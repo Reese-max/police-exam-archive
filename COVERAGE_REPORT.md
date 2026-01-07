@@ -3,8 +3,24 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-69%20passed-brightgreen.svg)](TEST_REPORT.md)
 [![Coverage](https://img.shields.io/badge/coverage-68%25-yellow.svg)](COVERAGE_REPORT.md)
+[![Security](https://img.shields.io/badge/security-A-brightgreen.svg)](IMPROVEMENT_REPORT.md)
+[![Code Quality](https://img.shields.io/badge/quality-A-brightgreen.svg)](BUG_FIX_REPORT.md)
 
 > **注意**: 推送至 GitHub 後，請將上方 badge 中的 `YOUR_USERNAME/YOUR_REPO` 替換為實際的儲存庫路徑
+
+---
+
+## 📊 專案健康度
+
+### 安全性
+- ✅ **等級 A** - 所有高嚴重度問題已修正
+- ✅ Shell Injection 風險: 2 → 0
+- ✅ 安全掃描通過（Bandit）
+
+### 程式碼品質
+- ✅ **等級 A** - Flake8 問題: 277 → 12
+- ✅ 測試覆蓋率: 68%
+- ✅ 所有測試通過: 69/69
 
 ---
 

@@ -2,3 +2,9 @@
 pytest>=8.3
 pytest-cov>=7.0
 pytest-mock>=3.15
+
+# 開發工具
+autopep8>=2.3
+autoflake>=2.3
+bandit>=1.9
+radon>=6.0

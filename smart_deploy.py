@@ -22,7 +22,11 @@ WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyy3WZCFcKfx2SR4FeQLe7QcS
 
 
 def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    """清除螢幕（安全版本，避免 shell injection）"""
+    if os.name == 'nt':
+        subprocess.run(['cmd', '/c', 'cls'], check=False)
+    else:
+        subprocess.run(['clear'], check=False)
 
 
 def print_banner():
@@ -47,11 +51,22 @@ def print_step(num, text, status=""):
 
 
 def run_cmd(cmd):
-    """執行命令"""
+    """執行命令（安全版本）"""
     try:
+        # 將命令字串分割為列表，避免 shell injection
+        import shlex
+        if isinstance(cmd, str):
+            cmd_list = shlex.split(cmd)
+        else:
+            cmd_list = cmd
+
         result = subprocess.run(
-            cmd, shell=True, cwd=PROJECT_DIR,
-            capture_output=True, text=True, encoding='utf-8'
+            cmd_list,
+            shell=False,  # 安全：不使用 shell
+            cwd=PROJECT_DIR,
+            capture_output=True,
+            text=True,
+            encoding='utf-8'
         )
         return result.returncode == 0, result.stdout + result.stderr
     except Exception as e:
