@@ -10,3 +10,22 @@ testpaths = ["tests"]
 pythonpath = [
     "."
 ]
+
+[tool.coverage.run]
+omit = [
+    "tests/*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/backup/*",
+    "*/.git/*",
+    "考選部考古題完整庫/*"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "raise AssertionError",
+    "raise NotImplementedError"
+]

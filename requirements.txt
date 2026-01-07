@@ -1,2 +1,4 @@
 # Runtime腳本僅使用標準函式庫；此檔主要列出測試/開發依賴。
 pytest>=8.3
+pytest-cov>=7.0
+pytest-mock>=3.15
