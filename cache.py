@@ -48,10 +48,11 @@ class DownloadCache:
             file_path: 檔案路徑
 
         Returns:
-            str: MD5 雜湊鍵值
+            str: MD5 雜湊鍵值（非安全用途）
         """
         key_string = f"{url}:{file_path}"
-        return hashlib.md5(key_string.encode()).hexdigest()
+        # MD5 僅用於快速鍵值生成，非安全用途
+        return hashlib.md5(key_string.encode(), usedforsecurity=False).hexdigest()
 
     def is_downloaded(self, url: str, file_path: str) -> bool:
         """檢查是否已下載

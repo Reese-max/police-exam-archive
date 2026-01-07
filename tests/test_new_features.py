@@ -4,10 +4,8 @@
 """
 
 import pytest
-import tempfile
-from pathlib import Path
 from logger import Logger, get_logger
-from errors import retry, NetworkError, PathTooLongError, ignore_errors
+from errors import retry, NetworkError, ignore_errors
 from cache import DownloadCache
 from concurrent_download import ConcurrentDownloader, DownloadTask
 
