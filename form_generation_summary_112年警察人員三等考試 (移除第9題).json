@@ -1,0 +1,14 @@
+{
+  "csv_source": "考選部考古題完整庫\\情境實務考古題\\情境實務資料夾\\112年警察人員三等考試 (移除第9題).csv",
+  "output_script": "src\\Code.gs",
+  "total_questions": 19,
+  "stats": {
+    "total_rows": 19,
+    "imported": 19,
+    "skipped": 0
+  },
+  "warnings": [
+    "缺少年份欄位，已改用檔名推斷值：112",
+    "缺少題號欄位，已改用列序號"
+  ]
+}

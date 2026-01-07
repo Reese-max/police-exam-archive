@@ -1,0 +1,12 @@
+[project]
+name = "google-form-deployment-toolkit"
+version = "0.0.0"
+description = "CSV → Google Forms automation scripts"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+pythonpath = [
+    "."
+]
