@@ -1,19 +1,21 @@
 import os
 import requests
 from bs4 import BeautifulSoup, Tag
-from bs4.element import NavigableString, PageElement
+from bs4.element import NavigableString
 import time
 import re
 from urllib.parse import urljoin
 import html
 import json
 from datetime import datetime
-from typing import List, Dict, Any, Union, Optional
+from typing import Union
 import warnings
 import urllib3
 
 # 隱藏 urllib3 的 SSL 警告
-warnings.filterwarnings('ignore', category=urllib3.exceptions.InsecureRequestWarning)
+warnings.filterwarnings(
+    'ignore',
+    category=urllib3.exceptions.InsecureRequestWarning)
 
 # 類型註解別名
 BeautifulSoupElement = Union[Tag, NavigableString]
@@ -25,10 +27,11 @@ HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
     'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
-    'Connection': 'keep-alive'
-}
+    'Connection': 'keep-alive'}
 
 # 動態計算年份範圍（民國年）
+
+
 def get_available_years():
     """動態計算可用的年份範圍"""
     from datetime import datetime
@@ -38,17 +41,20 @@ def get_available_years():
     # 從民國81年開始到當前年份（包含明年，以防萬一）
     return list(range(81, current_minguo_year + 2))
 
+
 AVAILABLE_YEARS = get_available_years()
 # --- ---
 
+
 def print_banner():
     """顯示程式標題"""
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print(" " * 20 + "考選部考古題批量下載工具")
-    print("="*70)
+    print("=" * 70)
     print("📚 資料來源: 考選部考畢試題查詢平臺")
     print(f"🗓️  可用年份: 民國 {AVAILABLE_YEARS[0]} 年 ~ {AVAILABLE_YEARS[-1]} 年")
-    print("="*70 + "\n")
+    print("=" * 70 + "\n")
+
 
 def get_save_folder():
     """互動式輸入儲存資料夾"""
@@ -60,41 +66,42 @@ def get_save_folder():
     print("   3. 輸入完整路徑 → 使用絕對路徑 (例如: D:/Downloads/考古題)")
     print("   4. 輸入相對路徑 → 相對於目前目錄 (例如: ../考古題)")
     print("-" * 70)
-    
+
     while True:
         current_dir = os.getcwd()
         print(f"📂 目前工作目錄: {current_dir}")
         user_input = input("💾 請輸入儲存資料夾 (直接按 Enter 使用預設): ").strip()
-        
+
         # 使用預設資料夾
         if not user_input:
             save_dir = DEFAULT_SAVE_DIR
         else:
             save_dir = user_input
-        
+
         # 轉換為絕對路徑
         abs_path = os.path.abspath(save_dir)
-        
+
         # 檢查路徑是否有效
         try:
             # 嘗試建立資料夾（如果不存在）
             os.makedirs(abs_path, exist_ok=True)
-            
+
             # 檢查是否可寫入
             test_file = os.path.join(abs_path, '.test_write')
             with open(test_file, 'w') as f:
                 f.write('test')
             os.remove(test_file)
-            
+
             print(f"✅ 已設定儲存位置: {abs_path}\n")
             return abs_path
-            
+
         except PermissionError:
             print(f"❌ 沒有寫入權限: {abs_path}")
             print("   請選擇其他資料夾或以管理員身份執行程式\n")
         except Exception as e:
             print(f"❌ 資料夾設定失敗: {e}")
             print("   請重新輸入\n")
+
 
 def get_year_input():
     """互動式輸入年份範圍"""
@@ -106,19 +113,19 @@ def get_year_input():
     print("   3. 多個年份: 110,112,113")
     print("   4. 全部年份: all 或 *")
     print("-" * 70)
-    
+
     while True:
         user_input = input("📅 請輸入年份 (民國年): ").strip()
-        
+
         if not user_input:
             print("❌ 輸入不可為空，請重新輸入\n")
             continue
-        
+
         try:
             # 全部年份
             if user_input.lower() in ['all', '*', '全部']:
                 return list(range(81, 115))
-            
+
             # 年份範圍
             elif '-' in user_input:
                 parts = user_input.split('-')
@@ -129,14 +136,17 @@ def get_year_input():
 
                 # 動態檢查年份範圍
                 max_year = AVAILABLE_YEARS[-1] if AVAILABLE_YEARS else 114
-                if not (AVAILABLE_YEARS[0] <= start <= max_year and AVAILABLE_YEARS[0] <= end <= max_year and start <= end):
-                    print(f"❌ 年份範圍必須在 {AVAILABLE_YEARS[0]}-{max_year} 之間，且起始年份不可大於結束年份\n")
+                if not (
+                        AVAILABLE_YEARS[0] <= start <= max_year and AVAILABLE_YEARS[0] <= end <= max_year and start <= end):
+                    print(
+                        f"❌ 年份範圍必須在 {
+                            AVAILABLE_YEARS[0]}-{max_year} 之間，且起始年份不可大於結束年份\n")
                     continue
 
                 years = list(range(start, end + 1))
                 print(f"✅ 已選擇: 民國 {start} 年 ~ {end} 年 (共 {len(years)} 年)\n")
                 return years
-            
+
             # 多個年份
             elif ',' in user_input:
                 years = [int(y.strip()) for y in user_input.split(',')]
@@ -148,7 +158,8 @@ def get_year_input():
                     continue
 
                 years = sorted(list(set(years)))
-                print(f"✅ 已選擇: {len(years)} 個年份: {', '.join(map(str, years))}\n")
+                print(
+                    f"✅ 已選擇: {len(years)} 個年份: {', '.join(map(str, years))}\n")
                 return years
 
             # 單一年份
@@ -161,10 +172,11 @@ def get_year_input():
 
                 print(f"✅ 已選擇: 民國 {year} 年\n")
                 return [year]
-        
+
         except ValueError:
             print("❌ 輸入格式錯誤，請重新輸入\n")
             continue
+
 
 def get_filter_input():
     """互動式輸入考試類型篩選"""
@@ -190,15 +202,16 @@ def get_filter_input():
     print("✅ 已自動設定: 警察與司法相關考試篩選\n")
     return target_keywords
 
+
 def confirm_settings(save_dir, years, keywords):
     """確認設定"""
-    print("="*70)
+    print("=" * 70)
     print("📋 目前設定")
-    print("="*70)
-    
+    print("=" * 70)
+
     # 顯示儲存位置
     print(f"💾 儲存位置: {save_dir}")
-    
+
     # 顯示年份
     if len(years) == 1:
         print(f"📅 下載年份: 民國 {years[0]} 年")
@@ -206,24 +219,24 @@ def confirm_settings(save_dir, years, keywords):
         print(f"📅 下載年份: 民國 {', '.join(map(str, years))} 年")
     else:
         print(f"📅 下載年份: 民國 {years[0]} ~ {years[-1]} 年 (共 {len(years)} 年)")
-    
+
     # 顯示篩選
     if keywords:
         print(f"🔍 考試篩選: {', '.join(keywords)}")
     else:
         print(f"🔍 考試篩選: 全部考試")
-    
+
     # 顯示磁碟空間
     try:
         if os.name == 'nt':  # Windows
             import shutil
             total, used, free = shutil.disk_usage(save_dir)
             print(f"💿 可用空間: {free / (1024**3):.2f} GB")
-    except:
+    except BaseException:
         pass
-    
-    print("="*70)
-    
+
+    print("=" * 70)
+
     while True:
         confirm = input("\n確認開始下載? (Y/N): ").strip().upper()
         if confirm == 'Y':
@@ -233,6 +246,7 @@ def confirm_settings(save_dir, years, keywords):
         else:
             print("❌ 請輸入 Y 或 N")
 
+
 def sanitize_filename(name):
     """清理檔名中的非法字元"""
     name = html.unescape(name)
@@ -241,19 +255,21 @@ def sanitize_filename(name):
         name = name[:80]
     return name.strip()
 
+
 def check_path_length(path, max_length=250):
     """檢查路徑長度是否超過限制
-    
+
     Args:
         path: 要檢查的路徑
         max_length: 最大路徑長度（預設250，留10字元緩衝）
-    
+
     Returns:
         tuple: (是否合法, 實際長度)
     """
     abs_path = os.path.abspath(path)
     path_length = len(abs_path)
     return path_length <= max_length, path_length
+
 
 def get_exam_list_by_year(session, year, keywords, max_retries=3):
     """獲取指定年份的考試列表（帶重試機制）"""
@@ -262,18 +278,19 @@ def get_exam_list_by_year(session, year, keywords, max_retries=3):
             url = f"{BASE_URL}wFrmExamQandASearch.aspx?y={year + 1911}"
             response = session.get(url, timeout=30, verify=False)
             response.raise_for_status()
-            
+
             soup = BeautifulSoup(response.text, 'html.parser')
             exam_select = soup.find("select", id=re.compile(r'ddlExamCode'))
             if not exam_select:
                 return []
-            
+
             exams = []
             for option in exam_select.find_all("option"):  # type: ignore
-                if isinstance(option, Tag) and option.has_attr('value') and option['value']:
+                if isinstance(option, Tag) and option.has_attr(
+                        'value') and option['value']:
                     exam_code = option['value']
                     exam_name = option.get_text(strip=True)
-                    
+
                     if keywords:
                         # 使用考試級別的關鍵字篩選
                         if any(keyword in exam_name for keyword in keywords):
@@ -289,9 +306,9 @@ def get_exam_list_by_year(session, year, keywords, max_retries=3):
                             'name': exam_name,
                             'year': year
                         })
-            
+
             return exams
-            
+
         except requests.exceptions.Timeout:
             if attempt < max_retries - 1:
                 print(f"   ⚠️ 請求超時，重試第 {attempt + 2} 次...")
@@ -299,7 +316,7 @@ def get_exam_list_by_year(session, year, keywords, max_retries=3):
             else:
                 print(f"   ❌ 獲取 {year} 年考試列表失敗: 請求超時（已重試 {max_retries} 次）")
                 return []
-                
+
         except requests.exceptions.RequestException as e:
             if attempt < max_retries - 1:
                 print(f"   ⚠️ 網路錯誤，重試第 {attempt + 2} 次...")
@@ -307,12 +324,13 @@ def get_exam_list_by_year(session, year, keywords, max_retries=3):
             else:
                 print(f"   ❌ 獲取 {year} 年考試列表失敗: {e}")
                 return []
-                
+
         except Exception as e:
             print(f"   ❌ 獲取 {year} 年考試列表失敗: {e}")
             return []
-    
+
     return []
+
 
 def parse_exam_page(html_content, exam_name=""):
     """
@@ -427,13 +445,15 @@ def parse_exam_page(html_content, exam_name=""):
             ]
 
             # 檢查是否包含排除科目（如果是概要科目，則不屬於三等監獄官）
-            has_exclude_subjects = any(subject in subjects_text for subject in exclude_subjects)
+            has_exclude_subjects = any(
+                subject in subjects_text for subject in exclude_subjects)
 
             if has_exclude_subjects:
                 return None
 
             # 檢查是否包含足夠的三等監獄官科目（至少4個主要科目）
-            judicial_matches = sum(1 for subject in judicial_subjects if subject in subjects_text)
+            judicial_matches = sum(
+                1 for subject in judicial_subjects if subject in subjects_text)
             if judicial_matches >= 4:
                 # 根據考試名稱判斷是男還是女
                 if exam_name and ('(男)' in exam_name or '男' in exam_name):
@@ -531,15 +551,22 @@ def parse_exam_page(html_content, exam_name=""):
 
     return exam_structure
 
+
 def download_file(session, url, file_path, max_retries=5):
     """下載檔案"""
     for attempt in range(max_retries):
         try:
-            response = session.get(url, headers=HEADERS, stream=True, timeout=60, verify=False)
+            response = session.get(
+                url,
+                headers=HEADERS,
+                stream=True,
+                timeout=60,
+                verify=False)
             response.raise_for_status()
 
             content_type = response.headers.get('Content-Type', '')
-            if 'pdf' not in content_type.lower() and 'application/octet-stream' not in content_type.lower():
+            if 'pdf' not in content_type.lower(
+            ) and 'application/octet-stream' not in content_type.lower():
                 return False, "非PDF檔案"
 
             with open(file_path, 'wb') as f:
@@ -571,51 +598,30 @@ def download_file(session, url, file_path, max_retries=5):
 
     return False, "重試失敗"
 
+
 def download_exam(session, exam_info, base_folder, stats):
     """下載單一考試"""
     year = exam_info['year']
     exam_code = exam_info['code']
     exam_name = exam_info['name']
-    
-    print(f"\n{'='*70}")
+
+    print(f"\n{'=' * 70}")
     print(f"📋 民國 {year} 年 - {exam_name}")
-    print(f"{'='*70}")
-    
+    print(f"{'=' * 70}")
+
     try:
-        url = f"{BASE_URL}wFrmExamQandASearch.aspx?y={year + 1911}&e={exam_code}"
+        url = f"{BASE_URL}wFrmExamQandASearch.aspx?y={
+            year + 1911}&e={exam_code}"
         response = session.get(url, timeout=30, verify=False)
         response.raise_for_status()
-        
-        # 定義類科關鍵字（用於第二層篩選）
-        category_keywords = [
-            # 警察人員考試三等考試類別
-            "警察人員考試三等考試_行政警察人員類別",
-            "警察人員考試三等考試_外事警察人員(選試英語)類別",
-            "警察人員考試三等考試_刑事警察人員類別",
-            "警察人員考試三等考試_公共安全人員類別",
-            "警察人員考試三等考試_犯罪防治人員類別預防組",
-            "警察人員考試三等考試_消防警察人員類別",
-            "警察人員考試三等考試_交通警察人員類別交通組",
-            "警察人員考試三等考試_警察資訊管理人員類別",
-            "警察人員考試三等考試_刑事鑑識人員類別",
-            "警察人員考試三等考試_國境警察人員類別",
-            "警察人員考試三等考試_水上警察人員類別",
-            "警察人員考試三等考試_警察法制人員類別",
-            "警察人員考試三等考試_交通警察人員電訊組",
-            "警察人員考試三等考試_行政管理人員類別",
-
-            # 司法考試類別
-            "司法三等考試_監獄官(男)",
-            "司法三等考試_監獄官(女)",
-        ]
 
         exam_structure = parse_exam_page(response.text, exam_name)
-        
+
         if not exam_structure:
             print("   ⚠️ 此考試沒有可下載的試題")
             stats['empty_exams'] += 1
             return
-        
+
         # 縮短考試資料夾名稱以避免路徑過長
         if "警察人員考試、一般警察人員考試" in exam_name:
             short_exam_name = f"民國{year}年_警察特考"
@@ -627,20 +633,23 @@ def download_exam(session, exam_info, base_folder, stats):
 
         exam_folder = os.path.join(base_folder, f"民國{year}年", short_exam_name)
         os.makedirs(exam_folder, exist_ok=True)
-        
-        total_subjects = sum(len(subjects) for subjects in exam_structure.values())
+
+        total_subjects = sum(len(subjects)
+                             for subjects in exam_structure.values())
         total_files = sum(
-            len(subject['downloads']) 
-            for subjects in exam_structure.values() 
+            len(subject['downloads'])
+            for subjects in exam_structure.values()
             for subject in subjects
         )
-        
-        print(f"   📊 類科: {len(exam_structure)} 個 | 科目: {total_subjects} 個 | 檔案: {total_files} 個")
+
+        print(
+            f"   📊 類科: {
+                len(exam_structure)} 個 | 科目: {total_subjects} 個 | 檔案: {total_files} 個")
         print(f"   🔍 調試: 詳細類科資訊")
         for cat_name, subjects in exam_structure.items():
             cat_files = sum(len(subject['downloads']) for subject in subjects)
             print(f"   🔍     {cat_name}: {len(subjects)} 科目, {cat_files} 檔案")
-        
+
         file_count = 0
         for category_name, subjects in exam_structure.items():
             # 縮短類科資料夾名稱
@@ -676,43 +685,45 @@ def download_exam(session, exam_info, base_folder, stats):
                 short_category_name = '監獄官'
             else:
                 # 對於其他類科，使用後面的部分
-                short_category_name = category_name.split('_')[-1] if '_' in category_name else category_name[:20]
+                short_category_name = category_name.split(
+                    '_')[-1] if '_' in category_name else category_name[:20]
 
             category_folder = os.path.join(exam_folder, short_category_name)
-            
+
             # 檢查路徑長度
             is_valid, path_len = check_path_length(category_folder)
             if not is_valid:
                 print(f"   ⚠️ 路徑過長 ({path_len}字元)，跳過類科: {short_category_name}")
-                stats['skipped'] += len(subjects) * sum(len(s['downloads']) for s in subjects)
+                stats['skipped'] += len(subjects) * \
+                    sum(len(s['downloads']) for s in subjects)
                 continue
-            
+
             os.makedirs(category_folder, exist_ok=True)
-            
+
             for subject_info in subjects:
                 subject_name = subject_info['subject']
-                
+
                 # 為每個科目建立專用資料夾
                 subject_folder = os.path.join(category_folder, subject_name)
-                
+
                 # 檢查路徑長度
                 is_valid, path_len = check_path_length(subject_folder)
                 if not is_valid:
                     print(f"   ⚠️ 路徑過長 ({path_len}字元)，跳過科目: {subject_name}")
                     stats['skipped'] += len(subject_info['downloads'])
                     continue
-                
+
                 try:
                     os.makedirs(subject_folder, exist_ok=True)
                 except OSError as e:
                     print(f"   ❌ 無法建立資料夾 {subject_folder}: {e}")
                     stats['skipped'] += len(subject_info['downloads'])
                     continue
-                
+
                 for download_info in subject_info['downloads']:
                     file_type = download_info['type']
                     url = download_info['url']
-                    
+
                     # 根據檔案類型進行更清晰的命名
                     file_type_mapping = {
                         "試題": "試題",
@@ -722,13 +733,14 @@ def download_exam(session, exam_info, base_folder, stats):
                         "解答": "答案",
                         "勘誤": "更正答案"
                     }
-                    
+
                     # 使用映射表來標準化檔案類型命名
-                    normalized_type = file_type_mapping.get(file_type, file_type)
+                    normalized_type = file_type_mapping.get(
+                        file_type, file_type)
                     file_name = f"{normalized_type}.pdf"
-                    
+
                     file_path = os.path.join(subject_folder, file_name)
-                    
+
                     # 檢查最終檔案路徑長度
                     is_valid, path_len = check_path_length(file_path)
                     if not is_valid:
@@ -737,11 +749,12 @@ def download_exam(session, exam_info, base_folder, stats):
                         continue
 
                     # 移除檔案存在檢查，總是嘗試下載以確保完整性
-                    
+
                     pdf_url = urljoin(BASE_URL, url)
-                    
+
                     try:
-                        success, result = download_file(session, pdf_url, file_path)
+                        success, result = download_file(
+                            session, pdf_url, file_path)
                     except Exception as e:
                         print(f"   ❌ 下載失敗 ({file_name}): {e}")
                         stats['failed'] += 1
@@ -757,11 +770,12 @@ def download_exam(session, exam_info, base_folder, stats):
                             'timestamp': datetime.now().isoformat()
                         })
                         continue
-                    
+
                     file_count += 1
                     if file_count % 10 == 0:
-                        print(f"   ⬇️  進度: {file_count}/{total_files}", end='\r')
-                    
+                        print(
+                            f"   ⬇️  進度: {file_count}/{total_files}", end='\r')
+
                     if success:
                         stats['success'] += 1
                         stats['total_size'] += result
@@ -782,32 +796,33 @@ def download_exam(session, exam_info, base_folder, stats):
                         })
                         # 對於失敗的檔案，等待更長時間再繼續
                         time.sleep(2)
-        
+
         print(f"   ✅ 完成: {file_count}/{total_files} 個檔案")
         stats['completed_exams'] += 1
-        
+
     except Exception as e:
         print(f"   ❌ 處理失敗: {e}")
         stats['failed_exams'] += 1
 
+
 def main():
     # 顯示歡迎畫面
     print_banner()
-    
+
     # 步驟1: 選擇儲存資料夾
     save_dir = get_save_folder()
-    
+
     # 步驟2: 選擇年份
     years = get_year_input()
-    
+
     # 步驟3: 選擇篩選條件
     keywords = get_filter_input()
-    
+
     # 步驟4: 確認設定
     if not confirm_settings(save_dir, years, keywords):
         print("\n❌ 已取消下載")
         return
-    
+
     # 開始下載
     stats = {
         'success': 0,
@@ -819,66 +834,70 @@ def main():
         'empty_exams': 0,
         'failed_list': []
     }
-    
+
     session = requests.Session()
     session.headers.update(HEADERS)
-    
+
     start_time = datetime.now()
-    
+
     try:
-        print("\n" + "="*70)
+        print("\n" + "=" * 70)
         print("🚀 開始下載")
-        print("="*70)
-        
+        print("=" * 70)
+
         for year in years:
             print(f"\n🔍 正在掃描民國 {year} 年的考試...")
-            
+
             exams = get_exam_list_by_year(session, year, keywords)
-            
+
             if not exams:
                 print(f"   ⚠️ 民國 {year} 年沒有找到符合條件的考試")
                 continue
-            
+
             print(f"   ✅ 找到 {len(exams)} 個考試")
-            
+
             for exam in exams:
                 download_exam(session, exam, save_dir, stats)
                 time.sleep(0.5)
-        
+
         elapsed_time = datetime.now() - start_time
-        
+
         # 產生報告
-        print("\n" + "="*70)
+        print("\n" + "=" * 70)
         print("📊 下載完成統計")
-        print("="*70)
+        print("=" * 70)
         print(f"⏱️  總耗時: {elapsed_time}")
         print(f"✅ 成功下載: {stats['success']} 個檔案")
         print(f"⏭️  已跳過: {stats['skipped']} 個檔案")
         print(f"❌ 失敗: {stats['failed']} 個檔案")
-        print(f"📦 總大小: {stats['total_size'] / (1024*1024):.2f} MB")
-        
+        print(f"📦 總大小: {stats['total_size'] / (1024 * 1024):.2f} MB")
+
         # 儲存失敗清單
         if stats['failed_list']:
             log_file = os.path.join(save_dir, '下載失敗清單.json')
             with open(log_file, 'w', encoding='utf-8') as f:
-                json.dump(stats['failed_list'], f, ensure_ascii=False, indent=2)
-            
+                json.dump(
+                    stats['failed_list'],
+                    f,
+                    ensure_ascii=False,
+                    indent=2)
+
             txt_file = os.path.join(save_dir, '下載失敗清單.txt')
             with open(txt_file, 'w', encoding='utf-8') as f:
                 f.write(f"下載失敗清單 (共 {len(stats['failed_list'])} 個)\n")
-                f.write("="*70 + "\n\n")
+                f.write("=" * 70 + "\n\n")
                 for idx, item in enumerate(stats['failed_list'], 1):
                     f.write(f"{idx}. 民國 {item['year']} 年 - {item['exam']}\n")
                     f.write(f"   類科: {item['category']}\n")
                     f.write(f"   科目: {item['subject']}\n")
                     f.write(f"   類型: {item['type']}\n")
                     f.write(f"   原因: {item['reason']}\n")
-                    f.write("-"*70 + "\n\n")
-            
+                    f.write("-" * 70 + "\n\n")
+
             print(f"\n⚠️  失敗清單已儲存至: {txt_file}")
-        
+
         print(f"\n🎉 所有作業完成！檔案位於: {save_dir}")
-        
+
     except KeyboardInterrupt:
         print("\n\n⚠️  使用者中斷下載")
         print(f"已下載: {stats['success']} 個檔案")
@@ -888,6 +907,7 @@ def main():
         traceback.print_exc()
     finally:
         session.close()
+
 
 if __name__ == "__main__":
     main()

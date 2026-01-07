@@ -26,7 +26,9 @@ def test_parse_args_supports_multiple_csvs(monkeypatch):
 
 
 def test_run_command_handles_missing_binary():
-    assert agf.run_command(["tool_that_does_not_exist_xyz"], "missing") is False
+    assert agf.run_command(
+        ["tool_that_does_not_exist_xyz"],
+        "missing") is False
 
 
 def test_process_single_csv_generates_summary(tmp_path):
@@ -45,7 +47,11 @@ def test_process_single_csv_generates_summary(tmp_path):
         run=False,
     )
 
-    ok = agf._process_single_csv(csv_path, args, multi_csv=True, clasp_available=False)
+    ok = agf._process_single_csv(
+        csv_path,
+        args,
+        multi_csv=True,
+        clasp_available=False)
 
     assert ok is True
     derived_report = tmp_path / "summary_sample.json"
@@ -79,7 +85,11 @@ def test_process_single_csv_fails_when_push_fails(tmp_path, monkeypatch):
 
     monkeypatch.setattr(agf, "run_command", fake_run_command)
 
-    ok = agf._process_single_csv(csv_path, args, multi_csv=False, clasp_available=True)
+    ok = agf._process_single_csv(
+        csv_path,
+        args,
+        multi_csv=False,
+        clasp_available=True)
 
     assert ok is False
     assert any("CLASP Push" in desc for desc in calls)

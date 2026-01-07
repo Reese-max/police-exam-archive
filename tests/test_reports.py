@@ -24,9 +24,18 @@ def test_derive_report_path_respects_base_when_single(tmp_path):
 
 def test_write_summary_report_contains_stats(tmp_path):
     output = tmp_path / "summary.json"
-    report = ImportReport(total_rows=2, imported=1, skipped=1, warnings=["測試警告"])
+    report = ImportReport(
+        total_rows=2,
+        imported=1,
+        skipped=1,
+        warnings=["測試警告"])
 
-    _write_summary_report(output, Path("foo.csv"), Path("src/Code.gs"), 1, report)
+    _write_summary_report(
+        output,
+        Path("foo.csv"),
+        Path("src/Code.gs"),
+        1,
+        report)
 
     payload = json.loads(output.read_text(encoding="utf-8"))
     assert payload["csv_source"].endswith("foo.csv")
