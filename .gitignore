@@ -34,6 +34,8 @@ env/
 *.swo
 *~
 .DS_Store
+.claude/
+.specify/
 
 # Testing
 .pytest_cache/
@@ -45,6 +47,8 @@ test_report.json
 
 # Project specific
 backup/
+backup_old/
+htmlcov_old/
 考選部考古題完整庫/
 *.csv
 *.pdf
@@ -56,6 +60,7 @@ clasp_logs_*.json
 # Temporary files
 nul
 _tmp_*.py
+form_generation_summary_*.json
 
 # Environment variables
 .env
