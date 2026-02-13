@@ -52,19 +52,20 @@ htmlcov_old/
 考選部考古題完整庫/
 *.csv
 *.pdf
+*.png
+*.jpeg
+*.jpg
 
 # Logs
 *.log
-clasp_logs_*.json
 
 # Temporary files
 nul
 _tmp_*.py
-form_generation_summary_*.json
+
+# Cache
+.download_cache.json
 
 # Environment variables
 .env
 .env.local
-
-# CLASP (keep config but ignore logs)
-# .clasp.json should be tracked

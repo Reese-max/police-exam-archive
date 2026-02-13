@@ -124,7 +124,7 @@ def get_year_input():
         try:
             # 全部年份
             if user_input.lower() in ['all', '*', '全部']:
-                return list(range(81, 115))
+                return list(AVAILABLE_YEARS)
 
             # 年份範圍
             elif '-' in user_input:
@@ -232,7 +232,7 @@ def confirm_settings(save_dir, years, keywords):
             import shutil
             total, used, free = shutil.disk_usage(save_dir)
             print(f"💿 可用空間: {free / (1024**3):.2f} GB")
-    except BaseException:
+    except Exception:
         pass
 
     print("=" * 70)
@@ -544,11 +544,6 @@ def parse_exam_page(html_content, exam_name=""):
                 'downloads': subject_info['downloads']
             })
 
-    # 調試輸出
-    print(f"   🔍 調試: 解析出 {len(exam_structure)} 個目標類科")
-    for cat_name, subjects in exam_structure.items():
-        print(f"   🔍 調試:   {cat_name}: {len(subjects)} 個科目")
-
     return exam_structure
 
 
@@ -584,17 +579,17 @@ def download_file(session, url, file_path, max_retries=5):
         except requests.exceptions.Timeout:
             if attempt == max_retries - 1:
                 return False, "請求超時"
-            time.sleep(5 ** attempt)
+            time.sleep(2 ** attempt)
 
         except requests.exceptions.ConnectionError:
             if attempt == max_retries - 1:
                 return False, "連線錯誤"
-            time.sleep(5 ** attempt)
+            time.sleep(2 ** attempt)
 
         except Exception as e:
             if attempt == max_retries - 1:
                 return False, str(e)[:50]
-            time.sleep(5 ** attempt)
+            time.sleep(2 ** attempt)
 
     return False, "重試失敗"
 
@@ -645,10 +640,6 @@ def download_exam(session, exam_info, base_folder, stats):
         print(
             f"   📊 類科: {
                 len(exam_structure)} 個 | 科目: {total_subjects} 個 | 檔案: {total_files} 個")
-        print(f"   🔍 調試: 詳細類科資訊")
-        for cat_name, subjects in exam_structure.items():
-            cat_files = sum(len(subject['downloads']) for subject in subjects)
-            print(f"   🔍     {cat_name}: {len(subjects)} 科目, {cat_files} 檔案")
 
         file_count = 0
         for category_name, subjects in exam_structure.items():

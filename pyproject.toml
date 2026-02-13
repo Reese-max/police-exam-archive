@@ -1,7 +1,7 @@
 [project]
-name = "google-form-deployment-toolkit"
-version = "0.0.0"
-description = "CSV → Google Forms automation scripts"
+name = "exam-paper-downloader"
+version = "2.1.0"
+description = "考選部考古題批量下載工具"
 requires-python = ">=3.10"
 
 [tool.pytest.ini_options]
