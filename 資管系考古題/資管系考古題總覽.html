@@ -524,13 +524,6 @@ html.dark .practice-mode .mc-option.wrong { background: #742a2a; color: #fed7d7;
 html.dark .practice-mode .mc-option.correct .opt-label { color: #68d391; }
 html.dark .practice-mode .mc-option.wrong .opt-label { color: #fc8181; }
 
-/* Read status indicator */
-.subject-header .read-badge {
-  font-size: 0.65rem; padding: 1px 6px; border-radius: 8px;
-  background: #e2e8f0; color: #718096; margin-left: 0.4rem;
-  flex-shrink: 0; pointer-events: none; font-weight: 500;
-}
-html.dark .subject-header .read-badge { background: #4a5568; color: #a0aec0; }
 
 /* Bookmark filter active state */
 .toolbar-btn.bookmark-filter.active { background: #f6e05e; color: #744210; border-color: #ecc94b; }
@@ -540,17 +533,6 @@ html.dark .toolbar-btn.bookmark-filter.active { background: #d69e2e; color: #1a2
 .practice-history { font-size: 0.75rem; color: var(--text-light); margin-top: 0.25rem; }
 .practice-history strong { color: var(--primary); }
 
-/* Reading progress bar */
-.progress-bar-wrap {
-  height: 6px; background: var(--border); border-radius: 3px;
-  margin-top: 0.75rem; overflow: hidden;
-}
-.progress-bar-fill {
-  height: 100%; background: linear-gradient(90deg, var(--success), #48bb78);
-  border-radius: 3px; transition: width 0.4s ease;
-  min-width: 0;
-}
-html.dark .progress-bar-fill { background: linear-gradient(90deg, #68d391, #38a169); }
 
 /* Bookmark filter empty state */
 .bookmark-empty {
@@ -800,7 +782,6 @@ html.dark .mc-question { border-top-color: #4a5568; }
 </div>
 <h1 class="page-title">資管系考古題總覽</h1>
 <p class="page-subtitle">105年至114年 ・ 7科目 ・ 共 70 份試卷 ・ 126 個 PDF</p>
-<div class="progress-bar-wrap" id="progressBarWrap" title="閱讀進度"><div class="progress-bar-fill" id="progressBarFill" style="width:0%"></div></div>
 <div class="stats-bar">
   <div class="stat-item"><div class="stat-value">10</div><div class="stat-label">年度</div></div>
   <div class="stat-item"><div class="stat-value">7</div><div class="stat-label">科目</div></div>
@@ -10324,35 +10305,11 @@ function initBookmarksAndProgress() {
     };
     header.appendChild(bmBtn);
 
-    // 已讀標記
-    const readData = getStore('exam-read');
-    if (readData[id]) {
-      const badge = document.createElement('span');
-      badge.className = 'read-badge';
-      badge.textContent = '已讀';
-      header.querySelector('h3').after(badge);
-    }
-
-    // 卡片展開/收合 + 記錄已讀
+    // 卡片展開/收合
     header.removeAttribute('onclick');
     header.addEventListener('click', (e) => {
       if (e.target.closest('.bookmark-btn')) return;
       card.classList.toggle('open');
-      if (card.classList.contains('open')) {
-        const rd = getStore('exam-read');
-        if (!rd[id]) {
-          rd[id] = Date.now();
-          setStore('exam-read', rd);
-          // 動態加上已讀標記
-          if (!header.querySelector('.read-badge')) {
-            const badge = document.createElement('span');
-            badge.className = 'read-badge';
-            badge.textContent = '已讀';
-            header.querySelector('h3').after(badge);
-          }
-          updateProgressStats();
-        }
-      }
     });
   });
   updateProgressStats();
@@ -10360,19 +10317,11 @@ function initBookmarksAndProgress() {
 
 function updateProgressStats() {
   const bmCount = Object.keys(getStore('exam-bookmarks')).length;
-  const readCount = Object.keys(getStore('exam-read')).length;
   const totalCards = document.querySelectorAll('#yearView .subject-card[id]').length;
   const subtitle = document.querySelector('.page-subtitle');
   if (subtitle) {
-    subtitle.textContent = `105年至114年 ・ 7科目 ・ 共 70 份試卷 ・ 已讀 ${readCount}/${totalCards} ・ 書籤 ${bmCount}`;
+    subtitle.textContent = `105年至114年 ・ 7科目 ・ 共 70 份試卷 ・ 書籤 ${bmCount}`;
   }
-  // 更新進度條
-  const fill = document.getElementById('progressBarFill');
-  if (fill && totalCards > 0) {
-    fill.style.width = Math.round(readCount / totalCards * 100) + '%';
-  }
-  const wrap = document.getElementById('progressBarWrap');
-  if (wrap) wrap.title = `閱讀進度：${readCount}/${totalCards} (${totalCards > 0 ? Math.round(readCount / totalCards * 100) : 0}%)`;
 }
 
 /* === Bookmark Filter === */
