@@ -27,7 +27,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 140px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -51,6 +51,7 @@ body {
   overflow-y: auto;
   z-index: 100;
   padding: 1.5rem 0;
+  transition: transform 0.3s ease;
 }
 .sidebar-title {
   font-size: 1.1rem; font-weight: 700;
@@ -84,7 +85,60 @@ body {
   margin-left: var(--sidebar-w);
   padding: 2rem 2.5rem;
   max-width: 960px;
+  transition: margin-left 0.3s ease;
 }
+
+/* Sidebar toggle button (desktop) — inside sidebar title */
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-toggle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+.sidebar-toggle:hover { background: rgba(255,255,255,0.25); color: #fff; }
+
+/* Collapsed: show a fixed re-open button */
+body.sidebar-collapsed .sidebar {
+  transform: translateX(-100%);
+}
+body.sidebar-collapsed .main {
+  margin-left: 0;
+}
+.sidebar-reopen {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 0.75rem;
+  z-index: 101;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+.sidebar-reopen:hover { background: var(--primary-light); }
+body.sidebar-collapsed .sidebar-reopen { display: flex; }
 .page-title { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; }
 .page-subtitle { color: var(--text-light); font-size: 0.95rem; margin-bottom: 2rem; }
 
@@ -477,12 +531,21 @@ body.practice-mode .practice-score { display: flex; }
   position: fixed; bottom: 2rem; left: 2rem; z-index: 200;
   width: 44px; height: 44px; border-radius: 50%;
   background: var(--card-bg); border: 2px solid var(--border);
-  cursor: pointer; font-size: 1.1rem;
+  cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: all 0.3s;
+  overflow: hidden;
 }
-.dark-toggle:hover { border-color: var(--accent); }
+.dark-toggle:hover { border-color: var(--accent); transform: scale(1.1); }
+.dark-toggle svg {
+  width: 22px; height: 22px;
+  transition: transform 0.4s ease;
+}
+.dark-toggle:active svg { transform: rotate(30deg); }
+.dark-icon-moon, .dark-icon-sun { display: block; }
+html.dark .dark-icon-moon { display: none; }
+html:not(.dark) .dark-icon-sun { display: none; }
 
 html.dark {
   --primary: #63b3ed;
@@ -628,8 +691,11 @@ html.dark .mc-question { border-top-color: #4a5568; }
 /* Mobile */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
+  .sidebar-toggle { display: none; }
+  .sidebar-reopen { display: none !important; }
   .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
-  .sidebar.open { transform: translateX(0); }
+  .sidebar.open,
+  body.sidebar-collapsed .sidebar.open { transform: translateX(0); }
   .main { margin-left: 0; padding: 1rem; padding-top: 4rem; max-width: 100%; }
   .page-title { font-size: 1.4rem; }
   .page-subtitle { font-size: 0.85rem; }
@@ -667,8 +733,9 @@ html.dark .mc-question { border-top-color: #4a5568; }
 <a href="#searchInput" class="skip-link">跳至搜尋</a>
 <button class="hamburger" id="hamburgerBtn" aria-label="開啟導航選單">☰</button>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button class="sidebar-reopen" id="sidebarReopen" aria-label="展開導航">☰</button>
 <nav class="sidebar" id="sidebar" aria-label="年份導航">
-<div class="sidebar-title">📚 資管系考古題</div>
+<div class="sidebar-title"><span>📚 資管系考古題</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="收合導航">✕</button></div>
 <div class="sidebar-year" role="button" tabindex="0" onclick="toggleYear(this)">114年</div>
 <div class="sidebar-subjects">
 <a class="sidebar-link" href="#y114-38157">憲法與警察英文</a>
@@ -771,7 +838,10 @@ html.dark .mc-question { border-top-color: #4a5568; }
 </div>
 </nav>
 <button class="back-to-top" id="backToTop" aria-label="回到頂部">↑</button>
-<button class="dark-toggle" id="darkToggle" aria-label="切換深色模式">🌙</button>
+<button class="dark-toggle" id="darkToggle" aria-label="切換深色模式">
+<svg class="dark-icon-moon" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+<svg class="dark-icon-sun" viewBox="0 0 24 24" fill="none" stroke="#ecc94b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
 <div class="main">
 <div class="practice-score" id="practiceScore" role="status" aria-live="polite" aria-label="練習模式計分">
   <div class="score-text">
@@ -842,7 +912,8 @@ html.dark .mc-question { border-top-color: #4a5568; }
 <div class="exam-note">※注意：禁止使用電子計算器。</div>
 <div class="exam-section-marker">甲、申論題部分：（25分）</div>
 <div class="exam-note">㈠不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。</div>
-<div class="exam-note">㈡請以藍、黑色鋼筆或原子筆在申論試卷上作答。英文作文：你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的注意事項。一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，美國在臺協會也特地致電相關單位致意。南投縣政府消防局呼籲：登山客在行前應隨時注意未來登山地點天候狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更精準掌握所在位置，從而減少搜救時間。</div>
+<div class="exam-note">㈡請以藍、黑色鋼筆或原子筆在申論試卷上作答。</div>
+<div class="essay-question">英文作文：（25分）你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的注意事項。一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，美國在臺協會也特地致電相關單位致意。南投縣政府消防局呼籲：登山客在行前應隨時注意未來登山地點天候狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更精準掌握所在位置，從而減少搜救時間。</div>
 <div class="exam-section-marker">乙、測驗題部分：（75 分） 代號：5501</div>
 <div class="exam-note">㈠本試題為單一選擇題，請選出一個正確或最適當答案。</div>
 <div class="exam-note">㈡共60題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。</div>
@@ -1218,7 +1289,8 @@ html.dark .mc-question { border-top-color: #4a5568; }
 <div class="exam-section-marker">甲、申論部分：（60分）</div>
 <div class="exam-section-marker">甲、作文部分：（80 分）</div>
 <div class="exam-note">㈠作答時請將試題題號及答案依照順序寫在申論試卷上，並以藍、黑色鋼筆或原子筆由左至右橫式作答，於本試題上作答者，不予計分。</div>
-<div class="exam-note">㈡不得於試卷上書寫姓名或座號。前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職場等各種人生場合贏得肯定。但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所苦，而是珍惜天賦，讓本身的優勢展現最大的價值。你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀察、體會或反思。</div>
+<div class="exam-note">㈡不得於試卷上書寫姓名或座號。</div>
+<div class="essay-question">前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職場等各種人生場合贏得肯定。但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所苦，而是珍惜天賦，讓本身的優勢展現最大的價值。你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀察、體會或反思。</div>
 <div class="exam-section-marker">乙、測驗部分：（20 分） 代號：1131</div>
 <div class="exam-note">㈠本試題為單一選擇題，請選出一個正確或最適當答案。</div>
 <div class="exam-note">㈡共10題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。</div>
@@ -2099,7 +2171,8 @@ html.dark .mc-question { border-top-color: #4a5568; }
 <div class="exam-section-marker">甲、申論部分：（60分）</div>
 <div class="exam-section-marker">甲、作文部分：（80分）</div>
 <div class="exam-note">㈠作答時請將試題題號及答案依照順序寫在申論試卷上，並以藍、黑色鋼筆或原子筆由左至右橫式作答，於本試題上作答者，不予計分。</div>
-<div class="exam-note">㈡不得於試卷上書寫姓名或座號。十九世紀後期，英國牧師甘為霖抵達水沙連時，日月潭只是一個小湖泊。湖中間有一耕作小島，上面還住著建立私塾的漢人。到了日治時期，為了發電的需要，日本工程師從武界擷取濁水溪流水，淹沒附近的小山丘，日月潭才有今日遼闊的水面。在電廠興建初期，到訪的佐藤春夫在其發表的《日月潭遊記》中卻認為工程竣工之後，「到那時，不管有什麼新的、別的美觀產生，但那也不會是今天我所看到的大自然了。思及此，我不禁興起無限感傷。」當年日月潭電廠興建完工，湖水發電占臺灣水力發電的一半強，效益甚鉅，但根據經濟部能源署 2023 年的公告，「臺灣發電量占比，以燃煤仍最高，占 42.23%，依序為燃氣（39.57%）、再生能源（9.47%）、核能（6.31%）、燃油（1.34%）、抽蓄水力（1.08%）」，而今日月潭電廠水力發電效益已微乎其微。人與自然的關係問題長久以來都是全球關注的熱點，起因於人類面臨著一個共同的危機，即生態環境的危機。面對滿目瘡痍的自然景象，許多人又開始懷念遠古的森林、綿延的綠洲，並在悉心描繪人與自然和諧共處、相安無事、共同發展的美景。人類與大自然的關係到底是征服，還是被征服？究竟是「天命難違」抑或是「人定勝天」？根據上文，請就下列兩問題作答：</div>
+<div class="exam-note">㈡不得於試卷上書寫姓名或座號。</div>
+<div class="essay-question">十九世紀後期，英國牧師甘為霖抵達水沙連時，日月潭只是一個小湖泊。湖中間有一耕作小島，上面還住著建立私塾的漢人。到了日治時期，為了發電的需要，日本工程師從武界擷取濁水溪流水，淹沒附近的小山丘，日月潭才有今日遼闊的水面。在電廠興建初期，到訪的佐藤春夫在其發表的《日月潭遊記》中卻認為工程竣工之後，「到那時，不管有什麼新的、別的美觀產生，但那也不會是今天我所看到的大自然了。思及此，我不禁興起無限感傷。」當年日月潭電廠興建完工，湖水發電占臺灣水力發電的一半強，效益甚鉅，但根據經濟部能源署 2023 年的公告，「臺灣發電量占比，以燃煤仍最高，占 42.23%，依序為燃氣（39.57%）、再生能源（9.47%）、核能（6.31%）、燃油（1.34%）、抽蓄水力（1.08%）」，而今日月潭電廠水力發電效益已微乎其微。人與自然的關係問題長久以來都是全球關注的熱點，起因於人類面臨著一個共同的危機，即生態環境的危機。面對滿目瘡痍的自然景象，許多人又開始懷念遠古的森林、綿延的綠洲，並在悉心描繪人與自然和諧共處、相安無事、共同發展的美景。人類與大自然的關係到底是征服，還是被征服？究竟是「天命難違」抑或是「人定勝天」？根據上文，請就下列兩問題作答：</div>
 <div class="essay-question">一、佐藤春夫面對初期的電廠興建時的日月潭，為什麼會產生「無限感傷」？請說明你的看法。文長不超過 300 字。（20 分）</div>
 <div class="essay-question">二、人類與大自然的關係到底是征服，還是被征服？究竟是「天命難違」抑或是「人定勝天」？請以「人與自然」為題作文一篇，舉出實例加以論述，清楚闡釋你的觀點。（60 分）</div>
 <div class="exam-section-marker">乙、測驗部分：（20 分） 代號：1301</div>
@@ -9243,7 +9316,8 @@ html.dark .mc-question { border-top-color: #4a5568; }
 <div class="exam-metadata">
 <div class="meta-line">105年公務人員特種考試警察人員、一般警察人員考試及105年特種考試交通事業鐵路人員考試試題 考試別：一般警察人員考試、警察人員考試、鐵路人員考試 等別：三等考試、高員三級考試 類科別：各類別、各類科 科目：國文（作文、公文與測驗） 考試時間 ： 2 小時 座號：</div>
 </div>
-<div class="exam-note">※注意： 禁止使用電子計算器。甲 、作文與公文部分：</div>
+<div class="exam-note">※注意： 禁止使用電子計算器。</div>
+<div class="exam-section-marker">甲、作文與公文部分：</div>
 <div class="exam-note">㈠請以藍、黑色鋼筆或原子筆在申論試卷上由左至右橫式作答，於本試題上作答者，不予計分。</div>
 <div class="exam-note">㈡不得於試卷上書寫姓名或入場證號。</div>
 <div class="essay-question">一、作文：（60 分）無論從事何者職務，皆有其應盡的責任與義務。所謂稱職，就是指自己的才能足夠勝任所擔負的職務。但是有一個不可忽略的關鍵是：能否清楚認識到什麼是應盡的責任與義務？請以「本分」為題，作文一篇，闡述自己對於工作的態度與期待。</div>
@@ -9907,6 +9981,25 @@ if (hamburger) {
   );
 }
 
+/* === Sidebar toggle (desktop) === */
+const sidebarToggle = document.getElementById('sidebarToggle');
+const sidebarReopen = document.getElementById('sidebarReopen');
+if (localStorage.getItem('sidebar-collapsed') === '1') {
+  document.body.classList.add('sidebar-collapsed');
+}
+if (sidebarToggle) {
+  sidebarToggle.addEventListener('click', () => {
+    document.body.classList.add('sidebar-collapsed');
+    localStorage.setItem('sidebar-collapsed', '1');
+  });
+}
+if (sidebarReopen) {
+  sidebarReopen.addEventListener('click', () => {
+    document.body.classList.remove('sidebar-collapsed');
+    localStorage.setItem('sidebar-collapsed', '0');
+  });
+}
+
 /* === Back to top === */
 const backToTop = document.getElementById('backToTop');
 window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
@@ -10183,9 +10276,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 為 sidebar 連結添加 hash 更新
   document.querySelectorAll('.sidebar-link').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
       const target = link.getAttribute('href');
-      if (target) history.replaceState(null, '', target);
+      if (target) {
+        history.replaceState(null, '', target);
+        handleHash();
+      }
     });
   });
 
@@ -10240,6 +10337,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initDarkMode();
 });
 
+function scrollToWithOffset(el) {
+  const offset = 140; // 預留 sticky 搜尋框高度
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
 function handleHash() {
   const hash = location.hash.slice(1);
   if (!hash) return;
@@ -10253,7 +10356,7 @@ function handleHash() {
       if (y.textContent.trim().startsWith(yearNum)) y.classList.add('active');
     });
     const section = document.getElementById(`year-${yearNum}`);
-    if (section) setTimeout(() => section.scrollIntoView({ behavior: 'smooth' }), 100);
+    if (section) setTimeout(() => scrollToWithOffset(section), 100);
     return;
   }
 
@@ -10269,7 +10372,7 @@ function handleHash() {
         if (y.textContent.trim().startsWith(yearNum)) y.classList.add('active');
       });
     }
-    setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    setTimeout(() => scrollToWithOffset(el), 100);
   }
 }
 
@@ -10388,11 +10491,9 @@ function initDarkMode() {
   // 自動偵測系統偏好
   if (saved === 'true' || (saved === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
-    toggle.textContent = '☀️';
   }
   toggle.addEventListener('click', () => {
     const isDark = document.documentElement.classList.toggle('dark');
-    toggle.textContent = isDark ? '☀️' : '🌙';
     localStorage.setItem('exam-dark', isDark);
   });
 }
