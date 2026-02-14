@@ -50,6 +50,8 @@ backup/
 backup_old/
 htmlcov_old/
 考選部考古題完整庫/
+資管系考古題/backup/
+資管系考古題/reports/
 *.csv
 *.pdf
 *.png
