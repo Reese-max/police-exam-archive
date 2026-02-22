@@ -1394,32 +1394,15 @@ def generate_index_page(output_dir, categories_stats):
     total_questions = sum(s.get('questions', 0) for s in categories_stats.values())
     total_categories = len(categories_stats)
 
-    # 分組定義
-    CATEGORY_GROUPS = [
-        ('行政法制', '&#9965;', '#2563eb', ['行政警察', '行政管理', '警察法制', '資訊管理']),
-        ('刑事鑑識', '&#128270;', '#d97706', ['刑事警察', '鑑識科學', '公共安全']),
-        ('犯罪防治', '&#128275;', '#e11d48', ['犯罪防治預防組', '犯罪防治矯治組']),
-        ('交通消防', '&#128678;', '#dc2626', ['交通警察交通組', '交通警察電訊組', '消防警察']),
-        ('涉外國境', '&#127760;', '#0d9488', ['外事警察', '國境警察', '水上警察']),
-    ]
-
-    groups_html = ''
-    for group_name, group_icon, group_color, members in CATEGORY_GROUPS:
-        items_html = ''
-        for cat_name in members:
-            if cat_name not in categories_stats:
-                continue
-            emoji = CATEGORIES_EMOJI.get(cat_name, '')
-            stats = categories_stats[cat_name]
-            items_html += f'''
-        <li><a href="{cat_name}/{cat_name}考古題總覽.html"><span class="item-icon">{emoji}</span><span class="item-name">{escape_html(cat_name)}</span><span class="item-count">{stats.get('questions', 0)} 題</span><span class="item-arrow">&#8594;</span></a></li>'''
-        if items_html:
-            groups_html += f'''
-    <div class="group-section" style="--group-color: {group_color}">
-      <div class="group-header"><span class="group-header-icon">{group_icon}</span> {group_name}</div>
-      <ul class="group-list">{items_html}
-      </ul>
-    </div>'''
+    items_html = ''
+    for cat_name in CATEGORIES_ORDER:
+        if cat_name not in categories_stats:
+            continue
+        info = CATEGORIES_INFO.get(cat_name, {'code': 0, 'icon': '&#128196;', 'color': '#1a365d'})
+        emoji = CATEGORIES_EMOJI.get(cat_name, '')
+        stats = categories_stats[cat_name]
+        items_html += f'''
+    <li><a href="{cat_name}/{cat_name}考古題總覽.html" style="--item-color: {info['color']}"><span class="item-icon">{emoji}</span><span class="item-name">{escape_html(cat_name)}</span><span class="item-count">{stats.get('questions', 0)} 題</span><span class="item-arrow">&#8594;</span></a></li>'''
 
     index_html = f'''<!DOCTYPE html>
 <html lang="zh-TW">
@@ -1449,22 +1432,18 @@ body {{ font-family: "Noto Sans TC", "Microsoft JhengHei", -apple-system, sans-s
 .hero-stat {{ text-align: center; }}
 .hero-stat-value {{ font-size: 2.5rem; font-weight: 800; color: #fbbf24; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }}
 .hero-stat-label {{ font-size: 0.85rem; opacity: 0.85; }}
-.container {{ max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }}
+.container {{ max-width: 660px; margin: 0 auto; padding: 2rem 1.5rem; }}
 .section-title {{ font-size: 1.3rem; font-weight: 700; color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1.25rem; }}
-.groups-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }}
-.group-section {{ background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }}
-.group-header {{ display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--group-color, var(--primary)) 5%, var(--card-bg)); }}
-.group-header-icon {{ font-size: 0.9rem; }}
-.group-list {{ list-style: none; }}
-.group-list li {{ border-bottom: 1px solid var(--border); }}
-.group-list li:last-child {{ border-bottom: none; }}
-.group-list a {{ display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1.25rem; text-decoration: none; color: var(--text); transition: background 0.15s ease, padding-left 0.15s ease; }}
-.group-list a:hover {{ background: color-mix(in srgb, var(--group-color, var(--primary)) 6%, transparent); padding-left: 1.5rem; }}
+.category-list {{ list-style: none; background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }}
+.category-list li {{ border-bottom: 1px solid var(--border); }}
+.category-list li:last-child {{ border-bottom: none; }}
+.category-list a {{ display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; text-decoration: none; color: var(--text); transition: background 0.15s ease, padding-left 0.15s ease; }}
+.category-list a:hover {{ background: color-mix(in srgb, var(--item-color, var(--primary)) 6%, transparent); padding-left: 1.5rem; }}
 .item-icon {{ font-size: 1.3rem; flex-shrink: 0; width: 28px; text-align: center; }}
 .item-name {{ flex: 1; font-size: 0.95rem; font-weight: 600; }}
 .item-count {{ font-size: 0.78rem; color: var(--text-light); white-space: nowrap; }}
 .item-arrow {{ font-size: 0.9rem; color: var(--border); transition: color 0.15s ease, transform 0.15s ease; }}
-.group-list a:hover .item-arrow {{ color: var(--accent); transform: translateX(3px); }}
+.category-list a:hover .item-arrow {{ color: var(--accent); transform: translateX(3px); }}
 .site-footer {{ text-align: center; padding: 2rem; font-size: 0.82rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }}
 .dark-toggle {{ position: fixed; bottom: 2rem; left: 2rem; z-index: 200; width: 44px; height: 44px; border-radius: 50%; background: var(--card-bg); border: 2px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }}
 .dark-toggle:hover {{ border-color: var(--accent); transform: scale(1.1); }}
@@ -1475,15 +1454,14 @@ html.dark .dark-icon-moon {{ display: none; }}
 html:not(.dark) .dark-icon-sun {{ display: none; }}
 html.dark {{ --primary: #818cf8; --primary-light: #6366f1; --accent: #a5b4fc; --bg: #0f172a; --card-bg: #1e293b; --border: #334155; --text: #f1f5f9; --text-light: #94a3b8; --gold: #fbbf24; --shadow-sm: 0 1px 2px rgba(0,0,0,0.2); --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -4px rgba(0,0,0,0.3); }}
 html.dark .site-header {{ background: linear-gradient(135deg, #020617 0%, #1e1b4b 50%, #312e81 100%); }}
-html.dark .group-section {{ background: #1e293b; border-color: #334155; }}
-html.dark .group-header {{ background: color-mix(in srgb, var(--group-color, var(--primary)) 8%, #1e293b); border-color: #334155; }}
-html.dark .group-list li {{ border-color: #334155; }}
-html.dark .group-list a:hover {{ background: color-mix(in srgb, var(--group-color, var(--primary)) 10%, transparent); }}
+html.dark .category-list {{ background: #1e293b; border-color: #334155; }}
+html.dark .category-list li {{ border-color: #334155; }}
+html.dark .category-list a:hover {{ background: color-mix(in srgb, var(--item-color, var(--primary)) 10%, transparent); }}
 html.dark .dark-toggle {{ background: #1e293b; border-color: #334155; }}
 a, button, input, select, [role="button"] {{ touch-action: manipulation; -webkit-tap-highlight-color: transparent; }}
 body {{ overflow-x: hidden; }}
 @media (prefers-reduced-motion: reduce) {{ *, *::before, *::after {{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }} }}
-@media (max-width: 768px) {{ .site-header {{ padding: 2rem 1.5rem; }} .site-title {{ font-size: 1.6rem; letter-spacing: 0.03em; }} .site-subtitle {{ font-size: 0.88rem; margin-bottom: 1.25rem; }} .hero-stats {{ gap: 1.5rem; padding: 1rem 1.5rem; border-radius: 12px; }} .hero-stat-value {{ font-size: 1.8rem; }} .groups-grid {{ grid-template-columns: 1fr; }} .container {{ padding: 1.5rem 1rem; }} .dark-toggle {{ bottom: 1.5rem; left: 1.5rem; }} }}
+@media (max-width: 768px) {{ .site-header {{ padding: 2rem 1.5rem; }} .site-title {{ font-size: 1.6rem; letter-spacing: 0.03em; }} .site-subtitle {{ font-size: 0.88rem; margin-bottom: 1.25rem; }} .hero-stats {{ gap: 1.5rem; padding: 1rem 1.5rem; border-radius: 12px; }} .hero-stat-value {{ font-size: 1.8rem; }} .container {{ padding: 1.5rem 1rem; }} .dark-toggle {{ bottom: 1.5rem; left: 1.5rem; }} }}
 @supports (padding: env(safe-area-inset-bottom)) {{ @media (max-width: 768px) {{ .dark-toggle {{ bottom: calc(1.5rem + env(safe-area-inset-bottom)); }} .site-footer {{ padding-bottom: calc(2rem + env(safe-area-inset-bottom)); }} }} }}
 @media (max-width: 768px) and (orientation: landscape) {{ .site-header {{ padding: 1.5rem; }} .hero-stat-value {{ font-size: 1.5rem; }} .hero-stats {{ gap: 1rem; padding: 0.75rem 1.25rem; }} }}
 .skip-link {{ position: absolute; top: -100%; left: 1rem; background: var(--primary); color: #fff; padding: 0.5rem 1rem; border-radius: 0 0 6px 6px; z-index: 999; text-decoration: none; font-size: 0.9rem; }}
@@ -1511,8 +1489,8 @@ body {{ overflow-x: hidden; }}
 <main class="container">
   <h2 class="section-title">選擇類科</h2>
   <nav aria-label="類科導航">
-  <div class="groups-grid" id="categories">{groups_html}
-  </div>
+  <ul class="category-list" id="categories">{items_html}
+  </ul>
   </nav>
 </main>
 <footer class="site-footer">
