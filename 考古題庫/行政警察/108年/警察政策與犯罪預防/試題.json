@@ -106,7 +106,7 @@
       "options": {
         "A": "問題建構(problem str ucturing)",
         "B": "探索(Exploring)",
-        "C": "預測(for ecasting)",
+        "C": "預測(forecasting)",
         "D": "評估(evaluation)"
       }
     },
@@ -321,7 +321,7 @@
     {
       "number": 23,
       "type": "choice",
-      "stem": "柯恩(Cohen)與費爾遜(Felson)的日常活動理論發現,潛在犯罪者與被害者的日常活動對於 犯罪的發生影響甚鉅,對於情境犯罪預防策略的發展貢獻良多。下列有關日常活動理論的敘述何 者正確?1柯恩與費爾遜以 VIVA 來描述犯罪的合適標的,VIVA 指的是價值(Value)、慣性 (Inertia)、可見性(Visibility)及可接近性(Access) 2此理論的驗證,以財產犯罪(property crime)為對象,無法適用於其他犯罪 3柯恩與費爾遜發現人們在戶外停留的時間,與犯罪數量 無顯著相關 4犯罪的發生,需要三個條件,分別是合適標的(sui table target)、有動機的犯罪 者(motivated offender)以及缺乏監控(absence of guard ians)",
+      "stem": "柯恩(Cohen)與費爾遜(Felson)的日常活動理論發現,潛在犯罪者與被害者的日常活動對於 犯罪的發生影響甚鉅,對於情境犯罪預防策略的發展貢獻良多。下列有關日常活動理論的敘述何 者正確?1柯恩與費爾遜以 VIVA 來描述犯罪的合適標的,VIVA 指的是價值(Value)、慣性 (Inertia)、可見性(Visibility)及可接近性(Access) 2此理論的驗證,以財產犯罪(property crime)為對象,無法適用於其他犯罪 3柯恩與費爾遜發現人們在戶外停留的時間,與犯罪數量 無顯著相關 4犯罪的發生,需要三個條件,分別是合適標的(suitable target)、有動機的犯罪 者(motivated offender)以及缺乏監控(absence of guard ians)",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {

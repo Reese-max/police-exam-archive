@@ -495,7 +495,7 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "In some African count ries, scarring is considered a rite of _____, symbolizing a child turning into an adult.",
+      "stem": "In some African countries, scarring is considered a rite of _____, symbolizing a child turning into an adult.",
       "section": null,
       "answer": "B",
       "options": {
@@ -540,7 +540,7 @@
       "options": {
         "A": "Expo sit ion",
         "B": "Narration",
-        "C": "Per suasion",
+        "C": "Persuasion",
         "D": "Classification"
       }
     },

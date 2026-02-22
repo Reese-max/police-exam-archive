@@ -658,7 +658,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "After the 911 attacks in the U.S., the homeland security studies have been initiated.",
+      "stem": "After the 911 attacks in the U. S., the homeland security studies have been initiated.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -715,7 +715,7 @@
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "Publication of in correct information.",
+        "A": "Publication of incorrect information.",
         "B": "Reporting news without permission.",
         "C": "Collection of erotic photos.",
         "D": "Protect ing personal privacy."

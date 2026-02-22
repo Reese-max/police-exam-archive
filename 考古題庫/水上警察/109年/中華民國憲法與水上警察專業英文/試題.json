@@ -567,7 +567,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "The crew of a large ship is typically organized into divisions, each with its own specialty. For example,the division would beresponsible for boat hand ling and general main ten ance.",
+      "stem": "The crew of a large ship is typically organized into divisions, each with its own specialty. For example, the division would beresponsible for boat hand ling and general main ten ance.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -580,7 +580,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "The interactions between the atmosp here and the ocean create a unique dynamical framework for the fundamental principles of marine .",
+      "stem": "The interactions between the atmosphere and the ocean create a unique dynamical framework for the fundamental principles of marine .",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -606,12 +606,12 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "Vessel traffic operators general lyope rate radar and radio equipment,make useof nautical charts to record aship’s current position,plot courses, and traffic flows.",
+      "stem": "Vessel traffic operators general lyope rate radar and radio equipment, make useof nautical charts to record aship’s current position, plot courses, and traffic flows.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "deva state",
-        "B": "for ecast",
+        "B": "forecast",
         "C": "over ride",
         "D": "per severe"
       }
@@ -619,7 +619,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "The complex task of two war ships with fuel oil and fresh water at the same time requires a high degree of sea man ship,especially inrough weather conditions.",
+      "stem": "The complex task of two war ships with fuel oil and fresh water at the same time requires a high degree of sea man ship, especially inrough weather conditions.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {

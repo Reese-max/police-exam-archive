@@ -612,7 +612,7 @@
         "A": "regional",
         "B": "industrial",
         "C": "cylindrical",
-        "D": "the atrical"
+        "D": "theatrical"
       }
     },
     {
@@ -696,7 +696,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "Instru mental analysis techniques have successfully assisted the police in ______ criminal cases.",
+      "stem": "Instrumental analysis techniques have successfully assisted the police in ______ criminal cases.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -709,7 +709,7 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "A fire believed to be caused by a light ning bolt forced the shut down of an oil-capturing system near the gushing Gulf oil well; for tunately it was quickly ______ without injuries.",
+      "stem": "A fire believed to be caused by a light ning bolt forced the shut down of an oil-capturing system near the gushing Gulf oil well; fortunately it was quickly ______ without injuries.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {

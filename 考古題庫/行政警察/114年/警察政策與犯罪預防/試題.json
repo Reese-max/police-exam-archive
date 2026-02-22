@@ -313,7 +313,7 @@
       "answer": "D",
       "options": {
         "A": "問題建構(problem str ucturing)",
-        "B": "預測(for ecasting)",
+        "B": "預測(forecasting)",
         "C": "描述(prescription)",
         "D": "解釋(interpretation)"
       }

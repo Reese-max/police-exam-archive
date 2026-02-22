@@ -32,7 +32,7 @@
     {
       "number": "三",
       "type": "essay",
-      "stem": "如圖(3)所示之Y 三相平衡系統中,其電源之相電壓有效值V 200V,\nP,rms\n若三相負載消耗之總功率為900W ,功率因數為 PF=0.6 落後,請求①線電\n流i 之有效值;(10 分)②負載每相之阻抗相量Z 值。(10 分)\na P\nv _ an + a i A\na\nZ\nP\n_ v\nbn+ b i\nn b B Z\nP\nZ\nP\nv _ cn\n+ c i C c",
+      "stem": "如圖(3)所示之Y 三相平衡系統中,其電源之相電壓有效值V 200V,\nP, rms\n若三相負載消耗之總功率為900W ,功率因數為 PF=0.6 落後,請求①線電\n流i 之有效值;(10 分)②負載每相之阻抗相量Z 值。(10 分)\na P\nv _ an + a i A\na\nZ\nP\n_ v\nbn+ b i\nn b B Z\nP\nZ\nP\nv _ cn\n+ c i C c",
       "section": null
     },
     {

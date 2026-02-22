@@ -567,7 +567,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "Pass engers have to go to the assembly station when the emergency alarm is sounded, which consists of seven short blasts and one blast that lasts several seconds.",
+      "stem": "Passengers have to go to the assembly station when the emergency alarm is sounded, which consists of seven short blasts and one blast that lasts several seconds.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -625,7 +625,7 @@
       "options": {
         "A": "abbreviate",
         "B": "escort",
-        "C": "integ rate",
+        "C": "integrate",
         "D": "interfere"
       }
     },
