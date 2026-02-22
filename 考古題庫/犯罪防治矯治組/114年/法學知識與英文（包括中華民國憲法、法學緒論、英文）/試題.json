@@ -405,7 +405,7 @@
     {
       "number": 31,
       "type": "choice",
-      "stem": "Herartexhibitwasa ofimaginativesculpturesandpaintingsthatcapturedtheaudience’simagination.",
+      "stem": "Her art exhibit was a ofimagi native sculptures and pain tings that capture dthe audience’sim agi nation.",
       "section": null,
       "answer": "A",
       "options": {
@@ -418,24 +418,24 @@
     {
       "number": 32,
       "type": "choice",
-      "stem": "Thegeneroushostprovideda/an amountoffoodanddrinksforalltheguestsattheparty.",
+      "stem": "The generous host provided a/an amount off ood and drink sfor all the guestsat the party.",
       "section": null,
       "answer": "A",
       "options": {
         "A": "ample",
         "B": "scarce",
         "C": "meager",
-        "D": "insufficient"
+        "D": "in sufficient"
       }
     },
     {
       "number": 33,
       "type": "choice",
-      "stem": "AfterIsubmittedthereceipt,thecompanyagreedto meforthetravelexpensesincurredduringthebusinesstrip.",
+      "stem": "After I submitted there ceipt,the company agree dto me for the travel expensesincur red during the business trip.",
       "section": null,
       "answer": "B",
       "options": {
-        "A": "subtract",
+        "A": "subtr act",
         "B": "reimburse",
         "C": "console",
         "D": "condone"
@@ -444,7 +444,7 @@
     {
       "number": 34,
       "type": "choice",
-      "stem": "Evenwithpropertrainingandcare,somewildanimalscannotbecome andaffectionatecompanions.",
+      "stem": "Even with proper training and care,some wild animal scan not become and affect ionatecom pan ions.",
       "section": null,
       "answer": "C",
       "options": {
@@ -457,20 +457,20 @@
     {
       "number": 35,
       "type": "choice",
-      "stem": "Workingin oftenleadstomistakesthatcouldhavebeenavoidedwithamorecarefulapproach.",
+      "stem": "Working in often leads tom is takes that could have been avoid edwitha more care ful approach.",
       "section": null,
       "answer": "D",
       "options": {
-        "A": "moderation",
+        "A": "mode ration",
         "B": "prudence",
-        "C": "restraint",
+        "C": "rest raint",
         "D": "haste"
       }
     },
     {
       "number": 36,
       "type": "choice",
-      "stem": "Theteammembers workedtogether to their efforts, eachcontributingtheir skills and expertise to achieve acommongoalefficientlyandeffectively.",
+      "stem": "The team members worked together to their efforts, each contri but ing their skills and expert ise to achieve acommon goal efficiently and effectively.",
       "section": null,
       "answer": "D",
       "options": {
@@ -483,11 +483,11 @@
     {
       "number": 37,
       "type": "choice",
-      "stem": "Theoldmanisas asamule;heneverlistenstoothers’opinions.",
+      "stem": "The old man isas asamule;he never listen sto others’opinions.",
       "section": null,
       "answer": "D",
       "options": {
-        "A": "approximate",
+        "A": "app roximate",
         "B": "intimate",
         "C": "passionate",
         "D": "obstinate"
@@ -496,20 +496,20 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "Mythree-yearoldniece showedoffthebirthdaypresentthatshelikedverymuch.",
+      "stem": "Mythree-year old niece show edoff the birth day present that she like dvery much.",
       "section": null,
       "answer": "A",
       "options": {
-        "A": "gleefully",
+        "A": "glee fully",
         "B": "miserably",
-        "C": "pathetically",
+        "C": "path etically",
         "D": "fluently"
       }
     },
     {
       "number": 39,
       "type": "choice",
-      "stem": "Allstudentswere bythepuzzlegivenbytheinstructorasnoneofthemwasabletosolveit.",
+      "stem": "All student swere by the puzzle given bythein str uctorasn one ofthem was able to solve it.",
       "section": null,
       "answer": "A",
       "options": {
@@ -522,14 +522,14 @@
     {
       "number": 40,
       "type": "choice",
-      "stem": "Theimminentthreatofathunderstorm ustoquicklygatherourbelongingsandseekshelterindoorsbefore therainstartedpouringdown.",
+      "stem": "The imminent threat ofath under storm usto quickly gather our belong ings and seek she lterin doors before the rain started pouring down.",
       "section": null,
       "answer": "B",
       "options": {
         "A": "promoted",
         "B": "prompted",
         "C": "prevented",
-        "D": "preempted 請依下文回答第41題至第45題: TheworldrenownedSongkran,muchcelebratedonApril13theachyear,istheThaiNewYear’snationalday.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9th to 16th. The word, “Songkran,” which is “samkrānti” in Sanskrit, carries the meaning of “astrological passage” with its 42 of transformation or change. Viewed as ritual cleansing, the Songkran celebrations have people engage themselvesto waterfightingin public. Ithasthusbecome 43 and widespreadamongThaiandforeign visitors.The origin of Songkran Festival can be 44 back to a Buddhist folk myth concerning harvest and spring. In the city of SukhavatiinSuvvannabhumi,Indra,KingofDevas,witnessedtheoccurrenceofcorruptioninthecitywherepeoplewere sinfulfortheirbadbehaviorsandtheyledalifewithoutfaithinDhamma.Thekingthendecidedtopunishpeoplebyhaving them 45 bylackofwaterandfood.Thereisevenadroughtwithahotsunburningpeopletodeath."
+        "D": "preempted"
       }
     },
     {
@@ -543,7 +543,8 @@
         "B": "abridged",
         "C": "extended",
         "D": "abbreviated"
-      }
+      },
+      "passage": "請依下文回答第41題至第45題: The world renowned Song kran,much celeb rate don April 13 the ach year,isthe Thai New Year’snational day.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9 th to 16 th. The word, “Song kran,” which is “samkrānti” in Sanskrit, carries the meaning of “a str ological passage” with its 42 of transformation or change. Viewed as ritual clean sing, the Song kran celebrations have people engage themselves to water fight ingin public. It has thus become 43 and widespread among Thai and foreign visit ors.The origin of Song kran Festival can be 44 back to a Buddhist folk myth concern ing harvest and spring. In the city of Sukhavatiin Suvvannabhumi,Indra,Kingof Devas,witness edthe occur renceofcorruption inthe city where people were sinful for their bad behavior sand they led a life with out faithin Dhamma.The king then decided top unish people by having them 45 bylackof water and food.There i seven adrought with a hot sun burning people to death."
     },
     {
       "number": 42,
@@ -553,10 +554,11 @@
       "answer": "D",
       "options": {
         "A": "capability",
-        "B": "complexity",
+        "B": "complex ity",
         "C": "coincidence",
-        "D": "connotation"
-      }
+        "D": "con not ation"
+      },
+      "passage": "請依下文回答第41題至第45題: The world renowned Song kran,much celeb rate don April 13 the ach year,isthe Thai New Year’snational day.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9 th to 16 th. The word, “Song kran,” which is “samkrānti” in Sanskrit, carries the meaning of “a str ological passage” with its 42 of transformation or change. Viewed as ritual clean sing, the Song kran celebrations have people engage themselves to water fight ingin public. It has thus become 43 and widespread among Thai and foreign visit ors.The origin of Song kran Festival can be 44 back to a Buddhist folk myth concern ing harvest and spring. In the city of Sukhavatiin Suvvannabhumi,Indra,Kingof Devas,witness edthe occur renceofcorruption inthe city where people were sinful for their bad behavior sand they led a life with out faithin Dhamma.The king then decided top unish people by having them 45 bylackof water and food.There i seven adrought with a hot sun burning people to death."
     },
     {
       "number": 43,
@@ -569,7 +571,8 @@
         "B": "negligible",
         "C": "isolated",
         "D": "occasional"
-      }
+      },
+      "passage": "請依下文回答第41題至第45題: The world renowned Song kran,much celeb rate don April 13 the ach year,isthe Thai New Year’snational day.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9 th to 16 th. The word, “Song kran,” which is “samkrānti” in Sanskrit, carries the meaning of “a str ological passage” with its 42 of transformation or change. Viewed as ritual clean sing, the Song kran celebrations have people engage themselves to water fight ingin public. It has thus become 43 and widespread among Thai and foreign visit ors.The origin of Song kran Festival can be 44 back to a Buddhist folk myth concern ing harvest and spring. In the city of Sukhavatiin Suvvannabhumi,Indra,Kingof Devas,witness edthe occur renceofcorruption inthe city where people were sinful for their bad behavior sand they led a life with out faithin Dhamma.The king then decided top unish people by having them 45 bylackof water and food.There i seven adrought with a hot sun burning people to death."
     },
     {
       "number": 44,
@@ -582,7 +585,8 @@
         "B": "spread",
         "C": "merged",
         "D": "disregarded"
-      }
+      },
+      "passage": "請依下文回答第41題至第45題: The world renowned Song kran,much celeb rate don April 13 the ach year,isthe Thai New Year’snational day.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9 th to 16 th. The word, “Song kran,” which is “samkrānti” in Sanskrit, carries the meaning of “a str ological passage” with its 42 of transformation or change. Viewed as ritual clean sing, the Song kran celebrations have people engage themselves to water fight ingin public. It has thus become 43 and widespread among Thai and foreign visit ors.The origin of Song kran Festival can be 44 back to a Buddhist folk myth concern ing harvest and spring. In the city of Sukhavatiin Suvvannabhumi,Indra,Kingof Devas,witness edthe occur renceofcorruption inthe city where people were sinful for their bad behavior sand they led a life with out faithin Dhamma.The king then decided top unish people by having them 45 bylackof water and food.There i seven adrought with a hot sun burning people to death."
     },
     {
       "number": 45,
@@ -591,76 +595,82 @@
       "section": null,
       "answer": "B",
       "options": {
-        "A": "nurtured",
-        "B": "impaired",
+        "A": "nurtu red",
+        "B": "impai red",
         "C": "intact",
-        "D": "sound 請依下文回答第46題至第50題: Pollinators, such as bees, butterflies, and birds, contribute roughly $500 billion a year to global food production. Beingtheprimarypollinatorsofmostwildplantsandmanycrops,beesareparticularlycrucialtobothecosystemstability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capturedtheattentionofscientists,governments,media,andthegeneralpublic. Severalanthropogenicdrivershavebeenassociatedwithdecliningbeepopulations,suchasdisturbancesoftheirnatural habitatsasresultofagriculturalintensificationsandurbanization,climatechange,pesticides,andmanagementpractices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in temperature and rainfallcancausesignificantalterationsinnaturalhabitats,thusreducingtheirsuitabilityforwildbeepopulations. Pesticideshavereceivedmuchattentionfortheirpotentialeffectsonbees.Inarecentstudy,theresearchgroupreviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using artificial intelligence tools, the researchersexplorehowpesticideexposurecontributestodeclinesinpopulationsofhoneybees,bumblebees,andstingless bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sophistication when tacklingquestionsconcerningthedecliningbeepopulationsassociatedwiththepesticidecontamination. However,littleresearchattentionhasbeengiventopotentialeffectsofmanagement techniquesonbeedeclines.Not untilrecently,a groupofresearchershasaddressedtheimportanceofimprovingbeekeepingtechniquesandconservation strategies to avoid reduction of genetic diversity in both managed and wild honey bees.Theyconclude that artificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to pathogens.However,moreresearchneedstobeconductedonpotentialeffectsofmanagementtechniquesonbeedeclines. Itisimportanttoemphasizethatscientificeffortsalonearenotenough.Additionalstrategiesshouldbeencouraged, including improvements of environmental education programs, changes in public awareness about wild bees through appropriate media coverage, and improvements in dialogue between scientists, industry, stakeholders, and legislators. Only comprehensive approaches, discussed by different societal actors, will result in efficient and long-term strategies toreducethedeclineofwildbeepopulations."
-      }
+        "D": "sound"
+      },
+      "passage": "請依下文回答第41題至第45題: The world renowned Song kran,much celeb rate don April 13 the ach year,isthe Thai New Year’snational day.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9 th to 16 th. The word, “Song kran,” which is “samkrānti” in Sanskrit, carries the meaning of “a str ological passage” with its 42 of transformation or change. Viewed as ritual clean sing, the Song kran celebrations have people engage themselves to water fight ingin public. It has thus become 43 and widespread among Thai and foreign visit ors.The origin of Song kran Festival can be 44 back to a Buddhist folk myth concern ing harvest and spring. In the city of Sukhavatiin Suvvannabhumi,Indra,Kingof Devas,witness edthe occur renceofcorruption inthe city where people were sinful for their bad behavior sand they led a life with out faithin Dhamma.The king then decided top unish people by having them 45 bylackof water and food.There i seven adrought with a hot sun burning people to death."
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "Whichofthefollowingtitlesbestdescribesthispassage?",
+      "stem": "Which ofthe following title sbestdescri best his passage?",
       "section": null,
       "answer": "B",
       "options": {
-        "A": "PollinatorsandTheirNaturalHabitats.",
-        "B": "CausesforDecliningBeePopulations.",
-        "C": "PollinatorsandTheirContributiontoFoodProduction.",
-        "D": "MeasuresforKeepingBeesfromBecomingEndangered."
-      }
+        "A": "Poll ina tors and Their Natural Habitats.",
+        "B": "Causes for Declining Bee Populations.",
+        "C": "Poll ina tors and Their Contribution to Food Production.",
+        "D": "Measure sfor Keeping Bees from Becoming End ange red."
+      },
+      "passage": "請依下文回答第46題至第50題: Poll ina tors, such as bees, but terflies, and birds, contribute roughly $500 billion a year to global food production. Being the primarypoll ina torsof most wild plant sand many crops,bees are particularly crucial tobo the cosystemst ability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capture dthe attention ofscientists,governments,media,and the general public. Several anthropogenic drivers have been associate dwi thdecliningbeepopulations,suchas distur ban cesof their natural habitat sas result of agricultural intensifications and urbanization,climate change,pesticides,and management practices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in tem per ature and rain fall can cause significant alter ationsin natural habitats,thus red ucing their suit ability for wild beepopulations. Pesticides have received much attention for their potential effect son bees.Ina recent study,there search group reviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using art ificial intelligence tools, the research ersexplore how pesticideexpo sure contribute sto decline sin population sofhoney bees,bumble bees,and sting less bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sop his tication when tackling question sconcerning the decliningbee population sassociated with the pesticidecontami nation. However,little research attention has been given top otential effect sof management technique son beedeclines.Not until recently,a group of research ers has address edtheim port anceofimprovingbee keeping techniques and conservation str ategies to avoid red uction of genetic diversity in both managed and wild honey bees.They conclude that art ificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to path ogens.However,more research needs tobe conducted onpo ten tial effect sof management technique son beedeclines. Itis important to emphasize that scientific efforts alone are not enough.Additional str ategies should be encouraged, including improve ments of environmental education programs, changes in public aware ness about wild bees through appropriate media coverage, and improve ments in dialogue between scientists, industry, stake hold ers, and legislators. Only comprehensive app roaches, discussed by different societal actors, will result in efficient and long-term str ategies to reduce the decline of wild beepopulations."
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "Whatisthemainideaofthethirdparagraph?",
+      "stem": "What is the main idea ofthe third paragraph?",
       "section": null,
       "answer": "D",
       "options": {
-        "A": "Arecentstudyshoweddeleteriouseffectsofagrochemicalsoneusocialbees.",
-        "B": "Artificialintelligencetoolshavebeenusedtoexploredecliningbeepopulations.",
-        "C": "Moreresearchisneededtostudythelinkbetweenpesticideuseandbeedeclines.",
-        "D": "Researchersaretryingtoprovedamagingeffectsofpesticidesonbeepopulations."
-      }
+        "A": "A recent study show edde let erious effects ofagrochemic also neu social bees.",
+        "B": "Art ificial intelligence tools have been usedto explo red ecliningbeepopulations.",
+        "C": "More research is needed to study the link between pesticide use and beedeclines.",
+        "D": "Research ers are trying top rovedamaging effects ofpesticide son beepopulations."
+      },
+      "passage": "請依下文回答第46題至第50題: Poll ina tors, such as bees, but terflies, and birds, contribute roughly $500 billion a year to global food production. Being the primarypoll ina torsof most wild plant sand many crops,bees are particularly crucial tobo the cosystemst ability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capture dthe attention ofscientists,governments,media,and the general public. Several anthropogenic drivers have been associate dwi thdecliningbeepopulations,suchas distur ban cesof their natural habitat sas result of agricultural intensifications and urbanization,climate change,pesticides,and management practices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in tem per ature and rain fall can cause significant alter ationsin natural habitats,thus red ucing their suit ability for wild beepopulations. Pesticides have received much attention for their potential effect son bees.Ina recent study,there search group reviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using art ificial intelligence tools, the research ersexplore how pesticideexpo sure contribute sto decline sin population sofhoney bees,bumble bees,and sting less bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sop his tication when tackling question sconcerning the decliningbee population sassociated with the pesticidecontami nation. However,little research attention has been given top otential effect sof management technique son beedeclines.Not until recently,a group of research ers has address edtheim port anceofimprovingbee keeping techniques and conservation str ategies to avoid red uction of genetic diversity in both managed and wild honey bees.They conclude that art ificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to path ogens.However,more research needs tobe conducted onpo ten tial effect sof management technique son beedeclines. Itis important to emphasize that scientific efforts alone are not enough.Additional str ategies should be encouraged, including improve ments of environmental education programs, changes in public aware ness about wild bees through appropriate media coverage, and improve ments in dialogue between scientists, industry, stake hold ers, and legislators. Only comprehensive app roaches, discussed by different societal actors, will result in efficient and long-term str ategies to reduce the decline of wild beepopulations."
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "Accordingtothepassage,whichofthefollowingstatementsisNOTtrue?",
+      "stem": "According to the passage,which ofthe following statement sis NOT true?",
       "section": null,
       "answer": "B",
       "options": {
-        "A": "Bees’naturalhabitatlossisamajordriverfortheirdecliningpopulations.",
-        "B": "Effectsofmanagementtechniquesonbeedeclineshavebeenwellstudied.",
-        "C": "Bees’exposuretopesticidehascontributedtodeclinesintheirpopulations.",
-        "D": "Changesinpublicawarenessaboutwildbeescanhelpreducetheirdeclines."
-      }
+        "A": "Bees’natural habitat loss isa major driver for their decliningpopulations.",
+        "B": "Effect sof management technique son bee decline shave been well studied.",
+        "C": "Bees’expo sure top esticide has contribute dto decline sin their populations.",
+        "D": "Change sin public aware ness about wild bees can help reduce their declines."
+      },
+      "passage": "請依下文回答第46題至第50題: Poll ina tors, such as bees, but terflies, and birds, contribute roughly $500 billion a year to global food production. Being the primarypoll ina torsof most wild plant sand many crops,bees are particularly crucial tobo the cosystemst ability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capture dthe attention ofscientists,governments,media,and the general public. Several anthropogenic drivers have been associate dwi thdecliningbeepopulations,suchas distur ban cesof their natural habitat sas result of agricultural intensifications and urbanization,climate change,pesticides,and management practices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in tem per ature and rain fall can cause significant alter ationsin natural habitats,thus red ucing their suit ability for wild beepopulations. Pesticides have received much attention for their potential effect son bees.Ina recent study,there search group reviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using art ificial intelligence tools, the research ersexplore how pesticideexpo sure contribute sto decline sin population sofhoney bees,bumble bees,and sting less bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sop his tication when tackling question sconcerning the decliningbee population sassociated with the pesticidecontami nation. However,little research attention has been given top otential effect sof management technique son beedeclines.Not until recently,a group of research ers has address edtheim port anceofimprovingbee keeping techniques and conservation str ategies to avoid red uction of genetic diversity in both managed and wild honey bees.They conclude that art ificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to path ogens.However,more research needs tobe conducted onpo ten tial effect sof management technique son beedeclines. Itis important to emphasize that scientific efforts alone are not enough.Additional str ategies should be encouraged, including improve ments of environmental education programs, changes in public aware ness about wild bees through appropriate media coverage, and improve ments in dialogue between scientists, industry, stake hold ers, and legislators. Only comprehensive app roaches, discussed by different societal actors, will result in efficient and long-term str ategies to reduce the decline of wild beepopulations."
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "Whichofthefollowingbestreplaces“disturbances”inthesecondparagraph?",
+      "stem": "Which ofthe following bestre places“distur ban ces”inthe second paragraph?",
       "section": null,
       "answer": "C",
       "options": {
         "A": "Disclosures",
-        "B": "Disengagements",
+        "B": "Dis engage ments",
         "C": "Disruptions",
-        "D": "Dissatisfactions"
-      }
+        "D": "Dissatisf actions"
+      },
+      "passage": "請依下文回答第46題至第50題: Poll ina tors, such as bees, but terflies, and birds, contribute roughly $500 billion a year to global food production. Being the primarypoll ina torsof most wild plant sand many crops,bees are particularly crucial tobo the cosystemst ability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capture dthe attention ofscientists,governments,media,and the general public. Several anthropogenic drivers have been associate dwi thdecliningbeepopulations,suchas distur ban cesof their natural habitat sas result of agricultural intensifications and urbanization,climate change,pesticides,and management practices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in tem per ature and rain fall can cause significant alter ationsin natural habitats,thus red ucing their suit ability for wild beepopulations. Pesticides have received much attention for their potential effect son bees.Ina recent study,there search group reviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using art ificial intelligence tools, the research ersexplore how pesticideexpo sure contribute sto decline sin population sofhoney bees,bumble bees,and sting less bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sop his tication when tackling question sconcerning the decliningbee population sassociated with the pesticidecontami nation. However,little research attention has been given top otential effect sof management technique son beedeclines.Not until recently,a group of research ers has address edtheim port anceofimprovingbee keeping techniques and conservation str ategies to avoid red uction of genetic diversity in both managed and wild honey bees.They conclude that art ificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to path ogens.However,more research needs tobe conducted onpo ten tial effect sof management technique son beedeclines. Itis important to emphasize that scientific efforts alone are not enough.Additional str ategies should be encouraged, including improve ments of environmental education programs, changes in public aware ness about wild bees through appropriate media coverage, and improve ments in dialogue between scientists, industry, stake hold ers, and legislators. Only comprehensive app roaches, discussed by different societal actors, will result in efficient and long-term str ategies to reduce the decline of wild beepopulations."
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "Whichofthefollowingstatementscanbeinferredfromthepassage?",
+      "stem": "Which ofthe following statement scanbeinfer red from the passage?",
       "section": null,
       "answer": "A",
       "options": {
-        "A": "Decliningbeepopulationsisexpectedtodamageglobalfoodproduction.",
-        "B": "Controllingclimatechangescanresolvetheproblemofbees'habitatloss.",
-        "C": "Artificialselectionhasreplacednaturalselectionforgeneticdiversityinbees.",
-        "D": "Groupscientificeffortsarekeytokeepingwildbeesfrombecomingendangered."
-      }
+        "A": "Decliningbee population sis expected to damage global food production.",
+        "B": "Control lingclimate changes canre solve the problem of bees'habitat loss.",
+        "C": "Art ificials election has replace dna turals election for genetic diver sit yin bees.",
+        "D": "Groups cientific efforts are key to keeping wild bees from becoming end ange red."
+      },
+      "passage": "請依下文回答第46題至第50題: Poll ina tors, such as bees, but terflies, and birds, contribute roughly $500 billion a year to global food production. Being the primarypoll ina torsof most wild plant sand many crops,bees are particularly crucial tobo the cosystemst ability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capture dthe attention ofscientists,governments,media,and the general public. Several anthropogenic drivers have been associate dwi thdecliningbeepopulations,suchas distur ban cesof their natural habitat sas result of agricultural intensifications and urbanization,climate change,pesticides,and management practices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in tem per ature and rain fall can cause significant alter ationsin natural habitats,thus red ucing their suit ability for wild beepopulations. Pesticides have received much attention for their potential effect son bees.Ina recent study,there search group reviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using art ificial intelligence tools, the research ersexplore how pesticideexpo sure contribute sto decline sin population sofhoney bees,bumble bees,and sting less bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sop his tication when tackling question sconcerning the decliningbee population sassociated with the pesticidecontami nation. However,little research attention has been given top otential effect sof management technique son beedeclines.Not until recently,a group of research ers has address edtheim port anceofimprovingbee keeping techniques and conservation str ategies to avoid red uction of genetic diversity in both managed and wild honey bees.They conclude that art ificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to path ogens.However,more research needs tobe conducted onpo ten tial effect sof management technique son beedeclines. Itis important to emphasize that scientific efforts alone are not enough.Additional str ategies should be encouraged, including improve ments of environmental education programs, changes in public aware ness about wild bees through appropriate media coverage, and improve ments in dialogue between scientists, industry, stake hold ers, and legislators. Only comprehensive app roaches, discussed by different societal actors, will result in efficient and long-term str ategies to reduce the decline of wild beepopulations."
     }
   ],
   "year": 114,

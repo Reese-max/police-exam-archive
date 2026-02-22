@@ -405,12 +405,12 @@
     {
       "number": 31,
       "type": "choice",
-      "stem": "Themanagerisverycarefulaboutqualitycontrol;healwayssaysthattheproblemsweignorenowwillcomeback to us.",
+      "stem": "The manage ris very care ful about quality control;he always says that the problem swe ignore now will come back to us.",
       "section": null,
       "answer": "D",
       "options": {
         "A": "fascinate",
-        "B": "highlight",
+        "B": "high light",
         "C": "force",
         "D": "haunt"
       }
@@ -418,7 +418,7 @@
     {
       "number": 32,
       "type": "choice",
-      "stem": "Therehavebeen discussionswithstrongnegativeemotionsforthenewpowerplant:Somethinkitwould bringjobs,whileotherssayitwoulddamagethenaturalenvironment.",
+      "stem": "There have been discussion swith strong negativee motion sfor the new power plant:Some think it would bring jobs,while others say it would damage the natural environment.",
       "section": null,
       "answer": "D",
       "options": {
@@ -431,7 +431,7 @@
     {
       "number": 33,
       "type": "choice",
-      "stem": "Mostcastlesweremadefromstoneinsteadoftimberbecausestoneismore tofirethanwood.",
+      "stem": "Most castles were made from stone instead oftimber because stone is more to fire than wood.",
       "section": null,
       "answer": "D",
       "options": {
@@ -457,7 +457,7 @@
     {
       "number": 35,
       "type": "choice",
-      "stem": "Youneedtorenewyourpassportassoonaspossiblebeforeitbecomesoutofdateand .",
+      "stem": "You need tore new your pass port assoonas possible before it becomes out ofdate and .",
       "section": null,
       "answer": "B",
       "options": {
@@ -470,24 +470,24 @@
     {
       "number": 36,
       "type": "choice",
-      "stem": "Theclassroomwindowsshouldbeleftopensostudentswillnotfeel .",
+      "stem": "The class room windows should be left open sostudents will not feel .",
       "section": null,
       "answer": "D",
       "options": {
-        "A": "bewildered",
+        "A": "bewilde red",
         "B": "complicated",
-        "C": "disorganized",
+        "C": "dis organized",
         "D": "suffocated"
       }
     },
     {
       "number": 37,
       "type": "choice",
-      "stem": "IfyouhaveaknownordiagnosedallergytoaCOVID-19vaccine ,youshouldnotgetvaccinated.",
+      "stem": "If you have a know nor diagnosed all ergytoa COVID-19 vaccine ,you should not get vacc ina ted.",
       "section": null,
       "answer": "A",
       "options": {
-        "A": "ingredient",
+        "A": "ing red ient",
         "B": "syringe",
         "C": "symptom",
         "D": "insignia"
@@ -496,12 +496,12 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "Theislandersassertedthatdumpingradioactivewastesintheseawasanactof .",
+      "stem": "The island ers assert edt hat dumping radio active was tes inthe sea was anactof .",
       "section": null,
       "answer": "A",
       "options": {
         "A": "insanity",
-        "B": "hospitality",
+        "B": "hospital ity",
         "C": "inquiry",
         "D": "hesitation"
       }
@@ -509,12 +509,12 @@
     {
       "number": 39,
       "type": "choice",
-      "stem": "The teachers’ methods of students’performances produce controversial results across the country based onacorecurriculum.",
+      "stem": "The teach ers’ methods of students’per for man ces produce controversial results across the country based onacorecurriculum.",
       "section": null,
       "answer": "C",
       "options": {
         "A": "parliament",
-        "B": "commandment",
+        "B": "comm and ment",
         "C": "assessment",
         "D": "amendment"
       }
@@ -522,7 +522,7 @@
     {
       "number": 40,
       "type": "choice",
-      "stem": "Thanks to modern , crops now grow abundantly in areas where once nothing but cacti and sagebrush couldlive.",
+      "stem": "Thanks to modern , crops now grow abundantly in areas where once nothing but cacti and sagebrush could live.",
       "section": null,
       "answer": "D",
       "options": {
@@ -535,20 +535,20 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Collective trauma finds outlet in public of a community or a nation, as it seems to remember or forget a painfulperiodinitshistory.",
+      "stem": "Collect ive trauma finds outlet in public of a community or a nation, as it seems to remember or forget a pain ful period in its history.",
       "section": null,
       "answer": "A",
       "options": {
-        "A": "articulation",
-        "B": "approbation",
+        "A": "art iculation",
+        "B": "app robation",
         "C": "arbitration",
-        "D": "approximation"
+        "D": "app roximation"
       }
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "The committee required that all the sports playersundergo a drug test before competing in the championship.",
+      "stem": "The commit tee required that all the sports play ers under go a drug test before competing in the championship.",
       "section": null,
       "answer": "C",
       "options": {
@@ -561,12 +561,12 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "Itwassucha sightwhentheysawswarmsofstarvingchildrenseekingfoodonthestreets.",
+      "stem": "It was such a sight when they sawsw arms of star ving children seek ing food on the str eets.",
       "section": null,
       "answer": "B",
       "options": {
         "A": "remedial",
-        "B": "pathetic",
+        "B": "path etic",
         "C": "eligible",
         "D": "fragrant"
       }
@@ -574,20 +574,20 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "Algonkian-speaking Native Americans greeted the Pilgrims who on the eastern shores of what is now NewEngland.",
+      "stem": "Algonkian-speaking Native Americans greeted the Pilgrims who on the eastern shores of what is now New Engl and.",
       "section": null,
       "answer": "C",
       "options": {
         "A": "steered",
         "B": "stooped",
         "C": "settled",
-        "D": "shattered"
+        "D": "shatte red"
       }
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "WebroughtbackamodelofTaipei101asa ofourtriptoTaipeilastmonth.",
+      "stem": "Webrought back a mode lof Taipei 101 asa of our trip to Taipei last month.",
       "section": null,
       "answer": "C",
       "options": {
@@ -600,33 +600,33 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "Thepandemichas forallparentsandteachershowindispensableonlinelearningisforeducationtoday.",
+      "stem": "The pan demic has for all parent sand teacher show indispens able online learn ingis for education today.",
       "section": null,
       "answer": "A",
       "options": {
-        "A": "underscored",
-        "B": "undermined",
+        "A": "under sco red",
+        "B": "under mined",
         "C": "unleashed",
-        "D": "undergone"
+        "D": "under gone"
       }
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "Theweatherforecasthassaidthattheremaybeatemporarybreakbefore rainreturnsonMonday.",
+      "stem": "The weather for ecast has said that there may beat emporary break before rain return son Monday.",
       "section": null,
       "answer": "C",
       "options": {
-        "A": "respective",
-        "B": "charitable",
-        "C": "persistent",
+        "A": "respect ive",
+        "B": "chari table",
+        "C": "per sistent",
         "D": "suspicious"
       }
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "More than 280 people have been from a ferry in northwestern Greece that caught fire overnight while headingtosouthernItalyinFebruary.",
+      "stem": "More than 280 people have been from a ferry in north western Greece that caught fire over night while head ingto southern Italyin February.",
       "section": null,
       "answer": "C",
       "options": {
@@ -639,11 +639,11 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Thetransitagencyhasseenrampantvirusinfectionsamongemployeesanddifficultiesinhiringand drivers.",
+      "stem": "The transit agency has seen rampant virusinfections among employ ees and difficulties inhiring and drivers.",
       "section": null,
       "answer": "A",
       "options": {
-        "A": "retaining",
+        "A": "retain ing",
         "B": "compiling",
         "C": "evading",
         "D": "obstructing"
@@ -652,14 +652,14 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Insteadofconcentratingonincentivizingshort-termtransactivebehaviors,today’sfirmsfocusonbuildingauthentic and relationshipswithcustomers.",
+      "stem": "Instead ofc once ntratingonincentivizing short-term trans active behaviors,today’sfirmsfocu son building authentic and relationship swithcus tom ers.",
       "section": null,
       "answer": "C",
       "options": {
         "A": "transitional",
         "B": "topical",
-        "C": "sustainable",
-        "D": "transparent"
+        "C": "sustain able",
+        "D": "trans parent"
       }
     }
   ],

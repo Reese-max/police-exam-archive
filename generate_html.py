@@ -160,6 +160,7 @@ body.sidebar-collapsed .sidebar-reopen { display: flex; }
 .exam-content-v2 { padding: 0.5rem 0; }
 .exam-metadata { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.82rem; color: var(--text-light); line-height: 1.6; }
 .exam-note { font-size: 0.82rem; color: var(--text-light); padding: 0.2rem 0 0.2rem 1rem; border-left: 3px solid var(--border); margin-bottom: 0.25rem; }
+.reading-passage { font-size: 0.88rem; line-height: 1.8; color: var(--text); background: #f8fafc; border-left: 3px solid var(--primary); padding: 0.75rem 1rem; margin: 0.75rem 0 0.25rem; border-radius: 0 8px 8px 0; overflow-wrap: break-word; word-break: break-word; }
 .exam-section-marker { font-size: 0.95rem; font-weight: 700; color: var(--primary); padding: 0.75rem 0 0.4rem; margin-top: 0.5rem; border-top: 1px solid var(--border); }
 .essay-question { font-size: 0.92rem; line-height: 1.85; padding: 0.75rem 0 0.5rem; border-bottom: 1px dashed #e2e8f0; margin-bottom: 0.5rem; text-indent: -1.5em; padding-left: 1.5em; overflow-wrap: break-word; word-break: break-word; }
 .mc-question { padding: 0.6rem 0 0.25rem; border-top: 1px solid #f1f5f9; margin-top: 0.4rem; display: flex; gap: 0.5rem; align-items: baseline; overflow-wrap: break-word; word-break: break-word; }
@@ -221,6 +222,7 @@ html.dark .filter-chip.active { background: #6366f1; color: #fff; border-color: 
 html.dark .meta-tag { background: #334155; color: #cbd5e1; }
 html.dark .exam-metadata { background: #1e293b; border-color: #334155; }
 html.dark .exam-note { border-color: #334155; }
+html.dark .reading-passage { background: #1e293b; border-color: #6366f1; }
 html.dark .stats-bar { background: var(--card-bg); border-color: var(--border); }
 html.dark .stat-item { background: transparent; }
 html.dark .stat-value { background: linear-gradient(135deg, #818cf8, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -1201,10 +1203,16 @@ def render_subject_card(card_id, subject_name, questions_data, year):
             content_html += f'<div class="exam-note">{escape_html(note)}</div>\n'
 
     current_section = None
+    rendered_passages = set()
     for q in questions:
         if q.get('section') and q['section'] != current_section:
             current_section = q['section']
             content_html += f'<div class="exam-section-marker">{escape_html(current_section)}</div>\n'
+        # 閱讀測驗段落：在題組第一題前顯示段落文字
+        passage = q.get('passage', '')
+        if passage and passage not in rendered_passages:
+            rendered_passages.add(passage)
+            content_html += f'<div class="reading-passage">{escape_html(passage)}</div>\n'
         content_html += render_question_html(q)
 
     # 答案已內嵌在逐題 q-block 中，不再需要底部答案格

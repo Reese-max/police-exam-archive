@@ -74,7 +74,7 @@
     {
       "number": 4,
       "type": "choice",
-      "stem": "「證據為基礎之犯罪預防」(Evidence-BasedCrimePrevention)是由美國犯罪學家Sherman 教授 等(2002)所提出。其認為有效的公共政策及實務作為需要以科學證據為基礎。Sherman教授等 人(2002)評估實行犯罪預防的七種機構環境的有效性。這七種主要的機構環境包括那些?",
+      "stem": "「證據為基礎之犯罪預防」(Evidence-Based Crime Prevention)是由美國犯罪學家Sherman 教授 等(2002)所提出。其認為有效的公共政策及實務作為需要以科學證據為基礎。Sherman教授等 人(2002)評估實行犯罪預防的七種機構環境的有效性。這七種主要的機構環境包括那些?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -100,7 +100,7 @@
     {
       "number": 6,
       "type": "choice",
-      "stem": "依據Sabatier和Mazmanian(1983)的政策執行環境關聯模式,下列何者正確?",
+      "stem": "依據Sabatier和Maz man ian(1983)的政策執行環境關聯模式,下列何者正確?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -143,10 +143,10 @@
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "口頭勸導(persuasiveverbalization):當警察現身仍未達目的時,警察以堅定但非命令的口吻 勸導當事人",
-        "B": "制伏命令(paincommand):警察在不傷害當事人前提下制伏當事人,並以命令式的語氣告知 當事人警察的要求",
-        "C": "運用裝備控制(impacttechniques):此措施是對付反抗者的作為,使用警棍或瓦斯槍等,但不 傷害到性命",
-        "D": "致命性強制力(deadlyforce):針對明顯危害他人生命者或暴力犯逃犯,當對方不聽警察命令 時,警察得依據法令使用槍械"
+        "A": "口頭勸導(per suasiv ever balization):當警察現身仍未達目的時,警察以堅定但非命令的口吻 勸導當事人",
+        "B": "制伏命令(pain comm and):警察在不傷害當事人前提下制伏當事人,並以命令式的語氣告知 當事人警察的要求",
+        "C": "運用裝備控制(impact techniques):此措施是對付反抗者的作為,使用警棍或瓦斯槍等,但不 傷害到性命",
+        "D": "致命性強制力(deadly force):針對明顯危害他人生命者或暴力犯逃犯,當對方不聽警察命令 時,警察得依據法令使用槍械"
       }
     },
     {
@@ -165,14 +165,14 @@
     {
       "number": 11,
       "type": "choice",
-      "stem": "在公共政策分析的方法論中,以理性模式(comprehensiverationality)與漸進模式(incrementalism) 為兩大典範,常被用於警察政策分析上,下列敘述何者正確?",
+      "stem": "在公共政策分析的方法論中,以理性模式(comprehensive rationality)與漸進模式(incre mental ism) 為兩大典範,常被用於警察政策分析上,下列敘述何者正確?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "理性模式是政治面項剖析政策,漸進模式是經濟理論的應用",
         "B": "問題導向警政中的SARA模式,是漸進模式的應用",
-        "C": "Kingdon的「政策窗(policywindow)」理論是理性模式的應用",
-        "D": "「漸進理論」指出決策者不會重新審視問題,也未確定目標,而是以現行做法為基礎(thestatus quo),僅作出局部的微調,以找尋漸進的代替性政策"
+        "C": "Kingdon的「政策窗(policy window)」理論是理性模式的應用",
+        "D": "「漸進理論」指出決策者不會重新審視問題,也未確定目標,而是以現行做法為基礎(the status quo),僅作出局部的微調,以找尋漸進的代替性政策"
       }
     },
     {
@@ -204,7 +204,7 @@
     {
       "number": 14,
       "type": "choice",
-      "stem": "關於社區導向警政(Community-OrientedPolicing)與情報導向警政(Intelligence-LedPolicing)兩 者比較,下列何者錯誤?",
+      "stem": "關於社區導向警政(Community-Oriented Policing)與情報導向警政(Intelligence-Led Policing)兩 者比較,下列何者錯誤?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -217,7 +217,7 @@
     {
       "number": 15,
       "type": "choice",
-      "stem": "關於現代新古典學派(ModernNeo-classicalCriminology)犯罪預防策略的說明,下列何者錯誤?",
+      "stem": "關於現代新古典學派(Modern Neo-class ical Criminology)犯罪預防策略的說明,下列何者錯誤?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -243,7 +243,7 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "關於「標準模式警政」(StandardmodelPolicing)以及「情資主導警政」(Intelligence-LedPolicing) 的敘述,下列何者錯誤?",
+      "stem": "關於「標準模式警政」(Standard model Policing)以及「情資主導警政」(Intelligence-Led Policing) 的敘述,下列何者錯誤?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -269,7 +269,7 @@
     {
       "number": 19,
       "type": "choice",
-      "stem": "CompStat 警政又稱為電腦導向的犯罪統計,警察基金會曾提出CompStat 的六個關鍵因素,下列 何者錯誤?",
+      "stem": "Comp Stat 警政又稱為電腦導向的犯罪統計,警察基金會曾提出Comp Stat 的六個關鍵因素,下列 何者錯誤?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -295,7 +295,7 @@
     {
       "number": 21,
       "type": "choice",
-      "stem": "1970年代美國 Missouri州Kansas 警察巡邏實驗所呈現的結果,下列敘述何者正確?",
+      "stem": "1970年代美國 Miss our i州Kansas 警察巡邏實驗所呈現的結果,下列敘述何者正確?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -308,12 +308,12 @@
     {
       "number": 22,
       "type": "choice",
-      "stem": "Dunn(2012)在其著作「公共政策分析」一書中,提出以問題為中心的政策分析(problem-centered policy),常應用於警察工作上,其提出的5 種政策分析方法(policy-analyticmethods),下列何 者錯誤?",
+      "stem": "Dunn(2012)在其著作「公共政策分析」一書中,提出以問題為中心的政策分析(problem-cente red policy),常應用於警察工作上,其提出的5 種政策分析方法(policy-analytic methods),下列何 者錯誤?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "問題建構(problem structuring)",
-        "B": "預測(forecasting)",
+        "A": "問題建構(problem str ucturing)",
+        "B": "預測(for ecasting)",
         "C": "描述(prescription)",
         "D": "解釋(interpretation)"
       }

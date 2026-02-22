@@ -79,7 +79,7 @@
       "answer": "D",
       "options": {
         "A": "在現場檢查之前或是在任何物品被觸碰、移動之前,都必須先攝影記錄",
-        "B": "不論室內或室外的現場應包括遠(overall)、中(midrange)、近(close-up)三種距離的 拍攝",
+        "B": "不論室內或室外的現場應包括遠(overall)、中(mid range)、近(close-up)三種距離的 拍攝",
         "C": "攝影時應適時運用三腳架,以利使用小光圈,獲得較長的景深",
         "D": "近距離的物證攝影,以使用刻度比例尺為主,勿拍攝沒有比例尺之物證,以免混淆後續偵查 作為"
       }
@@ -267,8 +267,8 @@
       "answer": "A",
       "options": {
         "A": "實體擷取(Physical Acquisition)",
-        "B": "備份檔案擷取(BackupfileAcquisition)",
-        "C": "翻拍擷取(PhotoAcquisition)",
+        "B": "備份檔案擷取(Bac kup file Acquisition)",
+        "C": "翻拍擷取(Photo Acquisition)",
         "D": "邏輯擷取(Logical Acquisition)"
       }
     },

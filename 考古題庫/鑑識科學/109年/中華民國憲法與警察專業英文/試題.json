@@ -554,7 +554,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "theprevious email message. It was sent toyoubymistake.",
+      "stem": "the previous email message. It was sent toyouby mistake.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -567,12 +567,12 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "It is humannaturethat peopletendtofeel oflotterywinners.",
+      "stem": "It is human nature that people tend to feel oflottery win ners.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
         "A": "jealous",
-        "B": "backward",
+        "B": "back ward",
         "C": "helpful",
         "D": "naughty"
       }
@@ -580,27 +580,27 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "Homicide areinvestigatingthecrimescenewheretwobodies were found.",
+      "stem": "Homicide are investigating the crime scene where two bodies were found.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "detectives",
-        "B": "firefighters",
-        "C": "managers",
+        "A": "detect ives",
+        "B": "fire fight ers",
+        "C": "man agers",
         "D": "jewelers"
       }
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "Wheels whenavehiclespeeds upon aslipperyroadsurface.",
+      "stem": "Wheels when a vehicle speeds upon aslippery road surface.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
         "A": "spin",
         "B": "merge",
         "C": "rust",
-        "D": "crack 請依下文回答第45題至第49題: Wheninterviewingchildren,interpreterscanbeusedinmanydifferentways,dependingontheneeds and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are interviewing the child, not the interpreter. The interview should be conducted in a waythat does notisolatethechildatanytime.Further,youshouldalwaysaddressthechildinthe 47 personwhen youaskaquestion,likeTommy,ratherthanTomPeterson.Inotherwords,donotasktheinterpreterabout thechild,phrase yourquestion 48 thechildcanunderstand you.Evenwhenaskingforclarification about aresponse, youshouldalways 49 the child,not theinterpreter."
+        "D": "crack"
       }
     },
     {
@@ -614,7 +614,8 @@
         "B": "dramatic",
         "C": "chaotic",
         "D": "fantastic"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter."
     },
     {
       "number": 46,
@@ -627,7 +628,8 @@
         "B": "adoration",
         "C": "imitation",
         "D": "classification"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter."
     },
     {
       "number": 47,
@@ -640,7 +642,8 @@
         "B": "second",
         "C": "third",
         "D": "fourth"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter."
     },
     {
       "number": 48,
@@ -650,10 +653,11 @@
       "answer": "A",
       "options": {
         "A": "as if",
-        "B": "eventhough",
+        "B": "even though",
         "C": "except for",
         "D": "orelse"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter."
     },
     {
       "number": 49,
@@ -666,42 +670,43 @@
         "B": "identify",
         "C": "order",
         "D": "evaluate"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter."
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "Police: Pleaseput your carry-onbagontheconveyorbelt. Mr.Jackson: Do Ialsoneedtoput mypersonal electronicdevicesintothe bin? Police: Yes, pleasedo.",
+      "stem": "Police: Please put your carry-onbagon the conveyorbelt. Mr.Jackson: Do I also need to put my personal electronic devices into the bin? Police: Yes, please do.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "Put yourluggageonthescale.And giveme yourpassport andticket.",
-        "B": "What is thepurposeof yourvisit? Do youhave anythingtodeclare?",
-        "C": "Passengers onFlight BA910toSeoul,pleaseproceedtoGate13forboarding.",
-        "D": "Now take off your shoes and any metal accessories. And then walk through the metal detector, please."
+        "A": "Put your luggage on the scale.And giveme your pass port and ticket.",
+        "B": "What is the purpose of your visit? Do youhave anything todecl are?",
+        "C": "Pass engers on Flight BA 910 toSeoul,please proceedto Gate 13 for board ing.",
+        "D": "Now take off your shoes and any metal access ories. And then walk through the metal detector, please."
       }
     },
     {
       "number": 51,
       "type": "choice",
-      "stem": "Nigel Nelson, a 33-year-old naturalized American citizen, married with two sons living in Manhattan,NewYork,wasarrestedbecausehewasfoundsettingupacarbombnearbustlingTime Square with an attempt to kill dozens of his fellow countrymen. The capture of Mr. Nelson has indicatedtheemergence of ,onethat worries thepolice.",
+      "stem": "Nigel Nelson, a 33-year-old natural ized American citizen, married with two sons living in Manhattan,NewYork,was arrested because he was found setting upa car bomb near bustling Time Square with an attempt to kill dozens of his fellow country men. The capture of Mr. Nelson has indicated the emergence of ,onethat worries the police.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "drugtrafficking",
-        "B": "armedrobbery",
-        "C": "domesticviolence",
-        "D": "home-grownterrorism"
+        "A": "drug trafficking",
+        "B": "armed robbery",
+        "C": "domestic violence",
+        "D": "home-grown terrorism"
       }
     },
     {
       "number": 52,
       "type": "choice",
-      "stem": "has been a rampant crime occurring transnationally. Many young women in distress from East Europe have been taken abroad to more affluent countries in West Europe and forced into prostitution.",
+      "stem": "has been a rampant crime occur ring trans nation ally. Many young women in distress from East Europe have been taken abroad to more affluent count ries in West Europe and forced into prostitution.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "Humantrafficking",
+        "A": "Human trafficking",
         "B": "Smuggling",
         "C": "Vandalism",
         "D": "Hijacking - -"
@@ -710,72 +715,72 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "Sinceprisonisnotthesolutiontoreducingcrimerates,researchershavedeveloped toassist justiceagencies toidentifyandmanagelikelyoffenders whomight beviolent towardothers.",
+      "stem": "Since prison is not the soluti onto red ucing crime rates,research ers have developed to assist justice age ncies to identify and manage likely offenders who might be violent toward others.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "social reintegrationschemes",
-        "B": "riskmanagement tools",
-        "C": "communitycorrections",
-        "D": "drugtreatment programs"
+        "B": "risk management tools",
+        "C": "community correct ions",
+        "D": "drug treatment programs"
       }
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "In order to increase the efficiency of the police force, many systems have been employed. One of these systems involves efficient handling of the database of driver’s licenses. This system can issue driver’s licenses daily, prevent the false acquisition of the licenses and enforce administrativepunishment ofthosewhohavetrafficviolations andso on.",
+      "stem": "In order to increase the efficiency of the police force, many systems have been employed. One of these systems involves efficient hand ling of the database of driver’s licenses. This system can issue driver’s licenses daily, prevent the false acquisition of the licenses and enforce admini str ative punishment of those who have traffic violations andso on.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "forensicengineering",
-        "B": "informationmanagement",
-        "C": "copyright infringement",
-        "D": "restrainingorder"
+        "A": "forensic engineering",
+        "B": "information management",
+        "C": "copy right infringement",
+        "D": "res training order"
       }
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "A system combining wireless, database, and applications technologies has been set up to assist the police in decreasing paperwork, increasing data accuracy, sharing knowledge and informationandevenprovidingaproblem solvingkit.",
+      "stem": "A system com bin ing wire less, database, and app lications technologies has been set up to assist the police in decrea sing paper work, increa sing data accuracy, sharing knowledge and information and even providing a problem solving kit.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "policecruiser",
-        "B": "handgunholster",
-        "C": "camouflageuniform",
-        "D": "mobileinformation"
+        "A": "police cruiser",
+        "B": "hand gun holster",
+        "C": "camoufl age uniform",
+        "D": "mobile information"
       }
     },
     {
       "number": 56,
       "type": "choice",
-      "stem": "In recent years, people have paid much attention to the high frequencyof . This involves the use of the Internet to create public turmoil and death threat, some of which even lead to the demolishment ofanation’s economicandtechnological infrastructure.",
+      "stem": "In recent years, people have paid much attention to the high frequencyof . This involves the use of the Internet to create public turmoil and death threat, some of which even lead to the demolishment ofa nation’s economic and technological infrastructure.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
         "A": "email hacking",
         "B": "internet fraud",
         "C": "cyberterrorism",
-        "D": "childpornography"
+        "D": "child pornography"
       }
     },
     {
       "number": 57,
       "type": "choice",
-      "stem": "TheNationalImmigrationAgencyhasutilizedinformationtechnologysuchasAdvancedPassenger Information System (APIS) and Advanced Passenger Processing System (APPS) to monitor the likely appearance of suspected travelers and other restricted passengers in order to safeguard our national territoryand .",
+      "stem": "The National Immigration Agency has utilized information technology suchas Advanced Pass enger Information System (APIS) and Advanced Pass enger Process ing System (APPS) to monitor the likely appear ance of suspected travel ers and other rest ricted pass engers in order to safe guard our national territory and .",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "bordersecurity",
-        "B": "crimescene",
-        "C": "emergencymanagement",
+        "A": "border security",
+        "B": "crime scene",
+        "C": "emergency management",
         "D": "secret service"
       }
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "Thegangsters havebeen moneyfromMr.Johnson,threateningtorevealtothepressvideo- tapeofhis adultery.",
+      "stem": "The gangsters have been money from Mr.Johnson,threatening to reveal to the press video- tap eof his adult ery.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -788,27 +793,27 @@
     {
       "number": 59,
       "type": "choice",
-      "stem": "When the police started shooting at some of the student protestors out of their misintepretation of students’behaviors, theyhavebeenstronglycriticizedas enacting .",
+      "stem": "When the police started shooting at some of the student protest ors out of their misintepretation of students’behaviors, they have been strong lycriticizedas enacting .",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "domesticabuse",
-        "B": "restorativejustice",
-        "C": "uniformedpresence",
-        "D": "excessiveenforcement"
+        "A": "domestic abuse",
+        "B": "rest orative justice",
+        "C": "uniform edpresence",
+        "D": "excessive enforcement"
       }
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "Mr. Thompson:I feel I have been overcharged when I purchased an online game. What can I do to get mymoneyback? Police:",
+      "stem": "Mr. Thomp son:I feel I have been over charged when I purchased an online game. What can I do to get my money back? Police:",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "Youshould thinkbefore youpost anymessage online.Everything youdothroughthe Internet is irretrievable.",
-        "B": "IwillcontactourNetsafeunittohelpdealwiththiscaseabouttheInternetscam.Tellmeexactly what happened.",
-        "C": "If youconsider yourselfavictim ofcyberbullying,pleasedial immediatelyourhotlineforhelp.",
-        "D": "Send us anyobscene images or photos you see online so that we are able to trace the occurrence ofcybercrimes."
+        "A": "You should think before youpost any message online.Everything you do through the Internet is irretriev able.",
+        "B": "I will contact our Net safe unit to help deal with this case about the Internetscam.Tell me exactly what happened.",
+        "C": "If you consider yourself a victim ofcyberbullying,please dial immediately our hot line for help.",
+        "D": "Send us anyob scene images or photos you see online so that we are able to trace the occur rence ofcyber crimes."
       }
     }
   ],

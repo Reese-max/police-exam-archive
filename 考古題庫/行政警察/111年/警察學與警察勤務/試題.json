@@ -74,7 +74,7 @@
     {
       "number": 4,
       "type": "choice",
-      "stem": "警政學者 DavidH.Bayley曾提出社區導向警政四種方式(CAMP):諮詢(Consultation)、調 適(Adaptation)、動員(Mobilization)、問題解決(ProblemSolving)。就「增進警察與社區 互動、舉行社區治安座談會」等實務策略而言,主要是屬於上述何項方式?",
+      "stem": "警政學者 DavidH.Bayley曾提出社區導向警政四種方式(CAMP):諮詢(Consultation)、調 適(Adaptation)、動員(Mobilization)、問題解決(Problem Solving)。就「增進警察與社區 互動、舉行社區治安座談會」等實務策略而言,主要是屬於上述何項方式?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -130,10 +130,10 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "被動反應式模式(ReactiveModel)",
-        "B": "守勢勤務模式(DefensiveModel)",
-        "C": "主動先發模式(ProactiveModel)",
-        "D": "服務民眾模式(ServiceModel)"
+        "A": "被動反應式模式(Reactive Model)",
+        "B": "守勢勤務模式(Defensive Model)",
+        "C": "主動先發模式(Pro active Model)",
+        "D": "服務民眾模式(Service Model)"
       }
     },
     {
@@ -191,7 +191,7 @@
     {
       "number": 13,
       "type": "choice",
-      "stem": "1990年代,紐約市警察局以資訊統計之管理系統(CompStat) 作為管理犯罪資訊之技術,其資 訊統計之程序包含四個步驟,不包括下列何者?",
+      "stem": "1990年代,紐約市警察局以資訊統計之管理系統(Comp Stat) 作為管理犯罪資訊之技術,其資 訊統計之程序包含四個步驟,不包括下列何者?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -230,7 +230,7 @@
     {
       "number": 16,
       "type": "choice",
-      "stem": "下列關於「破窗理論」(BrokenWindows Theory)之相關敘述,何者錯誤?",
+      "stem": "下列關於「破窗理論」(Broken Windows Theory)之相關敘述,何者錯誤?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {

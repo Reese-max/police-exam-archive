@@ -555,7 +555,7 @@
       "options": {
         "A": "共犯分析(Accomplice Analysis)",
         "B": "關聯分析(Association Analysis)",
-        "C": "犯罪熱點分析(Crime Hotspots Analysis)",
+        "C": "犯罪熱點分析(Crime Hot spots Analysis)",
         "D": "犯罪旅程分析(Journey-to-Crime Analysis)"
       }
     },
@@ -594,7 +594,7 @@
       "options": {
         "A": "NSLOOKUP",
         "B": "Ping",
-        "C": "Traceroute",
+        "C": "Trace route",
         "D": "Netstat"
       }
     },

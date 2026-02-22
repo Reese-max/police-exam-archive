@@ -554,20 +554,20 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Chicago P. D., an American TV drama, shows how the uniformed cops and the Intelligence Unit work together to combat crime, drug trafficking, high profile murders and beyond.",
+      "stem": "Chicago P. D., an American TV drama, shows how the uni formed cops and the Intelligence Unit work together to combat crime, drug trafficking, high profile murders and beyond.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
         "A": "organized",
-        "B": "modernized",
-        "C": "coordinated",
-        "D": "cooperated"
+        "B": "modern ized",
+        "C": "coord ina ted",
+        "D": "coo per ated"
       }
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "Policewomen are often found to be more capable of talking their way through difficult situations or listening to of domestic violence.",
+      "stem": "Police women are often found to be more capable of talking their way through difficult sit uations or listen ing to of domestic violence.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -606,7 +606,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "Surveillance camera databases are becoming tools for the police to solve criminal problems.",
+      "stem": "Surveillance camera data bases are becoming tools for the police to solve criminal problems.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -619,12 +619,12 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "Helen, a 16-year-old girl, was walking her dog at 6 in the morning in a park when she was . Someone called to threaten to kill her if the ransom was not paid.",
+      "stem": "Helen, a 16-year-old girl, was walking her dog at 6 in the morning in a park when she was . Someone called to threa ten to kill her if the ransom was not paid.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "identified",
-        "B": "kidnapped",
+        "B": "kid napped",
         "C": "mugged",
         "D": "robbed"
       }
@@ -645,20 +645,20 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "Some police officers have suffered post- stress disorder symptoms after a disaster rescue operation and seeing too many corpses.",
+      "stem": "Some police off icers have suffe red post- stress dis order symptoms after a disaster rescue operation and seeing too many corpses.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "modern",
-        "B": "frontier",
+        "B": "front ier",
         "C": "deadline",
-        "D": "traumatic"
+        "D": "trauma tic"
       }
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "Generally, police officers take an at the beginning of their careers, which affirms their standards of integrity, bravery and honor.",
+      "stem": "Generally, police off icers take an at the beginning of their careers, which affirms their stand ards of integrity, bravery and honor.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -678,16 +678,17 @@
         "A": "transcript",
         "B": "resume",
         "C": "diploma",
-        "D": "autobiography 請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and misperceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
+        "D": "autobiography"
       }
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "a definition for self-driving vehicles. Some experts tell CNN Business that the government needs to step into prevent businesses from misleading and confusing 55 . One says, “Tesla’s use of this term is totally irresponsible.”",
+      "stem": "a definition for self-driving vehicles. Some experts tell CNN Business that the government needs to step into prevent bus inesses from misleading and confusing 55 . One says, “Tesla’s use of this term is totally irresponsible.”",
       "section": "乙、測驗題",
       "answer": "D",
-      "subtype": "passage_fragment"
+      "subtype": "passage_fragment",
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
     },
     {
       "number": 51,
@@ -700,7 +701,8 @@
         "B": "animal",
         "C": "mechanical",
         "D": "computer - -"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
     },
     {
       "number": 52,
@@ -713,7 +715,8 @@
         "B": "beneath",
         "C": "behind",
         "D": "against"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
     },
     {
       "number": 53,
@@ -726,7 +729,8 @@
         "B": "trust",
         "C": "effort",
         "D": "obligation"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
     },
     {
       "number": 55,
@@ -738,8 +742,9 @@
         "A": "mechanics",
         "B": "pedestrians",
         "C": "consumers",
-        "D": "passengers 請依下文回答第56題至第60題 “Forensic science” means applying scientific methods and processes to solving crimes. Forensic science has become an integral part of many criminal cases and convictions. The extraordinary innovations and advancements in forensic science have allowed it to become a highly developed science that involves a number of disciplines. The field of forensic science draws from a number of scientific branches, including physics, chemistry, and biology, with its focus being on the recognition, identification, and evaluation of physical evidence. These scientific experts use microscopic examining techniques, complex instruments, mathematical principles, scientific principles, and reference literature to analyze evidence as to identify both class and individual characteristics. In the past decade, they have started using laser scanners, drones and photogrammetry to obtain 3D point clouds of accidents or crime scenes. Reconstruction of an accident scene on a highway using drones involves data acquisition time of only 10-20 minutes and can be performed without shutting down traffic. The majority of forensic scientists perform their jobs within the confines of the forensic laboratory or morgue; their work may also take them outside of the laboratory and to the crime scenes, where they observe the scene and collect evidence. Forensic scientists may work for local, state and federal law enforcement agencies and government, private laboratories, and hospitals. They may also serve as independent forensic science consultants."
-      }
+        "D": "pass engers"
+      },
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
     },
     {
       "number": 56,
@@ -750,9 +755,10 @@
       "options": {
         "A": "It is a technology too complicated for the police to employ.",
         "B": "It is the only technology the police use to solve crimes.",
-        "C": "It is nowadays helping the police a lot in solving crimes.",
+        "C": "It is now adays helping the police a lot in solving crimes.",
         "D": "It is used to observe criminals’ behavior."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 “Forensic science” means apply ing scientific methods and processes to solving crimes. Forensic science has become an integral part of many criminal cases and convictions. The extraordinary innovations and advance ments in forensic science have allowed it to become a highly developed science that involves a number of disciplines. The field of forensic science draws from a number of scientific branches, including physics, chemis try, and biology, with its focus being on the recognition, identification, and evaluation of physical evidence. These scientific experts use microscopic examining techniques, complex instruments, mathematical principles, scientific principles, and refer ence literature to analyze evidence as to identify both class and individual character istics. In the past decade, they have started using laser scanners, drones and photogramme try to obtain 3 D point clouds of accidents or crime scenes. Reconstruction of an accident scene on a highway using drones involves data acquisition time of only 10-20 minutes and can be performed without shut ting down traffic. The majority of forensic scientists perform their jobs within the confines of the forensic laboratory or morgue; their work may also take them outside of the laboratory and to the crime scenes, where they observe the scene and collect evidence. Forensic scientists may work for local, state and federal law enforcement age ncies and government, private laboratories, and hospitals. They may also serve as in depend ent forensic science consultants."
     },
     {
       "number": 57,
@@ -761,50 +767,54 @@
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "It is an outdated study of science.",
+        "A": "It is an out dated study of science.",
         "B": "It is a new field of study not yet well-developed.",
         "C": "It is an old science just newly innovated.",
         "D": "It is a science that integrates many fields of study."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 “Forensic science” means apply ing scientific methods and processes to solving crimes. Forensic science has become an integral part of many criminal cases and convictions. The extraordinary innovations and advance ments in forensic science have allowed it to become a highly developed science that involves a number of disciplines. The field of forensic science draws from a number of scientific branches, including physics, chemis try, and biology, with its focus being on the recognition, identification, and evaluation of physical evidence. These scientific experts use microscopic examining techniques, complex instruments, mathematical principles, scientific principles, and refer ence literature to analyze evidence as to identify both class and individual character istics. In the past decade, they have started using laser scanners, drones and photogramme try to obtain 3 D point clouds of accidents or crime scenes. Reconstruction of an accident scene on a highway using drones involves data acquisition time of only 10-20 minutes and can be performed without shut ting down traffic. The majority of forensic scientists perform their jobs within the confines of the forensic laboratory or morgue; their work may also take them outside of the laboratory and to the crime scenes, where they observe the scene and collect evidence. Forensic scientists may work for local, state and federal law enforcement age ncies and government, private laboratories, and hospitals. They may also serve as in depend ent forensic science consultants."
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "According to the passage, which of the following statements is true?",
+      "stem": "According to the passage, which of the following state ments is true?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
         "A": "Reconstruction of an accident scene on a highway has to shut down traffic.",
-        "B": "Using drones to reconstruct an accident scene takes too much time.",
+        "B": "Using drones to recon str uct an accident scene takes too much time.",
         "C": "Reconstruction of an accident scene on a highway uses drones.",
-        "D": "Using drones to reconstruct an accident scene may frighten drivers on a highway."
-      }
+        "D": "Using drones to recon str uct an accident scene may frigh ten drivers on a highway."
+      },
+      "passage": "請依下文回答第56題至第60題 “Forensic science” means apply ing scientific methods and processes to solving crimes. Forensic science has become an integral part of many criminal cases and convictions. The extraordinary innovations and advance ments in forensic science have allowed it to become a highly developed science that involves a number of disciplines. The field of forensic science draws from a number of scientific branches, including physics, chemis try, and biology, with its focus being on the recognition, identification, and evaluation of physical evidence. These scientific experts use microscopic examining techniques, complex instruments, mathematical principles, scientific principles, and refer ence literature to analyze evidence as to identify both class and individual character istics. In the past decade, they have started using laser scanners, drones and photogramme try to obtain 3 D point clouds of accidents or crime scenes. Reconstruction of an accident scene on a highway using drones involves data acquisition time of only 10-20 minutes and can be performed without shut ting down traffic. The majority of forensic scientists perform their jobs within the confines of the forensic laboratory or morgue; their work may also take them outside of the laboratory and to the crime scenes, where they observe the scene and collect evidence. Forensic scientists may work for local, state and federal law enforcement age ncies and government, private laboratories, and hospitals. They may also serve as in depend ent forensic science consultants."
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "Which of the following statements is true about forensic scientists?",
+      "stem": "Which of the following state ments is true about forensic scientists?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
         "A": "They only work in the laboratories to analyze evidence.",
         "B": "They do not need to visit the crime scenes to collect evidence.",
-        "C": "They are not confined to laboratories to examine evidence.",
+        "C": "They are not con fined to laboratories to examine evidence.",
         "D": "They use high technology to play 3-D computer games."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 “Forensic science” means apply ing scientific methods and processes to solving crimes. Forensic science has become an integral part of many criminal cases and convictions. The extraordinary innovations and advance ments in forensic science have allowed it to become a highly developed science that involves a number of disciplines. The field of forensic science draws from a number of scientific branches, including physics, chemis try, and biology, with its focus being on the recognition, identification, and evaluation of physical evidence. These scientific experts use microscopic examining techniques, complex instruments, mathematical principles, scientific principles, and refer ence literature to analyze evidence as to identify both class and individual character istics. In the past decade, they have started using laser scanners, drones and photogramme try to obtain 3 D point clouds of accidents or crime scenes. Reconstruction of an accident scene on a highway using drones involves data acquisition time of only 10-20 minutes and can be performed without shut ting down traffic. The majority of forensic scientists perform their jobs within the confines of the forensic laboratory or morgue; their work may also take them outside of the laboratory and to the crime scenes, where they observe the scene and collect evidence. Forensic scientists may work for local, state and federal law enforcement age ncies and government, private laboratories, and hospitals. They may also serve as in depend ent forensic science consultants."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "According to the passage, which of the following statements is NOT true?",
+      "stem": "According to the passage, which of the following state ments is NOT true?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "The contribution of forensic science is becoming much greater.",
-        "B": "Forensic scientists only work for government agencies.",
+        "B": "Forensic scientists only work for government age ncies.",
         "C": "The contribution of forensic science exceeds scientific research.",
-        "D": "One possible career path for a forensic scientist is to become an independent consultant."
-      }
+        "D": "One possible career path for a forensic scientist is to become an in depend ent consultant."
+      },
+      "passage": "請依下文回答第56題至第60題 “Forensic science” means apply ing scientific methods and processes to solving crimes. Forensic science has become an integral part of many criminal cases and convictions. The extraordinary innovations and advance ments in forensic science have allowed it to become a highly developed science that involves a number of disciplines. The field of forensic science draws from a number of scientific branches, including physics, chemis try, and biology, with its focus being on the recognition, identification, and evaluation of physical evidence. These scientific experts use microscopic examining techniques, complex instruments, mathematical principles, scientific principles, and refer ence literature to analyze evidence as to identify both class and individual character istics. In the past decade, they have started using laser scanners, drones and photogramme try to obtain 3 D point clouds of accidents or crime scenes. Reconstruction of an accident scene on a highway using drones involves data acquisition time of only 10-20 minutes and can be performed without shut ting down traffic. The majority of forensic scientists perform their jobs within the confines of the forensic laboratory or morgue; their work may also take them outside of the laboratory and to the crime scenes, where they observe the scene and collect evidence. Forensic scientists may work for local, state and federal law enforcement age ncies and government, private laboratories, and hospitals. They may also serve as in depend ent forensic science consultants."
     }
   ],
   "year": 108,
