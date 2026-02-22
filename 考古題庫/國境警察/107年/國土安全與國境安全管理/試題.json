@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "exam_type": "107",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "國土安全與國境安全管理",
+    "code": "51150"
+  },
+  "notes": [
+    "※注意： ①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "防救災成為亞太地區公共安全的重大挑戰,何謂「兵庫行動綱領」(Hyoko Framework\nfor Action, 2005-2015)、「仙台減災綱領」(Sendai Framework for Disaster Risk\nReduction, 2015-2030)?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "資訊安全也可稱之為數位國土安全,請說明我國政府在資訊安全的策略與具體落實\n例子。(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "我國國土安全面臨人為和天然災害的挑戰,依據行政院所公布「民國 106 年災害防\n救白皮書」的資料,全球所面臨之主要天然災害有那些?我國所面臨的是什麼?未\n來應該採取那些措施來減少天然災害所造成的損害?(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "美國在遭到 911 恐怖主義攻擊之後,於 2002 年成立國土安全部(Department of\nHomeland Security, DHS),並對國土安全提出明確定義,及說明美國國土安全部的工\n作項目。請說明我國政府對國土安全的概念、工作項目與美國的異同。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 107,
+  "category": "國境警察",
+  "subject": "國土安全與國境安全管理",
+  "source_pdf": "考古題庫\\國境警察\\107年\\國土安全與國境安全管理\\試題.pdf",
+  "file_type": "試題"
+}

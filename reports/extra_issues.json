@@ -1,0 +1,29 @@
+[
+  {
+    "severity": "Minor",
+    "role": "darkmode",
+    "title": "Dark mode toggle position inconsistent between pages",
+    "description": "On index page, dark toggle is at x=1204 (right side). On category page, it's at x=32 (left side). Users may have difficulty finding it.",
+    "location": "index.html inline CSS vs css/style.css .dark-toggle",
+    "steps": "1. Open index.html, note toggle position\n2. Open category page, note toggle position",
+    "suggestion": "Unify position to bottom-left (near sidebar) or bottom-right consistently"
+  },
+  {
+    "severity": "Major",
+    "role": "mobile",
+    "title": "Elements causing horizontal overflow on mobile",
+    "description": "When content is expanded on mobile, these elements overflow:\nbutton.filter-chip: right=401px, width=47px\nbutton.filter-chip: right=453px, width=47px\nbutton.filter-chip: right=505px, width=47px\nbutton.filter-chip: right=556px, width=47px\nselect#subjectFilter.toolbar-select: right=808px, width=792px",
+    "location": "CSS layout",
+    "steps": "Open category page on mobile, expand a subject card",
+    "suggestion": "Add overflow-wrap: break-word to container or max-width: 100% to overflowing elements"
+  },
+  {
+    "severity": "Minor",
+    "role": "mobile",
+    "title": "Horizontal overflow on Galaxy Fold (280px)",
+    "description": "scrollWidth=710px vs clientWidth=280px at 280px viewport.",
+    "location": "@media (max-width: 320px) CSS",
+    "steps": "View on Galaxy Fold (280px viewport)",
+    "suggestion": "Check Galaxy Fold media query coverage"
+  }
+]

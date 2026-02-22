@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "exam_type": "106",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "警政資訊管理與應用",
+    "code": "50850"
+  },
+  "notes": [
+    "※注意： ①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "何謂可行性分析(Feasibility Analysis)?身為一位資訊管理者,針對資訊系統發展專\n案的可行性分析,請列舉並說明三個須考慮的面向及分析的方法?(20 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "針對資訊系統發展,舉例詳述系統分析(Systems Analysis)與系統設計(Systems\nDesign)之意義與差異,並舉例詳述模式(Model)在系統分析與設計過程中所扮演\n的角色。(20 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "試舉例說明類別(Class)與物件(Object)的意義與關係,並舉例詳述物件導向系統\n發展與功能導向系統發展之差異?(20 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "試分別說明雲端運算(Cloud Computing)、大數據(Big Data)、及物聯網(Internet of\nThings)的意義,並以警政資訊相關領域為例,提出一項能整合以上三項科技的創新\n服務。(20 分)",
+      "section": null
+    },
+    {
+      "number": "五",
+      "type": "essay",
+      "stem": "針對政府部門或企業組織的資訊中心為防止駭客或病毒的不當入侵,除了一般宣導\n外,請列舉兩項較常使用的作法。此外,針對最近在全世界喧騰一時的網路勒索病\n毒事件(WannaCry),請說明其發生的原因及防範之道。(20 分)",
+      "section": null
+    }
+  ],
+  "year": 106,
+  "category": "警政資訊管理與應用",
+  "subject": "警政資訊管理與應用",
+  "source_pdf": "考古題庫\\資訊管理\\106年\\警政資訊管理與應用\\試題.pdf",
+  "file_type": "試題"
+}

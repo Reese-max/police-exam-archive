@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "108",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "刑事化學",
+    "exam_time": "2 小時 座號：",
+    "code": "50930"
+  },
+  "notes": [
+    "※注意： ①可以使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "指紋在刑事鑑識的領域中為個人鑑別的最主要工具。\n①請說明潛伏指紋具有那些特性可成為辨別身分的主要證物。(5 分)\n②近年來潛伏指紋顯現有使用 1,8-diazafluoren-9-one(DFO)法替代寧海\n德林(Ninhydrin)法,請說明其顯現原理。(8 分)\n③請說明以氰基丙烯酸酯煙燻法(Cyanoacrylate Fuming Method)顯現\n潛伏指紋的原理及適用的物件與表面性質。(12 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "近年來分析技術的發展,藥物濫用尿液中毒品如安非他命、甲基安非他\n命、嗎啡、可待因、K-他命及其代謝物等,均可使用液相層析串聯質譜\n儀同時快速的檢驗鑑定。\n①請說明逆相高效液相層析儀(Reversed-Phase HPLC)架構的主要組成\n裝置及其分離原理。(8 分)\n②請說明三重四極柱質譜儀(Triple-Quadrupole Mass Spectrometer)架構\n的主要組成裝置及其分離偵測原理。(10 分)\n③請說明濫用藥物之檢測方法偵測極限值(Limit of Detection, LOD)的\n意義;(5 分)若 LOD 為 1.0 ng/mL 則為多少 ppb(parts per billion)?\n(2 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "刑事分析鑑識人員要鑑定出嫌犯身上被質疑的油漆可能源於受害者的\n汽車或房屋的結論,必須對受害者的汽車或房屋的油漆進行比對。\n①請問現今的油漆主要由那三種物質組成?(9 分)\n② X 射線螢光(X-Ray Fluorescence, XRF)光譜法是一種非破壞性元素\n分析法,請說明其原理。(10 分)\n③以 XRF 量測一黃色油漆樣品中的鉛含量四次結果:0.0088%, 0.0086%,",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "紡織纖維在許多的刑事案件中,常是犯罪的重要證據,而衰減式全反射\n傅立葉轉換紅外線光譜儀(Attenuated Total Reflection-FTIR, ATR-FTIR)\n是一種簡便非破壞性檢測衣物等紡織纖維種類的有效方法。\n① 請 說 明 傅 立 葉 轉 換 紅 外 線 光 譜 儀 ( Fourier Transform Infrared\nSpectrometer, FTIR)原理。(9 分)\n②請說明衰減式全反射紅外線光譜(Attenuated Total Reflection Infrared,\nATR-IR)原理。(8 分)\n③根據下列聚酯(PET)纖維及尼龍(Nylon)6 纖維的化學結構說明其\n紅外線光譜的差異。(8 分)\nPET Nylon 6",
+      "section": null
+    }
+  ],
+  "year": 108,
+  "category": "鑑識科學",
+  "subject": "刑事化學",
+  "source_pdf": "考古題庫\\鑑識科學\\108年\\刑事化學\\試題.pdf",
+  "file_type": "試題"
+}

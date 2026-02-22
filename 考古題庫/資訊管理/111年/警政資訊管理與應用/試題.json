@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "111",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "警政資訊管理與應用",
+    "exam_time": "2 小時 座號：",
+    "code": "50930"
+  },
+  "notes": [
+    "※注意：①可以使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "聯合國教育、科學及文化組織(United Nations Educational, Scientific and\nCultural Organization, UNESCO)秘書長阿祖萊(Audrey Azoulay)在\n2021 年 11 月 25 日宣布通過「人工智慧倫理建議書」(Recommendation\non the Ethics of Artificial Intelligence),請說明該建議書有關發展人工\n智慧應遵循之原則(Principles),(10 分)並請依據該原則為內政部警政\n署訂定「警察機關發展人工智慧倫理規範」。(10 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "近年電信詐欺案件頻傳,你負責建置一警察機關「打擊電信詐欺知識管\n理系統」,請說明貴警察機關打擊電信詐欺的知識管理策略(10 分)及\n知識管理流程。(20 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "你負責承辦一警察機關資訊安全管理系統(ISMS)公正第三方驗證委外\n服務案,請說明該服務案之建議書徵求文件(RFP)應包含那些項目,\n(20 分)並請估算本案執行驗證稽核所需人天數及所需費用。(10 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "警政資訊系統中何項作業可以製作「治安斑點圖」?請說明該項作業名\n稱及該項作業所有功能,(10 分)又該作業依不同的資料來源提供那幾\n種「治安斑點圖」。(10 分)",
+      "section": null
+    }
+  ],
+  "year": 111,
+  "category": "警政資訊管理與應用",
+  "subject": "警政資訊管理與應用",
+  "source_pdf": "考古題庫\\資訊管理\\111年\\警政資訊管理與應用\\試題.pdf",
+  "file_type": "試題"
+}

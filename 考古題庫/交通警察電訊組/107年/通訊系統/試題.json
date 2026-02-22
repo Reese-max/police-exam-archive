@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "exam_type": "107",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "通訊系統",
+    "code": "50830"
+  },
+  "notes": [
+    "※注意： ①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。",
+    "π"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "考慮一雙旁帶載波抑制(DSB-SC)系統,若發射端之訊息訊號為 m(t)= cos(2000 t),\n載波訊號為 c(t)=2\n×\ncos(2\n×\n5π\nt),發射之調變訊號為 s(t)。\n①求發射訊號 s(t)之功率 Ps,並繪出 s(t)之頻譜 S(f),其中 f 之單位為 Hz。(10 分)\n②令接收端之輸入為 x(t) = s(t) + w(t),其中 w(t)為 AWGN 雜訊,功率頻譜密度為\nN /2 = 10 -6 W/Hz,繪出同調接收機模型並求其輸出訊雜比(dB)。(10 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "商用 FM 廣播電台之中心頻率 f 一般位於 88~108 MHz 之間:\nc\nΔ\n①若訊息訊號頻寬為 W=15 kHz,FM 調變器之最大頻率偏移量為 f=75kHz,試用卡\n森法則(Carson’s rule)求一 FM 廣播電台之頻寬需求 B 。(5 分)\nT\n②請設計及繪出一中頻頻率為 10.7 MHz 之超外差接收機方塊圖,並計算其本地振盪\n器之頻率範圍。(10 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "考慮一用來傳送多路語音之 TDM-PCM 系統,其訊框(signal frame)規格如下:每\n個訊框起始處為一段 10-bit 之同步序文(preamble),之後為 20 路語音時槽(time slot)\n之位元資料,每路語音之取樣速率為 f =10 ksps,並採用 12-bit 之均勻量化器(uniform\ns\nquantizer)。\n①繪出系統發射端方塊圖及其訊框結構圖,並求此 TDM-PCM 系統之位元速率。\n(10 分)\n②若量化器位元數增加至 16 位元,則接收端輸出訊雜比可提升多少 dB?(5 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "有一同樣可能(equally likely)之隨機位元序列 b=[b b b ...],採用二元振幅調變",
+      "section": null
+    },
+    {
+      "number": "五",
+      "type": "essay",
+      "stem": "試設計一格雷編碼(Gray-coded)之 QPSK 系統,設載波頻率為 f ,發射端帶通訊號\nc\ns(t) 的平均功率為 P ,位元速率為 R =1/T ,AWGN 通道之功率頻譜密度為 N /2。\ns b b 0\n①繪出此系統之 bit-symbol 對映星座圖、發射機方塊圖及 s(t)之功率頻譜密度圖。\n(10 分)\n②在 AWGN 通道下,繪出 QPSK 接收機之方塊圖與寫出對應的接收機決策法則,並\n求符碼錯誤率(SER)與位元錯誤率(BER)公式。(10 分)\n③若通道變成瑞利衰減(Rayleigh fading)通道,寫出其位元錯誤率公式。(5 分)\n④繪出 Pi/4-DQPSK 訊號之星座圖,並說明其實際應用時的優點。(5 分)",
+      "section": null
+    }
+  ],
+  "year": 107,
+  "category": "交通警察電訊組",
+  "subject": "通訊系統",
+  "source_pdf": "考古題庫\\交通警察電訊組\\107年\\通訊系統\\試題.pdf",
+  "file_type": "試題"
+}

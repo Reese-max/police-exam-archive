@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<string>", line 11, in <module>
+    verify_answers.process_all(args)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\Desktop\考古題下載\verify_answers.py", line 341, in process_all
+    input_dir = Path(input_dir)
+  File "C:\Python313\Lib\pathlib\_local.py", line 503, in __init__
+    super().__init__(*args)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 132, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'Namespace'

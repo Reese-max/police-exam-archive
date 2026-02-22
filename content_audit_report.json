@@ -1,0 +1,128 @@
+{
+  "summary": {
+    "total_findings": 18,
+    "severity_counts": {
+      "Info": 1,
+      "Major": 15,
+      "Critical": 2
+    },
+    "json_files": 910,
+    "json_questions": 18569,
+    "sample_size": 50,
+    "stem_found": 42,
+    "stem_not_found": 8,
+    "answer_checked": 15965,
+    "answer_matches": 15965,
+    "answer_mismatches": 0
+  },
+  "findings": [
+    {
+      "severity": "Info",
+      "location": "Category",
+      "description": "有 HTML 但無 JSON 資料的類別: ['css', 'js']",
+      "steps": ""
+    },
+    {
+      "severity": "Major",
+      "location": "刑事警察/108年/偵查法學",
+      "description": "題幹未在 HTML 中找到: \"甲因涉及傷害案件,經檢察官起訴後,於第一審法院審理中,甲並未...\"",
+      "steps": "Q#三"
+    },
+    {
+      "severity": "Major",
+      "location": "水上警察/107年/海巡法規(包括國家安全法、臺灣地區與大陸地區人民關係條例、海岸巡防法、海岸巡防機關器械使用條例、海關緝私條例、中華民國領海及鄰接區法、中華民國專屬經濟海域及大陸",
+      "description": "題幹未在 HTML 中找到: \"某海巡隊為查緝走私香菸,於海上命船舶A 停船受檢。但於登臨檢...\"",
+      "steps": "Q#二"
+    },
+    {
+      "severity": "Major",
+      "location": "資訊管理/110年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)",
+      "description": "題幹未在 HTML 中找到: \"甲在某街道騎樓意圖媒合乙與人性交易而拉客,乙並與丙從事性交易...\"",
+      "steps": "Q#一"
+    },
+    {
+      "severity": "Major",
+      "location": "交通警察交通組/112年/交通統計與分析",
+      "description": "題幹未在 HTML 中找到: \"某研究為評估機車駕駛訓練對其取得駕駛執照後之駕駛行為是否具有...\"",
+      "steps": "Q#二"
+    },
+    {
+      "severity": "Major",
+      "location": "鑑識科學/113年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)",
+      "description": "題幹未在 HTML 中找到: \"派出所所長甲在深夜帶班執行巡邏勤務,查獲乙在公園內無正當理由...\"",
+      "steps": "Q#一"
+    },
+    {
+      "severity": "Major",
+      "location": "交通警察交通組/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Major",
+      "location": "公共安全/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Major",
+      "location": "刑事警察/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Major",
+      "location": "國境警察/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Major",
+      "location": "外事警察/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Major",
+      "location": "水上警察/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Major",
+      "location": "消防警察/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Major",
+      "location": "犯罪防治預防組/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Major",
+      "location": "行政管理/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Major",
+      "location": "行政警察/108年/國文（作文、公文與測驗）",
+      "description": "重複題號: ['一', '二']",
+      "steps": "Check for duplicate questions"
+    },
+    {
+      "severity": "Critical",
+      "location": "css",
+      "description": "HTML 檔案不存在: C:\\Users\\User\\Desktop\\考古題下載\\考古題網站\\css\\css考古題總覽.html",
+      "steps": ""
+    },
+    {
+      "severity": "Critical",
+      "location": "js",
+      "description": "HTML 檔案不存在: C:\\Users\\User\\Desktop\\考古題下載\\考古題網站\\js\\js考古題總覽.html",
+      "steps": ""
+    }
+  ]
+}
