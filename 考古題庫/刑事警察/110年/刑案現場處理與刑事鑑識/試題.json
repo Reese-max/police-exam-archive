@@ -222,7 +222,7 @@
       "answer": "C",
       "options": {
         "A": "可用於只有父系的DNA能比對的檢體",
-        "B": "可用於所需鑑別力大於短重複序列(short tandem repeat,STR)的檢體",
+        "B": "可用於所需鑑別力大於短重複序列(short tandem repeat, STR)的檢體",
         "C": "可用於無法以核DNA分型(DNA typing)的檢體",
         "D": "可用於只有微量DNA能比對的檢體"
       }
@@ -289,7 +289,7 @@
         "A": "古柯鹼游離鹼的熔點比古柯鹼鹽酸鹽要來得高",
         "B": "古柯鹼鹽酸鹽與碳酸氫鈉反應可產生古柯鹼游離鹼",
         "C": "兩者無法以傅立葉轉換紅外光譜(Fourier-trans form infr are dspectros copy, FTIR)進行區分",
-        "D": "兩者可以使用紫外-可見光光譜(Ultravio let–visiblespectros copy,UV-Vis)進行區分"
+        "D": "兩者可以使用紫外-可見光光譜(Ultravio let–visiblespectros copy, UV-Vis)進行區分"
       }
     },
     {
@@ -299,7 +299,7 @@
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "以X射線繞射儀(X-raydiffr act ometer,XRD)來找出爆裂物的有機物成分",
+        "A": "以X射線繞射儀(X-raydiffr act ometer, XRD)來找出爆裂物的有機物成分",
         "B": "藉由溶解度的不同,以丙酮洗滌現場殘跡,將爆裂物與現場殘跡分離",
         "C": "以分光光譜儀分析爆裂物顏色",
         "D": "以低倍率顯微鏡檢視爆炸過程"

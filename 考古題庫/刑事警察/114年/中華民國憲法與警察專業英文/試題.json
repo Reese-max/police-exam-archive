@@ -566,7 +566,7 @@
       "options": {
         "A": "complaint",
         "B": "warrant",
-        "C": "dispatc her",
+        "C": "dispatcher",
         "D": "baton"
       }
     },
@@ -599,7 +599,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "Police officers are professionally train edto handle ten seorpo ten tially dangerous sit uations. Inmany cases, instead of using physical force immediately, officer sare expected to apply techniques tocalm the individual and reduce the risk of violence.",
+      "stem": "Police officers are professionally train edto handle ten seorpo ten tially dangerous sit uations. Inmany cases, instead of using physical force immediately, officer sare expected to apply techniques to calm the individual and reduce the risk of violence.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -612,7 +612,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "As part of community policing strategies, officers are regularlyassigned to monitor residential and commercial areas. Duringa , they remain alert for any signs of suspicious, illegal, orunusual activity that maypose athreat to public safety.",
+      "stem": "As part of community policing strategies, officers are regularly assigned to monitor residential and commercial areas. Duringa , they remain alert for any signs of suspicious, illegal, orunusual activity that maypose athreat to public safety.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -642,7 +642,7 @@
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "contami nation",
+        "A": "contamination",
         "B": "authorization",
         "C": "interrogation",
         "D": "inspection"
@@ -651,7 +651,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "Acommon strategy off raudsters is offer ing financial suchas abonus orlotteryas abait.",
+      "stem": "Acommon strategy off raudsters is offer ing financial such as abonus or lottery as abait.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -664,7 +664,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Thefact that no one step pedupto help the victim in theMRT assault suggests public .",
+      "stem": "Thefact that no one stepped up to help the victim in theMRT assault suggests public .",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -736,7 +736,7 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "AI chat bots are currently bannedin both the U. S.and Taiwan.",
+        "A": "AI chat bots are currently banned in both the U. S.and Taiwan.",
         "B": "Geoffrey Hinton believes AI can never surpass human intelligence.",
         "C": "Geoffrey Hinton warned that AI could surpass human intelligence and pose serious risks.",
         "D": "AItools are only used by children under age 13."

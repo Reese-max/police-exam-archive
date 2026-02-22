@@ -561,7 +561,7 @@
         "A": "hierarchy",
         "B": "com part ment",
         "C": "shutter",
-        "D": "app aratus"
+        "D": "apparatus"
       }
     },
     {
@@ -606,7 +606,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "The rescue squad reported that they were not provided with protective or warned about the risks of hazard ous materials encountered during operations.",
+      "stem": "The rescue squad reported that they were not provided with protective or warned about the risks of hazardous materials encountered during operations.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -619,7 +619,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "Inan emergency, avictim could use their own or other people’sitems, suchas a big bag, to important body parts from being stab bed byanattacker.",
+      "stem": "In an emergency, a victim could use their own or other people’sitems, such as a big bag, to important body parts from being stab bed byanattacker.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -658,7 +658,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Due tocollapsedlungs, he had tobe intensivelyat the scene ofaccident.",
+      "stem": "Due tocollapsedlungs, he had to be intensivelyat the scene ofaccident.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -716,7 +716,7 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "use atapeto measure by pull ingit out",
+        "A": "use a tape to measure by pull ingit out",
         "B": "ask simple questions tosecure the size",
         "C": "make the measurement very certain ordefinite",
         "D": "bac kup the data with AI algorithms"

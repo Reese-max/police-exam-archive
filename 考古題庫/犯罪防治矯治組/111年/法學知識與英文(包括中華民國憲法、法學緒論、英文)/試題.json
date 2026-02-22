@@ -366,7 +366,7 @@
     {
       "number": 28,
       "type": "choice",
-      "stem": "甲將自己的A車以60萬元賣給乙,雙方約定下個月初交車及付款。不料,於交車前數日,A車於公共停 車場中遭雷電擊中而燒毀。依民法規定,下列敘述何者錯誤?",
+      "stem": "甲將自己的A車以60萬元賣給乙,雙方約定下個月初交車及付款。不料,於交車前數日, A車於公共停 車場中遭雷電擊中而燒毀。依民法規定,下列敘述何者錯誤?",
       "section": null,
       "answer": "C",
       "options": {
@@ -542,7 +542,7 @@
         "A": "art iculation",
         "B": "app robation",
         "C": "arbitration",
-        "D": "app roximation"
+        "D": "approximation"
       }
     },
     {
@@ -659,7 +659,7 @@
         "A": "transitional",
         "B": "topical",
         "C": "sustainable",
-        "D": "trans parent"
+        "D": "transparent"
       }
     }
   ],

@@ -29,7 +29,7 @@
     {
       "number": "三",
       "type": "essay",
-      "stem": "生成式人工智慧(GenerativeArtificialIntelligence,GenAI)在近年來發展\n迅速,例如可自動生成案件報告。請提出一個創新的應用構想(排除上\n述例子),說明如何將 GenAI 應用於警察單位的日常工作。作答應包括:\n應用的具體場景、GenAI 的作用、預期的效益、潛在風險和技術可行性。\n(25 分)",
+      "stem": "生成式人工智慧(Generative ArtificialIntelligence, GenAI)在近年來發展\n迅速,例如可自動生成案件報告。請提出一個創新的應用構想(排除上\n述例子),說明如何將 GenAI 應用於警察單位的日常工作。作答應包括:\n應用的具體場景、GenAI 的作用、預期的效益、潛在風險和技術可行性。\n(25 分)",
       "section": null
     },
     {

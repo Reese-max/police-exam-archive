@@ -68,7 +68,7 @@
         "A": "氰丙烯酸酯法(Cyanoacry late fuming)",
         "B": "小粒子懸浮液法(Small part iclere agent )",
         "C": "蘇丹黑染料法(Sudan Black)",
-        "D": "DMAC(p-N,N-Dim ethylaminocinnamaldehyde)"
+        "D": "DMAC(p-N, N-Dim ethylaminocinnamaldehyde)"
       }
     },
     {
@@ -92,7 +92,7 @@
       "answer": "C",
       "options": {
         "A": "寧海得林(Ninhydrin)試劑",
-        "B": "可瑪士藍(Coomassie Brilliant Blue,R 520)試劑",
+        "B": "可瑪士藍(Coomassie Brilliant Blue, R 520)試劑",
         "C": "聯鄰-甲苯胺(Ortho-tolidine)試劑",
         "D": "醯胺黑(Amido Black)試劑"
       }
@@ -326,7 +326,7 @@
       "answer": "D",
       "options": {
         "A": "在鏡頭上加裝偏光濾色鏡,經旋轉適當角度將圓柱體曲面上之光柱加以消除後再進行拍攝",
-        "B": "縮小光圈、縮短快門速度、調降感光度 ISO 值,以曝光不足(under expo sure)的條件進行拍攝",
+        "B": "縮小光圈、縮短快門速度、調降感光度 ISO 值,以曝光不足(under exposure)的條件進行拍攝",
         "C": "使用多波域光源調至紅色波域下,從圓柱水杯的側邊打光讓深綠色的水杯變黑再進行拍攝",
         "D": "在圓柱水杯下方舖一張白紙,關掉室內光源,用一支白光從水杯頭頂上方打光再進行拍攝"
       }

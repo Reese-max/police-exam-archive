@@ -254,7 +254,7 @@
       "section": null,
       "answer": "C",
       "options": {
-        "A": "無論實務上或學者研究指出,警察的情資來源包括:開放來源(Open Source)、秘密來源(Confidential Source)、喬裝警探(Under cover Police Officer)、線民(Inform ant)、內線(Controlled Inform ant)等",
+        "A": "無論實務上或學者研究指出,警察的情資來源包括:開放來源(Open Source)、秘密來源(Confidential Source)、喬裝警探(Undercover Police Officer)、線民(Informant)、內線(Controlled Informant)等",
         "B": "警察為防止危害或犯罪,認對公共安全、公共秩序或個人生命、身體、自由、名譽或財產,將有危 害行為,或有觸犯刑事法律之虞者,得遴選第三人秘密蒐集其相關資料",
         "C": "經遴選為第三人者,除得支給實際需要工作費用外,不給予任何名義及證明文件,亦不具警察職權 行使法或其他法規賦予警察之職權。其從事秘密蒐集資料,不得有違反法規之行為。有關實際工作 需要之費用應由第三人親自具名領取",
         "D": "警察遴選第三人,應查核事項包括:忠誠度及信賴度、工作及生活背景、合作意願及動機"
@@ -582,7 +582,7 @@
         "A": "高速公路e-tag採用無線射頻(RFID)感應扣款",
         "B": "物聯網簡稱IoT",
         "C": "PayPal與支付寶屬於第三方支付金融交易類型",
-        "D": "Line通訊軟體的Letter Sea ling不使用點對點加密技術(End-to-End Encryption,E 2 EE)"
+        "D": "Line通訊軟體的Letter Sea ling不使用點對點加密技術(End-to-End Encryption, E 2 EE)"
       }
     },
     {

@@ -33,7 +33,7 @@
     {
       "number": "四",
       "type": "essay",
-      "stem": "我國入出境自動查驗通關系統,身分辨識以臉型生物特徵(biometric)為主,請敘述\n其比對流程與技術?前述建檔技術也可用於犯罪調查,請列舉 5 種可能影響辨識率\n的檢體缺失,並說明何謂錯誤接受率(False Acceptance Rate,FAR)與錯誤拒絕率\n(False Rejection Rate,FRR),其等與相同錯誤率(Equal Error Rate,EER)之關係\n為何?(25 分)",
+      "stem": "我國入出境自動查驗通關系統,身分辨識以臉型生物特徵(biometric)為主,請敘述\n其比對流程與技術?前述建檔技術也可用於犯罪調查,請列舉 5 種可能影響辨識率\n的檢體缺失,並說明何謂錯誤接受率(False Acceptance Rate, FAR)與錯誤拒絕率\n(False Rejection Rate, FRR),其等與相同錯誤率(Equal Error Rate, EER)之關係\n為何?(25 分)",
       "section": null
     }
   ],

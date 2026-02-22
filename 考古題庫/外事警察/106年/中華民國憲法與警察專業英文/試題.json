@@ -584,7 +584,7 @@
       "answer": "A",
       "options": {
         "A": "Stalking",
-        "B": "Str iking",
+        "B": "Striking",
         "C": "Stealing",
         "D": "Spelling"
       }
@@ -592,12 +592,12 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "All of the following are symptoms of post-trauma tic stress syndrome except .",
+      "stem": "All of the following are symptoms of post-traumatic stress syndrome except .",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "head aches",
-        "B": "night mares",
+        "A": "headaches",
+        "B": "nightmares",
         "C": "anxiety",
         "D": "euphoria"
       }
@@ -644,7 +644,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "Security and intelligence age ncies that generally operate under cover have played an increasingly important role in combat ing , especially since the September 11 attacks in the United States in 2001.",
+      "stem": "Security and intelligence age ncies that generally operate undercover have played an increasingly important role in combating , especially since the September 11 attacks in the United States in 2001.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {

@@ -574,7 +574,7 @@
         "A": "Trans ship ment",
         "B": "Transit ion",
         "C": "Transportation",
-        "D": "Trans parent"
+        "D": "Transparent"
       }
     },
     {
@@ -715,7 +715,7 @@
       "answer": "A",
       "options": {
         "A": "evacuation",
-        "B": "trans action",
+        "B": "transaction",
         "C": "trans mission",
         "D": "ejection"
       }
