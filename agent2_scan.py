@@ -583,6 +583,41 @@ def main():
     for sev, count in sorted(severity_counts.items(), key=lambda x: -x[1]):
         print(f"  {sev}: {count}")
 
+    # All categories that were checked (for completeness reporting)
+    all_checked_categories = [
+        "header_footer_leak_in_stem",
+        "instruction_text_in_stem",
+        "missing_answer_for_choice",
+        "metadata_in_options",
+        "reading_passage_leaked_into_option",
+        "abnormally_long_option",
+        "notes_leaked_question_content",
+        "notes_leaked_formula_or_table",
+        "notes_leaked_formula_fragment",
+        "notes_leaked_score_marker",
+        "notes_leaked_section_header",
+        "notes_non_standard_content",
+        "notes_empty_entry",
+        "notes_invalid_type",
+        "empty_stem",
+        "empty_options",
+        "empty_option_value",
+        "insufficient_options",
+        "answer_not_in_options",
+        "page_break_artifact_in_stem",
+        "json_parse_error",
+        "file_read_error",
+    ]
+
+    # Add zero counts for categories with no issues found
+    full_category_counts = {}
+    for cat in all_checked_categories:
+        full_category_counts[cat] = category_counts.get(cat, 0)
+    # Also include any unexpected categories
+    for cat in category_counts:
+        if cat not in full_category_counts:
+            full_category_counts[cat] = category_counts[cat]
+
     # Build the report
     report = {
         "scan_metadata": {
@@ -596,8 +631,13 @@ def main():
             "total_issues_found": len(all_issues),
         },
         "summary": {
-            "by_category": dict(sorted(category_counts.items(), key=lambda x: -x[1])),
+            "by_category": full_category_counts,
             "by_severity": dict(sorted(severity_counts.items(), key=lambda x: -x[1])),
+            "categories_with_issues": dict(sorted(
+                {k: v for k, v in category_counts.items() if v > 0}.items(),
+                key=lambda x: -x[1]
+            )),
+            "categories_clean": [cat for cat in all_checked_categories if category_counts.get(cat, 0) == 0],
         },
         "category_descriptions": {
             "header_footer_leak_in_stem": "Exam header/footer content (代號, 頁次, 座號, 等別, 類科, 科目, etc.) leaked into question stem text",
