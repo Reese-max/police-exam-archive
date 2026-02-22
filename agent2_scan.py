@@ -255,7 +255,7 @@ def scan_file(filepath):
                 })
 
     # --------------------------------------------------------
-    # Check 4: Options contain exam metadata
+    # Check 4: Options contain exam metadata OR reading passages
     # --------------------------------------------------------
     for q in questions:
         options = q.get("options", {})
@@ -268,8 +268,23 @@ def scan_file(filepath):
         for opt_key, opt_val in options.items():
             if not opt_val:
                 continue
-            for pattern, desc in OPTION_METADATA_PATTERNS:
-                if re.search(pattern, str(opt_val)):
+            val_str = str(opt_val)
+
+            # 4a: Check for exam metadata in options
+            # Use stricter matching to avoid false positives with legitimate legal content
+            strict_metadata_patterns = [
+                (r"頁次\s*[:：]?\s*\d", "頁次 (page number in option)"),
+                (r"座號", "座號 (seat number in option)"),
+                (r"等別\s*[:：]", "等別 (exam level in option)"),
+                (r"類科\s*[:：]", "類科 (category in option)"),
+                (r"考試時間\s*[:：]", "考試時間 (exam time in option)"),
+                (r"全[一二三四五六七八九十]+頁", "全X頁 (total pages in option)"),
+                (r"不必抄題", "不必抄題 (instruction in option)"),
+                (r"禁止使用電子計算器", "禁止使用電子計算器 (calculator prohibition in option)"),
+                (r"考\s*試\s*別\s*[:：]", "考試別 (exam type marker in option)"),
+            ]
+            for pattern, desc in strict_metadata_patterns:
+                if re.search(pattern, val_str):
                     issues.append({
                         "category": "metadata_in_options",
                         "severity": "high",
@@ -277,8 +292,56 @@ def scan_file(filepath):
                         "question_number": qnum,
                         "question_type": qtype,
                         "option_key": opt_key,
-                        "option_value": str(opt_val)[:200],
+                        "option_value": val_str[:200],
                         "pattern_matched": desc,
+                    })
+
+            # 4b: Check for reading passage content leaked into options
+            # This happens when a reading passage for subsequent questions
+            # gets appended to the last option of the preceding question
+            passage_intro_patterns = [
+                r"請依下文回答第?\d+至第?\d+題",
+                r"請回答下列第?\d+題至第?\d+題",
+                r"請閱讀下文後.{0,10}回答",
+                r"第\d+題至第\d+題為篇章結構題組",
+                r"請依下文回答",
+            ]
+            for ppat in passage_intro_patterns:
+                if re.search(ppat, val_str):
+                    issues.append({
+                        "category": "reading_passage_leaked_into_option",
+                        "severity": "high",
+                        "file": rel_path,
+                        "question_number": qnum,
+                        "question_type": qtype,
+                        "option_key": opt_key,
+                        "option_value_length": len(val_str),
+                        "option_excerpt": val_str[:200],
+                        "message": "Reading passage for subsequent questions leaked into this option value",
+                    })
+                    break  # Don't double-report for same option
+
+            # 4c: Check for abnormally long option values (> 200 chars)
+            # which may indicate content concatenation errors
+            if len(val_str) > 200:
+                # Only flag if not already flagged by 4b
+                already_flagged = any(
+                    i.get("category") == "reading_passage_leaked_into_option"
+                    and i.get("question_number") == qnum
+                    and i.get("option_key") == opt_key
+                    for i in issues
+                )
+                if not already_flagged:
+                    issues.append({
+                        "category": "abnormally_long_option",
+                        "severity": "medium",
+                        "file": rel_path,
+                        "question_number": qnum,
+                        "question_type": qtype,
+                        "option_key": opt_key,
+                        "option_value_length": len(val_str),
+                        "option_excerpt": val_str[:200],
+                        "message": f"Option value is unusually long ({len(val_str)} chars), may contain concatenated content",
                     })
 
     # --------------------------------------------------------
@@ -541,6 +604,8 @@ def main():
             "instruction_text_in_stem": "Exam instruction text (不必抄題, 申論試卷, 禁止使用電子計算器, 2B鉛筆, etc.) found in question stem",
             "missing_answer_for_choice": "Choice-type question is missing the answer field",
             "metadata_in_options": "Answer options contain exam metadata or header/footer content",
+            "reading_passage_leaked_into_option": "Reading passage for subsequent questions leaked into an option value (content concatenation error during extraction)",
+            "abnormally_long_option": "Option value is unusually long (>200 chars), suggesting possible content concatenation or extraction error",
             "notes_leaked_question_content": "Question/essay prompt content leaked into the notes array, split across multiple note entries (should be in a question stem instead)",
             "notes_leaked_formula_or_table": "Mathematical formula, statistical table, or technical reference data leaked into the notes array (should be in question content or a separate reference field)",
             "notes_leaked_formula_fragment": "Isolated formula fragment or symbol leaked into notes",

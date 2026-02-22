@@ -6,19 +6,21 @@
     "total_questions_scanned": 17901,
     "total_choice_questions": 15297,
     "total_essay_questions": 2604,
-    "files_with_issues": 48,
-    "total_issues_found": 499
+    "files_with_issues": 52,
+    "total_issues_found": 503
   },
   "summary": {
     "by_category": {
       "notes_leaked_question_content": 460,
       "notes_leaked_score_marker": 14,
       "notes_leaked_formula_or_table": 13,
-      "notes_non_standard_content": 12
+      "notes_non_standard_content": 12,
+      "reading_passage_leaked_into_option": 4
     },
     "by_severity": {
       "medium": 487,
-      "low": 12
+      "low": 12,
+      "high": 4
     }
   },
   "category_descriptions": {
@@ -26,6 +28,8 @@
     "instruction_text_in_stem": "Exam instruction text (不必抄題, 申論試卷, 禁止使用電子計算器, 2B鉛筆, etc.) found in question stem",
     "missing_answer_for_choice": "Choice-type question is missing the answer field",
     "metadata_in_options": "Answer options contain exam metadata or header/footer content",
+    "reading_passage_leaked_into_option": "Reading passage for subsequent questions leaked into an option value (content concatenation error during extraction)",
+    "abnormally_long_option": "Option value is unusually long (>200 chars), suggesting possible content concatenation or extraction error",
     "notes_leaked_question_content": "Question/essay prompt content leaked into the notes array, split across multiple note entries (should be in a question stem instead)",
     "notes_leaked_formula_or_table": "Mathematical formula, statistical table, or technical reference data leaked into the notes array (should be in question content or a separate reference field)",
     "notes_leaked_formula_fragment": "Isolated formula fragment or symbol leaked into notes",
@@ -2093,6 +2097,50 @@
       "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
     },
     {
+      "category": "reading_passage_leaked_into_option",
+      "severity": "high",
+      "file": "犯罪防治矯治組/106年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+      "question_number": 40,
+      "question_type": "choice",
+      "option_key": "D",
+      "option_value_length": 1041,
+      "option_excerpt": "obscure 請依下文回答第41至45題: By far some of the most prestigious centers of European learn ing today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of",
+      "message": "Reading passage for subsequent questions leaked into this option value"
+    },
+    {
+      "category": "reading_passage_leaked_into_option",
+      "severity": "high",
+      "file": "犯罪防治矯治組/107年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+      "question_number": 40,
+      "question_type": "choice",
+      "option_key": "D",
+      "option_value_length": 1504,
+      "option_excerpt": "with con science 請依下文回答第41至45題: As birds awaken the early risers at dawn on the farm, one person is already up; in fact, he hasn’t even been to bed. Sixty-four-year-old Thai Ngoc, from central Quang N",
+      "message": "Reading passage for subsequent questions leaked into this option value"
+    },
+    {
+      "category": "reading_passage_leaked_into_option",
+      "severity": "high",
+      "file": "犯罪防治矯治組/108年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+      "question_number": 36,
+      "question_type": "choice",
+      "option_key": "D",
+      "option_value_length": 2115,
+      "option_excerpt": "romantic 第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bed time just a time for dream ing?Do our brains turn off for the night?What if I told you that scientist srecently discovered that our brai",
+      "message": "Reading passage for subsequent questions leaked into this option value"
+    },
+    {
+      "category": "reading_passage_leaked_into_option",
+      "severity": "high",
+      "file": "犯罪防治矯治組/109年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+      "question_number": 40,
+      "question_type": "choice",
+      "option_key": "D",
+      "option_value_length": 1171,
+      "option_excerpt": "enc our aging 請回答下列第41題至第45題 Capital controls may be imposed on capital leaving a country or enter ing it. The former include controls over 41 trans actions for direct and equity investments by reside",
+      "message": "Reading passage for subsequent questions leaked into this option value"
+    },
+    {
       "category": "notes_leaked_score_marker",
       "severity": "medium",
       "file": "犯罪防治預防組/112年/國文(作文與測驗)/試題.json",
@@ -4064,6 +4112,10 @@
     "水上警察/114年/國文(作文與測驗)/試題.json",
     "消防警察/112年/國文(作文與測驗)/試題.json",
     "消防警察/114年/國文(作文與測驗)/試題.json",
+    "犯罪防治矯治組/106年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+    "犯罪防治矯治組/107年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+    "犯罪防治矯治組/108年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+    "犯罪防治矯治組/109年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
     "犯罪防治預防組/112年/國文(作文與測驗)/試題.json",
     "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
     "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
