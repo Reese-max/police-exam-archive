@@ -1,0 +1,103 @@
+# 警察考古題文檔錯誤修復計畫
+
+## 專案現況分析
+
+- **總檔案數**: 910 個 JSON 試題檔案（15 個類科）
+- **總偵測問題數**: 871 個
+
+## 問題分類與數量
+
+### P0 - 嚴重（題目內容遺失/錯誤）
+
+| 問題類型 | 數量 | 說明 |
+|---------|------|------|
+| empty_stem | 638 | 選擇題題幹為空（英文閱讀測驗克漏字題目，stem 缺失但 passage 段落存在） |
+| metadata_in_stem | 118 | 考試後設資料（代號、等別、科目、座號、頁碼）滲入題幹文字中 |
+| notes_contain_questions | 29 | 實際題目內容（含選項 ABCD）被錯誤放入 notes 陣列（多為國文科 106-107年） |
+| missing_options | 25 | 選擇題缺少選項物件（英文閱讀克漏字 passage_fragment 類型） |
+
+### P1 - 中度（格式/結構問題）
+
+| 問題類型 | 數量 | 說明 |
+|---------|------|------|
+| exam_header_in_notes | 43 | notes 中混入頁碼代號（30110、50110）、「背面」等印刷標記 |
+| options_in_stem | 11 | 申論題 stem 中出現 (A)(B)(C)(D)（部分為情境標記的誤報，需人工判斷） |
+| truncated_stems | 6 | 題幹在句子中間截斷（以 ，、的、是 結尾） |
+| merged_questions | 1 | 多題合併為一個巨大 stem（行政警察/106年/偵查法學 Q#6，1496 字元） |
+
+## Ralph-Loop 修復策略
+
+採用 **Agent Team 多輪迭代** 方法：每輪由多個專責 Agent 並行處理不同問題類型，每輪結束後由驗證 Agent 重新掃描，直到 0 問題。
+
+### Round 1: 結構性修復（自動化可修）
+
+**Agent A - metadata_cleaner**: 清除 118 個檔案中題幹裡的考試後設資料
+- 用正則匹配移除：代號:XXXX、等 別：、科 目：、座號：、頁碼（30110-30710 等）、「背面」
+- 清除題幹開頭/結尾的分隔線 `-` 和空白行
+- 清除 `乙、測驗部分:(XX分)` 等段落標記滲入題幹的部分
+
+**Agent B - notes_cleaner**: 清除 43 個檔案 notes 中的無關內容
+- 移除 notes 中的頁碼代號（30110、50110、70110）
+- 移除 notes 中的「背面」、「等 別」、「科 目」等印刷標記
+- 只保留真正的考試注意事項
+
+**Agent C - notes_to_questions**: 修復 29 個國文科檔案
+- 從 notes 陣列中提取被錯誤放入的題目內容
+- 解析出題幹、選項 (A)(B)(C)(D)、正確答案
+- 重建為正確的 questions 物件結構
+
+### Round 2: 內容修復（需智慧判斷）
+
+**Agent D - stem_repair**: 修復 6 個截斷題幹
+- 讀取原始檔案上下文，嘗試從後續題目或 passage 中恢復完整文字
+
+**Agent E - merged_splitter**: 拆分 1 個合併題目
+- 行政警察/106年/偵查法學 Q#6 包含多個題目合併，需拆分為獨立題目
+
+**Agent F - empty_stem_repair**: 處理 638 個空題幹
+- 英文閱讀克漏字(passage_fragment)：從 passage 欄位提取對應的空格句作為 stem
+- 如 passage 中有標記（如 51 、 52 ）對應題號，提取該句作為題幹
+- 無法修復的標記為 `"stem_status": "passage_reference"`
+
+**Agent G - missing_options_repair**: 修復 25 個缺選項的選擇題
+- 檢查是否為 passage_fragment 類型，選項可能在 passage 文字中
+- 嘗試從前後文推斷選項
+
+### Round 3: 驗證與品質保證
+
+**Agent H - validator**: 全面重新掃描
+- 重跑完整的錯誤偵測腳本
+- 確認所有 P0 問題降為 0
+- 生成修復報告
+
+### Round 4+: 迭代修復
+
+- 如 Round 3 驗證仍有殘餘問題，重新分配 Agent 修復
+- 重複 validate → fix → validate 循環直到通過
+
+### Round Final: 網站重生成
+
+**Agent I - html_regenerator**: 重新生成 HTML 網站
+- 執行 `python generate_html.py` 重建所有 HTML 頁面
+- 驗證網站能正確顯示修復後的資料
+
+## 執行順序
+
+```
+Round 1: Agent A + B + C (並行) → 驗證
+Round 2: Agent D + E + F + G (並行) → 驗證
+Round 3: Agent H (全面驗證)
+Round 4+: 殘餘修復 → 再驗證 (循環)
+Round Final: Agent I (HTML 重生成) → 最終驗證
+```
+
+## 不修改的項目（避免引入新問題）
+
+- **options_in_stem 的 11 個申論題**：經檢查多為情境題中使用 (A)(B)(C)(D) 作為情境元素標記（如「休旅車(A)」「交岔路口(B)」），屬正常內容，不修改
+- **passage_fragment 類型的 empty_stem**：如果 passage 中找不到對應題號標記，保留現狀並加註，因為原始 PDF 即為此格式
+
+## 預估影響
+
+- 修復後預計消除 **800+** 個問題
+- 影響檔案約 **200+** 個（部分檔案有多種問題重疊）
+- 網站所有頁面需重新生成
