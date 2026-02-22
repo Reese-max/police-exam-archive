@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "通訊系統",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50830"
   },
   "notes": [
@@ -23,7 +23,7 @@
     {
       "number": "二",
       "type": "essay",
-      "stem": "有一個線性非時變(linear time-invariant)的系統,我們將它稱為S,其脈衝\n1, t 0\n響應(impulseresponse)為h(t) etu(t),其中的u(t)為u(t) \n0, otherwise\n\n①請找出 S 的轉換函數(transfer function)。(5 分)\n②有一個訊號x(t) u(t)u(t 1),我們將它灌入 S 之中;請找出對應的\n輸出(output)。(10 分)",
+      "stem": "有一個線性非時變(linear time-invariant)的系統,我們將它稱為S,其脈衝\n1, t 0\n響應(impulseresponse)為h(t) etu(t),其中的u(t)為u(t)\n0, otherwise\n\n①請找出 S 的轉換函數(transfer function)。(5 分)\n②有一個訊號x(t) u(t)u(t 1),我們將它灌入 S 之中;請找出對應的\n輸出(output)。(10 分)",
       "section": null
     },
     {

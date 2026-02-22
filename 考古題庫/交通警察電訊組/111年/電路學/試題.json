@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "電路學",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50870"
   },
   "notes": [
@@ -23,7 +23,7 @@
     {
       "number": "二",
       "type": "essay",
-      "stem": "圖二所示電路中的雙埠網路阻抗參數為: [z] ,試求 I、I、\n 1 2\n4 12\n \nV 及 V 。(20 分)",
+      "stem": "圖二所示電路中的雙埠網路阻抗參數為: [z] ,試求 I、I、\n1 2\n4 12\n\nV 及 V 。(20 分)",
       "section": null
     },
     {

@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50120"
   },
   "notes": [
@@ -61,7 +61,7 @@
         "A": "總統就國家機密事項於刑事訴訟程序,應享有拒絕證言權",
         "B": "總統有拒絕提交相關證物之權",
         "C": "就涉及總統國家機密特權範圍內之國家機密事項之訊問,是否妨害國家之利益,應由總統 證明之",
-        "D": "檢察官若以總統所提交相關證物作為終結偵查之處分,有造成國家安全危險之合理顧慮 者,應認有妨害國家利益之虞 - -"
+        "D": "檢察官若以總統所提交相關證物作為終結偵查之處分,有造成國家安全危險之合理顧慮 者,應認有妨害國家利益之虞"
       }
     },
     {
@@ -191,7 +191,7 @@
         "A": "平等權",
         "B": "財產權",
         "C": "隱私權",
-        "D": "參政權 - -"
+        "D": "參政權"
       }
     },
     {
@@ -282,7 +282,7 @@
         "A": "如果沒有法律規定,人民尚不得依照憲法第24條,直接行使國家賠償請求權",
         "B": "就公務員怠於執行職務之國家賠償責任,不以人民應先請求公務員執行而怠於執行為必要",
         "C": "就公務員執行職務之國家賠償責任,立法者對於是否採無過失責任享有立法形成自由",
-        "D": "法律規範目的如有保障人民生命、身體及財產等法益之意旨時,即可直接認定被害人得向 國家請求損害賠償 - -"
+        "D": "法律規範目的如有保障人民生命、身體及財產等法益之意旨時,即可直接認定被害人得向 國家請求損害賠償"
       }
     },
     {
@@ -399,7 +399,7 @@
         "A": "憲法本文中規定行政院院長由總統提名,經立法院同意任命之",
         "B": "憲法增修條文規定行政院院長由總統任命之",
         "C": "憲法增修條文規定行政院院長辭職時,在總統尚未任命行政院院長前,由總統暫行代理",
-        "D": "憲法本文規定立法院休會期間,行政院院長辭職,應由行政院副院長代理其職務 - -"
+        "D": "憲法本文規定立法院休會期間,行政院院長辭職,應由行政院副院長代理其職務"
       }
     },
     {
@@ -516,7 +516,7 @@
         "A": "中央機關關於適用憲法發生疑義之事項",
         "B": "人民認確定終局裁判及其所適用之法律或命令有牴觸憲法之事項",
         "C": "關於省自治法、省法規有無牴觸憲法之事項",
-        "D": "國家最高機關聲請宣告其所受不利確定終決裁判違憲 - -"
+        "D": "國家最高機關聲請宣告其所受不利確定終決裁判違憲"
       }
     },
     {
@@ -674,81 +674,6 @@
         "C": "contemplative",
         "D": "conduct ive"
       }
-    },
-    {
-      "number": 51,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "was usedto",
-        "B": "usedto",
-        "C": "had been usedto",
-        "D": "had usedto"
-      },
-      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 52,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "for",
-        "B": "to",
-        "C": "at",
-        "D": "in"
-      },
-      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "to",
-        "B": "of",
-        "C": "by",
-        "D": "in"
-      },
-      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 54,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "surviving",
-        "B": "being survived",
-        "C": "for surviving",
-        "D": "tosurvive"
-      },
-      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "decided",
-        "B": "decides",
-        "C": "deciding",
-        "D": "being decided"
-      },
-      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important.",
-      "stem_note": "參見上方閱讀測驗段落"
     },
     {
       "number": 56,

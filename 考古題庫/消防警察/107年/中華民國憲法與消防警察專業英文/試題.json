@@ -4,7 +4,7 @@
     "exam_name": "一般警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與消防警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50610"
   },
   "notes": [
@@ -658,14 +658,14 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "in a room has been interpreted as thermal inst ability caused by the heat generation rate increa sing faster with tem per ature than the rate of aggregated heat losses.",
+      "stem": "in a room has been interpreted as thermal inst ability caused by the heat generation rate increasing faster with tem per ature than the rate of aggregated heat losses.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "Boil-over",
         "B": "Flash over",
-        "C": "Ventilation-control led",
-        "D": "Fuel-control led"
+        "C": "Ventilation-controlled",
+        "D": "Fuel-controlled"
       }
     },
     {
@@ -697,7 +697,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "A fuel-control led fire can also be described as .",
+      "stem": "A fuel-controlled fire can also be described as .",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -717,7 +717,7 @@
         "A": "Back draught",
         "B": "Smoldering",
         "C": "Flamming",
-        "D": "Fuel-control led"
+        "D": "Fuel-controlled"
       }
     },
     {
@@ -745,81 +745,6 @@
         "C": "adopted",
         "D": "allowed"
       }
-    },
-    {
-      "number": 56,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "sent off",
-        "B": "sounded",
-        "C": "rang",
-        "D": "went off"
-      },
-      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 57,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "to pass",
-        "B": "pass",
-        "C": "passed",
-        "D": "passing"
-      },
-      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 58,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "span",
-        "B": "extent",
-        "C": "spread",
-        "D": "range"
-      },
-      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 59,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "pull down",
-        "B": "pull out",
-        "C": "pull in",
-        "D": "pull off"
-      },
-      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 60,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "from",
-        "B": "of",
-        "C": "in",
-        "D": "at"
-      },
-      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department.",
-      "stem_note": "參見上方閱讀測驗段落"
     }
   ],
   "year": 107,

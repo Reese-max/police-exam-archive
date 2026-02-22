@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "警察政策與犯罪預防",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50170"
   },
   "notes": [
@@ -314,7 +314,7 @@
       "options": {
         "A": "內部課責(internal accountability)",
         "B": "組織彈性(organizational flexibility)",
-        "C": "有效的戰術(effect ivet act ics)",
+        "C": "有效的戰術(effectivet act ics)",
         "D": "創新的問題解決戰術(innovative problem-solving tactics)"
       }
     },

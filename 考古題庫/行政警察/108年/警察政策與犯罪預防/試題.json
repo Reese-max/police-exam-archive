@@ -4,7 +4,7 @@
     "exam_name": "一般警察人員考試",
     "level": "三等",
     "subject": "警察政策與犯罪預防",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50170"
   },
   "notes": [
@@ -193,7 +193,7 @@
       "type": "choice",
       "stem": "下列何者不是「犯罪轉移理論」(Crime Dis place ment)主張的犯罪轉移:",
       "section": "乙、測驗題",
-      "answer": "*",
+      "answer": "送分",
       "options": {
         "A": "地理上的犯罪轉移(geographical dis place ment)",
         "B": "時間上的犯罪轉移(temporal dis place ment)",
@@ -232,7 +232,7 @@
       "type": "choice",
       "stem": "犯罪預防由公共醫療模式角度可區分為三個層次:初級、次級與三級預防,下列何者不屬於初級 犯罪預防作為:",
       "section": "乙、測驗題",
-      "answer": "*",
+      "answer": "送分",
       "options": {
         "A": "設置監控系統",
         "B": "減少失業人口",

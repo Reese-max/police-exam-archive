@@ -3,7 +3,7 @@
     "exam_type": "112",
     "level": "三等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時"
   },
   "notes": [
     "※注意：①本試題為單一選擇題，請選出一個正確或最適當答案。",
@@ -431,7 +431,7 @@
     {
       "number": 33,
       "type": "choice",
-      "stem": "The news ofthe for est fire fil led them with_____because they had just had ago odvacation there.",
+      "stem": "The news of the for est fire fil led them with_____because they had just had ago odvacation there.",
       "section": null,
       "answer": "A",
       "options": {
@@ -522,7 +522,7 @@
     {
       "number": 40,
       "type": "choice",
-      "stem": "In Japan, combined junior high and senior high schools are mostly _____, but the number of public ones is increa sing.",
+      "stem": "In Japan, combined junior high and senior high schools are mostly _____, but the number of public ones is increasing.",
       "section": null,
       "answer": "D",
       "options": {
@@ -555,7 +555,7 @@
         "A": "captious",
         "B": "captivating",
         "C": "pre car ious",
-        "D": "prevent ive"
+        "D": "preventive"
       }
     },
     {
@@ -628,7 +628,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "According to the passage,which ofthe following is NOT helpful in treat ing SAD?",
+      "stem": "According to the passage,which of the following is NOT helpful in treat ing SAD?",
       "section": null,
       "answer": "B",
       "options": {
@@ -642,7 +642,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Which ofthe following is closest in meaning to the word“let hargic”inthe passage?",
+      "stem": "Which of the following is closest in meaning to the word“let hargic”inthe passage?",
       "section": null,
       "answer": "C",
       "options": {
@@ -656,7 +656,7 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "According to the passage,which ofthe following statement sis true?",
+      "stem": "According to the passage,which of the following statement sis true?",
       "section": null,
       "answer": "B",
       "options": {

@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與消防警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50620"
   },
   "notes": [
@@ -554,7 +554,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "The customs off icers conducted _____ searches to uncover attempts to smuggle prohibited items through the airport.",
+      "stem": "The customs officers conducted _____ searches to uncover attempts to smuggle prohibited items through the airport.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -580,7 +580,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "The police sergeant commended the off icers for their bravery in_____the armed suspect.",
+      "stem": "The police sergeant commended the officers for their bravery in_____the armed suspect.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -682,84 +682,9 @@
       }
     },
     {
-      "number": 51,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "rise",
-        "B": "riddle",
-        "C": "decline",
-        "D": "default"
-      },
-      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 52,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "sticking",
-        "B": "adjusting",
-        "C": "objecting",
-        "D": "contri but ing"
-      },
-      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "scarce",
-        "B": "prevalent",
-        "C": "diminished",
-        "D": "exceptional"
-      },
-      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 54,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "growth",
-        "B": "hamper",
-        "C": "deduction",
-        "D": "red uction"
-      },
-      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "refute",
-        "B": "fortify",
-        "C": "impede",
-        "D": "down play"
-      },
-      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
       "number": 56,
       "type": "choice",
-      "stem": "Which ofthe following titles best reflects the primary focus ofthe passage?",
+      "stem": "Which of the following titles best reflects the primary focus of the passage?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -768,7 +693,7 @@
         "C": "The Different Hazards Cause dby Fire fight ing",
         "D": "The Environmental Challenges Face dby Fire fight ers"
       },
-      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protect ive attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
+      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
     },
     {
       "number": 57,
@@ -782,12 +707,12 @@
         "C": "Witness ing trauma tic scenes.",
         "D": "Traveling through dangerous lands."
       },
-      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protect ive attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
+      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "Which ofthe following is identified as the leading hazard face dby fire fight ers inthe passage?",
+      "stem": "Which of the following is identified as the leading hazard face dby fire fight ers inthe passage?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -796,12 +721,12 @@
         "C": "Environmental threats.",
         "D": "Burning heat and flames."
       },
-      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protect ive attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
+      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "Which ofthe following is closest in meaning to the word“exact ing” as used inthe passage?",
+      "stem": "Which of the following is closest in meaning to the word“exact ing” as used inthe passage?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -810,12 +735,12 @@
         "C": "Tolerant.",
         "D": "Sim plified."
       },
-      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protect ive attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
+      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "According to the passage,which ofthe following state ments is true?",
+      "stem": "According to the passage,which of the following statements is true?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -824,7 +749,7 @@
         "C": "Fire fight ers are train edtoprioritize their own safety above all else,even during rescue operations.",
         "D": "Fire fight ers’psychological well-being needs toremainun affect edby the challenge sof their profession."
       },
-      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protect ive attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
+      "passage": "請依下文回答第56題至第60題 Fire fight ers con front an array of perils each time they respond to an emergency summons, jeopardizing their live sto rescue individual sand safe guard property.Fore most among these hazard sis the searing heat and fury of a large fire. These infernos can reach tem per atures surpas sing 1,000 degrees Celsius, present ing a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In add ition to the physical risks posed by flames,fire fight ers must con tend withun predict able str ucturalcollapses,as burning build ings deteriorate and crumble suddenly. These arc hit ectural hazards can trap and injure fire fight ers, trans form ingan already dangerous situation into a life-and-death threat. Further more,the harm ful smoke generate dby fires constitutesatacit yet let halmenaceto fire fight ers. Inhaling smoke can induce brea thing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratory app aratus,fire fight ers remain an easy target for long-term health issue sfrom repeat edexpo sure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, fire fight ers con front environmental threats suchas extreme weather condition sand natural disasters.Whether battling wild fires inintense heat,rescuing people during floods,ornavigatingt reach erouster rain inremote areas, fire fight ers must adapt to different and challengingenvironments toful fill their duty ofsavinglives. More over, the psychological toll of fire fight ing is pro found and end uring. Bearing witness to trauma tic scenes, such as severe injuries, deaths, and the deva station caused by fires, can impose a pro found emotional tollon fire fight ers.They often str uggle with feeling sof guilt,grief,andpost-trauma tic stress dis order,add ingto the demands oftheir exact ing vocation. Despite these dangers, fire fight ers bravely con front adversity with unyielding courage and determination. Their unwaveringdedication to protect ing lives and property, even at significant personal risk, demon str ates their self less ness and commit ment to the well-being of others. Daily, they epi tom ize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice str engthens their reputation as society’s guard ians, embodying the time less values ofc our age and altruism."
     }
   ],
   "year": 113,

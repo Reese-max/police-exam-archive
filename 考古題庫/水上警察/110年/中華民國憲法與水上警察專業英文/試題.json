@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與水上警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "51220"
   },
   "notes": [
@@ -567,7 +567,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "Fundamental to low-speed man euvering in sea navigation is an understanding of the and hand edness ofthe propellers.",
+      "stem": "Fundamental to low-speed man euvering in sea navigation is an understanding of the and hand edness of the propellers.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -632,7 +632,7 @@
     {
       "number": 47,
       "type": "choice",
-      "stem": "An often over looked goal for a comprehensive board ing & inspection scheme is to document the business plan ofthe vessel .",
+      "stem": "An often over looked goal for a comprehensive board ing & inspection scheme is to document the business plan of the vessel .",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -697,7 +697,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "A ship designer must know that the ofthe vessel is equal tothe sum ofthe dead weight and the light weight tonn ages.",
+      "stem": "A ship designer must know that the of the vessel is equal tothe sum of the dead weight and the light weight tonn ages.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -749,12 +749,12 @@
     {
       "number": 56,
       "type": "choice",
-      "stem": "Which ofthe following is themost appropriate TITLE forthis passage?",
+      "stem": "Which of the following is themost appropriate TITLE forthis passage?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "The uncenso red truth about our value system",
-        "B": "The chronology ofthe US law enforcement",
+        "B": "The chronology of the US law enforcement",
         "C": "What prosecutors and judges must prove?",
         "D": "The less ons welearned from Floyd’s unfortunate death"
       },
@@ -795,7 +795,7 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "Americans reactedto this verdict violent lyas former Minneapolis police officer was found guilty ofthe murder of George Floyd.",
+        "A": "Americans reactedto this verdict violent lyas former Minneapolis police officer was found guilty of the murder of George Floyd.",
         "B": "There are always bad apples in the police force; and we just need to swallow what happened to George Floyd.",
         "C": "We can draw on the str ength from millions of American people who protested and spoke up, shininga light oninequity and calling for change.",
         "D": "Floyd’s verdict has been criticized by law enforcement off icials and advocates who fear it will hand icap police."
@@ -805,7 +805,7 @@
     {
       "number": 60,
       "type": "choice",
-      "stem": "Which ofthe following best describes the author’s tone inthis passage?",
+      "stem": "Which of the following best describes the author’s tone inthis passage?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {

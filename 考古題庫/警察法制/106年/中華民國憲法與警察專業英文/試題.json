@@ -3,7 +3,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50120"
   },
   "notes": [
@@ -79,7 +79,7 @@
         "A": "大法官由總統提名,經監察院同意任命之",
         "B": "司法院院長、副院長並非大法官,不納入大法官員額計算",
         "C": "本為法學教授之大法官,不適用法官終身職待遇之規定",
-        "D": "大法官任期4年,得連任一次 - -"
+        "D": "大法官任期4年,得連任一次"
       }
     },
     {
@@ -209,7 +209,7 @@
         "A": "現役軍人不得登記為候選人",
         "B": "外國人不享有選舉權",
         "C": "選舉無效之訴以選舉委員會為被告",
-        "D": "選舉無效之訴終審法院為高等行政法院 - -"
+        "D": "選舉無效之訴終審法院為高等行政法院"
       }
     },
     {
@@ -365,7 +365,7 @@
         "A": "環保",
         "B": "教育",
         "C": "政風",
-        "D": "建築管理 - -"
+        "D": "建築管理"
       }
     },
     {
@@ -508,7 +508,7 @@
         "A": "律師接見受羈押被告時,監所一律予以監聽錄音,已逾越必要程度而侵害被告訴訟權",
         "B": "刑事被告與律師在不受干預下充分自由溝通,才能獲得確實有效之防禦權",
         "C": "受羈押被告與辯護人接見時,監所得予以監聽,所得之資訊並得作為審判上認定被告本案犯罪事 實之證據",
-        "D": "監所為維持押所秩序必要,於律師接見受羈押被告時,予以監看而不與聞,尚未侵害訴訟權 - -"
+        "D": "監所為維持押所秩序必要,於律師接見受羈押被告時,予以監看而不與聞,尚未侵害訴訟權"
       }
     },
     {
@@ -611,7 +611,7 @@
       "options": {
         "A": "toxic ology",
         "B": "criminology",
-        "C": "for ensics",
+        "C": "forensics",
         "D": "symbiosis"
       }
     },
@@ -648,7 +648,7 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "tour name nt",
+        "A": "tournament",
         "B": "tourism",
         "C": "terrorism",
         "D": "territorialism"
@@ -657,14 +657,14 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Many of the Pacific Ocean’s island nations with only a few thousand citizens and no major indu str ies are limited in preventing their economies from becoming staging grounds for crime syndicates.",
+      "stem": "Many of the Pacific Ocean’s island nations with only a few thousand citizens and no major industries are limited in preventing their economies from becoming staging grounds for crime syndicates.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "trans cultural",
-        "B": "inter cultural",
+        "A": "transcultural",
+        "B": "intercultural",
         "C": "institutional",
-        "D": "trans national"
+        "D": "transnational"
       }
     },
     {
@@ -707,81 +707,6 @@
       }
     },
     {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "defense",
-        "B": "detention",
-        "C": "offence",
-        "D": "offer"
-      },
-      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is seve rely limited if the police cannot contact you. You may specify how you are contacted and if contact ing you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Hand lers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 54,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "project",
-        "B": "produce",
-        "C": "protect",
-        "D": "prosecute"
-      },
-      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is seve rely limited if the police cannot contact you. You may specify how you are contacted and if contact ing you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Hand lers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "con ten tly",
-        "B": "confidentially",
-        "C": "conversely",
-        "D": "consistently"
-      },
-      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is seve rely limited if the police cannot contact you. You may specify how you are contacted and if contact ing you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Hand lers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 56,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "assess",
-        "B": "allow",
-        "C": "appoint",
-        "D": "approach"
-      },
-      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is seve rely limited if the police cannot contact you. You may specify how you are contacted and if contact ing you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Hand lers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 57,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "simply",
-        "B": "only",
-        "C": "naturally",
-        "D": "barely"
-      },
-      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is seve rely limited if the police cannot contact you. You may specify how you are contacted and if contact ing you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Hand lers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
       "number": 58,
       "type": "choice",
       "stem": "What would be the most appropriate title for the passage?",
@@ -790,10 +715,10 @@
       "options": {
         "A": "At the Heart of the Insistence",
         "B": "The Political Necessity",
-        "C": "New York City’s Peace Off icers",
+        "C": "New York City’s Peace Officers",
         "D": "The Patrol man’s Own Neighborhood"
       },
-      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace off icers would be “but a part of the citizens” rather than out siders. To that end, each ward had its own police station, while police men were required to live in the precinct. Local control was a political necessity of the time, but with the department established, local ism began a long decline. The residency requirement was never str ictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical consider ations dictated living near the work place since mass transit was limited and expensive."
+      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than out siders. To that end, each ward had its own police station, while police men were required to live in the precinct. Local control was a political necessity of the time, but with the department established, local ism began a long decline. The residency requirement was never str ictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical consider ations dictated living near the work place since mass transit was limited and expensive."
     },
     {
       "number": 59,
@@ -807,12 +732,12 @@
         "C": "Since the residency requirement was enforced, two-thirds to three-fourths of the police lived in the ward in which they worked.",
         "D": "The cost of transportation was one of the reasons why the police would like to live near their work place."
       },
-      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace off icers would be “but a part of the citizens” rather than out siders. To that end, each ward had its own police station, while police men were required to live in the precinct. Local control was a political necessity of the time, but with the department established, local ism began a long decline. The residency requirement was never str ictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical consider ations dictated living near the work place since mass transit was limited and expensive."
+      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than out siders. To that end, each ward had its own police station, while police men were required to live in the precinct. Local control was a political necessity of the time, but with the department established, local ism began a long decline. The residency requirement was never str ictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical consider ations dictated living near the work place since mass transit was limited and expensive."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "According to the passage, what is the most likely percentage of the NYPD off icers living in the precinct they worked in the second half of the 19 th century?",
+      "stem": "According to the passage, what is the most likely percentage of the NYPD officers living in the precinct they worked in the second half of the 19 th century?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -821,7 +746,7 @@
         "C": "3/5",
         "D": "4/5"
       },
-      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace off icers would be “but a part of the citizens” rather than out siders. To that end, each ward had its own police station, while police men were required to live in the precinct. Local control was a political necessity of the time, but with the department established, local ism began a long decline. The residency requirement was never str ictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical consider ations dictated living near the work place since mass transit was limited and expensive."
+      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than out siders. To that end, each ward had its own police station, while police men were required to live in the precinct. Local control was a political necessity of the time, but with the department established, local ism began a long decline. The residency requirement was never str ictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical consider ations dictated living near the work place since mass transit was limited and expensive."
     }
   ],
   "year": 106,
