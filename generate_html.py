@@ -1394,28 +1394,15 @@ def generate_index_page(output_dir, categories_stats):
     total_questions = sum(s.get('questions', 0) for s in categories_stats.values())
     total_categories = len(categories_stats)
 
-    cards_html = ''
+    items_html = ''
     for cat_name in CATEGORIES_ORDER:
         if cat_name not in categories_stats:
             continue
         info = CATEGORIES_INFO.get(cat_name, {'code': 0, 'icon': '&#128196;', 'color': '#1a365d'})
         emoji = CATEGORIES_EMOJI.get(cat_name, '')
         stats = categories_stats[cat_name]
-        years_range = f"{stats.get('min_year', '?')}-{stats.get('max_year', '?')}"
-        cards_html += f'''
-    <a href="{cat_name}/{cat_name}考古題總覽.html" class="category-card" style="--card-color: {info['color']}">
-      <div class="card-icon">{emoji}</div>
-      <div class="card-body">
-        <h3 class="card-title">{escape_html(cat_name)}</h3>
-        <div class="card-stats">
-          <span>{stats.get('years', 0)} 年度</span>
-          <span>{stats.get('papers', 0)} 份試卷</span>
-          <span>{stats.get('questions', 0)} 題</span>
-        </div>
-        <div class="card-years">{years_range}年</div>
-      </div>
-      <div class="card-arrow">&#8594;</div>
-    </a>'''
+        items_html += f'''
+    <li><a href="{cat_name}/{cat_name}考古題總覽.html" style="--item-color: {info['color']}"><span class="item-icon">{emoji}</span><span class="item-name">{escape_html(cat_name)}</span><span class="item-count">{stats.get('questions', 0)} 題</span><span class="item-arrow">&#8594;</span></a></li>'''
 
     index_html = f'''<!DOCTYPE html>
 <html lang="zh-TW">
@@ -1445,18 +1432,18 @@ body {{ font-family: "Noto Sans TC", "Microsoft JhengHei", -apple-system, sans-s
 .hero-stat {{ text-align: center; }}
 .hero-stat-value {{ font-size: 2.5rem; font-weight: 800; color: #fbbf24; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }}
 .hero-stat-label {{ font-size: 0.85rem; opacity: 0.85; }}
-.container {{ max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }}
-.categories-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem; }}
-.category-card {{ display: flex; align-items: center; gap: 1rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.25rem 1.5rem; text-decoration: none; color: var(--text); transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; border-top: 3px solid var(--card-color, var(--primary)); border-left: none; box-shadow: var(--shadow-sm); }}
-.category-card:hover {{ box-shadow: var(--shadow-lg); transform: translateY(-4px); }}
-.card-icon {{ font-size: 2.5rem; flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--card-color, var(--primary)) 12%, transparent); border-radius: 12px; }}
-.card-body {{ flex: 1; min-width: 0; }}
-.card-title {{ font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.3rem; }}
-.card-stats {{ display: flex; gap: 0.75rem; font-size: 0.8rem; color: var(--text-light); }}
-.card-years {{ font-size: 0.78rem; color: var(--text-light); margin-top: 0.2rem; }}
-.card-arrow {{ font-size: 1.2rem; color: var(--text-light); flex-shrink: 0; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }}
-.category-card:hover .card-arrow {{ transform: translateX(4px); color: var(--accent); }}
-.section-title {{ font-size: 1.3rem; font-weight: 700; color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }}
+.container {{ max-width: 660px; margin: 0 auto; padding: 2rem 1.5rem; }}
+.section-title {{ font-size: 1.3rem; font-weight: 700; color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1.25rem; }}
+.category-list {{ list-style: none; background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }}
+.category-list li {{ border-bottom: 1px solid var(--border); }}
+.category-list li:last-child {{ border-bottom: none; }}
+.category-list a {{ display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; text-decoration: none; color: var(--text); transition: background 0.15s ease, padding-left 0.15s ease; }}
+.category-list a:hover {{ background: color-mix(in srgb, var(--item-color, var(--primary)) 6%, transparent); padding-left: 1.5rem; }}
+.item-icon {{ font-size: 1.3rem; flex-shrink: 0; width: 28px; text-align: center; }}
+.item-name {{ flex: 1; font-size: 0.95rem; font-weight: 600; }}
+.item-count {{ font-size: 0.78rem; color: var(--text-light); white-space: nowrap; }}
+.item-arrow {{ font-size: 0.9rem; color: var(--border); transition: color 0.15s ease, transform 0.15s ease; }}
+.category-list a:hover .item-arrow {{ color: var(--accent); transform: translateX(3px); }}
 .site-footer {{ text-align: center; padding: 2rem; font-size: 0.82rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }}
 .dark-toggle {{ position: fixed; bottom: 2rem; left: 2rem; z-index: 200; width: 44px; height: 44px; border-radius: 50%; background: var(--card-bg); border: 2px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }}
 .dark-toggle:hover {{ border-color: var(--accent); transform: scale(1.1); }}
@@ -1467,14 +1454,14 @@ html.dark .dark-icon-moon {{ display: none; }}
 html:not(.dark) .dark-icon-sun {{ display: none; }}
 html.dark {{ --primary: #818cf8; --primary-light: #6366f1; --accent: #a5b4fc; --bg: #0f172a; --card-bg: #1e293b; --border: #334155; --text: #f1f5f9; --text-light: #94a3b8; --gold: #fbbf24; --shadow-sm: 0 1px 2px rgba(0,0,0,0.2); --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -4px rgba(0,0,0,0.3); }}
 html.dark .site-header {{ background: linear-gradient(135deg, #020617 0%, #1e1b4b 50%, #312e81 100%); }}
-html.dark .category-card {{ background: #1e293b; border-color: #334155; }}
-html.dark .category-card:hover {{ box-shadow: 0 10px 20px rgba(0,0,0,0.4); }}
+html.dark .category-list {{ background: #1e293b; border-color: #334155; }}
+html.dark .category-list li {{ border-color: #334155; }}
+html.dark .category-list a:hover {{ background: color-mix(in srgb, var(--item-color, var(--primary)) 10%, transparent); }}
 html.dark .dark-toggle {{ background: #1e293b; border-color: #334155; }}
-html.dark .card-icon {{ background: color-mix(in srgb, var(--card-color, var(--primary)) 15%, transparent); }}
 a, button, input, select, [role="button"] {{ touch-action: manipulation; -webkit-tap-highlight-color: transparent; }}
 body {{ overflow-x: hidden; }}
 @media (prefers-reduced-motion: reduce) {{ *, *::before, *::after {{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }} }}
-@media (max-width: 768px) {{ .site-header {{ padding: 2rem 1.5rem; }} .site-title {{ font-size: 1.6rem; letter-spacing: 0.03em; }} .site-subtitle {{ font-size: 0.88rem; margin-bottom: 1.25rem; }} .hero-stats {{ gap: 1.5rem; padding: 1rem 1.5rem; border-radius: 12px; }} .hero-stat-value {{ font-size: 1.8rem; }} .categories-grid {{ grid-template-columns: 1fr; }} .container {{ padding: 1.5rem 1rem; }} .category-card {{ padding: 1rem 1.25rem; border-radius: 12px; }} .card-title {{ font-size: 1rem; }} .card-stats {{ font-size: 0.75rem; gap: 0.5rem; }} .card-icon {{ width: 40px; height: 40px; font-size: 2rem; border-radius: 10px; }} .dark-toggle {{ bottom: 1.5rem; left: 1.5rem; }} }}
+@media (max-width: 768px) {{ .site-header {{ padding: 2rem 1.5rem; }} .site-title {{ font-size: 1.6rem; letter-spacing: 0.03em; }} .site-subtitle {{ font-size: 0.88rem; margin-bottom: 1.25rem; }} .hero-stats {{ gap: 1.5rem; padding: 1rem 1.5rem; border-radius: 12px; }} .hero-stat-value {{ font-size: 1.8rem; }} .container {{ padding: 1.5rem 1rem; }} .dark-toggle {{ bottom: 1.5rem; left: 1.5rem; }} }}
 @supports (padding: env(safe-area-inset-bottom)) {{ @media (max-width: 768px) {{ .dark-toggle {{ bottom: calc(1.5rem + env(safe-area-inset-bottom)); }} .site-footer {{ padding-bottom: calc(2rem + env(safe-area-inset-bottom)); }} }} }}
 @media (max-width: 768px) and (orientation: landscape) {{ .site-header {{ padding: 1.5rem; }} .hero-stat-value {{ font-size: 1.5rem; }} .hero-stats {{ gap: 1rem; padding: 0.75rem 1.25rem; }} }}
 .skip-link {{ position: absolute; top: -100%; left: 1rem; background: var(--primary); color: #fff; padding: 0.5rem 1rem; border-radius: 0 0 6px 6px; z-index: 999; text-decoration: none; font-size: 0.9rem; }}
@@ -1502,8 +1489,8 @@ body {{ overflow-x: hidden; }}
 <main class="container">
   <h2 class="section-title">選擇類科</h2>
   <nav aria-label="類科導航">
-  <div class="categories-grid" id="categories">{cards_html}
-  </div>
+  <ul class="category-list" id="categories">{items_html}
+  </ul>
   </nav>
 </main>
 <footer class="site-footer">
