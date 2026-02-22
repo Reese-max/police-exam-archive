@@ -775,9 +775,8 @@ function switchView(mode) {
   if (q.trim() || activeYearFilter) doSearch(q);
   if (bookmarkFilterActive) { bookmarkFilterActive = false; toggleBookmarkFilter(); }
   if (practiceMode) {
-    document.querySelectorAll('.self-score-panel').forEach(function(p) { p.remove(); });
-    document.querySelectorAll('.answer-section').forEach(function(as) { as.classList.remove('revealed'); });
-    buildSelfScorePanels();
+    clearAllAnswerState();
+    bindOptionClicks();
   }
 }
 
@@ -865,7 +864,7 @@ function filterBySubject(key) {
   });
 }
 
-/* === 練習模式 (Phase 6) === */
+/* === 練習模式 (Phase 6) — 互動式點選 === */
 let practiceMode = false;
 let practiceCorrect = 0;
 let practiceTotal = 0;
@@ -879,7 +878,6 @@ function togglePractice() {
     btn.classList.add('practice-active');
     btn.textContent = '結束練習';
     scorePanel.classList.add('visible');
-    /* 嘗試恢復上次 session */
     var session = getStore('exam-practice-session');
     if (session.url === window.location.pathname && session.ts && Date.now() - session.ts < 3600000) {
       practiceCorrect = session.correct || 0;
@@ -889,7 +887,7 @@ function togglePractice() {
       practiceTotal = 0;
     }
     updateScoreUI();
-    buildSelfScorePanels();
+    bindOptionClicks();
   } else {
     if (practiceTotal > 0) savePracticeScore(practiceCorrect, practiceTotal);
     clearPracticeSession();
@@ -897,74 +895,56 @@ function togglePractice() {
     btn.classList.remove('practice-active');
     btn.textContent = '練習模式';
     scorePanel.classList.remove('visible');
-    document.querySelectorAll('.self-score-panel').forEach(function(p) { p.remove(); });
-    document.querySelectorAll('.answer-section').forEach(function(as) { as.classList.remove('revealed'); });
+    clearAllAnswerState();
   }
 }
 
-function buildSelfScorePanels() {
-  const vs = getActiveViewSelector();
-  document.querySelectorAll(vs + ' .answer-section').forEach(function(as) {
-    // 防禦性跳過：若答案格為空（段落題被排除後可能發生）
-    if (!as.querySelector('.answer-cell')) return;
-    if (as.previousElementSibling && as.previousElementSibling.classList.contains('self-score-panel')) return;
-    const panel = document.createElement('div');
-    panel.className = 'self-score-panel';
-    const revBtn = document.createElement('button');
-    revBtn.className = 'reveal-btn';
-    revBtn.textContent = '顯示答案';
-    const btnCorrect = document.createElement('button');
-    btnCorrect.className = 'score-btn btn-correct';
-    btnCorrect.textContent = '✓ 答對';
-    const btnWrong = document.createElement('button');
-    btnWrong.className = 'score-btn btn-wrong';
-    btnWrong.textContent = '✗ 答錯';
-    revBtn.addEventListener('click', function() {
-      as.classList.add('revealed');
-      var isFreePoint = as.querySelector('.free-point') !== null;
-      if (isFreePoint) {
-        practiceTotal++;
-        practiceCorrect++;
-        panel.classList.add('scored', 'was-correct', 'free-point-scored');
-        panel.setAttribute('data-result', '\\u2605 本題送分');
-        updateScoreUI();
-        savePracticeSession();
-      } else {
-        btnCorrect.classList.add('visible');
-        btnWrong.classList.add('visible');
-      }
-      revBtn.style.display = 'none';
-    });
-    btnCorrect.addEventListener('click', function() {
-      if (panel.classList.contains('scored')) return;
-      practiceTotal++; practiceCorrect++;
-      panel.classList.add('scored', 'was-correct');
-      panel.setAttribute('data-result', '✓ 答對');
-      as.classList.add('revealed');
-      updateScoreUI();
-      savePracticeSession();
-    });
-    btnWrong.addEventListener('click', function() {
-      if (panel.classList.contains('scored')) return;
+function bindOptionClicks() {
+  document.querySelectorAll('.mc-opt').forEach(function(opt) {
+    if (opt._boundClick) return;
+    opt._boundClick = true;
+    opt.addEventListener('click', function() {
+      if (!practiceMode) return;
+      var block = opt.closest('.q-block');
+      if (!block || block.classList.contains('answered')) return;
+      var answer = block.getAttribute('data-answer');
+      var chosen = opt.getAttribute('data-val');
+      block.classList.add('answered');
       practiceTotal++;
-      panel.classList.add('scored', 'was-wrong');
-      panel.setAttribute('data-result', '✗ 答錯');
-      as.classList.add('revealed');
+      if (chosen === answer) {
+        practiceCorrect++;
+        opt.classList.add('correct');
+      } else {
+        opt.classList.add('wrong');
+        block.querySelectorAll('.mc-opt').forEach(function(o) {
+          if (o.getAttribute('data-val') === answer) o.classList.add('correct-reveal');
+        });
+      }
+      var ansEl = block.querySelector('.q-answer');
+      if (ansEl) ansEl.classList.add('revealed');
       updateScoreUI();
       savePracticeSession();
     });
-    panel.appendChild(revBtn);
-    panel.appendChild(btnCorrect);
-    panel.appendChild(btnWrong);
-    as.parentElement.insertBefore(panel, as);
   });
 }
 
 function updateScoreUI() {
   document.getElementById('scoreCorrect').textContent = practiceCorrect;
   document.getElementById('scoreTotal').textContent = practiceTotal;
-  const pct = practiceTotal > 0 ? Math.round(practiceCorrect / practiceTotal * 100) : 0;
+  var pct = practiceTotal > 0 ? Math.round(practiceCorrect / practiceTotal * 100) : 0;
   document.getElementById('scorePct').textContent = practiceTotal > 0 ? pct + '%' : '--';
+}
+
+function clearAllAnswerState() {
+  document.querySelectorAll('.q-block').forEach(function(b) {
+    b.classList.remove('answered');
+  });
+  document.querySelectorAll('.mc-opt').forEach(function(o) {
+    o.classList.remove('correct', 'wrong', 'correct-reveal', 'selected');
+  });
+  document.querySelectorAll('.q-answer').forEach(function(a) {
+    a.classList.remove('revealed');
+  });
 }
 
 function resetScore() {
@@ -972,14 +952,17 @@ function resetScore() {
   practiceTotal = 0;
   updateScoreUI();
   clearPracticeSession();
-  document.querySelectorAll('.self-score-panel').forEach(function(p) {
-    p.classList.remove('scored', 'was-correct', 'was-wrong');
-    p.removeAttribute('data-result');
-    const rev = p.querySelector('.reveal-btn');
-    if (rev) rev.style.display = '';
-    p.querySelectorAll('.score-btn').forEach(function(b) { b.classList.remove('visible'); });
+  clearAllAnswerState();
+}
+
+/* === 一般模式：顯示/隱藏全部答案 === */
+function toggleAllAnswers(btn) {
+  var showing = btn.classList.toggle('active');
+  btn.textContent = showing ? '隱藏答案' : '顯示答案';
+  document.querySelectorAll('.q-block').forEach(function(b) {
+    if (showing) b.classList.add('show-answer');
+    else b.classList.remove('show-answer');
   });
-  document.querySelectorAll('.answer-section').forEach(function(as) { as.classList.remove('revealed'); });
 }
 
 /* === URL Hash 導航 (Phase 7) === */
@@ -1127,7 +1110,7 @@ function exportPDF(includeAnswers) {
 
 
 def render_question_html(question):
-    """將單一題目渲染為 HTML"""
+    """將單一題目渲染為 HTML（含逐題選項與答案）"""
     q = question
     if q['type'] == 'essay':
         stem = escape_html(q['stem']).replace('\n', '<br>')
@@ -1135,26 +1118,64 @@ def render_question_html(question):
 
     elif q['type'] == 'choice':
         html_parts = []
+        answer = q.get('answer', '')
+        answer_attr = f' data-answer="{escape_html(answer)}"' if answer else ''
+
         if q.get('subtype') == 'passage_fragment':
             subtype_attr = f' data-subtype="passage_fragment" role="note" aria-label="閱讀段落"'
         elif q.get('subtype'):
             subtype_attr = f' data-subtype="{q["subtype"]}"'
         else:
             subtype_attr = ''
+
+        # 題目區塊包含題幹、選項、逐題答案
         html_parts.append(
-            f'<div class="mc-question"{subtype_attr}>'
-            f'<span class="q-number">{q["number"]}</span>'
-            f'<span class="q-text">{escape_html(q["stem"])}</span>'
-            f'</div>\n'
+            f'<div class="q-block" data-qnum="{q["number"]}"{answer_attr}>\n'
         )
-        for label in ['A', 'B', 'C', 'D']:
-            if 'options' in q and label in q['options']:
-                html_parts.append(
-                    f'<div class="mc-option">'
-                    f'<span class="opt-label">({label})</span>'
-                    f'<span class="opt-text">{escape_html(q["options"][label])}</span>'
-                    f'</div>\n'
-                )
+
+        # 題幹
+        stem_text = escape_html(q.get('stem', ''))
+        if stem_text:
+            html_parts.append(
+                f'<div class="mc-question"{subtype_attr}>'
+                f'<span class="q-number">{q["number"]}</span>'
+                f'<span class="q-text">{stem_text}</span>'
+                f'</div>\n'
+            )
+        else:
+            # 填空題（stem 為空，只有選項）
+            html_parts.append(
+                f'<div class="mc-question"{subtype_attr}>'
+                f'<span class="q-number">{q["number"]}</span>'
+                f'</div>\n'
+            )
+
+        # 選項（各自一行，可點選）
+        if 'options' in q:
+            html_parts.append('<div class="mc-options">\n')
+            for label in ['A', 'B', 'C', 'D', 'E']:
+                if label in q['options']:
+                    html_parts.append(
+                        f'<div class="mc-opt" data-val="{label}">'
+                        f'<span class="opt-label">({label})</span>'
+                        f'<span class="opt-text">{escape_html(q["options"][label])}</span>'
+                        f'</div>\n'
+                    )
+            html_parts.append('</div>\n')
+
+        # 逐題答案（預設隱藏）
+        if answer:
+            if answer == '*':
+                ans_display = '送分'
+                ans_class = 'q-answer free-point'
+            else:
+                ans_display = answer
+                ans_class = 'q-answer'
+            html_parts.append(
+                f'<div class="{ans_class}">答案：{escape_html(ans_display)}</div>\n'
+            )
+
+        html_parts.append('</div>\n')  # close q-block
         return ''.join(html_parts)
 
     return ''
@@ -1186,31 +1207,8 @@ def render_subject_card(card_id, subject_name, questions_data, year):
             content_html += f'<div class="exam-section-marker">{escape_html(current_section)}</div>\n'
         content_html += render_question_html(q)
 
-    # 答案格（僅限有答案的選擇題，排除閱讀段落）
+    # 答案已內嵌在逐題 q-block 中，不再需要底部答案格
     answer_grid_html = ''
-    choice_with_answers = [
-        q for q in questions
-        if q['type'] == 'choice' and q.get('answer')
-        and q.get('subtype') != 'passage_fragment'
-    ]
-    if choice_with_answers:
-        cells_parts = []
-        for q in choice_with_answers:
-            if q['answer'] == '*':
-                cls = 'answer-cell free-point'
-                ans_display = '送分'
-                extra_attr = f' aria-label="第 {q["number"]} 題，本題送分"'
-            else:
-                cls = 'answer-cell'
-                ans_display = escape_html(q['answer'])
-                extra_attr = ''
-            cells_parts.append(
-                f'<div class="{cls}"{extra_attr}><span class="q-num">{q["number"]}</span>'
-                f'<span class="q-ans">{ans_display}</span></div>'
-            )
-        cells = ''.join(cells_parts)
-        answer_grid_html = (f'<div class="answer-section"><h4 class="answer-title">&#128203; 標準答案</h4>'
-                           f'<div class="answer-grid">{cells}</div></div>')
 
     meta_html = '\n'.join(meta_tags)
 
@@ -1345,6 +1343,7 @@ def generate_category_page(category_name, years_data, output_dir):
   <button class="toolbar-btn" id="viewSubject" onclick="switchView('subject')">依科目瀏覽</button>
   <span class="toolbar-sep"></span>
   <button class="toolbar-btn" id="practiceToggle" onclick="togglePractice()">練習模式</button>
+  <button class="toolbar-btn" id="answerToggle" onclick="toggleAllAnswers(this)">顯示答案</button>
   <button class="toolbar-btn bookmark-filter" id="bookmarkFilter" onclick="toggleBookmarkFilter()" aria-pressed="false">只看書籤</button>
   <span class="toolbar-sep"></span>
   <select class="toolbar-select" id="subjectFilter" aria-label="科目篩選" onchange="filterBySubject(this.value)">
@@ -1612,14 +1611,20 @@ def main():
     os.makedirs(js_dir, exist_ok=True)
 
     css_path = os.path.join(css_dir, 'style.css')
-    with open(css_path, 'w', encoding='utf-8') as f:
-        f.write(generate_shared_css())
-    print(f"  CSS: {css_path}")
+    if not os.path.exists(css_path):
+        with open(css_path, 'w', encoding='utf-8') as f:
+            f.write(generate_shared_css())
+        print(f"  CSS: {css_path} (generated)")
+    else:
+        print(f"  CSS: {css_path} (existing, skipped)")
 
     js_path = os.path.join(js_dir, 'app.js')
-    with open(js_path, 'w', encoding='utf-8') as f:
-        f.write(generate_shared_js())
-    print(f"  JS:  {js_path}")
+    if not os.path.exists(js_path):
+        with open(js_path, 'w', encoding='utf-8') as f:
+            f.write(generate_shared_js())
+        print(f"  JS:  {js_path} (generated)")
+    else:
+        print(f"  JS:  {js_path} (existing, skipped)")
 
     print(f"\n讀取資料: {args.input}")
     all_data = collect_json_data(args.input)

@@ -33,422 +33,782 @@
     {
       "number": 1,
       "type": "choice",
-      "stem": "依憲法規定,考試院副院長人選之同意權屬於下列何者? (A)總統 (B)立法院 (C)考試院 (D)監察院",
+      "stem": "依憲法規定,考試院副院長人選之同意權屬於下列何者?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "總統",
+        "B": "立法院",
+        "C": "考試院",
+        "D": "監察院"
+      }
     },
     {
       "number": 2,
       "type": "choice",
-      "stem": "關於司法院大法官組成憲法法庭審理政黨違憲解散案件,下列敘述何者錯誤? (A)得向司法院聲請解散違憲政黨者為立法院 (B)憲法法庭認為聲請無理由者,應以判決駁回 (C)憲法法庭之判決有協同意見書或不同意見書者,應一併公告 (D)被宣告解散之政黨,不得成立目的相同之代替組織",
+      "stem": "關於司法院大法官組成憲法法庭審理政黨違憲解散案件,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "得向司法院聲請解散違憲政黨者為立法院",
+        "B": "憲法法庭認為聲請無理由者,應以判決駁回",
+        "C": "憲法法庭之判決有協同意見書或不同意見書者,應一併公告",
+        "D": "被宣告解散之政黨,不得成立目的相同之代替組織"
+      }
     },
     {
       "number": 3,
       "type": "choice",
-      "stem": "依司法院大法官審理案件法之規定,司法院大法官作成下列何種決議所需法定人數要求最低? (A)解釋憲法 (B)統一解釋法律及命令 (C)宣告法律牴觸憲法 (D)宣告命令牴觸憲法",
+      "stem": "依司法院大法官審理案件法之規定,司法院大法官作成下列何種決議所需法定人數要求最低?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "解釋憲法",
+        "B": "統一解釋法律及命令",
+        "C": "宣告法律牴觸憲法",
+        "D": "宣告命令牴觸憲法"
+      }
     },
     {
       "number": 4,
       "type": "choice",
-      "stem": "依憲法增修條文規定,有關大法官之敘述,下列何者正確? (A)大法官由總統提名,經監察院同意任命之 (B)司法院院長、副院長並非大法官,不納入大法官員額計算 (C)本為法學教授之大法官,不適用法官終身職待遇之規定 (D)大法官任期4年,得連任一次",
+      "stem": "依憲法增修條文規定,有關大法官之敘述,下列何者正確?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "大法官由總統提名,經監察院同意任命之",
+        "B": "司法院院長、副院長並非大法官,不納入大法官員額計算",
+        "C": "本為法學教授之大法官,不適用法官終身職待遇之規定",
+        "D": "大法官任期4年,得連任一次"
+      }
     },
     {
       "number": 5,
       "type": "choice",
-      "stem": "下列立法院之委員會何者屬於特種委員會? (A)外交及國防委員會 (B)經濟委員會 (C)修憲委員會 (D)司法及法制委員會",
+      "stem": "下列立法院之委員會何者屬於特種委員會?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "外交及國防委員會",
+        "B": "經濟委員會",
+        "C": "修憲委員會",
+        "D": "司法及法制委員會"
+      }
     },
     {
       "number": 6,
       "type": "choice",
-      "stem": "關於立法院之組織,下列敘述何者正確? (A)立法院以院長為代表,為首長制機關 (B)立法院院長由立法委員互選產生,必須具備立法委員身分 (C)立法院院長應本公平中立原則,必須完全脫離政黨活動 (D)立法院院長得由監察院彈劾",
+      "stem": "關於立法院之組織,下列敘述何者正確?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "立法院以院長為代表,為首長制機關",
+        "B": "立法院院長由立法委員互選產生,必須具備立法委員身分",
+        "C": "立法院院長應本公平中立原則,必須完全脫離政黨活動",
+        "D": "立法院院長得由監察院彈劾"
+      }
     },
     {
       "number": 7,
       "type": "choice",
-      "stem": "依憲法本文及增修條文之規定,下列何者不屬於立法院之職權? (A)聽取總統國情報告 (B)提出領土變更案 (C)追認緊急命令 (D)彈劾行政院院長",
+      "stem": "依憲法本文及增修條文之規定,下列何者不屬於立法院之職權?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "聽取總統國情報告",
+        "B": "提出領土變更案",
+        "C": "追認緊急命令",
+        "D": "彈劾行政院院長"
+      }
     },
     {
       "number": 8,
       "type": "choice",
-      "stem": "依司法院釋字第585號解釋,關於立法院調查權之敘述,下列何者錯誤? (A)屬於國家機關獨立行使職權受憲法保障者,即非立法院所得調查之事物範圍 (B)可能干預行政部門有效運作之資訊,行政首長基於行政特權有決定不予公開之權力,立法院調查 時應予適當尊重 (C)立法院調查權包括文件調閱權、要求相關人民或政府人員陳述證言,但不得施以強制手段 (D)即使有其必要,除非立法院制定特別法,否則不得委任非立法委員之人士就特定事項協助調查",
+      "stem": "依司法院釋字第585號解釋,關於立法院調查權之敘述,下列何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "屬於國家機關獨立行使職權受憲法保障者,即非立法院所得調查之事物範圍",
+        "B": "可能干預行政部門有效運作之資訊,行政首長基於行政特權有決定不予公開之權力,立法院調查 時應予適當尊重",
+        "C": "立法院調查權包括文件調閱權、要求相關人民或政府人員陳述證言,但不得施以強制手段",
+        "D": "即使有其必要,除非立法院制定特別法,否則不得委任非立法委員之人士就特定事項協助調查"
+      }
     },
     {
       "number": 9,
       "type": "choice",
-      "stem": "下列何者並非隸屬行政院? (A)國史館 (B)國立故宮博物院 (C)國家發展委員會 (D)中央銀行",
+      "stem": "下列何者並非隸屬行政院?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "國史館",
+        "B": "國立故宮博物院",
+        "C": "國家發展委員會",
+        "D": "中央銀行"
+      }
     },
     {
       "number": 10,
       "type": "choice",
-      "stem": "總統於立法院解散後發布緊急命令,立法院應如何處理? (A)因立法院已解散,故只能留待新任立法委員選出後加以處理 (B)立法院應由立法院院長決定是否追認 (C)立法院應於法定期限內自行集會、開議,以決定是否追認 (D)立法院應由委員連署聲請大法官解釋,以確定總統此種行為是否因違反誠信原則而違憲",
+      "stem": "總統於立法院解散後發布緊急命令,立法院應如何處理?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "因立法院已解散,故只能留待新任立法委員選出後加以處理",
+        "B": "立法院應由立法院院長決定是否追認",
+        "C": "立法院應於法定期限內自行集會、開議,以決定是否追認",
+        "D": "立法院應由委員連署聲請大法官解釋,以確定總統此種行為是否因違反誠信原則而違憲"
+      }
     },
     {
       "number": 11,
       "type": "choice",
-      "stem": "關於總統、副總統罷免之敘述,下列何者錯誤? (A)罷免案宣告成立之日起,任何人不得有罷免或阻止罷免之宣傳活動 (B)總統、副總統選舉、罷免訴訟,專屬中央政府所在地之高等行政法院管轄 (C)罷免案通過者,被罷免人4年內不得為總統、副總統候選人 (D)對於總統、副總統罷免案之提出,依法應予以被罷免人得提出答辯書之機會",
+      "stem": "關於總統、副總統罷免之敘述,下列何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "罷免案宣告成立之日起,任何人不得有罷免或阻止罷免之宣傳活動",
+        "B": "總統、副總統選舉、罷免訴訟,專屬中央政府所在地之高等行政法院管轄",
+        "C": "罷免案通過者,被罷免人4年內不得為總統、副總統候選人",
+        "D": "對於總統、副總統罷免案之提出,依法應予以被罷免人得提出答辯書之機會"
+      }
     },
     {
       "number": 12,
       "type": "choice",
-      "stem": "年滿40歲之中華民國自由地區人民,擬向中央選舉委員會申請登記為總統、副總統參選人,下列何 種方式不屬之? (A)單一政黨單獨推薦方式 (B)二個以上政黨共同推薦方式 (C)選民連署方式 (D)繳納保證金自我推薦方式",
+      "stem": "年滿40歲之中華民國自由地區人民,擬向中央選舉委員會申請登記為總統、副總統參選人,下列何 種方式不屬之?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "單一政黨單獨推薦方式",
+        "B": "二個以上政黨共同推薦方式",
+        "C": "選民連署方式",
+        "D": "繳納保證金自我推薦方式"
+      }
     },
     {
       "number": 13,
       "type": "choice",
-      "stem": "關於國家安全會議以及國家安全有關大政方針之敘述,下列何者錯誤? (A)國家安全會議為總統決定國家安全有關大政方針之諮詢機關 (B)國家安全會議以國家安全會議秘書長為會議主席 (C)國家安全會議所作成之決議,僅作為總統決策之參考 (D)總統得指定有關人員列席國家安全會議",
+      "stem": "關於國家安全會議以及國家安全有關大政方針之敘述,下列何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "國家安全會議為總統決定國家安全有關大政方針之諮詢機關",
+        "B": "國家安全會議以國家安全會議秘書長為會議主席",
+        "C": "國家安全會議所作成之決議,僅作為總統決策之參考",
+        "D": "總統得指定有關人員列席國家安全會議"
+      }
     },
     {
       "number": 14,
       "type": "choice",
-      "stem": "依公職人員選舉罷免法之規定,下列敘述何者錯誤? (A)現役軍人不得登記為候選人 (B)外國人不享有選舉權 (C)選舉無效之訴以選舉委員會為被告 (D)選舉無效之訴終審法院為高等行政法院",
+      "stem": "依公職人員選舉罷免法之規定,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "現役軍人不得登記為候選人",
+        "B": "外國人不享有選舉權",
+        "C": "選舉無效之訴以選舉委員會為被告",
+        "D": "選舉無效之訴終審法院為高等行政法院"
+      }
     },
     {
       "number": 15,
       "type": "choice",
-      "stem": "中華民國國民,原則上於年滿幾歲時,有依法被選舉之權? (A)20歲 (B)23歲 (C)30歲 (D)40歲",
+      "stem": "中華民國國民,原則上於年滿幾歲時,有依法被選舉之權?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "20歲",
+        "B": "23歲",
+        "C": "30歲",
+        "D": "40歲"
+      }
     },
     {
       "number": 16,
       "type": "choice",
-      "stem": "依國家賠償法之規定,下列敘述何者正確? (A)公務員於執行職務行使公權力時,因故意不法侵害人民自由或權利者,國家應負損害賠償責任, 過失者不在此限 (B)公有公共設施因設置或管理有欠缺,致人民生命、身體、自由或財產受損害者,國家應負損害賠償責任 (C)國家賠償請求權,自請求權人知有損害時起,因2年間不行使而消滅;自損害發生時起,逾5年者亦同 (D)國家負損害賠償責任者,應以回復原狀為原則,例外以金錢賠償之",
+      "stem": "依國家賠償法之規定,下列敘述何者正確?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "公務員於執行職務行使公權力時,因故意不法侵害人民自由或權利者,國家應負損害賠償責任, 過失者不在此限",
+        "B": "公有公共設施因設置或管理有欠缺,致人民生命、身體、自由或財產受損害者,國家應負損害賠償責任",
+        "C": "國家賠償請求權,自請求權人知有損害時起,因2年間不行使而消滅;自損害發生時起,逾5年者亦同",
+        "D": "國家負損害賠償責任者,應以回復原狀為原則,例外以金錢賠償之"
+      }
     },
     {
       "number": 17,
       "type": "choice",
-      "stem": "下列何人之任命,非屬行政院院長得獨立決定之人事權範圍? (A)中央銀行總裁 (B)審計長 (C)經濟部部長 (D)內政部部長",
+      "stem": "下列何人之任命,非屬行政院院長得獨立決定之人事權範圍?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "中央銀行總裁",
+        "B": "審計長",
+        "C": "經濟部部長",
+        "D": "內政部部長"
+      }
     },
     {
       "number": 18,
       "type": "choice",
-      "stem": "行政院公民投票審議委員會委員,係由何人任命? (A)行政院院長 (B)行政院副院長 (C)總統 (D)總統府秘書長",
+      "stem": "行政院公民投票審議委員會委員,係由何人任命?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "行政院院長",
+        "B": "行政院副院長",
+        "C": "總統",
+        "D": "總統府秘書長"
+      }
     },
     {
       "number": 19,
       "type": "choice",
-      "stem": "按憲法第9條規定:「人民除現役軍人外,不受軍事審判。」下列何者為大法官對軍事審判之主張? (A)軍事審判機關對於軍人之犯罪應有專屬之審判權 (B)軍事審判之建制,憲法未設明文規定,得以法律定之 (C)軍人除非經終審軍事審判機關宣告無期徒刑以上之案件,否則不得向普通法院請求救濟 (D)軍事審判不須有審判獨立之保障",
+      "stem": "按憲法第9條規定:「人民除現役軍人外,不受軍事審判。」下列何者為大法官對軍事審判之主張?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "軍事審判機關對於軍人之犯罪應有專屬之審判權",
+        "B": "軍事審判之建制,憲法未設明文規定,得以法律定之",
+        "C": "軍人除非經終審軍事審判機關宣告無期徒刑以上之案件,否則不得向普通法院請求救濟",
+        "D": "軍事審判不須有審判獨立之保障"
+      }
     },
     {
       "number": 20,
       "type": "choice",
-      "stem": "下列何種權利,應受憲法絕對之保障? (A)居住自由 (B)財產自由 (C)內在信仰自由 (D)政治言論自由",
+      "stem": "下列何種權利,應受憲法絕對之保障?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "居住自由",
+        "B": "財產自由",
+        "C": "內在信仰自由",
+        "D": "政治言論自由"
+      }
     },
     {
       "number": 21,
       "type": "choice",
-      "stem": "依司法院大法官之解釋,個人之主體性及人格之自由發展,係基於下列何種理念,而應受憲法保障? (A)人性尊嚴 (B)倫理道德 (C)幸福追求 (D)理性平等",
+      "stem": "依司法院大法官之解釋,個人之主體性及人格之自由發展,係基於下列何種理念,而應受憲法保障?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "人性尊嚴",
+        "B": "倫理道德",
+        "C": "幸福追求",
+        "D": "理性平等"
+      }
     },
     {
       "number": 22,
       "type": "choice",
-      "stem": "下列何種情形,司法院大法官認為違反平等原則? (A)祭祀公業條例施行前已存在之祭祀公業,以規約約定女子不得為派下員 (B)立法委員選舉政黨比例代表席次之分配,設有百分之五之門檻 (C)稅法規定,須扶養親屬未滿20歲或年滿60歲者始得減除免稅額 (D)稅法規定,未成立婚姻關係之異性伴侶間之相互贈與不得免徵贈與稅",
+      "stem": "下列何種情形,司法院大法官認為違反平等原則?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "祭祀公業條例施行前已存在之祭祀公業,以規約約定女子不得為派下員",
+        "B": "立法委員選舉政黨比例代表席次之分配,設有百分之五之門檻",
+        "C": "稅法規定,須扶養親屬未滿20歲或年滿60歲者始得減除免稅額",
+        "D": "稅法規定,未成立婚姻關係之異性伴侶間之相互贈與不得免徵贈與稅"
+      }
     },
     {
       "number": 23,
       "type": "choice",
-      "stem": "依司法院釋字第499號解釋,下列何者非屬憲法修正時不得變更之基本原則? (A)福利國原則 (B)民主共和國原則 (C)國民主權原則 (D)權力分立原則",
+      "stem": "依司法院釋字第499號解釋,下列何者非屬憲法修正時不得變更之基本原則?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "福利國原則",
+        "B": "民主共和國原則",
+        "C": "國民主權原則",
+        "D": "權力分立原則"
+      }
     },
     {
       "number": 24,
       "type": "choice",
-      "stem": "依憲法增修條文第12條規定,憲法之修改應依據下列何種程序? (A)監察院提案 (B)總統提案 (C)立法院複決 (D)公民投票複決",
+      "stem": "依憲法增修條文第12條規定,憲法之修改應依據下列何種程序?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "監察院提案",
+        "B": "總統提案",
+        "C": "立法院複決",
+        "D": "公民投票複決"
+      }
     },
     {
       "number": 25,
       "type": "choice",
-      "stem": "依據司法院大法官解釋所揭示之見解,下列何者非屬憲法第19條「租稅法律主義」適用之事項? (A)納稅之稅目及稅率應以法律規定 (B)課稅原因事實之有無及有關證據之證明力 (C)不得對納稅義務人以行政命令增加稅法所無之義務 (D)租稅之優惠及減免應以法律規定",
+      "stem": "依據司法院大法官解釋所揭示之見解,下列何者非屬憲法第19條「租稅法律主義」適用之事項?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "納稅之稅目及稅率應以法律規定",
+        "B": "課稅原因事實之有無及有關證據之證明力",
+        "C": "不得對納稅義務人以行政命令增加稅法所無之義務",
+        "D": "租稅之優惠及減免應以法律規定"
+      }
     },
     {
       "number": 26,
       "type": "choice",
-      "stem": "依地方制度法之規定,下列何種主管或首長,應依專屬人事管理法律任命? (A)環保 (B)教育 (C)政風 (D)建築管理",
+      "stem": "依地方制度法之規定,下列何種主管或首長,應依專屬人事管理法律任命?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "環保",
+        "B": "教育",
+        "C": "政風",
+        "D": "建築管理"
+      }
     },
     {
       "number": 27,
       "type": "choice",
-      "stem": "下列何者為地方自治團體? (A)臺灣省 (B)臺北市中正區 (C)新北市烏來區 (D)臺南市政府",
+      "stem": "下列何者為地方自治團體?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "臺灣省",
+        "B": "臺北市中正區",
+        "C": "新北市烏來區",
+        "D": "臺南市政府"
+      }
     },
     {
       "number": 28,
       "type": "choice",
-      "stem": "依照憲法增修條文第5條之規定,司法院設置大法官幾人? (A)9人 (B)11人 (C)13人 (D)15人",
+      "stem": "依照憲法增修條文第5條之規定,司法院設置大法官幾人?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "9人",
+        "B": "11人",
+        "C": "13人",
+        "D": "15人"
+      }
     },
     {
       "number": 29,
       "type": "choice",
-      "stem": "地方制度法第2條所規定之核定,其性質為何? (A)為上級機關對地方自治團體之事後監督機制 (B)為一種觀念通知 (C)為上級政府機關對下級政府機關所陳報事項,進行實質審查之決定 (D)為下級機關依法完成法定效力後,陳報上級機關知悉",
+      "stem": "地方制度法第2條所規定之核定,其性質為何?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "為上級機關對地方自治團體之事後監督機制",
+        "B": "為一種觀念通知",
+        "C": "為上級政府機關對下級政府機關所陳報事項,進行實質審查之決定",
+        "D": "為下級機關依法完成法定效力後,陳報上級機關知悉"
+      }
     },
     {
       "number": 30,
       "type": "choice",
-      "stem": "依據憲法規定,下列何者並非縣自治事項之範圍? (A)銀行 (B)郵政 (C)公營事業 (D)租稅",
+      "stem": "依據憲法規定,下列何者並非縣自治事項之範圍?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "銀行",
+        "B": "郵政",
+        "C": "公營事業",
+        "D": "租稅"
+      }
     },
     {
       "number": 31,
       "type": "choice",
-      "stem": "我國憲法「前言」中明文提及下列何者? (A)權力分立 (B)地方自治 (C)聯邦制度 (D)鞏固國權",
+      "stem": "我國憲法「前言」中明文提及下列何者?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "權力分立",
+        "B": "地方自治",
+        "C": "聯邦制度",
+        "D": "鞏固國權"
+      }
     },
     {
       "number": 32,
       "type": "choice",
-      "stem": "有關法律保留原則之敘述,下列何者錯誤? (A)法律保留原則為現代法治國原則之具體表現 (B)法律保留原則不僅規範國家與人民之關係 (C)行政與立法兩權之權限分配,不受法律保留原則之規範 (D)給付行政如涉及公共利益等重大事項,仍應有法律保留原則之適用",
+      "stem": "有關法律保留原則之敘述,下列何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "法律保留原則為現代法治國原則之具體表現",
+        "B": "法律保留原則不僅規範國家與人民之關係",
+        "C": "行政與立法兩權之權限分配,不受法律保留原則之規範",
+        "D": "給付行政如涉及公共利益等重大事項,仍應有法律保留原則之適用"
+      }
     },
     {
       "number": 33,
       "type": "choice",
-      "stem": "集會自由權是建立在憲法兩個原則上,一為自決原則,另一為何? (A)民主政治原則 (B)行政權優位原則 (C)國家監督原則 (D)行政自我拘束原則",
+      "stem": "集會自由權是建立在憲法兩個原則上,一為自決原則,另一為何?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "民主政治原則",
+        "B": "行政權優位原則",
+        "C": "國家監督原則",
+        "D": "行政自我拘束原則"
+      }
     },
     {
       "number": 34,
       "type": "choice",
-      "stem": "中央警察大學研究所碩士班入學考試簡章中,規定以有無色盲決定能否取得入學資格,下列何者與 司法院大法官解釋意旨無關? (A)該簡章規定與憲法第7條保障之平等權並無牴觸 (B)該簡章規定之目的係為達成重要公共利益 (C)該簡章規定與促進公益有實質關聯性 (D)該簡章規定違反比例原則",
+      "stem": "中央警察大學研究所碩士班入學考試簡章中,規定以有無色盲決定能否取得入學資格,下列何者與 司法院大法官解釋意旨無關?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "該簡章規定與憲法第7條保障之平等權並無牴觸",
+        "B": "該簡章規定之目的係為達成重要公共利益",
+        "C": "該簡章規定與促進公益有實質關聯性",
+        "D": "該簡章規定違反比例原則"
+      }
     },
     {
       "number": 35,
       "type": "choice",
-      "stem": "下列何種規定,因違反比例原則而遭司法院大法官宣告違憲? (A)土壤及地下水污染整治法使污染行為人就該法施行前發生、施行後仍存在之污染狀況負整治義務 (B)藥師法規定藥師執業處所應以一處為限 (C)道路交通管理處罰條例於汽車駕駛人拒絕酒測時吊銷其駕駛執照、禁止其 3 年內考領駕駛執照, 並吊銷其所持有各級車類駕駛執照 (D)社會秩序維護法處罰意圖得利而與人姦、宿者3日以下拘留或新臺幣3萬元以下之罰鍰",
+      "stem": "下列何種規定,因違反比例原則而遭司法院大法官宣告違憲?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "土壤及地下水污染整治法使污染行為人就該法施行前發生、施行後仍存在之污染狀況負整治義務",
+        "B": "藥師法規定藥師執業處所應以一處為限",
+        "C": "道路交通管理處罰條例於汽車駕駛人拒絕酒測時吊銷其駕駛執照、禁止其 3 年內考領駕駛執照, 並吊銷其所持有各級車類駕駛執照",
+        "D": "社會秩序維護法處罰意圖得利而與人姦、宿者3日以下拘留或新臺幣3萬元以下之罰鍰"
+      }
     },
     {
       "number": 36,
       "type": "choice",
-      "stem": "國軍老舊眷村改建條例第22條規定,針對不同意眷村改建之眷戶,主管機關得逕行註銷其眷舍居住 憑證及原眷戶權益,收回房地,司法院釋字第727號解釋認為未違背人民下列何項權利? (A)工作權 (B)居住遷徙自由 (C)隱私權 (D)平等權",
+      "stem": "國軍老舊眷村改建條例第22條規定,針對不同意眷村改建之眷戶,主管機關得逕行註銷其眷舍居住 憑證及原眷戶權益,收回房地,司法院釋字第727號解釋認為未違背人民下列何項權利?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "工作權",
+        "B": "居住遷徙自由",
+        "C": "隱私權",
+        "D": "平等權"
+      }
     },
     {
       "number": 37,
       "type": "choice",
-      "stem": "依司法院釋字第654號解釋,關於律師接見受羈押被告之敘述,下列何者錯誤? (A)律師接見受羈押被告時,監所一律予以監聽錄音,已逾越必要程度而侵害被告訴訟權 (B)刑事被告與律師在不受干預下充分自由溝通,才能獲得確實有效之防禦權 (C)受羈押被告與辯護人接見時,監所得予以監聽,所得之資訊並得作為審判上認定被告本案犯罪事 實之證據 (D)監所為維持押所秩序必要,於律師接見受羈押被告時,予以監看而不與聞,尚未侵害訴訟權",
+      "stem": "依司法院釋字第654號解釋,關於律師接見受羈押被告之敘述,下列何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "律師接見受羈押被告時,監所一律予以監聽錄音,已逾越必要程度而侵害被告訴訟權",
+        "B": "刑事被告與律師在不受干預下充分自由溝通,才能獲得確實有效之防禦權",
+        "C": "受羈押被告與辯護人接見時,監所得予以監聽,所得之資訊並得作為審判上認定被告本案犯罪事 實之證據",
+        "D": "監所為維持押所秩序必要,於律師接見受羈押被告時,予以監看而不與聞,尚未侵害訴訟權"
+      }
     },
     {
       "number": 38,
       "type": "choice",
-      "stem": "依司法院大法官解釋,下列何者受勞動權之保障? (A)組織聯誼會 (B)參加國家考試 (C)加入政黨之勞工代表 (D)組織工會",
+      "stem": "依司法院大法官解釋,下列何者受勞動權之保障?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "組織聯誼會",
+        "B": "參加國家考試",
+        "C": "加入政黨之勞工代表",
+        "D": "組織工會"
+      }
     },
     {
       "number": 39,
       "type": "choice",
-      "stem": "下列何者屬於訴訟權保障之內涵? (A)聽審請求權 (B)證據自由順序原則 (C)三級三審級制度 (D)秘密審判請求權",
+      "stem": "下列何者屬於訴訟權保障之內涵?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "聽審請求權",
+        "B": "證據自由順序原則",
+        "C": "三級三審級制度",
+        "D": "秘密審判請求權"
+      }
     },
     {
       "number": 40,
       "type": "choice",
-      "stem": "教育部依法發布「普通高級中學課程綱要」作為編寫教科用書之標準,此不涉及憲法所保障之下列 何種自由權利? (A)思想自由 (B)教學自由 (C)受國民教育之權利 (D)人身自由",
+      "stem": "教育部依法發布「普通高級中學課程綱要」作為編寫教科用書之標準,此不涉及憲法所保障之下列 何種自由權利?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "思想自由",
+        "B": "教學自由",
+        "C": "受國民教育之權利",
+        "D": "人身自由"
+      }
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "As fires can be caused by or involve many _____ sources and fuels, fire investigators need to know not only the science of fire behavior, but also to have a working understanding of many different areas of studies, including construction, electricity, human behavior, and mechanical devices. (A)confession (B)ignition (C)corruption (D)interruption",
+      "stem": "As fires can be caused by or involve many _____ sources and fuels, fire investigators need to know not only the science of fire behavior, but also to have a working understanding of many different areas of studies, including construction, electricity, human behavior, and mechanical devices.",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "confession",
+        "B": "ignition",
+        "C": "corruption",
+        "D": "interruption"
+      }
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "Changes in a building’s _____ or presence of an external wind can increase the energy release of a fire and the spread of fire gases. (A)foundation (B)conclusion (C)vegetation (D)ventilation",
+      "stem": "Changes in a building’s _____ or presence of an external wind can increase the energy release of a fire and the spread of fire gases.",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "foundation",
+        "B": "conclusion",
+        "C": "vegetation",
+        "D": "ventilation"
+      }
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "A huge fire, apparently started _____, tore through the Grande-Synthe refugee camp in France and firefighters said at least 10 people had been injured in the blaze at the camp. (A)conservatively (B)deliberately (C)respectively (D)diligently",
+      "stem": "A huge fire, apparently started _____, tore through the Grande-Synthe refugee camp in France and firefighters said at least 10 people had been injured in the blaze at the camp.",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "conservatively",
+        "B": "deliberately",
+        "C": "respectively",
+        "D": "diligently"
+      }
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "Generally, the time a fire drill takes to evacuate is measured to _____ that it occurs within a reasonable length of time. (A)ensure (B)reward (C)interpret (D)swear",
+      "stem": "Generally, the time a fire drill takes to evacuate is measured to _____ that it occurs within a reasonable length of time.",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "ensure",
+        "B": "reward",
+        "C": "interpret",
+        "D": "swear"
+      }
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "A fire extinguisher consists of a hand-held _____ pressure vessel containing an agent which can be discharged to extinguish a fire. (A)regional (B)industrial (C)cylindrical (D)theatrical",
+      "stem": "A fire extinguisher consists of a hand-held _____ pressure vessel containing an agent which can be discharged to extinguish a fire.",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "regional",
+        "B": "industrial",
+        "C": "cylindrical",
+        "D": "theatrical"
+      }
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "One of the firefighter’s rescue duties is to assist people in _____ condition as a first responder. (A)flexible (B)critical (C)abstract (D)available",
+      "stem": "One of the firefighter’s rescue duties is to assist people in _____ condition as a first responder.",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "flexible",
+        "B": "critical",
+        "C": "abstract",
+        "D": "available"
+      }
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "After the earthquake, firefighters walked among _____ houses, trying to pull a child from the rubble. (A)collapsed (B)floated (C)prevented (D)terrified",
+      "stem": "After the earthquake, firefighters walked among _____ houses, trying to pull a child from the rubble.",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "collapsed",
+        "B": "floated",
+        "C": "prevented",
+        "D": "terrified"
+      }
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "A boy climbs a partially _____ electric pole in the flooded river, waiting to be rescued by the firefighters. (A)submerged (B)diverged (C)hesitated (D)abolished",
+      "stem": "A boy climbs a partially _____ electric pole in the flooded river, waiting to be rescued by the firefighters.",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "submerged",
+        "B": "diverged",
+        "C": "hesitated",
+        "D": "abolished"
+      }
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "After the terror attack, the police urged people to watch out for and report _____ movements or behaviors. (A)affectionate (B)diligent (C)suspicious (D)intelligent",
+      "stem": "After the terror attack, the police urged people to watch out for and report _____ movements or behaviors.",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "affectionate",
+        "B": "diligent",
+        "C": "suspicious",
+        "D": "intelligent"
+      }
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "After the bridge collapsed, local residents and firefighters tried to rescue people trapped under the _____ for many hours. (A)cripples (B)debris (C)councils (D)destinations",
+      "stem": "After the bridge collapsed, local residents and firefighters tried to rescue people trapped under the _____ for many hours.",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "cripples",
+        "B": "debris",
+        "C": "councils",
+        "D": "destinations"
+      }
     },
     {
       "number": 51,
       "type": "choice",
-      "stem": "A smoke ______ is a device that senses smoke, typically as an indicator of fire. (A)detection (B)detective (C)detector (D)definition",
+      "stem": "A smoke ______ is a device that senses smoke, typically as an indicator of fire.",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "detection",
+        "B": "detective",
+        "C": "detector",
+        "D": "definition"
+      }
     },
     {
       "number": 52,
       "type": "choice",
-      "stem": "Instrumental analysis techniques have successfully assisted the police in ______ criminal cases. (A)revolving (B)solving (C)dissolving (D)involving",
+      "stem": "Instrumental analysis techniques have successfully assisted the police in ______ criminal cases.",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "revolving",
+        "B": "solving",
+        "C": "dissolving",
+        "D": "involving"
+      }
     },
     {
       "number": 53,
       "type": "choice",
-      "stem": "A fire believed to be caused by a lightning bolt forced the shutdown of an oil-capturing system near the gushing Gulf oil well; fortunately it was quickly ______ without injuries. (A)investigated (B)distinguished (C)extinguished (D)regulated",
+      "stem": "A fire believed to be caused by a lightning bolt forced the shutdown of an oil-capturing system near the gushing Gulf oil well; fortunately it was quickly ______ without injuries.",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "investigated",
+        "B": "distinguished",
+        "C": "extinguished",
+        "D": "regulated"
+      }
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "A ______ is a dramatic event caused by a fire, resulting from rapid re-introduction of oxygen to combustion in an oxygen-depleted environment; for example, the breaking of a window or opening of a door to an enclosed space. (A)backdoor (B)backdrop (C)backbreaker (D)backdraft",
+      "stem": "A ______ is a dramatic event caused by a fire, resulting from rapid re-introduction of oxygen to combustion in an oxygen-depleted environment; for example, the breaking of a window or opening of a door to an enclosed space.",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "backdoor",
+        "B": "backdrop",
+        "C": "backbreaker",
+        "D": "backdraft"
+      }
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "Four people were killed and thirteen injured in a fire that swept through a nursing home in Taoyuan. After investigating the cause of the fire, the fire department said the nursing home appeared to have _____ fire codes several times in the past. (A)arrested (B)impressed (C)violated (D)launched 請依下文回答第56題至第60題: Professional firefighters must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, trousers, and work gloves. Firefighters’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, firefighters have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, firefighters also need Personal 58 Apparatus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when firefighters are in danger or do not move for about 30 seconds. Pike poles allow firefighters to search behind walls and ceilings for fire and to ventilate structures by breaking windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly breaking through walls, ceilings, or locked doors of buildings on fire.",
+      "stem": "Four people were killed and thirteen injured in a fire that swept through a nursing home in Taoyuan. After investigating the cause of the fire, the fire department said the nursing home appeared to have _____ fire codes several times in the past.",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "arrested",
+        "B": "impressed",
+        "C": "violated",
+        "D": "launched 請依下文回答第56題至第60題: Professional firefighters must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, trousers, and work gloves. Firefighters’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, firefighters have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, firefighters also need Personal 58 Apparatus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when firefighters are in danger or do not move for about 30 seconds. Pike poles allow firefighters to search behind walls and ceilings for fire and to ventilate structures by breaking windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly breaking through walls, ceilings, or locked doors of buildings on fire."
+      }
     },
     {
       "number": 56,
       "type": "choice",
-      "stem": "(A)provocative (B)protrusive (C)protective (D)productive",
+      "stem": "",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "provocative",
+        "B": "protrusive",
+        "C": "protective",
+        "D": "productive"
+      }
     },
     {
       "number": 57,
       "type": "choice",
-      "stem": "(A)components (B)numbers (C)ingredients (D)contents",
+      "stem": "",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "components",
+        "B": "numbers",
+        "C": "ingredients",
+        "D": "contents"
+      }
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "(A)Bathing (B)Branching (C)Binding (D)Breathing",
+      "stem": "",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "Bathing",
+        "B": "Branching",
+        "C": "Binding",
+        "D": "Breathing"
+      }
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "(A)affect (B)alarm (C)attack (D)effect",
+      "stem": "",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "affect",
+        "B": "alarm",
+        "C": "attack",
+        "D": "effect"
+      }
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "(A)multi-dimension (B)multi-color (C)multi-purpose (D)multi-discipline",
+      "stem": "",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "multi-dimension",
+        "B": "multi-color",
+        "C": "multi-purpose",
+        "D": "multi-discipline"
+      }
     }
   ],
   "year": 106,

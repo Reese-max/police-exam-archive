@@ -374,9 +374,8 @@ function switchView(mode) {
   if (q.trim() || activeYearFilter) doSearch(q);
   if (bookmarkFilterActive) { bookmarkFilterActive = false; toggleBookmarkFilter(); }
   if (practiceMode) {
-    document.querySelectorAll('.self-score-panel').forEach(function(p) { p.remove(); });
-    document.querySelectorAll('.answer-section').forEach(function(as) { as.classList.remove('revealed'); });
-    buildSelfScorePanels();
+    clearAllAnswerState();
+    bindOptionClicks();
   }
 }
 
@@ -464,7 +463,7 @@ function filterBySubject(key) {
   });
 }
 
-/* === 練習模式 (Phase 6) === */
+/* === 練習模式 (Phase 6) — 互動式點選 === */
 let practiceMode = false;
 let practiceCorrect = 0;
 let practiceTotal = 0;
@@ -478,7 +477,6 @@ function togglePractice() {
     btn.classList.add('practice-active');
     btn.textContent = '結束練習';
     scorePanel.classList.add('visible');
-    /* 嘗試恢復上次 session */
     var session = getStore('exam-practice-session');
     if (session.url === window.location.pathname && session.ts && Date.now() - session.ts < 3600000) {
       practiceCorrect = session.correct || 0;
@@ -488,7 +486,7 @@ function togglePractice() {
       practiceTotal = 0;
     }
     updateScoreUI();
-    buildSelfScorePanels();
+    bindOptionClicks();
   } else {
     if (practiceTotal > 0) savePracticeScore(practiceCorrect, practiceTotal);
     clearPracticeSession();
@@ -496,74 +494,58 @@ function togglePractice() {
     btn.classList.remove('practice-active');
     btn.textContent = '練習模式';
     scorePanel.classList.remove('visible');
-    document.querySelectorAll('.self-score-panel').forEach(function(p) { p.remove(); });
-    document.querySelectorAll('.answer-section').forEach(function(as) { as.classList.remove('revealed'); });
+    clearAllAnswerState();
   }
 }
 
-function buildSelfScorePanels() {
-  const vs = getActiveViewSelector();
-  document.querySelectorAll(vs + ' .answer-section').forEach(function(as) {
-    // 防禦性跳過：若答案格為空（段落題被排除後可能發生）
-    if (!as.querySelector('.answer-cell')) return;
-    if (as.previousElementSibling && as.previousElementSibling.classList.contains('self-score-panel')) return;
-    const panel = document.createElement('div');
-    panel.className = 'self-score-panel';
-    const revBtn = document.createElement('button');
-    revBtn.className = 'reveal-btn';
-    revBtn.textContent = '顯示答案';
-    const btnCorrect = document.createElement('button');
-    btnCorrect.className = 'score-btn btn-correct';
-    btnCorrect.textContent = '✓ 答對';
-    const btnWrong = document.createElement('button');
-    btnWrong.className = 'score-btn btn-wrong';
-    btnWrong.textContent = '✗ 答錯';
-    revBtn.addEventListener('click', function() {
-      as.classList.add('revealed');
-      var isFreePoint = as.querySelector('.free-point') !== null;
-      if (isFreePoint) {
-        practiceTotal++;
-        practiceCorrect++;
-        panel.classList.add('scored', 'was-correct', 'free-point-scored');
-        panel.setAttribute('data-result', '\u2605 本題送分');
-        updateScoreUI();
-        savePracticeSession();
-      } else {
-        btnCorrect.classList.add('visible');
-        btnWrong.classList.add('visible');
-      }
-      revBtn.style.display = 'none';
-    });
-    btnCorrect.addEventListener('click', function() {
-      if (panel.classList.contains('scored')) return;
-      practiceTotal++; practiceCorrect++;
-      panel.classList.add('scored', 'was-correct');
-      panel.setAttribute('data-result', '✓ 答對');
-      as.classList.add('revealed');
-      updateScoreUI();
-      savePracticeSession();
-    });
-    btnWrong.addEventListener('click', function() {
-      if (panel.classList.contains('scored')) return;
+function bindOptionClicks() {
+  document.querySelectorAll('.mc-opt').forEach(function(opt) {
+    if (opt._boundClick) return;
+    opt._boundClick = true;
+    opt.addEventListener('click', function() {
+      if (!practiceMode) return;
+      var block = opt.closest('.q-block');
+      if (!block || block.classList.contains('answered')) return;
+      var answer = block.getAttribute('data-answer');
+      var chosen = opt.getAttribute('data-val');
+      block.classList.add('answered');
       practiceTotal++;
-      panel.classList.add('scored', 'was-wrong');
-      panel.setAttribute('data-result', '✗ 答錯');
-      as.classList.add('revealed');
+      if (chosen === answer) {
+        practiceCorrect++;
+        opt.classList.add('correct');
+      } else {
+        opt.classList.add('wrong');
+        /* 標示正確選項 */
+        block.querySelectorAll('.mc-opt').forEach(function(o) {
+          if (o.getAttribute('data-val') === answer) o.classList.add('correct-reveal');
+        });
+      }
+      /* 顯示逐題答案 */
+      var ansEl = block.querySelector('.q-answer');
+      if (ansEl) ansEl.classList.add('revealed');
       updateScoreUI();
       savePracticeSession();
     });
-    panel.appendChild(revBtn);
-    panel.appendChild(btnCorrect);
-    panel.appendChild(btnWrong);
-    as.parentElement.insertBefore(panel, as);
   });
 }
 
 function updateScoreUI() {
   document.getElementById('scoreCorrect').textContent = practiceCorrect;
   document.getElementById('scoreTotal').textContent = practiceTotal;
-  const pct = practiceTotal > 0 ? Math.round(practiceCorrect / practiceTotal * 100) : 0;
+  var pct = practiceTotal > 0 ? Math.round(practiceCorrect / practiceTotal * 100) : 0;
   document.getElementById('scorePct').textContent = practiceTotal > 0 ? pct + '%' : '--';
+}
+
+function clearAllAnswerState() {
+  document.querySelectorAll('.q-block').forEach(function(b) {
+    b.classList.remove('answered');
+  });
+  document.querySelectorAll('.mc-opt').forEach(function(o) {
+    o.classList.remove('correct', 'wrong', 'correct-reveal', 'selected');
+  });
+  document.querySelectorAll('.q-answer').forEach(function(a) {
+    a.classList.remove('revealed');
+  });
 }
 
 function resetScore() {
@@ -571,14 +553,17 @@ function resetScore() {
   practiceTotal = 0;
   updateScoreUI();
   clearPracticeSession();
-  document.querySelectorAll('.self-score-panel').forEach(function(p) {
-    p.classList.remove('scored', 'was-correct', 'was-wrong');
-    p.removeAttribute('data-result');
-    const rev = p.querySelector('.reveal-btn');
-    if (rev) rev.style.display = '';
-    p.querySelectorAll('.score-btn').forEach(function(b) { b.classList.remove('visible'); });
+  clearAllAnswerState();
+}
+
+/* === 一般模式：顯示/隱藏全部答案 === */
+function toggleAllAnswers(btn) {
+  var showing = btn.classList.toggle('active');
+  btn.textContent = showing ? '隱藏答案' : '顯示答案';
+  document.querySelectorAll('.q-block').forEach(function(b) {
+    if (showing) b.classList.add('show-answer');
+    else b.classList.remove('show-answer');
   });
-  document.querySelectorAll('.answer-section').forEach(function(as) { as.classList.remove('revealed'); });
 }
 
 /* === URL Hash 導航 (Phase 7) === */

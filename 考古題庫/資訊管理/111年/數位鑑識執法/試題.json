@@ -17,7 +17,7 @@
     {
       "number": "一",
       "type": "essay",
-      "stem": "請說明依循 ISO/IEC  標準來進行數位鑑識的目的為何?(30 分)",
+      "stem": "請說明依循 ISO/IEC 標準來進行數位鑑識的目的為何?(30 分)",
       "section": null
     },
     {
@@ -41,7 +41,7 @@
     {
       "number": "五",
       "type": "essay",
-      "stem": "請列出 ISO/IEC  中規範「數位證據處理」的三個基本需求為何?\n(15 分)",
+      "stem": "請列出 ISO/IEC 中規範「數位證據處理」的三個基本需求為何?\n(15 分)",
       "section": null
     }
   ],
