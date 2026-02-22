@@ -585,7 +585,7 @@
       "answer": "B",
       "options": {
         "A": "conventional",
-        "B": "hazard ous",
+        "B": "hazardous",
         "C": "leg end ary",
         "D": "reward ing"
       }
@@ -593,7 +593,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "The government’s cameras are every where in China, and the is as much about intimidation as monitor ing.",
+      "stem": "The government’s cameras are every where in China, and the is as much about intimidation as monitoring.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {

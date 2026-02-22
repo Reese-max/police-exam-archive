@@ -152,7 +152,7 @@
     {
       "number": 10,
       "type": "choice",
-      "stem": "關於現場檢測儀器之顯現原理或使用方法的敘述:1「現場勘察線性光源產生器」係以低角度之 照明,可使微物和痕跡灰塵產生散射光或漫反射光 2「反射式紫外光影像系統(Reflected Ultravio let Imaging System,RUVIS)」係以紫外光激發物證致使產生螢光 3「靜電足跡採取器 (ele ctrostaticdustprintlifter)」也能應用於金屬面的鞋印痕之採取 4「反斯托克斯(anti-stokes) 指紋拍照系統」係以紅外線作為光源,適用於吸水透氣之物面,下列何者正確?",
+      "stem": "關於現場檢測儀器之顯現原理或使用方法的敘述:1「現場勘察線性光源產生器」係以低角度之 照明,可使微物和痕跡灰塵產生散射光或漫反射光 2「反射式紫外光影像系統(Reflected Ultravio let Imaging System, RUVIS)」係以紫外光激發物證致使產生螢光 3「靜電足跡採取器 (ele ctrostaticdustprintlifter)」也能應用於金屬面的鞋印痕之採取 4「反斯托克斯(anti-stokes) 指紋拍照系統」係以紅外線作為光源,適用於吸水透氣之物面,下列何者正確?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -242,7 +242,7 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "「刑事生物識別術(forensic biometrics)」之標記(marker)可區分為兩類別:生理性 (physiological)與行為性(behavioral)。下列那些是屬於生理性識別(physiologicalbiometrics) 之標記(marker)?1指紋(finger prints) 2手(hand) 3虹膜(iris) 4視網膜(retina) 5聲音(voice) 6臉部特徵掃描(facial scans)",
+      "stem": "「刑事生物識別術(forensic biometrics)」之標記(marker)可區分為兩類別:生理性 (physiological)與行為性(behavioral)。下列那些是屬於生理性識別(physiologicalbiometrics) 之標記(marker)?1指紋(fingerprints) 2手(hand) 3虹膜(iris) 4視網膜(retina) 5聲音(voice) 6臉部特徵掃描(facial scans)",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -312,7 +312,7 @@
       "answer": "B",
       "options": {
         "A": "氰丙烯酸酯法(Cyanoacry late Fuming)",
-        "B": "鉬溶液「小粒子懸浮液」(Small Part icle Reagent,SPR)",
+        "B": "鉬溶液「小粒子懸浮液」(Small Part icle Reagent, SPR)",
         "C": "寧海得林法(Ninhydrin)",
         "D": "粉末法"
       }

@@ -275,7 +275,7 @@
     {
       "number": 19,
       "type": "choice",
-      "stem": "你利用氣相層析質譜法分析同仁從火場採集的跡證,分析結果發現其中含有中質石油分餾液 (medium petroleum distil late,MPD),下列何種化學成分是你判斷跡證中質石油分餾液應該出 現的標的化合物(target compound)?",
+      "stem": "你利用氣相層析質譜法分析同仁從火場採集的跡證,分析結果發現其中含有中質石油分餾液 (medium petroleum distil late, MPD),下列何種化學成分是你判斷跡證中質石油分餾液應該出 現的標的化合物(target compound)?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {

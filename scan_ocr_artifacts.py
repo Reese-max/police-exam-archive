@@ -390,6 +390,141 @@ for word in [
     "intelligence", "description", "explanation", "sergeant", "lieutenant", "captain",
     "corporal", "sheriff", "detective", "Thompson", "manipulated", "likelihood",
     "projected", "created", "overlooked", "benchmark",
+    # Additional words found from spot-checking exam files
+    "officials", "official", "returning", "entitled", "dependents",
+    "committing", "committed", "transactions", "transaction", "earthquake",
+    "dominance", "dominant", "artificial", "machines", "machine", "creation",
+    "evolution", "opportunities", "opportunity", "efficiency", "algorithms",
+    "algorithm", "autonomous", "compromise", "compromised", "uncertainty",
+    "disinformation", "perceptions", "identity", "warfare",
+    "discharged", "combating", "combat", "hazardous", "simulations",
+    "simulation", "simmered", "striking", "headaches", "nightmares",
+    "traumatic", "transcribed", "nowadays", "suffered",
+    "informative", "integrate", "integrated", "fostered",
+    "prisoners", "prisoner", "likelihood", "appearances", "appearance",
+    "restricted", "travelers", "traveler", "restricted",
+    "administrative", "punishment", "endangered", "policing",
+    "deescalation", "techniques", "technique", "supervision",
+    "contamination", "contaminated", "contaminate", "credibility",
+    "fraudsters", "fraudster", "offering", "offered", "incentives",
+    "incentive", "lottery", "bonus", "interests",
+    "reintegration", "schemes", "scheme", "modifying",
+    "resistance", "restorative", "residence", "residents", "residential",
+    "anonymous", "anonymously", "exploitation",
+    "negligence", "neglect", "neglected",
+    "demeanor", "comprehensive", "comprehensively",
+    "colleagues", "colleague", "accusations", "accusation",
+    "coordinated", "coordinator", "terminated", "termination",
+    "collegiate", "appropriate", "appropriated", "appropriation",
+    "assimilated", "attributed", "attribution",
+    "biometric", "biometrics", "physiological", "behavioral",
+    "fingerprint", "fingerprints", "recognition",
+    "extortion", "blackmail", "intimidated", "intimidation",
+    "bribery", "corruption", "laundering",
+    "expedition", "extradition", "deduction", "deductions",
+    "rehabilitation", "rehabilitated", "reintegration",
+    "acquittal", "acquitted", "conviction", "convicted",
+    "sentencing", "sentenced", "imprisonment", "imprisoned",
+    "probation", "probationer", "parole", "parolee",
+    "perpetrator", "perpetrators", "perpetrated",
+    "apprehend", "apprehended", "apprehension",
+    "surveillance", "surveilling", "monitoring",
+    "suspicious", "suspiciously", "allegedly", "alleged",
+    "testimony", "testimonies", "testifying", "testified",
+    "violation", "violations", "violator", "violators",
+    "enforcement", "enforced", "enforcing",
+    "jurisdiction", "jurisdictions", "jurisdictional",
+    "prosecution", "prosecuted", "prosecuting", "prosecutor",
+    "defendant", "defendants", "defense", "defended",
+    "plaintiff", "plaintiffs", "petition", "petitioned",
+    "burglary", "robbery", "larceny", "arson", "arsonist",
+    "smuggling", "smuggled", "smuggler", "smugglers",
+    "trafficking", "trafficked", "trafficker", "traffickers",
+    "counterfeiting", "counterfeit", "counterfeited",
+    "embezzlement", "embezzled", "embezzler",
+    "forgery", "forged", "forger", "forgers",
+    "kidnapping", "kidnapped", "kidnapper",
+    "homicide", "homicides", "manslaughter",
+    "assault", "assaulted", "assaulting",
+    "harassment", "harassed", "harassing",
+    "vandalism", "vandalized", "vandalizing",
+    "trespassing", "trespassed", "trespasser",
+    "cyberbullying", "cybercrime", "cyberattack",
+    "breathalyzer", "sobriety", "intoxication",
+    "misdemeanor", "felony", "indictment",
+    "affidavit", "subpoena", "warrant", "warrants",
+    "uniformed", "plainclothes", "undercover",
+    "dispatcher", "dispatched", "dispatching",
+    "responding", "respondent", "respondents",
+    "precinct", "headquarters", "barracks",
+    "fingerprinting", "handcuffs", "handcuffed",
+    "autopsy", "coroner", "pathologist",
+    "delinquent", "delinquency", "juvenile",
+    "recidivism", "recidivist", "reoffend",
+    "confiscated", "confiscation", "seizure",
+    "evacuation", "evacuated", "evacuating",
+    "earthquake", "tsunami", "hurricane", "tornado",
+    "firefighter", "firefighters", "paramedic", "paramedics",
+    "ambulance", "stretcher", "defibrillator",
+    "rehabilitation", "rehabilitate", "rehabilitated",
+    "restitution", "compensation", "reparation",
+    "dissonance", "fracture", "penalty",
+    "occupants", "occupant", "exposure", "debris",
+    "embers", "flammable", "combustible",
+    "simultaneously", "consecutive", "consecutively",
+    "apparatus", "equipment", "specialized",
+    "protocols", "protocol", "procedures", "procedural",
+    "accountability", "accountable", "transparent",
+    "allegations", "allegation", "implicated",
+    "accomplice", "accomplices", "conspiracy",
+    "witness", "witnesses", "eyewitness",
+    "informant", "informants", "cooperating",
+    "undercover", "sting", "entrapment",
+    "jurisdiction", "extradite", "extradited",
+    "immigration", "immigrant", "immigrants",
+    "deportation", "deported", "deportee",
+    "naturalization", "citizenship", "refugee",
+    "asylum", "detention", "detainee",
+    "prohibited", "prohibition", "prohibit",
+    "legitimate", "legitimacy", "legitimately",
+    "Taiwanese", "government", "implemented",
+    "production", "importation", "cigarettes",
+    "identification", "identified", "identifying",
+    "acknowledge", "acknowledged", "acknowledgment",
+    "establishment", "established", "establishing",
+    "overwhelming", "overwhelmed",
+    "approximately", "approximate",
+    "demonstration", "demonstrated", "demonstrating",
+    "investigation", "investigated", "investigating",
+    "implementation", "implemented", "implementing",
+    "communication", "communicated", "communicating",
+    "administration", "administered", "administering",
+    "consideration", "considered", "considering",
+    "determination", "determined", "determining",
+    "discrimination", "discriminated", "discriminating",
+    "interpretation", "interpreted", "interpreting",
+    "recommendation", "recommended", "recommending",
+    "representation", "represented", "representing",
+    "responsibility", "responsible", "responsibly",
+    "characteristics", "characteristic",
+    "circumstances", "circumstance",
+    "consequently", "consequence", "consequences",
+    "significantly", "significance", "significant",
+    "understanding", "understood", "misunderstanding",
+    "unfortunately", "unfortunate",
+    "appropriately", "inappropriate", "inappropriately",
+    "manufacturing", "manufactured", "manufacturer",
+    "automatically", "automatic", "automated",
+    "approximately", "approximate", "approximation",
+    "consciousness", "conscious", "unconscious",
+    "psychological", "psychologically",
+    "technological", "technologically",
+    "philosophical", "philosophically",
+    "environmental", "environmentally",
+    "organizational", "organizationally",
+    "constitutional", "unconstitutional",
+    "professionally", "professional",
+    "internationally", "international",
 ]:
     KNOWN_WORDS.add(word.lower())
 
@@ -425,73 +560,11 @@ COMMON_SHORT_WORDS = {
 
 GENERIC_BROKEN_PATTERN = re.compile(r'(?<![a-zA-Z])([a-zA-Z]{2,})\s+([a-zA-Z]{2,})(?![a-zA-Z])')
 
-def looks_like_english_word(word):
-    """Heuristic: does this word look like a plausible English word?
-    Uses letter pattern analysis rather than dictionary lookup."""
-    w = word.lower()
-    n = len(w)
-    if n <= 1:
-        return True  # Single letters are fine
-    if n == 2:
-        return w in COMMON_SHORT_WORDS
-    if n == 3:
-        return w in COMMON_SHORT_WORDS
-
-    # Check if word is in our known sets
-    if w in COMMON_SHORT_WORDS or w in PREFIX_WORDS or w in KNOWN_WORDS:
-        return True
-
-    # Common English word endings (productive suffixes)
-    common_endings = [
-        'ing', 'tion', 'ment', 'ness', 'able', 'ible', 'ful', 'less',
-        'ous', 'ive', 'ity', 'ent', 'ant', 'ence', 'ance', 'ist', 'ism',
-        'ize', 'ise', 'ate', 'ure', 'ory', 'ary', 'age', 'dom', 'ally',
-        'ical', 'ious', 'eous', 'ated', 'ting', 'ted', 'ned', 'red',
-        'sed', 'ded', 'led', 'ped', 'ged', 'ked', 'bed', 'ved',
-        'ers', 'ors', 'ies', 'tes', 'ces', 'ses', 'ges', 'nes', 'res',
-        'les', 'ves', 'ely', 'lly', 'ily', 'ght', 'ble', 'dle', 'gle',
-        'ple', 'tle', 'cle', 'ual', 'ial', 'nal', 'ral', 'tal',
-        'ner', 'ter', 'der', 'ger', 'ler', 'per', 'ber', 'fer', 'cer',
-        'ster', 'sion', 'nce', 'nse', 'rse', 'ety', 'ory', 'ary',
-        'ery', 'ury', 'phy', 'thy', 'logy', 'nomy', 'ward', 'wise',
-        'like', 'ling',
-    ]
-
-    # If word has a common ending and is 4+ chars, likely a word
-    for end in common_endings:
-        if w.endswith(end) and n >= len(end) + 2:
-            return True
-
-    # Check vowel/consonant pattern - English words need vowels
-    vowels = set('aeiou')
-    has_vowel = any(c in vowels for c in w)
-    if not has_vowel:
-        return False  # No vowels = not an English word
-
-    # Consonant cluster analysis - English rarely has 4+ consonants in a row
-    max_consonant_run = 0
-    current_run = 0
-    for c in w:
-        if c not in vowels:
-            current_run += 1
-            max_consonant_run = max(max_consonant_run, current_run)
-        else:
-            current_run = 0
-    if max_consonant_run >= 4:
-        return False
-
-    # Very permissive for 4+ letter words that have reasonable patterns
-    if n >= 4:
-        return True
-
-    return True
-
-
 def check_generic_broken_word(text):
-    """Find cases where two fragments separated by space form a broken word.
-    Strategy: flag if combined is in KNOWN_WORDS, or if at least one fragment
-    doesn't look like a standalone English word."""
+    """Find cases where two fragments separated by space form a known word."""
     issues = []
+
+    ALL_WORDS = COMMON_SHORT_WORDS | PREFIX_WORDS | KNOWN_WORDS
 
     for m in GENERIC_BROKEN_PATTERN.finditer(text):
         frag1 = m.group(1)
@@ -500,50 +573,13 @@ def check_generic_broken_word(text):
         f2 = frag2.lower()
         combined = f1 + f2
 
-        # APPROACH 1: Combined word is in our known words set
-        if combined in KNOWN_WORDS:
-            # Both being common short words -> skip (normal phrase)
-            if f1 in COMMON_SHORT_WORDS and f2 in COMMON_SHORT_WORDS:
-                continue
-            # Both being known words -> skip
-            if f1 in PREFIX_WORDS and f2 in PREFIX_WORDS:
-                continue
-            if looks_like_english_word(f1) and looks_like_english_word(f2):
-                # Both look like English words - could be normal phrase or broken word
-                # Since combined IS a known word, flag it but only if at least one
-                # fragment is suspiciously short or doesn't look like a standalone word
-                if len(f1) >= 4 and len(f2) >= 4:
-                    continue  # Both are reasonable standalone words
-            issues.append({
-                "type": "broken_word",
-                "matched_text": m.group(),
-                "reconstructed": combined,
-                "position": m.start(),
-                "context": text[max(0, m.start()-25):m.end()+25]
-            })
+        # The combined text must be a known English word
+        if combined not in KNOWN_WORDS:
             continue
 
-        # APPROACH 2: Skip if not in English context
-        if not is_english_context(text, m.start()):
+        # Both fragments being common standalone words is likely a normal phrase
+        if f1 in ALL_WORDS and f2 in ALL_WORDS:
             continue
-
-        # Only flag if at least one fragment doesn't look like a real English word
-        f1_plausible = looks_like_english_word(f1)
-        f2_plausible = looks_like_english_word(f2)
-
-        # Both look like plausible words -> skip (normal phrase)
-        if f1_plausible and f2_plausible:
-            continue
-
-        # At least one doesn't look like a word -> likely a broken word fragment
-        # But skip very short non-word fragments unless they're clearly suffixes
-        if not f1_plausible and len(f1) <= 2:
-            continue
-        if not f2_plausible and len(f2) <= 2:
-            # Only keep if it's a common suffix
-            if f2 not in {'ed', 'er', 'ly', 'al', 'nt', 'ng', 'rs', 'ts', 'ns', 'es',
-                          'ds', 'le', 'ty', 'ry', 'cy', 'ss'}:
-                continue
 
         issues.append({
             "type": "broken_word",

@@ -548,7 +548,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "The police got a(n) call that said money was being stolen from alocal bank.",
+      "stem": "The police got a(n) call that said money was being stolen from a local bank.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -591,7 +591,7 @@
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "misdemea nor",
+        "A": "misdemeanor",
         "B": "parole",
         "C": "dic hot omy",
         "D": "penalty"
@@ -600,7 +600,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "_______isa criminal charge involving violence, so the prosecution take sit very seriously, especially ifa weapon is involved orit results in injury.",
+      "stem": "_______isa criminal charge involving violence, so the prosecution take sit very seriously, especially if a weapon is involved or it results in injury.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -656,7 +656,7 @@
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "sim ulations",
+        "A": "simulations",
         "B": "reparations",
         "C": "conventions",
         "D": "incursions"
@@ -665,7 +665,7 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "The Taiwan ese government has implemented new laws that prohi bit the production, sale, and importation of e-cig are ttes. The legal age for smoking has also been raised from 18 to 20 to curb young people's add iction.",
+      "stem": "The Taiwanese government has implemented new laws that prohibit the production, sale, and importation of e-cig are ttes. The legal age for smoking has also been raised from 18 to 20 to curb young people's add iction.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -683,7 +683,7 @@
       "answer": "B",
       "options": {
         "A": "The ethical problems with biometric identification.",
-        "B": "Biometric identification, its uses, andits challenges.",
+        "B": "Biometric identification, its uses, and its challenges.",
         "C": "Biometric identification and its history in law enforcement.",
         "D": "The difference between physiological and behavioral biometrics."
       },
