@@ -67,6 +67,58 @@ def escape_html(text):
     return html_module.escape(str(text))
 
 
+def format_passage_html(text):
+    """將閱讀測驗段落格式化為 HTML：
+    1. 將「請依下文回答第XX題至第XX題」中的題號加粗加底線
+    2. 將段落中作為填空的題號加粗加底線（只處理題號範圍內的數字）
+    3. 不轉義引號，避免 &#x27; 造成視覺空格
+    """
+    # 先做 HTML 跳脫，但不轉義引號（段落在 div 內容中，不需要跳脫引號）
+    escaped = html_module.escape(str(text), quote=False)
+
+    # 先提取題號範圍（如 51-55），用於後續只標記範圍內的數字
+    range_match = re.search(r'請依下文回答第(\d+)題至第(\d+)題', escaped)
+    valid_nums = set()
+    if range_match:
+        start_num = int(range_match.group(1))
+        end_num = int(range_match.group(2))
+        valid_nums = set(range(start_num, end_num + 1))
+
+    # 1. 「請依下文回答第XX題至第XX題」→ 題號加粗底線
+    def bold_range_numbers(m):
+        prefix = m.group(1)   # 請依下文回答第
+        num1 = m.group(2)     # 起始題號
+        mid = m.group(3)      # 題至第
+        num2 = m.group(4)     # 結束題號
+        suffix = m.group(5)   # 題
+        return (f'{prefix}<strong class="passage-qnum">{num1}</strong>'
+                f'{mid}<strong class="passage-qnum">{num2}</strong>{suffix}')
+
+    escaped = re.sub(
+        r'(請依下文回答第)(\d+)(題至第)(\d+)(題)',
+        bold_range_numbers,
+        escaped
+    )
+
+    # 2. 段落內作為填空的題號（只標記落在題號範圍內的獨立數字）
+    if valid_nums:
+        def bold_blank_number(m):
+            before = m.group(1)
+            num = m.group(2)
+            after = m.group(3)
+            if int(num) in valid_nums:
+                return f'{before}<strong class="passage-qnum">{num}</strong>{after}'
+            return m.group(0)
+
+        escaped = re.sub(
+            r'([\s,.\u3001\u3002\uff0c;])(\d{2,3})([\s,.\u3001\u3002\uff0c;])',
+            bold_blank_number,
+            escaped
+        )
+
+    return escaped
+
+
 def make_card_id(year, subj_name):
     """生成唯一且穩定的卡片 ID"""
     cleaned = re.sub(r'[^a-zA-Z0-9_]', '', subj_name.replace(' ', '_'))[:20]
@@ -161,6 +213,7 @@ body.sidebar-collapsed .sidebar-reopen { display: flex; }
 .exam-metadata { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.82rem; color: var(--text-light); line-height: 1.6; }
 .exam-note { font-size: 0.82rem; color: var(--text-light); padding: 0.2rem 0 0.2rem 1rem; border-left: 3px solid var(--border); margin-bottom: 0.25rem; }
 .reading-passage { font-size: 0.88rem; line-height: 1.8; color: var(--text); background: #f8fafc; border-left: 3px solid var(--primary); padding: 0.75rem 1rem; margin: 0.75rem 0 0.25rem; border-radius: 0 8px 8px 0; overflow-wrap: break-word; word-break: break-word; }
+.passage-qnum { display: inline-block; background: var(--primary); color: #fff; font-weight: 700; padding: 0 0.4em; border-radius: 4px; font-size: 0.92em; line-height: 1.5; margin: 0 0.1em; }
 .exam-section-marker { font-size: 0.95rem; font-weight: 700; color: var(--primary); padding: 0.75rem 0 0.4rem; margin-top: 0.5rem; border-top: 1px solid var(--border); }
 .essay-question { font-size: 0.92rem; line-height: 1.85; padding: 0.75rem 0 0.5rem; border-bottom: 1px dashed #e2e8f0; margin-bottom: 0.5rem; text-indent: -1.5em; padding-left: 1.5em; overflow-wrap: break-word; word-break: break-word; }
 .mc-question { padding: 0.6rem 0 0.25rem; border-top: 1px solid #f1f5f9; margin-top: 0.4rem; display: flex; gap: 0.5rem; align-items: baseline; overflow-wrap: break-word; word-break: break-word; }
@@ -223,6 +276,7 @@ html.dark .meta-tag { background: #334155; color: #cbd5e1; }
 html.dark .exam-metadata { background: #1e293b; border-color: #334155; }
 html.dark .exam-note { border-color: #334155; }
 html.dark .reading-passage { background: #1e293b; border-color: #6366f1; }
+html.dark .passage-qnum { background: #6366f1; color: #fff; }
 html.dark .stats-bar { background: var(--card-bg); border-color: var(--border); }
 html.dark .stat-item { background: transparent; }
 html.dark .stat-value { background: linear-gradient(135deg, #818cf8, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -1212,7 +1266,7 @@ def render_subject_card(card_id, subject_name, questions_data, year):
         passage = q.get('passage', '')
         if passage and passage not in rendered_passages:
             rendered_passages.add(passage)
-            content_html += f'<div class="reading-passage">{escape_html(passage)}</div>\n'
+            content_html += f'<div class="reading-passage">{format_passage_html(passage)}</div>\n'
         content_html += render_question_html(q)
 
     # 答案已內嵌在逐題 q-block 中，不再需要底部答案格
@@ -1606,12 +1660,9 @@ def main():
     os.makedirs(js_dir, exist_ok=True)
 
     css_path = os.path.join(css_dir, 'style.css')
-    if not os.path.exists(css_path):
-        with open(css_path, 'w', encoding='utf-8') as f:
-            f.write(generate_shared_css())
-        print(f"  CSS: {css_path} (generated)")
-    else:
-        print(f"  CSS: {css_path} (existing, skipped)")
+    with open(css_path, 'w', encoding='utf-8') as f:
+        f.write(generate_shared_css())
+    print(f"  CSS: {css_path} (generated)")
 
     js_path = os.path.join(js_dir, 'app.js')
     if not os.path.exists(js_path):
