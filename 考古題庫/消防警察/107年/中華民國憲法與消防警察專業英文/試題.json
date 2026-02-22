@@ -554,7 +554,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "many fire fighters working over-time frequently, how to reduce working hours becomes a big issue.",
+      "stem": "many fire fight ers working over-time frequently, how to reduce working hours becomes a big issue.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -567,7 +567,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "other hazardous materials, lighters and matches should be kept out of children’s reach.",
+      "stem": "other hazard ous materials, light ers and matches should be kept out of children’s reach.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -580,7 +580,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "If a firefighter enters the fire scene without any consideration, he might be in a room filled with dangers.",
+      "stem": "If a fire fighter enters the fire scene without any consideration, he might be in a room filled with dangers.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -598,7 +598,7 @@
       "answer": "C",
       "options": {
         "A": "distributer",
-        "B": "decontaminator",
+        "B": "decontam ina tor",
         "C": "defibrillator",
         "D": "destroyer"
       }
@@ -606,12 +606,12 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "check your personal equipment before entering any building in the fire scene.",
+      "stem": "check your personal equipment before enter ing any building in the fire scene.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "Be reduced to",
-        "B": "Be captured to",
+        "B": "Be captu red to",
         "C": "Be defined to",
         "D": "Be sure to"
       }
@@ -625,20 +625,20 @@
       "options": {
         "A": "Now that",
         "B": "In light of",
-        "C": "In addition to",
+        "C": "In add ition to",
         "D": "But for"
       }
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "should any fireman get into a fire scene all alone, because teamwork is the basic requirement in fire-fighting.",
+      "stem": "should any fireman get into a fire scene all alone, because team work is the basic requirement in fire-fight ing.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
         "A": "On no account",
         "B": "On account of",
-        "C": "In addition to",
+        "C": "In add ition to",
         "D": "In case that"
       }
     },
@@ -658,25 +658,25 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "in a room has been interpreted as thermal instability caused by the heat generation rate increasing faster with temperature than the rate of aggregated heat losses.",
+      "stem": "in a room has been interpreted as thermal inst ability caused by the heat generation rate increa sing faster with tem per ature than the rate of aggregated heat losses.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "Boil-over",
-        "B": "Flashover",
-        "C": "Ventilation-controlled",
-        "D": "Fuel-controlled"
+        "B": "Flash over",
+        "C": "Ventilation-control led",
+        "D": "Fuel-control led"
       }
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "reduce the casualties of residential fire, houses should install residential fire alarm detectors.",
+      "stem": "reduce the casualties of residential fire, houses should install residential fire alarm detect ors.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "In addition to",
-        "B": "Be supposed to",
+        "A": "In add ition to",
+        "B": "Be sup posed to",
         "C": "Be used to",
         "D": "In order to"
       }
@@ -697,7 +697,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "A fuel-controlled fire can also be described as .",
+      "stem": "A fuel-control led fire can also be described as .",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -714,36 +714,36 @@
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "Backdraught",
+        "A": "Back draught",
         "B": "Smoldering",
         "C": "Flamming",
-        "D": "Fuel-controlled"
+        "D": "Fuel-control led"
       }
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "After a flashover has occurred in a compartment, the will develop to produce temperatures of 900–1100 oC.",
+      "stem": "After a flash over has occurred in a com part ment, the will develop to produce tem per atures of 900–1100 oC.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "temperature",
+        "A": "tem per ature",
         "B": "density",
-        "C": "specific heat capacity",
+        "C": "specific heat capa city",
         "D": "heat release rate"
       }
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "No access to a fire scene is to anyone without prior approval from fire scene investigators.",
+      "stem": "No access to a fire scene is to anyone without prior app roval from fire scene investigators.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "admired",
         "B": "adored",
         "C": "adopted",
-        "D": "allowed 請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department."
+        "D": "allowed"
       }
     },
     {
@@ -757,7 +757,8 @@
         "B": "sounded",
         "C": "rang",
         "D": "went off"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department."
     },
     {
       "number": 57,
@@ -770,7 +771,8 @@
         "B": "pass",
         "C": "passed",
         "D": "passing"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department."
     },
     {
       "number": 58,
@@ -783,7 +785,8 @@
         "B": "extent",
         "C": "spread",
         "D": "range"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department."
     },
     {
       "number": 59,
@@ -796,7 +799,8 @@
         "B": "pull out",
         "C": "pull in",
         "D": "pull off"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department."
     },
     {
       "number": 60,
@@ -809,7 +813,8 @@
         "B": "of",
         "C": "in",
         "D": "at"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fight ing watch men in 24 BC. In that era most cities had watch men who 56 an alarm at signs of fire. The principal piece of fire-fight ing equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fight ing tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make open ings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 build ings. When explosives were available, they would be used for this same purpose. The first modern stand ards for the operation of a fire department were not established until 1830, in Edinburgh, Scotl and. These stand ards explained, for the first time, what was expected 60 a good fire department."
     }
   ],
   "year": 107,

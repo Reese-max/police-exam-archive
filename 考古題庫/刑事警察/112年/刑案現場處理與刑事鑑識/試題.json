@@ -53,9 +53,9 @@
       "answer": "B",
       "options": {
         "A": "浮漂玻璃(Float glass)",
-        "B": "回火玻璃(Tempered glass)",
-        "C": "疊層玻璃(Laminatedglass)",
-        "D": "板玻璃(Plateglass)"
+        "B": "回火玻璃(Tempe red glass)",
+        "C": "疊層玻璃(Lam ina ted glass)",
+        "D": "板玻璃(Plate glass)"
       }
     },
     {
@@ -67,14 +67,14 @@
       "options": {
         "A": "調整混合液的密度與玻璃的密度相同,然後將混合液注入定容積的比重瓶,利用天秤秤取混合 液的質量,可算出混合液密度,即是玻璃密度",
         "B": "利用液體的密度隨溫度升高而變大的性質來測定玻璃密度",
-        "C": "由顯微鏡觀察玻璃碎片時,Beckeline如果向碎片內部移動即表示碎片的折射率大於浸液",
-        "D": "由顯微鏡觀察玻璃碎片時使用單色光,當碎片與浸液的折射率相同時,則Beckeline消失"
+        "C": "由顯微鏡觀察玻璃碎片時,Becke line如果向碎片內部移動即表示碎片的折射率大於浸液",
+        "D": "由顯微鏡觀察玻璃碎片時使用單色光,當碎片與浸液的折射率相同時,則Becke line消失"
       }
     },
     {
       "number": 4,
       "type": "choice",
-      "stem": "測量血液中酒精含量(BloodAlcoholConcentration;BAC)就可估計體內酒精總量。酒精經由血 液到達腦部對中樞神經系統作用,下列敘述何者錯誤?",
+      "stem": "測量血液中酒精含量(Blood Alcohol Concentration;BAC)就可估計體內酒精總量。酒精經由血 液到達腦部對中樞神經系統作用,下列敘述何者錯誤?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -100,7 +100,7 @@
     {
       "number": 6,
       "type": "choice",
-      "stem": "歹徒常使用膠帶進行各項犯罪活動,因此,如何顯現膠帶黏膠面上指紋,對於破案有其重要性, 請問下列何者適合用於顯現膠帶黏膠面指紋方法?1氰丙烯酸脂法燻蒸後再以 Basic Yellow 40 染料漂染 2氯化鋅試劑法(Zinc chloride solution) 3硝酸銀試劑法(Silver nitrate solution) 4碘燻法(Iodinevapor) 5黏膠面粉末法(Sticky-sidepowder)",
+      "stem": "歹徒常使用膠帶進行各項犯罪活動,因此,如何顯現膠帶黏膠面上指紋,對於破案有其重要性, 請問下列何者適合用於顯現膠帶黏膠面指紋方法?1氰丙烯酸脂法燻蒸後再以 Basic Yellow 40 染料漂染 2氯化鋅試劑法(Zinc chloride solution) 3硝酸銀試劑法(Silver nitrate solution) 4碘燻法(Iodinevapor) 5黏膠面粉末法(Sticky-side powder)",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -117,9 +117,9 @@
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "熱解氣相層析法(Pyrolysis-gaschromatography)藉由裂解產物之層析結果來鑑析該高分子的化 學組成與結構",
-        "B": "紅外線光譜法(Infraredspectroscopy)分析高分子聚合物與顏料成分之方法",
-        "C": "顯微分光光譜法(Microspectrophotomery)分析表面或橫切面各漆顏色,提供可見光光譜和顏 色色彩座標資料",
+        "A": "熱解氣相層析法(Pyrolysis-gas chromatography)藉由裂解產物之層析結果來鑑析該高分子的化 學組成與結構",
+        "B": "紅外線光譜法(Infr are dspectros copy)分析高分子聚合物與顏料成分之方法",
+        "C": "顯微分光光譜法(Microspectropho tom ery)分析表面或橫切面各漆顏色,提供可見光光譜和顏 色色彩座標資料",
         "D": "超微切片技術(Ultra-microtomy)可提供每一漆層之顏料及其分佈鑑定,樣品經浸泡丙酮後, 進行有機成分分析"
       }
     },
@@ -183,7 +183,7 @@
       "answer": "D",
       "options": {
         "A": "Ninhydrin",
-        "B": "AmidoBlack",
+        "B": "Amido Black",
         "C": "Tetramethylbenzidine",
         "D": "p-Dimethylaminobenzaldehyde"
       }
@@ -230,7 +230,7 @@
     {
       "number": 16,
       "type": "choice",
-      "stem": "以吸收抑制法(Absorption–inhibitionmethod)進行乾燥血斑之ABO 型別檢測,若加入B血球後 觀察到血球凝集反應,該血斑不可能為何種血型?",
+      "stem": "以吸收抑制法(Absorption–inhi bit ion method)進行乾燥血斑之ABO 型別檢測,若加入B血球後 觀察到血球凝集反應,該血斑不可能為何種血型?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -249,14 +249,14 @@
       "options": {
         "A": "血紅素F(HbF)",
         "B": "血紅素H(HbH)",
-        "C": "血紅素結合素(haptoglobin)",
+        "C": "血紅素結合素(haptoglo bin)",
         "D": "纖維蛋白原(fibrinogen)"
       }
     },
     {
       "number": 18,
       "type": "choice",
-      "stem": "生物檢體經萃取後之雙股 DNA 溶液,以 UV-spectrophotometer 於 260 nm 測得吸光值為 0.5,則 其DNA濃度約為多少?",
+      "stem": "生物檢體經萃取後之雙股 DNA 溶液,以 UV-spectropho tom eter 於 260 nm 測得吸光值為 0.5,則 其DNA濃度約為多少?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -269,7 +269,7 @@
     {
       "number": 19,
       "type": "choice",
-      "stem": "以Sanger鏈終止定序(chain-termination sequencing)反應並結合毛細管電泳分析進行PCR 產物 之DNA定序,通常定序反應液中的那一個成分會被標定螢光染料?",
+      "stem": "以Sanger鏈終止定序(chain-term i nation sequencing)反應並結合毛細管電泳分析進行PCR 產物 之DNA定序,通常定序反應液中的那一個成分會被標定螢光染料?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -295,7 +295,7 @@
     {
       "number": 21,
       "type": "choice",
-      "stem": "硝基化合物屬於化合爆藥,下列爆炸物:苦味酸(picricacid)、三硝基甲苯(TNT)、疊氮化鉛 (leadazide)、特出兒(tetryl)、史蒂芬酸(styphnicacid)、塑膠炸藥(PBX)等,請問有幾種 屬於硝基化合物的爆炸物?",
+      "stem": "硝基化合物屬於化合爆藥,下列爆炸物:苦味酸(picricacid)、三硝基甲苯(TNT)、疊氮化鉛 (lead azide)、特出兒(tetryl)、史蒂芬酸(styphnicacid)、塑膠炸藥(PBX)等,請問有幾種 屬於硝基化合物的爆炸物?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -340,8 +340,8 @@
       "options": {
         "A": "在血跡型態的分析中,消失的血跡型態與出現的血跡型態是同等重要",
         "B": "拋甩(Cast-off)的血跡型態可研判對於血液來源揮擊的次數",
-        "C": "現場的血灘(Poolingofblood)可以提供血液流出的量與受傷種類的資訊",
-        "D": "在高速度撞擊(例如:子彈等)的血液噴濺痕中,只有前噴(Forwardspatter)血跡有散射效應 (Dispersioneffects),而後噴(Backspatter)血跡則無散射效應"
+        "C": "現場的血灘(Poolingof blood)可以提供血液流出的量與受傷種類的資訊",
+        "D": "在高速度撞擊(例如:子彈等)的血液噴濺痕中,只有前噴(For ward spatter)血跡有散射效應 (Dis per sion effects),而後噴(Back spatter)血跡則無散射效應"
       }
     },
     {

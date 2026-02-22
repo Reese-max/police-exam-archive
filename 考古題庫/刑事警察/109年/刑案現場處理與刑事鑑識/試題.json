@@ -40,7 +40,7 @@
       "answer": "C",
       "options": {
         "A": "以沖塞(plugging)為主,並伴同破片(fragmentation)產生",
-        "B": "以斷裂(crack)為主,並伴同結痂及崩落(scabbingandspalling)產生",
+        "B": "以斷裂(crack)為主,並伴同結痂及崩落(scab bin gandsp all ing)產生",
         "C": "以斷裂(crack)為主,並伴同破片(fragmentation)產生",
         "D": "以沖塞(plugging)為主,並伴同瓣狀破壞(petaling)產生"
       }
@@ -48,7 +48,7 @@
     {
       "number": 2,
       "type": "choice",
-      "stem": "某位印尼籍母親帶所生兒子,來臺找尋美國籍白人男子生父,請問計算單親父子親子關係指數PI (PaternityIndex;PI=X/Y)時,應引用何種族群頻率最為正確?",
+      "stem": "某位印尼籍母親帶所生兒子,來臺找尋美國籍白人男子生父,請問計算單親父子親子關係指數PI (Paternity Index;PI=X/Y)時,應引用何種族群頻率最為正確?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -65,10 +65,10 @@
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "氰丙烯酸酯法(Cyanoacrylate fuming)",
-        "B": "小粒子懸浮液法(Small particlereagent )",
-        "C": "蘇丹黑染料法(SudanBlack)",
-        "D": "DMAC(p-N,N-Dimethylaminocinnamaldehyde)"
+        "A": "氰丙烯酸酯法(Cyanoacry late fuming)",
+        "B": "小粒子懸浮液法(Small part iclere agent )",
+        "C": "蘇丹黑染料法(Sudan Black)",
+        "D": "DMAC(p-N,N-Dim ethylaminocinnamaldehyde)"
       }
     },
     {
@@ -92,7 +92,7 @@
       "answer": "C",
       "options": {
         "A": "寧海得林(Ninhydrin)試劑",
-        "B": "可瑪士藍(CoomassieBrilliant Blue,R520)試劑",
+        "B": "可瑪士藍(Coomassie Brilliant Blue,R 520)試劑",
         "C": "聯鄰-甲苯胺(Ortho-tolidine)試劑",
         "D": "醯胺黑(Amido Black)試劑"
       }
@@ -139,7 +139,7 @@
     {
       "number": 9,
       "type": "choice",
-      "stem": "有關文書鑑識學理及技術的相關敘述,請選出那幾項為正確者?1書寫文字整體的筆癖慣性係屬 個化特徵 2書寫字跡中有筆劃中斷、頓筆,顫抖筆劃,可能透露著有被偽造的可能 3氯化物 移動法(chloridemigrationtest)可應用於判定儲存條件極佳之可疑文件書寫墨水的大致年分 4 以複寫紙及一些硬頭器具,將原書寫字跡從頭描繪一遍,再將複寫出之字跡以墨水塗滿,此類描 寫出之字跡係為做作字跡(disguise)",
+      "stem": "有關文書鑑識學理及技術的相關敘述,請選出那幾項為正確者?1書寫文字整體的筆癖慣性係屬 個化特徵 2書寫字跡中有筆劃中斷、頓筆,顫抖筆劃,可能透露著有被偽造的可能 3氯化物 移動法(chloridemigration test)可應用於判定儲存條件極佳之可疑文件書寫墨水的大致年分 4 以複寫紙及一些硬頭器具,將原書寫字跡從頭描繪一遍,再將複寫出之字跡以墨水塗滿,此類描 寫出之字跡係為做作字跡(disguise)",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -208,9 +208,9 @@
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "孔雀綠試驗(Leucomalachite greentest)在紫外光激發下會發射出藍綠色",
+        "A": "孔雀綠試驗(Leucomalachite green test)在紫外光激發下會發射出藍綠色",
         "B": "Kastle-Meyer試驗(KM test)在鹼性條件下呈現出桃紅色",
-        "C": "四甲基聯苯胺試驗(Tetramethylbenzidinetest)勿需光源之激發即可發射出藍色光",
+        "C": "四甲基聯苯胺試驗(Tetramethylbenzidine test)勿需光源之激發即可發射出藍色光",
         "D": "魯米諾試驗(Luminol test)在紫光激發下會發射出藍色光"
       }
     },
@@ -243,7 +243,7 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "閃光燈的發光強度通常以閃光指數(GuideNumber,簡稱GN值)為代表,當使用單眼數位相機 並搭配使用外接閃光燈時,關於該閃光燈的GN值因調整某些因素而變小的敘述,下列那幾項為 正確?1閃光燈輸出量從 1/1 調至 1/16 2感光度 ISO 值從 100 調至 1600 3閃光燈燈頭照射 角度從望遠調至廣角 4相機的光圈從f/16 調至f/4",
+      "stem": "閃光燈的發光強度通常以閃光指數(Guide Number,簡稱GN值)為代表,當使用單眼數位相機 並搭配使用外接閃光燈時,關於該閃光燈的GN值因調整某些因素而變小的敘述,下列那幾項為 正確?1閃光燈輸出量從 1/1 調至 1/16 2感光度 ISO 值從 100 調至 1600 3閃光燈燈頭照射 角度從望遠調至廣角 4相機的光圈從f/16 調至f/4",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -321,7 +321,7 @@
     {
       "number": 23,
       "type": "choice",
-      "stem": "下列那幾種無機分析方法可測得證物中所含無機化合物分子的明確資訊?1X射線螢光光譜法 (XRF) 2原子吸收光譜法(AA) 3拉曼光譜法(RamanSpectroscopy) 4感應耦合電漿 質譜法(ICP-MS) 5紅外光譜法(Infrared Spectroscopy)",
+      "stem": "下列那幾種無機分析方法可測得證物中所含無機化合物分子的明確資訊?1 X射線螢光光譜法 (XRF) 2原子吸收光譜法(AA) 3拉曼光譜法(Raman Spectros copy) 4感應耦合電漿 質譜法(ICP-MS) 5紅外光譜法(Infra red Spectros copy)",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -339,7 +339,7 @@
       "answer": "D",
       "options": {
         "A": "在鏡頭上加裝偏光濾色鏡,經旋轉適當角度將圓柱體曲面上之光柱加以消除後再進行拍攝",
-        "B": "縮小光圈、縮短快門速度、調降感光度 ISO 值,以曝光不足(underexposure)的條件進行拍攝",
+        "B": "縮小光圈、縮短快門速度、調降感光度 ISO 值,以曝光不足(under expo sure)的條件進行拍攝",
         "C": "使用多波域光源調至紅色波域下,從圓柱水杯的側邊打光讓深綠色的水杯變黑再進行拍攝",
         "D": "在圓柱水杯下方舖一張白紙,關掉室內光源,用一支白光從水杯頭頂上方打光再進行拍攝"
       }

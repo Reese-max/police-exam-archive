@@ -80,7 +80,7 @@
         "A": "原子吸收光譜法(AAS)",
         "B": "層析法(Chromatography)",
         "C": "感導偶合電漿質譜法(ICP-MS)",
-        "D": "X-射線繞射法(X-ray diffraction)"
+        "D": "X-射線繞射法(X-ray diffr action)"
       }
     },
     {
@@ -116,10 +116,10 @@
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "1ICP/MS 2birefringence",
+        "A": "1 ICP/MS 2 birefringence",
         "B": "1NMR 2Rf值",
         "C": "1GC/MS 2Rf值",
-        "D": "1LC/MS 2medullary index"
+        "D": "1 LC/MS 2 medullary index"
       }
     },
     {
@@ -151,7 +151,7 @@
     {
       "number": 10,
       "type": "choice",
-      "stem": "關於玻璃證物之「3R原則」應用及相關特性敘述,請選出正確者:1放射狀裂痕與同心圓裂痕之側面肋狀紋痕(stress mark) 會在子彈撞擊面產生垂直角度 2放射狀裂痕之側面肋狀紋痕(stress mark)會在子彈撞擊面之反面產生垂直角度 3子彈 與高速飛行小石頭所產生之撞擊洞口形狀難以區辨 43R原則不適用於加工強化玻璃(tempered glass)",
+      "stem": "關於玻璃證物之「3 R原則」應用及相關特性敘述,請選出正確者:1放射狀裂痕與同心圓裂痕之側面肋狀紋痕(stress mark) 會在子彈撞擊面產生垂直角度 2放射狀裂痕之側面肋狀紋痕(stress mark)會在子彈撞擊面之反面產生垂直角度 3子彈 與高速飛行小石頭所產生之撞擊洞口形狀難以區辨 43 R原則不適用於加工強化玻璃(tempe red glass)",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -242,7 +242,7 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "下列那些屬於二級高爆藥及其爆速特性?1RDX 2TATP 3TNT 4DDNP 5dynamite 6爆速在每秒1000公尺以上",
+      "stem": "下列那些屬於二級高爆藥及其爆速特性?1 RDX 2 TATP 3 TNT 4 DDNP 5 dynamite 6爆速在每秒1000公尺以上",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -333,7 +333,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "刑案現場為拍攝微細證物,常需運用近距離攝影(Macrophotography)技術,下列有關近距離攝影的敘述,何者錯誤?",
+      "stem": "刑案現場為拍攝微細證物,常需運用近距離攝影(Macro photography)技術,下列有關近距離攝影的敘述,何者錯誤?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -353,7 +353,7 @@
         "A": "閃光燈為點光源,照度與距離成反比,是導致前後景物明暗差異極為顯著的主因",
         "B": "閃光燈的閃光指數(GN值)太小,是導致前後景物明暗差異極為顯著的主因",
         "C": "進行一次閃光攝影時,可透過加大光圈改善前後的曝光效果",
-        "D": "可將相機架在三腳架上,利用多次閃光法(Painting with Light)改善前後的曝光效果"
+        "D": "可將相機架在三腳架上,利用多次閃光法(Pain ting with Light)改善前後的曝光效果"
       }
     }
   ],

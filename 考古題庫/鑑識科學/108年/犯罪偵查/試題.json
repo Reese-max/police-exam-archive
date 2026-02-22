@@ -79,7 +79,7 @@
     {
       "number": 6,
       "type": "choice",
-      "stem": "下列何者係基於數學機率之計算以達個化(individualization)效果?1指紋 2DNA 3個異性鞋印 4彈頭來復線",
+      "stem": "下列何者係基於數學機率之計算以達個化(individual ization)效果?1指紋 2 DNA 3個異性鞋印 4彈頭來復線",
       "section": null,
       "answer": "B",
       "options": {
@@ -313,7 +313,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "有關詢問(interview)和偵訊(interrogation)之比較,下列何者錯誤?",
+      "stem": "有關詢問(inter view)和偵訊(interrogation)之比較,下列何者錯誤?",
       "section": null,
       "answer": "D",
       "options": {
@@ -502,7 +502,7 @@
         "A": "海洛因(heroin)",
         "B": "甲基安非他命(Methamphetamine)",
         "C": "K他命(Ketamine)",
-        "D": "甲氧麻黃酮(Mephedrone)"
+        "D": "甲氧麻黃酮(Mephedr one)"
       }
     },
     {
@@ -521,7 +521,7 @@
     {
       "number": 40,
       "type": "choice",
-      "stem": "下列關於新興詐欺中「假冒機構」詐財之作案手法(Modus Operandi)的敘述,何者為非?",
+      "stem": "下列關於新興詐欺中「假冒機構」詐財之作案手法(Modus Oper and i)的敘述,何者為非?",
       "section": null,
       "answer": "C",
       "options": {
@@ -538,7 +538,7 @@
       "section": null,
       "answer": "C",
       "options": {
-        "A": "批准型號碼(Type approval Code)",
+        "A": "批准型號碼(Type app roval Code)",
         "B": "最後組裝地碼(Final Assembly)",
         "C": "出廠序號碼(Serial Number)",
         "D": "備用碼(Spare)"
@@ -591,7 +591,7 @@
       "answer": "A",
       "options": {
         "A": "接續性證據(Sequential Evidence)",
-        "B": "指引性證據(Directional Evidence)",
+        "B": "指引性證據(Direct ional Evidence)",
         "C": "行動性證據(Action Evidence)",
         "D": "結合性證據(Associative Evidence)"
       }

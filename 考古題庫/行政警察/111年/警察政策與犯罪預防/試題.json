@@ -35,7 +35,7 @@
     {
       "number": 1,
       "type": "choice",
-      "stem": "OscarNewman是發展情境犯罪預防觀點的先驅,1970年推出「防衛空間」的觀念,藉由特殊的 建築設計,以減低犯罪行為發生的機會,下列何者符合防衛空間的規劃要素?",
+      "stem": "Oscar Newman是發展情境犯罪預防觀點的先驅,1970年推出「防衛空間」的觀念,藉由特殊的 建築設計,以減低犯罪行為發生的機會,下列何者符合防衛空間的規劃要素?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -217,7 +217,7 @@
     {
       "number": 15,
       "type": "choice",
-      "stem": "在警察公共政策分析議題中,有以市場機制(解決問題)為中心的政策分析(mechanism-centered policyanalysis)取向,這其中包含政府失靈(governmentfailure)的現象。Weimer&Vining曾提 出造成政府失靈的原因,下列何者不是他們所提出的問題?",
+      "stem": "在警察公共政策分析議題中,有以市場機制(解決問題)為中心的政策分析(mechanism-cente red policy analysis)取向,這其中包含政府失靈(government fail ure)的現象。Weimer&Vining曾提 出造成政府失靈的原因,下列何者不是他們所提出的問題?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -230,7 +230,7 @@
     {
       "number": 16,
       "type": "choice",
-      "stem": "Elmore(1978)將政策執行的組織研究分為四種模式:系統管理模式(systemsmanagementmodel)、 官僚過程模式(bureaucraticprocessmodel)、組織發展模式(organizationaldevelopmentmodel)、 衝突協調模式(conflictandbargainingmodel),若用上述四模式與警察機關組織文化相呼應,下 列敘述何者正確?",
+      "stem": "Elmore(1978)將政策執行的組織研究分為四種模式:系統管理模式(systems management model)、 官僚過程模式(bureau cratic process model)、組織發展模式(organizational development model)、 衝突協調模式(conflict and bar gain ing model),若用上述四模式與警察機關組織文化相呼應,下 列敘述何者正確?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -243,7 +243,7 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "Fischer 提出公共政策的批判評估(critical evaluation of public policy)四種分析,包含技術印證 (technicalverification)、情境確證(situationalvalidation)、系統驗證(systemvindication)和理 性的社會選擇(rational social choice)。若將上述四種分析應用於警察政策評估,下列敘述何者 正確?",
+      "stem": "Fischer 提出公共政策的批判評估(critical evaluation of public policy)四種分析,包含技術印證 (technical verification)、情境確證(situation alvalidation)、系統驗證(systemv indication)和理 性的社會選擇(rational social choice)。若將上述四種分析應用於警察政策評估,下列敘述何者 正確?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -327,7 +327,7 @@
       "options": {
         "A": "警察的工作範疇不再是以犯罪為中心,也強調為民服務",
         "B": "警察對於與民眾生活息息相關的治安與非治安案件都加以重視",
-        "C": "警政重點逐漸由預防式(proactive)警政,走向反應式(reactive)警政",
+        "C": "警政重點逐漸由預防式(pro active)警政,走向反應式(reactive)警政",
         "D": "警察機關必須在結構上改進,同時鼓勵創新,提倡參與式管理,才能有效因應社區警政要求"
       }
     },

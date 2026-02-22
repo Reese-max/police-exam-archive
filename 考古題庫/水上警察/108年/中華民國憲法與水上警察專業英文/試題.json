@@ -560,27 +560,27 @@
       "options": {
         "A": "seagate",
         "B": "sailor",
-        "C": "seamanship",
+        "C": "sea man ship",
         "D": "session"
       }
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "means the unloading of fishery product on board a fishing vessel to another fishing vessel, or transfer of consignments from one to another.",
+      "stem": "means the unloading of fishery product on board a fishing vessel to another fishing vessel, or transfer of con sign ments from one to another.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "Transshipment",
-        "B": "Transition",
+        "A": "Trans ship ment",
+        "B": "Transit ion",
         "C": "Transportation",
-        "D": "Transparent"
+        "D": "Trans parent"
       }
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "An Italian aid ship has been declared for rescue operations at sea, because it did not meet rescue operation standards.",
+      "stem": "An Italian aid ship has been decla red for rescue operations at sea, because it did not meet rescue operation stand ards.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -593,7 +593,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "Coastal barriers islands serve as coastal mainland's first line of defense against the impacts of severe storms and .",
+      "stem": "Coastal bar riers islands serve as coastal main land's first line of defense against the impacts of severe storms and .",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -606,24 +606,24 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "is distinct from mitigation because it focuses on enhancing the capacity to respond to an incident or potential incidents.",
+      "stem": "is distinct from mitigation because it focuses on enhancing the capa city to respond to an incident or potential incidents.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "Recovery",
+        "A": "Reco very",
         "B": "Emigration",
-        "C": "Engagement",
-        "D": "Preparedness"
+        "C": "Engage ment",
+        "D": "Prepared ness"
       }
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "Coast Guard is usually designated as the maritime and SAR Coordinator for the waters.",
+      "stem": "Coast Guard is usually designated as the mari time and SAR Coord ina tor for the waters.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "bordercrossing",
+        "A": "border crossing",
         "B": "aeronautical",
         "C": "mountain",
         "D": "international"
@@ -639,7 +639,7 @@
         "A": "sovereign",
         "B": "alienated",
         "C": "diagram",
-        "D": "offensive"
+        "D": "off ensive"
       }
     },
     {
@@ -658,11 +658,11 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "means robbery, kidnapping, murdering, or any other criminal violence committed at sea.",
+      "stem": "means robbery, kidnapping, murder ing, or any other criminal violence committed at sea.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "Transshipment",
+        "A": "Trans ship ment",
         "B": "Piracy",
         "C": "Smuggling",
         "D": "Harassment"
@@ -684,11 +684,11 @@
     {
       "number": 51,
       "type": "choice",
-      "stem": "Taiwan is suffering from massive resource due to overfishing, habitat destruction, pollution and invasive species introduction.",
+      "stem": "Taiwan is suffer ing from massive resource due to over fishing, habitat destruction, pollution and invasive species introduction.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "depletion",
+        "A": "dep let ion",
         "B": "synonym",
         "C": "outlet",
         "D": "augmentation"
@@ -710,14 +710,14 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "A building on Changan E Road in Taipei shifted, leading to the of 30 people, but was declared safe after an inspection yesterday.",
+      "stem": "A building on Changan E Road in Taipei shifted, leading to the of 30 people, but was decla red safe after an inspection yesterday.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
         "A": "evacuation",
-        "B": "transaction",
-        "C": "transmission",
-        "D": "ejection 請依下文回答第54題至第55題 Marine police often inspect boats to ensure they are 54 with regulations. In some parts of the country, the marine police are also responsible for 55 smuggling operations and arresting criminals."
+        "B": "trans action",
+        "C": "trans mission",
+        "D": "ejection"
       }
     },
     {
@@ -729,9 +729,10 @@
       "options": {
         "A": "satisfied",
         "B": "complying",
-        "C": "tampering",
+        "C": "tam per ing",
         "D": "pleased"
-      }
+      },
+      "passage": "請依下文回答第54題至第55題 Marine police often inspect boats to ensure they are 54 with regulations. In some parts of the country, the marine police are also responsible for 55 smuggling operations and arrest ing criminals."
     },
     {
       "number": 55,
@@ -742,9 +743,10 @@
       "options": {
         "A": "interdicting",
         "B": "interceding",
-        "C": "permitting",
+        "C": "permit ting",
         "D": "sanctioning"
-      }
+      },
+      "passage": "請依下文回答第54題至第55題 Marine police often inspect boats to ensure they are 54 with regulations. In some parts of the country, the marine police are also responsible for 55 smuggling operations and arrest ing criminals."
     },
     {
       "number": 56,
@@ -756,7 +758,7 @@
         "A": "paramedics",
         "B": "cookers",
         "C": "pharmacist",
-        "D": "helper 請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Throughout history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncovered of a Mayan salt production center in Guatemala located next to a principal riverine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who controlled its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathered in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the artistic and scientific innovations of the Italian Renaissance. The role salt has played throughout history is impressive. Columbus’s voyage of discovery to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
+        "D": "helper"
       }
     },
     {
@@ -766,11 +768,12 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "The value of naturally occurring salt today",
+        "A": "The value of naturally occur ring salt today",
         "B": "The decrease of our need for salt over time",
-        "C": "Salt’s impact on civilizations throughout history",
+        "C": "Salt’s impact on civil izations through out history",
         "D": "The possible uses of salt in the future"
-      }
+      },
+      "passage": "請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Through out history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncove red of a Mayan salt production center in Guatemala located next to a principal river ine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who control led its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathe red in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the art istic and scientific innovations of the Italian Renaissance. The role salt has played through out history is impressive. Columbus’s voyage of disco very to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
     },
     {
       "number": 58,
@@ -781,9 +784,10 @@
       "options": {
         "A": "They utilized river routes to ship salt.",
         "B": "They produced salt in coastal areas.",
-        "C": "They became powerful with salt money.",
-        "D": "They invited foreigners to inspect their salt trade."
-      }
+        "C": "They became power ful with salt money.",
+        "D": "They invited foreign ers to inspect their salt trade."
+      },
+      "passage": "請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Through out history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncove red of a Mayan salt production center in Guatemala located next to a principal river ine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who control led its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathe red in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the art istic and scientific innovations of the Italian Renaissance. The role salt has played through out history is impressive. Columbus’s voyage of disco very to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
     },
     {
       "number": 59,
@@ -796,12 +800,13 @@
         "B": "vessel",
         "C": "product",
         "D": "currency"
-      }
+      },
+      "passage": "請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Through out history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncove red of a Mayan salt production center in Guatemala located next to a principal river ine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who control led its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathe red in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the art istic and scientific innovations of the Italian Renaissance. The role salt has played through out history is impressive. Columbus’s voyage of disco very to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "What can be inferred about the salt sold under Venice's monopoly?",
+      "stem": "What can be infer red about the salt sold under Venice's monopoly?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -809,7 +814,8 @@
         "B": "It was distributed far beyond the Adriatic region.",
         "C": "It was of a poorer quality than before.",
         "D": "It was produced primarily in the lagoons near Venice."
-      }
+      },
+      "passage": "請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Through out history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncove red of a Mayan salt production center in Guatemala located next to a principal river ine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who control led its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathe red in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the art istic and scientific innovations of the Italian Renaissance. The role salt has played through out history is impressive. Columbus’s voyage of disco very to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
     }
   ],
   "year": 108,

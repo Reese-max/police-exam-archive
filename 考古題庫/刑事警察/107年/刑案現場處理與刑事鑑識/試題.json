@@ -71,7 +71,7 @@
     {
       "number": 4,
       "type": "choice",
-      "stem": "有關鑑識光源之物證應用,請選出正確者: 1精液跡證於波長 415nm 有最強之吸收,可佩戴黃色護目鏡 以觀察該斑跡 2使用紫外線(UV)照射血液跡證,可佩戴透明護目鏡以觀察血跡螢光 3血紅素 (hemoglobin)也會吸收UV,故可應用於受虐兒童皮膚下之瘀傷攝影 4黑色衣物上之槍彈火藥射擊殘 跡可使用紅外線(IR)攝影拍下該痕跡之位置及型態",
+      "stem": "有關鑑識光源之物證應用,請選出正確者: 1精液跡證於波長 415 nm 有最強之吸收,可佩戴黃色護目鏡 以觀察該斑跡 2使用紫外線(UV)照射血液跡證,可佩戴透明護目鏡以觀察血跡螢光 3血紅素 (hemoglo bin)也會吸收UV,故可應用於受虐兒童皮膚下之瘀傷攝影 4黑色衣物上之槍彈火藥射擊殘 跡可使用紅外線(IR)攝影拍下該痕跡之位置及型態",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -101,10 +101,10 @@
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "微粒子試劑(small particle reagent)",
+        "A": "微粒子試劑(small part icle reagent)",
         "B": "濕性指紋粉末法(wet powder method)",
-        "C": "磁性指紋粉末法(magnetic fingerprint powder)",
-        "D": "真空金屬鍍膜法(vacuum metal deposition, VMD)"
+        "C": "磁性指紋粉末法(magnetic finger print powder)",
+        "D": "真空金屬鍍膜法(vacuum metal deposit ion, VMD)"
       }
     },
     {
@@ -128,9 +128,9 @@
       "answer": "A",
       "options": {
         "A": "碘燻法(iodine fuming)",
-        "B": "DFO(1,8-diaza-9-fluorenone)法",
+        "B": "DFO(1,8-diaza-9-fluoren one)法",
         "C": "寧海德林(ninhydrin)法",
-        "D": "PD(physical developer)法"
+        "D": "PD(physical develo per)法"
       }
     },
     {
@@ -140,9 +140,9 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "1寧海德林試劑(ninhydrin) 21,2-茚二酮(1,2-indanedione)",
-        "B": "31,8-二氮雜-9-芴酮(1,8-diaza-9-fluorenone;",
-        "C": "DFO) 4NBD-chloride",
+        "A": "1寧海德林試劑(ninhydrin) 21,2-茚二酮(1,2-indanedi one)",
+        "B": "31,8-二氮雜-9-芴酮(1,8-diaza-9-fluoren one;",
+        "C": "DFO) 4 NBD-chloride",
         "D": "(4-chloro-7-nitrobenzofurazan)"
       }
     },
@@ -207,7 +207,7 @@
       "options": {
         "A": "使用氣相層析質譜法(GC/MS)與液 相層析質譜法(LC/MS)均適合進行可燃性液體殘跡的鑑析",
         "B": "使用萃取離子層析圖比對需在全圖譜掃 描模式(full scan mode)完成後再以特徵性離子加以建立",
-        "C": "使用標的化合物層析圖比對需在選擇離子監 測模式(selected ion monitoring mode)完成後再以標的化合物加以建立",
+        "C": "使用標的化合物層析圖比對需在選擇離子監 測模式(selected ion monitor ing mode)完成後再以標的化合物加以建立",
         "D": "無論是使用萃取離子層析圖比 對或標的化合物層析圖比對均需以不同揮發度的可燃性液體參考物質建立充分比對資料庫"
       }
     },
@@ -292,7 +292,7 @@
     {
       "number": 21,
       "type": "choice",
-      "stem": "關於纖維物證之鑑識概念,請選出正確者:1纖維鑑識通常僅能達到類化效果,故難以提供有價值之偵 查訊息 2在接觸附著之持續特性上,通常短纖維比長纖維更易於流失 3張三留在沙發椅上的衣服纖 維轉移到李四(後來之乘坐者)身上,此情形為二次移轉(secondary transfer) 4纖維鑑識主要係以微 化學處理法(microchemical methods)檢測分析,因此在應用上並不適用於現場重建 5石綿纖維係屬於 天然纖維",
+      "stem": "關於纖維物證之鑑識概念,請選出正確者:1纖維鑑識通常僅能達到類化效果,故難以提供有價值之偵 查訊息 2在接觸附著之持續特性上,通常短纖維比長纖維更易於流失 3張三留在沙發椅上的衣服纖 維轉移到李四(後來之乘坐者)身上,此情形為二次移轉(second ary transfer) 4纖維鑑識主要係以微 化學處理法(microchemical methods)檢測分析,因此在應用上並不適用於現場重建 5石綿纖維係屬於 天然纖維",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -318,7 +318,7 @@
     {
       "number": 23,
       "type": "choice",
-      "stem": "關於土壤物證之鑑定分析,下列那些是正確有效的鑑識方法:1外觀紋理比較(gross appearance comparison) 2密度分布比較(density comparison) 3重量精準比對(precise weight comparison)„ 4粒子大小比對(grain size comparison) 5雙折光特性檢測(birefringence measurement) 2345 1245 25",
+      "stem": "關於土壤物證之鑑定分析,下列那些是正確有效的鑑識方法:1外觀紋理比較(gross appear ance comparison) 2密度分布比較(density comparison) 3重量精準比對(precise weight comparison)„ 4粒子大小比對(grain size comparison) 5雙折光特性檢測(birefringence measurement) 2345 1245 25",
       "section": "乙、測驗題",
       "answer": "C",
       "subtype": "passage_fragment"
@@ -326,7 +326,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "聚合酶連鎖反應(polymerase chain reaction, PCR)係刑事DNA鑑定普遍使用的技術,其包含如下三步驟: 1延伸(extension) 2DNA 變性(denaturation) 3黏合(annealing)。請問:PCR 反應次序及其對 應的作用內容分別應為下列何者?",
+      "stem": "聚合酶連鎖反應(polymerase chain reaction, PCR)係刑事DNA鑑定普遍使用的技術,其包含如下三步驟: 1延伸(extension) 2 DNA 變性(denaturation) 3黏合(annealing)。請問:PCR 反應次序及其對 應的作用內容分別應為下列何者?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {

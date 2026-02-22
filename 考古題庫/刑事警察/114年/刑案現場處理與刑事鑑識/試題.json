@@ -35,7 +35,7 @@
     {
       "number": 1,
       "type": "choice",
-      "stem": "有關地下毒品工廠現場各類試劑與工具之研判,請選出正確者:1現場發現有黃樟油(Safrole), 比較有可能為二甲基色胺(DMT)製造場所 2現場發現甲胺(Methylamine),可能是製造喵 喵(Mephedrone)之試劑 3現場發現甲胺,可能是製造愷他命(Ketamine)之試劑 4三級丁 氧羰基愷他命(N-BocKetamine)為愷他命之先驅原料 5火災現場發現有雙層玻璃反應槽,但 無冷卻循環設備,不可能為喵喵製造場所",
+      "stem": "有關地下毒品工廠現場各類試劑與工具之研判,請選出正確者:1現場發現有黃樟油(Safrole), 比較有可能為二甲基色胺(DMT)製造場所 2現場發現甲胺(Methylamine),可能是製造喵 喵(Mephedr one)之試劑 3現場發現甲胺,可能是製造愷他命(Ketamine)之試劑 4三級丁 氧羰基愷他命(N-Boc Ketamine)為愷他命之先驅原料 5火災現場發現有雙層玻璃反應槽,但 無冷卻循環設備,不可能為喵喵製造場所",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -48,7 +48,7 @@
     {
       "number": 2,
       "type": "choice",
-      "stem": "有關植物類毒品之敘述,請選出正確者:1Fast Corinth V salt test 可作為大麻呈色試驗使用 2JWH、AM、HU 系列均係由大麻植株中提煉而來 3墨西哥鼠尾草(S. divinorum)葉緣呈鋸 齒狀,葉片對生,內含沙維諾林A(salvinorin.A)成分,施用者吸入後會產生類似大麻之迷幻作 用 4相思樹皮可用來製作DMT或死藤水 5大花曼陀羅為多年生、直立性的半落葉性灌木, 主要成分為裸頭草辛(Psilocine)",
+      "stem": "有關植物類毒品之敘述,請選出正確者:1 Fast Corinth V salt test 可作為大麻呈色試驗使用 2 JWH、AM、HU 系列均係由大麻植株中提煉而來 3墨西哥鼠尾草(S. divinorum)葉緣呈鋸 齒狀,葉片對生,內含沙維諾林A(salvinorin.A)成分,施用者吸入後會產生類似大麻之迷幻作 用 4相思樹皮可用來製作DMT或死藤水 5大花曼陀羅為多年生、直立性的半落葉性灌木, 主要成分為裸頭草辛(Psilocine)",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -74,7 +74,7 @@
     {
       "number": 4,
       "type": "choice",
-      "stem": "火場可燃性液體殘跡辨識與偵檢要領,請選出正確者:1縱火劑往低處逸流,滲入木板間隙後持 續燃燒,其特徵為池塘狀燒痕(poolpattern) 2黏附於混凝土上之塑膠地板,若滲入液態縱火 劑燃燒後,會形成鬼狀痕跡(ghost pattern) 3可燃性液體吸附劑(Ignitable Liquid Absorbent, ILA)為一親水性粉末,灑在可疑位置之表面後,可吸收殘留之可燃性液體殘跡 4可疑起火處 若有多孔性材質要優先採樣 5光離子化偵測器藉由氫氣和氧氣混合將化合物燃燒產生離子和 電子,藉由光譜顏色變化分辨可疑氣體",
+      "stem": "火場可燃性液體殘跡辨識與偵檢要領,請選出正確者:1縱火劑往低處逸流,滲入木板間隙後持 續燃燒,其特徵為池塘狀燒痕(pool pattern) 2黏附於混凝土上之塑膠地板,若滲入液態縱火 劑燃燒後,會形成鬼狀痕跡(ghost pattern) 3可燃性液體吸附劑(Igni table Liquid Absorbent, ILA)為一親水性粉末,灑在可疑位置之表面後,可吸收殘留之可燃性液體殘跡 4可疑起火處 若有多孔性材質要優先採樣 5光離子化偵測器藉由氫氣和氧氣混合將化合物燃燒產生離子和 電子,藉由光譜顏色變化分辨可疑氣體",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -87,7 +87,7 @@
     {
       "number": 5,
       "type": "choice",
-      "stem": "有關文書鑑定之技術與概念,請選出正確者:1將爭議內容以幾何圖形重疊分析相關位置關係, 稱為幾何圖形分析法 2線性光源在暗室內操作,效果較自然光線下好 3透過靜電壓痕顯現 儀,可觀察到筆壓及筆畫之先後次序 4筆跡鑑定之平日字跡(collected writing)及庭書字跡 (requestedwriting)都屬於標準比對檢體 5變異性字跡筆畫之特徵乃是終其一生不會改變",
+      "stem": "有關文書鑑定之技術與概念,請選出正確者:1將爭議內容以幾何圖形重疊分析相關位置關係, 稱為幾何圖形分析法 2線性光源在暗室內操作,效果較自然光線下好 3透過靜電壓痕顯現 儀,可觀察到筆壓及筆畫之先後次序 4筆跡鑑定之平日字跡(collected writing)及庭書字跡 (requested writing)都屬於標準比對檢體 5變異性字跡筆畫之特徵乃是終其一生不會改變",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -100,7 +100,7 @@
     {
       "number": 6,
       "type": "choice",
-      "stem": "有關血跡指紋之化學試劑顯現法,請選出正確者:1Amido Black試劑是與指紋中的無機物質反 應 2Acid Yellow 7 試劑係與指紋中的蛋白質反應 3深色物面上之血指紋可以直接用415nm 光源照射,指紋顏色會變深 4血跡指紋系統化處理之次序,蛋白質或血基質之處理應置於最後 5Leucocrystal Violet(LCV)適用於非吸水性檢體上",
+      "stem": "有關血跡指紋之化學試劑顯現法,請選出正確者:1 Amido Black試劑是與指紋中的無機物質反 應 2 Acid Yellow 7 試劑係與指紋中的蛋白質反應 3深色物面上之血指紋可以直接用415 nm 光源照射,指紋顏色會變深 4血跡指紋系統化處理之次序,蛋白質或血基質之處理應置於最後 5 Leuco crystal Violet(LCV)適用於非吸水性檢體上",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -113,7 +113,7 @@
     {
       "number": 7,
       "type": "choice",
-      "stem": "指紋採證時現場光線之使用與選擇,請選出正確者:1不論是凸起或是凹陷的成型紋,均適用低 角度打光呈現 2反射式打光(bounce lighting)適用於不鏽鋼鐵門上之較微弱指紋 3同軸光 (coaxial lighting)適用於具有反射或半反射物面之檢體 4反史托克(anti-stokes)指紋粉末多 由紫外光激發後產生目視可見之螢光 5反射式紫外線影像系統(RUVIS)係使用紫外線照射於 吸水透氣物面檢體以產生螢光",
+      "stem": "指紋採證時現場光線之使用與選擇,請選出正確者:1不論是凸起或是凹陷的成型紋,均適用低 角度打光呈現 2反射式打光(bounce light ing)適用於不鏽鋼鐵門上之較微弱指紋 3同軸光 (coaxial light ing)適用於具有反射或半反射物面之檢體 4反史托克(anti-stokes)指紋粉末多 由紫外光激發後產生目視可見之螢光 5反射式紫外線影像系統(RUVIS)係使用紫外線照射於 吸水透氣物面檢體以產生螢光",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -126,7 +126,7 @@
     {
       "number": 8,
       "type": "choice",
-      "stem": "指紋與其他證物採證之交互影響,請選出正確者:1使用物理顯影法(physical developer),會 造成DNA散失,明顯降低DNA檢出率 2指紋顯現後進行DNA 採集,非吸水性檢體上檢出率 普遍優於吸水性檢體 3Gun Blue 法採證指紋若未立即乾燥,會影響彈殼痕跡之觀察 4列印 文件若需進行列表機溯源時,不能先進行指紋增顯 51,2IND及寧海德林法均會影響後續DNA 顯現,因此需視情況考慮DNA與指紋採證優先次序",
+      "stem": "指紋與其他證物採證之交互影響,請選出正確者:1使用物理顯影法(physical develo per),會 造成DNA散失,明顯降低DNA檢出率 2指紋顯現後進行DNA 採集,非吸水性檢體上檢出率 普遍優於吸水性檢體 3 Gun Blue 法採證指紋若未立即乾燥,會影響彈殼痕跡之觀察 4列印 文件若需進行列表機溯源時,不能先進行指紋增顯 51,2 IND及寧海德林法均會影響後續DNA 顯現,因此需視情況考慮DNA與指紋採證優先次序",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -152,7 +152,7 @@
     {
       "number": 10,
       "type": "choice",
-      "stem": "親子鑑定觀念,請選出正確者:1生殖細胞進行減數分裂時Y染色體中多數DNA並不參與重組 2Y染色體也具有大量多型性的STR 與單核苷酸多型性(single nucleotide polymorphism; SNP) 序列 3粒線體DNA 之D-loop區為密碼區(coding region),為個體間變異最大區域 4根據 哈代-溫伯格定律(Hardy–Weinbergprinciple),族群的基因型頻率及等位基因頻率在不受特定干 擾情況下,會持續變動 5親子關係演算模式中,將所有不能排除的對象都納入計算的模式,稱 為RMNE法(random mannot excluded)",
+      "stem": "親子鑑定觀念,請選出正確者:1生殖細胞進行減數分裂時Y染色體中多數DNA並不參與重組 2 Y染色體也具有大量多型性的STR 與單核苷酸多型性(single nucleotide polymorphism; SNP) 序列 3粒線體DNA 之D-loop區為密碼區(coding region),為個體間變異最大區域 4根據 哈代-溫伯格定律(Hardy–Weinbergprinciple),族群的基因型頻率及等位基因頻率在不受特定干 擾情況下,會持續變動 5親子關係演算模式中,將所有不能排除的對象都納入計算的模式,稱 為RMNE法(random mannot excluded)",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -165,7 +165,7 @@
     {
       "number": 11,
       "type": "choice",
-      "stem": "有關 DNA 鑑定實務,請選出正確者:1dNTP 可使合成中的 DNA 鏈終止反應,故可用來做為定 序法之試劑 2親子指數PI(PaternityIndex)之計算,PI=X/Y,其中Y為隨機男子具有此生父必 備對偶基因之頻率 3CODIS 鑑定系統中,作為性別判定的Amelogenin,其乃是一個基因 4STR DNA並非基因,不會產製出蛋白質 5STR分析出現之stutter訊號為偽訊號,非為對偶基因型別",
+      "stem": "有關 DNA 鑑定實務,請選出正確者:1 dNTP 可使合成中的 DNA 鏈終止反應,故可用來做為定 序法之試劑 2親子指數PI(Paternity Index)之計算,PI=X/Y,其中Y為隨機男子具有此生父必 備對偶基因之頻率 3 CODIS 鑑定系統中,作為性別判定的Amelogenin,其乃是一個基因 4 STR DNA並非基因,不會產製出蛋白質 5 STR分析出現之stutter訊號為偽訊號,非為對偶基因型別",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -178,7 +178,7 @@
     {
       "number": 12,
       "type": "choice",
-      "stem": "與刑事鑑識有關之血清學運用,請選出正確者:1A 型血液是個體之紅血球細胞膜有 A 型抗體 物質,會與外來A抗原形成凝集反應 2酸性磷酸酶(ACP)又稱為PSA,水解後產物可與Fast blueB反應 3血液之結晶試驗,如Takayama試驗,其特異性(specificity)很高 4Luminol 檢 測後之血跡仍可進行後續DNA檢測 5MUP(4-methylumbelliferylphosphate)試劑可與酸性磷 酸酶反應,在紫外光下呈現螢光反應",
+      "stem": "與刑事鑑識有關之血清學運用,請選出正確者:1 A 型血液是個體之紅血球細胞膜有 A 型抗體 物質,會與外來A抗原形成凝集反應 2酸性磷酸酶(ACP)又稱為PSA,水解後產物可與Fast blueB反應 3血液之結晶試驗,如Takayama試驗,其特異性(specific ity)很高 4 Luminol 檢 測後之血跡仍可進行後續DNA檢測 5 MUP(4-methylumbel life rylphosphate)試劑可與酸性磷 酸酶反應,在紫外光下呈現螢光反應",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -191,7 +191,7 @@
     {
       "number": 13,
       "type": "choice",
-      "stem": "現場常見毒物鑑定實務,請選出正確者:1使用微量擴散法鑑定一氧化碳時,血液檢體要放在外面, 氯化鈀放在內部 2檢體有硫化氫存在時,以 Na-nitroprusside 試紙檢測會變成黑色 3檢體若有 氰酸存在,加入苦味酸(picricacid)後出現紅色,並可在520nm測定吸光度定量 4公認的血液 酒精濃度與呼氣酒精濃度比值約為2100:1,但各國法令對於比例有些許變動 5飲料中甲醇含量 檢驗可用變色酸(chromotropicacid)試驗法,檢驗過程需先將甲醇以高錳酸鉀等物質氧化成甲醛",
+      "stem": "現場常見毒物鑑定實務,請選出正確者:1使用微量擴散法鑑定一氧化碳時,血液檢體要放在外面, 氯化鈀放在內部 2檢體有硫化氫存在時,以 Na-nitroprus side 試紙檢測會變成黑色 3檢體若有 氰酸存在,加入苦味酸(picricacid)後出現紅色,並可在520 nm測定吸光度定量 4公認的血液 酒精濃度與呼氣酒精濃度比值約為2100:1,但各國法令對於比例有些許變動 5飲料中甲醇含量 檢驗可用變色酸(chromotropicacid)試驗法,檢驗過程需先將甲醇以高錳酸鉀等物質氧化成甲醛",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -230,7 +230,7 @@
     {
       "number": 16,
       "type": "choice",
-      "stem": "將分析物由複雜基質分離之層析法概念,請選出正確者:1超臨界流體萃取時,須將溫度加熱至三 相點,此時如何加壓都無法使物質變成明確的液相 2薄層分析中,R 值(retardationfactor)為分 f 析物移動距離與溶劑距離之比值 3使用薄層分析展開平板法時,分析樣品的起始線必須與展開劑 直接接觸才能獲得最精確移動數值 4使用氣相層析進行濫用藥物分析時,可用波峰滯留時間與面 積測量作為化合物之純度標準 5液相層析法以液體為動相,管柱為靜相,將混合物之成分分離",
+      "stem": "將分析物由複雜基質分離之層析法概念,請選出正確者:1超臨界流體萃取時,須將溫度加熱至三 相點,此時如何加壓都無法使物質變成明確的液相 2薄層分析中,R 值(retardation factor)為分 f 析物移動距離與溶劑距離之比值 3使用薄層分析展開平板法時,分析樣品的起始線必須與展開劑 直接接觸才能獲得最精確移動數值 4使用氣相層析進行濫用藥物分析時,可用波峰滯留時間與面 積測量作為化合物之純度標準 5液相層析法以液體為動相,管柱為靜相,將混合物之成分分離",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -325,9 +325,9 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "偵測極限(limit ofdetection):樣品訊號必須大於μ+3σ",
-        "B": "確認極限(limit ofidentification):樣品訊號必須大於μ+6σ",
-        "C": "可靠偵測極限(reliabledetectionlimit):樣品訊號必須大於μ+8σ",
+        "A": "偵測極限(limit of detection):樣品訊號必須大於μ+3σ",
+        "B": "確認極限(limit of identification):樣品訊號必須大於μ+6σ",
+        "C": "可靠偵測極限(reli able detection limit):樣品訊號必須大於μ+8σ",
         "D": "定量極限(limit ofquantitation):樣品訊號必須大於μ+10σ"
       }
     },
@@ -338,9 +338,9 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "比對顯微鏡法(Comparison microscopy):將纖維放置在載玻片上,並浸在 XMA mounting medium 中,先以白光,後以紫外光為光源,觀察並記錄其差異性",
-        "B": "顯微光譜法(Microspectrophotometry):將上述載玻片上之纖維以顯微光譜儀繪出波長 400~700nm 的光譜,以為比對",
-        "C": "溶液光譜法(Solutionspectrometry):測定纖維染料萃取液在波長280~580nm 之紅外光範圍 的光譜",
+        "A": "比對顯微鏡法(Comparison micros copy):將纖維放置在載玻片上,並浸在 XMA mounting medium 中,先以白光,後以紫外光為光源,觀察並記錄其差異性",
+        "B": "顯微光譜法(Microspectrop hot ome try):將上述載玻片上之纖維以顯微光譜儀繪出波長 400~700 nm 的光譜,以為比對",
+        "C": "溶液光譜法(Solutionspectrome try):測定纖維染料萃取液在波長280~580 nm 之紅外光範圍 的光譜",
         "D": "薄層層析法(Thin layer chromatography):可用以進行纖維染料的分離比對"
       }
     },
@@ -351,10 +351,10 @@
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "原子吸收光譜法(AAS;Atomicabsorptionspectroscopy)",
-        "B": "導感耦合電漿原子發射光譜法(ICP-AES;Inductively coupled plasma atomic emission spectroscopy)",
-        "C": "氣相層析質譜法(GC-MS;Gas chromatographymass spectrometry)",
-        "D": "掃描電子顯微鏡/X光能譜法(SEM/EDX;Scanningelectron microscopy/energydispersiveX-ray spectrometry)"
+        "A": "原子吸收光譜法(AAS;A tom icabsorptionspectros copy)",
+        "B": "導感耦合電漿原子發射光譜法(ICP-AES;Inductively coupled plasma atomic emission spectros copy)",
+        "C": "氣相層析質譜法(GC-MS;Gas chromatography mass spectrome try)",
+        "D": "掃描電子顯微鏡/X光能譜法(SEM/EDX;Scanningelectron micros copy/energy dis per siveX-ray spectrome try)"
       }
     }
   ],

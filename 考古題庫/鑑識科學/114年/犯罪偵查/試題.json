@@ -33,16 +33,16 @@
       "section": null,
       "answer": "B",
       "options": {
-        "A": "處置階段(Placement)",
-        "B": "去中心化階段(Decentralization)",
-        "C": "多層化階段(Layering)",
+        "A": "處置階段(Place ment)",
+        "B": "去中心化階段(De central ization)",
+        "C": "多層化階段(Lay ering)",
         "D": "整合階段(Integration)"
       }
     },
     {
       "number": 3,
       "type": "choice",
-      "stem": "「蜜罐技術」(HoneypotTechology)係科技偵查人員經常使用的科技偵查技術之一,請問「蜜罐技 術」主要的網路犯罪偵查功能為何?",
+      "stem": "「蜜罐技術」(Honeypot Techology)係科技偵查人員經常使用的科技偵查技術之一,請問「蜜罐技 術」主要的網路犯罪偵查功能為何?",
       "section": null,
       "answer": "A",
       "options": {
@@ -55,7 +55,7 @@
     {
       "number": 4,
       "type": "choice",
-      "stem": "詐騙犯罪中,著名的龐氏騙局(Ponzischeme)的犯罪手法是指下列何者?",
+      "stem": "詐騙犯罪中,著名的龐氏騙局(Ponzi scheme)的犯罪手法是指下列何者?",
       "section": null,
       "answer": "A",
       "options": {

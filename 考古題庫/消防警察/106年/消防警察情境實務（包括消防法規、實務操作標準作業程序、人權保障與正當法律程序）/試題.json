@@ -83,10 +83,10 @@
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "頂空分析法(headspace analysis)",
-        "B": "靜態式頂空濃縮分析法(passive headspace concentration analysis)",
-        "C": "溶劑萃取法(solvent extraction)",
-        "D": "固相微量萃取法(solid phase micro extraction)"
+        "A": "頂空分析法(head space analysis)",
+        "B": "靜態式頂空濃縮分析法(passive head space concentration analysis)",
+        "C": "溶劑萃取法(solvent extr action)",
+        "D": "固相微量萃取法(solid phase micro extr action)"
       }
     },
     {

@@ -104,23 +104,23 @@
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "問題建構(problem structuring)",
+        "A": "問題建構(problem str ucturing)",
         "B": "探索(Exploring)",
-        "C": "預測(forecasting)",
+        "C": "預測(for ecasting)",
         "D": "評估(evaluation)"
       }
     },
     {
       "number": 7,
       "type": "choice",
-      "stem": "下列有關於警察政策形成(Policy Formation)的敘述,何者錯誤?",
+      "stem": "下列有關於警察政策形成(Policy Form ation)的敘述,何者錯誤?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "警察政策形成泛指自警察問題的發生、設計規劃替選方案、將選定方案合法化,而產生政策的 整個過程",
         "B": "有組織的團體會將多元文化與多元意見帶進政府決策之中,團體之間的競爭在政策形成中扮演 著重要的角色",
         "C": "政策鐵三角理論認為警察政策是由國會、警察行政部門與特殊利益團體三者之間的緊密聯盟所 決定",
-        "D": "利益團體、公私組織與一般民眾會針對包括治安政策在內的特定議題結合起來,形成自發性的 政策次級單位(autonomous policy subunits),發揮影響力,他們的穩定性(stability)與獨立 性(autonomy)均高於政策鐵三角"
+        "D": "利益團體、公私組織與一般民眾會針對包括治安政策在內的特定議題結合起來,形成自發性的 政策次級單位(autonomous policy sub units),發揮影響力,他們的穩定性(stability)與獨立 性(autonomy)均高於政策鐵三角"
       }
     },
     {
@@ -183,7 +183,7 @@
       "answer": "D",
       "options": {
         "A": "法律可行性(legal feasibility)較低",
-        "B": "行政可行性(administrative feasibility)較低",
+        "B": "行政可行性(admini str ative feasibility)較低",
         "C": "技術可行性(technical feasibility)較低",
         "D": "政治可行性(political feasibility)較低"
       }
@@ -191,14 +191,14 @@
     {
       "number": 13,
       "type": "choice",
-      "stem": "下列何者不是「犯罪轉移理論」(Crime Displacement)主張的犯罪轉移:",
+      "stem": "下列何者不是「犯罪轉移理論」(Crime Dis place ment)主張的犯罪轉移:",
       "section": "乙、測驗題",
       "answer": "*",
       "options": {
-        "A": "地理上的犯罪轉移(geographical displacement)",
-        "B": "時間上的犯罪轉移(temporal displacement)",
-        "C": "犯罪行為人的轉移(criminal displacement)",
-        "D": "犯罪類型的轉移(crime type displacement)"
+        "A": "地理上的犯罪轉移(geographical dis place ment)",
+        "B": "時間上的犯罪轉移(temporal dis place ment)",
+        "C": "犯罪行為人的轉移(criminal dis place ment)",
+        "D": "犯罪類型的轉移(crime type dis place ment)"
       }
     },
     {
@@ -321,7 +321,7 @@
     {
       "number": 23,
       "type": "choice",
-      "stem": "柯恩(Cohen)與費爾遜(Felson)的日常活動理論發現,潛在犯罪者與被害者的日常活動對於 犯罪的發生影響甚鉅,對於情境犯罪預防策略的發展貢獻良多。下列有關日常活動理論的敘述何 者正確?1柯恩與費爾遜以 VIVA 來描述犯罪的合適標的,VIVA 指的是價值(Value)、慣性 (Inertia)、可見性(Visibility)及可接近性(Access) 2此理論的驗證,以財產犯罪(property crime)為對象,無法適用於其他犯罪 3柯恩與費爾遜發現人們在戶外停留的時間,與犯罪數量 無顯著相關 4犯罪的發生,需要三個條件,分別是合適標的(suitable target)、有動機的犯罪 者(motivated offender)以及缺乏監控(absence of guardians)",
+      "stem": "柯恩(Cohen)與費爾遜(Felson)的日常活動理論發現,潛在犯罪者與被害者的日常活動對於 犯罪的發生影響甚鉅,對於情境犯罪預防策略的發展貢獻良多。下列有關日常活動理論的敘述何 者正確?1柯恩與費爾遜以 VIVA 來描述犯罪的合適標的,VIVA 指的是價值(Value)、慣性 (Inertia)、可見性(Visibility)及可接近性(Access) 2此理論的驗證,以財產犯罪(property crime)為對象,無法適用於其他犯罪 3柯恩與費爾遜發現人們在戶外停留的時間,與犯罪數量 無顯著相關 4犯罪的發生,需要三個條件,分別是合適標的(sui table target)、有動機的犯罪 者(motivated offender)以及缺乏監控(absence of guard ians)",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
