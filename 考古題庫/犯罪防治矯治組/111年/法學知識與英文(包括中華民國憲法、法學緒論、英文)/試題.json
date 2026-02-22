@@ -3,7 +3,7 @@
     "exam_type": "111",
     "level": "三等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時"
   },
   "notes": [
     "※注意：①本試題為單一選擇題，請選出一個正確或最適當答案。",
@@ -418,7 +418,7 @@
     {
       "number": 32,
       "type": "choice",
-      "stem": "There have been discussion swith strong negativee motion sfor the new power plant:Some think it would bring jobs,while others say it would damage the natural environment.",
+      "stem": "There have been discussion swith strong negativee motion sfor the new power plant:Some think it would bring jobs, while others say it would damage the natural environment.",
       "section": null,
       "answer": "D",
       "options": {
@@ -457,7 +457,7 @@
     {
       "number": 35,
       "type": "choice",
-      "stem": "You need tore new your pass port assoonas possible before it becomes out ofdate and .",
+      "stem": "You need tore new your passport assoonas possible before it becomes out ofdate and .",
       "section": null,
       "answer": "B",
       "options": {
@@ -483,7 +483,7 @@
     {
       "number": 37,
       "type": "choice",
-      "stem": "If you have a know nor diagnosed all ergytoa COVID-19 vaccine ,you should not get vacc ina ted.",
+      "stem": "If you have a know nor diagnosed all ergytoa COVID-19 vaccine , you should not get vacc ina ted.",
       "section": null,
       "answer": "A",
       "options": {
@@ -496,7 +496,7 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "The island ers assert edt hat dumping radio active was tes inthe sea was anactof .",
+      "stem": "The island ers assert edt hat dumping radio active was tes in the sea was anactof .",
       "section": null,
       "answer": "A",
       "options": {
@@ -613,13 +613,13 @@
     {
       "number": 47,
       "type": "choice",
-      "stem": "The weather for ecast has said that there may beat emporary break before rain return son Monday.",
+      "stem": "The weather forecast has said that there may beat emporary break before rain return son Monday.",
       "section": null,
       "answer": "C",
       "options": {
         "A": "respect ive",
         "B": "chari table",
-        "C": "per sistent",
+        "C": "persistent",
         "D": "suspicious"
       }
     },
@@ -652,13 +652,13 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Instead ofc once ntratingonincentivizing short-term trans active behaviors,today’sfirmsfocu son building authentic and relationship swithcus tom ers.",
+      "stem": "Instead ofc once ntratingonincentivizing short-term trans active behaviors, today’sfirmsfocu son building authentic and relationship swithcus tom ers.",
       "section": null,
       "answer": "C",
       "options": {
         "A": "transitional",
         "B": "topical",
-        "C": "sustain able",
+        "C": "sustainable",
         "D": "trans parent"
       }
     }

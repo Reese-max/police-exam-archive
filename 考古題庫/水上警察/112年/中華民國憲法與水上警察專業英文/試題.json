@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與水上警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "51120"
   },
   "notes": [
@@ -335,7 +335,7 @@
       "type": "choice",
       "stem": "依司法院大法官解釋及現行制度,關於憲法第16條保障之訴訟權,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "*",
+      "answer": "送分",
       "options": {
         "A": "法官迴避制度屬訴訟權保障之核心內容",
         "B": "基於訴訟權保障及法官依法獨立審判,法定法官原則為我國應遵循之憲法原則",
@@ -567,7 +567,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "Scientist sfind that using native oystersas water filters helps the bivalve and other species and could increase biodiversity inthe area.",
+      "stem": "Scientist sfind that using native oystersas water filters helps the bivalve and other species and could increase biodiversity in the area.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -580,7 +580,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "Dover Port Health Authority is responsible for the control of diseases affect ing pass engers and crew on vessels that arrive in Dover.",
+      "stem": "Dover Port Health Authority is responsible for the control of diseases affect ing passengers and crew on vessels that arrive in Dover.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -606,7 +606,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "When the watch stand ers received a call in form ing the vessel’spo sit ion,they directed the launch of ahelicopter and avessel to search.",
+      "stem": "When the watch stand ers received a call inform ing the vessel’spo sit ion, they directed the launch of ahelicopter and avessel to search.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -658,7 +658,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Over fishing is consider ably red ucing the population of fish in our oceans, and it is linked to the destruction of under water foliage and coral reefs. Some even ____ that it could be a major cause of global warming.",
+      "stem": "Over fishing is consider ably reducing the population of fish in our oceans, and it is linked to the destruction of under water foliage and coral reefs. Some even ____ that it could be a major cause of global warming.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -682,81 +682,6 @@
       }
     },
     {
-      "number": 51,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "coordi nation",
-        "B": "ordi nation",
-        "C": "cooperation",
-        "D": "operation"
-      },
-      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 52,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "pre serve",
-        "B": "reserve",
-        "C": "transit",
-        "D": "deposit"
-      },
-      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "deck",
-        "B": "anchor",
-        "C": "cargo",
-        "D": "rudder"
-      },
-      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 54,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "consists of",
-        "B": "compresses by",
-        "C": "conserves of",
-        "D": "concludes by"
-      },
-      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "resilience",
-        "B": "station ary",
-        "C": "fleeting",
-        "D": "movable"
-      },
-      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
       "number": 56,
       "type": "choice",
       "stem": "What is the primary purpose of this passage?",
@@ -768,7 +693,7 @@
         "C": "To demonstrate the tactics for smugglerstosmuggle",
         "D": "To explain different kinds ofregulations for smuggling"
       },
-      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers.At one end of the spectrum,smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror pass enger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade.Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise off icers, while international trade was policed by customs off icers; latterly, the two revenue services have been merged intoone."
+      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers. At one end of the spectrum, smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror passenger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade. Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise officers, while international trade was policed by customs officers; latterly, the two revenue services have been merged intoone."
     },
     {
       "number": 57,
@@ -778,11 +703,11 @@
       "answer": "C",
       "options": {
         "A": "The law makers have rest rictedimports ofsome goods.",
-        "B": "Excise off icers turn smuggling into a criminal operation.",
+        "B": "Excise officers turn smuggling into a criminal operation.",
         "C": "Smuggling may occur due toavarietyofmotivations.",
         "D": "People may becomes mugglers for personal purposes."
       },
-      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers.At one end of the spectrum,smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror pass enger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade.Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise off icers, while international trade was policed by customs off icers; latterly, the two revenue services have been merged intoone."
+      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers. At one end of the spectrum, smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror passenger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade. Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise officers, while international trade was policed by customs officers; latterly, the two revenue services have been merged intoone."
     },
     {
       "number": 58,
@@ -792,16 +717,16 @@
       "answer": "B",
       "options": {
         "A": "Taxes on international trade outside a country",
-        "B": "Taxes ongoods manu fact uredor produce dwith ina country",
+        "B": "Taxes ongoods manu fact uredor produce dwithina country",
         "C": "Regulations relatingtointernal and international business",
-        "D": "Regulations on goods imported from other count ries"
+        "D": "Regulations on goods imported from other countries"
       },
-      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers.At one end of the spectrum,smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror pass enger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade.Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise off icers, while international trade was policed by customs off icers; latterly, the two revenue services have been merged intoone."
+      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers. At one end of the spectrum, smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror passenger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade. Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise officers, while international trade was policed by customs officers; latterly, the two revenue services have been merged intoone."
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "Which ofthe following is NOT smuggling?",
+      "stem": "Which of the following is NOT smuggling?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -810,7 +735,7 @@
         "C": "Anintenti onto get around export laws",
         "D": "Adeal tocomplywit him port regulations"
       },
-      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers.At one end of the spectrum,smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror pass enger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade.Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise off icers, while international trade was policed by customs off icers; latterly, the two revenue services have been merged intoone."
+      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers. At one end of the spectrum, smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror passenger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade. Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise officers, while international trade was policed by customs officers; latterly, the two revenue services have been merged intoone."
     },
     {
       "number": 60,
@@ -824,7 +749,7 @@
         "C": "Anendeavorto avoid export regulations",
         "D": "Evadingtaxes one xcis able goods"
       },
-      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers.At one end of the spectrum,smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror pass enger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade.Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise off icers, while international trade was policed by customs off icers; latterly, the two revenue services have been merged intoone."
+      "passage": "請依下文回答第56題至第60題 Smuggling has existed ever since governments first attempted to control trade across their borders. Although it is often under stoodas an attempt toevade duties ortaxes that the legislature has place dupon the importation of certain classes of goods, smuggling is a much broader phenomenon than this. It may apply to attempts to evade export regulations, for example, or trade in certain prohibited goods, such as weapons or drugs. People maybe smugg led across front iers. At one end of the spectrum, smuggling may be a highly organized criminal activity, or what some describe as “the smuggling industry;” at the other, it may consist simply ofasailoror passenger trying toslip something for personal use past the authorities. Consideration must also be given toattempts to evaderegulations relatingtointernal trade. Taxeson this are class ified as excise duties. At one time, compliance was enforced by excise officers, while international trade was policed by customs officers; latterly, the two revenue services have been merged intoone."
     }
   ],
   "year": 112,

@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與水上警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "51150"
   },
   "notes": [
@@ -22,7 +22,7 @@
     {
       "number": "一",
       "type": "essay",
-      "stem": "Please translate the following paragraph into Chinese.(15 分)\nExpertise in marine meteorology constitutes an indispensable asset for the\nTaiwan Coast Guard Administration (CGA), enabling it to operate\nproficiently within Taiwan’s volatile and multifaceted maritime domain.\nPrecise meteorological forecasting coupled with continuous real-time\noceanographic surveillance empowers the CGA to orchestrate patrols with\nheightened safety and operational efficiency, execute search and rescue\nmissions with optimal timing, and mount rapid responses to meteorological\ncalamities such as typhoons. Comprehensive understanding of hydrodynamic\nphenomena, such as ocean currents, wave dynamics, and prevailing wind\nregimes, substantially mitigates operational hazards for personnel and vessels\nalike. Also, this specialized acumen underpins strategic decision-making in\nlaw enforcement and environmental stewardship, thereby augmenting overall\nmissionreadiness.Inbrief,thesystematicintegrationof marinemeteorological\ninsights significantly enhances the Coast Guard’s capacity to ensure maritime\nsecurity and safeguard human life.",
+      "stem": "Please translate the following paragraph into Chinese.(15 分)\nExpertise in marine meteorology constitutes an indispensable asset for the\nTaiwan Coast Guard Administration (CGA), enabling it to operate\nproficiently within Taiwan’s volatile and multifaceted maritime domain.\nPrecise meteorological forecasting coupled with continuous real-time\noceanographic surveillance empowers the CGA to orchestrate patrols with\nheightened safety and operational efficiency, execute search and rescue\nmissions with optimal timing, and mount rapid responses to meteorological\ncalamities such as typhoons. Comprehensive understanding of hydrodynamic\nphenomena, such as ocean currents, wave dynamics, and prevailing wind\nregimes, substantially mitigates operational hazards for personnel and vessels\nalike. Also, this specialized acumen underpins strategic decision-making in\nlaw enforcement and environmental stewardship, thereby augmenting overall\nmissionreadiness. Inbrief, thesystematicintegrationof marinemeteorological\ninsights significantly enhances the Coast Guard’s capacity to ensure maritime\nsecurity and safeguard human life.",
       "section": "甲、申論題"
     },
     {
@@ -554,7 +554,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "A sea turtle was found in a fixed fishing net area, and it was immediately rescued and transferred to the R.O.C. Coast Guard Security Inspection Station for subsequent place ment and release into the wild.",
+      "stem": "A sea turtle was found in a fixed fishing net area, and it was immediately rescued and transferred to the R. O. C. Coast Guard Security Inspection Station for subsequent place ment and release into the wild.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -580,7 +580,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "The investigation of criminal acts shall be based on the principlesofterritorial ,national ity, the principleof national ity ofthe victim,and the principleof protection.",
+      "stem": "The investigation of criminal acts shall be based on the principlesofterritorial , national ity, the principleof national ity of the victim, and the principleof protection.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -593,7 +593,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "The R.O.C. Coast Guard is the security inspection of vessels or other water tran sport vehicles enter ing and leaving the port and person nel at tradingports.",
+      "stem": "The R. O. C. Coast Guard is the security inspection of vessels or other water tran sport vehicles enter ing and leaving the port and personnel at tradingports.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -619,7 +619,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "The effectiveness of coast guards in the impact of natural disasters, by red ucing damage and savinglives, is vital for protect ing coastal comm unit ies.",
+      "stem": "The effectiveness of coast guards in the impact of natural disasters, by reducing damage and savinglives, is vital for protect ing coastal comm unit ies.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -645,7 +645,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "Enforcing documentation requirement sisacritical part ofthe coast guards’mission to prevent illegal trafficking of goods, suchas those that are flamm able, corrosive, orpoi son ous.",
+      "stem": "Enforcing documentation requirement sisacritical part of the coast guards’mission to prevent illegal trafficking of goods, suchas those that are flamm able, corrosive, orpoi son ous.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -682,81 +682,6 @@
       }
     },
     {
-      "number": 51,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "incli nation",
-        "B": "suspension",
-        "C": "main ten ance",
-        "D": "tolerance"
-      },
-      "passage": "請依下文回答第51題至第55題 Navigation has never been a task that can be accomplished by one person or one skill alone, but rather amulti-disciplinary collaboration that combines wisdom,technology and experience. Anex cell ent crew member must be proficient in various marine operation processes, including ship operation, daily engine 51 ,and emergency repairof system abnormalities,all of which are related to the safety ofthe ship itself and the live sof the crew. Ina ddition,navigation planning also need sto take into account tides, ocean 52 , port rest rictions and mari time traffic density to ensure that the voyage is both safe and efficient. The construction of the vessel that carries the crew is also important. The stability, wave resistance and 53 ofa ship all depend on the scientific design of its skeleton structure and the use of materials. Finally, before leaving the port, the ship needs to 54 the latest meteorological maps and sea condition sim ulations and make risk predict ions based on the climate character istics of different sea areas.Therefore,only by fully mastering sea man ship,navigation technology,knowledge of ship structure and the ability tointerpret sea conditions can one take the lead inthe 55 mari time environment and ensure the safe arrival of the ship and crew.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 52,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "cabins",
-        "B": "clinics",
-        "C": "contents",
-        "D": "currents"
-      },
-      "passage": "請依下文回答第51題至第55題 Navigation has never been a task that can be accomplished by one person or one skill alone, but rather amulti-disciplinary collaboration that combines wisdom,technology and experience. Anex cell ent crew member must be proficient in various marine operation processes, including ship operation, daily engine 51 ,and emergency repairof system abnormalities,all of which are related to the safety ofthe ship itself and the live sof the crew. Ina ddition,navigation planning also need sto take into account tides, ocean 52 , port rest rictions and mari time traffic density to ensure that the voyage is both safe and efficient. The construction of the vessel that carries the crew is also important. The stability, wave resistance and 53 ofa ship all depend on the scientific design of its skeleton structure and the use of materials. Finally, before leaving the port, the ship needs to 54 the latest meteorological maps and sea condition sim ulations and make risk predict ions based on the climate character istics of different sea areas.Therefore,only by fully mastering sea man ship,navigation technology,knowledge of ship structure and the ability tointerpret sea conditions can one take the lead inthe 55 mari time environment and ensure the safe arrival of the ship and crew.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "avail ability",
-        "B": "dur ability",
-        "C": "prob ability",
-        "D": "visibility"
-      },
-      "passage": "請依下文回答第51題至第55題 Navigation has never been a task that can be accomplished by one person or one skill alone, but rather amulti-disciplinary collaboration that combines wisdom,technology and experience. Anex cell ent crew member must be proficient in various marine operation processes, including ship operation, daily engine 51 ,and emergency repairof system abnormalities,all of which are related to the safety ofthe ship itself and the live sof the crew. Ina ddition,navigation planning also need sto take into account tides, ocean 52 , port rest rictions and mari time traffic density to ensure that the voyage is both safe and efficient. The construction of the vessel that carries the crew is also important. The stability, wave resistance and 53 ofa ship all depend on the scientific design of its skeleton structure and the use of materials. Finally, before leaving the port, the ship needs to 54 the latest meteorological maps and sea condition sim ulations and make risk predict ions based on the climate character istics of different sea areas.Therefore,only by fully mastering sea man ship,navigation technology,knowledge of ship structure and the ability tointerpret sea conditions can one take the lead inthe 55 mari time environment and ensure the safe arrival of the ship and crew.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 54,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "analyze",
-        "B": "comply",
-        "C": "obstruct",
-        "D": "trans form"
-      },
-      "passage": "請依下文回答第51題至第55題 Navigation has never been a task that can be accomplished by one person or one skill alone, but rather amulti-disciplinary collaboration that combines wisdom,technology and experience. Anex cell ent crew member must be proficient in various marine operation processes, including ship operation, daily engine 51 ,and emergency repairof system abnormalities,all of which are related to the safety ofthe ship itself and the live sof the crew. Ina ddition,navigation planning also need sto take into account tides, ocean 52 , port rest rictions and mari time traffic density to ensure that the voyage is both safe and efficient. The construction of the vessel that carries the crew is also important. The stability, wave resistance and 53 ofa ship all depend on the scientific design of its skeleton structure and the use of materials. Finally, before leaving the port, the ship needs to 54 the latest meteorological maps and sea condition sim ulations and make risk predict ions based on the climate character istics of different sea areas.Therefore,only by fully mastering sea man ship,navigation technology,knowledge of ship structure and the ability tointerpret sea conditions can one take the lead inthe 55 mari time environment and ensure the safe arrival of the ship and crew.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "ever-changing",
-        "B": "ever-green",
-        "C": "ever-present",
-        "D": "ever-victorious"
-      },
-      "passage": "請依下文回答第51題至第55題 Navigation has never been a task that can be accomplished by one person or one skill alone, but rather amulti-disciplinary collaboration that combines wisdom,technology and experience. Anex cell ent crew member must be proficient in various marine operation processes, including ship operation, daily engine 51 ,and emergency repairof system abnormalities,all of which are related to the safety ofthe ship itself and the live sof the crew. Ina ddition,navigation planning also need sto take into account tides, ocean 52 , port rest rictions and mari time traffic density to ensure that the voyage is both safe and efficient. The construction of the vessel that carries the crew is also important. The stability, wave resistance and 53 ofa ship all depend on the scientific design of its skeleton structure and the use of materials. Finally, before leaving the port, the ship needs to 54 the latest meteorological maps and sea condition sim ulations and make risk predict ions based on the climate character istics of different sea areas.Therefore,only by fully mastering sea man ship,navigation technology,knowledge of ship structure and the ability tointerpret sea conditions can one take the lead inthe 55 mari time environment and ensure the safe arrival of the ship and crew.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
       "number": 56,
       "type": "choice",
       "stem": "What is the primary cause of this ship wreck?",
@@ -764,16 +689,16 @@
       "answer": "B",
       "options": {
         "A": "The bad weather at sea",
-        "B": "The problem ofthe engine",
-        "C": "The power ofthe captain",
+        "B": "The problem of the engine",
+        "C": "The power of the captain",
         "D": "Thefire from the kitchen"
       },
-      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning,a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board.Two ofthem were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be control led.Some people jumped into these ato escape,while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism,dispatched the Wanli ship and the North east Sea Area patrol boat tothe incident area,and contact edthe Air Force Comm and for bac kup.When the coast guard arrive dat the scene at 11:10,smoke was still coming out ofthe fishing boat’sengine room.Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation.After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment.The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use ofthe accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special person nel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
+      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning, a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board. Two of them were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be controlled. Some people jumped into these ato escape, while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism, dispatched the Wanli ship and the North east Sea Area patrol boat to the incident area, and contact edthe Air Force Comm and for bac kup. When the coast guard arrive dat the scene at 11:10, smoke was still coming out of the fishing boat’sengine room. Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation. After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment. The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use of the accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special personnel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
     },
     {
       "number": 57,
       "type": "choice",
-      "stem": "Which ofthe following state ments is true about this accident?",
+      "stem": "Which of the following statements is true about this accident?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -782,7 +707,7 @@
         "C": "The detail edca use will be investigated.",
         "D": "Thereis no fire extingui she ron the fishing boat."
       },
-      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning,a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board.Two ofthem were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be control led.Some people jumped into these ato escape,while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism,dispatched the Wanli ship and the North east Sea Area patrol boat tothe incident area,and contact edthe Air Force Comm and for bac kup.When the coast guard arrive dat the scene at 11:10,smoke was still coming out ofthe fishing boat’sengine room.Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation.After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment.The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use ofthe accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special person nel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
+      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning, a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board. Two of them were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be controlled. Some people jumped into these ato escape, while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism, dispatched the Wanli ship and the North east Sea Area patrol boat to the incident area, and contact edthe Air Force Comm and for bac kup. When the coast guard arrive dat the scene at 11:10, smoke was still coming out of the fishing boat’sengine room. Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation. After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment. The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use of the accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special personnel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
     },
     {
       "number": 58,
@@ -796,12 +721,12 @@
         "C": "11:40",
         "D": "11:50"
       },
-      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning,a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board.Two ofthem were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be control led.Some people jumped into these ato escape,while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism,dispatched the Wanli ship and the North east Sea Area patrol boat tothe incident area,and contact edthe Air Force Comm and for bac kup.When the coast guard arrive dat the scene at 11:10,smoke was still coming out ofthe fishing boat’sengine room.Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation.After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment.The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use ofthe accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special person nel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
+      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning, a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board. Two of them were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be controlled. Some people jumped into these ato escape, while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism, dispatched the Wanli ship and the North east Sea Area patrol boat to the incident area, and contact edthe Air Force Comm and for bac kup. When the coast guard arrive dat the scene at 11:10, smoke was still coming out of the fishing boat’sengine room. Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation. After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment. The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use of the accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special personnel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "Which ofthe following means oftran sport didnot part icipate inthe rescue operation?",
+      "stem": "Which of the following means oftran sport didnot part icipate in the rescue operation?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -810,7 +735,7 @@
         "C": "The patrol boat",
         "D": "The helicopter"
       },
-      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning,a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board.Two ofthem were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be control led.Some people jumped into these ato escape,while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism,dispatched the Wanli ship and the North east Sea Area patrol boat tothe incident area,and contact edthe Air Force Comm and for bac kup.When the coast guard arrive dat the scene at 11:10,smoke was still coming out ofthe fishing boat’sengine room.Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation.After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment.The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use ofthe accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special person nel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
+      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning, a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board. Two of them were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be controlled. Some people jumped into these ato escape, while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism, dispatched the Wanli ship and the North east Sea Area patrol boat to the incident area, and contact edthe Air Force Comm and for bac kup. When the coast guard arrive dat the scene at 11:10, smoke was still coming out of the fishing boat’sengine room. Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation. After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment. The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use of the accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special personnel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
     },
     {
       "number": 60,
@@ -824,7 +749,7 @@
         "C": "The fourth paragraph",
         "D": "The fifthparagraph"
       },
-      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning,a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board.Two ofthem were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be control led.Some people jumped into these ato escape,while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism,dispatched the Wanli ship and the North east Sea Area patrol boat tothe incident area,and contact edthe Air Force Comm and for bac kup.When the coast guard arrive dat the scene at 11:10,smoke was still coming out ofthe fishing boat’sengine room.Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation.After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment.The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use ofthe accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special person nel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
+      "passage": "請依下文回答第56題至第60題 At around 10 o’clock this morning, a fishing boat suffer edasuddenmechanical fail ure while sailing in the north east waters of Taiwan, causing it to lose power, which then caused a fire in the engine room, and the situation was critical. After receiving the report, the Coast Guard Administration immediately dispatched the Wanli ship and speed boat for the rescue and successfully rescued all 8 crew members on board. Two of them were sent to the hospital for treatment due to burns and smoke inhalation. According to preliminary investigations, the fishing boat was conduct ing ocean-going operations at the time. The captain reported that the engine suddenly vibrated abnormally and then stalled. Subsequently, a large amount of thick smoke came out of the engine room, and the fire spread rapid lyin a short period. The crew tried to put out the fire with a fire extinguis her but failed. The fire could not be controlled. Some people jumped into these ato escape, while some called for help through the emergency radio. After receiving the notification at 10:20, the Coast Guard Administration immediately act ivated the emergency response mechanism, dispatched the Wanli ship and the North east Sea Area patrol boat to the incident area, and contact edthe Air Force Comm and for bac kup. When the coast guard arrive dat the scene at 11:10, smoke was still coming out of the fishing boat’sengine room. Rescuers immediately used water can nonsto help cool down the body while launch ing asearch and rescue operation. After about 40 minutes of emergency operations, the three people who fell into the sea and were floating on the sea were successfully rescued. Another five trapped crew members were found on the boat, and all of them were rescued. After a preliminary examination, two crew members had obvious burns and continued coughing, suspected of inhaling excessive smoke. They were immediately sent to Keelung Chang Gung Memorial Hospital byhelicopter for emergency treatment. The remaining six people were not seriously injured and have been arrange dby the Coast Guardto return to shore to rest. The Coast Guard Administration stated that the detail edca use of the accidents till needs tobe further clarified. The hull has been secured to prevent further drifting, and special personnel have been arranged to monitor possible subsequent pollution risks. The agency str essed that it will continue to str eng then its emergency response capabilities at sea to ensure mari time safety and efficiencyinrescuinglives."
     }
   ],
   "year": 114,

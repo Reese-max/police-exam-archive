@@ -4,7 +4,7 @@
     "exam_name": "一般警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與水上警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "51210"
   },
   "notes": [
@@ -567,7 +567,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "Pass engers have to go to the assembly station when the emergency alarm is sounded, which consists of seven short blasts and one blast that lasts several seconds.",
+      "stem": "Passengers have to go to the assembly station when the emergency alarm is sounded, which consists of seven short blasts and one blast that lasts several seconds.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -580,7 +580,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "More than 150 whales became str anded in Hamelin Bay in western Australia. However, rescue operations were hampe red by weather conditions.",
+      "stem": "More than 150 whales became stranded in Hamelin Bay in western Australia. However, rescue operations were hampe red by weather conditions.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -606,7 +606,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "When dealing with the ocean oil spill cases, the EPA relies on OILMAP sim ulation softw are to predict oil slick dis per sal as quickly as possible.",
+      "stem": "When dealing with the ocean oil spill cases, the EPA relies on OILMAP sim ulation software to predict oil slick dis per sal as quickly as possible.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -619,13 +619,13 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "To planning, coordi nation and implementation of marine-related policy, as well as to conduct affairs related to waters and coast guard ing, marine conservation and marine research, the Executive Yuan establishes the Ocean Affairs of Council.",
+      "stem": "To planning, coordination and implementation of marine-related policy, as well as to conduct affairs related to waters and coast guard ing, marine conservation and marine research, the Executive Yuan establishes the Ocean Affairs of Council.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
         "A": "abbreviate",
         "B": "escort",
-        "C": "integ rate",
+        "C": "integrate",
         "D": "interfere"
       }
     },
@@ -680,156 +680,6 @@
         "C": "in car nations",
         "D": "aes the tics"
       }
-    },
-    {
-      "number": 51,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "commuters",
-        "B": "term inals",
-        "C": "refer ees",
-        "D": "vessels"
-      },
-      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and position ing information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all pass enger ships 52 size are required by the International Mari time Organization to carry AIS equipment. AIS transponders automatically broad cast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In add ition, voyage related data is broad cast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transm its and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 52,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "free from",
-        "B": "irrespective of",
-        "C": "in contrast to",
-        "D": "by order of"
-      },
-      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and position ing information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all pass enger ships 52 size are required by the International Mari time Organization to carry AIS equipment. AIS transponders automatically broad cast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In add ition, voyage related data is broad cast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transm its and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "rituals",
-        "B": "episodes",
-        "C": "intervals",
-        "D": "fragments"
-      },
-      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and position ing information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all pass enger ships 52 size are required by the International Mari time Organization to carry AIS equipment. AIS transponders automatically broad cast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In add ition, voyage related data is broad cast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transm its and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 54,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "meant",
-        "B": "meaning",
-        "C": "to mean",
-        "D": "being meant"
-      },
-      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and position ing information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all pass enger ships 52 size are required by the International Mari time Organization to carry AIS equipment. AIS transponders automatically broad cast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In add ition, voyage related data is broad cast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transm its and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "without",
-        "B": "through",
-        "C": "under",
-        "D": "except"
-      },
-      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and position ing information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all pass enger ships 52 size are required by the International Mari time Organization to carry AIS equipment. AIS transponders automatically broad cast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In add ition, voyage related data is broad cast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transm its and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 56,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "under mine",
-        "B": "encom pass",
-        "C": "man ifest",
-        "D": "irritate"
-      },
-      "passage": "請依下文回答第56題至第60題: The International Mari time Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 mari time security, the Organization develops sui table regulations and gui dance through the Mari time Safety Commit tee and with input from its Facilitation Commit tee and Legal Commit tee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980 s. In the late 1990 s and the early 2000 s, the focus was on the South China Sea and the Straits of Malacca and Sing apore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implement ing a strategy for enhancing mari time security in West and Central Africa, 59 the region’s mari time security agree ments. The Organization, with support and cooperation from the ship ping industry, has developed and adopted several anti piracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 57,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "armful",
-        "B": "armless",
-        "C": "arming",
-        "D": "armed"
-      },
-      "passage": "請依下文回答第56題至第60題: The International Mari time Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 mari time security, the Organization develops sui table regulations and gui dance through the Mari time Safety Commit tee and with input from its Facilitation Commit tee and Legal Commit tee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980 s. In the late 1990 s and the early 2000 s, the focus was on the South China Sea and the Straits of Malacca and Sing apore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implement ing a strategy for enhancing mari time security in West and Central Africa, 59 the region’s mari time security agree ments. The Organization, with support and cooperation from the ship ping industry, has developed and adopted several anti piracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 58,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "off",
-        "B": "upon",
-        "C": "below",
-        "D": "through"
-      },
-      "passage": "請依下文回答第56題至第60題: The International Mari time Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 mari time security, the Organization develops sui table regulations and gui dance through the Mari time Safety Commit tee and with input from its Facilitation Commit tee and Legal Commit tee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980 s. In the late 1990 s and the early 2000 s, the focus was on the South China Sea and the Straits of Malacca and Sing apore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implement ing a strategy for enhancing mari time security in West and Central Africa, 59 the region’s mari time security agree ments. The Organization, with support and cooperation from the ship ping industry, has developed and adopted several anti piracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 59,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "for fear of",
-        "B": "in line with",
-        "C": "at the cost of",
-        "D": "on the way to"
-      },
-      "passage": "請依下文回答第56題至第60題: The International Mari time Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 mari time security, the Organization develops sui table regulations and gui dance through the Mari time Safety Commit tee and with input from its Facilitation Commit tee and Legal Commit tee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980 s. In the late 1990 s and the early 2000 s, the focus was on the South China Sea and the Straits of Malacca and Sing apore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implement ing a strategy for enhancing mari time security in West and Central Africa, 59 the region’s mari time security agree ments. The Organization, with support and cooperation from the ship ping industry, has developed and adopted several anti piracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 60,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "disputes",
-        "B": "offenses",
-        "C": "incidents",
-        "D": "measures"
-      },
-      "passage": "請依下文回答第56題至第60題: The International Mari time Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 mari time security, the Organization develops sui table regulations and gui dance through the Mari time Safety Commit tee and with input from its Facilitation Commit tee and Legal Commit tee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980 s. In the late 1990 s and the early 2000 s, the focus was on the South China Sea and the Straits of Malacca and Sing apore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implement ing a strategy for enhancing mari time security in West and Central Africa, 59 the region’s mari time security agree ments. The Organization, with support and cooperation from the ship ping industry, has developed and adopted several anti piracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
-      "stem_note": "參見上方閱讀測驗段落"
     }
   ],
   "year": 107,

@@ -1,0 +1,13 @@
+{
+  "files_processed": 910,
+  "files_modified": 397,
+  "fixes": {
+    "option_trailing_garbage_removed": 974,
+    "answer_star_to_songfen": 88,
+    "ocr_advanced_stem": 266,
+    "duplicate_number_fixed": 29,
+    "single_empty_option_removed": 31,
+    "remaining_empty_stem_removed": 18,
+    "ocr_advanced_option": 164
+  }
+}

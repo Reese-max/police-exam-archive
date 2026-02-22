@@ -4,7 +4,7 @@
     "exam_name": "一般警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50110"
   },
   "notes": [
@@ -80,7 +80,7 @@
         "A": "直轄市議會議決事項由立法院予以函告",
         "B": "縣議會議決事項由中央各該主管機關予以函告",
         "C": "鄉民代表會議決事項由縣政府予以函告",
-        "D": "議決自治事項與憲法、法律等規章有無牴觸發生疑義時,得聲請司法院解釋 - -"
+        "D": "議決自治事項與憲法、法律等規章有無牴觸發生疑義時,得聲請司法院解釋"
       }
     },
     {
@@ -236,7 +236,7 @@
         "A": "曾犯搶奪強盜罪經判決確定,不得為營業小客車駕駛",
         "B": "公務員離職後3年內,不得任與先前職務直接相關之營利事業董事",
         "C": "行為不檢有損師道之教師,得予以解聘或不續聘",
-        "D": "非視覺功能障礙之人,不得從事按摩業 - -"
+        "D": "非視覺功能障礙之人,不得從事按摩業"
       }
     },
     {
@@ -379,7 +379,7 @@
         "A": "現職總統競選連任時,其競選活動受總統副總統選舉罷免法有關規定之規範,無法主張憲法第52條 之刑事豁免權",
         "B": "副總統為總統之備位,憲法有關總統刑事豁免權之規定於副總統亦有適用",
         "C": "基於憲法第52條刑事豁免權之規定,法院對於以總統為被告之刑事案件,仍得受理起訴,但停止 審判",
-        "D": "檢察機關因他人刑事案件之偵查,發現總統有犯罪嫌疑者,為避免證據湮滅,得為必要之證據保 全程序,但不得限制總統之人身自由或妨礙其職權之行使 - -"
+        "D": "檢察機關因他人刑事案件之偵查,發現總統有犯罪嫌疑者,為避免證據湮滅,得為必要之證據保 全程序,但不得限制總統之人身自由或妨礙其職權之行使"
       }
     },
     {
@@ -509,7 +509,7 @@
         "A": "明確性原則",
         "B": "比例原則",
         "C": "平等原則",
-        "D": "法律保留原則 - -"
+        "D": "法律保留原則"
       }
     },
     {
@@ -554,7 +554,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Off icers shall not consume any into xicating bever age while on unless authorized by a supervisor.",
+      "stem": "Officers shall not consume any into xicating bever age while on unless authorized by a supervisor.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -632,7 +632,7 @@
     {
       "number": 47,
       "type": "choice",
-      "stem": "The mission of the prison is to protect society by offenders in the control led environments of prisons.",
+      "stem": "The mission of the prison is to protect society by offenders in the controlled environments of prisons.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -658,7 +658,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "After the 911 attacks in the U.S., the homeland security studies have been initiated.",
+      "stem": "After the 911 attacks in the U. S., the homeland security studies have been initiated.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -706,7 +706,7 @@
         "C": "To analyze how an affair may happen.",
         "D": "To explain a legal concept."
       },
-      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light add resses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by dissem ina ting false or misleading information, rather than the gather ing of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, all uding to “anonymous sources” report ing Walter was a little too friendly with the admini str ative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reck less dis regard for the falsity of the information, in exchange for higher reader ship."
+      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light add resses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by dissem ina ting false or misleading information, rather than the gather ing of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, all uding to “anonymous sources” reporting Walter was a little too friendly with the admini str ative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reck less dis regard for the falsity of the information, in exchange for higher reader ship."
     },
     {
       "number": 53,
@@ -715,12 +715,12 @@
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "Publication of in correct information.",
-        "B": "Report ing news without permission.",
+        "A": "Publication of incorrect information.",
+        "B": "Reporting news without permission.",
         "C": "Collection of erotic photos.",
         "D": "Protect ing personal privacy."
       },
-      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light add resses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by dissem ina ting false or misleading information, rather than the gather ing of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, all uding to “anonymous sources” report ing Walter was a little too friendly with the admini str ative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reck less dis regard for the falsity of the information, in exchange for higher reader ship."
+      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light add resses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by dissem ina ting false or misleading information, rather than the gather ing of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, all uding to “anonymous sources” reporting Walter was a little too friendly with the admini str ative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reck less dis regard for the falsity of the information, in exchange for higher reader ship."
     },
     {
       "number": 54,
@@ -734,7 +734,7 @@
         "C": "People’s right.",
         "D": "The public."
       },
-      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light add resses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by dissem ina ting false or misleading information, rather than the gather ing of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, all uding to “anonymous sources” report ing Walter was a little too friendly with the admini str ative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reck less dis regard for the falsity of the information, in exchange for higher reader ship."
+      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light add resses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by dissem ina ting false or misleading information, rather than the gather ing of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, all uding to “anonymous sources” reporting Walter was a little too friendly with the admini str ative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reck less dis regard for the falsity of the information, in exchange for higher reader ship."
     },
     {
       "number": 55,
@@ -748,82 +748,7 @@
         "C": "He is the most popular person in the office.",
         "D": "He has been fight ing against the newspaper."
       },
-      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light add resses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by dissem ina ting false or misleading information, rather than the gather ing of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, all uding to “anonymous sources” report ing Walter was a little too friendly with the admini str ative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reck less dis regard for the falsity of the information, in exchange for higher reader ship."
-    },
-    {
-      "number": 56,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "imminent",
-        "B": "per sistent",
-        "C": "civil ian",
-        "D": "humble"
-      },
-      "passage": "請依下文回答第56題至第60題: Juvenile delinquents are often defined as children between the ages of 10 and 17 who have committed a criminal act. There are two main types of offenders: repeat offenders and age-specific offenders. Repeat offenders are also known as “life-course 56 offenders.” These juvenile delinquents begin off end ing or showing other signs of anti social behavior during adolescence. Repeat offenders continue to engage in criminal act ivities or aggressive behaviors 57 after they enter adult hood. The other type of juvenile delinquent behavior, age-specific offenders, begins during adolescence. 58 the repeat offenders, however, the behaviors of the age-specific offender ends before the minor becomes an adult. The behaviors that a juvenile shows during adolescence are often a good 59 of the type of offender he will become. While age-specific offenders leave their delinquent behavior behind 60 they enter adult hood, they often have more mental health problems, engage in substance abuse, and have greater financial problems than adults who were never delinquent as juveniles.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 57,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "quite",
-        "B": "never",
-        "C": "even",
-        "D": "over"
-      },
-      "passage": "請依下文回答第56題至第60題: Juvenile delinquents are often defined as children between the ages of 10 and 17 who have committed a criminal act. There are two main types of offenders: repeat offenders and age-specific offenders. Repeat offenders are also known as “life-course 56 offenders.” These juvenile delinquents begin off end ing or showing other signs of anti social behavior during adolescence. Repeat offenders continue to engage in criminal act ivities or aggressive behaviors 57 after they enter adult hood. The other type of juvenile delinquent behavior, age-specific offenders, begins during adolescence. 58 the repeat offenders, however, the behaviors of the age-specific offender ends before the minor becomes an adult. The behaviors that a juvenile shows during adolescence are often a good 59 of the type of offender he will become. While age-specific offenders leave their delinquent behavior behind 60 they enter adult hood, they often have more mental health problems, engage in substance abuse, and have greater financial problems than adults who were never delinquent as juveniles.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 58,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "To",
-        "B": "For",
-        "C": "Beside",
-        "D": "Unlike"
-      },
-      "passage": "請依下文回答第56題至第60題: Juvenile delinquents are often defined as children between the ages of 10 and 17 who have committed a criminal act. There are two main types of offenders: repeat offenders and age-specific offenders. Repeat offenders are also known as “life-course 56 offenders.” These juvenile delinquents begin off end ing or showing other signs of anti social behavior during adolescence. Repeat offenders continue to engage in criminal act ivities or aggressive behaviors 57 after they enter adult hood. The other type of juvenile delinquent behavior, age-specific offenders, begins during adolescence. 58 the repeat offenders, however, the behaviors of the age-specific offender ends before the minor becomes an adult. The behaviors that a juvenile shows during adolescence are often a good 59 of the type of offender he will become. While age-specific offenders leave their delinquent behavior behind 60 they enter adult hood, they often have more mental health problems, engage in substance abuse, and have greater financial problems than adults who were never delinquent as juveniles.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 59,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "indicator",
-        "B": "example",
-        "C": "decision",
-        "D": "principle"
-      },
-      "passage": "請依下文回答第56題至第60題: Juvenile delinquents are often defined as children between the ages of 10 and 17 who have committed a criminal act. There are two main types of offenders: repeat offenders and age-specific offenders. Repeat offenders are also known as “life-course 56 offenders.” These juvenile delinquents begin off end ing or showing other signs of anti social behavior during adolescence. Repeat offenders continue to engage in criminal act ivities or aggressive behaviors 57 after they enter adult hood. The other type of juvenile delinquent behavior, age-specific offenders, begins during adolescence. 58 the repeat offenders, however, the behaviors of the age-specific offender ends before the minor becomes an adult. The behaviors that a juvenile shows during adolescence are often a good 59 of the type of offender he will become. While age-specific offenders leave their delinquent behavior behind 60 they enter adult hood, they often have more mental health problems, engage in substance abuse, and have greater financial problems than adults who were never delinquent as juveniles.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 60,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "because",
-        "B": "unless",
-        "C": "when",
-        "D": "or"
-      },
-      "passage": "請依下文回答第56題至第60題: Juvenile delinquents are often defined as children between the ages of 10 and 17 who have committed a criminal act. There are two main types of offenders: repeat offenders and age-specific offenders. Repeat offenders are also known as “life-course 56 offenders.” These juvenile delinquents begin off end ing or showing other signs of anti social behavior during adolescence. Repeat offenders continue to engage in criminal act ivities or aggressive behaviors 57 after they enter adult hood. The other type of juvenile delinquent behavior, age-specific offenders, begins during adolescence. 58 the repeat offenders, however, the behaviors of the age-specific offender ends before the minor becomes an adult. The behaviors that a juvenile shows during adolescence are often a good 59 of the type of offender he will become. While age-specific offenders leave their delinquent behavior behind 60 they enter adult hood, they often have more mental health problems, engage in substance abuse, and have greater financial problems than adults who were never delinquent as juveniles.",
-      "stem_note": "參見上方閱讀測驗段落"
+      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light add resses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by dissem ina ting false or misleading information, rather than the gather ing of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, all uding to “anonymous sources” reporting Walter was a little too friendly with the admini str ative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reck less dis regard for the falsity of the information, in exchange for higher reader ship."
     }
   ],
   "year": 107,

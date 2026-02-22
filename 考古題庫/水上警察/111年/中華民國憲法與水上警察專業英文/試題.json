@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與水上警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "51220"
   },
   "notes": [
@@ -561,7 +561,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Coast Guard Administration plays a vital role in national of which the jurisdiction covers the waters surrounding Kinmen,Matzu,Penghu,and themain island of Taiwan.",
+      "stem": "Coast Guard Administration plays a vital role in national of which the jurisdiction covers the waters surrounding Kinmen,Matzu,Penghu, and themain island of Taiwan.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -587,7 +587,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "One ofthe Coast Guard Administration mission sisto investigate the to prevent people from moving goods illegal lyintoor out ofthe country.",
+      "stem": "One of the Coast Guard Administration mission sisto investigate the to prevent people from moving goods illegal lyintoor out of the country.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -652,7 +652,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "When National Rescue Comm and Center(NRCC)receive sandverifiesa call,Coast Guard Administration and various age ncies relative to mari time search and rescue will be alerted to take actions in accor dance with the standard operation procedures of \"Executive Yuan National Rescue Comm and Center Operations Manual\".",
+      "stem": "When National Rescue Comm and Center(NRCC)receive sandverifiesa call,Coast Guard Administration and various age ncies relative to mari time search and rescue will be alerted to take actions in accordance with the standard operation procedures of \"Executive Yuan National Rescue Comm and Center Operations Manual\".",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -704,7 +704,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "NAVTEX is an international automated medium frequency (518 kHz) direct-printing service for deli very of navigational and warn ings and for ecasts, as well as urgent marine safety information to ships.",
+      "stem": "NAVTEX is an international automated medium frequency (518 kHz) direct-printing service for deli very of navigational and warn ings and forecasts, as well as urgent marine safety information to ships.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -717,7 +717,7 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "Coast Guard Administration is a agency toexe cut eregulations toenhance national security by discover ing,deterring,rehabilitating,orpunishing people who vio late the rules and nor ms.",
+      "stem": "Coast Guard Administration is a agency toexe cut eregulations toenhance national security by discover ing, deterring, rehabilitating, orpunishing people who violate the rules and nor ms.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {

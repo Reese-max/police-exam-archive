@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "警察政策與犯罪預防",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50170"
   },
   "notes": [
@@ -48,7 +48,7 @@
     {
       "number": 2,
       "type": "choice",
-      "stem": "D.Kennedy(1983)認為服務人群的機關組織應具備一些特質,下列何者不是其所具備的特質:",
+      "stem": "D. Kennedy(1983)認為服務人群的機關組織應具備一些特質,下列何者不是其所具備的特質:",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -139,7 +139,7 @@
     {
       "number": 9,
       "type": "choice",
-      "stem": "學者貝利(Step henK.Bailey)認為所有執法人員,均應平等對待所有人,但基於重大個別差異之 考量,得允許彈性處理特殊個案,此一原則被稱為:",
+      "stem": "學者貝利(Step henK. Bailey)認為所有執法人員,均應平等對待所有人,但基於重大個別差異之 考量,得允許彈性處理特殊個案,此一原則被稱為:",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -282,7 +282,7 @@
     {
       "number": 20,
       "type": "choice",
-      "stem": "M.Felson 和R.V.Clarke,在1998年提出之新機會理論的架構中,包含了下列那一個理論?",
+      "stem": "M. Felson 和R. V. Clarke,在1998年提出之新機會理論的架構中,包含了下列那一個理論?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -314,7 +314,7 @@
       "options": {
         "A": "內部課責(internal accountability)",
         "B": "組織彈性(organizational flexibility)",
-        "C": "有效的戰術(effect ivet act ics)",
+        "C": "有效的戰術(effectivet act ics)",
         "D": "創新的問題解決戰術(innovative problem-solving tactics)"
       }
     },
@@ -334,7 +334,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "R.V.Clarke和J.Eck 的犯罪分析六十步驟(Crime analysis for problem solvers: In 60 small steps), 以兩項指標評估警政策略處理犯罪問題的有效性,下列何者為其中一項指標?",
+      "stem": "R. V. Clarke和J. Eck 的犯罪分析六十步驟(Crime analysis for problem solvers: In 60 small steps), 以兩項指標評估警政策略處理犯罪問題的有效性,下列何者為其中一項指標?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {

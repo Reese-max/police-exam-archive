@@ -3,7 +3,7 @@
     "exam_type": "109",
     "level": "三等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1小時 座號："
+    "exam_time": "1小時"
   },
   "notes": [
     "※注意：①本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -444,7 +444,7 @@
     {
       "number": 34,
       "type": "choice",
-      "stem": "The fact that Taiwan has a lower of investment for immigration, compa red to other developed count ries,makes the island country more appeal ing.",
+      "stem": "The fact that Taiwan has a lower of investment for immigration, compa red to other developed countries, makes the island country more appeal ing.",
       "section": null,
       "answer": "B",
       "options": {
@@ -457,7 +457,7 @@
     {
       "number": 35,
       "type": "choice",
-      "stem": "An immigration officer needs advanced knowledge of the immigration laws and procedures to uncover potential complex fraud scheme sthat the integrity ofthe legal immigration system.",
+      "stem": "An immigration officer needs advanced knowledge of the immigration laws and procedures to uncover potential complex fraud scheme sthat the integrity of the legal immigration system.",
       "section": null,
       "answer": "D",
       "options": {
@@ -470,7 +470,7 @@
     {
       "number": 36,
       "type": "choice",
-      "stem": "The Kenyan government spends about US$5 million in 2018 to foreign ers working in the country illegally,a significant increase compare dto theUS$3.6 million spent inthe previous year.",
+      "stem": "The Kenyan government spends about US$5 million in 2018 to foreigners working in the country illegally, a significant increase compare dto theUS$3.6 million spent in the previous year.",
       "section": null,
       "answer": "A",
       "options": {
@@ -496,7 +496,7 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "Some tourist sin tend to from one attr act i onto the next in order to make the most ofthe trip.",
+      "stem": "Some tourist sin tend to from one attr act i onto the next in order to make the most of the trip.",
       "section": null,
       "answer": "D",
       "options": {
@@ -509,7 +509,7 @@
     {
       "number": 39,
       "type": "choice",
-      "stem": "With the recent increase in number ofl one wolfterrorist attacks,government saround the world have been on high alert for social media out lets that may potenti all yradicalize .",
+      "stem": "With the recent increase in number ofl one wolfterrorist attacks, government saround the world have been on high alert for social media out lets that may potenti all yradicalize .",
       "section": null,
       "answer": "A",
       "options": {
@@ -522,85 +522,15 @@
     {
       "number": 40,
       "type": "choice",
-      "stem": "The task is ,but he has rise nto the challenge with intelligence,creativity,flexibility and commit ments toex cell ence.",
+      "stem": "The task is , but he has rise nto the challenge withintelligence, creativity, flexibility and commit ments toex cell ence.",
       "section": null,
       "answer": "A",
       "options": {
         "A": "daunting",
         "B": "amusing",
         "C": "de light ing",
-        "D": "enc our aging 請回答下列第41題至第45題 Capital controls may be imposed on capital leaving a country or enter ing it. The former include controls over 41 trans actions for direct and equity investments by residents and/or foreign ers. For example, rest rictions on the repatriation of capital by foreign ers can include 42 a period before such repatriation is allowed, and regulations that phase the repatriation according to the avail ability of foreign exchange. Residents may be rest ricted 43 their hold ings of foreign stocks, either directly or through limits on the per miss ible port folios of the country’s investment funds. Law can also rest rict bank depos its abroad by residents. Alter natively, bank accounts and trans actions 44 in foreign currencies can be made available to residents, and non-interest-bearing capital reserve require ments can be imposed on depos its in foreign currencies, 45 red ucing or elim ina ting the interest paid on them and therefore diminishing their attr active ness. The main purpose of controls over capital out flows is to thwart attempts to shift between currencies during financial crises, which can exacerbate currency depreciation."
+        "D": "encouraging"
       }
-    },
-    {
-      "number": 41,
-      "type": "choice",
-      "stem": "",
-      "section": null,
-      "answer": "C",
-      "options": {
-        "A": "ultimate",
-        "B": "upmost",
-        "C": "outward",
-        "D": "inbound"
-      },
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 42,
-      "type": "choice",
-      "stem": "",
-      "section": null,
-      "answer": "C",
-      "options": {
-        "A": "sacrificing",
-        "B": "for tifying",
-        "C": "specify ing",
-        "D": "for seeing"
-      },
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 43,
-      "type": "choice",
-      "stem": "",
-      "section": null,
-      "answer": "A",
-      "options": {
-        "A": "in respect of",
-        "B": "ina dditi onto",
-        "C": "bywayof",
-        "D": "inspiteof"
-      },
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 44,
-      "type": "choice",
-      "stem": "",
-      "section": null,
-      "answer": "B",
-      "options": {
-        "A": "distributed",
-        "B": "denom ina ted",
-        "C": "denounced",
-        "D": "discrim ina ted"
-      },
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 45,
-      "type": "choice",
-      "stem": "",
-      "section": null,
-      "answer": "D",
-      "options": {
-        "A": "albeit",
-        "B": "after",
-        "C": "unless",
-        "D": "thus 請回答下列第46題至第50題 Two years ago, a group of elders in a village in north-western Uganda agreed to lend their land to refugees from South Sudan. About 120,000 are now in the surrounding area. Here they live in tarpaulin she lters and mud-brick huts on a patch of scrub where cows once grazed. Kemis Butele, a gravel-voiced Ugandan elder, explains that host ingrefugeesis away for are mote place,long neglect edby the central government,to get not iced.Hehopes for new schools,clinics and adecent road–and“that our children can get jobs.” There are more than 20 million refugees inthe world today,more than at any time since the end ofthe second world war. Nearly 90% reside in poor count ries. In many, to pre serve jobs for natives, governments bar refugees from working inthe formal economy.Uganda has show nhowa different approach can reapdivid ends.The government give srefugeesl and plots and lets them work.In some places,there fugeesboost local business esand act asamagnet for foreign aid.Mr.But ele and many other Uganda nssee their new neighborsasa benefit,not aburden.Sadly,such attitudes are still the except ion. Refugees are“brother sandsisters,”say many Ugandans.Mr.But ele was once one himself.But the welcome is also a pragmatic one. North ern Uganda is so poor that some locals pose as refugees to receive food aid. Others see refugees as buyers for local goods. Else where in Uganda has indeed seen such positive spill over. One study from 2016 found that the presenceof Congoleserefugeesin western Uganda had increased consumption per household. Another estimates that each new refugee household boosts total income, including that of refugees, by $320-430 more than the cost of the aid the household is given. That rises to $560-670 when refugees are given cash instead ofrations."
-      },
-      "stem_note": "參見上方閱讀測驗段落"
     },
     {
       "number": 46,
@@ -611,14 +541,14 @@
       "options": {
         "A": "Allow ingrefugeesto work can bring benef its.",
         "B": "Bar ringrefugees from working boosts economy.",
-        "C": "The Ugandan approach torefugeesproves problem atic.",
+        "C": "The Ugandan approach torefugeesproves problematic.",
         "D": "Uganda nsho str efugeesto receive foreign aid."
       }
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "Why do many government sbarrefugees from working inthe formal economy?",
+      "stem": "Why do many government sbarrefugees from working in the formal economy?",
       "section": null,
       "answer": "B",
       "options": {
@@ -631,7 +561,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "Which ofthe following words is closest in meaning to“spill over”?",
+      "stem": "Which of the following words is closest in meaning to“spill over”?",
       "section": null,
       "answer": "D",
       "options": {
@@ -644,11 +574,11 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "What is the implication ofthe statement,“such attitudes are still the except ion”?",
+      "stem": "What is the implication of the statement,“such attitudes are still the except ion”?",
       "section": null,
       "answer": "C",
       "options": {
-        "A": "The majority ofrefugees prefer tore side inrich count ries.",
+        "A": "The majority ofrefugees prefer tore side inrich countries.",
         "B": "The majority of government sgiverefugeesl and plots.",
         "C": "The majority of people consider refugeestobeaburden.",
         "D": "The majority of local business esseerefugeesasa benefit."
@@ -657,14 +587,14 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Which ofthe following statement sis true?",
+      "stem": "Which of the following statement sis true?",
       "section": null,
       "answer": "D",
       "options": {
-        "A": "Uganda nswel come drefugees because the central government promise dnew schools,clinics and adecent road.",
-        "B": "Most refugees stay edin poor count riesin order toboost local business esand act asamagnet for foreign aid.",
+        "A": "Uganda nswel come drefugees because the central government promise dnew schools, clinics and adecent road.",
+        "B": "Most refugees stay edin poor countriesin order toboost local business esand act asamagnet for foreign aid.",
         "C": "A study found that the presenceofrefugeesin Uganda had decreasedconsumption per household.",
-        "D": "Each new refugee household boosted total in come more than the cost ofthe aid the household was given."
+        "D": "Each new refugee household boosted total income more than the cost of the aid the household was given."
       }
     }
   ],

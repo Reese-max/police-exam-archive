@@ -44,7 +44,6 @@
       "section": null,
       "answer": "B",
       "options": {
-        "A": "",
         "B": "2345",
         "C": "1235",
         "D": "1245"
@@ -313,7 +312,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "有關詢問(inter view)和偵訊(interrogation)之比較,下列何者錯誤?",
+      "stem": "有關詢問(interview)和偵訊(interrogation)之比較,下列何者錯誤?",
       "section": null,
       "answer": "D",
       "options": {

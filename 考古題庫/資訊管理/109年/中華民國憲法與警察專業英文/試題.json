@@ -4,7 +4,7 @@
     "exam_name": "一般警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50110"
   },
   "notes": [
@@ -80,7 +80,7 @@
         "A": "憲法第8條所保障之人身自由",
         "B": "憲法第10條所保障之遷徙自由",
         "C": "憲法第22條所保障之一般行為自由",
-        "D": "憲法第22條所保障之人格權 - -"
+        "D": "憲法第22條所保障之人格權"
       }
     },
     {
@@ -210,7 +210,7 @@
         "A": "組織成員僅限於行政院院長、副院長及各部會首長",
         "B": "只有行政院院長有權將應行提出於立法院之法律案提出於行政院會議議決之",
         "C": "以行政院院長為主席",
-        "D": "會議方式以法律定之 - -"
+        "D": "會議方式以法律定之"
       }
     },
     {
@@ -314,7 +314,7 @@
         "A": "凡限制人民身體自由之處置,不問其是否屬刑事被告之身分,均須踐行正當法律程序",
         "B": "非由司法或警察機關依法定程序不得逮捕拘禁,此司法機關包含檢察機關",
         "C": "人民被逮捕拘禁後,24小時內必須移送法院審問,所稱法院僅指刑事法院",
-        "D": "非由司法或警察機關依法定程序不得逮捕拘禁,此警察機關包含行政執行處 - -"
+        "D": "非由司法或警察機關依法定程序不得逮捕拘禁,此警察機關包含行政執行處"
       }
     },
     {
@@ -548,13 +548,13 @@
         "A": "係國家賠償之憲法依據",
         "B": "國家賠償責任與公務員之行政責任並存",
         "C": "憲法第24條之規定,具有補充基本權保障之性質",
-        "D": "得逕依憲法第24條規定作為國家賠償的法律基礎 - -"
+        "D": "得逕依憲法第24條規定作為國家賠償的法律基礎"
       }
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "the previous email message. It was sent toyouby mistake.",
+      "stem": "the previous email message. It was sent to you by mistake.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -584,7 +584,7 @@
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "detect ives",
+        "A": "detectives",
         "B": "fire fight ers",
         "C": "man agers",
         "D": "jewelers"
@@ -604,97 +604,22 @@
       }
     },
     {
-      "number": 45,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "linguistic",
-        "B": "dramatic",
-        "C": "chaotic",
-        "D": "fantastic"
-      },
-      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 46,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "recognition",
-        "B": "adoration",
-        "C": "imitation",
-        "D": "classification"
-      },
-      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 47,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "first",
-        "B": "second",
-        "C": "third",
-        "D": "fourth"
-      },
-      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 48,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "as if",
-        "B": "even though",
-        "C": "except for",
-        "D": "orelse"
-      },
-      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 49,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "address",
-        "B": "identify",
-        "C": "order",
-        "D": "evaluate"
-      },
-      "passage": "請依下文回答第45題至第49題: When inter view ing children,interpreters canbe used inmany different ways,depending on the needs and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are inter view ing the child, not the interpreter. The inter view should be conducted in a waythat does not iso late the child at any time.Further,you should always address the child inthe 47 person when you ask a question,like Tommy,rather than Tom Peter son.I not her words,do not ask the interpreter about the child,phrase your question 48 the child can understand you.Even when ask ing for clarification about a response, you should always 49 the child,not the interpreter.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
       "number": 50,
       "type": "choice",
-      "stem": "Police: Please put your carry-onbagon the conveyorbelt. Mr.Jackson: Do I also need to put my personal electronic devices into the bin? Police: Yes, please do.",
+      "stem": "Police: Please put your carry-on bagon the conveyor belt. Mr. Jackson: Do I also need to put my personal electronic devices into the bin? Police: Yes, please do.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "Put your luggage on the scale.And giveme your pass port and ticket.",
+        "A": "Put your luggage on the scale. And give me your passport and ticket.",
         "B": "What is the purpose of your visit? Do youhave anything todecl are?",
-        "C": "Pass engers on Flight BA 910 toSeoul,please proceedto Gate 13 for board ing.",
+        "C": "Passengers on Flight BA 910 to Seoul, please proceed to Gate 13 for board ing.",
         "D": "Now take off your shoes and any metal access ories. And then walk through the metal detector, please."
       }
     },
     {
       "number": 51,
       "type": "choice",
-      "stem": "Nigel Nelson, a 33-year-old natural ized American citizen, married with two sons living in Manhattan,NewYork,was arrested because he was found setting upa car bomb near bustling Time Square with an attempt to kill dozens of his fellow country men. The capture of Mr. Nelson has indicated the emergence of ,onethat worries the police.",
+      "stem": "Nigel Nelson, a 33-year-old natural ized American citizen, married with two sons living in Manhattan,New York, was arrested because he was found setting upa car bomb near bustling Time Square with an attempt to kill dozens of his fellow country men. The capture of Mr. Nelson has indicated the emergence of , onethat worries the police.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -707,26 +632,26 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "has been a rampant crime occur ring trans nation ally. Many young women in distress from East Europe have been taken abroad to more affluent count ries in West Europe and forced into prostitution.",
+      "stem": "has been a rampant crime occur ring trans nationally. Many young women in distress from East Europe have been taken abroad to more affluent countries in West Europe and forced into prostitution.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
         "A": "Human trafficking",
         "B": "Smuggling",
         "C": "Vandalism",
-        "D": "Hijacking - -"
+        "D": "Hijacking"
       }
     },
     {
       "number": 53,
       "type": "choice",
-      "stem": "Since prison is not the soluti onto red ucing crime rates,research ers have developed to assist justice age ncies to identify and manage likely offenders who might be violent toward others.",
+      "stem": "Since prison is not the soluti onto reducing crime rates, research ers have developed to assist justice age ncies to identify and manage likely offenders who might be violent toward others.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "social reintegrationschemes",
         "B": "risk management tools",
-        "C": "community correct ions",
+        "C": "community corrections",
         "D": "drug treatment programs"
       }
     },
@@ -746,7 +671,7 @@
     {
       "number": 55,
       "type": "choice",
-      "stem": "A system com bin ing wire less, database, and app lications technologies has been set up to assist the police in decrea sing paper work, increa sing data accuracy, sharing knowledge and information and even providing a problem solving kit.",
+      "stem": "A system com bin ing wire less, database, and app lications technologies has been set up to assist the police in decrea sing paper work, increasing data accuracy, sharing knowledge and information and even providing a problem solving kit.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -772,7 +697,7 @@
     {
       "number": 57,
       "type": "choice",
-      "stem": "The National Immigration Agency has utilized information technology suchas Advanced Pass enger Information System (APIS) and Advanced Pass enger Process ing System (APPS) to monitor the likely appear ance of suspected travel ers and other rest ricted pass engers in order to safe guard our national territory and .",
+      "stem": "The National Immigration Agency has utilized information technology suchas Advanced Passenger Information System (APIS) and Advanced Passenger Processing System (APPS) to monitor the likely appear ance of suspected travel ers and other rest ricted passengers in order to safeguard our national territory and .",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -785,7 +710,7 @@
     {
       "number": 58,
       "type": "choice",
-      "stem": "The gangsters have been money from Mr.Johnson,threatening to reveal to the press video- tap eof his adult ery.",
+      "stem": "The gangsters have been money from Mr. Johnson, threatening to reveal to the press video- tap eof his adult ery.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -811,13 +736,13 @@
     {
       "number": 60,
       "type": "choice",
-      "stem": "Mr. Thomp son:I feel I have been over charged when I purchased an online game. What can I do to get my money back? Police:",
+      "stem": "Mr. Thompson:I feel I have been over charged when I purchased an online game. What can I do to get my money back? Police:",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "You should think before youpost any message online.Everything you do through the Internet is irretriev able.",
-        "B": "I will contact our Net safe unit to help deal with this case about the Internetscam.Tell me exactly what happened.",
-        "C": "If you consider yourself a victim ofcyberbullying,please dial immediately our hot line for help.",
+        "A": "You should think before youpost any message online. Everything you do through the Internet is irretriev able.",
+        "B": "I will contact our Net safe unit to help deal with this case about the Internet scam. Tell me exactly what happened.",
+        "C": "If you consider yourself a victim ofcyberbullying, please dial immediately our hot line for help.",
         "D": "Send us anyob scene images or photos you see online so that we are able to trace the occur rence ofcyber crimes."
       }
     }

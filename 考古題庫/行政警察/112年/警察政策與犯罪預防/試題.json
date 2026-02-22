@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "警察政策與犯罪預防",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50170"
   },
   "notes": [
@@ -113,7 +113,7 @@
     {
       "number": 7,
       "type": "choice",
-      "stem": "Felson 和Clarke(1998)主張,新機會理論(New Opportunity The ories)是由三個理論所構成, 這些理論以不同的方式說明「機會」的概念,下列何者不是該三個理論之一?",
+      "stem": "Felson 和Clarke(1998)主張,新機會理論(New Opportunity Theories)是由三個理論所構成, 這些理論以不同的方式說明「機會」的概念,下列何者不是該三個理論之一?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -145,14 +145,14 @@
       "options": {
         "A": "E代表合乎倫理的裁量決定(the Ethical Decision)",
         "B": "P 代表道德原則(the Principle)",
-        "C": "J 代表情境的正當性(the Justification ofthe Situation)",
+        "C": "J 代表情境的正當性(the Justification of the Situation)",
         "D": "道德原則(P)是變數,情境正當性(J)為常數"
       }
     },
     {
       "number": 10,
       "type": "choice",
-      "stem": "關於情境犯罪預防(Sit uational Crime Prevention)的敘述,下列何者錯誤?",
+      "stem": "關於情境犯罪預防(Situational Crime Prevention)的敘述,下列何者錯誤?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {

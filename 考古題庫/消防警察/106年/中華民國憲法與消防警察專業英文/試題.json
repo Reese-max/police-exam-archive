@@ -3,7 +3,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與消防警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50620"
   },
   "notes": [
@@ -612,7 +612,7 @@
         "A": "regional",
         "B": "industrial",
         "C": "cylindrical",
-        "D": "the atrical"
+        "D": "theatrical"
       }
     },
     {
@@ -688,7 +688,7 @@
       "answer": "C",
       "options": {
         "A": "detection",
-        "B": "detect ive",
+        "B": "detective",
         "C": "detector",
         "D": "definition"
       }
@@ -696,7 +696,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "Instru mental analysis techniques have successfully assisted the police in ______ criminal cases.",
+      "stem": "Instrumental analysis techniques have successfully assisted the police in ______ criminal cases.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -709,7 +709,7 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "A fire believed to be caused by a light ning bolt forced the shut down of an oil-capturing system near the gushing Gulf oil well; for tunately it was quickly ______ without injuries.",
+      "stem": "A fire believed to be caused by a light ning bolt forced the shut down of an oil-capturing system near the gushing Gulf oil well; fortunately it was quickly ______ without injuries.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -744,81 +744,6 @@
         "C": "violated",
         "D": "launched"
       }
-    },
-    {
-      "number": 56,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "provocative",
-        "B": "protrusive",
-        "C": "protect ive",
-        "D": "product ive"
-      },
-      "passage": "請依下文回答第56題至第60題: Professional fire fight ers must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, tro users, and work gloves. Fire fight ers’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, fire fight ers have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, fire fight ers also need Personal 58 App aratus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when fire fight ers are in danger or do not move for about 30 seconds. Pike poles allow fire fight ers to search behind walls and ceilings for fire and to venti late str uctures by break ing windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly break ing through walls, ceilings, or locked doors of build ings on fire.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 57,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "components",
-        "B": "numbers",
-        "C": "ing red ients",
-        "D": "contents"
-      },
-      "passage": "請依下文回答第56題至第60題: Professional fire fight ers must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, tro users, and work gloves. Fire fight ers’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, fire fight ers have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, fire fight ers also need Personal 58 App aratus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when fire fight ers are in danger or do not move for about 30 seconds. Pike poles allow fire fight ers to search behind walls and ceilings for fire and to venti late str uctures by break ing windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly break ing through walls, ceilings, or locked doors of build ings on fire.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 58,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "Bathing",
-        "B": "Branching",
-        "C": "Binding",
-        "D": "Brea thing"
-      },
-      "passage": "請依下文回答第56題至第60題: Professional fire fight ers must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, tro users, and work gloves. Fire fight ers’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, fire fight ers have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, fire fight ers also need Personal 58 App aratus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when fire fight ers are in danger or do not move for about 30 seconds. Pike poles allow fire fight ers to search behind walls and ceilings for fire and to venti late str uctures by break ing windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly break ing through walls, ceilings, or locked doors of build ings on fire.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 59,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "affect",
-        "B": "alarm",
-        "C": "attack",
-        "D": "effect"
-      },
-      "passage": "請依下文回答第56題至第60題: Professional fire fight ers must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, tro users, and work gloves. Fire fight ers’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, fire fight ers have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, fire fight ers also need Personal 58 App aratus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when fire fight ers are in danger or do not move for about 30 seconds. Pike poles allow fire fight ers to search behind walls and ceilings for fire and to venti late str uctures by break ing windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly break ing through walls, ceilings, or locked doors of build ings on fire.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 60,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "multi-dimension",
-        "B": "multi-color",
-        "C": "multi-purpose",
-        "D": "multi-discipline"
-      },
-      "passage": "請依下文回答第56題至第60題: Professional fire fight ers must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, tro users, and work gloves. Fire fight ers’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, fire fight ers have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, fire fight ers also need Personal 58 App aratus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when fire fight ers are in danger or do not move for about 30 seconds. Pike poles allow fire fight ers to search behind walls and ceilings for fire and to venti late str uctures by break ing windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly break ing through walls, ceilings, or locked doors of build ings on fire.",
-      "stem_note": "參見上方閱讀測驗段落"
     }
   ],
   "year": 106,

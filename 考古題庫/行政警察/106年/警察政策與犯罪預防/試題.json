@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "警察政策與犯罪預防",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50170"
   },
   "notes": [
@@ -307,7 +307,7 @@
     {
       "number": 22,
       "type": "choice",
-      "stem": "情境犯罪預防策略(Sit uational Crime Prevention App roaches)在過去 10 年間運用於汽機車竊盜犯罪之 防範,成效斐然。根據各項具體作為的先後實施順序,下列何者的排列方式完全正確? 2003年 2005年 2006年 2007年 新出廠車輛加設防",
+      "stem": "情境犯罪預防策略(Situational Crime Prevention Approaches)在過去 10 年間運用於汽機車竊盜犯罪之 防範,成效斐然。根據各項具體作為的先後實施順序,下列何者的排列方式完全正確? 2003年 2005年 2006年 2007年 新出廠車輛加設防",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {

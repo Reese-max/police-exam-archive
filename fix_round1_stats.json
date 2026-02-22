@@ -1,0 +1,14 @@
+{
+  "files_processed": 910,
+  "files_modified": 800,
+  "fixes": {
+    "metadata_leak_fixed": 799,
+    "ocr_spaces_fixed_option": 53,
+    "ocr_spaces_fixed_stem": 119,
+    "broken_cloze_removed": 620,
+    "too_few_options_removed": 25,
+    "whitespace_fixed_stem": 7,
+    "notes_whitespace_fixed": 1,
+    "empty_options_question_removed": 5
+  }
+}

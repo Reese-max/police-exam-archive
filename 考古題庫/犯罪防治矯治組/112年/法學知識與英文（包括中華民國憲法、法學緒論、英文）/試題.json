@@ -3,7 +3,7 @@
     "exam_type": "112",
     "level": "三等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時"
   },
   "notes": [
     "※注意：①本試題為單一選擇題，請選出一個正確或最適當答案。",
@@ -418,7 +418,7 @@
     {
       "number": 32,
       "type": "choice",
-      "stem": "If your skin type is_____oily,the pores around theT-zone would produce the most oil and tend toward black head form ation.",
+      "stem": "If your skin type is_____oily, the pores around theT-zone would produce the most oil and tend toward black head form ation.",
       "section": null,
       "answer": "B",
       "options": {
@@ -431,7 +431,7 @@
     {
       "number": 33,
       "type": "choice",
-      "stem": "The news ofthe for est fire fil led them with_____because they had just had ago odvacation there.",
+      "stem": "The news of the forest fire fil led them with_____because they had just had ago odvacation there.",
       "section": null,
       "answer": "A",
       "options": {
@@ -444,7 +444,7 @@
     {
       "number": 34,
       "type": "choice",
-      "stem": "After their general had been captivated,the enemytroops were forced to_____after months ofintense fight ing.",
+      "stem": "After their general had been captivated, the enemytroops were forced to_____after months ofintense fight ing.",
       "section": null,
       "answer": "C",
       "options": {
@@ -457,7 +457,7 @@
     {
       "number": 35,
       "type": "choice",
-      "stem": "Many successful leaders believe that a _____ approach should be taken in order to solve complex problems,with feasiblesolutions often being prefer red over more idea listic ones.",
+      "stem": "Many successful leaders believe that a _____ approach should be taken in order to solve complex problems, with feasiblesolutions often being prefer red over more idea listic ones.",
       "section": null,
       "answer": "C",
       "options": {
@@ -483,7 +483,7 @@
     {
       "number": 37,
       "type": "choice",
-      "stem": "We were told about the meeting just one day before.Our report was prepare din such a_____and contained several mis takes.",
+      "stem": "We were told about the meeting just one day before. Our report was prepare din such a_____and contained several mis takes.",
       "section": null,
       "answer": "C",
       "options": {
@@ -522,7 +522,7 @@
     {
       "number": 40,
       "type": "choice",
-      "stem": "In Japan, combined junior high and senior high schools are mostly _____, but the number of public ones is increa sing.",
+      "stem": "In Japan, combined junior high and senior high schools are mostly _____, but the number of public ones is increasing.",
       "section": null,
       "answer": "D",
       "options": {
@@ -555,13 +555,13 @@
         "A": "captious",
         "B": "captivating",
         "C": "pre car ious",
-        "D": "prevent ive"
+        "D": "preventive"
       }
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "Uncle Jonesis always a bit_____;therefore,his relatives and acquaintances keep him ata great distance.",
+      "stem": "Uncle Jonesis always a bit_____;therefore, his relatives and acquaintances keep him ata great distance.",
       "section": null,
       "answer": "D",
       "options": {
@@ -600,7 +600,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "According to the passage,what prompted Nor man Rosenthalto study season aldepression?",
+      "stem": "According to the passage, what prompted Nor man Rosenthalto study season aldepression?",
       "section": null,
       "answer": "B",
       "options": {
@@ -609,12 +609,12 @@
         "C": "Problem sof previous studies.",
         "D": "Rising case sof New York City adults."
       },
-      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold,short day sof the city’swinters than hehadin his home country.Years later,he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms inthe summer time instead. The most comm only reported symp tom sof winter depression are hypersomnia,the desireto sleep more than usual, as well as an increased app etite and lack of interest in things.According to experts, most people experience symptoms in young adult hood,but SAD can begin at any stage of life.The condition also variesbysex.About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night.As for summer SAD,triggers might include the heat and humidity.Instead of feeling let hargic,summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested.One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT),a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,or going to the gym,toboost their mood.Whether using light or talk the rapy,there isnoreas onto not seek mental health treatment,even ifsymptoms are only present for a few months out ofthe year."
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "According to the passage,what has to bed one before receiving SAD treat ments?",
+      "stem": "According to the passage, what has to bed one before receiving SAD treat ments?",
       "section": null,
       "answer": "C",
       "options": {
@@ -623,12 +623,12 @@
         "C": "Seek inga professional diagnosis.",
         "D": "Comparing the effect sof different treat ments."
       },
-      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold,short day sof the city’swinters than hehadin his home country.Years later,he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms inthe summer time instead. The most comm only reported symp tom sof winter depression are hypersomnia,the desireto sleep more than usual, as well as an increased app etite and lack of interest in things.According to experts, most people experience symptoms in young adult hood,but SAD can begin at any stage of life.The condition also variesbysex.About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night.As for summer SAD,triggers might include the heat and humidity.Instead of feeling let hargic,summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested.One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT),a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,or going to the gym,toboost their mood.Whether using light or talk the rapy,there isnoreas onto not seek mental health treatment,even ifsymptoms are only present for a few months out ofthe year."
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "According to the passage,which ofthe following is NOT helpful in treat ing SAD?",
+      "stem": "According to the passage, which of the following is NOT helpful in treat ing SAD?",
       "section": null,
       "answer": "B",
       "options": {
@@ -637,26 +637,26 @@
         "C": "Regulating the production ofmelatonin.",
         "D": "Changing the way people think."
       },
-      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold,short day sof the city’swinters than hehadin his home country.Years later,he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms inthe summer time instead. The most comm only reported symp tom sof winter depression are hypersomnia,the desireto sleep more than usual, as well as an increased app etite and lack of interest in things.According to experts, most people experience symptoms in young adult hood,but SAD can begin at any stage of life.The condition also variesbysex.About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night.As for summer SAD,triggers might include the heat and humidity.Instead of feeling let hargic,summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested.One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT),a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,or going to the gym,toboost their mood.Whether using light or talk the rapy,there isnoreas onto not seek mental health treatment,even ifsymptoms are only present for a few months out ofthe year."
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "Which ofthe following is closest in meaning to the word“let hargic”inthe passage?",
+      "stem": "Which of the following is closest in meaning to the word“let hargic”in the passage?",
       "section": null,
       "answer": "C",
       "options": {
         "A": "Guarded.",
         "B": "Furious.",
-        "C": "In active.",
+        "C": "Inactive.",
         "D": "Superior."
       },
-      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold,short day sof the city’swinters than hehadin his home country.Years later,he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms inthe summer time instead. The most comm only reported symp tom sof winter depression are hypersomnia,the desireto sleep more than usual, as well as an increased app etite and lack of interest in things.According to experts, most people experience symptoms in young adult hood,but SAD can begin at any stage of life.The condition also variesbysex.About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night.As for summer SAD,triggers might include the heat and humidity.Instead of feeling let hargic,summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested.One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT),a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,or going to the gym,toboost their mood.Whether using light or talk the rapy,there isnoreas onto not seek mental health treatment,even ifsymptoms are only present for a few months out ofthe year."
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "According to the passage,which ofthe following statement sis true?",
+      "stem": "According to the passage, which of the following statement sis true?",
       "section": null,
       "answer": "B",
       "options": {
@@ -665,7 +665,7 @@
         "C": "Winter depressionis often trigge red byhumidity.",
         "D": "Suffer ersof winter depression are likely to lose app etite."
       },
-      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold,short day sof the city’swinters than hehadin his home country.Years later,he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms inthe summer time instead. The most comm only reported symp tom sof winter depression are hypersomnia,the desireto sleep more than usual, as well as an increased app etite and lack of interest in things.According to experts, most people experience symptoms in young adult hood,but SAD can begin at any stage of life.The condition also variesbysex.About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night.As for summer SAD,triggers might include the heat and humidity.Instead of feeling let hargic,summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested.One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT),a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,or going to the gym,toboost their mood.Whether using light or talk the rapy,there isnoreas onto not seek mental health treatment,even ifsymptoms are only present for a few months out ofthe year."
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affect ive Dis order (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a for mof talk the rapy. As negative think ing tend sto breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
     }
   ],
   "year": 112,

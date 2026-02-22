@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與消防警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50620"
   },
   "notes": [
@@ -335,7 +335,7 @@
       "type": "choice",
       "stem": "依司法院大法官解釋及現行制度,關於憲法第16條保障之訴訟權,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "*",
+      "answer": "送分",
       "options": {
         "A": "法官迴避制度屬訴訟權保障之核心內容",
         "B": "基於訴訟權保障及法官依法獨立審判,法定法官原則為我國應遵循之憲法原則",
@@ -554,7 +554,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Afire is a method ofpr act icing how a building would be evacuated inthe event of afireor other emerge ncies.",
+      "stem": "Afire is a method ofpr act icing how a building would be evacuated in the event of afireor other emergencies.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -580,12 +580,12 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "Fire fight ers and other off icials have been to monitor the affected areas, as burning of farm lands and illegal for aging occur during this time ofthe year.",
+      "stem": "Fire fight ers and other off icials have been to monitor the affected areas, as burning of farm lands and illegal for aging occur during this time of the year.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
         "A": "conducted",
-        "B": "control led",
+        "B": "controlled",
         "C": "deployed",
         "D": "detained"
       }
@@ -645,7 +645,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "Forest fires in north ern Thail and are threatening to worsen the country’s air pollution, which has sent nearly 2 million people tohospitals with illnesses since the beginning ofthe year.",
+      "stem": "Forest fires in north ern Thail and are threatening to worsen the country’s air pollution, which has sent nearly 2 million people tohospitals with illnesses since the beginning of the year.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -671,7 +671,7 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "A wild fire forced evacuations in El Paso County. All other residents within a two-mile of the intersection of Peter son Road and Galley Road in Cimarron Hills were initially put on pre- evacuation notice,but that was later lifted.",
+      "stem": "A wild fire forced evacuations in El Paso County. All other residents within a two-mile of the intersection of Peter son Road and Galley Road in Cimarron Hills were initially put on pre- evacuation notice, but that was later lifted.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -684,7 +684,7 @@
     {
       "number": 51,
       "type": "choice",
-      "stem": "Fire doors are special ist doors which have been tested against the elements and purpose-built to withstand roaring fires for aslon gas possible.The yen able building sto and delay the spread of fire from one are ato another,andform a crucial part ofa pass ive fire protection strategy.",
+      "stem": "Fire doors are special ist doors which have been tested against the elements and purpose-built to withstand roaring fires for aslon gas possible. The yen able building sto and delay the spread of fire from one are ato another, andform a crucial part ofa pass ive fire protection strategy.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -695,93 +695,18 @@
       }
     },
     {
-      "number": 52,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "spread",
-        "B": "spread ing",
-        "C": "was spread",
-        "D": "being spread"
-      },
-      "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon,burning into the night,fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 .The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning,count ing the number ofen danger edbird 55 suchas ring-neckedpheasants,orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "into",
-        "B": "at",
-        "C": "upon",
-        "D": "in"
-      },
-      "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon,burning into the night,fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 .The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning,count ing the number ofen danger edbird 55 suchas ring-neckedpheasants,orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 54,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "defiance",
-        "B": "valor",
-        "C": "will",
-        "D": "arson"
-      },
-      "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon,burning into the night,fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 .The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning,count ing the number ofen danger edbird 55 suchas ring-neckedpheasants,orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "species",
-        "B": "spices",
-        "C": "sparks",
-        "D": "specials"
-      },
-      "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon,burning into the night,fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 .The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning,count ing the number ofen danger edbird 55 suchas ring-neckedpheasants,orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 56,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "nest",
-        "B": "nesting",
-        "C": "been nested",
-        "D": "having nested"
-      },
-      "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon,burning into the night,fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 .The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning,count ing the number ofen danger edbird 55 suchas ring-neckedpheasants,orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
       "number": 57,
       "type": "choice",
-      "stem": "What is the main idea ofthe passage?",
+      "stem": "What is the main idea of the passage?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
         "A": "Fireis abotha great invention and a source of danger.",
-        "B": "The number ofdeaths cause dby fire has great lyreduced inthe past 30 years.",
+        "B": "The number ofdeaths cause dby fire has great lyreduced in the past 30 years.",
         "C": "It is important that we take measures to ensure fire safety in build ings.",
         "D": "Fire evacuation can help ensure the safety of building occupants."
       },
-      "passage": "請依下文回答第57題至第60題 Fireis one ofhuman kind’smost significant discover ies, but it canalso bea great source of danger in accidents. On average 8 in 1,000,000 people are kil led annual lyin Europe, and more are hospital ized due tofire.For tunately,government sthat have continuouslyadjusted fire safety str ategies have address edt his risk. As a positive result,inthe past 30 years, fire deaths dropped by 65%in Europe. Build ings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting build ings specifically. Plastics are used in various building and construction app lications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignit ability and limited impact on fire spread,contri but ingto the on going red uction off atalities,injuries,and property damage due to fire. The most crucial aspect of a building’s safety in the face of fire is the possibilityof a safe escape. A necessary pre condition is that fire safety facilities enable in depend ent and adequate fire response per for man ces by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning build ings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understand how tobe have inthe event of afire. Fire safety has always been and continue stobea major objective for the industry and anintegral part of product design and manufacturing.However,to provide adequate fire safety in build ings,consideration must be given to various connected design and use aspects. In add ition, training and education to help building occupants respond adequately inthe face of fire also plays avital role in building fire safety."
+      "passage": "請依下文回答第57題至第60題 Fireis one ofhuman kind’smost significant discover ies, but it canalso bea great source of danger in accidents. On average 8 in 1,000,000 people are kil led annual lyin Europe, and more are hospital ized due tofire. For tunately, government sthat have continuouslyadjusted fire safety strategies have address edt his risk. As a positive result, in the past 30 years, fire deaths dropped by 65%in Europe. Build ings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting build ings specifically. Plastics are used in various building and construction app lications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignit ability and limited impact on fire spread, contri but ingto the on going red uction off atalities, injuries, and property damage due to fire. The most crucial aspect of a building’s safety in the face of fire is the possibilityof a safe escape. A necessary pre condition is that fire safety facilities enable in depend ent and adequate fire response per for man ces by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning build ings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understand how tobe have in the event of afire. Fire safety has always been and continue stobea major objective for the industry and anintegral part of product design and manufacturing. However, to provide adequate fire safety in build ings, consideration must be given to various connected design and use aspects. In add ition, training and education to help building occupants respond adequately in the face of fire also plays avital role in building fire safety."
     },
     {
       "number": 58,
@@ -790,40 +715,40 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "Adjust fire safety str ategies continuously.",
+        "A": "Adjust fire safety strategies continuously.",
         "B": "Deregu late safety regulations targeting build ings specifically.",
         "C": "Design and use construction materials that areless likely to catch fire.",
         "D": "Provide training and education on fire safety to building occupants."
       },
-      "passage": "請依下文回答第57題至第60題 Fireis one ofhuman kind’smost significant discover ies, but it canalso bea great source of danger in accidents. On average 8 in 1,000,000 people are kil led annual lyin Europe, and more are hospital ized due tofire.For tunately,government sthat have continuouslyadjusted fire safety str ategies have address edt his risk. As a positive result,inthe past 30 years, fire deaths dropped by 65%in Europe. Build ings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting build ings specifically. Plastics are used in various building and construction app lications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignit ability and limited impact on fire spread,contri but ingto the on going red uction off atalities,injuries,and property damage due to fire. The most crucial aspect of a building’s safety in the face of fire is the possibilityof a safe escape. A necessary pre condition is that fire safety facilities enable in depend ent and adequate fire response per for man ces by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning build ings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understand how tobe have inthe event of afire. Fire safety has always been and continue stobea major objective for the industry and anintegral part of product design and manufacturing.However,to provide adequate fire safety in build ings,consideration must be given to various connected design and use aspects. In add ition, training and education to help building occupants respond adequately inthe face of fire also plays avital role in building fire safety."
+      "passage": "請依下文回答第57題至第60題 Fireis one ofhuman kind’smost significant discover ies, but it canalso bea great source of danger in accidents. On average 8 in 1,000,000 people are kil led annual lyin Europe, and more are hospital ized due tofire. For tunately, government sthat have continuouslyadjusted fire safety strategies have address edt his risk. As a positive result, in the past 30 years, fire deaths dropped by 65%in Europe. Build ings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting build ings specifically. Plastics are used in various building and construction app lications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignit ability and limited impact on fire spread, contri but ingto the on going red uction off atalities, injuries, and property damage due to fire. The most crucial aspect of a building’s safety in the face of fire is the possibilityof a safe escape. A necessary pre condition is that fire safety facilities enable in depend ent and adequate fire response per for man ces by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning build ings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understand how tobe have in the event of afire. Fire safety has always been and continue stobea major objective for the industry and anintegral part of product design and manufacturing. However, to provide adequate fire safety in build ings, consideration must be given to various connected design and use aspects. In add ition, training and education to help building occupants respond adequately in the face of fire also plays avital role in building fire safety."
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "According to the passage,what is require dto ensure fire safety in build ings?",
+      "stem": "According to the passage, what is require dto ensure fire safety in build ings?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
         "A": "Fire safety facilities and adequate training are both needed to enable adequate fire response per for man ces by the building’s occupants.",
-        "B": "Building indu str ies reduce the uses of plastics in a wide and growing range of building and construction app lications.",
+        "B": "Building industries reduce the uses of plastics in a wide and growing range of building and construction app lications.",
         "C": "Civil servants implement national and regional fire safety regulations targeting build ings specifically.",
         "D": "The management leaves the responsibility for in depend ent and adequate fire response per for man ces to building occupants."
       },
-      "passage": "請依下文回答第57題至第60題 Fireis one ofhuman kind’smost significant discover ies, but it canalso bea great source of danger in accidents. On average 8 in 1,000,000 people are kil led annual lyin Europe, and more are hospital ized due tofire.For tunately,government sthat have continuouslyadjusted fire safety str ategies have address edt his risk. As a positive result,inthe past 30 years, fire deaths dropped by 65%in Europe. Build ings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting build ings specifically. Plastics are used in various building and construction app lications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignit ability and limited impact on fire spread,contri but ingto the on going red uction off atalities,injuries,and property damage due to fire. The most crucial aspect of a building’s safety in the face of fire is the possibilityof a safe escape. A necessary pre condition is that fire safety facilities enable in depend ent and adequate fire response per for man ces by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning build ings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understand how tobe have inthe event of afire. Fire safety has always been and continue stobea major objective for the industry and anintegral part of product design and manufacturing.However,to provide adequate fire safety in build ings,consideration must be given to various connected design and use aspects. In add ition, training and education to help building occupants respond adequately inthe face of fire also plays avital role in building fire safety."
+      "passage": "請依下文回答第57題至第60題 Fireis one ofhuman kind’smost significant discover ies, but it canalso bea great source of danger in accidents. On average 8 in 1,000,000 people are kil led annual lyin Europe, and more are hospital ized due tofire. For tunately, government sthat have continuouslyadjusted fire safety strategies have address edt his risk. As a positive result, in the past 30 years, fire deaths dropped by 65%in Europe. Build ings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting build ings specifically. Plastics are used in various building and construction app lications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignit ability and limited impact on fire spread, contri but ingto the on going red uction off atalities, injuries, and property damage due to fire. The most crucial aspect of a building’s safety in the face of fire is the possibilityof a safe escape. A necessary pre condition is that fire safety facilities enable in depend ent and adequate fire response per for man ces by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning build ings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understand how tobe have in the event of afire. Fire safety has always been and continue stobea major objective for the industry and anintegral part of product design and manufacturing. However, to provide adequate fire safety in build ings, consideration must be given to various connected design and use aspects. In add ition, training and education to help building occupants respond adequately in the face of fire also plays avital role in building fire safety."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "What does “insulation”inthe second paragraph most likely mean?",
+      "stem": "What does “insulation”in the second paragraph most likely mean?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "Expo sure",
         "B": "Display",
-        "C": "Red ucing",
+        "C": "Reducing",
         "D": "Rein for cing"
       },
-      "passage": "請依下文回答第57題至第60題 Fireis one ofhuman kind’smost significant discover ies, but it canalso bea great source of danger in accidents. On average 8 in 1,000,000 people are kil led annual lyin Europe, and more are hospital ized due tofire.For tunately,government sthat have continuouslyadjusted fire safety str ategies have address edt his risk. As a positive result,inthe past 30 years, fire deaths dropped by 65%in Europe. Build ings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting build ings specifically. Plastics are used in various building and construction app lications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignit ability and limited impact on fire spread,contri but ingto the on going red uction off atalities,injuries,and property damage due to fire. The most crucial aspect of a building’s safety in the face of fire is the possibilityof a safe escape. A necessary pre condition is that fire safety facilities enable in depend ent and adequate fire response per for man ces by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning build ings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understand how tobe have inthe event of afire. Fire safety has always been and continue stobea major objective for the industry and anintegral part of product design and manufacturing.However,to provide adequate fire safety in build ings,consideration must be given to various connected design and use aspects. In add ition, training and education to help building occupants respond adequately inthe face of fire also plays avital role in building fire safety."
+      "passage": "請依下文回答第57題至第60題 Fireis one ofhuman kind’smost significant discover ies, but it canalso bea great source of danger in accidents. On average 8 in 1,000,000 people are kil led annual lyin Europe, and more are hospital ized due tofire. For tunately, government sthat have continuouslyadjusted fire safety strategies have address edt his risk. As a positive result, in the past 30 years, fire deaths dropped by 65%in Europe. Build ings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting build ings specifically. Plastics are used in various building and construction app lications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignit ability and limited impact on fire spread, contri but ingto the on going red uction off atalities, injuries, and property damage due to fire. The most crucial aspect of a building’s safety in the face of fire is the possibilityof a safe escape. A necessary pre condition is that fire safety facilities enable in depend ent and adequate fire response per for man ces by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning build ings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understand how tobe have in the event of afire. Fire safety has always been and continue stobea major objective for the industry and anintegral part of product design and manufacturing. However, to provide adequate fire safety in build ings, consideration must be given to various connected design and use aspects. In add ition, training and education to help building occupants respond adequately in the face of fire also plays avital role in building fire safety."
     }
   ],
   "year": 112,

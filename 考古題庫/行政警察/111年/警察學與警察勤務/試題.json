@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "警察學與警察勤務",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50130"
   },
   "notes": [
@@ -74,7 +74,7 @@
     {
       "number": 4,
       "type": "choice",
-      "stem": "警政學者 DavidH.Bayley曾提出社區導向警政四種方式(CAMP):諮詢(Consultation)、調 適(Adaptation)、動員(Mobilization)、問題解決(Problem Solving)。就「增進警察與社區 互動、舉行社區治安座談會」等實務策略而言,主要是屬於上述何項方式?",
+      "stem": "警政學者 DavidH. Bayley曾提出社區導向警政四種方式(CAMP):諮詢(Consultation)、調 適(Adaptation)、動員(Mobilization)、問題解決(Problem Solving)。就「增進警察與社區 互動、舉行社區治安座談會」等實務策略而言,主要是屬於上述何項方式?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -234,7 +234,7 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "美國學者威爾森(James Q.Wilson)、凱林 (George L. Kelling),首先使用「破窗」一詞",
+        "A": "美國學者威爾森(James Q. Wilson)、凱林 (George L. Kelling),首先使用「破窗」一詞",
         "B": "該理論首先發表於「警察與鄰里安全:破窗」(The Police and Neighborhood Safety: Broken Windows)論文中",
         "C": "該理論極力促請警察人員應多注意嚴重的犯罪(crime)行為",
         "D": "當破窗無法被有效控制,即代表監控力量減弱"

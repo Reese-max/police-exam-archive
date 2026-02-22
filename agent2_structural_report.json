@@ -1,0 +1,4185 @@
+{
+  "scan_metadata": {
+    "scanner": "Agent 2 - Structural & Content Quality Scanner",
+    "base_directory": "/home/user/police-exam-archive/考古題庫",
+    "total_files_scanned": 912,
+    "total_questions_scanned": 17901,
+    "total_choice_questions": 15297,
+    "total_essay_questions": 2604,
+    "files_with_issues": 52,
+    "total_issues_found": 503
+  },
+  "summary": {
+    "by_category": {
+      "header_footer_leak_in_stem": 0,
+      "instruction_text_in_stem": 0,
+      "missing_answer_for_choice": 0,
+      "metadata_in_options": 0,
+      "reading_passage_leaked_into_option": 4,
+      "abnormally_long_option": 0,
+      "notes_leaked_question_content": 460,
+      "notes_leaked_formula_or_table": 13,
+      "notes_leaked_formula_fragment": 0,
+      "notes_leaked_score_marker": 14,
+      "notes_leaked_section_header": 0,
+      "notes_non_standard_content": 12,
+      "notes_empty_entry": 0,
+      "notes_invalid_type": 0,
+      "empty_stem": 0,
+      "empty_options": 0,
+      "empty_option_value": 0,
+      "insufficient_options": 0,
+      "answer_not_in_options": 0,
+      "page_break_artifact_in_stem": 0,
+      "json_parse_error": 0,
+      "file_read_error": 0
+    },
+    "by_severity": {
+      "medium": 487,
+      "low": 12,
+      "high": 4
+    },
+    "categories_with_issues": {
+      "notes_leaked_question_content": 460,
+      "notes_leaked_score_marker": 14,
+      "notes_leaked_formula_or_table": 13,
+      "notes_non_standard_content": 12,
+      "reading_passage_leaked_into_option": 4
+    },
+    "categories_clean": [
+      "header_footer_leak_in_stem",
+      "instruction_text_in_stem",
+      "missing_answer_for_choice",
+      "metadata_in_options",
+      "abnormally_long_option",
+      "notes_leaked_formula_fragment",
+      "notes_leaked_section_header",
+      "notes_empty_entry",
+      "notes_invalid_type",
+      "empty_stem",
+      "empty_options",
+      "empty_option_value",
+      "insufficient_options",
+      "answer_not_in_options",
+      "page_break_artifact_in_stem",
+      "json_parse_error",
+      "file_read_error"
+    ]
+  },
+  "category_descriptions": {
+    "header_footer_leak_in_stem": "Exam header/footer content (代號, 頁次, 座號, 等別, 類科, 科目, etc.) leaked into question stem text",
+    "instruction_text_in_stem": "Exam instruction text (不必抄題, 申論試卷, 禁止使用電子計算器, 2B鉛筆, etc.) found in question stem",
+    "missing_answer_for_choice": "Choice-type question is missing the answer field",
+    "metadata_in_options": "Answer options contain exam metadata or header/footer content",
+    "reading_passage_leaked_into_option": "Reading passage for subsequent questions leaked into an option value (content concatenation error during extraction)",
+    "abnormally_long_option": "Option value is unusually long (>200 chars), suggesting possible content concatenation or extraction error",
+    "notes_leaked_question_content": "Question/essay prompt content leaked into the notes array, split across multiple note entries (should be in a question stem instead)",
+    "notes_leaked_formula_or_table": "Mathematical formula, statistical table, or technical reference data leaked into the notes array (should be in question content or a separate reference field)",
+    "notes_leaked_formula_fragment": "Isolated formula fragment or symbol leaked into notes",
+    "notes_leaked_score_marker": "Score/point marker (e.g. '(25分)') leaked into notes",
+    "notes_leaked_section_header": "Section header or label leaked into notes",
+    "notes_non_standard_content": "Non-standard content in notes that doesn't match expected instruction patterns",
+    "notes_empty_entry": "Notes array contains empty string entry",
+    "notes_invalid_type": "Notes array entry is not a string",
+    "empty_stem": "Question has an empty or missing stem",
+    "empty_options": "Choice question has no options at all",
+    "empty_option_value": "One or more option values are empty strings",
+    "insufficient_options": "Choice question has fewer than 2 options",
+    "answer_not_in_options": "Answer references an option key that doesn't exist in the options object",
+    "page_break_artifact_in_stem": "Page break artifacts (代號:XXXXX, page ranges) embedded in stem text",
+    "json_parse_error": "JSON file could not be parsed",
+    "file_read_error": "File could not be read"
+  },
+  "issues": [
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 3,
+      "note_content": "註：",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 4,
+      "note_content": "2 1.145； 2 0.711； 2 0.352",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 5,
+      "note_content": "(0.05;5) (0.05;4) (0.05;3)",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 6,
+      "note_content": "2 11.07； 2 9.49； 2 7.81",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 7,
+      "note_content": "(0.95;5) (0.95;4) (0.95;3)",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 8,
+      "note_content": "t 2.920； t 1.658； t 1.645",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 9,
+      "note_content": "(0.95;2) (0.95;120) (0.95;)",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 10,
+      "note_content": "t 4.303； t 1.980； t 1.960",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 11,
+      "note_content": "(0.975;2) (0.975;120) (0.975;)",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 12,
+      "note_content": "x2",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 13,
+      "note_content": "22",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 14,
+      "note_content": "常態分配 p.d.f : f x e",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/110年/交通統計與分析/試題.json",
+      "note_index": 15,
+      "note_content": "2",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "交通警察交通組/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/107年/通訊系統/試題.json",
+      "note_index": 3,
+      "note_content": "π",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 3,
+      "note_content": "相角調變系統其輸出訊號為",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 4,
+      "note_content": "st 100cos 2πf t 4sin2f t",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 5,
+      "note_content": "c m",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 6,
+      "note_content": "f 10 MHz , and f 1000 Hz",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 7,
+      "note_content": "c m",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 9,
+      "note_content": "p",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 11,
+      "note_content": "傳輸所需之頻寬為何？（10 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 12,
+      "note_content": "考慮一雙邊指數脈波",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 13,
+      "note_content": "expt,t 0",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 14,
+      "note_content": "gt 1, t 0",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 15,
+      "note_content": "expt, t 0",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 18,
+      "note_content": "在離地表 40,000 公里的定軌道衛星系統中，假設使用 10 瓦的傳輸功率",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 19,
+      "note_content": "天線增益 G 30 dB ，地面接收站天線增益 G 43.5 dB，載波頻率",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 20,
+      "note_content": "t r",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 21,
+      "note_content": "f 4GHz ，此外會有額外 5dB 的系統損耗：",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 22,
+      "note_content": "c",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 25,
+      "note_content": "訊溫度為 50K，信號頻寬為 36 MHz，請計算此接收系統之雜訊功率為",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 26,
+      "note_content": "多少dBm？（6 分）",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 28,
+      "note_content": "O",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 29,
+      "note_content": "［波茲曼常數k 1.381023 J / K 228.6 dBW / K / Hz〕",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 30,
+      "note_content": "使用差異調變（DeltaModulation,DM）來傳送語音信號，取樣速率為 64KHz，",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 31,
+      "note_content": "語音信號頻寬為 3.1 KHz，最大振幅 10 伏特：",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 34,
+      "note_content": "（8 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_leaked_formula_or_table",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 35,
+      "note_content": "∆",
+      "message": "Mathematical formula, statistical table, or technical reference data leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 37,
+      "note_content": "編碼率為 1/2 之迴旋編碼器架構（convolution code）如下圖所示，假設",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 38,
+      "note_content": "正反器之初始值為 0，如果輸入序列為 1001100（最後兩個位元 00 為訊",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/通訊系統/試題.json",
+      "note_index": 39,
+      "note_content": "息尾或沖積位元，用以回復正反器至零的初始狀態），請問：",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/電路學/試題.json",
+      "note_index": 3,
+      "note_content": "如圖⑴所示之電路，請求① A-B 端點左邊網路之戴維寧等效電路（10 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/電路學/試題.json",
+      "note_index": 4,
+      "note_content": "及諾頓等效電路；（5 分）②若將電路中之 5 A 電流源拿掉，請再重新求",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "交通警察電訊組/110年/電路學/試題.json",
+      "note_index": 5,
+      "note_content": "A-B 端點左邊網路之戴維寧等效電路。（5 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "公共安全/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "公共安全/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "刑事警察/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "刑事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "國境警察/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "國境警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/109年/國際警察合作與跨國(境)犯罪防制/試題.json",
+      "note_index": 3,
+      "note_content": "請問何謂跨國犯罪，試舉兩個例子為例？（10 分）應對跨國犯罪，跨國",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/109年/國際警察合作與跨國(境)犯罪防制/試題.json",
+      "note_index": 4,
+      "note_content": "執法合作相當重要，請問跨國執法合作運作時經常面臨了什麼樣的障礙",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/109年/國際警察合作與跨國(境)犯罪防制/試題.json",
+      "note_index": 5,
+      "note_content": "與挑戰？（20 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/109年/國際警察合作與跨國(境)犯罪防制/試題.json",
+      "note_index": 6,
+      "note_content": "跨國犯罪經常引發刑事管轄權衝突的爭論。請說明一般解決刑事管轄權",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/109年/國際警察合作與跨國(境)犯罪防制/試題.json",
+      "note_index": 7,
+      "note_content": "衝突的途徑為何？（10 分）解決衝突的一般判斷規則為何？（15 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/109年/國際警察合作與跨國(境)犯罪防制/試題.json",
+      "note_index": 8,
+      "note_content": "人口販運是當前跨國犯罪的重要形式之一，請說明如何辨識人口販運案",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/109年/國際警察合作與跨國(境)犯罪防制/試題.json",
+      "note_index": 9,
+      "note_content": "件被害人？（20 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/109年/國際警察合作與跨國(境)犯罪防制/試題.json",
+      "note_index": 10,
+      "note_content": "我國執行控制下交付的法律依據為何？（10 分）如何發動與執行？（15 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "外事警察/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "外事警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+      "note_index": 4,
+      "note_content": "海巡艇於臺南海域執行巡邏勤務時，突然火災警報響起，經查為機艙起火，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+      "note_index": 5,
+      "note_content": "當時海面風力 6 至 7 級、陣風 9 級，風向西南風，應如何處置？（20 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+      "note_index": 6,
+      "note_content": "民眾以「海巡 118 報案專線」向海洋委員會海巡署巡防區報案：「淡水河",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+      "note_index": 7,
+      "note_content": "出海口東北方約 5 浬處（領海內非錨泊區水域）有 1 艘貨船錨泊，影響",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+      "note_index": 8,
+      "note_content": "漁船作業及航行安全。」巡防區執勤人員接獲報案，應如何查證、通報",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+      "note_index": 9,
+      "note_content": "及應處？（10 分）若該錨泊貨船為「外國籍」、「我國籍」及「大陸籍」各",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+      "note_index": 10,
+      "note_content": "該如何處置？（10 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+      "note_index": 11,
+      "note_content": "為防範「非洲豬瘟」及「嚴重特殊傳染性肺炎」疫情境外入侵，海巡艇",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+      "note_index": 12,
+      "note_content": "長在查處越界大陸漁船時，請說明應如何處置？（20 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
+      "note_index": 3,
+      "note_content": "Please translate the following paragraphs into English.",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "水上警察/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "水上警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "消防警察/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "消防警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "reading_passage_leaked_into_option",
+      "severity": "high",
+      "file": "犯罪防治矯治組/106年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+      "question_number": 40,
+      "question_type": "choice",
+      "option_key": "D",
+      "option_value_length": 1041,
+      "option_excerpt": "obscure 請依下文回答第41至45題: By far some of the most prestigious centers of European learn ing today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of",
+      "message": "Reading passage for subsequent questions leaked into this option value"
+    },
+    {
+      "category": "reading_passage_leaked_into_option",
+      "severity": "high",
+      "file": "犯罪防治矯治組/107年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+      "question_number": 40,
+      "question_type": "choice",
+      "option_key": "D",
+      "option_value_length": 1504,
+      "option_excerpt": "with con science 請依下文回答第41至45題: As birds awaken the early risers at dawn on the farm, one person is already up; in fact, he hasn’t even been to bed. Sixty-four-year-old Thai Ngoc, from central Quang N",
+      "message": "Reading passage for subsequent questions leaked into this option value"
+    },
+    {
+      "category": "reading_passage_leaked_into_option",
+      "severity": "high",
+      "file": "犯罪防治矯治組/108年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+      "question_number": 36,
+      "question_type": "choice",
+      "option_key": "D",
+      "option_value_length": 2115,
+      "option_excerpt": "romantic 第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bed time just a time for dream ing?Do our brains turn off for the night?What if I told you that scientist srecently discovered that our brai",
+      "message": "Reading passage for subsequent questions leaked into this option value"
+    },
+    {
+      "category": "reading_passage_leaked_into_option",
+      "severity": "high",
+      "file": "犯罪防治矯治組/109年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+      "question_number": 40,
+      "question_type": "choice",
+      "option_key": "D",
+      "option_value_length": 1171,
+      "option_excerpt": "enc our aging 請回答下列第41題至第45題 Capital controls may be imposed on capital leaving a country or enter ing it. The former include controls over 41 trans actions for direct and equity investments by reside",
+      "message": "Reading passage for subsequent questions leaked into this option value"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "犯罪防治預防組/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "行政管理/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 4,
+      "note_content": "毒品通緝犯 O 某騎乘機車遇巡邏員警即刻閃躲，員警遂予以攔查，O 某",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 5,
+      "note_content": "拒絕受檢加速逃逸，因路口無法通行，迴轉再遇攔查員警，O 某未減速",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 6,
+      "note_content": "並衝撞員警，員警開 1 槍擊中 O 某，送醫不治，引發社會議論。警察執",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 7,
+      "note_content": "法，裁量能力與倫理原則被廣泛探討，特別是涉及警械使用時，更成為",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 8,
+      "note_content": "社會關注的焦點。請以「盤查盤檢人車」，以及「警械使用」相關法令規",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 9,
+      "note_content": "定為基礎，對題旨情境案例作一解析。（25 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 12,
+      "note_content": "力有限，民力無窮」，當今全國各直轄市、縣（市）警察局均已陸續推",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 13,
+      "note_content": "動「『第三方警政』治安策略」。請說明，如何引用「治理」的概念，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 14,
+      "note_content": "經由跨部門協力，面對與「社會治安」有關的公共問題的挑戰；例如：",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/112年/警察組織與事務管理/試題.json",
+      "note_index": 15,
+      "note_content": "「第三方警政」。（15 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 3,
+      "note_content": "近年來網路與行動裝置十分普及，加上大量社群平台興起，社群彼此串",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 4,
+      "note_content": "聯，傳播快速並交互影響，許多重大政治、社會事件或治安議題的發生，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 5,
+      "note_content": "在解決危機事件上已與傳統媒體之處理大不相同，後續影響層面也較以",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 6,
+      "note_content": "往更為寬廣、快速且深遠，危機管理專家 StevenFink 在「危機發展階段",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 7,
+      "note_content": "論」中主張危機之產生有「醞釀、爆發、蔓延擴散、處理」等四個時期，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 8,
+      "note_content": "面對網路輿情危機之不同發展階段，警察機關應如何運用社群監測工具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 9,
+      "note_content": "妥適應對？並請說明其在危機處理上之運用與啟示。（20 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 10,
+      "note_content": "2024 年 4 月 3 日花蓮發生 7.2 級大地震，該次地震截至 4 月下旬，在全",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 11,
+      "note_content": "臺共造成 18 人罹難、1,155 人受傷、37 人留置及 3 人失聯，另有多棟房",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 12,
+      "note_content": "屋倒塌或半倒，許多道路、橋梁、維生管線、學校等基礎設施受到不同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 13,
+      "note_content": "程度的損毀，中央及地方均展開積極之救援工作。請說明我國的中央災",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 14,
+      "note_content": "害防救體系目前所擔任之任務重點與內容。（30 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 15,
+      "note_content": "警察機關在偵辦刑案時應恪遵偵查不公開，以落實無罪推定原則，在偵",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 16,
+      "note_content": "查過程中，經審酌公共利益之維護或合法權益之保護，認有發布新聞之",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 17,
+      "note_content": "情形有幾種？應特別考量之事項，又有那些？在得適度公開或揭露之案",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 18,
+      "note_content": "件，除法律另有規定外，有那些事項不得公開或揭露？請列舉之。（30 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 19,
+      "note_content": "第十六任總統副總統就職國宴首度於臺南市登場，此類舉辦國際性、重",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 20,
+      "note_content": "大性、特殊性的活動是每個地方或城市積極爭取的目標。然而，在各國",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 21,
+      "note_content": "政要雲集、媒體聚光焦點的活動上，卻也成為恐怖份子、政治狂熱者或",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 23,
+      "note_content": "具。因此，警察機關在配合類似活動上，安全檢查及維護是不可或缺的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 24,
+      "note_content": "工作，也惟有滴水不漏的規畫，才能讓挾持者無機可趁，試請就舉辦此",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
+      "note_index": 25,
+      "note_content": "類重大活動之各項安全檢查及維護措施分別舉例說明。（20 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "行政警察/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/112年/警察學與警察勤務/試題.json",
+      "note_index": 4,
+      "note_content": "今年報載某幫會於臺北市五星級酒店，將其宴會廳整個包場舉辦春",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/112年/警察學與警察勤務/試題.json",
+      "note_index": 5,
+      "note_content": "酒，席開 80 桌，現場名車雲集，該幫會全臺各分會的幹部全都到齊。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/112年/警察學與警察勤務/試題.json",
+      "note_index": 6,
+      "note_content": "轄區警察機關動員百餘名警力馳赴現場蒐證壓制。請詳述轄區警察機",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/112年/警察學與警察勤務/試題.json",
+      "note_index": 7,
+      "note_content": "關所為之蒐證壓制，其為防止危害、防止犯罪及維護治安等目的而為",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/112年/警察學與警察勤務/試題.json",
+      "note_index": 8,
+      "note_content": "之資料蒐集，其蒐集之對象、方法、限制及資料之保存等規定為何？",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/112年/警察學與警察勤務/試題.json",
+      "note_index": 9,
+      "note_content": "（25 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "行政警察/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "警察法制/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "警察法制/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "資訊管理/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "資訊管理/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 3,
+      "note_content": "近年有少量槍擊案件，因現場勘察與取證紀錄未能完整詳實，而造成重",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 4,
+      "note_content": "大爭議，甚至導致案件無法成立，完善處理證物極有必要，請敘述槍枝",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 5,
+      "note_content": "證物（10 分）、子彈、彈頭（殼）證物之處理原則。（15 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 6,
+      "note_content": "通訊監察係犯罪偵查手段之一，請說明其依據之法令名稱與立法要旨",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 7,
+      "note_content": "（5 分），其通訊內容包含那些項目？（5 分）聲請程序為何？（5 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 8,
+      "note_content": "被告或犯罪嫌疑人有何種罪嫌者適用。（請列舉 5 種以上，10 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 9,
+      "note_content": "目前國內已有 30 餘個鑑識科學實驗室獲得認證（ISO 17025，2017），",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 10,
+      "note_content": "實驗室以獲得認證提升報告公信力已成為趨勢，請敘述方法的選用與",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 11,
+      "note_content": "查證要求作為至少 5 項（15 分）、對非標準方法（自行開發的方法等）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 12,
+      "note_content": "的確認作為至少 5 項。（10 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 13,
+      "note_content": "車牌辨識為科技偵查作為之一環，請說明其辨識原理（5 分）、軟硬體角",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 14,
+      "note_content": "色與功能。（10 分）另請敘述如何設置全國性的監視系統至少 5 項以提升",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/110年/物理鑑識/試題.json",
+      "note_index": 15,
+      "note_content": "辦案之效能。（10 分）",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_score_marker",
+      "severity": "medium",
+      "file": "鑑識科學/112年/國文(作文與測驗)/試題.json",
+      "note_index": 3,
+      "note_content": "（80 分）",
+      "message": "Score/point marker leaked into notes"
+    },
+    {
+      "category": "notes_non_standard_content",
+      "severity": "low",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 4,
+      "note_content": "你所屬的單位將針對下列事件發布英文新聞稿。請以英文擬定 300 字左",
+      "message": "Non-standard content in notes that doesn't match expected instruction patterns"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 5,
+      "note_content": "右的新聞內容，其中應敘述事件經過（可自行添加細節），並宣導文末的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 7,
+      "note_content": "一位美國籍女性旅客來臺探望在本地教英語的表弟，兩人相約於本",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 8,
+      "note_content": "（6）月 10 日由南投竹山的杉林溪生態渡假園區入山，想要前往 4 小時路",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 9,
+      "note_content": "程外的水漾森林。兩人出發時天氣晴朗，不料途中遭遇大雨，因攜帶雨具",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 10,
+      "note_content": "不足，又因讀錯地圖而迷失方向，結果受困山區。美籍男子於當日晚間 7",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 11,
+      "note_content": "時許向臺灣友人求助，友人撥打 119 報案後，南投縣政府消防局隨即會同",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 12,
+      "note_content": "中華民國山難救助協會展開救援，於 11 日上午尋獲兩人。因一夜未進食，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 13,
+      "note_content": "兩人身體虛弱有輕微失溫現象。救難人員提供保暖衣物、食物及熱飲，並",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 14,
+      "note_content": "以救護車將兩人送醫，目前已無大礙。兩位外籍人士再三感謝警方救助，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 15,
+      "note_content": "美國在臺協會也特地致電相關單位致意。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 17,
+      "note_content": "狀況，事先做好安全相關規劃，並備妥充足登山裝備。另外建議登山前可",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 18,
+      "note_content": "下載內政部消防署開發的「消防防災 e 點通 APP」，該 APP 支援多種語",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 19,
+      "note_content": "言，如遭遇緊急狀況時可藉由此 APP 報案，經 APP 定位後，救難人員更",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+      "note_index": 20,
+      "note_content": "精準掌握所在位置，從而減少搜救時間。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 7,
+      "note_content": "前人曾提出「木桶原理」，意指一個木桶能盛裝多少水，取決於圍成",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 8,
+      "note_content": "木桶的木板中最短的那塊。這個形象化的比喻，強調了在一個團隊中，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 9,
+      "note_content": "必須所有人的素質、能力都一樣好，方可獲得最理想的成就。若其中一",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 10,
+      "note_content": "人落後其他人，他會成為團隊的破口，影響整體的實力。在個人方面亦",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 11,
+      "note_content": "然，應儘量培養各項能力，並找出不足之處設法彌補，方可在考場、職",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 12,
+      "note_content": "場等各種人生場合贏得肯定。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 13,
+      "note_content": "但後來有人提出：如果將木桶斜放，水的盛裝高度就不是受限於短",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 14,
+      "note_content": "的木板，反而是由長的木板決定。此即「斜木桶原理」或「長板原理」。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 15,
+      "note_content": "若改用這個觀點，團隊要提高整體實力的方式，就未必是強求人人同樣",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 16,
+      "note_content": "優秀，而是找出木桶最恰當的傾放角度，鞏固並儘可能發揮既有的強項，",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 17,
+      "note_content": "透過適才適所來放大成效。而個人也不用為自己的匱乏或不擅長的事所",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 18,
+      "note_content": "苦，而是珍惜天賦，讓本身的優勢展現最大的價值。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 19,
+      "note_content": "你比較認同「木桶原理」或「斜木桶原理」？或者在不同場合、目的",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 20,
+      "note_content": "及人生階段，這兩個原理各有其適用性？請以「墊高成就，來自補足",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 21,
+      "note_content": "短處或延展長處」為題，結合經驗或見聞，寫一篇文章，說明你的觀",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    },
+    {
+      "category": "notes_leaked_question_content",
+      "severity": "medium",
+      "file": "鑑識科學/114年/國文(作文與測驗)/試題.json",
+      "note_index": 22,
+      "note_content": "察、體會或反思。",
+      "message": "Question/essay prompt content leaked into notes (part of multi-line sequence)"
+    }
+  ],
+  "affected_files_list": [
+    "交通警察交通組/110年/交通統計與分析/試題.json",
+    "交通警察交通組/112年/國文(作文與測驗)/試題.json",
+    "交通警察交通組/114年/中華民國憲法與警察專業英文/試題.json",
+    "交通警察交通組/114年/國文(作文與測驗)/試題.json",
+    "交通警察電訊組/107年/通訊系統/試題.json",
+    "交通警察電訊組/110年/通訊系統/試題.json",
+    "交通警察電訊組/110年/電路學/試題.json",
+    "公共安全/112年/國文(作文與測驗)/試題.json",
+    "公共安全/114年/中華民國憲法與警察專業英文/試題.json",
+    "公共安全/114年/國文(作文與測驗)/試題.json",
+    "刑事警察/112年/國文(作文與測驗)/試題.json",
+    "刑事警察/114年/中華民國憲法與警察專業英文/試題.json",
+    "刑事警察/114年/國文(作文與測驗)/試題.json",
+    "國境警察/112年/國文(作文與測驗)/試題.json",
+    "國境警察/114年/中華民國憲法與警察專業英文/試題.json",
+    "國境警察/114年/國文(作文與測驗)/試題.json",
+    "外事警察/109年/國際警察合作與跨國(境)犯罪防制/試題.json",
+    "外事警察/112年/國文(作文與測驗)/試題.json",
+    "外事警察/114年/中華民國憲法與警察專業英文/試題.json",
+    "外事警察/114年/國文(作文與測驗)/試題.json",
+    "水上警察/109年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
+    "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
+    "水上警察/112年/國文(作文與測驗)/試題.json",
+    "水上警察/114年/國文(作文與測驗)/試題.json",
+    "消防警察/112年/國文(作文與測驗)/試題.json",
+    "消防警察/114年/國文(作文與測驗)/試題.json",
+    "犯罪防治矯治組/106年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+    "犯罪防治矯治組/107年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+    "犯罪防治矯治組/108年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+    "犯罪防治矯治組/109年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+    "犯罪防治預防組/112年/國文(作文與測驗)/試題.json",
+    "犯罪防治預防組/114年/中華民國憲法與警察專業英文/試題.json",
+    "犯罪防治預防組/114年/國文(作文與測驗)/試題.json",
+    "行政管理/112年/國文(作文與測驗)/試題.json",
+    "行政管理/112年/警察組織與事務管理/試題.json",
+    "行政管理/113年/警察危機應變與安全管理/試題.json",
+    "行政管理/114年/中華民國憲法與警察專業英文/試題.json",
+    "行政管理/114年/國文(作文與測驗)/試題.json",
+    "行政警察/112年/國文(作文與測驗)/試題.json",
+    "行政警察/112年/警察學與警察勤務/試題.json",
+    "行政警察/114年/中華民國憲法與警察專業英文/試題.json",
+    "行政警察/114年/國文(作文與測驗)/試題.json",
+    "警察法制/112年/國文(作文與測驗)/試題.json",
+    "警察法制/114年/中華民國憲法與警察專業英文/試題.json",
+    "警察法制/114年/國文(作文與測驗)/試題.json",
+    "資訊管理/112年/國文(作文與測驗)/試題.json",
+    "資訊管理/114年/中華民國憲法與警察專業英文/試題.json",
+    "資訊管理/114年/國文(作文與測驗)/試題.json",
+    "鑑識科學/110年/物理鑑識/試題.json",
+    "鑑識科學/112年/國文(作文與測驗)/試題.json",
+    "鑑識科學/114年/中華民國憲法與警察專業英文/試題.json",
+    "鑑識科學/114年/國文(作文與測驗)/試題.json"
+  ]
+}

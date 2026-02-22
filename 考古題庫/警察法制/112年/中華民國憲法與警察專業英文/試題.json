@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50120"
   },
   "notes": [
@@ -61,7 +61,7 @@
         "A": "總統因行使憲法職權而獲得之資訊,如公開可能影響國家安全與國家利益者,總統有決定 不予公開之權力",
         "B": "總統如以書面釋明,在訴訟程序中公開機密資訊有妨害國家利益之虞,檢察官及法院應予 以尊重,不得駁回總統之決定",
         "C": "在刑事訴訟程序上,總統就國家機密事項有拒絕證言權",
-        "D": "總統在訴訟程序中公開機密資訊是否有妨害國家利益之虞,應僅由承辦檢察官或審判庭法 官依保密程序為之 - -"
+        "D": "總統在訴訟程序中公開機密資訊是否有妨害國家利益之虞,應僅由承辦檢察官或審判庭法 官依保密程序為之"
       }
     },
     {
@@ -165,7 +165,7 @@
         "A": "立法委員不得兼任官吏",
         "B": "立法委員在院內所為之言論,對院外不負責任",
         "C": "立法委員在院內所為之表決,對院外不負責任",
-        "D": "立法委員,除現行犯及叛亂罪外,在會期中非經立法院許可,不得逮捕或拘禁 - -"
+        "D": "立法委員,除現行犯及叛亂罪外,在會期中非經立法院許可,不得逮捕或拘禁"
       }
     },
     {
@@ -282,7 +282,7 @@
         "A": "覆議案逾期未議決者,立法院之原決議失效",
         "B": "行政院提起覆議,須得總統之核可",
         "C": "覆議之對象以法律案、預算案、條約案為限",
-        "D": "立法院對行政院之重要政策不贊同時,得以決議移請變更 - -"
+        "D": "立法院對行政院之重要政策不贊同時,得以決議移請變更"
       }
     },
     {
@@ -329,7 +329,7 @@
       "type": "choice",
       "stem": "依司法院大法官解釋及現行制度,關於憲法第16條保障之訴訟權,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "*",
+      "answer": "送分",
       "options": {
         "A": "法官迴避制度屬訴訟權保障之核心內容",
         "B": "基於訴訟權保障及法官依法獨立審判,法定法官原則為我國應遵循之憲法原則",
@@ -386,7 +386,7 @@
         "A": "公務員懲戒屬司法權之一環",
         "B": "懲戒法院為行使懲戒權之專屬機關",
         "C": "懲戒法院之審議,應予以付懲戒人充分程序保障,包括採取直接審理及給予最後陳述之機會",
-        "D": "公務員懲戒法未設有通常上訴救濟之機制,屬於立法形成自由,未對人民訴訟權構成侵害 - -"
+        "D": "公務員懲戒法未設有通常上訴救濟之機制,屬於立法形成自由,未對人民訴訟權構成侵害"
       }
     },
     {
@@ -503,7 +503,7 @@
         "A": "提出對行政院院長之彈劾案",
         "B": "追認緊急命令",
         "C": "提出修憲案",
-        "D": "提出總統罷免案 - -"
+        "D": "提出總統罷免案"
       }
     },
     {
@@ -574,7 +574,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "The goal of airport security isto safe guard pass engers,crew,and staff by for for biddenitems and preventing acts of terrorism, hijacking, and other criminal act ivities that could end anger the safety of air travel.",
+      "stem": "The goal of airport security isto safeguard passengers, crew, and staff by for for biddenitems and preventing acts of terrorism, hijacking, and other criminal act ivities that could end anger the safety of air travel.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -587,7 +587,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "In that country,for sentence sinexcess off our years,prison ers are eligib let obe release don after serving one-third of their sent ences.",
+      "stem": "In that country, for sentence sinexcess off our years, prisoners are eligib let obe release don after serving one-third of their sentences.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -600,7 +600,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "_______isa criminal charge involving violence,so the prosecution take sit very seriously,especially ifa weapon is involved orit results in injury.",
+      "stem": "_______isa criminal charge involving violence, so the prosecution take sit very seriously, especially ifa weapon is involved orit results in injury.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -613,7 +613,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "To prevent identity theft, you should regularly monitor your credit reports and financial state ments to detect any or suspicious activity.",
+      "stem": "To prevent identity theft, you should regularly monitor your credit reports and financial statements to detect any or suspicious activity.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -626,14 +626,14 @@
     {
       "number": 47,
       "type": "choice",
-      "stem": "While driving home from a party last night, I was stopped by the police and asked to take a breathalyzer test.Since I had only consume do range juic eat the party,mybr eat halcohol was normal.",
+      "stem": "While driving home from a party last night, I was stopped by the police and asked to take a breathalyzer test. Since I had only consume do range juic eat the party, mybr eat halcohol was normal.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "acceleration",
         "B": "concentration",
         "C": "disinfectant",
-        "D": "into lerance - -"
+        "D": "into lerance"
       }
     },
     {
@@ -676,81 +676,6 @@
       }
     },
     {
-      "number": 51,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "intercept",
-        "B": "intrigue",
-        "C": "impact",
-        "D": "imply"
-      },
-      "passage": "請依下文回答第51題至第55題 The Customs Administration’s canine division last year helped customs off icers 51 758 kg of illegal drugs, which were valued at NT$330 million (US$11.86 million). Most of the narcotics detected by sniffer dogs were ketamine, the agency said. Taiwan has 37 detection dogs, with each dog working with one dog handler. Detection dogs are put 52 duty when ever high-risk flights arrive, and they must finish 53 the luggage in about 10 minutes, it added. With the establishment of the Mari time Express Con sign ments Clear ance service at the Keelung Customs Office and the construction of Taiwan Taoyuan International Airport’s Term inal 3 expected tobecomp let edin 2026,the center said itis aiming toexp and the canine division from 37 to 44 sniffer dogs by 2025.The center said that its main task inthe next few years is to train more Labradors to find tobacco, narcotics or explosives 54 the Military Police Comm and,the National Fire Agency,the National Police Agency,the Bureau of Animal and Plant Inspection and Quarantine, and other age ncies. The success rate of training Labrador puppies to become detection dogs has reached more than 20 percent, as puppies born from second-generation dams tend to best ronger and health ier,itsaid.Asthe 55 of puppies is expected todouble inthe next three years, people living south of Taoyuan or north of Yunlin County are encouraged to become foster families of puppies, the center said, add ing that com pan ies in central Taiwan can offer facilities for puppy training.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 52,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "by",
-        "B": "with",
-        "C": "on",
-        "D": "in"
-      },
-      "passage": "請依下文回答第51題至第55題 The Customs Administration’s canine division last year helped customs off icers 51 758 kg of illegal drugs, which were valued at NT$330 million (US$11.86 million). Most of the narcotics detected by sniffer dogs were ketamine, the agency said. Taiwan has 37 detection dogs, with each dog working with one dog handler. Detection dogs are put 52 duty when ever high-risk flights arrive, and they must finish 53 the luggage in about 10 minutes, it added. With the establishment of the Mari time Express Con sign ments Clear ance service at the Keelung Customs Office and the construction of Taiwan Taoyuan International Airport’s Term inal 3 expected tobecomp let edin 2026,the center said itis aiming toexp and the canine division from 37 to 44 sniffer dogs by 2025.The center said that its main task inthe next few years is to train more Labradors to find tobacco, narcotics or explosives 54 the Military Police Comm and,the National Fire Agency,the National Police Agency,the Bureau of Animal and Plant Inspection and Quarantine, and other age ncies. The success rate of training Labrador puppies to become detection dogs has reached more than 20 percent, as puppies born from second-generation dams tend to best ronger and health ier,itsaid.Asthe 55 of puppies is expected todouble inthe next three years, people living south of Taoyuan or north of Yunlin County are encouraged to become foster families of puppies, the center said, add ing that com pan ies in central Taiwan can offer facilities for puppy training.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "tosniff",
-        "B": "sniff",
-        "C": "sniffed",
-        "D": "sniff ing"
-      },
-      "passage": "請依下文回答第51題至第55題 The Customs Administration’s canine division last year helped customs off icers 51 758 kg of illegal drugs, which were valued at NT$330 million (US$11.86 million). Most of the narcotics detected by sniffer dogs were ketamine, the agency said. Taiwan has 37 detection dogs, with each dog working with one dog handler. Detection dogs are put 52 duty when ever high-risk flights arrive, and they must finish 53 the luggage in about 10 minutes, it added. With the establishment of the Mari time Express Con sign ments Clear ance service at the Keelung Customs Office and the construction of Taiwan Taoyuan International Airport’s Term inal 3 expected tobecomp let edin 2026,the center said itis aiming toexp and the canine division from 37 to 44 sniffer dogs by 2025.The center said that its main task inthe next few years is to train more Labradors to find tobacco, narcotics or explosives 54 the Military Police Comm and,the National Fire Agency,the National Police Agency,the Bureau of Animal and Plant Inspection and Quarantine, and other age ncies. The success rate of training Labrador puppies to become detection dogs has reached more than 20 percent, as puppies born from second-generation dams tend to best ronger and health ier,itsaid.Asthe 55 of puppies is expected todouble inthe next three years, people living south of Taoyuan or north of Yunlin County are encouraged to become foster families of puppies, the center said, add ing that com pan ies in central Taiwan can offer facilities for puppy training.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 54,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "onbe half of",
-        "B": "regardless of",
-        "C": "insomuc has",
-        "D": "inspiteof"
-      },
-      "passage": "請依下文回答第51題至第55題 The Customs Administration’s canine division last year helped customs off icers 51 758 kg of illegal drugs, which were valued at NT$330 million (US$11.86 million). Most of the narcotics detected by sniffer dogs were ketamine, the agency said. Taiwan has 37 detection dogs, with each dog working with one dog handler. Detection dogs are put 52 duty when ever high-risk flights arrive, and they must finish 53 the luggage in about 10 minutes, it added. With the establishment of the Mari time Express Con sign ments Clear ance service at the Keelung Customs Office and the construction of Taiwan Taoyuan International Airport’s Term inal 3 expected tobecomp let edin 2026,the center said itis aiming toexp and the canine division from 37 to 44 sniffer dogs by 2025.The center said that its main task inthe next few years is to train more Labradors to find tobacco, narcotics or explosives 54 the Military Police Comm and,the National Fire Agency,the National Police Agency,the Bureau of Animal and Plant Inspection and Quarantine, and other age ncies. The success rate of training Labrador puppies to become detection dogs has reached more than 20 percent, as puppies born from second-generation dams tend to best ronger and health ier,itsaid.Asthe 55 of puppies is expected todouble inthe next three years, people living south of Taoyuan or north of Yunlin County are encouraged to become foster families of puppies, the center said, add ing that com pan ies in central Taiwan can offer facilities for puppy training.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "volume",
-        "B": "number",
-        "C": "latitude",
-        "D": "length"
-      },
-      "passage": "請依下文回答第51題至第55題 The Customs Administration’s canine division last year helped customs off icers 51 758 kg of illegal drugs, which were valued at NT$330 million (US$11.86 million). Most of the narcotics detected by sniffer dogs were ketamine, the agency said. Taiwan has 37 detection dogs, with each dog working with one dog handler. Detection dogs are put 52 duty when ever high-risk flights arrive, and they must finish 53 the luggage in about 10 minutes, it added. With the establishment of the Mari time Express Con sign ments Clear ance service at the Keelung Customs Office and the construction of Taiwan Taoyuan International Airport’s Term inal 3 expected tobecomp let edin 2026,the center said itis aiming toexp and the canine division from 37 to 44 sniffer dogs by 2025.The center said that its main task inthe next few years is to train more Labradors to find tobacco, narcotics or explosives 54 the Military Police Comm and,the National Fire Agency,the National Police Agency,the Bureau of Animal and Plant Inspection and Quarantine, and other age ncies. The success rate of training Labrador puppies to become detection dogs has reached more than 20 percent, as puppies born from second-generation dams tend to best ronger and health ier,itsaid.Asthe 55 of puppies is expected todouble inthe next three years, people living south of Taoyuan or north of Yunlin County are encouraged to become foster families of puppies, the center said, add ing that com pan ies in central Taiwan can offer facilities for puppy training.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
       "number": 56,
       "type": "choice",
       "stem": "What is the main idea of this passage?",
@@ -758,11 +683,11 @@
       "answer": "B",
       "options": {
         "A": "The ethical problems with biometric identification.",
-        "B": "Biometric identification,its uses, andits challenges.",
+        "B": "Biometric identification, its uses, andits challenges.",
         "C": "Biometric identification and its history in law enforcement.",
         "D": "The difference between physiological and behavioral biometrics."
       },
-      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day,how dowe know we’renot let ting dangerous people into our count ries?One response isbiometric identification technology.It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics,has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are softw are programs that identify faces, palms,and irises.Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult,ifnot impossible,for criminals tosteal. Behavior albiometrics can also be usedto identify people.Certain behavior sareuniquetoindividuals, suchas their speech or the way they type.The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problem atica sit canbe copied.However,people do automatically recognize subt let ies inthe way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose.Today, we use pass ports to verify our identity when crossing borders,but pass ports canbe stolen or for ged.An effect ivebiometric identification system would be difficult to fool. Because of this, many count ries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system,which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
+      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day, how dowe know we’renot let ting dangerous people into our countries?One response isbiometric identification technology. It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics, has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are software programs that identify faces, palms, and irises. Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult, ifnot impossible, for criminals tosteal. Behavior albiometrics can also be usedto identify people. Certain behavior sareuniquetoindividuals, suchas their speech or the way they type. The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problematica sit canbe copied. However, people do automatically recognize subt let ies in the way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose. Today, we use passports to verify our identity when crossing borders, but passports canbe stolen or for ged. An effectivebiometric identification system would be difficult to fool. Because of this, many countries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system, which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
     },
     {
       "number": 57,
@@ -776,12 +701,12 @@
         "C": "Palms and irises.",
         "D": "Speaking speed."
       },
-      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day,how dowe know we’renot let ting dangerous people into our count ries?One response isbiometric identification technology.It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics,has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are softw are programs that identify faces, palms,and irises.Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult,ifnot impossible,for criminals tosteal. Behavior albiometrics can also be usedto identify people.Certain behavior sareuniquetoindividuals, suchas their speech or the way they type.The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problem atica sit canbe copied.However,people do automatically recognize subt let ies inthe way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose.Today, we use pass ports to verify our identity when crossing borders,but pass ports canbe stolen or for ged.An effect ivebiometric identification system would be difficult to fool. Because of this, many count ries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system,which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
+      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day, how dowe know we’renot let ting dangerous people into our countries?One response isbiometric identification technology. It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics, has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are software programs that identify faces, palms, and irises. Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult, ifnot impossible, for criminals tosteal. Behavior albiometrics can also be usedto identify people. Certain behavior sareuniquetoindividuals, suchas their speech or the way they type. The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problematica sit canbe copied. However, people do automatically recognize subt let ies in the way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose. Today, we use passports to verify our identity when crossing borders, but passports canbe stolen or for ged. An effectivebiometric identification system would be difficult to fool. Because of this, many countries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system, which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "According to the passage,what is a traditional behavioral biometricmarker?",
+      "stem": "According to the passage, what is a traditional behavioral biometricmarker?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -790,7 +715,7 @@
         "C": "Regional accents.",
         "D": "Typing patterns."
       },
-      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day,how dowe know we’renot let ting dangerous people into our count ries?One response isbiometric identification technology.It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics,has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are softw are programs that identify faces, palms,and irises.Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult,ifnot impossible,for criminals tosteal. Behavior albiometrics can also be usedto identify people.Certain behavior sareuniquetoindividuals, suchas their speech or the way they type.The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problem atica sit canbe copied.However,people do automatically recognize subt let ies inthe way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose.Today, we use pass ports to verify our identity when crossing borders,but pass ports canbe stolen or for ged.An effect ivebiometric identification system would be difficult to fool. Because of this, many count ries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system,which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
+      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day, how dowe know we’renot let ting dangerous people into our countries?One response isbiometric identification technology. It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics, has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are software programs that identify faces, palms, and irises. Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult, ifnot impossible, for criminals tosteal. Behavior albiometrics can also be usedto identify people. Certain behavior sareuniquetoindividuals, suchas their speech or the way they type. The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problematica sit canbe copied. However, people do automatically recognize subt let ies in the way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose. Today, we use passports to verify our identity when crossing borders, but passports canbe stolen or for ged. An effectivebiometric identification system would be difficult to fool. Because of this, many countries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system, which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
     },
     {
       "number": 59,
@@ -804,21 +729,21 @@
         "C": "missed",
         "D": "shaped"
       },
-      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day,how dowe know we’renot let ting dangerous people into our count ries?One response isbiometric identification technology.It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics,has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are softw are programs that identify faces, palms,and irises.Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult,ifnot impossible,for criminals tosteal. Behavior albiometrics can also be usedto identify people.Certain behavior sareuniquetoindividuals, suchas their speech or the way they type.The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problem atica sit canbe copied.However,people do automatically recognize subt let ies inthe way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose.Today, we use pass ports to verify our identity when crossing borders,but pass ports canbe stolen or for ged.An effect ivebiometric identification system would be difficult to fool. Because of this, many count ries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system,which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
+      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day, how dowe know we’renot let ting dangerous people into our countries?One response isbiometric identification technology. It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics, has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are software programs that identify faces, palms, and irises. Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult, ifnot impossible, for criminals tosteal. Behavior albiometrics can also be usedto identify people. Certain behavior sareuniquetoindividuals, suchas their speech or the way they type. The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problematica sit canbe copied. However, people do automatically recognize subt let ies in the way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose. Today, we use passports to verify our identity when crossing borders, but passports canbe stolen or for ged. An effectivebiometric identification system would be difficult to fool. Because of this, many countries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system, which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "Which ethical concern about biometric identification technology is NOT mentioned inthe passage?",
+      "stem": "Which ethical concern about biometric identification technology is NOT mentioned in the passage?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
         "A": "The potential for illicit usage.",
-        "B": "The like lihoodof misuse byauthorities.",
+        "B": "The likelihoodof misuse byauthorities.",
         "C": "The dispute over India's dis regard for civil liberties.",
         "D": "The balance between ensuring security and protect ing personal privacy."
       },
-      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day,how dowe know we’renot let ting dangerous people into our count ries?One response isbiometric identification technology.It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics,has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are softw are programs that identify faces, palms,and irises.Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult,ifnot impossible,for criminals tosteal. Behavior albiometrics can also be usedto identify people.Certain behavior sareuniquetoindividuals, suchas their speech or the way they type.The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problem atica sit canbe copied.However,people do automatically recognize subt let ies inthe way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose.Today, we use pass ports to verify our identity when crossing borders,but pass ports canbe stolen or for ged.An effect ivebiometric identification system would be difficult to fool. Because of this, many count ries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system,which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
+      "passage": "請依下文回答第56題至第60題 With so many people crossing borders every day, how dowe know we’renot let ting dangerous people into our countries?One response isbiometric identification technology. It has been developed to recognize individuals and to identify criminals. In fact, biometric identification is not a new invention. Law enforcement age ncies have been using photographs and finger prints asbiometricidentifiers since the late 19 th century. Today, biometric identification technology, including both physiological and behavioral biometrics, has become increasingly prevalentasa means ofenhancing security and protect ingindividuals' interests. - - Physiological biometrics, such as finger prints and facial features, use human morphology to identify or recognize individuals. Besides finger print scanners, there are software programs that identify faces, palms, and irises. Scanning these physical feature sensu rest hat the person being scanned is who heor she claims to be. Unlike personal identification numbers, which are used to access bank accounts, biometric identifiers are extremely difficult, ifnot impossible, for criminals tosteal. Behavior albiometrics can also be usedto identify people. Certain behavior sareuniquetoindividuals, suchas their speech or the way they type. The classic behavior albiometric mark eris aperson'ssig nature, but it canbe problematica sit canbe copied. However, people do automatically recognize subt let ies in the way a person speaks, such as into nation and regional accents. Typing patterns, like wise, would be very difficult to observe and mimic convincingly. Biometrics can have two potential app lications: identification and identity verification. Identification uses biometric information to discover the identity of an unknown person. DNA evidence has joined finger prints as acommon tool of law enforcement forthis purpose. Today, we use passports to verify our identity when crossing borders, but passports canbe stolen or for ged. An effectivebiometric identification system would be difficult to fool. Because of this, many countries are consider ing biometric add itions to or replace ments of exist ing identification system. India, for instance, has already implemented such a system, which utilizes finger print andiris scans, in add ition top hot ographs. While biometric identification technology shows promise in various app lications, there are ethical concerns surrounding the development of biometric identification technology. Critics worry about the possibility of criminal uses of the technology, as legitimate organizations can use biometric scanners to verify personal information. And civil liberties advocates are concerned about the potential for abuse by authorities. Therefore, policy makers will need to balance security and law enforcement against personal freedom and privacy. Ethical consider ations must be taken into account when develop ing biometric identification technology."
     }
   ],
   "year": 112,

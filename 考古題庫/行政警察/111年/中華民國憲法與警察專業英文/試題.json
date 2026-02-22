@@ -4,7 +4,7 @@
     "exam_name": "警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50120"
   },
   "notes": [
@@ -54,7 +54,7 @@
         "A": "於法院訴訟程序進行中,總統尚非不得將系爭資訊依法改核定為國家機密",
         "B": "法院審理個案,如涉及總統已提出之資訊者,即無國家機密保護法之適用",
         "C": "依國家機密特權,總統就國家機密事項於刑事訴訟程序應享有拒絕證言權",
-        "D": "總統就有關國家安全、國防以及外交之國家機密事項,有決定不予公開之權力 - -"
+        "D": "總統就有關國家安全、國防以及外交之國家機密事項,有決定不予公開之權力"
       }
     },
     {
@@ -184,7 +184,7 @@
         "A": "憲法修正案",
         "B": "總統彈劾案",
         "C": "領土變更案",
-        "D": "總統罷免案 - -"
+        "D": "總統罷免案"
       }
     },
     {
@@ -314,7 +314,7 @@
         "A": "與憲法第16條保障人民訴訟權之意旨有違,違憲",
         "B": "與憲法第7條保障人民平等權之意旨有違,違憲",
         "C": "與憲法第23條信賴保護原則之意旨有違,違憲",
-        "D": "與憲法第23條比例原則之意旨有違,違憲 - -"
+        "D": "與憲法第23條比例原則之意旨有違,違憲"
       }
     },
     {
@@ -431,7 +431,7 @@
         "A": "行政院院長若有辭職或出缺之情事,在總統未任命行政院院長之前,應由立法院院長暫行 代理之責",
         "B": "行政院認為立法院決議之條約案窒礙難行,得經總統核可於該決議案送達行政院10日內, 移請立法院覆議",
         "C": "立法院得經全體立法委員3分之1以上連署,經總統核可後,對行政院院長提出不信任案",
-        "D": "立法院對於行政院之重要政策不贊同時,得以決議移請行政院變更之 - -"
+        "D": "立法院對於行政院之重要政策不贊同時,得以決議移請行政院變更之"
       }
     },
     {
@@ -554,20 +554,20 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "On April 16, Kaohsiung’s police bureau clarified the origins of footage showing police shooting a mobsterdead ina recent disinformation video that has been widely circulating on social media.The police repeated their request that the public _____ from sharing this video so as not to cause undue panic inthe community.",
+      "stem": "On April 16, Kaohsiung’s police bureau clarified the origins of footage showing police shooting a mobsterdead ina recent disinformation video that has been widely circulating on social media. The police repeated their request that the public _____ from sharing this video so as not to cause undue panic in the community.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "integ rate",
-        "B": "count erfeit",
+        "A": "integrate",
+        "B": "counterfeit",
         "C": "refrain",
-        "D": "substitute - -"
+        "D": "substitute"
       }
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "The man accused of shooting 10 people ona Brooklyn subway train was arrested on Wednesday and charged with a federal terrorism offense after the suspect called police to come get him.Frank James, 62, was taken into _____ about 30 hours after the violence on a rush-hour train, which left people around the city one dge.",
+      "stem": "The man accused of shooting 10 people ona Brooklyn subway train was arrested on Wednesday and charged with a federal terrorism offense after the suspect called police to come get him. Frank James, 62, was taken into _____ about 30 hours after the violence on a rush-hour train, which left people around the city one dge.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -580,7 +580,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "Tainan police began to search for Chang after the prosecutors’office issueda warrant for his arrest. Chang, a former element ary-school teacher from Tainan, who was convicted of sexually_____ one of his students,had been wanted,after hefai ledto hand himself over to the authoritiesto start serving his prison sentence.",
+      "stem": "Tainan police began to search for Chang after the prosecutors’office issueda warrant for his arrest. Chang, a former element ary-school teacher from Tainan, who was convicted of sexually_____ one of his students, had been wanted, after hefai ledto hand himself over to the authoritiesto start serving his prison sentence.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -606,7 +606,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "The Ciaotou District Court has sentenced a farmer to one year and four months in prison and fined himNT$30,000 form odifyingan air soft gun tom akeit more dangerous.The collegiatebench ruled that the farmer’s_____ was minor and hand edd own alighter punishment.",
+      "stem": "The Ciaotou District Court has sentenced a farmer to one year and four months in prison and fined himNT$30,000 form odifyingan air soft gun tom akeit more dangerous. The collegiatebench ruled that the farmer’s_____ was minor and hand edd own alighter punishment.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -619,7 +619,7 @@
     {
       "number": 47,
       "type": "choice",
-      "stem": "For a domestic violence incident, if a police officer has prob able cause to believe that a crime has been committed,the officer must attempt to identify and arrest the_____.",
+      "stem": "For a domestic violence incident, if a police officer has probable cause to believe that a crime has been committed, the officer must attempt to identify and arrest the_____.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -632,7 +632,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "report ing of any suspicious activity to the Police Department can help us prevent further crimes,apprehend the suspects and provide accu rate data for federal lym and ated statistical report ing.",
+      "stem": "reporting of any suspicious activity to the Police Department can help us prevent further crimes, apprehend the suspects and provide accurate data for federal lym and ated statistical reporting.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -682,120 +682,6 @@
       }
     },
     {
-      "number": 11,
-      "type": "choice",
-      "stem": "months 54 . Karpeles received a suspended sentence, meaning he is not serving jail time. Prosecutors had demanded 10 years in prison.His lawyer Nobuyasu Ogata said the verdict high lights legal uncertainties inthe new are aof cryptocurrency crime.",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "subtype": "passage_fragment",
-      "options_note": "原始試題選項未擷取"
-    },
-    {
-      "number": 52,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "filtered out",
-        "B": "referred to",
-        "C": "indulged in",
-        "D": "ledto"
-      },
-      "passage": "請依下文回答第52 題至第54 題: Mark Karpeles, arrested in Japan after his bitcoin exchange collapsed from massive hacking, is starting a new business around the same computer technology that 52 his legal troubles. Karpeles told report ers that he wants to make Japan a global leader in block chain, the technology behind virtual money like bitcoin. The 34-year-old French man 53 embezzlement and fraud all egations in March, but is appeal ing a conviction for man ipulating electronic data. Karpeles was arrested in 2015, and spent",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "was deprive dof",
-        "B": "was cleared of",
-        "C": "was composed of",
-        "D": "was trespassed on"
-      },
-      "passage": "請依下文回答第52 題至第54 題: Mark Karpeles, arrested in Japan after his bitcoin exchange collapsed from massive hacking, is starting a new business around the same computer technology that 52 his legal troubles. Karpeles told report ers that he wants to make Japan a global leader in block chain, the technology behind virtual money like bitcoin. The 34-year-old French man 53 embezzlement and fraud all egations in March, but is appeal ing a conviction for man ipulating electronic data. Karpeles was arrested in 2015, and spent",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 54,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "in detention",
-        "B": "for the motion",
-        "C": "in response",
-        "D": "inthis case"
-      },
-      "passage": "請依下文回答第52 題至第54 題: Mark Karpeles, arrested in Japan after his bitcoin exchange collapsed from massive hacking, is starting a new business around the same computer technology that 52 his legal troubles. Karpeles told report ers that he wants to make Japan a global leader in block chain, the technology behind virtual money like bitcoin. The 34-year-old French man 53 embezzlement and fraud all egations in March, but is appeal ing a conviction for man ipulating electronic data. Karpeles was arrested in 2015, and spent",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "was found",
-        "B": "finding",
-        "C": "found",
-        "D": "find"
-      },
-      "passage": "請依下文回答第55 題至第58 題: The Legislative Yuan passed an amendment that reduces the minimum prison sentence for growing marijuana for personal use from five years to one year and lowered the fine from NT$5 million to NT$1 million. Before the change in the law was made, the Narcotics Hazard Prevention Act (毒品危害防制條 例) stipulated that people 55 guilty of cultivating marijuana with \"intentions to supply for manufacturing narcotics\" faceda minimum sentence off ive years in prison and could also result inafine of up to NT$5 million. However, because the cultivation of cannabis covers a wide range, Judicial Yuan Interpretation No. 790 in 2020 ruled that the penalties for growing marijuana for personal use failed to meet the principleof proportional punishment 56 stipulated inthe Constitution.Citing the ruling,the Cabinet in March 2021 pro posed a revision to the act to impose appropriate punishment for plant ing marijuana that is commensurate with the crime. A new article stated that those who grow the plant for personal use and 57 the \"circumstances are minor\" should be sentenced to a minimum prison sentence of one year and a maximum of seven years and a fine of 58 NT$1 million. On Tuesday, the third read ing ofthe amendment passed the Legislative Yuan with out any objectionsby any legislators present.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 56,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "so",
-        "B": "with",
-        "C": "for",
-        "D": "as"
-      },
-      "passage": "請依下文回答第55 題至第58 題: The Legislative Yuan passed an amendment that reduces the minimum prison sentence for growing marijuana for personal use from five years to one year and lowered the fine from NT$5 million to NT$1 million. Before the change in the law was made, the Narcotics Hazard Prevention Act (毒品危害防制條 例) stipulated that people 55 guilty of cultivating marijuana with \"intentions to supply for manufacturing narcotics\" faceda minimum sentence off ive years in prison and could also result inafine of up to NT$5 million. However, because the cultivation of cannabis covers a wide range, Judicial Yuan Interpretation No. 790 in 2020 ruled that the penalties for growing marijuana for personal use failed to meet the principleof proportional punishment 56 stipulated inthe Constitution.Citing the ruling,the Cabinet in March 2021 pro posed a revision to the act to impose appropriate punishment for plant ing marijuana that is commensurate with the crime. A new article stated that those who grow the plant for personal use and 57 the \"circumstances are minor\" should be sentenced to a minimum prison sentence of one year and a maximum of seven years and a fine of 58 NT$1 million. On Tuesday, the third read ing ofthe amendment passed the Legislative Yuan with out any objectionsby any legislators present.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 57,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "when",
-        "B": "where",
-        "C": "how",
-        "D": "why"
-      },
-      "passage": "請依下文回答第55 題至第58 題: The Legislative Yuan passed an amendment that reduces the minimum prison sentence for growing marijuana for personal use from five years to one year and lowered the fine from NT$5 million to NT$1 million. Before the change in the law was made, the Narcotics Hazard Prevention Act (毒品危害防制條 例) stipulated that people 55 guilty of cultivating marijuana with \"intentions to supply for manufacturing narcotics\" faceda minimum sentence off ive years in prison and could also result inafine of up to NT$5 million. However, because the cultivation of cannabis covers a wide range, Judicial Yuan Interpretation No. 790 in 2020 ruled that the penalties for growing marijuana for personal use failed to meet the principleof proportional punishment 56 stipulated inthe Constitution.Citing the ruling,the Cabinet in March 2021 pro posed a revision to the act to impose appropriate punishment for plant ing marijuana that is commensurate with the crime. A new article stated that those who grow the plant for personal use and 57 the \"circumstances are minor\" should be sentenced to a minimum prison sentence of one year and a maximum of seven years and a fine of 58 NT$1 million. On Tuesday, the third read ing ofthe amendment passed the Legislative Yuan with out any objectionsby any legislators present.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 58,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "nofewer than",
-        "B": "no more than",
-        "C": "nosooner than",
-        "D": "no later than"
-      },
-      "passage": "請依下文回答第55 題至第58 題: The Legislative Yuan passed an amendment that reduces the minimum prison sentence for growing marijuana for personal use from five years to one year and lowered the fine from NT$5 million to NT$1 million. Before the change in the law was made, the Narcotics Hazard Prevention Act (毒品危害防制條 例) stipulated that people 55 guilty of cultivating marijuana with \"intentions to supply for manufacturing narcotics\" faceda minimum sentence off ive years in prison and could also result inafine of up to NT$5 million. However, because the cultivation of cannabis covers a wide range, Judicial Yuan Interpretation No. 790 in 2020 ruled that the penalties for growing marijuana for personal use failed to meet the principleof proportional punishment 56 stipulated inthe Constitution.Citing the ruling,the Cabinet in March 2021 pro posed a revision to the act to impose appropriate punishment for plant ing marijuana that is commensurate with the crime. A new article stated that those who grow the plant for personal use and 57 the \"circumstances are minor\" should be sentenced to a minimum prison sentence of one year and a maximum of seven years and a fine of 58 NT$1 million. On Tuesday, the third read ing ofthe amendment passed the Legislative Yuan with out any objectionsby any legislators present.",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
       "number": 59,
       "type": "choice",
       "stem": "What is the purpose of this passage?",
@@ -807,12 +693,12 @@
         "C": "It shows how terrorist groups finance organized crime groups for their operations.",
         "D": "It shows how these organized crime groups and terrorist groups are often united."
       },
-      "passage": "請依下文回答第59 題至第60 題: The link ages between terrorism and organized crime are multi face ted and can man ifest themselves in different ways.Generally speaking,terrorist groups and organized crime groups(OCGs)have inthe ory distinct objectives. Terrorist groups deliberately challenge State authority and seek to produce political change through violent means; their motivations are related to several factors, including, but not limited toideological ones.OCGs on the other hand typically engage in secret operation ssoasto obtain a financial or other material benefit while avoid ing detection by law enforcement authorities. Rather than aiming to effect political change, the disruption they seek to impose on territories under State authority is meant to per petuate conditions that are beneficial totheir operations. Inpractic alter ms,the link ages between terrorism and organized crime become apparent most not ably in the financing of terrorism. In other cases, these link ages may involve the smuggling of migrants and illicit arms trafficking involving small arms, light weapons and other military equipment, car theft, illicit mineral extr action, kidnapping for ransom, drug trafficking, trafficking in other illicit goods. Instances involving OCGs facilitating the tran sport of terrorists across borders act ivities also represent possible scenarios where these two phenomena become intertwined."
+      "passage": "請依下文回答第59 題至第60 題: The link ages between terrorism and organized crime are multi face ted and can man ifest themselves in different ways. Generally speaking, terrorist groups and organized crime groups(OCGs)have in the ory distinct objectives. Terrorist groups deliberately challenge State authority and seek to produce political change through violent means; their motivations are related to several factors, including, but not limited toideological ones. OCGs on the other hand typically engage in secret operation ssoasto obtain a financial or other material benefit while avoid ing detection by law enforcement authorities. Rather than aiming to effect political change, the disruption they seek to impose on territories under State authority is meant to per petuate conditions that are beneficial to their operations. Inpractic alter ms, the link ages between terrorism and organized crime become apparent most not ably in the financing of terrorism. In other cases, these link ages may involve the smuggling of migrants and illicit arms trafficking involving small arms, light weapons and other military equipment, car theft, illicit mineral extr action, kidnapping for ransom, drug trafficking, trafficking in other illicit goods. Instances involving OCGs facilitating the tran sport of terrorists across borders act ivities also represent possible scenarios where these two phenomena become intertwined."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "What does the pronoun“they”referto inthe last sentence ofthe first paragraph? “Rather than aiming to effect political change,the disruption they seek to impose onterritories under State authority is meant top erpetuate conditions that are beneficial totheir operations.”",
+      "stem": "What does the pronoun“they”referto in the last sentence of the first paragraph? “Rather than aiming to effect political change, the disruption they seek to impose onterritories under State authority is meant top erpetuate conditions that are beneficial to their operations.”",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -821,7 +707,7 @@
         "C": "smuggling act ivities.",
         "D": "illicit goods."
       },
-      "passage": "請依下文回答第59 題至第60 題: The link ages between terrorism and organized crime are multi face ted and can man ifest themselves in different ways.Generally speaking,terrorist groups and organized crime groups(OCGs)have inthe ory distinct objectives. Terrorist groups deliberately challenge State authority and seek to produce political change through violent means; their motivations are related to several factors, including, but not limited toideological ones.OCGs on the other hand typically engage in secret operation ssoasto obtain a financial or other material benefit while avoid ing detection by law enforcement authorities. Rather than aiming to effect political change, the disruption they seek to impose on territories under State authority is meant to per petuate conditions that are beneficial totheir operations. Inpractic alter ms,the link ages between terrorism and organized crime become apparent most not ably in the financing of terrorism. In other cases, these link ages may involve the smuggling of migrants and illicit arms trafficking involving small arms, light weapons and other military equipment, car theft, illicit mineral extr action, kidnapping for ransom, drug trafficking, trafficking in other illicit goods. Instances involving OCGs facilitating the tran sport of terrorists across borders act ivities also represent possible scenarios where these two phenomena become intertwined."
+      "passage": "請依下文回答第59 題至第60 題: The link ages between terrorism and organized crime are multi face ted and can man ifest themselves in different ways. Generally speaking, terrorist groups and organized crime groups(OCGs)have in the ory distinct objectives. Terrorist groups deliberately challenge State authority and seek to produce political change through violent means; their motivations are related to several factors, including, but not limited toideological ones. OCGs on the other hand typically engage in secret operation ssoasto obtain a financial or other material benefit while avoid ing detection by law enforcement authorities. Rather than aiming to effect political change, the disruption they seek to impose on territories under State authority is meant to per petuate conditions that are beneficial to their operations. Inpractic alter ms, the link ages between terrorism and organized crime become apparent most not ably in the financing of terrorism. In other cases, these link ages may involve the smuggling of migrants and illicit arms trafficking involving small arms, light weapons and other military equipment, car theft, illicit mineral extr action, kidnapping for ransom, drug trafficking, trafficking in other illicit goods. Instances involving OCGs facilitating the tran sport of terrorists across borders act ivities also represent possible scenarios where these two phenomena become intertwined."
     }
   ],
   "year": 111,

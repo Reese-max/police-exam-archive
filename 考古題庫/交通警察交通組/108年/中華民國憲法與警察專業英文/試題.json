@@ -4,7 +4,7 @@
     "exam_name": "一般警察人員考試",
     "level": "三等",
     "subject": "中華民國憲法與警察專業英文",
-    "exam_time": "2 小時 座號：",
+    "exam_time": "2 小時",
     "code": "50110"
   },
   "notes": [
@@ -80,7 +80,7 @@
         "A": "憲法上的法官,皆享有終身職保障",
         "B": "憲法上的法官,皆享有免於停職、轉任或減俸之保障",
         "C": "各級法院庭長職務之任免,屬於憲法上法官身分保障之範圍",
-        "D": "有關庭長之遴選及任免等相關人事行政事項,涉及法院組織,應以法律規定為宜 - -"
+        "D": "有關庭長之遴選及任免等相關人事行政事項,涉及法院組織,應以法律規定為宜"
       }
     },
     {
@@ -223,7 +223,7 @@
         "A": "曾協助他人非法入出境之有戶籍人民",
         "B": "於境內出生而僑居國外之無戶籍人民",
         "C": "實際居住地與戶籍登記地不同之人民",
-        "D": "設籍國內但具有雙重國籍之人民 - -"
+        "D": "設籍國內但具有雙重國籍之人民"
       }
     },
     {
@@ -340,7 +340,7 @@
         "A": "總統、副總統候選人應聯名登記",
         "B": "總統、副總統之當選,採相對多數",
         "C": "總統、副總統之罷免案,經全體立法委員四分之一之提議,全體立法委員三分之二之同意 後提出",
-        "D": "總統、副總統之罷免案,經中華民國自由地區全體選舉人總額三分之二以上之投票,有效 票過半數同意罷免時,即為通過 - -"
+        "D": "總統、副總統之罷免案,經中華民國自由地區全體選舉人總額三分之二以上之投票,有效 票過半數同意罷免時,即為通過"
       }
     },
     {
@@ -522,7 +522,7 @@
         "A": "行政院基於行政一體,對所有行政院所屬機關之整體施政表現負責,但不包括獨立機關",
         "B": "基於權力分立原則,立法院對行政院有關獨立機關之人事決定權得為一定限制,以為制衡",
         "C": "獨立機關之首長不得由其成員互相選任產生之",
-        "D": "行政院必要時得依職權設置相當於部會層級之獨立機關 - -"
+        "D": "行政院必要時得依職權設置相當於部會層級之獨立機關"
       }
     },
     {
@@ -560,7 +560,7 @@
       "options": {
         "A": "organized",
         "B": "modern ized",
-        "C": "coord ina ted",
+        "C": "coordina ted",
         "D": "coo per ated"
       }
     },
@@ -606,7 +606,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "Surveillance camera data bases are becoming tools for the police to solve criminal problems.",
+      "stem": "Surveillance camera databases are becoming tools for the police to solve criminal problems.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -645,7 +645,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "Some police off icers have suffe red post- stress dis order symptoms after a disaster rescue operation and seeing too many corpses.",
+      "stem": "Some police officers have suffered post- stress dis order symptoms after a disaster rescue operation and seeing too many corpses.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -658,7 +658,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Generally, police off icers take an at the beginning of their careers, which affirms their stand ards of integrity, bravery and honor.",
+      "stem": "Generally, police officers take an at the beginning of their careers, which affirms their standards of integrity, bravery and honor.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -682,76 +682,6 @@
       }
     },
     {
-      "number": 54,
-      "type": "choice",
-      "stem": "a definition for self-driving vehicles. Some experts tell CNN Business that the government needs to step into prevent bus inesses from misleading and confusing 55 . One says, “Tesla’s use of this term is totally irresponsible.”",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "subtype": "passage_fragment",
-      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t",
-      "options_note": "原始試題選項未擷取"
-    },
-    {
-      "number": 51,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "human",
-        "B": "animal",
-        "C": "mechanical",
-        "D": "computer - -"
-      },
-      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 52,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "upon",
-        "B": "beneath",
-        "C": "behind",
-        "D": "against"
-      },
-      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 53,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "need",
-        "B": "trust",
-        "C": "effort",
-        "D": "obligation"
-      },
-      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
-      "number": 55,
-      "type": "choice",
-      "stem": "",
-      "section": "乙、測驗題",
-      "answer": "C",
-      "options": {
-        "A": "mechanics",
-        "B": "pedestrians",
-        "C": "consumers",
-        "D": "pass engers"
-      },
-      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t",
-      "stem_note": "參見上方閱讀測驗段落"
-    },
-    {
       "number": 56,
       "type": "choice",
       "stem": "Which of the following evaluations best shows the standing of forensic science?",
@@ -760,7 +690,7 @@
       "options": {
         "A": "It is a technology too complicated for the police to employ.",
         "B": "It is the only technology the police use to solve crimes.",
-        "C": "It is now adays helping the police a lot in solving crimes.",
+        "C": "It is nowadays helping the police a lot in solving crimes.",
         "D": "It is used to observe criminals’ behavior."
       },
       "passage": "請依下文回答第56題至第60題 “Forensic science” means apply ing scientific methods and processes to solving crimes. Forensic science has become an integral part of many criminal cases and convictions. The extraordinary innovations and advance ments in forensic science have allowed it to become a highly developed science that involves a number of disciplines. The field of forensic science draws from a number of scientific branches, including physics, chemis try, and biology, with its focus being on the recognition, identification, and evaluation of physical evidence. These scientific experts use microscopic examining techniques, complex instruments, mathematical principles, scientific principles, and refer ence literature to analyze evidence as to identify both class and individual character istics. In the past decade, they have started using laser scanners, drones and photogramme try to obtain 3 D point clouds of accidents or crime scenes. Reconstruction of an accident scene on a highway using drones involves data acquisition time of only 10-20 minutes and can be performed without shut ting down traffic. The majority of forensic scientists perform their jobs within the confines of the forensic laboratory or morgue; their work may also take them outside of the laboratory and to the crime scenes, where they observe the scene and collect evidence. Forensic scientists may work for local, state and federal law enforcement age ncies and government, private laboratories, and hospitals. They may also serve as in depend ent forensic science consultants."
@@ -782,7 +712,7 @@
     {
       "number": 58,
       "type": "choice",
-      "stem": "According to the passage, which of the following state ments is true?",
+      "stem": "According to the passage, which of the following statements is true?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -796,7 +726,7 @@
     {
       "number": 59,
       "type": "choice",
-      "stem": "Which of the following state ments is true about forensic scientists?",
+      "stem": "Which of the following statements is true about forensic scientists?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -810,7 +740,7 @@
     {
       "number": 60,
       "type": "choice",
-      "stem": "According to the passage, which of the following state ments is NOT true?",
+      "stem": "According to the passage, which of the following statements is NOT true?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
