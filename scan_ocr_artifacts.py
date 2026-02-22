@@ -425,14 +425,73 @@ COMMON_SHORT_WORDS = {
 
 GENERIC_BROKEN_PATTERN = re.compile(r'(?<![a-zA-Z])([a-zA-Z]{2,})\s+([a-zA-Z]{2,})(?![a-zA-Z])')
 
+def looks_like_english_word(word):
+    """Heuristic: does this word look like a plausible English word?
+    Uses letter pattern analysis rather than dictionary lookup."""
+    w = word.lower()
+    n = len(w)
+    if n <= 1:
+        return True  # Single letters are fine
+    if n == 2:
+        return w in COMMON_SHORT_WORDS
+    if n == 3:
+        return w in COMMON_SHORT_WORDS
+
+    # Check if word is in our known sets
+    if w in COMMON_SHORT_WORDS or w in PREFIX_WORDS or w in KNOWN_WORDS:
+        return True
+
+    # Common English word endings (productive suffixes)
+    common_endings = [
+        'ing', 'tion', 'ment', 'ness', 'able', 'ible', 'ful', 'less',
+        'ous', 'ive', 'ity', 'ent', 'ant', 'ence', 'ance', 'ist', 'ism',
+        'ize', 'ise', 'ate', 'ure', 'ory', 'ary', 'age', 'dom', 'ally',
+        'ical', 'ious', 'eous', 'ated', 'ting', 'ted', 'ned', 'red',
+        'sed', 'ded', 'led', 'ped', 'ged', 'ked', 'bed', 'ved',
+        'ers', 'ors', 'ies', 'tes', 'ces', 'ses', 'ges', 'nes', 'res',
+        'les', 'ves', 'ely', 'lly', 'ily', 'ght', 'ble', 'dle', 'gle',
+        'ple', 'tle', 'cle', 'ual', 'ial', 'nal', 'ral', 'tal',
+        'ner', 'ter', 'der', 'ger', 'ler', 'per', 'ber', 'fer', 'cer',
+        'ster', 'sion', 'nce', 'nse', 'rse', 'ety', 'ory', 'ary',
+        'ery', 'ury', 'phy', 'thy', 'logy', 'nomy', 'ward', 'wise',
+        'like', 'ling',
+    ]
+
+    # If word has a common ending and is 4+ chars, likely a word
+    for end in common_endings:
+        if w.endswith(end) and n >= len(end) + 2:
+            return True
+
+    # Check vowel/consonant pattern - English words need vowels
+    vowels = set('aeiou')
+    has_vowel = any(c in vowels for c in w)
+    if not has_vowel:
+        return False  # No vowels = not an English word
+
+    # Consonant cluster analysis - English rarely has 4+ consonants in a row
+    max_consonant_run = 0
+    current_run = 0
+    for c in w:
+        if c not in vowels:
+            current_run += 1
+            max_consonant_run = max(max_consonant_run, current_run)
+        else:
+            current_run = 0
+    if max_consonant_run >= 4:
+        return False
+
+    # Very permissive for 4+ letter words that have reasonable patterns
+    if n >= 4:
+        return True
+
+    return True
+
+
 def check_generic_broken_word(text):
     """Find cases where two fragments separated by space form a broken word.
-    Uses a conservative approach: at least one fragment must NOT be a common
-    standalone English word, indicating it's likely a fragment of a broken word."""
+    Strategy: flag if combined is in KNOWN_WORDS, or if at least one fragment
+    doesn't look like a standalone English word."""
     issues = []
-
-    if not is_english_context(text, len(text) // 2):
-        return issues  # Skip entirely non-English text
 
     for m in GENERIC_BROKEN_PATTERN.finditer(text):
         frag1 = m.group(1)
@@ -441,17 +500,20 @@ def check_generic_broken_word(text):
         f2 = frag2.lower()
         combined = f1 + f2
 
-        # Skip if both fragments are common standalone words
-        if f1 in COMMON_SHORT_WORDS and f2 in COMMON_SHORT_WORDS:
-            continue
-        if f1 in PREFIX_WORDS and f2 in PREFIX_WORDS:
-            continue
-
         # APPROACH 1: Combined word is in our known words set
         if combined in KNOWN_WORDS:
-            # Both being common words -> skip (normal phrase)
-            if f1 in (COMMON_SHORT_WORDS | PREFIX_WORDS) and f2 in (COMMON_SHORT_WORDS | PREFIX_WORDS):
+            # Both being common short words -> skip (normal phrase)
+            if f1 in COMMON_SHORT_WORDS and f2 in COMMON_SHORT_WORDS:
                 continue
+            # Both being known words -> skip
+            if f1 in PREFIX_WORDS and f2 in PREFIX_WORDS:
+                continue
+            if looks_like_english_word(f1) and looks_like_english_word(f2):
+                # Both look like English words - could be normal phrase or broken word
+                # Since combined IS a known word, flag it but only if at least one
+                # fragment is suspiciously short or doesn't look like a standalone word
+                if len(f1) >= 4 and len(f2) >= 4:
+                    continue  # Both are reasonable standalone words
             issues.append({
                 "type": "broken_word",
                 "matched_text": m.group(),
@@ -461,58 +523,35 @@ def check_generic_broken_word(text):
             })
             continue
 
-        # APPROACH 2: At least one fragment is NOT a recognizable word
-        # This means it's likely a fragment of a broken word
-        f1_is_word = f1 in COMMON_SHORT_WORDS or f1 in PREFIX_WORDS
-        f2_is_word = f2 in COMMON_SHORT_WORDS or f2 in PREFIX_WORDS
-
-        # Both are words -> definitely a normal phrase, skip
-        if f1_is_word and f2_is_word:
-            continue
-
-        # Only flag if in English context at this specific position
+        # APPROACH 2: Skip if not in English context
         if not is_english_context(text, m.start()):
             continue
 
-        # At least one fragment is NOT a word
-        # But we need to be careful - some non-word fragments are just proper nouns,
-        # abbreviations, or domain-specific terms
-        # Only flag if the non-word fragment looks like a word fragment (not a proper noun)
-        non_word_frag = f2 if f1_is_word else (f1 if f2_is_word else None)
+        # Only flag if at least one fragment doesn't look like a real English word
+        f1_plausible = looks_like_english_word(f1)
+        f2_plausible = looks_like_english_word(f2)
 
-        if non_word_frag is None:
-            # Neither is a word - both are likely fragments
-            # Only flag if combined >= 6 chars (to avoid false positives with short fragments)
-            if len(combined) >= 6:
-                issues.append({
-                    "type": "broken_word",
-                    "matched_text": m.group(),
-                    "reconstructed": combined,
-                    "position": m.start(),
-                    "context": text[max(0, m.start()-25):m.end()+25]
-                })
-        else:
-            # One is a word, one is not
-            # The non-word fragment should look like a word fragment, not a proper noun
-            # Check: is the non-word fragment all lowercase? (proper nouns start with uppercase)
-            orig_frag = frag2 if f1_is_word else frag1
-            if orig_frag[0].isupper() and len(orig_frag) >= 3:
-                continue  # Likely a proper noun
-            # Is the non-word fragment very short (1-2 chars)?
-            if len(non_word_frag) <= 2:
-                # Only flag known suffix patterns: "ed", "er", "ly", "al", "nt", "ng"
-                if non_word_frag not in {'ed', 'er', 'ly', 'al', 'nt', 'ng', 'rs', 'ts',
-                                          'ns', 'es', 'ds', 'le', 'ty', 'ry', 'cy', 'ny',
-                                          'ss', 'ks', 'ps', 'gy', 'fy', 'te', 'ce', 'se',
-                                          'ge', 'ne', 'de', 're'}:
-                    continue
-            issues.append({
-                "type": "broken_word",
-                "matched_text": m.group(),
-                "reconstructed": combined,
-                "position": m.start(),
-                "context": text[max(0, m.start()-25):m.end()+25]
-            })
+        # Both look like plausible words -> skip (normal phrase)
+        if f1_plausible and f2_plausible:
+            continue
+
+        # At least one doesn't look like a word -> likely a broken word fragment
+        # But skip very short non-word fragments unless they're clearly suffixes
+        if not f1_plausible and len(f1) <= 2:
+            continue
+        if not f2_plausible and len(f2) <= 2:
+            # Only keep if it's a common suffix
+            if f2 not in {'ed', 'er', 'ly', 'al', 'nt', 'ng', 'rs', 'ts', 'ns', 'es',
+                          'ds', 'le', 'ty', 'ry', 'cy', 'ss'}:
+                continue
+
+        issues.append({
+            "type": "broken_word",
+            "matched_text": m.group(),
+            "reconstructed": combined,
+            "position": m.start(),
+            "context": text[max(0, m.start()-25):m.end()+25]
+        })
 
     return issues
 
