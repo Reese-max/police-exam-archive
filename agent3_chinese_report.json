@@ -7,13 +7,16 @@
     "total_files_found": 910,
     "total_issues_found": 5119,
     "files_with_issues": 910,
-    "files_without_issues": 0
+    "files_without_issues": 0,
+    "post_processing_note": "After manual review, 8 random_english_in_chinese issues were further analyzed. Some involve legitimate use of lowercase a/b/c/d as variable placeholders in exam questions (where the options provide values like a=5, b=2), and mg/mL as scientific units. These are annotated as likely_false_positive in the detailed issues.",
+    "genuine_issues_count": 5111,
+    "likely_false_positives_count": 8
   },
   "severity_summary": {
     "low": 3647,
-    "medium": 1239,
+    "medium": 1231,
     "high": 145,
-    "info": 88
+    "info": 96
   },
   "issue_type_summary": {
     "circled_number": 4576,
@@ -8088,10 +8091,12 @@
     {
       "file": "刑事警察/107年/刑案現場處理與刑事鑑識/試題.json",
       "issue_type": "random_english_in_chinese",
-      "severity": "medium",
+      "severity": "info",
       "location": "question[19].stem",
       "text_snippet": "算該檢體每500 mL中含有多少mg的毒物?",
-      "details": "Suspicious English 'mg' embedded in Chinese text"
+      "details": "Suspicious English 'mg' embedded in Chinese text",
+      "likely_false_positive": true,
+      "false_positive_reason": "mg/mL are legitimate scientific units"
     },
     {
       "file": "刑事警察/107年/國文（作文、公文與測驗）/試題.json",
@@ -18840,58 +18845,72 @@
     {
       "file": "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
       "issue_type": "random_english_in_chinese",
-      "severity": "medium",
+      "severity": "info",
       "location": "question[1].stem",
       "text_snippet": "年內請求之。但自損失發生後,經過b年者,不得為之。請問下列何者正確",
-      "details": "Suspicious English 'b' embedded in Chinese text"
+      "details": "Suspicious English 'b' embedded in Chinese text",
+      "likely_false_positive": true,
+      "false_positive_reason": "Lowercase a/b/c/d used as variable placeholders in exam (options provide values)"
     },
     {
       "file": "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
       "issue_type": "random_english_in_chinese",
-      "severity": "medium",
+      "severity": "info",
       "location": "question[4].stem",
       "text_snippet": "a 日內完成,必要時,得 延長至b日。請問下列何者正確?",
-      "details": "Suspicious English 'b' embedded in Chinese text"
+      "details": "Suspicious English 'b' embedded in Chinese text",
+      "likely_false_positive": true,
+      "false_positive_reason": "Lowercase a/b/c/d used as variable placeholders in exam (options provide values)"
     },
     {
       "file": "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
       "issue_type": "random_english_in_chinese",
-      "severity": "medium",
+      "severity": "info",
       "location": "question[6].stem",
       "text_snippet": "堪用狀態,並每月至少實施功能測試a次,每半年至少舉辦演練b 次,並",
-      "details": "Suspicious English 'a' embedded in Chinese text"
+      "details": "Suspicious English 'a' embedded in Chinese text",
+      "likely_false_positive": true,
+      "false_positive_reason": "Lowercase a/b/c/d used as variable placeholders in exam (options provide values)"
     },
     {
       "file": "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
       "issue_type": "random_english_in_chinese",
-      "severity": "medium",
+      "severity": "info",
       "location": "question[8].stem",
       "text_snippet": " 以下有期徒刑、拘役或併科新臺幣b萬元以上c萬元以下罰金。請問下列",
-      "details": "Suspicious English 'b' embedded in Chinese text"
+      "details": "Suspicious English 'b' embedded in Chinese text",
+      "likely_false_positive": true,
+      "false_positive_reason": "Lowercase a/b/c/d used as variable placeholders in exam (options provide values)"
     },
     {
       "file": "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
       "issue_type": "random_english_in_chinese",
-      "severity": "medium",
+      "severity": "info",
       "location": "question[8].stem",
       "text_snippet": "徒刑、拘役或併科新臺幣b萬元以上c萬元以下罰金。請問下列何者正確?",
-      "details": "Suspicious English 'c' embedded in Chinese text"
+      "details": "Suspicious English 'c' embedded in Chinese text",
+      "likely_false_positive": true,
+      "false_positive_reason": "Lowercase a/b/c/d used as variable placeholders in exam (options provide values)"
     },
     {
       "file": "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
       "issue_type": "random_english_in_chinese",
-      "severity": "medium",
+      "severity": "info",
       "location": "question[11].stem",
       "text_snippet": "氣備用量,供營業使用者,不得超過c公斤;供家庭使用者,不得超過d公",
-      "details": "Suspicious English 'c' embedded in Chinese text"
+      "details": "Suspicious English 'c' embedded in Chinese text",
+      "likely_false_positive": true,
+      "false_positive_reason": "Lowercase a/b/c/d used as variable placeholders in exam (options provide values)"
     },
     {
       "file": "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
       "issue_type": "random_english_in_chinese",
-      "severity": "medium",
+      "severity": "info",
       "location": "question[11].stem",
       "text_snippet": "過c公斤;供家庭使用者,不得超過d公斤。請問下列何者正確?",
-      "details": "Suspicious English 'd' embedded in Chinese text"
+      "details": "Suspicious English 'd' embedded in Chinese text",
+      "likely_false_positive": true,
+      "false_positive_reason": "Lowercase a/b/c/d used as variable placeholders in exam (options provide values)"
     },
     {
       "file": "消防警察/107年/消防警察情境實務(包括消防法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
