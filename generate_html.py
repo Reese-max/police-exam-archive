@@ -127,6 +127,20 @@ def make_card_id(year, subj_name):
     return f"y{year}-{cleaned}"
 
 
+def minify_css(css):
+    """簡易 CSS 壓縮：移除註解、多餘空白"""
+    # 移除 /* ... */ 註解
+    css = re.sub(r'/\*.*?\*/', '', css, flags=re.DOTALL)
+    # 壓縮空白：換行、多空格 → 單空格
+    css = re.sub(r'\s+', ' ', css)
+    # 移除 { } : ; , 前後多餘空格
+    css = re.sub(r'\s*([{};:,])\s*', r'\1', css)
+    # 修復 media query 語法中需要的空格
+    css = re.sub(r'@media\(', '@media (', css)
+    css = re.sub(r'\)and\(', ') and (', css)
+    return css.strip()
+
+
 def _read_template(name):
     """讀取內嵌模板"""
     templates_dir = Path(__file__).parent / 'templates'
@@ -426,6 +440,19 @@ html.dark .export-cancel:hover { color: var(--text); }
 /* === Performance === */
 .subject-card { content-visibility: auto; contain-intrinsic-size: auto 80px; }
 .subject-card.open { content-visibility: visible; }
+/* === Practice Answer Feedback === */
+.mc-opt.correct { background: #dcfce7; border-left: 4px solid #16a34a; color: #15803d; font-weight: 600; }
+.mc-opt.correct::after { content: ' \\2713'; color: #16a34a; font-weight: 700; }
+.mc-opt.wrong { background: #fee2e2; border-left: 4px solid #dc2626; color: #991b1b; text-decoration: line-through; opacity: 0.75; }
+.mc-opt.wrong::after { content: ' \\2717'; color: #dc2626; font-weight: 700; }
+.mc-opt.correct-reveal { background: #dbeafe; border-left: 4px solid #2563eb; font-weight: 600; }
+.mc-opt.correct-reveal::after { content: ' \\2190 \\6b63\\78ba\\7b54\\6848'; font-size: 0.78rem; color: #2563eb; margin-left: 0.3em; }
+html.dark .mc-opt.correct { background: #052e16; border-left-color: #22c55e; color: #86efac; }
+html.dark .mc-opt.correct::after { color: #22c55e; }
+html.dark .mc-opt.wrong { background: #450a0a; border-left-color: #f87171; color: #fca5a5; }
+html.dark .mc-opt.wrong::after { color: #f87171; }
+html.dark .mc-opt.correct-reveal { background: #1e1b4b; border-left-color: #818cf8; color: #c7d2fe; }
+html.dark .mc-opt.correct-reveal::after { color: #818cf8; }
 /* === Button Press === */
 .toolbar-btn:active, .filter-chip:active { transform: scale(0.97); }
 .bookmark-btn:active { transform: scale(0.9); }
@@ -1351,6 +1378,8 @@ def generate_category_page(category_name, years_data, output_dir):
 <meta property="og:description" content="警察特考三等{escape_html(category_name)}，{years[-1]}-{years[0]}年共 {total_subjects} 份試卷、{total_questions} 道題目">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
+<link rel="canonical" href="{escape_html(category_name)}/{escape_html(category_name)}考古題總覽.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%AE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap" media="print" onload="this.media='all'">
@@ -1471,6 +1500,8 @@ def generate_index_page(output_dir, categories_stats):
 <meta property="og:description" content="三等警察特考（內軌）{total_categories} 個類科，{total_papers} 份試卷，{total_questions} 道題目">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
+<link rel="canonical" href="index.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%AE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap" media="print" onload="this.media='all'">
@@ -1661,8 +1692,9 @@ def main():
 
     css_path = os.path.join(css_dir, 'style.css')
     with open(css_path, 'w', encoding='utf-8') as f:
-        f.write(generate_shared_css())
-    print(f"  CSS: {css_path} (generated)")
+        css_content = generate_shared_css()
+        f.write(minify_css(css_content))
+    print(f"  CSS: {css_path} (generated, minified)")
 
     js_path = os.path.join(js_dir, 'app.js')
     if not os.path.exists(js_path):

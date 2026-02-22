@@ -554,7 +554,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "many fire fight ers working over-time frequently, how to reduce working hours becomes a big issue.",
+      "stem": "many firefighters working over-time frequently, how to reduce working hours becomes a big issue.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -625,20 +625,20 @@
       "options": {
         "A": "Now that",
         "B": "In light of",
-        "C": "In add ition to",
+        "C": "In addition to",
         "D": "But for"
       }
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "should any fireman get into a fire scene all alone, because team work is the basic requirement in fire-fight ing.",
+      "stem": "should any fireman get into a fire scene all alone, because team work is the basic requirement in fire-fighting.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
         "A": "On no account",
         "B": "On account of",
-        "C": "In add ition to",
+        "C": "In addition to",
         "D": "In case that"
       }
     },
@@ -658,7 +658,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "in a room has been interpreted as thermal inst ability caused by the heat generation rate increasing faster with tem per ature than the rate of aggregated heat losses.",
+      "stem": "in a room has been interpreted as thermal inst ability caused by the heat generation rate increasing faster with temperature than the rate of aggregated heat losses.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -675,7 +675,7 @@
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "In add ition to",
+        "A": "In addition to",
         "B": "Be supposed to",
         "C": "Be used to",
         "D": "In order to"
@@ -723,11 +723,11 @@
     {
       "number": 54,
       "type": "choice",
-      "stem": "After a flash over has occurred in a com part ment, the will develop to produce tem per atures of 900–1100 oC.",
+      "stem": "After a flash over has occurred in a com part ment, the will develop to produce temperatures of 900–1100 oC.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "tem per ature",
+        "A": "temperature",
         "B": "density",
         "C": "specific heat capa city",
         "D": "heat release rate"
