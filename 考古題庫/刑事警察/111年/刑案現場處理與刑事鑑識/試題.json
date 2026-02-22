@@ -94,7 +94,7 @@
         "A": "搖頭丸(MDMA)",
         "B": "K他命(Ketamine)",
         "C": "甲基安非他命(Methamphetamine)",
-        "D": "PMA(para-Methoxya mph etamine)"
+        "D": "PMA(para-Methoxya mphetamine)"
       }
     },
     {
@@ -113,7 +113,7 @@
     {
       "number": 7,
       "type": "choice",
-      "stem": "關於刑事DNA的分析步驟:1 DNA定量(quantitation) 2 DNA萃取(extr action) 3 PCR 產 物電泳(electrophoresis) 4 PCR 產物複製 5機率統計分析 6基因型別研判。其步驟次序下 列何者最為適當?",
+      "stem": "關於刑事DNA的分析步驟:1 DNA定量(quantitation) 2 DNA萃取(extraction) 3 PCR 產 物電泳(electrophoresis) 4 PCR 產物複製 5機率統計分析 6基因型別研判。其步驟次序下 列何者最為適當?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
