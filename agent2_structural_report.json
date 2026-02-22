@@ -11,17 +11,60 @@
   },
   "summary": {
     "by_category": {
+      "header_footer_leak_in_stem": 0,
+      "instruction_text_in_stem": 0,
+      "missing_answer_for_choice": 0,
+      "metadata_in_options": 0,
+      "reading_passage_leaked_into_option": 4,
+      "abnormally_long_option": 0,
+      "notes_leaked_question_content": 460,
+      "notes_leaked_formula_or_table": 13,
+      "notes_leaked_formula_fragment": 0,
+      "notes_leaked_score_marker": 14,
+      "notes_leaked_section_header": 0,
+      "notes_non_standard_content": 12,
+      "notes_empty_entry": 0,
+      "notes_invalid_type": 0,
+      "empty_stem": 0,
+      "empty_options": 0,
+      "empty_option_value": 0,
+      "insufficient_options": 0,
+      "answer_not_in_options": 0,
+      "page_break_artifact_in_stem": 0,
+      "json_parse_error": 0,
+      "file_read_error": 0
+    },
+    "by_severity": {
+      "medium": 487,
+      "low": 12,
+      "high": 4
+    },
+    "categories_with_issues": {
       "notes_leaked_question_content": 460,
       "notes_leaked_score_marker": 14,
       "notes_leaked_formula_or_table": 13,
       "notes_non_standard_content": 12,
       "reading_passage_leaked_into_option": 4
     },
-    "by_severity": {
-      "medium": 487,
-      "low": 12,
-      "high": 4
-    }
+    "categories_clean": [
+      "header_footer_leak_in_stem",
+      "instruction_text_in_stem",
+      "missing_answer_for_choice",
+      "metadata_in_options",
+      "abnormally_long_option",
+      "notes_leaked_formula_fragment",
+      "notes_leaked_section_header",
+      "notes_empty_entry",
+      "notes_invalid_type",
+      "empty_stem",
+      "empty_options",
+      "empty_option_value",
+      "insufficient_options",
+      "answer_not_in_options",
+      "page_break_artifact_in_stem",
+      "json_parse_error",
+      "file_read_error"
+    ]
   },
   "category_descriptions": {
     "header_footer_leak_in_stem": "Exam header/footer content (代號, 頁次, 座號, 等別, 類科, 科目, etc.) leaked into question stem text",
