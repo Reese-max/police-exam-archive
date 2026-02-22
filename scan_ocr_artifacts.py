@@ -426,34 +426,94 @@ COMMON_SHORT_WORDS = {
 GENERIC_BROKEN_PATTERN = re.compile(r'(?<![a-zA-Z])([a-zA-Z]{2,})\s+([a-zA-Z]{2,})(?![a-zA-Z])')
 
 def check_generic_broken_word(text):
-    """Find cases where two fragments separated by space form a known word."""
+    """Find cases where two fragments separated by space form a broken word.
+    Uses a conservative approach: at least one fragment must NOT be a common
+    standalone English word, indicating it's likely a fragment of a broken word."""
     issues = []
+
+    if not is_english_context(text, len(text) // 2):
+        return issues  # Skip entirely non-English text
+
     for m in GENERIC_BROKEN_PATTERN.finditer(text):
         frag1 = m.group(1)
         frag2 = m.group(2)
-        combined = (frag1 + frag2).lower()
-
-        # The combined text must be a known English word
-        if combined not in KNOWN_WORDS:
-            continue
-
-        # Both fragments being common standalone words is likely a normal phrase
         f1 = frag1.lower()
         f2 = frag2.lower()
+        combined = f1 + f2
+
+        # Skip if both fragments are common standalone words
         if f1 in COMMON_SHORT_WORDS and f2 in COMMON_SHORT_WORDS:
             continue
-
-        # Both fragments being >= 4 letter common words: probably a real phrase
         if f1 in PREFIX_WORDS and f2 in PREFIX_WORDS:
             continue
 
-        issues.append({
-            "type": "broken_word",
-            "matched_text": m.group(),
-            "reconstructed": combined,
-            "position": m.start(),
-            "context": text[max(0, m.start()-25):m.end()+25]
-        })
+        # APPROACH 1: Combined word is in our known words set
+        if combined in KNOWN_WORDS:
+            # Both being common words -> skip (normal phrase)
+            if f1 in (COMMON_SHORT_WORDS | PREFIX_WORDS) and f2 in (COMMON_SHORT_WORDS | PREFIX_WORDS):
+                continue
+            issues.append({
+                "type": "broken_word",
+                "matched_text": m.group(),
+                "reconstructed": combined,
+                "position": m.start(),
+                "context": text[max(0, m.start()-25):m.end()+25]
+            })
+            continue
+
+        # APPROACH 2: At least one fragment is NOT a recognizable word
+        # This means it's likely a fragment of a broken word
+        f1_is_word = f1 in COMMON_SHORT_WORDS or f1 in PREFIX_WORDS
+        f2_is_word = f2 in COMMON_SHORT_WORDS or f2 in PREFIX_WORDS
+
+        # Both are words -> definitely a normal phrase, skip
+        if f1_is_word and f2_is_word:
+            continue
+
+        # Only flag if in English context at this specific position
+        if not is_english_context(text, m.start()):
+            continue
+
+        # At least one fragment is NOT a word
+        # But we need to be careful - some non-word fragments are just proper nouns,
+        # abbreviations, or domain-specific terms
+        # Only flag if the non-word fragment looks like a word fragment (not a proper noun)
+        non_word_frag = f2 if f1_is_word else (f1 if f2_is_word else None)
+
+        if non_word_frag is None:
+            # Neither is a word - both are likely fragments
+            # Only flag if combined >= 6 chars (to avoid false positives with short fragments)
+            if len(combined) >= 6:
+                issues.append({
+                    "type": "broken_word",
+                    "matched_text": m.group(),
+                    "reconstructed": combined,
+                    "position": m.start(),
+                    "context": text[max(0, m.start()-25):m.end()+25]
+                })
+        else:
+            # One is a word, one is not
+            # The non-word fragment should look like a word fragment, not a proper noun
+            # Check: is the non-word fragment all lowercase? (proper nouns start with uppercase)
+            orig_frag = frag2 if f1_is_word else frag1
+            if orig_frag[0].isupper() and len(orig_frag) >= 3:
+                continue  # Likely a proper noun
+            # Is the non-word fragment very short (1-2 chars)?
+            if len(non_word_frag) <= 2:
+                # Only flag known suffix patterns: "ed", "er", "ly", "al", "nt", "ng"
+                if non_word_frag not in {'ed', 'er', 'ly', 'al', 'nt', 'ng', 'rs', 'ts',
+                                          'ns', 'es', 'ds', 'le', 'ty', 'ry', 'cy', 'ny',
+                                          'ss', 'ks', 'ps', 'gy', 'fy', 'te', 'ce', 'se',
+                                          'ge', 'ne', 'de', 're'}:
+                    continue
+            issues.append({
+                "type": "broken_word",
+                "matched_text": m.group(),
+                "reconstructed": combined,
+                "position": m.start(),
+                "context": text[max(0, m.start()-25):m.end()+25]
+            })
+
     return issues
 
 
@@ -495,6 +555,38 @@ KNOWN_CONCAT_PATTERNS = [
     (re.compile(r'\bmakeit\b', re.IGNORECASE), "makeit -> make it"),
     (re.compile(r'\bcarry-onbag', re.IGNORECASE), "carry-onbag -> carry-on bag"),
     (re.compile(r'\bsuchas\b', re.IGNORECASE), "suchas -> such as"),
+    (re.compile(r'\bshewas\b', re.IGNORECASE), "shewas -> she was"),
+    (re.compile(r'\bcanbe\b', re.IGNORECASE), "canbe -> can be"),
+    (re.compile(r'\btobe\b', re.IGNORECASE), "tobe -> to be"),
+    (re.compile(r'\bsohe\b', re.IGNORECASE), "sohe -> so he"),
+    (re.compile(r'\bhowever(?=[a-z])', re.IGNORECASE), None),  # skip
+    (re.compile(r'(?<=[a-z])ledto\b', re.IGNORECASE), "...ledto -> ...led to"),
+    (re.compile(r'\bregularlyassigned\b', re.IGNORECASE), "regularlyassigned -> regularly assigned"),
+    (re.compile(r'\bHowdoes\b', re.IGNORECASE), "Howdoes -> How does"),
+    (re.compile(r'\bbannedin\b', re.IGNORECASE), "bannedin -> banned in"),
+    (re.compile(r'\bwhene?ver\b', re.IGNORECASE), None),  # skip - valid word
+    (re.compile(r'\bifa\b', re.IGNORECASE), "ifa -> if a"),
+    (re.compile(r'\borit\b', re.IGNORECASE), "orit -> or it"),
+    (re.compile(r'\bsare\b', re.IGNORECASE), "...sare -> ...s are"),
+    (re.compile(r'(?<=[a-z])edto\b', re.IGNORECASE), "...edto -> ...ed to"),
+    (re.compile(r'\bavictim\b', re.IGNORECASE), "avictim -> a victim"),
+    (re.compile(r'\bafine\b', re.IGNORECASE), "afine -> a fine"),
+    (re.compile(r'\balocal\b', re.IGNORECASE), "alocal -> a local"),
+    (re.compile(r'\bforbiddenit', re.IGNORECASE), "forbiddenit... -> forbidden it..."),
+    (re.compile(r'\boffr?audsters\b', re.IGNORECASE), "of fraudsters -> of fraudsters"),
+    (re.compile(r'\boflaws?\b', re.IGNORECASE), None),  # skip
+    (re.compile(r'\bstep\s*pedupto\b', re.IGNORECASE), "steppedupto -> stepped up to"),
+    (re.compile(r'\btocalm\b', re.IGNORECASE), "tocalm -> to calm"),
+    (re.compile(r'\bbyplacing\b', re.IGNORECASE), "byplacing -> by placing"),
+    (re.compile(r"\bsuspect.?sre\b", re.IGNORECASE), "suspect'sre -> suspect's re..."),
+    (re.compile(r'\bingimmediate\b', re.IGNORECASE), "...ingimmediate -> ...ing immediate"),
+    (re.compile(r'\bCreationof\b', re.IGNORECASE), "Creationof -> Creation of"),
+    (re.compile(r'\bEvolutiono[fp]\b', re.IGNORECASE), "Evolutionof -> Evolution of"),
+    (re.compile(r'\bjobop\b', re.IGNORECASE), "jobop -> job op..."),
+    (re.compile(r'\bbebuilt\b', re.IGNORECASE), "bebuilt -> be built"),
+    (re.compile(r'\bLossof\b', re.IGNORECASE), "Lossof -> Loss of"),
+    (re.compile(r'\bsuchasabonus\b', re.IGNORECASE), "suchasabonus -> such as a bonus"),
+    (re.compile(r'\borlotteryas\b', re.IGNORECASE), "orlotteryas -> or lottery as"),
     (re.compile(r'\boccur\s*rence\b', re.IGNORECASE), None),  # skip, handled by broken_word
 ]
 KNOWN_CONCAT_PATTERNS = [(p, d) for p, d in KNOWN_CONCAT_PATTERNS if d is not None]
