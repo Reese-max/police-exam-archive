@@ -1445,7 +1445,7 @@ def generate_category_page(category_name, years_data, output_dir):
         sidebar_html += '<div class="sidebar-subjects">\n'
         for subj_name in sorted(subjects.keys()):
             card_id = make_card_id(year, subj_name)
-            short_name = subj_name[:15]
+            short_name = subj_name[:20]
             sidebar_html += f'<a class="sidebar-link" href="#{card_id}" title="{escape_html(subj_name)}">{escape_html(short_name)}</a>\n'
         sidebar_html += '</div>\n'
 
@@ -1564,6 +1564,9 @@ def generate_category_page(category_name, years_data, output_dir):
 </div>
 <div id="subjectView" style="display:none"></div>
 </main>
+<footer class="site-footer">
+  資料來源：考選部考畢試題查詢平臺 ・ 生成時間：{datetime.now().strftime('%Y-%m-%d')}
+</footer>
 {subject_keys_script}
 <script src="../js/app.js" defer></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
