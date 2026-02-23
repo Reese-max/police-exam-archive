@@ -201,8 +201,48 @@ Round Final: Agent I (HTML 重生成) → 最終驗證
 | 答案格式統一 | 21 題 | `*` → `送分` 語意標準化 |
 | metadata 清理 | 77 檔案 | 移除 exam_time 中的「座號：」等 PDF 殘留文字 |
 
-## 預估影響
+## 修復執行結果（2026-02-23）
 
-- 修復後預計消除 **800+** 個問題
-- 影響檔案約 **200+** 個（部分檔案有多種問題重疊）
+### 本次修復（Round 1）
+
+| 修復項目 | 數量 | 狀態 |
+|---------|------|------|
+| 題幹中 PDF 頁碼/表頭 | 5 題（3 檔案） | ✅ 已修復 |
+| notes 合併段落標題拆分 | 19 個 notes（16 檔案） | ✅ 已修復 |
+| notes 斷行指示文字合併 | 39 個 notes（39 檔案） | ✅ 已修復 |
+| notes 重複作文題目移除 | 若干 | ✅ 已修復 |
+| notes 獨立分數標記移除 | 若干 | ✅ 已修復 |
+
+### 先前已修復（確認狀態）
+
+| 原始問題 | 原始數量 | 狀態 |
+|---------|---------|------|
+| empty_stem（空題幹） | 638 | ✅ 先前 commit 已修復 |
+| metadata_in_stem | 118 | ✅ 先前已清理（僅餘 5 筆本次修復） |
+| notes_contain_questions | 29 | ✅ 先前 commit 已修復 |
+| missing_options | 25 | ✅ 先前 commit 已修復 |
+| exam_header_in_notes | 43 | ✅ 先前已清理（無殘留） |
+| truncated_stems | 6 | ✅ 先前 commit 已修復 |
+| merged_questions | 1 | ✅ 先前 commit 已修復 |
+
+### 最終驗證結果（17,931 題 / 910 檔案）
+
+| 檢查項目 | 結果 |
+|---------|------|
+| empty_stem | ✅ 0 |
+| missing_options | ✅ 0 |
+| metadata_in_stem | ✅ 0 |
+| merged_notes | ✅ 0 |
+| orphan_notes | ✅ 0 |
+| notes_with_questions | ✅ 0 |
+| invalid_answer | ✅ 0 |
+| corrupted_option | ✅ 0 |
+| **incomplete_options** | ❌ 24（需原始試卷） |
+| **missing_option_text** | ❌ 7（需原始試卷） |
+| **empty_option** | ❌ 1（需原始試卷） |
+
+### 結論
+
+- **可自動修復的問題：全部完成**
+- **剩餘 32 筆問題**皆為 PDF 解析時遺漏選項文字，需人工對照原始試卷補齊，無法自動修復
 - 網站所有頁面需重新生成
