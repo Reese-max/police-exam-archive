@@ -681,6 +681,48 @@
       }
     },
     {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "defense",
+        "B": "detention",
+        "C": "offence",
+        "D": "offer"
+      },
+      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is seve rely limited if the police cannot contact you. You may specify how you are contacted and if contact ing you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Hand lers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "project",
+        "B": "produce",
+        "C": "protect",
+        "D": "prosecute"
+      },
+      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is seve rely limited if the police cannot contact you. You may specify how you are contacted and if contact ing you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Hand lers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "con ten tly",
+        "B": "confidentially",
+        "C": "conversely",
+        "D": "consistently"
+      },
+      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is seve rely limited if the police cannot contact you. You may specify how you are contacted and if contact ing you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Hand lers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
+    },
+    {
       "number": 51,
       "type": "choice",
       "stem": "Policing is most often performed by the public forces that patrol public spaces, often in marked cars, and whose members wear a uniform.",
@@ -753,5 +795,6 @@
   "category": "行政警察",
   "subject": "中華民國憲法與警察專業英文",
   "source_pdf": "考古題庫\\行政警察\\106年\\中華民國憲法與警察專業英文\\試題.pdf",
-  "file_type": "試題"
+  "file_type": "試題",
+  "total_questions": 60
 }

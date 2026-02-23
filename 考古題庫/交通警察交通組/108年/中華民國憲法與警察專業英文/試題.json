@@ -682,6 +682,71 @@
       }
     },
     {
+      "number": 51,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "human",
+        "B": "animal",
+        "C": "mechanical",
+        "D": "computer - -"
+      },
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "upon",
+        "B": "beneath",
+        "C": "behind",
+        "D": "against"
+      },
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "need",
+        "B": "trust",
+        "C": "effort",
+        "D": "obligation"
+      },
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "a definition for self-driving vehicles. Some experts tell CNN Business that the government needs to step into prevent bus inesses from misleading and confusing 55 . One says, “Tesla’s use of this term is totally irresponsible.”",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "subtype": "passage_fragment",
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "mechanics",
+        "B": "pedestrians",
+        "C": "consumers",
+        "D": "pass engers"
+      },
+      "passage": "請依下文回答第51題至第55題 (CNN Business) Tesla is selling its cars with the option of “full self-driving capability,” a feature that’s drawing criticism from experts on self-driving technology. Experts say Tesla’s full self-driving feature is really a “partial” self-driving feature that handles minor driving tasks such as keeping pace with other cars on a highway and still requires diligent 51 oversight. To most autonomous vehicle experts, “full self-driving” means a car in which a person could safely fall asleep 52 the wheel and the steering wheel and pedals aren’t even needed. They say the general public doesn’t understand this, and mis per ceptions abound. A 2018 study found that 71% of drivers believed they could purchase a self-driving car today, despite no fully autonomous vehicles being available for sale. Experts warn that this lack of understanding could be deadly as humans may put too much 53 in systems like Tesla’s, leading to crashes. Part of the problem, according to experts, is that governing bodies haven’t"
+    },
+    {
       "number": 56,
       "type": "choice",
       "stem": "Which of the following evaluations best shows the standing of forensic science?",
@@ -756,5 +821,6 @@
   "category": "交通警察交通組",
   "subject": "中華民國憲法與警察專業英文",
   "source_pdf": "考古題庫\\交通警察交通組\\108年\\中華民國憲法與警察專業英文\\試題.pdf",
-  "file_type": "試題"
+  "file_type": "試題",
+  "total_questions": 62
 }

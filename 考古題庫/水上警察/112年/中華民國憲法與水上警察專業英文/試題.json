@@ -682,6 +682,76 @@
       }
     },
     {
+      "number": 51,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "coordi nation",
+        "B": "ordi nation",
+        "C": "cooperation",
+        "D": "operation"
+      },
+      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved."
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "pre serve",
+        "B": "reserve",
+        "C": "transit",
+        "D": "deposit"
+      },
+      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved."
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "deck",
+        "B": "anchor",
+        "C": "cargo",
+        "D": "rudder"
+      },
+      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved."
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "consists of",
+        "B": "compresses by",
+        "C": "conserves of",
+        "D": "concludes by"
+      },
+      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "resilience",
+        "B": "station ary",
+        "C": "fleeting",
+        "D": "movable"
+      },
+      "passage": "請依下文回答第51題至第55題 The unit is designed for 51 in water depthsofupto 250 feet.The unit is also designed for ocean 52 , afloat on its own hull with its legs intact and fully raised so that the spud can tip is 12.38 feet below the bottom of the hull. The light weight is the condition of the unit before loading 53 , fuel, water, or stores. For the Coastal Driller, the light weight 54 the basic hull weight and the fixed weight. The fix edw eight is that which is per man entlyattachedto the unit,which include saportion that is 55 and a port ion that canbe moved."
+    },
+    {
       "number": 56,
       "type": "choice",
       "stem": "What is the primary purpose of this passage?",
@@ -756,5 +826,6 @@
   "category": "中華民國憲法與水上警察專業英文",
   "subject": "中華民國憲法與水上警察專業英文",
   "source_pdf": "考古題庫\\水上警察\\112年\\中華民國憲法與水上警察專業英文\\試題.pdf",
-  "file_type": "試題"
+  "file_type": "試題",
+  "total_questions": 62
 }

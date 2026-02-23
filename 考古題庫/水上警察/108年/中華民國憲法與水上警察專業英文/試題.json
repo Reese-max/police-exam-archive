@@ -682,6 +682,34 @@
       }
     },
     {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "satisfied",
+        "B": "complying",
+        "C": "tam per ing",
+        "D": "pleased"
+      },
+      "passage": "請依下文回答第54題至第55題 Marine police often inspect boats to ensure they are 54 with regulations. In some parts of the country, the marine police are also responsible for 55 smuggling operations and arrest ing criminals."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "interdicting",
+        "B": "interceding",
+        "C": "permit ting",
+        "D": "sanctioning"
+      },
+      "passage": "請依下文回答第54題至第55題 Marine police often inspect boats to ensure they are 54 with regulations. In some parts of the country, the marine police are also responsible for 55 smuggling operations and arrest ing criminals."
+    },
+    {
       "number": 51,
       "type": "choice",
       "stem": "Taiwan is suffering from massive resource due to over fishing, habitat destruction, pollution and invasive species introduction.",
@@ -794,5 +822,6 @@
   "category": "中華民國憲法與水上警察專業英文",
   "subject": "中華民國憲法與水上警察專業英文",
   "source_pdf": "考古題庫\\水上警察\\108年\\中華民國憲法與水上警察專業英文\\試題.pdf",
-  "file_type": "試題"
+  "file_type": "試題",
+  "total_questions": 62
 }

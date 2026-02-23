@@ -682,6 +682,76 @@
       }
     },
     {
+      "number": 51,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "rise",
+        "B": "riddle",
+        "C": "decline",
+        "D": "default"
+      },
+      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents."
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "sticking",
+        "B": "adjusting",
+        "C": "objecting",
+        "D": "contri but ing"
+      },
+      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents."
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "scarce",
+        "B": "prevalent",
+        "C": "diminished",
+        "D": "exceptional"
+      },
+      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents."
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "growth",
+        "B": "hamper",
+        "C": "deduction",
+        "D": "red uction"
+      },
+      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "refute",
+        "B": "fortify",
+        "C": "impede",
+        "D": "down play"
+      },
+      "passage": "請依下文回答第51題至第55題 Increa sing crime rates, particularly in urban areas, have recently become a growing concern for citizen sand policy make rsa like inmany count ries.For example,there has been a notice able 51 in public safety across various parts of the United States. Factors 52 to this trend include socio economic inequalities, drug trafficking, and gang violence. Add itionally, the spread of fire arms has worsened the situation,making violent crime more 53 .All of these things combined further str ained law enforcement res our ces and intensified social and economic inequalities, leading to an unprecedented 54 in social in justice. To address this issue, comm unit ies are advocating for comprehensive str ategies that 55 crime prevention and community policing.Increased collaboration between law enforcement age ncies and community leaders ises sent ialto ensure the well-being of all residents."
+    },
+    {
       "number": 56,
       "type": "choice",
       "stem": "Which of the following titles best reflects the primary focus of the passage?",
@@ -756,5 +826,6 @@
   "category": "中華民國憲法與消防警察專業英文",
   "subject": "中華民國憲法與消防警察專業英文",
   "source_pdf": "考古題庫\\消防警察\\113年\\中華民國憲法與消防警察專業英文\\試題.pdf",
-  "file_type": "試題"
+  "file_type": "試題",
+  "total_questions": 62
 }

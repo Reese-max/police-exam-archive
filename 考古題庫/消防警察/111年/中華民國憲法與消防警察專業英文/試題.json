@@ -682,6 +682,76 @@
       }
     },
     {
+      "number": 51,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "mourn",
+        "B": "revere",
+        "C": "delight",
+        "D": "surp rise"
+      },
+      "passage": "請依下文回答第51題至第55題: Back draft sareof great danger.They often 51 even highly experienced fire fight ers.A back draft can occur when a com part ment fire has little or no 52 . Due to this, little or no oxygen can flow into the com part ment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentration becomes too 54 to support com bus tion,this may cause aphenomenonin which when material i she ated enough,it begin sto breakdown into small ercompounds,including hydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the com part ment, e.g. by opening a door or window to a closed room, while the gasses are still hot enough to auto-ignite, com bus tion will often rest art abruptly."
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "exist ence",
+        "B": "obligation",
+        "C": "ventilation",
+        "D": "manipulation"
+      },
+      "passage": "請依下文回答第51題至第55題: Back draft sareof great danger.They often 51 even highly experienced fire fight ers.A back draft can occur when a com part ment fire has little or no 52 . Due to this, little or no oxygen can flow into the com part ment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentration becomes too 54 to support com bus tion,this may cause aphenomenonin which when material i she ated enough,it begin sto breakdown into small ercompounds,including hydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the com part ment, e.g. by opening a door or window to a closed room, while the gasses are still hot enough to auto-ignite, com bus tion will often rest art abruptly."
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "reduce",
+        "B": "promote",
+        "C": "provoke",
+        "D": "str eng then"
+      },
+      "passage": "請依下文回答第51題至第55題: Back draft sareof great danger.They often 51 even highly experienced fire fight ers.A back draft can occur when a com part ment fire has little or no 52 . Due to this, little or no oxygen can flow into the com part ment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentration becomes too 54 to support com bus tion,this may cause aphenomenonin which when material i she ated enough,it begin sto breakdown into small ercompounds,including hydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the com part ment, e.g. by opening a door or window to a closed room, while the gasses are still hot enough to auto-ignite, com bus tion will often rest art abruptly."
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "low",
+        "B": "filled",
+        "C": "dense",
+        "D": "flooded"
+      },
+      "passage": "請依下文回答第51題至第55題: Back draft sareof great danger.They often 51 even highly experienced fire fight ers.A back draft can occur when a com part ment fire has little or no 52 . Due to this, little or no oxygen can flow into the com part ment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentration becomes too 54 to support com bus tion,this may cause aphenomenonin which when material i she ated enough,it begin sto breakdown into small ercompounds,including hydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the com part ment, e.g. by opening a door or window to a closed room, while the gasses are still hot enough to auto-ignite, com bus tion will often rest art abruptly."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "pros per ity",
+        "B": "tem per ature",
+        "C": "significance",
+        "D": "resistance"
+      },
+      "passage": "請依下文回答第51題至第55題: Back draft sareof great danger.They often 51 even highly experienced fire fight ers.A back draft can occur when a com part ment fire has little or no 52 . Due to this, little or no oxygen can flow into the com part ment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentration becomes too 54 to support com bus tion,this may cause aphenomenonin which when material i she ated enough,it begin sto breakdown into small ercompounds,including hydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the com part ment, e.g. by opening a door or window to a closed room, while the gasses are still hot enough to auto-ignite, com bus tion will often rest art abruptly."
+    },
+    {
       "number": 56,
       "type": "choice",
       "stem": "Which of the following is themost suitable title for this article?",
@@ -756,5 +826,6 @@
   "category": "中華民國憲法與消防警察專業英文",
   "subject": "中華民國憲法與消防警察專業英文",
   "source_pdf": "考古題庫\\消防警察\\111年\\中華民國憲法與消防警察專業英文\\試題.pdf",
-  "file_type": "試題"
+  "file_type": "試題",
+  "total_questions": 62
 }

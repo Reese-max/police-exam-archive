@@ -682,6 +682,62 @@
       }
     },
     {
+      "number": 52,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "spread",
+        "B": "spread ing",
+        "C": "was spread",
+        "D": "being spread"
+      },
+      "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon,burning into the night,fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 .The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning,count ing the number ofen danger edbird 55 suchas ring-neckedpheasants,orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth."
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "into",
+        "B": "at",
+        "C": "upon",
+        "D": "in"
+      },
+      "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon,burning into the night,fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 .The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning,count ing the number ofen danger edbird 55 suchas ring-neckedpheasants,orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth."
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "defiance",
+        "B": "valor",
+        "C": "will",
+        "D": "arson"
+      },
+      "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon,burning into the night,fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 .The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning,count ing the number ofen danger edbird 55 suchas ring-neckedpheasants,orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "species",
+        "B": "spices",
+        "C": "sparks",
+        "D": "specials"
+      },
+      "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon,burning into the night,fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 .The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning,count ing the number ofen danger edbird 55 suchas ring-neckedpheasants,orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth."
+    },
+    {
       "number": 51,
       "type": "choice",
       "stem": "Fire doors are specialist doors which have been tested against the elements and purpose-built to withstand roaring fires for as long as possible. The tenable building should stop and delay the spread of fire from one area to another, andform a crucial part ofa passive fire protection strategy.",
@@ -755,5 +811,6 @@
   "category": "中華民國憲法與消防警察專業英文",
   "subject": "中華民國憲法與消防警察專業英文",
   "source_pdf": "考古題庫\\消防警察\\112年\\中華民國憲法與消防警察專業英文\\試題.pdf",
-  "file_type": "試題"
+  "file_type": "試題",
+  "total_questions": 61
 }

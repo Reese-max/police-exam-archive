@@ -669,6 +669,62 @@
       }
     },
     {
+      "number": 52,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "filtered out",
+        "B": "referred to",
+        "C": "indulged in",
+        "D": "ledto"
+      },
+      "passage": "請依下文回答第52 題至第54 題: Mark Karpeles, arrested in Japan after his bitcoin exchange collapsed from massive hacking, is starting a new business around the same computer technology that 52 his legal troubles. Karpeles told report ers that he wants to make Japan a global leader in block chain, the technology behind virtual money like bitcoin. The 34-year-old French man 53 embezzlement and fraud all egations in March, but is appeal ing a conviction for man ipulating electronic data. Karpeles was arrested in 2015, and spent"
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "was deprive dof",
+        "B": "was cleared of",
+        "C": "was composed of",
+        "D": "was trespassed on"
+      },
+      "passage": "請依下文回答第52 題至第54 題: Mark Karpeles, arrested in Japan after his bitcoin exchange collapsed from massive hacking, is starting a new business around the same computer technology that 52 his legal troubles. Karpeles told report ers that he wants to make Japan a global leader in block chain, the technology behind virtual money like bitcoin. The 34-year-old French man 53 embezzlement and fraud all egations in March, but is appeal ing a conviction for man ipulating electronic data. Karpeles was arrested in 2015, and spent"
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "in detention",
+        "B": "for the motion",
+        "C": "in response",
+        "D": "inthis case"
+      },
+      "passage": "請依下文回答第52 題至第54 題: Mark Karpeles, arrested in Japan after his bitcoin exchange collapsed from massive hacking, is starting a new business around the same computer technology that 52 his legal troubles. Karpeles told report ers that he wants to make Japan a global leader in block chain, the technology behind virtual money like bitcoin. The 34-year-old French man 53 embezzlement and fraud all egations in March, but is appeal ing a conviction for man ipulating electronic data. Karpeles was arrested in 2015, and spent"
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "was found",
+        "B": "finding",
+        "C": "found",
+        "D": "find"
+      },
+      "passage": "請依下文回答第55 題至第58 題: The Legislative Yuan passed an amendment that reduces the minimum prison sentence for growing marijuana for personal use from five years to one year and lowered the fine from NT$5 million to NT$1 million. Before the change in the law was made, the Narcotics Hazard Prevention Act (毒品危害防制條 例) stipulated that people 55 guilty of cultivating marijuana with \"intentions to supply for manufacturing narcotics\" faceda minimum sentence off ive years in prison and could also result inafine of up to NT$5 million. However, because the cultivation of cannabis covers a wide range, Judicial Yuan Interpretation No. 790 in 2020 ruled that the penalties for growing marijuana for personal use failed to meet the principleof proportional punishment 56 stipulated inthe Constitution.Citing the ruling,the Cabinet in March 2021 pro posed a revision to the act to impose appropriate punishment for plant ing marijuana that is commensurate with the crime. A new article stated that those who grow the plant for personal use and 57 the \"circumstances are minor\" should be sentenced to a minimum prison sentence of one year and a maximum of seven years and a fine of 58 NT$1 million. On Tuesday, the third read ing ofthe amendment passed the Legislative Yuan with out any objectionsby any legislators present."
+    },
+    {
       "number": 51,
       "type": "choice",
       "stem": "Anyone filing a false police report may be prosecuted under accusation section of the Criminal Code.",
@@ -714,5 +770,6 @@
   "category": "犯罪防治預防組",
   "subject": "中華民國憲法與警察專業英文",
   "source_pdf": "考古題庫\\犯罪防治預防組\\111年\\中華民國憲法與警察專業英文\\試題.pdf",
-  "file_type": "試題"
+  "file_type": "試題",
+  "total_questions": 58
 }

@@ -676,6 +676,76 @@
       }
     },
     {
+      "number": 51,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "was usedto",
+        "B": "usedto",
+        "C": "had been usedto",
+        "D": "had usedto"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important."
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "for",
+        "B": "to",
+        "C": "at",
+        "D": "in"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important."
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "to",
+        "B": "of",
+        "C": "by",
+        "D": "in"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important."
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "surviving",
+        "B": "being survived",
+        "C": "for surviving",
+        "D": "tosurvive"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "decided",
+        "B": "decides",
+        "C": "deciding",
+        "D": "being decided"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses.Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step.What 51 affect only those who could afford indulgence,now affects the world at large.The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore,once 55 tore cover,the ability to identify one's feeling sis vitally important."
+    },
+    {
       "number": 56,
       "type": "choice",
       "stem": "What is the main challenge mentioned regarding the impact of artificial intelligence on the workforce?",
@@ -750,5 +820,6 @@
   "category": "外事警察",
   "subject": "中華民國憲法與警察專業英文",
   "source_pdf": "考古題庫\\外事警察\\113年\\中華民國憲法與警察專業英文\\試題.pdf",
-  "file_type": "試題"
+  "file_type": "試題",
+  "total_questions": 61
 }
