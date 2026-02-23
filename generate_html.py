@@ -1196,7 +1196,19 @@ def render_question_html(question):
     """將單一題目渲染為 HTML（含逐題選項與答案）"""
     q = question
     if q['type'] == 'essay':
-        stem = escape_html(q['stem']).replace('\n', '<br>')
+        stem = escape_html(q['stem'])
+        # 保留段落分隔（連續換行）
+        stem = stem.replace('\n\n', '\x00PARA\x00')
+        # 保留子題標記前的換行（①②③… 或 (1)(2)… 或 （一）（二）…）
+        stem = re.sub(
+            r'\n(?=[①②③④⑤⑥⑦⑧⑨⑩(（])',
+            '\x00BR\x00',
+            stem
+        )
+        # 其餘 PDF 軟換行替換為空格
+        stem = stem.replace('\n', '')
+        stem = stem.replace('\x00PARA\x00', '<br><br>')
+        stem = stem.replace('\x00BR\x00', '<br>')
         return f'<div class="essay-question">{escape_html(q["number"])}、{stem}</div>\n'
 
     elif q['type'] == 'choice':
