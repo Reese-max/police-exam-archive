@@ -1,24 +1,290 @@
 {
   "metadata": {
-    "fix_time": "2026-02-23T07:02:26.899234",
+    "fix_time": "2026-02-23T07:08:42.936016",
     "dry_run": false,
     "files_scanned": 916,
-    "files_modified": 1,
-    "total_fixes": 1
+    "files_modified": 22,
+    "total_fixes": 36
   },
   "fixes_by_type": {
-    "broken_word": 1
+    "broken_word": 36
   },
   "fixes_by_file": {
-    "犯罪防治預防組/114年/犯罪分析/試題.json": 1
+    "消防警察/112年/中華民國憲法與消防警察專業英文/試題.json": 6,
+    "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json": 3,
+    "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json": 3,
+    "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json": 3,
+    "水上警察/112年/中華民國憲法與水上警察專業英文/試題.json": 3,
+    "犯罪防治矯治組/111年/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.json": 2,
+    "交通警察交通組/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "交通警察電訊組/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "公共安全/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "刑事警察/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "國境警察/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "外事警察/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "水上警察/114年/中華民國憲法與水上警察專業英文/試題.json": 1,
+    "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json": 1,
+    "消防警察/111年/中華民國憲法與消防警察專業英文/試題.json": 1,
+    "消防警察/113年/中華民國憲法與消防警察專業英文/試題.json": 1,
+    "犯罪防治預防組/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "行政管理/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "行政警察/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "警察法制/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "資訊管理/109年/中華民國憲法與警察專業英文/試題.json": 1,
+    "鑑識科學/109年/中華民國憲法與警察專業英文/試題.json": 1
   },
   "all_changes": [
     {
-      "file": "犯罪防治預防組/114年/犯罪分析/試題.json",
-      "location": "Q一.stem",
+      "file": "交通警察交通組/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
       "type": "broken_word",
-      "old": "MixedMethods",
-      "new": "Mixed Methods"
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "交通警察電訊組/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "公共安全/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "刑事警察/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "國境警察/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "外事警察/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q42.option_A",
+      "type": "broken_word",
+      "old": "Trans ship ment",
+      "new": "Transshipment"
+    },
+    {
+      "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q45.option_D",
+      "type": "broken_word",
+      "old": "Prepared ness",
+      "new": "Preparedness"
+    },
+    {
+      "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q49.option_A",
+      "type": "broken_word",
+      "old": "Trans ship ment",
+      "new": "Transshipment"
+    },
+    {
+      "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q41.option_B",
+      "type": "broken_word",
+      "old": "avoid ance",
+      "new": "avoidance"
+    },
+    {
+      "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q60.option_A",
+      "type": "broken_word",
+      "old": "reflect ive",
+      "new": "reflective"
+    },
+    {
+      "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q60.option_B",
+      "type": "broken_word",
+      "old": "unforgiv able",
+      "new": "unforgivable"
+    },
+    {
+      "file": "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q46.stem",
+      "type": "broken_word",
+      "old": "depend able",
+      "new": "dependable"
+    },
+    {
+      "file": "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q52.option_B",
+      "type": "broken_word",
+      "old": "practic able",
+      "new": "practicable"
+    },
+    {
+      "file": "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q57.option_D",
+      "type": "broken_word",
+      "old": "pot able",
+      "new": "potable"
+    },
+    {
+      "file": "水上警察/112年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q41.stem",
+      "type": "broken_word",
+      "old": "pass ive",
+      "new": "passive"
+    },
+    {
+      "file": "水上警察/112年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q60.option_D",
+      "type": "broken_word",
+      "old": "one xcis able",
+      "new": "on excisable"
+    },
+    {
+      "file": "水上警察/112年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q60.option_D",
+      "type": "broken_word",
+      "old": "Evadingtaxes",
+      "new": "Evading taxes"
+    },
+    {
+      "file": "水上警察/114年/中華民國憲法與水上警察專業英文/試題.json",
+      "location": "Q48.stem",
+      "type": "broken_word",
+      "old": "orpoison ous",
+      "new": "or poisonous"
+    },
+    {
+      "file": "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
+      "location": "Q46.option_D",
+      "type": "broken_word",
+      "old": "per miss ible",
+      "new": "permissible"
+    },
+    {
+      "file": "消防警察/111年/中華民國憲法與消防警察專業英文/試題.json",
+      "location": "Q48.option_C",
+      "type": "broken_word",
+      "old": "respect ive",
+      "new": "respective"
+    },
+    {
+      "file": "消防警察/112年/中華民國憲法與消防警察專業英文/試題.json",
+      "location": "Q46.option_A",
+      "type": "broken_word",
+      "old": "de test able",
+      "new": "detestable"
+    },
+    {
+      "file": "消防警察/112年/中華民國憲法與消防警察專業英文/試題.json",
+      "location": "Q48.option_D",
+      "type": "broken_word",
+      "old": "replic able",
+      "new": "replicable"
+    },
+    {
+      "file": "消防警察/112年/中華民國憲法與消防警察專業英文/試題.json",
+      "location": "Q51.stem",
+      "type": "broken_word",
+      "old": "pass ive",
+      "new": "passive"
+    },
+    {
+      "file": "消防警察/112年/中華民國憲法與消防警察專業英文/試題.json",
+      "location": "Q51.stem",
+      "type": "broken_word",
+      "old": "aslon gas possible",
+      "new": "as long as possible"
+    },
+    {
+      "file": "消防警察/112年/中華民國憲法與消防警察專業英文/試題.json",
+      "location": "Q51.stem",
+      "type": "broken_word",
+      "old": "yen able building sto and",
+      "new": "tenable building should stop and"
+    },
+    {
+      "file": "消防警察/112年/中華民國憲法與消防警察專業英文/試題.json",
+      "location": "Q51.stem",
+      "type": "broken_word",
+      "old": "are ato another",
+      "new": "area to another"
+    },
+    {
+      "file": "消防警察/113年/中華民國憲法與消防警察專業英文/試題.json",
+      "location": "Q48.option_D",
+      "type": "broken_word",
+      "old": "count able",
+      "new": "countable"
+    },
+    {
+      "file": "犯罪防治矯治組/111年/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.json",
+      "location": "Q38.option_B",
+      "type": "broken_word",
+      "old": "hospital ity",
+      "new": "hospitality"
+    },
+    {
+      "file": "犯罪防治矯治組/111年/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.json",
+      "location": "Q47.option_A",
+      "type": "broken_word",
+      "old": "respect ive",
+      "new": "respective"
+    },
+    {
+      "file": "犯罪防治預防組/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "行政管理/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "行政警察/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "警察法制/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "資訊管理/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
+    },
+    {
+      "file": "鑑識科學/109年/中華民國憲法與警察專業英文/試題.json",
+      "location": "Q43.option_C",
+      "type": "broken_word",
+      "old": "man agers",
+      "new": "managers"
     }
   ]
 }

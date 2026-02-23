@@ -559,7 +559,7 @@
       "answer": "B",
       "options": {
         "A": "avatar",
-        "B": "avoid ance",
+        "B": "avoidance",
         "C": "avocado",
         "D": "avocation"
       }
@@ -809,8 +809,8 @@
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "reflect ive but hopeful",
-        "B": "ignorant and unforgiv able",
+        "A": "reflective but hopeful",
+        "B": "ignorant and unforgivable",
         "C": "relieved and cheerful",
         "D": "remorseful and cynical"
       },

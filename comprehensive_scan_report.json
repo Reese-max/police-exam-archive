@@ -1,12 +1,12 @@
 {
   "scan_metadata": {
-    "scan_time": "2026-02-23T07:00:00.120788",
+    "scan_time": "2026-02-23T07:09:33.060146",
     "base_directory": "/home/user/police-exam-archive/考古題庫",
     "total_files_scanned": 910,
-    "files_with_issues": 55,
-    "files_clean": 855,
+    "files_with_issues": 28,
+    "files_clean": 882,
     "files_with_parse_errors": 0,
-    "total_issues": 134
+    "total_issues": 50
   },
   "category_summary": {
     "pua_characters": {
@@ -18,20 +18,20 @@
     "broken_english_words": {
       "description": "Spaces inserted inside English words (e.g., 'off icer' -> 'officer')",
       "severity": "high",
-      "total_occurrences": 89,
-      "affected_files_count": 33
+      "total_occurrences": 7,
+      "affected_files_count": 3
     },
     "missing_spaces_english": {
       "description": "Missing spaces between concatenated English words (e.g., 'ofthe' -> 'of the')",
       "severity": "medium",
-      "total_occurrences": 25,
-      "affected_files_count": 9
+      "total_occurrences": 24,
+      "affected_files_count": 8
     },
     "header_footer_residue": {
       "description": "Page header/footer text leaked into question content (代號, 頁次, 請接背面, etc.)",
       "severity": "high",
-      "total_occurrences": 1,
-      "affected_files_count": 1
+      "total_occurrences": 0,
+      "affected_files_count": 0
     },
     "five_digit_code_pollution": {
       "description": "Five-digit exam codes (e.g., 50120) stuck in question content",
@@ -72,300 +72,76 @@
   },
   "detailed_issues": {
     "broken_english_words": {
-      "showing": "30 of 89",
+      "showing": "7 of 7",
       "examples": [
         {
-          "file": "交通警察交通組/109年/中華民國憲法與警察專業英文/試題.json",
-          "field": "option",
-          "found": "man age",
-          "expected": "manage...",
-          "context": "man agers",
-          "question_number": 43,
-          "question_type": "choice",
-          "option_key": "C"
-        },
-        {
-          "file": "交通警察電訊組/109年/中華民國憲法與警察專業英文/試題.json",
-          "field": "option",
-          "found": "man age",
-          "expected": "manage...",
-          "context": "man agers",
-          "question_number": 43,
-          "question_type": "choice",
-          "option_key": "C"
-        },
-        {
-          "file": "公共安全/109年/中華民國憲法與警察專業英文/試題.json",
-          "field": "option",
-          "found": "man age",
-          "expected": "manage...",
-          "context": "man agers",
-          "question_number": 43,
-          "question_type": "choice",
-          "option_key": "C"
-        },
-        {
-          "file": "刑事警察/109年/中華民國憲法與警察專業英文/試題.json",
-          "field": "option",
-          "found": "man age",
-          "expected": "manage...",
-          "context": "man agers",
-          "question_number": 43,
-          "question_type": "choice",
-          "option_key": "C"
-        },
-        {
-          "file": "刑事警察/111年/刑案現場處理與刑事鑑識/試題.json",
-          "field": "stem",
-          "found": "Reflect ance",
-          "expected": "broken -ance suffix",
-          "context": "可選擇紅外線反射光(Infra red Reflect ance)光源 2可選擇紅外線冷光 (Infra",
-          "question_number": 2,
-          "question_type": "choice"
-        },
-        {
-          "file": "刑事警察/111年/刑案現場處理與刑事鑑識/試題.json",
-          "field": "stem",
-          "found": "individual ity",
-          "expected": "broken -ity suffix",
-          "context": "「個異性原則(principle of individual ity)」:物物皆有所不同,分辨不出兩物之間的",
-          "question_number": 18,
-          "question_type": "choice"
-        },
-        {
-          "file": "刑事警察/111年/犯罪偵查學/試題.json",
-          "field": "stem",
-          "found": "vari able",
-          "expected": "broken -able suffix",
-          "context": ")所分類之「系統變 數」(system vari able)?",
-          "question_number": 11,
-          "question_type": "choice"
-        },
-        {
-          "file": "刑事警察/114年/刑案現場處理與刑事鑑識/試題.json",
-          "field": "option",
-          "found": "reli able",
-          "expected": "broken -able suffix",
-          "context": "可靠偵測極限(reli able detection limit):樣品",
-          "question_number": 23,
-          "question_type": "choice",
-          "option_key": "C"
-        },
-        {
-          "file": "國境警察/109年/中華民國憲法與警察專業英文/試題.json",
-          "field": "option",
-          "found": "man age",
-          "expected": "manage...",
-          "context": "man agers",
-          "question_number": 43,
-          "question_type": "choice",
-          "option_key": "C"
-        },
-        {
-          "file": "外事警察/109年/中華民國憲法與警察專業英文/試題.json",
-          "field": "option",
-          "found": "man age",
-          "expected": "manage...",
-          "context": "man agers",
-          "question_number": 43,
-          "question_type": "choice",
-          "option_key": "C"
-        },
-        {
-          "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "ship ment",
-          "expected": "broken -ment suffix",
-          "context": "Trans ship ment",
-          "question_number": 42,
-          "question_type": "choice",
-          "option_key": "A"
-        },
-        {
-          "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "Prepared ness",
-          "expected": "broken -ness suffix",
-          "context": "Prepared ness",
-          "question_number": 45,
-          "question_type": "choice",
-          "option_key": "D"
-        },
-        {
-          "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "ship ment",
-          "expected": "broken -ment suffix",
-          "context": "Trans ship ment",
-          "question_number": 49,
-          "question_type": "choice",
-          "option_key": "A"
-        },
-        {
-          "file": "水上警察/109年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "stem",
-          "found": "understand able",
-          "expected": "broken -able suffix",
-          "context": "s, and that fear is understand able andmust be acknowle",
-          "question_number": 41,
-          "question_type": "choice"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "avoid ance",
-          "expected": "broken -ance suffix",
-          "context": "avoid ance",
-          "question_number": 41,
-          "question_type": "choice",
-          "option_key": "B"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "replace ment",
-          "expected": "broken -ment suffix",
-          "context": "replace ment",
-          "question_number": 52,
-          "question_type": "choice",
-          "option_key": "A"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "reflect ive",
-          "expected": "broken -ive suffix",
-          "context": "reflect ive but hopeful",
-          "question_number": 60,
-          "question_type": "choice",
-          "option_key": "A"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "unforgiv able",
-          "expected": "broken -able suffix",
-          "context": "ignorant and unforgiv able",
-          "question_number": 60,
-          "question_type": "choice",
-          "option_key": "B"
-        },
-        {
-          "file": "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "stem",
-          "found": "depend able",
-          "expected": "broken -able suffix",
-          "context": "employees to be and depend able.",
-          "question_number": 46,
-          "question_type": "choice"
-        },
-        {
-          "file": "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "commit ment",
-          "expected": "broken -ment suffix",
-          "context": "commit ment",
-          "question_number": 50,
-          "question_type": "choice",
-          "option_key": "D"
-        },
-        {
-          "file": "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "practic able",
-          "expected": "broken -able suffix",
-          "context": "practic able",
-          "question_number": 52,
-          "question_type": "choice",
-          "option_key": "B"
-        },
-        {
-          "file": "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "pot able",
-          "expected": "broken -able suffix",
-          "context": "pot able water",
-          "question_number": 57,
-          "question_type": "choice",
-          "option_key": "D"
-        },
-        {
-          "file": "水上警察/112年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "option",
-          "found": "xcis able",
-          "expected": "broken -able suffix",
-          "context": "Evadingtaxes one xcis able goods",
-          "question_number": 60,
-          "question_type": "choice",
-          "option_key": "D"
-        },
-        {
-          "file": "水上警察/113年/中華民國憲法與水上警察專業英文/試題.json",
+          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
           "field": "passage",
-          "found": "exist ence",
-          "expected": "broken -ence suffix",
-          "context": "blic lyrejected the exist ence of the prohibited w",
+          "found": "better able",
+          "expected": "broken -able suffix",
+          "context": "dge, we’d surely be better able to protect the town",
           "question_number": 56,
           "question_type": "choice"
         },
         {
-          "file": "水上警察/113年/中華民國憲法與水上警察專業英文/試題.json",
+          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
           "field": "passage",
-          "found": "exist ence",
-          "expected": "broken -ence suffix",
-          "context": "blic lyrejected the exist ence of the prohibited w",
+          "found": "better able",
+          "expected": "broken -able suffix",
+          "context": "dge, we’d surely be better able to protect the town",
           "question_number": 57,
           "question_type": "choice"
         },
         {
-          "file": "水上警察/113年/中華民國憲法與水上警察專業英文/試題.json",
+          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
           "field": "passage",
-          "found": "exist ence",
-          "expected": "broken -ence suffix",
-          "context": "blic lyrejected the exist ence of the prohibited w",
+          "found": "better able",
+          "expected": "broken -able suffix",
+          "context": "dge, we’d surely be better able to protect the town",
           "question_number": 58,
           "question_type": "choice"
         },
         {
-          "file": "水上警察/113年/中華民國憲法與水上警察專業英文/試題.json",
+          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
           "field": "passage",
-          "found": "exist ence",
-          "expected": "broken -ence suffix",
-          "context": "blic lyrejected the exist ence of the prohibited w",
+          "found": "better able",
+          "expected": "broken -able suffix",
+          "context": "dge, we’d surely be better able to protect the town",
           "question_number": 59,
           "question_type": "choice"
         },
         {
-          "file": "水上警察/113年/中華民國憲法與水上警察專業英文/試題.json",
+          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
           "field": "passage",
-          "found": "exist ence",
-          "expected": "broken -ence suffix",
-          "context": "blic lyrejected the exist ence of the prohibited w",
+          "found": "better able",
+          "expected": "broken -able suffix",
+          "context": "dge, we’d surely be better able to protect the town",
           "question_number": 60,
           "question_type": "choice"
         },
         {
-          "file": "水上警察/114年/中華民國憲法與水上警察專業英文/試題.json",
+          "file": "犯罪防治矯治組/111年/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.json",
           "field": "stem",
-          "found": "national ity",
-          "expected": "broken -ity suffix",
-          "context": "plesofterritorial , national ity, the principleof na",
-          "question_number": 43,
+          "found": "indispens able",
+          "expected": "broken -able suffix",
+          "context": "t sand teacher show indispens able online learningis f",
+          "question_number": 46,
           "question_type": "choice"
         },
         {
-          "file": "水上警察/114年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "stem",
-          "found": "national ity",
-          "expected": "broken -ity suffix",
-          "context": "ty, the principleof national ity of the victim, and ",
-          "question_number": 43,
-          "question_type": "choice"
+          "file": "犯罪防治矯治組/112年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+          "field": "option",
+          "found": "port able",
+          "expected": "broken -able suffix",
+          "context": "port able",
+          "question_number": 38,
+          "question_type": "choice",
+          "option_key": "C"
         }
       ]
     },
     "missing_spaces_english": {
-      "showing": "25 of 25",
+      "showing": "24 of 24",
       "examples": [
         {
           "file": "公共安全/114年/情報學/試題.json",
@@ -566,15 +342,6 @@
           "question_type": "essay"
         },
         {
-          "file": "犯罪防治預防組/114年/犯罪分析/試題.json",
-          "field": "stem",
-          "found": "xedMethods)",
-          "suggestion": "missing space at case boundary",
-          "context": "究中,同時執行,謂之混合方法(MixedMethods)。(請以混合 研究方法為",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
           "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
           "field": "stem",
           "found": "venFink 在「危",
@@ -591,21 +358,6 @@
           "context": "mont 州使用Cumming 和 McGrath所提出的「性罪犯之社區監督鑽石",
           "question_number": 12,
           "question_type": "choice"
-        }
-      ]
-    },
-    "header_footer_residue": {
-      "showing": "1 of 1",
-      "examples": [
-        {
-          "file": "水上警察/107年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
-          "field": "option",
-          "found": "請接背面",
-          "pattern_type": "continue on back",
-          "context": "(請接背面)",
-          "question_number": 7,
-          "question_type": "choice",
-          "option_key": "B"
         }
       ]
     },
@@ -775,24 +527,6 @@
       }
     },
     {
-      "file": "交通警察交通組/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "交通警察電訊組/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "公共安全/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
       "file": "公共安全/114年/情報學/試題.json",
       "issues": {
         "missing_spaces_english": 1
@@ -817,98 +551,28 @@
       }
     },
     {
-      "file": "刑事警察/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
       "file": "刑事警察/111年/刑案現場處理與刑事鑑識/試題.json",
       "issues": {
-        "broken_english_words": 2,
         "truncated_text": 1
-      }
-    },
-    {
-      "file": "刑事警察/111年/犯罪偵查學/試題.json",
-      "issues": {
-        "broken_english_words": 1
       }
     },
     {
       "file": "刑事警察/114年/刑案現場處理與刑事鑑識/試題.json",
       "issues": {
-        "truncated_text": 2,
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "國境警察/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "外事警察/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "水上警察/107年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json",
-      "issues": {
-        "header_footer_residue": 1
+        "truncated_text": 2
       }
     },
     {
       "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
       "issues": {
-        "broken_english_words": 3,
         "truncated_text": 1
-      }
-    },
-    {
-      "file": "水上警察/109年/中華民國憲法與水上警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
       }
     },
     {
       "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
       "issues": {
-        "broken_english_words": 4,
         "missing_spaces_english": 5,
         "truncated_text": 1
-      }
-    },
-    {
-      "file": "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 4
-      }
-    },
-    {
-      "file": "水上警察/112年/中華民國憲法與水上警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "水上警察/113年/中華民國憲法與水上警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 5
-      }
-    },
-    {
-      "file": "水上警察/114年/中華民國憲法與水上警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 3
-      }
-    },
-    {
-      "file": "消防警察/106年/中華民國憲法與消防警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
       }
     },
     {
@@ -920,32 +584,13 @@
     {
       "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
       "issues": {
-        "broken_english_words": 10
+        "broken_english_words": 5
       }
     },
     {
       "file": "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
       "issues": {
-        "broken_english_words": 2,
         "missing_spaces_english": 5
-      }
-    },
-    {
-      "file": "消防警察/110年/中華民國憲法與消防警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 5
-      }
-    },
-    {
-      "file": "消防警察/111年/中華民國憲法與消防警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 11
-      }
-    },
-    {
-      "file": "消防警察/112年/中華民國憲法與消防警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 6
       }
     },
     {
@@ -955,33 +600,15 @@
       }
     },
     {
-      "file": "消防警察/113年/中華民國憲法與消防警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 11
-      }
-    },
-    {
       "file": "消防警察/113年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體製造儲存處理場所設置標準暨安全管理辦法、/試題.json",
       "issues": {
         "truncated_text": 1
       }
     },
     {
-      "file": "犯罪防治矯治組/108年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "犯罪防治矯治組/109年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
       "file": "犯罪防治矯治組/111年/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.json",
       "issues": {
-        "broken_english_words": 3
+        "broken_english_words": 1
       }
     },
     {
@@ -1003,27 +630,9 @@
       }
     },
     {
-      "file": "犯罪防治預防組/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
       "file": "犯罪防治預防組/112年/犯罪分析/試題.json",
       "issues": {
         "missing_spaces_english": 3
-      }
-    },
-    {
-      "file": "犯罪防治預防組/114年/犯罪分析/試題.json",
-      "issues": {
-        "missing_spaces_english": 1
-      }
-    },
-    {
-      "file": "行政管理/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
       }
     },
     {
@@ -1051,24 +660,6 @@
       }
     },
     {
-      "file": "行政警察/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "警察法制/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "資訊管理/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
       "file": "鑑識科學/106年/犯罪偵查/試題.json",
       "issues": {
         "truncated_text": 1
@@ -1093,12 +684,6 @@
       }
     },
     {
-      "file": "鑑識科學/109年/中華民國憲法與警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
       "file": "鑑識科學/110年/犯罪偵查/試題.json",
       "issues": {
         "truncated_text": 1
@@ -1107,39 +692,9 @@
   ],
   "affected_files_by_category": {
     "broken_english_words": [
-      "交通警察交通組/109年/中華民國憲法與警察專業英文/試題.json",
-      "交通警察電訊組/109年/中華民國憲法與警察專業英文/試題.json",
-      "公共安全/109年/中華民國憲法與警察專業英文/試題.json",
-      "刑事警察/109年/中華民國憲法與警察專業英文/試題.json",
-      "刑事警察/111年/刑案現場處理與刑事鑑識/試題.json",
-      "刑事警察/111年/犯罪偵查學/試題.json",
-      "刑事警察/114年/刑案現場處理與刑事鑑識/試題.json",
-      "國境警察/109年/中華民國憲法與警察專業英文/試題.json",
-      "外事警察/109年/中華民國憲法與警察專業英文/試題.json",
-      "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
-      "水上警察/109年/中華民國憲法與水上警察專業英文/試題.json",
-      "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-      "水上警察/111年/中華民國憲法與水上警察專業英文/試題.json",
-      "水上警察/112年/中華民國憲法與水上警察專業英文/試題.json",
-      "水上警察/113年/中華民國憲法與水上警察專業英文/試題.json",
-      "水上警察/114年/中華民國憲法與水上警察專業英文/試題.json",
-      "消防警察/106年/中華民國憲法與消防警察專業英文/試題.json",
       "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
-      "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
-      "消防警察/110年/中華民國憲法與消防警察專業英文/試題.json",
-      "消防警察/111年/中華民國憲法與消防警察專業英文/試題.json",
-      "消防警察/112年/中華民國憲法與消防警察專業英文/試題.json",
-      "消防警察/113年/中華民國憲法與消防警察專業英文/試題.json",
-      "犯罪防治矯治組/108年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-      "犯罪防治矯治組/109年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
       "犯罪防治矯治組/111年/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.json",
-      "犯罪防治矯治組/112年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-      "犯罪防治預防組/109年/中華民國憲法與警察專業英文/試題.json",
-      "行政管理/109年/中華民國憲法與警察專業英文/試題.json",
-      "行政警察/109年/中華民國憲法與警察專業英文/試題.json",
-      "警察法制/109年/中華民國憲法與警察專業英文/試題.json",
-      "資訊管理/109年/中華民國憲法與警察專業英文/試題.json",
-      "鑑識科學/109年/中華民國憲法與警察專業英文/試題.json"
+      "犯罪防治矯治組/112年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json"
     ],
     "missing_spaces_english": [
       "公共安全/114年/情報學/試題.json",
@@ -1148,12 +703,8 @@
       "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
       "犯罪防治矯治組/113年/監獄學/試題.json",
       "犯罪防治預防組/112年/犯罪分析/試題.json",
-      "犯罪防治預防組/114年/犯罪分析/試題.json",
       "行政管理/113年/警察危機應變與安全管理/試題.json",
       "行政警察/107年/警察政策與犯罪預防/試題.json"
-    ],
-    "header_footer_residue": [
-      "水上警察/107年/水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）/試題.json"
     ],
     "truncated_text": [
       "交通警察交通組/108年/交通統計與分析/試題.json",
