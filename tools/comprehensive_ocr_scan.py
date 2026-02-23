@@ -185,6 +185,11 @@ VALID_STANDALONE_WORDS = {
     # Specifically problematic: these + suffix-like words form valid phrases
     'most', 'least', 'less', 'ever', 'former', 'inner', 'outer', 'upper',
     'lower', 'super', 'over', 'under', 'counter', 'cross',
+    # Comparatives / common adjectives that precede -able/-ible/-ive etc.
+    'better', 'more', 'much', 'further', 'higher', 'lower',
+    'select', 'collect', 'object', 'direct', 'correct', 'protect',
+    'effect', 'perfect', 'detect', 'expect', 'respect', 'reject',
+    'subject', 'connect', 'project',
 }
 
 # ── 3. Missing Spaces Between English Words ─────────────────────────────────
@@ -222,6 +227,15 @@ MISSING_SPACE_PATTERNS = [
     # Concatenated at camelCase-like boundaries within running English text
     (r'(?<=[a-z])(?=[A-Z][a-z]{3,})', 'missing space at case boundary'),
 ]
+
+# Known CamelCase proper nouns / brand names that should NOT be flagged
+CAMELCASE_WHITELIST = {
+    'YouTube', 'CompStat', 'iPhone', 'iPad', 'LinkedIn', 'JavaScript',
+    'TypeScript', 'GitHub', 'WordPress', 'PowerPoint', 'YouTube',
+    'McDonald', 'McGrath', 'McDonalds', 'McCarthy', 'McKinsey',
+    'DeepMind', 'TikTok', 'WeChat', 'WhatsApp', 'FaceTime',
+    'PayPal', 'MasterCard', 'FedEx', 'DreamWorks', 'StarBucks',
+}
 # Remove None entries and compile
 MISSING_SPACE_RE = []
 for pat, desc in MISSING_SPACE_PATTERNS:
@@ -371,11 +385,35 @@ def scan_text(text, field_name, extra_info, metadata_code=None):
     # 3. Missing spaces between English words
     for pattern, desc in MISSING_SPACE_RE:
         for m in pattern.finditer(text):
+            found = m.group() if m.group() else text[max(0,m.start()-3):m.start()+8]
+            context_str = ctx(text, m.start(), m.end(), margin=30)
+            # Skip camelCase matches that are known proper nouns
+            if desc == 'missing space at case boundary':
+                # Extract the full word around the boundary
+                word_start = m.start()
+                while word_start > 0 and text[word_start-1].isalpha():
+                    word_start -= 1
+                word_end = m.start()
+                while word_end < len(text) and text[word_end].isalpha():
+                    word_end += 1
+                full_word = text[word_start:word_end]
+                if any(full_word.startswith(w) or full_word == w for w in CAMELCASE_WHITELIST):
+                    continue
+                # Also skip if the word is in a Chinese context (mixed Chinese-English)
+                before_ctx = text[max(0, word_start-2):word_start]
+                after_word_end = word_end
+                while after_word_end < len(text) and text[after_word_end].isalpha():
+                    after_word_end += 1
+                after_ctx = text[after_word_end:min(len(text), after_word_end+2)]
+                has_cjk_before = bool(re.search(r'[\u4e00-\u9fff]', before_ctx))
+                has_cjk_after = bool(re.search(r'[\u4e00-\u9fff]', after_ctx))
+                if has_cjk_before or has_cjk_after:
+                    continue
             issues["missing_spaces_english"].append({
                 "field": field_name,
-                "found": m.group() if m.group() else text[max(0,m.start()-3):m.start()+8],
+                "found": found,
                 "suggestion": desc,
-                "context": ctx(text, m.start(), m.end()),
+                "context": context_str,
                 **extra_info,
             })
 
@@ -428,7 +466,7 @@ def scan_text(text, field_name, extra_info, metadata_code=None):
             **extra_info,
         })
 
-    # 9. Truncated text (only for stems)
+    # 9. Truncated text (only for stems — see scan_question for gating logic)
     if field_name == "stem":
         stripped = text.rstrip()
         if stripped:
@@ -469,6 +507,15 @@ def scan_question(question, file_rel, metadata_code):
     if isinstance(stem, str):
         stem_issues = scan_text(stem, "stem", base_info, metadata_code)
         for cat, items in stem_issues.items():
+            # Filter truncated_text false positives for choice questions:
+            # If the stem contains numbered sub-options (1xxxx 2xxxx 3xxxx etc.),
+            # the "ending" is just the last sub-option text, not a truncation.
+            if cat == "truncated_text" and qtype == "choice":
+                has_numbered_options = bool(
+                    re.search(r'[①②③④⑤⑥]|[1-6][^\d].*[2-6][^\d]', stem or '')
+                )
+                if has_numbered_options:
+                    continue
             all_issues[cat].extend(items)
 
     # Scan options
