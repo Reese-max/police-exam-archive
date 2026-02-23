@@ -1,12 +1,12 @@
 {
   "scan_metadata": {
-    "scan_time": "2026-02-23T07:09:33.060146",
+    "scan_time": "2026-02-23T08:17:00.311085",
     "base_directory": "/home/user/police-exam-archive/考古題庫",
     "total_files_scanned": 910,
-    "files_with_issues": 28,
-    "files_clean": 882,
+    "files_with_issues": 6,
+    "files_clean": 904,
     "files_with_parse_errors": 0,
-    "total_issues": 50
+    "total_issues": 6
   },
   "category_summary": {
     "pua_characters": {
@@ -18,14 +18,14 @@
     "broken_english_words": {
       "description": "Spaces inserted inside English words (e.g., 'off icer' -> 'officer')",
       "severity": "high",
-      "total_occurrences": 7,
-      "affected_files_count": 3
+      "total_occurrences": 0,
+      "affected_files_count": 0
     },
     "missing_spaces_english": {
       "description": "Missing spaces between concatenated English words (e.g., 'ofthe' -> 'of the')",
       "severity": "medium",
-      "total_occurrences": 24,
-      "affected_files_count": 8
+      "total_occurrences": 0,
+      "affected_files_count": 0
     },
     "header_footer_residue": {
       "description": "Page header/footer text leaked into question content (代號, 頁次, 請接背面, etc.)",
@@ -60,8 +60,8 @@
     "truncated_text": {
       "description": "Text appearing to end mid-sentence or mid-word",
       "severity": "medium",
-      "total_occurrences": 19,
-      "affected_files_count": 18
+      "total_occurrences": 6,
+      "affected_files_count": 6
     },
     "cid_references": {
       "description": "(cid:NNNN) patterns from PDF font extraction failures",
@@ -71,298 +71,8 @@
     }
   },
   "detailed_issues": {
-    "broken_english_words": {
-      "showing": "7 of 7",
-      "examples": [
-        {
-          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "better able",
-          "expected": "broken -able suffix",
-          "context": "dge, we’d surely be better able to protect the town",
-          "question_number": 56,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "better able",
-          "expected": "broken -able suffix",
-          "context": "dge, we’d surely be better able to protect the town",
-          "question_number": 57,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "better able",
-          "expected": "broken -able suffix",
-          "context": "dge, we’d surely be better able to protect the town",
-          "question_number": 58,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "better able",
-          "expected": "broken -able suffix",
-          "context": "dge, we’d surely be better able to protect the town",
-          "question_number": 59,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "better able",
-          "expected": "broken -able suffix",
-          "context": "dge, we’d surely be better able to protect the town",
-          "question_number": 60,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/111年/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.json",
-          "field": "stem",
-          "found": "indispens able",
-          "expected": "broken -able suffix",
-          "context": "t sand teacher show indispens able online learningis f",
-          "question_number": 46,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/112年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-          "field": "option",
-          "found": "port able",
-          "expected": "broken -able suffix",
-          "context": "port able",
-          "question_number": 38,
-          "question_type": "choice",
-          "option_key": "C"
-        }
-      ]
-    },
-    "missing_spaces_english": {
-      "showing": "24 of 24",
-      "examples": [
-        {
-          "file": "公共安全/114年/情報學/試題.json",
-          "field": "stem",
-          "found": "iveEyes)?請詳",
-          "suggestion": "missing space at case boundary",
-          "context": "何謂五眼聯盟(FiveEyes)?請詳細說明其功能、運作方式、",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "he road to justice, itis far from a sufficie",
-          "question_number": 56,
-          "question_type": "choice"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "he road to justice, itis far from a sufficie",
-          "question_number": 57,
-          "question_type": "choice"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "he road to justice, itis far from a sufficie",
-          "question_number": 58,
-          "question_type": "choice"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "he road to justice, itis far from a sufficie",
-          "question_number": 59,
-          "question_type": "choice"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "he road to justice, itis far from a sufficie",
-          "question_number": 60,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "YouTube vid",
-          "suggestion": "missing space at case boundary",
-          "context": "we have all seen YouTube videos of adult",
-          "question_number": 56,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "YouTube vid",
-          "suggestion": "missing space at case boundary",
-          "context": "we have all seen YouTube videos of adult",
-          "question_number": 57,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "YouTube vid",
-          "suggestion": "missing space at case boundary",
-          "context": "we have all seen YouTube videos of adult",
-          "question_number": 58,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "YouTube vid",
-          "suggestion": "missing space at case boundary",
-          "context": "we have all seen YouTube videos of adult",
-          "question_number": 59,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
-          "field": "passage",
-          "found": "YouTube vid",
-          "suggestion": "missing space at case boundary",
-          "context": "we have all seen YouTube videos of adult",
-          "question_number": 60,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-          "field": "stem",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "sing itto make sure itis still fresh.",
-          "question_number": 31,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-          "field": "stem",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "Byregulation, itis for all worker sto ",
-          "question_number": 37,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "esemblesapizza that itis local lynicknamed\"t",
-          "question_number": 46,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "esemblesapizza that itis local lynicknamed\"t",
-          "question_number": 47,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "esemblesapizza that itis local lynicknamed\"t",
-          "question_number": 48,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "esemblesapizza that itis local lynicknamed\"t",
-          "question_number": 49,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-          "field": "passage",
-          "found": "itis",
-          "suggestion": "it is",
-          "context": "esemblesapizza that itis local lynicknamed\"t",
-          "question_number": 50,
-          "question_type": "choice"
-        },
-        {
-          "file": "犯罪防治矯治組/113年/監獄學/試題.json",
-          "field": "stem",
-          "found": "sonRiot)對於人",
-          "suggestion": "missing space at case boundary",
-          "context": "監獄暴動(PrisonRiot)對於人犯與職員有身心的傷害,並",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
-          "file": "犯罪防治預防組/112年/犯罪分析/試題.json",
-          "field": "stem",
-          "found": "ompStat 警政」",
-          "suggestion": "missing space at case boundary",
-          "context": "「CompStat 警政」的意義與其政策上的意涵為",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
-          "file": "犯罪防治預防組/112年/犯罪分析/試題.json",
-          "field": "stem",
-          "found": "ompStat 警政策",
-          "suggestion": "missing space at case boundary",
-          "context": "政」的意義與其政策上的意涵為何?CompStat 警政策略的 核心要素為何?Co",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
-          "file": "犯罪防治預防組/112年/犯罪分析/試題.json",
-          "field": "stem",
-          "found": "ompStat 警政與",
-          "suggestion": "missing space at case boundary",
-          "context": "at 警政策略的 核心要素為何?CompStat 警政與問題導向警政有何不同?(",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
-          "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
-          "field": "stem",
-          "found": "venFink 在「危",
-          "suggestion": "missing space at case boundary",
-          "context": "、快速且深遠,危機管理專家 StevenFink 在「危機發展階段 論」中主張危",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
-          "file": "行政警察/107年/警察政策與犯罪預防/試題.json",
-          "field": "stem",
-          "found": " McGrath所提出",
-          "suggestion": "missing space at case boundary",
-          "context": "mont 州使用Cumming 和 McGrath所提出的「性罪犯之社區監督鑽石",
-          "question_number": 12,
-          "question_type": "choice"
-        }
-      ]
-    },
     "truncated_text": {
-      "showing": "19 of 19",
+      "showing": "6 of 6",
       "examples": [
         {
           "file": "交通警察交通組/108年/交通統計與分析/試題.json",
@@ -371,54 +81,6 @@
           "text_ending": "某路段調查車輛速度如下所示,",
           "question_number": "一",
           "question_type": "essay"
-        },
-        {
-          "file": "刑事警察/107年/犯罪偵查學/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "3採 樣其DNA檢體,送驗比對查驗 4拍攝相片影像,調取口卡片、戶役政電子閘門系統之相片影像資料核對",
-          "question_number": 15,
-          "question_type": "choice"
-        },
-        {
-          "file": "刑事警察/108年/刑案現場處理與刑事鑑識/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "偵測器原理為將碳氫化合物吸 入後以加熱之鉑片燃燒偵測電阻變化 5起火點位置之地毯證物採取碳化部分即可",
-          "question_number": 4,
-          "question_type": "choice"
-        },
-        {
-          "file": "刑事警察/108年/犯罪偵查學/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "年有期徒刑之刑之罪 3組成必須 具有持續性及牟利性之有結構性組織 4犯罪組織須有內部管理結構性為必要",
-          "question_number": 25,
-          "question_type": "choice"
-        },
-        {
-          "file": "刑事警察/111年/刑案現場處理與刑事鑑識/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "述何者正確? 1撞擊力的方向(如由內而外) 2撞擊力的角度 3槍擊順序 4燃燒的溫度 5燃燒行進方向",
-          "question_number": 25,
-          "question_type": "choice"
-        },
-        {
-          "file": "刑事警察/114年/刑案現場處理與刑事鑑識/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "ine)為愷他命之先驅原料 5火災現場發現有雙層玻璃反應槽,但 無冷卻循環設備,不可能為喵喵製造場所",
-          "question_number": 1,
-          "question_type": "choice"
-        },
-        {
-          "file": "刑事警察/114年/刑案現場處理與刑事鑑識/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "ylumbel life rylphosphate)試劑可與酸性磷 酸酶反應,在紫外光下呈現螢光反應",
-          "question_number": 12,
-          "question_type": "choice"
         },
         {
           "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
@@ -432,16 +94,8 @@
           "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
           "field": "stem",
           "description": "ends with function word",
-          "text_ending": "the word“reverbe rate” is closest in meaning to",
+          "text_ending": "The word \"reverberate\" is closest in meaning to",
           "question_number": 58,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "存場所 3達中央主管機關所定管制量 30 倍之販賣場所 4達中央 主管機關所定管制量30倍之處理場所",
-          "question_number": 25,
           "question_type": "choice"
         },
         {
@@ -451,38 +105,6 @@
           "text_ending": "流動有何影響?若一棟建築物 高度為 20 公尺,頂部及底部開口可做為空氣流通用,其面積分別為 4 及",
           "question_number": "一",
           "question_type": "essay"
-        },
-        {
-          "file": "消防警察/113年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體製造儲存處理場所設置標準暨安全管理辦法、/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "施放爆竹煙火?1可燃性氣體儲槽 2加油站 3爆竹煙火販賣場所 4石油煉製工廠 5公共危險物品處理場所",
-          "question_number": 18,
-          "question_type": "choice"
-        },
-        {
-          "file": "行政警察/106年/警察學與警察勤務/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "就警察教育訓練來說,下列那些國家採取訓練的導向?1美國 2我國 3英國 4韓國 5日本 6土耳其",
-          "question_number": 8,
-          "question_type": "choice"
-        },
-        {
-          "file": "行政警察/107年/偵查法學與犯罪偵查/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": " 場物質熔化的圖形 2牛油上的指印 3血滴滴落的角度 4雪茄的味道 5屍體的溫度 6子彈進行 的方向",
-          "question_number": 14,
-          "question_type": "choice"
-        },
-        {
-          "file": "鑑識科學/106年/犯罪偵查/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "循個人身分識別系統(PID)查驗 4拍 攝相片影像,調取口卡片、戶役政電子閘門系統之相片影像資料核對",
-          "question_number": 6,
-          "question_type": "choice"
         },
         {
           "file": "鑑識科學/107年/刑事生物/試題.json",
@@ -499,22 +121,6 @@
           "text_ending": "(10 分) ③以 XRF 量測一黃色油漆樣品中的鉛含量四次結果:0.0088%, 0.0086%,",
           "question_number": "三",
           "question_type": "essay"
-        },
-        {
-          "file": "鑑識科學/108年/犯罪偵查/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "外,因調查犯罪嫌疑或其他違法行為所保 存之監視器蒐集資料,至遲應於資料製作完成時起5年內註銷或銷毀之",
-          "question_number": 14,
-          "question_type": "choice"
-        },
-        {
-          "file": "鑑識科學/110年/犯罪偵查/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "錯誤表示意見 4筆錄應命受訊問人緊接其記載之末行簽名、蓋 章或按指印。但受訊問人拒絕時,應附記其事由",
-          "question_number": 8,
-          "question_type": "choice"
         }
       ]
     }
@@ -527,42 +133,6 @@
       }
     },
     {
-      "file": "公共安全/114年/情報學/試題.json",
-      "issues": {
-        "missing_spaces_english": 1
-      }
-    },
-    {
-      "file": "刑事警察/107年/犯罪偵查學/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "刑事警察/108年/刑案現場處理與刑事鑑識/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "刑事警察/108年/犯罪偵查學/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "刑事警察/111年/刑案現場處理與刑事鑑識/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "刑事警察/114年/刑案現場處理與刑事鑑識/試題.json",
-      "issues": {
-        "truncated_text": 2
-      }
-    },
-    {
       "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
       "issues": {
         "truncated_text": 1
@@ -571,96 +141,11 @@
     {
       "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
       "issues": {
-        "missing_spaces_english": 5,
         "truncated_text": 1
-      }
-    },
-    {
-      "file": "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
-      "issues": {
-        "broken_english_words": 5
-      }
-    },
-    {
-      "file": "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
-      "issues": {
-        "missing_spaces_english": 5
       }
     },
     {
       "file": "消防警察/112年/火災學與消防化學/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "消防警察/113年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體製造儲存處理場所設置標準暨安全管理辦法、/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "犯罪防治矯治組/111年/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "犯罪防治矯治組/112年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-      "issues": {
-        "broken_english_words": 1
-      }
-    },
-    {
-      "file": "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-      "issues": {
-        "missing_spaces_english": 7
-      }
-    },
-    {
-      "file": "犯罪防治矯治組/113年/監獄學/試題.json",
-      "issues": {
-        "missing_spaces_english": 1
-      }
-    },
-    {
-      "file": "犯罪防治預防組/112年/犯罪分析/試題.json",
-      "issues": {
-        "missing_spaces_english": 3
-      }
-    },
-    {
-      "file": "行政管理/113年/警察危機應變與安全管理/試題.json",
-      "issues": {
-        "missing_spaces_english": 1
-      }
-    },
-    {
-      "file": "行政警察/106年/警察學與警察勤務/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "行政警察/107年/偵查法學與犯罪偵查/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "行政警察/107年/警察政策與犯罪預防/試題.json",
-      "issues": {
-        "missing_spaces_english": 1
-      }
-    },
-    {
-      "file": "鑑識科學/106年/犯罪偵查/試題.json",
       "issues": {
         "truncated_text": 1
       }
@@ -676,55 +161,16 @@
       "issues": {
         "truncated_text": 1
       }
-    },
-    {
-      "file": "鑑識科學/108年/犯罪偵查/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "鑑識科學/110年/犯罪偵查/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
     }
   ],
   "affected_files_by_category": {
-    "broken_english_words": [
-      "消防警察/108年/中華民國憲法與消防警察專業英文/試題.json",
-      "犯罪防治矯治組/111年/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.json",
-      "犯罪防治矯治組/112年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json"
-    ],
-    "missing_spaces_english": [
-      "公共安全/114年/情報學/試題.json",
-      "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-      "消防警察/109年/中華民國憲法與消防警察專業英文/試題.json",
-      "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
-      "犯罪防治矯治組/113年/監獄學/試題.json",
-      "犯罪防治預防組/112年/犯罪分析/試題.json",
-      "行政管理/113年/警察危機應變與安全管理/試題.json",
-      "行政警察/107年/警察政策與犯罪預防/試題.json"
-    ],
     "truncated_text": [
       "交通警察交通組/108年/交通統計與分析/試題.json",
-      "刑事警察/107年/犯罪偵查學/試題.json",
-      "刑事警察/108年/刑案現場處理與刑事鑑識/試題.json",
-      "刑事警察/108年/犯罪偵查學/試題.json",
-      "刑事警察/111年/刑案現場處理與刑事鑑識/試題.json",
-      "刑事警察/114年/刑案現場處理與刑事鑑識/試題.json",
       "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
       "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-      "消防警察/107年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊/試題.json",
       "消防警察/112年/火災學與消防化學/試題.json",
-      "消防警察/113年/消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體製造儲存處理場所設置標準暨安全管理辦法、/試題.json",
-      "行政警察/106年/警察學與警察勤務/試題.json",
-      "行政警察/107年/偵查法學與犯罪偵查/試題.json",
-      "鑑識科學/106年/犯罪偵查/試題.json",
       "鑑識科學/107年/刑事生物/試題.json",
-      "鑑識科學/108年/刑事化學/試題.json",
-      "鑑識科學/108年/犯罪偵查/試題.json",
-      "鑑識科學/110年/犯罪偵查/試題.json"
+      "鑑識科學/108年/刑事化學/試題.json"
     ]
   }
 }

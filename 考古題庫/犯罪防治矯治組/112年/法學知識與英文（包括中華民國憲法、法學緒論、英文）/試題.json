@@ -496,13 +496,13 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "Instead of treat ing you like an expert, some caring and sym path etic doctors would give youmore _____ expla nations.",
+      "stem": "Instead of treating you like an expert, some caring and sympathetic doctors would give you more _____ explanations.",
       "section": null,
       "answer": "D",
       "options": {
         "A": "ambiguous",
         "B": "furious",
-        "C": "port able",
+        "C": "portable",
         "D": "comprehensible"
       }
     },
