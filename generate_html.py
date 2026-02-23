@@ -237,6 +237,11 @@ body.sidebar-collapsed .sidebar-reopen { display: flex; }
 .mc-option { display: flex; gap: 0.4rem; padding: 0.2rem 0 0.2rem 2.2rem; align-items: baseline; }
 .opt-label { font-weight: 700; color: var(--accent); flex-shrink: 0; font-size: 0.88rem; }
 .opt-text { font-size: 0.9rem; line-height: 1.7; overflow-wrap: break-word; word-break: break-word; }
+/* === Answer Visibility === */
+.q-answer { display: none; font-size: 0.85rem; color: var(--success); font-weight: 600; padding: 0.3rem 0 0.3rem 2.2rem; }
+.q-block.show-answer .q-answer { display: block; }
+.q-answer.revealed { display: block; }
+html.dark .q-answer { color: var(--success); }
 /* === Search === */
 .search-box { position: sticky; top: 0; background: var(--bg); padding: 1rem 0; z-index: 50; margin-bottom: 1rem; }
 .search-input { width: 100%; padding: 0.75rem 1rem 0.75rem 2.75rem; border: 2px solid var(--border); border-radius: var(--radius); font-size: 1rem; font-family: inherit; outline: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: 0.85rem center; background-size: 18px; }
@@ -363,6 +368,8 @@ html.dark .mc-question[data-subtype="passage_fragment"]::before { background: #3
 .hit-counter { font-size: 0.82rem; color: var(--text-light); font-weight: 600; min-width: 3em; text-align: center; }
 html.dark .search-jump button { background: #1e293b; border-color: #334155; color: #f1f5f9; }
 /* === Practice Mode === */
+.practice-mode .q-answer { display: none !important; }
+.practice-mode .q-answer.revealed { display: block !important; }
 .practice-mode .answer-section { display: none; }
 .practice-mode .answer-section.revealed { display: block; animation: answerReveal 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 @keyframes answerReveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
