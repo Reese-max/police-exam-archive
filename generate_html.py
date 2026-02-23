@@ -1192,6 +1192,27 @@ function exportPDF(includeAnswers) {
 """
 
 
+_FIGURE_RE = re.compile(r'如圖[一二三四五六七八九十①②③④⑤⑥⑦⑧⑨⑩(（\d]|附圖|下圖所示|如下圖')
+
+
+def _render_figure_placeholder(q):
+    """如果題幹引用了圖表但 JSON 無 figures 欄位，插入圖片缺失提示"""
+    figures = q.get('figures', [])
+    if figures:
+        # JSON 有提供圖片路徑，渲染實際圖片
+        parts = []
+        for fig in figures:
+            src = escape_html(fig.get('src', ''))
+            alt = escape_html(fig.get('alt', '題目圖片'))
+            parts.append(f'<div class="figure-block"><img src="{src}" alt="{alt}" loading="lazy"></div>\n')
+        return ''.join(parts)
+    # 偵測題幹是否引用圖表
+    stem = q.get('stem', '')
+    if _FIGURE_RE.search(stem):
+        return '<div class="figure-missing">本題含有圖表，請參閱考選部公布之原始試卷</div>\n'
+    return ''
+
+
 def render_question_html(question):
     """將單一題目渲染為 HTML（含逐題選項與答案）"""
     q = question
@@ -1209,7 +1230,8 @@ def render_question_html(question):
         stem = stem.replace('\n', '')
         stem = stem.replace('\x00PARA\x00', '<br><br>')
         stem = stem.replace('\x00BR\x00', '<br>')
-        return f'<div class="essay-question">{escape_html(q["number"])}、{stem}</div>\n'
+        fig_html = _render_figure_placeholder(q)
+        return f'<div class="essay-question">{escape_html(q["number"])}、{stem}</div>\n{fig_html}'
 
     elif q['type'] == 'choice':
         html_parts = []
@@ -1244,6 +1266,11 @@ def render_question_html(question):
                 f'<span class="q-number">{q["number"]}</span>'
                 f'</div>\n'
             )
+
+        # 圖片缺失提示
+        fig_html = _render_figure_placeholder(q)
+        if fig_html:
+            html_parts.append(fig_html)
 
         # 選項（各自一行，可點選）
         if 'options' in q:
