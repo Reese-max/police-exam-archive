@@ -469,7 +469,8 @@ def scan_text(text, field_name, extra_info, metadata_code=None):
     # 9. Truncated text (only for stems — see scan_question for gating logic)
     if field_name == "stem":
         stripped = text.rstrip()
-        if stripped:
+        # Skip stems that already have a truncation notice
+        if stripped and '請參閱考選部原始試題' not in stripped:
             for pattern, desc in TRUNCATION_PATTERNS:
                 if pattern.search(stripped):
                     issues["truncated_text"].append({
