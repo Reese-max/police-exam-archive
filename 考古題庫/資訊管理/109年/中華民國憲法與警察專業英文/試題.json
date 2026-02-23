@@ -586,7 +586,7 @@
       "options": {
         "A": "detectives",
         "B": "firefighters",
-        "C": "man agers",
+        "C": "managers",
         "D": "jewelers"
       }
     },
@@ -658,7 +658,7 @@
     {
       "number": 54,
       "type": "choice",
-      "stem": "In order to increase the efficiency of the police force, many systems have been employed. One of these systems involves efficient hand ling of the database of driver’s licenses. This system can issue driver’s licenses daily, prevent the false acquisition of the licenses and enforce administrative punishment of those who have traffic violations and so on.",
+      "stem": "In order to increase the efficiency of the police force, many systems have been employed. One of these systems involves efficient handling of the database of driver’s licenses. This system can issue driver’s licenses daily, prevent the false acquisition of the licenses and enforce administrative punishment of those who have traffic violations and so on.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -671,7 +671,7 @@
     {
       "number": 55,
       "type": "choice",
-      "stem": "A system combining wire less, database, and applications technologies has been set up to assist the police in decrea sing paper work, increasing data accuracy, sharing knowledge and information and even providing a problem solving kit.",
+      "stem": "A system combining wireless, database, and applications technologies has been set up to assist the police in decrea sing paper work, increasing data accuracy, sharing knowledge and information and even providing a problem solving kit.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -740,7 +740,7 @@
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
-        "A": "You should think before you post any message online. Everything you do through the Internet is irretriev able.",
+        "A": "You should think before you post any message online. Everything you do through the Internet is irretrievable.",
         "B": "I will contact our Net safe unit to help deal with this case about the Internet scam. Tell me exactly what happened.",
         "C": "If you consider yourself a victim of cyberbullying, please dial immediately our hot line for help.",
         "D": "Send us anyobscene images or photos you see online so that we are able to trace the occur rence of cyber crimes."

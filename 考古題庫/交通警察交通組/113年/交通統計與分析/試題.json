@@ -17,7 +17,7 @@
     {
       "number": "一",
       "type": "essay",
-      "stem": "回答下列諸問題:\n①在統計估計與檢定分析時,參數(Parameters)與統計量(Statistics)\n所指為何?請說明其差異。(8 分)\n②進行假設檢定時,何謂錯誤(又稱 TypeIerror)?與常用之 p 值\n有何關係?(8 分)\n③統計分析中所指之自由度(Degree of Freedom)為何?如何計算?\n(8 分)\n④何謂單尾檢定(One-Tailed Test)與雙尾檢定(Two-Tailed Test)?\n在值確定下(例如 0.05),其檢定門檻各該如何決定?(8 分)",
+      "stem": "回答下列諸問題:\n①在統計估計與檢定分析時,參數(Parameters)與統計量(Statistics)\n所指為何?請說明其差異。(8 分)\n②進行假設檢定時,何謂錯誤(又稱 Type I error)?與常用之 p 值\n有何關係?(8 分)\n③統計分析中所指之自由度(Degree of Freedom)為何?如何計算?\n(8 分)\n④何謂單尾檢定(One-Tailed Test)與雙尾檢定(Two-Tailed Test)?\n在值確定下(例如 0.05),其檢定門檻各該如何決定?(8 分)",
       "section": null
     },
     {

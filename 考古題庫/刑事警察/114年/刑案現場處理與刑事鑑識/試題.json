@@ -176,7 +176,7 @@
     {
       "number": 12,
       "type": "choice",
-      "stem": "與刑事鑑識有關之血清學運用,請選出正確者:1 A 型血液是個體之紅血球細胞膜有 A 型抗體 物質,會與外來A抗原形成凝集反應 2酸性磷酸酶(ACP)又稱為PSA,水解後產物可與Fast blueB反應 3血液之結晶試驗,如Takayama試驗,其特異性(specific ity)很高 4 Luminol 檢 測後之血跡仍可進行後續DNA檢測 5 MUP(4-methylumbel life rylphosphate)試劑可與酸性磷 酸酶反應,在紫外光下呈現螢光反應",
+      "stem": "與刑事鑑識有關之血清學運用,請選出正確者:1 A 型血液是個體之紅血球細胞膜有 A 型抗體 物質,會與外來A抗原形成凝集反應 2酸性磷酸酶(ACP)又稱為PSA,水解後產物可與Fast blueB反應 3血液之結晶試驗,如Takayama試驗,其特異性(specificity)很高 4 Luminol 檢 測後之血跡仍可進行後續DNA檢測 5 MUP(4-methylumbel life rylphosphate)試劑可與酸性磷 酸酶反應,在紫外光下呈現螢光反應",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -325,7 +325,7 @@
       "options": {
         "A": "偵測極限(limit of detection):樣品訊號必須大於μ+3σ",
         "B": "確認極限(limit of identification):樣品訊號必須大於μ+6σ",
-        "C": "可靠偵測極限(reli able detection limit):樣品訊號必須大於μ+8σ",
+        "C": "可靠偵測極限(reliable detection limit):樣品訊號必須大於μ+8σ",
         "D": "定量極限(limit ofquantitation):樣品訊號必須大於μ+10σ"
       }
     },

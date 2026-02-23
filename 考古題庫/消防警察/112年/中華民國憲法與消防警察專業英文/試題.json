@@ -567,7 +567,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "Ifeel so in this base ment because it’s so much like amaze.",
+      "stem": "Ifeel so in this basement because it’s so much like amaze.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -623,7 +623,7 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "de test able",
+        "A": "detestable",
         "B": "timid",
         "C": "viable",
         "D": "ethe real"
@@ -637,7 +637,7 @@
       "answer": "B",
       "options": {
         "A": "con form ation",
-        "B": "com bus tion",
+        "B": "combustion",
         "C": "confederation",
         "D": "conservation"
       }
@@ -652,7 +652,7 @@
         "A": "respiratory",
         "B": "reciprocated",
         "C": "regretful",
-        "D": "replic able"
+        "D": "replicable"
       }
     },
     {
@@ -684,11 +684,11 @@
     {
       "number": 51,
       "type": "choice",
-      "stem": "Fire doors are special ist doors which have been tested against the elements and purpose-built to withstand roaring fires for aslon gas possible. The yen able building sto and delay the spread of fire from one are ato another, andform a crucial part ofa pass ive fire protection strategy.",
+      "stem": "Fire doors are specialist doors which have been tested against the elements and purpose-built to withstand roaring fires for as long as possible. The tenable building should stop and delay the spread of fire from one area to another, andform a crucial part ofa passive fire protection strategy.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "com part mental ize",
+        "A": "compartmentalize",
         "B": "communicate",
         "C": "compreh end",
         "D": "compromise"
