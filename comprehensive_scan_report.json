@@ -1,12 +1,12 @@
 {
   "scan_metadata": {
-    "scan_time": "2026-02-23T08:17:00.311085",
+    "scan_time": "2026-02-23T08:44:30.037107",
     "base_directory": "/home/user/police-exam-archive/考古題庫",
     "total_files_scanned": 910,
-    "files_with_issues": 6,
-    "files_clean": 904,
+    "files_with_issues": 0,
+    "files_clean": 910,
     "files_with_parse_errors": 0,
-    "total_issues": 6
+    "total_issues": 0
   },
   "category_summary": {
     "pua_characters": {
@@ -60,8 +60,8 @@
     "truncated_text": {
       "description": "Text appearing to end mid-sentence or mid-word",
       "severity": "medium",
-      "total_occurrences": 6,
-      "affected_files_count": 6
+      "total_occurrences": 0,
+      "affected_files_count": 0
     },
     "cid_references": {
       "description": "(cid:NNNN) patterns from PDF font extraction failures",
@@ -70,107 +70,7 @@
       "affected_files_count": 0
     }
   },
-  "detailed_issues": {
-    "truncated_text": {
-      "showing": "6 of 6",
-      "examples": [
-        {
-          "file": "交通警察交通組/108年/交通統計與分析/試題.json",
-          "field": "stem",
-          "description": "ends with mid-sentence punctuation",
-          "text_ending": "某路段調查車輛速度如下所示,",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
-          "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "stem",
-          "description": "ends with function word",
-          "text_ending": " commodity in the passage is closest in meaning to",
-          "question_number": 59,
-          "question_type": "choice"
-        },
-        {
-          "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-          "field": "stem",
-          "description": "ends with function word",
-          "text_ending": "The word \"reverberate\" is closest in meaning to",
-          "question_number": 58,
-          "question_type": "choice"
-        },
-        {
-          "file": "消防警察/112年/火災學與消防化學/試題.json",
-          "field": "stem",
-          "description": "ends with Chinese function word/particle",
-          "text_ending": "流動有何影響?若一棟建築物 高度為 20 公尺,頂部及底部開口可做為空氣流通用,其面積分別為 4 及",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
-          "file": "鑑識科學/107年/刑事生物/試題.json",
-          "field": "stem",
-          "description": "ends with mid-sentence punctuation",
-          "text_ending": "性侵害案件混有女性被害人細胞的可疑精液類證物,",
-          "question_number": "一",
-          "question_type": "essay"
-        },
-        {
-          "file": "鑑識科學/108年/刑事化學/試題.json",
-          "field": "stem",
-          "description": "ends with mid-sentence punctuation",
-          "text_ending": "(10 分) ③以 XRF 量測一黃色油漆樣品中的鉛含量四次結果:0.0088%, 0.0086%,",
-          "question_number": "三",
-          "question_type": "essay"
-        }
-      ]
-    }
-  },
-  "per_file_summary": [
-    {
-      "file": "交通警察交通組/108年/交通統計與分析/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "消防警察/112年/火災學與消防化學/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "鑑識科學/107年/刑事生物/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    },
-    {
-      "file": "鑑識科學/108年/刑事化學/試題.json",
-      "issues": {
-        "truncated_text": 1
-      }
-    }
-  ],
-  "affected_files_by_category": {
-    "truncated_text": [
-      "交通警察交通組/108年/交通統計與分析/試題.json",
-      "水上警察/108年/中華民國憲法與水上警察專業英文/試題.json",
-      "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
-      "消防警察/112年/火災學與消防化學/試題.json",
-      "鑑識科學/107年/刑事生物/試題.json",
-      "鑑識科學/108年/刑事化學/試題.json"
-    ]
-  }
+  "detailed_issues": {},
+  "per_file_summary": [],
+  "affected_files_by_category": {}
 }
