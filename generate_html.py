@@ -344,6 +344,13 @@ html.dark .answer-cell.corrected { border-color: var(--danger); background: #450
 html.dark .answer-cell.free-point { background: linear-gradient(135deg, #422006, #451a03); border-color: #a16207; animation: freePointPulse 2.5s ease-in-out infinite; }
 html.dark .answer-cell.free-point .q-ans { color: #fbbf24; }
 @keyframes freePointPulse { 0%, 100% { box-shadow: 0 0 6px rgba(250,204,21,0.2); } 50% { box-shadow: 0 0 14px rgba(250,204,21,0.45); } }
+/* === Figure Block === */
+.figure-block { margin: 0.75rem 0; text-align: center; }
+.figure-block img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow-sm); background: #fff; padding: 0.5rem; }
+.figure-missing { margin: 0.5rem 0; padding: 0.6rem 1rem; background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1px solid #fcd34d; border-left: 4px solid #f59e0b; border-radius: 10px; color: #92400e; font-size: 0.85rem; font-weight: 500; }
+.figure-missing::before { content: '\\1F5BC\\FE0F '; }
+html.dark .figure-block img { background: #1e293b; border-color: #334155; }
+html.dark .figure-missing { background: linear-gradient(135deg, #422006, #451a03); border-color: #92400e; border-left-color: #d97706; color: #fbbf24; }
 /* === Passage Fragment === */
 .mc-question[data-subtype="passage_fragment"] { border-left: 3px solid #60a5fa; background: #eff6ff; padding: 0.5rem 0.75rem 0.5rem 1rem; border-radius: 8px; margin-bottom: 0.3rem; position: relative; }
 .mc-question[data-subtype="passage_fragment"]::before { content: '\\01F4D6 閱讀段落'; display: inline-block; font-size: 0.75rem; color: #2563eb; background: #dbeafe; padding: 0.1rem 0.5rem; border-radius: 6px; margin-right: 0.5rem; vertical-align: middle; }

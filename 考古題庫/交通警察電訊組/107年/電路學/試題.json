@@ -17,31 +17,61 @@
       "number": "一",
       "type": "essay",
       "stem": "如圖①之直流電路,請應用戴維寧定理(Thevenin’s theorem),試求 a 與 b 端點之間\n之戴維寧等效電路?(20 分)",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/107_電路學_q一_5273ca24.png",
+          "alt": "107年 電路學 第一題圖表"
+        }
+      ]
     },
     {
       "number": "二",
       "type": "essay",
       "stem": "如圖②之雙埠電路,其傳輸參數(transmission parameter, T)矩陣定義如下,試求負\n載電阻 10 Ω 所消耗之功率?(20 分)\n[符號] [符號] 5 10 Ω [符號]\n[符號] [符號] [符號]\n[符號] [符號] [符號] [符號][符號]][符號] [符號]=[符號] [符號][符號] [符號]\n[符號] [符號][符號] 0.4 S 1 [符號][符號]\n[符號] [符號] [符號]",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/107_電路學_q二_e8029fe4.png",
+          "alt": "107年 電路學 第二題圖表"
+        }
+      ]
     },
     {
       "number": "三",
       "type": "essay",
       "stem": "如圖③之一階電路,開關於 t < 0 維持打開,並使電路達穩定狀態;開關於 t = 0 瞬間\n閉合,試求電流 i(t > 0)=?(20 分)\ni(t)\n6Ω 3 Ω",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/107_電路學_q三_1f5bd787.png",
+          "alt": "107年 電路學 第三題圖表"
+        }
+      ]
     },
     {
       "number": "四",
       "type": "essay",
       "stem": "如圖④之交流電路包含一理想運算放大器(operational amplifier),試求輸出電壓 V =?\no\n(20 分) 10kΩ\n-j2 kΩ 5 kΩ\nV\no\n1∠30°V -j kΩ\n圖④",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/107_電路學_q四_28ec1b64.png",
+          "alt": "107年 電路學 第四題圖表"
+        }
+      ]
     },
     {
       "number": "五",
       "type": "essay",
       "stem": "如圖⑤所示為包含一理想變壓器(transformer)之交流電路,試求負載電阻 R 可獲\nL\n得之最大輸出功率?(20 分)",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/107_電路學_q五_95ffab14.png",
+          "alt": "107年 電路學 第五題圖表"
+        }
+      ]
     }
   ],
   "year": 107,

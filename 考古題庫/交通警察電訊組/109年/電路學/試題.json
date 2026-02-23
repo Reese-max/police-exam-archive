@@ -18,19 +18,37 @@
       "number": "一",
       "type": "essay",
       "stem": "某電路及其等效電路圖如下圖所示,試計算:\n①該電路圖(a)各分支之 v 、v 、i 、v 、v 及 i 之值。(15 分)",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/109_電路學_q一_60cad732.png",
+          "alt": "109年 電路學 第一題圖表"
+        }
+      ]
     },
     {
       "number": "二",
       "type": "essay",
       "stem": "某理想運算放大器電路如下圖,若輸入端之 v =3 V 且 v =1 V,請計算\na b\ni 、i 、i 以及 v 、v 、v 。(20 分)",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/109_電路學_q二_165c99e8.png",
+          "alt": "109年 電路學 第二題圖表"
+        }
+      ]
     },
     {
       "number": "三",
       "type": "essay",
       "stem": "一雙埠電路如下圖所示,請以雙埠網路方式計算出流經 4 負載電阻之\n電流值為多少?(20 分)\ni i",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/109_電路學_q三_a2d1a881.png",
+          "alt": "109年 電路學 第三題圖表"
+        }
+      ]
     },
     {
       "number": "四",

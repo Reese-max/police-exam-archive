@@ -18,7 +18,13 @@
       "number": "一",
       "type": "essay",
       "stem": "如圖一所示電路,試求理想電壓源 V 看到的等效電阻值 R 與電路中 31-Ω\ns eq\n電阻器所消耗的功率分別為何?(20 分)\nR\neq",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/111_電路學_q一_586673da.png",
+          "alt": "111年 電路學 第一題圖表"
+        }
+      ]
     },
     {
       "number": "二",
@@ -36,13 +42,25 @@
       "number": "四",
       "type": "essay",
       "stem": "如圖四所示電路,試求負載 Z 可獲得之最大平均功率為何?並求此時之\nL\nZ 值為何?(20 分)\nL",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/111_電路學_q四_2e991a77.png",
+          "alt": "111年 電路學 第四題圖表"
+        }
+      ]
     },
     {
       "number": "五",
       "type": "essay",
       "stem": "如圖五所示電路,試求電路中電壓源v (t)所提供的平均功率及 50-Ω 電\ns\n阻所消耗的平均功率分別為何?(20 分)\n10Ω",
-      "section": null
+      "section": null,
+      "figures": [
+        {
+          "src": "images/111_電路學_q五_ce1a7131.png",
+          "alt": "111年 電路學 第五題圖表"
+        }
+      ]
     }
   ],
   "year": 111,

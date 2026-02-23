@@ -58,6 +58,9 @@ htmlcov_old/
 *.jpeg
 *.jpg
 
+# 允許考古題網站的圖片
+!考古題網站/**/images/*.png
+
 # Logs
 *.log
 
