@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "fix_time": "2026-02-23T07:02:26.899234",
+    "dry_run": false,
+    "files_scanned": 916,
+    "files_modified": 1,
+    "total_fixes": 1
+  },
+  "fixes_by_type": {
+    "broken_word": 1
+  },
+  "fixes_by_file": {
+    "犯罪防治預防組/114年/犯罪分析/試題.json": 1
+  },
+  "all_changes": [
+    {
+      "file": "犯罪防治預防組/114年/犯罪分析/試題.json",
+      "location": "Q一.stem",
+      "type": "broken_word",
+      "old": "MixedMethods",
+      "new": "Mixed Methods"
+    }
+  ]
+}

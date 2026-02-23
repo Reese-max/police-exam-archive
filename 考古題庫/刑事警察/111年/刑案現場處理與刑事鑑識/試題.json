@@ -48,7 +48,7 @@
     {
       "number": 2,
       "type": "choice",
-      "stem": "影像光譜比對儀(Video Spectral Comparator;VSC)可用以鑑識遭竄改之圖文資料,關於該儀器之光 源選擇及顯像之敘述:1可選擇紅外線反射光(Infra red Reflect ance)光源 2可選擇紅外線冷光 (Infra red Luminescence)光源 3可選擇紫外線(Ultravio let light)光源 4可選用適當濾鏡,以紅 外線感光攝影機顯像 5可選擇適當濾鏡,以紫外線感光攝影機顯像,下列何者正確?",
+      "stem": "影像光譜比對儀(Video Spectral Comparator;VSC)可用以鑑識遭竄改之圖文資料,關於該儀器之光 源選擇及顯像之敘述:1可選擇紅外線反射光(Infra red Reflectance)光源 2可選擇紅外線冷光 (Infra red Luminescence)光源 3可選擇紫外線(Ultravio let light)光源 4可選用適當濾鏡,以紅 外線感光攝影機顯像 5可選擇適當濾鏡,以紫外線感光攝影機顯像,下列何者正確?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -261,7 +261,7 @@
     {
       "number": 18,
       "type": "choice",
-      "stem": "關於物證分析之學理敘述,下列何者正確?1「回退效應(drawback effect)」:近距離射擊時, 被射擊者之血液反濺進入槍口內之情況 2「遮障效應(mask effect)」:使用高能可見光線照 射物證,其產生之螢光被該高能可見光蓋掉之情形 3「CSI效應(effect)」:犯罪題材之影視 節目對於鑑識科學功效之描繪過分誇大而造成公眾之認知錯誤 4「個異性原則(principle of individual ity)」:物物皆有所不同,分辨不出兩物之間的差異,可確認為係相同來源",
+      "stem": "關於物證分析之學理敘述,下列何者正確?1「回退效應(drawback effect)」:近距離射擊時, 被射擊者之血液反濺進入槍口內之情況 2「遮障效應(mask effect)」:使用高能可見光線照 射物證,其產生之螢光被該高能可見光蓋掉之情形 3「CSI效應(effect)」:犯罪題材之影視 節目對於鑑識科學功效之描繪過分誇大而造成公眾之認知錯誤 4「個異性原則(principle of individuality)」:物物皆有所不同,分辨不出兩物之間的差異,可確認為係相同來源",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {

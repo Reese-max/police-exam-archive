@@ -685,7 +685,7 @@
         "A": "detection",
         "B": "deception",
         "C": "ban ishment",
-        "D": "commit ment"
+        "D": "commitment"
       }
     },
     {
@@ -761,7 +761,7 @@
       "answer": "A",
       "options": {
         "A": "inspection",
-        "B": "main ten ance",
+        "B": "maintenance",
         "C": "repair",
         "D": "collision"
       }
@@ -808,7 +808,7 @@
     {
       "number": 60,
       "type": "choice",
-      "stem": "The search and rescue operation will be_______ due to the disappear ance ofdensefog.",
+      "stem": "The search and rescue operation will be_______ due to the disappearance ofdensefog.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {

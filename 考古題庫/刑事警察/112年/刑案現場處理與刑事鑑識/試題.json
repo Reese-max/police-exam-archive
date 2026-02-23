@@ -119,7 +119,7 @@
       "options": {
         "A": "熱解氣相層析法(Pyrolysis-gas chromatography)藉由裂解產物之層析結果來鑑析該高分子的化 學組成與結構",
         "B": "紅外線光譜法(Infr are dspectros copy)分析高分子聚合物與顏料成分之方法",
-        "C": "顯微分光光譜法(Microspectropho tom ery)分析表面或橫切面各漆顏色,提供可見光光譜和顏 色色彩座標資料",
+        "C": "顯微分光光譜法(Microspectrophotometry)分析表面或橫切面各漆顏色,提供可見光光譜和顏 色色彩座標資料",
         "D": "超微切片技術(Ultra-microtomy)可提供每一漆層之顏料及其分佈鑑定,樣品經浸泡丙酮後, 進行有機成分分析"
       }
     },
@@ -341,7 +341,7 @@
         "A": "在血跡型態的分析中,消失的血跡型態與出現的血跡型態是同等重要",
         "B": "拋甩(Cast-off)的血跡型態可研判對於血液來源揮擊的次數",
         "C": "現場的血灘(Poolingof blood)可以提供血液流出的量與受傷種類的資訊",
-        "D": "在高速度撞擊(例如:子彈等)的血液噴濺痕中,只有前噴(Forward spatter)血跡有散射效應 (Dis per sion effects),而後噴(Back spatter)血跡則無散射效應"
+        "D": "在高速度撞擊(例如:子彈等)的血液噴濺痕中,只有前噴(Forward spatter)血跡有散射效應 (Dispersion effects),而後噴(Back spatter)血跡則無散射效應"
       }
     },
     {

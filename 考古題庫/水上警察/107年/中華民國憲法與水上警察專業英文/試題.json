@@ -612,7 +612,7 @@
       "options": {
         "A": "compensations",
         "B": "patterns",
-        "C": "establish ments",
+        "C": "establishments",
         "D": "amateurs"
       }
     },
@@ -658,7 +658,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "The CGA works with experts and special ists in marine science, the agency’s work process, and raises public awareness for marine conservation and sustainability by exploiting the power of social media.",
+      "stem": "The CGA works with experts and specialists in marine science, the agency’s work process, and raises public awareness for marine conservation and sustainability by exploiting the power of social media.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {

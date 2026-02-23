@@ -164,7 +164,7 @@
     {
       "number": 11,
       "type": "choice",
-      "stem": "目擊者指認之正確性受到諸多因素所影響,下列何者屬於學者 Wells(1978)所分類之「系統變 數」(system vari able)?",
+      "stem": "目擊者指認之正確性受到諸多因素所影響,下列何者屬於學者 Wells(1978)所分類之「系統變 數」(system variable)?",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -222,7 +222,7 @@
       "options": {
         "A": "區域比對法(Zone Comparison Technique)",
         "B": "探索測試法(Exploratory Test)",
-        "C": "緊張高點法(Peakof Ten sion Test)",
+        "C": "緊張高點法(Peakof Tension Test)",
         "D": "有關無關法(Relevant & Irrelevant Technique)"
       }
     },
