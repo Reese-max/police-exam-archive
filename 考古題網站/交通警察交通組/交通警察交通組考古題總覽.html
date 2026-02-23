@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap"></noscript>
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -8319,7 +8320,7 @@
 <div class="exam-note">②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。</div>
 <div class="exam-note">③本科目除專門名詞或數理公式外，應使用本國文字作答。</div>
 <div class="essay-question">一、某路段調查車輛速度如下所示,<br>（以下為車輛速度頻率分配表，因 PDF 表格無法提取而缺失。請參閱考選部原始試題 PDF。）</div>
-<div class="essay-question">二、請以指數分配的隨機變數和卜瓦松(Poisson)分配的隨機變數,和兩者平均數之間的關係,分別以下述兩應用事件說明之(本題不必計算,只要論述):(每小題 10 分,共 20 分)<br>①車禍事件。<br>②車輛進入停車場事件。[符號]<br>(附註:指數分配之機率函數為 P[符號][符號][符號] = [符號][符號][符號]/[符號],其中[符號] &gt; 0)[符號][符號][符號]exp ([符號][符號])<br>(附註:卜瓦松分配之機率函數為P[符號][符號][符號] = ,其中[符號]=0,1,2....[符號]!且 0&lt;λ&lt;∞)</div>
+<div class="essay-question math-content">二、請以指數分配的隨機變數和卜瓦松(Poisson)分配的隨機變數,和兩者平均數之間的關係,分別以下述兩應用事件說明之(本題不必計算,只要論述):(每小題 10 分,共 20 分)<br>①車禍事件。<br>②車輛進入停車場事件。<br><br>(附註:指數分配之機率密度函數為 $f(x) = \lambda e^{-\lambda x}$,其中 $\lambda &gt; 0$)<br>(附註:卜瓦松分配之機率函數為 $P(X = k) = \dfrac{\lambda^k e^{-\lambda}}{k!}$,其中 $k = 0, 1, 2, \ldots$ 且 $0 &lt; \lambda &lt; \infty$)</div>
 <div class="essay-question">三、想了解汽車使用的平均年限,對 30 位成年駕駛者調查,汽車使用平均年限為 5.6 年,假設母體標準差是 0.8 年。請問:(每小題 5 分,共 15 分)<br>①最好的母體汽車使用平均值為何?<br>②在 95%信賴區間,母體汽車使用平均值為何?<br>③在 99%信賴區間,母體汽車使用平均值為何?</div>
 <div class="essay-question">四、路口 1 的右轉車流量(X)和路口 2 的車流量(Y),調查資料如下:<br>(每小題 10 分,共 40 分)X : 9、 3、 7、 4、 6、 8、 3、 5、 8、 6Y :22、 9、22、12、14、24、 5、 9、18、16<br>①請計算 X 和 Y 的相關係數。<br>②請計算簡單直線回歸 Y=b + b X。</div>
 
@@ -11299,5 +11300,8 @@
 </main>
 <script>const SUBJECT_KEYS=["中華民國憲法與警察專業英文", "交通工程與管制", "交通統計與分析", "交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)", "國文(作文、公文與測驗)", "國文(作文與測驗)", "警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)", "警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)"];</script>
 <script src="../js/app.js" defer></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
 </body>
 </html>

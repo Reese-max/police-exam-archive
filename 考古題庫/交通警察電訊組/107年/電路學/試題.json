@@ -28,7 +28,8 @@
     {
       "number": "二",
       "type": "essay",
-      "stem": "如圖②之雙埠電路,其傳輸參數(transmission parameter, T)矩陣定義如下,試求負\n載電阻 10 Ω 所消耗之功率?(20 分)\n[符號] [符號] 5 10 Ω [符號]\n[符號] [符號] [符號]\n[符號] [符號] [符號] [符號][符號]][符號] [符號]=[符號] [符號][符號] [符號]\n[符號] [符號][符號] 0.4 S 1 [符號][符號]\n[符號] [符號] [符號]",
+      "stem": "如圖②之雙埠電路,其傳輸參數(transmission parameter, T)矩陣定義如下,試求負載電阻 10 Ω 所消耗之功率?(20 分)\nT = [A B; C D] = [5, 10 Ω; 0.4 S, 1]",
+      "stem_latex": "如圖②之雙埠電路,其傳輸參數(transmission parameter, T)矩陣定義如下,試求負載電阻 $10\\,\\Omega$ 所消耗之功率?(20 分)\n\n$$\\mathbf{T} = \\begin{bmatrix} A & B \\\\ C & D \\end{bmatrix} = \\begin{bmatrix} 5 & 10\\,\\Omega \\\\ 0.4\\,\\text{S} & 1 \\end{bmatrix}$$",
       "section": null,
       "figures": [
         {
@@ -40,7 +41,8 @@
     {
       "number": "三",
       "type": "essay",
-      "stem": "如圖③之一階電路,開關於 t < 0 維持打開,並使電路達穩定狀態;開關於 t = 0 瞬間\n閉合,試求電流 i(t > 0)=?(20 分)\ni(t)\n6Ω 3 Ω",
+      "stem": "如圖③之一階電路,開關於 t < 0 維持打開,並使電路達穩定狀態;開關於 t = 0 瞬間閉合,試求電流 i(t > 0) = ?(20 分)",
+      "stem_latex": "如圖③之一階電路,開關於 $t < 0$ 維持打開,並使電路達穩定狀態;開關於 $t = 0$ 瞬間閉合,試求電流 $i(t > 0) = $ ?(20 分)",
       "section": null,
       "figures": [
         {
@@ -52,7 +54,8 @@
     {
       "number": "四",
       "type": "essay",
-      "stem": "如圖④之交流電路包含一理想運算放大器(operational amplifier),試求輸出電壓 V =?\no\n(20 分) 10kΩ\n-j2 kΩ 5 kΩ\nV\no\n1∠30°V -j kΩ\n圖④",
+      "stem": "如圖④之交流電路包含一理想運算放大器(operational amplifier),試求輸出電壓 Vo = ?(20 分)",
+      "stem_latex": "如圖④之交流電路包含一理想運算放大器(operational amplifier),試求輸出電壓 $V_o = $ ?(20 分)",
       "section": null,
       "figures": [
         {
@@ -64,7 +67,8 @@
     {
       "number": "五",
       "type": "essay",
-      "stem": "如圖⑤所示為包含一理想變壓器(transformer)之交流電路,試求負載電阻 R 可獲\nL\n得之最大輸出功率?(20 分)",
+      "stem": "如圖⑤所示為包含一理想變壓器(transformer)之交流電路,試求負載電阻 RL 可獲得之最大輸出功率?(20 分)",
+      "stem_latex": "如圖⑤所示為包含一理想變壓器(transformer)之交流電路,試求負載電阻 $R_L$ 可獲得之最大輸出功率?(20 分)",
       "section": null,
       "figures": [
         {

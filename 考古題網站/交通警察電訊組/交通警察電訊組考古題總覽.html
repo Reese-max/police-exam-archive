@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap"></noscript>
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -1327,11 +1328,11 @@
 <div class="exam-note">※注意：①禁止使用電子計算器。</div>
 <div class="exam-note">②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。</div>
 <div class="exam-note">③本科目得以本國文字或英文作答。</div>
-<div class="essay-question">一、有一個頻寬(bandwidth)為 W 的基頻訊號(baseband signal) x(t),我們準備對它做調變(modulation)。在此我們考慮兩種不同的調變方 式 , 他 們 所 對 應 的 訊 號 分 別 為 s (t) A x(t)cos(t) 以 及……</div>
-<div class="essay-question">二、有一個線性非時變(linear time-invariant)的系統,我們將它稱為S,其脈衝1, t 0響應(impulse response)為h(t) etu(t),其中的u(t)為u(t)0, otherwise<br><br>①請找出 S 的轉換函數(transfer function)。(5 分)<br>②有一個訊號x(t) u(t)u(t 1),我們將它灌入 S 之中;請找出對應的輸出(output)。(10 分)</div>
-<div class="essay-question">三、我們考慮一個數位通訊系統,其傳送端傳送的訊號,在每一個訊符時間(symbol duration)內有四種可能,分別為s (t) cos(t) sin(t)、s (t) cos(t)sin(t)、……</div>
-<div class="essay-question">四、在通訊網路中以封包(packet)形式傳送資料時,封包之中會帶有循環冗餘校驗碼(cyclic redundancy check,簡稱 CRC)的部分;本題目就以一個簡單的例子來探討 CRC 的計算及使用。假設我們的原始資料長度為 8個位元,我們使用生成多項式(generator polynomial)x4 x3 x2 x 1<br>(可以對應成位元串表示法:[]),經過計算以後產生 4 個校驗位元<br>(parity bits),形成一個總共有8 4 12個位元長的封包。<br>①在傳送端,假設我們有一個資料位元串為 (可以對應成多項式表示法:x7 x6 x5 x2 1),請找出加上 CRC 之後的封包(共[11100101]有 12 個位元)。(5 分)<br>②假設我們在接收端收到了下面這個封包:[101101001001],我們是否應該將它判定成其中有錯誤?(請顯示推論或計算過程)(5 分)<br>③在本題目的場景設定之中,接收端經由 CRC 校驗判定封包沒有錯誤但其實卻非如此的情況是有可能發生的,其機率為何?(5 分)<br>④在使用 CRC 機制的時候會需要用到除法器。若是用電路來實作時,除法器可以用線性回饋移位暫存器(linear feedback shift register,簡稱 LFSR)來實現。針對本題目中的生成多項式(也就是g(x) x4 x3 x2 x 1),請畫出「除以g(x)」的 LFSR 除法器電路。<br>(5 分)</div>
-<div class="essay-question">五、在無線通訊之中,分集(diversity)是一個常用的技術,使用的場景是針對傳送端所送出的同一個訊號(例如:x),接收端收到了若干個互相獨立(或者至少是高度不相關(highlyuncorrelated))的不同版本的訊號(例如:y h x n 、y h x n 、...),各自經過了不同通道的訊號衰減……</div>
+<div class="essay-question math-content">一、有一個頻寬(bandwidth)為 $W$ 的基頻訊號(baseband signal) $x(t)$,我們準備對它做調變(modulation)。在此我們考慮兩種不同的調變方式,他們所對應的訊號分別為 $s_1(t) = [A + x(t)]\cos(\omega_c t)$ 以及 $s_2(t) = x(t)\cos(\omega_c t)$……</div>
+<div class="essay-question math-content">二、有一個線性非時變(linear time-invariant)的系統,我們將它稱為 $S$,其脈衝響應(impulse response)為 $h(t) = e^{-t}u(t)$,其中的 $u(t)$ 為<br>$$u(t) = \begin{cases} 1, &amp; t \geq 0 \\ 0, &amp; \text{otherwise} \end{cases}$$<br><br>①請找出 $S$ 的轉換函數(transfer function)。(5 分)<br>②有一個訊號 $x(t) = u(t) - u(t-1)$,我們將它灌入 $S$ 之中;請找出對應的輸出(output)。(10 分)</div>
+<div class="essay-question math-content">三、我們考慮一個數位通訊系統,其傳送端傳送的訊號,在每一個訊符時間(symbol duration)內有四種可能,分別為<br>$$s_1(t) = \cos(\omega_c t) + \sin(\omega_c t)$$<br>$$s_2(t) = \cos(\omega_c t) - \sin(\omega_c t)$$<br>$$s_3(t) = -\cos(\omega_c t) + \sin(\omega_c t)$$<br>$$s_4(t) = -\cos(\omega_c t) - \sin(\omega_c t)$$<br>……</div>
+<div class="essay-question math-content">四、在通訊網路中以封包(packet)形式傳送資料時,封包之中會帶有循環冗餘校驗碼(cyclic redundancy check,簡稱 CRC)的部分;本題目就以一個簡單的例子來探討 CRC 的計算及使用。假設我們的原始資料長度為 8 個位元,我們使用生成多項式(generator polynomial) $x^4 + x^3 + x^2 + x + 1$(可以對應成位元串表示法:$[11111]$),經過計算以後產生 4 個校驗位元(parity bits),形成一個總共有 $8 + 4 = 12$ 個位元長的封包。<br><br>①在傳送端,假設我們有一個資料位元串為 $[11100101]$(可以對應成多項式表示法:$x^7 + x^6 + x^5 + x^2 + 1$),請找出加上 CRC 之後的封包(共有 12 個位元)。(5 分)<br><br>②假設我們在接收端收到了下面這個封包:$[101101001001]$,我們是否應該將它判定成其中有錯誤?(請顯示推論或計算過程)(5 分)<br><br>③在本題目的場景設定之中,接收端經由 CRC 校驗判定封包沒有錯誤但其實卻非如此的情況是有可能發生的,其機率為何?(5 分)<br><br>④在使用 CRC 機制的時候會需要用到除法器。若是用電路來實作時,除法器可以用線性回饋移位暫存器(linear feedback shift register,簡稱 LFSR)來實現。針對本題目中的生成多項式(也就是 $g(x) = x^4 + x^3 + x^2 + x + 1$),請畫出「除以 $g(x)$」的 LFSR 除法器電路。(5 分)</div>
+<div class="essay-question math-content">五、在無線通訊之中,分集(diversity)是一個常用的技術,使用的場景是針對傳送端所送出的同一個訊號(例如:$x$),接收端收到了若干個互相獨立(或者至少是高度不相關(highly uncorrelated))的不同版本的訊號(例如:$y_1 = h_1 x + n_1$、$y_2 = h_2 x + n_2$、$\ldots$),各自經過了不同通道的訊號衰減……</div>
 
 </div>
 
@@ -1350,13 +1351,13 @@
 <div class="exam-note">※注意：①可以使用電子計算器。</div>
 <div class="exam-note">②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。</div>
 <div class="exam-note">③本科目除專門名詞或數理公式外，應使用本國文字作答。</div>
-<div class="essay-question">一、如圖一所示電路,試求理想電壓源 V 看到的等效電阻值 R 與電路中 31-Ωs eq電阻器所消耗的功率分別為何?(20 分)Req</div>
+<div class="essay-question math-content">一、如圖一所示電路,試求理想電壓源 $V_s$ 看到的等效電阻值 $R_{eq}$ 與電路中 $31\text{-}\Omega$ 電阻器所消耗的功率分別為何?(20 分)</div>
 <div class="figure-block"><img src="images/111_電路學_q一_586673da.png" alt="111年 電路學 第一題圖表" loading="lazy"></div>
-<div class="essay-question">二、圖二所示電路中的雙埠網路阻抗參數為: [z] ,試求 I、I、1 24 12<br><br>V 及 V 。(20 分)</div>
-<div class="essay-question">三、圖三所示電路中的開關 S 在t 0時被打開前電路已達穩態。試求當t 0時i (t)及v (t)之表示式分別為何?(20 分)o o20Ω 50Ω 3Ω50V 75Ω i o (t) 0.02H v o (t) 60Ω 15Ω圖三</div>
-<div class="essay-question">四、如圖四所示電路,試求負載 Z 可獲得之最大平均功率為何?並求此時之LZ 值為何?(20 分)L</div>
+<div class="essay-question math-content">二、圖二所示電路中的雙埠網路阻抗參數為: $$[z] = \begin{bmatrix} 4 &amp; 12 \\ 1 &amp; 2 \end{bmatrix}$$試求 $I_1$、$I_2$、$V_1$ 及 $V_2$。(20 分)</div>
+<div class="essay-question math-content">三、圖三所示電路中的開關 $S$ 在 $t &lt; 0$ 時被打開前電路已達穩態。試求當 $t \geq 0$ 時 $i_o(t)$ 及 $v_o(t)$ 之表示式分別為何?(20 分)</div>
+<div class="essay-question math-content">四、如圖四所示電路,試求負載 $Z_L$ 可獲得之最大平均功率為何?並求此時之 $Z_L$ 值為何?(20 分)</div>
 <div class="figure-block"><img src="images/111_電路學_q四_2e991a77.png" alt="111年 電路學 第四題圖表" loading="lazy"></div>
-<div class="essay-question">五、如圖五所示電路,試求電路中電壓源v (t)所提供的平均功率及 50-Ω 電s阻所消耗的平均功率分別為何?(20 分)10Ω</div>
+<div class="essay-question math-content">五、如圖五所示電路,試求電路中電壓源 $v_s(t)$ 所提供的平均功率及 $50\text{-}\Omega$ 電阻所消耗的平均功率分別為何?(20 分)</div>
 <div class="figure-block"><img src="images/111_電路學_q五_ce1a7131.png" alt="111年 電路學 第五題圖表" loading="lazy"></div>
 
 </div>
@@ -2592,11 +2593,11 @@
 <div class="exam-note">※注意：①可以使用電子計算器。</div>
 <div class="exam-note">②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。</div>
 <div class="exam-note">③本科目除專門名詞或數理公式外，應使用本國文字作答。</div>
-<div class="essay-question">一、相角調變系統其輸出訊號為st 100cos 2πf t 4sin2f tc mf 10 MHz , and f 1000 Hzc m<br>①若 st 為 PM 調變訊號,請問其調變參數 k 為何?(10 分)p<br>②若 st 為 FM 調變訊號,請問依據卡森法則(Carson’s rule),估算其傳輸所需之頻寬為何?(10 分)</div>
-<div class="essay-question">二、考慮一雙邊指數脈波expt, t 0<br><br>gt 1, t 0expt, t 0<br><br>①試求出此脈波之傅立葉轉換Gf =?(10 分)<br>②試求 g3t 之傅立葉轉換為何?(10 分)</div>
-<div class="essay-question">三、在離地表 40,000 公里的定軌道衛星系統中,假設使用 10 瓦的傳輸功率天線增益 G 30 dB ,地面接收站天線增益 G 43.5 dB,載波頻率t rf 4GHz ,此外會有額外 5dB 的系統損耗:c<br>①試求地面上接收端之接收功率為多少dBm?(8 分)<br>②若地面接收模組之等效雜訊溫度為 20K,地表大型接收天線之等效雜訊溫度為 50K,信號頻寬為 36 MHz,請計算此接收系統之雜訊功率為多少dBm?(6 分)<br>③請計算接收系統輸入端之訊號雜訊比C / N 為多少 dB ?(6 分)O[波茲曼常數k 1.381023 J / K 228.6 dBW / K / Hz〕</div>
-<div class="essay-question">四、使用差異調變(Delta Modulation, DM)來傳送語音信號,取樣速率為 64KHz,語音信號頻寬為 3.1 KHz,最大振幅 10 伏特:<br>①請問此 DM 系統傳送所需之最小頻寬為何?(6 分)<br>②為避免斜率超載失真,差異調變的間距大小(stepsize) 最小為多少?<br>(8 分)∆<br>③量化誤差的平均功率為何?(6 分)</div>
-<div class="essay-question">五、編碼率為 1/2 之迴旋編碼器架構(convolution code)如下圖所示,假設正反器之初始值為 0,如果輸入序列為 1001100(最後兩個位元 00 為訊息尾或沖積位元,用以回復正反器至零的初始狀態),請問:<br>①路徑一之輸出序列為何?(8 分)<br>②路徑二之輸出序列為何?(8 分)<br>③結合後之總輸出序列為何?(4 分)</div>
+<div class="essay-question math-content">一、相角調變系統其輸出訊號為<br>$$s(t) = 100\cos[2\pi f_c t + 4\sin(2\pi f_m t)]$$<br>$f_c = 10$ MHz, and $f_m = 1000$ Hz<br>①若 $s(t)$ 為 PM 調變訊號，請問其調變參數 $k_p$ 為何？（10 分）<br>②若 $s(t)$ 為 FM 調變訊號，請問依據卡森法則（Carson’s rule），估算其傳輸所需之頻寬為何？（10 分）</div>
+<div class="essay-question math-content">二、考慮一雙邊指數脈波<br>$$g(t) = \begin{cases} e^{-t}, &amp; t &gt; 0 \\ 1, &amp; t = 0 \\ e^{t}, &amp; t &lt; 0 \end{cases}$$<br>①試求出此脈波之傅立葉轉換 $G(f)$ = ？（10 分）<br>②試求 $g(3t)$ 之傅立葉轉換為何？（10 分）</div>
+<div class="essay-question math-content">三、在離地表 40,000 公里的定軌道衛星系統中，假設使用 10 瓦的傳輸功率，天線增益 $G_t = 30$ dB，地面接收站天線增益 $G_r = 43.5$ dB，載波頻率 $f_c = 4$ GHz，此外會有額外 5 dB 的系統損耗：<br>①試求地面上接收端之接收功率為多少 dBm？（8 分）<br>②若地面接收模組之等效雜訊溫度為 20K，地表大型接收天線之等效雜訊溫度為 50K，信號頻寬為 36 MHz，請計算此接收系統之雜訊功率為多少 dBm？（6 分）<br>③請計算接收系統輸入端之訊號雜訊比 $C/N_0$ 為多少 dB？（6 分）<br>［波茲曼常數 $k = 1.38 \times 10^{-23}$ J/K $= -228.6$ dBW/K/Hz］</div>
+<div class="essay-question math-content">四、使用差異調變（Delta Modulation, DM）來傳送語音信號，取樣速率為 64 KHz，語音信號頻寬為 3.1 KHz，最大振幅 10 伏特：<br>①請問此 DM 系統傳送所需之最小頻寬為何？（6 分）<br>②為避免斜率超載失真，差異調變的間距大小（stepsize）$\Delta$ 最小為多少？（8 分）<br>③量化誤差的平均功率為何？（6 分）</div>
+<div class="essay-question math-content">五、編碼率為 $1/2$ 之迴旋編碼器架構（convolution code）如下圖所示，假設正反器之初始值為 0，如果輸入序列為 1001100（最後兩個位元 00 為訊息尾或沖積位元，用以回復正反器至零的初始狀態），請問：<br>①路徑一之輸出序列為何？（8 分）<br>②路徑二之輸出序列為何？（8 分）<br>③結合後之總輸出序列為何？（4 分）</div>
 <div class="figure-block"><img src="images/110_通訊系統_q五_0b86e86c.png" alt="110年 通訊系統 第五題圖表" loading="lazy"></div>
 
 </div>
@@ -2616,15 +2617,15 @@
 <div class="exam-note">※注意：①可以使用電子計算器。</div>
 <div class="exam-note">②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。</div>
 <div class="exam-note">③本科目除專門名詞或數理公式外，應使用本國文字作答。</div>
-<div class="essay-question">一、如圖(1)所示之電路,請求① A-B 端點左邊網路之戴維寧等效電路(10 分)及諾頓等效電路;(5 分)②若將電路中之 5 A 電流源拿掉,請再重新求A-B 端點左邊網路之戴維寧等效電路。(5 分)</div>
+<div class="essay-question math-content">一、如圖(1)所示之電路，請求① A-B 端點左邊網路之戴維寧等效電路（10 分）及諾頓等效電路；（5 分）②若將電路中之 $5 \text{ A}$ 電流源拿掉，請再重新求 A-B 端點左邊網路之戴維寧等效電路。（5 分）</div>
 <div class="figure-block"><img src="images/110_電路學_q一_p2_4f3ca20d.png" alt="110年 電路學 第一題圖表 (試卷第2頁)" loading="lazy"></div>
-<div class="essay-question">二、如圖(2)所示電路,交流電壓源之有效值為 45 V,請求①穩態電流 i 值;<br>(10 分)②電阻 6 Ω 所消耗之功率P 。(10 分)6</div>
+<div class="essay-question math-content">二、如圖(2)所示電路，交流電壓源之有效值為 $45 \text{ V}$，請求①穩態電流 $i$ 值；（10 分）②電阻 $6 \ \Omega$ 所消耗之功率 $P_6$。（10 分）</div>
 <div class="figure-block"><img src="images/110_電路學_q二_p2_4f3ca20d.png" alt="110年 電路學 第二題圖表 (試卷第2頁)" loading="lazy"></div>
-<div class="essay-question">三、如圖(3)所示之Y 三相平衡系統中,其電源之相電壓有效值V 200V,P, rms若三相負載消耗之總功率為900W ,功率因數為 PF=0.6 落後,請求①線電流i 之有效值;(10 分)②負載每相之阻抗相量Z 值。(10 分)a Pv _ an + a i AaZP_ vbn+ b in b B ZPZPv _ cn+ c i C c</div>
+<div class="essay-question math-content">三、如圖(3)所示之 Y 三相平衡系統中，其電源之相電壓有效值 $V_{P,rms} = 200 \text{V}$，若三相負載消耗之總功率為 $900 \text{W}$，功率因數為 $PF = 0.6$ 落後，請求①線電流 $i_a$ 之有效值；（10 分）②負載每相之阻抗相量 $Z_P$ 值。（10 分）</div>
 <div class="figure-block"><img src="images/110_電路學_q三_p2_4f3ca20d.png" alt="110年 電路學 第三題圖表 (試卷第2頁)" loading="lazy"></div>
-<div class="essay-question">四、圖(3)如圖(4)所示之 RLC 串聯電路,若電感之初值電流 i(0) = 2 A,電容之初值電壓 v(0) = 6 V,請求①電容電壓 v(t)之 2 次微分方程式;(5 分)② v(t)之暫態響應;(5 分)③ v(t)之穩態響應;(8 分)④ i(t)之完全響應。(2 分)</div>
+<div class="essay-question math-content">四、如圖(4)所示之 RLC 串聯電路，若電感之初值電流 $i(0) = 2 \text{ A}$，電容之初值電壓 $v(0) = 6 \text{ V}$，請求①電容電壓 $v(t)$ 之 2 次微分方程式；（5 分）② $v(t)$ 之暫態響應；（5 分）③ $v(t)$ 之穩態響應；（8 分）④ $i(t)$ 之完全響應。（2 分）</div>
 <div class="figure-block"><img src="images/110_電路學_q四_p2_4f3ca20d.png" alt="110年 電路學 第四題圖表 (試卷第2頁)" loading="lazy"></div>
-<div class="essay-question">五、圖(4)如圖(5)所示之雙埠電路,請求①電路之 y 參數;(15 分)②在輸出埠 V兩端接一個 2 Ω 電阻時之網路轉移函數 V (s) / V (s)。(5 分)2 1I (s) 1F I (s) 1 2</div>
+<div class="essay-question math-content">五、如圖(5)所示之雙埠電路，請求①電路之 $y$ 參數；（15 分）②在輸出埠 $V_2$ 兩端接一個 $2 \ \Omega$ 電阻時之網路轉移函數 $V_2(s) / V_1(s)$。（5 分）</div>
 <div class="figure-block"><img src="images/110_電路學_q五_p2_4f3ca20d.png" alt="110年 電路學 第五題圖表 (試卷第2頁)" loading="lazy"></div>
 
 </div>
@@ -3860,11 +3861,11 @@
 <div class="exam-note">※注意：①可以使用電子計算器。</div>
 <div class="exam-note">②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。</div>
 <div class="exam-note">③本科目除專門名詞或數理公式外，應使用本國文字作答。</div>
-<div class="essay-question">一、考慮具有隨機相位的弦波信號,定義如下:x(t)=A cos(2f t+)其中 Ac和 f 為常數,為在(-π,π)間均勻分布的隨機變數,請求出下列函數:c<br>① x(t)的自相關函數。(10 分)<br>② x(t)的功率頻譜密度函數。(10 分)</div>
-<div class="essay-question">二、考慮一個平方律檢測器,其非線性特性為v (t) a v (t) a v2(t)</div>
-<div class="essay-question">三、通道容量估算是通訊系統的重要特性,請回答下列問題:<br>①在無失真的通道中可使用 Nyquist Bandwidth 來估算,使用二進制之資料傳輸,信號頻寬為 1 MHz,請問最大資料傳輸速率為何?(6 分)<br>②在有失真的系統中可用 Shannon 的通道容量來估算其最大傳輸速率,若使用二進制之資料傳輸,信號頻寬為 1MHz,訊號與雜訊比為 20dB,請問於此情況下其最大資料傳輸速率為何?(7 分)<br>③承子題②,若要將此系統的通道容量提升一倍,在不改變信號頻寬的前提下,請問此系統之訊雜比要提升幾倍?(7 分)</div>
-<div class="essay-question">四、一個類比信號經取樣與量化後,使用位階數目為 128,編碼為一個二進制的 PCM 調變信號,將一個同步脈衝加到每個編碼字樣的末端,傳送時此 PCM 系統採用一個具有增高餘弦頻譜的四進制 PAM 信號,經過頻寬為 13 kHz 的通道發送,此通道之下滾因數為 1。<br>①請問此信息通過該通道傳輸之速率為何?(8 分)<br>②此類比信息的取樣速率為何?(7 分)<br>③此類比信號之最高可能的頻率成分為多少?(5 分)</div>
-<div class="essay-question">五、①若使用頻率為100MHz 的載波來調變一個振幅為20V及頻率為100kHz的正弦波,假設此調變器的頻率敏感度為每伏特 25 kHz,請使用卡森法則估算此 FM 接收機調變信號的近似頻寬為何?(10 分)<br>②圖一為 AM 接收機混頻器之方塊圖,若輸入信號之頻寬為 10 kHz,且載波頻率為 0.535MHz 到 1.605 MHz 之間的任意值,欲使輸出之中頻為 0.455 MHz,請問本地震盪器之可調範圍為何?(10 分)Band-passs(t)filtercos(2 ft)l圖一</div>
+<div class="essay-question math-content">一、考慮具有隨機相位的弦波信號,定義如下:<br>$$x(t) = A \cos(2\pi f_c t + \theta)$$<br>其中 $A$ 和 $f_c$ 為常數,$\theta$ 為在 $(-\pi, \pi)$ 間均勻分布的隨機變數,請求出下列函數:<br>① $x(t)$ 的自相關函數。(10 分)<br>② $x(t)$ 的功率頻譜密度函數。(10 分)</div>
+<div class="essay-question math-content">二、考慮一個平方律檢測器,其非線性特性為<br>$$v_o(t) = a_1 v_i(t) + a_2 v_i^2(t)$$</div>
+<div class="essay-question math-content">三、通道容量估算是通訊系統的重要特性,請回答下列問題:<br>① 在無失真的通道中可使用 Nyquist Bandwidth 來估算,使用二進制之資料傳輸,信號頻寬為 $1$ MHz,請問最大資料傳輸速率為何?(6 分)<br>② 在有失真的系統中可用 Shannon 的通道容量來估算其最大傳輸速率,若使用二進制之資料傳輸,信號頻寬為 $1$ MHz,訊號與雜訊比為 $20$ dB,請問於此情況下其最大資料傳輸速率為何?(7 分)<br>③ 承子題②,若要將此系統的通道容量提升一倍,在不改變信號頻寬的前提下,請問此系統之訊雜比要提升幾倍?(7 分)</div>
+<div class="essay-question math-content">四、一個類比信號經取樣與量化後,使用位階數目為 $128$,編碼為一個二進制的 PCM 調變信號,將一個同步脈衝加到每個編碼字樣的末端,傳送時此 PCM 系統採用一個具有增高餘弦頻譜的四進制 PAM 信號,經過頻寬為 $13$ kHz 的通道發送,此通道之下滾因數為 $1$。<br>① 請問此信息通過該通道傳輸之速率為何?(8 分)<br>② 此類比信息的取樣速率為何?(7 分)<br>③ 此類比信號之最高可能的頻率成分為多少?(5 分)</div>
+<div class="essay-question math-content">五、① 若使用頻率為 $100$ MHz 的載波來調變一個振幅為 $20$ V 及頻率為 $100$ kHz 的正弦波,假設此調變器的頻率敏感度為每伏特 $25$ kHz,請使用卡森法則估算此 FM 接收機調變信號的近似頻寬為何?(10 分)<br>② 圖一為 AM 接收機混頻器之方塊圖,若輸入信號之頻寬為 $10$ kHz,且載波頻率為 $0.535$ MHz 到 $1.605$ MHz 之間的任意值,欲使輸出之中頻為 $0.455$ MHz,請問本地震盪器之可調範圍為何?(10 分)<br>[圖一:$s(t)$ → Band-pass filter → 輸出;本地振盪器 $\cos(2\pi f_l t)$ 輸入至混頻器]</div>
 
 </div>
 
@@ -3883,14 +3884,14 @@
 <div class="exam-note">※注意：①可以使用電子計算器。</div>
 <div class="exam-note">②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。</div>
 <div class="exam-note">③本科目除專門名詞或數理公式外，應使用本國文字作答。</div>
-<div class="essay-question">一、某電路及其等效電路圖如下圖所示,試計算:<br>①該電路圖(a)各分支之 v 、v 、i 、v 、v 及 i 之值。(15 分)</div>
+<div class="essay-question math-content">一、某電路及其等效電路圖如下圖所示,試計算:<br>①該電路圖(a)各分支之 $v_1$、$v_2$、$i_1$、$v_3$、$v_4$ 及 $i_2$ 之值。(15 分)</div>
 <div class="figure-block"><img src="images/109_電路學_q一_60cad732.png" alt="109年 電路學 第一題圖表" loading="lazy"></div>
-<div class="essay-question">二、某理想運算放大器電路如下圖,若輸入端之 v =3 V 且 v =1 V,請計算a bi 、i 、i 以及 v 、v 、v 。(20 分)</div>
+<div class="essay-question math-content">二、某理想運算放大器電路如下圖,若輸入端之 $v_a = 3\text{ V}$ 且 $v_b = 1\text{ V}$,請計算 $i_1$、$i_2$、$i_3$ 以及 $v_1$、$v_2$、$v_o$。(20 分)</div>
 <div class="figure-block"><img src="images/109_電路學_q二_165c99e8.png" alt="109年 電路學 第二題圖表" loading="lazy"></div>
-<div class="essay-question">三、一雙埠電路如下圖所示,請以雙埠網路方式計算出流經 4 負載電阻之電流值為多少?(20 分)i i</div>
+<div class="essay-question math-content">三、一雙埠電路如下圖所示,請以雙埠網路方式計算出流經 $4\,\Omega$ 負載電阻之電流值為多少?(20 分)</div>
 <div class="figure-block"><img src="images/109_電路學_q三_a2d1a881.png" alt="109年 電路學 第三題圖表" loading="lazy"></div>
-<div class="essay-question">四、下示電阻電容電感之電路圖在 t &lt;0 時,電路的開關 S 保持為閉合,且電路已達穩態。當 t = 0 時,開關打開,試求在 t &gt; 0 時,請計算該電路中之電容器兩端的電壓值。(20 分)</div>
-<div class="essay-question">五、以下電路為史密特(Schmitt)觸發電路,請說明該電路之功能及輸入與輸出訊號之運作關係。該電路中 R 及 C 之功用為何?(10 分)E 1+VccCR 1 R</div>
+<div class="essay-question math-content">四、下示電阻電容電感之電路圖在 $t &lt; 0$ 時,電路的開關 $S$ 保持為閉合,且電路已達穩態。當 $t = 0$ 時,開關打開,試求在 $t &gt; 0$ 時,請計算該電路中之電容器兩端的電壓值。(20 分)</div>
+<div class="essay-question math-content">五、以下電路為史密特(Schmitt)觸發電路,請說明該電路之功能及輸入與輸出訊號之運作關係。該電路中 $R$ 及 $C$ 之功用為何?(10 分)</div>
 
 </div>
 
@@ -5025,11 +5026,11 @@
 <div class="exam-note">※注意： ①禁止使用電子計算器。</div>
 <div class="exam-note">②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。</div>
 <div class="exam-note">③本科目除專門名詞或數理公式外，應使用本國文字作答。</div>
-<div class="essay-question">一、考慮一雙旁帶載波抑制(DSB-SC)系統,若發射端之訊息訊號為 m(t)= cos(2000 t),載波訊號為 c(t)=2×cos(2×5πt),發射之調變訊號為 s(t)。<br>①求發射訊號 s(t)之功率 Ps,並繪出 s(t)之頻譜 S(f),其中 f 之單位為 Hz。(10 分)<br>②令接收端之輸入為 x(t) = s(t) + w(t),其中 w(t)為 AWGN 雜訊,功率頻譜密度為N /2 = 10 -6 W/Hz,繪出同調接收機模型並求其輸出訊雜比(dB)。(10 分)</div>
-<div class="essay-question">二、商用 FM 廣播電台之中心頻率 f 一般位於 88~108 MHz 之間:cΔ<br>①若訊息訊號頻寬為 W=15 kHz, FM 調變器之最大頻率偏移量為 f=75kHz,試用卡森法則(Carson’s rule)求一 FM 廣播電台之頻寬需求 B 。(5 分)T<br>②請設計及繪出一中頻頻率為 10.7 MHz 之超外差接收機方塊圖,並計算其本地振盪器之頻率範圍。(10 分)</div>
-<div class="essay-question">三、考慮一用來傳送多路語音之 TDM-PCM 系統,其訊框(signal frame)規格如下:每個訊框起始處為一段 10-bit 之同步序文(preamble),之後為 20 路語音時槽(time slot)之位元資料,每路語音之取樣速率為 f =10 ksps,並採用 12-bit 之均勻量化器(uniformsquantizer)。<br>①繪出系統發射端方塊圖及其訊框結構圖,並求此 TDM-PCM 系統之位元速率。<br>(10 分)<br>②若量化器位元數增加至 16 位元,則接收端輸出訊雜比可提升多少 dB?(5 分)</div>
-<div class="essay-question">四、有一同樣可能(equally likely)之隨機位元序列 b=[b b b ...],採用二元振幅調變</div>
-<div class="essay-question">五、試設計一格雷編碼(Gray-coded)之 QPSK 系統,設載波頻率為 f ,發射端帶通訊號cs(t) 的平均功率為 P ,位元速率為 R =1/T , AWGN 通道之功率頻譜密度為 N /2。s b b 0<br>①繪出此系統之 bit-symbol 對映星座圖、發射機方塊圖及 s(t)之功率頻譜密度圖。<br>(10 分)<br>②在 AWGN 通道下,繪出 QPSK 接收機之方塊圖與寫出對應的接收機決策法則,並求符碼錯誤率(SER)與位元錯誤率(BER)公式。(10 分)<br>③若通道變成瑞利衰減(Rayleigh fading)通道,寫出其位元錯誤率公式。(5 分)<br>④繪出 Pi/4-DQPSK 訊號之星座圖,並說明其實際應用時的優點。(5 分)</div>
+<div class="essay-question math-content">一、考慮一雙旁帶載波抑制(DSB-SC)系統,若發射端之訊息訊號為 $m(t) = \cos(2000\pi t)$,載波訊號為 $c(t) = 2\cos(2 \times 10^5 \pi t)$,發射之調變訊號為 $s(t)$。①求發射訊號 $s(t)$ 之功率 $P_s$,並繪出 $s(t)$ 之頻譜 $S(f)$,其中 $f$ 之單位為 Hz。(10 分)②令接收端之輸入為 $x(t) = s(t) + w(t)$,其中 $w(t)$ 為 AWGN 雜訊,功率頻譜密度為 $N_0/2 = 10^{-6}$ W/Hz,繪出同調接收機模型並求其輸出訊雜比(dB)。(10 分)</div>
+<div class="essay-question math-content">二、商用 FM 廣播電台之中心頻率 $f_c$ 一般位於 88~108 MHz 之間:①若訊息訊號頻寬為 $W = 15$ kHz,FM 調變器之最大頻率偏移量為 $\Delta f = 75$ kHz,試用卡森法則(Carson’s rule)求一 FM 廣播電台之頻寬需求 $B_T$。(5 分)②請設計及繪出一中頻頻率為 10.7 MHz 之超外差接收機方塊圖,並計算其本地振盪器之頻率範圍。(10 分)</div>
+<div class="essay-question math-content">三、考慮一用來傳送多路語音之 TDM-PCM 系統,其訊框(signal frame)規格如下:每個訊框起始處為一段 10-bit 之同步序文(preamble),之後為 20 路語音時槽(time slot)之位元資料,每路語音之取樣速率為 $f_s = 10$ ksps,並採用 12-bit 之均勻量化器(uniform quantizer)。①繪出系統發射端方塊圖及其訊框結構圖,並求此 TDM-PCM 系統之位元速率。(10 分)②若量化器位元數增加至 16 位元,則接收端輸出訊雜比可提升多少 dB?(5 分)</div>
+<div class="essay-question math-content">四、有一同樣可能(equally likely)之隨機位元序列 $b = [b_1\ b_2\ b_3\ \ldots]$,採用二元振幅調變</div>
+<div class="essay-question math-content">五、試設計一格雷編碼(Gray-coded)之 QPSK 系統,設載波頻率為 $f_c$,發射端帶通訊號 $s(t)$ 的平均功率為 $P_s$,位元速率為 $R_b = 1/T_b$,AWGN 通道之功率頻譜密度為 $N_0/2$。①繪出此系統之 bit-symbol 對映星座圖、發射機方塊圖及 $s(t)$ 之功率頻譜密度圖。(10 分)②在 AWGN 通道下,繪出 QPSK 接收機之方塊圖與寫出對應的接收機決策法則,並求符碼錯誤率(SER)與位元錯誤率(BER)公式。(10 分)③若通道變成瑞利衰減(Rayleigh fading)通道,寫出其位元錯誤率公式。(5 分)④繪出 $\pi/4$-DQPSK 訊號之星座圖,並說明其實際應用時的優點。(5 分)</div>
 
 </div>
 
@@ -5050,13 +5051,13 @@
 <div class="exam-note">③本科目除專門名詞或數理公式外，應使用本國文字作答。</div>
 <div class="essay-question">一、如圖①之直流電路,請應用戴維寧定理(Thevenin’s theorem),試求 a 與 b 端點之間之戴維寧等效電路?(20 分)</div>
 <div class="figure-block"><img src="images/107_電路學_q一_5273ca24.png" alt="107年 電路學 第一題圖表" loading="lazy"></div>
-<div class="essay-question">二、如圖②之雙埠電路,其傳輸參數(transmission parameter, T)矩陣定義如下,試求負載電阻 10 Ω 所消耗之功率?(20 分)[符號] [符號] 5 10 Ω [符號][符號] [符號] [符號][符號] [符號] [符號] [符號][符號]][符號] [符號]=[符號] [符號][符號] [符號][符號] [符號][符號] 0.4 S 1 [符號][符號][符號] [符號] [符號]</div>
+<div class="essay-question math-content">二、如圖②之雙埠電路,其傳輸參數(transmission parameter, T)矩陣定義如下,試求負載電阻 $10\,\Omega$ 所消耗之功率?(20 分)<br><br>$$\mathbf{T} = \begin{bmatrix} A &amp; B \\ C &amp; D \end{bmatrix} = \begin{bmatrix} 5 &amp; 10\,\Omega \\ 0.4\,\text{S} &amp; 1 \end{bmatrix}$$</div>
 <div class="figure-block"><img src="images/107_電路學_q二_e8029fe4.png" alt="107年 電路學 第二題圖表" loading="lazy"></div>
-<div class="essay-question">三、如圖③之一階電路,開關於 t &lt; 0 維持打開,並使電路達穩定狀態;開關於 t = 0 瞬間閉合,試求電流 i(t &gt; 0)=?(20 分)i(t)6Ω 3 Ω</div>
+<div class="essay-question math-content">三、如圖③之一階電路,開關於 $t &lt; 0$ 維持打開,並使電路達穩定狀態;開關於 $t = 0$ 瞬間閉合,試求電流 $i(t &gt; 0) = $ ?(20 分)</div>
 <div class="figure-block"><img src="images/107_電路學_q三_1f5bd787.png" alt="107年 電路學 第三題圖表" loading="lazy"></div>
-<div class="essay-question">四、如圖④之交流電路包含一理想運算放大器(operational amplifier),試求輸出電壓 V =?o<br>(20 分) 10kΩ-j2 kΩ 5 kΩVo1∠30°V -j kΩ圖④</div>
+<div class="essay-question math-content">四、如圖④之交流電路包含一理想運算放大器(operational amplifier),試求輸出電壓 $V_o = $ ?(20 分)</div>
 <div class="figure-block"><img src="images/107_電路學_q四_28ec1b64.png" alt="107年 電路學 第四題圖表" loading="lazy"></div>
-<div class="essay-question">五、如圖⑤所示為包含一理想變壓器(transformer)之交流電路,試求負載電阻 R 可獲L得之最大輸出功率?(20 分)</div>
+<div class="essay-question math-content">五、如圖⑤所示為包含一理想變壓器(transformer)之交流電路,試求負載電阻 $R_L$ 可獲得之最大輸出功率?(20 分)</div>
 <div class="figure-block"><img src="images/107_電路學_q五_95ffab14.png" alt="107年 電路學 第五題圖表" loading="lazy"></div>
 
 </div>
@@ -5070,5 +5071,8 @@
 </main>
 <script>const SUBJECT_KEYS=["中華民國憲法與警察專業英文", "國文(作文、公文與測驗)", "警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)", "警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)", "通訊犯罪偵查", "通訊系統", "電路學"];</script>
 <script src="../js/app.js" defer></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
 </body>
 </html>

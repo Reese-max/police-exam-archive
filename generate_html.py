@@ -507,6 +507,11 @@ html.dark .search-box::after { background: linear-gradient(to right, rgba(15,23,
 @supports (padding: env(safe-area-inset-bottom)) { @media (max-width: 768px) { .dark-toggle { bottom: calc(1.5rem + env(safe-area-inset-bottom)); } .back-to-top { bottom: calc(1.5rem + env(safe-area-inset-bottom)); } .hamburger { top: calc(1rem + env(safe-area-inset-top)); } .main { padding-bottom: env(safe-area-inset-bottom); } } }
 /* === Landscape === */
 @media (max-width: 768px) and (orientation: landscape) { .main { padding-top: 3rem; } .stats-bar { flex-wrap: nowrap; } .page-title { font-size: 1.2rem; margin-bottom: 0.25rem; } .page-subtitle { margin-bottom: 1rem; font-size: 0.85rem; } .year-heading { font-size: 1.05rem; margin-bottom: 1rem; } .year-section { margin-bottom: 2rem; } }
+/* === Math Content (KaTeX) === */
+.math-content { text-indent: 0; padding-left: 0; }
+.math-content .katex { font-size: 1em; }
+.math-content .katex-display { margin: 0.5em 0; overflow-x: auto; overflow-y: hidden; padding: 0.25em 0; }
+.math-content .katex-display > .katex { text-align: left; }
 """
 
 
@@ -1247,6 +1252,17 @@ def render_question_html(question):
     """將單一題目渲染為 HTML（含逐題選項與答案）"""
     q = question
     if q['type'] == 'essay':
+        # 優先使用 stem_latex（含 LaTeX 數學公式的版本）
+        if 'stem_latex' in q:
+            stem = escape_html(q['stem_latex'])
+            # escape_html 不會動到 $、\、{、}、_、^ 等 LaTeX 字元
+            # 瀏覽器會將 &lt; 等 HTML 實體還原後，KaTeX 再從 DOM 文字節點處理
+            # stem_latex 的換行是手動編排的，全部保留為 <br>
+            stem = stem.replace('\n\n', '<br><br>')
+            stem = stem.replace('\n', '<br>')
+            fig_html = _render_figure_placeholder(q)
+            return f'<div class="essay-question math-content">{escape_html(q["number"])}、{stem}</div>\n{fig_html}'
+
         stem = escape_html(q['stem'])
         # 保留段落分隔（連續換行）
         stem = stem.replace('\n\n', '\x00PARA\x00')
@@ -1454,6 +1470,7 @@ def generate_category_page(category_name, years_data, output_dir):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap"></noscript>
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script type="application/ld+json">{{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -1525,6 +1542,9 @@ def generate_category_page(category_name, years_data, output_dir):
 </main>
 {subject_keys_script}
 <script src="../js/app.js" defer></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'$',right:'$',display:false}}],throwOnError:false}});"></script>
 </body>
 </html>'''
 
