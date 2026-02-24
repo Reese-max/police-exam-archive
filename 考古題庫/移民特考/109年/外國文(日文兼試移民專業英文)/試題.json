@@ -54,7 +54,7 @@
     {
       "number": 2,
       "type": "choice",
-      "stem": "Most countries havemademucheffort in_____humantrafficking, andTaiwanis noexception.",
+      "stem": "Most countries havemademucheffort in_____humantrafficking, and Taiwanis noexception.",
       "section": "乙、測驗題",
       "options": {
         "A": "committing",
@@ -67,7 +67,7 @@
     {
       "number": 3,
       "type": "choice",
-      "stem": "Whenfillingouttheapplicationform,pleasewrite_____sotheclerkscanunderstandthewrittencontent.",
+      "stem": "Whenfillingouttheapplicationform, pleasewrite_____sotheclerkscanunderstandthewrittencontent.",
       "section": "乙、測驗題",
       "options": {
         "A": "practically",
@@ -93,7 +93,7 @@
     {
       "number": 5,
       "type": "choice",
-      "stem": "This entrypermit is only_____,validforthreemonths.",
+      "stem": "This entrypermit is only_____, validforthreemonths.",
       "section": "乙、測驗題",
       "options": {
         "A": "solitary",
@@ -106,7 +106,7 @@
     {
       "number": 6,
       "type": "choice",
-      "stem": "Accordingtoofficial statistics,immigrants _____almost 14%oftheU.S.population.",
+      "stem": "Accordingtoofficial statistics, immigrants _____almost 14%ofthe U.S.population.",
       "section": "乙、測驗題",
       "options": {
         "A": "contain",
@@ -132,7 +132,7 @@
     {
       "number": 8,
       "type": "choice",
-      "stem": "Successfully_____travelers canuse e-Gates inthemajorairports andseaports ofTaiwan.",
+      "stem": "Successfully_____travelers canuse e-Gates inthemajorairports andseaports of Taiwan.",
       "section": "乙、測驗題",
       "options": {
         "A": "enrolled",
@@ -145,7 +145,7 @@
     {
       "number": 9,
       "type": "choice",
-      "stem": "Theactionto_____anexistingARC must betakenwithin30days priortoits expirationdate.",
+      "stem": "Theactionto_____anexisting ARC must betakenwithin30days priortoits expirationdate.",
       "section": "乙、測驗題",
       "options": {
         "A": "exceed",
@@ -171,7 +171,7 @@
     {
       "number": 11,
       "type": "choice",
-      "stem": "Inthat community,thelocals andtheforeigners havea goodrelationshipwhichis _____supportive.",
+      "stem": "Inthat community, thelocals andtheforeigners havea goodrelationshipwhichis _____supportive.",
       "section": "乙、測驗題",
       "options": {
         "A": "only",
@@ -271,7 +271,7 @@
         "D": "Acceptingfailureis verydifficult."
       },
       "answer": "C",
-      "passage": "Failure: We all avoid it, and most of us fear it. However, without failure, progress would be impossible. Indeed, the word success comes from the Latin succedere, meaning “to come after.” And what does success usuallycome after? Failure. It seems that onecannot exist without theother. Accepting failure is not easy for many, though. We are often reluctant to admit failure because our professional reputations depend on success. However, things are slowly changing, notably in the field of business and science. In the past decade, for instance, some scientific journals-mostly in medicine and conservation-havepublishedreportsoffailedexperiments. Thebeliefisthatthesciencecommunitycanalso learnfrom “negative”results andthat this caneventuallyleadtopositiveoutcomes. In many ways, the business world already understands the value of negative results. To encourage entrepreneurship, the Netherlands-based ABN AMRO bank started an Institute of Brilliant Failures to learn more about what works and what doesn’t in banking. Similarly, Eli Lilly and Company, the pharmaceutical corporation, has “R&D outcome celebrations”-failure parties-to study data about drugs that don’t work. (Almost 90percent of all drugtrials fail,andthedrugs cannot besold.) In fact, one of the business world’s most famous failures eventuallybecame one of its biggest successes, inpartbecausetheproduct’smakerslearnedfromtheirmistakes. Intheearly1990s, Apple Corporationcreated ahand-helddevicecalledthe Apple Newton. Theproduct,thoughuniqueatthetime,wasexpensiveandheavy; moreover, some of its most important features didn’t work properly. Consequently, it became one of Apple’s biggestfailures,andin1998,thecompanystoppedsellingit. However, Apple’s CEO, Steve Jobs,believedthe product had potential and he began to explore ways of improving it. In time, this led to the creation of the i Phoneandthei Pad,twoofthecompany’s most successful products. The story of the Apple Newton can teach us another important lesson about failure. Not only should we trytolearnfromit;ifwewanttosucceed,wemustalsobepersistent. Though Applestoppedsellingthe Newton in 1998, the first i Phone wasn’t available until 2007. It took a lot of research and hard work to go from the Apple Newtontoi Phone, but intheend,theeffort paidoff. Ultimately, there is a lot we can learn by studying mistakes. Perhaps the most important lesson is that failureandsuccess aretwosides ofthesame coin. Onetrulycannot exist without theother.",
+      "passage": "Failure: We all avoid it, and most of us fear it. However, without failure, progress would be impossible. Indeed, the word success comes from the Latin succedere, meaning “to come after.” And what does success usuallycome after? Failure. It seems that onecannot exist without theother. Accepting failure is not easy for many, though. We are often reluctant to admit failure because our professional reputations depend on success. However, things are slowly changing, notably in the field of business and science. In the past decade, for instance, some scientific journals-mostly in medicine and conservation-havepublishedreportsoffailedexperiments. Thebeliefisthatthesciencecommunitycanalso learnfrom “negative”results andthat this caneventuallyleadtopositiveoutcomes. In many ways, the business world already understands the value of negative results. To encourage entrepreneurship, the Netherlands-based ABN AMRO bank started an Institute of Brilliant Failures to learn more about what works and what doesn’t in banking. Similarly, Eli Lilly and Company, the pharmaceutical corporation, has “R&D outcome celebrations”-failure parties-to study data about drugs that don’t work. (Almost 90percent of all drugtrials fail, andthedrugs cannot besold.) In fact, one of the business world’s most famous failures eventuallybecame one of its biggest successes, inpartbecausetheproduct’smakerslearnedfromtheirmistakes. Intheearly1990s, Apple Corporationcreated ahand-helddevicecalledthe Apple Newton. Theproduct, thoughuniqueatthetime, wasexpensiveandheavy; moreover, some of its most important features didn’t work properly. Consequently, it became one of Apple’s biggestfailures, andin1998, thecompanystoppedsellingit. However, Apple’s CEO, Steve Jobs, believedthe product had potential and he began to explore ways of improving it. In time, this led to the creation of the i Phoneandthei Pad, twoofthecompany’s most successful products. The story of the Apple Newton can teach us another important lesson about failure. Not only should we trytolearnfromit; ifwewanttosucceed, wemustalsobepersistent. Though Applestoppedsellingthe Newton in 1998, the first i Phone wasn’t available until 2007. It took a lot of research and hard work to go from the Apple Newtontoi Phone, but intheend, theeffort paidoff. Ultimately, there is a lot we can learn by studying mistakes. Perhaps the most important lesson is that failureandsuccess aretwosides ofthesame coin. Onetrulycannot exist without theother.",
       "passage_intro": "請回答下列第18題至第20題"
     },
     {
@@ -286,7 +286,7 @@
         "D": "becauseofthebeliefthat negativeresults canleadtosuccessful outcomes"
       },
       "answer": "D",
-      "passage": "Failure: We all avoid it, and most of us fear it. However, without failure, progress would be impossible. Indeed, the word success comes from the Latin succedere, meaning “to come after.” And what does success usuallycome after? Failure. It seems that onecannot exist without theother. Accepting failure is not easy for many, though. We are often reluctant to admit failure because our professional reputations depend on success. However, things are slowly changing, notably in the field of business and science. In the past decade, for instance, some scientific journals-mostly in medicine and conservation-havepublishedreportsoffailedexperiments. Thebeliefisthatthesciencecommunitycanalso learnfrom “negative”results andthat this caneventuallyleadtopositiveoutcomes. In many ways, the business world already understands the value of negative results. To encourage entrepreneurship, the Netherlands-based ABN AMRO bank started an Institute of Brilliant Failures to learn more about what works and what doesn’t in banking. Similarly, Eli Lilly and Company, the pharmaceutical corporation, has “R&D outcome celebrations”-failure parties-to study data about drugs that don’t work. (Almost 90percent of all drugtrials fail,andthedrugs cannot besold.) In fact, one of the business world’s most famous failures eventuallybecame one of its biggest successes, inpartbecausetheproduct’smakerslearnedfromtheirmistakes. Intheearly1990s, Apple Corporationcreated ahand-helddevicecalledthe Apple Newton. Theproduct,thoughuniqueatthetime,wasexpensiveandheavy; moreover, some of its most important features didn’t work properly. Consequently, it became one of Apple’s biggestfailures,andin1998,thecompanystoppedsellingit. However, Apple’s CEO, Steve Jobs,believedthe product had potential and he began to explore ways of improving it. In time, this led to the creation of the i Phoneandthei Pad,twoofthecompany’s most successful products. The story of the Apple Newton can teach us another important lesson about failure. Not only should we trytolearnfromit;ifwewanttosucceed,wemustalsobepersistent. Though Applestoppedsellingthe Newton in 1998, the first i Phone wasn’t available until 2007. It took a lot of research and hard work to go from the Apple Newtontoi Phone, but intheend,theeffort paidoff. Ultimately, there is a lot we can learn by studying mistakes. Perhaps the most important lesson is that failureandsuccess aretwosides ofthesame coin. Onetrulycannot exist without theother.",
+      "passage": "Failure: We all avoid it, and most of us fear it. However, without failure, progress would be impossible. Indeed, the word success comes from the Latin succedere, meaning “to come after.” And what does success usuallycome after? Failure. It seems that onecannot exist without theother. Accepting failure is not easy for many, though. We are often reluctant to admit failure because our professional reputations depend on success. However, things are slowly changing, notably in the field of business and science. In the past decade, for instance, some scientific journals-mostly in medicine and conservation-havepublishedreportsoffailedexperiments. Thebeliefisthatthesciencecommunitycanalso learnfrom “negative”results andthat this caneventuallyleadtopositiveoutcomes. In many ways, the business world already understands the value of negative results. To encourage entrepreneurship, the Netherlands-based ABN AMRO bank started an Institute of Brilliant Failures to learn more about what works and what doesn’t in banking. Similarly, Eli Lilly and Company, the pharmaceutical corporation, has “R&D outcome celebrations”-failure parties-to study data about drugs that don’t work. (Almost 90percent of all drugtrials fail, andthedrugs cannot besold.) In fact, one of the business world’s most famous failures eventuallybecame one of its biggest successes, inpartbecausetheproduct’smakerslearnedfromtheirmistakes. Intheearly1990s, Apple Corporationcreated ahand-helddevicecalledthe Apple Newton. Theproduct, thoughuniqueatthetime, wasexpensiveandheavy; moreover, some of its most important features didn’t work properly. Consequently, it became one of Apple’s biggestfailures, andin1998, thecompanystoppedsellingit. However, Apple’s CEO, Steve Jobs, believedthe product had potential and he began to explore ways of improving it. In time, this led to the creation of the i Phoneandthei Pad, twoofthecompany’s most successful products. The story of the Apple Newton can teach us another important lesson about failure. Not only should we trytolearnfromit; ifwewanttosucceed, wemustalsobepersistent. Though Applestoppedsellingthe Newton in 1998, the first i Phone wasn’t available until 2007. It took a lot of research and hard work to go from the Apple Newtontoi Phone, but intheend, theeffort paidoff. Ultimately, there is a lot we can learn by studying mistakes. Perhaps the most important lesson is that failureandsuccess aretwosides ofthesame coin. Onetrulycannot exist without theother.",
       "passage_intro": "請回答下列第18題至第20題"
     },
     {
@@ -298,10 +298,10 @@
         "A": "If youwant tobesuccessful, ask successful peoplewhat theydidtosucceed.",
         "B": "Accept that somepeoplefail andnot everyoneis meant tosucceed.",
         "C": "If youmake amistake, ask yourselfwhat went wrongandtrytolearnfrom it.",
-        "D": "Youshouldthinkoffailureandsuccess asthesamething."
+        "D": "You shouldthinkoffailureandsuccess asthesamething."
       },
       "answer": "C",
-      "passage": "Failure: We all avoid it, and most of us fear it. However, without failure, progress would be impossible. Indeed, the word success comes from the Latin succedere, meaning “to come after.” And what does success usuallycome after? Failure. It seems that onecannot exist without theother. Accepting failure is not easy for many, though. We are often reluctant to admit failure because our professional reputations depend on success. However, things are slowly changing, notably in the field of business and science. In the past decade, for instance, some scientific journals-mostly in medicine and conservation-havepublishedreportsoffailedexperiments. Thebeliefisthatthesciencecommunitycanalso learnfrom “negative”results andthat this caneventuallyleadtopositiveoutcomes. In many ways, the business world already understands the value of negative results. To encourage entrepreneurship, the Netherlands-based ABN AMRO bank started an Institute of Brilliant Failures to learn more about what works and what doesn’t in banking. Similarly, Eli Lilly and Company, the pharmaceutical corporation, has “R&D outcome celebrations”-failure parties-to study data about drugs that don’t work. (Almost 90percent of all drugtrials fail,andthedrugs cannot besold.) In fact, one of the business world’s most famous failures eventuallybecame one of its biggest successes, inpartbecausetheproduct’smakerslearnedfromtheirmistakes. Intheearly1990s, Apple Corporationcreated ahand-helddevicecalledthe Apple Newton. Theproduct,thoughuniqueatthetime,wasexpensiveandheavy; moreover, some of its most important features didn’t work properly. Consequently, it became one of Apple’s biggestfailures,andin1998,thecompanystoppedsellingit. However, Apple’s CEO, Steve Jobs,believedthe product had potential and he began to explore ways of improving it. In time, this led to the creation of the i Phoneandthei Pad,twoofthecompany’s most successful products. The story of the Apple Newton can teach us another important lesson about failure. Not only should we trytolearnfromit;ifwewanttosucceed,wemustalsobepersistent. Though Applestoppedsellingthe Newton in 1998, the first i Phone wasn’t available until 2007. It took a lot of research and hard work to go from the Apple Newtontoi Phone, but intheend,theeffort paidoff. Ultimately, there is a lot we can learn by studying mistakes. Perhaps the most important lesson is that failureandsuccess aretwosides ofthesame coin. Onetrulycannot exist without theother.",
+      "passage": "Failure: We all avoid it, and most of us fear it. However, without failure, progress would be impossible. Indeed, the word success comes from the Latin succedere, meaning “to come after.” And what does success usuallycome after? Failure. It seems that onecannot exist without theother. Accepting failure is not easy for many, though. We are often reluctant to admit failure because our professional reputations depend on success. However, things are slowly changing, notably in the field of business and science. In the past decade, for instance, some scientific journals-mostly in medicine and conservation-havepublishedreportsoffailedexperiments. Thebeliefisthatthesciencecommunitycanalso learnfrom “negative”results andthat this caneventuallyleadtopositiveoutcomes. In many ways, the business world already understands the value of negative results. To encourage entrepreneurship, the Netherlands-based ABN AMRO bank started an Institute of Brilliant Failures to learn more about what works and what doesn’t in banking. Similarly, Eli Lilly and Company, the pharmaceutical corporation, has “R&D outcome celebrations”-failure parties-to study data about drugs that don’t work. (Almost 90percent of all drugtrials fail, andthedrugs cannot besold.) In fact, one of the business world’s most famous failures eventuallybecame one of its biggest successes, inpartbecausetheproduct’smakerslearnedfromtheirmistakes. Intheearly1990s, Apple Corporationcreated ahand-helddevicecalledthe Apple Newton. Theproduct, thoughuniqueatthetime, wasexpensiveandheavy; moreover, some of its most important features didn’t work properly. Consequently, it became one of Apple’s biggestfailures, andin1998, thecompanystoppedsellingit. However, Apple’s CEO, Steve Jobs, believedthe product had potential and he began to explore ways of improving it. In time, this led to the creation of the i Phoneandthei Pad, twoofthecompany’s most successful products. The story of the Apple Newton can teach us another important lesson about failure. Not only should we trytolearnfromit; ifwewanttosucceed, wemustalsobepersistent. Though Applestoppedsellingthe Newton in 1998, the first i Phone wasn’t available until 2007. It took a lot of research and hard work to go from the Apple Newtontoi Phone, but intheend, theeffort paidoff. Ultimately, there is a lot we can learn by studying mistakes. Perhaps the most important lesson is that failureandsuccess aretwosides ofthesame coin. Onetrulycannot exist without theother.",
       "passage_intro": "請回答下列第18題至第20題"
     }
   ],

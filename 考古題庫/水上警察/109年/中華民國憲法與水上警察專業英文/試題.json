@@ -680,6 +680,136 @@
         "C": "maintenance",
         "D": "confiscation"
       }
+    },
+    {
+      "number": 51,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "stranded",
+        "B": "strangled",
+        "C": "struggled",
+        "D": "stumbled"
+      },
+      "answer": "A",
+      "passage": "請依下文回答第51題至第55題: Traveling through waterways is definitelythe oldest and one of the most efficient ways of travel, but not necessarily the smoothest. The need for a system for an endangered ship to seek help while it is 51 in the middle of an ocean has been felt ever since the first voyage happened. Since long, various forms of emergency signals have been used. One of the most commonly used 52 signal is maritime signal flares. These flares when fired 53 a minute indicate a ship in extreme danger and asking for help. This, however, is the form used today, an earlier version of 54 was developed by Martha Coston based on a framework laid by her deceased husband around 1850s. Coston’s system underwent many modifications and was later 55 by the American marine services and standardized to be used all over America. Thanks to Coston’s invention, ships now has much more to rely on when they run into troubles in the ocean."
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "despair",
+        "B": "distress",
+        "C": "distraction",
+        "D": "deterioration"
+      },
+      "answer": "B",
+      "passage": "請依下文回答第51題至第55題: Traveling through waterways is definitelythe oldest and one of the most efficient ways of travel, but not necessarily the smoothest. The need for a system for an endangered ship to seek help while it is 51 in the middle of an ocean has been felt ever since the first voyage happened. Since long, various forms of emergency signals have been used. One of the most commonly used 52 signal is maritime signal flares. These flares when fired 53 a minute indicate a ship in extreme danger and asking for help. This, however, is the form used today, an earlier version of 54 was developed by Martha Coston based on a framework laid by her deceased husband around 1850s. Coston’s system underwent many modifications and was later 55 by the American marine services and standardized to be used all over America. Thanks to Coston’s invention, ships now has much more to rely on when they run into troubles in the ocean."
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "at atimeof",
+        "B": "intheextent of",
+        "C": "in the period of",
+        "D": "at aninterval of"
+      },
+      "answer": "D",
+      "passage": "請依下文回答第51題至第55題: Traveling through waterways is definitelythe oldest and one of the most efficient ways of travel, but not necessarily the smoothest. The need for a system for an endangered ship to seek help while it is 51 in the middle of an ocean has been felt ever since the first voyage happened. Since long, various forms of emergency signals have been used. One of the most commonly used 52 signal is maritime signal flares. These flares when fired 53 a minute indicate a ship in extreme danger and asking for help. This, however, is the form used today, an earlier version of 54 was developed by Martha Coston based on a framework laid by her deceased husband around 1850s. Coston’s system underwent many modifications and was later 55 by the American marine services and standardized to be used all over America. Thanks to Coston’s invention, ships now has much more to rely on when they run into troubles in the ocean."
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "it",
+        "B": "that",
+        "C": "what",
+        "D": "which"
+      },
+      "answer": "D",
+      "passage": "請依下文回答第51題至第55題: Traveling through waterways is definitelythe oldest and one of the most efficient ways of travel, but not necessarily the smoothest. The need for a system for an endangered ship to seek help while it is 51 in the middle of an ocean has been felt ever since the first voyage happened. Since long, various forms of emergency signals have been used. One of the most commonly used 52 signal is maritime signal flares. These flares when fired 53 a minute indicate a ship in extreme danger and asking for help. This, however, is the form used today, an earlier version of 54 was developed by Martha Coston based on a framework laid by her deceased husband around 1850s. Coston’s system underwent many modifications and was later 55 by the American marine services and standardized to be used all over America. Thanks to Coston’s invention, ships now has much more to rely on when they run into troubles in the ocean."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "dug up",
+        "B": "raised up",
+        "C": "taken up",
+        "D": "caught up"
+      },
+      "answer": "C",
+      "passage": "請依下文回答第51題至第55題: Traveling through waterways is definitelythe oldest and one of the most efficient ways of travel, but not necessarily the smoothest. The need for a system for an endangered ship to seek help while it is 51 in the middle of an ocean has been felt ever since the first voyage happened. Since long, various forms of emergency signals have been used. One of the most commonly used 52 signal is maritime signal flares. These flares when fired 53 a minute indicate a ship in extreme danger and asking for help. This, however, is the form used today, an earlier version of 54 was developed by Martha Coston based on a framework laid by her deceased husband around 1850s. Coston’s system underwent many modifications and was later 55 by the American marine services and standardized to be used all over America. Thanks to Coston’s invention, ships now has much more to rely on when they run into troubles in the ocean."
+    },
+    {
+      "number": 56,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "assault",
+        "B": "completion",
+        "C": "rescue",
+        "D": "withdrawal"
+      },
+      "answer": "A",
+      "passage": "請依下文回答第56題至第60題: Patrol vessels and inspectors are generallyauthorized to use whatever minimal force is necessaryto keep them safe in the face of 56 of any sudden danger. Some regional fishery management organizations, such as Northwest Atlantic Fisheries Organization, specifically 57 that fishery inspectors will be unarmed during routine inspections. This policy can be accepted if the subject of the boarding is a member State fishing vessel with 58 on the High Seas Vessel Authorization Record, showntohaveavalidauthorizationtofishfromtheflag State. However, thepolicyofunarmedinspectors should have limits, such as the boarding of a non-cooperative stateless fishing vessel 59 contact with the patrol vessel and abandoning its gear in the water. Since the end of the Second World War and the dramatic expansion of high seas fishing and the concurrent birth of international conventions and regionalfisherymanagementorganizationstoregulateandcontrol fishing, therehasbeenalongstanding effort todefine, 60 , andquantifyhighseas fishingvessel boardingandinspectionschemes."
+    },
+    {
+      "number": 57,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "attribute",
+        "B": "isolate",
+        "C": "objective",
+        "D": "stipulate"
+      },
+      "answer": "D",
+      "passage": "請依下文回答第56題至第60題: Patrol vessels and inspectors are generallyauthorized to use whatever minimal force is necessaryto keep them safe in the face of 56 of any sudden danger. Some regional fishery management organizations, such as Northwest Atlantic Fisheries Organization, specifically 57 that fishery inspectors will be unarmed during routine inspections. This policy can be accepted if the subject of the boarding is a member State fishing vessel with 58 on the High Seas Vessel Authorization Record, showntohaveavalidauthorizationtofishfromtheflag State. However, thepolicyofunarmedinspectors should have limits, such as the boarding of a non-cooperative stateless fishing vessel 59 contact with the patrol vessel and abandoning its gear in the water. Since the end of the Second World War and the dramatic expansion of high seas fishing and the concurrent birth of international conventions and regionalfisherymanagementorganizationstoregulateandcontrol fishing, therehasbeenalongstanding effort todefine, 60 , andquantifyhighseas fishingvessel boardingandinspectionschemes."
+    },
+    {
+      "number": 58,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "grade",
+        "B": "registry",
+        "C": "slash",
+        "D": "tally"
+      },
+      "answer": "B",
+      "passage": "請依下文回答第56題至第60題: Patrol vessels and inspectors are generallyauthorized to use whatever minimal force is necessaryto keep them safe in the face of 56 of any sudden danger. Some regional fishery management organizations, such as Northwest Atlantic Fisheries Organization, specifically 57 that fishery inspectors will be unarmed during routine inspections. This policy can be accepted if the subject of the boarding is a member State fishing vessel with 58 on the High Seas Vessel Authorization Record, showntohaveavalidauthorizationtofishfromtheflag State. However, thepolicyofunarmedinspectors should have limits, such as the boarding of a non-cooperative stateless fishing vessel 59 contact with the patrol vessel and abandoning its gear in the water. Since the end of the Second World War and the dramatic expansion of high seas fishing and the concurrent birth of international conventions and regionalfisherymanagementorganizationstoregulateandcontrol fishing, therehasbeenalongstanding effort todefine, 60 , andquantifyhighseas fishingvessel boardingandinspectionschemes."
+    },
+    {
+      "number": 59,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "approaching to",
+        "B": "depriving of",
+        "C": "fleeing from",
+        "D": "returning to"
+      },
+      "answer": "C",
+      "passage": "請依下文回答第56題至第60題: Patrol vessels and inspectors are generallyauthorized to use whatever minimal force is necessaryto keep them safe in the face of 56 of any sudden danger. Some regional fishery management organizations, such as Northwest Atlantic Fisheries Organization, specifically 57 that fishery inspectors will be unarmed during routine inspections. This policy can be accepted if the subject of the boarding is a member State fishing vessel with 58 on the High Seas Vessel Authorization Record, showntohaveavalidauthorizationtofishfromtheflag State. However, thepolicyofunarmedinspectors should have limits, such as the boarding of a non-cooperative stateless fishing vessel 59 contact with the patrol vessel and abandoning its gear in the water. Since the end of the Second World War and the dramatic expansion of high seas fishing and the concurrent birth of international conventions and regionalfisherymanagementorganizationstoregulateandcontrol fishing, therehasbeenalongstanding effort todefine, 60 , andquantifyhighseas fishingvessel boardingandinspectionschemes."
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "harmonize",
+        "B": "presume",
+        "C": "regard",
+        "D": "surmise"
+      },
+      "answer": "A",
+      "passage": "請依下文回答第56題至第60題: Patrol vessels and inspectors are generallyauthorized to use whatever minimal force is necessaryto keep them safe in the face of 56 of any sudden danger. Some regional fishery management organizations, such as Northwest Atlantic Fisheries Organization, specifically 57 that fishery inspectors will be unarmed during routine inspections. This policy can be accepted if the subject of the boarding is a member State fishing vessel with 58 on the High Seas Vessel Authorization Record, showntohaveavalidauthorizationtofishfromtheflag State. However, thepolicyofunarmedinspectors should have limits, such as the boarding of a non-cooperative stateless fishing vessel 59 contact with the patrol vessel and abandoning its gear in the water. Since the end of the Second World War and the dramatic expansion of high seas fishing and the concurrent birth of international conventions and regionalfisherymanagementorganizationstoregulateandcontrol fishing, therehasbeenalongstanding effort todefine, 60 , andquantifyhighseas fishingvessel boardingandinspectionschemes."
     }
   ],
   "year": 109,

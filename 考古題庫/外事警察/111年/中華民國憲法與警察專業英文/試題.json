@@ -606,7 +606,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "The Ciaotou District Court has sentenced a farmer to one year and four months in prison and fined himNT$30,000 form odifyingan air soft gun tom akeit more dangerous. The collegiatebench ruled that the farmer’s_____ was minor and handed down alighter punishment.",
+      "stem": "The Ciaotou District Court has sentenced a farmer to one year and four months in prison and fined him NT$30,000 form odifyingan air soft gun tom akeit more dangerous. The collegiatebench ruled that the farmer’s_____ was minor and handed down alighter punishment.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -669,6 +669,19 @@
       }
     },
     {
+      "number": 50,
+      "type": "choice",
+      "stem": "Anyone filing a false police report may be prosecuted under accusation section of the Criminal Code.",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "mutual",
+        "B": "benevolent",
+        "C": "compassionate",
+        "D": "malicious"
+      }
+    },
+    {
       "number": 51,
       "type": "choice",
       "stem": "",
@@ -678,7 +691,7 @@
         "A": "filtered out",
         "B": "referred to",
         "C": "indulged in",
-        "D": "ledto"
+        "D": "led to"
       },
       "passage": "請依下文回答第51 題至第53 題: Mark Karpeles, arrested in Japan after his bitcoin exchange collapsed from massive hacking, is starting a new business around the same computer technology that 52 his legal troubles. Karpeles told report ers that he wants to make Japan a global leader in block chain, the technology behind virtual money like bitcoin. The 34-year-old French man 53 embezzlement and fraud all egations in March, but is appeal ing a conviction for man ipulating electronic data. Karpeles was arrested in 2015, and spent"
     },
@@ -722,20 +735,7 @@
         "C": "found",
         "D": "find"
       },
-      "passage": "請依下文回答第54 題至第58 題: The Legislative Yuan passed an amendment that reduces the minimum prison sentence for growing marijuana for personal use from five years to one year and lowered the fine from NT$5 million to NT$1 million. Before the change in the law was made, the Narcotics Hazard Prevention Act (毒品危害防制條 例) stipulated that people 55 guilty of cultivating marijuana with \"intentions to supply for manufacturing narcotics\" faceda minimum sentence off ive years in prison and could also result inafine of up to NT$5 million. However, because the cultivation of cannabis covers a wide range, Judicial Yuan Interpretation No. 790 in 2020 ruled that the penalties for growing marijuana for personal use failed to meet the principleof proportional punishment 56 stipulated inthe Constitution.Citing the ruling,the Cabinet in March 2021 pro posed a revision to the act to impose appropriate punishment for plant ing marijuana that is commensurate with the crime. A new article stated that those who grow the plant for personal use and 57 the \"circumstances are minor\" should be sentenced to a minimum prison sentence of one year and a maximum of seven years and a fine of 58 NT$1 million. On Tuesday, the third read ing ofthe amendment passed the Legislative Yuan with out any objectionsby any legislators present."
-    },
-    {
-      "number": 50,
-      "type": "choice",
-      "stem": "Anyone filing a false police report may be prosecuted under accusation section of the Criminal Code.",
-      "section": "乙、測驗題",
-      "answer": "D",
-      "options": {
-        "A": "mutual",
-        "B": "benevolent",
-        "C": "compassionate",
-        "D": "malicious"
-      }
+      "passage": "請依下文回答第54 題至第58 題: The Legislative Yuan passed an amendment that reduces the minimum prison sentence for growing marijuana for personal use from five years to one year and lowered the fine from NT$5 million to NT$1 million. Before the change in the law was made, the Narcotics Hazard Prevention Act (毒品危害防制條 例) stipulated that people 55 guilty of cultivating marijuana with \" intentions to supply for manufacturing narcotics\" faceda minimum sentence off ive years in prison and could also result inafine of up to NT$5 million. However, because the cultivation of cannabis covers a wide range, Judicial Yuan Interpretation No. 790 in 2020 ruled that the penalties for growing marijuana for personal use failed to meet the principleof proportional punishment 56 stipulated inthe Constitution. Citing the ruling, the Cabinet in March 2021 pro posed a revision to the act to impose appropriate punishment for plant ing marijuana that is commensurate with the crime. A new article stated that those who grow the plant for personal use and 57 the \" circumstances are minor\" should be sentenced to a minimum prison sentence of one year and a maximum of seven years and a fine of 58 NT$1 million. On Tuesday, the third read ing ofthe amendment passed the Legislative Yuan with out any objectionsby any legislators present."
     },
     {
       "number": 55,
@@ -764,6 +764,56 @@
         "D": "illicit goods."
       },
       "passage": "請依下文回答第55 題至第56 題: The linkages between terrorism and organized crime are multifaceted and can manifest themselves in different ways. Generally speaking, terrorist groups and organized crime groups(OCGs)have in theory distinct objectives. Terrorist groups deliberately challenge State authority and seek to produce political change through violent means; their motivations are related to several factors, including, but not limited to ideological ones. OCGs on the other hand typically engage in secret operations so as to obtain a financial or other material benefit while avoiding detection by law enforcement authorities. Rather than aiming to effect political change, the disruption they seek to impose on territories under State authority is meant to perpetuate conditions that are beneficial to their operations. In practical terms, the linkages between terrorism and organized crime become apparent most notably in the financing of terrorism. In other cases, these linkages may involve the smuggling of migrants and illicit arms trafficking involving small arms, light weapons and other military equipment, car theft, illicit mineral extraction, kidnapping for ransom, drug trafficking, trafficking in other illicit goods. Instances involving OCGs facilitating the transport of terrorists across borders activities also represent possible scenarios where these two phenomena become intertwined."
+    },
+    {
+      "number": 57,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "when",
+        "B": "where",
+        "C": "how",
+        "D": "why"
+      },
+      "answer": "A",
+      "passage": "請依下文回答第55 題至第56 題: The linkages between terrorism and organized crime are multifaceted and can manifest themselves in different ways. Generally speaking, terrorist groups and organized crime groups(OCGs)have in theory distinct objectives. Terrorist groups deliberately challenge State authority and seek to produce political change through violent means; their motivations are related to several factors, including, but not limited to ideological ones. OCGs on the other hand typically engage in secret operations so as to obtain a financial or other material benefit while avoiding detection by law enforcement authorities. Rather than aiming to effect political change, the disruption they seek to impose on territories under State authority is meant to perpetuate conditions that are beneficial to their operations. In practical terms, the linkages between terrorism and organized crime become apparent most notably in the financing of terrorism. In other cases, these linkages may involve the smuggling of migrants and illicit arms trafficking involving small arms, light weapons and other military equipment, car theft, illicit mineral extraction, kidnapping for ransom, drug trafficking, trafficking in other illicit goods. Instances involving OCGs facilitating the transport of terrorists across borders activities also represent possible scenarios where these two phenomena become intertwined."
+    },
+    {
+      "number": 58,
+      "type": "choice",
+      "stem": "",
+      "options": {
+        "A": "no fewer than",
+        "B": "no more than",
+        "C": "no sooner than",
+        "D": "no later than"
+      },
+      "answer": "B",
+      "passage": "請依下文回答第55 題至第56 題: The linkages between terrorism and organized crime are multifaceted and can manifest themselves in different ways. Generally speaking, terrorist groups and organized crime groups(OCGs)have in theory distinct objectives. Terrorist groups deliberately challenge State authority and seek to produce political change through violent means; their motivations are related to several factors, including, but not limited to ideological ones. OCGs on the other hand typically engage in secret operations so as to obtain a financial or other material benefit while avoiding detection by law enforcement authorities. Rather than aiming to effect political change, the disruption they seek to impose on territories under State authority is meant to perpetuate conditions that are beneficial to their operations. In practical terms, the linkages between terrorism and organized crime become apparent most notably in the financing of terrorism. In other cases, these linkages may involve the smuggling of migrants and illicit arms trafficking involving small arms, light weapons and other military equipment, car theft, illicit mineral extraction, kidnapping for ransom, drug trafficking, trafficking in other illicit goods. Instances involving OCGs facilitating the transport of terrorists across borders activities also represent possible scenarios where these two phenomena become intertwined."
+    },
+    {
+      "number": 59,
+      "type": "choice",
+      "stem": "What is the purpose of this passage?",
+      "options": {
+        "A": "It provides solutions tocombat thesetwotypes ofcrimes.",
+        "B": "It argues that organized crime groups and terrorist groups can be reconciled if ideological problems canbe resolved.",
+        "C": "It shows howterrorist groups financeorganized crime groups fortheiroperations.",
+        "D": "It shows howtheseorganizedcrime groups and terrorist groups areoften united."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "What does the pronoun“they”referto in the last sentence of the first paragraph? “Rather than aiming to effect political change, the disruption they seek to impose on territories under State authority is meant to perpetuate conditions that are beneficial to their operations.”",
+      "options": {
+        "A": "the terrorist groups.",
+        "B": "the organized crime groups.",
+        "C": "smuggling activities.",
+        "D": "illicit goods."
+      },
+      "answer": "B"
     }
   ],
   "year": 111,

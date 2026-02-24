@@ -684,7 +684,7 @@
     {
       "number": 51,
       "type": "choice",
-      "stem": "In recent years, people have paid much attention to the high frequencyof . This involves the use of the Internet to create public turmoil and death threat, some of which even lead to the demolishment of a nation’s economic and technological infrastructure.",
+      "stem": "In recent years, people have paid much attention to the high frequency of . This involves the use of the Internet to create public turmoil and death threat, some of which even lead to the demolishment of a nation’s economic and technological infrastructure.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -723,7 +723,7 @@
     {
       "number": 54,
       "type": "choice",
-      "stem": "When the police started shooting at some of the student protestors out of their misintepretation of students’behaviors, they have been strong lycriticizedas enacting .",
+      "stem": "When the police started shooting at some of the student protestors out of their misinterpretation of students’behaviors, they have been strong lycriticizedas enacting .",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -736,15 +736,75 @@
     {
       "number": 55,
       "type": "choice",
-      "stem": "Mr. Thompson:I feel I have been over charged when I purchased an online game. What can I do to get my money back? Police:",
+      "stem": "Mr. Thompson: I feel I have been over charged when I purchased an online game. What can I do to get my money back? Police:",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "You should think before you post any message online. Everything you do through the Internet is irretrievable.",
         "B": "I will contact our Net safe unit to help deal with this case about the Internet scam. Tell me exactly what happened.",
         "C": "If you consider yourself a victim of cyberbullying, please dial immediately our hot line for help.",
-        "D": "Send us anyobscene images or photos you see online so that we are able to trace the occur rence of cyber crimes."
+        "D": "Send us any obscene images or photos you see online so that we are able to trace the occur rence of cyber crimes."
       }
+    },
+    {
+      "number": 56,
+      "type": "choice",
+      "stem": "In recent years, people have paid much attention to the high frequency of . This involves the use of the Internet to create public turmoil and death threat, some of which even lead to the demolishment of a nation’s economic and technological infrastructure.",
+      "options": {
+        "A": "email hacking",
+        "B": "internet fraud",
+        "C": "cyberterrorism",
+        "D": "child pornography"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 57,
+      "type": "choice",
+      "stem": "The National Immigration Agency has utilized information technology such as Advanced Passenger Information System (APIS) and Advanced Passenger Processing System (APPS) to monitor the likely appearance of suspected travelers and other restricted passengers in order to safeguard our national territory and .",
+      "options": {
+        "A": "border security",
+        "B": "crime scene",
+        "C": "emergency management",
+        "D": "secret service"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 58,
+      "type": "choice",
+      "stem": "The gangsters have been money from Mr. Johnson, threatening to reveal to the press video- tape of his adultery.",
+      "options": {
+        "A": "abducting",
+        "B": "corrupting",
+        "C": "extorting",
+        "D": "hijacking"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 59,
+      "type": "choice",
+      "stem": "When the police started shooting at some of the student protestors out of their misinterpretation of students’behaviors, they have been strongly criticized as enacting .",
+      "options": {
+        "A": "domestic abuse",
+        "B": "restorative justice",
+        "C": "uniformed presence",
+        "D": "excessive enforcement"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "Mr. Thompson: I feel I have been overcharged when I purchased an online game. What can I do to get my money back? Police:",
+      "options": {
+        "A": "You should think before you post any message online. Everything you do through the Internet is irretrievable.",
+        "B": "I will contact our Netsafe unit to help deal with this case about the Internet scam. Tell me exactly what happened.",
+        "C": "If you consider yourself a victim of cyberbullying, please dial immediately our hotline for help.",
+        "D": "Send us any obscene images or photos you see online so that we are able to trace the occurrence of cybercrimes."
+      },
+      "answer": "B"
     }
   ],
   "year": 109,
