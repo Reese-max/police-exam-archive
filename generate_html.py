@@ -125,7 +125,7 @@ def format_passage_html(text):
 def make_card_id(year, subj_name):
     """生成唯一且穩定的卡片 ID"""
     cleaned = re.sub(r'[^a-zA-Z0-9_]', '', subj_name.replace(' ', '_'))[:20]
-    if not cleaned:
+    if not cleaned or cleaned.strip('_') == '':
         cleaned = hashlib.md5(subj_name.encode()).hexdigest()[:8]
     return f"y{year}-{cleaned}"
 
