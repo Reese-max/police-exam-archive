@@ -368,7 +368,7 @@
     {
       "number": 28,
       "type": "choice",
-      "stem": "甲將自己的A車以60萬元賣給乙,雙方約定下個月初交車及付款。不料,於交車前數日,A車於公共停 車場中遭雷電擊中而燒毀。依民法規定,下列敘述何者錯誤?",
+      "stem": "甲將自己的A車以60萬元賣給乙,雙方約定下個月初交車及付款。不料,於交車前數日, A車於公共停 車場中遭雷電擊中而燒毀。依民法規定,下列敘述何者錯誤?",
       "section": null,
       "options": {
         "A": "甲對乙免給付義務",
@@ -407,7 +407,7 @@
     {
       "number": 31,
       "type": "choice",
-      "stem": "Themanagerisverycarefulaboutqualitycontrol;healwayssaysthattheproblemsweignorenowwillcomeback to us.",
+      "stem": "Themanagerisverycarefulaboutqualitycontrol; healwayssaysthattheproblemsweignorenowwillcomeback to us.",
       "section": null,
       "options": {
         "A": "fascinate",
@@ -420,7 +420,7 @@
     {
       "number": 32,
       "type": "choice",
-      "stem": "Therehavebeen discussionswithstrongnegativeemotionsforthenewpowerplant:Somethinkitwould bringjobs,whileotherssayitwoulddamagethenaturalenvironment.",
+      "stem": "Therehave been discussionswithstrongnegativeemotionsforthenewpowerplant: Somethinkitwould bringjobs, whileotherssayitwoulddamagethenaturalenvironment.",
       "section": null,
       "options": {
         "A": "warmly",
@@ -485,7 +485,7 @@
     {
       "number": 37,
       "type": "choice",
-      "stem": "IfyouhaveaknownordiagnosedallergytoaCOVID-19vaccine ,youshouldnotgetvaccinated.",
+      "stem": "Ifyouhaveaknownordiagnosedallergytoa COVID-19vaccine , youshouldnotgetvaccinated.",
       "section": null,
       "options": {
         "A": "ingredient",
@@ -576,7 +576,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "Algonkian-speaking Native Americans greeted the Pilgrims who on the eastern shores of what is now NewEngland.",
+      "stem": "Algonkian-speaking Native Americans greeted the Pilgrims who on the eastern shores of what is now New England.",
       "section": null,
       "options": {
         "A": "steered",
@@ -589,7 +589,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "WebroughtbackamodelofTaipei101asa ofourtriptoTaipeilastmonth.",
+      "stem": "Webroughtbackamodelof Taipei101asa ofourtripto Taipeilastmonth.",
       "section": null,
       "options": {
         "A": "vessel",
@@ -615,7 +615,7 @@
     {
       "number": 47,
       "type": "choice",
-      "stem": "Theweatherforecasthassaidthattheremaybeatemporarybreakbefore rainreturnsonMonday.",
+      "stem": "Theweatherforecasthassaidthattheremaybeatemporarybreakbefore rainreturnson Monday.",
       "section": null,
       "options": {
         "A": "respective",
@@ -628,7 +628,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "More than 280 people have been from a ferry in northwestern Greece that caught fire overnight while headingtosouthernItalyinFebruary.",
+      "stem": "More than 280 people have been from a ferry in northwestern Greece that caught fire overnight while headingtosouthern Italyin February.",
       "section": null,
       "options": {
         "A": "deserted",
@@ -654,7 +654,7 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Insteadofconcentratingonincentivizingshort-termtransactivebehaviors,today’sfirmsfocusonbuildingauthentic and relationshipswithcustomers.",
+      "stem": "Insteadofconcentratingonincentivizingshort-termtransactivebehaviors, today’sfirmsfocusonbuildingauthentic and relationshipswithcustomers.",
       "section": null,
       "options": {
         "A": "transitional",

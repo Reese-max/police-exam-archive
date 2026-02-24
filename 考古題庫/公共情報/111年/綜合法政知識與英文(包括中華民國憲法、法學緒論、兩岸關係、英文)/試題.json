@@ -314,7 +314,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "「臺灣友邦國際保護及加強倡議法」(TaiwanAlliesInternationalProtectionandEnhancementInitiativeAct) 是川普總統於2020年簽署之重要友臺法案之一。關於該法內容,以下敘述何者正確?",
+      "stem": "「臺灣友邦國際保護及加強倡議法」(Taiwan Allies International Protectionand Enhancement Initiative Act) 是川普總統於2020年簽署之重要友臺法案之一。關於該法內容,以下敘述何者正確?",
       "section": null,
       "options": {
         "A": "美國歷屆政府自1979年之後,從未對臺灣最終地位採取正式立場",
@@ -418,7 +418,7 @@
     {
       "number": 32,
       "type": "choice",
-      "stem": "ManyTaiwaneseparentsare_____tobelievethatchildrenneedtostartlearningEnglishasearlyaspossible.",
+      "stem": "Many Taiwaneseparentsare_____tobelievethatchildrenneedtostartlearning Englishasearlyaspossible.",
       "section": null,
       "options": {
         "A": "tendered",
@@ -431,7 +431,7 @@
     {
       "number": 33,
       "type": "choice",
-      "stem": "Thetalentedyoungmanchosetosetuphisownfirm,ratherthanbecomeaprofessor,becausehewantedto_____ whathehadlearnedinindustrialsites.",
+      "stem": "Thetalentedyoungmanchosetosetuphisownfirm, ratherthanbecomeaprofessor, becausehewantedto_____ whathehadlearnedinindustrialsites.",
       "section": null,
       "options": {
         "A": "correspond",
@@ -444,7 +444,7 @@
     {
       "number": 34,
       "type": "choice",
-      "stem": "ThephysiciantoldHelentogetbedrest,_____herfeet,andtakesomemedication.",
+      "stem": "Thephysiciantold Helentogetbedrest,_____herfeet, andtakesomemedication.",
       "section": null,
       "options": {
         "A": "disclose",
@@ -457,7 +457,7 @@
     {
       "number": 35,
       "type": "choice",
-      "stem": "Unfortunately,manycouldseethatthepublichealthinsuranceanditsnewregulationscould_____thepoorfrom gettingthemedicalcaretheyneed.",
+      "stem": "Unfortunately, manycouldseethatthepublichealthinsuranceanditsnewregulationscould_____thepoorfrom gettingthemedicalcaretheyneed.",
       "section": null,
       "options": {
         "A": "invade",
@@ -535,7 +535,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "_____bythehorrifyingmurderscene,thelittleboycouldn'tevenutteraword,letalonecryforhelp.",
+      "stem": "_____bythehorrifyingmurderscene, thelittleboycouldn'tevenutteraword, letalonecryforhelp.",
       "section": null,
       "options": {
         "A": "Detached",
@@ -600,7 +600,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "TheUnited Stateshas experiencedadramaticincreaseinoverdosedeathsoverthe past20years,whichhasbeen welldocumentedandlargely_____towhathasbeentermedtheopioidcrisisoropioidepidemic.",
+      "stem": "The United Stateshas experiencedadramaticincreaseinoverdosedeathsoverthe past20years, whichhasbeen welldocumentedandlargely_____towhathasbeentermedtheopioidcrisisoropioidepidemic.",
       "section": null,
       "options": {
         "A": "accumulated",
@@ -626,7 +626,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "Manyrefugees,inthefaceoftortureanddeath,decidetoseekan_____inforeignlands.",
+      "stem": "Manyrefugees, inthefaceoftortureanddeath, decidetoseekan_____inforeignlands.",
       "section": null,
       "options": {
         "A": "asylum",
@@ -652,7 +652,7 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Innovations,suchasthesteamengine,electrificationanddigitalization,have_____radicalchangesinthewayin whichweproducegoodsandservices.",
+      "stem": "Innovations, suchasthesteamengine, electrificationanddigitalization, have_____radicalchangesinthewayin whichweproducegoodsandservices.",
       "section": null,
       "options": {
         "A": "underpinned",
