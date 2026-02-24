@@ -41,6 +41,8 @@ EXAM_KEYWORDS = [
     "警察鐵路人員考試",
     "司法人員考試",       # 犯罪防治矯治組（監獄官）
     "司法人員特考",
+    "國家安全情報人員考試",  # 國安局特考（公共情報）
+    "國家安全情報人員特考",
 ]
 
 # ===== 15 個類科組別定義 =====
@@ -152,6 +154,14 @@ CATEGORIES = {
         'key_subjects': ['警察人事行政與法制', '警察組織與事務管理'],
         'description': '警察人事行政與法制、警察組織與事務管理',
     },
+    '公共情報': {
+        'code': 'nsi',
+        'short': '公共情報',
+        'full': '國家安全情報人員考試三等考試_情報組',
+        'key_subjects': ['情報學', '國家安全'],
+        'description': '國安局特考情報組：情報學、國家安全、國家安全相關法規',
+        'exam_type': 'national_security',
+    },
 }
 
 # 快取檔案路徑
@@ -242,6 +252,18 @@ def identify_category_from_subjects(subjects_text):
         # 排除四等監所管理員（概要科目）
         if '監獄學概要' not in subjects_text:
             return '犯罪防治矯治組'
+
+    # === 國安局特考：情報組 ===
+    # 特徵：「國家安全」（含傳統安全與非傳統安全）+ 「綜合法政知識與英文」
+    # 或「國家安全相關法規」+ 「情報學」（不含警察專業英文）
+    if ('綜合法政知識與英文' in subjects_text and
+            '國家安全' in subjects_text and
+            '情報學' in subjects_text):
+        return '公共情報'
+    if ('國家安全相關法規' in subjects_text and
+            '情報學' in subjects_text and
+            '警察專業英文' not in subjects_text):
+        return '公共情報'
 
     # === 內軌判定：必須有這三種英文科目之一 ===
     is_internal = (
