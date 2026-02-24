@@ -1,0 +1,307 @@
+{
+  "metadata": {
+    "exam_type": "106",
+    "level": "三等",
+    "subject": "外國文（泰文兼試移民專業英文）",
+    "exam_time": "2 小時 座號："
+  },
+  "notes": [
+    "※注意： 禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本測驗試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "共20題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "泰譯中 :(20 分)\nสาํ นักงานการค้าและเศรษฐกิจไทยขอเตือนคนไทยท่ปี ระสงค์เดนิ ทางมาท่องเท่ยี วในไต้หวนั\nโดยเฉพาะหญิงไทยให้ระมดั ระวงั ไม่ให้ตกเป็นเคร่อื งมอื ของกระบวนการค้ามนุษย์ โดยการชกั ชวน\nให้เดนิ ทางเขา้ ไต้หวนั เพ่อื ลกั ลอบทาํ งานผดิ กฎหมาย เน่ืองจากในช่วง ๑-๒ เดอื นท่ผี ่านมาน้ี ม ี\nหญิงไทยจาํ นวนมากถูกจบั ขอ้ หาลกั ลอบค้าขายผดิ กฎหมาย ซ่ึงบางกลุ่มถูกเนรเทศและข้นึ บญั ชดี าํ\nทาํ ให้ไม่สามารถกลบั มาไต้หวนั ได้อีก และอีกส่วนหน่ึงถูกกกั กนั เพ่อื ดาํ เนินการตามกระบวนการ\nยุติธรรมของไต้หวนั ซ่ึงไทยไม่สามารถแทรกแซงได้",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "中譯泰 :(25 分)\n內政部移民署提醒尚未申辦自動查驗通關系統的旅客,國人只要年滿 14 歲,身高",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "泰文作文,至少 300 個字 :(30 分)\nเขยี นเรยี งความเป็นภาษาไทย จาํ นวนคาํ ไม่น้อยกว่า ๓๐๐ คาํ ข้นึ ไป ในหวั ขอ้ เร่อื ง\n「ทาํ งานอย่างไรให้มคี วามสุข」",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "Police arrested a man suspected of burning an old factory building. The suspect was reported near the building when the fire started.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "to be",
+        "B": "having been",
+        "C": "being",
+        "D": "to have been"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "Deforestation is a real threat to the wildlife. In fact, deforestation is certain species.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "cleaning up",
+        "B": "taking off",
+        "C": "wiping out",
+        "D": "pressing down"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "If you are a shopaholic, you are person.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "a compulsive",
+        "B": "an impulsive",
+        "C": "a comprehensive",
+        "D": "an irresolute"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "The trouble with Tanya is she always wants to have her cake and it.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "leave",
+        "B": "cut",
+        "C": "eat",
+        "D": "bake"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "Many people are multilingual, but people speak more than ten languages.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "a few",
+        "B": "a little",
+        "C": "few",
+        "D": "little (請接背面) 調查局調查人員、國家安全局國家安全情報 代號 : (背面) 考 試 別:移民行政人員"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "Scott’s teacher Mrs. Lee is very worried about him because his country has recently into war.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "drafted",
+        "B": "mingled",
+        "C": "probed",
+        "D": "erupted"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "The teachers discussed Jim, was poor study habits.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "whose problems",
+        "B": "of whose problem",
+        "C": "one of whose problems",
+        "D": "most of whose problem"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "Only if it rains, .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "the picnic will be canceled",
+        "B": "the picnic will cancel",
+        "C": "will the picnic cancel",
+        "D": "will the picnic be canceled"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "You are for any damages when you rent a car.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "obliged",
+        "B": "mandatory",
+        "C": "liable",
+        "D": "compulsory"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "Many North Americans have pets. Pets usually live in the house and are treated with great care and .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "isolation",
+        "B": "affection",
+        "C": "saturation",
+        "D": "ramification"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "If a person wears “no name” brands, he or she is not “in”, or accepted. Some people say that this is a symptom of a society that is interested in surface, not .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "courtship",
+        "B": "material",
+        "C": "incentive",
+        "D": "substance"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "The American cowboy has long been a of the American belief in rugged individualism and the frontier spirit.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "disgrace",
+        "B": "symbol",
+        "C": "domino",
+        "D": "smear"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "A salesclerk who takes a break when customers are waiting is the thing that gets on my .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "angers",
+        "B": "barriers",
+        "C": "nerves",
+        "D": "attentions"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "The sight of beggars on city streets and the of the homeless may inspire sympathy but also concern.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "plight",
+        "B": "prowess",
+        "C": "priority",
+        "D": "prejudice"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "Sleep is a basic human need, as basic as the need for .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "quota",
+        "B": "slogan",
+        "C": "oxygen",
+        "D": "censor 請依下文回答第16題至第20題: Have you noticed that the brightest students you knew in school are not necessarily the ones who have gone farthest in life? We all know some people who have 16 IQs, but are successful in their work, social relationships, love lives, and in maintaining physical and mental well-being. They are much more successful than many people who have higher IQs. Why do “smart” people think “dumb,” and vice versa? The answer is that there is a second kind of intelligence that is unrelated to IQ tests, but is related, 17 , to social skills and coping with emotions. When people who are obviously bright get passed over for the key promotions or remain frustrated and unfulfilled in their family lives, they naturally ask, “Where did I go wrong?” They try to figure out where they went wrong intellectually, but that is not where the problem 18 . Although a high IQ does contribute to success in many life endeavors, it is far from the whole story, or even the most important part. A high IQ equips us to learn from books and lectures, but it does not ensure that we know how to 19 practical lessons from experience. That requires an altogether different type of intelligence. In fact, we have two “minds” operating all the time. Besides our rational intelligence, we have a second kind of intelligence, which IQ tests do not measure. It is experiential intelligence. While the rational mind learns by abstracting and analyzing, the experiential mind learns directly from experience. While the rational mind solves problems by using 20 , the experiential mind operates by intuitive wisdom. Both contribute to one’s success in life."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "modest",
+        "B": "clumsy",
+        "C": "tangible",
+        "D": "ingrained"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "moreover",
+        "B": "instead",
+        "C": "rarely",
+        "D": "hence"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "breaks",
+        "B": "flaws",
+        "C": "booms",
+        "D": "lies"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "recruit",
+        "B": "sustain",
+        "C": "draw",
+        "D": "confer"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "reason",
+        "B": "surmise",
+        "C": "nurture",
+        "D": "paradox"
+      },
+      "answer": "A"
+    }
+  ],
+  "year": 106,
+  "category": "移民特考",
+  "subject": "[三等] 外國文（泰文兼試移民專業英文）",
+  "level": "三等",
+  "original_subject": "外國文（泰文兼試移民專業英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/106年/三等/外國文（泰文兼試移民專業英文）/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 23
+}

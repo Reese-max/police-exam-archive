@@ -26,6 +26,7 @@ CATEGORIES_ORDER = [
     '犯罪防治預防組', '犯罪防治矯治組',
     '消防警察', '交通警察交通組', '交通警察電訊組', '資訊管理',
     '鑑識科學', '國境警察', '水上警察', '警察法制', '行政管理',
+    '移民特考',
 ]
 
 CATEGORIES_INFO = {
@@ -44,6 +45,7 @@ CATEGORIES_INFO = {
     '水上警察': {'code': 511, 'icon': '&#9875;', 'color': '#0369a1'},
     '警察法制': {'code': 512, 'icon': '&#9878;', 'color': '#b45309'},
     '行政管理': {'code': 513, 'icon': '&#128203;', 'color': '#6366f1'},
+    '移民特考': {'code': 590, 'icon': '&#9992;', 'color': '#0891b2'},
 }
 
 # 圖標對照（純文字版，用於 Python 端）
@@ -55,6 +57,7 @@ CATEGORIES_EMOJI = {
     '資訊管理': '💻', '鑑識科學': '🔬',
     '國境警察': '🛂', '水上警察': '⚓', '警察法制': '⚖',
     '行政管理': '📋',
+    '移民特考': '✈',
 }
 
 
@@ -1450,17 +1453,20 @@ def generate_category_page(category_name, years_data, output_dir):
     subject_keys_json = json.dumps(subject_keys, ensure_ascii=False)
     subject_keys_script = f'<script>const SUBJECT_KEYS={subject_keys_json};</script>'
 
+    exam_prefix = '' if category_name == '移民特考' else '警察特考三等'
+    site_name = '考古題總覽' if category_name == '移民特考' else '三等警察特考考古題總覽'
+
     page_html = f'''<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>{escape_html(category_name)}考古題總覽 ({years[-1]}-{years[0]}年)</title>
-<meta name="description" content="警察特考三等{escape_html(category_name)}考古題總覽，涵蓋{years[-1]}-{years[0]}年共 {total_subjects} 份試卷、{total_questions} 道題目">
+<meta name="description" content="{exam_prefix}{escape_html(category_name)}考古題總覽，涵蓋{years[-1]}-{years[0]}年共 {total_subjects} 份試卷、{total_questions} 道題目">
 <meta name="theme-color" content="{info['color']}">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="{escape_html(category_name)}考古題總覽 ({years[-1]}-{years[0]}年)">
-<meta property="og:description" content="警察特考三等{escape_html(category_name)}，{years[-1]}-{years[0]}年共 {total_subjects} 份試卷、{total_questions} 道題目">
+<meta property="og:description" content="{exam_prefix}{escape_html(category_name)}，{years[-1]}-{years[0]}年共 {total_subjects} 份試卷、{total_questions} 道題目">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
 <link rel="canonical" href="{escape_html(category_name)}/{escape_html(category_name)}考古題總覽.html">
@@ -1475,9 +1481,9 @@ def generate_category_page(category_name, years_data, output_dir):
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "{escape_html(category_name)}考古題總覽",
-  "description": "警察特考三等{escape_html(category_name)}考古題，{years[-1]}-{years[0]}年共 {total_subjects} 份試卷",
+  "description": "{exam_prefix}{escape_html(category_name)}考古題，{years[-1]}-{years[0]}年共 {total_subjects} 份試卷",
   "inLanguage": "zh-TW",
-  "isPartOf": {{ "@type": "WebSite", "name": "三等警察特考考古題總覽" }}
+  "isPartOf": {{ "@type": "WebSite", "name": "{site_name}" }}
 }}</script>
 </head>
 <body>

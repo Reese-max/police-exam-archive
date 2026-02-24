@@ -1,0 +1,673 @@
+{
+  "metadata": {
+    "level": "四等",
+    "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,國家應推行全民健康保險,此處所謂國家,係指下列何者?",
+      "section": null,
+      "options": {
+        "A": "僅指中央",
+        "B": "僅指地方",
+        "C": "指中央或地方",
+        "D": "兼指中央與地方"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,下列有關遷徙自由的敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "憲法第10條規定人民有居住、遷徙之自由,包括人民有入出國境之權利",
+        "B": "任何人民都有無條件返鄉的權利,法律不得拒斥人民於國境外",
+        "C": "外國人入境的權利得依法加以限制",
+        "D": "役男出境非不得以法律限制,但應符合法律保留原則"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "憲法第19條規定人民有依法律納稅之義務,依司法院大法官解釋意旨,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "國家提供人民租稅減免優惠,雖非課予人民納稅義務,仍有租稅法定主義之適用",
+        "B": "國家應考量人民個人經濟能力之不同而訂定稅則,始符合租稅公平主義",
+        "C": "主管機關本於法定職權,就相關法律所為之闡釋,不得違背憲法原則與相關法律之立法意旨",
+        "D": "法律課予人民繳納一定金錢負擔之特別公課,與稅捐有別,其徵收目的、對象與用途不須以法律明定"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依據司法院大法官解釋之意旨,有關商業言論保障之敘述,下列何者正確?",
+      "section": null,
+      "options": {
+        "A": "廣告係為獲得財產而從事之經濟活動,涉及財產權之保障,與言論自由無關",
+        "B": "非關公意形成、真理發現或信仰表達之商業言論,所受保障與政治性言論未必相同",
+        "C": "商品標示僅為提供商品客觀資訊之方式,不受言論自由之保障",
+        "D": "事前審查乃對言論自由之重大干預,原則上應為違憲,但此一原則於商業言論並不適用"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依司法院釋字第584號解釋,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "職業自由屬於憲法保障人民工作權之範圍",
+        "B": "職業自由之限制因內容差異,憲法有寬嚴不同之容許標準",
+        "C": "限制曾犯故意殺人、強制性交等罪而受判決確定者,不准辦理營業小客車駕駛人職業登記之規定違憲",
+        "D": "立法者限制人民選擇職業自由之主觀要件,應有重要公共利益"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依據憲法增修條文,關於立法委員選舉,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "立法委員選舉係採單一選區兩票之聯立制",
+        "B": "全國不分區及僑居國外國民立法委員採政黨比例代表制產生",
+        "C": "須獲得百分之三以上的政黨選舉票的政黨始得分配全國不分區立法委員席次",
+        "D": "採取政黨比例代表制違反國民主權原則"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "關於罷免權之行使,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "被選舉人得由原選舉區罷免之",
+        "B": "不具有選舉區之不分區立法委員,所有選舉人皆可罷免",
+        "C": "罷免權之行使,以該被罷免人有具體違法失職行為為前提",
+        "D": "行使罷免權之要件及程序,明定於憲法及憲法增修條文中"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依司法院大法官解釋之意旨,關於總統發布之緊急命令,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "憲法上總統發布緊急命令之事由為避免國家或人民遭遇緊急危難或應付財政經濟上重大變故",
+        "B": "緊急命令在效期內具有替代法律之效力,得授權下級機關發布補充規定,無須立法院追認",
+        "C": "緊急命令在發布前應先經行政院會議決議通過",
+        "D": "緊急命令在發布後10日內應提交立法院追認,如立法院不同意時,立即失效"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "依憲法及憲法增修條文規定,下列何者不是行政院的職權?",
+      "section": null,
+      "options": {
+        "A": "向立法院提出施政方針及施政報告",
+        "B": "針對立法院重要政策之決議移請覆議",
+        "C": "針對立法院決議之法律案移請覆議",
+        "D": "議決緊急命令"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依司法院釋字第585號解釋,有關立法院調查權之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "得以法律由立法院院會決議,依法對違反協助調查義務者科處適當罰鍰",
+        "B": "319槍擊事件真相調查特別委員會由立法院籌設組成,屬協助立法院行使調查權特別委員會",
+        "C": "得立法委任非立法委員之人士協助調查",
+        "D": "於必要時,得禁止被調查人出境"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依憲法及增修條文規定與司法院大法官解釋意旨,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "立法院不得對各機關所編列預算之數額,在款項目節間移動增減",
+        "B": "立法院議決預算案所作成之附帶決議,有拘束行政院各機關之效力",
+        "C": "主管機關依其職權停止法定預算中部分支出項目之執行,必然違憲",
+        "D": "行政院對立法院議決之預算案如認窒礙難行,得逕移請立法院覆議"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "下列何者非人民得聲請司法院大法官解釋之標的?",
+      "section": null,
+      "options": {
+        "A": "最高法院判例",
+        "B": "最高行政法院庭長、法官聯席會議決議",
+        "C": "高等法院裁判",
+        "D": "公立大學招生簡章"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "關於我國司法審級制度之設計,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "採司法二元制,分為行政訴訟及普通訴訟",
+        "B": "不論是行政訴訟或普通訴訟,皆採三級三審",
+        "C": "公務員之懲戒由公務員懲戒委員會掌理,因其未設通常上訴救濟制度,與憲法第16條有所違背",
+        "D": "行政訴訟之三級分別為地方行政法院、高等行政法院與最高行政法院"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "下列有關監察委員之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "為使監察院之職權得以不間斷行使,總統於當屆監察院院長、副院長及監察委員任期屆滿前,應適時 提名繼任人選",
+        "B": "立法院於接受總統關於監察院院長、副院長及監察委員之提名咨文後,應適時行使同意權,以維繫監 察院之正常運行",
+        "C": "就監察委員之缺額,總統並無須適時提名繼任人選咨請立法院同意",
+        "D": "立法院就總統所提監察委員之人事案,消極不行使同意權,致監察院無從行使職權,違憲"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "依司法院釋字第553號解釋,有關中央對地方自治團體之監督,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "應尊重該地方自治團體所為合法性之判斷,但仍得依法撤銷或變更",
+        "B": "地方自治團體如判斷有恣意濫用等違法情事,得依法撤銷或變更",
+        "C": "針對地方自治團體處理其自治事項,中央僅得為適法性監督",
+        "D": "針對地方自治團體辦理委辦事項,中央僅得為合目的性監督"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "依地方制度法之規定,關於自治法規之公布或發布機關之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "自治條例,由各該地方行政機關公布",
+        "B": "自治規則,由各該地方行政機關發布",
+        "C": "委辦規則,由各該地方行政機關發布",
+        "D": "自律規則,由各該地方行政機關發布"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "下列何者為間接法源?",
+      "section": null,
+      "options": {
+        "A": "政策",
+        "B": "計畫",
+        "C": "行政規則",
+        "D": "解釋函令"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "依憲法規定,關於立法院法律案通過後之程序,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "移送總統",
+        "B": "移送行政院",
+        "C": "總統應於收到後30日內公布之",
+        "D": "行政院對於法律案如認為有窒礙難行時,得經總統核可,移請立法院覆議"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "下列何者非屬普通法院適用法律之原則?",
+      "section": null,
+      "options": {
+        "A": "不告不理原則",
+        "B": "拒絕適用可能違憲之法律",
+        "C": "不得拒絕適用法律",
+        "D": "一事不再理原則"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "下列何者不屬於法律保留原則之理論基礎?",
+      "section": null,
+      "options": {
+        "A": "基本權利之保障",
+        "B": "議會民主原則",
+        "C": "司法之可審查性",
+        "D": "法治國家原則"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "關於憲法解䆁與適用之敘述,下列何者正確?",
+      "section": null,
+      "options": {
+        "A": "憲法之適用,以憲法有明文規定者為限",
+        "B": "適用憲法發生疑義時,由爭議機關會商解決之",
+        "C": "修憲者不受憲法之拘束,非憲法規範之對象",
+        "D": "凡憲法設置之機關均有遵守自由民主憲政秩序之義務"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "依民法規定,下列關於保證契約之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "主債務因清償而消滅者,保證債務隨同消滅",
+        "B": "主債務人所有之抗辯,保證人得主張之。但主債務人拋棄其抗辯者,保證人則不得主張之",
+        "C": "數人保證同一債務,除契約另有約定外,應負連帶保證責任",
+        "D": "保證人之負擔,較主債務人為重者,應縮減至主債務之限度"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "下列勞務給付,何者原則上不具專屬性?",
+      "section": null,
+      "options": {
+        "A": "醫療契約",
+        "B": "僱傭契約",
+        "C": "委任契約",
+        "D": "旅客運送契約"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "區分所有建築物中,下列何者可單獨所有?",
+      "section": null,
+      "options": {
+        "A": "專有部分",
+        "B": "共有部分",
+        "C": "共用部分",
+        "D": "專有部分與共有部分"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "甲欲下手行竊,已進入屋內蒐尋財物,見到桌上鑽錶,然因巡邏員警經過,而放棄該次犯行。下列何者 正確?",
+      "section": null,
+      "options": {
+        "A": "甲為不能未遂",
+        "B": "甲為普通未遂",
+        "C": "甲為中止未遂",
+        "D": "甲為準中止犯"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "某甲先前因為犯竊盜罪,遭法院判處罰金新臺幣3,000元,正在2年緩刑期間,卻在日前因開車肇事,遭 檢察官依過失致傷害罪(法定刑為 6 個月以下有期徒刑、拘役或 500 元以下罰金)向地方法院起訴。就 本案與前案,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "甲為累犯,法院就本案不能宣告緩刑",
+        "B": "檢察官同時得就前案的緩刑宣告,聲請法院予以撤銷",
+        "C": "法院如果就本案對甲處以罰金刑,則同時可以宣告緩刑",
+        "D": "如果地方法院就本案判決甲有罪,檢察官即應聲請撤銷前案之緩刑宣告"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "依消費者保護法之規定,關於企業經營者對於產品之包裝,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "得給予豪華誇張之包裝",
+        "B": "包裝價格應予以最高額限制",
+        "C": "應進行防偽包裝",
+        "D": "應按商品性質為必要之包裝"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "依著作權法之規定,於街道長期展示之雕塑作品,不得以下列何種方式利用之?",
+      "section": null,
+      "options": {
+        "A": "以攝影方式拍攝雕塑物",
+        "B": "以雕塑方式重製雕塑物",
+        "C": "以繪畫方式描繪雕塑物",
+        "D": "將雕塑物以縮小模式重製模型自娛"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "依勞動基準法第10條之1之規定,有關雇主調動勞工工作所應符合的原則,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "對勞工之工資及其他勞動條件,未作不利之變更",
+        "B": "調動後工作為勞工體能及技術可勝任",
+        "C": "考量勞工及其家庭之生活利益",
+        "D": "雇主有應受保護之正當營業利益"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "依家庭暴力防治法之規定,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "家庭暴力防治法保護的對象只限於本國國民,對外籍或大陸配偶則不具效力",
+        "B": "該法不僅保障有婚姻關係的家庭成員,也包括前配偶與同居人及未同居的親密關係伴侶",
+        "C": "聲請通常保護令需經法院裁定核發,而暫時保護令則由警察機關核發",
+        "D": "保護令之聲請,只能在家庭暴力發生地之地方法院管轄"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "The mother the child to sleep almost every evening.",
+      "section": null,
+      "options": {
+        "A": "limped",
+        "B": "infected",
+        "C": "lulled",
+        "D": "inflicted"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Arriving in Orlando for a conference, Rose managed to catch a taxi to her accommodation and in.",
+      "section": null,
+      "options": {
+        "A": "dig",
+        "B": "rest",
+        "C": "inhabit",
+        "D": "settle"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "If Fleming hadn’t discovered penicillin, a lot of people from bacterial infection.",
+      "section": null,
+      "options": {
+        "A": "would be dead",
+        "B": "would have died",
+        "C": "would have survived",
+        "D": "would be saved"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "With the highly anti-missile system, we can effectively defend our country from any invasion.",
+      "section": null,
+      "options": {
+        "A": "sophisticated",
+        "B": "superstitious",
+        "C": "informal",
+        "D": "conscious"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Doctors say that consuming various vegetables and fruit is to our health.",
+      "section": null,
+      "options": {
+        "A": "artificial",
+        "B": "superficial",
+        "C": "beneficial",
+        "D": "commercial"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Cosmetic can make a person look different by changing the shape of his/her face or body.",
+      "section": null,
+      "options": {
+        "A": "pottery",
+        "B": "surgery",
+        "C": "bribery",
+        "D": "flattery"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "We went to the mall to buy some for our new apartment, including a refrigerator, a stove, and a dishwasher.",
+      "section": null,
+      "options": {
+        "A": "facilities",
+        "B": "utensils",
+        "C": "appliances",
+        "D": "supplements"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "People who eat healthy foods and do exercise have fewer health problems than people who do not.",
+      "section": null,
+      "options": {
+        "A": "brilliantly",
+        "B": "instantly",
+        "C": "historically",
+        "D": "statistically"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "The sailor’s light blue shirt beautifully with his dark tan skin in the sun.",
+      "section": null,
+      "options": {
+        "A": "confirmed",
+        "B": "contained",
+        "C": "contributed",
+        "D": "contrasted"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "Hawaii is a multicultural society, a community of different groups where no one group is the majority.",
+      "section": null,
+      "options": {
+        "A": "ethic",
+        "B": "ethnic",
+        "C": "moral",
+        "D": "mortal 請依下文回答第41題至第45題: The deal struck between Iran and six world powers over its nuclear program should see sanctions against the country beginning to ease by next year. Iranians are hoping the 41 of travel restrictions could prompt an influx of international tourists. Travel agencies have already seen an increase in demand. With its ancient architecture, 42 landscapes and warm people, tour companies describe Iran as one of the unexplored jewels of the Middle East. But the country’s 43 since the 1979 Islamic Revolution has seen visitor numbers from the West fall. The latest 44 show only 90,000 arrivals from North America and the European Union in 2013. Former diplomat Mehrdad Khonsari said there’s a lot of work to do. “The difficulties we’ve had in Iran have definitely hurt the tourist industry in the sense that people are afraid to go. But those people that 45 and overcame these considerations and visited Iran were never sorry,” said Khonsari."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "lifting",
+        "B": "impact",
+        "C": "possibility",
+        "D": "activation"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "emerging",
+        "B": "resulting",
+        "C": "demanding",
+        "D": "breathtaking"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "export",
+        "B": "isolation",
+        "C": "transportation",
+        "D": "population"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "figures",
+        "B": "fingers",
+        "C": "fashions",
+        "D": "fragments"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "voted",
+        "B": "violated",
+        "C": "ventured",
+        "D": "volunteered 請依下文回答第46題至第50題: Experts have traditionally seen a high level of intelligence as applicable across the board to most human activities, guaranteeing its possessor success in whatever s/he does. In the 1980s, however, Prof. Howard Gardner proposed the theory of multiple intelligences, suggesting that the mind does not possess just one kind of intelligence, but rather many distinct intelligences, including linguistic, logical-mathematical, spatial, naturalistic intelligences, among others. A person with a high level of linguistic intelligence is endowed with a large vocabulary and the ability to express him or herself well. Gardner sees the poet as the best example of an astute user of language. In creating poems, poets make use of the full complexity of meaning and the widest range of linguistic dynamics. Naturally, people with a high level of linguistic intelligence would excel at language-related activities such as writing, teaching and persuading others. Logical-mathematical intelligence refers to the skills often associated with scientists and mathematicians. Scientists tend to give it a more significant role than other intelligences. Gardner certainly disagrees with this point of view. He sees logical-mathematical intelligence as simply one among a set of intelligences, asserting that though it may have been exceptionally important in western societies, it has played a more modest role in other societies. Spatial intelligence refers to the ability to visualize things in the mind accurately and precisely. This intelligence is therefore associated with artists, who are experts in visualizing and making intelligent use of forms and colors. A person with a high level of spatial intelligence may also have excellent visual memory, and perhaps even a so-called photographic memory. Naturalistic intelligence has been quite controversial and critics generally see it as an area of interest. Gardner hypothesizes that people who have a high level of naturalistic intelligence are more sensitive to nature and to their own relationship to it. A person who is successful at growing plants or raising animals could be said to have a high level of naturalistic intelligence. Such a person could be a successful gardener or farmer, and would also make a good scientist studying the natural world. The revolutionary theory of multiple intelligences has resulted in several criticisms. Some have questioned the criteria that qualify something as an intelligence. Others have pointed out that the existence of multiple intelligences has never been proven through scientific research. These criticisms notwithstanding, the theory of multiple intelligences has sparked fascinating debate about the value and the nature of intelligence. Its applications in the field of education have led to more diverse educational methods as teachers seek to access and develop the multiple intelligences of students."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "What is this passage mainly about?",
+      "section": null,
+      "options": {
+        "A": "Introducing a new theory of intelligence.",
+        "B": "Explaining why being intelligent is important.",
+        "C": "Discussing the significance of different intelligences.",
+        "D": "Evaluating the methods of cultivating one’s intelligences."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Which of the following is NOT an intelligence mentioned in this passage?",
+      "section": null,
+      "options": {
+        "A": "Spatial.",
+        "B": "Linguistic.",
+        "C": "Interactive.",
+        "D": "Naturalistic."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Which of the following intelligences has received most criticisms?",
+      "section": null,
+      "options": {
+        "A": "Spatial.",
+        "B": "Naturalistic.",
+        "C": "Linguistic.",
+        "D": "Logical-mathematical."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Which criticism about the theory of multiple intelligences has been raised by critics?",
+      "section": null,
+      "options": {
+        "A": "It is wrongly applied to education.",
+        "B": "It has never been proven by scientific research.",
+        "C": "It tells us nothing about the nature of intelligence.",
+        "D": "There are too many criteria for identifying intelligences."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "According to this passage, which of the following statements is NOT true?",
+      "section": null,
+      "options": {
+        "A": "An artist is most likely to rely on naturalistic intelligence.",
+        "B": "Scientists tend to consider logical-mathematical intelligence the most important.",
+        "C": "People with better spatial intelligence may have clearer visualization of images.",
+        "D": "A person with a high level of linguistic intelligence is more likely to excel at explaining ideas."
+      },
+      "answer": "A"
+    }
+  ],
+  "year": 107,
+  "category": "移民特考",
+  "subject": "[四等] 法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "level": "四等",
+  "original_subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/107年/四等/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}
