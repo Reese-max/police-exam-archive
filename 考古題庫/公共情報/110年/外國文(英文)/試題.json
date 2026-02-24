@@ -2,8 +2,8 @@
   "metadata": {
     "exam_type": "110",
     "level": "三等",
-    "subject": "外國文（英文）",
-    "exam_time": "2 小時 座號：",
+    "subject": "外國文(英文)",
+    "exam_time": "2 小時",
     "code": "35140"
   },
   "notes": [
@@ -292,7 +292,7 @@
         "A": "cautious",
         "B": "careful",
         "C": "risky",
-        "D": "positive 請依下文回答第21題至第25題: Shingles is a painful skin rash. It is caused bythe varicella zoster virus. Shingles usually appears in a band, a strip, or a small area on one side of the face or body. Shingles is most common 21 older adults and people who have weak immune systems because of stress, injury, certain medicines, or other reasons. Most people who get shingles will get better and will not get it again. But it is possible to get shingles morethanonce. Shingles occurs whenthevirusthat causes chickenpoxto 22 upagainin yourbody.After youget better from chickenpox, the virus “sleeps” in your nerve roots. In some people, it stays 23 forever. In others,thevirus“wakesup”whendisease,stress,aging,orsomemedicationsweakentheimmunesystem.Itis not clear why this happens. But after the virus becomes 24 again, it can only cause shingles, not chickenpox. Usually, one can’t catch shingles from someone else who has shingles. But there is a small chance that a person with a shingles rash can 25 the virus to another person. If you have shingles, avoid closecontact withpeople until aftertherash blisters heal."
+        "D": "positive"
       },
       "answer": "C"
     },
@@ -307,7 +307,9 @@
         "C": "at",
         "D": "about"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第21題至第25題:\nShingles is a painful skin rash. It is caused bythe varicella zoster virus. Shingles usually appears in a band, a strip, or a small area on one side of the face or body. Shingles is most common 21 older adults and people who have weak immune systems because of stress, injury, certain medicines, or other reasons. Most people who get shingles will get better and will not get it again. But it is possible to get shingles morethanonce. Shingles occurs whenthevirusthat causes chickenpoxto 22 upagainin yourbody.After youget better from chickenpox, the virus “sleeps” in your nerve roots. In some people, it stays 23 forever. In others,thevirus“wakesup”whendisease,stress,aging,orsomemedicationsweakentheimmunesystem.Itis not clear why this happens. But after the virus becomes 24 again, it can only cause shingles, not chickenpox. Usually, one can’t catch shingles from someone else who has shingles. But there is a small chance that a person with a shingles rash can 25 the virus to another person. If you have shingles, avoid closecontact withpeople until aftertherash blisters heal.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 22,
@@ -320,7 +322,9 @@
         "C": "close",
         "D": "start"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第21題至第25題:\nShingles is a painful skin rash. It is caused bythe varicella zoster virus. Shingles usually appears in a band, a strip, or a small area on one side of the face or body. Shingles is most common 21 older adults and people who have weak immune systems because of stress, injury, certain medicines, or other reasons. Most people who get shingles will get better and will not get it again. But it is possible to get shingles morethanonce. Shingles occurs whenthevirusthat causes chickenpoxto 22 upagainin yourbody.After youget better from chickenpox, the virus “sleeps” in your nerve roots. In some people, it stays 23 forever. In others,thevirus“wakesup”whendisease,stress,aging,orsomemedicationsweakentheimmunesystem.Itis not clear why this happens. But after the virus becomes 24 again, it can only cause shingles, not chickenpox. Usually, one can’t catch shingles from someone else who has shingles. But there is a small chance that a person with a shingles rash can 25 the virus to another person. If you have shingles, avoid closecontact withpeople until aftertherash blisters heal.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 23,
@@ -333,7 +337,9 @@
         "C": "fatal",
         "D": "silent"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第21題至第25題:\nShingles is a painful skin rash. It is caused bythe varicella zoster virus. Shingles usually appears in a band, a strip, or a small area on one side of the face or body. Shingles is most common 21 older adults and people who have weak immune systems because of stress, injury, certain medicines, or other reasons. Most people who get shingles will get better and will not get it again. But it is possible to get shingles morethanonce. Shingles occurs whenthevirusthat causes chickenpoxto 22 upagainin yourbody.After youget better from chickenpox, the virus “sleeps” in your nerve roots. In some people, it stays 23 forever. In others,thevirus“wakesup”whendisease,stress,aging,orsomemedicationsweakentheimmunesystem.Itis not clear why this happens. But after the virus becomes 24 again, it can only cause shingles, not chickenpox. Usually, one can’t catch shingles from someone else who has shingles. But there is a small chance that a person with a shingles rash can 25 the virus to another person. If you have shingles, avoid closecontact withpeople until aftertherash blisters heal.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 24,
@@ -346,7 +352,9 @@
         "C": "accurate",
         "D": "absent"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第21題至第25題:\nShingles is a painful skin rash. It is caused bythe varicella zoster virus. Shingles usually appears in a band, a strip, or a small area on one side of the face or body. Shingles is most common 21 older adults and people who have weak immune systems because of stress, injury, certain medicines, or other reasons. Most people who get shingles will get better and will not get it again. But it is possible to get shingles morethanonce. Shingles occurs whenthevirusthat causes chickenpoxto 22 upagainin yourbody.After youget better from chickenpox, the virus “sleeps” in your nerve roots. In some people, it stays 23 forever. In others,thevirus“wakesup”whendisease,stress,aging,orsomemedicationsweakentheimmunesystem.Itis not clear why this happens. But after the virus becomes 24 again, it can only cause shingles, not chickenpox. Usually, one can’t catch shingles from someone else who has shingles. But there is a small chance that a person with a shingles rash can 25 the virus to another person. If you have shingles, avoid closecontact withpeople until aftertherash blisters heal.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 25,
@@ -357,9 +365,11 @@
         "A": "smear",
         "B": "skip",
         "C": "spread",
-        "D": "stop 請依下文回答第26題至第30題: AcinemainNewZealandhasimposedarestrictionbanningpeoplefromwearingpajamasandrubber rainboots tothetheater fornoticingan increasing 26 offilm lovers turningupinpajamas recently. ItdecidedtoraisedressstandardandannouncethebaninaFacebookpostsaying,“Justafriendly 27 that we have a dress code at Hawera Cinemas. It’s simple really, as long as you are 28 dressed and are wearing clean footwear you are good to go.” Many people positivelyagree with the new dress code, and even wouldn’t feel being offended 29 . But certainly, not everyone is happywith the new restriction about dress. Some argue that the cinema has no right to 30 the dress of customers, and some even calledthetheater“fashionpolice.”"
+        "D": "stop"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第21題至第25題:\nShingles is a painful skin rash. It is caused bythe varicella zoster virus. Shingles usually appears in a band, a strip, or a small area on one side of the face or body. Shingles is most common 21 older adults and people who have weak immune systems because of stress, injury, certain medicines, or other reasons. Most people who get shingles will get better and will not get it again. But it is possible to get shingles morethanonce. Shingles occurs whenthevirusthat causes chickenpoxto 22 upagainin yourbody.After youget better from chickenpox, the virus “sleeps” in your nerve roots. In some people, it stays 23 forever. In others,thevirus“wakesup”whendisease,stress,aging,orsomemedicationsweakentheimmunesystem.Itis not clear why this happens. But after the virus becomes 24 again, it can only cause shingles, not chickenpox. Usually, one can’t catch shingles from someone else who has shingles. But there is a small chance that a person with a shingles rash can 25 the virus to another person. If you have shingles, avoid closecontact withpeople until aftertherash blisters heal.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 26,
@@ -372,7 +382,9 @@
         "C": "controversy",
         "D": "trend"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第26題至第30題:\nAcinemainNewZealandhasimposedarestrictionbanningpeoplefromwearingpajamasandrubber rainboots tothetheater fornoticingan increasing 26 offilm lovers turningupinpajamas recently. ItdecidedtoraisedressstandardandannouncethebaninaFacebookpostsaying,“Justafriendly 27 that we have a dress code at Hawera Cinemas. It’s simple really, as long as you are 28 dressed and are wearing clean footwear you are good to go.” Many people positivelyagree with the new dress code, and even wouldn’t feel being offended 29 . But certainly, not everyone is happywith the new restriction about dress. Some argue that the cinema has no right to 30 the dress of customers, and some even calledthetheater“fashionpolice.”",
+      "passage_question_range": "26-30"
     },
     {
       "number": 27,
@@ -385,7 +397,9 @@
         "C": "momentum",
         "D": "recall"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第26題至第30題:\nAcinemainNewZealandhasimposedarestrictionbanningpeoplefromwearingpajamasandrubber rainboots tothetheater fornoticingan increasing 26 offilm lovers turningupinpajamas recently. ItdecidedtoraisedressstandardandannouncethebaninaFacebookpostsaying,“Justafriendly 27 that we have a dress code at Hawera Cinemas. It’s simple really, as long as you are 28 dressed and are wearing clean footwear you are good to go.” Many people positivelyagree with the new dress code, and even wouldn’t feel being offended 29 . But certainly, not everyone is happywith the new restriction about dress. Some argue that the cinema has no right to 30 the dress of customers, and some even calledthetheater“fashionpolice.”",
+      "passage_question_range": "26-30"
     },
     {
       "number": 28,
@@ -398,18 +412,24 @@
         "C": "specifically",
         "D": "informally"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第26題至第30題:\nAcinemainNewZealandhasimposedarestrictionbanningpeoplefromwearingpajamasandrubber rainboots tothetheater fornoticingan increasing 26 offilm lovers turningupinpajamas recently. ItdecidedtoraisedressstandardandannouncethebaninaFacebookpostsaying,“Justafriendly 27 that we have a dress code at Hawera Cinemas. It’s simple really, as long as you are 28 dressed and are wearing clean footwear you are good to go.” Many people positivelyagree with the new dress code, and even wouldn’t feel being offended 29 . But certainly, not everyone is happywith the new restriction about dress. Some argue that the cinema has no right to 30 the dress of customers, and some even calledthetheater“fashionpolice.”",
+      "passage_question_range": "26-30"
     },
     {
       "number": 29,
       "type": "choice",
-      "stem": "(A)theotherwayaround (B)ontheotherhand",
+      "stem": "",
       "section": "乙、測驗題",
       "options": {
+        "A": "theotherwayaround",
+        "B": "ontheotherhand",
         "C": "inthefirst place",
         "D": "at anycost"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第26題至第30題:\nAcinemainNewZealandhasimposedarestrictionbanningpeoplefromwearingpajamasandrubber rainboots tothetheater fornoticingan increasing 26 offilm lovers turningupinpajamas recently. ItdecidedtoraisedressstandardandannouncethebaninaFacebookpostsaying,“Justafriendly 27 that we have a dress code at Hawera Cinemas. It’s simple really, as long as you are 28 dressed and are wearing clean footwear you are good to go.” Many people positivelyagree with the new dress code, and even wouldn’t feel being offended 29 . But certainly, not everyone is happywith the new restriction about dress. Some argue that the cinema has no right to 30 the dress of customers, and some even calledthetheater“fashionpolice.”",
+      "passage_question_range": "26-30"
     },
     {
       "number": 30,
@@ -420,9 +440,11 @@
         "A": "regulate",
         "B": "alternate",
         "C": "confirm",
-        "D": "describe 請依下文回答第31題至第35題: Against utilitarian and empiricist philosophers, Immanuel Kant argued that we must think of ourselves as more than a bundle of preferences and desires. To be free is to be autonomous, and to be autonomous is to be 31 by a law I give myself. John Rawls adapted Kant’s conception of the autonomous self and drew upon it in theory of justice. Like Kant, Rawls observed that the choices we makeoftenshowmorallyarbitrarycontingencies.Someone’schoicestoworkinasweatshop,forexample, might 32 direeconomicnecessity,notfreechoiceinanymeaningfulsense.Soifwewantsocietyto be a voluntaryarrangement, we can’t base it on actual 33 ; we should ask instead what principles of justicewewouldagreetoifwe 34 ourparticularinterestsandadvantages,andchoosebehindaveil of ignorance. Kant’s idea of an autonomous will and Rawls’s idea of a hypothetical agreement behind a veil of ignorance have this in common: both conceive the moral agent as 35 his or her particular aims and attachments.When we wish the moral law or choose the principles of justice, we do so without referencetotheroles and identities that situateus intheworldandmakeus theparticularpeoplewe are."
+        "D": "describe"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第26題至第30題:\nAcinemainNewZealandhasimposedarestrictionbanningpeoplefromwearingpajamasandrubber rainboots tothetheater fornoticingan increasing 26 offilm lovers turningupinpajamas recently. ItdecidedtoraisedressstandardandannouncethebaninaFacebookpostsaying,“Justafriendly 27 that we have a dress code at Hawera Cinemas. It’s simple really, as long as you are 28 dressed and are wearing clean footwear you are good to go.” Many people positivelyagree with the new dress code, and even wouldn’t feel being offended 29 . But certainly, not everyone is happywith the new restriction about dress. Some argue that the cinema has no right to 30 the dress of customers, and some even calledthetheater“fashionpolice.”",
+      "passage_question_range": "26-30"
     },
     {
       "number": 31,
@@ -435,7 +457,9 @@
         "C": "violated",
         "D": "governed"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第31題至第35題:\nAgainst utilitarian and empiricist philosophers, Immanuel Kant argued that we must think of ourselves as more than a bundle of preferences and desires. To be free is to be autonomous, and to be autonomous is to be 31 by a law I give myself. John Rawls adapted Kant’s conception of the autonomous self and drew upon it in theory of justice. Like Kant, Rawls observed that the choices we makeoftenshowmorallyarbitrarycontingencies.Someone’schoicestoworkinasweatshop,forexample, might 32 direeconomicnecessity,notfreechoiceinanymeaningfulsense.Soifwewantsocietyto be a voluntaryarrangement, we can’t base it on actual 33 ; we should ask instead what principles of justicewewouldagreetoifwe 34 ourparticularinterestsandadvantages,andchoosebehindaveil of ignorance. Kant’s idea of an autonomous will and Rawls’s idea of a hypothetical agreement behind a veil of ignorance have this in common: both conceive the moral agent as 35 his or her particular aims and attachments.When we wish the moral law or choose the principles of justice, we do so without referencetotheroles and identities that situateus intheworldandmakeus theparticularpeoplewe are.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 32,
@@ -448,7 +472,9 @@
         "C": "include",
         "D": "reduce"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第31題至第35題:\nAgainst utilitarian and empiricist philosophers, Immanuel Kant argued that we must think of ourselves as more than a bundle of preferences and desires. To be free is to be autonomous, and to be autonomous is to be 31 by a law I give myself. John Rawls adapted Kant’s conception of the autonomous self and drew upon it in theory of justice. Like Kant, Rawls observed that the choices we makeoftenshowmorallyarbitrarycontingencies.Someone’schoicestoworkinasweatshop,forexample, might 32 direeconomicnecessity,notfreechoiceinanymeaningfulsense.Soifwewantsocietyto be a voluntaryarrangement, we can’t base it on actual 33 ; we should ask instead what principles of justicewewouldagreetoifwe 34 ourparticularinterestsandadvantages,andchoosebehindaveil of ignorance. Kant’s idea of an autonomous will and Rawls’s idea of a hypothetical agreement behind a veil of ignorance have this in common: both conceive the moral agent as 35 his or her particular aims and attachments.When we wish the moral law or choose the principles of justice, we do so without referencetotheroles and identities that situateus intheworldandmakeus theparticularpeoplewe are.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 33,
@@ -461,7 +487,9 @@
         "C": "negation",
         "D": "rebuttal"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第31題至第35題:\nAgainst utilitarian and empiricist philosophers, Immanuel Kant argued that we must think of ourselves as more than a bundle of preferences and desires. To be free is to be autonomous, and to be autonomous is to be 31 by a law I give myself. John Rawls adapted Kant’s conception of the autonomous self and drew upon it in theory of justice. Like Kant, Rawls observed that the choices we makeoftenshowmorallyarbitrarycontingencies.Someone’schoicestoworkinasweatshop,forexample, might 32 direeconomicnecessity,notfreechoiceinanymeaningfulsense.Soifwewantsocietyto be a voluntaryarrangement, we can’t base it on actual 33 ; we should ask instead what principles of justicewewouldagreetoifwe 34 ourparticularinterestsandadvantages,andchoosebehindaveil of ignorance. Kant’s idea of an autonomous will and Rawls’s idea of a hypothetical agreement behind a veil of ignorance have this in common: both conceive the moral agent as 35 his or her particular aims and attachments.When we wish the moral law or choose the principles of justice, we do so without referencetotheroles and identities that situateus intheworldandmakeus theparticularpeoplewe are.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 34,
@@ -474,7 +502,9 @@
         "C": "look for",
         "D": "set aside"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第31題至第35題:\nAgainst utilitarian and empiricist philosophers, Immanuel Kant argued that we must think of ourselves as more than a bundle of preferences and desires. To be free is to be autonomous, and to be autonomous is to be 31 by a law I give myself. John Rawls adapted Kant’s conception of the autonomous self and drew upon it in theory of justice. Like Kant, Rawls observed that the choices we makeoftenshowmorallyarbitrarycontingencies.Someone’schoicestoworkinasweatshop,forexample, might 32 direeconomicnecessity,notfreechoiceinanymeaningfulsense.Soifwewantsocietyto be a voluntaryarrangement, we can’t base it on actual 33 ; we should ask instead what principles of justicewewouldagreetoifwe 34 ourparticularinterestsandadvantages,andchoosebehindaveil of ignorance. Kant’s idea of an autonomous will and Rawls’s idea of a hypothetical agreement behind a veil of ignorance have this in common: both conceive the moral agent as 35 his or her particular aims and attachments.When we wish the moral law or choose the principles of justice, we do so without referencetotheroles and identities that situateus intheworldandmakeus theparticularpeoplewe are.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 35,
@@ -485,9 +515,11 @@
         "A": "adjacent to",
         "B": "different from",
         "C": "independent of",
-        "D": "responsiblefor 請依下文回答第36題至第40題: Technologicaladvancementsofferanumberofnovelwaystocommunicatewithotherssuchasonline chat, instant messaging, email, text messages, and social network sites, above and beyond existing channels of communication such as face-to-face contact, phone calls, and conventional mail. Given the plethora of social communication channels available, people often need to choose one channel over the others to communicate with others. Arecent poll conducted by the Swedish furniture giant IKEAshows that 68% of the 12,000 respondents in 12 big cities around the world prefer communicating with other people online. The question is, why do some people prefer online communication over face-to-face interactionwhencommunicatingwiththeirfriends?Amonganumberoffactorssuchasthecontentofthe communication,thenatureoftherelationshipsinvolved,andgeographicdistances,individualdifferences, like social skills, have also been identified to be associated with preference for online communication. Social skills can be defined as one’s ability to interact with others in an appropriate way, and to offer complex,strategicself-presentationsinresponsetoawidevarietyofverbalandnonverbalcuesandsocial contexts. Since one major difference between online communication and face-to-face interaction lies in the diminished nonverbal cues, individuals with poor social skills may thus be attracted to online communication.With diminished nonverbal cues, online social communication is possiblymuch simpler and easier for them to handle. In addition, given the relative anonymity provided by online communication,individualswithpoorsocialskillsmayhaveanopportunitytodevelopandpresent“online selves” that replace their real selves. This means online communication may also increase individuals’ abilitytoedit theirsocial behaviorandpresent themselves selectivelybeforereal orimaginedfriends."
+        "D": "responsiblefor"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第31題至第35題:\nAgainst utilitarian and empiricist philosophers, Immanuel Kant argued that we must think of ourselves as more than a bundle of preferences and desires. To be free is to be autonomous, and to be autonomous is to be 31 by a law I give myself. John Rawls adapted Kant’s conception of the autonomous self and drew upon it in theory of justice. Like Kant, Rawls observed that the choices we makeoftenshowmorallyarbitrarycontingencies.Someone’schoicestoworkinasweatshop,forexample, might 32 direeconomicnecessity,notfreechoiceinanymeaningfulsense.Soifwewantsocietyto be a voluntaryarrangement, we can’t base it on actual 33 ; we should ask instead what principles of justicewewouldagreetoifwe 34 ourparticularinterestsandadvantages,andchoosebehindaveil of ignorance. Kant’s idea of an autonomous will and Rawls’s idea of a hypothetical agreement behind a veil of ignorance have this in common: both conceive the moral agent as 35 his or her particular aims and attachments.When we wish the moral law or choose the principles of justice, we do so without referencetotheroles and identities that situateus intheworldandmakeus theparticularpeoplewe are.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 36,
@@ -500,7 +532,9 @@
         "C": "Potential Negative Impacts ofSocial Mediaon Social Skills.",
         "D": "Rolesof LinguisticandNon-linguisticSkills onOnlineCommunication."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第36題至第40題:\nTechnologicaladvancementsofferanumberofnovelwaystocommunicatewithotherssuchasonline chat, instant messaging, email, text messages, and social network sites, above and beyond existing channels of communication such as face-to-face contact, phone calls, and conventional mail. Given the plethora of social communication channels available, people often need to choose one channel over the others to communicate with others. Arecent poll conducted by the Swedish furniture giant IKEAshows that 68% of the 12,000 respondents in 12 big cities around the world prefer communicating with other people online. The question is, why do some people prefer online communication over face-to-face interactionwhencommunicatingwiththeirfriends?Amonganumberoffactorssuchasthecontentofthe communication,thenatureoftherelationshipsinvolved,andgeographicdistances,individualdifferences, like social skills, have also been identified to be associated with preference for online communication. Social skills can be defined as one’s ability to interact with others in an appropriate way, and to offer complex,strategicself-presentationsinresponsetoawidevarietyofverbalandnonverbalcuesandsocial contexts. Since one major difference between online communication and face-to-face interaction lies in the diminished nonverbal cues, individuals with poor social skills may thus be attracted to online communication.With diminished nonverbal cues, online social communication is possiblymuch simpler and easier for them to handle. In addition, given the relative anonymity provided by online communication,individualswithpoorsocialskillsmayhaveanopportunitytodevelopandpresent“online selves” that replace their real selves. This means online communication may also increase individuals’ abilitytoedit theirsocial behaviorandpresent themselves selectivelybeforereal orimaginedfriends.",
+      "passage_question_range": "36-40"
     },
     {
       "number": 37,
@@ -513,7 +547,9 @@
         "C": "Its geographical independence.",
         "D": "Its obscurityinreal identity."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第36題至第40題:\nTechnologicaladvancementsofferanumberofnovelwaystocommunicatewithotherssuchasonline chat, instant messaging, email, text messages, and social network sites, above and beyond existing channels of communication such as face-to-face contact, phone calls, and conventional mail. Given the plethora of social communication channels available, people often need to choose one channel over the others to communicate with others. Arecent poll conducted by the Swedish furniture giant IKEAshows that 68% of the 12,000 respondents in 12 big cities around the world prefer communicating with other people online. The question is, why do some people prefer online communication over face-to-face interactionwhencommunicatingwiththeirfriends?Amonganumberoffactorssuchasthecontentofthe communication,thenatureoftherelationshipsinvolved,andgeographicdistances,individualdifferences, like social skills, have also been identified to be associated with preference for online communication. Social skills can be defined as one’s ability to interact with others in an appropriate way, and to offer complex,strategicself-presentationsinresponsetoawidevarietyofverbalandnonverbalcuesandsocial contexts. Since one major difference between online communication and face-to-face interaction lies in the diminished nonverbal cues, individuals with poor social skills may thus be attracted to online communication.With diminished nonverbal cues, online social communication is possiblymuch simpler and easier for them to handle. In addition, given the relative anonymity provided by online communication,individualswithpoorsocialskillsmayhaveanopportunitytodevelopandpresent“online selves” that replace their real selves. This means online communication may also increase individuals’ abilitytoedit theirsocial behaviorandpresent themselves selectivelybeforereal orimaginedfriends.",
+      "passage_question_range": "36-40"
     },
     {
       "number": 38,
@@ -526,7 +562,9 @@
         "C": "The biggest challenge for people poor at social skills is to start online conversations to present themselves.",
         "D": "Online communication may reduce the difficulty experienced by those deficient in social skills duringface-to-faceinteraction."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第36題至第40題:\nTechnologicaladvancementsofferanumberofnovelwaystocommunicatewithotherssuchasonline chat, instant messaging, email, text messages, and social network sites, above and beyond existing channels of communication such as face-to-face contact, phone calls, and conventional mail. Given the plethora of social communication channels available, people often need to choose one channel over the others to communicate with others. Arecent poll conducted by the Swedish furniture giant IKEAshows that 68% of the 12,000 respondents in 12 big cities around the world prefer communicating with other people online. The question is, why do some people prefer online communication over face-to-face interactionwhencommunicatingwiththeirfriends?Amonganumberoffactorssuchasthecontentofthe communication,thenatureoftherelationshipsinvolved,andgeographicdistances,individualdifferences, like social skills, have also been identified to be associated with preference for online communication. Social skills can be defined as one’s ability to interact with others in an appropriate way, and to offer complex,strategicself-presentationsinresponsetoawidevarietyofverbalandnonverbalcuesandsocial contexts. Since one major difference between online communication and face-to-face interaction lies in the diminished nonverbal cues, individuals with poor social skills may thus be attracted to online communication.With diminished nonverbal cues, online social communication is possiblymuch simpler and easier for them to handle. In addition, given the relative anonymity provided by online communication,individualswithpoorsocialskillsmayhaveanopportunitytodevelopandpresent“online selves” that replace their real selves. This means online communication may also increase individuals’ abilitytoedit theirsocial behaviorandpresent themselves selectivelybeforereal orimaginedfriends.",
+      "passage_question_range": "36-40"
     },
     {
       "number": 39,
@@ -539,7 +577,9 @@
         "C": "Theyfeel it moresinceretoconveytheirmessages withdigital contents.",
         "D": "Theythinkit morepolitetoreachout totheirfriends separatedbygeographical distances."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第36題至第40題:\nTechnologicaladvancementsofferanumberofnovelwaystocommunicatewithotherssuchasonline chat, instant messaging, email, text messages, and social network sites, above and beyond existing channels of communication such as face-to-face contact, phone calls, and conventional mail. Given the plethora of social communication channels available, people often need to choose one channel over the others to communicate with others. Arecent poll conducted by the Swedish furniture giant IKEAshows that 68% of the 12,000 respondents in 12 big cities around the world prefer communicating with other people online. The question is, why do some people prefer online communication over face-to-face interactionwhencommunicatingwiththeirfriends?Amonganumberoffactorssuchasthecontentofthe communication,thenatureoftherelationshipsinvolved,andgeographicdistances,individualdifferences, like social skills, have also been identified to be associated with preference for online communication. Social skills can be defined as one’s ability to interact with others in an appropriate way, and to offer complex,strategicself-presentationsinresponsetoawidevarietyofverbalandnonverbalcuesandsocial contexts. Since one major difference between online communication and face-to-face interaction lies in the diminished nonverbal cues, individuals with poor social skills may thus be attracted to online communication.With diminished nonverbal cues, online social communication is possiblymuch simpler and easier for them to handle. In addition, given the relative anonymity provided by online communication,individualswithpoorsocialskillsmayhaveanopportunitytodevelopandpresent“online selves” that replace their real selves. This means online communication may also increase individuals’ abilitytoedit theirsocial behaviorandpresent themselves selectivelybeforereal orimaginedfriends.",
+      "passage_question_range": "36-40"
     },
     {
       "number": 40,
@@ -552,7 +592,9 @@
         "C": "Perished.",
         "D": "Wasted."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第36題至第40題:\nTechnologicaladvancementsofferanumberofnovelwaystocommunicatewithotherssuchasonline chat, instant messaging, email, text messages, and social network sites, above and beyond existing channels of communication such as face-to-face contact, phone calls, and conventional mail. Given the plethora of social communication channels available, people often need to choose one channel over the others to communicate with others. Arecent poll conducted by the Swedish furniture giant IKEAshows that 68% of the 12,000 respondents in 12 big cities around the world prefer communicating with other people online. The question is, why do some people prefer online communication over face-to-face interactionwhencommunicatingwiththeirfriends?Amonganumberoffactorssuchasthecontentofthe communication,thenatureoftherelationshipsinvolved,andgeographicdistances,individualdifferences, like social skills, have also been identified to be associated with preference for online communication. Social skills can be defined as one’s ability to interact with others in an appropriate way, and to offer complex,strategicself-presentationsinresponsetoawidevarietyofverbalandnonverbalcuesandsocial contexts. Since one major difference between online communication and face-to-face interaction lies in the diminished nonverbal cues, individuals with poor social skills may thus be attracted to online communication.With diminished nonverbal cues, online social communication is possiblymuch simpler and easier for them to handle. In addition, given the relative anonymity provided by online communication,individualswithpoorsocialskillsmayhaveanopportunitytodevelopandpresent“online selves” that replace their real selves. This means online communication may also increase individuals’ abilitytoedit theirsocial behaviorandpresent themselves selectivelybeforereal orimaginedfriends.",
+      "passage_question_range": "36-40"
     }
   ],
   "year": 110,

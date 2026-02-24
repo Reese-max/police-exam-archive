@@ -2,8 +2,8 @@
   "metadata": {
     "exam_type": "111",
     "level": "三等",
-    "subject": "外國文（英文）",
-    "exam_time": "2 小時 座號：",
+    "subject": "外國文(英文)",
+    "exam_time": "2 小時",
     "code": "35140"
   },
   "notes": [
@@ -292,7 +292,7 @@
         "A": "confidential",
         "B": "confirmative",
         "C": "superficial",
-        "D": "supplementary 請依下文回答第21題至第25題: ThemostcommonquestionthatcuratorEdwardBleibergfieldsfromvisitorsisastraightforwardbut salientone:Whyarethestatues’nosesbroken?Bleiberg,who 21 theBrooklynmuseum'sextensive holdings of Egyptian, Classical and ancient Near Eastern art, was surprised the first few times he heard this question. He had taken for 22 that the sculptures were damaged; his training in Egyptology encouragedvisualizinghowastatuewouldlookifitwerestill 23 .Itmightseeminevitablethatafter thousands of years, an ancient artifact would show wear and 24 . But this simple observation led Bleiberg to uncover a widespread pattern of deliberate destruction, which pointed to a complex set of reasons whymost works ofEgyptian art cametobe 25 inthefirst place."
+        "D": "supplementary"
       },
       "answer": "D"
     },
@@ -307,7 +307,9 @@
         "C": "devastates",
         "D": "fortells"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第21題至第25題:\nThemostcommonquestionthatcuratorEdwardBleibergfieldsfromvisitorsisastraightforwardbut salientone:Whyarethestatues’nosesbroken?Bleiberg,who 21 theBrooklynmuseum'sextensive holdings of Egyptian, Classical and ancient Near Eastern art, was surprised the first few times he heard this question. He had taken for 22 that the sculptures were damaged; his training in Egyptology encouragedvisualizinghowastatuewouldlookifitwerestill 23 .Itmightseeminevitablethatafter thousands of years, an ancient artifact would show wear and 24 . But this simple observation led Bleiberg to uncover a widespread pattern of deliberate destruction, which pointed to a complex set of reasons whymost works ofEgyptian art cametobe 25 inthefirst place.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 22,
@@ -320,7 +322,9 @@
         "C": "poached",
         "D": "abridged"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第21題至第25題:\nThemostcommonquestionthatcuratorEdwardBleibergfieldsfromvisitorsisastraightforwardbut salientone:Whyarethestatues’nosesbroken?Bleiberg,who 21 theBrooklynmuseum'sextensive holdings of Egyptian, Classical and ancient Near Eastern art, was surprised the first few times he heard this question. He had taken for 22 that the sculptures were damaged; his training in Egyptology encouragedvisualizinghowastatuewouldlookifitwerestill 23 .Itmightseeminevitablethatafter thousands of years, an ancient artifact would show wear and 24 . But this simple observation led Bleiberg to uncover a widespread pattern of deliberate destruction, which pointed to a complex set of reasons whymost works ofEgyptian art cametobe 25 inthefirst place.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 23,
@@ -333,7 +337,9 @@
         "C": "alert",
         "D": "intact"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第21題至第25題:\nThemostcommonquestionthatcuratorEdwardBleibergfieldsfromvisitorsisastraightforwardbut salientone:Whyarethestatues’nosesbroken?Bleiberg,who 21 theBrooklynmuseum'sextensive holdings of Egyptian, Classical and ancient Near Eastern art, was surprised the first few times he heard this question. He had taken for 22 that the sculptures were damaged; his training in Egyptology encouragedvisualizinghowastatuewouldlookifitwerestill 23 .Itmightseeminevitablethatafter thousands of years, an ancient artifact would show wear and 24 . But this simple observation led Bleiberg to uncover a widespread pattern of deliberate destruction, which pointed to a complex set of reasons whymost works ofEgyptian art cametobe 25 inthefirst place.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 24,
@@ -346,7 +352,9 @@
         "C": "tear",
         "D": "display"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第21題至第25題:\nThemostcommonquestionthatcuratorEdwardBleibergfieldsfromvisitorsisastraightforwardbut salientone:Whyarethestatues’nosesbroken?Bleiberg,who 21 theBrooklynmuseum'sextensive holdings of Egyptian, Classical and ancient Near Eastern art, was surprised the first few times he heard this question. He had taken for 22 that the sculptures were damaged; his training in Egyptology encouragedvisualizinghowastatuewouldlookifitwerestill 23 .Itmightseeminevitablethatafter thousands of years, an ancient artifact would show wear and 24 . But this simple observation led Bleiberg to uncover a widespread pattern of deliberate destruction, which pointed to a complex set of reasons whymost works ofEgyptian art cametobe 25 inthefirst place.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 25,
@@ -357,9 +365,11 @@
         "A": "debarked",
         "B": "defaced",
         "C": "deserted",
-        "D": "despised 請依下文回答第26題至第30題: Environmental protection is the practice of protecting the natural environment by individuals, organizations and governments. Its objectives are to conserve natural resources and the existing natural environment and, 26 , to repair damage and reverse trends. Due to the pressures ofoverconsumption,population growth and technology, thebiophysical environment is being degraded, sometimes permanently. This has beenrecognized,andgovernments havebegunputting 27 onactivities thatcauseenvironmentaldegradation.Sincethe1960s,environmentalmovementshavecreatedmore 28 of thevariousenvironmental problems. There is disagreement on the extent of theenvironmental impact of humanactivityandeven scientificdishonestyoccurs, so protectionmeasures areoccasionallydebated. Discussionconcerningenvironmentalprotectionoftenfocusesontheroleofgovernment,legislation, and law enforcement. 29 , in its broadest sense, environmental protection may be seen to be the responsibilityofallthepeopleandnotsimplythatofgovernment.Decisionsthatimpacttheenvironment will ideally 30 a broadrangeof stakeholders includingindustry,indigenous groups, environmental groupandcommunityrepresentatives. Gradually, environmentaldecision-makingprocessesareevolving toreflect this broadbase ofstakeholders andarebecomingmorecollaborativeinmanycountries."
+        "D": "despised"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第21題至第25題:\nThemostcommonquestionthatcuratorEdwardBleibergfieldsfromvisitorsisastraightforwardbut salientone:Whyarethestatues’nosesbroken?Bleiberg,who 21 theBrooklynmuseum'sextensive holdings of Egyptian, Classical and ancient Near Eastern art, was surprised the first few times he heard this question. He had taken for 22 that the sculptures were damaged; his training in Egyptology encouragedvisualizinghowastatuewouldlookifitwerestill 23 .Itmightseeminevitablethatafter thousands of years, an ancient artifact would show wear and 24 . But this simple observation led Bleiberg to uncover a widespread pattern of deliberate destruction, which pointed to a complex set of reasons whymost works ofEgyptian art cametobe 25 inthefirst place.",
+      "passage_question_range": "21-25"
     },
     {
       "number": 26,
@@ -372,7 +382,9 @@
         "C": "what possible",
         "D": "wherepossible"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第26題至第30題:\nEnvironmental protection is the practice of protecting the natural environment by individuals, organizations and governments. Its objectives are to conserve natural resources and the existing natural environment and, 26 , to repair damage and reverse trends. Due to the pressures ofoverconsumption,population growth and technology, thebiophysical environment is being degraded, sometimes permanently. This has beenrecognized,andgovernments havebegunputting 27 onactivities thatcauseenvironmentaldegradation.Sincethe1960s,environmentalmovementshavecreatedmore 28 of thevariousenvironmental problems. There is disagreement on the extent of theenvironmental impact of humanactivityandeven scientificdishonestyoccurs, so protectionmeasures areoccasionallydebated. Discussionconcerningenvironmentalprotectionoftenfocusesontheroleofgovernment,legislation, and law enforcement. 29 , in its broadest sense, environmental protection may be seen to be the responsibilityofallthepeopleandnotsimplythatofgovernment.Decisionsthatimpacttheenvironment will ideally 30 a broadrangeof stakeholders includingindustry,indigenous groups, environmental groupandcommunityrepresentatives. Gradually, environmentaldecision-makingprocessesareevolving toreflect this broadbase ofstakeholders andarebecomingmorecollaborativeinmanycountries.",
+      "passage_question_range": "26-30"
     },
     {
       "number": 27,
@@ -385,7 +397,9 @@
         "C": "reward",
         "D": "revenge"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第26題至第30題:\nEnvironmental protection is the practice of protecting the natural environment by individuals, organizations and governments. Its objectives are to conserve natural resources and the existing natural environment and, 26 , to repair damage and reverse trends. Due to the pressures ofoverconsumption,population growth and technology, thebiophysical environment is being degraded, sometimes permanently. This has beenrecognized,andgovernments havebegunputting 27 onactivities thatcauseenvironmentaldegradation.Sincethe1960s,environmentalmovementshavecreatedmore 28 of thevariousenvironmental problems. There is disagreement on the extent of theenvironmental impact of humanactivityandeven scientificdishonestyoccurs, so protectionmeasures areoccasionallydebated. Discussionconcerningenvironmentalprotectionoftenfocusesontheroleofgovernment,legislation, and law enforcement. 29 , in its broadest sense, environmental protection may be seen to be the responsibilityofallthepeopleandnotsimplythatofgovernment.Decisionsthatimpacttheenvironment will ideally 30 a broadrangeof stakeholders includingindustry,indigenous groups, environmental groupandcommunityrepresentatives. Gradually, environmentaldecision-makingprocessesareevolving toreflect this broadbase ofstakeholders andarebecomingmorecollaborativeinmanycountries.",
+      "passage_question_range": "26-30"
     },
     {
       "number": 28,
@@ -398,7 +412,9 @@
         "C": "inferiority",
         "D": "awareness"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第26題至第30題:\nEnvironmental protection is the practice of protecting the natural environment by individuals, organizations and governments. Its objectives are to conserve natural resources and the existing natural environment and, 26 , to repair damage and reverse trends. Due to the pressures ofoverconsumption,population growth and technology, thebiophysical environment is being degraded, sometimes permanently. This has beenrecognized,andgovernments havebegunputting 27 onactivities thatcauseenvironmentaldegradation.Sincethe1960s,environmentalmovementshavecreatedmore 28 of thevariousenvironmental problems. There is disagreement on the extent of theenvironmental impact of humanactivityandeven scientificdishonestyoccurs, so protectionmeasures areoccasionallydebated. Discussionconcerningenvironmentalprotectionoftenfocusesontheroleofgovernment,legislation, and law enforcement. 29 , in its broadest sense, environmental protection may be seen to be the responsibilityofallthepeopleandnotsimplythatofgovernment.Decisionsthatimpacttheenvironment will ideally 30 a broadrangeof stakeholders includingindustry,indigenous groups, environmental groupandcommunityrepresentatives. Gradually, environmentaldecision-makingprocessesareevolving toreflect this broadbase ofstakeholders andarebecomingmorecollaborativeinmanycountries.",
+      "passage_question_range": "26-30"
     },
     {
       "number": 29,
@@ -411,7 +427,9 @@
         "C": "Therefore",
         "D": "Likewise"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第26題至第30題:\nEnvironmental protection is the practice of protecting the natural environment by individuals, organizations and governments. Its objectives are to conserve natural resources and the existing natural environment and, 26 , to repair damage and reverse trends. Due to the pressures ofoverconsumption,population growth and technology, thebiophysical environment is being degraded, sometimes permanently. This has beenrecognized,andgovernments havebegunputting 27 onactivities thatcauseenvironmentaldegradation.Sincethe1960s,environmentalmovementshavecreatedmore 28 of thevariousenvironmental problems. There is disagreement on the extent of theenvironmental impact of humanactivityandeven scientificdishonestyoccurs, so protectionmeasures areoccasionallydebated. Discussionconcerningenvironmentalprotectionoftenfocusesontheroleofgovernment,legislation, and law enforcement. 29 , in its broadest sense, environmental protection may be seen to be the responsibilityofallthepeopleandnotsimplythatofgovernment.Decisionsthatimpacttheenvironment will ideally 30 a broadrangeof stakeholders includingindustry,indigenous groups, environmental groupandcommunityrepresentatives. Gradually, environmentaldecision-makingprocessesareevolving toreflect this broadbase ofstakeholders andarebecomingmorecollaborativeinmanycountries.",
+      "passage_question_range": "26-30"
     },
     {
       "number": 30,
@@ -422,9 +440,11 @@
         "A": "observe",
         "B": "preserve",
         "C": "involve",
-        "D": "dissolve - 請依下文回答第31題至第35題: If you are currently in refugee or asylee status, you may be able to help your relative obtain asylee or refugee status. You can start the process by filing a Form I-730, Refugee/Asylee Relative Petition. Filinginstructions andforms areavailableonour Websiteat www.uscis.gov. If youwere admittedtotheUnitedStates as a refugeeor were granted asylum less than2 years ago, youmayfilean I-730 for thefollowingrelatives: •Husbandorwife; •Unmarriedchildrenwhowereunderage21atthetimeyouwereadmittedasarefugeeorgrantedasylum intheUnitedStates. AnI-730petitionmustbefiledwithin2yearsofbeingadmittedasarefugeeorbeinggrantedasylum. If it has been longer than 2 years since you were admitted as a refugee or were granted asylum, you may wanttogetlegaladvicetodetermineifthereareanyotherimmigrationbenefitsavailabletoyourrelative. AfteryoufiletheI-730petition,wewillmailyouareceiptsoyouknowwereceiveditforprocessing. If your petition is incomplete, we may have to reject it, or ask you for more evidence or information, which will delay processing. Please send all required information the first time to avoid delay. If your relativeisintheUnitedStates,wemayrequirehimorhertoappearforaninterviewwithanimmigration officer. We will notify you when we make a decision regarding your case. If we approve your petition, and your relative is in the United States, we will send you an approval notice, notifying you that your relative has been granted derivative refugee or asylee status and what steps to take next. If we approve your petition and your relative is outside the United States, we will send you an approval notice and forward your petition to the U.S. Embassy or consulate nearest your relative. The U.S. Embassy or consulate will notify your relative when and where to appear, inviting him or her to apply for travel authorizationtoentertheUnitedStates. The time it takes to process and approve your relative’s petition depends on a number of factors. Once you file, we will send you a receipt. You can check and monitor current processing times on our Website.Also,ifyoumarryafterIbecomearefugeeorasylee, youcannotfileanI-730for yourhusband orwifeifthemarriageoccurredafteryoubecomearefugeeorasylee.However,youmaywanttogetlegal advicetodetermineifthereareanyotherimmigration benefits availableto yourspouse. Thelawlimitseligibilitytotherelativeslistedinthisguideshownabove.Ifyourrelativewasgranted refugee or asylee status based on his or her relationship to you, the relative cannot file a Form I-730 for otherfamilymembers."
+        "D": "dissolve -"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第26題至第30題:\nEnvironmental protection is the practice of protecting the natural environment by individuals, organizations and governments. Its objectives are to conserve natural resources and the existing natural environment and, 26 , to repair damage and reverse trends. Due to the pressures ofoverconsumption,population growth and technology, thebiophysical environment is being degraded, sometimes permanently. This has beenrecognized,andgovernments havebegunputting 27 onactivities thatcauseenvironmentaldegradation.Sincethe1960s,environmentalmovementshavecreatedmore 28 of thevariousenvironmental problems. There is disagreement on the extent of theenvironmental impact of humanactivityandeven scientificdishonestyoccurs, so protectionmeasures areoccasionallydebated. Discussionconcerningenvironmentalprotectionoftenfocusesontheroleofgovernment,legislation, and law enforcement. 29 , in its broadest sense, environmental protection may be seen to be the responsibilityofallthepeopleandnotsimplythatofgovernment.Decisionsthatimpacttheenvironment will ideally 30 a broadrangeof stakeholders includingindustry,indigenous groups, environmental groupandcommunityrepresentatives. Gradually, environmentaldecision-makingprocessesareevolving toreflect this broadbase ofstakeholders andarebecomingmorecollaborativeinmanycountries.",
+      "passage_question_range": "26-30"
     },
     {
       "number": 31,
@@ -437,7 +457,9 @@
         "C": "Toinform howtoapplyfortravel authorizationtoentertheU.S.",
         "D": "Toinform howtoget legal adviceon refugeeorasylum status intheU.S."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第31題至第35題:\nIf you are currently in refugee or asylee status, you may be able to help your relative obtain asylee or refugee status. You can start the process by filing a Form I-730, Refugee/Asylee Relative Petition. Filinginstructions andforms areavailableonour Websiteat www.uscis.gov. If youwere admittedtotheUnitedStates as a refugeeor were granted asylum less than2 years ago, youmayfilean I-730 for thefollowingrelatives: •Husbandorwife; •Unmarriedchildrenwhowereunderage21atthetimeyouwereadmittedasarefugeeorgrantedasylum intheUnitedStates. AnI-730petitionmustbefiledwithin2yearsofbeingadmittedasarefugeeorbeinggrantedasylum. If it has been longer than 2 years since you were admitted as a refugee or were granted asylum, you may wanttogetlegaladvicetodetermineifthereareanyotherimmigrationbenefitsavailabletoyourrelative. AfteryoufiletheI-730petition,wewillmailyouareceiptsoyouknowwereceiveditforprocessing. If your petition is incomplete, we may have to reject it, or ask you for more evidence or information, which will delay processing. Please send all required information the first time to avoid delay. If your relativeisintheUnitedStates,wemayrequirehimorhertoappearforaninterviewwithanimmigration officer. We will notify you when we make a decision regarding your case. If we approve your petition, and your relative is in the United States, we will send you an approval notice, notifying you that your relative has been granted derivative refugee or asylee status and what steps to take next. If we approve your petition and your relative is outside the United States, we will send you an approval notice and forward your petition to the U.S. Embassy or consulate nearest your relative. The U.S. Embassy or consulate will notify your relative when and where to appear, inviting him or her to apply for travel authorizationtoentertheUnitedStates. The time it takes to process and approve your relative’s petition depends on a number of factors. Once you file, we will send you a receipt. You can check and monitor current processing times on our Website.Also,ifyoumarryafterIbecomearefugeeorasylee, youcannotfileanI-730for yourhusband orwifeifthemarriageoccurredafteryoubecomearefugeeorasylee.However,youmaywanttogetlegal advicetodetermineifthereareanyotherimmigration benefits availableto yourspouse. Thelawlimitseligibilitytotherelativeslistedinthisguideshownabove.Ifyourrelativewasgranted refugee or asylee status based on his or her relationship to you, the relative cannot file a Form I-730 for otherfamilymembers.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 32,
@@ -450,7 +472,9 @@
         "C": "Aclaim",
         "D": "Astatus"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第31題至第35題:\nIf you are currently in refugee or asylee status, you may be able to help your relative obtain asylee or refugee status. You can start the process by filing a Form I-730, Refugee/Asylee Relative Petition. Filinginstructions andforms areavailableonour Websiteat www.uscis.gov. If youwere admittedtotheUnitedStates as a refugeeor were granted asylum less than2 years ago, youmayfilean I-730 for thefollowingrelatives: •Husbandorwife; •Unmarriedchildrenwhowereunderage21atthetimeyouwereadmittedasarefugeeorgrantedasylum intheUnitedStates. AnI-730petitionmustbefiledwithin2yearsofbeingadmittedasarefugeeorbeinggrantedasylum. If it has been longer than 2 years since you were admitted as a refugee or were granted asylum, you may wanttogetlegaladvicetodetermineifthereareanyotherimmigrationbenefitsavailabletoyourrelative. AfteryoufiletheI-730petition,wewillmailyouareceiptsoyouknowwereceiveditforprocessing. If your petition is incomplete, we may have to reject it, or ask you for more evidence or information, which will delay processing. Please send all required information the first time to avoid delay. If your relativeisintheUnitedStates,wemayrequirehimorhertoappearforaninterviewwithanimmigration officer. We will notify you when we make a decision regarding your case. If we approve your petition, and your relative is in the United States, we will send you an approval notice, notifying you that your relative has been granted derivative refugee or asylee status and what steps to take next. If we approve your petition and your relative is outside the United States, we will send you an approval notice and forward your petition to the U.S. Embassy or consulate nearest your relative. The U.S. Embassy or consulate will notify your relative when and where to appear, inviting him or her to apply for travel authorizationtoentertheUnitedStates. The time it takes to process and approve your relative’s petition depends on a number of factors. Once you file, we will send you a receipt. You can check and monitor current processing times on our Website.Also,ifyoumarryafterIbecomearefugeeorasylee, youcannotfileanI-730for yourhusband orwifeifthemarriageoccurredafteryoubecomearefugeeorasylee.However,youmaywanttogetlegal advicetodetermineifthereareanyotherimmigration benefits availableto yourspouse. Thelawlimitseligibilitytotherelativeslistedinthisguideshownabove.Ifyourrelativewasgranted refugee or asylee status based on his or her relationship to you, the relative cannot file a Form I-730 for otherfamilymembers.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 33,
@@ -463,7 +487,9 @@
         "C": "Childrenunder21 whoaremarried.",
         "D": "Husbandorwifewho has obtainedrefugeestatus. -"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第31題至第35題:\nIf you are currently in refugee or asylee status, you may be able to help your relative obtain asylee or refugee status. You can start the process by filing a Form I-730, Refugee/Asylee Relative Petition. Filinginstructions andforms areavailableonour Websiteat www.uscis.gov. If youwere admittedtotheUnitedStates as a refugeeor were granted asylum less than2 years ago, youmayfilean I-730 for thefollowingrelatives: •Husbandorwife; •Unmarriedchildrenwhowereunderage21atthetimeyouwereadmittedasarefugeeorgrantedasylum intheUnitedStates. AnI-730petitionmustbefiledwithin2yearsofbeingadmittedasarefugeeorbeinggrantedasylum. If it has been longer than 2 years since you were admitted as a refugee or were granted asylum, you may wanttogetlegaladvicetodetermineifthereareanyotherimmigrationbenefitsavailabletoyourrelative. AfteryoufiletheI-730petition,wewillmailyouareceiptsoyouknowwereceiveditforprocessing. If your petition is incomplete, we may have to reject it, or ask you for more evidence or information, which will delay processing. Please send all required information the first time to avoid delay. If your relativeisintheUnitedStates,wemayrequirehimorhertoappearforaninterviewwithanimmigration officer. We will notify you when we make a decision regarding your case. If we approve your petition, and your relative is in the United States, we will send you an approval notice, notifying you that your relative has been granted derivative refugee or asylee status and what steps to take next. If we approve your petition and your relative is outside the United States, we will send you an approval notice and forward your petition to the U.S. Embassy or consulate nearest your relative. The U.S. Embassy or consulate will notify your relative when and where to appear, inviting him or her to apply for travel authorizationtoentertheUnitedStates. The time it takes to process and approve your relative’s petition depends on a number of factors. Once you file, we will send you a receipt. You can check and monitor current processing times on our Website.Also,ifyoumarryafterIbecomearefugeeorasylee, youcannotfileanI-730for yourhusband orwifeifthemarriageoccurredafteryoubecomearefugeeorasylee.However,youmaywanttogetlegal advicetodetermineifthereareanyotherimmigration benefits availableto yourspouse. Thelawlimitseligibilitytotherelativeslistedinthisguideshownabove.Ifyourrelativewasgranted refugee or asylee status based on his or her relationship to you, the relative cannot file a Form I-730 for otherfamilymembers.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 34,
@@ -476,7 +502,9 @@
         "C": "Estimationoftimeisprovidedonthewebsite.",
         "D": "Therewill benowaytofindout."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第31題至第35題:\nIf you are currently in refugee or asylee status, you may be able to help your relative obtain asylee or refugee status. You can start the process by filing a Form I-730, Refugee/Asylee Relative Petition. Filinginstructions andforms areavailableonour Websiteat www.uscis.gov. If youwere admittedtotheUnitedStates as a refugeeor were granted asylum less than2 years ago, youmayfilean I-730 for thefollowingrelatives: •Husbandorwife; •Unmarriedchildrenwhowereunderage21atthetimeyouwereadmittedasarefugeeorgrantedasylum intheUnitedStates. AnI-730petitionmustbefiledwithin2yearsofbeingadmittedasarefugeeorbeinggrantedasylum. If it has been longer than 2 years since you were admitted as a refugee or were granted asylum, you may wanttogetlegaladvicetodetermineifthereareanyotherimmigrationbenefitsavailabletoyourrelative. AfteryoufiletheI-730petition,wewillmailyouareceiptsoyouknowwereceiveditforprocessing. If your petition is incomplete, we may have to reject it, or ask you for more evidence or information, which will delay processing. Please send all required information the first time to avoid delay. If your relativeisintheUnitedStates,wemayrequirehimorhertoappearforaninterviewwithanimmigration officer. We will notify you when we make a decision regarding your case. If we approve your petition, and your relative is in the United States, we will send you an approval notice, notifying you that your relative has been granted derivative refugee or asylee status and what steps to take next. If we approve your petition and your relative is outside the United States, we will send you an approval notice and forward your petition to the U.S. Embassy or consulate nearest your relative. The U.S. Embassy or consulate will notify your relative when and where to appear, inviting him or her to apply for travel authorizationtoentertheUnitedStates. The time it takes to process and approve your relative’s petition depends on a number of factors. Once you file, we will send you a receipt. You can check and monitor current processing times on our Website.Also,ifyoumarryafterIbecomearefugeeorasylee, youcannotfileanI-730for yourhusband orwifeifthemarriageoccurredafteryoubecomearefugeeorasylee.However,youmaywanttogetlegal advicetodetermineifthereareanyotherimmigration benefits availableto yourspouse. Thelawlimitseligibilitytotherelativeslistedinthisguideshownabove.Ifyourrelativewasgranted refugee or asylee status based on his or her relationship to you, the relative cannot file a Form I-730 for otherfamilymembers.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 35,
@@ -487,9 +515,11 @@
         "A": "Processingwill bedelayedifthepetitionis incomplete.",
         "B": "Theapplicant will receiveareceipt inthemail afterfilingan I-730petition.",
         "C": "Thepersonwhofiledthepetitionmayberequiredtoappearforaninterviewwithanimmigration officer.",
-        "D": "Iftherelativeis grantedrefugeestatusthroughfilingan I-730,heorshecannotfileaform I-730 forotherfamilymembers. 請依下文回答第36題至第40題: Universalstudent-debtcancellationisabadidea.ItwouldbeabighandouttoAmericansfromupper- incomefamilies,mostofwhomareabletopayofftheirloanswithouttoomuchtrouble.“Educationdebt,” as Sandy Baum and Victoria Lee of the Urban Institute have written, “is disproportionately concentrated amongthewell-off.”(Ifyou’reskeptical,Ilaidouttheevidenceinarecentcolumn.)Amuchbetteridea wouldbeanenormousinvestmentincollegesthatenrolllargenumbersofmiddle-classandlower-income students. These colleges tend to be underfunded and suffer from high dropout rates. This investment program could be combined with targeted debt forgiveness for those college graduates(and especially non-graduates)unabletorepaytheirloans. When Iheard this week that Elizabeth Warren was instead proposing a sweepingdebt-relief program, I was disappointed. Her campaign has been full of ideas to reduce poverty and lift middle-class living standards. A big debt-cancellation program is much less progressive than most of her ideas. But as Idug into the details of her new proposal, I discovered that it wasn’t as bad as I had first feared. It is more targeted than her campaign has sometimes made it sound. Her plan is considerably less regressive than universal debt cancellation would be. Istill don’t love the idea. Warren would wipe out up to $50,000 in debt for anyone making less than $100,000 a year. It means that a 24-year-old in Silicon Valley making $90,000--andonapathtoearnfarmore--couldgetawindfall.Andpeopleearningupto$250,000--say,a 27-year-old investment banker or corporate lawyer--would get some benefit from the plan. Warren would also make tuition free at every public college, including those with overwhelmingly upper-income students,liketheUniversityofVirginiaandtheUniversityofMichigan.Thismoneywoulddomuchmore goodifit insteadwent tocommunitycolleges,whicharetypicallystarvedofresources. Yet the Warren plan is better than I first thought—for two reasons. First, people earning more than $100,000 a year can’t get the full $50,000 in debt relief; someone earning $220,000 could get only $10,000,for example.Second,the $50,000capmeans that people whotookonmore debt to get a degree in business, law and medicine--and are often earning veryhigh salaries--will still have to payback some oftheirloans."
+        "D": "Iftherelativeis grantedrefugeestatusthroughfilingan I-730,heorshecannotfileaform I-730 forotherfamilymembers."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第31題至第35題:\nIf you are currently in refugee or asylee status, you may be able to help your relative obtain asylee or refugee status. You can start the process by filing a Form I-730, Refugee/Asylee Relative Petition. Filinginstructions andforms areavailableonour Websiteat www.uscis.gov. If youwere admittedtotheUnitedStates as a refugeeor were granted asylum less than2 years ago, youmayfilean I-730 for thefollowingrelatives: •Husbandorwife; •Unmarriedchildrenwhowereunderage21atthetimeyouwereadmittedasarefugeeorgrantedasylum intheUnitedStates. AnI-730petitionmustbefiledwithin2yearsofbeingadmittedasarefugeeorbeinggrantedasylum. If it has been longer than 2 years since you were admitted as a refugee or were granted asylum, you may wanttogetlegaladvicetodetermineifthereareanyotherimmigrationbenefitsavailabletoyourrelative. AfteryoufiletheI-730petition,wewillmailyouareceiptsoyouknowwereceiveditforprocessing. If your petition is incomplete, we may have to reject it, or ask you for more evidence or information, which will delay processing. Please send all required information the first time to avoid delay. If your relativeisintheUnitedStates,wemayrequirehimorhertoappearforaninterviewwithanimmigration officer. We will notify you when we make a decision regarding your case. If we approve your petition, and your relative is in the United States, we will send you an approval notice, notifying you that your relative has been granted derivative refugee or asylee status and what steps to take next. If we approve your petition and your relative is outside the United States, we will send you an approval notice and forward your petition to the U.S. Embassy or consulate nearest your relative. The U.S. Embassy or consulate will notify your relative when and where to appear, inviting him or her to apply for travel authorizationtoentertheUnitedStates. The time it takes to process and approve your relative’s petition depends on a number of factors. Once you file, we will send you a receipt. You can check and monitor current processing times on our Website.Also,ifyoumarryafterIbecomearefugeeorasylee, youcannotfileanI-730for yourhusband orwifeifthemarriageoccurredafteryoubecomearefugeeorasylee.However,youmaywanttogetlegal advicetodetermineifthereareanyotherimmigration benefits availableto yourspouse. Thelawlimitseligibilitytotherelativeslistedinthisguideshownabove.Ifyourrelativewasgranted refugee or asylee status based on his or her relationship to you, the relative cannot file a Form I-730 for otherfamilymembers.",
+      "passage_question_range": "31-35"
     },
     {
       "number": 36,
@@ -502,7 +532,9 @@
         "C": "It wouldnot be fairto students ofprivatecolleges.",
         "D": "It wouldonlydo good topoorerstudents inpubliccolleges. -"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第36題至第40題:\nUniversalstudent-debtcancellationisabadidea.ItwouldbeabighandouttoAmericansfromupper- incomefamilies,mostofwhomareabletopayofftheirloanswithouttoomuchtrouble.“Educationdebt,” as Sandy Baum and Victoria Lee of the Urban Institute have written, “is disproportionately concentrated amongthewell-off.”(Ifyou’reskeptical,Ilaidouttheevidenceinarecentcolumn.)Amuchbetteridea wouldbeanenormousinvestmentincollegesthatenrolllargenumbersofmiddle-classandlower-income students. These colleges tend to be underfunded and suffer from high dropout rates. This investment program could be combined with targeted debt forgiveness for those college graduates(and especially non-graduates)unabletorepaytheirloans. When Iheard this week that Elizabeth Warren was instead proposing a sweepingdebt-relief program, I was disappointed. Her campaign has been full of ideas to reduce poverty and lift middle-class living standards. A big debt-cancellation program is much less progressive than most of her ideas. But as Idug into the details of her new proposal, I discovered that it wasn’t as bad as I had first feared. It is more targeted than her campaign has sometimes made it sound. Her plan is considerably less regressive than universal debt cancellation would be. Istill don’t love the idea. Warren would wipe out up to $50,000 in debt for anyone making less than $100,000 a year. It means that a 24-year-old in Silicon Valley making $90,000--andonapathtoearnfarmore--couldgetawindfall.Andpeopleearningupto$250,000--say,a 27-year-old investment banker or corporate lawyer--would get some benefit from the plan. Warren would also make tuition free at every public college, including those with overwhelmingly upper-income students,liketheUniversityofVirginiaandtheUniversityofMichigan.Thismoneywoulddomuchmore goodifit insteadwent tocommunitycolleges,whicharetypicallystarvedofresources. Yet the Warren plan is better than I first thought—for two reasons. First, people earning more than $100,000 a year can’t get the full $50,000 in debt relief; someone earning $220,000 could get only $10,000,for example.Second,the $50,000capmeans that people whotookonmore debt to get a degree in business, law and medicine--and are often earning veryhigh salaries--will still have to payback some oftheirloans.",
+      "passage_question_range": "36-40"
     },
     {
       "number": 37,
@@ -515,7 +547,9 @@
         "C": "It is moretargeted at helpinglower-incomestudents.",
         "D": "It allows acollege graduateearning$90,000 a yearto get a full debt cancellation."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第36題至第40題:\nUniversalstudent-debtcancellationisabadidea.ItwouldbeabighandouttoAmericansfromupper- incomefamilies,mostofwhomareabletopayofftheirloanswithouttoomuchtrouble.“Educationdebt,” as Sandy Baum and Victoria Lee of the Urban Institute have written, “is disproportionately concentrated amongthewell-off.”(Ifyou’reskeptical,Ilaidouttheevidenceinarecentcolumn.)Amuchbetteridea wouldbeanenormousinvestmentincollegesthatenrolllargenumbersofmiddle-classandlower-income students. These colleges tend to be underfunded and suffer from high dropout rates. This investment program could be combined with targeted debt forgiveness for those college graduates(and especially non-graduates)unabletorepaytheirloans. When Iheard this week that Elizabeth Warren was instead proposing a sweepingdebt-relief program, I was disappointed. Her campaign has been full of ideas to reduce poverty and lift middle-class living standards. A big debt-cancellation program is much less progressive than most of her ideas. But as Idug into the details of her new proposal, I discovered that it wasn’t as bad as I had first feared. It is more targeted than her campaign has sometimes made it sound. Her plan is considerably less regressive than universal debt cancellation would be. Istill don’t love the idea. Warren would wipe out up to $50,000 in debt for anyone making less than $100,000 a year. It means that a 24-year-old in Silicon Valley making $90,000--andonapathtoearnfarmore--couldgetawindfall.Andpeopleearningupto$250,000--say,a 27-year-old investment banker or corporate lawyer--would get some benefit from the plan. Warren would also make tuition free at every public college, including those with overwhelmingly upper-income students,liketheUniversityofVirginiaandtheUniversityofMichigan.Thismoneywoulddomuchmore goodifit insteadwent tocommunitycolleges,whicharetypicallystarvedofresources. Yet the Warren plan is better than I first thought—for two reasons. First, people earning more than $100,000 a year can’t get the full $50,000 in debt relief; someone earning $220,000 could get only $10,000,for example.Second,the $50,000capmeans that people whotookonmore debt to get a degree in business, law and medicine--and are often earning veryhigh salaries--will still have to payback some oftheirloans.",
+      "passage_question_range": "36-40"
     },
     {
       "number": 38,
@@ -528,7 +562,9 @@
         "C": "It is theaverageamount ofstudent loans ofpoorerstudents.",
         "D": "It is anecessarymeasuresince collegeeducationis expensive."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第36題至第40題:\nUniversalstudent-debtcancellationisabadidea.ItwouldbeabighandouttoAmericansfromupper- incomefamilies,mostofwhomareabletopayofftheirloanswithouttoomuchtrouble.“Educationdebt,” as Sandy Baum and Victoria Lee of the Urban Institute have written, “is disproportionately concentrated amongthewell-off.”(Ifyou’reskeptical,Ilaidouttheevidenceinarecentcolumn.)Amuchbetteridea wouldbeanenormousinvestmentincollegesthatenrolllargenumbersofmiddle-classandlower-income students. These colleges tend to be underfunded and suffer from high dropout rates. This investment program could be combined with targeted debt forgiveness for those college graduates(and especially non-graduates)unabletorepaytheirloans. When Iheard this week that Elizabeth Warren was instead proposing a sweepingdebt-relief program, I was disappointed. Her campaign has been full of ideas to reduce poverty and lift middle-class living standards. A big debt-cancellation program is much less progressive than most of her ideas. But as Idug into the details of her new proposal, I discovered that it wasn’t as bad as I had first feared. It is more targeted than her campaign has sometimes made it sound. Her plan is considerably less regressive than universal debt cancellation would be. Istill don’t love the idea. Warren would wipe out up to $50,000 in debt for anyone making less than $100,000 a year. It means that a 24-year-old in Silicon Valley making $90,000--andonapathtoearnfarmore--couldgetawindfall.Andpeopleearningupto$250,000--say,a 27-year-old investment banker or corporate lawyer--would get some benefit from the plan. Warren would also make tuition free at every public college, including those with overwhelmingly upper-income students,liketheUniversityofVirginiaandtheUniversityofMichigan.Thismoneywoulddomuchmore goodifit insteadwent tocommunitycolleges,whicharetypicallystarvedofresources. Yet the Warren plan is better than I first thought—for two reasons. First, people earning more than $100,000 a year can’t get the full $50,000 in debt relief; someone earning $220,000 could get only $10,000,for example.Second,the $50,000capmeans that people whotookonmore debt to get a degree in business, law and medicine--and are often earning veryhigh salaries--will still have to payback some oftheirloans.",
+      "passage_question_range": "36-40"
     },
     {
       "number": 39,
@@ -541,7 +577,9 @@
         "C": "Givingeducationfunds toall privatecolleges.",
         "D": "Allocatingmost financial supports tocommunitycolleges."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第36題至第40題:\nUniversalstudent-debtcancellationisabadidea.ItwouldbeabighandouttoAmericansfromupper- incomefamilies,mostofwhomareabletopayofftheirloanswithouttoomuchtrouble.“Educationdebt,” as Sandy Baum and Victoria Lee of the Urban Institute have written, “is disproportionately concentrated amongthewell-off.”(Ifyou’reskeptical,Ilaidouttheevidenceinarecentcolumn.)Amuchbetteridea wouldbeanenormousinvestmentincollegesthatenrolllargenumbersofmiddle-classandlower-income students. These colleges tend to be underfunded and suffer from high dropout rates. This investment program could be combined with targeted debt forgiveness for those college graduates(and especially non-graduates)unabletorepaytheirloans. When Iheard this week that Elizabeth Warren was instead proposing a sweepingdebt-relief program, I was disappointed. Her campaign has been full of ideas to reduce poverty and lift middle-class living standards. A big debt-cancellation program is much less progressive than most of her ideas. But as Idug into the details of her new proposal, I discovered that it wasn’t as bad as I had first feared. It is more targeted than her campaign has sometimes made it sound. Her plan is considerably less regressive than universal debt cancellation would be. Istill don’t love the idea. Warren would wipe out up to $50,000 in debt for anyone making less than $100,000 a year. It means that a 24-year-old in Silicon Valley making $90,000--andonapathtoearnfarmore--couldgetawindfall.Andpeopleearningupto$250,000--say,a 27-year-old investment banker or corporate lawyer--would get some benefit from the plan. Warren would also make tuition free at every public college, including those with overwhelmingly upper-income students,liketheUniversityofVirginiaandtheUniversityofMichigan.Thismoneywoulddomuchmore goodifit insteadwent tocommunitycolleges,whicharetypicallystarvedofresources. Yet the Warren plan is better than I first thought—for two reasons. First, people earning more than $100,000 a year can’t get the full $50,000 in debt relief; someone earning $220,000 could get only $10,000,for example.Second,the $50,000capmeans that people whotookonmore debt to get a degree in business, law and medicine--and are often earning veryhigh salaries--will still have to payback some oftheirloans.",
+      "passage_question_range": "36-40"
     },
     {
       "number": 40,
@@ -554,7 +592,9 @@
         "C": "Warrenbelieves intheimportanceofprovidingresources tocommunitycolleges.",
         "D": "Warrenthinks that themoreastudent borrows, themoreshe/heshouldbereimbursed."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第36題至第40題:\nUniversalstudent-debtcancellationisabadidea.ItwouldbeabighandouttoAmericansfromupper- incomefamilies,mostofwhomareabletopayofftheirloanswithouttoomuchtrouble.“Educationdebt,” as Sandy Baum and Victoria Lee of the Urban Institute have written, “is disproportionately concentrated amongthewell-off.”(Ifyou’reskeptical,Ilaidouttheevidenceinarecentcolumn.)Amuchbetteridea wouldbeanenormousinvestmentincollegesthatenrolllargenumbersofmiddle-classandlower-income students. These colleges tend to be underfunded and suffer from high dropout rates. This investment program could be combined with targeted debt forgiveness for those college graduates(and especially non-graduates)unabletorepaytheirloans. When Iheard this week that Elizabeth Warren was instead proposing a sweepingdebt-relief program, I was disappointed. Her campaign has been full of ideas to reduce poverty and lift middle-class living standards. A big debt-cancellation program is much less progressive than most of her ideas. But as Idug into the details of her new proposal, I discovered that it wasn’t as bad as I had first feared. It is more targeted than her campaign has sometimes made it sound. Her plan is considerably less regressive than universal debt cancellation would be. Istill don’t love the idea. Warren would wipe out up to $50,000 in debt for anyone making less than $100,000 a year. It means that a 24-year-old in Silicon Valley making $90,000--andonapathtoearnfarmore--couldgetawindfall.Andpeopleearningupto$250,000--say,a 27-year-old investment banker or corporate lawyer--would get some benefit from the plan. Warren would also make tuition free at every public college, including those with overwhelmingly upper-income students,liketheUniversityofVirginiaandtheUniversityofMichigan.Thismoneywoulddomuchmore goodifit insteadwent tocommunitycolleges,whicharetypicallystarvedofresources. Yet the Warren plan is better than I first thought—for two reasons. First, people earning more than $100,000 a year can’t get the full $50,000 in debt relief; someone earning $220,000 could get only $10,000,for example.Second,the $50,000capmeans that people whotookonmore debt to get a degree in business, law and medicine--and are often earning veryhigh salaries--will still have to payback some oftheirloans.",
+      "passage_question_range": "36-40"
     }
   ],
   "year": 111,
