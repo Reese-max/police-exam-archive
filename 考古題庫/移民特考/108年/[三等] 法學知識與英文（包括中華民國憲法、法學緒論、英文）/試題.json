@@ -484,12 +484,13 @@
     {
       "number": 37,
       "type": "choice",
-      "stem": "(A)Theyalsofoundthatduringsleep,thebrain’scellsshrink,orbecomesmaller.",
+      "stem": "",
       "section": null,
       "options": {
         "B": "Whilewesleep,ourbrainsaredoingmuchmorethangettingreadyforthenextday.",
         "C": "Shesaidtheresultsdemonstratejusthowimportantsleepistohealthandfightingdisease.",
-        "D": "Thebrainexpertsaysourbrainsperformtwoverydifferentjobs."
+        "D": "Thebrainexpertsaysourbrainsperformtwoverydifferentjobs.",
+        "A": "Theyalsofoundthatduringsleep,thebrain’scellsshrink,orbecomesmaller."
       },
       "answer": "B",
       "passage": "Isbedtimejustatimefordreaming?Doourbrainsturnoffforthenight?WhatifItoldyouthatscientistsrecently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the UniversityofRochesterfoundthatthebrainmaybebusycleaninghouse--cleaningoutharmfulwastematerials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected intotheirbrains.Theyobservedthemicebrainsastheysleptandwhentheywereawake.Theresearcherssaytheysaw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a dayjob.Andthisstudysaysthatiswhatourbrainsseemtobedoing–workinganextrajobatnightwithoutadditional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we areawake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 Thisshrinkingpermitswastetoberemovedmoreeffectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body.“Soourstudysuggeststhatweneedtosleepbecausewehaveamacroscopiccleaningsystemthatremovesmany ofthetoxicwasteproductsfromthebrain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
@@ -498,12 +499,13 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "(A)Theyalsofoundthatduringsleep,thebrain’scellsshrink,orbecomesmaller.",
+      "stem": "",
       "section": null,
       "options": {
         "B": "Whilewesleep,ourbrainsaredoingmuchmorethangettingreadyforthenextday.",
         "C": "Shesaidtheresultsdemonstratejusthowimportantsleepistohealthandfightingdisease.",
-        "D": "Thebrainexpertsaysourbrainsperformtwoverydifferentjobs."
+        "D": "Thebrainexpertsaysourbrainsperformtwoverydifferentjobs.",
+        "A": "Theyalsofoundthatduringsleep,thebrain’scellsshrink,orbecomesmaller."
       },
       "answer": "D",
       "passage": "Isbedtimejustatimefordreaming?Doourbrainsturnoffforthenight?WhatifItoldyouthatscientistsrecently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the UniversityofRochesterfoundthatthebrainmaybebusycleaninghouse--cleaningoutharmfulwastematerials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected intotheirbrains.Theyobservedthemicebrainsastheysleptandwhentheywereawake.Theresearcherssaytheysaw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a dayjob.Andthisstudysaysthatiswhatourbrainsseemtobedoing–workinganextrajobatnightwithoutadditional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we areawake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 Thisshrinkingpermitswastetoberemovedmoreeffectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body.“Soourstudysuggeststhatweneedtosleepbecausewehaveamacroscopiccleaningsystemthatremovesmany ofthetoxicwasteproductsfromthebrain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
@@ -512,12 +514,13 @@
     {
       "number": 39,
       "type": "choice",
-      "stem": "(A)Theyalsofoundthatduringsleep,thebrain’scellsshrink,orbecomesmaller.",
+      "stem": "",
       "section": null,
       "options": {
         "B": "Whilewesleep,ourbrainsaredoingmuchmorethangettingreadyforthenextday.",
         "C": "Shesaidtheresultsdemonstratejusthowimportantsleepistohealthandfightingdisease.",
-        "D": "Thebrainexpertsaysourbrainsperformtwoverydifferentjobs."
+        "D": "Thebrainexpertsaysourbrainsperformtwoverydifferentjobs.",
+        "A": "Theyalsofoundthatduringsleep,thebrain’scellsshrink,orbecomesmaller."
       },
       "answer": "A",
       "passage": "Isbedtimejustatimefordreaming?Doourbrainsturnoffforthenight?WhatifItoldyouthatscientistsrecently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the UniversityofRochesterfoundthatthebrainmaybebusycleaninghouse--cleaningoutharmfulwastematerials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected intotheirbrains.Theyobservedthemicebrainsastheysleptandwhentheywereawake.Theresearcherssaytheysaw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a dayjob.Andthisstudysaysthatiswhatourbrainsseemtobedoing–workinganextrajobatnightwithoutadditional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we areawake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 Thisshrinkingpermitswastetoberemovedmoreeffectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body.“Soourstudysuggeststhatweneedtosleepbecausewehaveamacroscopiccleaningsystemthatremovesmany ofthetoxicwasteproductsfromthebrain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
@@ -526,12 +529,13 @@
     {
       "number": 40,
       "type": "choice",
-      "stem": "(A)Theyalsofoundthatduringsleep,thebrain’scellsshrink,orbecomesmaller.",
+      "stem": "",
       "section": null,
       "options": {
         "B": "Whilewesleep,ourbrainsaredoingmuchmorethangettingreadyforthenextday.",
         "C": "Shesaidtheresultsdemonstratejusthowimportantsleepistohealthandfightingdisease.",
-        "D": "Thebrainexpertsaysourbrainsperformtwoverydifferentjobs."
+        "D": "Thebrainexpertsaysourbrainsperformtwoverydifferentjobs.",
+        "A": "Theyalsofoundthatduringsleep,thebrain’scellsshrink,orbecomesmaller."
       },
       "answer": "C",
       "passage": "Isbedtimejustatimefordreaming?Doourbrainsturnoffforthenight?WhatifItoldyouthatscientistsrecently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the UniversityofRochesterfoundthatthebrainmaybebusycleaninghouse--cleaningoutharmfulwastematerials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected intotheirbrains.Theyobservedthemicebrainsastheysleptandwhentheywereawake.Theresearcherssaytheysaw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a dayjob.Andthisstudysaysthatiswhatourbrainsseemtobedoing–workinganextrajobatnightwithoutadditional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we areawake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 Thisshrinkingpermitswastetoberemovedmoreeffectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body.“Soourstudysuggeststhatweneedtosleepbecausewehaveamacroscopiccleaningsystemthatremovesmany ofthetoxicwasteproductsfromthebrain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
