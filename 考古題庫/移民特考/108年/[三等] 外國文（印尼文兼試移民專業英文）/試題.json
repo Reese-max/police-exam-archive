@@ -44,12 +44,6 @@
     },
     {
       "number": 5,
-      "type": "essay",
-      "stem": "Pegawai Negeri Sipil",
-      "section": "甲、申論題"
-    },
-    {
-      "number": 5,
       "type": "choice",
       "stem": "A visitor visa holder will be allowed to travel to Taiwan before the of the visa.",
       "options": {
