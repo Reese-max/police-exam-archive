@@ -237,14 +237,21 @@ Round Final: Agent I (HTML 重生成) → 最終驗證
 | notes_with_questions | ✅ 0 |
 | invalid_answer | ✅ 0 |
 | corrupted_option | ✅ 0 |
-| **incomplete_options** | ❌ 24（需原始試卷） |
-| **missing_option_text** | ❌ 7（需原始試卷） |
-| **empty_option** | ❌ 1（需原始試卷） |
+| incomplete_options | ✅ 0（原報 24 筆為誤報，選項皆完整） |
+| missing_option_text | ✅ 0（7 筆已由 fix_missing_options.py 修復） |
+| empty_option | ✅ 0（1 筆已由 fix_missing_options.py 修復） |
+| option_key_ordering | ✅ 0（10 筆 JSON key 順序已正規化為 A→B→C→D） |
 
 ### 結論
 
-- **可自動修復的問題：全部完成**
-- **剩餘 32 筆問題**皆為 PDF 解析時遺漏選項文字，需人工對照原始試卷補齊，無法自動修復
+- **所有可偵測的資料品質問題：全部修復完成**
+- 原報告的 32 筆「需原始試卷」問題，經逐一檢查後發現：
+  - 24 筆 incomplete_options 為掃描腳本誤報（選項皆完整，部分 JSON key 順序非字母序已正規化）
+  - 7 筆 missing_option_text 已由 fix_missing_options.py 從邏輯推斷修復（皆為組合型題目）
+  - 1 筆 empty_option 已由 fix_missing_options.py 修復（PDF 解析合併問題）
+- **殘餘無法修復的問題**（需原始 PDF 試卷）：
+  - 5 筆 question_number_gap_anomalous（整題遺失，無法從現有資料恢復）
+  - 93 筆 question_number_gap_systemic（英文閱讀測驗 PDF 解析限制）
 - 網站所有頁面需重新生成
 
 ## 移民特考申論題分析修復（2026-02-24）
