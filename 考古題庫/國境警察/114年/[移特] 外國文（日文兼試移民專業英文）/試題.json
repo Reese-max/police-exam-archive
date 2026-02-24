@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "exam_type": "114",
+    "level": "三等",
+    "subject": "外國文（日文兼試移民專業英文）",
+    "exam_time": "2 小時 座號：",
+    "code": "80270",
+    "exam_name": "移民行政人員特種考試",
+    "year": 114
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "共20題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "中國語に訳しなさい。\n占い大國の台灣。人生の重要事を占いで決める人も少なからずい\nて、その本気度は日本の比ではありません。龍山寺や行天宮などの\n大寺院近くには占いの館がずらりと並ぶ地下街があり、占い方も実\nにさまざま。手相や風水などの定番のほか、紫微斗數や米卦など、\nとにかく獨特な占いがいっぱい!なかでもぜひ體験したいのが、愛\nらしい小鳥にお伺いを立てる文鳥占い。(10 分)\n十二月は「師走」ともいう。年の暮れが迫り、僧がお経を唱えるた\nめに各地を忙しく走り回ることに由來する。たしかに、年越しの品\n物や料理、歳暮の贈り物を用意したり、大掃除をしたりと、年末は\nなにかと忙しくなる。日本では、この一年世話になった禮の意味で\n年末に贈り物をする習慣があり、これを歳暮という。一般的には世\n話になった相手や年配の人に贈ることが多い。昔は相手の家に行っ\nて贈り物を手渡していたが、今は百貨店などの店にお願いし、宅配\n便で屆けてもらうことのほうが多い。また、歳暮は一般的に毎年同\nじ相手に贈るもので、一度限りではない。(15 分)",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "日本語に訳しなさい(漢字に振り仮名を付けなさい)。\n生在臺灣這樣一個講求自由民主的人權國家,沒有人會認為自己罔顧\n人權,但很多時候生活中不經意的歧視,卻不斷地發生。(10 分)\n走在街頭,你可曾注意身邊多了許多東南亞人的臉孔。來到臺灣工作\n的他們,無非懷抱希望、忍受離鄉背井的辛苦,追求更理想的美好生\n活。認識世界、走入國際,不在他方,就在你我身旁一個個來自印尼、\n越南、泰國的東南亞朋友身上。(15 分)",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "作文(日本語で 300 字以上)(25 分)\n台灣の朝食文化について",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "In Pakistan, an airplane was briefly when a passenger was suspected of being infected with H5N1.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "distinguished",
+        "B": "quarantined",
+        "C": "perceived",
+        "D": "recognized"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "When Mr. and Mrs. Smith stayed at a hotel, they took rooms for themselves and their two children.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "adjacent",
+        "B": "glutinous",
+        "C": "occupied",
+        "D": "restrictive"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "This is the first study to show how to air pollution influences cognitive function in a national sampleofoldermen and women.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "examination",
+        "B": "expiration",
+        "C": "exposure",
+        "D": "expansion"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "If a foreign banker knowingly assisted a taxpayer in concealing a foreign account or evading taxes, the bankercanbe chargedwithconspiracyto theMinistryof Finance.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "authorize",
+        "B": "fraud",
+        "C": "prohibit",
+        "D": "waive"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "The President did eventually sign a minor but lauded executive order that halted of certain childrenofillegal immigrants.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "exportation",
+        "B": "clarification",
+        "C": "deportation",
+        "D": "exemplification"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "National-security agencies invest hundreds of millions of dollars yearly in software to hackers andcybercriminals from invadingourprofiles.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "deter",
+        "B": "alter",
+        "C": "gather",
+        "D": "whisper"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "We live at a time in which societies are becoming increasingly and multicultural. And, globalization forces us tointeract across national, cultural,religious andotherboundaries.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "equivocal",
+        "B": "fallacious",
+        "C": "magnetic",
+        "D": "heterogeneous"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "In the spring of 1889, Van Gogh entered an at Saint-Remy after suffering what he described as moods ofindescribable anguish, followingtheepisodeinwhichhecut off his left ear.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "boycott",
+        "B": "forum",
+        "C": "asylum",
+        "D": "variation"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "Today,itisnot foryoungerspeakersinTaiwantobeequallyfluentinTaiwaneseandMandarin.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "unseen",
+        "B": "uncommon",
+        "C": "unheard",
+        "D": "undaunted"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "Social media has significantly transformed our communication methods by both virality and efficiency.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "endangering",
+        "B": "enhancing",
+        "C": "envisioning",
+        "D": "evolving"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "acceptingby",
+        "B": "except by",
+        "C": "additional to",
+        "D": "inaddition"
+      },
+      "answer": "B",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Ofthose",
+        "B": "Amongthem that",
+        "C": "Ofthosethat",
+        "D": "Ofthem"
+      },
+      "answer": "C",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "inhabiting",
+        "B": "inhabit",
+        "C": "inhabitant",
+        "D": "inhabited"
+      },
+      "answer": "D",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "rises",
+        "B": "raising",
+        "C": "raises",
+        "D": "arising"
+      },
+      "answer": "B",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "interrelated",
+        "B": "interrelate",
+        "C": "opposite",
+        "D": "oppositional 請依下文回答第16 題至第20題 There are basicallytwo types of stress placed on human beings. One type involves physical activity and its demands; the other type is the result of mental and emotional demands. Whether physical or emotional in origin,stress causes thebodytoreact insimilarways. Inthe first stage, your bodyprepares tomeet thestress. The heartbeat and respiration rates increase, and the pupils of the eyes dilate; the blood sugar level increases, and the perspiration rate speeds up, while digestion slows down as blood and muscular activity is diverted elsewhere. In the second stage, your body returns to normal and repairs any damage caused by the stressful situation. However, if stress continues, the body cannot repair itself, and the final stage, exhaustion, then begins. If this stage continues, physical and emotional damage will occur. These stages of stress reaction are generallythesame,whetherthestressiscausedbyacross-countryrun,afirstdate,buyingahouse,ornarrowly missinganautomobileaccident. Stress from physical activity, if not carried too far, is actually beneficial. Probably most harmful of all stresses is guilt. This common emotion is useful to have when it helps us realize that we have, in fact, committed some error, violated our own rules or social norms. If we did not feel guilt, we would never do anythingexceptthethingsthatbroughtusimmediatepleasure—we’dneverobeythelaw,work,orevenstudy inschool,unlesswewantedtodosointhefirstplace.Asaperson’sconsciencedevelops,guiltfeelingsbecome inevitable; guilt is thesorrowwe experiencewhen weknowwehavedonesomethingincorrect. Many of us as children learned rules that we no longer need. For instance, a successful business person needs not feel guilty about spending a little too much money on a vacation, or should she/he feel guilty that she/hecan combineabusiness tripwithsomeswimmingand golfat anoceanresort. But manypeopledofeel guilty over such apparently innocent actions. Excessive guilt can make life not worth living; guilt can cause self-hatredas well as otherfears and anxieties that causeall life’s successes tobebittersweet,at best. Guilt and the worrythat often accompanies this major stress are difficult to eradicate, but people subject to excessive guilt feelings should realize, as simple as it sounds, that no one is perfect. People cannot always be cheerful and helpful to everyone they meet. Another good lesson is that mistakes should be forgotten, not lingeredover andbrought out toexamineperiodically. Alifewithoutstresswouldbeboring.Justasweneedalittleguilttokeepuscorrect,andalittleworryto make us plan ahead, we need a little stress to stay interested in life. But, when stress begins to bother you, change your routine. Take your mind off your worries with some activities, whether tennis, yoga, gardening, or meditation. Or talk your worries over with someone else; you maydiscover a solution you had overlooked before."
+      },
+      "answer": "A",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "What is thebest titleforthepassage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Keyfindings about stress",
+        "B": "Stress: Causes, symptoms,andmanagement",
+        "C": "Thebest waytoescapestress",
+        "D": "Physical stress andmental stress"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "Accordingto thepassage,whichofthefollowingstatements isNOT true?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Worryoftenaccompaniesguilt.",
+        "B": "Someofus feel guiltyabout veryinnocent actions.",
+        "C": "Aperson’s respiration rateincreases duringastressful situation.",
+        "D": "Guilt has nobeneficial effects onhumanbeings."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "Wecanconcludefrom this passagethat .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "astress-freelifewouldbeideal",
+        "B": "anincreaseinheartbeat ratecanonlybecausedbymental stress",
+        "C": "guilt is oftenself-induced",
+        "D": "worryis amoredangerous form ofstress thanis guilt"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "Thepassagesuggests that .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "physical andmental stress innormal amounts areadvantageous toman",
+        "B": "worryoften causes physical stress",
+        "C": "physical stress canbe moredangerous thanmental stress",
+        "D": "thebodyis ill-equippedtodeal withstress"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "Accordingto thepassage,theword“dilate”means .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "redden",
+        "B": "depress",
+        "C": "focus",
+        "D": "expand"
+      },
+      "answer": "D"
+    }
+  ],
+  "year": 114,
+  "category": "國境警察",
+  "subject": "[移特] 外國文(日文兼試移民專業英文)",
+  "level": "三等",
+  "original_subject": "外國文(日文兼試移民專業英文)",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/114年/三等/外國文(日文兼試移民專業英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 23
+}
