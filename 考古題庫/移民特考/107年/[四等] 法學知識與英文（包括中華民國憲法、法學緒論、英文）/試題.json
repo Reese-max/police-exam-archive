@@ -2,7 +2,9 @@
   "metadata": {
     "level": "四等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 107
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -187,8 +189,8 @@
       "section": null,
       "options": {
         "A": "為使監察院之職權得以不間斷行使,總統於當屆監察院院長、副院長及監察委員任期屆滿前,應適時 提名繼任人選",
-        "B": "立法院於接受總統關於監察院院長、副院長及監察委員之提名咨文後,應適時行使同意權,以維繫監 察院之正常運行",
-        "C": "就監察委員之缺額,總統並無須適時提名繼任人選咨請立法院同意",
+        "B": "立法院於接受總統關於監察院院長、副院長及監察委員之提名諮文後,應適時行使同意權,以維繫監 察院之正常運行",
+        "C": "就監察委員之缺額,總統並無須適時提名繼任人選諮請立法院同意",
         "D": "立法院就總統所提監察委員之人事案,消極不行使同意權,致監察院無從行使職權,違憲"
       },
       "answer": "C"
@@ -527,14 +529,14 @@
         "A": "ethic",
         "B": "ethnic",
         "C": "moral",
-        "D": "mortal 請依下文回答第41題至第45題: The deal struck between Iran and six world powers over its nuclear program should see sanctions against the country beginning to ease by next year. Iranians are hoping the 41 of travel restrictions could prompt an influx of international tourists. Travel agencies have already seen an increase in demand. With its ancient architecture, 42 landscapes and warm people, tour companies describe Iran as one of the unexplored jewels of the Middle East. But the country’s 43 since the 1979 Islamic Revolution has seen visitor numbers from the West fall. The latest 44 show only 90,000 arrivals from North America and the European Union in 2013. Former diplomat Mehrdad Khonsari said there’s a lot of work to do. “The difficulties we’ve had in Iran have definitely hurt the tourist industry in the sense that people are afraid to go. But those people that 45 and overcame these considerations and visited Iran were never sorry,” said Khonsari."
+        "D": "mortal"
       },
       "answer": "B"
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "lifting",
@@ -542,12 +544,14 @@
         "C": "possibility",
         "D": "activation"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "The deal struck between Iran and six world powers over its nuclear program should see sanctions against the country beginning to ease by next year. Iranians are hoping the 41 of travel restrictions could prompt an influx of international tourists. Travel agencies have already seen an increase in demand. With its ancient architecture, 42 landscapes and warm people, tour companies describe Iran as one of the unexplored jewels of the Middle East. But the country’s 43 since the 1979 Islamic Revolution has seen visitor numbers from the West fall. The latest 44 show only 90,000 arrivals from North America and the European Union in 2013. Former diplomat Mehrdad Khonsari said there’s a lot of work to do. “The difficulties we’ve had in Iran have definitely hurt the tourist industry in the sense that people are afraid to go. But those people that 45 and overcame these considerations and visited Iran were never sorry,” said Khonsari.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "emerging",
@@ -555,12 +559,14 @@
         "C": "demanding",
         "D": "breathtaking"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "The deal struck between Iran and six world powers over its nuclear program should see sanctions against the country beginning to ease by next year. Iranians are hoping the 41 of travel restrictions could prompt an influx of international tourists. Travel agencies have already seen an increase in demand. With its ancient architecture, 42 landscapes and warm people, tour companies describe Iran as one of the unexplored jewels of the Middle East. But the country’s 43 since the 1979 Islamic Revolution has seen visitor numbers from the West fall. The latest 44 show only 90,000 arrivals from North America and the European Union in 2013. Former diplomat Mehrdad Khonsari said there’s a lot of work to do. “The difficulties we’ve had in Iran have definitely hurt the tourist industry in the sense that people are afraid to go. But those people that 45 and overcame these considerations and visited Iran were never sorry,” said Khonsari.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "export",
@@ -568,12 +574,14 @@
         "C": "transportation",
         "D": "population"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "The deal struck between Iran and six world powers over its nuclear program should see sanctions against the country beginning to ease by next year. Iranians are hoping the 41 of travel restrictions could prompt an influx of international tourists. Travel agencies have already seen an increase in demand. With its ancient architecture, 42 landscapes and warm people, tour companies describe Iran as one of the unexplored jewels of the Middle East. But the country’s 43 since the 1979 Islamic Revolution has seen visitor numbers from the West fall. The latest 44 show only 90,000 arrivals from North America and the European Union in 2013. Former diplomat Mehrdad Khonsari said there’s a lot of work to do. “The difficulties we’ve had in Iran have definitely hurt the tourist industry in the sense that people are afraid to go. But those people that 45 and overcame these considerations and visited Iran were never sorry,” said Khonsari.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "figures",
@@ -581,12 +589,14 @@
         "C": "fashions",
         "D": "fragments"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "The deal struck between Iran and six world powers over its nuclear program should see sanctions against the country beginning to ease by next year. Iranians are hoping the 41 of travel restrictions could prompt an influx of international tourists. Travel agencies have already seen an increase in demand. With its ancient architecture, 42 landscapes and warm people, tour companies describe Iran as one of the unexplored jewels of the Middle East. But the country’s 43 since the 1979 Islamic Revolution has seen visitor numbers from the West fall. The latest 44 show only 90,000 arrivals from North America and the European Union in 2013. Former diplomat Mehrdad Khonsari said there’s a lot of work to do. “The difficulties we’ve had in Iran have definitely hurt the tourist industry in the sense that people are afraid to go. But those people that 45 and overcame these considerations and visited Iran were never sorry,” said Khonsari.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "voted",
@@ -594,7 +604,9 @@
         "C": "ventured",
         "D": "volunteered 請依下文回答第46題至第50題: Experts have traditionally seen a high level of intelligence as applicable across the board to most human activities, guaranteeing its possessor success in whatever s/he does. In the 1980s, however, Prof. Howard Gardner proposed the theory of multiple intelligences, suggesting that the mind does not possess just one kind of intelligence, but rather many distinct intelligences, including linguistic, logical-mathematical, spatial, naturalistic intelligences, among others. A person with a high level of linguistic intelligence is endowed with a large vocabulary and the ability to express him or herself well. Gardner sees the poet as the best example of an astute user of language. In creating poems, poets make use of the full complexity of meaning and the widest range of linguistic dynamics. Naturally, people with a high level of linguistic intelligence would excel at language-related activities such as writing, teaching and persuading others. Logical-mathematical intelligence refers to the skills often associated with scientists and mathematicians. Scientists tend to give it a more significant role than other intelligences. Gardner certainly disagrees with this point of view. He sees logical-mathematical intelligence as simply one among a set of intelligences, asserting that though it may have been exceptionally important in western societies, it has played a more modest role in other societies. Spatial intelligence refers to the ability to visualize things in the mind accurately and precisely. This intelligence is therefore associated with artists, who are experts in visualizing and making intelligent use of forms and colors. A person with a high level of spatial intelligence may also have excellent visual memory, and perhaps even a so-called photographic memory. Naturalistic intelligence has been quite controversial and critics generally see it as an area of interest. Gardner hypothesizes that people who have a high level of naturalistic intelligence are more sensitive to nature and to their own relationship to it. A person who is successful at growing plants or raising animals could be said to have a high level of naturalistic intelligence. Such a person could be a successful gardener or farmer, and would also make a good scientist studying the natural world. The revolutionary theory of multiple intelligences has resulted in several criticisms. Some have questioned the criteria that qualify something as an intelligence. Others have pointed out that the existence of multiple intelligences has never been proven through scientific research. These criticisms notwithstanding, the theory of multiple intelligences has sparked fascinating debate about the value and the nature of intelligence. Its applications in the field of education have led to more diverse educational methods as teachers seek to access and develop the multiple intelligences of students."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "The deal struck between Iran and six world powers over its nuclear program should see sanctions against the country beginning to ease by next year. Iranians are hoping the 41 of travel restrictions could prompt an influx of international tourists. Travel agencies have already seen an increase in demand. With its ancient architecture, 42 landscapes and warm people, tour companies describe Iran as one of the unexplored jewels of the Middle East. But the country’s 43 since the 1979 Islamic Revolution has seen visitor numbers from the West fall. The latest 44 show only 90,000 arrivals from North America and the European Union in 2013. Former diplomat Mehrdad Khonsari said there’s a lot of work to do. “The difficulties we’ve had in Iran have definitely hurt the tourist industry in the sense that people are afraid to go. But those people that 45 and overcame these considerations and visited Iran were never sorry,” said Khonsari.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 46,

@@ -1,0 +1,682 @@
+{
+  "metadata": {
+    "exam_type": "110",
+    "level": "四等",
+    "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "下列何者為憲法增修條文所定之領土變更程序?",
+      "section": null,
+      "options": {
+        "A": "經行政院會議決議,經立法院議決",
+        "B": "由立法院提出領土變更案,經公告半年,並於3個月內投票複決通過後為之",
+        "C": "由立法院議決後為之",
+        "D": "依修憲程序為之"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院釋字第 790 號解釋,大法官宣告原毒品危害防制條例第 12 條第 2 項規定:「意圖供製造毒品之 用,而栽種大麻者,處5年以上有期徒刑,得併科新臺幣500萬元以下罰金。」違憲,係違反下列何者?",
+      "section": null,
+      "options": {
+        "A": "財產權及比例原則",
+        "B": "財產權及平等原則",
+        "C": "人身自由及比例原則",
+        "D": "人身自由及平等原則"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "關於軍事審判之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "冤獄賠償法制排除軍事審判案件之適用,屬立法者所為合理之差別待遇",
+        "B": "依現行軍事審判法規定,現役軍人非戰時犯罪由一般司法機關追訴及審理",
+        "C": "軍事審判程序之法律涉及軍人權利之限制時,亦應合乎比例原則之要求",
+        "D": "軍事審判官依憲法第80條規定,仍須依法獨立行使審判職權"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "法律禁止公職人員及關係人與有關機關交易,違者罰交易行為金額3倍,上述處罰規定係侵害人民何種權利?",
+      "section": null,
+      "options": {
+        "A": "人身自由權",
+        "B": "平等權",
+        "C": "財產權",
+        "D": "訴訟權"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依據司法院大法官解釋,關於特別公課,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "空氣污染防制費屬於特別公課",
+        "B": "徵收目的、對象及用途,原則上應以法律規定",
+        "C": "特別公課之運用,不得悖離徵收之目的",
+        "D": "特別公課性質上仍屬稅捐,全體國民均有繳納義務"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於服兵役之義務,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "服兵役之義務僅限於男性,係基於男女生理上之差異所為區別對待,與憲法平等原則並無違背",
+        "B": "為確保服兵役義務之履行,立法者僅得採行募兵制,全面推動志願役",
+        "C": "服兵役之義務係為保護人民,防衛國家之安全所必需,並無違反人性尊嚴",
+        "D": "在國防軍事無妨礙時,以不影響兵員補充、不降低兵員素質、不違背兵役公平前提下,得實施替代役"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "憲法本文關於教育文化基本國策之規定,不包括下列何者?",
+      "section": null,
+      "options": {
+        "A": "國民受教育之機會一律平等",
+        "B": "6歲至12歲之學齡兒童免納學費",
+        "C": "僅公立教育文化機關依法律受國家之監督",
+        "D": "已逾學齡未受教育之國民一律受補習教育"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依司法院釋字第791號解釋,有關刑法通姦罪,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "以刑事制裁約束配偶雙方履行婚姻忠誠義務,目的正當",
+        "B": "性自主權為個人自主權之一環,受憲法第22條保障",
+        "C": "立法對性自主權之限制是否符合平等原則,應受寬鬆審查",
+        "D": "國家以刑事追訴介入婚姻關係為干預個人之隱私"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "依現行規定,總統行使下列職權,何者須經行政院院長之副署?",
+      "section": null,
+      "options": {
+        "A": "提名司法院院長",
+        "B": "提名考試委員",
+        "C": "解散立法院",
+        "D": "依法公布法律"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "關於行政院院長之任期,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "憲法並無明文規定",
+        "B": "憲法本文規定其任期與立法委員相同",
+        "C": "憲法增修條文明定其任期為4年",
+        "D": "行政院院長任期事關重大,不得依據憲政慣例決定之"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "關於憲法增修條文規定之覆議制度,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "行政院對於立法院決議之法律案、預算案及條約案,認為有窒礙難行時,得移請立法院覆議",
+        "B": "對於行政院向立法院提出之覆議案,立法院應於7日內集會,並於開議後15日內議決",
+        "C": "覆議案若經全體立法委員二分之一以上維持原案者,行政院院長即應接受該決議",
+        "D": "對於立法院就國家重大政策所為之決議,行政院院長得提出覆議"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,立法院各種委員會依憲法第 67 條第 2 項規定邀請政府人員到會備詢,下列何者無 應邀說明的義務?",
+      "section": null,
+      "options": {
+        "A": "參謀總長",
+        "B": "政務委員",
+        "C": "主計長",
+        "D": "公平交易委員會委員"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "下列何者不適用法官身分及任期之保障規定?",
+      "section": null,
+      "options": {
+        "A": "司法院大法官",
+        "B": "司法院秘書長",
+        "C": "懲戒法院法官",
+        "D": "民事法院法官"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "有關司法院職權,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "公務員之懲戒,應經公務員懲戒委員會審議",
+        "B": "公務員之懲戒,應經公務人員保障暨培訓委員會審議",
+        "C": "公務員之懲戒,得向高等行政法院起訴",
+        "D": "公務員之懲戒,由懲戒法院審理"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "於憲法及法律規範之框架下,地方自治團體享有自主組織權。下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "攸關地方自治團體及其所營事業機構之組織事項,均應以自治條例定之",
+        "B": "法律規定得設置之職位,地方自治團體具有自主決定設置與否之權限,但仍應以組織自治條例為依據, 始可進用",
+        "C": "縣議會置議長及副議長以及其選舉及罷免之投票方式,涉及議會自律事項,屬與縣議會組織及其運作有 關之重要事項,應以自律規則定之,中央不得另以法律加以規範",
+        "D": "就憲法授權事項之立法,因涉及地方制度之政策形成,司法院應予尊重,原則上採寬鬆標準予以審查"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "依據中央法規標準法之規定,法規條文書寫體例格式中,不冠數字、空二字書寫者為下列何者?",
+      "section": null,
+      "options": {
+        "A": "條",
+        "B": "項",
+        "C": "款",
+        "D": "目"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "下列有關自治條例之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "自治條例得規定罰鍰之處罰",
+        "B": "自治條例須經地方立法機關之通過",
+        "C": "自治條例罰鍰之處罰,最高以新臺幣20萬元為限",
+        "D": "自治條例應分別冠以各該地方自治團體之名稱"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "司法院釋字第615號解釋所提及之「主管機關本於法定職權所為釋示」,應屬下列何種有權解釋?",
+      "section": null,
+      "options": {
+        "A": "立法解釋",
+        "B": "行政解釋",
+        "C": "司法解釋",
+        "D": "學理解釋"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "依行政程序法規定,關於明確性原則之敘述,下列何者正確?",
+      "section": null,
+      "options": {
+        "A": "行政指導僅得以書面為之",
+        "B": "為求明確,若無裁量基準可供依循,行政機關即不得行使裁量權",
+        "C": "法規命令之規範對象應具體特定",
+        "D": "行政指導應明示指導之目的及內容"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "有關隱私權,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "隱私權為個人生存不可或缺之權利,受憲法第15條之保障",
+        "B": "指紋乃重要之個人資訊,個人對其指紋資訊之自主控制,受資訊隱私權之保障",
+        "C": "存款人自願提供給銀行的存款資料,不受隱私權保障",
+        "D": "警察實施臨檢,屬對人或物之查驗、干預,僅影響人民之行動自由,不涉及隱私權"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "甲將A動產出借予乙,乙擅自將A出售予不知情的丙,並完成A讓與合意及交付。依民法規定,下列敘 述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "乙讓與A為無權處分",
+        "B": "甲不得向乙主張所有物返還請求權",
+        "C": "甲不得向丙主張所有物返還請求權",
+        "D": "丙於甲承認後始取得A的所有權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "下列何者在刑法上應評價為「作為」?",
+      "section": null,
+      "options": {
+        "A": "駕車見前有路人經過,卻不採任何防免措施,將路人輾斃",
+        "B": "行為人受退去之要求,仍留滯於他人住宅內",
+        "C": "母親不餵食嬰兒,令嬰兒餓死",
+        "D": "醫生開立無療效之維他命給病患服用,任其病情惡化致死"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "警察張三依法逮捕現行犯李四後,疏未將手銬銬好,致使李四趁機脫逃。下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "張三的行為構成刑法第163條公務員縱放脫逃罪,因張三係便利李四脫逃",
+        "B": "張三的行為構成刑法第163條公務員縱放脫逃罪,因張三過失致李四脫逃",
+        "C": "張三的行為不構成刑法第163條公務員縱放脫逃罪,因該罪不罰過失",
+        "D": "張三的行為不構成刑法第163條公務員縱放脫逃罪,因李四非受羈押之人"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "依我國著作權法規定,有關著作財產權的限制,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "為教學之必要,教師得將論文予以精簡摘要後,在上課講義內加以引用",
+        "B": "為強化學生英語能力,各級學校得將他人已公開發表之英語錄音著作上傳至數位教學平台供全校學生自習",
+        "C": "為非營利教育目的,大學教師得公開傳輸他人已公開發表之著作",
+        "D": "為學習所需,學生得完整錄製教師之上課口述內容,並將該錄音檔案無償分享給其他同學"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "A公司想了解公司法對公司轉投資、借貸和保證之相關規定,請問下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "公開發行公司為他公司有限責任股東,得經股東會特別決議通過,投資超過本公司實收股本百分之四十",
+        "B": "公司之資金得貸予有業務往來之其他公司",
+        "C": "公司負責人使公司違法為保證人時,應自負保證責任",
+        "D": "非公開發行公司負責人使公司轉投資其他股份有限公司超出本公司實收股本百分之四十,該法律行為無效"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "下列有關性別工作平等法「育嬰留職停薪」規定之敘述,何者為正確?",
+      "section": null,
+      "options": {
+        "A": "只要受僱者的子女未滿3歲前,皆得申請育嬰留職停薪",
+        "B": "受僱者於育嬰留職停薪期間,原由雇主負擔之保險費,得遞延3年繳納",
+        "C": "受僱者於育嬰留職停薪期滿後申請復職,雇主應回復受僱者申請育嬰留職停薪時之原有工作或相當原有 工作之工作",
+        "D": "受僱者同時撫育子女2人以上者,其育嬰留職停薪期間應合併計算,最長以最幼子女受撫育2年為限"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "依家庭暴力防治法之規定,下列有幾項是直轄市、縣(市)主管機關得核發給家庭暴力被害人之補助: 1緊急生活扶助費用 2全民健康保險給付範圍之醫療費用及身心治療、諮商與輔導費用 3訴訟費用及 律師費用 4安置費用、房屋租金費用 5子女教育、生活費用及兒童托育費用",
+      "section": null,
+      "options": {
+        "A": "2項",
+        "B": "3項",
+        "C": "4項",
+        "D": "5項"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "下列何者,與法律安定性原則無涉?",
+      "section": null,
+      "options": {
+        "A": "法律禁止溯及既往原則",
+        "B": "法律明確性原則",
+        "C": "信賴保護原則",
+        "D": "措施性法律禁止原則"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "甲與乙訂定婚約,除甲交付聘金外,並約定違約之一方應給付他方違約金新臺幣(以下同)100萬元。未 料乙於訂婚後,又另與丙訂定婚約。解除婚約後,甲不得向乙請求下列何種權利?",
+      "section": null,
+      "options": {
+        "A": "返還聘金",
+        "B": "100萬元違約金",
+        "C": "訂婚囍宴所支出費用的財產上損害賠償",
+        "D": "精神上損害賠償"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "雇主甲與其勞工乙間為離職後競業禁止之約定,約定期間為3年其效力如何?",
+      "section": null,
+      "options": {
+        "A": "甲乙間約定之期間,縮短為2年",
+        "B": "甲乙間約定之期間,第三年之合理補償,雇主須加倍發給",
+        "C": "甲乙間約定之期間,應由主管機關撤銷,另行約定",
+        "D": "因約定期間過長,該離職後競業禁止之約定無效"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Thisisaconserativesocietythatvaluesanunquestioning oftraditionandculturalnorms.",
+      "section": null,
+      "options": {
+        "A": "acceptance",
+        "B": "threat",
+        "C": "dispute",
+        "D": "diplomacy"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Toavoidimitationfromourcompetitors,ournewproductsrequire tobothcoverdesignandfunctions.",
+      "section": null,
+      "options": {
+        "A": "alterations",
+        "B": "restorations",
+        "C": "decorations",
+        "D": "preparations"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Thepatientcouldn’tbutletouta whenthenursemovedhisbrokenleg.",
+      "section": null,
+      "options": {
+        "A": "groan",
+        "B": "grant",
+        "C": "remendy",
+        "D": "relief"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "Luckily,thehistoricbuildingremained aftertheterribleearthquake.",
+      "section": null,
+      "options": {
+        "A": "contact",
+        "B": "intent",
+        "C": "contract",
+        "D": "intact"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Abortionisanextremely issue,foritinvolvesendingthelifeofababyinthemother’swomb.",
+      "section": null,
+      "options": {
+        "A": "complicated",
+        "B": "graceful",
+        "C": "pregnant",
+        "D": "typical"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Understanding the to health that flies pose is important to help prevent the transmission of dangerous diseasesandbacteria.",
+      "section": null,
+      "options": {
+        "A": "insurance",
+        "B": "trend",
+        "C": "expectations",
+        "D": "threats"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Duringthepremiere’svisit,unemployedprotestors ,shuttingdownpublictransportation.",
+      "section": null,
+      "options": {
+        "A": "wentroundtheblock",
+        "B": "sparednoeffort",
+        "C": "tooktothestreets",
+        "D": "heldtheground"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "TravelingbytheMRTinTaipeiisquickandconvenient,butthetrainscanbevery duringrushhours.",
+      "section": null,
+      "options": {
+        "A": "crowned",
+        "B": "clowned",
+        "C": "clouded",
+        "D": "crowded"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "MymotherspentNT$10,000onacreamproductwhichclaimstobeableto eyewrinkles.",
+      "section": null,
+      "options": {
+        "A": "occupy",
+        "B": "fertilize",
+        "C": "refresh",
+        "D": "diminish"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "Ineedareliableand secretary,notalazy,forgetfulonelikeyou!",
+      "section": null,
+      "options": {
+        "A": "efficient",
+        "B": "considerable",
+        "C": "fanatic",
+        "D": "simultaneous"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "Maxtendsto thedegreeofthings.Ifhehasacold,hemaysayheisdying.",
+      "section": null,
+      "options": {
+        "A": "exasperate",
+        "B": "demonstrate",
+        "C": "exaggerate",
+        "D": "evaluate"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "forcooking",
+        "B": "intocooking",
+        "C": "tocook",
+        "D": "tocooking"
+      },
+      "answer": "D",
+      "passage": "In Texas, people take chili seriously. So seriously that from May to November, hundreds of Texans devote their weekends 42 giantpotsofitinchilicookoffs.Thesecontestsarecarefullyorganizedincitiesandtownsthroughout the state, each one 43 that it sponsors the best one around. 44 other states have their own version of the cookoff, Texas sets the standards. The Chili Appreciation Society International in Dallas has established rules and regulations as well as a point systemfor determining the winners.There is even a newspaper,theGoat Gap Gazette in Houston,that is 45 for chili heads,the name given tothose who are passionate about chili making. It publishes a completelistofcompetitionsintheUnitedStatesandprovidesusefulhintsandbitsofgossipforitssubscribers.",
+      "passage_intro": "請依下文回答第42題至第45題:"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "boasted",
+        "B": "boasts",
+        "C": "boasting",
+        "D": "willboast"
+      },
+      "answer": "C",
+      "passage": "In Texas, people take chili seriously. So seriously that from May to November, hundreds of Texans devote their weekends 42 giantpotsofitinchilicookoffs.Thesecontestsarecarefullyorganizedincitiesandtownsthroughout the state, each one 43 that it sponsors the best one around. 44 other states have their own version of the cookoff, Texas sets the standards. The Chili Appreciation Society International in Dallas has established rules and regulations as well as a point systemfor determining the winners.There is even a newspaper,theGoat Gap Gazette in Houston,that is 45 for chili heads,the name given tothose who are passionate about chili making. It publishes a completelistofcompetitionsintheUnitedStatesandprovidesusefulhintsandbitsofgossipforitssubscribers.",
+      "passage_intro": "請依下文回答第42題至第45題:"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "Whatever",
+        "B": "Before",
+        "C": "After",
+        "D": "Eventhough"
+      },
+      "answer": "D",
+      "passage": "In Texas, people take chili seriously. So seriously that from May to November, hundreds of Texans devote their weekends 42 giantpotsofitinchilicookoffs.Thesecontestsarecarefullyorganizedincitiesandtownsthroughout the state, each one 43 that it sponsors the best one around. 44 other states have their own version of the cookoff, Texas sets the standards. The Chili Appreciation Society International in Dallas has established rules and regulations as well as a point systemfor determining the winners.There is even a newspaper,theGoat Gap Gazette in Houston,that is 45 for chili heads,the name given tothose who are passionate about chili making. It publishes a completelistofcompetitionsintheUnitedStatesandprovidesusefulhintsandbitsofgossipforitssubscribers.",
+      "passage_intro": "請依下文回答第42題至第45題:"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "inclusively",
+        "B": "exclusively",
+        "C": "externally",
+        "D": "internally 請依下文回答第46題至第50題: AwetspringinLasVegashasspawnedhordesofgrasshopperssolarge thattheyare showingupontheweatherradar. Inviewingtheradar,CNNmeteorologistAllisonChincharsaiditlookedlikethereweretwostormsovertheVegasarea: oneinthenorthofthecity(thatwasactualrain)andanotherrightoverLasVegas.Butthesecondonewasn’tmovingas rainnormallywould,shesaid.“ItlookedasthoughitshouldbetorrentiallydownpouringinLasVegas,”saidChinchar. By changing the settings on the radar, meteorologists could see that the other “storm” was actually the massive hordes ofgrasshoppersthathavesettledoverthecityinrecentdays,Chincharsaid.LasVegas,likeallofNevada,hashadalmost twice as much rain in 2019 than normal, Chinchar said. “It appears through history that when we have a wet winter or spring,these thingsbuildup often down belowLaughlin and evenintoArizona,”JeffKnight,stateentomologist, said. “We’ll have grasshopper migrations about this time of the year, and they’ll move northward.” Knight said the swarms aren’t terribly unusual given the amount of rain the state has had this year. “We have records clear from the ’60s of it happening,andIhaveseenit...atleastfourorfivetimesinmy30-plusyears,”hesaid.“Therearesomespecialweather conditionsthattriggerthemigration.”"
+      },
+      "answer": "B",
+      "passage": "In Texas, people take chili seriously. So seriously that from May to November, hundreds of Texans devote their weekends 42 giantpotsofitinchilicookoffs.Thesecontestsarecarefullyorganizedincitiesandtownsthroughout the state, each one 43 that it sponsors the best one around. 44 other states have their own version of the cookoff, Texas sets the standards. The Chili Appreciation Society International in Dallas has established rules and regulations as well as a point systemfor determining the winners.There is even a newspaper,theGoat Gap Gazette in Houston,that is 45 for chili heads,the name given tothose who are passionate about chili making. It publishes a completelistofcompetitionsintheUnitedStatesandprovidesusefulhintsandbitsofgossipforitssubscribers.",
+      "passage_intro": "請依下文回答第42題至第45題:"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Whichofthefollowingisthetopicofthispassage?",
+      "section": null,
+      "options": {
+        "A": "LasVegas’grasshopperinvasionissobigthatyoucanseeitonweatherradar.",
+        "B": "GrasshoppersleadtomoreraininLasVegas.",
+        "C": "LasVegas’grasshoppershavestartedtheirmigrationearlierthanusual.",
+        "D": "LasVegas’desertsaresoondisappearingduetovastamountsofrain."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Whatcouldhavepossiblycausedtheoversizedgrasshoppers?",
+      "section": null,
+      "options": {
+        "A": "Meteorshowers.",
+        "B": "Exposuretoradarsystem.",
+        "C": "Unusualamountofrain.",
+        "D": "Changeofsunlight."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Whatdo“thesethings”refertointhepassage?",
+      "section": null,
+      "options": {
+        "A": "Storms.",
+        "B": "Deserts.",
+        "C": "Meteors.",
+        "D": "Grasshoppers."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingisNOTtrueaboutgrasshoppers?",
+      "section": null,
+      "options": {
+        "A": "Theycanbeeasilyseenontheradarsystem.",
+        "B": "TheyoftenmigratetoArizona.",
+        "C": "Theyliketorrentialdownpouring.",
+        "D": "TheswarmsofgrasshoppersareacommonsceneinArizona."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Whichofthefollowingwordscouldreplace“hordes”inthefirstsentence?",
+      "section": null,
+      "options": {
+        "A": "Eggs.",
+        "B": "Children.",
+        "C": "Swarms.",
+        "D": "States."
+      },
+      "answer": "C"
+    }
+  ],
+  "year": 110,
+  "category": "移民特考",
+  "subject": "[四等] 法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "level": "四等",
+  "original_subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/110年/四等/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

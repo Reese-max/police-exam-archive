@@ -3,7 +3,9 @@
     "exam_type": "109",
     "level": "三等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1小時 座號："
+    "exam_time": "1小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 109
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -528,14 +530,14 @@
         "A": "daunting",
         "B": "amusing",
         "C": "delighting",
-        "D": "encouraging 請回答下列第41題至第45題 Capital controls may be imposed on capital leaving a country or entering it. The former include controls over 41 transactions for direct and equity investments by residents and/or foreigners. For example, restrictions on the repatriation of capital by foreigners can include 42 a period before such repatriation is allowed, and regulations that phase the repatriation according to the availability of foreign exchange. Residents may be restricted 43 their holdings of foreignstocks, either directly or through limits on the permissible portfolios of the country’s investment funds. Law can also restrict bank deposits abroad by residents. Alternatively, bank accounts and transactions 44 in foreign currencies can be made available to residents, and non-interest-bearing capital reserve requirements can be imposed on deposits in foreign currencies, 45 reducing or eliminating the interest paid on them and therefore diminishing their attractiveness. The main purpose of controls over capital out flows is to thwart attempts to shift between currencies during financial crises, which can exacerbate currency depreciation."
+        "D": "encouraging"
       },
       "answer": "A"
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "ultimate",
@@ -543,12 +545,14 @@
         "C": "outward",
         "D": "inbound"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "Capital controls may be imposed on capital leaving a country or entering it. The former include controls over 41 transactions for direct and equity investments by residents and/or foreigners. For example, restrictions on the repatriation of capital by foreigners can include 42 a period before such repatriation is allowed, and regulations that phase the repatriation according to the availability of foreign exchange. Residents may be restricted 43 their holdings of foreignstocks, either directly or through limits on the permissible portfolios of the country’s investment funds. Law can also restrict bank deposits abroad by residents. Alternatively, bank accounts and transactions 44 in foreign currencies can be made available to residents, and non-interest-bearing capital reserve requirements can be imposed on deposits in foreign currencies, 45 reducing or eliminating the interest paid on them and therefore diminishing their attractiveness. The main purpose of controls over capital out flows is to thwart attempts to shift between currencies during financial crises, which can exacerbate currency depreciation.",
+      "passage_intro": "請回答下列第41題至第45題"
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "sacrificing",
@@ -556,12 +560,14 @@
         "C": "specifying",
         "D": "forseeing"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "Capital controls may be imposed on capital leaving a country or entering it. The former include controls over 41 transactions for direct and equity investments by residents and/or foreigners. For example, restrictions on the repatriation of capital by foreigners can include 42 a period before such repatriation is allowed, and regulations that phase the repatriation according to the availability of foreign exchange. Residents may be restricted 43 their holdings of foreignstocks, either directly or through limits on the permissible portfolios of the country’s investment funds. Law can also restrict bank deposits abroad by residents. Alternatively, bank accounts and transactions 44 in foreign currencies can be made available to residents, and non-interest-bearing capital reserve requirements can be imposed on deposits in foreign currencies, 45 reducing or eliminating the interest paid on them and therefore diminishing their attractiveness. The main purpose of controls over capital out flows is to thwart attempts to shift between currencies during financial crises, which can exacerbate currency depreciation.",
+      "passage_intro": "請回答下列第41題至第45題"
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "inrespectof",
@@ -569,12 +575,14 @@
         "C": "bywayof",
         "D": "inspiteof"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Capital controls may be imposed on capital leaving a country or entering it. The former include controls over 41 transactions for direct and equity investments by residents and/or foreigners. For example, restrictions on the repatriation of capital by foreigners can include 42 a period before such repatriation is allowed, and regulations that phase the repatriation according to the availability of foreign exchange. Residents may be restricted 43 their holdings of foreignstocks, either directly or through limits on the permissible portfolios of the country’s investment funds. Law can also restrict bank deposits abroad by residents. Alternatively, bank accounts and transactions 44 in foreign currencies can be made available to residents, and non-interest-bearing capital reserve requirements can be imposed on deposits in foreign currencies, 45 reducing or eliminating the interest paid on them and therefore diminishing their attractiveness. The main purpose of controls over capital out flows is to thwart attempts to shift between currencies during financial crises, which can exacerbate currency depreciation.",
+      "passage_intro": "請回答下列第41題至第45題"
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "distributed",
@@ -582,12 +590,14 @@
         "C": "denounced",
         "D": "discriminated"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "Capital controls may be imposed on capital leaving a country or entering it. The former include controls over 41 transactions for direct and equity investments by residents and/or foreigners. For example, restrictions on the repatriation of capital by foreigners can include 42 a period before such repatriation is allowed, and regulations that phase the repatriation according to the availability of foreign exchange. Residents may be restricted 43 their holdings of foreignstocks, either directly or through limits on the permissible portfolios of the country’s investment funds. Law can also restrict bank deposits abroad by residents. Alternatively, bank accounts and transactions 44 in foreign currencies can be made available to residents, and non-interest-bearing capital reserve requirements can be imposed on deposits in foreign currencies, 45 reducing or eliminating the interest paid on them and therefore diminishing their attractiveness. The main purpose of controls over capital out flows is to thwart attempts to shift between currencies during financial crises, which can exacerbate currency depreciation.",
+      "passage_intro": "請回答下列第41題至第45題"
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "albeit",
@@ -595,7 +605,9 @@
         "C": "unless",
         "D": "thus 請回答下列第46題至第50題 Two years ago, a group of elders in a village in north-western Uganda agreed to lend their land to refugees from South Sudan. About 120,000 are now in the surrounding area. Here they live in tarpaulin shelters and mud-brick huts on a patch of scrub where cows once grazed. Kemis Butele, a gravel-voiced Ugandan elder, explains that hostingrefugeesisawayforaremoteplace,longneglectedbythecentralgovernment,togetnoticed.Hehopesfor newschools,clinicsandadecentroad–and“thatourchildrencangetjobs.” Therearemorethan20millionrefugeesintheworldtoday,morethanatanytimesincetheendofthesecondworld war. Nearly 90% reside in poor countries. In many, to preserve jobs for natives, governments bar refugees from workingintheformaleconomy.Ugandahasshownhowadifferentapproachcanreapdividends.Thegovernment givesrefugeeslandplotsandletsthemwork.Insomeplaces,therefugeesboostlocalbusinessesandactasamagnet forforeignaid.Mr.ButeleandmanyotherUgandansseetheirnewneighborsasabenefit,notaburden.Sadly,such attitudesarestilltheexception. Refugeesare“brothersandsisters,”saymanyUgandans.Mr.Butelewasonceonehimself.Butthewelcomeisalso a pragmatic one. Northern Uganda is so poor that some locals pose as refugees to receive food aid. Others see refugees as buyers for local goods. Elsewhere in Uganda has indeedseen such positive spillover. One studyfrom 2016foundthatthepresenceofCongoleserefugeesinwesternUgandahadincreasedconsumptionperhousehold. Another estimates that each new refugee household boosts total income, including that of refugees, by $320-430 more than the cost of the aid the household is given. That rises to $560-670 when refugees are given cash instead ofrations."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "Capital controls may be imposed on capital leaving a country or entering it. The former include controls over 41 transactions for direct and equity investments by residents and/or foreigners. For example, restrictions on the repatriation of capital by foreigners can include 42 a period before such repatriation is allowed, and regulations that phase the repatriation according to the availability of foreign exchange. Residents may be restricted 43 their holdings of foreignstocks, either directly or through limits on the permissible portfolios of the country’s investment funds. Law can also restrict bank deposits abroad by residents. Alternatively, bank accounts and transactions 44 in foreign currencies can be made available to residents, and non-interest-bearing capital reserve requirements can be imposed on deposits in foreign currencies, 45 reducing or eliminating the interest paid on them and therefore diminishing their attractiveness. The main purpose of controls over capital out flows is to thwart attempts to shift between currencies during financial crises, which can exacerbate currency depreciation.",
+      "passage_intro": "請回答下列第41題至第45題"
     },
     {
       "number": 46,

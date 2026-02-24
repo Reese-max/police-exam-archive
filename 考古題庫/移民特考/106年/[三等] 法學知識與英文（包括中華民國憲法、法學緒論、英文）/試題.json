@@ -2,7 +2,9 @@
   "metadata": {
     "level": "三等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 106
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -527,14 +529,14 @@
         "A": "diverse",
         "B": "fragile",
         "C": "intact",
-        "D": "obscure 請依下文回答第41至45題: By far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century."
+        "D": "obscure"
       },
       "answer": "C"
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "with regard to",
@@ -542,12 +544,14 @@
         "C": "except for",
         "D": "along with"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "By far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_intro": "請依下文回答第41至45題:"
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "accustomed to",
@@ -555,12 +559,14 @@
         "C": "consistent with",
         "D": "entitled to"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "By far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_intro": "請依下文回答第41至45題:"
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "escort",
@@ -568,12 +574,14 @@
         "C": "tremor",
         "D": "sway"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "By far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_intro": "請依下文回答第41至45題:"
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "offshoot",
@@ -581,12 +589,14 @@
         "C": "catastrophe",
         "D": "fraud"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "By far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_intro": "請依下文回答第41至45題:"
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "secular",
@@ -594,7 +604,9 @@
         "C": "spiritual",
         "D": "mercantile 請依下文回答第46至50題: The word volcano can describe anything from a single opening in the earth a few meters across to a field of connected openings that might be 20 kilometers or more in width. Most researchers consider any set of openings that are connected to a large central core as a single “volcano”. Otherwise, they would have to deal with an endless number of names for each individual opening. Italy’s Stromboli has been almost constantly erupting for over 2400 years, but most eruptions do not last that long. Currently, there are about 15 volcanoes worldwide that have been actively erupting for the last 30 years. On the other end of the scale, about ten percent of volcanoes have eruptions which last for just a single day. The majority of the eruptions lasted three months or less. This means the average time from beginning to end is usually about seven weeks. From the number of volcanic eruptions detected over the past few hundred years, it would appear that they are becoming much more frequent over time. However, when researchers tracked the growth in reported eruptions along with the growth of the human population, they realized that volcanic activity wasn’t actually becoming more frequent. Instead, as people spread over more areas of the earth’s surface, the monitoring and reporting of volcanic activity inevitably increased with the expanding population. The highest volcano when measured from sea level to its top is Ojos del Salado in the Andes mountains in South America. It is 6,887 meters above sea level. However, when measured from its base on the surface of the earth to the top, a different set of volcanoes become the highest ones. Some volcanoes in the Mauna Loa zone near Hawaii rise as much as 19 kilometers above their bases at the bottom of the Pacific Ocean. The first thing to do when caught near a volcanic eruption is to avoid a potentially disastrous situation, listen to the radio and travel only as instructed by the local police or other authorities. Stay away from lava, mud and flying rocks. Avoid river areas and low-lying regions. Before you leave the house, put on a long-sleeved shirt, long pants, and eyeglasses or sunglasses to protect your eyes. Wear an emergency mask or hold a wet cloth over your face if you do not have one. Since ash can damage engine parts, refrain from driving if possible. If you decide not to leave the house, close all windows and doors to prevent ash from getting inside."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "By far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_intro": "請依下文回答第41至45題:"
     },
     {
       "number": 46,

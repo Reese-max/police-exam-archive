@@ -3,7 +3,9 @@
     "level": "三等",
     "subject": "外國文（俄文兼試移民專業英文）",
     "exam_time": "2 小時 座號：",
-    "code": "91140"
+    "code": "91140",
+    "exam_name": "移民行政人員特種考試",
+    "year": 107
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -161,14 +163,14 @@
         "A": "eligible",
         "B": "overloaded",
         "C": "overruled",
-        "D": "exclusive 請依下文回答第11題至第15題: Roger White (2016) assumes that religion is a potential marker of cultural similarity between societies. Two societies that share a common religion or that 11 the same dominant religion are likely more culturally similar than are two societies that stick to different religious beliefs. Similar to language, which acts as a representation of culture and a means 12 culture can be transmitted, to the extent that religious views 13 or influence broader attitudes, norms, expectations, and mores, it can be viewed as a 14 that allows culture to be communicated across people and time periods. 15 , the researcher employs two measures off religious distance between parent and host countries as a potential proxy variable for cultural differences. The results obtained from his study support his assumptions."
+        "D": "exclusive"
       },
       "answer": "A"
     },
     {
       "number": 11,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "adhere to",
@@ -176,12 +178,14 @@
         "C": "deter from",
         "D": "disregard"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Roger White (2016) assumes that religion is a potential marker of cultural similarity between societies. Two societies that share a common religion or that 11 the same dominant religion are likely more culturally similar than are two societies that stick to different religious beliefs. Similar to language, which acts as a representation of culture and a means 12 culture can be transmitted, to the extent that religious views 13 or influence broader attitudes, norms, expectations, and mores, it can be viewed as a 14 that allows culture to be communicated across people and time periods. 15 , the researcher employs two measures off religious distance between parent and host countries as a potential proxy variable for cultural differences. The results obtained from his study support his assumptions.",
+      "passage_intro": "請依下文回答第11題至第15題:"
     },
     {
       "number": 12,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "by which",
@@ -189,12 +193,14 @@
         "C": "so as",
         "D": "in case"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Roger White (2016) assumes that religion is a potential marker of cultural similarity between societies. Two societies that share a common religion or that 11 the same dominant religion are likely more culturally similar than are two societies that stick to different religious beliefs. Similar to language, which acts as a representation of culture and a means 12 culture can be transmitted, to the extent that religious views 13 or influence broader attitudes, norms, expectations, and mores, it can be viewed as a 14 that allows culture to be communicated across people and time periods. 15 , the researcher employs two measures off religious distance between parent and host countries as a potential proxy variable for cultural differences. The results obtained from his study support his assumptions.",
+      "passage_intro": "請依下文回答第11題至第15題:"
     },
     {
       "number": 13,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "align with",
@@ -202,12 +208,14 @@
         "C": "deviate from",
         "D": "separate from"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Roger White (2016) assumes that religion is a potential marker of cultural similarity between societies. Two societies that share a common religion or that 11 the same dominant religion are likely more culturally similar than are two societies that stick to different religious beliefs. Similar to language, which acts as a representation of culture and a means 12 culture can be transmitted, to the extent that religious views 13 or influence broader attitudes, norms, expectations, and mores, it can be viewed as a 14 that allows culture to be communicated across people and time periods. 15 , the researcher employs two measures off religious distance between parent and host countries as a potential proxy variable for cultural differences. The results obtained from his study support his assumptions.",
+      "passage_intro": "請依下文回答第11題至第15題:"
     },
     {
       "number": 14,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "block",
@@ -215,12 +223,14 @@
         "C": "terminal",
         "D": "vessel"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "Roger White (2016) assumes that religion is a potential marker of cultural similarity between societies. Two societies that share a common religion or that 11 the same dominant religion are likely more culturally similar than are two societies that stick to different religious beliefs. Similar to language, which acts as a representation of culture and a means 12 culture can be transmitted, to the extent that religious views 13 or influence broader attitudes, norms, expectations, and mores, it can be viewed as a 14 that allows culture to be communicated across people and time periods. 15 , the researcher employs two measures off religious distance between parent and host countries as a potential proxy variable for cultural differences. The results obtained from his study support his assumptions.",
+      "passage_intro": "請依下文回答第11題至第15題:"
     },
     {
       "number": 15,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "Accordingly",
@@ -228,7 +238,9 @@
         "C": "Surprisingly",
         "D": "Unexpectedly 請依下文回答第16題至第20題: In April 1968, Britain was debating the Race Relations Act, which made it illegal to deny a person employment, housing or public services based on race or national origin. The law was intended to protect immigrants from Commonwealth nations, especially former colonies in the Caribbean, India, and Pakistan. The first of these immigrants, 492 Jamaicans, had arrived 20 years earlier. Hundreds of thousands followed. \"The immigrants were called over,\" says Sathnam Sanghera, an author whose Sikh parents emigrated from India during that time. \"There was a labor shortage. There weren't enough people to run the factories after the war.\" The immigrants were granted British citizenship and helped rebuild Britain after World War II. But they faced racism. Landlords wouldn't rent to them. Some employers turned them away. The Race Relations Act was intended to protect immigrants. The tension was especially obvious in Wolverhampton, one of the first cities in Britain to experience mass immigration. Enoch Powell, who represented Wolverhampton in Parliament, feared a race war coming because of mass immigration. On April 20, 1968, he took the stage at a Conservative Party event at the Midlands Hotel in Birmingham and gave an incendiary speech that would come to define him — and divide his country. In the speech, Powell warned, \"that tragic and intractable phenomenon which we watch with horror on the other side of the Atlantic ... is coming upon us here by our own volition and our own neglect.\" He attacked the bill that outlawed discrimination. He said it was whites who were facing deprivation and that Britain \"must be mad, literally mad, as a nation to be permitting\" large numbers of immigrants to enter. The Times of London immediately labeled it an \"evil speech.\" Conservative Party leader Edward Heath dismissed Powell from the party leadership. But polls showed a majority of Britons supported Powell. Many protested, saying, \"Powell was right.\" The speech emboldened racists."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Roger White (2016) assumes that religion is a potential marker of cultural similarity between societies. Two societies that share a common religion or that 11 the same dominant religion are likely more culturally similar than are two societies that stick to different religious beliefs. Similar to language, which acts as a representation of culture and a means 12 culture can be transmitted, to the extent that religious views 13 or influence broader attitudes, norms, expectations, and mores, it can be viewed as a 14 that allows culture to be communicated across people and time periods. 15 , the researcher employs two measures off religious distance between parent and host countries as a potential proxy variable for cultural differences. The results obtained from his study support his assumptions.",
+      "passage_intro": "請依下文回答第11題至第15題:"
     },
     {
       "number": 16,

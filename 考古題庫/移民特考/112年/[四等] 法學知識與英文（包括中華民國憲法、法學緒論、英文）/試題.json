@@ -3,7 +3,9 @@
     "exam_type": "112",
     "level": "四等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 112
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當答案。",
@@ -528,14 +530,14 @@
         "A": "constituted",
         "B": "distributed",
         "C": "elaborated",
-        "D": "terminated 請依下文回答第41題至第45題 When initiating a conversation, note how close you are standing to the person opposite you. Personal space is an essentialconceptinmanycultures,andhowmuchorlittleyougiveoften 41 thefirstimpressionyoumake. 42 , inmostWesternnations,localsdonotlikestandingclosetooneanother.Inthesecountries,itiscustomaryforpeopleto backawaywhentheyfeeltheirspacehasbeen 43 .Ontheotherhand,SouthAmericansstandinclose 44 to oneanother.Whenyouaremeetingoneofthem,keepinmindthatit’s 45 tostepbackwardsduringaconversation. Agoodruleofthumbistostandatleastanarm’slengthawayfromyourspeakingpartner."
+        "D": "terminated"
       },
       "answer": "A"
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "affects",
@@ -543,12 +545,14 @@
         "C": "defeats",
         "D": "reduces"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "When initiating a conversation, note how close you are standing to the person opposite you. Personal space is an essentialconceptinmanycultures,andhowmuchorlittleyougiveoften 41 thefirstimpressionyoumake. 42 , inmostWesternnations,localsdonotlikestandingclosetooneanother.Inthesecountries,itiscustomaryforpeopleto backawaywhentheyfeeltheirspacehasbeen 43 .Ontheotherhand,SouthAmericansstandinclose 44 to oneanother.Whenyouaremeetingoneofthem,keepinmindthatit’s 45 tostepbackwardsduringaconversation. Agoodruleofthumbistostandatleastanarm’slengthawayfromyourspeakingpartner.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "Incontrast",
@@ -556,12 +560,14 @@
         "C": "Forexample",
         "D": "Atleast"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "When initiating a conversation, note how close you are standing to the person opposite you. Personal space is an essentialconceptinmanycultures,andhowmuchorlittleyougiveoften 41 thefirstimpressionyoumake. 42 , inmostWesternnations,localsdonotlikestandingclosetooneanother.Inthesecountries,itiscustomaryforpeopleto backawaywhentheyfeeltheirspacehasbeen 43 .Ontheotherhand,SouthAmericansstandinclose 44 to oneanother.Whenyouaremeetingoneofthem,keepinmindthatit’s 45 tostepbackwardsduringaconversation. Agoodruleofthumbistostandatleastanarm’slengthawayfromyourspeakingpartner.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "observed",
@@ -569,12 +575,14 @@
         "C": "induced",
         "D": "provided"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "When initiating a conversation, note how close you are standing to the person opposite you. Personal space is an essentialconceptinmanycultures,andhowmuchorlittleyougiveoften 41 thefirstimpressionyoumake. 42 , inmostWesternnations,localsdonotlikestandingclosetooneanother.Inthesecountries,itiscustomaryforpeopleto backawaywhentheyfeeltheirspacehasbeen 43 .Ontheotherhand,SouthAmericansstandinclose 44 to oneanother.Whenyouaremeetingoneofthem,keepinmindthatit’s 45 tostepbackwardsduringaconversation. Agoodruleofthumbistostandatleastanarm’slengthawayfromyourspeakingpartner.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "animosity",
@@ -582,12 +590,14 @@
         "C": "proximity",
         "D": "prominence"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "When initiating a conversation, note how close you are standing to the person opposite you. Personal space is an essentialconceptinmanycultures,andhowmuchorlittleyougiveoften 41 thefirstimpressionyoumake. 42 , inmostWesternnations,localsdonotlikestandingclosetooneanother.Inthesecountries,itiscustomaryforpeopleto backawaywhentheyfeeltheirspacehasbeen 43 .Ontheotherhand,SouthAmericansstandinclose 44 to oneanother.Whenyouaremeetingoneofthem,keepinmindthatit’s 45 tostepbackwardsduringaconversation. Agoodruleofthumbistostandatleastanarm’slengthawayfromyourspeakingpartner.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "contagious",
@@ -595,7 +605,9 @@
         "C": "militant",
         "D": "rebellious 請依下文回答第46題至第50題 Nikola Tesla, a Serbian-American who emigrated to NewYorkCity in 1884, was a scientist and visionary who developedthebasisforalternatingcurrent(AC)thatmostofususetodayandpioneerednumeroustechnologiesthatimprove oureverydaylives.WithouthiscontributiontotheACelectricpower,wewouldbefiftyyearsbehindtechnologicallythan wherewearetoday. In 1884,Tesla left Europe and worked forThomas Edison,the developer of direct current (DC). It was said that EdisonpromisedTesla$50,000tofixtheproblemswithhisDCsystem.WhenTeslasucceededanddemandedhisreward, Edisonclaimedtheofferwasajoke,saying“Whenyoubecomeafull-fledgedAmerican,youwillappreciateanAmerican joke.”ThispromptedTeslatoquitandheendedupinabattlewithEdison.Today,Tesla’sACsystemispredominantlyused to power most of the world’s electricity. DC motors are still used for some industrial machines, but often require more maintenance. ItisnotjustACpowerthatTeslaworkedon.Motors,radios,X-rays,neonsignswereadvancedbyhisextraordinary mind. History often touts Italian entrepreneur Guglielmo Marconi as the inventor of radio, but actually he was using technology from seventeen of Tesla’s patents. The two inventors became embroiled in a patent war. In 1943, the United States Supreme Court revoked Marconi’s radio patents in favor of Tesla. Unfortunately, Tesla and Marconi had already passedawaybythetimethecourthandeddowntheirdecision. Teslaalsoinventedoneoftheworld’searliestremotecontrolandwasapioneerofX-raytechnology.Hetooksome ofthefirstX-rayimagesofthehumanbodyandwasoneofthefirstscientiststohypothesizethatX-rayscouldbeharmful. Thebrilliantinventorcontributedtoreusableenergyaswell.Nineoutofthetwelvepatentsusedtobuildtheworld’sfirst hydroelectricstation,erectedatNiagaraFalls,NewYork,belongedtoTesla.Hehelpedpavethewaytowardcleanenergy becauseheunderstoodthephysicsbehindenergyandwhatmightbepossibleinthefuture. Oftenreferredtoas“themanwhoinventedthe20thcentury,”Teslawasinvolvedinmanymorediscoveriesand creations. When he died in 1943, there was so much interest in what he was working on that the Federal Bureau of Investigation(FBI)raidedhishotelroomwithinhoursofhisdeath.ExpertssayTeslaenvisionedhisinventionsimproving people’slives.Indeed,hisinnovative ideas were milestonesoftechnology.Thegreatpioneer believed“Inventionisthe mostimportantproductofmen’screativebrain.”"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "When initiating a conversation, note how close you are standing to the person opposite you. Personal space is an essentialconceptinmanycultures,andhowmuchorlittleyougiveoften 41 thefirstimpressionyoumake. 42 , inmostWesternnations,localsdonotlikestandingclosetooneanother.Inthesecountries,itiscustomaryforpeopleto backawaywhentheyfeeltheirspacehasbeen 43 .Ontheotherhand,SouthAmericansstandinclose 44 to oneanother.Whenyouaremeetingoneofthem,keepinmindthatit’s 45 tostepbackwardsduringaconversation. Agoodruleofthumbistostandatleastanarm’slengthawayfromyourspeakingpartner.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 46,

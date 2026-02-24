@@ -1,0 +1,690 @@
+{
+  "metadata": {
+    "exam_type": "111",
+    "level": "四等",
+    "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "下列何者為憲法增修條文所明定之基本國策?",
+      "section": null,
+      "options": {
+        "A": "扶助弱勢政黨",
+        "B": "扶助人民興辦之中小型經濟事業",
+        "C": "保障身心障礙者之收入",
+        "D": "保障大陸地區人民政治參與"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,教育、科學、文化之經費,應如何編列?",
+      "section": null,
+      "options": {
+        "A": "國民教育經費應優先編列",
+        "B": "基本教育經費應優先編列",
+        "C": "學行俱優無力升學之學生獎學金應優先編列",
+        "D": "邊遠及貧瘠地區之教育文化經費應優先編列"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "依憲法第8條及相關大法官解釋意旨,關於人身自由,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "除現行犯之逮捕與拘禁外,僅限於警察機關始得依法定程序執行逮捕與拘禁",
+        "B": "憲法第8條第1項所稱之警察機關,並不限於組織法上形式意義之「警察」",
+        "C": "違警罰法之前數度遭大法官宣告違憲,主因就是該法諸多條文牴觸憲法第8條有關人身自由保障之規定",
+        "D": "憲法第8條第1項所稱之司法機關,包括檢察機關"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依據司法院釋字第573號解釋之意旨,關於憲法對宗教信仰自由之保障,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "人民所從事之宗教行為與其內心宗教信念無法截然二分,均應受憲法絕對之保障",
+        "B": "宗教團體就其財產之處分,同時受憲法財產權與信仰自由之保障",
+        "C": "宗教性結社,就其內部組織結構、人事及財政管理應享有自主權",
+        "D": "國家對宗教應謹守中立及寬容原則,不得對特定之宗教加以獎勵或禁制"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "關於原住民族工作權保障法規定,依政府採購法得標之廠商,於國內員工總人數逾100人者,應於履約期 間僱用原住民,其人數不得低於總人數百分之一,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "此為立法者對原住民所為之優惠性差別待遇",
+        "B": "此規定將影響得標廠商之營業自由",
+        "C": "此規定符合憲法增修條文第10條保障原住民地位之精神",
+        "D": "此規定違反憲法第7條平等原則之要求"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "有關應考試權,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "應考試權,係指具備一定資格之人民有報考國家所舉辦公務人員任用資格暨專門職業及技術人員執業資 格考試之權利",
+        "B": "依考試法舉行之考試,對於應考資格體格試驗,或檢覈經決定不及格者,得依法提起救濟",
+        "C": "因資格不符而遭否准參選之公職候選人,因選舉於訴訟期間已舉行完畢,已無救濟實益,故法院應裁定 駁回起訴",
+        "D": "受緩刑宣告者,緩刑期間不得參加公務員考試"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "關於憲法第21條規定之國民教育,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "本條係規定人民有請求接受國民教育的權利",
+        "B": "國家依本條規定可制定法律強制人民接受國民義務教育",
+        "C": "人民受國民教育以外其他教育之受教權亦可從本條導出",
+        "D": "國民義務教育之內容得由法律形成之"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依司法院釋字第689號解釋意旨,社會秩序維護法對新聞採訪者之跟追行為有一定的限制,旨在衡平跟追 者的新聞採訪自由與被跟追者之何種自由?",
+      "section": null,
+      "options": {
+        "A": "結社自由",
+        "B": "言論自由",
+        "C": "遷徙自由",
+        "D": "一般行為自由"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "下列何者最不屬於比例原則之內涵?",
+      "section": null,
+      "options": {
+        "A": "基本權干預之目的應該具體明確",
+        "B": "基本權干預的手段有助於目的達成",
+        "C": "採取較小侵害的干預手段",
+        "D": "手段所造成之損害應不大於其目的所擬維護之公共利益"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,獨立機關之設置是否合憲,應綜合各項因素判斷能否維持一定之民主正當性基 礎,下列何者非屬之?",
+      "section": null,
+      "options": {
+        "A": "設置之目的係為追求憲法上之公共利益",
+        "B": "所職司之任務具有特殊性,並有正當理由足以證立設置之必要性",
+        "C": "重要事項以聽證程序決定,任務執行績效應透明、公開,以方便公眾監督",
+        "D": "立法院對於獨立機關重要人員之任命享有完全之決定與制衡權限"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依憲法增修條文及司法院大法官解釋意旨,關於立法委員,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "區域立法委員,應依各直轄市、縣市及鄉鎮市人口比例分配,並按應選名額劃分同額選舉區選出",
+        "B": "全國不分區及僑居國外國民之立法委員,依政黨名單選舉之,各政黨當選名單中婦女不得低於二分之一",
+        "C": "總統於立法院解散後所發布之緊急命令,應由新任立法委員於就職後追認之",
+        "D": "立法委員於院內公聽會之發言,對外不負民事上損害賠償責任或受刑事上之訴追,亦不負任何行政責任"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "下列人員之資格,何者不須經考試院依法考選銓定之?",
+      "section": null,
+      "options": {
+        "A": "國民小學教師",
+        "B": "護理師",
+        "C": "記帳士",
+        "D": "地政士"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "關於司法院大法官,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "大法官任期8年,不分屆次,個別計算,並不得連任",
+        "B": "大法官須超出黨派以外,獨立行使職權,不受任何干涉",
+        "C": "司法院設大法官若干人,並以其中一人為院長、一人為副院長,由總統提名,經立法院同意任命之",
+        "D": "並為院長、副院長之大法官,不受任期之保障"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "下列何者屬於憲法法庭之職權?",
+      "section": null,
+      "options": {
+        "A": "統一法令解釋",
+        "B": "總統罷免案之審理",
+        "C": "大法庭裁定",
+        "D": "法官彈劾案之審理"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "依司法院釋字第527號解釋及憲法訴訟法規定,有關地方之組織及權限,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "地方自治團體依法享有自主組織權及對自治事項制定規章並執行之權限",
+        "B": "地方自治團體及其所屬機關之組織,應由地方立法機關依中央主管機關所擬訂之準則制定組織自治條例 規定",
+        "C": "地方機關未依法規所設置之機關及所置人員,地方立法機關得刪除其相關預算、審計機關得依法剔除、 追繳其支出",
+        "D": "地方自治團體對函告無效之內容持不同意見時,一律由地方自治團體直接向憲法法庭聲請判決"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "關於法律之種類,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "成文法須經過一定之立法程序,不成文法無制定與公布之程序",
+        "B": "土地法相對於民法為特別法,但相對於耕地三七五減租條例則為普通法",
+        "C": "公法法規為強行法,私法法規為任意法",
+        "D": "民法為典型之實體法,但其中亦有關於程序之規定"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "臺灣法律體制的現代化,至何時才全面展開?",
+      "section": null,
+      "options": {
+        "A": "荷蘭殖民統治",
+        "B": "鄭氏王國統治",
+        "C": "清帝國統治",
+        "D": "日治時期"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "「公園魚池旁有禁止垂釣之警告,網魚雖然沒有明示在警告之中,但應包含在內。」此段話所採取的是何 種法律解釋方法?",
+      "section": null,
+      "options": {
+        "A": "文義解釋",
+        "B": "舉輕以明重之當然解釋",
+        "C": "比較法解釋",
+        "D": "歷史解釋"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "下列何種情形司法院大法官會傾向於採取最嚴格之審查基準?",
+      "section": null,
+      "options": {
+        "A": "要求商品包裝上從事與成分有關之標示",
+        "B": "限制計程車駕駛人選擇職業之自由",
+        "C": "限制性行為之自由",
+        "D": "限制發表政治性言論"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "下列何項情形,最符合「裁量怠惰」之描述?",
+      "section": null,
+      "options": {
+        "A": "行政機關裁量之結果,超出法律授權之範圍",
+        "B": "行政機關依法有裁量之權限,但因故意或過失而消極不行使裁量權",
+        "C": "行政機關作成裁量與法律授權之目的不符",
+        "D": "行政機關出於不相關之動機而作成裁量"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "關於行為人犯罪故意的判斷,依實務見解,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "A誤熊為仇人B而開槍射擊,A有殺人故意",
+        "B": "A欲開槍射殺B卻誤中在旁的C,A對C沒有殺人故意",
+        "C": "A誤B為C而欲開槍射殺之,卻誤中在旁的D,A對B有殺人故意",
+        "D": "A誤將B的錢包當成自己錢包而取錢花用,A對B的錢包有竊盜故意"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "甲律師於看守所接見被告乙時,提供開鎖工具給在押的乙,乙因而成功脫逃。甲有何刑責?",
+      "section": null,
+      "options": {
+        "A": "甲構成刑法第161條的脫逃罪",
+        "B": "甲構成刑法第162條的縱放或便利脫逃罪",
+        "C": "甲構成刑法第163條的公務員縱放或便利脫逃罪",
+        "D": "甲不構成犯罪"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "關於著作財產權之利用,以下敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "著作財產權人得授權他人利用著作,其授權利用之內容與利用方法,依當事人之約定;其約定不明之部 分,推定為已授權",
+        "B": "著作財產權之授權,不因著作財產權人嗣後將其著作財產權讓與或再為授權而受影響",
+        "C": "專屬授權之被授權人在被授權範圍內,得以著作財產權人之地位行使權利,並得以自己名義為訴訟上之 行為。但不排除著作財產權人在專屬授權範圍內同時行使權利",
+        "D": "以著作財產權設質時,除另有約定,著作財產權人不得行使其著作財產權"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "依勞動基準法第 15 條之 1 規定,雇主約定最低服務年限之合法性,應參考有無提供專業培訓、支付培訓 費用、提供補償等因素。下列何者非屬專業技術培訓?",
+      "section": null,
+      "options": {
+        "A": "旅行社教導新進員工公司最新的旅遊促銷方案",
+        "B": "航空公司選送培訓機師出國訓練",
+        "C": "理髮沙龍長期指導新進成員美髮技術跟知識",
+        "D": "工程公司指派勞工出國學習操作昂貴設備之認證課程"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "依地方制度法規定,下列何者不屬於設籍於臺東縣人民得享有之地方自治團體居民之權利?",
+      "section": null,
+      "options": {
+        "A": "選舉臺東縣立法委員",
+        "B": "使用臺東縣立文化中心",
+        "C": "就臺東縣自治事項提出創制案",
+        "D": "請求臺東縣政府公開政府資訊"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "有關行政程序法之聽證程序,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "基於公正中立之考量,聽證之主持人不得由行政機關首長或其指定人員擔任",
+        "B": "行政機關為使聽證順利進行,認為必要時,得於聽證期日前,舉行預備聽證",
+        "C": "聽證應公開以言詞為之,但行政機關得於當事人同意時以書面為之",
+        "D": "當事人認為主持人於聽證程序進行中所為之處置違法或不當者,僅得於對實體決定聲明不服時一併聲明之"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "下列何者是依民法規定僅適用於不動產的擔保物權?",
+      "section": null,
+      "options": {
+        "A": "地上權",
+        "B": "普通抵押權",
+        "C": "農育權",
+        "D": "不動產役權"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "住在高雄之甲乙為夫妻,並育有8歲大的兒子丙。然甲因最近失業心情不好,常借酒澆愁,酒後更時常在 丙面前對乙暴力相向。試問依家庭暴力防治法之規定:乙若想向法院聲請民事保護令,應向下列那個法院 提出聲請?",
+      "section": null,
+      "options": {
+        "A": "臺灣臺北地方法院",
+        "B": "臺灣高雄地方法院",
+        "C": "臺灣高雄少年及家事法院",
+        "D": "臺灣橋頭地方法院"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "稱旅遊契約者,謂旅客與旅遊營業人所訂定之契約。關於旅客之權利,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "旅遊營業人安排旅客在特定場所購物,其所購物品有瑕疵者,旅客得於受領所購物品後一個月內,請求 旅遊營業人協助其處理",
+        "B": "旅遊營業人隨時得變更旅遊內容",
+        "C": "旅客在旅遊中發生身體或財產上之事故時,旅客得請求旅遊營業人為必要之協助及處理",
+        "D": "旅遊未完成前,旅客得隨時終止契約,但應賠償營業人因契約終止而生之損害"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "依法律規定、習慣或法律行為,成一公同關係之數人,基於其公同關係,而共有一物者,為公同共有人。 下列何者並非公同關係?",
+      "section": null,
+      "options": {
+        "A": "祭祀公業關係",
+        "B": "親屬關係",
+        "C": "繼承關係",
+        "D": "合夥關係"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Thegovernmentwantstocreatean_____todefendfreedom,safety,humanrights,anddemocracy.",
+      "section": null,
+      "options": {
+        "A": "adaptation",
+        "B": "allocation",
+        "C": "alliance",
+        "D": "appliance"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "TimhasbookedatickettoChicagoand_____asingleroomatthehotel.",
+      "section": null,
+      "options": {
+        "A": "deserved",
+        "B": "conserved",
+        "C": "preserved",
+        "D": "reserved"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Aftershegraduatesfromcollegenextyear,shewill_____asanelementaryschoolteacher.",
+      "section": null,
+      "options": {
+        "A": "connect",
+        "B": "decline",
+        "C": "qualify",
+        "D": "reflect"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "Itis_____thatanancientartifactshowswearandtearafterthousandsofyears.",
+      "section": null,
+      "options": {
+        "A": "imprudent",
+        "B": "inevitable",
+        "C": "generous",
+        "D": "grateful"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Durianhassucha_____smellthat,inmostcases,peopleloveitorhateit.",
+      "section": null,
+      "options": {
+        "A": "generous",
+        "B": "frequent",
+        "C": "distinct",
+        "D": "creative"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "John drank a lot of beer and whisky and got completely drunk last night because all the alcoholic drinks in the hotelroomare_____.",
+      "section": null,
+      "options": {
+        "A": "complimentary",
+        "B": "substantial",
+        "C": "benevolent",
+        "D": "additional"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Mrs.Wong_____hernew-bornbabyverymuch,soshealreadymademanyplansforitsfuture.",
+      "section": null,
+      "options": {
+        "A": "adored",
+        "B": "overlooked",
+        "C": "perceived",
+        "D": "spotted"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Thisshrineis_____tothememoryofsoldierskilledinthedefenseofthecountry.",
+      "section": null,
+      "options": {
+        "A": "dedicated",
+        "B": "deferred",
+        "C": "defiled",
+        "D": "deformed"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Apersonwitha(n)_____attitudeoftenfeelsataskistoodifficulttocompletebeforeactuallygivingitatry.",
+      "section": null,
+      "options": {
+        "A": "flexible",
+        "B": "inquisitive",
+        "C": "pessimistic",
+        "D": "aggressive"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "Somewomensufferingfrom_____violencechoosetoremainsilentbecauseoftheirchildren.",
+      "section": null,
+      "options": {
+        "A": "domestic",
+        "B": "dramatic",
+        "C": "energetic",
+        "D": "automatic"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "type": "essay",
+      "stem": "At the beginning, the learning is slower, more like ten words per week.With these early words, the childis able to nameherexperiencesandcommunicatewithhercaregivers.",
+      "section": null
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "recognize",
+        "B": "derive",
+        "C": "exchange",
+        "D": "combine"
+      },
+      "answer": "A",
+      "passage": "Communicationiscrucialforasocialspeciesandparticularlyforhumaninfantswhoaredependentonothersforyears. Whenchildrenstarttolearnlanguage,theyfirstlearnto 41 words(aswellasemotionaltones,etc.)andonlylater produce words or the signs of sign language. There is no good way to 42 exactly what an infant understands, so almostalloftheresearchhasbeenaboutwhatwordschildrenproduce.Asanimportantfirststepinproducinglanguage, achildmustlearntoproducethesoundsofherlanguage, 43 shealreadycanperceive.Theseeffortsareknownas babbling, and similar practice takes place in the hand movements of children learning signed languages. 44 the childcanproduceenoughofthebasicphonemesofherlanguage,theproductionofwordsstartsandthereisnolooking back.Thegenerallyaccepted 45 isthatachildlearnsanaverageoftennewwordsadaybetweentheagesof2and",
+      "passage_intro": "請依下文回答第41題至第45題:"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "hear",
+        "B": "plan",
+        "C": "read",
+        "D": "tell"
+      },
+      "answer": "D",
+      "passage": "Communicationiscrucialforasocialspeciesandparticularlyforhumaninfantswhoaredependentonothersforyears. Whenchildrenstarttolearnlanguage,theyfirstlearnto 41 words(aswellasemotionaltones,etc.)andonlylater produce words or the signs of sign language. There is no good way to 42 exactly what an infant understands, so almostalloftheresearchhasbeenaboutwhatwordschildrenproduce.Asanimportantfirststepinproducinglanguage, achildmustlearntoproducethesoundsofherlanguage, 43 shealreadycanperceive.Theseeffortsareknownas babbling, and similar practice takes place in the hand movements of children learning signed languages. 44 the childcanproduceenoughofthebasicphonemesofherlanguage,theproductionofwordsstartsandthereisnolooking back.Thegenerallyaccepted 45 isthatachildlearnsanaverageoftennewwordsadaybetweentheagesof2and",
+      "passage_intro": "請依下文回答第41題至第45題:"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "which",
+        "B": "what",
+        "C": "where",
+        "D": "that"
+      },
+      "answer": "A",
+      "passage": "Communicationiscrucialforasocialspeciesandparticularlyforhumaninfantswhoaredependentonothersforyears. Whenchildrenstarttolearnlanguage,theyfirstlearnto 41 words(aswellasemotionaltones,etc.)andonlylater produce words or the signs of sign language. There is no good way to 42 exactly what an infant understands, so almostalloftheresearchhasbeenaboutwhatwordschildrenproduce.Asanimportantfirststepinproducinglanguage, achildmustlearntoproducethesoundsofherlanguage, 43 shealreadycanperceive.Theseeffortsareknownas babbling, and similar practice takes place in the hand movements of children learning signed languages. 44 the childcanproduceenoughofthebasicphonemesofherlanguage,theproductionofwordsstartsandthereisnolooking back.Thegenerallyaccepted 45 isthatachildlearnsanaverageoftennewwordsadaybetweentheagesof2and",
+      "passage_intro": "請依下文回答第41題至第45題:"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "Before",
+        "B": "Lest",
+        "C": "Shortly",
+        "D": "Once"
+      },
+      "answer": "D",
+      "passage": "Communicationiscrucialforasocialspeciesandparticularlyforhumaninfantswhoaredependentonothersforyears. Whenchildrenstarttolearnlanguage,theyfirstlearnto 41 words(aswellasemotionaltones,etc.)andonlylater produce words or the signs of sign language. There is no good way to 42 exactly what an infant understands, so almostalloftheresearchhasbeenaboutwhatwordschildrenproduce.Asanimportantfirststepinproducinglanguage, achildmustlearntoproducethesoundsofherlanguage, 43 shealreadycanperceive.Theseeffortsareknownas babbling, and similar practice takes place in the hand movements of children learning signed languages. 44 the childcanproduceenoughofthebasicphonemesofherlanguage,theproductionofwordsstartsandthereisnolooking back.Thegenerallyaccepted 45 isthatachildlearnsanaverageoftennewwordsadaybetweentheagesof2and",
+      "passage_intro": "請依下文回答第41題至第45題:"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "estimate",
+        "B": "placement",
+        "C": "objection",
+        "D": "treatment 請依下文回答第46題至第50題: Cheese is a dairy product, derived from milk and produced in wide ranges of flavors, textures, and forms. There are hundreds of different typesof cheesearound the world,andtheyare made mostlyfromthe milkof cows butalsoother mammals, including sheep, goats, buffalo, reindeer, camels, and yaks. Cheese also contains water. Asoft cheese, like Brie,containsmorewaterthanahardcheese,likeParmesan.Sinceitcontainsvitaminsandprotein,cheeseisnutritious, which can be used both as a food itself and in many different types of cooking. Cheese is produced through a process called“fermentation.”Theprocessofmakingcheesewasprobablydiscoveredbychance.Ancientpeopleusedtomake bags,usingtheskinfromananimal’sstomach.Whentheyusedtheseskinbagstocarrymilk,bacteriafromtheanimal’s skin reacted with the milk. Then the milk was fermented, and the result was cheese. Around 4,000 years ago, people startedtobreedanimalsandprocesstheirmilk.Today,cheesemakingisaveryscientificprocess.First,themilkthatwill be used is pasteurized, which means that it is heated to remove all bacteria. Then specially cultivated bacteria, called “cultures,”areaddedtothemilk.Themilkiskeptfairlywarmduringthisperiodtohelptheculturesgrow.Astheygrow, theculturessometimes releasebubblesofcarbondioxide.These bubbles helpmake the holesinSwisscheese. Next,as themilkripens,itformsasolidsubstance.Thissubstanceiscalled“curd.”Thecurdisremoved,andthewaterisdrained fromit.Thecurdformsthebasisofthecheeseandmaybetreatedindifferentways.Finally,onceitismaturedanddried, thecheeseisready."
+      },
+      "answer": "A",
+      "passage": "Communicationiscrucialforasocialspeciesandparticularlyforhumaninfantswhoaredependentonothersforyears. Whenchildrenstarttolearnlanguage,theyfirstlearnto 41 words(aswellasemotionaltones,etc.)andonlylater produce words or the signs of sign language. There is no good way to 42 exactly what an infant understands, so almostalloftheresearchhasbeenaboutwhatwordschildrenproduce.Asanimportantfirststepinproducinglanguage, achildmustlearntoproducethesoundsofherlanguage, 43 shealreadycanperceive.Theseeffortsareknownas babbling, and similar practice takes place in the hand movements of children learning signed languages. 44 the childcanproduceenoughofthebasicphonemesofherlanguage,theproductionofwordsstartsandthereisnolooking back.Thegenerallyaccepted 45 isthatachildlearnsanaverageoftennewwordsadaybetweentheagesof2and",
+      "passage_intro": "請依下文回答第41題至第45題:"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Whichofthefollowingisthebesttitleforthepassage?",
+      "section": null,
+      "options": {
+        "A": "TheCultureofCheese.",
+        "B": "TheNutritionofCheese.",
+        "C": "TheBirthofCheese.",
+        "D": "TheAdvantageofCheese."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Whichofthefollowingisclosestinmeaningto“drained”?",
+      "section": null,
+      "options": {
+        "A": "Putout.",
+        "B": "Addedinto.",
+        "C": "Carriedout.",
+        "D": "Gottenridof."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingisnecessarytotheprocessof“fermentation”?",
+      "section": null,
+      "options": {
+        "A": "Cultures.",
+        "B": "Texture.",
+        "C": "Flavors.",
+        "D": "Breeding."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingdoespasteurizationrequire?",
+      "section": null,
+      "options": {
+        "A": "Addingcultures.",
+        "B": "Freezingthemilk.",
+        "C": "Drainingthecurd.",
+        "D": "Removingallbacteria."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Whichofthefollowingistrueaccordingtothepassage?",
+      "section": null,
+      "options": {
+        "A": "Theripenedmilkformsacurdthatisreadytoeat.",
+        "B": "ParmesancheesecontainsmorewaterthanBriecheese.",
+        "C": "Thousandsofyearsagopeopleprocessedtheirmilkbypasteurization.",
+        "D": "ThereleasedbubblesofcarbondioxideformtheholesinSwisscheese."
+      },
+      "answer": "D"
+    }
+  ],
+  "year": 111,
+  "category": "移民特考",
+  "subject": "[四等] 法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+  "level": "四等",
+  "original_subject": "法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/111年/四等/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 51
+}

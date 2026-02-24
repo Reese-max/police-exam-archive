@@ -2,7 +2,9 @@
   "metadata": {
     "level": "四等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 106
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -592,14 +594,14 @@
         "A": "France",
         "B": "America",
         "C": "India",
-        "D": "China 請依下文回答第46題至第50題: As you may know, Ms. Rothe will be retiring at the end of the year. She has made a great contribution to our company, and will be missed by all her 46 . She has been with the company for fifteen years, 47 up from Sales Assistant to Sales Manager during that time. We will also present her with a small gift. I have asked Mary to organize the 48 for the gift, and she will be coming round with a large brown envelope if you want to make a 49 . The 50 you give is entirely your choice. The leaving party will be after work on December 20th. I look forward to seeing everyone there."
+        "D": "China"
       },
       "answer": "B"
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "coworkers",
@@ -607,12 +609,14 @@
         "C": "neighbors",
         "D": "students"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "As you may know, Ms. Rothe will be retiring at the end of the year. She has made a great contribution to our company, and will be missed by all her 46 . She has been with the company for fifteen years, 47 up from Sales Assistant to Sales Manager during that time. We will also present her with a small gift. I have asked Mary to organize the 48 for the gift, and she will be coming round with a large brown envelope if you want to make a 49 . The 50 you give is entirely your choice. The leaving party will be after work on December 20th. I look forward to seeing everyone there.",
+      "passage_intro": "請依下文回答第46題至第50題:"
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "flying",
@@ -620,12 +624,14 @@
         "C": "moving",
         "D": "rounding"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "As you may know, Ms. Rothe will be retiring at the end of the year. She has made a great contribution to our company, and will be missed by all her 46 . She has been with the company for fifteen years, 47 up from Sales Assistant to Sales Manager during that time. We will also present her with a small gift. I have asked Mary to organize the 48 for the gift, and she will be coming round with a large brown envelope if you want to make a 49 . The 50 you give is entirely your choice. The leaving party will be after work on December 20th. I look forward to seeing everyone there.",
+      "passage_intro": "請依下文回答第46題至第50題:"
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "business",
@@ -633,12 +639,14 @@
         "C": "distribution",
         "D": "collection"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "As you may know, Ms. Rothe will be retiring at the end of the year. She has made a great contribution to our company, and will be missed by all her 46 . She has been with the company for fifteen years, 47 up from Sales Assistant to Sales Manager during that time. We will also present her with a small gift. I have asked Mary to organize the 48 for the gift, and she will be coming round with a large brown envelope if you want to make a 49 . The 50 you give is entirely your choice. The leaving party will be after work on December 20th. I look forward to seeing everyone there.",
+      "passage_intro": "請依下文回答第46題至第50題:"
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "mission",
@@ -646,12 +654,14 @@
         "C": "contribution",
         "D": "condition"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "As you may know, Ms. Rothe will be retiring at the end of the year. She has made a great contribution to our company, and will be missed by all her 46 . She has been with the company for fifteen years, 47 up from Sales Assistant to Sales Manager during that time. We will also present her with a small gift. I have asked Mary to organize the 48 for the gift, and she will be coming round with a large brown envelope if you want to make a 49 . The 50 you give is entirely your choice. The leaving party will be after work on December 20th. I look forward to seeing everyone there.",
+      "passage_intro": "請依下文回答第46題至第50題:"
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "amount",
@@ -659,7 +669,9 @@
         "C": "reason",
         "D": "period"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "As you may know, Ms. Rothe will be retiring at the end of the year. She has made a great contribution to our company, and will be missed by all her 46 . She has been with the company for fifteen years, 47 up from Sales Assistant to Sales Manager during that time. We will also present her with a small gift. I have asked Mary to organize the 48 for the gift, and she will be coming round with a large brown envelope if you want to make a 49 . The 50 you give is entirely your choice. The leaving party will be after work on December 20th. I look forward to seeing everyone there.",
+      "passage_intro": "請依下文回答第46題至第50題:"
     }
   ],
   "year": 106,

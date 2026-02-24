@@ -4,7 +4,9 @@
     "level": "三等",
     "subject": "外國文（印尼文兼試移民專業英文）",
     "exam_time": "2 小時 座號：",
-    "code": "70740"
+    "code": "70740",
+    "exam_name": "移民行政人員特種考試",
+    "year": 110
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -198,14 +200,14 @@
         "A": "hypocrisy",
         "B": "obligation",
         "C": "exploitation",
-        "D": "promulgation 請依下文回答第11 題至第15題 At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts."
+        "D": "promulgation"
       },
       "answer": "C"
     },
     {
       "number": 11,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "retribution",
@@ -213,12 +215,14 @@
         "C": "negligence",
         "D": "depredation"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 12,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "However",
@@ -226,12 +230,14 @@
         "C": "Accordingly",
         "D": "Contradictorily"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 13,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "frame",
@@ -239,12 +245,14 @@
         "C": "collapse",
         "D": "conceal"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 14,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "immense",
@@ -252,12 +260,14 @@
         "C": "surpassable",
         "D": "surmountable"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 15,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "attached",
@@ -265,7 +275,9 @@
         "C": "attributed",
         "D": "denounced 請依下文回答第16 題至第20題 The incredible thing about television is that characters have the potential to be represented in a million different ways. Unfortunately, producers tend to stick to the same few archetypes and tropes. Nearly every showabouthighschoolersincludesatoughjockorarebelliousbadboy.Assuch,itisnosurprisethattelevision follows afewpatterns andstereotypes whenit comestoportrayingintelligence. Oneofthemost obvious andfranklypainful depictions ofintelligenceis thesociallyawkward genius. In spite of their high IQs and brilliant minds, these characters have trouble understanding jokes and other social cues. For instance, nearlyeverycharacter in “The Big BangTheory” acts this way. Most of the show’s humor comes from the contrast between the awkwardness of the brilliant physicists like Sheldon and Leonard, and the “normal” people like Penny, the waitress who lives across the hall.Another kind of intelligent character is theonewhoseabilitiesarelimitedtohelpingtheprotagonist.Wethuscanseethatintheshow“Arrow,”Felicity Smoak is a computer whiz who worked as an IT girl for superhero Oliver Queen’s company before joining “TeamArrow”asahacker.Shecoulddoanythingfromfindingshortcutsduringacarchasetosendingagreedy criminal’s illegally-earned income to a charity as a twisted form of blackmail—all from the comfort of her computerscreen.However,whenshewasn’tbusysavingtheworld,shewasreducedtolittlemorethanOliver Queen’sloveinterest.Thefinaltypeofsmartcharacteristheonethatisconstantlypickedon.Inahighschool scenario, it’s the nerdy kid who gets shoved into lockers and made fun of. The show “Glee” created an entire seriesbasedonthisidea.Evenafterthegleeclubwonawardsandcompetitions,itwasstillmetwithresentment from the majorityof the student body.Although the audience wanted the students in the glee club to succeed, the prevailing theme throughout the show was that the kids who were smart and hard-working were not the ones whowerecool and popular. Thefactis,smartpeoplearen’tasuniqueastelevisionmakesthemouttobe.Theyshouldnotbemarveled at like zoo animals or be used as an easy target. Additionally, the characters who are presented in the media shouldn’t have their intelligence be their defining characteristic.Although television has come a long way in normalizing intelligence, there is still more ground to be gained in creating characters that are complex and interesting—not just smart."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 16,

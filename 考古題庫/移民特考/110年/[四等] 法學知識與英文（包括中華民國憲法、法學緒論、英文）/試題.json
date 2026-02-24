@@ -3,7 +3,9 @@
     "exam_type": "110",
     "level": "四等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 110
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -541,14 +543,14 @@
         "A": "exasperate",
         "B": "demonstrate",
         "C": "exaggerate",
-        "D": "evaluate 請依下文回答第42題至第45題: In Texas, people take chili seriously. So seriously that from May to November, hundreds of Texans devote their weekends 42 giantpotsofitinchilicookoffs.Thesecontestsarecarefullyorganizedincitiesandtownsthroughout the state, each one 43 that it sponsors the best one around. 44 other states have their own version of the cookoff, Texas sets the standards. The Chili Appreciation Society International in Dallas has established rules and regulations as well as a point systemfor determining the winners.There is even a newspaper,theGoat Gap Gazette in Houston,that is 45 for chili heads,the name given tothose who are passionate about chili making. It publishes a completelistofcompetitionsintheUnitedStatesandprovidesusefulhintsandbitsofgossipforitssubscribers."
+        "D": "evaluate"
       },
       "answer": "C"
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "forcooking",
@@ -556,12 +558,14 @@
         "C": "tocook",
         "D": "tocooking"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "In Texas, people take chili seriously. So seriously that from May to November, hundreds of Texans devote their weekends 42 giantpotsofitinchilicookoffs.Thesecontestsarecarefullyorganizedincitiesandtownsthroughout the state, each one 43 that it sponsors the best one around. 44 other states have their own version of the cookoff, Texas sets the standards. The Chili Appreciation Society International in Dallas has established rules and regulations as well as a point systemfor determining the winners.There is even a newspaper,theGoat Gap Gazette in Houston,that is 45 for chili heads,the name given tothose who are passionate about chili making. It publishes a completelistofcompetitionsintheUnitedStatesandprovidesusefulhintsandbitsofgossipforitssubscribers.",
+      "passage_intro": "請依下文回答第42題至第45題:"
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "boasted",
@@ -569,12 +573,14 @@
         "C": "boasting",
         "D": "willboast"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "In Texas, people take chili seriously. So seriously that from May to November, hundreds of Texans devote their weekends 42 giantpotsofitinchilicookoffs.Thesecontestsarecarefullyorganizedincitiesandtownsthroughout the state, each one 43 that it sponsors the best one around. 44 other states have their own version of the cookoff, Texas sets the standards. The Chili Appreciation Society International in Dallas has established rules and regulations as well as a point systemfor determining the winners.There is even a newspaper,theGoat Gap Gazette in Houston,that is 45 for chili heads,the name given tothose who are passionate about chili making. It publishes a completelistofcompetitionsintheUnitedStatesandprovidesusefulhintsandbitsofgossipforitssubscribers.",
+      "passage_intro": "請依下文回答第42題至第45題:"
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "Whatever",
@@ -582,12 +588,14 @@
         "C": "After",
         "D": "Eventhough"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "In Texas, people take chili seriously. So seriously that from May to November, hundreds of Texans devote their weekends 42 giantpotsofitinchilicookoffs.Thesecontestsarecarefullyorganizedincitiesandtownsthroughout the state, each one 43 that it sponsors the best one around. 44 other states have their own version of the cookoff, Texas sets the standards. The Chili Appreciation Society International in Dallas has established rules and regulations as well as a point systemfor determining the winners.There is even a newspaper,theGoat Gap Gazette in Houston,that is 45 for chili heads,the name given tothose who are passionate about chili making. It publishes a completelistofcompetitionsintheUnitedStatesandprovidesusefulhintsandbitsofgossipforitssubscribers.",
+      "passage_intro": "請依下文回答第42題至第45題:"
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "inclusively",
@@ -595,7 +603,9 @@
         "C": "externally",
         "D": "internally 請依下文回答第46題至第50題: AwetspringinLasVegashasspawnedhordesofgrasshopperssolarge thattheyare showingupontheweatherradar. Inviewingtheradar,CNNmeteorologistAllisonChincharsaiditlookedlikethereweretwostormsovertheVegasarea: oneinthenorthofthecity(thatwasactualrain)andanotherrightoverLasVegas.Butthesecondonewasn’tmovingas rainnormallywould,shesaid.“ItlookedasthoughitshouldbetorrentiallydownpouringinLasVegas,”saidChinchar. By changing the settings on the radar, meteorologists could see that the other “storm” was actually the massive hordes ofgrasshoppersthathavesettledoverthecityinrecentdays,Chincharsaid.LasVegas,likeallofNevada,hashadalmost twice as much rain in 2019 than normal, Chinchar said. “It appears through history that when we have a wet winter or spring,these thingsbuildup often down belowLaughlin and evenintoArizona,”JeffKnight,stateentomologist, said. “We’ll have grasshopper migrations about this time of the year, and they’ll move northward.” Knight said the swarms aren’t terribly unusual given the amount of rain the state has had this year. “We have records clear from the ’60s of it happening,andIhaveseenit...atleastfourorfivetimesinmy30-plusyears,”hesaid.“Therearesomespecialweather conditionsthattriggerthemigration.”"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "In Texas, people take chili seriously. So seriously that from May to November, hundreds of Texans devote their weekends 42 giantpotsofitinchilicookoffs.Thesecontestsarecarefullyorganizedincitiesandtownsthroughout the state, each one 43 that it sponsors the best one around. 44 other states have their own version of the cookoff, Texas sets the standards. The Chili Appreciation Society International in Dallas has established rules and regulations as well as a point systemfor determining the winners.There is even a newspaper,theGoat Gap Gazette in Houston,that is 45 for chili heads,the name given tothose who are passionate about chili making. It publishes a completelistofcompetitionsintheUnitedStatesandprovidesusefulhintsandbitsofgossipforitssubscribers.",
+      "passage_intro": "請依下文回答第42題至第45題:"
     },
     {
       "number": 46,

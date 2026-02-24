@@ -4,7 +4,9 @@
     "level": "三等",
     "subject": "外國文（泰文兼試移民專業英文）",
     "exam_time": "2小時 座號：",
-    "code": "70640"
+    "code": "70640",
+    "exam_name": "移民行政人員特種考試",
+    "year": 110
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -21,7 +23,7 @@
     {
       "number": "一",
       "type": "essay",
-      "stem": "泰翻中:(20 分)\nสืบเนื่องจากสถานการณการแพรระบาดของโรคติดเชื้อโคโรนาไวรัส-๑๙\nยังคงลุกลามไปทั่วโลกอยางตอเนื่อง เพื่อปองกันการแพรระบาดในประเทศและ\nสรางหลักประกันดานสุขภาพใหกับสาธารณชนในประเทศ นับตั้งแตเวลา ๐๐.๐๐\nน. ของวันที่ ๑๕ มกราคม ค.ศ. ๒๐๒๑ เปนตนไป ผูโดยสารที่มีความประสงคจะ\nเดินทางเขาสูไตหวัน นอกจากจะตองแนบใบรับรองการตรวจเชื้อโควิด-๑๙ ที่มี\nผมลบกอนออกเดินทาง ๓ วันแลว ยังตองแนบหนังสือรับรองการเขาพักใน\nสถานกักกันโรคที่ภาครัฐจัดเตรียมไวให หรือโรงแรมที่มีไวเพื่อรองรับการกัก\nตัวโดยเฉพาะ สําหรับผูที่มีความประสงคจะกักตัวที่บาน ทางการไดกําหนดให\nบุคคลนั้นๆ ตองอยูในเคหสถานแหงนั้นเพียงลําพัง และตองลงนามในหนังสือ\nรับรองเพื่อเปนหลักฐานยืนยัน โดยมาตรการขางตนนี้ทางศูนยบัญชาการกลาง\nปองกันโรคระบาดของไตหวันจะพิจารณาปรับแกตามสถานการณการแพร\nระบาดทั่วโลก",
+      "stem": "泰翻中:(20 分)\nสืบเนื่องจากสถานการณการแพรระบาดของโรคติดเชื้อโคโรนาไวรัส-๑๙\nยังคงลุกลามไปทั่วโลกอยางตอเนื่อง เพื่อปองกันการแพรระบาดในประเทศและ\nสรางหลักประกันดานสุขภาพใหกับสาธารณชนในประเทศ นับตั้งแตเวลา ๐๐.๐๐\nน. ของวันที่ ๑๕ มกราคม ค.ศ. ๒๐๒๑ เปนตนไป ผูโดยสารที่มีความประสงคจะ\nเดินทางเขาสูไตหวัน นอกจากจะตองแนบใบรับรองการตรวจเชื้อโควิด-๑๙ ที่มี\nผมลบกอนออกเดินทาง ๓ วันแลว ยังตองแนบหนังสือรับรองการเขาพักใน\nสถานกักกันโรคที่ภาครัฐจัดเตรียมไวให หรือโรงแรมที่มีไวเพื่อรองรับการกัก\nตัวโดยเฉพาะ สําหรับผูที่มีความประสงคจะกักตัวที่บาน ทางการไดกําหนดให\nบุคคลนั้นๆ ตองอยูในเคหสถานแหงนั้นเพียงลําพัง และตองลงนามในหนังสือ\nรับรองเพื่อเปนหลักฐานยืนยัน โดยมาตรการขางตนนี้ทางศูนยบัญชาการกลาง\nปองกันโรคระบาดของไตหวันจะพิจารณาปรับแกตามสถานการณการแพร\nระบาดทั่วโลก",
       "section": "甲、申論題"
     },
     {
@@ -33,7 +35,7 @@
     {
       "number": "三",
       "type": "essay",
-      "stem": "泰文作文,至少 300 個字:(30 分)\nจงเขียนเรียงความในหัวขอ “ปญหาโรคระบาดโควิด-๑๙ สงผลกระทบตอ\nคุณอยางไร และคุณจะใหกําลังใจตัวเองและผูอื่นที่ไดรับผลกระทบนี้อยางไร\nบาง” เปนจํานวน ๓๐๐ คําขึ้นไป",
+      "stem": "泰文作文,至少 300 個字:(30 分)\nจงเขียนเรียงความในหัวขอ “ปญหาโรคระบาดโควิด-๑๙ สงผลกระทบตอ\nคุณอยางไร และคุณจะใหกําลังใจตัวเองและผูอื่นที่ไดรับผลกระทบนี้อยางไร\nบาง” เปนจํานวน ๓๐๐ คําขึ้นไป",
       "section": "甲、申論題"
     },
     {
@@ -162,14 +164,14 @@
         "A": "hypocrisy",
         "B": "obligation",
         "C": "exploitation",
-        "D": "promulgation 請依下文回答第11 題至第15題 At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts."
+        "D": "promulgation"
       },
       "answer": "C"
     },
     {
       "number": 11,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "retribution",
@@ -177,12 +179,14 @@
         "C": "negligence",
         "D": "depredation"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 12,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "However",
@@ -190,12 +194,14 @@
         "C": "Accordingly",
         "D": "Contradictorily"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 13,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "frame",
@@ -203,12 +209,14 @@
         "C": "collapse",
         "D": "conceal"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 14,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "immense",
@@ -216,12 +224,14 @@
         "C": "surpassable",
         "D": "surmountable"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 15,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "attached",
@@ -229,7 +239,9 @@
         "C": "attributed",
         "D": "denounced 請依下文回答第16 題至第20題 The incredible thing about television is that characters have the potential to be represented in a million different ways. Unfortunately, producers tend to stick to the same few archetypes and tropes. Nearly every showabouthighschoolersincludesatoughjockorarebelliousbadboy.Assuch,itisnosurprisethattelevision follows afewpatterns andstereotypes whenit comestoportrayingintelligence. Oneofthemost obvious andfranklypainful depictions ofintelligenceis thesociallyawkward genius. In spite of their high IQs and brilliant minds, these characters have trouble understanding jokes and other social cues. For instance, nearlyeverycharacter in “The Big BangTheory” acts this way. Most of the show’s humor comes from the contrast between the awkwardness of the brilliant physicists like Sheldon and Leonard, and the “normal” people like Penny, the waitress who lives across the hall.Another kind of intelligent character is theonewhoseabilitiesarelimitedtohelpingtheprotagonist.Wethuscanseethatintheshow“Arrow,”Felicity Smoak is a computer whiz who worked as an IT girl for superhero Oliver Queen’s company before joining “TeamArrow”asahacker.Shecoulddoanythingfromfindingshortcutsduringacarchasetosendingagreedy criminal’s illegally-earned income to a charity as a twisted form of blackmail—all from the comfort of her computerscreen.However,whenshewasn’tbusysavingtheworld,shewasreducedtolittlemorethanOliver Queen’sloveinterest.Thefinaltypeofsmartcharacteristheonethatisconstantlypickedon.Inahighschool scenario, it’s the nerdy kid who gets shoved into lockers and made fun of. The show “Glee” created an entire seriesbasedonthisidea.Evenafterthegleeclubwonawardsandcompetitions,itwasstillmetwithresentment from the majorityof the student body.Although the audience wanted the students in the glee club to succeed, the prevailing theme throughout the show was that the kids who were smart and hard-working were not the ones whowerecool and popular. Thefactis,smartpeoplearen’tasuniqueastelevisionmakesthemouttobe.Theyshouldnotbemarveled at like zoo animals or be used as an easy target. Additionally, the characters who are presented in the media shouldn’t have their intelligence be their defining characteristic.Although television has come a long way in normalizing intelligence, there is still more ground to be gained in creating characters that are complex and interesting—not just smart."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "At noothertimeinhistoryhavesports playedsuchadominant roleindailylife.Thanks tothe 11 ofthe Internet and television, adults and children alike consume sports at an astonishing rate. When we are not physicallyinvolved in sports, we playthem via video games or in fantasyleagues, and we watch them onTV. The celebrity status of top athletes speaks to the importance we attach to sporting events. 12 , athletic endeavors have a tremendous economic, political, and cultural influence on our society. Hosting sporting events can boost tourism and revenue for a city. Sports in societycan even influence our understanding of gender roles and socio-economic issues, and they can help 13 city-, state-, and national identity. Sports’ 14 effect on culture is especially evident among those who may not enjoy playing or watching sports—these people often still know the names of key players, and they may still take national pride in Olympicmedals.Infact,sportsinsocietyaresovitalthattheUnitedNationshas 15 themahumanright: Sport and play are human rights that must be respected and enforced worldwide; sport has been increasingly recognized and used as a low-cost and high-impact tool in humanitarian development and peace-building efforts.",
+      "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 16,

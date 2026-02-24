@@ -1,0 +1,685 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關人民工作權、財產權,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "基於憲法工作權之保障,人民得自由選擇從事特定職業",
+        "B": "航空人員之技能、體格或性行,經檢查不合標準時,得限制、暫停或終止其執業,並未侵害其工 作權",
+        "C": "公務員服務法規定,公務員於其離職後 3 年內,不得擔任與其離職前 5 年內之職務直接相關之營 利事業董事,侵害其工作權",
+        "D": "道路交通管理處罰條例規定,曾犯故意殺人罪,經判決罪刑確定者,不准辦理營業小客車駕駛人執 業登記,並未侵害其工作權"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "司法院釋字第 585 號解釋:「......凡國家機關獨立行使職權受憲法之保障者,即非立法院所得調查 之事物範圍。......」上述說明與下列何項憲法原則有關?",
+      "section": null,
+      "options": {
+        "A": "權力分立",
+        "B": "依法行政",
+        "C": "民主原則",
+        "D": "比例原則"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "依司法院釋字第 803 號解釋,有關原住民得安全從事合法狩獵活動之要求,不涉及下列何種權利之 保障?",
+      "section": null,
+      "options": {
+        "A": "原住民之生命權",
+        "B": "原住民之身體權",
+        "C": "原住民之文化權",
+        "D": "原住民之持槍權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "憲法所定基本國策章之各節,不包括下列何者?",
+      "section": null,
+      "options": {
+        "A": "國民經濟",
+        "B": "國土規劃",
+        "C": "社會安全",
+        "D": "邊疆地區"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "倘若立法院認為佛教影響國民價值觀甚鉅,且該教義良善與國家施政目標一致,因此決定立法將佛 誕日定為國定假日。此舉可能違反下列何種憲法規範?",
+      "section": null,
+      "options": {
+        "A": "憲法第11條人民有言論之自由",
+        "B": "憲法第42條總統有依法授與榮典之權力",
+        "C": "憲法第13條人民有宗教信仰之自由",
+        "D": "權力分立與制衡原則"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "關於基本權利在私人間之效力,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "司法院大法官解釋或憲法法庭裁判尚未承認基本權得在私人之間發生直接效力",
+        "B": "基本權侵害之來源,可能為私人,而有基本權第三人效力理論之產生",
+        "C": "依學說見解,透過民法公序良俗規定之解釋,得使基本權效力及於私人之間",
+        "D": "性別平等工作法之制定,即為基本權利在私人間發生直接效力之證"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "下列何人得申請登記為我國之總統候選人?",
+      "section": null,
+      "options": {
+        "A": "正在服役且屢創功績的海軍陸戰隊成員",
+        "B": "曾犯貪污罪,經判刑確定,但受緩刑宣告者",
+        "C": "動員戡亂時期終止前,經宣告內亂罪判刑確定者",
+        "D": "受破產宣告確定,尚未復權者"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "關於行政院各部會首長之選任去留,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "由行政院院長單獨提名並任命之",
+        "B": "由總統單獨提名並任命之",
+        "C": "各部會首長之任期與行政院院長相同",
+        "D": "由行政院院長提請總統任命之"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "有關立法委員之文件調閱權,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "立法院得向檢察機關調閱已偵查終結而不起訴處分確定之案件卷證",
+        "B": "文件調閱權之行使,係經院會或委員會之決議行之",
+        "C": "國家機關獨立行使職權受憲法保障者,文件調閱權之行使即應受限制",
+        "D": "考試機關對於應考成績之評定,無涉機關獨立行使職權,得經院會決議調閱文件原本"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "關於考試院,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "考試院為合議制機關",
+        "B": "考試院院長並為考試委員及考試院會議主席",
+        "C": "考試委員由總統提名,經立法院同意後任命",
+        "D": "考試院就所掌事項得向立法院提出法律案"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,下列何種憲法法庭判決,必須經過言詞辯論才能作成?",
+      "section": null,
+      "options": {
+        "A": "總統彈劾案",
+        "B": "統一解釋法律案件",
+        "C": "機關爭議案件",
+        "D": "地方自治保障案件"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "下列何種情形,限制人身自由之行政機關毋須於24小時內移送法院審理?",
+      "section": null,
+      "options": {
+        "A": "衛生主管機關認疑似被傳染者有強制隔離之必要時",
+        "B": "人民因犯罪嫌疑被逮捕拘禁,檢察官經訊問後認有羈押之必要時",
+        "C": "受收容之外國人於暫時收容期間內,對於暫時收容處分表示不服時",
+        "D": "行政執行官拘提義務人並經詢問後,認有對義務人為管收處分之必要時"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "有關訴訟權,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "基於「有權利必有救濟」原則,人民權利受有侵害,均得向法院尋求救濟",
+        "B": "立法機關對於受理爭議的裁判機關及審級,有一定之裁量權,但仍應受司法審查",
+        "C": "特別類型案件如設置有特別程序,違反訴訟平等原則",
+        "D": "法院不得以法律有漏洞而拒絕審判"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "憲法第19條規定,人民有依法律納稅之義務。依司法院大法官解釋,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "國家課人民以繳納稅捐之義務時,應以法律明定租稅主體等租稅構成要件",
+        "B": "累進稅率使所得較高者必須負擔高額賦稅,故違反平等原則之要求",
+        "C": "國家提供人民稅捐減免優惠時,亦有租稅法定主義之適用",
+        "D": "稅捐稽徵機關絕對不得逾越法律解釋之範圍,而增加法律所無之租稅義務"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "依相關大法官解釋,有關中央與地方權限關係,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "於不侵害地方自主權核心領域之限度內,中央得依據法律,使地方共負協力義務分擔全民健康保險 保險費之補助",
+        "B": "於符合憲法規定、法律保留原則及比例原則之下,地方自治團體得就自治事項,以自治條例規範居 民之權利義務",
+        "C": "地方立法機關得依中央主管機關擬訂之準則,制定地方自治團體及其所屬機關之組織自治條例以 行使自主組織權",
+        "D": "地方行政機關公務員未應立法院各委員會之邀請到會備詢時,立法院為有效監督,得刪減中央對地 方補助款預算"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "依著作權法規定,下列何者不得為著作權之標的?",
+      "section": null,
+      "options": {
+        "A": "書法",
+        "B": "司法院新聞稿",
+        "C": "電腦程式",
+        "D": "建築物"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "祭祀公業條例第4條第1項前段規定:「本條例施行前已存在之祭祀公業,其派下員依規約定之。」 關於該條之合憲性,下列敘述何者最符合大法官解釋之意旨?",
+      "section": null,
+      "options": {
+        "A": "該規定為性別中立,不違憲",
+        "B": "該規定構成實質上的性別差別待遇,違憲",
+        "C": "該規定構成實質上的性別差別待遇,但其目的在於維護法秩序之安定及不溯及既往原則,不違憲",
+        "D": "該規定為性別中立,但違反國家積極促進性別平等之義務,違憲"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "關於法規的失效,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "法定施行期間經過後,仍須待主管機關公告,始失其效力",
+        "B": "法律不得授權以命令訂定失效日期",
+        "C": "法律之廢止,應經立法院通過,總統公布",
+        "D": "憲法法庭對於違憲之法規,只能宣告定期失效"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "關於信賴保護原則,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "信賴保護原則為法治國原則的具體實踐,且與法安定性與既得權保障有關",
+        "B": "行政法規倘預先訂定施行期間,不生信賴保護問題",
+        "C": "行政法規之變更與廢止,不生信賴保護之問題",
+        "D": "人民明知行政處分違法,其信賴不值得保護"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "有關保安處分之規定,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "中華民國國民如具有外國國籍,即得適用驅逐出境規定",
+        "B": "保安處分於刑之執行完畢後宣告之",
+        "C": "受緩刑之宣告者,應於緩刑期間付保護管束",
+        "D": "感化教育、監護、禁戒、強制工作等保安處分,按其情形得以保護管束代之"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "消防官員李四對張三之場所執行消防安檢時指出其設備有缺失之處,張三一時氣憤,便對李四怒罵 道:「臭官員,有什麼了不起!敢罰我的話,以後出門小心點,看到你一次,打一次!」下列敘述何 者正確?",
+      "section": null,
+      "options": {
+        "A": "張三觸犯刑法第 135 條第 1 項妨害公務罪,因為公務員李四係依法執行職務,且張三的行為屬於 脅迫",
+        "B": "張三觸犯刑法第 135 條第 1 項妨害公務罪,因為李四係公務員,無論其是否依法執行職務,皆不 得施以脅迫",
+        "C": "張三未觸犯刑法第135條第1項妨害公務罪,因為該罪僅罰強暴行為",
+        "D": "張三未觸犯刑法第135條第1項妨害公務罪,因為消防安檢並非國家公權力的運作行為"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "依我國著作權法規定,下列何者會侵害他人之著作財產權?",
+      "section": null,
+      "options": {
+        "A": "國立大學之教師,為學校授課需要而將他人整本教科書上傳至數位教學平台,供選課學生下載閱讀",
+        "B": "經濟部智慧財產局,因研擬新法所需,認有必要將他人著作列為內部參考資料時,得在合理範圍 內,重製他人之學術論文",
+        "C": "圖書館基於保存資料之必要,而以掃描之方式重製其所收藏的珍稀書籍",
+        "D": "國家圖書館為製作期刊論文索引系統供公眾查詢,而重製刊載於期刊中的學術論文所附之摘要"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "甲因侵權行為而與被害人乙和解,約定甲於 3 日內對乙賠償新臺幣(以下同)20 萬元。嗣後,甲持 以10元硬幣湊滿的20萬元向乙為給付。甲的給付行為違反:",
+      "section": null,
+      "options": {
+        "A": "權利濫用禁止原則",
+        "B": "私法自治原則",
+        "C": "契約自由原則",
+        "D": "誠實信用原則"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "下列何者之性質非屬形成權?",
+      "section": null,
+      "options": {
+        "A": "抗辯權",
+        "B": "撤銷權",
+        "C": "解除權",
+        "D": "終止權"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "甲男自小生活在大家族中,家族親戚往來頻繁。依現行法,甲男不得與何人結婚?",
+      "section": null,
+      "options": {
+        "A": "甲的堂嫂的妹妹",
+        "B": "甲的堂伯父的女兒",
+        "C": "甲的表姑媽收養的女兒",
+        "D": "甲的表姑媽收養的兒子"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "依民法之規定,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "如民眾出示其為不識字之證明者,其指印或十字,與其親自簽名之效力相同",
+        "B": "關於一定之數量,同時以兩種文字與數字號碼以上表示者,兩者如不符合時,如法院不能決定何者 為當事人之原意,應以當事人之母國文字為準",
+        "C": "民眾於銀行、信用合作社或農漁會進行交易時,如用印鑑章代簽名者,其用印鑑章之效力大於本人 親自簽名",
+        "D": "依法律之規定,有使用文字之必要者,得不由本人自寫,但必須親自簽名"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "下列何者非信賴保護原則之要件?",
+      "section": null,
+      "options": {
+        "A": "信賴基礎",
+        "B": "信賴行為",
+        "C": "值得保護之信賴",
+        "D": "無不當聯結"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "法律案經立法院移送總統公布者,曾否踐行其議事應遵循之程序,除明顯牴觸憲法者外,行政、司法 或其他國家機關均應予以尊重。學理上稱為何種原則?",
+      "section": null,
+      "options": {
+        "A": "國會自律原則",
+        "B": "法律保留原則",
+        "C": "法不溯及既往原則",
+        "D": "機關忠誠原則"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "關於命令的效力,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "總統依憲法增修條文規定所發布之緊急命令,於必要時得暫時停止部分憲法條文之適用",
+        "B": "行政機關獲法律授權制定命令時,如知母法有缺漏不備之處,得逾越授權意旨逕行補充",
+        "C": "行政命令縱使獲有法律授權而制定者,依憲法規定依舊不得作為限制人民基本權利之依據",
+        "D": "普通法院法官於審查個案,認所應適用之行政命令有牴觸母法意旨時,得逕行拒絕適用"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "文義解釋是一項重要的法律解釋方法,學者多認為,法官解釋法律應避免任意超過法律文義進行適 用,以避免造成法官任意扭曲法律之結果。關於文義解釋的說明,下列何者最為適當?",
+      "section": null,
+      "options": {
+        "A": "對於刑法的解釋只能依據文義解釋,避免法官類推適用刑法,違反罪刑法定主義",
+        "B": "基於讓人民理解,文義解釋應該只採取日常生活所使用的文義,法律不能自行定義文義",
+        "C": "文義解釋可能會產生多種不同的結果,此時須運用其他的解釋方法來協助正確解釋法律",
+        "D": "為確保能以文義解釋來正確解釋法律,立法時應確保法律都只有單一意義,不可使用不確定法律 概念"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Herfamilydidn’t hermarryingthispersonsotheywouldnotattendherwedding.",
+      "section": null,
+      "options": {
+        "A": "lookfor",
+        "B": "agree",
+        "C": "carefor",
+        "D": "assent"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "A forest fire has recently in California. It has claimed two lives and caused some damage to the naturalresourcesnearby.",
+      "section": null,
+      "options": {
+        "A": "gonethrough",
+        "B": "brokenout",
+        "C": "takenoff",
+        "D": "driedup"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Theministerdeliveredthepreachina(n) tone,sohiscongregationbegantofeelboredanddozeoff.",
+      "section": null,
+      "options": {
+        "A": "coherent",
+        "B": "imperative",
+        "C": "innocent",
+        "D": "monotonous"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "If affordable and autonomous ride-sharing is made available to people, individual vehicle ownership could ,especiallyinmetropolitanareas.",
+      "section": null,
+      "options": {
+        "A": "privatize",
+        "B": "prevail",
+        "C": "plunge",
+        "D": "proliferate"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "If you’re designing your dream kitchen, tools that allow you to different design ideas on the computerareessentialtothesuccessofyourplans.",
+      "section": null,
+      "options": {
+        "A": "authorize",
+        "B": "eliminate",
+        "C": "subscribe",
+        "D": "visualize"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Theflashoflightningisalmost followedbythethunderduringthestorm.",
+      "section": null,
+      "options": {
+        "A": "confidentially",
+        "B": "opaquely",
+        "C": "instantaneously",
+        "D": "transparently"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Alargecrowdgatheredandlistened tothepresident’sMemorialDayspeech.",
+      "section": null,
+      "options": {
+        "A": "solemnly",
+        "B": "empirically",
+        "C": "imperially",
+        "D": "regionally"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Athisstore,hesoldbroken-downsecond-handcarsat prices,sohemadeafortune.",
+      "section": null,
+      "options": {
+        "A": "existential",
+        "B": "exiguous",
+        "C": "exortica",
+        "D": "exorbitant"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Greatspeakerswouldagreeontheideathat isanasset.Moreoftenthannot,longtalksendupboring theaudience.",
+      "section": null,
+      "options": {
+        "A": "brevity",
+        "B": "geniality",
+        "C": "hilarity",
+        "D": "validity"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "The president’s political advisors are scheming that issues like civic unrest would the pandemic crisisforwinningthere-election.",
+      "section": null,
+      "options": {
+        "A": "eclipse",
+        "B": "fortify",
+        "C": "amplify",
+        "D": "strengthen"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "competing",
+        "B": "confusing",
+        "C": "complimented",
+        "D": "contrived"
+      },
+      "answer": "A",
+      "passage": "Recentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "complacence",
+        "B": "claims",
+        "C": "conceit",
+        "D": "capabilities"
+      },
+      "answer": "B",
+      "passage": "Recentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "magnitude",
+        "B": "manners",
+        "C": "measures",
+        "D": "manifesto"
+      },
+      "answer": "C",
+      "passage": "Recentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "Inaddition",
+        "B": "Insum",
+        "C": "Inconclusion",
+        "D": "Inresponse"
+      },
+      "answer": "D",
+      "passage": "Recentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "reliant",
+        "B": "redundant",
+        "C": "rebellious",
+        "D": "ruthless 請依下文回答第46題至第50題 InNewZealand’sWestlandDistricttheclosureofthelocalindigenoustimberindustryalongsiderapidgrowth of the dairyand tourismsectors has produced dilemmas for families andcommunities as they attempt to adjust to the social consequences of rapid industry change. Drawing on a social capital perspective and a case study of 12 Westlandfamilies,thisprojectexamineshowruralfamiliesbringbalancetoaspectsofthethreeactionsdefinedby Arendtasbeingessentialtothehumancondition:family,workandcommunitylife.Thefindingsrevealsignificant insights intohowsocialcapitalis effectivelyreproduced intimes ofchange.These insights are discussed interms oftheirsocialpolicyimplications. Fifty years ago Hannah Arendt published The Human Condition. In this work she contended that there are threetypesofactionrequiredtobe“fullyhuman.”Thefirsttwooftheseactions,engagementinfamilylifeandpaid work,arenecessaryforhumanexistenceincontemporarysociety.Thethirdactionshecalledvitaactiva,orpublic life:a life thatis actionedwithinjointlybuiltcivilspaces.Within thesespaceswe arecapableof debate,we share actions and we resolve collective dilemmas. Arendt reminds us that the absence of, or over-attention to, any one aspectofthehumanconditionislikelytobeproblematic. AhalfacenturyonfromArendt’s originalthesis,publicpolicycontinuestodebateaspectsofvitaactiva and democraticgovernmentsstillseektoengagevitaactivaineconomicallyandsociallyproductiveways.Workingout the shifting balance between family life, paid work and vita activa is a crucial aspect of responding effectively to significantsocialchange,beitlocalissues(suchasnaturaldisasterrelief)ormeetingthechallengesthatariseasa consequenceofexternalorglobalforces(suchasthelossofacoreindustry).Theconceptofsocialcapitalhasbeen usedasawaytorecogniseandgaugevitaactiva. Theterm“socialcapital”originated,inpart,inanattempttounderstandhowfeaturesofsocialorganisation,such as trust, norms and networks can improve the efficiency of society by facilitatingcoordinated actions. Voluntary or joint social actions provide the opportunity to resolve collective dilemmas. Individuals achieve this through the development and use of social bonds and networks as resources to facilitate productive activity. By maintainingthe socialrelationshipsandstructuresnecessaryforcollectiveactivity,individuals,familiesandcommunitiesareableto realisesomeofthesebenefits,andindoingsocanresolvesomeoftheissuestheyfaceincommon."
+      },
+      "answer": "A",
+      "passage": "Recentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Whichofthefollowingisthebesttitleofthepassage?",
+      "section": null,
+      "options": {
+        "A": "RuralFamilies,IndustryChangeandSocialCapital.",
+        "B": "TheHumanCondition:ABookReview.",
+        "C": "GovernmentalRolesintheFaceofSocialChange.",
+        "D": "TheLivingConditionsof12WestlandFamilies."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingstatementsaboutArendtisNOTtrue?",
+      "section": null,
+      "options": {
+        "A": "Herworkhasanimportanttheoreticalinfluenceonthecurrentstudy.",
+        "B": "Sheproposesthattobefullyhumanhe/shemusthaveapubliclife,asalaryorwage,andafamily.",
+        "C": "Shebelievesthatpubliclifeisthemostimportantamongthethreetypesofactionmentioned.",
+        "D": "Hertheorysuggeststhatactionplayacentralroleinfacilitatingandmaintaininghumanconditions."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whatkindofchallengeisfacedbyWestlandDistrict?",
+      "section": null,
+      "options": {
+        "A": "Forestfiresthatdestroyedhundredsofhouses.",
+        "B": "Lossofthetimberindustrytoagricultureandtourism.",
+        "C": "Lackofcapitaltoprovidefreeeducationtothecommunity.",
+        "D": "Lackofco-ordinationamonggovernmentagenciesinsavingtheenvironment."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whatisthemainvalueofsocialcapital?",
+      "section": null,
+      "options": {
+        "A": "Itprovidesvolunteerswithcrucialfundingforsocialcharitywork.",
+        "B": "Ithelpsacommunitytosharepowerandresourcesmoreequally.",
+        "C": "Itoffersahopefortheunemployedpeopletostarttheirnewcareers.",
+        "D": "Itenablesacommunitytodealwithitsproblemsviajointeffortsandactions."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Inwhatkindoftextwouldtheabovepassagemostlikelyappear?",
+      "section": null,
+      "options": {
+        "A": "Abookreviewinanagriculturemagazine.",
+        "B": "Alettertotheeditorinanewspaper.",
+        "C": "Aresearchpaperinasocialpolicyjournal.",
+        "D": "AnewsreportinNewZealand."
+      },
+      "answer": "C"
+    }
+  ],
+  "year": 113,
+  "category": "移民特考",
+  "subject": "[三等] 法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+  "level": "三等",
+  "original_subject": "法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/113年/三等/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

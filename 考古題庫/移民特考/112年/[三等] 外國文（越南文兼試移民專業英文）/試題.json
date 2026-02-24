@@ -4,7 +4,9 @@
     "level": "三等",
     "subject": "外國文（越南文兼試移民專業英文）",
     "exam_time": "2 小時 座號：",
-    "code": "63340"
+    "code": "63340",
+    "exam_name": "移民行政人員特種考試",
+    "year": 112
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -27,7 +29,7 @@
     {
       "number": "二",
       "type": "essay",
-      "stem": "Hãy dịch các câu sau đây ra tiếng Việt:(每小題 5 分,共 20 分)\n自從 2016 年「國籍法」修法通過至今,已有 253 位外國高級專業人才\n不需要放棄母國國籍,即可取得臺灣國籍。\n仲介公司只能向移工收取每個月新臺幣 1,500 元到 1,800 元的服務費。\n若被收取任何沒有這條法規內的款項,請主動來電至 1955 專線,以獲\n得協助和諮詢。\n近幾年來,臺灣教育部已補助全國各大專院校大量經費來開設東南亞\n語言課程,其中,越南語開課最多。\n勞動部提出讓移工有機會轉任成中階技術人力方案,不受在臺工作年\n限限制。",
+      "stem": "Hãy dịch các câu sau đây ra tiếng Việt:(每小題 5 分,共 20 分)\n自從 2016 年「國籍法」修法通過至今,已有 253 位外國高級專業人才\n不需要放棄母國國籍,即可取得臺灣國籍。\n仲介公司只能向移工收取每個月新臺幣 1,500 元到 1,800 元的服務費。\n若被收取任何沒有這條法規內的款項,請主動來電至 1955 專線,以獲\n得協助和諮詢。\n近幾年來,臺灣教育部已補助全國各大專院校大量經費來開設東南亞\n語言課程,其中,越南語開課最多。\n勞動部提出讓移工有機會轉任成中階技術人力方案,不受在臺工作年\n限限制。",
       "section": "甲、申論題"
     },
     {
@@ -162,14 +164,14 @@
         "A": "expedited",
         "B": "expanded",
         "C": "extended",
-        "D": "expired 請依下文回答第11題至第15題 Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency."
+        "D": "expired"
       },
       "answer": "A"
     },
     {
       "number": 11,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "recreational",
@@ -177,12 +179,14 @@
         "C": "devastating",
         "D": "differentiating"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
     },
     {
       "number": 12,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "impair",
@@ -190,12 +194,14 @@
         "C": "illustrate",
         "D": "affiliate"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
     },
     {
       "number": 13,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "contends",
@@ -203,12 +209,14 @@
         "C": "extends",
         "D": "bridges"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
     },
     {
       "number": 14,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "minimal",
@@ -216,12 +224,14 @@
         "C": "negligent",
         "D": "affording"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
     },
     {
       "number": 15,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "glance",
@@ -229,7 +239,9 @@
         "C": "glare",
         "D": "toll 請依下文回答第16 題至第20題 Spacecolonization,onceatopicconfinedtosciencefiction,hasnowbecomeaplausibleidea.Withrapid advancements in technology and growing interest from both public and private entities, the possibilities of humans establishingpermanent settlements inspace are gainingmomentum. Space colonization is driven by the vision of expanding human presence beyond Earth and ensuring the long-term survival of our species. Scientists believe that establishing self-sustaining colonies on celestial bodies such as the Moon, Mars, or even asteroids could provide a solution to future challenges on Earth, including overpopulation and resource depletion. One of the main hurdles in space colonization is the developmentofreliabletransportationsystems.Achievingroutineandaffordableaccesstospaceiscriticalfor large-scale migration. The emergence of reusable rocket technology has significantly lowered the cost of reaching orbit. Moreover, ongoing research on advanced propulsion systems, such as ion engines and nuclear propulsion, could further enhance our ability to travel longer distances within the solar system. Creating habitable environments in space is another essential aspect of colonization. This involves designing closed- looplifesupportsystemsthatcansustainhumanlifeforextendedperiods.NASA'sInternationalSpaceStation (ISS)serves as a crucial testinggroundfordevelopingandrefiningthesetechnologies.Advances in areas like hydroponics, 3Dprinting,andenergygenerationhavethepotential toenableself-sufficient habitats inspace. Whilethechallengesareimmense,spacecolonizationoffersseveralbenefits.Onesignificantadvantageis thepotentialtoexploitextraterrestrialresources.Asteroids,forinstance,containvaluablemetalslikeplatinum and gold, as well as water ice, which can be utilized for life support and fuel production. Byharnessing these resources, space settlers could establish sustainable economies and reduce dependence on Earth's limited reserves. The prospect of space migration also opens up new frontiers for scientific discovery. Studying celestialbodiesfirsthandcandeepenourunderstandingoftheuniverseandshedlightonfundamentalquestions about theoriginandnatureoflife. Furthermore,thedevelopment oftechnologies andmethodologies required for space colonization could have far-reaching applications on Earth, benefiting industries such as medicine, energy,andmaterials science. In conclusion, space colonization has transitioned from science fiction to an attainable goal, opening up newpossibilities forhumanity. Unlockingthepotential ofspacemigrationcouldmarkasignificant chapterin ourhistory,allowingustoexplore,flourish,andsecurethelong-termsurvivalofourspeciesbeyondthelimits ofEarth."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
     },
     {
       "number": 16,

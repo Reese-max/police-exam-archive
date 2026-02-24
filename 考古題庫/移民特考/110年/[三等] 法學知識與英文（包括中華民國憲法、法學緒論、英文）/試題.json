@@ -3,7 +3,9 @@
     "exam_type": "110",
     "level": "三等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 110
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -528,14 +530,14 @@
         "A": "tingling",
         "B": "tempering",
         "C": "twittering",
-        "D": "twinkling 請依下文回答第41題至第45題 With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition."
+        "D": "twinkling"
       },
       "answer": "A"
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "insteadof",
@@ -543,12 +545,14 @@
         "C": "inplaceof",
         "D": "inspiteof"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "washarvesting",
@@ -556,12 +560,14 @@
         "C": "hadharvested",
         "D": "hasbeenharvested"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "descend",
@@ -569,12 +575,14 @@
         "C": "deprive",
         "D": "deteriorate"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "inthemeantime",
@@ -582,12 +590,14 @@
         "C": "ontheotherhand",
         "D": "forthetimebeing"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "Although",
@@ -595,7 +605,9 @@
         "C": "However",
         "D": "Nonetheless 請依下文回答第46題至第50題 At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The numberofcollegesskyrocketedinwaves,duringtheearlyandmid20thcentury.Stateuniversitiesgrewfromsmall institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campusesaroundthestate.Inturn,regionalcampusesbrokeawayandbecameseparateuniversities. TohandletheexplosivegrowthofK–12education,everystatesetupanetworkofteachers’colleges,beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s.Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges,enrollingabout150studentseach.Meanwhile,another137wereprivatelyoperated,withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949,whentherewere322juniorcollegesinall;180wereaffiliated withchurches,108wereindependentandnon-profit,and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby,low-costschoolstoprovidetrainingforthegrowingwhite-collarlaborforce,aswellasformoreadvanced technicaljobsintheblue-collarsphere.Four-yearcollegeswerealsogrowing,albeitnotasfast;however,manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 46,

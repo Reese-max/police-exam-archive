@@ -2,7 +2,9 @@
   "metadata": {
     "level": "四等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1 小時 座號："
+    "exam_time": "1 小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 108
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -527,14 +529,14 @@
         "A": "steep",
         "B": "stable",
         "C": "strange",
-        "D": "staring 請依下文回答第41題至第45題: More than 320 million metric tons of plastic are produced every year — and a disturbing amount ends up in the ocean,withmuchofit 41 inplacesliketheGreatPacificGarbagePatch. The Great Pacific Garbage Patch is a massive area measuring more than 1.6 million square kilometers. Researchers from the Ocean Cleanup foundation conducted a survey of plastic in the area, using planes to 42 from the skyand boatstotrawl the water.Theyfoundthatthe amount ofplasticthereseemed to beincreasingexponentially andthattherecouldbe16timesasmuchaspreviouslythought. There’s far too much plastic in the world’s oceans, and the problem continues to 43 . Every little bit of plastic that gets tossedintothe ocean or swept downstreamout to sea either sinks or is picked up bycurrents.Much of it is eventually carried into one of five massive ocean regions, where plastic can be so 44 that areas have garnerednamesliketheGreatPacificGarbagePatch. There maybe more than 16times asmuchplasticinthe patchthanprevious studies have 45 ,accordingto the researchers behind the study. An aerial view of the Great Pacific Garbage Patch might at first appear to be open water. But inside there is debris from all over the world — debris that traps or is eaten by marine animals, filling up theirbodiestothepointofbeingfatalandtaintingourfoodsupply."
+        "D": "staring"
       },
       "answer": "B"
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "accumulating",
@@ -542,12 +544,14 @@
         "C": "astonishing",
         "D": "communicating"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "More than 320 million metric tons of plastic are produced every year — and a disturbing amount ends up in the ocean,withmuchofit 41 inplacesliketheGreatPacificGarbagePatch. The Great Pacific Garbage Patch is a massive area measuring more than 1.6 million square kilometers. Researchers from the Ocean Cleanup foundation conducted a survey of plastic in the area, using planes to 42 from the skyand boatstotrawl the water.Theyfoundthatthe amount ofplasticthereseemed to beincreasingexponentially andthattherecouldbe16timesasmuchaspreviouslythought. There’s far too much plastic in the world’s oceans, and the problem continues to 43 . Every little bit of plastic that gets tossedintothe ocean or swept downstreamout to sea either sinks or is picked up bycurrents.Much of it is eventually carried into one of five massive ocean regions, where plastic can be so 44 that areas have garnerednamesliketheGreatPacificGarbagePatch. There maybe more than 16times asmuchplasticinthe patchthanprevious studies have 45 ,accordingto the researchers behind the study. An aerial view of the Great Pacific Garbage Patch might at first appear to be open water. But inside there is debris from all over the world — debris that traps or is eaten by marine animals, filling up theirbodiestothepointofbeingfatalandtaintingourfoodsupply.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "preserve",
@@ -555,12 +559,14 @@
         "C": "observe",
         "D": "conserve"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "More than 320 million metric tons of plastic are produced every year — and a disturbing amount ends up in the ocean,withmuchofit 41 inplacesliketheGreatPacificGarbagePatch. The Great Pacific Garbage Patch is a massive area measuring more than 1.6 million square kilometers. Researchers from the Ocean Cleanup foundation conducted a survey of plastic in the area, using planes to 42 from the skyand boatstotrawl the water.Theyfoundthatthe amount ofplasticthereseemed to beincreasingexponentially andthattherecouldbe16timesasmuchaspreviouslythought. There’s far too much plastic in the world’s oceans, and the problem continues to 43 . Every little bit of plastic that gets tossedintothe ocean or swept downstreamout to sea either sinks or is picked up bycurrents.Much of it is eventually carried into one of five massive ocean regions, where plastic can be so 44 that areas have garnerednamesliketheGreatPacificGarbagePatch. There maybe more than 16times asmuchplasticinthe patchthanprevious studies have 45 ,accordingto the researchers behind the study. An aerial view of the Great Pacific Garbage Patch might at first appear to be open water. But inside there is debris from all over the world — debris that traps or is eaten by marine animals, filling up theirbodiestothepointofbeingfatalandtaintingourfoodsupply.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "putaway",
@@ -568,12 +574,14 @@
         "C": "godown",
         "D": "takeoff"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "More than 320 million metric tons of plastic are produced every year — and a disturbing amount ends up in the ocean,withmuchofit 41 inplacesliketheGreatPacificGarbagePatch. The Great Pacific Garbage Patch is a massive area measuring more than 1.6 million square kilometers. Researchers from the Ocean Cleanup foundation conducted a survey of plastic in the area, using planes to 42 from the skyand boatstotrawl the water.Theyfoundthatthe amount ofplasticthereseemed to beincreasingexponentially andthattherecouldbe16timesasmuchaspreviouslythought. There’s far too much plastic in the world’s oceans, and the problem continues to 43 . Every little bit of plastic that gets tossedintothe ocean or swept downstreamout to sea either sinks or is picked up bycurrents.Much of it is eventually carried into one of five massive ocean regions, where plastic can be so 44 that areas have garnerednamesliketheGreatPacificGarbagePatch. There maybe more than 16times asmuchplasticinthe patchthanprevious studies have 45 ,accordingto the researchers behind the study. An aerial view of the Great Pacific Garbage Patch might at first appear to be open water. But inside there is debris from all over the world — debris that traps or is eaten by marine animals, filling up theirbodiestothepointofbeingfatalandtaintingourfoodsupply.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "continued",
@@ -581,12 +589,14 @@
         "C": "consumed",
         "D": "concentrated"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "More than 320 million metric tons of plastic are produced every year — and a disturbing amount ends up in the ocean,withmuchofit 41 inplacesliketheGreatPacificGarbagePatch. The Great Pacific Garbage Patch is a massive area measuring more than 1.6 million square kilometers. Researchers from the Ocean Cleanup foundation conducted a survey of plastic in the area, using planes to 42 from the skyand boatstotrawl the water.Theyfoundthatthe amount ofplasticthereseemed to beincreasingexponentially andthattherecouldbe16timesasmuchaspreviouslythought. There’s far too much plastic in the world’s oceans, and the problem continues to 43 . Every little bit of plastic that gets tossedintothe ocean or swept downstreamout to sea either sinks or is picked up bycurrents.Much of it is eventually carried into one of five massive ocean regions, where plastic can be so 44 that areas have garnerednamesliketheGreatPacificGarbagePatch. There maybe more than 16times asmuchplasticinthe patchthanprevious studies have 45 ,accordingto the researchers behind the study. An aerial view of the Great Pacific Garbage Patch might at first appear to be open water. But inside there is debris from all over the world — debris that traps or is eaten by marine animals, filling up theirbodiestothepointofbeingfatalandtaintingourfoodsupply.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "affected",
@@ -594,7 +604,9 @@
         "C": "estimated",
         "D": "eliminated 請依下文回答第46題至第50題: Researchers at Vanderbilt University decided to find out howintelligent various animals are. To rightly compare brain power in species, it isn’t enough to weigh brain tissue. You must take into account the brain relative to the organism’s size.Butthismayfallshortofevaluatingactualintelligence. NeuroscientistSuzana Herculano-Houzel said, “Ibelieve the absolute number ofneurons an animal has determined the richness of their internal mental state and their abilityto predict what is about tohappen intheir environment based on pastexperience.”Sheandhercolleaguesfoundthatmeateatershaveaboutthesamenumberofneuronsasplanteaters. Thatmeansplanteatersneedasmuchbrainpowertoescapefrompredatorsasmeateatersneedtocatchthem. How do cats and dogs measure up? Previous findings had cats ahead at 300 million neurons to dogs roughly 160 million. In this latest study, however, dogs were on top, with 530 million neurons to cats 250 million. Just for comparison,humanshavearound16billionsuchneurons.Evenso,dogswerewayaboveothermeateatersinthebrain powerdepartment. Having a bigger brain has a downside, researchers have found. “Meat eating is largely considered a problem-solver in terms of energy,” Herculano-Houzel said, “but in retrospect, itis clearthat meat eatinganimals must impose a delicate balance between how much brain and body a species can afford.” This may be why you often see large predators like lionsandbearsdozing."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "More than 320 million metric tons of plastic are produced every year — and a disturbing amount ends up in the ocean,withmuchofit 41 inplacesliketheGreatPacificGarbagePatch. The Great Pacific Garbage Patch is a massive area measuring more than 1.6 million square kilometers. Researchers from the Ocean Cleanup foundation conducted a survey of plastic in the area, using planes to 42 from the skyand boatstotrawl the water.Theyfoundthatthe amount ofplasticthereseemed to beincreasingexponentially andthattherecouldbe16timesasmuchaspreviouslythought. There’s far too much plastic in the world’s oceans, and the problem continues to 43 . Every little bit of plastic that gets tossedintothe ocean or swept downstreamout to sea either sinks or is picked up bycurrents.Much of it is eventually carried into one of five massive ocean regions, where plastic can be so 44 that areas have garnerednamesliketheGreatPacificGarbagePatch. There maybe more than 16times asmuchplasticinthe patchthanprevious studies have 45 ,accordingto the researchers behind the study. An aerial view of the Great Pacific Garbage Patch might at first appear to be open water. But inside there is debris from all over the world — debris that traps or is eaten by marine animals, filling up theirbodiestothepointofbeingfatalandtaintingourfoodsupply.",
+      "passage_intro": "請依下文回答第41題至第45題:"
     },
     {
       "number": 46,

@@ -1,0 +1,684 @@
+{
+  "metadata": {
+    "exam_type": "110",
+    "level": "三等",
+    "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依憲法之規定,下列何者為判斷人民是否為中華民國國民之標準?",
+      "section": null,
+      "options": {
+        "A": "種族",
+        "B": "戶籍",
+        "C": "國籍",
+        "D": "國家認同"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "下列有關基本國策中社會安全的敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "國家對於具工作能力者,應予適當工作機會,故人民有向國家請求提供工作機會的權利",
+        "B": "社會補償制度,指的是對於經濟能力較差者,對於其所受的社會經濟待遇給予補償",
+        "C": "基本國策規定國家應該制定保護勞工法律,但保護勞工之內容與方法,立法者有形成自由而不受拘束",
+        "D": "國家為謀社會福利,應實施社會保險制度"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "SARS 期間有醫師未依規定回到院區集中強制隔離而遭裁罰,依據為當時傳染病防治法第 37 條 第 1 項:「曾與傳染病病人接觸或疑似被傳染者,得由該管主管機關予以留驗;必要時,得令遷入指 定之處所檢查,或施行預防接種等必要之處置。」大法官就此作成釋字第690號解釋,關於此解釋之 內容,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "「必要之處置」違反法律明確性原則",
+        "B": "強制隔離係為保護人民生命安全與身體健康,性質上與刑事逮捕拘禁不同,不適用憲法第8條",
+        "C": "強制隔離雖剝奪人身自由,但係為保護重大公益目的所採取的合理必要手段",
+        "D": "強制隔離對人身自由影響重大,須經中立、公正之法院加以審查,方得實施"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依司法院大法官解釋之意旨,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "祭祀公業條例維護傳統規約依循傳統宗族觀念以男系子孫(含養子)為派下員之約定,使女子不得 為派下員,尚不違反性別平等",
+        "B": "民法未容許相同性別二人結婚,違反平等保護",
+        "C": "民法規定父母對於未成年子女權利之行使意思不一致時,由父行使,並不違反性別平等",
+        "D": "道路交通管理處罰條例禁止曾犯特定罪名者擔任計程車駕駛,其目的在保障乘客之人身安全,尚屬 合憲"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依司法院釋字第749號解釋意旨,對於乘客之安全有何風險時,國家始可廢止計程車執業登記?",
+      "section": null,
+      "options": {
+        "A": "實質風險",
+        "B": "特別風險",
+        "C": "一般風險",
+        "D": "剩餘風險"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依憲法增修條文之規定,下列關於覆議之敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "立法院必須在一定期間內議決,逾期未議決時,原決議有效",
+        "B": "覆議時,經全體立法委員二分之一以上維持原案,行政院院長應即接受該決議或辭職",
+        "C": "行政院得不經總統之核可,移請立法院覆議",
+        "D": "行政院得對於立法院決議之法律案、預算案、條約案提出覆議"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "關於立法權之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "立法院制定公民投票法,使立法院自身得就重大政策之爭議,交由中央選舉委員會辦理公民投票, 牴觸權力分立原則",
+        "B": "立法院基於民主正當性之立法責任,得制定或修正法律,乃立法形成之範圍及其固有權限",
+        "C": "民意代表行使選民賦予之職權須遵守與選民約定,任期屆滿,除有不能改選之正當理由外應即改選",
+        "D": "立法委員在開會時,有向行政院院長及行政院各部會首長質詢之權"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,立法委員35人,未達下列何者之提案門檻?",
+      "section": null,
+      "options": {
+        "A": "提議總統彈劾案",
+        "B": "提議憲法修正案",
+        "C": "提議總統罷免案",
+        "D": "提議領土變更案"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "下列何者非屬憲法規定的選舉方法?",
+      "section": null,
+      "options": {
+        "A": "普通選舉",
+        "B": "間接選舉",
+        "C": "平等選舉",
+        "D": "無記名投票"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列何種基本權利受憲法第22條之保障?",
+      "section": null,
+      "options": {
+        "A": "學術自由",
+        "B": "營業自由",
+        "C": "財產權",
+        "D": "性行為自由"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依憲法及增修條文規定,總統之權限不包括下列何者?",
+      "section": null,
+      "options": {
+        "A": "主持行政院會議",
+        "B": "依法任免文武官員",
+        "C": "國家安全大政方針決定權",
+        "D": "發布緊急命令"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "有關地方自治團體居民之權利,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "對於地方公職人員有依法創制之權",
+        "B": "對於地方公職人員有依法複決之權",
+        "C": "對於地方自治事項有依法選舉之權",
+        "D": "對於地方自治事項有依法創制之權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "關於各級法院所設之庭長,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "庭長係為統一訴訟指揮程序所設之機制",
+        "B": "身分獨立性之保障對象不及於庭長",
+        "C": "令免兼庭長之人事行政行為對法官之俸給無不利影響",
+        "D": "關於庭長之遴選與任免,宜以法律定之"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "依憲法及增修條文規定,下列何者並非司法院大法官之職權?",
+      "section": null,
+      "options": {
+        "A": "解釋憲法",
+        "B": "政黨違憲審查權",
+        "C": "審理總統、副總統彈劾案",
+        "D": "統一解釋最高法院各庭之歧異見解"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "依憲法增修條文規定及司法院大法官解釋意旨,有關總統緊急命令權之敘述,下列何者正確?",
+      "section": null,
+      "options": {
+        "A": "緊急命令因具有暫時替代或變更法律之效力,原則上可具體、明確授權執行機關訂定補充規定",
+        "B": "總統僅得於立法院休會時發布緊急命令",
+        "C": "緊急命令之發布,不受憲法第23條法律保留原則之限制,惟仍應遵守比例原則",
+        "D": "立法院就緊急命令行使追認權時,如認部分內容不當,得為部分追認,或逕予變更其內容"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "下列有關「法律的制裁」之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "法律的效果不限於制裁,但是制裁卻是相當重要的法律效果",
+        "B": "現代國家透過法律所要達成的政策目標種類日益增加,法律所規定的制裁種類亦越發紛雜多樣",
+        "C": "當國家課以制裁時,通常是以實施強制力的方式為之",
+        "D": "監護宣告,屬於民法上的制裁"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "下列何部法律之條文未曾遭司法院大法官宣告違憲?",
+      "section": null,
+      "options": {
+        "A": "集會遊行法",
+        "B": "出版法",
+        "C": "違警罰法",
+        "D": "檢肅流氓條例"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "99 年 8 月 4 日修正之公務人員退休法,增訂公務人員之婚姻關係於公務人員退休生效時已存續 2 年 以上,退休公務人員死亡後,其配偶始得起領月撫慰金,並自100年1月1日起施行。公務人員甲於 民國 87 年與乙結婚,婚後 1 年多,甲即退休。後甲於 100 年3 月死亡。關於本案之法律適用,下列 敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "依中央法規標準法所規定之從新從優原則,應適用結婚時之舊法",
+        "B": "依後法優先於前法之原則,應適用修正後之新法",
+        "C": "依法律不溯及既往原則,應適用結婚時之舊法",
+        "D": "依不真正溯及既往原則,應適用修正後之新法"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,大法官於審查法律合憲性遇有立法程序之瑕疵時,應如何審查,下列敘述何者 正確?",
+      "section": null,
+      "options": {
+        "A": "法律既已公布生效,大法官不得介入審查",
+        "B": "大法官調查事實不受限制,一經發現有立法程序瑕疵時,即得宣告其為無效",
+        "C": "立法程序之瑕疵基於議事自律,立法院應自行認定並解決,但若有明顯重大瑕疵者,釋憲機關仍得 宣告其為無效",
+        "D": "大法官僅得形式審查總統之公布與行政院院長之副署是否正確無誤"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "下列法律條文,何者非法律的擬制?",
+      "section": null,
+      "options": {
+        "A": "二人以上同時遇難,不能證明其死亡之先後時,推定其為同時死亡",
+        "B": "電能、熱能及其他能量,關於本章之罪,以動產論",
+        "C": "胎兒以將來非死產者為限,關於其個人利益之保護,視為既已出生",
+        "D": "因條件成就而受利益之當事人,如以不正當行為促其條件之成就者,視為條件不成就"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "關於法律保留原則,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "並非所有政府行為均須法律保留",
+        "B": "並非一切自由權利均受憲法同等保障",
+        "C": "並非所有對人民權利之限制均須由法律規定",
+        "D": "法律授權主管機關訂定命令時,授權明確之程度必須完全一致"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "主管機關於裁量外國人申請歸化案件時,以國籍法所無之要件,認該外國人之本國與中華民國非友好 國家而拒絕其歸化。此舉最可能構成下列何者?",
+      "section": null,
+      "options": {
+        "A": "裁量濫用",
+        "B": "裁量萎縮至零",
+        "C": "計畫裁量",
+        "D": "行政保留"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "稅捐稽徵法與行政程序法均有關於「送達」之規定,則就稅捐文書之送達,此二部法律之適用關係 如何?",
+      "section": null,
+      "options": {
+        "A": "稅捐稽徵法屬特別法,依特別法優於普通法原則,應僅適用稅捐稽徵法",
+        "B": "行政程序法雖屬普通法,但其中關於送達之規定較為完整,應僅適用行政程序法",
+        "C": "稅捐稽徵法作為特別法而優先適用,於規範不足時補充適用行政程序法",
+        "D": "由行政機關視具體個案而決定應適用何法律"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "關於我國股份有限公司之規定,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "公司得依章程規定不設董事會,置董事1人或2人",
+        "B": "非公開發行公司,不得採用董事候選人提名制度",
+        "C": "公開發行公司就董事選舉,可選擇不採用累積投票制",
+        "D": "公司股東會不得在董事任期中,無正當理由而決議解任董事"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "關於勞工保險月投保薪資之敘述,下列何者正確?",
+      "section": null,
+      "options": {
+        "A": "直接以被保險人之實際薪資數額作為投保薪資數額,向保險人申報",
+        "B": "按被保險人之月薪資總額,依投保薪資分級表之規定,向保險人申報投保薪資",
+        "C": "每月收入不固定者之投保薪資月薪資總額,以最近6個月收入之平均為準",
+        "D": "申報新進員工加保,其月薪資總額尚未確定者,可暫不申報"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "債務人甲恐債權人乙查封其財產,甲乃與丙偽作買賣,將財產讓與丙。下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "甲丙間之債權行為有效,物權行為無效",
+        "B": "甲丙間之債權行為與物權行為效力未定",
+        "C": "甲丙間之債權行為無效,物權行為有效",
+        "D": "甲丙間之債權行為和物權行為均無效"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "甲、乙夫妻的 18 歲獨生子丙,就讀高中三年級,於放學途中毆打路人丁,致丁右手指骨折。依民法 規定,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "丁得對丙請求全部賠償",
+        "B": "丁得請求財產上損害賠償",
+        "C": "丁得請求非財產上損害賠償",
+        "D": "丁對甲僅得請求三分之一的損害賠償"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "依民法之規定,下列有關共有關係之敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "首期合會金,為會首與全體合會會員公同共有",
+        "B": "繼承人有數人時,在分割遺產前,各繼承人對於遺產全部為公同共有",
+        "C": "夫妻之財產及所得,合併為共同財產時,為夫妻分別共有之",
+        "D": "合夥人之出資與合夥之財產,各合夥人就出資之比例分別共有之"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "甲在某大學研究所考試中,事先竊取試題應考,使原本可能名落孫山的自己金榜題名。下列敘述何者 正確?",
+      "section": null,
+      "options": {
+        "A": "甲的行為不構成刑法第137條的妨害考試罪,因為研究所入學考試非屬依考試法所舉行之考試",
+        "B": "甲的行為構成刑法第137條的妨害考試罪,因為竊取試題屬詐術或非法之方法",
+        "C": "甲的行為不構成刑法第137條的妨害考試罪,因為其行為不必然使考試發生不正確之結果",
+        "D": "甲的行為構成刑法第137條的妨害考試罪,因為其行為已經使考試發生不正確之結果"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "依家庭暴力防治法之規定,有關民事保護令,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "保護令之聲請,原則上應以書面為之",
+        "B": "被害人得向法院聲請通常保護令、暫時保護令與緊急保護令",
+        "C": "法院於受理民事保護令之聲請後,得於審理終結前聽取社會福利機構之意見",
+        "D": "當被害人有受急迫危險時,檢察官或警察機關得以電信傳真之方式聲請緊急保護令"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "To make the contract more complete, the hockey star a clause that would guarantee him 50% of his salaryifaninjuryendedhiscareer.",
+      "section": null,
+      "options": {
+        "A": "renounced",
+        "B": "inserted",
+        "C": "represented",
+        "D": "structured"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "The police themselves as tourists, secretly videotaping visitors as they moved round the exhibition site.",
+      "section": null,
+      "options": {
+        "A": "consigned",
+        "B": "harmonized",
+        "C": "moderated",
+        "D": "disguised"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "New satellite images of Antarctica just revealed a number of Emperor penguin colonies that scientists were not ofintheirearlyresearch.",
+      "section": null,
+      "options": {
+        "A": "anxious",
+        "B": "aware",
+        "C": "afraid",
+        "D": "acquired"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "In a democraticcountry,everyoneis tothefreedomof speechandexpression.Thisrightisprotected bythelaw.",
+      "section": null,
+      "options": {
+        "A": "empowered",
+        "B": "enabled",
+        "C": "endowed",
+        "D": "entitled"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Afterhisheartattack,thedoctorputhimonastrict ,andregularappointmentsarescheduledforfurther checkups.",
+      "section": null,
+      "options": {
+        "A": "decency",
+        "B": "regimen",
+        "C": "casualty",
+        "D": "shipwreck"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Whencelebratinganewyear,weoftenwishothershappiness, ,andgoodhealth.",
+      "section": null,
+      "options": {
+        "A": "resistance",
+        "B": "prosperity",
+        "C": "temptation",
+        "D": "succession"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "One benefit of working past the normal retirement age is the ability to current standard of living by increasinglifetimeincome.",
+      "section": null,
+      "options": {
+        "A": "maintain",
+        "B": "mandate",
+        "C": "manifest",
+        "D": "manufacture"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Sadly,theirrecent,truncatedliveshowsborenoevidenceofnewmaterialwithwhichto theirsuccess.",
+      "section": null,
+      "options": {
+        "A": "sustain",
+        "B": "suppress",
+        "C": "suspect",
+        "D": "suspend"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Patrick is such a good-natured person; he practices faithfully and is always more than ready to help needypeople.",
+      "section": null,
+      "options": {
+        "A": "altruism",
+        "B": "cynicism",
+        "C": "euphemism",
+        "D": "metabolism"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "At the roots of my hair a sensation began and ran down the surface of my flesh, leaving me goose- fleshedandcold.",
+      "section": null,
+      "options": {
+        "A": "tingling",
+        "B": "tempering",
+        "C": "twittering",
+        "D": "twinkling"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "insteadof",
+        "B": "intermsof",
+        "C": "inplaceof",
+        "D": "inspiteof"
+      },
+      "answer": "B",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "washarvesting",
+        "B": "hasharvested",
+        "C": "hadharvested",
+        "D": "hasbeenharvested"
+      },
+      "answer": "D",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "descend",
+        "B": "deflate",
+        "C": "deprive",
+        "D": "deteriorate"
+      },
+      "answer": "D",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "inthemeantime",
+        "B": "insomerespects",
+        "C": "ontheotherhand",
+        "D": "forthetimebeing"
+      },
+      "answer": "C",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": null,
+      "options": {
+        "A": "Although",
+        "B": "Despite",
+        "C": "However",
+        "D": "Nonetheless 請依下文回答第46題至第50題 At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The numberofcollegesskyrocketedinwaves,duringtheearlyandmid20thcentury.Stateuniversitiesgrewfromsmall institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campusesaroundthestate.Inturn,regionalcampusesbrokeawayandbecameseparateuniversities. TohandletheexplosivegrowthofK–12education,everystatesetupanetworkofteachers’colleges,beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s.Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges,enrollingabout150studentseach.Meanwhile,another137wereprivatelyoperated,withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949,whentherewere322juniorcollegesinall;180wereaffiliated withchurches,108wereindependentandnon-profit,and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby,low-costschoolstoprovidetrainingforthegrowingwhite-collarlaborforce,aswellasformoreadvanced technicaljobsintheblue-collarsphere.Four-yearcollegeswerealsogrowing,albeitnotasfast;however,manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element."
+      },
+      "answer": "A",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference betweenfreshandfrozenproduce 41 nutrition?Well,ithighlydependsonthecircumstances.Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yetreacheditspeaknutrition.Furthermore,theminuteitispicked,itsnutritionalcontentbeginsto 43 .When itfinallyappearsonyourdinnertabledayslater,thefoodmayloseupto50percentofitsnutritionalvalue.Frozen foods, 44 ,arepickedwhenthey’reripeandfrozenimmediately. 45 thequickfreezeprocessmayaffect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce thathasbeensittingaroundfordays,there’snodoubtthatfrozenfoodscontainmorenutrition.",
+      "passage_intro": "請依下文回答第41題至第45題"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "WhichofthefollowingstatementsisTRUE,accordingtothetextabove?",
+      "section": null,
+      "options": {
+        "A": "Atthebeginning,therewerelessthan1,000collegeswith160,000studentsexistingintheUS.",
+        "B": "Inthe1830s,statecollegesanduniversitiesweresetuptotrainteachersfortheexplosivegrowthofK–12 education.",
+        "C": "Juniorcollegeswereusuallysetupbycityschoolsystemsstartinginthe1930s.",
+        "D": "Communitycolleges wererenamed fromjuniorcolleges aslow-costinstitutions with astrongcomponent ofvocationaleducation."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Whichofthefollowingstatementsistruetothedescriptionaboutjuniorcolleges?",
+      "section": null,
+      "options": {
+        "A": "Juniorcollegesgrewfrom1919studentsto70,000in1930.",
+        "B": "In1949,therewere180privatejuniorcollegesaffiliatedwithchurches.",
+        "C": "Therapidgrowthofcommunitycollegesisduetothedemandformorenon-profitindependentinstitutions.",
+        "D": "Teachers’collegesarethecommunitynameforjuniorcolleges."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "WhichisoneofthefactorsthatcontributedtotherapidgrowthofcommunitycollegesintheUnitedStates?",
+      "section": null,
+      "options": {
+        "A": "Itisamajornewtrendtoincludeasmanyruralstudentsaspossible.",
+        "B": "ThepurposeistohandletheexplosivegrowthofK–12education.",
+        "C": "Parentsandbusinessmenwantednearby,low-costschoolsinruralorsmall-townareastoprovidetraining forthegrowingwhite-collarlaborforce.",
+        "D": "Many community colleges were located in the center of the fast-growing metropolis to provide more advancedtechnicaljobsintheblue-collarsphere."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "WhichofthefollowingstatisticsisTRUE?",
+      "section": null,
+      "options": {
+        "A": "Before1919,therewerealreadymorethan170juniorcolleges.",
+        "B": "Inthe1920s,therewereabout140privately-operatedjuniorcolleges.",
+        "C": "In1949,thereweretotally180juniorcollegeswith108independentnon-profit.",
+        "D": "Thepeakyearforprivatecommunitycollegeexpansioncameattheyearof1922."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "WhichofthefollowingstatementsisTRUE,accordingtothetextabove?",
+      "section": null,
+      "options": {
+        "A": "Communitycollegesenrollmentisvocationallylimited.",
+        "B": "Four-yearcollegegrowthwasaffectedbytheopen-enrollmentpolicyofjuniorcolleges.",
+        "C": "Communitycollegesprovidelow-costpreparationfortransferstudentsintofour-yearinstitutions.",
+        "D": "Communitycollegescontinuetoappealtoyoung,lesspreparedstudents."
+      },
+      "answer": "C"
+    }
+  ],
+  "year": 110,
+  "category": "移民特考",
+  "subject": "[三等] 法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "level": "三等",
+  "original_subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/110年/三等/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

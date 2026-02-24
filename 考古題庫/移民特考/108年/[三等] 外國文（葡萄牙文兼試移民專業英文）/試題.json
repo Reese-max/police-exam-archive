@@ -1,7 +1,10 @@
 {
   "metadata": {
     "level": "三等",
-    "code": "90640"
+    "code": "90640",
+    "subject": "外國文（葡萄牙文兼試移民專業英文）",
+    "exam_name": "移民行政人員特種考試",
+    "year": 108
   },
   "notes": [
     "※注意： 禁止使用電子計算器。",
@@ -79,7 +82,10 @@
       "number": 10,
       "type": "essay",
       "stem": "Liderança",
-      "section": "甲、申論題"
+      "section": "甲、申論題",
+      "notes": [
+        "題幹可能不完整"
+      ]
     },
     {
       "number": 11,
@@ -103,7 +109,10 @@
       "number": 14,
       "type": "essay",
       "stem": "Folha",
-      "section": "甲、申論題"
+      "section": "甲、申論題",
+      "notes": [
+        "題幹可能不完整"
+      ]
     },
     {
       "number": 15,

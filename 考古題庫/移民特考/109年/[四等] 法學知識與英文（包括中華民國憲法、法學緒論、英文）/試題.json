@@ -3,7 +3,9 @@
     "exam_type": "109",
     "level": "四等",
     "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
-    "exam_time": "1小時 座號："
+    "exam_time": "1小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 109
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -593,14 +595,14 @@
         "A": "endurance",
         "B": "evacuation",
         "C": "expenditure",
-        "D": "extension 請回答下列第46題至第50題 Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance."
+        "D": "extension"
       },
       "answer": "C"
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "ratherthan",
@@ -608,12 +610,14 @@
         "C": "deprivedof",
         "D": "dueto"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "increase",
@@ -621,12 +625,14 @@
         "C": "division",
         "D": "ratio"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "therefore",
@@ -634,12 +640,14 @@
         "C": "though",
         "D": "once"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "promoted",
@@ -647,12 +655,14 @@
         "C": "reminded",
         "D": "prescribed"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": null,
       "options": {
         "A": "Tosolve",
@@ -660,7 +670,9 @@
         "C": "Todepict",
         "D": "Afterdepicting"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
     }
   ],
   "year": 109,

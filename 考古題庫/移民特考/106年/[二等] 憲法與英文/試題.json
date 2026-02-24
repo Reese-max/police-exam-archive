@@ -1,7 +1,10 @@
 {
   "metadata": {
     "exam_type": "106",
-    "subject": "憲法與英文"
+    "subject": "憲法與英文",
+    "exam_name": "移民行政人員特種考試",
+    "level": "二等",
+    "year": 106
   },
   "notes": [
     "※注意： 禁止使用電子計算器。",
@@ -25,7 +28,10 @@
       "number": "三",
       "type": "essay",
       "stem": "中翻英:(15 分)",
-      "section": null
+      "section": null,
+      "notes": [
+        "題幹可能不完整"
+      ]
     },
     {
       "number": 25,

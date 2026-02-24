@@ -3,7 +3,9 @@
     "exam_type": "106",
     "level": "三等",
     "subject": "外國文（德文兼試移民專業英文）",
-    "exam_time": "2 小時 座號："
+    "exam_time": "2 小時 座號：",
+    "exam_name": "移民行政人員特種考試",
+    "year": 106
   },
   "notes": [
     "※注意： 禁止使用電子計算器。",
@@ -226,14 +228,14 @@
         "A": "quota",
         "B": "slogan",
         "C": "oxygen",
-        "D": "censor 請依下文回答第16題至第20題: Have you noticed that the brightest students you knew in school are not necessarily the ones who have gone farthest in life? We all know some people who have 16 IQs, but are successful in their work, social relationships, love lives, and in maintaining physical and mental well-being. They are much more successful than many people who have higher IQs. Why do “smart” people think “dumb,” and vice versa? The answer is that there is a second kind of intelligence that is unrelated to IQ tests, but is related, 17 , to social skills and coping with emotions. When people who are obviously bright get passed over for the key promotions or remain frustrated and unfulfilled in their family lives, they naturally ask, “Where did I go wrong?” They try to figure out where they went wrong intellectually, but that is not where the problem 18 . Although a high IQ does contribute to success in many life endeavors, it is far from the whole story, or even the most important part. A high IQ equips us to learn from books and lectures, but it does not ensure that we know how to 19 practical lessons from experience. That requires an altogether different type of intelligence. In fact, we have two “minds” operating all the time. Besides our rational intelligence, we have a second kind of intelligence, which IQ tests do not measure. It is experiential intelligence. While the rational mind learns by abstracting and analyzing, the experiential mind learns directly from experience. While the rational mind solves problems by using 20 , the experiential mind operates by intuitive wisdom. Both contribute to one’s success in life."
+        "D": "censor"
       },
       "answer": "C"
     },
     {
       "number": 16,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "modest",
@@ -241,12 +243,14 @@
         "C": "tangible",
         "D": "ingrained"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Have you noticed that the brightest students you knew in school are not necessarily the ones who have gone farthest in life? We all know some people who have 16 IQs, but are successful in their work, social relationships, love lives, and in maintaining physical and mental well-being. They are much more successful than many people who have higher IQs. Why do “smart” people think “dumb,” and vice versa? The answer is that there is a second kind of intelligence that is unrelated to IQ tests, but is related, 17 , to social skills and coping with emotions. When people who are obviously bright get passed over for the key promotions or remain frustrated and unfulfilled in their family lives, they naturally ask, “Where did I go wrong?” They try to figure out where they went wrong intellectually, but that is not where the problem 18 . Although a high IQ does contribute to success in many life endeavors, it is far from the whole story, or even the most important part. A high IQ equips us to learn from books and lectures, but it does not ensure that we know how to 19 practical lessons from experience. That requires an altogether different type of intelligence. In fact, we have two “minds” operating all the time. Besides our rational intelligence, we have a second kind of intelligence, which IQ tests do not measure. It is experiential intelligence. While the rational mind learns by abstracting and analyzing, the experiential mind learns directly from experience. While the rational mind solves problems by using 20 , the experiential mind operates by intuitive wisdom. Both contribute to one’s success in life.",
+      "passage_intro": "請依下文回答第16題至第20題:"
     },
     {
       "number": 17,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "moreover",
@@ -254,12 +258,14 @@
         "C": "rarely",
         "D": "hence"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "Have you noticed that the brightest students you knew in school are not necessarily the ones who have gone farthest in life? We all know some people who have 16 IQs, but are successful in their work, social relationships, love lives, and in maintaining physical and mental well-being. They are much more successful than many people who have higher IQs. Why do “smart” people think “dumb,” and vice versa? The answer is that there is a second kind of intelligence that is unrelated to IQ tests, but is related, 17 , to social skills and coping with emotions. When people who are obviously bright get passed over for the key promotions or remain frustrated and unfulfilled in their family lives, they naturally ask, “Where did I go wrong?” They try to figure out where they went wrong intellectually, but that is not where the problem 18 . Although a high IQ does contribute to success in many life endeavors, it is far from the whole story, or even the most important part. A high IQ equips us to learn from books and lectures, but it does not ensure that we know how to 19 practical lessons from experience. That requires an altogether different type of intelligence. In fact, we have two “minds” operating all the time. Besides our rational intelligence, we have a second kind of intelligence, which IQ tests do not measure. It is experiential intelligence. While the rational mind learns by abstracting and analyzing, the experiential mind learns directly from experience. While the rational mind solves problems by using 20 , the experiential mind operates by intuitive wisdom. Both contribute to one’s success in life.",
+      "passage_intro": "請依下文回答第16題至第20題:"
     },
     {
       "number": 18,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "breaks",
@@ -267,12 +273,14 @@
         "C": "booms",
         "D": "lies"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "Have you noticed that the brightest students you knew in school are not necessarily the ones who have gone farthest in life? We all know some people who have 16 IQs, but are successful in their work, social relationships, love lives, and in maintaining physical and mental well-being. They are much more successful than many people who have higher IQs. Why do “smart” people think “dumb,” and vice versa? The answer is that there is a second kind of intelligence that is unrelated to IQ tests, but is related, 17 , to social skills and coping with emotions. When people who are obviously bright get passed over for the key promotions or remain frustrated and unfulfilled in their family lives, they naturally ask, “Where did I go wrong?” They try to figure out where they went wrong intellectually, but that is not where the problem 18 . Although a high IQ does contribute to success in many life endeavors, it is far from the whole story, or even the most important part. A high IQ equips us to learn from books and lectures, but it does not ensure that we know how to 19 practical lessons from experience. That requires an altogether different type of intelligence. In fact, we have two “minds” operating all the time. Besides our rational intelligence, we have a second kind of intelligence, which IQ tests do not measure. It is experiential intelligence. While the rational mind learns by abstracting and analyzing, the experiential mind learns directly from experience. While the rational mind solves problems by using 20 , the experiential mind operates by intuitive wisdom. Both contribute to one’s success in life.",
+      "passage_intro": "請依下文回答第16題至第20題:"
     },
     {
       "number": 19,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "recruit",
@@ -280,12 +288,14 @@
         "C": "draw",
         "D": "confer"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "Have you noticed that the brightest students you knew in school are not necessarily the ones who have gone farthest in life? We all know some people who have 16 IQs, but are successful in their work, social relationships, love lives, and in maintaining physical and mental well-being. They are much more successful than many people who have higher IQs. Why do “smart” people think “dumb,” and vice versa? The answer is that there is a second kind of intelligence that is unrelated to IQ tests, but is related, 17 , to social skills and coping with emotions. When people who are obviously bright get passed over for the key promotions or remain frustrated and unfulfilled in their family lives, they naturally ask, “Where did I go wrong?” They try to figure out where they went wrong intellectually, but that is not where the problem 18 . Although a high IQ does contribute to success in many life endeavors, it is far from the whole story, or even the most important part. A high IQ equips us to learn from books and lectures, but it does not ensure that we know how to 19 practical lessons from experience. That requires an altogether different type of intelligence. In fact, we have two “minds” operating all the time. Besides our rational intelligence, we have a second kind of intelligence, which IQ tests do not measure. It is experiential intelligence. While the rational mind learns by abstracting and analyzing, the experiential mind learns directly from experience. While the rational mind solves problems by using 20 , the experiential mind operates by intuitive wisdom. Both contribute to one’s success in life.",
+      "passage_intro": "請依下文回答第16題至第20題:"
     },
     {
       "number": 20,
       "type": "choice",
-      "stem": "",
+      "stem": "（承上題組）",
       "section": "乙、測驗題",
       "options": {
         "A": "reason",
@@ -293,7 +303,9 @@
         "C": "nurture",
         "D": "paradox"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Have you noticed that the brightest students you knew in school are not necessarily the ones who have gone farthest in life? We all know some people who have 16 IQs, but are successful in their work, social relationships, love lives, and in maintaining physical and mental well-being. They are much more successful than many people who have higher IQs. Why do “smart” people think “dumb,” and vice versa? The answer is that there is a second kind of intelligence that is unrelated to IQ tests, but is related, 17 , to social skills and coping with emotions. When people who are obviously bright get passed over for the key promotions or remain frustrated and unfulfilled in their family lives, they naturally ask, “Where did I go wrong?” They try to figure out where they went wrong intellectually, but that is not where the problem 18 . Although a high IQ does contribute to success in many life endeavors, it is far from the whole story, or even the most important part. A high IQ equips us to learn from books and lectures, but it does not ensure that we know how to 19 practical lessons from experience. That requires an altogether different type of intelligence. In fact, we have two “minds” operating all the time. Besides our rational intelligence, we have a second kind of intelligence, which IQ tests do not measure. It is experiential intelligence. While the rational mind learns by abstracting and analyzing, the experiential mind learns directly from experience. While the rational mind solves problems by using 20 , the experiential mind operates by intuitive wisdom. Both contribute to one’s success in life.",
+      "passage_intro": "請依下文回答第16題至第20題:"
     }
   ],
   "year": 106,
