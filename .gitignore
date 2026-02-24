@@ -61,6 +61,9 @@ htmlcov_old/
 # 允許考古題網站的圖片
 !考古題網站/**/images/*.png
 
+# 允許移民特考 PDF 考古題
+!移民特考PDF/**/*.pdf
+
 # Logs
 *.log
 
@@ -70,6 +73,7 @@ _tmp_*.py
 
 # Cache
 .download_cache.json
+.download_cache_immigration.json
 
 # Environment variables
 .env
