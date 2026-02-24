@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "subject": "憲法與英文",
+    "exam_time": "2 小時 座號：",
+    "code": "70130"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "人民某甲以衛生福利部中央健康保險署(簡稱健保署)將健保資料對外\n提供使用,為原始蒐集目的外之使用,有違法之情事,乃以存證信函向\n健保署表示,拒絕健保署將聲請人之個人健保資料釋出給第三人,用於\n健保相關業務以外之目的。健保署函復聲請人,拒絕其主張。甲不服,\n提起訴願、行政訴訟,均遭駁回,乃向憲法法庭聲請法規範憲法審查,\n並主張:健保署應將個人健保資料處理成為完全不具還原識別可能性之\n匿名資料再予利用,始為合法。請問:本案所涉及之基本權利及其具體\n內容為何?某甲之主張有無理由?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "醫師某乙經人檢舉在臉書網站之個人粉絲頁面刊登醫療廣告,違反醫療\n法第 84 條「非醫療機構,不得為醫療廣告」之規定,遭主管機關裁罰處\n分。乙不服提起行政救濟,行政法院認為應適用之醫療法第 84 條規定,\n有牴觸憲法疑義,聲請解釋憲法。您認為系爭法規禁止醫師為醫療廣告\n之部分,是否違憲?其理由為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "中譯英:請將下面這段中文譯成正確、流暢的英文(15 分)\n環境變化,特別是氣候變化,正在日益影響遷移。海平面上升、極端天\n氣事件、荒漠化和水資源短缺正在迫使社區遷移。經濟破壞、健康風險\n和資源相關的衝突進一步推動了遷移。為應對氣候引發的流離失所,政\n策必須透過加強國際合作和資金支援、制定國家和地方的積極計畫以及\n投資於韌性基礎設施,來進行調整。對氣候移民的法律承認和擴展保護\n至關重要,同時改進社會服務。促進脆弱地區的可持續發展和氣候適應\n企畫可以減少遷移壓力。這些措施將有助於有效管理氣候遷移,確保流\n離失所人群的權利和福祉。",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "英譯中:請將下面這段英文譯成正確、流暢的中文(15 分)\nPromoting cultural integration among immigrant communities involves\nmultifaceted policies. Key initiatives include offering language classes,\ncultural orientation, and inclusive education to enhance understanding.\nEmployment support through job training, recognition of qualifications, and\nentrepreneurship resources helps economic integration. Legal and social\nsupport such as anti-discrimination laws, legal aid, and access to social\nservices are essential. Community engagement is fostered through\nmulticultural centers, intercultural events, and mentorship programs.\nEncouraging political and civic participation involves civic education,\nextending voting rights, and creating advisory councils. Media and public\nawareness campaigns promote positive representations of immigrants and the\nbenefits of cultural diversity. These combined efforts help create an inclusive\nsociety where immigrants can thrive and contribute fully.",
+      "section": null
+    },
+    {
+      "number": "五",
+      "type": "essay",
+      "stem": "英文作文:請根據下面說明寫一篇約 250 字的英文作文(20 分)\nWhat role does immigration play in addressing demographic challenges, such\nas aging populations and labor shortages? Please write a 250-word essay to\njustify your points.",
+      "section": null
+    }
+  ],
+  "year": 113,
+  "category": "移民特考",
+  "subject": "[二等] 憲法與英文",
+  "level": "二等",
+  "original_subject": "憲法與英文",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/113年/二等/憲法與英文/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 5
+}

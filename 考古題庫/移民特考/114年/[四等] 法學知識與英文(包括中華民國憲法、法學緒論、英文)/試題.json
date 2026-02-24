@@ -1,0 +1,675 @@
+{
+  "metadata": {
+    "exam_type": "114",
+    "exam_name": "一般警察人員考試",
+    "level": "四等",
+    "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "關於憲法基本國策中的國民經濟,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "國家領土內之土地屬於國民全體",
+        "B": "公用事業以國民經營為原則",
+        "C": "國家不得以法律限制私營事業",
+        "D": "附著於土地之礦,屬於土地所有權人"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列何者並非憲法對軍事審判制度之要求?",
+      "section": null,
+      "options": {
+        "A": "軍事審判制度之運作,應符合正當法律程序之最低要求,包含獨立公正之審判機關與程序",
+        "B": "軍事審判官應依法律獨立審判,並受終身職之保障",
+        "C": "軍事審判制度不得違背憲法有關司法院作為國家最高司法機關之規定",
+        "D": "軍事審判官非受刑事或懲戒處分,或依其他法定原因,不得免職"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,教師法規定教師依法得予以解聘、停聘或不續聘,此一規定涉及下列何者 基本權利?",
+      "section": null,
+      "options": {
+        "A": "言論自由",
+        "B": "工作權",
+        "C": "服公職權",
+        "D": "生存權"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依憲法第129條規定,憲法所規定之各種選舉,除憲法別有規定外,以普通、平等、直接及無記名投 票之方法行之,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "所謂「普通選舉」,指所有具有中華民國國籍之人民,如符合法定年齡,且無法定排除事由者,則 均有選舉權及被選舉權",
+        "B": "所謂「平等選舉」,即每人一票,票票等值,如各該選舉定有婦女保障名額,即違反平等選舉原則",
+        "C": "所謂「直接選舉」,即選舉結果係由人民直接的選舉行為所產生,而無任何其他機關或第三人之中介",
+        "D": "所謂「無記名選舉」,即選票上不能有關於投票人姓名或其他足以辨識投票人資訊之記載,以確保 選舉的自主性以及秘密性"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關憲法第22條,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "環境權為大法官解釋承認之憲法第22條權利",
+        "B": "憲法第22條保障對象以本國籍自然人與法人為限",
+        "C": "人格發展自由係憲法第22條保障之權利",
+        "D": "憲法第22條保障之權利,限於符合公共道德與善良風俗者"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依憲法本文及增修條文,總統所發布之命令中,下列何者須經行政院院長之副署?",
+      "section": null,
+      "options": {
+        "A": "行政院院長的任免命令",
+        "B": "依憲法經立法院同意任命人員之任免命令",
+        "C": "戒嚴及緊急命令",
+        "D": "解散立法院之命令"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關立法院職權行使,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "立法院對總統提名之監察委員人選,得消極不行使同意權",
+        "B": "公投法規定立法院有公投提案權,違憲",
+        "C": "偵查中之案件,立法院亦得向檢察機關調閱相關卷證",
+        "D": "立法院於臨時會中審議不信任案,非憲法所不許"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依憲法增修條文第5條第5項規定,政黨之目的或其行為如危害下列何者,即屬違憲?",
+      "section": null,
+      "options": {
+        "A": "政黨平等原則",
+        "B": "自由民主之憲政秩序",
+        "C": "社會福利原則",
+        "D": "創制複決等直接民主權利"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "總統、副總統彈劾案件,憲法法庭宣告彈劾成立之判決,應經下列何種方式之同意?",
+      "section": null,
+      "options": {
+        "A": "大法官現有總額3分之2以上",
+        "B": "大法官現有總額4分之3以上",
+        "C": "大法官參與評議人數3分之2以上",
+        "D": "大法官參與評議人數4分之3以上"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依相關憲法解釋與裁判見解及我國立法實務,以下何者不屬於國民主權原則的實踐?",
+      "section": null,
+      "options": {
+        "A": "國民法官參與刑事審判",
+        "B": "立法委員不得兼任官吏",
+        "C": "公民投票",
+        "D": "民意代表定期改選"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依憲法法庭判決,關於侮辱職務罪與言論自由之保障,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "對於質疑、批評政府公權力行使之言論,宜抱持較寬容之態度,以確保憲法對言論自由最大限度之保障",
+        "B": "侮辱職務罪非僅是對表意時間、地點或方式之規制或處罰,甚至可能涉及觀點之管制",
+        "C": "侮辱職務之言論係對事不對人,國家僅得以保障公務執行之法益,做為侮辱職務罪所追求之合憲目的",
+        "D": "如將侮辱職務言論之處罰,限縮至處以罰金刑,即符合比例原則,未違反憲法保障言論自由之意旨"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "關於租稅的實踐,依憲法學理及我國稅捐行政實務,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "因義務人逾期納稅而加徵之滯納金部分,得加計利息命義務人繳納",
+        "B": "特別公課乃是稅捐以外對義務人課予繳納金錢之負擔,其徵收要件不得由法律授權以命令訂定,始 符租稅法定主義",
+        "C": "無償供公眾通行之道路土地免徵地價稅,但若屬建造房屋應保留之法定空地者則不免徵,符合平等原則",
+        "D": "國家對人民應不分經濟能力強弱,一律課予相同稅率,方符賦稅公平主義"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "下列何者曾被大法官認定違反法律明確性而宣告違憲?",
+      "section": null,
+      "options": {
+        "A": "檢肅流氓條例有關「敲詐勒索、強迫買賣及其幕後操縱行為」之規定",
+        "B": "檢肅流氓條例有關「品行惡劣、遊蕩無賴」之規定",
+        "C": "刑法第235條「猥褻」之規定",
+        "D": "藥害救濟法「常見且可預期之藥物不良反應」之規定"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "依憲法增修條文第6條規定,下列何者並非考試院之職權?",
+      "section": null,
+      "options": {
+        "A": "考試",
+        "B": "公務人員違法行為之糾舉、彈劾",
+        "C": "公務人員之銓敘、保障、撫卹、退休",
+        "D": "公務人員任免、考績、級俸、陞遷、褒獎之法制事項"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "電子遊戲場業管理條例第9條規定,電子遊戲場業之營業場所,應距離醫院50公尺以上。但某直轄 市以自治條例規定此類營業場所應距離醫院100公尺以上。該自治條例是否合法?",
+      "section": null,
+      "options": {
+        "A": "不合法,自治條例不得牴觸法律",
+        "B": "不合法,要求營業場所距離醫院100公尺以上,違反比例原則,侵犯其營業自由",
+        "C": "合法,因營業場所管理為直轄市專屬事項",
+        "D": "合法,因法律所規定之50公尺距離,係法律為保留地方因地制宜空間所設之最低標準,並未禁止 直轄市以自治條例為應保持更長距離之規範"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "下列何者並非我國司法院大法官針對「明確性原則」所提出的判斷標準?",
+      "section": null,
+      "options": {
+        "A": "無其他解釋可能性",
+        "B": "意義非難以理解",
+        "C": "為受規範者所得預見",
+        "D": "可經由司法審查加以確認"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "下列法規範何者位階最高?",
+      "section": null,
+      "options": {
+        "A": "嚴重特殊傳染性肺炎防治及紓困振興特別條例",
+        "B": "違反傳染病防治法第58條第1項第2款、第3款及第3項規定所為之檢疫措施案件裁罰基準",
+        "C": "臺北市政府防治嚴重特殊傳染性肺炎防疫勤務費發放要點",
+        "D": "臺北市政府衛生局疾病管制業務作業要點"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "甲於大學學測考試前,竊得試題紙本,看完後予以銷毀,並考得高分。下列有關甲刑事責任之敘述, 何者正確?",
+      "section": null,
+      "options": {
+        "A": "甲的行為構成刑法第320條的竊盜罪既遂",
+        "B": "甲的行為構成刑法第137條的妨害考試罪既遂",
+        "C": "甲的行為構成第137條的妨害考試罪未遂",
+        "D": "甲的行為構成刑法第136條的妨害公務罪未遂"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "關於有限公司之董事,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "有限公司董事一定是該公司之股東",
+        "B": "董事為自己或他人為與公司同類業務之行為,應對全體股東說明其行為之重要內容,並經股東表決 權3分之2以上之同意",
+        "C": "董事不得將自己之出資轉讓給其他人",
+        "D": "除與公司有特別約定外,董事不得向公司請求報酬"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "稱要式行為者,謂以一定方式之作成作為成立或生效要件之法律行為。下列何者並非法定要式行為?",
+      "section": null,
+      "options": {
+        "A": "動產租賃契約",
+        "B": "合會契約",
+        "C": "人事保證契約",
+        "D": "終身定期金契約"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "甲遺失一隻愛犬,後來發現為乙善意取得,甲自遺失時起最長多久時間以內,可向乙為回復之主張?",
+      "section": null,
+      "options": {
+        "A": "6個月內",
+        "B": "1年內",
+        "C": "2年內",
+        "D": "3年內"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "有關國民參與審判制度「終局評議及判決」之進行,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "國民法官6票認為無罪,但法官3票認為有罪,應為有罪判決",
+        "B": "國民法官4票認為有罪,法官兩票認為有罪,應為有罪判決",
+        "C": "有罪判決須有6票以上同意,國民法官與法官雙方都須有同意票",
+        "D": "死刑判決須有6票以上同意,國民法官與法官雙方都須有同意票"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "下列何者並非為裁判離婚之事由?",
+      "section": null,
+      "options": {
+        "A": "重婚",
+        "B": "有不治之惡疾",
+        "C": "因故意犯罪,經判處有期徒刑逾6個月確定",
+        "D": "生死不明已滿1年"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "受僱於僱用 5 人以上公司、行號之勞工參加勞工保險後,其投保單位僱用勞工減至 4 人以下時,關 於其參加之勞工保險,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "勞工無參加勞工保險之義務",
+        "B": "由勞雇協商是否繼續參加勞工保險",
+        "C": "勞工應於原投保單位繼續參加勞工保險",
+        "D": "勞工應透過職業工會參加勞工保險"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "下列何者係妨礙他人行使請求權之一種對抗權?",
+      "section": null,
+      "options": {
+        "A": "支配權",
+        "B": "抗辯權",
+        "C": "形成權",
+        "D": "絕對權"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "下列何者非刑事制裁?",
+      "section": null,
+      "options": {
+        "A": "褫奪公權",
+        "B": "罰金",
+        "C": "拘役",
+        "D": "拘留"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "下列何者是個人主義法律思想之私法原則?",
+      "section": null,
+      "options": {
+        "A": "契約限制原則",
+        "B": "無過失責任原則",
+        "C": "所有權負有社會義務",
+        "D": "所有權絕對原則"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "行政執行法第 9 條修正草案原規定,對於行政執行行為不服而提出聲明異議,異議決定後,不得聲 明不服。惟立法院於審議時,為保障人民訴訟權而刪除該「不得聲明不服」之規定。依此,義務人於 聲明異議後,仍得依法提起行政訴訟,是何種解釋方法?",
+      "section": null,
+      "options": {
+        "A": "歷史解釋",
+        "B": "目的論解釋",
+        "C": "體系解釋",
+        "D": "文義解釋"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "下列何種遺囑,於繼承開始後,遺囑將失效而非無效?",
+      "section": null,
+      "options": {
+        "A": "遺囑內容違反公序良俗",
+        "B": "受遺贈人早於被繼承人死亡",
+        "C": "自書遺囑人以按指印代替簽名",
+        "D": "由繼承人之配偶為見證人所立之代筆遺囑"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "下列何者不屬於家庭暴力防治法所規範之行為?",
+      "section": null,
+      "options": {
+        "A": "甲騷擾已經分手之成年前女友",
+        "B": "乙辱罵未同居的父母",
+        "C": "丙毆打已經離婚分居之前配偶",
+        "D": "丁恐嚇已離婚分居之前配偶之再婚對象"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Constructionmethods fromplacetoplaceandtheyhaveevolvedovertime.",
+      "section": null,
+      "options": {
+        "A": "vary",
+        "B": "stay",
+        "C": "trim",
+        "D": "haze"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Marydidnotperformwellontheexambecausetheallergypillsshetookmadeher .",
+      "section": null,
+      "options": {
+        "A": "ambitious",
+        "B": "bright",
+        "C": "elastic",
+        "D": "drowsy"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Therisingunemploymentrate thenegativeinfluenceofthepandemic.",
+      "section": null,
+      "options": {
+        "A": "eliminates",
+        "B": "deletes",
+        "C": "amplifies",
+        "D": "frustrates"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "Processedfoodhaschangedfromits stateduringthepreparationtokeepitfreshortasty.",
+      "section": null,
+      "options": {
+        "A": "ultimate",
+        "B": "transformed",
+        "C": "original",
+        "D": "upmost"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Inthisdigitalage,businessestreatdataasan forthemtogainacompetitiveadvantageinthemarket.",
+      "section": null,
+      "options": {
+        "A": "academy",
+        "B": "ingredient",
+        "C": "overpass",
+        "D": "asset"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Thereisa offoodandlittleaid,andthevillagersareinadiresituation.",
+      "section": null,
+      "options": {
+        "A": "device",
+        "B": "plenty",
+        "C": "realm",
+        "D": "shortage"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Thewedding aftertheceremonywasheldinabeautifulhall,andalltheguestsdancedlateintothenight.",
+      "section": null,
+      "options": {
+        "A": "discussion",
+        "B": "permission",
+        "C": "invitation",
+        "D": "reception"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Ahotcupoflemonteaisoftenconsideredasoothing forasorethroat.",
+      "section": null,
+      "options": {
+        "A": "reform",
+        "B": "remedy",
+        "C": "remark",
+        "D": "retreat"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Peopleinthisareastilllivea life,mainlyonfarmingandhunting.",
+      "section": null,
+      "options": {
+        "A": "developed",
+        "B": "complex",
+        "C": "primary",
+        "D": "primitive"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "Thestoryofhowthebusinessman hardshipshowsthatonecanbeachampionwithoutgivingup.",
+      "section": null,
+      "options": {
+        "A": "achieved",
+        "B": "represented",
+        "C": "obtained",
+        "D": "overcame 請依下文回答第41題至第45題 In a Paris cafe or restaurant, many tourists may have complained about the poor service or the waiters’ impatientattitude.Aonce-annualeventforthemtoshowtheirprofessionalskillstookplaceagainrecently, 41 waiters had to race a two-kilometer route while carrying a tray laden with a cup of coffee, a glass of water and a croissant. About 200 of the city’s serving staff put on traditional aprons and white shirts to 42 the revived cafe race. Holding a round tray with a typical French breakfast of a croissant, coffee and a glass of water, they walkedbrisklyfor2kmthroughthestreets.Therulesweresimple:To 43 therace,participantsneededtobe not only quick but also careful. Any change to the composition of their tray would impact their final score. Once underway,therewereinevitable 44 .Waterspilled,cupsfell.Thereweregasps,cheersandlaughterfromthe thousandsofParisianswatchingthereturnofthisclassicrace.Theracewas 45 toprofessionals,apprentices andpart-timetraineeserversandatthefinishinglinejudgesexaminedthetraystoestablishifeverythinghadarrived intact. The prize included the glory of being the fastest server in town, as well as a medal and a night’s stay in a chichotel."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "which",
+        "B": "inwhich",
+        "C": "inthat",
+        "D": "whose"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "fightagainst",
+        "B": "cometotermswith",
+        "C": "approveof",
+        "D": "takepartin"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "win",
+        "B": "become",
+        "C": "standout",
+        "D": "getoff"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "witnesses",
+        "B": "explosives",
+        "C": "tragedies",
+        "D": "offenses"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "alien",
+        "B": "prime",
+        "C": "exhausted",
+        "D": "open 請依下文回答第46題至第50題 OnMay8,1945,BritishPrimeMinisterWinstonChurchillannouncedtheendoftheSecondWorldWar.He concluded his radio address with “Nothing should prevent us from celebrating Victory Day in Europe today and tomorrow!”ButbeforeChurchillrespondedtohisowncalltocelebratethevictory,heturnedtohiscook,Georgina Landemare,andsaid“WithoutyouIwouldnothavesurvivedthewar.”Thiswasmeantindeadlyearnest,foreating wellwasessentialtothestabilityandwell-beingofthestatesman.ItwasChurchill’sbeliefthatoneshouldofferthe bodysomethinggood,sothatthesoulmaydesiretodwellinit. Landemare entered Churchill’s kitchen in 1930. She soon learned that it would be anything but easy to meet the culinary demands of the master of the house. His answer to the question of what he liked was: “My taste is simple.Iameasilysatisfiedwiththebest.”Andherdishesstooduptohisdiscerningpalate.Sheknewhisculinary preferencesaswellashisdislikes.ChurchillappreciatedtraditionalEnglishdisheslikechickenandroastbeef.He preferredclearbouillonstocreamsoups,andifhehadtochoosebetweenfishandshellfish,hechosethelatter. Churchillpreferredtofinishhisdinnerwithcheese.However,hewasnotenthusiasticaboutCheddar,themost popular cheese in the English kingdom; rather, the blue cheese Stilton was his favorite.The gourmet insisted that cheesethatcametohistableshouldnotbeboughtjustanywhere,butonlyataparticularfromagerie.“Agentleman onlybuys his cheese at Paxton &Whitfield,” he said.Thetraditional companystill exists and has been one of the suppliers of the British Royal Family for many years. Desserts such as puddings or tarts, on the other hand, were neverhighonChurchill’sculinaryagenda. The prime minister often invited people to dinner parties at his home. He used dining as an art to display his conversational talents and to engage in political debate, to confer with friends and to win over rivals. During the WWII,heuseddiningtoexerthisconversationalskillstopersuadehisallies,FranklinRooseveltandJosephStalin, to fight the war.Churchillused diningand the dinnertableto do whatcould notalways be done attheconference table."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "HowdidLandemarehelpChurchilltosurvivethewar?",
+      "section": null,
+      "options": {
+        "A": "Sheknewwheretogetfoodsuppliesduringthewar.",
+        "B": "Sheknewhistastesandpreparedthedishesheliked.",
+        "C": "Shetookcareofhishealthbypreparinghealthymeals.",
+        "D": "Sheshowedhimthetruemeaningofbraveryandhope."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Whatisthelastparagraphmainlyabout?",
+      "section": null,
+      "options": {
+        "A": "ThepoliticalvalueofChurchill’sdinnerparties.",
+        "B": "ThedishescommonlyseenonChurchill’sdinnertable.",
+        "C": "ThefriendsandenemiesChurchillmadeatdinnerparties.",
+        "D": "ThesenseofhumorChurchilldisplayedathisdiningtable."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "WhichsetofwordsisusedinthepassagetorefertoChurchill?",
+      "section": null,
+      "options": {
+        "A": "Gentleman,ally,statesman.",
+        "B": "Fromagerie,master,gourmet.",
+        "C": "Master,supplier,primeminister.",
+        "D": "Gourmet,statesman,primeminister."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Whatdoestheword“it”refertointhefirstparagraph?",
+      "section": null,
+      "options": {
+        "A": "Belief",
+        "B": "Soul",
+        "C": "Body",
+        "D": "Food"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingstatementsistrue?",
+      "section": null,
+      "options": {
+        "A": "Churchillpreferredshellfishtofish.",
+        "B": "ChurchilldislikedtraditionalBritishdishes.",
+        "C": "Churchillfoundpuddingsandtartsirresistible.",
+        "D": "ChurchilllikedtoendhisdinnerwithCheddar."
+      },
+      "answer": "A"
+    }
+  ],
+  "year": 114,
+  "category": "移民特考",
+  "subject": "[四等] 法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+  "level": "四等",
+  "original_subject": "法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/114年/四等/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}
