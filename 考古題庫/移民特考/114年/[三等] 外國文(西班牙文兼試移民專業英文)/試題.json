@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "exam_type": "114",
+    "level": "三等",
+    "subject": "外國文(西班牙文兼試移民專業英文)",
+    "exam_time": "2 小時 座號：",
+    "code": "80370",
+    "exam_name": "移民行政人員特種考試",
+    "year": 114
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "共20題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "Traduzca el siguiente texto al chino(25 分)\nTrump afirma que Rusia trabajará “inmediatamente” para lograr un cese del\nfuego tras la llamada; Putin parece impasible\nPara el presidente Donald Trump, la llamada telefónica del lunes con el\npresidente de Rusia Vladimir Putin representó un acontecimiento\ntrascendental, destinado a confirmar la disposición de su homólogo a poner\nfin al conflicto en Ucrania.\nPara Putin, pareció un evento mucho menos trascendental. A diferencia de\nTrump, quien mantuvo la conversación de dos horas desde la Oficina Oval y\nadelantó la llamada con mayúsculas en redes sociales, Putin no tenía libre su\nagenda. Llamó desde una escuela para niños superdotados en el balneario de\nSochi, en el mar Negro, y le hizo un hueco a Trump durante un recorrido por\nlas instalaciones.\nDespués,quedó claro quecada uno consideró lallamada con diferentes niveles\nde importancia. Mientras Trump proclamó en una publicación optimista en\nredes sociales que la llamada “salió muy bien” y que Rusia y Ucrania habían\nacordado “iniciar negociaciones inmediatas para un cese del fuego”, Putin\ndejó claro en sus propios comentarios que no cedía en sus exigencias\nmaximalistas de poner fin a la violencia. (CNN 2025-05-19)",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "Traduzca el siguiente texto al español(25 分)\n美中互降關稅 美媒:短期貨運激增秋季物價恐上漲\n(中央社記者舊金山 12 日專電)美中會談後互降關稅,美國財經媒體\nCNBC 分析,預期接下來 4 至 6 週,從中國到美國的貨運量將激增,進\n口商搶著大量備貨之下,將面臨更高運費成本,消費者未來仍將面臨更\n高物價,有企業預期秋季出貨商品將調漲。\n美中結束貿易談判,美國對中國商品關稅稅率從 145%調降至 30%,除\n10%基準關稅外,先前因中國未積極處理芬太尼(Fentany)問題加徵的\n20%關稅並未取消。雙方同意 90 天內不再調高或新增關稅並展開談判,\n未來仍充滿不確定性。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "Redacción(25 分)\nHaz un comentario de 150 palabras sobre la política migratoria del presidente\nTrump de Estados Unidos.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "In Pakistan, an airplane was briefly when a passenger was suspected of being infected with H5N1.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "distinguished",
+        "B": "quarantined",
+        "C": "perceived",
+        "D": "recognized"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "When Mr. and Mrs. Smith stayed at a hotel, they took rooms for themselves and their two children.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "adjacent",
+        "B": "glutinous",
+        "C": "occupied",
+        "D": "restrictive"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "This is the first study to show how to air pollution influences cognitive function in a national sampleofoldermen and women.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "examination",
+        "B": "expiration",
+        "C": "exposure",
+        "D": "expansion"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "If a foreign banker knowingly assisted a taxpayer in concealing a foreign account or evading taxes, the bankercanbe chargedwithconspiracyto theMinistryof Finance.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "authorize",
+        "B": "fraud",
+        "C": "prohibit",
+        "D": "waive"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "The President did eventually sign a minor but lauded executive order that halted of certain childrenofillegal immigrants.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "exportation",
+        "B": "clarification",
+        "C": "deportation",
+        "D": "exemplification"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "National-security agencies invest hundreds of millions of dollars yearly in software to hackers andcybercriminals from invadingourprofiles.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "deter",
+        "B": "alter",
+        "C": "gather",
+        "D": "whisper"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "We live at a time in which societies are becoming increasingly and multicultural. And, globalization forces us tointeract across national, cultural,religious andotherboundaries.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "equivocal",
+        "B": "fallacious",
+        "C": "magnetic",
+        "D": "heterogeneous"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "In the spring of 1889, Van Gogh entered an at Saint-Remy after suffering what he described as moods ofindescribable anguish, followingtheepisodeinwhichhecut off his left ear.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "boycott",
+        "B": "forum",
+        "C": "asylum",
+        "D": "variation"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "Today,itisnot foryoungerspeakersinTaiwantobeequallyfluentinTaiwaneseandMandarin.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "unseen",
+        "B": "uncommon",
+        "C": "unheard",
+        "D": "undaunted"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "Social media has significantly transformed our communication methods by both virality and efficiency.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "endangering",
+        "B": "enhancing",
+        "C": "envisioning",
+        "D": "evolving"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "acceptingby",
+        "B": "except by",
+        "C": "additional to",
+        "D": "inaddition"
+      },
+      "answer": "B",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Ofthose",
+        "B": "Amongthem that",
+        "C": "Ofthosethat",
+        "D": "Ofthem"
+      },
+      "answer": "C",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "inhabiting",
+        "B": "inhabit",
+        "C": "inhabitant",
+        "D": "inhabited"
+      },
+      "answer": "D",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "rises",
+        "B": "raising",
+        "C": "raises",
+        "D": "arising"
+      },
+      "answer": "B",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "interrelated",
+        "B": "interrelate",
+        "C": "opposite",
+        "D": "oppositional"
+      },
+      "answer": "A",
+      "passage": "Earthquakes are caused by the movement of 50-mile-thick plates that comprise the earth’s crust. More than two thousand earthquakes occur daily somewhere on our planet, but about 95 percent of them are too weak to be felt 11 sensitive seismometers. 12 are felt by humans, most cause relatively little damage,particularlyiftheyoccurinsparely 13 areas. Scientistshaveobservedthatcertainphenomenaseemtooccurbeforeanearthquakeasthepressurewithin theplatesintensifies.Myriadsoftinycracksappearintherock,causingittoexpandandupliftthegroundabove it. The pressure squeezes water out of the rock, thereby 14 nearby water levels. Also the rock becomes moreresistanttoelectriccurrent,andradongasisreleased.Scientistshopethatthese 15 phenomenawill provide keys to predict when and where an earthquake will occur, thereby enabling them to warn people to evacuatethearea.While theearthquakeitselfcannot beprevented, at least lives maybesaved.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "What is thebest titleforthepassage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Keyfindings about stress",
+        "B": "Stress: Causes, symptoms,andmanagement",
+        "C": "Thebest waytoescapestress",
+        "D": "Physical stress andmental stress"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "Accordingto thepassage,whichofthefollowingstatements isNOT true?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Worryoftenaccompaniesguilt.",
+        "B": "Someofus feel guiltyabout veryinnocent actions.",
+        "C": "Aperson’s respiration rateincreases duringastressful situation.",
+        "D": "Guilt has nobeneficial effects onhumanbeings."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "Wecanconcludefrom this passagethat .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "astress-freelifewouldbeideal",
+        "B": "anincreaseinheartbeat ratecanonlybecausedbymental stress",
+        "C": "guilt is oftenself-induced",
+        "D": "worryis amoredangerous form ofstress thanis guilt"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "Thepassagesuggests that .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "physical andmental stress innormal amounts areadvantageous toman",
+        "B": "worryoften causes physical stress",
+        "C": "physical stress canbe moredangerous thanmental stress",
+        "D": "thebodyis ill-equippedtodeal withstress"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "Accordingto thepassage,theword“dilate”means .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "redden",
+        "B": "depress",
+        "C": "focus",
+        "D": "expand"
+      },
+      "answer": "D"
+    }
+  ],
+  "year": 114,
+  "category": "移民特考",
+  "subject": "[三等] 外國文(西班牙文兼試移民專業英文)",
+  "level": "三等",
+  "original_subject": "外國文（西班牙文兼試移民專業英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/114年/三等/外國文(西班牙文兼試移民專業英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 23
+}

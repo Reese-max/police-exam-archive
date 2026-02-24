@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "exam_type": "112",
+    "level": "三等",
+    "subject": "外國文(英文兼試移民專業英文)",
+    "exam_time": "2 小時 座號：",
+    "code": "63140",
+    "exam_name": "移民行政人員特種考試",
+    "year": 112
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "共20題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "中翻英:Please translate the following passage into English.(20 分)\n移民輔導知識對於引導和協助個人進行移民過程至關重要,該知識涵蓋\n移民政策和移民人權保障等重要內容。對於移民輔導專業人員來說,深\n入了解移民政策是至關重要的,以便向客戶提供準確和相關的指導。這\n種知識包括熟悉簽證規定、居留要求和入籍程序等內容。透過及時了解\n移民政策,輔導專業人員可以在複雜的法律框架中導航,並有效地向移\n民者提供有關他們的選擇和權利的信息。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "英翻中:Please translate the following passage into Chinese.(20 分)\nEducational reforms worldwide are increasingly shaped by an evolving\nunderstanding of the pedagogical landscape, driven by technological\nadvancements, shifts in socio-economic structures, and the imperative to\nnurture learners who are adaptable and resilient in the face of rapid changes.\nOne trend at the forefront of educational reform is the transition from\ntraditional rote learning methodologies to competency-based learning\nframeworks. These paradigms prioritize the development of an array of skills\nsuch as critical thinking, creativity, digital literacy, and socio-emotional\nlearning, which are deemed essential for the 21st-century citizen. They\nrepresent a shift away from purely content-based education, advocating\ninstead for a holistic development of learners, cognizant of the real-world\ncomplexities they will confront.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "英文作文:(35 分)\nSince the implementation of the Foreign Professional Recruitment and\nEmployment Act in 2018, our government has been continuously optimizing\nand implementing various measures to attract international talent. Please\nidentify some difficulties we are facing and provide your own suggestions and\nconcrete proposals to address these difficulties (About 250 words).",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "In response to the company's unethical practices, consumers organized a widespread , refusing to purchasetheirproducts.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "salutation",
+        "B": "embrace",
+        "C": "boycott",
+        "D": "obligation"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "Upon discovering the unjust treatment of marginalized communities, I felt a surge of , prompting metojointheprotest for social justice.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "sincerity",
+        "B": "reservation",
+        "C": "tolerance",
+        "D": "indignation"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "The esteemed judge will over the high-profile trial, ensuring an impartial legal process for all parties involved.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "concede",
+        "B": "preside",
+        "C": "evolve",
+        "D": "auction"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "Shedelivereda/an lecture,presentingcomplexideasinalogicalmannerthatallowedthestudents toeasilyengagewiththe subject matter.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "obscure",
+        "B": "abstract",
+        "C": "coherent",
+        "D": "gloomy"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "The hiker remained of venturing too close to the edge of the steep cliff, prioritizing their safety aboveanydesireforabreathtakingview.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "jolly",
+        "B": "wary",
+        "C": "lofty",
+        "D": "moody"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "Despitetheirbest efforts, theteam's performance duringthe championship matchwas lackluster, resultingina crushingdefeat.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "miserably",
+        "B": "excellently",
+        "C": "exceptionally",
+        "D": "triumphantly"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "Smuggled migrants often face dangerous conditions and become to trafficking and other abuses at thehands ofsmugglers.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "variable",
+        "B": "versatile",
+        "C": "vulnerable",
+        "D": "venerable"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "Slowingor stopping movements of people and goods across national borders is a top priorityfor lawenforcement agencies inSoutheastAsia.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "illicit",
+        "B": "legitimate",
+        "C": "authorized",
+        "D": "lawful"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "Moneylaunderingincrypto,thoughcurrentlylow,isexpectedtorapidlyincrease,enabling international criminalcrimes.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "average",
+        "B": "acculturation",
+        "C": "infinitesimal",
+        "D": "unprecedented"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "TheArgentinefootballerarrivedinChinawithoutavalidvisaandhadtowaitattheairportforan one.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "expedited",
+        "B": "expanded",
+        "C": "extended",
+        "D": "expired"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "recreational",
+        "B": "reminiscent",
+        "C": "devastating",
+        "D": "differentiating"
+      },
+      "answer": "C",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "impair",
+        "B": "advance",
+        "C": "illustrate",
+        "D": "affiliate"
+      },
+      "answer": "A",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "contends",
+        "B": "abridges",
+        "C": "extends",
+        "D": "bridges"
+      },
+      "answer": "C",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "minimal",
+        "B": "staggering",
+        "C": "negligent",
+        "D": "affording"
+      },
+      "answer": "B",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "glance",
+        "B": "stroll",
+        "C": "glare",
+        "D": "toll"
+      },
+      "answer": "D",
+      "passage": "Drug abuse is a pervasive issue that poses significant threats to individuals and society. The adverse effectsofdrugaddictioncanbe 11 ,leadingtophysical andpsychological harm.Substanceabusecan deteriorate an individual's overall well-being and 12 their ability to function properly. The impact of drugabuse 13 beyond the individual. It places aburden on families, communities, andhealthcare systems. Furthermore, the economic costs associated with drug abuse, including healthcare expenses and lost productivity, are 14 . Drug addiction clearly takes a heavy 15 on the individual's physical health andtheirmental well-being.Thereis noquestionthat addressingthis issueis ofgreat urgency.",
+      "passage_intro": "請依下文回答第11題至第15題"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingis oneofthemain goals ofspace colonization?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Establishingself-sustainingcolonies oncelestial bodies.",
+        "B": "ExpandinghumanpresenceonEarth.",
+        "C": "Ensuringthelong-term survival ofextraterrestrial species.",
+        "D": "Investigatingtheoriginoftheuniverse."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "Whichofthefollowingis onepotential benefit of spacecolonizationmentionedinthepassage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Reducingdependence onEarth's limitedreserves.",
+        "B": "Discoveringnew forms ofextraterrestrial life.",
+        "C": "Preservingthenatural environment onEarth.",
+        "D": "Promotinginternational collaborationinspace exploration."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingabout space colonizationis correct?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Spacecolonizationis mainlydrivenbythedesiretostudytheorigin and natureoflifeon Earth.",
+        "B": "Reusablerocket technologyhas prominentlycontributedtoloweringthe cost ofreachingspace.",
+        "C": "Closed-looplifesupport systems playaninsignificant roleinsustaininghumanlifeinspace.",
+        "D": "Spacecolonizationhas seeminglynegligiblepotential benefits for certainindustries likeenergy."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingis aplausibleinference?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Space colonization will eliminate all possible challenges and risks associated with human survival in space.",
+        "B": "The success of space colonization may depend exclusively on the availability of extraterrestrial resources.",
+        "C": "Space colonization is likely to have the foreseeable potential to revolutionize various industries on Earth.",
+        "D": "The development of space colonization technologies will lead to the immediate exploration of distant galaxies."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "Whichofthefollowingcanbeconsideredthemost suitabletoneforthis passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Questioning.",
+        "B": "Mocking.",
+        "C": "Sympathetic.",
+        "D": "Optimistic."
+      },
+      "answer": "D"
+    }
+  ],
+  "year": 112,
+  "category": "移民特考",
+  "subject": "[三等] 外國文(英文兼試移民專業英文)",
+  "level": "三等",
+  "original_subject": "外國文（英文兼試移民專業英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/112年/三等/外國文（英文兼試移民專業英文）/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 23
+}

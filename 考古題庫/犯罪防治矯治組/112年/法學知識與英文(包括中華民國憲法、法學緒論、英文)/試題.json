@@ -1,0 +1,676 @@
+{
+  "metadata": {
+    "exam_type": "112",
+    "level": "三等",
+    "subject": "法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+    "exam_time": "1 小時"
+  },
+  "notes": [
+    "※注意：①本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "②本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "③禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依據憲法增修條文第10條第4項之規定,國家對於公營金融機構之管理,應本何項原則?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "企業經營化",
+        "B": "國際化",
+        "C": "最大利潤化",
+        "D": "全面自由化"
+      }
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院釋字第499號解釋,下列敘述何者正確?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "為確保修憲決定不受任何不當壓力影響,修憲應符合秘密原則",
+        "B": "修憲若未先得到人民公投之明確授權,不得從事修憲",
+        "C": "修憲雖為國民主權之展現,仍不可修改具本質重要性的憲法條文",
+        "D": "修憲應向所屬政黨負責,以貫徹政黨政治精神"
+      }
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "關於秘密通訊自由之敘述,下列何者錯誤?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "旨在確保人民就通訊之有無、對象、時間、方式及內容等事項,不受國家及他人任意侵擾",
+        "B": "為憲法保障隱私權之具體態樣之一",
+        "C": "國家為確保國家安全及維護社會秩序所必要,於符合法定之實體及程序要件下,得對人民之秘密通訊為 監察",
+        "D": "檢察官與司法警察機關,無須經法官審查,可同時負責通訊監察書之聲請與核發"
+      }
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依據釋憲實務見解,關於宗教結社自由,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "保障範圍包括寺廟組織內部結構",
+        "B": "保障範圍包括寺廟是否加入其他宗教團體成為團體會員",
+        "C": "保障範圍包括寺廟財產之管理、處分",
+        "D": "未經合法設立登記之宗教團體不受憲法宗教結社自由之保障"
+      }
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "禁止恣意之差別待遇為下列何種基本權之內涵?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "平等權",
+        "B": "工作權",
+        "C": "言論自由",
+        "D": "人身自由"
+      }
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "下列何者屬於憲法第16條訴訟權之保障範圍?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "擔任民、刑事訴訟或行政訴訟之證人",
+        "B": "擔任民、刑事訴訟或行政訴訟之鑑定人",
+        "C": "公務員根據公務員懲戒法規定,提起再審之訴",
+        "D": "監察院將彈劾案連同證據,移送懲戒法院審理"
+      }
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列何者規定係屬違反平等權?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "兵役法規定「中華民國男子依法皆有服兵役之義務」,而女子則無此義務",
+        "B": "菸害防制法規定「限制菸品業者以公司名義顯名贊助任何形式之活動」,而「酒類產品」無此限制",
+        "C": "社會秩序維護法有規定就「意圖得利與人姦、宿者」為相關處罰,即僅處罰意圖得利之一方,而不處罰 支付對價之相對人",
+        "D": "警察大學招生簡章規定「以有無色盲」作為能否取得入學資格的條件,使色盲者無法通過入學考試"
+      }
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "下列何者不是司法院大法官解釋已承認為憲法第22條所保障之自由或權利?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "健康權",
+        "B": "環境權",
+        "C": "婚姻自由",
+        "D": "契約自由"
+      }
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "下列何者不是僅限於中華民國國民才能享有的基本權利?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "選舉、罷免、創制及複決之權",
+        "B": "受國民教育之權利",
+        "C": "服公職權",
+        "D": "訴訟權"
+      }
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依司法院釋字第419號解釋,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "行政院院長於新任總統就職時提出總辭,並非其憲法上之義務",
+        "B": "總統無須向立法院負責",
+        "C": "總統對行政院院長非憲法上義務之辭職應如何處理,乃總統之裁量權限",
+        "D": "立法院決議要求總統為一定行為或不為一定行為,總統應受拘束"
+      }
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "下列何者係依據司法院大法官解釋而得向立法院提出法律案?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "考試院",
+        "B": "立法委員",
+        "C": "行政院",
+        "D": "司法院"
+      }
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "有關監察院院長之職權,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "參與總統院際協商",
+        "B": "赴立法院備詢",
+        "C": "綜理院務監督所屬機關",
+        "D": "主持監察院會議"
+      }
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,下列何者不屬於憲法法庭得審查之標的?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "政黨違憲之解散",
+        "B": "地方自治法規與上級自治團體自治條例有無牴觸發生疑義",
+        "C": "自治事項有無違背中央法規發生疑義",
+        "D": "院與院間權限爭議"
+      }
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,最高司法行政機關得本於其司法行政監督權而發布相關命令,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "不得違反審判獨立",
+        "B": "不得牴觸法律",
+        "C": "需有法律具體明確授權,才可對人民權利有所限制",
+        "D": "若有涉及審判上之法律見解,法院應受其拘束"
+      }
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "原屬國家或其他上級地方自治團體本身的行政事務,委由地方自治團體執行,其法律性質為何?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "委辦事項",
+        "B": "委任事項",
+        "C": "委託事項",
+        "D": "行政委託"
+      }
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "法是人類共同生活中,為形成秩序、解決紛爭、實現自由之規範。下列敘述中,何者屬於符合此定義的規 範?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "為了考上國考,自己規定每天6點起床唸書,要唸滿10小時,若沒做到就不能休息",
+        "B": "朋友結婚請喜宴時,要包禮金",
+        "C": "交通警察以手勢指揮車輛行駛的順序或方式",
+        "D": "伊斯蘭教中不吃豬肉的戒律"
+      }
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "下列關於強行法與任意法的敘述,何者錯誤?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "法律行為違反強行法規定時,該法律行為一概無效",
+        "B": "強行法又可再區分為強制規定及禁止規定",
+        "C": "任意法又可再區分為補充規定及解釋規定",
+        "D": "強行法與任意法的區分標準,在於是否容許基於當事人之自由意思,決定該法律應否加以適用"
+      }
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "下列有關「準用」的敘述,何者錯誤?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "準用是以法條明文規定的類推適用",
+        "B": "準用只適用於法律原因,不適用於法律效果",
+        "C": "「比照」其意同於「準用」",
+        "D": "「亦同」其意同於「準用」"
+      }
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "下列何者不是行政法上比例原則之內涵?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "手段應有助於公益目的之達成",
+        "B": "應選擇對人民侵害最小之手段",
+        "C": "手段應符合信賴利益之保護",
+        "D": "手段對人民之侵害不得與公益目的顯失均衡"
+      }
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "下列關於「刑之加減」之敘述,何者正確?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "無期徒刑加重者,為死刑",
+        "B": "死刑減輕者,為不得假釋之無期徒刑",
+        "C": "有期徒刑加重者,僅加重其最高度",
+        "D": "拘役加重者,僅加重其最高度"
+      }
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "監所管理員甲因為疏忽,將鑰匙遺落於地上,羈押中的被告乙撿到鑰匙後,以該鑰匙打開大門逃之夭夭。 甲有何刑責?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "甲不構成犯罪",
+        "B": "甲構成刑法第161條第1項的脫逃罪",
+        "C": "甲構成刑法第162條第1項的縱放或便利脫逃罪",
+        "D": "甲構成刑法第163條第2項的公務員過失縱放或便利脫逃罪"
+      }
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "依勞動基準法第 84 條之 1 規定,於特定之情況下,勞工之工作條件得約定有一定之彈性放寬。下列敘述 何者正確?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "不待主管機關公告,任何勞工都可以直接透過勞資合意,成為適用勞基法第84條之1之對象",
+        "B": "勞動條件放寬之約定,必須以書面為之,並且不能有損勞工健康福祉",
+        "C": "雇主可以任意指定企業內特定職位之勞工,成為適用第84條之1工時彈性的責任制勞工",
+        "D": "適用第84條之1的勞工,只要有勞資雙方合意,不必送到主管機關核備"
+      }
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "下列何者非行政院所轄相當二級機關之獨立機關?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "中央選舉委員會",
+        "B": "中央銀行",
+        "C": "公平交易委員會",
+        "D": "國家通訊傳播委員會"
+      }
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "歌手甲於演唱會上演唱由乙填詞、丙作曲的一首歌曲,經丁公司將甲的現場表演錄製為唱片(以下簡稱為 「A唱片」),並對外發售。有關著作權之敘述,下列何者錯誤?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "甲在演唱會上的表演,為一獨立之著作而受著作權法保護",
+        "B": "丁公司於錄製A唱片前,僅須取得甲之同意,毋庸取得乙、丙之同意",
+        "C": "丁公司錄製之A唱片為錄音著作,其著作財產權存續至著作公開發表後五十年",
+        "D": "戊在臺北車站某唱片行購入一張丁所發售的A唱片,嗣後得自由轉售給其他人,毋庸取得甲、乙、丙、 丁之同意"
+      }
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "依據性別工作平等法,下列敘述何者正確?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "性別工作平等法於雇主依勞動基準法所招生之技術生,亦有適用",
+        "B": "性別工作平等法僅適用於一般私人企業,教育人員及軍職人員均不適用",
+        "C": "雇主與受僱者之約定若與性別工作平等法之規定有不同時,一律適用性別工作平等法",
+        "D": "公私立高中修習校外實習課程之實習生,若於實習期間遭受性騷擾,無性別工作平等法之適用"
+      }
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,關於法庭之友制度,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "當事人及關係人以外之人民、機關或團體均得擔任法庭之友",
+        "B": "法庭之友得提出具參考價值之專業意見",
+        "C": "法庭之友應以書面敘明其與審理案件之關聯性,聲請憲法法庭許可",
+        "D": "經憲法法庭裁定許可,法庭之友得自行提出具參考價值之資料,無須委任代理人為之"
+      }
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,關於聲請之撤回,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "於裁判宣示或公告前得撤回聲請之全部或一部",
+        "B": "聲請案件於憲法上具原則重要性者,憲法法庭得不准許撤回",
+        "C": "聲請之撤回應以書面為之",
+        "D": "案件經撤回者,聲請人得在聲請不變期間內,更行聲請"
+      }
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "依民法之規定,下列關於瑕疵擔保責任之敘述,何者錯誤?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "出賣人應擔保第三人就買賣之標的物,對於買受人不得主張任何權利",
+        "B": "債權之出賣人,原則上對於債務人之支付能力,不負擔保責任",
+        "C": "買受人於契約成立時,知有權利之瑕疵者,原則上出賣人應負擔保之責",
+        "D": "出賣人應擔保其物無滅失或減少其預定效用之瑕疵"
+      }
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "關於先占,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "須以所有之意思而占有",
+        "B": "標的得為動產或不動產",
+        "C": "限制行為能力人得為先占",
+        "D": "無主之動產先占人取得無主動產之所有權"
+      }
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "甲、乙為夫妻,婚後育有子女丙、丁二人。甲因生病死亡,遺留有遺產新臺幣120萬元。依法定應繼分分 配遺產,下列敘述何者正確?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "乙分60萬元、丙分30萬元、丁分30萬元",
+        "B": "乙、丙、丁各分40萬元",
+        "C": "乙分80萬元,丙、丁各分20萬元",
+        "D": "乙分60萬元、丙分40萬元、丁分20萬元"
+      }
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Itwas_____that very day even though we had the fanrattling behind us.",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "roll icking",
+        "B": "stifling",
+        "C": "rummaging",
+        "D": "rumbling"
+      }
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "If your skin type is_____oily, the pores around theT-zone would produce the most oil and tend toward black head form ation.",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "pre historically",
+        "B": "predominantly",
+        "C": "predict ably",
+        "D": "preeminently"
+      }
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "The news of the forest fire fil led them with_____because they had just had ago odvacation there.",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "dismay",
+        "B": "relief",
+        "C": "turbulence",
+        "D": "lucidity"
+      }
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "After their general had been captivated, the enemytroops were forced to_____after months ofintense fighting.",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "survive",
+        "B": "weather",
+        "C": "surrender",
+        "D": "withstand"
+      }
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Many successful leaders believe that a _____ approach should be taken in order to solve complex problems, with feasiblesolutions often being prefer red over more idea listic ones.",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "resilient",
+        "B": "resistant",
+        "C": "pragmatic",
+        "D": "pre car ious"
+      }
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "The thriller movie had the audience on the_____ of their seats, who eagerlyanticipated the next twist and turn in theplot.",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "ledge",
+        "B": "surface",
+        "C": "edge",
+        "D": "corner"
+      }
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "We were told about the meeting just one day before. Our report was prepare din such a_____and contained several mis takes.",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "stupor",
+        "B": "privilege",
+        "C": "haste",
+        "D": "torment"
+      }
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Instead of treating you like an expert, some caring and sympathetic doctors would give you more _____ explanations.",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "ambiguous",
+        "B": "furious",
+        "C": "portable",
+        "D": "comprehensible"
+      }
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Autumn for Maxisa_____season and iteasily bring sab out his dee per feel ings and thought sof just about anything.",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "compulsory",
+        "B": "legitimate",
+        "C": "negligible",
+        "D": "sent i mental"
+      }
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "In Japan, combined junior high and senior high schools are mostly _____, but the number of public ones is increasing.",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "collective",
+        "B": "communal",
+        "C": "shared",
+        "D": "private"
+      }
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "Patricia'srecent behavior shave become so_____that nobody can really understand what she is doing.",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "integral",
+        "B": "lavish",
+        "C": "obscure",
+        "D": "relevant"
+      }
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "I enjoy going to see musicalsat the the ater because the live performance sand music are very_____tome.",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "captious",
+        "B": "captivating",
+        "C": "pre car ious",
+        "D": "preventive"
+      }
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "Uncle Jonesis always a bit_____;therefore, his relatives and acquaintances keep him ata great distance.",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "proficient",
+        "B": "elastic",
+        "C": "decent",
+        "D": "eccentric"
+      }
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "We can see many coralreefs occur insh allow water where the sunprovides_____energy for the mto grow rapidly.",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "lucrative",
+        "B": "abundant",
+        "C": "exuberant",
+        "D": "modest"
+      }
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "The reti red air craft will be_____and some of its parts can bere used i not her air planes.",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "detou red",
+        "B": "dismant led",
+        "C": "diminished",
+        "D": "descended"
+      }
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "According to the passage, what prompted Nor man Rosenthalto study season aldepression?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "His patients’symptoms.",
+        "B": "His personal experiences.",
+        "C": "Problems of previous studies.",
+        "D": "Rising case sof New York City adults."
+      },
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affective Disorder (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a form of talk the rapy. As negative think ing tends to breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "According to the passage, what has to bed one before receiving SAD treatments?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "Getting a good light box.",
+        "B": "Talking to family orfri ends.",
+        "C": "Seek inga professional diagnosis.",
+        "D": "Comparing the effects of different treatments."
+      },
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affective Disorder (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a form of talk the rapy. As negative think ing tends to breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "According to the passage, which of the following is NOT helpful in treat ing SAD?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "Using light boxes daily.",
+        "B": "Being in doors and rest ingin winter.",
+        "C": "Regulating the production ofmelatonin.",
+        "D": "Changing the way people think."
+      },
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affective Disorder (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a form of talk the rapy. As negative think ing tends to breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Which of the following is closest in meaning to the word“let hargic”in the passage?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "Guarded.",
+        "B": "Furious.",
+        "C": "Inactive.",
+        "D": "Superior."
+      },
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affective Disorder (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a form of talk the rapy. As negative think ing tends to breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "According to the passage, which of the following statements is true?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "SAD affects men more than women.",
+        "B": "Summer SAD is less common than winter SAD.",
+        "C": "Winter depressionis often trigge red byhumidity.",
+        "D": "Suffer ersof winter depression are likely to lose app etite."
+      },
+      "passage": "請依下文回答第46題至第50題: When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressed during the cold, short day sof the city’swinters than hehadin his home country. Years later, he published the first paper to scientifically name the winter blues: Seas onal Affective Disorder (SAD). Subsequent studies have found that the seas onal depression affects those in north ern latitudes more and that about 10 percent of SAD suffer ers have symptoms in the summer time instead. The most comm only reported symptom sof winter depression are hypersomnia, the desireto sleep more than usual, as well as an increased app etite and lack of interest in things. According to experts, most people experience symptoms in young adult hood, but SAD can begin at any stage of life. The condition also variesbysex. About three time sas many women asmen get SAD. But why does less day light make some people clini call ydepressed?One leading theory is that the change in day light disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of day light dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biological night. As for summer SAD, triggers might include the heat and humidity. Instead of feeling let hargic, summer SAD patient smore often feel irri table and agitated. Experts say a professional diagnosisisa crucial first step toward treatment and self-diagnosisis not suggested. One common treatment issittingin front ofab right box of light for 30 minutes to sign alto the body that it’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Another treatment that may have longer last ing benefit sis Cognitive Behavioral The rapy(CBT), a form of talk the rapy. As negative think ing tends to breednegative emotions,CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” More over, finding winter time hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting, reading, or going to the gym, toboost their mood. Whether using light or talk the rapy, there isnoreas onto not seek mental health treatment, even ifsymptoms are only present for a few months out of the year."
+    }
+  ],
+  "year": 112,
+  "category": "犯罪防治矯治組",
+  "subject": "法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+  "source_pdf": "考古題庫\\犯罪防治矯治組\\112年\\法學知識與英文（包括中華民國憲法、法學緒論、英文）\\試題.pdf",
+  "file_type": "試題"
+}
