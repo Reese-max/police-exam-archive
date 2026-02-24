@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "exam_type": "106",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "刑事生物",
+    "code": "50970"
+  },
+  "notes": [
+    "※注意： ①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "你身為某民航機場航警局局長,因飛機進場時發生墜機事件,被任命為現場指揮官,\n因為飛機嚴重燒毀,200 位機組員及旅客中有 82 位於墜機火災中喪生,且面目全非\n達無法由外觀辨識身分,你為現場指揮官,欲面對支援之法醫、救援支援警員及鑑\n識人員進行簡報,除交付工作外,並分別進行:「體質人類學」辨識工作;DNA 檢體、\n檢驗辨識工作;你應該如何迅速交付工作以提升效率,儘快完成所有往生者的人別\n鑑識工作,並將遺體交付家屬以輔助飛機失事調查工作?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "請試述下列名詞之意涵:(每小題 5 分,共 25 分)\n①路卡原則(Lorcard Principle)\n② PCR(Polymerase Chain Reaction)\n③ Short Tandem Repeat and DNA profiler\n④請敘述 Y-STR 之鑑識原理\n⑤證物鏈(Chain of Custody)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "犯罪現場重建時發現可疑紅色斑點,應進行那些檢驗步驟以分辨血跡(人血或動物\n血)、嚼檳榔之檳榔汁?(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "試述屍體死後變化過程及死亡時間的研判。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 106,
+  "category": "鑑識科學學系",
+  "subject": "刑事生物",
+  "source_pdf": "考古題庫\\鑑識科學學系\\106年\\刑事生物\\試題.pdf",
+  "file_type": "試題"
+}

@@ -1,0 +1,691 @@
+{
+  "metadata": {
+    "level": "三等",
+    "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+    "exam_time": "1 小時"
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "下列何者屬憲法法庭審理之事件?",
+      "section": null,
+      "options": {
+        "A": "國家賠償事件",
+        "B": "內亂外患事件",
+        "C": "政黨違憲之解散事件",
+        "D": "違反國家安全事件"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "下列何者非隸屬於司法院?",
+      "section": null,
+      "options": {
+        "A": "司法官學院",
+        "B": "公務人員懲戒委員會",
+        "C": "臺灣高等法院臺南分院",
+        "D": "最高行政法院"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "有關立法院職權,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "總統缺位時,由立法院補選",
+        "B": "立法院於每年集會時,得聽取總統國情報告",
+        "C": "總統或副總統彈劾案經立法院議決通過後,移請公務人員保障暨培訓委員會審理",
+        "D": "憲法之修改,應經立法委員三分之一提議,四分之三出席,及出席委員四分之三決議,始得提出憲法 修正案"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依據憲法與公民投票法,全國性公民投票審議委員會之組織成員應如何產生?",
+      "section": null,
+      "options": {
+        "A": "由各政黨依立法院各黨團席次比例推薦,提請總統任命",
+        "B": "由各政黨依立法院各黨團席次比例推薦,提請行政院院長任命",
+        "C": "由行政院院長提名,經立法院同意,提請總統任命",
+        "D": "由主管機關提請總統任命"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,下列何種公職,人民得對其行使罷免權?",
+      "section": null,
+      "options": {
+        "A": "省主席",
+        "B": "監察委員",
+        "C": "總統",
+        "D": "全國不分區立法委員"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "人民就通訊之有無、對象、時間、方式及內容等事項,有不受國家及他人任意侵擾之權利,係受憲法保 障人民何種權利?",
+      "section": null,
+      "options": {
+        "A": "言論自由",
+        "B": "居住遷徙自由",
+        "C": "秘密通訊自由",
+        "D": "集會遊行自由"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "憲法第22條對於人民權利之保障,係採下列何者方式?",
+      "section": null,
+      "options": {
+        "A": "列舉方式",
+        "B": "概括方式",
+        "C": "例外方式",
+        "D": "列舉兼具概括方式"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "下列何項權利不得以法律加以限制?",
+      "section": null,
+      "options": {
+        "A": "結社",
+        "B": "營業活動",
+        "C": "宗教活動",
+        "D": "思想"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "依公民投票法規定,下列何者無全國性公民投票之提案權?",
+      "section": null,
+      "options": {
+        "A": "總統經行政院院會決議通過提出",
+        "B": "監察院",
+        "C": "立法院",
+        "D": "中華民國公民"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依據司法院大法官相關解釋精神,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "言論自由應受到最高程度之保障,因此不得限制言論自由",
+        "B": "商品標示是提供商品客觀資訊方式,屬於商業性言論一種,也受到言論自由保障,法律不得限制之",
+        "C": "示威遊行是搞政治的人的遊戲,會破壞社會秩序,與言論自由或表意自由皆無關",
+        "D": "舉標語靜坐,是人民表達其言論的一種方式"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "關於刑法第129條第1項違法徵收罪之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "本罪限於行為人明知之情形",
+        "B": "本罪所謂之租稅,包括中央或地方依據法令所徵收之一切稅捐",
+        "C": "本罪所謂之其他入款,包括違反法令而受罰之款項",
+        "D": "本罪之行為態樣,僅限於不應徵收而徵收之情形"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "依據全民健康保險法規定,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "全民健康保險之保險費、滯納金,並不優先於普通債權",
+        "B": "保險對象應自行負擔門診或急診費用之百分之二十,居家照護醫療費用之百分之五",
+        "C": "不經轉診,於地區醫院、區域醫院、醫學中心門診就醫者,應分別部分負擔百分之三十、百分之四十 及百分之五十",
+        "D": "保險對象應自行負擔之住院費用,如為急性病房,三十日以內,應自行負擔費用百分之十"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "A公司為非公開發行公司,下列有關A公司買回自己股份之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "除法律另有規定外, A公司不得將股份收買、收回或收為質物",
+        "B": "A公司依法持有自己發行之股份,該股份無表決權",
+        "C": "A 公司為轉讓股份於員工而買回之股份,應於三年內轉讓,屆期未轉讓者,視為公司未發行之股份, 應辦理變更章程",
+        "D": "A公司發行特別股得收回之,但不得損害該特別股股東依章程應有之權利"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "甲為某縣政府工務局人員,負責修繕某道路坑洞,由於延誤工程導致機車騎士乙摔倒受傷,關於廢弛職 務釀成災害罪,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "甲若過失不進行修補時,仍可成立本罪",
+        "B": "本案僅乙一人受傷,尚不構成災害",
+        "C": "本罪之成立無須確認是否存在因果關係",
+        "D": "本罪之災害限於天然災害"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "關於懸賞廣告,下列敘述何項正確?",
+      "section": null,
+      "options": {
+        "A": "數人先後分別完成懸賞廣告所指定之行為時,由最先通知者取得報酬請求權",
+        "B": "數人同時分別完成懸賞廣告所指定之行為時,由最先通知者取得報酬請求權",
+        "C": "不知有廣告而完成廣告所定行為之人,不得取得報酬請求權",
+        "D": "只要廣告人善意給付報酬於最先通知之人,其給付義務即消滅"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "甲於乙之A土地上設定地上權並營造B屋;丙於丁之C地上設定農育權並設育苗室。下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "甲之地上權與其B屋,不得分離而為讓與",
+        "B": "甲得將B屋連同A地出租他人",
+        "C": "丙之農育權與育苗室不得分離而為讓與",
+        "D": "原則上,丙得將育苗室連同C地出租他人"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關憲法第16條訴願及訴訟權保障規定,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "律師懲戒覆審委員會之決議即屬法院之終審裁判,並非行政處分或訴願決定,不得再行提起行政爭訟",
+        "B": "羈押法不許受羈押被告向法院提起訴訟請求救濟,與憲法保障人民訴訟權之意旨有違",
+        "C": "審級制度不在憲法第16條訴訟權之保障範圍",
+        "D": "關於寄存送達於依法送達完畢時,即生送達效力,侵害訴願及訴訟權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "依司法院釋字第 419 號解釋,以「此項兼任如遇總統缺位或不能視事時,將影響憲法所規定繼任或代行 職權之設計,與憲法設置副總統及行政院院長職位分由不同之人擔任之本旨未盡相符。」之理由,認為 副總統不得兼任行政院院長。此係運用下列何種解釋方法所得出之結果?",
+      "section": null,
+      "options": {
+        "A": "文義解釋法",
+        "B": "目的解釋法",
+        "C": "歷史解釋法",
+        "D": "體系解釋法"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "地方自治團體之民選首長或議員(代表)任期,依現行地方制度法規定,下列何項正確?",
+      "section": null,
+      "options": {
+        "A": "三年",
+        "B": "四年",
+        "C": "五年",
+        "D": "六年"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "關於憲法敘述,下列何項錯誤?",
+      "section": null,
+      "options": {
+        "A": "憲法為人民權利之保障書",
+        "B": "憲法為首要之法源",
+        "C": "憲法疑義由立法院解釋",
+        "D": "憲法效力高於法律"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "兩岸兩會(財團法人海峽交流基金會、海峽兩岸關係協會)為建立有效聯繫管道,雙方同意於 1993 年 4 月在新加坡舉行海基會董事長辜振甫與海協會會長汪道涵會談(辜汪會談),並簽署四項協議。下列那 一項協議不屬於四項協議之一?",
+      "section": null,
+      "options": {
+        "A": "兩岸公證書使用查證協議",
+        "B": "兩岸掛號函件查詢、補償事宜協議",
+        "C": "兩岸人民親屬關係查證協議",
+        "D": "兩岸聯繫與會談制度協議"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "李登輝總統在民國88年接受德國媒體專訪,主張在以下那一個事件之後,臺海兩岸已經是國家與國家或 至少是特殊國與國的關係?",
+      "section": null,
+      "options": {
+        "A": "民國80年修憲之後",
+        "B": "民國85年我國舉行首次直接民選總統之後",
+        "C": "民國76年政府開放赴大陸探親之後",
+        "D": "民國82年第一次「辜汪會談」之後"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "我國政府在那一位總統時期,根據「試辦金門馬祖與大陸地區通航實施辦法」,開始實施所謂的「小三 通」?",
+      "section": null,
+      "options": {
+        "A": "蔣經國總統",
+        "B": "李登輝總統",
+        "C": "陳水扁總統",
+        "D": "馬英九總統"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "下列何項主張是蔡英文總統的大陸政策?",
+      "section": null,
+      "options": {
+        "A": "與北京合作共同防衛南海主權",
+        "B": "新情勢、新問卷、新模式的「三新主張」",
+        "C": "無條件接受臺海兩岸在馬英九總統時期所簽的23項協議",
+        "D": "接受「92共識」"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "下列何項非美國對臺海兩岸關係之基本立場?",
+      "section": null,
+      "options": {
+        "A": "以臺灣關係法及美中三公報為政策依據",
+        "B": "主張一個中國原則",
+        "C": "反對臺海兩岸任何一方片面改變現狀",
+        "D": "和平解決臺灣問題"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "臺海兩岸為遣返違反有關規定進入對方地區人民、刑事犯及嫌疑犯所簽訂的是何項協議?",
+      "section": null,
+      "options": {
+        "A": "金門協議",
+        "B": "辜汪會談協議",
+        "C": "香港協議",
+        "D": "澳門協議"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "李登輝總統於民國85年提出「戒急用忍政策」,明確界定那三種投資應對中國大陸戒急用忍?",
+      "section": null,
+      "options": {
+        "A": "高科技、一千萬美元以上、金融業",
+        "B": "高科技、五千萬美元以上、基礎建設",
+        "C": "高科技、金融業、基礎建設",
+        "D": "金融業、基礎建設、五百萬美元以上"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "2016 年5月23 日世界衛生大會邀請函內文附加聯合國2758 號決議文,中華人民共和國政府依據此決議 取得原由中華民國政府擁有之聯合國「中國席位代表權」。該決議案通過之年份為:",
+      "section": null,
+      "options": {
+        "A": "1969年第24屆聯合國大會會議",
+        "B": "1970年第25屆聯合國大會會議",
+        "C": "1971年第26屆聯合國大會會議",
+        "D": "1972年第27屆聯合國大會會議"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "兩岸關係政治論述一直是兩岸間重大歧異點與爭論議題,而大陸方面有關兩岸關係政治論述,也代表中 共立場與政策。長期以來,大陸方面有關兩岸關係政治論述,有所謂「三段論」、「四段論」等立場或 說法,其中足以代表中共官方正式說詞及立場者,便是2005年3月14日中共第10屆「人大」第三次會 議通過並公布實施之「反分裂國家法」,有關兩岸政治關係論述為?",
+      "section": null,
+      "options": {
+        "A": "世界上只有一個中國,臺灣是中國的一部分,中華人民共和國政府是代表全中國的唯一合法政府",
+        "B": "世界上只有一個中國,大陸和臺灣同屬一個中國,儘管兩岸尚未統一,大陸和臺灣同屬一個中國的事 實並未改變",
+        "C": "世界上只有一個中國,大陸和臺灣同屬一個中國,中國的主權和領土完整不容分割",
+        "D": "世界上只有一個中國,臺灣是中國的一部分,目前尚未統一,中國的主權和領土是不可分割"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "依據臺灣地區與大陸地區人民關係條例第57條規定,父母一方為臺灣地區人民,一方為大陸地區人民, 其與子女間之法律關係為何?",
+      "section": null,
+      "options": {
+        "A": "依父親設籍地區之規定",
+        "B": "依母親設籍地區之規定",
+        "C": "依子女設籍地區之規定",
+        "D": "依父母親設籍地區之規定"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Little Johnny had to redo his homework because his handwriting was so that his teacher could hardly tell what he wrote on the homework he turned in yesterday.",
+      "section": null,
+      "options": {
+        "A": "alternative",
+        "B": "fraudulent",
+        "C": "illegible",
+        "D": "malicious"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Helen’s students didn’t understand the message she was trying to when she wrote down a big question mark on the white board.",
+      "section": null,
+      "options": {
+        "A": "convey",
+        "B": "distribute",
+        "C": "proceed",
+        "D": "reform"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "After explaining the basic diving skills to her students, the swimming instructor was ready to herself how to dive into the water safely.",
+      "section": null,
+      "options": {
+        "A": "demonstrate",
+        "B": "interfere",
+        "C": "negotiate",
+        "D": "overcome"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "This company sells its market share at an extremely high price, maintaining formidable .",
+      "section": null,
+      "options": {
+        "A": "protests",
+        "B": "pricks",
+        "C": "profits",
+        "D": "pitfalls"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Students who rent an off-campus apartment in Taiwan often have to pay their bill to the landlord along with their monthly rent.",
+      "section": null,
+      "options": {
+        "A": "utility",
+        "B": "tuition",
+        "C": "credit card",
+        "D": "insurance"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "The social media website Twitter has announced major to its service. It no longer counts website addresses as characters in tweets, so users have more space to share their thoughts.",
+      "section": null,
+      "options": {
+        "A": "counterparts",
+        "B": "disturbances",
+        "C": "statues",
+        "D": "updates"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Many buildings constructed in the last few years have incorporated energy conservation to reduce energy consumption.",
+      "section": null,
+      "options": {
+        "A": "manuals",
+        "B": "measures",
+        "C": "missions",
+        "D": "momentums"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Leisure time helps people stay healthy and work more efficiently and ______.",
+      "section": null,
+      "options": {
+        "A": "commercially",
+        "B": "destructively",
+        "C": "productively",
+        "D": "restlessly"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Christine has been unreasonable giving everyone in the family a hard time ever since she was fired by her boss last week.",
+      "section": null,
+      "options": {
+        "A": "considerately",
+        "B": "horizontally",
+        "C": "permissibly",
+        "D": "ridiculously"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "In the past, people owned fewer things, used things longer, and much of their waste decomposed. But today, trash is made from materials that will still be when we no longer are.",
+      "section": null,
+      "options": {
+        "A": "diverse",
+        "B": "fragile",
+        "C": "intact",
+        "D": "obscure"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "with regard to",
+        "B": "in spite of",
+        "C": "except for",
+        "D": "along with"
+      },
+      "answer": "D",
+      "passage": "請依下文回答第41至45題:\nBy far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "accustomed to",
+        "B": "associated with",
+        "C": "consistent with",
+        "D": "entitled to"
+      },
+      "answer": "B",
+      "passage": "請依下文回答第41至45題:\nBy far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "escort",
+        "B": "aegis",
+        "C": "tremor",
+        "D": "sway"
+      },
+      "answer": "B",
+      "passage": "請依下文回答第41至45題:\nBy far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "offshoot",
+        "B": "initiative",
+        "C": "catastrophe",
+        "D": "fraud"
+      },
+      "answer": "A",
+      "passage": "請依下文回答第41至45題:\nBy far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "secular",
+        "B": "financial",
+        "C": "spiritual",
+        "D": "mercantile"
+      },
+      "answer": "A",
+      "passage": "請依下文回答第41至45題:\nBy far some of the most prestigious centers of European learning today stand where they were founded eight hundred years ago: Oxford and Cambridge in England; the University of Paris in France; the University of Bologna in Italy. European universities developed in the late twelfth and early thirteenth centuries 41 the emergence of city life. Earlier medieval schools were most often 42 the monasteries, which were perforce situated in rural areas. As cities grew in importance, schools also developed at urban monasteries or under the 43 of bishops whose cathedrals were in the towns. The cathedral school was a direct 44 of the increasing importance of towns and the increasing power of bishops, the spiritual leaders of town life. In Italy, town life had been relatively strong throughout the early Middle Ages, so there was a tradition of schools which were controlled by the common people. The center of medical studies in Salerno and the law faculty of Bologna had been in 45 hands since the tenth century.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "What is the purpose of this passage?",
+      "section": null,
+      "options": {
+        "A": "To explain the increasing rate of volcanic activities.",
+        "B": "To explain some facts about volcanoes.",
+        "C": "To describe the causes of volcanic eruptions.",
+        "D": "To analyze the threats of volcanic eruptions."
+      },
+      "answer": "B",
+      "passage": "請依下文回答第46至50題:\nThe word volcano can describe anything from a single opening in the earth a few meters across to a field of connected openings that might be 20 kilometers or more in width. Most researchers consider any set of openings that are connected to a large central core as a single “volcano”. Otherwise, they would have to deal with an endless number of names for each individual opening. Italy’s Stromboli has been almost constantly erupting for over 2400 years, but most eruptions do not last that long. Currently, there are about 15 volcanoes worldwide that have been actively erupting for the last 30 years. On the other end of the scale, about ten percent of volcanoes have eruptions which last for just a single day. The majority of the eruptions lasted three months or less. This means the average time from beginning to end is usually about seven weeks. From the number of volcanic eruptions detected over the past few hundred years, it would appear that they are becoming much more frequent over time. However, when researchers tracked the growth in reported eruptions along with the growth of the human population, they realized that volcanic activity wasn’t actually becoming more frequent. Instead, as people spread over more areas of the earth’s surface, the monitoring and reporting of volcanic activity inevitably increased with the expanding population. The highest volcano when measured from sea level to its top is Ojos del Salado in the Andes mountains in South America. It is 6,887 meters above sea level. However, when measured from its base on the surface of the earth to the top, a different set of volcanoes become the highest ones. Some volcanoes in the Mauna Loa zone near Hawaii rise as much as 19 kilometers above their bases at the bottom of the Pacific Ocean. The first thing to do when caught near a volcanic eruption is to avoid a potentially disastrous situation, listen to the radio and travel only as instructed by the local police or other authorities. Stay away from lava, mud and flying rocks. Avoid river areas and low-lying regions. Before you leave the house, put on a long-sleeved shirt, long pants, and eyeglasses or sunglasses to protect your eyes. Wear an emergency mask or hold a wet cloth over your face if you do not have one. Since ash can damage engine parts, refrain from driving if possible. If you decide not to leave the house, close all windows and doors to prevent ash from getting inside.",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Which of the following statements is true about volcanic activities in Paragraph Two?",
+      "section": null,
+      "options": {
+        "A": "They have been on the increase over the years.",
+        "B": "They are no more frequent than they used to be.",
+        "C": "They increase as the human population becomes larger.",
+        "D": "They are more frequently observed as a result of increased population."
+      },
+      "answer": "C",
+      "passage": "請依下文回答第46至50題:\nThe word volcano can describe anything from a single opening in the earth a few meters across to a field of connected openings that might be 20 kilometers or more in width. Most researchers consider any set of openings that are connected to a large central core as a single “volcano”. Otherwise, they would have to deal with an endless number of names for each individual opening. Italy’s Stromboli has been almost constantly erupting for over 2400 years, but most eruptions do not last that long. Currently, there are about 15 volcanoes worldwide that have been actively erupting for the last 30 years. On the other end of the scale, about ten percent of volcanoes have eruptions which last for just a single day. The majority of the eruptions lasted three months or less. This means the average time from beginning to end is usually about seven weeks. From the number of volcanic eruptions detected over the past few hundred years, it would appear that they are becoming much more frequent over time. However, when researchers tracked the growth in reported eruptions along with the growth of the human population, they realized that volcanic activity wasn’t actually becoming more frequent. Instead, as people spread over more areas of the earth’s surface, the monitoring and reporting of volcanic activity inevitably increased with the expanding population. The highest volcano when measured from sea level to its top is Ojos del Salado in the Andes mountains in South America. It is 6,887 meters above sea level. However, when measured from its base on the surface of the earth to the top, a different set of volcanoes become the highest ones. Some volcanoes in the Mauna Loa zone near Hawaii rise as much as 19 kilometers above their bases at the bottom of the Pacific Ocean. The first thing to do when caught near a volcanic eruption is to avoid a potentially disastrous situation, listen to the radio and travel only as instructed by the local police or other authorities. Stay away from lava, mud and flying rocks. Avoid river areas and low-lying regions. Before you leave the house, put on a long-sleeved shirt, long pants, and eyeglasses or sunglasses to protect your eyes. Wear an emergency mask or hold a wet cloth over your face if you do not have one. Since ash can damage engine parts, refrain from driving if possible. If you decide not to leave the house, close all windows and doors to prevent ash from getting inside.",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "In Paragraph Four, what does one refer to?",
+      "section": null,
+      "options": {
+        "A": "A wet cloth.",
+        "B": "A volcanic eruption.",
+        "C": "An emergency mask.",
+        "D": "A long-sleeved shirt."
+      },
+      "answer": "D",
+      "passage": "請依下文回答第46至50題:\nThe word volcano can describe anything from a single opening in the earth a few meters across to a field of connected openings that might be 20 kilometers or more in width. Most researchers consider any set of openings that are connected to a large central core as a single “volcano”. Otherwise, they would have to deal with an endless number of names for each individual opening. Italy’s Stromboli has been almost constantly erupting for over 2400 years, but most eruptions do not last that long. Currently, there are about 15 volcanoes worldwide that have been actively erupting for the last 30 years. On the other end of the scale, about ten percent of volcanoes have eruptions which last for just a single day. The majority of the eruptions lasted three months or less. This means the average time from beginning to end is usually about seven weeks. From the number of volcanic eruptions detected over the past few hundred years, it would appear that they are becoming much more frequent over time. However, when researchers tracked the growth in reported eruptions along with the growth of the human population, they realized that volcanic activity wasn’t actually becoming more frequent. Instead, as people spread over more areas of the earth’s surface, the monitoring and reporting of volcanic activity inevitably increased with the expanding population. The highest volcano when measured from sea level to its top is Ojos del Salado in the Andes mountains in South America. It is 6,887 meters above sea level. However, when measured from its base on the surface of the earth to the top, a different set of volcanoes become the highest ones. Some volcanoes in the Mauna Loa zone near Hawaii rise as much as 19 kilometers above their bases at the bottom of the Pacific Ocean. The first thing to do when caught near a volcanic eruption is to avoid a potentially disastrous situation, listen to the radio and travel only as instructed by the local police or other authorities. Stay away from lava, mud and flying rocks. Avoid river areas and low-lying regions. Before you leave the house, put on a long-sleeved shirt, long pants, and eyeglasses or sunglasses to protect your eyes. Wear an emergency mask or hold a wet cloth over your face if you do not have one. Since ash can damage engine parts, refrain from driving if possible. If you decide not to leave the house, close all windows and doors to prevent ash from getting inside.",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "According to the passage, what is the right thing to do when being caught near a volcanic eruption?",
+      "section": null,
+      "options": {
+        "A": "Drive to low-lying regions right away.",
+        "B": "Walk along river areas as soon as possible.",
+        "C": "Wear short-sleeved shirts before leaving the house.",
+        "D": "Close all the windows and doors when staying indoors."
+      },
+      "answer": "B",
+      "passage": "請依下文回答第46至50題:\nThe word volcano can describe anything from a single opening in the earth a few meters across to a field of connected openings that might be 20 kilometers or more in width. Most researchers consider any set of openings that are connected to a large central core as a single “volcano”. Otherwise, they would have to deal with an endless number of names for each individual opening. Italy’s Stromboli has been almost constantly erupting for over 2400 years, but most eruptions do not last that long. Currently, there are about 15 volcanoes worldwide that have been actively erupting for the last 30 years. On the other end of the scale, about ten percent of volcanoes have eruptions which last for just a single day. The majority of the eruptions lasted three months or less. This means the average time from beginning to end is usually about seven weeks. From the number of volcanic eruptions detected over the past few hundred years, it would appear that they are becoming much more frequent over time. However, when researchers tracked the growth in reported eruptions along with the growth of the human population, they realized that volcanic activity wasn’t actually becoming more frequent. Instead, as people spread over more areas of the earth’s surface, the monitoring and reporting of volcanic activity inevitably increased with the expanding population. The highest volcano when measured from sea level to its top is Ojos del Salado in the Andes mountains in South America. It is 6,887 meters above sea level. However, when measured from its base on the surface of the earth to the top, a different set of volcanoes become the highest ones. Some volcanoes in the Mauna Loa zone near Hawaii rise as much as 19 kilometers above their bases at the bottom of the Pacific Ocean. The first thing to do when caught near a volcanic eruption is to avoid a potentially disastrous situation, listen to the radio and travel only as instructed by the local police or other authorities. Stay away from lava, mud and flying rocks. Avoid river areas and low-lying regions. Before you leave the house, put on a long-sleeved shirt, long pants, and eyeglasses or sunglasses to protect your eyes. Wear an emergency mask or hold a wet cloth over your face if you do not have one. Since ash can damage engine parts, refrain from driving if possible. If you decide not to leave the house, close all windows and doors to prevent ash from getting inside.",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "According to the passage, which of the following is true?",
+      "section": null,
+      "options": {
+        "A": "Volcanic eruptions can last as long as thirty years.",
+        "B": "Most volcanic eruptions last no longer than three months.",
+        "C": "Ojos del Salado in South America is the highest volcano on the surface of the earth.",
+        "D": "It has been proved by scientists that volcanoes have become more active than ever."
+      },
+      "answer": "B",
+      "passage": "請依下文回答第46至50題:\nThe word volcano can describe anything from a single opening in the earth a few meters across to a field of connected openings that might be 20 kilometers or more in width. Most researchers consider any set of openings that are connected to a large central core as a single “volcano”. Otherwise, they would have to deal with an endless number of names for each individual opening. Italy’s Stromboli has been almost constantly erupting for over 2400 years, but most eruptions do not last that long. Currently, there are about 15 volcanoes worldwide that have been actively erupting for the last 30 years. On the other end of the scale, about ten percent of volcanoes have eruptions which last for just a single day. The majority of the eruptions lasted three months or less. This means the average time from beginning to end is usually about seven weeks. From the number of volcanic eruptions detected over the past few hundred years, it would appear that they are becoming much more frequent over time. However, when researchers tracked the growth in reported eruptions along with the growth of the human population, they realized that volcanic activity wasn’t actually becoming more frequent. Instead, as people spread over more areas of the earth’s surface, the monitoring and reporting of volcanic activity inevitably increased with the expanding population. The highest volcano when measured from sea level to its top is Ojos del Salado in the Andes mountains in South America. It is 6,887 meters above sea level. However, when measured from its base on the surface of the earth to the top, a different set of volcanoes become the highest ones. Some volcanoes in the Mauna Loa zone near Hawaii rise as much as 19 kilometers above their bases at the bottom of the Pacific Ocean. The first thing to do when caught near a volcanic eruption is to avoid a potentially disastrous situation, listen to the radio and travel only as instructed by the local police or other authorities. Stay away from lava, mud and flying rocks. Avoid river areas and low-lying regions. Before you leave the house, put on a long-sleeved shirt, long pants, and eyeglasses or sunglasses to protect your eyes. Wear an emergency mask or hold a wet cloth over your face if you do not have one. Since ash can damage engine parts, refrain from driving if possible. If you decide not to leave the house, close all windows and doors to prevent ash from getting inside.",
+      "passage_question_range": "46-50"
+    }
+  ],
+  "year": 106,
+  "category": "公共安全學系社安組學系情報組",
+  "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+  "source_pdf": "考古題庫\\公共安全學系社安組學系情報組\\106年\\綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

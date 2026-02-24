@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-移民特考題庫 JSON 結構審計腳本
-掃描 考古題庫/移民特考/ 下所有 試題.json，進行完整的結構與 schema 檢查
+國境警察學系移民組題庫 JSON 結構審計腳本
+掃描 考古題庫/國境警察學系移民組/ 下所有 試題.json，進行完整的結構與 schema 檢查
 """
 
 import json
@@ -12,8 +12,8 @@ from collections import defaultdict, Counter
 from datetime import datetime
 
 BASE_DIR = "C:/Users/User/Desktop/考古題下載/考古題庫"
-TARGET_DIR = os.path.join(BASE_DIR, "移民特考")
-REF_DIR = os.path.join(BASE_DIR, "行政警察")
+TARGET_DIR = os.path.join(BASE_DIR, "國境警察學系移民組")
+REF_DIR = os.path.join(BASE_DIR, "行政警察學系")
 
 # ============================================================
 # 問題收集器
@@ -33,12 +33,12 @@ def add_issue(severity, category, file_path, detail):
     stats[f"{severity}_{category}"] += 1
 
 # ============================================================
-# 1. 先分析行政警察的 JSON 作為參考格式
+# 1. 先分析行政警察學系的 JSON 作為參考格式
 # ============================================================
 def analyze_reference_format():
-    """分析行政警察 JSON 了解標準格式"""
+    """分析行政警察學系 JSON 了解標準格式"""
     ref_files = glob.glob(os.path.join(REF_DIR, "**", "試題.json"), recursive=True)
-    print(f"=== 參考格式分析：行政警察 ({len(ref_files)} 個 JSON) ===\n")
+    print(f"=== 參考格式分析：行政警察學系 ({len(ref_files)} 個 JSON) ===\n")
 
     ref_top_keys = Counter()
     ref_metadata_keys = Counter()
@@ -83,9 +83,9 @@ def analyze_reference_format():
 # 2. 主要審計邏輯
 # ============================================================
 def audit_all_files():
-    """掃描所有移民特考 JSON 檔案"""
+    """掃描所有國境警察學系移民組 JSON 檔案"""
     files = sorted(glob.glob(os.path.join(TARGET_DIR, "**", "試題.json"), recursive=True))
-    print(f"=== 開始審計：移民特考 ({len(files)} 個 JSON) ===\n")
+    print(f"=== 開始審計：國境警察學系移民組 ({len(files)} 個 JSON) ===\n")
 
     total_questions = 0
     total_choice = 0
@@ -362,7 +362,7 @@ def audit_all_files():
     # 統計彙整
     # ============================================================
     print(f"\n{'='*80}")
-    print(f"  移民特考題庫 JSON 結構審計報告")
+    print(f"  國境警察學系移民組題庫 JSON 結構審計報告")
     print(f"  審計時間: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'='*80}\n")
 
@@ -517,7 +517,7 @@ def audit_all_files():
 # ============================================================
 if __name__ == "__main__":
     print("=" * 80)
-    print("  移民特考題庫 JSON 結構審計工具")
+    print("  國境警察學系移民組題庫 JSON 結構審計工具")
     print("  目標路徑:", TARGET_DIR)
     print("  參考路徑:", REF_DIR)
     print("=" * 80)

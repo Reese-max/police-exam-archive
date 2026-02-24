@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-移民特考題庫綜合修復腳本
+國境警察學系移民組題庫綜合修復腳本
 ========================
-修復「考古題庫/移民特考/」下所有 試題.json 的已知問題。
+修復「考古題庫/國境警察學系移民組/」下所有 試題.json 的已知問題。
 
 用法：
     python fix_immigration_issues.py                    # dry-run 模式（僅列出修改，不寫入）
@@ -36,7 +36,7 @@ from typing import Any
 # ============================================================
 
 BASE_DIR = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)), "考古題庫", "移民特考"
+    os.path.dirname(os.path.abspath(__file__)), "考古題庫", "國境警察學系移民組"
 )
 
 EXAM_NAME = "移民行政人員特種考試"
@@ -475,7 +475,7 @@ def fix_metadata(data: dict, filepath: str, report: FixReport) -> dict:
 
     # 補 exam_name
     # 注意：已有 exam_name 為「一般警察人員考試」的是共用科目（國文、法學知識），
-    # 但它們放在移民特考目錄下，所以統一設為移民特考
+    # 但它們放在國境警察學系移民組目錄下，所以統一設為國境警察學系移民組
     if not meta.get("exam_name") or meta.get("exam_name") == "一般警察人員考試":
         old_name = meta.get("exam_name", "")
         meta["exam_name"] = EXAM_NAME
@@ -630,7 +630,7 @@ def fix_short_stems(data: dict, filepath: str, report: FixReport) -> dict:
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="移民特考題庫綜合修復腳本",
+        description="國境警察學系移民組題庫綜合修復腳本",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 範例：
@@ -686,7 +686,7 @@ def main():
 
     mode_label = "套用模式" if args.apply else "DRY-RUN 模式（不會寫入任何變更）"
     print(f"\n{'=' * 70}")
-    print(f"移民特考題庫綜合修復腳本")
+    print(f"國境警察學系移民組題庫綜合修復腳本")
     print(f"模式: {mode_label}")
     print(f"基礎目錄: {BASE_DIR}")
     print(f"{'=' * 70}")

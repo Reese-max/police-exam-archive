@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "112",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "情報學",
+    "exam_time": "2 小時",
+    "code": "50470"
+  },
+  "notes": [
+    "※注意：①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "請以美國國家情報總監辦公室(Office of the Director of National\nIntelligence, ODNI)所屬五個工作中心,說明該辦公室主要職能為何?\n(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "請以《孫子兵法》謀攻篇:「故上兵伐謀,其次伐交,其次伐兵,其下攻\n城。」舉例說明如何將上兵伐謀應用在情報戰經驗上?(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "全球進入 COVID-19 後疫情階段以來,恐怖主義勢力正透過網路進行理\n念宣傳與募集人力資源,甚至從事人體器官、古文物等跨境組織型犯罪。\n請說明當前涉及恐怖主義的跨境組織型犯罪,對情報工作之衝擊為何?\n(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "請說明中共中央國家安全委員會主要職能為何?(25 分)",
+      "section": null
+    }
+  ],
+  "year": 112,
+  "category": "公共安全學系社安組",
+  "subject": "情報學",
+  "source_pdf": "考古題庫\\公共安全學系社安組\\112年\\情報學\\試題.pdf",
+  "file_type": "試題"
+}

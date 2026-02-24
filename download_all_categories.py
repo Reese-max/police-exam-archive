@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 三等警察特考（內軌）全類科考古題下載器
-支援 14 個類科組別（含交通警察交通組/電訊組），年份範圍 105-114 年
+支援 14 個類科組別（含交通學系交通組/電訊組），年份範圍 105-114 年
 基於 download_資管系.py 通用化改寫，複用 考古題下載.py 的 identify_category() 邏輯
 """
 
@@ -39,43 +39,43 @@ EXAM_KEYWORDS = [
     "警察人員考試",
     "警察人員特考",
     "警察鐵路人員考試",
-    "司法人員考試",       # 犯罪防治矯治組（監獄官）
+    "司法人員考試",       # 犯罪防治學系矯治組（監獄官）
     "司法人員特考",
-    "國家安全情報人員考試",  # 國安局特考（公共情報）
+    "國家安全情報人員考試",  # 國安局特考（公共安全學系社安組學系情報組）
     "國家安全情報人員特考",
 ]
 
 # ===== 15 個類科組別定義 =====
 CATEGORIES = {
-    '行政警察': {
+    '行政警察學系': {
         'code': 501,
-        'short': '行政警察',
-        'full': '警察人員考試三等考試_行政警察人員',
+        'short': '行政警察學系',
+        'full': '警察人員考試三等考試_行政警察學系人員',
         'key_subjects': ['警察學與警察勤務'],
         'description': '警察學與警察勤務、警察政策與犯罪預防',
     },
-    '外事警察': {
+    '外事警察學系': {
         'code': 502,
-        'short': '外事警察',
-        'full': '警察人員考試三等考試_外事警察人員',
-        'key_subjects': ['外事警察學'],
-        'description': '外事警察學、國際公法',
+        'short': '外事警察學系',
+        'full': '警察人員考試三等考試_外事警察學系人員',
+        'key_subjects': ['外事警察學系學'],
+        'description': '外事警察學系學、國際公法',
     },
-    '刑事警察': {
+    '刑事警察學系': {
         'code': 503,
-        'short': '刑事警察',
-        'full': '警察人員考試三等考試_刑事警察人員',
+        'short': '刑事警察學系',
+        'full': '警察人員考試三等考試_刑事警察學系人員',
         'key_subjects': ['犯罪偵查學', '刑案現場處理'],
         'description': '犯罪偵查學、刑案現場處理',
     },
-    '公共安全': {
+    '公共安全學系社安組': {
         'code': 504,
-        'short': '公共安全',
-        'full': '警察人員考試三等考試_公共安全人員',
+        'short': '公共安全學系社安組',
+        'full': '警察人員考試三等考試_公共安全學系社安組人員',
         'key_subjects': ['情報學', '國家安全情報法制'],
         'description': '情報學、國家安全情報法制',
     },
-    '犯罪防治預防組': {
+    '犯罪防治學系預防組': {
         'code': 505,
         'short': '犯防預防',
         'full': '警察人員考試三等考試_犯罪防治人員預防組',
@@ -83,7 +83,7 @@ CATEGORIES = {
         'description': '諮商輔導與婦幼保護、犯罪分析',
         'exam_type': 'police',
     },
-    '犯罪防治矯治組': {
+    '犯罪防治學系矯治組': {
         'code': '505b',
         'short': '犯防矯治',
         'full': '司法人員考試三等考試_監獄官',
@@ -91,72 +91,72 @@ CATEGORIES = {
         'description': '監獄學、監獄行刑法與羈押法、刑事政策、犯罪學與再犯預測',
         'exam_type': 'judicial',
     },
-    '消防警察': {
+    '消防學系': {
         'code': 506,
-        'short': '消防警察',
-        'full': '警察人員考試三等考試_消防警察人員',
+        'short': '消防學系',
+        'full': '警察人員考試三等考試_消防學系人員',
         'key_subjects': ['火災學與消防化學', '消防安全設備'],
         'description': '火災學與消防化學、消防安全設備',
     },
-    '交通警察交通組': {
+    '交通學系交通組': {
         'code': 507,
         'short': '交通交通',
         'full': '警察人員考試三等考試_交通警察人員交通組',
         'key_subjects': ['交通警察學', '交通統計與分析'],
         'description': '交通警察學、交通統計與分析',
     },
-    '交通警察電訊組': {
+    '交通學系電訊組': {
         'code': '507b',
         'short': '交通電訊',
         'full': '警察人員考試三等考試_交通警察人員電訊組',
         'key_subjects': ['通訊犯罪偵查', '通訊系統', '電路學'],
         'description': '通訊犯罪偵查、通訊系統、電路學',
     },
-    '資訊管理': {
+    '資訊管理學系': {
         'code': 508,
-        'short': '資訊管理',
-        'full': '警察人員考試三等考試_警察資訊管理人員',
+        'short': '資訊管理學系',
+        'full': '警察人員考試三等考試_警察資訊管理學系人員',
         'key_subjects': ['電腦犯罪偵查', '數位鑑識執法'],
         'description': '電腦犯罪偵查、數位鑑識執法',
     },
-    '鑑識科學': {
+    '鑑識科學學系': {
         'code': 509,
-        'short': '鑑識科學',
+        'short': '鑑識科學學系',
         'full': '警察人員考試三等考試_刑事鑑識人員',
         'key_subjects': ['物理鑑識', '刑事化學', '刑事生物'],
         'description': '物理鑑識、刑事化學、刑事生物',
     },
-    '國境警察': {
+    '國境警察學系境管組': {
         'code': 510,
-        'short': '國境警察',
-        'full': '警察人員考試三等考試_國境警察人員',
+        'short': '國境警察學系境管組',
+        'full': '警察人員考試三等考試_國境警察學系境管組人員',
         'key_subjects': ['移民情勢與政策分析', '國境執法'],
         'description': '移民情勢與政策分析、國境執法',
     },
-    '水上警察': {
+    '水上警察學系': {
         'code': 511,
-        'short': '水上警察',
-        'full': '警察人員考試三等考試_水上警察人員',
-        'key_subjects': ['水上警察學', '海上犯罪偵查法學'],
-        'description': '水上警察學、海上犯罪偵查法學',
+        'short': '水上警察學系',
+        'full': '警察人員考試三等考試_水上警察學系人員',
+        'key_subjects': ['水上警察學系學', '海上犯罪偵查法學'],
+        'description': '水上警察學系學、海上犯罪偵查法學',
     },
-    '警察法制': {
+    '法律學系': {
         'code': 512,
-        'short': '警察法制',
-        'full': '警察人員考試三等考試_警察法制人員',
-        'key_subjects': ['警察法制作業'],
-        'description': '警察法制作業、行政法與警察行政違規調查裁處作業',
+        'short': '法律學系',
+        'full': '警察人員考試三等考試_法律學系人員',
+        'key_subjects': ['法律學系作業'],
+        'description': '法律學系作業、行政法與警察行政違規調查裁處作業',
     },
-    '行政管理': {
+    '行政管理學系': {
         'code': 513,
-        'short': '行政管理',
-        'full': '警察人員考試三等考試_行政管理人員',
+        'short': '行政管理學系',
+        'full': '警察人員考試三等考試_行政管理學系人員',
         'key_subjects': ['警察人事行政與法制', '警察組織與事務管理'],
         'description': '警察人事行政與法制、警察組織與事務管理',
     },
-    '公共情報': {
+    '公共安全學系社安組學系情報組': {
         'code': 'nsi',
-        'short': '公共情報',
+        'short': '公共安全學系社安組學系情報組',
         'full': '國家安全情報人員考試三等考試_情報組',
         'key_subjects': ['情報學', '國家安全'],
         'description': '國安局特考情報組：情報學、國家安全、國家安全相關法規',
@@ -247,11 +247,11 @@ def identify_category_from_subjects(subjects_text):
     複用 考古題下載.py 的 identify_category() 邏輯
     支援警察特考（內軌）+ 司法特考（監獄官/矯治組）
     """
-    # === 司法特考：犯罪防治矯治組（監獄官）===
+    # === 司法特考：犯罪防治學系矯治組（監獄官）===
     if '監獄學' in subjects_text and '監獄行刑法' in subjects_text:
         # 排除四等監所管理員（概要科目）
         if '監獄學概要' not in subjects_text:
-            return '犯罪防治矯治組'
+            return '犯罪防治學系矯治組'
 
     # === 國安局特考：情報組 ===
     # 特徵：「國家安全」（含傳統安全與非傳統安全）+ 「綜合法政知識與英文」
@@ -259,51 +259,51 @@ def identify_category_from_subjects(subjects_text):
     if ('綜合法政知識與英文' in subjects_text and
             '國家安全' in subjects_text and
             '情報學' in subjects_text):
-        return '公共情報'
+        return '公共安全學系社安組學系情報組'
     if ('國家安全相關法規' in subjects_text and
             '情報學' in subjects_text and
             '警察專業英文' not in subjects_text):
-        return '公共情報'
+        return '公共安全學系社安組學系情報組'
 
     # === 內軌判定：必須有這三種英文科目之一 ===
     is_internal = (
         '中華民國憲法與警察專業英文' in subjects_text or
-        '中華民國憲法與消防警察專業英文' in subjects_text or
-        '中華民國憲法與水上警察專業英文' in subjects_text
+        '中華民國憲法與消防學系專業英文' in subjects_text or
+        '中華民國憲法與水上警察學系專業英文' in subjects_text
     )
     if not is_internal:
         return None
 
     # 按特徵科目識別 14 個警察特考類科組別
     if '警察學與警察勤務' in subjects_text:
-        return '行政警察'
-    if '外事警察學' in subjects_text:
-        return '外事警察'
+        return '行政警察學系'
+    if '外事警察學系學' in subjects_text:
+        return '外事警察學系'
     if '犯罪偵查學' in subjects_text and '刑案現場處理' in subjects_text:
-        return '刑事警察'
+        return '刑事警察學系'
     if '情報學' in subjects_text and '國家安全情報法制' in subjects_text:
-        return '公共安全'
+        return '公共安全學系社安組'
     if '諮商輔導與婦幼保護' in subjects_text and '犯罪分析' in subjects_text:
-        return '犯罪防治預防組'
+        return '犯罪防治學系預防組'
     if '火災學與消防化學' in subjects_text and '消防安全設備' in subjects_text:
-        return '消防警察'
+        return '消防學系'
     # 交通警察：電訊組必須在交通組之前判斷（電訊組科目更獨特）
     if '通訊犯罪偵查' in subjects_text and '通訊系統' in subjects_text and '電路學' in subjects_text:
-        return '交通警察電訊組'
+        return '交通學系電訊組'
     if '交通警察學' in subjects_text and '交通統計與分析' in subjects_text:
-        return '交通警察交通組'
+        return '交通學系交通組'
     if '電腦犯罪偵查' in subjects_text and '數位鑑識執法' in subjects_text:
-        return '資訊管理'
+        return '資訊管理學系'
     if '物理鑑識' in subjects_text and '刑事化學' in subjects_text and '刑事生物' in subjects_text:
-        return '鑑識科學'
+        return '鑑識科學學系'
     if '移民情勢與政策分析' in subjects_text and '國境執法' in subjects_text:
-        return '國境警察'
-    if '水上警察學' in subjects_text and '海上犯罪偵查法學' in subjects_text:
-        return '水上警察'
-    if '警察法制作業' in subjects_text:
-        return '警察法制'
+        return '國境警察學系境管組'
+    if '水上警察學系學' in subjects_text and '海上犯罪偵查法學' in subjects_text:
+        return '水上警察學系'
+    if '法律學系作業' in subjects_text:
+        return '法律學系'
     if '警察人事行政與法制' in subjects_text and '警察組織與事務管理' in subjects_text:
-        return '行政管理'
+        return '行政管理學系'
 
     return None
 

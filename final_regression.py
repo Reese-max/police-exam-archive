@@ -9,7 +9,7 @@ import sys
 
 BASE = r"C:\Users\User\Desktop\考古題下載\考古題網站"
 CSS_PATH = os.path.join(BASE, "css", "style.css")
-SAMPLE_HTML = os.path.join(BASE, "行政警察", "行政警察考古題總覽.html")
+SAMPLE_HTML = os.path.join(BASE, "行政警察學系", "行政警察學系考古題總覽.html")
 
 results = []
 
@@ -57,7 +57,7 @@ def main():
     check("subject-header has aria-expanded='false'",
           'tabindex="0" aria-expanded="false"' in html)
     # Check export panel in another HTML that has it
-    export_html_path = os.path.join(BASE, "刑事警察", "刑事警察考古題總覽.html")
+    export_html_path = os.path.join(BASE, "刑事警察學系", "刑事警察學系考古題總覽.html")
     with open(export_html_path, "r", encoding="utf-8") as f:
         export_html = f.read()
     check("export panel has role='dialog'",

@@ -14,7 +14,7 @@ from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
 # ── 全域設定 ──────────────────────────────────────────
 BASE_URL = "http://localhost:8767"
-PAGE_PATH = "/資訊管理/資訊管理考古題總覽.html"
+PAGE_PATH = "/資訊管理學系/資訊管理學系考古題總覽.html"
 PAGE_URL = BASE_URL + PAGE_PATH
 SITE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "考古題網站")
 
@@ -108,7 +108,7 @@ def run_tests():
         # ────────────────────────────────────────────────
         page.goto(PAGE_URL, wait_until="networkidle", timeout=15000)
         title = page.title()
-        check(1, "載入頁面", "資訊管理" in title, f"標題={title}")
+        check(1, "載入頁面", "資訊管理學系" in title, f"標題={title}")
 
         # ────────────────────────────────────────────────
         # 步驟 2: 科目瀏覽切換

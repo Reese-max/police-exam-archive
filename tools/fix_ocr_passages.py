@@ -20,10 +20,10 @@ BASE_DIR = Path("/home/user/police-exam-archive/考古題庫")
 
 PASSAGE_FIXES = {
     # ----------------------------------------------------------
-    # 水上警察/114年/中華民國憲法與水上警察專業英文
+    # 水上警察學系/114年/中華民國憲法與水上警察學系專業英文
     # Passage about fishing boat rescue (Q56-Q60)
     # ----------------------------------------------------------
-    "水上警察/114年/中華民國憲法與水上警察專業英文/試題.json": [
+    "水上警察學系/114年/中華民國憲法與水上警察學系專業英文/試題.json": [
         ("suffer edasuddenmechanical", "suffered a sudden mechanical"),
         ("rapid lyin a short", "rapidly in a short"),
         ("extinguis her but", "extinguisher but"),
@@ -52,10 +52,10 @@ PASSAGE_FIXES = {
     ],
 
     # ----------------------------------------------------------
-    # 交通警察電訊組/111年/中華民國憲法與警察專業英文
+    # 交通學系電訊組/111年/中華民國憲法與警察專業英文
     # Passage about terrorism and organized crime (Q59-Q60)
     # ----------------------------------------------------------
-    "交通警察電訊組/111年/中華民國憲法與警察專業英文/試題.json": [
+    "交通學系電訊組/111年/中華民國憲法與警察專業英文/試題.json": [
         ("link ages", "linkages"),
         ("toideological", "to ideological"),
         ("operation ssoasto", "operations so as to"),
@@ -72,10 +72,10 @@ PASSAGE_FIXES = {
     ],
 
     # ----------------------------------------------------------
-    # 交通警察電訊組/111年/通訊系統
+    # 交通學系電訊組/111年/通訊系統
     # Technical terms
     # ----------------------------------------------------------
-    "交通警察電訊組/111年/通訊系統/試題.json": [
+    "交通學系電訊組/111年/通訊系統/試題.json": [
         ("impulseresponse", "impulse response"),
         ("cyclicredundancycheck", "cyclic redundancy check"),
         ("generatorpolynomial", "generator polynomial"),
@@ -85,8 +85,8 @@ PASSAGE_FIXES = {
 # Also check if any other 中華民國憲法與警察專業英文 files from the same year
 # share the same passage (they often do across categories for 111年)
 SHARED_PASSAGE_CATEGORIES_111 = [
-    "交通警察交通組", "公共安全", "刑事警察", "國境警察", "外事警察",
-    "犯罪防治預防組", "行政管理", "行政警察", "警察法制", "資訊管理", "鑑識科學",
+    "交通學系交通組", "公共安全學系社安組", "刑事警察學系", "國境警察學系境管組", "外事警察學系",
+    "犯罪防治學系預防組", "行政管理學系", "行政警察學系", "法律學系", "資訊管理學系", "鑑識科學學系",
 ]
 
 
@@ -128,7 +128,7 @@ def main():
 
     # Check shared passages across categories for 111年
     terrorism_fixes = PASSAGE_FIXES.get(
-        "交通警察電訊組/111年/中華民國憲法與警察專業英文/試題.json", [])
+        "交通學系電訊組/111年/中華民國憲法與警察專業英文/試題.json", [])
 
     for cat in SHARED_PASSAGE_CATEGORIES_111:
         rel_path = f"{cat}/111年/中華民國憲法與警察專業英文/試題.json"
@@ -141,9 +141,9 @@ def main():
                 print(f"Fixed {fixes} issues in: {rel_path}")
 
     # Also scan for any OTHER files with the same passages
-    # Check 水上警察 passage in other years
+    # Check 水上警察學系 passage in other years
     water_fixes = PASSAGE_FIXES.get(
-        "水上警察/114年/中華民國憲法與水上警察專業英文/試題.json", [])
+        "水上警察學系/114年/中華民國憲法與水上警察學系專業英文/試題.json", [])
 
     # Scan all English exam files for the same broken patterns
     print("\nScanning all files for remaining passage-level OCR issues...")

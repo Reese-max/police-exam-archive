@@ -1,0 +1,692 @@
+{
+  "metadata": {
+    "exam_type": "110",
+    "level": "三等",
+    "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+    "exam_time": "1 小時"
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於隱私權之限制,下列何者合憲?",
+      "section": null,
+      "options": {
+        "A": "受刑人於獄中發受書信,須經監獄長官檢閱",
+        "B": "就重罪犯罪嫌疑人之通話,經司法警察機關敘明與本案之關聯性,且不能或難以其他替代方式蒐證,得 由檢察官核發通訊監察書",
+        "C": "法律容許新聞採訪者就具新聞價值之公益事務,依適當之跟追方式進行採訪",
+        "D": "國家依法律授權強制大規模蒐集人民指紋,並建立指紋資料庫"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院釋字第499號解釋及民主憲政原理,有關制憲、修憲之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "制憲權不受現行憲法之拘束",
+        "B": "制憲與修憲乃國民主權之體現",
+        "C": "由修憲機關所為之修憲,不論修憲內容如何,皆屬有效",
+        "D": "修憲權應受現有憲法拘束"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "有關憲法保障人民之自由權利,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "憲法所保障之人民自由權利,若非自由權,即是積極性要求國家提供服務或給付之受益權",
+        "B": "基於人性尊嚴之理念,個人主體性及人格之自由發展,應受憲法保障",
+        "C": "憲法所定人民之自由及權利範圍甚廣,凡不妨害社會秩序公共利益者,均受保障",
+        "D": "國家有義務採取適當之組織與程序上措施,使個人權利得以落實"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "下列何者非屬憲法第11條表意自由之保障對象?",
+      "section": null,
+      "options": {
+        "A": "向國旗敬禮",
+        "B": "為免遲到而闖紅燈",
+        "C": "為表抗議而臥軌",
+        "D": "刊登在報紙上的讀者投書"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依憲法規定及司法院大法官解釋,有關選舉罷免,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "中華民國國民年滿20歲者,有依法選舉之權",
+        "B": "中華民國憲法所規定各種選舉之候選人,一律公開競選",
+        "C": "中華民國國民年滿23歲者,有依法被選舉之權",
+        "D": "全國不分區立法委員當選人,得由原選舉區依法罷免之"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "下列何者並非我國總統之權力?",
+      "section": null,
+      "options": {
+        "A": "締結條約",
+        "B": "主動解散立法院",
+        "C": "宣布戒嚴",
+        "D": "發布緊急命令"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "政府機關於公共場所普設監視錄影器,此種行為將直接干預下列何種基本人權?",
+      "section": null,
+      "options": {
+        "A": "言論自由",
+        "B": "人身自由",
+        "C": "資訊隱私權",
+        "D": "秘密通訊自由"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "有關刑事訴訟法規定某些輕罪不得上訴第三審,依司法院大法官解釋,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "人民於其權利遭受侵害時,有請求法院救濟之權利,乃訴訟權之核心",
+        "B": "有關訴訟救濟審級制度之限制,原則上應由立法機關以法律為合理之規定",
+        "C": "依據保障訴訟權之意旨,人民受有罪判決,應至少提供一次上訴救濟機會,以避免錯誤或冤抑",
+        "D": "此規定未給予人民就二審有罪判決有提起上訴之救濟機會,侵害人民訴訟權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關立法院對行政機關行使調查權的憲法界限,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "立法院調查事項必須與其行使憲法職權具有重大關聯",
+        "B": "行政首長就可能影響行政部門運作之資訊不予公開,屬其固有行政特權,立法院應予以尊重",
+        "C": "國家機關職權如屬受憲法保障獨立行使者,立法院仍得調查,必要時經由協商解決調查方法與程度",
+        "D": "屬於行政特權之資訊應否接受調查或公開發生爭執時,應可由司法機關審理解決"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "有關立法院對行政院院長提出不信任案,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "提出不信任案後,立法院須先等待72小時,之後於48小時內以記名投票表決",
+        "B": "不信任案不經討論逕行交付全院委員會審查,審查後表決的程序設計,屬國會自律事項",
+        "C": "立法院雖以其他議題召開臨時會,於臨時會期間亦得處理不信任案",
+        "D": "於立法院休會期間,立法委員不得連署提出不信任案"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依地方制度法之規定,下列何者並非自治規則得定之名稱?",
+      "section": null,
+      "options": {
+        "A": "綱要",
+        "B": "準則",
+        "C": "規章",
+        "D": "辦法"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "公務員如利用權力、公款或公務上的秘密消息而從事營利行為,其效果為何?",
+      "section": null,
+      "options": {
+        "A": "公務員不受刑事處罰,營利之法律行為無效",
+        "B": "公務員不受刑事處罰,營利之法律行為有效",
+        "C": "公務員受刑事處罰,營利之法律行為有效",
+        "D": "公務員受刑事處罰,營利之法律行為無效"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "有關法規命令之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "法規命令之訂定得由人民提議為之",
+        "B": "法規命令中應明定其授權依據",
+        "C": "法規命令之訂定依法應經其他機關核准而未經核准者,效力未定",
+        "D": "法規命令依法應經上級機關核定者,應於核定後始得發布"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "有關考試院之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "考試院掌理公務人員考績之法制事項",
+        "B": "憲法明定考試委員名額為19人",
+        "C": "考試委員須超出黨派以外,依據法律獨立行使職權",
+        "D": "考試院關於所掌事項,得向立法院提出法律案"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列對人民權利之限制,何者應由國會制定法律,始得為之?",
+      "section": null,
+      "options": {
+        "A": "就特定犯罪行為處以唯一死刑",
+        "B": "執行法律之細節性事項",
+        "C": "執行法律之技術性事項",
+        "D": "無涉重大公益之給付行政措施"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "依據司法院大法官解釋意旨,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "名譽權旨在維護個人主體性及人格之完整,雖非憲法所保障之基本權利,但仍受民法等法律規定所保障",
+        "B": "憲法第11條保障人民之言論自由,包含表意自由及不表意自由",
+        "C": "不表意自由乃維護個人主體性及人格自由完整發展所不可或缺",
+        "D": "國家若有限制不表意自由之必要,應符合比例原則"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "下列何者不是法源?",
+      "section": null,
+      "options": {
+        "A": "行政機關的政策",
+        "B": "條約",
+        "C": "自治法規",
+        "D": "沒有違背公共秩序、善良風俗的習慣"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "依民法之規定,要約之相對人,將要約擴張而承諾者。下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "契約已成立,但尚未發生效力",
+        "B": "契約已成立生效",
+        "C": "推定拒絕原要約,而為新要約",
+        "D": "視為拒絕原要約,而為新要約"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "甲有A、B二地,因讓與A地給乙,致B地與公路無適宜之聯絡,不能為通常之使用。下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "甲可以任擇A地或其他相鄰之地而對外通行",
+        "B": "甲通行鄰地已造成鄰地負擔,必要時乙得限制甲之通行時段",
+        "C": "甲通行鄰地時,為求便利可任意選擇通行之處所",
+        "D": "甲僅得通行A地以至公路,無須支付乙償金"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "關於宣告緩刑之有罪判決確定後,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "被告若同時受感化教育的宣告,必須在緩刑期滿後實施",
+        "B": "被告若同時受禁戒處分的宣告,仍得立即實施",
+        "C": "被告若違反緩刑宣告之附帶負擔,緩刑宣告即失效",
+        "D": "被告若在緩刑期間因故意犯他罪,緩刑宣告即可撤銷"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "為了有效應對外部經濟環境變化,應對經貿摩擦,中共總書記習近平與總理李克強多次強調「六穩」與「六 保」,請問下列何者不是「六穩」的內容?",
+      "section": null,
+      "options": {
+        "A": "穩投資",
+        "B": "穩預期",
+        "C": "穩基層",
+        "D": "穩外資"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "美國拜登政府公布的《國家安全戰略中期指導方針》(Interim National Security Strategic Guidance),把中共 視為:",
+      "section": null,
+      "options": {
+        "A": "主要競爭者",
+        "B": "最強大的敵人",
+        "C": "不是朋友也不是敵人",
+        "D": "是夥伴也是競爭對手"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "下列何者不是我國訂立「反滲透法」之法定滲透來源?",
+      "section": null,
+      "options": {
+        "A": "境外敵對勢力之企業或其他非政府組織、非營利組織或其派遣之人",
+        "B": "境外敵對勢力之政府及所屬組織、機構或其派遣之人",
+        "C": "境外敵對勢力之政府與政黨各組織、機構、團體所設立或實質控制之各類組織、機構、團體或其派遣之人",
+        "D": "境外敵對勢力之政黨或其他訴求政治目的之組織、團體或其派遣之人"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "根據臺灣地區與大陸地區人民關係條例增訂第9條之3,曾任那些職務與位階的官員不得參與大陸地區黨 務、軍事、行政或具政治性機關(構)、團體所舉辦之慶典或活動,而有妨害國家尊嚴之行為?",
+      "section": null,
+      "options": {
+        "A": "曾任國防、外交、大陸事務或與行政院相關機關之政務首長或上將以上人員,或情報機關首長與副首長",
+        "B": "曾任國防、外交、大陸事務或與國家安全相關機關之政務副首長或上校以上人員,或情報機關首長與知 曉機敏情報人員",
+        "C": "曾任國防、外交、大陸事務或與行政院相關機關之政務副首長或少將以上人員,或情報機關首長與知曉 機敏情報人員",
+        "D": "曾任國防、外交、大陸事務或與國家安全相關機關之政務副首長或少將以上人員,或情報機關首長"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "根據中共十九屆五中全會公報,中國在發展上突出的問題仍然是:",
+      "section": null,
+      "options": {
+        "A": "科技落後與創新不足",
+        "B": "中、美貿易戰",
+        "C": "人口的少子化與老齡化",
+        "D": "不平衡不充分"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "中共近來推動所謂的「三戰」,請問係指:",
+      "section": null,
+      "options": {
+        "A": "政治戰、外交戰、軍事戰",
+        "B": "心理戰、法律戰、輿論戰",
+        "C": "外交戰、經濟戰、認知戰",
+        "D": "軍事戰、外交戰、經濟戰"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "為防範境外敵對勢力之滲透干預,確保國家安全及社會安定,維護我國主權及自由民主憲政秩序,立法院 於109年通過制定反滲透法,根據該法,任何人不得受滲透來源之指示、委託或資助,捐贈政治獻金,或 捐贈經費供從事公民投票案之相關活動,若違反此規定者,得處幾年以下有期徒刑?",
+      "section": null,
+      "options": {
+        "A": "3年",
+        "B": "5年",
+        "C": "7年",
+        "D": "10年"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "中共中央總書記習近平在 2012 年 11 月提出實現中華民族偉大復興的「中國夢」,作為其治國理念。而為 實現所謂的「中國夢」,習近平提出「兩個百年」目標,請問所謂的「兩個百年」目標是指下列何者?",
+      "section": null,
+      "options": {
+        "A": "在中國共產黨成立100年時,全面建成小康社會 在中華人民共和國成立100年時,全面建成社會主義現代化國家",
+        "B": "在中國人民解放軍成立100年時,實現富國強軍的目標 在中華人民共和國成立100年時,全面建成社會主義現代化國家",
+        "C": "在中國共產黨成立100年時,全面建成小康社會 在中華人民共和國成立100年時,全面建成具有中國特色的社會主義國家",
+        "D": "在中國人民解放軍成立100年時,實現富國強軍的目標 在中國共產黨成立100年時,全面建成社會主義文明的小康社會"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "美國川普政府(Donald Trump)時期,曾有多個友台法案經聯邦參眾兩院通過,並由川普總統簽署後正式 生效。請問下列那個法案不在其中?",
+      "section": null,
+      "options": {
+        "A": "臺灣旅行法(Taiwan Travel Act)",
+        "B": "臺灣友邦國際保護及加強倡議法(Taiwan Allies International Protectionand Enhancement Initiative Act)",
+        "C": "臺灣安全加強法(Taiwan Security Enhancement Act)",
+        "D": "臺灣保證法(Taiwan Assurance Act)"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "中國共產黨中央政治局常務委員會,是中共最高權力的常設機關,也是中華人民共和國政府的最高決策機 關。請問下列何人不是現任的中共中央政治局常務委員?",
+      "section": null,
+      "options": {
+        "A": "汪洋",
+        "B": "韓正",
+        "C": "趙樂際",
+        "D": "楊潔箎"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Environmental hasdirect, tangibleconsequences:drought, famine, andfuelscarcity.",
+      "section": null,
+      "options": {
+        "A": "construction",
+        "B": "substantiation",
+        "C": "initiation",
+        "D": "degradation"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Shecertainlyseemedveryconscientiousandtrustworthy, but Iwonderwhethershe’sgotthenecessary , or whethershe’sassertiveenoughforthisjobof CEO.",
+      "section": null,
+      "options": {
+        "A": "charisma",
+        "B": "dullness",
+        "C": "unpleasantness",
+        "D": "apathy"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "The Meakambut, a nomadic tribe in Papua New Guinea, are onthe edge of because theyare dyingfrom easilycontagiousillnesses.",
+      "section": null,
+      "options": {
+        "A": "extinction",
+        "B": "replication",
+        "C": "survival",
+        "D": "immigration"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "Thehumanbodyismadeofsome50to100trillioncells. Insideeachcell, genes a“blueprint”forprotein productionthatdetermineshowthecellwillfunction.",
+      "section": null,
+      "options": {
+        "A": "wreck",
+        "B": "eliminate",
+        "C": "comprise",
+        "D": "ellude"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Ithasbeenincreasinglyseenaroundtheworldthat climateeventssuchassupertyphoonsandhurricanes couldhaveaseriousimpactonaregion’seconomy.",
+      "section": null,
+      "options": {
+        "A": "catastrophic",
+        "B": "prospective",
+        "C": "redundant",
+        "D": "spontaneous"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Creutzfeldt-Jakob disease is a rare but illnessfor itis always fatal andmost patients sadlydie within six weeksofdiagnosis.",
+      "section": null,
+      "options": {
+        "A": "challenged",
+        "B": "devastating",
+        "C": "disappointing",
+        "D": "frustrated"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "As most people in the audience have never heard of cloud computing before, how to clearly explain it to these isabigchallengeto Prof. Lin.",
+      "section": null,
+      "options": {
+        "A": "adherents",
+        "B": "apprentices",
+        "C": "disciples",
+        "D": "laymen"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Theblood-stainedknifewas foundnearthebody, whichmeansitis themurderweapon.",
+      "section": null,
+      "options": {
+        "A": "ludicrously",
+        "B": "incredibly",
+        "C": "presumably",
+        "D": "superficially"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "If you consistently make financial contributions to your company, you will become at work even when layoffsarebeingmadeallaroundyou.",
+      "section": null,
+      "options": {
+        "A": "domineering",
+        "B": "independent",
+        "C": "indispensable",
+        "D": "obligatory"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "Ifwegetnewsandinformation fromaparticular TVchannel, ourworldviewscanbebiased.",
+      "section": null,
+      "options": {
+        "A": "maliciously",
+        "B": "exclusively",
+        "C": "impartially",
+        "D": "beneficially"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "turnin",
+        "B": "turnup",
+        "C": "tossdown",
+        "D": "tossandturn"
+      },
+      "answer": "D",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, itknowswhenyoufallasleepand whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 isthatpeoplewhobecometooattunedto theirdatamayexperienceanxietyand aninabilitytosleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "theyare",
+        "B": "whichare",
+        "C": "theyhave been",
+        "D": "thathave been"
+      },
+      "answer": "B",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, itknowswhenyoufallasleepand whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 isthatpeoplewhobecometooattunedto theirdatamayexperienceanxietyand aninabilitytosleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "advocates",
+        "B": "challengers",
+        "C": "contestants",
+        "D": "offenders"
+      },
+      "answer": "A",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, itknowswhenyoufallasleepand whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 isthatpeoplewhobecometooattunedto theirdatamayexperienceanxietyand aninabilitytosleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "Likewise",
+        "B": "Nonetheless",
+        "C": "Otherwise",
+        "D": "Subsequently"
+      },
+      "answer": "B",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, itknowswhenyoufallasleepand whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 isthatpeoplewhobecometooattunedto theirdatamayexperienceanxietyand aninabilitytosleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "elaboration",
+        "B": "achievement",
+        "C": "consequence",
+        "D": "preference"
+      },
+      "answer": "C",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, itknowswhenyoufallasleepand whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 isthatpeoplewhobecometooattunedto theirdatamayexperienceanxietyand aninabilitytosleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Whatisthemainpurposeofthispassage?",
+      "section": null,
+      "options": {
+        "A": "Tocastdoubtonthefunctionofsocialmedia.",
+        "B": "Tohighlighttheimportanceofhistoryandpolitics.",
+        "C": "Topraisetranscendenceovertriviality.",
+        "D": "Topointoutanurgentissue Americanyouthsface."
+      },
+      "answer": "D",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, thebigblockoftextbelowprobablyseemsdaunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distractedimpatiencethatmakes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“theintellectualfutureofthe United Stateslooksdim.” Theway Bauerleinseesit, somethingnewanddisastroushashappenedto America’syouthwiththearrivaloftheinstant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, youngpeoplemostlyuseittogossipabouteachotherandfollowpop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptationandmostteenagersfeelthepainofmissingout. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and theabilitytositdownformorethanfiveminuteswithabook, today’sdigitalgenerationisbecominginsulatedinitsown stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lackthecouragetorisk“beinglabeledacurmudgeonandareactionary.”",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Accordingtothepassage, howmuchtimedoestheaverage15-to24-year-oldspendonreadingeachday?",
+      "section": null,
+      "options": {
+        "A": "4minutes.",
+        "B": "8minutes.",
+        "C": "12minutes.",
+        "D": "16minutes."
+      },
+      "answer": "B",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, thebigblockoftextbelowprobablyseemsdaunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distractedimpatiencethatmakes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“theintellectualfutureofthe United Stateslooksdim.” Theway Bauerleinseesit, somethingnewanddisastroushashappenedto America’syouthwiththearrivaloftheinstant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, youngpeoplemostlyuseittogossipabouteachotherandfollowpop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptationandmostteenagersfeelthepainofmissingout. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and theabilitytositdownformorethanfiveminuteswithabook, today’sdigitalgenerationisbecominginsulatedinitsown stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lackthecouragetorisk“beinglabeledacurmudgeonandareactionary.”",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Whatdoestheword“dim”inthefirstparagraphmean?",
+      "section": null,
+      "options": {
+        "A": "Pessimistic.",
+        "B": "Dark.",
+        "C": "Gossipy.",
+        "D": "Illiterate."
+      },
+      "answer": "A",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, thebigblockoftextbelowprobablyseemsdaunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distractedimpatiencethatmakes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“theintellectualfutureofthe United Stateslooksdim.” Theway Bauerleinseesit, somethingnewanddisastroushashappenedto America’syouthwiththearrivaloftheinstant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, youngpeoplemostlyuseittogossipabouteachotherandfollowpop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptationandmostteenagersfeelthepainofmissingout. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and theabilitytositdownformorethanfiveminuteswithabook, today’sdigitalgenerationisbecominginsulatedinitsown stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lackthecouragetorisk“beinglabeledacurmudgeonandareactionary.”",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Whichofthefollowingis NOTaproblemthatcurrent Americanyoungpeopleface?",
+      "section": null,
+      "options": {
+        "A": "Badspelling.",
+        "B": "Civicilliteracy.",
+        "C": "Lossofhistory.",
+        "D": "Linguafranca."
+      },
+      "answer": "D",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, thebigblockoftextbelowprobablyseemsdaunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distractedimpatiencethatmakes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“theintellectualfutureofthe United Stateslooksdim.” Theway Bauerleinseesit, somethingnewanddisastroushashappenedto America’syouthwiththearrivaloftheinstant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, youngpeoplemostlyuseittogossipabouteachotherandfollowpop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptationandmostteenagersfeelthepainofmissingout. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and theabilitytositdownformorethanfiveminuteswithabook, today’sdigitalgenerationisbecominginsulatedinitsown stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lackthecouragetorisk“beinglabeledacurmudgeonandareactionary.”",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Whatistheauthor’sattitudetowardtheintellectualfutureof America’syouth?",
+      "section": null,
+      "options": {
+        "A": "Supportive.",
+        "B": "Critical.",
+        "C": "Indifferent.",
+        "D": "Neutral."
+      },
+      "answer": "B",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, thebigblockoftextbelowprobablyseemsdaunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distractedimpatiencethatmakes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“theintellectualfutureofthe United Stateslooksdim.” Theway Bauerleinseesit, somethingnewanddisastroushashappenedto America’syouthwiththearrivaloftheinstant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, youngpeoplemostlyuseittogossipabouteachotherandfollowpop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptationandmostteenagersfeelthepainofmissingout. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and theabilitytositdownformorethanfiveminuteswithabook, today’sdigitalgenerationisbecominginsulatedinitsown stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lackthecouragetorisk“beinglabeledacurmudgeonandareactionary.”",
+      "passage_question_range": "46-50"
+    }
+  ],
+  "year": 110,
+  "category": "公共安全學系社安組學系情報組",
+  "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+  "source_pdf": "考古題庫\\公共安全學系社安組學系情報組\\110年\\綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

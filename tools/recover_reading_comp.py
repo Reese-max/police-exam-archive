@@ -7,8 +7,8 @@ files with options embedded in the stem text.
 Recoverable data:
 - 109年 中華民國憲法與警察專業英文 Q56-60 (5 Qs × 11 categories)
 - 111年 中華民國憲法與警察專業英文 Q57-60 (4 Qs × 12 categories)
-- 106年 中華民國憲法與水上警察專業英文 Q51-60 (10 Qs × 1 category)
-- 109年 中華民國憲法與水上警察專業英文 Q51-60 (10 Qs × 1 category)
+- 106年 中華民國憲法與水上警察學系專業英文 Q51-60 (10 Qs × 1 category)
+- 109年 中華民國憲法與水上警察學系專業英文 Q51-60 (10 Qs × 1 category)
 """
 
 import json
@@ -223,15 +223,15 @@ def main():
         },
         {
             "year": "106年",
-            "subject_pattern": "中華民國憲法與水上警察專業英文",
+            "subject_pattern": "中華民國憲法與水上警察學系專業英文",
             "expected_extra": list(range(51, 61)),
-            "description": "106年 水上警察專業英文 Q51-60",
+            "description": "106年 水上警察學系專業英文 Q51-60",
         },
         {
             "year": "109年",
-            "subject_pattern": "中華民國憲法與水上警察專業英文",
+            "subject_pattern": "中華民國憲法與水上警察學系專業英文",
             "expected_extra": list(range(51, 61)),
-            "description": "109年 水上警察專業英文 Q51-60",
+            "description": "109年 水上警察學系專業英文 Q51-60",
         },
     ]
 

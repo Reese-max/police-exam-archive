@@ -19,7 +19,7 @@ import json
 import os
 import sys
 
-BASE_DIR = "/home/user/police-exam-archive/考古題庫/移民特考/108年"
+BASE_DIR = "/home/user/police-exam-archive/考古題庫/國境警察學系移民組/108年"
 REFERENCE_FILE = os.path.join(BASE_DIR, "外國文(泰文兼試移民專業英文)", "試題.json")
 
 def load_json(filepath):

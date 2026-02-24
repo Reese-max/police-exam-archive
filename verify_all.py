@@ -40,7 +40,7 @@ print("=" * 60)
 print("  全面驗證: HTML / CSS / JS / 資料一致性")
 print("=" * 60)
 
-samples = ['行政警察', '資訊管理', '消防警察']
+samples = ['行政警察學系', '資訊管理學系', '消防學系']
 for cat in samples:
     html_path = SITE / cat / f'{cat}考古題總覽.html'
     if not html_path.exists():
@@ -139,7 +139,7 @@ for cls in important_js_classes:
 print(f"  CSS 完整性: 檢查完成")
 
 # ======== 3. 資料一致性 ========
-for cat in ['行政警察', '資訊管理', '鑑識科學']:
+for cat in ['行政警察學系', '資訊管理學系', '鑑識科學學系']:
     json_total = 0
     json_choice_ans = 0
     cat_dir = DATA / cat

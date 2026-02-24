@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "108",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "犯罪學與犯罪預防",
+    "exam_time": "2 小時",
+    "code": "50550"
+  },
+  "notes": [
+    "※注意： ①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "古典學派犯罪學者邊沁(Bentham)說,「人因為愛財富,愛擁有很多東\n西,帶來犯罪動機。」社會解組理論學者派克(Park)強調,達爾文進\n化論(Darwinian evolution)左右都市環境區位生態,亦帶來犯罪問題;\n社會控制理論學者赫胥(Hirschi)相信,所有的人皆有犯罪本能。因此,\n犯罪學者研究的問題應該是:「為什麼人不犯罪?」。試從人性角度詮釋\n如何影響犯罪學古典學派、社會解組理論、緊張理論,以及社會控制理\n論。(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "知名社會學者哈佛大學教授山普森(Sampson),1993 年寫了《暴力犯罪\n的社區內涵》(The community context of violent crime),強調社區層面的\n情境因素是暴力的主要來源,請就山普森的理論暨犯罪預防觀點,說明\n社區層面如何做可以減少暴力犯罪的發生。(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "請就蘇哲蘭(Sutherland)的差別接觸理論(differential association theory)\n與艾克斯(Akers)的差別增強理論(differential association reinforcement\ntheory),也稱社會學習理論(social learning theory),敘述他們的理論命\n題,並從行為發展的角度分析比較這兩個理論的異同。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "106 年司法改革國是會議有關監獄制度改革有許多總結,包括:建立受\n刑人的個別式處遇計畫,處遇要融入性別意識觀點,假釋審查要落實專\n家評估,降低收容人數,建立符合基本生活需求的矯正環境,監所附近\n設置醫療專區等,請從邊沁功利原則(utilitarianism)之思想,探討他的\n監獄改革觀點,並評論司法改革國是會議中有關建構當代矯正與福利的\n監獄政策建議。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 108,
+  "category": "犯罪防治學系預防組",
+  "subject": "犯罪學與犯罪預防",
+  "source_pdf": "考古題庫\\犯罪防治學系預防組\\108年\\犯罪學與犯罪預防\\試題.pdf",
+  "file_type": "試題"
+}

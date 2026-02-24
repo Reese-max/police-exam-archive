@@ -1,0 +1,759 @@
+{
+  "metadata": {
+    "exam_type": "107",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "中華民國憲法與警察專業英文",
+    "exam_time": "2 小時",
+    "code": "50110"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "①不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "②請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "①本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "②共60題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "中翻英:(10 分)\n有經驗的警員都知道有效溝通的重要性,所以警員都必須知道如何溝通以達成\n幫民眾解決問題的目標。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "英文作文:(15 分)\n當一個人進入警察人員這個體制後,常會面臨家庭和社會所帶來的壓力。請以\n一篇長 150-200 字的短文,敘述你若當了警察以後,會如何面對家庭或社會(含\n一般民眾)可能帶來的壓力。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依憲法本文之規定,下列何者為專屬「中央立法並執行」之事項?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "教育制度",
+        "B": "警察制度",
+        "C": "公共衛生",
+        "D": "度量衡"
+      }
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依憲法增修條文第9條之規定,有關省之規定,下列何者正確?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "省主席由省民選舉之",
+        "B": "「省諮議會議員」暨「省政府委員」皆由行政院院長提請總統任命之",
+        "C": "省政府委員由省主席任命之",
+        "D": "省主席任期6年"
+      }
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "臺北市政府訂定臺北市產業發展獎勵補助辦法,並發布之。此辦法之性質為何?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "法律",
+        "B": "行政規則",
+        "C": "自治條例",
+        "D": "自治規則"
+      }
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "地方自治團體立法機關議決事項無效者,下列敘述何者有誤?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "直轄市議會議決事項由立法院予以函告",
+        "B": "縣議會議決事項由中央各該主管機關予以函告",
+        "C": "鄉民代表會議決事項由縣政府予以函告",
+        "D": "議決自治事項與憲法、法律等規章有無牴觸發生疑義時,得聲請司法院解釋"
+      }
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依憲法增修條文第10條之規定,下列經費支出,何者無須優先編列?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "社會救助之救濟性支出",
+        "B": "國民就業之救濟性支出",
+        "C": "國民教育之經費",
+        "D": "中小型經濟事業之補助經費"
+      }
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依憲法規定,行政機關發布之行政命令,若與憲法牴觸時,其效果為何?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "無效",
+        "B": "得撤銷",
+        "C": "效力未定",
+        "D": "得補正"
+      }
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "關於人身自由之敘述,下列何者正確?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "非經司法或警察機關依法定程序,不得逮捕拘禁",
+        "B": "非經司法或警察機關依法定程序,不得審問處罰",
+        "C": "人民受合法逮捕時,不得聲請法院向逮捕之機關提審",
+        "D": "人民被非法逮捕拘禁時,法院應即主動追究,不得拖延"
+      }
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "銓敘部發函各機關,要求組考績委員會時,委員之任一性別比例原則上不得低於三分之一,此一函 釋最直接涉及人民之何種基本權利?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "參政權",
+        "B": "平等權",
+        "C": "言論自由",
+        "D": "結社自由"
+      }
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "依司法院釋字第 436 號解釋意旨,對現役軍人之犯罪行為得設軍事審判之特別訴訟程序,主要係基 於下列何項理由?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "避免軍人專政",
+        "B": "強化軍人服從觀念",
+        "C": "反恐與國土安全",
+        "D": "國家安全與軍事需要"
+      }
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依司法院釋字第 535 號解釋之意旨,大法官認為警察機關執行臨檢所影響人民之權利,不包含下列 何種權利?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "言論自由",
+        "B": "行動自由",
+        "C": "財產權",
+        "D": "隱私權"
+      }
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依司法院大法官解釋之意旨,有關人民居住遷徙自由,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "居住遷徙自由不包括出國之自由",
+        "B": "居住遷徙自由保障本國人入國之權利",
+        "C": "國家不得將國民驅逐出境",
+        "D": "人民之居住遷徙自由得以法律限制之"
+      }
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "依司法院釋字第 490 號解釋意旨,宗教行為自由與宗教結社自由,在必要之最小限度內,仍應受下 列何者之約束?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "地方議會決議",
+        "B": "行政命令",
+        "C": "國家相關法律",
+        "D": "習慣"
+      }
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "依司法院釋字第573號解釋,有關宗教自由之敘述,下列何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "宗教自由係指人民有信仰與不信仰任何宗教之自由",
+        "B": "宗教自由之保障範圍包含內在信仰之自由、宗教行為之自由與宗教結社之自由",
+        "C": "國家基於保護特定宗教之發展,得對於特定宗教加以獎勵或給予優待",
+        "D": "宗教團體之內部組織結構、人事及財政管理應有自主權"
+      }
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "依現行法規及大法官解釋意旨,關於集會遊行自由之敘述,下列何者正確?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "集會自由不分舉行之場地,都必須向警察主管機關申請或報備",
+        "B": "集會遊行應以和平方式為之",
+        "C": "集會自由權是基於自決原則與共和原則而成立",
+        "D": "多數人佇立於街頭欣賞街頭藝人表演,亦屬於集會,因此街頭藝人表演必須得到許可"
+      }
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "關於徵收人民之財產,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "此為被徵收人為公共利益所受之特別犧牲",
+        "B": "國家如對被徵收人給予補償即不違憲",
+        "C": "立法機關對徵收補償之方法,有一定之自由形成空間",
+        "D": "徵收補償與國家賠償之依據不同"
+      }
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "依司法院大法官相關解釋,對服公職權或職業自由之限制,下列何者係屬違憲?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "曾犯搶奪強盜罪經判決確定,不得為營業小客車駕駛",
+        "B": "公務員離職後3年內,不得任與先前職務直接相關之營利事業董事",
+        "C": "行為不檢有損師道之教師,得予以解聘或不續聘",
+        "D": "非視覺功能障礙之人,不得從事按摩業"
+      }
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,關於平等原則之敘述,下列何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "平等原則強調國家權力作用之恣意禁止",
+        "B": "平等原則皆禁止優惠性差別待遇",
+        "C": "平等原則強調等則等之、不等則不等之",
+        "D": "平等原則涉及法律對於體系正義之要求"
+      }
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "下列有關契約自由之敘述,何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "契約自由是民事法之基本法理,屬法律上權利",
+        "B": "契約自由是憲法第22條所規定的非列舉權利,亦受憲法之保障",
+        "C": "契約自由也可能涉及結社自由",
+        "D": "契約自由也可能與職業自由有關"
+      }
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "「國防部國軍志願役專業預備軍士官班考選簡章」曾規定,受刑之宣告者不得報考。司法院釋字第 715號解釋宣告此規定違憲,其理由為何?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "侵害人民職業自由",
+        "B": "違反法律保留原則",
+        "C": "違反平等原則",
+        "D": "違反比例原則"
+      }
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "依國家賠償法第12條規定,損害賠償之訴除依本法規定外,適用下列何者之規定?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "行政訴訟法",
+        "B": "行政執行法",
+        "C": "刑事訴訟法",
+        "D": "民事訴訟法"
+      }
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "憲法第23條規定「以上各條列舉之自由權利,除為防止妨礙他人自由,避免緊急危難,維持社會秩 序或增進公共利益所必要者外,不得以法律限制之」,條文中所謂之「...必要者外,...」,依司法 院大法官解釋,此所指為何?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "平等原則",
+        "B": "比例原則",
+        "C": "法律保留原則",
+        "D": "法律明確性原則"
+      }
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "依司法院釋字第 517 號解釋意旨,關於兵役制度及其相關之兵員召集、徵集如何實施,下列敘述何 者正確?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "行政機關得以職權命令訂定之",
+        "B": "由立法機關以法律定之",
+        "C": "行政機關得以行政規則訂定之",
+        "D": "憲法已明文規定"
+      }
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "下列何者,我國憲法明定其兼具有人民「基本權利與基本義務」之雙重性質:",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "服公職",
+        "B": "納稅",
+        "C": "服兵役",
+        "D": "受國民教育"
+      }
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "關於公職人員之罷免,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "公職人員不論就職多久均得對其提出罷免",
+        "B": "全國不分區立法委員選舉之當選人不得罷免",
+        "C": "公職人員之罷免,得由原選舉區選舉人向選舉委員會提出罷免案",
+        "D": "公職人員罷免,由原選舉區之選舉人以無記名投票決定"
+      }
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "下列關於國家安全會議之敘述,何者正確?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "國家安全會議設於行政院下,為總統之諮詢機關",
+        "B": "國家安全會議秘書長為國家安全會議之列席人員",
+        "C": "國家安全會議之決議,僅作為總統決策之參考",
+        "D": "國家安全會議及其所屬國家安全局,不受立法院之監督"
+      }
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "下列何人發生缺位時,應由總統提名候選人,並由立法院補選產生,繼任至原任期屆滿為止?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "副總統",
+        "B": "行政院院長",
+        "C": "立法院院長",
+        "D": "司法院院長"
+      }
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "有關總統刑事豁免權之敘述,下列何者正確?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "現職總統競選連任時,其競選活動受總統副總統選舉罷免法有關規定之規範,無法主張憲法第52條 之刑事豁免權",
+        "B": "副總統為總統之備位,憲法有關總統刑事豁免權之規定於副總統亦有適用",
+        "C": "基於憲法第52條刑事豁免權之規定,法院對於以總統為被告之刑事案件,仍得受理起訴,但停止 審判",
+        "D": "檢察機關因他人刑事案件之偵查,發現總統有犯罪嫌疑者,為避免證據湮滅,得為必要之證據保 全程序,但不得限制總統之人身自由或妨礙其職權之行使"
+      }
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "下列何者非屬憲法所賦予總統之職權?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "國家安全大政方針決定權",
+        "B": "緊急命令權",
+        "C": "核駁行政院院長向立法院所提法律案覆議之權",
+        "D": "核駁行政院院會決議之權"
+      }
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "依現行憲法增修條文之規定,應以下列何種方式,對行政院院長提出不信任案?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "立法院院長之提議",
+        "B": "立法院全體立法委員三分之一以上連署",
+        "C": "立法院委員會之決議",
+        "D": "監察院之移送"
+      }
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "依司法院釋字第613號解釋意旨,關於獨立機關之敘述,下列何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "獨立機關依據法律獨立行使職權,自主運作,對於責任政治毫無減損",
+        "B": "立法院得經由立法設置獨立機關,將原行政院所掌理特定領域之行政事務劃歸獨立機關行使",
+        "C": "獨立機關設立的目的係在法律規定範圍內,排除上級機關對具體個案決定之指揮與監督",
+        "D": "對於獨立機關之委員有違法情事,而情節重大,行政院院長得行使最低限度人事監督權"
+      }
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "行政院得經總統之核可,將下列何者移請立法院覆議?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "戒嚴案",
+        "B": "大赦案",
+        "C": "條約案",
+        "D": "宣戰案"
+      }
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "依據憲法本文規定,下列何者有法律案提案權?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "總統",
+        "B": "考試院",
+        "C": "司法院",
+        "D": "監察院"
+      }
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "關於立法委員之敘述,下列何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "立法委員不得擔任行政機關首長",
+        "B": "立法委員所為之一切言論,對院外不負責任",
+        "C": "立法委員為現行犯時,不須經立法院許可,得逮捕之",
+        "D": "對立法委員之拘禁,會期中應經立法院許可"
+      }
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "依憲法增修條文及立法院職權行使法相關規定,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "司法院大法官審理並提出總統彈劾案,經立法院決議通過後彈劾成立",
+        "B": "立法院提出領土變更案,經自由地區選舉人投票複決通過後生效",
+        "C": "自由地區選舉人投票提出總統罷免案,經立法院決議通過後罷免成立",
+        "D": "總統經行政院會議決議發布緊急命令,經立法院追認後生效"
+      }
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "依憲法增修條文第4條之規定,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "立法院立法委員自第7屆起113人,任期3年,連選得連任",
+        "B": "立法院於每年集會時,得聽取總統國情報告",
+        "C": "立法院經總統解散後,在新選出之立法委員就職前,視同未休會",
+        "D": "全國不分區及僑居國外國民共 34 人,由政黨名單投票選舉之,由獲得 3%以上政黨選舉票之政黨 依得票比率選出之"
+      }
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "關於大法官之敘述,下列何者正確?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "司法院組織法第4條第1項設定不同資格,該資格之認定,以任命之日為準",
+        "B": "司法院之院長、副院長並為大法官,但不受任期8年之保障",
+        "C": "大法官之組成應考量性別平等,單一性別不得超過三分之二",
+        "D": "民國92年總統提名之大法官,任期均為8年"
+      }
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "原藥師法第11條規定,藥師經登記領照執業者,其執業處所應以一處為限,未設任何例外規定,被 司法院大法官宣告違反下列何種原則?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "明確性原則",
+        "B": "比例原則",
+        "C": "平等原則",
+        "D": "法律保留原則"
+      }
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "依司法院大法官審理案件法第5條之規定,關於聲請解釋憲法之事由,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "中央或地方機關,於其行使職權,適用憲法發生疑義,或因行使職權與其他機關之職權,發生適 用憲法之爭議,或適用法律與命令發生有牴觸憲法之疑義者",
+        "B": "人民或法人於其憲法上所保障之權利,遭受不法侵害,經依法定程序提起訴訟,對於確定終局裁 判發生有牴觸憲法之疑義者",
+        "C": "依立法委員現有總額1/4以上之聲請,就其行使職權,適用憲法發生疑義,或適用法律發生有牴觸 憲法之疑義者",
+        "D": "各級法院就其受理之案件,對所適用之法律或命令,確信有牴觸憲法之疑義時,得以判決停止訴 訟程序,聲請大法官解釋"
+      }
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "下列有關大法官解釋案件程序之敘述,何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "大法官解釋案件,應參考制憲、修憲及立法資料",
+        "B": "得依請求或逕行通知聲請人、關係人及有關機關說明",
+        "C": "得行言詞辯論",
+        "D": "應有強制代理制度"
+      }
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "依司法院釋字第547號解釋,醫師屬於下列何種資格之人員?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "公職人員",
+        "B": "軍職人員",
+        "C": "技術人員",
+        "D": "專門職業人員"
+      }
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "Officers shall not consume any intoxicating beverage while on unless authorized by a supervisor.",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "responsibility",
+        "B": "accountability",
+        "C": "capability",
+        "D": "duty"
+      }
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "A car driver who causes a car accident may face civil and criminal , depending on the circumstances.",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "assaults",
+        "B": "licenses",
+        "C": "penalties",
+        "D": "opposites"
+      }
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "The exception derives from the interests in officer safety and evidence that are typically implicated in arrest situation.",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "preservation",
+        "B": "prevention",
+        "C": "distr action",
+        "D": "distribution"
+      }
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "is a formal written accusation of a crime, which is presented to a court for prosecution against the accused person.",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "Indictment",
+        "B": "Conviction",
+        "C": "Subpoena",
+        "D": "Summon"
+      }
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "A new form of identification relies on DNA, which carries the information of each person.",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "electric",
+        "B": "genetic",
+        "C": "psychological",
+        "D": "mental"
+      }
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Officials said that diplomats do not enjoy from criminal prosecution on charges of visa fraud.",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "immobility",
+        "B": "impediment",
+        "C": "imminence",
+        "D": "immunity"
+      }
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "The mission of the prison is to protect society by offenders in the controlled environments of prisons.",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "confusing",
+        "B": "confining",
+        "C": "combining",
+        "D": "combating"
+      }
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "During the execution of the warrant, officer must prepare an inventory and verify the property , and may retain a copy.",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "arrested",
+        "B": "terminated",
+        "C": "seized",
+        "D": "decoded"
+      }
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "After the 911 attacks in the U. S., the homeland security studies have been initiated.",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "terrorist",
+        "B": "scooterist",
+        "C": "psychiatrist",
+        "D": "tourist"
+      }
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "It is dangerous. Do not the fire scene.",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "exhibit",
+        "B": "approve",
+        "C": "prohibit",
+        "D": "approach"
+      }
+    },
+    {
+      "number": 51,
+      "type": "choice",
+      "stem": "The police officer in that case stopped a car. The limit over there is 60MPH.",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "steering",
+        "B": "driving",
+        "C": "boarding",
+        "D": "speeding"
+      }
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "What is the purpose of the passage?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "To demonstrate the power of mass media.",
+        "B": "To describe the personality of the victim.",
+        "C": "To analyze how an affair may happen.",
+        "D": "To explain a legal concept."
+      },
+      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light addresses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by disseminating false or misleading information, rather than the gathering of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, alluding to “anonymous sources” reporting Walter was a little too friendly with the administrative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reckless disregard for the falsity of the information, in exchange for higher readership."
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "What does false light mean?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "Publication of incorrect information.",
+        "B": "Reporting news without permission.",
+        "C": "Collection of erotic photos.",
+        "D": "Protecting personal privacy."
+      },
+      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light addresses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by disseminating false or misleading information, rather than the gathering of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, alluding to “anonymous sources” reporting Walter was a little too friendly with the administrative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reckless disregard for the falsity of the information, in exchange for higher readership."
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "What does it in the second sentence refer to?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "Misleading information.",
+        "B": "The legal doctrine.",
+        "C": "People’s right.",
+        "D": "The public."
+      },
+      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light addresses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by disseminating false or misleading information, rather than the gathering of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, alluding to “anonymous sources” reporting Walter was a little too friendly with the administrative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reckless disregard for the falsity of the information, in exchange for higher readership."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "According to the passage, which is true about Walter?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "He is a caring husband.",
+        "B": "He loves to share information.",
+        "C": "He is the most popular person in the office.",
+        "D": "He has been fighting against the newspaper."
+      },
+      "passage": "請依下文回答第52題至第55題: The legal doctrine of false light addresses people’s right to not have false or misleading information, which puts them in a false light, made public. In other words, it deals with the invasion of a person’s privacy by disseminating false or misleading information, rather than the gathering of information through invasion of privacy. Walter leaves his position on the City Council to care for his wife, who has serious health problems. The small town’s local newspaper prints a story about Walter’s resignation, alluding to “anonymous sources” reporting Walter was a little too friendly with the administrative assist ants and other women at the office. This led to talk about whether Walter had an affair. Walter, who is certainly friendly with every one at the office, never had an affair, and is terribly embarrassed and indignant over the incident, and the damage to his reputation. Because the newspaper disclosed information that painted Walter in a false light, he may choose to file a civil lawsuit under the tort of false light. In this case, the misleading information was published in the town newspaper, intentionally, with reckless disregard for the falsity of the information, in exchange for higher readership."
+    }
+  ],
+  "year": 107,
+  "category": "犯罪防治學系預防組",
+  "subject": "中華民國憲法與警察專業英文",
+  "source_pdf": "考古題庫\\犯罪防治學系預防組\\107年\\中華民國憲法與警察專業英文\\試題.pdf",
+  "file_type": "試題"
+}

@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "112",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "數位鑑識執法",
+    "exam_time": "2 小時",
+    "code": "50870"
+  },
+  "notes": [
+    "※注意：①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "請以國內學者所提出數位證據鑑識標準程序(Digital Evidence Forensics\nStandard Operating Procedure, DEFSOP)四大階段(原理概念階段、準備\n階段、操作階段、報告階段)為基礎及參考國際資安鑑識相關標準(如\nISO/IEC /// 等),如何建立一套完整行動鑑識標準\n作業程序(DEFSOP for Mobile Forensics, DEFSOP-MF)?並請舉例及繪\n圖表說明之。(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "請說明電腦鑑識(Computer Forensics)、軟體鑑識(Software Forensics)、\n資料鑑識(Data Forensics)、網路鑑識(Network Forensics)、行動鑑識\n(Mobile Forensics)、雲端鑑識(Cloud Forensics)及資安鑑識(Cyber\nForensics)的異同處(含定義、原理、功能及應用等)。並請舉例及繪\n圖表說明之。(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "近年來全球發生勒索病毒(Ransomware)攻擊事件層出不窮,對各行各\n業的政府部門及企業組織(營運持續性)攻擊犯罪問題帶來了重大威脅。\n請問透過資安鑑識及系統性的資安風險管理,並結合 NISTCybersecurity\nFramework(如ISO27110:2021)的IPDRR五大功能應用(識別(Identify)、\n保護(Protect)、偵測(Detect)、應變(Respond)、復原(Recover)),\n如何有效地降低勒索病毒及其他資安事件對企業營運的影響,並有能力\n偵辦該網路犯罪事件,進行事前相關的風險評估、防護措施建立、事中\n應變策略制定,以及事後的修復與檢討,以提高其營運的持續性與恢復\n力?並請舉例及繪圖表說明之。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "臺灣近年爆發多起重大個資外洩事件,且是從公部門到民間企業私部\n門,甚至在海外遭販賣;另根據內政部警政署統計,2022-2023 年(網\n路)詐欺案,也創下 10 年新高紀錄,專家學者指出,很大一部分是來自\n於個資外洩事故。請從資安鑑識角色(含事前預警系統+事中反應系統+\n事後復原系統等),說明如何有效偵查及防制上述個資外洩犯罪事故,\n並提高其數位證據能力及符合資安鑑識基本原則(CIAC Principles)?\n請用相關國際資安鑑識標準(如 DEFSOP/ISO / 等),並請\n舉例及繪圖表說明之。(25 分)(CIAC Principle 是指 Consistent, Integrity,\nAccuracy and Compliance)(ISO/IEC :2018-2021 — Information\nTechnology — Security Techniques — Electronic Discovery)",
+      "section": null
+    }
+  ],
+  "year": 112,
+  "category": "資訊管理學系",
+  "subject": "數位鑑識執法",
+  "source_pdf": "考古題庫\\資訊管理學系\\112年\\數位鑑識執法\\試題.pdf",
+  "file_type": "試題"
+}

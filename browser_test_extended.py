@@ -13,7 +13,7 @@ server = subprocess.Popen(
 )
 time.sleep(1)
 
-URL = 'http://localhost:8765/行政警察/行政警察考古題總覽.html'
+URL = 'http://localhost:8765/行政警察學系/行政警察學系考古題總覽.html'
 results = []
 
 def check(name, condition, detail=''):

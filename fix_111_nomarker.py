@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-修復 111年移民特考 PDF 無 ABCD 標記問題
+修復 111年國境警察學系移民組 PDF 無 ABCD 標記問題
 
 這些 PDF 的選項標記 (A)(B)(C)(D) 使用了 pdfplumber 無法提取的特殊字型編碼。
 本腳本：
@@ -24,8 +24,8 @@ from pathlib import Path
 import pdfplumber
 
 BASE = Path(__file__).parent
-JSON_BASE = BASE / '考古題庫' / '移民特考' / '111年'
-PDF_BASE = BASE / '移民特考PDF' / '111年'
+JSON_BASE = BASE / '考古題庫' / '國境警察學系移民組' / '111年'
+PDF_BASE = BASE / '國境警察學系移民組PDF' / '111年'
 
 # 左右欄分界 x 座標（根據實際 PDF 分析）
 COL_SPLIT_X = 280
@@ -470,7 +470,7 @@ def main():
         return
 
     print(f"{'=' * 60}")
-    print(f"修復 111年移民特考無標記選擇題")
+    print(f"修復 111年國境警察學系移民組無標記選擇題")
     print(f"模式: {'實際修改' if apply else '預覽（加 --apply 執行）'}")
     print(f"{'=' * 60}\n")
 

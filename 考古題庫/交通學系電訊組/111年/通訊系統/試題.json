@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "exam_type": "111",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "通訊系統",
+    "exam_time": "2 小時",
+    "code": "50830"
+  },
+  "notes": [
+    "※注意：①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目得以本國文字或英文作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "有一個頻寬(bandwidth)為 W 的基頻訊號(baseband signal) x(t),我們準備對它做調變(modulation)。在此我們考慮兩種不同的調變方式,他們所對應的訊號分別為 s₁(t) = [A + x(t)]cos(ω_c t) 以及 s₂(t) = x(t)cos(ω_c t)……",
+      "stem_latex": "有一個頻寬(bandwidth)為 $W$ 的基頻訊號(baseband signal) $x(t)$,我們準備對它做調變(modulation)。在此我們考慮兩種不同的調變方式,他們所對應的訊號分別為 $s_1(t) = [A + x(t)]\\cos(\\omega_c t)$ 以及 $s_2(t) = x(t)\\cos(\\omega_c t)$……",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "有一個線性非時變(linear time-invariant)的系統,我們將它稱為 S,其脈衝響應(impulse response)為 h(t) = e⁻ᵗu(t),其中的 u(t) 為 u(t) = {1, t ≥ 0; 0, otherwise}。\n\n①請找出 S 的轉換函數(transfer function)。(5 分)\n②有一個訊號 x(t) = u(t) - u(t-1),我們將它灌入 S 之中;請找出對應的輸出(output)。(10 分)",
+      "stem_latex": "有一個線性非時變(linear time-invariant)的系統,我們將它稱為 $S$,其脈衝響應(impulse response)為 $h(t) = e^{-t}u(t)$,其中的 $u(t)$ 為\n$$u(t) = \\begin{cases} 1, & t \\geq 0 \\\\ 0, & \\text{otherwise} \\end{cases}$$\n\n①請找出 $S$ 的轉換函數(transfer function)。(5 分)\n②有一個訊號 $x(t) = u(t) - u(t-1)$,我們將它灌入 $S$ 之中;請找出對應的輸出(output)。(10 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "我們考慮一個數位通訊系統,其傳送端傳送的訊號,在每一個訊符時間(symbol duration)內有四種可能,分別為 s₁(t) = cos(ω_c t) + sin(ω_c t)、s₂(t) = cos(ω_c t) - sin(ω_c t)、s₃(t) = -cos(ω_c t) + sin(ω_c t)、s₄(t) = -cos(ω_c t) - sin(ω_c t)……",
+      "stem_latex": "我們考慮一個數位通訊系統,其傳送端傳送的訊號,在每一個訊符時間(symbol duration)內有四種可能,分別為\n$$s_1(t) = \\cos(\\omega_c t) + \\sin(\\omega_c t)$$\n$$s_2(t) = \\cos(\\omega_c t) - \\sin(\\omega_c t)$$\n$$s_3(t) = -\\cos(\\omega_c t) + \\sin(\\omega_c t)$$\n$$s_4(t) = -\\cos(\\omega_c t) - \\sin(\\omega_c t)$$\n……",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "在通訊網路中以封包(packet)形式傳送資料時,封包之中會帶有循環冗餘校驗碼(cyclic redundancy check,簡稱 CRC)的部分;本題目就以一個簡單的例子來探討 CRC 的計算及使用。假設我們的原始資料長度為 8 個位元,我們使用生成多項式(generator polynomial) x⁴ + x³ + x² + x + 1(可以對應成位元串表示法:[11111]),經過計算以後產生 4 個校驗位元(parity bits),形成一個總共有 8 + 4 = 12 個位元長的封包。\n①在傳送端,假設我們有一個資料位元串為 [11100101](可以對應成多項式表示法:x⁷ + x⁶ + x⁵ + x² + 1),請找出加上 CRC 之後的封包(共有 12 個位元)。(5 分)\n②假設我們在接收端收到了下面這個封包:[101101001001],我們是否應該將它判定成其中有錯誤?(請顯示推論或計算過程)(5 分)\n③在本題目的場景設定之中,接收端經由 CRC 校驗判定封包沒有錯誤但其實卻非如此的情況是有可能發生的,其機率為何?(5 分)\n④在使用 CRC 機制的時候會需要用到除法器。若是用電路來實作時,除法器可以用線性回饋移位暫存器(linear feedback shift register,簡稱 LFSR)來實現。針對本題目中的生成多項式(也就是 g(x) = x⁴ + x³ + x² + x + 1),請畫出「除以 g(x)」的 LFSR 除法器電路。(5 分)",
+      "stem_latex": "在通訊網路中以封包(packet)形式傳送資料時,封包之中會帶有循環冗餘校驗碼(cyclic redundancy check,簡稱 CRC)的部分;本題目就以一個簡單的例子來探討 CRC 的計算及使用。假設我們的原始資料長度為 8 個位元,我們使用生成多項式(generator polynomial) $x^4 + x^3 + x^2 + x + 1$(可以對應成位元串表示法:$[11111]$),經過計算以後產生 4 個校驗位元(parity bits),形成一個總共有 $8 + 4 = 12$ 個位元長的封包。\n\n①在傳送端,假設我們有一個資料位元串為 $[11100101]$(可以對應成多項式表示法:$x^7 + x^6 + x^5 + x^2 + 1$),請找出加上 CRC 之後的封包(共有 12 個位元)。(5 分)\n\n②假設我們在接收端收到了下面這個封包:$[101101001001]$,我們是否應該將它判定成其中有錯誤?(請顯示推論或計算過程)(5 分)\n\n③在本題目的場景設定之中,接收端經由 CRC 校驗判定封包沒有錯誤但其實卻非如此的情況是有可能發生的,其機率為何?(5 分)\n\n④在使用 CRC 機制的時候會需要用到除法器。若是用電路來實作時,除法器可以用線性回饋移位暫存器(linear feedback shift register,簡稱 LFSR)來實現。針對本題目中的生成多項式(也就是 $g(x) = x^4 + x^3 + x^2 + x + 1$),請畫出「除以 $g(x)$」的 LFSR 除法器電路。(5 分)",
+      "section": null
+    },
+    {
+      "number": "五",
+      "type": "essay",
+      "stem": "在無線通訊之中,分集(diversity)是一個常用的技術,使用的場景是針對傳送端所送出的同一個訊號(例如:x),接收端收到了若干個互相獨立(或者至少是高度不相關(highly uncorrelated))的不同版本的訊號(例如:y₁ = h₁x + n₁、y₂ = h₂x + n₂、……),各自經過了不同通道的訊號衰減……",
+      "stem_latex": "在無線通訊之中,分集(diversity)是一個常用的技術,使用的場景是針對傳送端所送出的同一個訊號(例如:$x$),接收端收到了若干個互相獨立(或者至少是高度不相關(highly uncorrelated))的不同版本的訊號(例如:$y_1 = h_1 x + n_1$、$y_2 = h_2 x + n_2$、$\\ldots$),各自經過了不同通道的訊號衰減……",
+      "section": null
+    }
+  ],
+  "year": 111,
+  "category": "交通學系電訊組",
+  "subject": "通訊系統",
+  "source_pdf": "考古題庫\\交通學系電訊組\\111年\\通訊系統\\試題.pdf",
+  "file_type": "試題"
+}

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-修復移民特考閱讀測驗空 stem 題目
+修復國境警察學系移民組閱讀測驗空 stem 題目
 
 問題描述：
-  在「考古題庫/移民特考/」的試題.json 中，有 344 道選擇題的 stem 為空字串 ""。
+  在「考古題庫/國境警察學系移民組/」的試題.json 中，有 344 道選擇題的 stem 為空字串 ""。
   這些全是英文閱讀測驗題組（克漏字填空型）。
   閱讀段落（passage）被錯誤地合併到前面某一題的選項 D 中。
 
@@ -32,7 +32,7 @@ from collections import defaultdict
 
 # ── 常數 ────────────────────────────────────────────────────
 SCRIPT_DIR = Path(__file__).parent
-BASE_DIR = SCRIPT_DIR / "考古題庫" / "移民特考"
+BASE_DIR = SCRIPT_DIR / "考古題庫" / "國境警察學系移民組"
 BACKUP_DIR = SCRIPT_DIR / "backups" / f"fix_empty_stems_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
 # 匹配所有引導文字變體
@@ -296,7 +296,7 @@ def main():
     apply = "--apply" in sys.argv
 
     print("=" * 70)
-    print("移民特考閱讀測驗空 stem 修復工具")
+    print("國境警察學系移民組閱讀測驗空 stem 修復工具")
     print("=" * 70)
 
     if apply:

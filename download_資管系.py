@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-警察資訊管理人員（資管系）考古題專用下載器
-目標：近10年（105-114年）三等警察特考 資訊管理人員 所有科目試題
+警察資訊管理學系人員（資管系）考古題專用下載器
+目標：近10年（105-114年）三等警察特考 資訊管理學系人員 所有科目試題
 """
 
 import os
@@ -79,7 +79,7 @@ def get_exam_list(session, year):
 
 
 def parse_and_filter_資管(session, year, exam_code, exam_name):
-    """解析考試頁面，只擷取資訊管理人員的科目"""
+    """解析考試頁面，只擷取資訊管理學系人員的科目"""
     url = f"{BASE_URL}wFrmExamQandASearch.aspx?y={year + 1911}&e={exam_code}"
     try:
         resp = session.get(url, timeout=30, verify=False)
@@ -127,7 +127,7 @@ def parse_and_filter_資管(session, year, exam_code, exam_name):
             'url': html_module.unescape(href)
         })
 
-    # 從所有類科代碼中找出資訊管理人員
+    # 從所有類科代碼中找出資訊管理學系人員
     for cat_code, subjects_dict in raw.items():
         subjects_list = list(subjects_dict.keys())
         subjects_text = '|||'.join(subjects_list)
@@ -135,8 +135,8 @@ def parse_and_filter_資管(session, year, exam_code, exam_name):
         # 內軌判定
         is_internal = (
             '中華民國憲法與警察專業英文' in subjects_text or
-            '中華民國憲法與消防警察專業英文' in subjects_text or
-            '中華民國憲法與水上警察專業英文' in subjects_text
+            '中華民國憲法與消防學系專業英文' in subjects_text or
+            '中華民國憲法與水上警察學系專業英文' in subjects_text
         )
         if not is_internal:
             continue
@@ -177,7 +177,7 @@ def download_file(session, url, path):
 
 def main():
     print("=" * 60)
-    print("  警察資訊管理人員（資管系）考古題下載器")
+    print("  警察資訊管理學系人員（資管系）考古題下載器")
     print(f"  目標年份: 民國 {TARGET_YEARS[0]}~{TARGET_YEARS[-1]} 年")
     print("=" * 60)
 

@@ -5,7 +5,7 @@
 
 用法:
   python verify_answers.py                        # 處理全部
-  python verify_answers.py --input 考古題庫/行政警察  # 只處理行政警察
+  python verify_answers.py --input 考古題庫/行政警察學系  # 只處理行政警察學系
   python verify_answers.py --dry-run               # 只驗證不寫入
 """
 

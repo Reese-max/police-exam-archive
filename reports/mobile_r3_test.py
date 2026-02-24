@@ -8,7 +8,7 @@ REPORT_DIR = Path(r"C:\Users\User\Desktop\考古題下載\reports")
 SS_DIR = REPORT_DIR / "screenshots" / "r3"
 SS_DIR.mkdir(parents=True, exist_ok=True)
 
-CATEGORY_PAGE = (BASE / "行政警察" / "行政警察考古題總覽.html").as_uri()
+CATEGORY_PAGE = (BASE / "行政警察學系" / "行政警察學系考古題總覽.html").as_uri()
 INDEX_PAGE = (BASE / "index.html").as_uri()
 
 VIEWPORTS = {

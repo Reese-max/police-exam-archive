@@ -1,9 +1,0 @@
-# robots.txt for police-exam.example.com
-
-User-agent: *
-Allow: /
-
-Disallow: /css/
-Disallow: /js/
-
-Sitemap: https://police-exam.example.com/sitemap.xml

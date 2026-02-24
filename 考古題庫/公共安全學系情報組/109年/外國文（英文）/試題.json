@@ -1,0 +1,606 @@
+{
+  "metadata": {
+    "exam_type": "109",
+    "level": "三等",
+    "subject": "外國文（英文）",
+    "exam_time": "2小時",
+    "code": "40140"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本測驗試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "共40題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "英譯中:(15分)\nAlthough the world of today has a very vivid sense of its unity and of\nhow one man depends on another in needful solidarity, it is most grievously\ntorn into opposing camps by conflicting forces. True, there is a growing\nexchange of ideas, but the very words by which key concepts are expressed\ntake on quite different meanings in diverse ideological systems.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "中譯英:(15分)\n眾人皆知我們的大腦和身體無時無刻不在互傳訊息。也就是說,我\n們的身體對我們的思維會不斷作出反應。當我們有正面的想法時,我們\n的大腦就會釋放出讓我們的身體感到愉悅的化學物質。因此,我們高興\n時,肌肉就會放鬆,心跳會變慢,呼吸速度也會趨緩。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "英文作文:(20分)\nAccording to a recent report by the World Population Review, Taiwan has\nthe lowest fertility rate in the list of 200 countries. This phenomenon may have\nimpacts on our society. Write an English essay in NO MORE THAN 200\nwords to express your opinions, positive and negative, with supportive reasons\nor illustrations.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "_____beingawell-knowntennis player, he also runs several restaurants.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Apart from",
+        "B": "In fact",
+        "C": "Moreover",
+        "D": "Regarding"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "The Environmental Protection Agency (EPA) has been promoting electric motorcycles to help _____ greenhouse gas emissions.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "repeat",
+        "B": "reduce",
+        "C": "return",
+        "D": "reuse"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "Hehas beensmokingcigarettes formanyyears. Thehabit is his _____andformidablefoe.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "reconfigured",
+        "B": "evacuated",
+        "C": "inveterate",
+        "D": "evicted"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "Professor Chensometimes _____thechairman, whotrusts heras botha colleagueand anoldfriend.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "falls out of",
+        "B": "fills out for",
+        "C": "falls in",
+        "D": "fills infor"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "Weatheris _____, so it is unwisetotravel without checkingtheforecast.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "unparalleled",
+        "B": "unpredictable",
+        "C": "unprecedented",
+        "D": "unproblematic -"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "Therewereno_____on thetable, so Ihadtoeat theroastedlamb chops withmyhands.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "umpires",
+        "B": "ushers",
+        "C": "utensils",
+        "D": "groceries"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "Dubai has established various free trade zones, where international companies are encouraged to locate withthe_____ ofzeropercent taxes.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "decline",
+        "B": "obstacle",
+        "C": "promise",
+        "D": "restriction"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "_____ your account unpaidwithinterms, alatepayment chargewill beaddedinthebill next month.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "As if",
+        "B": "Dueto",
+        "C": "Inlieuof",
+        "D": "Inspiteof"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "Stevewas accusedofpayingtheemployeefortradesecrets and_____information.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "autonomous",
+        "B": "delinquent",
+        "C": "confidential",
+        "D": "ludicrous"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "The Transportation Security Administration program has existed since 2010 as an effort to _____ the threat posedbypossibleterrorists afteridentifyingpeoplebasedontheirtravel historyorothercriteria.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "mitigate",
+        "B": "compensate",
+        "C": "designate",
+        "D": "detonate"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "Ireland voted to repeal its near-ban on _____, which previouslyhad subjected manywomen to cruel and inhumantreatments.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "amusements",
+        "B": "abortions",
+        "C": "allowances",
+        "D": "allocations"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "The government of Sierra Leone had ordered its people to shelter at home because the Ebola _____ was out ofcontrol. It was timetotakedesperatemeasures tostopthespreadingofthis disease.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "epic",
+        "B": "evolution",
+        "C": "epidemic",
+        "D": "evacuation"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "The misogynistic politician’s victory in the election _____ a massive wave of protests among activists, especiallywomen.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "spared",
+        "B": "spoiled",
+        "C": "sparked",
+        "D": "spattered"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "The policemen in Australia have identified an _____ serial killer behind three previously unlinked murders, but theycan’t arrest thesuspect duetolackofevidence.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "allied",
+        "B": "alleged",
+        "C": "allured",
+        "D": "alleviated"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "Agroupof Mexicanmen, all members ofaninternational sextraffickingorganization, were_____tothe United States andtriedforcrimes committedinthestateof New York.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "escaped",
+        "B": "escorted",
+        "C": "extradited",
+        "D": "extracted"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "While there has been a considerable population of migrant workers in Taiwan for quite a few years now, it is debatablewhetherit has become easier forthem to_____intosociety.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "formulate",
+        "B": "accommodate",
+        "C": "assimilate",
+        "D": "combine"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "The cruel treatment inflicted upon these prisoners of war irrefutably _____ the UN human rights convention, yetlittleactionhasbeentakenagainst thetyrannical governmentresponsiblefortheatrocity.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "contravenes",
+        "B": "prohibits",
+        "C": "convenes",
+        "D": "plagiarizes"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "Given the dismally high numbers of frauds getting past immigration checkpoints this past year, the passport andidentity_____process couldbeimproved.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "visualization",
+        "B": "verification",
+        "C": "vetoing",
+        "D": "voting"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "Creative methods of drug _____ were devised, with women swallowing plastic baggies of cocaine and travellingintothecountry.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "smuggling",
+        "B": "embezzling",
+        "C": "stealing",
+        "D": "thieving"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "Whenpeoplefeelso_____aboutstayingintheirhomecountry, theymightpresumablyseekhelptomove toabetterplace.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "numb",
+        "B": "cautious",
+        "C": "distressed",
+        "D": "sympathetic"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "surpass",
+        "B": "survive",
+        "C": "surge",
+        "D": "suspend"
+      },
+      "answer": "B",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage_question_range": "21-25"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "defenses",
+        "B": "offenses",
+        "C": "licenses",
+        "D": "disasters"
+      },
+      "answer": "A",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage_question_range": "21-25"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "paralyzed",
+        "B": "predicted",
+        "C": "followed",
+        "D": "diagnosed"
+      },
+      "answer": "C",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage_question_range": "21-25"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "penetrated",
+        "B": "persuaded",
+        "C": "pertained",
+        "D": "permitted"
+      },
+      "answer": "D",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage_question_range": "21-25"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "among",
+        "B": "about",
+        "C": "as longas",
+        "D": "as well as -"
+      },
+      "answer": "A",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage_question_range": "21-25"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "faced",
+        "B": "ignored",
+        "C": "taken",
+        "D": "spoken"
+      },
+      "answer": "C",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage_question_range": "26-30"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "dawnedon",
+        "B": "degradedinto",
+        "C": "delvedinto",
+        "D": "dwelledon"
+      },
+      "answer": "B",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage_question_range": "26-30"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "by",
+        "B": "for",
+        "C": "of",
+        "D": "with"
+      },
+      "answer": "D",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage_question_range": "26-30"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "although",
+        "B": "because",
+        "C": "if",
+        "D": "whereas"
+      },
+      "answer": "D",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage_question_range": "26-30"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "shallow",
+        "B": "valid",
+        "C": "legal",
+        "D": "neutral"
+      },
+      "answer": "A",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage_question_range": "26-30"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Whichofthefollowingis thebest titleofthis passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Government Computer Systems Relatedto Human-Rights Implications.",
+        "B": "Government Lookingto AIin Addressing Issues with Immigration.",
+        "C": "Possible Legal Challenges to Immigrationand Refugee Claims in Ottawa.",
+        "D": "The Useof AIto Entrench Discriminatory Legal Practices in Canada."
+      },
+      "answer": "B",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage_question_range": "31-35"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Accordingtothepassage, whatmaybethereasonforthe Canadiangovernmenttousetheemergingtechnology?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "It mayaid industryto submit theirowntechnological solutions forimmigration.",
+        "B": "It mayleadtomassivehuman-rights implications ingovernment computersystems.",
+        "C": "It mayreducetheneedtoperform costlyandtime-consuminglegal research.",
+        "D": "It mayreplacehuman workwithalgorithms andposepotential human-rights concerns. -"
+      },
+      "answer": "C",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage_question_range": "31-35"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Accordingtothepassage, whichofthefollowingstatements is true?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Using AItechnologyinimmigrationin Canada mayraisehumanrights issues.",
+        "B": "Ottawahas adoptedtheemergingtechnologytopredict litigationoutcomes.",
+        "C": "The Canadian government has successfullyused AIto determinerefugeeapplications.",
+        "D": "Thedataonthe Canadiangovernment computersystems is itselfflawed."
+      },
+      "answer": "A",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage_question_range": "31-35"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "Accordingtothelastsentenceinthepassage, whichofthefollowingbestdescribesthedecisionof Ottawa?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Ottawais about toestimaterisks ofthepilot project.",
+        "B": "Ottawais alreadyterminatingthepilot project.",
+        "C": "Ottawais consideringtopostponethepilot project.",
+        "D": "Ottawais gettingreadytoexecutethepilot project."
+      },
+      "answer": "D",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage_question_range": "31-35"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "What is theword“nuanced”in thepassage closest inmeaningto?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Alittleawkward.",
+        "B": "Abit notorious.",
+        "C": "Slightlydifferent.",
+        "D": "Somewhat annoyed."
+      },
+      "answer": "C",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage_question_range": "31-35"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "What is themainmessageofthis passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Morecompanies arenowchangingtosubscriptionapproachtomakeprofits.",
+        "B": "Amazon Primeis agoodexampletoillustratethenewsubscriptionaddiction.",
+        "C": "Dropbox andmanyotherstarfirms are floatingtheirshares.",
+        "D": "Morehome-deliverycompaniesareofferingnewprograms to get more “payingusers.”"
+      },
+      "answer": "A",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage_question_range": "36-40"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Whichofthefollowingphrases canbest replace “theholygrail”inthepassage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "theemperor’s new clothes",
+        "B": "thereligious fountain",
+        "C": "theultimatesolution",
+        "D": "thewayhome"
+      },
+      "answer": "C",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage_question_range": "36-40"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Whichofthefollowingis NOT aproblem forcompanies that adopt subscriptionmodels?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Thehigh cost tofindsubscribers.",
+        "B": "Most subscribersliabletobefrom thehigh-incomefamily.",
+        "C": "Thesubscribers incapableofcontrollingtheirdesiretochangetheirproviders.",
+        "D": "Subscribers proneto makepurchases withseveral firms at thesametime."
+      },
+      "answer": "B",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage_question_range": "36-40"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Accordingtothis article, what is NOT includedin Amazon Prime’s $99-program?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Discounts onfood",
+        "B": "Films",
+        "C": "Speedydeliveryof goods",
+        "D": "Noadverts formusic"
+      },
+      "answer": "D",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage_question_range": "36-40"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "According to the passage, which of the following firms has had ten times more sales from their paying usersthanusers whopaynofee?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Amazon Prime",
+        "B": "Zuora",
+        "C": "Netflix",
+        "D": "Dropbox"
+      },
+      "answer": "D",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage_question_range": "36-40"
+    }
+  ],
+  "year": 109,
+  "category": "公共安全學系社安組學系情報組",
+  "subject": "外國文（英文）",
+  "source_pdf": "考古題庫\\公共安全學系社安組學系情報組\\109年\\外國文（英文）\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 43
+}
