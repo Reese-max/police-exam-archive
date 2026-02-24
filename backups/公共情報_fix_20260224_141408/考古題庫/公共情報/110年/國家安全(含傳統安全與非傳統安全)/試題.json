@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "110",
+    "level": "三等",
+    "subject": "國家安全（含傳統安全與非傳統安全）",
+    "exam_time": "2 小時 座號：",
+    "code": "35250"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目得以本國文字或英文作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "請比較美國拜登總統(Joe Biden)和川普總統(Donald Trump)在國家\n安全戰略(national security strategy)上的異同。(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "恐怖主義(terrorism)存在時間非常長久,它與一般黑道集團殺人犯罪有\n何不同?為何恐怖主義很難根絕?(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "請說明下列名詞意涵(以每小題論述最少 100 字,最多不超過 200 字)\n(每小題 5 分,共 25 分)\n巴黎氣候變遷條約\nWorld Health Organization\nSARS 病毒\nAl-Qaeda\nHuman Security",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "請說明何謂網路安全,以及分析我國所面臨之網路安全威脅。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 110,
+  "category": "公共情報",
+  "subject": "國家安全(含傳統安全與非傳統安全)",
+  "source_pdf": "考古題庫\\公共情報\\110年\\國家安全(含傳統安全與非傳統安全)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 4
+}

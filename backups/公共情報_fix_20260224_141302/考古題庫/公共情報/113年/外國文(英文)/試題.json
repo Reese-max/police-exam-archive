@@ -1,0 +1,560 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "level": "三等",
+    "subject": "外國文（英文）",
+    "exam_time": "2 小時 座號：",
+    "code": "35140"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "共40題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "英譯中:請將以下文章翻譯成中文(20 分)\nInternational fraud is a growing concern in today’s interconnected world.\nWith the rapid advancement of the technology and global financial\nsystems, criminals have found new avenues to perpetrate fraudulent\nactivities across borders, exploiting vulnerabilities and loopholes in\ninternational regulations. International fraud encompasses a wide range of\ndeceptive practices,including identity theft, moneylaundering,investment\nscams, and cyber fraud. These schemes often involve complex networks\nof individuals and organizations operating in multiple jurisdictions,\nmaking it challenging for law enforcement agencies to investigate and\nprosecute offenders effectively.\nIn a world where borders are increasingly porous, combating international\nfraud demands a proactive and unified approach. To effectively combat\ninternational fraud, there is an urgent need for enhanced international\ncooperation, harmonized legal frameworks, increased resource allocation,\nand the development of innovative strategies that can keep pace with\nevolving criminal tactics.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "英文寫作:請根據以下指示寫一篇英文作文(30 分)\nCybersecurity has become a critical concern for national security, aligning\nwith the United Nations’ Sustainable Development Goal 16: Peace,\nJustice, and Strong Institutions. Write an essay to discuss the role of\ninvestigators in countering cyber threats and protecting sensitive digital\nassets, and how their work contributes to achieving SDG 16.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "AI technologies can provide highly precise insights into market trends, which allow companies to stayaheadof and well prepareforadynamicmarket.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "competitors",
+        "B": "participants",
+        "C": "collectors",
+        "D": "programmers"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "Themorepublictransportationisused,thesmalleracity’scarbonfootprintis.Thisisbecausepublic transportationuses less .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "vapor",
+        "B": "space",
+        "C": "fuel",
+        "D": "distance"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "Vehicle cybersecurityis essential because autonomous cars must with one another to share informationforthem tobesafe.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "communicate",
+        "B": "motivate",
+        "C": "contribute",
+        "D": "manufacture"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "Placed strategically throughout the house, certain good luck plants are believed to bring prosperity, ,healthandmore.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "closure",
+        "B": "invitation",
+        "C": "fortune",
+        "D": "exchange"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "According to WHO, over seven hundred million people lack to clean water, meaning they areexposedtohigherrisks ofdiseases.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "effort",
+        "B": "attempt",
+        "C": "engagement",
+        "D": "access"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "Taipei 101’s ability to the recent 7.4 magnitude earthquake lies in its use of reinforced concrete,amaterial renownedforits strengthand flexibility.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "withstand",
+        "B": "eliminate",
+        "C": "minimize",
+        "D": "illustrate"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "Multiple days of heavyrains had flooded this city, so a team of rescuers was dispatched to residents trappedbyrisingwaters.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "export",
+        "B": "exclude",
+        "C": "evacuate",
+        "D": "evaluate"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "It is estimated that by2025, data centers will consume 20% of the world’s energysupply; it is thus urgent toadopt energysolutions.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "sustainable",
+        "B": "portable",
+        "C": "controversial",
+        "D": "functional"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "Ecotourism is designed to a natural area’s vulnerable ecosystem, so it should allow visitors toexperiencethebeautyofadestinationwithout causingdamagetoit.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "disregard",
+        "B": "relocate",
+        "C": "compete",
+        "D": "safeguard"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "Criminology states that criminality is inherited; studies show that a significant number of youthshavecriminal fathers.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "muscular",
+        "B": "superficial",
+        "C": "delinquent",
+        "D": "proficient"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "Measures arebeingtaken tostopemployment agencies foreign workers.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "exploiting",
+        "B": "advocating",
+        "C": "encountering",
+        "D": "accelerating"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "Volcanoes aremountains that sometimes spurt out burningash, gas, andhot .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "saliva",
+        "B": "lama",
+        "C": "yak",
+        "D": "lava"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "After spendinga fortuneon a concert ticket,Irene was furious to find that the ticket was a .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "counterpart",
+        "B": "counteract",
+        "C": "counter-argument",
+        "D": "counterfeit"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "Harrier fighter planes have been “jump jets” because they can take off straight up into the air.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "nicknamed",
+        "B": "falsified",
+        "C": "eliminated",
+        "D": "neutralized"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "DNAcollectedfrom chewinggum ledtoarrest and ina1980coldcasemurder.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "villain",
+        "B": "forgery",
+        "C": "genocide",
+        "D": "conviction"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "NoonewassureifAdamcouldhandlethepressureofmakingapublicspeech,buthe tothe occasionanddidan excellent job.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "rolled",
+        "B": "arose",
+        "C": "rose",
+        "D": "raised"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "The night before a big trip is the perfect time to tie up ends, finishing any last-minute packing,and gettingreadyforthetrip.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "loose",
+        "B": "loosen",
+        "C": "lost",
+        "D": "lose"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "Abridgecollapsed after amassivecargoshipveered andstruckthebridge.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "onduty",
+        "B": "offduty",
+        "C": "ofcourse",
+        "D": "offcourse"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "ThougheventuallyreachingthetopofMt.Everest,Jamlinghadtohavetwoofhis toes due tobadbleedingandfrostbite.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "expedited",
+        "B": "amputated",
+        "C": "gratified",
+        "D": "impeded"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "Therisingpop musicstar has shownapromisingupwardcareer .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "outrage",
+        "B": "trajectory",
+        "C": "monotony",
+        "D": "blockage 請依下文回答第21題至第25題 Is migration good for the economy? Migration is a feature of social and economic life across many countries, but theprofile ofmigrant populations varies considerably. Inpart this is because ofthe variety of 21 ofmigration.Forexample,inAustralia,Canada,andNewZealand,managedlabormigration plays an important role. Other sources include family and humanitarian migration. Whatever its source, migrationhas important impacts onoursocieties. Benefitorburden–what’sthereality?Toanswerthisquestion,itcanbehelpfultolookatmigration’s impact in two areas – the labor market and economic growth. In the labor markets, migrants have played asignificantrole,particularlyintheUnitedStatesandEurope.Overthepastdecade,theyhave 22 47% oftheworkforceincrease intheUnitedStatesandanevenhigher70%inEurope.Thesemigrants arenot just filling roles but are occupying important niches in both fast-growing and declining sectors of the economy. 23 their impact on labor markets, migrants also significantly contribute to economic growth.Migrationleadstoanincreaseintheworking-agepopulation,therebyprovidingaboosttotheeconomy. Moreover, migrants are known to contribute to technological progress. Their unique perspectives and experiences canleadtoinnovativesolutions andadvancements, furtherdrivingeconomic 24 . Understanding these impacts is important if our societies are to usefully debate the role of migration. The fundamental question of how to maximize the benefits of migration, both for host countries and the 25 themselves, needs to be addressed by many countries in coming decades, especially as rapid population ageing increases demand for migrants to make up shortfalls in the workforce."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "countries",
+        "B": "sources",
+        "C": "customs",
+        "D": "societies"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "accounted for",
+        "B": "givenup",
+        "C": "takenoff",
+        "D": "intervenedwith"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "In additionto",
+        "B": "Inspiteof",
+        "C": "Tosum up",
+        "D": "Bytheway"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "regression",
+        "B": "problem",
+        "C": "growth",
+        "D": "involvement"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "officers",
+        "B": "socialists",
+        "C": "educators",
+        "D": "migrants 請依下文回答第26題至第30題 Too many people in corporate America, working five days a week—Monday to Friday, 9 to 5— feels as 26 as brushing their teeth. But it wasn’t always that way. In the late 1800s, a full-time manufacturingworkercouldeasilyspend100hoursperweekonthejob.Itwasn’tuntilaround1940,after aconcertedpushfromlaborunions,thatthe40-hourworkweekbecamestandardintheU.S.Now,almost acenturylater,there’s growingmomentumforanevenmore 27 schedule.Pilotstudiesonworking fourdaysaweekhavebeenconductedincountriesincludingtheU.K.,Spain,Portugal,andSouthAfrica. Thefindings suggest that shorterworkweeks canhelp employees reduceburnout,mangestress, get more sleep and exercise, spend additional quality time with loved ones, and feel all-around happier and healthier. Employers also reap 28 , including lower rates of turnover and absenteeism. The study in Spaineventrackedadropinfuel emissions duetofewercommutingtrips. AdditionaltrialsareunderwayincountriesincludingGermany,Brazil,andtheDominicanRepublic. Much of the research on shorter workweeks has been done byadvocacygroups like 4 DayWeek Global. Independent surveys, likeone conductedbyGallupin2022,sometimes showamorecomplex picture. In theGallupsurvey,peoplewhoworkedfourdaysaweekwereslightlymorelikelytoreportfeelingburned out, compared to those with traditional schedules—potentially because they had to 29 the same amount of work into less time. That result is in direct 30 with the results of pilot studies run by groups like 4 Day Week Global; in fact, the group identified burnout reduction as one of the largest benefits ofa condensedschedule."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "sanitary",
+        "B": "formal",
+        "C": "habitual",
+        "D": "confusing"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "condensed",
+        "B": "complementary",
+        "C": "commercial",
+        "D": "controversial"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "arguments",
+        "B": "benefits",
+        "C": "emotions",
+        "D": "pressures"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "cram",
+        "B": "claim",
+        "C": "approve",
+        "D": "improve"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "relation",
+        "B": "conclusion",
+        "C": "revolution",
+        "D": "conflict 請依下文回答第31題至第35題 One of the main factors that drive the growth of e-commerce companies is efficiencyat all levels of operations. Supply chain management is a big part of ensuring such efficiency. By leveraging specific aspects of the supply chain management process, e-commerce giants such as Amazon are growing even larger. First,supplychainmanagementencouragespositivecustomerreviews.Upto72%ofcustomersvisit websites and read their reviews, and as high as 93% of online shoppers admit that they make a decision basedonreviewsandmakepurchasesbecauseofpositivereviews.E-commercebusinessesarecomingto terms with these statistics and are using positive reviews as a major marketing and selling point. But on the other end of the spectrum, E-commerce companies are also hugely affected by negative reviews and thesecanhaveadrasticeffectonsales.Thisiswhycompaniesneedtotakegreatmeasurestomanagethe reviews they get. Effective supply chain management ensures that orders are received and delivered quickly and effectively to customers which keeps them happy and encourages them to give positive reviews. In addition, supply chain management confirms stock availability. One of the most useful pieces of information that customers should have access to is the availability of products. Such information can mean the difference between losing a customer and making a sale. If you have ever made a purchase online,thenchancesareyou’vebasedyourdecisiononknowingthattheproductisavailableandthatyou can get it within a certain period. For instance, when there were only 5 items left, 85% of surveyed customers reported they would make the order immediately. E-commerce giants understand that customers don’t want to be disappointed. Through effective and efficient supply chain management E- commerce businesses can ensure that stock is always available for driving sales. Therefore, a major part ofeveryE-commercebusiness’smarketingstrategyshouldbetoensurethatproductsarealwaysavailable. In conclusion, if you are interested in runningor joiningan E-commerce business, you maywant to learn how to make the supply chain more effective and efficient. Learning more about supply chain management will help youboost theprofit of your business."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "What is themainideaofthis passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Todiscuss whyE-commercecompanies arebooming.",
+        "B": "Toexplainhowtoeffectivelymanagetheinventoryof acompany.",
+        "C": "Tohighlight theimportanceofpositivereviews customers provide.",
+        "D": "Toencouragebusiness owners tousesupplychainmanagement."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Whichofthefollowingmagazines is most likelytobethesourceofthis passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Green Living.",
+        "B": "Sports andHealth.",
+        "C": "OnlineBusiness.",
+        "D": "CreativeBaking."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "According to the passage, how many percentages of customers tend to make a decision based on customerreviews?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "93%.",
+        "B": "85%.",
+        "C": "72%.",
+        "D": "60%."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingstatements is true?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "E-commercebusinesses arenot affectedbynegative customerreviews.",
+        "B": "Deliveringgoods quicklycanleadtopositivecustomerreviews.",
+        "C": "Fewsupplychainmanagement systems areeffectiveinpractice.",
+        "D": "Customers donot needtoknowifcertain goods areinstock."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "What canbeinferred from this passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "E-commercebusinesses aremorelikelytokeeplowinventory.",
+        "B": "Effectivesupplychainmanagement is essential fore-commerce.",
+        "C": "Customers areencouragedtouploadcomments toget coupons.",
+        "D": "More younger generations areshoppingonlinethanolder generations. 請依下文回答第36題至第40題 Two months after its release in November 2022, OpenAI’s ChatGPT had 100 million active users, and suddenly tech corporations were racing to offer the public more “generative AI.” One consequence of the explosion of artificial intelligence is clear: this technology’s environmental footprint is large and growing. AI use is directly responsible for carbon emissions from non-renewable electricity and for the consumption of millions of gallons of fresh water, and it indirectly boosts impacts from building and maintaining the power-hungry equipment on which AI runs. Globally, the number of cloud data centers, whichhouseamultitudeofcomputersperformingcomplexcalculationsforAIoperations,isestimatedto be between approximately 9,000 and 11,000. More are under construction. The International Energy Agency(IEA)projectsthatdatacenters’electricityconsumptionin2026willdoublethatof2022—1,000 terawatts, roughly equivalent to Japan’s current total consumption. Moreover, AI data centers require a significant amount of water due to their cooling needs. These facilities generate a lot of heat because of the intense computation performed by the servers. To prevent overheating and maintain optimal performance,theseserversneedtobecooleddown,whichisoftenachievedthroughwater-basedcooling systems. Inconclusion,therapidadvancementandadoptionofartificialintelligencehaveundeniablybrought about a new era of technological innovation. However, this progress comes with a significant environmental cost. The increasing reliance on AI has led to a surge in carbon emissions, water consumption, and the construction of power-intensive infrastructure. As we look towards the future, it is crucial that webalancethebenefits ofAIwithits environmental impact.Thechallengelies inharnessing thepowerof AIwhilemitigatingits ecological footprint,ensuringasustainablefuture forall."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "What is themainideaofthis passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Todiscuss whyChatGPTattracts millions ofactiveusers inashort time.",
+        "B": "Toexplainthat development ofAIcomes withhuge environmental cost.",
+        "C": "ToexplorehowgenerativeAIcanimprovevarious aspects ofourlives.",
+        "D": "Todiscoverthenewsustainableenergysources forsupportingAIoperation."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Accordingtothepassage,what arethetworesources necessaryforAIdevelopment?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Datacenters andstoragespace.",
+        "B": "Gasolineandelectricity.",
+        "C": "Electricityandwater.",
+        "D": "Rainfall andwindpower."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Whichis usedas evidenceforthelargeand growingfootprint of AItechnology?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "OpenAI’s ChatGPThas morethan100millionactiveusers everymonth.",
+        "B": "Therewill be9000datacenters aroundtheworldten years from now.",
+        "C": "Development ofAIrelies ontheconstructions ofmoredata centers.",
+        "D": "Datacenters’ electricityconsumptionin2026will betwicethat of2022."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Whichofthefollowingissues is NOTdiscussedinthepassage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "AItechnologyencourages theuseof greenenergy.",
+        "B": "Wemust limit theecological footprint ofAItechnology.",
+        "C": "Complex calculationsforAIoperations demandhuge amount ofelectricity.",
+        "D": "Coolingsystems preventingcomputers from overheatingconsumemuchwater."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "What is theauthor’s attitudetowards thedevelopment ofAIandits impacts ontheenvironment?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Weneedtobalancethebenefits of AIandits environmental impact.",
+        "B": "Wemust stopbuildingdatacenters that areexhaustingnatural resources.",
+        "C": "Wecanmovedata centers toareas that canprovideabundant resources.",
+        "D": "Weshouldproperlymaintainthepower-hungryequipment that runs AI."
+      },
+      "answer": "A"
+    }
+  ],
+  "year": 113,
+  "category": "公共情報",
+  "subject": "外國文(英文)",
+  "source_pdf": "考古題庫\\公共情報\\113年\\外國文(英文)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 42
+}

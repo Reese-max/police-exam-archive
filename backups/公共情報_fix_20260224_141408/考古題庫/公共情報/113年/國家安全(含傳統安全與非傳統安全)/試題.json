@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "level": "三等",
+    "subject": "國家安全（含傳統安全與非傳統安全）",
+    "exam_time": "2 小時 座號：",
+    "code": "35250"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "美國白宮 2022 年 10 月公布之「國家安全戰略」(National Security\nStrategy)報告,將臺海議題列入戰略文件,請說明其內容為何?對美中\n臺關係之戰略意涵以及亞太區域安全之影響為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "網路安全(cybersecurity)為當代國家安全重要議題與安全防護的場域,\n請說明網路安全之意涵為何?從科技層面、網路犯罪、網路間諜等三面\n向,舉例分析其對國家安全之挑戰為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "依據美國國土安全部公布「2024 年國土威脅評估」(Homeland Threat\nAssessment 2024)報告,說明關鍵基礎設施安全(Critical Infrastructure\nSecurity)之內容為何?對國土安全之威脅為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "何謂灰色地帶(Gray Zone)衝突?請說明近年來美國與中共在南海持續\n進行灰色地帶競爭之相關行動,以及其對臺灣與亞太區域安全之衝擊為\n何?(25 分)",
+      "section": null
+    }
+  ],
+  "year": 113,
+  "category": "公共情報",
+  "subject": "國家安全(含傳統安全與非傳統安全)",
+  "source_pdf": "考古題庫\\公共情報\\113年\\國家安全(含傳統安全與非傳統安全)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 4
+}
