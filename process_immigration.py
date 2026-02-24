@@ -24,8 +24,19 @@ from pdf_to_questions import (
 PUA_OPTION_MAP = {
     '\ue18c': '(A)', '\ue18d': '(B)', '\ue18e': '(C)', '\ue18f': '(D)',
 }
-# 其他 PUA 字元（注意事項圓點等）→ 移除
-PUA_STRIP = {'\ue129', '\ue12a', '\ue12b', '\ue0c6', '\ue0c7'}
+# 其他 PUA 字元 → 移除（完整掃描 652 個 PDF 後擴充為 32 個）
+PUA_STRIP = {
+    # 注意事項標頭（①②③）
+    '\ue129', '\ue12a', '\ue12b',
+    # 子項標記（④~⑮，葡萄牙文/越南文/行政法子題）
+    '\ue12c', '\ue12d', '\ue12e', '\ue12f', '\ue130', '\ue131', '\ue132',
+    '\ue133', '\ue134', '\ue135', '\ue136', '\ue137',
+    # 題號裝飾（①~⑩，國文/外國文題號前）
+    '\ue0c6', '\ue0c7', '\ue0c8', '\ue0c9', '\ue0ca', '\ue0cb', '\ue0cc',
+    '\ue0cd', '\ue0ce', '\ue0cf',
+    # 泰文字型 PUA（聲調/母音符號）
+    '\uf70a', '\uf70b', '\uf70e', '\uf706', '\uf702', '\uf710', '\uf712',
+}
 
 def preprocess_immigration_text(pages_text):
     """將考選部 PDF 的私有 Unicode 選項標記轉換為標準 (A)(B)(C)(D) 格式"""
