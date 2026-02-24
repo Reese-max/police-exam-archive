@@ -484,7 +484,7 @@
     {
       "number": 37,
       "type": "choice",
-      "stem": "",
+      "stem": "請依文意,從四個選項中選出最合適者,填入第 37 題空格中。",
       "section": null,
       "options": {
         "B": "Whilewesleep,ourbrainsaredoingmuchmorethangettingreadyforthenextday.",
@@ -499,7 +499,7 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "",
+      "stem": "請依文意,從四個選項中選出最合適者,填入第 38 題空格中。",
       "section": null,
       "options": {
         "B": "Whilewesleep,ourbrainsaredoingmuchmorethangettingreadyforthenextday.",
@@ -514,7 +514,7 @@
     {
       "number": 39,
       "type": "choice",
-      "stem": "",
+      "stem": "請依文意,從四個選項中選出最合適者,填入第 39 題空格中。",
       "section": null,
       "options": {
         "B": "Whilewesleep,ourbrainsaredoingmuchmorethangettingreadyforthenextday.",
@@ -529,7 +529,7 @@
     {
       "number": 40,
       "type": "choice",
-      "stem": "",
+      "stem": "請依文意,從四個選項中選出最合適者,填入第 40 題空格中。",
       "section": null,
       "options": {
         "B": "Whilewesleep,ourbrainsaredoingmuchmorethangettingreadyforthenextday.",
@@ -623,9 +623,9 @@
       "section": null,
       "options": {
         "A": "TheFoundationofChronobiology.",
-        "B": "TheFeatureofLifeCycle.",
-        "C": "TheInternalandExternalEnvironments.",
-        "D": "TheOverviewofBiologicalMechanism."
+        "B": "The Featureof Life Cycle.",
+        "C": "The Internaland External Environments.",
+        "D": "The Overviewof Biological Mechanism."
       },
       "answer": "A",
       "passage": "One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise froma timekeeping systemwithin the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changesinthephysicalenvironmentthatareassociatedwithdayandnight,therebyensuringthattheorganismwill“do therightthing”attherighttimeoftheday. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, andtheaccompanyingsleeploss. Themechanismsunderlyingthebiologicaltimekeepingsystemsandthepotentialconsequencesoftheirfailureare among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of varioussleepstagesaroundthesametime.",
