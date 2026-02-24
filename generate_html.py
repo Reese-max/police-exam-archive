@@ -26,7 +26,6 @@ CATEGORIES_ORDER = [
     '犯罪防治預防組', '犯罪防治矯治組',
     '消防警察', '交通警察交通組', '交通警察電訊組', '資訊管理',
     '鑑識科學', '國境警察', '水上警察', '警察法制', '行政管理',
-    '移民特考',
 ]
 
 CATEGORIES_INFO = {
@@ -45,7 +44,6 @@ CATEGORIES_INFO = {
     '水上警察': {'code': 511, 'icon': '&#9875;', 'color': '#0369a1'},
     '警察法制': {'code': 512, 'icon': '&#9878;', 'color': '#b45309'},
     '行政管理': {'code': 513, 'icon': '&#128203;', 'color': '#6366f1'},
-    '移民特考': {'code': 590, 'icon': '&#9992;', 'color': '#0891b2'},
 }
 
 # 圖標對照（純文字版，用於 Python 端）
@@ -57,7 +55,6 @@ CATEGORIES_EMOJI = {
     '資訊管理': '💻', '鑑識科學': '🔬',
     '國境警察': '🛂', '水上警察': '⚓', '警察法制': '⚖',
     '行政管理': '📋',
-    '移民特考': '✈',
 }
 
 
@@ -1453,8 +1450,8 @@ def generate_category_page(category_name, years_data, output_dir):
     subject_keys_json = json.dumps(subject_keys, ensure_ascii=False)
     subject_keys_script = f'<script>const SUBJECT_KEYS={subject_keys_json};</script>'
 
-    exam_prefix = '' if category_name == '移民特考' else '警察特考三等'
-    site_name = '考古題總覽' if category_name == '移民特考' else '三等警察特考考古題總覽'
+    exam_prefix = '警察特考三等'
+    site_name = '三等警察特考考古題總覽'
 
     page_html = f'''<!DOCTYPE html>
 <html lang="zh-TW">
