@@ -39,24 +39,6 @@
     },
     {
       "number": 1,
-      "type": "essay",
-      "stem": "Wortschatz(10 分)",
-      "section": "甲、申論題"
-    },
-    {
-      "number": 2,
-      "type": "essay",
-      "stem": "Inhalt(5 分)",
-      "section": "甲、申論題"
-    },
-    {
-      "number": 3,
-      "type": "essay",
-      "stem": "Plausible fliessende Darstellung(10 分)",
-      "section": "甲、申論題"
-    },
-    {
-      "number": 1,
       "type": "choice",
       "stem": "Illegal immigrants are considered by some to be an economic on the country because they use services while paying almost no taxes.",
       "section": "乙、測驗題",
@@ -343,5 +325,5 @@
   "original_subject": "外國文（德文兼試移民專業英文）",
   "source_pdf": "/home/user/police-exam-archive/移民特考PDF/107年/三等/外國文（德文兼試移民專業英文）/試題.pdf",
   "file_type": "試題",
-  "total_questions": 26
+  "total_questions": 23
 }
