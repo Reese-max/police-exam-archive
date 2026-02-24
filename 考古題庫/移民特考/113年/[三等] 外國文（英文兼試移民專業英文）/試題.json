@@ -243,7 +243,7 @@
         "A": "dislocate",
         "B": "determine",
         "C": "unsettle",
-        "D": "cultivate 請依下文回答第16 題至第20題 The United States has more immigrants than any other country in the world. Today, more than 40 million people living in the US were born in another country, accounting for about one-fifth of the world’s migrants. Also, the population of immigrants is very diverse, with just about every country in the world represented among US immigrants. Pew Research Center regularly publishes statistical portraits of the nation’s foreign- born population, which include historical trends since 1960. These portraits provide more details on the US immigrant population. The US foreign-born population reached a record 44.8 million in 2018. Since 1965, when US immigration laws replaced a national quota system, the number of immigrants living in the US has more than quadrupled. Immigrants today account for 13.7% of the US population, nearly triple the share (4.8%) in 1970. However, today’s immigrant share remains below the record 14.8% share in 1890 when 9.2 million immigrants lived in theUS. Most immigrants (77%) are in the countrylegally, while almost a quarter are unauthorized, according tonew Pew Research Center estimates based on census data adjusted for undercount. In 2017, 45% were naturalized UScitizens,27%ofimmigrantswerepermanentresidents,and5%weretemporaryresidentsin2017.Another 23% of all immigrants were unauthorized immigrants. From 1990 to 2007, the unauthorized immigrant populationwas morethantripledinsize–from 3.5milliontoarecordhigh of12.2millionin2007.By2017, that numberhaddeclined by1.7million,or14%.Therewere10.5millionunauthorizedimmigrants intheUS in2017,accountingfor3.2%ofthenation’spopulation.Thedeclineintheunauthorizedimmigrantpopulation isduelargelytoafallinthenumberfromMexico–thesinglelargestgroupofunauthorizedimmigrantsinthe US."
+        "D": "cultivate"
       },
       "answer": "B",
       "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
@@ -317,9 +317,9 @@
   ],
   "year": 113,
   "category": "移民特考",
-  "subject": "[三等] 外國文(英文兼試移民專業英文)",
+  "subject": "[三等] 外國文（英文兼試移民專業英文）",
   "level": "三等",
-  "original_subject": "外國文(英文兼試移民專業英文)",
+  "original_subject": "外國文（英文兼試移民專業英文）",
   "source_pdf": "/home/user/police-exam-archive/移民特考PDF/113年/三等/外國文(英文兼試移民專業英文)/試題.pdf",
   "file_type": "試題",
   "total_questions": 24

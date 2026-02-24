@@ -36,7 +36,7 @@ from typing import Any
 # ============================================================
 
 BASE_DIR = os.path.join(
-    os.path.expanduser("~"), "Desktop", "考古題下載", "考古題庫", "移民特考"
+    os.path.dirname(os.path.abspath(__file__)), "考古題庫", "移民特考"
 )
 
 EXAM_NAME = "移民行政人員特種考試"
