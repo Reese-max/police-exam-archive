@@ -2,8 +2,8 @@
   "metadata": {
     "exam_type": "113",
     "level": "三等",
-    "subject": "綜合法政知識與英文（包括中華民國憲法、法學緒論、兩岸關係、英文）",
-    "exam_time": "1 小時 座號："
+    "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+    "exam_time": "1 小時"
   },
   "notes": [
     "※注意：本試題為單一選擇題，請選出一個正確或最適當答案。",
@@ -528,7 +528,7 @@
         "A": "eclipse",
         "B": "fortify",
         "C": "amplify",
-        "D": "strengthen 請依下文回答第41題至第45題 Recentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms."
+        "D": "strengthen"
       },
       "answer": "A"
     },
@@ -543,7 +543,9 @@
         "C": "complimented",
         "D": "contrived"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第41題至第45題\nRecentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 42,
@@ -556,7 +558,9 @@
         "C": "conceit",
         "D": "capabilities"
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第41題至第45題\nRecentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 43,
@@ -569,7 +573,9 @@
         "C": "measures",
         "D": "manifesto"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第41題至第45題\nRecentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 44,
@@ -582,7 +588,9 @@
         "C": "Inconclusion",
         "D": "Inresponse"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第41題至第45題\nRecentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 45,
@@ -593,9 +601,11 @@
         "A": "reliant",
         "B": "redundant",
         "C": "rebellious",
-        "D": "ruthless 請依下文回答第46題至第50題 InNewZealand’sWestlandDistricttheclosureofthelocalindigenoustimberindustryalongsiderapidgrowth of the dairyand tourismsectors has produced dilemmas for families andcommunities as they attempt to adjust to the social consequences of rapid industry change. Drawing on a social capital perspective and a case study of 12 Westlandfamilies,thisprojectexamineshowruralfamiliesbringbalancetoaspectsofthethreeactionsdefinedby Arendtasbeingessentialtothehumancondition:family,workandcommunitylife.Thefindingsrevealsignificant insights intohowsocialcapitalis effectivelyreproduced intimes ofchange.These insights are discussed interms oftheirsocialpolicyimplications. Fifty years ago Hannah Arendt published The Human Condition. In this work she contended that there are threetypesofactionrequiredtobe“fullyhuman.”Thefirsttwooftheseactions,engagementinfamilylifeandpaid work,arenecessaryforhumanexistenceincontemporarysociety.Thethirdactionshecalledvitaactiva,orpublic life:a life thatis actionedwithinjointlybuiltcivilspaces.Within thesespaceswe arecapableof debate,we share actions and we resolve collective dilemmas. Arendt reminds us that the absence of, or over-attention to, any one aspectofthehumanconditionislikelytobeproblematic. AhalfacenturyonfromArendt’s originalthesis,publicpolicycontinuestodebateaspectsofvitaactiva and democraticgovernmentsstillseektoengagevitaactivaineconomicallyandsociallyproductiveways.Workingout the shifting balance between family life, paid work and vita activa is a crucial aspect of responding effectively to significantsocialchange,beitlocalissues(suchasnaturaldisasterrelief)ormeetingthechallengesthatariseasa consequenceofexternalorglobalforces(suchasthelossofacoreindustry).Theconceptofsocialcapitalhasbeen usedasawaytorecogniseandgaugevitaactiva. Theterm“socialcapital”originated,inpart,inanattempttounderstandhowfeaturesofsocialorganisation,such as trust, norms and networks can improve the efficiency of society by facilitatingcoordinated actions. Voluntary or joint social actions provide the opportunity to resolve collective dilemmas. Individuals achieve this through the development and use of social bonds and networks as resources to facilitate productive activity. By maintainingthe socialrelationshipsandstructuresnecessaryforcollectiveactivity,individuals,familiesandcommunitiesareableto realisesomeofthesebenefits,andindoingsocanresolvesomeoftheissuestheyfaceincommon."
+        "D": "ruthless"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第41題至第45題\nRecentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 46,
@@ -608,7 +618,9 @@
         "C": "GovernmentalRolesintheFaceofSocialChange.",
         "D": "TheLivingConditionsof12WestlandFamilies."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第46題至第50題\nInNewZealand’sWestlandDistricttheclosureofthelocalindigenoustimberindustryalongsiderapidgrowth of the dairyand tourismsectors has produced dilemmas for families andcommunities as they attempt to adjust to the social consequences of rapid industry change. Drawing on a social capital perspective and a case study of 12 Westlandfamilies,thisprojectexamineshowruralfamiliesbringbalancetoaspectsofthethreeactionsdefinedby Arendtasbeingessentialtothehumancondition:family,workandcommunitylife.Thefindingsrevealsignificant insights intohowsocialcapitalis effectivelyreproduced intimes ofchange.These insights are discussed interms oftheirsocialpolicyimplications. Fifty years ago Hannah Arendt published The Human Condition. In this work she contended that there are threetypesofactionrequiredtobe“fullyhuman.”Thefirsttwooftheseactions,engagementinfamilylifeandpaid work,arenecessaryforhumanexistenceincontemporarysociety.Thethirdactionshecalledvitaactiva,orpublic life:a life thatis actionedwithinjointlybuiltcivilspaces.Within thesespaceswe arecapableof debate,we share actions and we resolve collective dilemmas. Arendt reminds us that the absence of, or over-attention to, any one aspectofthehumanconditionislikelytobeproblematic. AhalfacenturyonfromArendt’s originalthesis,publicpolicycontinuestodebateaspectsofvitaactiva and democraticgovernmentsstillseektoengagevitaactivaineconomicallyandsociallyproductiveways.Workingout the shifting balance between family life, paid work and vita activa is a crucial aspect of responding effectively to significantsocialchange,beitlocalissues(suchasnaturaldisasterrelief)ormeetingthechallengesthatariseasa consequenceofexternalorglobalforces(suchasthelossofacoreindustry).Theconceptofsocialcapitalhasbeen usedasawaytorecogniseandgaugevitaactiva. Theterm“socialcapital”originated,inpart,inanattempttounderstandhowfeaturesofsocialorganisation,such as trust, norms and networks can improve the efficiency of society by facilitatingcoordinated actions. Voluntary or joint social actions provide the opportunity to resolve collective dilemmas. Individuals achieve this through the development and use of social bonds and networks as resources to facilitate productive activity. By maintainingthe socialrelationshipsandstructuresnecessaryforcollectiveactivity,individuals,familiesandcommunitiesareableto realisesomeofthesebenefits,andindoingsocanresolvesomeoftheissuestheyfaceincommon.",
+      "passage_question_range": "46-50"
     },
     {
       "number": 47,
@@ -621,7 +633,9 @@
         "C": "Shebelievesthatpubliclifeisthemostimportantamongthethreetypesofactionmentioned.",
         "D": "Hertheorysuggeststhatactionplayacentralroleinfacilitatingandmaintaininghumanconditions."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第46題至第50題\nInNewZealand’sWestlandDistricttheclosureofthelocalindigenoustimberindustryalongsiderapidgrowth of the dairyand tourismsectors has produced dilemmas for families andcommunities as they attempt to adjust to the social consequences of rapid industry change. Drawing on a social capital perspective and a case study of 12 Westlandfamilies,thisprojectexamineshowruralfamiliesbringbalancetoaspectsofthethreeactionsdefinedby Arendtasbeingessentialtothehumancondition:family,workandcommunitylife.Thefindingsrevealsignificant insights intohowsocialcapitalis effectivelyreproduced intimes ofchange.These insights are discussed interms oftheirsocialpolicyimplications. Fifty years ago Hannah Arendt published The Human Condition. In this work she contended that there are threetypesofactionrequiredtobe“fullyhuman.”Thefirsttwooftheseactions,engagementinfamilylifeandpaid work,arenecessaryforhumanexistenceincontemporarysociety.Thethirdactionshecalledvitaactiva,orpublic life:a life thatis actionedwithinjointlybuiltcivilspaces.Within thesespaceswe arecapableof debate,we share actions and we resolve collective dilemmas. Arendt reminds us that the absence of, or over-attention to, any one aspectofthehumanconditionislikelytobeproblematic. AhalfacenturyonfromArendt’s originalthesis,publicpolicycontinuestodebateaspectsofvitaactiva and democraticgovernmentsstillseektoengagevitaactivaineconomicallyandsociallyproductiveways.Workingout the shifting balance between family life, paid work and vita activa is a crucial aspect of responding effectively to significantsocialchange,beitlocalissues(suchasnaturaldisasterrelief)ormeetingthechallengesthatariseasa consequenceofexternalorglobalforces(suchasthelossofacoreindustry).Theconceptofsocialcapitalhasbeen usedasawaytorecogniseandgaugevitaactiva. Theterm“socialcapital”originated,inpart,inanattempttounderstandhowfeaturesofsocialorganisation,such as trust, norms and networks can improve the efficiency of society by facilitatingcoordinated actions. Voluntary or joint social actions provide the opportunity to resolve collective dilemmas. Individuals achieve this through the development and use of social bonds and networks as resources to facilitate productive activity. By maintainingthe socialrelationshipsandstructuresnecessaryforcollectiveactivity,individuals,familiesandcommunitiesareableto realisesomeofthesebenefits,andindoingsocanresolvesomeoftheissuestheyfaceincommon.",
+      "passage_question_range": "46-50"
     },
     {
       "number": 48,
@@ -634,7 +648,9 @@
         "C": "Lackofcapitaltoprovidefreeeducationtothecommunity.",
         "D": "Lackofco-ordinationamonggovernmentagenciesinsavingtheenvironment."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第46題至第50題\nInNewZealand’sWestlandDistricttheclosureofthelocalindigenoustimberindustryalongsiderapidgrowth of the dairyand tourismsectors has produced dilemmas for families andcommunities as they attempt to adjust to the social consequences of rapid industry change. Drawing on a social capital perspective and a case study of 12 Westlandfamilies,thisprojectexamineshowruralfamiliesbringbalancetoaspectsofthethreeactionsdefinedby Arendtasbeingessentialtothehumancondition:family,workandcommunitylife.Thefindingsrevealsignificant insights intohowsocialcapitalis effectivelyreproduced intimes ofchange.These insights are discussed interms oftheirsocialpolicyimplications. Fifty years ago Hannah Arendt published The Human Condition. In this work she contended that there are threetypesofactionrequiredtobe“fullyhuman.”Thefirsttwooftheseactions,engagementinfamilylifeandpaid work,arenecessaryforhumanexistenceincontemporarysociety.Thethirdactionshecalledvitaactiva,orpublic life:a life thatis actionedwithinjointlybuiltcivilspaces.Within thesespaceswe arecapableof debate,we share actions and we resolve collective dilemmas. Arendt reminds us that the absence of, or over-attention to, any one aspectofthehumanconditionislikelytobeproblematic. AhalfacenturyonfromArendt’s originalthesis,publicpolicycontinuestodebateaspectsofvitaactiva and democraticgovernmentsstillseektoengagevitaactivaineconomicallyandsociallyproductiveways.Workingout the shifting balance between family life, paid work and vita activa is a crucial aspect of responding effectively to significantsocialchange,beitlocalissues(suchasnaturaldisasterrelief)ormeetingthechallengesthatariseasa consequenceofexternalorglobalforces(suchasthelossofacoreindustry).Theconceptofsocialcapitalhasbeen usedasawaytorecogniseandgaugevitaactiva. Theterm“socialcapital”originated,inpart,inanattempttounderstandhowfeaturesofsocialorganisation,such as trust, norms and networks can improve the efficiency of society by facilitatingcoordinated actions. Voluntary or joint social actions provide the opportunity to resolve collective dilemmas. Individuals achieve this through the development and use of social bonds and networks as resources to facilitate productive activity. By maintainingthe socialrelationshipsandstructuresnecessaryforcollectiveactivity,individuals,familiesandcommunitiesareableto realisesomeofthesebenefits,andindoingsocanresolvesomeoftheissuestheyfaceincommon.",
+      "passage_question_range": "46-50"
     },
     {
       "number": 49,
@@ -647,7 +663,9 @@
         "C": "Itoffersahopefortheunemployedpeopletostarttheirnewcareers.",
         "D": "Itenablesacommunitytodealwithitsproblemsviajointeffortsandactions."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第46題至第50題\nInNewZealand’sWestlandDistricttheclosureofthelocalindigenoustimberindustryalongsiderapidgrowth of the dairyand tourismsectors has produced dilemmas for families andcommunities as they attempt to adjust to the social consequences of rapid industry change. Drawing on a social capital perspective and a case study of 12 Westlandfamilies,thisprojectexamineshowruralfamiliesbringbalancetoaspectsofthethreeactionsdefinedby Arendtasbeingessentialtothehumancondition:family,workandcommunitylife.Thefindingsrevealsignificant insights intohowsocialcapitalis effectivelyreproduced intimes ofchange.These insights are discussed interms oftheirsocialpolicyimplications. Fifty years ago Hannah Arendt published The Human Condition. In this work she contended that there are threetypesofactionrequiredtobe“fullyhuman.”Thefirsttwooftheseactions,engagementinfamilylifeandpaid work,arenecessaryforhumanexistenceincontemporarysociety.Thethirdactionshecalledvitaactiva,orpublic life:a life thatis actionedwithinjointlybuiltcivilspaces.Within thesespaceswe arecapableof debate,we share actions and we resolve collective dilemmas. Arendt reminds us that the absence of, or over-attention to, any one aspectofthehumanconditionislikelytobeproblematic. AhalfacenturyonfromArendt’s originalthesis,publicpolicycontinuestodebateaspectsofvitaactiva and democraticgovernmentsstillseektoengagevitaactivaineconomicallyandsociallyproductiveways.Workingout the shifting balance between family life, paid work and vita activa is a crucial aspect of responding effectively to significantsocialchange,beitlocalissues(suchasnaturaldisasterrelief)ormeetingthechallengesthatariseasa consequenceofexternalorglobalforces(suchasthelossofacoreindustry).Theconceptofsocialcapitalhasbeen usedasawaytorecogniseandgaugevitaactiva. Theterm“socialcapital”originated,inpart,inanattempttounderstandhowfeaturesofsocialorganisation,such as trust, norms and networks can improve the efficiency of society by facilitatingcoordinated actions. Voluntary or joint social actions provide the opportunity to resolve collective dilemmas. Individuals achieve this through the development and use of social bonds and networks as resources to facilitate productive activity. By maintainingthe socialrelationshipsandstructuresnecessaryforcollectiveactivity,individuals,familiesandcommunitiesareableto realisesomeofthesebenefits,andindoingsocanresolvesomeoftheissuestheyfaceincommon.",
+      "passage_question_range": "46-50"
     },
     {
       "number": 50,
@@ -660,7 +678,9 @@
         "C": "Aresearchpaperinasocialpolicyjournal.",
         "D": "AnewsreportinNewZealand."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第46題至第50題\nInNewZealand’sWestlandDistricttheclosureofthelocalindigenoustimberindustryalongsiderapidgrowth of the dairyand tourismsectors has produced dilemmas for families andcommunities as they attempt to adjust to the social consequences of rapid industry change. Drawing on a social capital perspective and a case study of 12 Westlandfamilies,thisprojectexamineshowruralfamiliesbringbalancetoaspectsofthethreeactionsdefinedby Arendtasbeingessentialtothehumancondition:family,workandcommunitylife.Thefindingsrevealsignificant insights intohowsocialcapitalis effectivelyreproduced intimes ofchange.These insights are discussed interms oftheirsocialpolicyimplications. Fifty years ago Hannah Arendt published The Human Condition. In this work she contended that there are threetypesofactionrequiredtobe“fullyhuman.”Thefirsttwooftheseactions,engagementinfamilylifeandpaid work,arenecessaryforhumanexistenceincontemporarysociety.Thethirdactionshecalledvitaactiva,orpublic life:a life thatis actionedwithinjointlybuiltcivilspaces.Within thesespaceswe arecapableof debate,we share actions and we resolve collective dilemmas. Arendt reminds us that the absence of, or over-attention to, any one aspectofthehumanconditionislikelytobeproblematic. AhalfacenturyonfromArendt’s originalthesis,publicpolicycontinuestodebateaspectsofvitaactiva and democraticgovernmentsstillseektoengagevitaactivaineconomicallyandsociallyproductiveways.Workingout the shifting balance between family life, paid work and vita activa is a crucial aspect of responding effectively to significantsocialchange,beitlocalissues(suchasnaturaldisasterrelief)ormeetingthechallengesthatariseasa consequenceofexternalorglobalforces(suchasthelossofacoreindustry).Theconceptofsocialcapitalhasbeen usedasawaytorecogniseandgaugevitaactiva. Theterm“socialcapital”originated,inpart,inanattempttounderstandhowfeaturesofsocialorganisation,such as trust, norms and networks can improve the efficiency of society by facilitatingcoordinated actions. Voluntary or joint social actions provide the opportunity to resolve collective dilemmas. Individuals achieve this through the development and use of social bonds and networks as resources to facilitate productive activity. By maintainingthe socialrelationshipsandstructuresnecessaryforcollectiveactivity,individuals,familiesandcommunitiesareableto realisesomeofthesebenefits,andindoingsocanresolvesomeoftheissuestheyfaceincommon.",
+      "passage_question_range": "46-50"
     }
   ],
   "year": 113,

@@ -1,0 +1,672 @@
+{
+  "metadata": {
+    "exam_type": "111",
+    "level": "三等",
+    "subject": "綜合法政知識與英文（包括中華民國憲法、法學緒論、兩岸關係、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依司法院大法官解釋之意旨,下列有關學術自由之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "學術自由受憲法第11條之保障",
+        "B": "學術自由之內涵包括研究自由、教學自由以及學習自由在內",
+        "C": "學術自由屬個人性質之基本權,其保障對象不包括大學在內",
+        "D": "在宗教團體所設立之大學內任教者,仍可主張學術自由之保障"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關總統之國家機密特權,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "就有關國家安全、國防、外交及人事任免之資訊,均屬總統國家機密特權之範圍",
+        "B": "總統核定國家機密,應經行政院院會議決",
+        "C": "於刑事訴訟程序,總統就國家機密事項享有拒絕證言權",
+        "D": "在刑事訴訟程序中,總統就國家機密事項不得拒絕提交相關證物給法院"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "依憲法及憲法增修條文規定,關於司法院之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "司法院為國家最高司法機關",
+        "B": "司法院解釋憲法,並有統一解釋法律及命令之權",
+        "C": "司法院設大法官15人,由總統提名,經立法院同意任命之",
+        "D": "司法院院長、副院長,任期8年,受任期保障"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,立法委員言論免責權之保障範圍,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "立法委員在立法院內舉辦公聽會之發言",
+        "B": "立法委員在院會舉牌抗議",
+        "C": "立法委員在立法院內使用手機關說自己家人涉及之刑事案件",
+        "D": "立法委員進行院內黨團協商"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於憲法第14條集會結社自由之保障,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "規範集會結社之時間、地點及方式,如為公益或社會秩序之必要,司法權基本上尊重立法形成之自由",
+        "B": "設立管制對人民結社自由之限制最為嚴重,司法權應就各項法定設立事由,嚴格審查",
+        "C": "職業團體之運作,不論公私益或營利與否,同時受憲法第14條結社自由與第15條工作權之保障",
+        "D": "既存祭祀公業規約約定派下員資格傳男不傳女,同時受憲法第14條結社自由與第13條宗教自由之保障"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依憲法及憲法增修條文、總統副總統選舉罷免法及司法院大法官解釋,關於總統副總統罷免,下列敘述何 者錯誤?",
+      "section": null,
+      "options": {
+        "A": "總統副總統之選舉為聯名登記,故其罷免案亦應聯名提出",
+        "B": "罷免制度之本質係政治責任,故提議罷免之理由,自無限制之必要",
+        "C": "總統、副總統之罷免案,僅得由立法委員提案發動",
+        "D": "總統副總統之罷免通過須經全體選舉人總額過半數之投票,有效票過半數之同意"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "依憲法及憲法增修條文及司法院大法官解釋,關於行政院與立法院之關係,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "行政院因施政方針變更而向立法院報告不欲執行法定預算時,如立法院作成反對決議,即屬對政策變更 之異議,具有確認法定預算效力之作用",
+        "B": "行政院如認立法院通過之預算案窒礙難行,得依憲法增修條文之規定提出覆議",
+        "C": "行政院如認為立法院決議之條約案有窒礙難行之處,得逕將該決議案移請立法院覆議",
+        "D": "如立法院針對行政院之施政方針變更作成反對決議,行政院並無移請立法院覆議之權"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,民法未容許同性婚姻違反平等保護,以下何者不屬於該解釋之相關理由?",
+      "section": null,
+      "options": {
+        "A": "同性戀者長期在事實上及法律上受到歧視,且因屬於弱勢少數,故難以透過一般民主程序爭取平等待遇",
+        "B": "基於性傾向的差別待遇須受較為嚴格的審查,亦即視其有無追求重要公益,手段與目的間有無實質關聯",
+        "C": "以不能繁衍後代為由,不承認同性婚姻,尚屬合理之差別待遇",
+        "D": "以維護基本倫理秩序為由,禁止同性婚姻,顯非合理之差別待遇"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "某市電子遊戲場業設置管理自治條例規定,業者選定的場所必須至少距離學校一千公尺以上。依司法院大 法官解釋,下列敘述何者有誤?",
+      "section": null,
+      "options": {
+        "A": "系爭距離規定可能侵害人民的營業自由",
+        "B": "以自治條例訂定距離規定並未牴觸法律保留原則",
+        "C": "系爭距離規定涉及工作地點的選擇,屬於對職業選擇自由的限制",
+        "D": "系爭距離規定如對人民的營業活動產生實質阻絕的結果時,應受較嚴格的比例原則審查"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "憲法未要求下列何者須超出黨派以外獨立行使職權?",
+      "section": null,
+      "options": {
+        "A": "監察委員",
+        "B": "考試委員",
+        "C": "法官",
+        "D": "行政院政務委員"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "以下有關命令之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "中央法規標準法所規定之命令有兩種,一者為行政機關依其法定職權所訂定,另一者則是基於法律授權 而訂定",
+        "B": "中央法規標準法所規定之命令名稱,包含規程、規則、細則、辦法、綱要、標準及準則",
+        "C": "總統發布之緊急命令,可以牴觸,甚至取代或凍結法律之規定",
+        "D": "依憲法增修條文之規定,總統得經立法院會議之決議,發布緊急命令"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "常聽到「臺灣法律體系是繼受近代歐陸法」,下列何種法規為此句話之具體事例?",
+      "section": null,
+      "options": {
+        "A": "民法",
+        "B": "證券交易法",
+        "C": "家庭暴力防治法",
+        "D": "動產擔保交易法"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "行政機關基於法律授權而訂定法規命令,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "該法規命令不得牴觸授權母法",
+        "B": "該法規命令應明列其授權依據",
+        "C": "該法規命令於發布送立法院備查後始生效力",
+        "D": "該法規命令得名之為「規則」"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "以下關於「不確定法律概念」之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "實定法中之所以存在不確定法律概念,主要是因為立法者之疏失缺漏",
+        "B": "「公序良俗」屬於不確定法律概念",
+        "C": "不確定法律概念可能存在於構成要件與法律效果",
+        "D": "不確定法律概念之適用,可採取具體化(類型化)之方式評價條文而為之"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "甲欲殺害乙,誤以為站立於前方之丙為乙而殺之,學說將這種情況稱為:",
+      "section": null,
+      "options": {
+        "A": "客體錯誤",
+        "B": "禁止錯誤",
+        "C": "打擊錯誤",
+        "D": "因果歷程錯誤"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "公開發行股票之A公司欲發行特別股,依公司法之規定,下列何者並非A公司得以發行之特別股種類?",
+      "section": null,
+      "options": {
+        "A": "優先分派股息及紅利之特別股",
+        "B": "股東無表決權之特別股",
+        "C": "優先分派公司賸餘財產之特別股",
+        "D": "複數表決權之特別股"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "關於勞動基準法第9條之1離職後競業禁止期間之規定,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "沒有任何規範,完全由雇主視實際需要約定",
+        "B": "最長不得逾3年。逾3年者,無效",
+        "C": "最長不得逾1年。有特殊合理因素者,得逾1年,但最長不得逾3年",
+        "D": "最長不得逾2年。逾2年者,縮短為2年"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "下列有關「產假」之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "雇主於女性受僱者分娩前後,應使其停止工作,給予產假8星期",
+        "B": "雇主於女性受僱者妊娠3個月以上流產者,應使其停止工作,給予產假4星期",
+        "C": "雇主於女性受僱者妊娠2個月以上未滿3個月流產者,應使其停止工作,給予產假1星期",
+        "D": "雇主於女性受僱者妊娠未滿2個月流產者,應使其停止工作,給予產假3日"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "依司法院大法官解釋之意旨,下列何者非屬憲法第22條保障之權利?",
+      "section": null,
+      "options": {
+        "A": "名譽權",
+        "B": "姓名權",
+        "C": "人格權",
+        "D": "請願權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "甲、乙、丙三人共有A屋,就此共有關係,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "共有物之管理,原則上應以共有人過半數及其應有部分合計過半數之同意行之",
+        "B": "共有物之管理,得以其應有部分合計逾3分之2的共有人之同意行之",
+        "C": "各共有人,得自由處分共有物",
+        "D": "各共有人,得自由處分其應有部分"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "下列那一個中國大陸黨政職務不屬於「副國級」幹部?",
+      "section": null,
+      "options": {
+        "A": "上海市委書記",
+        "B": "全國人大常委會委員長",
+        "C": "國家副主席",
+        "D": "最高人民法院院長"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "中共為了強化對臺政策,成立「中共中央對臺工作領導小組」,由中共中央總書記、中國國家主席、中央 軍委主席習近平擔任組長,2022年6月時的副組長是那一位中共高層?",
+      "section": null,
+      "options": {
+        "A": "國務院總理李克強",
+        "B": "人大委員長栗戰書",
+        "C": "全國政協主席汪洋",
+        "D": "國家副主席王岐山"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "1999年7月9日李前總統登輝接受「德國之聲」專訪,提及1949年中共建立政權後,從未統治過中華民 國所轄的臺澎金馬,被認為是使兩岸關係發生重要轉折的事件。以下何者不是李前總統在該次訪問所強調 的要點?",
+      "section": null,
+      "options": {
+        "A": "1991年修憲以來,兩岸至少是特殊的國與國關係",
+        "B": "總統與副總統直選,使憲改建構的國家機關,只代表臺灣人民",
+        "C": "兩岸關係不是一邊是合法政府,一邊是叛亂團體",
+        "D": "兩岸關係依照憲法與兩岸人民關係條例,應分為臺灣地區與大陸地區"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "「臺灣友邦國際保護及加強倡議法」(TaiwanAlliesInternationalProtectionandEnhancementInitiativeAct) 是川普總統於2020年簽署之重要友臺法案之一。關於該法內容,以下敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "美國歷屆政府自1979年之後,從未對臺灣最終地位採取正式立場",
+        "B": "美國對臺軍售內容不受「八一七公報」之侷限",
+        "C": "美國支持臺灣成為不以主權國家為參與資格的國際組織會員",
+        "D": "美國將協助臺灣與印太各國建立邦交"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "韓國於2022年選出新任總統尹錫悅,中共派出那一位高層代表出席尹錫悅的就職儀式?",
+      "section": null,
+      "options": {
+        "A": "李克強",
+        "B": "王毅",
+        "C": "王岐山",
+        "D": "楊潔篪"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "我國「反滲透法」第3條規定,任何人不得受滲透來源之指示、委託或資助,捐贈政治獻金,或捐贈經費 供從事那一種相關活動?",
+      "section": null,
+      "options": {
+        "A": "總統、副總統選舉之相關活動",
+        "B": "立法機關之遊說",
+        "C": "政黨之日常運作",
+        "D": "公民投票案"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "為保衛國家安全,政府自108年起陸續完成「國安五法」的修正,以下何者不包括在內?",
+      "section": null,
+      "options": {
+        "A": "臺灣地區與大陸地區人民關係條例",
+        "B": "海岸巡防法",
+        "C": "國家機密保護法",
+        "D": "國家安全法"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "1961 年起,中華民國政府曾試圖推動軍事反攻大陸的「國光計畫」,一項重要考量是當時對岸發生一系 列政經危機。請問以下所述重大事件,何者屬於策劃反攻當時,中國大陸進行中之危機?",
+      "section": null,
+      "options": {
+        "A": "林彪事件",
+        "B": "「四人幫」事件",
+        "C": "「大躍進」運動",
+        "D": "蘇聯入侵阿富汗"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "下列有關海峽交流基金會(海基會)的敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "海基會是政府全資捐助的社團法人,決算接受審計部審計",
+        "B": "海基會接受政府委託,協助保障人民在大陸地區停留期間之合法權益事宜",
+        "C": "海基會董事長由主管機關於政府特定職務之人員中遴聘",
+        "D": "2008年海基會董事長江丙坤邀請海協會會長汪道涵來臺,遭遇民眾抗議"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "我國人前往中國大陸,必需持有中華人民共和國出入境管理局根據《中國公民往來臺灣地區管理辦法》頒 發的證件才能入境,俗稱「台胞證」,它的正式名稱是?",
+      "section": null,
+      "options": {
+        "A": "臺灣同胞來往大陸通行證",
+        "B": "臺灣居民來往大陸通行證",
+        "C": "臺灣同胞往來大陸通行證",
+        "D": "臺灣居民來往大陸許可證"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Nooneisfully_____fromthediseaseuntilmoreeffectivevaccinesareinvented.",
+      "section": null,
+      "options": {
+        "A": "durable",
+        "B": "immune",
+        "C": "hospitable",
+        "D": "accessible"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "ManyTaiwaneseparentsare_____tobelievethatchildrenneedtostartlearningEnglishasearlyaspossible.",
+      "section": null,
+      "options": {
+        "A": "tendered",
+        "B": "inclined",
+        "C": "tilted",
+        "D": "sloped"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Thetalentedyoungmanchosetosetuphisownfirm,ratherthanbecomeaprofessor,becausehewantedto_____ whathehadlearnedinindustrialsites.",
+      "section": null,
+      "options": {
+        "A": "correspond",
+        "B": "implement",
+        "C": "reconcile",
+        "D": "satisfy"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "ThephysiciantoldHelentogetbedrest,_____herfeet,andtakesomemedication.",
+      "section": null,
+      "options": {
+        "A": "disclose",
+        "B": "enrich",
+        "C": "elevate",
+        "D": "devalue"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Unfortunately,manycouldseethatthepublichealthinsuranceanditsnewregulationscould_____thepoorfrom gettingthemedicalcaretheyneed.",
+      "section": null,
+      "options": {
+        "A": "invade",
+        "B": "inhibit",
+        "C": "involve",
+        "D": "indulge"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Geographically _____ animal populations of the same species often inhabit in decidedly different ecological conditions.",
+      "section": null,
+      "options": {
+        "A": "conducted",
+        "B": "dedicated",
+        "C": "abducted",
+        "D": "separated"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Predation by avian predators is an important cause of _____ in some bird species during all life stages and has beenlinkedtoimpairedreproductiveperformance.",
+      "section": null,
+      "options": {
+        "A": "mentality",
+        "B": "majority",
+        "C": "mortality",
+        "D": "morality"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "The author makes the relationship of the humanities and environment a core concern, insisting on the profound importanceoftheir_____.",
+      "section": null,
+      "options": {
+        "A": "ambiguity",
+        "B": "hostility",
+        "C": "linkage",
+        "D": "hospitality"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Manypeoplebelievebuyingrealestatemaybea_____againstinflation.",
+      "section": null,
+      "options": {
+        "A": "hedge",
+        "B": "sanction",
+        "C": "ravage",
+        "D": "cavity"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "People may experience the positive feelings of high self-esteem by being members of some influential or _____ associations.",
+      "section": null,
+      "options": {
+        "A": "prestigious",
+        "B": "destructive",
+        "C": "spontaneous",
+        "D": "consecutive"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "_____bythehorrifyingmurderscene,thelittleboycouldn'tevenutteraword,letalonecryforhelp.",
+      "section": null,
+      "options": {
+        "A": "Detached",
+        "B": "Discharged",
+        "C": "Paralyzed",
+        "D": "Withdrawn"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "Food insecurityrefers toa spectrumof experiences that encompass worries aboutrunningout of food or making _____infoodqualitybecauseoflimitedfunds.",
+      "section": null,
+      "options": {
+        "A": "compromises",
+        "B": "commodities",
+        "C": "comprehension",
+        "D": "compassion"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "Modernenvironmentalconcernslikeglobalwarmingdoencourageustothinkhow_____lifeonearthcanbe.",
+      "section": null,
+      "options": {
+        "A": "fragile",
+        "B": "flagrant",
+        "C": "fruitful",
+        "D": "flamboyant"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "Theinterdependenceofnatureandhumankindservestostressthemutualobligationsthatshouldevokeasenseof universal_____.",
+      "section": null,
+      "options": {
+        "A": "fraternity",
+        "B": "frivolity",
+        "C": "fraudulence",
+        "D": "frontier"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "Thecivilrightsmovementlastingforadecadecausedsomeviolentincidentsandmarkedaperiodofsocial_____ inthecountry.",
+      "section": null,
+      "options": {
+        "A": "burglary",
+        "B": "syndrome",
+        "C": "tendency",
+        "D": "upheaval"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "TheUnited Stateshas experiencedadramaticincreaseinoverdosedeathsoverthe past20years,whichhasbeen welldocumentedandlargely_____towhathasbeentermedtheopioidcrisisoropioidepidemic.",
+      "section": null,
+      "options": {
+        "A": "accumulated",
+        "B": "attributed",
+        "C": "abbreviated",
+        "D": "acclaimed"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Cosmestics sales went up to 50% when the ladies who wish to brighten up their skins heard that the new liquid concealercould_____thecomplexion.",
+      "section": null,
+      "options": {
+        "A": "illuminate",
+        "B": "amplify",
+        "C": "animate",
+        "D": "humidify"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Manyrefugees,inthefaceoftortureanddeath,decidetoseekan_____inforeignlands.",
+      "section": null,
+      "options": {
+        "A": "asylum",
+        "B": "overload",
+        "C": "overcharge",
+        "D": "abolishment"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Thesurgeonwaspleasedwiththeresultandscheduleda_____meetingwiththepatientoneweekafterthesurgery tomakesurethateverythingisundercontrol.",
+      "section": null,
+      "options": {
+        "A": "choke-up",
+        "B": "make-up",
+        "C": "catch-up",
+        "D": "follow-up"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Innovations,suchasthesteamengine,electrificationanddigitalization,have_____radicalchangesinthewayin whichweproducegoodsandservices.",
+      "section": null,
+      "options": {
+        "A": "underpinned",
+        "B": "underestimated",
+        "C": "undercovered",
+        "D": "undermined"
+      },
+      "answer": "A"
+    }
+  ],
+  "year": 111,
+  "category": "公共情報",
+  "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+  "source_pdf": "考古題庫\\公共情報\\111年\\綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

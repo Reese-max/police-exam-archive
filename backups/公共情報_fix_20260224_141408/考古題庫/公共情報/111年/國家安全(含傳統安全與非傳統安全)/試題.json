@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "111",
+    "level": "三等",
+    "subject": "國家安全（含傳統安全與非傳統安全）",
+    "exam_time": "2 小時 座號：",
+    "code": "35250"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "美國國家情報總監辦公室公布的《2022 年度威脅評估報告》(The 2022\nAnnual Threat Assessment Report),特別提到中共的「惡意影響力」\n(Malign Influence),請問其內容為何?這跟中共的「銳實力」(sharp\npower)有何關聯?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "根據美國國土安全部(Department of Homeland Security)公布 2020 年\n《國土安全威脅評估》(Homeland ThreatAssessment)報告所列出的「美\n國的暴力極端主義」有那些組織?該報告所指出的未來恐怖主義的發展\n趨勢為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "請問聯合國 2006 年通過的「全球反恐戰略」為何?又 2003 年 1 月 20 日\n聯合國安理會通過的第 1456 號決議文,其中如何規範各國政府兼顧反\n恐與人權的平衡?(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "2021 年我國總統蔡英文在國慶日發表「臺灣堅韌之島 攜手走向世界」\n演說,其中提出我國國家安全挑戰為何?我國國家安全共識所約定的\n「四個堅持」為何?以及我國國家安全總目標為何?(25 分)",
+      "section": null
+    }
+  ],
+  "year": 111,
+  "category": "公共情報",
+  "subject": "國家安全(含傳統安全與非傳統安全)",
+  "source_pdf": "考古題庫\\公共情報\\111年\\國家安全(含傳統安全與非傳統安全)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 4
+}

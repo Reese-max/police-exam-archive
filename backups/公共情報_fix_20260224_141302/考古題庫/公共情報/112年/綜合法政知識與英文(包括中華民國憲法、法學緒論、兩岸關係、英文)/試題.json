@@ -1,0 +1,672 @@
+{
+  "metadata": {
+    "exam_type": "112",
+    "level": "三等",
+    "subject": "綜合法政知識與英文（包括中華民國憲法、法學緒論、兩岸關係、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "有關憲法增修條文第10條第12項規定,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "國家應積極維護原住民族之語言及文化",
+        "B": "國家應制定保障原住民族地位之法律",
+        "C": "國家應致力推動原住民族之社會福利事業",
+        "D": "原住民族教育經費應優先編列"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "下列何者並非我國憲法及增修條文有關社會福利之明文規定?",
+      "section": null,
+      "options": {
+        "A": "婦女兒童福利政策",
+        "B": "身心障礙者之保險與就醫",
+        "C": "實施年金制度",
+        "D": "實施保護勞工及農民之法律"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "依憲法第8條第1項規定,人民非由法院依法定程序,不得審問處罰。關於本項規定所稱之法院,下列敘 述何者正確?",
+      "section": null,
+      "options": {
+        "A": "僅指法院合議庭,不包括獨任法官",
+        "B": "包括法院合議庭與獨任法官",
+        "C": "包括法院合議庭、獨任法官與檢察官",
+        "D": "包括法院合議庭、獨任法官與檢察署"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,舊所得稅法強制夫妻合併申報所得且採累進稅率之規定,違反下列何種基本權?",
+      "section": null,
+      "options": {
+        "A": "工作權",
+        "B": "人格權",
+        "C": "配偶權",
+        "D": "平等權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列何者因侵害憲法第15條所保障之工作權而違憲?",
+      "section": null,
+      "options": {
+        "A": "按摩業專由視障者從事之規定",
+        "B": "航空人員體格檢查不合標準,限制其執業之規定",
+        "C": "限制級電子遊戲場,不得放任未滿18歲者進入之規定",
+        "D": "經主管機關核准之證券投資顧問事業方得舉辦有關證券投資講習之規定"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "關於憲法保障之人民基本權利,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "即為憲法上所保障之自由或權利",
+        "B": "最基礎之功能為對抗國家不法侵害之防衛權",
+        "C": "均得以其基本權利受侵害為由請求救濟",
+        "D": "均得以之為依據直接向國家請求給付"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "依據我國現行憲法規範,下列關於行政權的敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "行政院為國家最高行政機關",
+        "B": "行政院院長由總統提名,經立法院同意後任命之",
+        "C": "行政院認為立法院決議之法律案窒礙難行時,得於該決議案送達行政院15日內,移請立法院覆議",
+        "D": "覆議時,如經全體立法委員2分之1以上決議維持原案,行政院院長應即辭職"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依據憲法增修條文規定,有關立法委員選出人數之分配,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "立法院立法委員自第7屆起113人",
+        "B": "自由地區直轄市、縣市選出73人",
+        "C": "自由地區平地原住民及山地原住民各選出2人",
+        "D": "全國不分區及僑居國外國民共選出34人"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "行政法院確信於個案所應適用之法律有牴觸憲法疑義,得聲請司法院大法官解釋。下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "必須先裁定停止訴訟",
+        "B": "必須提出客觀上形成確信法律為違憲之具體理由",
+        "C": "應於聲請書內詳敘其對系爭違憲法律之闡釋",
+        "D": "裁定停止訴訟後,即不得為必要之保全程序"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "有關中央對地方自治團體之監督,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "中央僅得行使合法性監督",
+        "B": "監督機關對於地方自治團體制定之法規範,不得逕行函告無效,而應先請求法院裁判",
+        "C": "地方自治團體有依法履行法定義務而未履行,監督機關僅得行使下達命令權命其履行,不得代替履行",
+        "D": "監督機關得指派代理人執行地方機關之職務"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "關於行政程序法的立法,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "使行政行為有所依循,即彰顯依法行政原則",
+        "B": "使人民有參與行政行為的可能性,即呈現民主原則作為本法的基礎",
+        "C": "使行政效能得以提昇,即實踐行政的優位性原則",
+        "D": "使行政行為因此得公開透明,可增進人民對行政的信賴"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "依行政程序法之規定,下列何種行為不適用行政程序法的程序規定?",
+      "section": null,
+      "options": {
+        "A": "檢察官為刑事案件的犯罪偵查",
+        "B": "立法院拒絕人民政府資訊公開之請求",
+        "C": "法院與某機構簽訂契約,以辦理安置並輔導相關少年的業務",
+        "D": "監察院對違反財產申報法令之公務員予以裁罰"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "下列關於未遂犯的敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "甲想殺乙,於是從黑市購買一把手槍,甲買槍的行為該當於未遂犯的著手",
+        "B": "依刑法規定,未遂犯之處罰,必須較既遂犯之處罰為輕",
+        "C": "丙持刀欲砍殺丁,砍出一刀後,忽想起自己年幼時常和丁玩,心生不忍,棄刀而去,丁因此未死,丙得 依中止規定減輕或免除刑罰",
+        "D": "戊想殺己,在己的餐後酒裡下毒後離去,豈知己未喝餐後酒而躲過一劫,戊的行為屬於無危險的不能未 遂而不罰"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "甲冒充為警察,向乙收取保護費。有關甲之刑責,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "甲構成刑法第135條的妨害公務罪",
+        "B": "甲不構成刑法第158條的僭行公務員職權罪",
+        "C": "甲不構成刑法第159條的冒用公務員官銜罪",
+        "D": "甲構成刑法第336條的公務侵占罪"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "消費者保護法中所規定消費者保護團體之功能,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "消費者保護團體得受理消費者申訴,調解消費紛爭",
+        "B": "政府關於消費者保護之立法或行政措施應徵詢消費者保護團體之意見",
+        "C": "設立2年以上之消費者保護團體即得提起消費者損害賠償訴訟",
+        "D": "消費者保護團體為從事商品或服務檢驗,應設置與檢驗項目有關之檢驗設備或委託有與檢驗項目有關 之檢驗設備之機關、團體檢驗之"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "關於民主國原則,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "憲法第1條即開宗明義地揭示此原則",
+        "B": "只要國家權力擁有者是人民,元首不論是總統或君主,都可視為民主國",
+        "C": "憲法明定中華民國之主權屬於國民全體",
+        "D": "代議民主是對憲法的破棄"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "下列有關性別工作平等法之敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "性別工作平等法制定之目的係在於促進性別地位之形式平等",
+        "B": "雇主與受僱者間之約定,不論是否優於性別工作平等法,皆應適用性別工作平等法之規定",
+        "C": "性別工作平等法僅適用於一般勞工,軍公教並無性別工作平等法之適用",
+        "D": "實習生於實習期若遭受性騷擾,亦有性別工作平等法之適用"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "依民法規定,當事人如未特別約定,買賣標的物的利益及危險,自何時起由買受人負擔?",
+      "section": null,
+      "options": {
+        "A": "買賣契約成立時",
+        "B": "買賣契約生效時",
+        "C": "買受物交付時",
+        "D": "買賣價金支付時"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,關於機關爭議案件,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "限於國家最高機關間之憲法上權限爭議事項",
+        "B": "須經爭議之機關協商未果",
+        "C": "於爭議存續期間內,任一方均得提出聲請",
+        "D": "憲法法庭應於判決主文確認相關機關之權限"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "下列何人具有法定繼承人資格?",
+      "section": null,
+      "options": {
+        "A": "繼母",
+        "B": "養子女對本生父母",
+        "C": "生父對未認領之非婚生子女",
+        "D": "同父異母的半血緣兄弟之間"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "對於中共的武警部隊以下敘述何者為非?",
+      "section": null,
+      "options": {
+        "A": "全名是中國人民武裝警察部隊",
+        "B": "最高領導者是司令員,官階為上將",
+        "C": "隸屬於公安部與中共中央政法委員會書記",
+        "D": "負責處理突發社會安全事件、防範恐怖攻擊與海上執法等"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "有關習近平的意識型態敘述,何者為非?",
+      "section": null,
+      "options": {
+        "A": "全名是「習近平新時代中國特色社會主義思想」",
+        "B": "與「江澤民三個代表」、「胡錦濤科學發展觀」一樣都在意識型態前冠上姓名",
+        "C": "在2017年列入中共黨章,在2018年列入中共憲法",
+        "D": "與「毛澤東思想」一樣都被稱為「思想」"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "「香港特別行政區維護國家安全法」在2020年6月通過,請問是那一個單位通過的?",
+      "section": null,
+      "options": {
+        "A": "香港立法會",
+        "B": "中共全國人民代表大會常務委員會",
+        "C": "香港區議會",
+        "D": "中共全國人民代表大會"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "有關對於當前中國總體經濟計畫的敘述,下列何者正確?",
+      "section": null,
+      "options": {
+        "A": "是第十三個五年規劃,從2021年開始",
+        "B": "是第十四個三年規劃,從2020年開始",
+        "C": "是第十四個五年規劃,從2021年開始",
+        "D": "是第十三個三年規劃,從2020年開始"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "中共專門針對臺灣工作的最高決策單位是那一個?",
+      "section": null,
+      "options": {
+        "A": "國務院臺灣事務辦公室",
+        "B": "中共中央統一戰線工作領導小組",
+        "C": "海峽兩岸關係協會",
+        "D": "中共中央對臺工作領導小組"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "當前中共在外交上的最高決策單位是那一個?",
+      "section": null,
+      "options": {
+        "A": "中共中央外事工作委員會",
+        "B": "外交部",
+        "C": "中共中央對外聯絡部",
+        "D": "中共中央外事領導小組"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "根據臺灣地區與大陸地區人民關係條例規定,臺灣地區公務員,國家安全局、國防部、法務部調查局及其 所屬各級機關未具公務員身分之人員,應向內政部申請許可,始得進入大陸地區。但一定職等以下,未涉 及國家安全、利益或機密之公務員及警察人員赴大陸地區,不在此限。請問「一定職等」為:",
+      "section": null,
+      "options": {
+        "A": "簡任第十職等及警監四階",
+        "B": "簡任第九職等及警監四階",
+        "C": "簡任第十職等及警監三階",
+        "D": "簡任第九職等及警監三階"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "依據臺灣地區與大陸地區人民關係條例,對涉及政治議題之協議,需經立法院通過,以下敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "涉及政治議題之協議,行政院應於協商開始九十日前,向立法院提出協議締結計畫及憲政或重大政治衝 擊影響評估報告。締結計畫經全體立法委員三分之二之出席,及出席委員四分之三之同意,始得開啟簽 署協議之協商",
+        "B": "涉及政治議題之協議,行政院應於協商開始九十日前,向立法院提出協議締結計畫及憲政或重大政治衝 擊影響評估報告。締結計畫經全體立法委員四分之三之出席,及出席委員四分之三之同意,始得開啟簽 署協議之協商",
+        "C": "涉及政治議題之協議,行政院應於協商開始六十日前,向立法院提出協議締結計畫及憲政或重大政治衝 擊影響評估報告。締結計畫經全體立法委員四分之三之出席,及出席委員四分之三之同意,始得開啟簽 署協議之協商",
+        "D": "涉及政治議題之協議,行政院應於協商開始六十日前,向立法院提出協議締結計畫及憲政或重大政治衝 擊影響評估報告。締結計畫經全體立法委員四分之三之出席,及出席委員三分之二之同意,始得開啟簽 署協議之協商。"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "下列人士誰在中共「十九大」和「二十大」時,都出任中共中央政治局常務委員?",
+      "section": null,
+      "options": {
+        "A": "栗戰書",
+        "B": "李強",
+        "C": "王滬寧",
+        "D": "王岐山"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "關於中共黨政架構,以下敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "「二十大」之後,中共中央政治局常委為九人",
+        "B": "「二十大」之後,由王滬寧接任「人民代表大會」常務委員長",
+        "C": "「二十大」之後,不再設立「國家副主席」",
+        "D": "「二十大」之後,由李強接任「國務院」總理"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "The family followed the road to a _____ where three roads met and turned left to a big open area. That's where theysawalargenumberofcolorfulmushrooms.",
+      "section": null,
+      "options": {
+        "A": "junction",
+        "B": "reservoir",
+        "C": "transition",
+        "D": "chariot"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Delegates from different countries participated in the forum to discuss how to _____ their trade relations and promoteeconomicgrowth.",
+      "section": null,
+      "options": {
+        "A": "strengthen",
+        "B": "contempt",
+        "C": "disapprove",
+        "D": "apprehend"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Thetwoorganizationsofficiallycameinto_____twoyearsaftertheadoptionoftheconvention.",
+      "section": null,
+      "options": {
+        "A": "patronage",
+        "B": "diversion",
+        "C": "existence",
+        "D": "rehearsal"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "Amanarrestedinconnectionwithashootingwaschargedwithillegal_____offirearms.",
+      "section": null,
+      "options": {
+        "A": "possession",
+        "B": "resistance",
+        "C": "obligation",
+        "D": "reluctance"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "John’sicecreambusinesstookoffinjustthreemonthsbecausenobodyreallyworksashardashedoes.His_____ forworkleavesalastingimpression.",
+      "section": null,
+      "options": {
+        "A": "seal",
+        "B": "zeal",
+        "C": "reel",
+        "D": "wheel"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Youshouldavoid_____wordsorphrasestomakesurethateverywordyouuseaddssomethingnewtoyourpiece ofwriting.",
+      "section": null,
+      "options": {
+        "A": "redundant",
+        "B": "secondary",
+        "C": "submissive",
+        "D": "undeserved"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Landscapes existed before they were constructed as national landscapes and before nationalism_____ as a dominantpoliticalideology.",
+      "section": null,
+      "options": {
+        "A": "acquired",
+        "B": "disappeared",
+        "C": "emerged",
+        "D": "violated"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Most companies now rely on search engine optimization to improve visibility of their websites, _____ brand awarenessandbuildrelationshipswithcustomersandprospects.",
+      "section": null,
+      "options": {
+        "A": "bombard",
+        "B": "bolster",
+        "C": "blunt",
+        "D": "bulge"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Thedestructionofrainforestsdisturbsthe_____balancebecauseiteliminatesanimals’naturalhabitatsinthose areas.",
+      "section": null,
+      "options": {
+        "A": "ecological",
+        "B": "evolutionary",
+        "C": "interactional",
+        "D": "revolutionary"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "Thehealthorganizationdeclaredthattwoinfectiousdiseaseshadbeensuccessfully_____worldwide.",
+      "section": null,
+      "options": {
+        "A": "eradicated",
+        "B": "attributed",
+        "C": "contributed",
+        "D": "fluctuated"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "The visitors were amazed at the _____orthe giant mass of ice moving slowly down the valley and spreading outwardonthelandsurface.",
+      "section": null,
+      "options": {
+        "A": "icebergs",
+        "B": "snowstorms",
+        "C": "blizzards",
+        "D": "glaciers"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "Werushedtothemountaintophopingtoseesnow,onlytofindthatthewhitesnow_____inthesunlightmadeit extremelydifficulttodrive.",
+      "section": null,
+      "options": {
+        "A": "boasting",
+        "B": "glaring",
+        "C": "shielding",
+        "D": "fleeting"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "IcaruswasthesonoftheancientGreekarchitect,Daedalus,whoseflyingexperienceofbeingtooclosetothesun endedina_____.",
+      "section": null,
+      "options": {
+        "A": "category",
+        "B": "catalogue",
+        "C": "catastrophe",
+        "D": "catalyst"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "Doctorsandnutritionspecialists______adiethighinfiberandlowincholesterolforbetterhealth.",
+      "section": null,
+      "options": {
+        "A": "advocate",
+        "B": "coincide",
+        "C": "eliminate",
+        "D": "frighten"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "Thepantryiswhere_______isnormallyfound,suchasdishes,forksandknivesthatthefamilyuseatameal.",
+      "section": null,
+      "options": {
+        "A": "copperware",
+        "B": "newware",
+        "C": "glassware",
+        "D": "tableware"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Preventive health optionsare believed to bea better route than disease treatment,so nutrition and dietary _____ arekeycomponentsofpeople’shealthregimens.",
+      "section": null,
+      "options": {
+        "A": "subscriptions",
+        "B": "subsidies",
+        "C": "supplements",
+        "D": "subtleties"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Assealevelrises,saltwaterwould_____freshwaterresources,limitingtheresidents’accesstocleanwater.",
+      "section": null,
+      "options": {
+        "A": "consolidate",
+        "B": "contain",
+        "C": "contaminate",
+        "D": "control"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Herreplytomyquestionwas______.Ireallydidn’tknowwhatshemeant.",
+      "section": null,
+      "options": {
+        "A": "analytical",
+        "B": "assessable",
+        "C": "accessible",
+        "D": "ambiguous"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Thedefenseattorneyischargedwithofficialmisconductand______withwitnesses.",
+      "section": null,
+      "options": {
+        "A": "tampering",
+        "B": "thrusting",
+        "C": "exempting",
+        "D": "esteeming"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Thetelescopewhichtheastronomerdesignedmadeitpossibleforhimtoclearlyseethestarsandplanetsthathad onlybeendimly_____before.",
+      "section": null,
+      "options": {
+        "A": "perspicuous",
+        "B": "inconspicuous",
+        "C": "perceptible",
+        "D": "unnoticeable"
+      },
+      "answer": "C"
+    }
+  ],
+  "year": 112,
+  "category": "公共情報",
+  "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+  "source_pdf": "考古題庫\\公共情報\\112年\\綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

@@ -1,0 +1,672 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "level": "三等",
+    "subject": "綜合法政知識與英文（包括中華民國憲法、法學緒論、兩岸關係、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "為防止極端政治勢力利用自由民主制度破壞自由民主之憲政秩序,憲法增修條文中有所謂防衛性民 主之設計。下列何者屬之?",
+      "section": null,
+      "options": {
+        "A": "總統連選連任之限制",
+        "B": "立法委員選舉之選區劃分",
+        "C": "憲法修正案之公民複決程序",
+        "D": "違憲政黨之解散"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依憲法第146條規定,下列何者為國家運用科學技術改善農業,所擬促成之目的?",
+      "section": null,
+      "options": {
+        "A": "促成農業奠定民族生存發展之基礎",
+        "B": "促成農業滿足國計民生之需求",
+        "C": "促成農業之工業化",
+        "D": "促成農業之企業化經營"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "關於人民因宗教理由拒絕服兵役義務而受刑罰之憲法爭議,下列何者為司法院釋字第 490 號解釋之 立場?",
+      "section": null,
+      "options": {
+        "A": "合憲,服兵役之義務並無違反人性尊嚴,亦非對特定宗教所設之限制,因此未牴觸憲法對宗教信仰 自由之保障",
+        "B": "違憲,我國兵役制度並未對特殊宗教信仰者作成例外處置,致使其接受過苛刑罰,已違比例原則之 要求",
+        "C": "合憲,憲法第13條之宗教信仰自由,其保障範圍僅限於內在信仰自由,而不及於外在宗教行為之 自由,不得以此對抗兵役義務",
+        "D": "違憲,我國兵役制度未考量特殊宗教信仰者的獨特情事,均課以相同之兵役義務,已違反實質平等 之理念"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "耕地三七五減租條例規定,出租人因收回耕地,致承租人失其家庭生活依據者,耕地租約期滿時,出 租人不得收回自耕。此乃用以保障承租人之何種憲法上權利?",
+      "section": null,
+      "options": {
+        "A": "期待權",
+        "B": "工作權",
+        "C": "財產權",
+        "D": "生存權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關原住民狩獵,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "以非營利性自用為目的所為之狩獵,亦受保障",
+        "B": "原住民從事狩獵為憲法所保障的文化權利",
+        "C": "就非定期性狩獵活動,要求應於5日前提出申請,違反比例原則",
+        "D": "立法者以法律或授權立法要求不可獵捕、宰殺或利用保育類野生動物,違反比例原則"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,對性犯罪者所為之強制治療制度,須與刑罰之執行有所不同,係符合下列 何者憲法原則之要求?",
+      "section": null,
+      "options": {
+        "A": "法明確性",
+        "B": "刑事優先",
+        "C": "明顯區隔",
+        "D": "罪責相當"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "依司法院釋字第601號解釋,大法官亦屬於憲法上之法官。下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "大法官須超出黨派以外,依據法律獨立審判政黨違憲解散案件,不受任何政黨干涉",
+        "B": "大法官非受刑事或懲戒處分,或禁治產之宣告,不得免職",
+        "C": "大法官非依法律,不得停職、轉任或減俸",
+        "D": "具大法官身分之司法院院長,其院長任期亦受保障"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "關於現行總統權責,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "掌理國防、外交及大陸政策方針",
+        "B": "得召開國家安全會議",
+        "C": "對於行政院副院長,各部會首長及不管部會之政務委員,總統僅有任命權而無提名權",
+        "D": "對行政院院長有提名權,經立法院同意後任命之"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "下列機關何者無權向立法院,就其所職掌事項提出法律案?",
+      "section": null,
+      "options": {
+        "A": "行政院",
+        "B": "司法院",
+        "C": "考試院",
+        "D": "中央研究院"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,有關地方自治團體或其機關認為地方自治權受損害時之救濟途徑,下列敘述何 者錯誤?",
+      "section": null,
+      "options": {
+        "A": "自治法規經監督機關函告不予核定,得不經其他程序,逕行提起憲法訴訟",
+        "B": "地方行政機關辦理自治事項,經監督機關撤銷,應用盡審級救濟而仍受不利確定終局裁判,方得提 起憲法訴訟",
+        "C": "地方立法機關議決自治事項,經監督機關函告無效,應用盡審級救濟而仍受不利確定終局裁判,方 得提起憲法訴訟",
+        "D": "地方自治團體之機關因行使職權,認所應適用之中央法規範牴觸憲法,得不經其他程序,逕行提起 憲法訴訟"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "社會秩序維護法於80年6月29日由總統令公布,其第94條規定「本法自公布日施行」,故該法應 自何時開始生效?",
+      "section": null,
+      "options": {
+        "A": "80年6月29日",
+        "B": "80年6月30日",
+        "C": "80年7月1日",
+        "D": "80年7月2日"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "下列何者不是針對法律漏洞進行補充的方法?",
+      "section": null,
+      "options": {
+        "A": "類推適用",
+        "B": "目的解釋",
+        "C": "目的性限縮",
+        "D": "法律續造"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "關於刑法適用,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "刑法上的通姦罪雖已廢除,但依社會習慣,通姦仍為不被允許的行為,故實務上仍可依習慣以刑罰 處罰行為人",
+        "B": "如果某甲在通姦罪廢除前與乙通姦,而裁判時本罪已廢除者,應依廢除前之通姦罪處斷",
+        "C": "行為人在沒收規定修正前犯罪,而裁判時沒收規定已修正者,其犯行中適用沒收規定部分,適用裁 判時之法律",
+        "D": "刑法舊法第 321 條第 6 款的加重竊盜事由限在「車站、埠頭」竊盜而無「航空站」,顯為法律漏 洞,在修法之前可以透過類推適用予以填補"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "甲為66歲之退休人士,並已依據勞工保險條例請領老年給付,為能夠再創事業第二春,決定返回職 場,受僱於乙公司作為資深技術顧問人員。就有關於乙公司依法為甲辦理之各項社會保險及退休金, 下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "乙公司應依據勞工退休金條例為甲按月提繳退休金",
+        "B": "乙公司得為甲辦理參加職業災害保險",
+        "C": "乙公司得為甲辦理參加就業保險",
+        "D": "乙公司應為甲辦理參加全民健康保險"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "甲遭雇主乙性騷擾,雖多次拒絕,仍無法阻止,為能繼續工作,隱忍數年,離職後向地方勞工主管機 關提出申訴,下列何者正確?",
+      "section": null,
+      "options": {
+        "A": "甲已離職,乙已無性騷擾防治與調查義務",
+        "B": "甲雖離職,乙仍須採取立即有效之糾正及補救措施",
+        "C": "乙雖然有採取立即有效之補救措施義務,但乙為行為人,免除此義務",
+        "D": "甲在職時未提出申訴,乙無採取立即有效之補救措施義務"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,下列何者符合比例原則?",
+      "section": null,
+      "options": {
+        "A": "為確保國軍幹部之品德與素質,軍事院校一律禁止刑事故意犯與過失犯報考",
+        "B": "為保障視障者,立法禁止非視障者從事按摩業",
+        "C": "為防止冒領、辨識路倒病人與失智老人,要求須經按捺指紋以換發新的國民身分證",
+        "D": "為維護國家安全、社會秩序及增進公共利益,毒品危害防治條例以死刑作為處罰之手段"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "依我國公司法,A 股份有限公司欲與 B 股份有限公司合併,則有關於這二個公司合併程序規定之敘 述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "A公司和B公司合併,原則上應先經過其各自董事會特別決議後提出於股東會",
+        "B": "若 A 公司和 B 公司具控制從屬關係,且 A 公司持有 B 公司股份達 B 公司已發行股份總數之 90% 以上者,只要經過此二公司之董事會特別決議同意後即可,便無須經過公司股東會同意",
+        "C": "若 A 公司和 B 公司具控制從屬關係,且 A 公司持有 B 公司股份達 B 公司已發行股份總數之 90% 以上,不同意合併之A公司、B公司股東,均得行使公司法第317條之股東股份收買請求權",
+        "D": "A公司和B公司合併後,存續公司或新設公司董事會應踐行債權人保障程序,通知各債權人"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "下列關於法律的敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "就人類歷史發展的整體言之,必須有現代民族國家才有法律",
+        "B": "由於傳統中國的政治體制較接近西方的帝國,而非現代民族國家,是以並沒有法律",
+        "C": "只要有人類共同生活事實,就有可能產生法律",
+        "D": "西方教會或行會等非政治組織中缺乏主權者,是以無法產生法律"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,關於憲法法庭認定法規範牴觸憲法,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "判決宣告法規範違憲且應失效者,該法規範自判決生效日起失效",
+        "B": "判決主文得諭知法規範溯及失效",
+        "C": "判決得宣告法規範定期失效,其所定期間,法律位階法規範不得逾2年",
+        "D": "判決宣告法律位階法規範定期失效者,於期限屆至前,各法院審理案件,得拒絕適用該法規範"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "甲將其所有土地一筆出租於乙,期間10個月,由乙在土地上種植果樹。下列敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "果樹之果實為法定孳息",
+        "B": "在租賃期間內,果樹的收取權人是乙",
+        "C": "果樹非甲土地之重要成分,故得為單獨物權之標的物",
+        "D": "甲得向乙收取1年的租金"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "請問下列關於中共對臺政策的敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "葉劍英最早提出「兩岸經社融合發展」,擴大兩岸經濟交流合作,並願意率先同臺灣同胞分享大陸 發展的機遇",
+        "B": "「和平統一,一國兩制」最早是由江澤民提出",
+        "C": "鄧小平於1984年所提「一個國家,兩種制度」是指在中華人民共和國內實行「社會主義制度」, 香港、臺灣實行「資本主義制度」",
+        "D": "「新時代解決臺灣問題的總體方略」在中共十八大提出後成為對臺政策的最高指導綱領"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "關於2019年習近平出席《告臺灣同胞書》40週年紀念會針對金馬地區提出「新四通」的構想,請問 下列何者已經在金門實踐?",
+      "section": null,
+      "options": {
+        "A": "通氣",
+        "B": "通電",
+        "C": "通橋",
+        "D": "通水"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "下列那一項是中共在2018年提出的對臺政策?",
+      "section": null,
+      "options": {
+        "A": "《關於促進兩岸經濟文化交流合作的若干措施》(惠臺31條)",
+        "B": "《關於支援臺灣同胞臺資企業在大陸農業林業領域發展的若干措施》(農林22條措施)",
+        "C": "《關於進一步促進兩岸經濟文化交流合作的若干措施》(對臺26項措施)",
+        "D": "《國務院關於鼓勵臺灣同胞投資規定》(鼓勵投資規定)"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "下列那項罪名不是2020年通過的香港國安法所規範的內容?",
+      "section": null,
+      "options": {
+        "A": "分裂國家",
+        "B": "竊取國家機密",
+        "C": "顛覆國家政權",
+        "D": "外國勢力干預"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "下列何者非屬中共的「一個中國」主張?",
+      "section": null,
+      "options": {
+        "A": "全世界只有一個中國,中華人民共和國為中國唯一合法政府",
+        "B": "中國強調的九二共識其內涵是「一個中國,各自表述」",
+        "C": "中共的「一個中國」內涵為世界上只有一個中國,大陸和臺灣同屬一個中國,中國的主權和領土完 整不容分割,維護國家主權和領土完整是包括臺灣同胞在內的全中國人民的共同義務",
+        "D": "2015年通過的《國家安全法》當中也規定了「一個中國」的內涵"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "根據中華人民共和國 2005 年 3 月 14 日通過的反分裂法第 8 條,下列那一項不是中華人民共和國得 採取非和平方式及其必要措施?",
+      "section": null,
+      "options": {
+        "A": "臺獨分裂勢力以任何名義、任何方式造成臺灣從中國分裂出去的事實",
+        "B": "發生將會導致臺灣從中國分裂出去的重大事實",
+        "C": "臺灣舉行統一公投",
+        "D": "和平統一的可能性完全喪失"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "根據臺灣地區與大陸地區人民關係條例規定,大陸地區船舶非經主管機關許可,不得進入臺灣地區 限制或禁止水域;根據國防部 107 年 6 月 1 日公告生效的臺灣、澎湖及東沙地區限制、禁止水域範 圍及事項,其中臺灣、澎湖、綠島、蘭嶼、彭佳嶼、小琉球、七星岩及東沙地區之禁止水域範圍和限 制水域範圍為何?",
+      "section": null,
+      "options": {
+        "A": "禁止水域範圍是自領海基線12浬海域、限制水域範圍是採取多邊形畫法",
+        "B": "禁止水域範圍是採取多邊形畫法、限制水域範圍是自領海基線起24浬海域",
+        "C": "禁止水域範圍和限制水域範圍都是採用多邊形畫法",
+        "D": "禁止水域範圍是自領海基線起12浬海域、限制水域範圍是自領海基線起24浬海域"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "根據臺灣地區與大陸地區人民關係條例第 9 條,下面那些臺灣地區人民,進入大陸地區不需經由申 請以及經由內政部會同國家安全局、法務部、大陸委員會及相關機關組成之審查會許可?",
+      "section": null,
+      "options": {
+        "A": "政務人員和直轄市長",
+        "B": "縣市長",
+        "C": "縣市議員",
+        "D": "國防、外交、科技、情報、大陸事務或其他相關機關從事涉及國家安全、利益或機密業務之人員"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "下列那種態樣不會適用反滲透法的第 4 條第 1 項之規定,任何人不得受滲透來源之指示、委託或資 助,為總統副總統選舉罷免法第43條或公職人員選舉罷免法第45條各款行為?",
+      "section": null,
+      "options": {
+        "A": "公開演講或署名推薦為候選人宣傳或支持、反對罷免案",
+        "B": "非選舉期間村里長單純赴中國大陸旅遊並接受落地招待",
+        "C": "為候選人或支持、反對罷免案站台或亮相造勢",
+        "D": "懸掛或豎立標語、看板、旗幟、布條等廣告物為候選人或支持、反對罷免案宣傳"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "中國大陸漁船或海警船進入我國外島的禁限制水域,我國是依據那個主權原則執行警告和驅離?",
+      "section": null,
+      "options": {
+        "A": "國際法主權",
+        "B": "相互依賴主權",
+        "C": "西伐利亞主權",
+        "D": "國內主權"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Herfamilydidn’t hermarryingthispersonsotheywouldnotattendherwedding.",
+      "section": null,
+      "options": {
+        "A": "lookfor",
+        "B": "agree",
+        "C": "carefor",
+        "D": "assent"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "A forest fire has recently in California. It has claimed two lives and caused some damage to the naturalresourcesnearby.",
+      "section": null,
+      "options": {
+        "A": "gonethrough",
+        "B": "brokenout",
+        "C": "takenoff",
+        "D": "driedup"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Theministerdeliveredthepreachina(n) tone,sohiscongregationbegantofeelboredanddozeoff.",
+      "section": null,
+      "options": {
+        "A": "coherent",
+        "B": "imperative",
+        "C": "innocent",
+        "D": "monotonous"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "If affordable and autonomous ride-sharing is made available to people, individual vehicle ownership could ,especiallyinmetropolitanareas.",
+      "section": null,
+      "options": {
+        "A": "privatize",
+        "B": "prevail",
+        "C": "plunge",
+        "D": "proliferate"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "If you’re designing your dream kitchen, tools that allow you to different design ideas on the computerareessentialtothesuccessofyourplans.",
+      "section": null,
+      "options": {
+        "A": "authorize",
+        "B": "eliminate",
+        "C": "subscribe",
+        "D": "visualize"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Theflashoflightningisalmost followedbythethunderduringthestorm.",
+      "section": null,
+      "options": {
+        "A": "confidentially",
+        "B": "opaquely",
+        "C": "instantaneously",
+        "D": "transparently"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Alargecrowdgatheredandlistened tothepresident’sMemorialDayspeech.",
+      "section": null,
+      "options": {
+        "A": "solemnly",
+        "B": "empirically",
+        "C": "imperially",
+        "D": "regionally"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Athisstore,hesoldbroken-downsecond-handcarsat prices,sohemadeafortune.",
+      "section": null,
+      "options": {
+        "A": "existential",
+        "B": "exiguous",
+        "C": "exortica",
+        "D": "exorbitant"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Greatspeakerswouldagreeontheideathat isanasset.Moreoftenthannot,longtalksendupboring theaudience.",
+      "section": null,
+      "options": {
+        "A": "brevity",
+        "B": "geniality",
+        "C": "hilarity",
+        "D": "validity"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "The president’s political advisors are scheming that issues like civic unrest would the pandemic crisisforwinningthere-election.",
+      "section": null,
+      "options": {
+        "A": "eclipse",
+        "B": "fortify",
+        "C": "amplify",
+        "D": "strengthen 請依下文回答第41題至第45題 Recentsocietalchangeshavecausedaquestioningoftherelationshipbetweenhighereducationinstitutionsand theirhostingstategovernments.Whiletherehavebeenanincreasingnumberof 41 causesandagencies,suchas prisonsandhealthcare,fundingforhighereducationinstitutionshasnotincreased.Somestategovernmentshaveeven challengedinstitutional 42 ofrighttofundingbyprovidingfundingtothestudentratherthantheinstitution. Most recently, some governments even assigned funding according to certain performance 43 deemed appropriate and necessary to the state. 44 , some institutions have openly challenged the state’s authority in assigning governing board members. Some have radically increased tuition and become 45 on fundraising. Othershaveeliminatedprogramsorrestrictedenrollmentofhigh-costprograms."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "competing",
+        "B": "confusing",
+        "C": "complimented",
+        "D": "contrived"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "complacence",
+        "B": "claims",
+        "C": "conceit",
+        "D": "capabilities"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "magnitude",
+        "B": "manners",
+        "C": "measures",
+        "D": "manifesto"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "Inaddition",
+        "B": "Insum",
+        "C": "Inconclusion",
+        "D": "Inresponse"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "reliant",
+        "B": "redundant",
+        "C": "rebellious",
+        "D": "ruthless 請依下文回答第46題至第50題 InNewZealand’sWestlandDistricttheclosureofthelocalindigenoustimberindustryalongsiderapidgrowth of the dairyand tourismsectors has produced dilemmas for families andcommunities as they attempt to adjust to the social consequences of rapid industry change. Drawing on a social capital perspective and a case study of 12 Westlandfamilies,thisprojectexamineshowruralfamiliesbringbalancetoaspectsofthethreeactionsdefinedby Arendtasbeingessentialtothehumancondition:family,workandcommunitylife.Thefindingsrevealsignificant insights intohowsocialcapitalis effectivelyreproduced intimes ofchange.These insights are discussed interms oftheirsocialpolicyimplications. Fifty years ago Hannah Arendt published The Human Condition. In this work she contended that there are threetypesofactionrequiredtobe“fullyhuman.”Thefirsttwooftheseactions,engagementinfamilylifeandpaid work,arenecessaryforhumanexistenceincontemporarysociety.Thethirdactionshecalledvitaactiva,orpublic life:a life thatis actionedwithinjointlybuiltcivilspaces.Within thesespaceswe arecapableof debate,we share actions and we resolve collective dilemmas. Arendt reminds us that the absence of, or over-attention to, any one aspectofthehumanconditionislikelytobeproblematic. AhalfacenturyonfromArendt’s originalthesis,publicpolicycontinuestodebateaspectsofvitaactiva and democraticgovernmentsstillseektoengagevitaactivaineconomicallyandsociallyproductiveways.Workingout the shifting balance between family life, paid work and vita activa is a crucial aspect of responding effectively to significantsocialchange,beitlocalissues(suchasnaturaldisasterrelief)ormeetingthechallengesthatariseasa consequenceofexternalorglobalforces(suchasthelossofacoreindustry).Theconceptofsocialcapitalhasbeen usedasawaytorecogniseandgaugevitaactiva. Theterm“socialcapital”originated,inpart,inanattempttounderstandhowfeaturesofsocialorganisation,such as trust, norms and networks can improve the efficiency of society by facilitatingcoordinated actions. Voluntary or joint social actions provide the opportunity to resolve collective dilemmas. Individuals achieve this through the development and use of social bonds and networks as resources to facilitate productive activity. By maintainingthe socialrelationshipsandstructuresnecessaryforcollectiveactivity,individuals,familiesandcommunitiesareableto realisesomeofthesebenefits,andindoingsocanresolvesomeoftheissuestheyfaceincommon."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Whichofthefollowingisthebesttitleofthepassage?",
+      "section": null,
+      "options": {
+        "A": "RuralFamilies,IndustryChangeandSocialCapital.",
+        "B": "TheHumanCondition:ABookReview.",
+        "C": "GovernmentalRolesintheFaceofSocialChange.",
+        "D": "TheLivingConditionsof12WestlandFamilies."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingstatementsaboutArendtisNOTtrue?",
+      "section": null,
+      "options": {
+        "A": "Herworkhasanimportanttheoreticalinfluenceonthecurrentstudy.",
+        "B": "Sheproposesthattobefullyhumanhe/shemusthaveapubliclife,asalaryorwage,andafamily.",
+        "C": "Shebelievesthatpubliclifeisthemostimportantamongthethreetypesofactionmentioned.",
+        "D": "Hertheorysuggeststhatactionplayacentralroleinfacilitatingandmaintaininghumanconditions."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whatkindofchallengeisfacedbyWestlandDistrict?",
+      "section": null,
+      "options": {
+        "A": "Forestfiresthatdestroyedhundredsofhouses.",
+        "B": "Lossofthetimberindustrytoagricultureandtourism.",
+        "C": "Lackofcapitaltoprovidefreeeducationtothecommunity.",
+        "D": "Lackofco-ordinationamonggovernmentagenciesinsavingtheenvironment."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whatisthemainvalueofsocialcapital?",
+      "section": null,
+      "options": {
+        "A": "Itprovidesvolunteerswithcrucialfundingforsocialcharitywork.",
+        "B": "Ithelpsacommunitytosharepowerandresourcesmoreequally.",
+        "C": "Itoffersahopefortheunemployedpeopletostarttheirnewcareers.",
+        "D": "Itenablesacommunitytodealwithitsproblemsviajointeffortsandactions."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Inwhatkindoftextwouldtheabovepassagemostlikelyappear?",
+      "section": null,
+      "options": {
+        "A": "Abookreviewinanagriculturemagazine.",
+        "B": "Alettertotheeditorinanewspaper.",
+        "C": "Aresearchpaperinasocialpolicyjournal.",
+        "D": "AnewsreportinNewZealand."
+      },
+      "answer": "C"
+    }
+  ],
+  "year": 113,
+  "category": "公共情報",
+  "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+  "source_pdf": "考古題庫\\公共情報\\113年\\綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

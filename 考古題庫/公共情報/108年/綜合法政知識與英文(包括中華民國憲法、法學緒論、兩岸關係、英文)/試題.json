@@ -1,8 +1,8 @@
 {
   "metadata": {
     "level": "三等",
-    "subject": "綜合法政知識與英文（包括中華民國憲法、法學緒論、兩岸關係、英文）",
-    "exam_time": "1 小時 座號："
+    "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+    "exam_time": "1 小時"
   },
   "notes": [
     "※注意： 本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
@@ -475,57 +475,69 @@
         "A": "anxious",
         "B": "crucial",
         "C": "insecure",
-        "D": "romantic 第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bedtime just a time for dreaming? Do our brains turn off for the night? What if I told you that scientists recently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the University of Rochester found that the brain may be busy cleaning house -- cleaning out harmful waste materials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected into their brains. They observed the mice brains as they slept and when they were awake. The researchers say they saw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a day job. And this study says that is what our brains seem to be doing – working an extra job at night without additional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we are awake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 This shrinking permits waste to be removed more effectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body. “So our study suggests that we need to sleep because we have a macroscopic cleaning system that removes many of the toxic waste products from the brain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders."
+        "D": "romantic"
       },
       "answer": "B"
     },
     {
       "number": 37,
       "type": "choice",
-      "stem": "(A)They also found that during sleep, the brain’s cells shrink, or become smaller.",
+      "stem": "",
       "section": null,
       "options": {
+        "A": "They also found that during sleep, the brain’s cells shrink, or become smaller.",
         "B": "While we sleep, our brains are doing much more than getting ready for the next day.",
         "C": "She said the results demonstrate just how important sleep is to health and fighting disease.",
         "D": "The brain expert says our brains perform two very different jobs."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bedtime just a time for dreaming? Do our brains turn off for the night? What if I told you that scientists recently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the University of Rochester found that the brain may be busy cleaning house -- cleaning out harmful waste materials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected into their brains. They observed the mice brains as they slept and when they were awake. The researchers say they saw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a day job. And this study says that is what our brains seem to be doing – working an extra job at night without additional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we are awake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 This shrinking permits waste to be removed more effectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body. “So our study suggests that we need to sleep because we have a macroscopic cleaning system that removes many of the toxic waste products from the brain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
+      "passage_question_range": "37-40"
     },
     {
       "number": 38,
       "type": "choice",
-      "stem": "(A)They also found that during sleep, the brain’s cells shrink, or become smaller.",
+      "stem": "",
       "section": null,
       "options": {
+        "A": "They also found that during sleep, the brain’s cells shrink, or become smaller.",
         "B": "While we sleep, our brains are doing much more than getting ready for the next day.",
         "C": "She said the results demonstrate just how important sleep is to health and fighting disease.",
         "D": "The brain expert says our brains perform two very different jobs."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bedtime just a time for dreaming? Do our brains turn off for the night? What if I told you that scientists recently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the University of Rochester found that the brain may be busy cleaning house -- cleaning out harmful waste materials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected into their brains. They observed the mice brains as they slept and when they were awake. The researchers say they saw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a day job. And this study says that is what our brains seem to be doing – working an extra job at night without additional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we are awake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 This shrinking permits waste to be removed more effectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body. “So our study suggests that we need to sleep because we have a macroscopic cleaning system that removes many of the toxic waste products from the brain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
+      "passage_question_range": "37-40"
     },
     {
       "number": 39,
       "type": "choice",
-      "stem": "(A)They also found that during sleep, the brain’s cells shrink, or become smaller.",
+      "stem": "",
       "section": null,
       "options": {
+        "A": "They also found that during sleep, the brain’s cells shrink, or become smaller.",
         "B": "While we sleep, our brains are doing much more than getting ready for the next day.",
         "C": "She said the results demonstrate just how important sleep is to health and fighting disease.",
         "D": "The brain expert says our brains perform two very different jobs."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bedtime just a time for dreaming? Do our brains turn off for the night? What if I told you that scientists recently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the University of Rochester found that the brain may be busy cleaning house -- cleaning out harmful waste materials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected into their brains. They observed the mice brains as they slept and when they were awake. The researchers say they saw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a day job. And this study says that is what our brains seem to be doing – working an extra job at night without additional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we are awake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 This shrinking permits waste to be removed more effectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body. “So our study suggests that we need to sleep because we have a macroscopic cleaning system that removes many of the toxic waste products from the brain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
+      "passage_question_range": "37-40"
     },
     {
       "number": 40,
       "type": "choice",
-      "stem": "(A)They also found that during sleep, the brain’s cells shrink, or become smaller.",
+      "stem": "",
       "section": null,
       "options": {
+        "A": "They also found that during sleep, the brain’s cells shrink, or become smaller.",
         "B": "While we sleep, our brains are doing much more than getting ready for the next day.",
         "C": "She said the results demonstrate just how important sleep is to health and fighting disease.",
-        "D": "The brain expert says our brains perform two very different jobs. 請依下文回答第41題至第45題: It is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this."
+        "D": "The brain expert says our brains perform two very different jobs."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bedtime just a time for dreaming? Do our brains turn off for the night? What if I told you that scientists recently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the University of Rochester found that the brain may be busy cleaning house -- cleaning out harmful waste materials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected into their brains. They observed the mice brains as they slept and when they were awake. The researchers say they saw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a day job. And this study says that is what our brains seem to be doing – working an extra job at night without additional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we are awake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 This shrinking permits waste to be removed more effectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body. “So our study suggests that we need to sleep because we have a macroscopic cleaning system that removes many of the toxic waste products from the brain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
+      "passage_question_range": "37-40"
     },
     {
       "number": 41,
@@ -538,7 +550,9 @@
         "C": "Colors can change your mood.",
         "D": "Colors can cause you to react differently."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 42,
@@ -551,7 +565,9 @@
         "C": "Light colors",
         "D": "Transparent colors"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 43,
@@ -564,7 +580,9 @@
         "C": "silver",
         "D": "white"
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 44,
@@ -577,7 +595,9 @@
         "C": "Vehicles with dark colors have lower crash risk during daylight hours.",
         "D": "Vehicles with light colors have more severe crashes during daylight hours."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 45,
@@ -588,9 +608,11 @@
         "A": "Vehicle color and environmental factors",
         "B": "Vehicle color and crash risk",
         "C": "Vehicle color and time of the day",
-        "D": "Vehicle color and crash severity 請依下文回答第46題至第50題: One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time."
+        "D": "Vehicle color and crash severity"
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
     },
     {
       "number": 46,
@@ -603,7 +625,9 @@
         "C": "The Internal and External Environments.",
         "D": "The Overview of Biological Mechanism."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
     },
     {
       "number": 47,
@@ -616,7 +640,9 @@
         "C": "Downsized",
         "D": "Underestimated"
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
     },
     {
       "number": 48,
@@ -629,7 +655,9 @@
         "C": "People experiencing difficulty falling asleep at night.",
         "D": "People feeling shocked when witnessing a car accident in the daytime."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
     },
     {
       "number": 49,
@@ -642,7 +670,9 @@
         "C": "A biological timekeeping system.",
         "D": "A desire to change one’s behavior."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
     },
     {
       "number": 50,
@@ -655,7 +685,9 @@
         "C": "All species have an internal clock that is crucial for their survival.",
         "D": "Jet lag is a failure of a biological timekeeping mechanism."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
     }
   ],
   "year": 108,

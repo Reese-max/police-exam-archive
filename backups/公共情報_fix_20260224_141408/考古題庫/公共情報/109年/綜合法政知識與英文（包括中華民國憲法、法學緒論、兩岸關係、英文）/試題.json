@@ -1,0 +1,672 @@
+{
+  "metadata": {
+    "exam_type": "109",
+    "level": "三等",
+    "subject": "綜合法政知識與英文（包括中華民國憲法、法學緒論、兩岸關係、英文）",
+    "exam_time": "1小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,下列何者不受言論自由之保障?",
+      "section": null,
+      "options": {
+        "A": "說明商品成分之標示",
+        "B": "歷史教師上課中所提及之個人政治主張",
+        "C": "在臉書上張貼反對政府廢核政策的內容",
+        "D": "在下班時段的捷運車廂中惡作劇高喊有老鼠"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依據現行憲政體制,有關總統與行政院間關係,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "行政院院長辭職或出缺時,在總統未任命行政院院長前,由行政院副院長暫行代理",
+        "B": "副總統缺位時,應由行政院院長代行其職權",
+        "C": "行政院對於立法院決議之法律案,如認為有窒礙難行,於移請立法院覆議前,須經總統之核可",
+        "D": "立法院對行政院院長所提出之不信任案經表決通過時,行政院院長於辭職同時,得呈請總統解散立 法院"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "關於憲法基本國策規定之效力,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "得補充基本權利之內涵及理論基礎",
+        "B": "得作為司法院大法官解釋之依據",
+        "C": "立法院未及時實現國家方針條款之規定,即屬違憲",
+        "D": "如為方針條款,立法院對如何實現相關規定之目的,有其裁量權"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於憲法第8條人身自由之保障範圍,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "受刑人於入監服刑期間內,就其人身自由所受之限制,如有爭議,在服刑期滿前,均無司法救濟",
+        "B": "犯罪嫌疑人於偵查程序中聲請閱覽羈押審查相關卷證,係基於憲法第16條訴訟權,與憲法第8條人 身自由之保障無關",
+        "C": "受羈押者受無罪判決確定後,向國家請求冤獄賠償,係基於憲法第15條財產權,與憲法第8條人身 自由之保障無關",
+        "D": "受強制出境處分之大陸地區人民,如予強制收容,於收容前毋須經法院審問"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於隱私權之內涵,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "隱私權之保障範圍,涵蓋保障個人生活私密領域免於他人侵擾及個人資料之自主控制",
+        "B": "個人資料自主控制之權利,係保障人民對於其自身之個人資料享有自主自決之知悉與控制權,以及 資料記載錯誤之更正權",
+        "C": "基於人性尊嚴與個人主體性之維護及人格發展之完整,應透過修憲將其納入基本權利清單,方得確 立其受憲法保障之地位",
+        "D": "隱私權之保障並非絕對,國家於符合憲法第23條規定意旨之範圍內,仍得以法律明確規定對之予以 適當之限制"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "關於總統副總統之罷免,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "罷免案須經全體立法委員四分之一之提議、三分之二同意後提出",
+        "B": "罷免案尚需交由人民投票才能決定是否通過",
+        "C": "罷免案經否決者,於其任期中得對之再為罷免之提議",
+        "D": "就職未滿一年者,不得罷免"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "關於立法院職權,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "得聽取總統國情報告",
+        "B": "得對總統副總統提出彈劾案",
+        "C": "得聲請司法院大法官解釋",
+        "D": "得要求總統到院備詢"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "憲法第80條規定法官依據法律獨立審判。依司法院大法官解釋,上述規定所稱之法官,不包括下列何 者?",
+      "section": null,
+      "options": {
+        "A": "檢察官",
+        "B": "大法官",
+        "C": "律師懲戒委員會委員",
+        "D": "律師懲戒覆審委員會委員"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "關於中央與地方自治團體之監督關係,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "直轄市辦理自治事項之監督機關為行政院主管機關",
+        "B": "直轄市對行政院因監督其委辦事項所為之措施不服時,得聲請司法院大法官解釋",
+        "C": "行政院對直轄市之自治事項,僅得為合法性監督",
+        "D": "行政院對直轄市之委辦事項,得為合目的性及合法性監督"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "司法院大法官解釋憲法與統一解釋法令,兩者有相同之處,其相同處為何?",
+      "section": null,
+      "options": {
+        "A": "兩者若聲請不合規定者,均應不受理",
+        "B": "兩者若聲請解釋機關有上級機關者,其聲請均不可經上級機關層轉",
+        "C": "兩者均須與憲法基本人權有關",
+        "D": "兩者均應有大法官現有總額過半數之出席,及出席人數之同意,方得通過"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "關於地方制度法自治條例之規定,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "創設、剝奪或限制地方自治團體居民之權利義務之事項,應以自治條例定之",
+        "B": "自治條例均應經地方立法機關通過,並由各該地方行政機關公布",
+        "C": "自治條例均應分別報經行政院、中央各該主管機關核定後發布",
+        "D": "自治條例與憲法、法律或基於法律授權之法規或上級自治團體自治條例牴觸者,無效"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "有關勞動基準法對於工作時間、休息、休假之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "勞工繼續工作八小時,至少應有三十分鐘之休息",
+        "B": "勞工每七日中至少應有一日之休息,作為例假",
+        "C": "除勞資雙方另有約定調休外,紀念日、勞動節日及其他由中央主管機關規定應放假之日,均應休假",
+        "D": "第36條所定之例假、第37條所定之休假及第38條所定之特別休假,工資應由雇主照給"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "關於現行憲法規定之修憲程序,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "須經立法院立法委員三分之一提議,三分之二出席,及出席委員四分之三之決議提出憲法修正案",
+        "B": "須經立法院立法委員四分之一提議,四分之三出席,及出席委員四分之三之決議提出憲法修正案",
+        "C": "須經立法院立法委員二分之一提議,三分之二出席,及出席委員四分之三之決議提出憲法修正案",
+        "D": "須經立法院立法委員二分之一提議,四分之三出席,及出席委員四分之三之決議提出憲法修正案"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "下列何者並非妻之一方得以訴請裁判離婚的事由?",
+      "section": null,
+      "options": {
+        "A": "夫經醫學健康檢查發現無精蟲,不能生育",
+        "B": "夫因工作長期派駐海外,並與他人重婚",
+        "C": "夫於失蹤後,生死不明已逾五年",
+        "D": "夫經常藉細故毆傷與漫罵侮辱妻和前夫所生之子女"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "A社團法人的董事乙,其代表權受有不得為關於不動產交易的限制。依民法規定,此代表權的限制:",
+      "section": null,
+      "options": {
+        "A": "無效",
+        "B": "不得對抗第三人",
+        "C": "不得對抗善意第三人",
+        "D": "登記後始生效力"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "甲、乙分別有相鄰之A、B二地之所有權,甲在A地上建築H屋,因輕過失致H屋有約0.6平方公尺 建在B地上。乙一開始即知H屋越界卻未曾提出異議,如今H屋已經完工。下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "乙得請求拆除H屋返還B地",
+        "B": "甲、乙間視為有使用借貸關係存在",
+        "C": "乙得要求甲變更H屋",
+        "D": "乙得要求甲以相當之價額購買越界部分之土地"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "依民法之規定,關於要式契約,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "終身定期金契約之訂立,應以書面為之,未以書面訂立者,終身定期金契約無效",
+        "B": "逾一年期限之不動產租賃契約,應以字據訂立之,未以字據訂立者,視為不定期限之租賃",
+        "C": "人事保證契約,應以書面為之,未以書面訂立者,人事保證契約無效",
+        "D": "契約當事人約定其契約須一定方式者,該方式未完成前,其契約視為不成立"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "依實務見解,偷接有線電視觀看,並不成立竊盜罪,其理由在於傳輸的影音視訊乃電磁波的一種,使 用後,物質的全部能量不會減少,所以非屬電能。此見解所採取的刑法原則為何?",
+      "section": null,
+      "options": {
+        "A": "從新從輕原則",
+        "B": "特別預防原則",
+        "C": "責任主義",
+        "D": "禁止類推適用"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "某離職之女性受僱者A,向其原任職之學校提出口頭申訴表示遭該校副校長B以書信示愛性騷擾,該 校所採取之措施,何者符合性別工作平等法之規定?",
+      "section": null,
+      "options": {
+        "A": "該受僱人已離職,學校無法處理",
+        "B": "該校一經申訴,即組成申訴調查小組,進行調查",
+        "C": "該校因受僱人未提出書面申請,所以必須直到補齊書面資料後,始進行調查",
+        "D": "該校認為書信示愛,並非性騷擾,因而決定不予調查"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "依中央法規標準法之規定,法規內容繁複或條文較多者,得劃分為不同結構。下列何者非劃分法規內 容時所使用之體例結構?",
+      "section": null,
+      "options": {
+        "A": "「第某章」",
+        "B": "「第某節」",
+        "C": "「第某項」",
+        "D": "「第某款」"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "2008年馬英九總統上任後,中共發表了「胡六點」做為對臺方針,下列何者並未包括於其中?",
+      "section": null,
+      "options": {
+        "A": "一個中國原則",
+        "B": "兩岸人員與經濟交流",
+        "C": "堅持一國兩制",
+        "D": "達成和平協議"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "蔡英文於520偕同賴清德宣誓就職中華民國第十五任正副總統,就職演說中提及關於兩岸關係思維, 下列何者與其思維無關?",
+      "section": null,
+      "options": {
+        "A": "對等對話",
+        "B": "兩岸和平穩定",
+        "C": "民主協商",
+        "D": "遵循中華民國憲法與兩岸人民關係條例"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "美國在近年來陸續通過若干友臺法案,請問下列那一部與鼓勵美臺政府官員互訪有關?",
+      "section": null,
+      "options": {
+        "A": "臺灣旅行法",
+        "B": "國防授權法",
+        "C": "臺灣友邦國際保護暨強化倡議法",
+        "D": "臺灣保證法"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "下列何者不屬於日本對於兩岸關係的基本政策立場?",
+      "section": null,
+      "options": {
+        "A": "依據1972年簽訂「中日建交公報」界定中、日、臺之間關係",
+        "B": "承認並遵守海峽兩岸同屬於一個中國的政策",
+        "C": "政治與經濟關係二元分離",
+        "D": "將臺灣納入美日安保條約「周邊有事」的範圍內"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "中共第十八屆三中全會後提出第五個現代化的概念,主要指涉的是下列那個領域?",
+      "section": null,
+      "options": {
+        "A": "工業",
+        "B": "國防",
+        "C": "科學技術",
+        "D": "國家治理能力"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "新冠肺炎疫情爆發之後,中國大陸總理李克強在今年提出「六保」,其中不包括下列那一項?",
+      "section": null,
+      "options": {
+        "A": "糧食安全",
+        "B": "基層運轉",
+        "C": "外來投資",
+        "D": "基本民生"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "大陸學生來臺就學,相關政策規範有所演變,下列有關現行政策的敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "臺灣開放承認中國大陸地區所有專科學校學歷",
+        "B": "陸生禁止校外打工,但是可以從事與課程、論文研究相關的研究教學助理工作",
+        "C": "目前在臺就學的大陸學生可以參加商業性醫療保險",
+        "D": "來臺就學的大陸學生不得報考公職及專技考試"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "有關中國大陸配偶之父母以及未成年親生子女來臺探親之規定,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "大陸配偶之中國大陸親生子女,年齡在16歲以下,或曾在16歲以前申請進入臺灣者,來臺探親之停 留期間為每次3個月,得申請延期",
+        "B": "大陸配偶經許可在臺灣依親、長期居留者,其父母得申請進入臺灣探親,停留期間為每次3個月, 得申請延期",
+        "C": "大陸配偶前婚生子女為其目前的臺灣配偶所收養,年齡在14歲以下者可申請定居",
+        "D": "大陸配偶轉換身分為臺灣人民,其20歲以下之親生子女,可以申請在臺長期居留"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "2020年是兩岸經濟合作架構協議(ECFA)生效後第十年,當時主要想要推動的協議範圍沒有包括下 列何者?",
+      "section": null,
+      "options": {
+        "A": "投資協議",
+        "B": "服務貿易",
+        "C": "貨品貿易",
+        "D": "金融互惠"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "香港反送中抗爭情勢升級,我方政府近日實施若干新政策,主要包括下列何項?",
+      "section": null,
+      "options": {
+        "A": "修改香港澳門關係條例第18條以因應新情勢",
+        "B": "推出香港人道援助關懷行動專案協助香港人民",
+        "C": "提供香港人民政治庇護",
+        "D": "停止適用港澳條例,取消對港特殊待遇"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Thegovernmentisconsideringthecreationofadedicatedimmigrationlawto manpowershortagein thecountry.",
+      "section": null,
+      "options": {
+        "A": "tickle",
+        "B": "tackle",
+        "C": "trickle",
+        "D": "twinkle"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Until they obtain citizenship through , immigrants may be denied full rights of citizenship precisely becausetheyarenotcitizens.",
+      "section": null,
+      "options": {
+        "A": "alienation",
+        "B": "internalization",
+        "C": "internationalization",
+        "D": "naturalization"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "New immigrants not only need to adjust to a new culture, they also, often, must with traumatic experiencesfromtheirpast.",
+      "section": null,
+      "options": {
+        "A": "cometoterms",
+        "B": "comeinhandy",
+        "C": "catchup",
+        "D": "teamup"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "The fact that Taiwan has a lower of investment for immigration, compared to other developed countries,makestheislandcountrymoreappealing.",
+      "section": null,
+      "options": {
+        "A": "reputation",
+        "B": "threshold",
+        "C": "benefit",
+        "D": "respect"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "An immigration officer needs advanced knowledge of the immigration laws and procedures to uncover potentialcomplexfraudschemesthat theintegrityofthelegalimmigrationsystem.",
+      "section": null,
+      "options": {
+        "A": "expose",
+        "B": "reinforce",
+        "C": "defend",
+        "D": "threaten"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "The Kenyan governmentspends about US$5 million in 2018 to foreigners working in the country illegally,asignificantincreasecomparedtotheUS$3.6millionspentinthepreviousyear.",
+      "section": null,
+      "options": {
+        "A": "deport",
+        "B": "consent",
+        "C": "conpensate",
+        "D": "immigrate"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Newluggage methodscanidentifyliquidexplosivesandhelptrackdownthedangeroussubstancesin theairport.",
+      "section": null,
+      "options": {
+        "A": "acquisition",
+        "B": "calculation",
+        "C": "inspection",
+        "D": "stagnation"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Sometouristsintendto fromoneattractiontothenextinordertomakethemostofthetrip.",
+      "section": null,
+      "options": {
+        "A": "drain",
+        "B": "halt",
+        "C": "recess",
+        "D": "whisk"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Withtherecentincreaseinnumberoflonewolfterroristattacks,governmentsaroundtheworldhavebeenon highalertforsocialmediaoutletsthatmaypotentiallyradicalize .",
+      "section": null,
+      "options": {
+        "A": "individuals",
+        "B": "animals",
+        "C": "peoples",
+        "D": "humanitarians"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "Thetaskis ,buthehasrisentothechallengewithintelligence,creativity,flexibilityandcommitments toexcellence.",
+      "section": null,
+      "options": {
+        "A": "daunting",
+        "B": "amusing",
+        "C": "delighting",
+        "D": "encouraging 請回答下列第41題至第45題 Capital controls may be imposed on capital leaving a country or entering it. The former include controls over 41 transactions for direct and equity investments by residents and/or foreigners. For example, restrictions on the repatriation of capital by foreigners can include 42 a period before such repatriation is allowed, and regulations that phase the repatriation according to the availability of foreign exchange. Residents may be restricted 43 their holdings of foreignstocks, either directly or through limits on the permissible portfolios of the country’s investment funds. Law can also restrict bank deposits abroad by residents. Alternatively, bank accounts and transactions 44 in foreign currencies can be made available to residents, and non-interest-bearing capital reserve requirements can be imposed on deposits in foreign currencies, 45 reducing or eliminating the interest paid on them and therefore diminishing their attractiveness. The main purpose of controls over capital out flows is to thwart attempts to shift between currencies during financial crises, which can exacerbate currency depreciation."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "ultimate",
+        "B": "upmost",
+        "C": "outward",
+        "D": "inbound"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "sacrificing",
+        "B": "fortifying",
+        "C": "specifying",
+        "D": "forseeing"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "inrespectof",
+        "B": "inadditionto",
+        "C": "bywayof",
+        "D": "inspiteof"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "distributed",
+        "B": "denominated",
+        "C": "denounced",
+        "D": "discriminated"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "albeit",
+        "B": "after",
+        "C": "unless",
+        "D": "thus 請回答下列第46題至第50題 Two years ago, a group of elders in a village in north-western Uganda agreed to lend their land to refugees from South Sudan. About 120,000 are now in the surrounding area. Here they live in tarpaulin shelters and mud-brick huts on a patch of scrub where cows once grazed. Kemis Butele, a gravel-voiced Ugandan elder, explains that hostingrefugeesisawayforaremoteplace,longneglectedbythecentralgovernment,togetnoticed.Hehopesfor newschools,clinicsandadecentroad–and“thatourchildrencangetjobs.” Therearemorethan20millionrefugeesintheworldtoday,morethanatanytimesincetheendofthesecondworld war. Nearly 90% reside in poor countries. In many, to preserve jobs for natives, governments bar refugees from workingintheformaleconomy.Ugandahasshownhowadifferentapproachcanreapdividends.Thegovernment givesrefugeeslandplotsandletsthemwork.Insomeplaces,therefugeesboostlocalbusinessesandactasamagnet forforeignaid.Mr.ButeleandmanyotherUgandansseetheirnewneighborsasabenefit,notaburden.Sadly,such attitudesarestilltheexception. Refugeesare“brothersandsisters,”saymanyUgandans.Mr.Butelewasonceonehimself.Butthewelcomeisalso a pragmatic one. Northern Uganda is so poor that some locals pose as refugees to receive food aid. Others see refugees as buyers for local goods. Elsewhere in Uganda has indeedseen such positive spillover. One studyfrom 2016foundthatthepresenceofCongoleserefugeesinwesternUgandahadincreasedconsumptionperhousehold. Another estimates that each new refugee household boosts total income, including that of refugees, by $320-430 more than the cost of the aid the household is given. That rises to $560-670 when refugees are given cash instead ofrations."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Whatisthemainideaofthispassage?",
+      "section": null,
+      "options": {
+        "A": "Allowingrefugeestoworkcanbringbenefits.",
+        "B": "Barringrefugeesfromworkingboostseconomy.",
+        "C": "TheUgandanapproachtorefugeesprovesproblematic.",
+        "D": "Ugandanshostrefugeestoreceiveforeignaid."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Whydomanygovernmentsbarrefugeesfromworkingintheformaleconomy?",
+      "section": null,
+      "options": {
+        "A": "Refugeeswouldrathertakeoddjobsinabarthanformaljobs.",
+        "B": "Thegovernmentsintendtopreservejobsforthelocalnatives.",
+        "C": "Theresearchshowsthatimmigrantsrarelytakenativeworkers’jobs.",
+        "D": "Theresearchshowsthatrefugeeshaveincreasedconsumptionperhousehold."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Whichofthefollowingwordsisclosestinmeaningto“spillover”?",
+      "section": null,
+      "options": {
+        "A": "Dividend.",
+        "B": "Magnet.",
+        "C": "Presence.",
+        "D": "Excess."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Whatistheimplicationofthestatement,“suchattitudesarestilltheexception”?",
+      "section": null,
+      "options": {
+        "A": "Themajorityofrefugeesprefertoresideinrichcountries.",
+        "B": "Themajorityofgovernmentsgiverefugeeslandplots.",
+        "C": "Themajorityofpeopleconsiderrefugeestobeaburden.",
+        "D": "Themajorityoflocalbusinessesseerefugeesasabenefit."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Whichofthefollowingstatementsistrue?",
+      "section": null,
+      "options": {
+        "A": "Ugandanswelcomedrefugeesbecausethecentralgovernmentpromisednewschools,clinicsandadecentroad.",
+        "B": "Mostrefugeesstayedinpoorcountriesinordertoboostlocalbusinessesandactasamagnetforforeignaid.",
+        "C": "AstudyfoundthatthepresenceofrefugeesinUgandahaddecreasedconsumptionperhousehold.",
+        "D": "Eachnewrefugeehouseholdboostedtotalincomemorethanthecostoftheaidthehouseholdwasgiven."
+      },
+      "answer": "D"
+    }
+  ],
+  "year": 109,
+  "category": "公共情報",
+  "subject": "綜合法政知識與英文（包括中華民國憲法、法學緒論、兩岸關係、英文）",
+  "source_pdf": "考古題庫\\公共情報\\109年\\綜合法政知識與英文（包括中華民國憲法、法學緒論、兩岸關係、英文）\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}
