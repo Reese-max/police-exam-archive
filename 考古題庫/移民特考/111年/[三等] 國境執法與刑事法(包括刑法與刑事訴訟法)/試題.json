@@ -131,7 +131,7 @@
       "section": "乙、測驗題",
       "options": {
         "A": "建置「航前旅客資訊系統(AdvancePassenger InformationSystem,APIS)」",
-        "B": "建置「航前旅客審查系統(AdvancePassengerProcessingSystem,APPS)」",
+        "B": "建置「航前旅客審查系統(Advance Passenger Processing System, APPS)」",
         "C": "實施本國人口個人生物特徵(臉部特徵與指紋)之錄存及比對作業",
         "D": "啟用「偽變造護照辨識比對系統」"
       },

@@ -173,7 +173,7 @@
     {
       "number": 11,
       "type": "choice",
-      "stem": "",
+      "stem": "請依上文,選出最適合填入第 11 題空格的選項。",
       "section": "乙、測驗題",
       "options": {
         "A": "address",
@@ -188,7 +188,7 @@
     {
       "number": 12,
       "type": "choice",
-      "stem": "",
+      "stem": "請依上文,選出最適合填入第 12 題空格的選項。",
       "section": "乙、測驗題",
       "options": {
         "A": "respective",
@@ -203,7 +203,7 @@
     {
       "number": 13,
       "type": "choice",
-      "stem": "",
+      "stem": "請依上文,選出最適合填入第 13 題空格的選項。",
       "section": "乙、測驗題",
       "options": {
         "A": "ahead",
@@ -218,7 +218,7 @@
     {
       "number": 14,
       "type": "choice",
-      "stem": "",
+      "stem": "請依上文,選出最適合填入第 14 題空格的選項。",
       "section": "乙、測驗題",
       "options": {
         "A": "customary",
@@ -233,7 +233,7 @@
     {
       "number": 15,
       "type": "choice",
-      "stem": "",
+      "stem": "請依上文,選出最適合填入第 15 題空格的選項。",
       "section": "乙、測驗題",
       "options": {
         "A": "adventure",

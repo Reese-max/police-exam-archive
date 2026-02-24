@@ -35,13 +35,13 @@
     {
       "number": "三",
       "type": "essay",
-      "stem": "Schreiben Sie einenAufsatz ab 160 Wörtern zumThema „Integrationsbereitschaft\nder Einwanderer*Innen bzw. Gastarbeiter*Innen in Taiwan“!\nSeit den letzten Jahrzehnten gibt es immer mehr Einwander*Innen und\nGastarbeiter*Innen in Taiwan. Der Umgang mit Leuten aus verschiedenen\nkulturellen Hintergründen gehört allmählich zumAlltag unserer Gesellschaft.\nHaben Sie schon Erfahrungen damit gemacht? Sind Einwander*Innen und\nGastarbeiter*Innen in Taiwan integrationsbereit? Wie soll unsere Regierung\nIhrer Meinung nach darauf reagieren?\nKriterien der Bewertung:\nInhalt (Aufbau und Logik) bzw. Darstellung(15 分)\nWortschatz und Satzstrukturen (10 分)",
+      "stem": "Schreiben Sie einen Aufsatz ab 160 Wörtern zum Thema „Integrationsbereitschaft\nder Einwanderer*Innen bzw. Gastarbeiter*Innen in Taiwan“!\nSeit den letzten Jahrzehnten gibt es immer mehr Einwander*Innen und\nGastarbeiter*Innen in Taiwan. Der Umgang mit Leuten aus verschiedenen\nkulturellen Hintergründen gehört allmählich zum Alltag unserer Gesellschaft.\nHaben Sie schon Erfahrungen damit gemacht? Sind Einwander*Innen und\nGastarbeiter*Innen in Taiwan integrationsbereit? Wie soll unsere Regierung\nIhrer Meinung nach darauf reagieren?\nKriterien der Bewertung:\nInhalt (Aufbau und Logik) bzw. Darstellung(15 分)\nWortschatz und Satzstrukturen (10 分)",
       "section": "甲、申論題"
     },
     {
       "number": 1,
       "type": "choice",
-      "stem": "WhileTSMC (TaiwanSemiconductorManufacturingCompany) claimedtheApril-third earthquake did not haveamajor onits production,it sawsomedisruptiontoits operations.",
+      "stem": "While TSMC (Taiwan Semiconductor Manufacturing Company) claimedthe April-third earthquake did not haveamajor onits production,it sawsomedisruptiontoits operations.",
       "section": "乙、測驗題",
       "options": {
         "A": "satisfaction",
@@ -93,7 +93,7 @@
     {
       "number": 5,
       "type": "choice",
-      "stem": "For foreigners who have no certain domicile or residence in Taiwan, the National Immigration Agency oftheMinistryoftheInteriormayordersuchforeignerstoexittheStatevoluntarilywithintendaysprior totheforcible .",
+      "stem": "For foreigners who have no certain domicile or residence in Taiwan, the National Immigration Agency ofthe Ministryofthe Interiormayordersuchforeignerstoexitthe Statevoluntarilywithintendaysprior totheforcible .",
       "section": "乙、測驗題",
       "options": {
         "A": "deportation",
@@ -132,7 +132,7 @@
     {
       "number": 8,
       "type": "choice",
-      "stem": "OnFebruary14th,aChinesefishingboatoverturnedwhilebeingchasedbytheTaiwanesecoast guards, killing two Chinese fishermen on board. While between Taiwan and China soared, disinformationabout theincident alsotookoff.",
+      "stem": "On February14th,a Chinesefishingboatoverturnedwhilebeingchasedbythe Taiwanesecoast guards, killing two Chinese fishermen on board. While between Taiwan and China soared, disinformationabout theincident alsotookoff.",
       "section": "乙、測驗題",
       "options": {
         "A": "peace",
