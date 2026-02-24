@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "level": "三等",
+    "subject": "外國文(日文兼試移民專業英文)",
+    "exam_time": "2 小時 座號：",
+    "code": "80350",
+    "exam_name": "移民行政人員特種考試",
+    "year": 113
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "共20題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "中譯日:\nOpen AI 近期發表的 GPT-4o 語音技術,不僅提升反應速度與情緒感\n知,更能夠即時翻譯語言,令人驚嘆。(5 分)\n國家發展委員會報告指出,臺灣 2025 年起邁入超高齡化社會,老年人\n口占總人口比率超過 20%。(5 分)\n據說市占逾七成的化學大廠被發現實驗數據造假,遭到衛生福利部食\n品藥物管理署勒令停業,進而導致大型醫療院所需使用的生理食鹽\n水、葡萄糖液、滅菌液等貨源頓時停擺。(8 分)",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "日譯中:(每小題 15 分,共 30 分)\n外國人だけではなく、日本人同士にも、透明ディスプレイを活用し\nた窓口向けユニバーサルコミュニケーションサービス(翻訳システ\nム)が聴覚障害者や言語障害者などへの対応が可能です。字幕と表\n情が同時に見える透明ディスプレイを介入し、より多くの人への情\n報伝達を実現することにより、受付業務のユニバーサルコミュニケ\nーションを支援します。\nAI の軍事利用が急速に進み、これまでの概念を覆す兵器が次々登\n場しています。例えば、ロシアを相手に劣勢に置かれたウクライナ\nは、戦局打開のために國を挙げて実戦への導入を始め、AI 兵器の開\n発を進めています。イスラエルのガザ地區への攻撃でも AI システ\nムが利用され、民間人の犠牲者の増加につながっている可能性が高\nまっています。人間が関與せず攻撃まで遂行する「究極の AI 兵器」\nの誕生も、現実味を帯びてきているようです。そうすると、AI の発\n展に対する規制が各國で議論すべき時期が來ていると思われます。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "撰寫一篇作文。注意事項:需符合 400 個字左右以及具有起承轉合結構\n的內容。(27 分)\n題目:「思い描いた十年後の自分」",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "WhileTSMC (TaiwanSemiconductorManufacturingCompany) claimedtheApril-third earthquake did not haveamajor onits production,it sawsomedisruptiontoits operations.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "satisfaction",
+        "B": "impact",
+        "C": "interest",
+        "D": "license"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "Those who facilitate or aid foreigners to engage in activities in Taiwan that are inconsistent with the reasons of their permitted visit or residence shall be to a fine of NT$200,000 or more and up to NT$1million.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "subject",
+        "B": "object",
+        "C": "projected",
+        "D": "rejected"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "Before arriving in Taiwan, please an online immigration arrival card on the website of the National ImmigrationAgency.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "communicate",
+        "B": "complete",
+        "C": "contempt",
+        "D": "contemplate"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "ThemaximumdurationofprohibitionfromenteringTaiwanforforeignerswhooverstaybeyondthe periodofvisit orresidenceinTaiwanhas beenrevisedfrom 3 years to7 years.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "improved",
+        "B": "sensible",
+        "C": "authorized",
+        "D": "evident"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "For foreigners who have no certain domicile or residence in Taiwan, the National Immigration Agency oftheMinistryoftheInteriormayordersuchforeignerstoexittheStatevoluntarilywithintendaysprior totheforcible .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "deportation",
+        "B": "importation",
+        "C": "exportation",
+        "D": "teleportation"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "Nationals without household registration who hold a valid R.O.C. (Taiwan) biometric passport and possess areturnticket are from applyingforanentrypermit.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "excelled",
+        "B": "examined",
+        "C": "exempt",
+        "D": "performed"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "Law enforcement agencies have 11 people who ran a food fraud operation that produced more than68,000gallons ofoliveoil unfit forconsumption.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "occupied",
+        "B": "rested",
+        "C": "joined",
+        "D": "arrested"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "OnFebruary14th,aChinesefishingboatoverturnedwhilebeingchasedbytheTaiwanesecoast guards, killing two Chinese fishermen on board. While between Taiwan and China soared, disinformationabout theincident alsotookoff.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "peace",
+        "B": "tension",
+        "C": "match",
+        "D": "sanctions"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "For any applicant who is unable to pay the fee, he/she may request a fee by submitting his/her caseforfurtherconsideration.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "increase",
+        "B": "expansion",
+        "C": "waiver",
+        "D": "resistance"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "Rememberto youraddresswiththisofficetoensurethat youcanreceiveallcorrespondenceand notifications from us inatimelymanner.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "fill",
+        "B": "retrieve",
+        "C": "update",
+        "D": "inform"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "associate",
+        "B": "contact",
+        "C": "cling",
+        "D": "organize"
+      },
+      "answer": "A",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "restrictions",
+        "B": "regulations",
+        "C": "simulations",
+        "D": "strategies"
+      },
+      "answer": "D",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "perished",
+        "B": "acquired",
+        "C": "excluded",
+        "D": "paralyzed"
+      },
+      "answer": "B",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "locations",
+        "B": "operations",
+        "C": "establishments",
+        "D": "expectations"
+      },
+      "answer": "D",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "dislocate",
+        "B": "determine",
+        "C": "unsettle",
+        "D": "cultivate"
+      },
+      "answer": "B",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "What is thebest titleforthis passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Diverse Backgrounds of Immigrants.",
+        "B": "KeyFindings about US Immigrants.",
+        "C": "Reasons for BecomingImmigrants.",
+        "D": "Rights andObligations of Immigrants."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "Accordingto thepassage,whichofthefollowingstatements is NOTtrue?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Thenumberofimmigrants intheUS occupies one-fifthofthetotal ofimmigrants intheworld.",
+        "B": "The yearof2018markedtherecordhighfortheforeign-bornpopulationintheUS.",
+        "C": "Morethanone-thirdofimmigrants intheUS areunauthorized.",
+        "D": "TheUS usedtohave anational quotasystem."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "What is thefocus ofthefinal paragraph?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Thelegal status ofimmigrants intheUS.",
+        "B": "Theestablishment of PewResearchCenter.",
+        "C": "TheimportanceofNational Census.",
+        "D": "Theinfluenceofimmigrants from Mexico."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "According to the passage, what is the main contributor to the decline in the unauthorized immigrant populationin2017?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Theimplementationofnewimmigrationlaws intheUS.",
+        "B": "Theundercount adjustment tothecensus data.",
+        "C": "Theincreaseofnaturalizedcitizens andpermanent residents.",
+        "D": "Thedecreaseofimmigrants from Mexico."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "Accordingto thepassage,whichofthefollowingstatistics is NOTcorrect?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Ever since the US immigration laws replaced a national quota system in 1965, the number of immigrants livinginthe US has grownmorethan sixtimes.",
+        "B": "In1970,immigrants accountedfor4.8%ofthe US population.",
+        "C": "In2017, about 23%of all immigrants wereunauthorizedimmigrants.",
+        "D": "In2017,unauthorizedimmigrants intheUS accountedfor3.2%ofthe US population."
+      },
+      "answer": "A"
+    }
+  ],
+  "year": 113,
+  "category": "移民特考",
+  "subject": "[三等] 外國文(日文兼試移民專業英文)",
+  "level": "三等",
+  "original_subject": "外國文（日文兼試移民專業英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/113年/三等/外國文(日文兼試移民專業英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 23
+}

@@ -1,0 +1,628 @@
+{
+  "metadata": {
+    "level": "三等",
+    "subject": "法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+    "exam_time": "1 小時"
+  },
+  "notes": [
+    "※注意：①本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "②本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "③禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依憲法及憲法增修條文規定,下列何者非屬立法院之職權?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "提出總統、副總統之罷免案",
+        "B": "對行政院院長提出不信任案",
+        "C": "依憲法規定提出緊急命令",
+        "D": "解決中央與地方間有關剩餘權分配之爭議"
+      }
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依憲法增修條文之規定,下列何者不屬於經立法院提出後,須經中華民國自由地區選舉人投票複決或同 意,始為通過之議案?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "憲法修正案",
+        "B": "領土變更案",
+        "C": "總統、副總統彈劾案",
+        "D": "總統、副總統罷免案"
+      }
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "依憲法及憲法增修條文規定,關於總統職權之行使,下列何者毋須經行政院會議決議?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "宣布戒嚴",
+        "B": "任命內政部長",
+        "C": "發布緊急命令",
+        "D": "宣戰"
+      }
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依憲法及憲法增修條文規定,有關行政院組織,下列敘述何者正確?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "行政院設有行政院會議,故行政院為合議制機關",
+        "B": "行政院之組織毋須適用法律保留原則",
+        "C": "國家機關之職權、設立程序及總員額,得以法律為準則性之規定",
+        "D": "憲法增修條文明文授權行政院得設二級獨立機關"
+      }
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "憲法基本國策章有關國民經濟之規定,下列敘述何者正確?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "甲所有土地所蘊藏之煤礦,亦為甲所有",
+        "B": "憲法規定公用事業應以公營為原則",
+        "C": "憲法要求發達私人資本",
+        "D": "國家徵收土地增值稅,嚴重侵害人民財產權"
+      }
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關行政執行法上拘提管收之相關規定,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "管收係於一定期間內拘束人民身體自由於一定之處所,屬憲法第8條第1項所規定之拘禁",
+        "B": "管收與刑事程序之羈押,目的不同,故其所踐行之司法程序自無須與羈押完全相同",
+        "C": "行政執行法關於拘提、管收交由行政執行處執行之規定,違反憲法第 8 條第 1 項所定應由司法或警察 機關為之的規定",
+        "D": "行政執行法之管收處分,目的係在貫徹公法上金錢給付義務之履行,尚非憲法所不許"
+      }
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "依司法院大法官解釋:「自辦市地重劃由部分土地所有權人申請主管機關核定成立之籌備會發動,此將使重 劃範圍內不同意參與重劃之土地所有權人,被迫參與自辦市地重劃程序」,涉及憲法何項基本權利之限制?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "財產權",
+        "B": "平等權",
+        "C": "生存權",
+        "D": "工作權"
+      }
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於商業言論,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "化粧品廣告之事前審查乃對言論自由之重大干預,原則上應為違憲",
+        "B": "菸品與酒類對人體健康皆有影響,立法者對其標示應為相同之規範",
+        "C": "菸品容器上應以中文標示所含尼古丁及焦油含量,乃菸品財產權所具有之社會義務",
+        "D": "商業言論所提供之訊息,應受憲法第11條言論自由之保障"
+      }
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "依租稅法律主義,須明定於法律者,不包括下列何者?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "稅目",
+        "B": "租稅優惠減免",
+        "C": "納稅方法",
+        "D": "列舉扣除額證明方式"
+      }
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於婚姻之保障,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "一夫一妻之婚姻受憲法所保障",
+        "B": "民法關於重婚無效之規定,就一般情形而言,並未對人民之婚姻自由造成違憲之限制",
+        "C": "國家遭遇重大變故,在夫妻隔離,相聚無期之情況下所發生之重婚,後婚姻應受憲法保障",
+        "D": "憲法保障性行為之自由,故刑法通姦罪違憲"
+      }
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列何者並非憲法第22條保障之基本權利?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "名譽權",
+        "B": "婚姻自由",
+        "C": "性行為自由",
+        "D": "政府資訊公開請求權"
+      }
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "關於總統之刑事豁免權,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "總統在職期間犯內亂罪或外患罪時,仍得對之為刑事訴究",
+        "B": "憲法保障之刑事豁免權係屬實體之免責權",
+        "C": "刑事豁免權並不免除總統之行政或民事責任",
+        "D": "總統原則上不得拋棄其刑事豁免權"
+      }
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "依據憲法增修條文規定,下列何者非監察院之職權?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "彈劾權",
+        "B": "糾舉權",
+        "C": "審計權",
+        "D": "同意權"
+      }
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "下列何者不是聲請大法官釋憲之主體?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "立法院",
+        "B": "臺北市市長",
+        "C": "人民",
+        "D": "地方法院法官"
+      }
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "有關司法院大法官解釋之效力,下列敘述何者錯誤?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "大法官解釋有拘束全國各機關之效力",
+        "B": "大法官依人民聲請所為之解釋,對聲請人據以聲請之案件,亦有效力",
+        "C": "大法官解釋有拘束全國人民之效力",
+        "D": "大法官解釋之效力,不得溯及既往"
+      }
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "下列何者並非依照憲法第170條之程序所制定之法律?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "國立歷史博物館組織條例",
+        "B": "臺灣地區與大陸地區人民關係條例",
+        "C": "離島建設條例",
+        "D": "高雄市建築管理自治條例"
+      }
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "總統為下列行為,何者須經行政院院長之副署?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "依法公布法律",
+        "B": "發布行政院院長之任免命令",
+        "C": "發布依憲法經立法院同意任命人員之任免命令",
+        "D": "發布解散立法院之命令"
+      }
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "下列何者不須經公開發行公司股東會之同意?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "公司發行限制權利新股給員工",
+        "B": "修正公司章程",
+        "C": "股東以對公司之貨幣債權繳納股款",
+        "D": "公司減資彌補虧損"
+      }
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於規定請求權消滅時效之法規,下列敘述何者正確?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "應以憲法規定",
+        "B": "應以法律規定",
+        "C": "得以法律或法律授權之法規命令規定",
+        "D": "得以行政規則規定"
+      }
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "屬於地區性、專門性、特殊性或臨時性事項之法律,其名稱通常為下列何者?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "法",
+        "B": "律",
+        "C": "條例",
+        "D": "通則"
+      }
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "依據地方制度法規定,地方立法機關得訂定:",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "自治規則",
+        "B": "自律規則",
+        "C": "委辦規則",
+        "D": "行政規則"
+      }
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "行政命令經立法院各該委員會審查後,發現有違反、變更或牴觸法律者,或應以法律規定事項而以命令 定之者,應提報院會,經議決後,結果如何?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "該行政命令失其效力",
+        "B": "由立法院公告廢止該行政命令",
+        "C": "由立法院通知原訂頒之機關更正或廢止該行政命令",
+        "D": "由立法院通知行政院予以函告無效"
+      }
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "關於推定之敘述,下列何者錯誤?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "推定乃對於某種事實之存在與否不明確時,依照一般常理加以推論認定之意",
+        "B": "推定乃法律對生活關係合理之規範,不問是否真實,對一定事實之存在,依據法律加以確定",
+        "C": "推定乃是依據法律規定所為之推論認定,若有不同之主張,允許提出反證推翻",
+        "D": "依據經驗法則判斷即屬於推定"
+      }
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列何者違反法律明確性原則?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "教師法以「行為不檢有損師道,經有關機關查證屬實」為解聘、停聘或不續聘之構成要件",
+        "B": "社會秩序維護法規定,無正當理由,跟追他人,經勸阻不聽者,處新臺幣3000元以下罰鍰或申誡",
+        "C": "檢肅流氓條例關於欺壓善良、品行惡劣、遊蕩無賴之規定",
+        "D": "刑法第235條規定所稱「猥褻」之資訊、物品"
+      }
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "甲已喪偶,育有乙、丙、丁 3 名子女,乙結婚時,甲贈與 200 萬元,丙開設電腦公司時,甲贈與 300 萬 元,丁出國遊學時,甲贈與60萬元旅費,甲死亡時,留下遺產400萬元。丁可分得多少遺產?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "200萬元",
+        "B": "240萬元",
+        "C": "260萬元",
+        "D": "300萬元"
+      }
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "下列法律行為或意思表示,何者不是無效?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "表意人無欲為其意思表示所拘束之意,而為意思表示,但其情形為相對人所明知",
+        "B": "表意人與相對人通謀而為之虛偽意思表示",
+        "C": "背於公共秩序或善良風俗之法律行為",
+        "D": "限制行為能力人未得法定代理人之允許,所訂立之契約"
+      }
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "甲、乙、丙三人平均共有之A動產被丁不法侵奪,甲欲起訴丁請求返還。下列敘述何者正確?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "須以甲、乙、丙三人為共同原告",
+        "B": "須以甲、乙為共同原告,請求將A返還予原告",
+        "C": "甲得單獨起訴,請求將A返還予共有人全體",
+        "D": "須有過半數之共有人為共同原告"
+      }
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "有關合夥與隱名合夥之敘述,下列何者錯誤?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "合夥有團體性,隱名合夥則無",
+        "B": "合夥人之出資得以信用或勞務為之,隱名合夥僅以財產為限",
+        "C": "合夥人僅由執行業務合夥人負出資義務,隱名合夥僅由隱名合夥人出資",
+        "D": "合夥事務,原則上由合夥人全體共同執行;隱名合夥之事務,原則上專由出名營業人執行"
+      }
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "甲到花蓮遊玩,在乙開設之商店購買當地名產A物,帶回公司與同事丙分享,詎料二人食用A物後均產 生食物中毒現象,經查 A 物為丁工廠所製作,之所以發生食物中毒,主要係因為丁工廠原料使用不當所 致。下列敘述,何者正確?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "乙開設之商店為消費者,得向丁工廠請求損害賠償",
+        "B": "丙非消費者,因為A物並非丙所交易購買",
+        "C": "甲為消費者,僅得向丁依消費者保護法規定請求損害賠償",
+        "D": "甲為消費者,得向企業經營者乙、丁依消費者保護法規定請求損害賠償"
+      }
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "下列關於勞工保險之給付,何項敘述錯誤?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "被保險人在保險有效期間發生傷病事故,於保險效力停止後 1 年內,得請領任一傷病及其引起之疾病 之傷病給付、失能給付、死亡給付或職業災害醫療給付",
+        "B": "被保險人退保後,經診斷確定於保險有效期間罹患職業病者,得請領職業災害保險失能給付",
+        "C": "同一種保險給付,不得因同一事故而重複請領",
+        "D": "領取保險給付之請求權,自得請領之日起,因5年間不行使而消滅"
+      }
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "This company has been . It makes products ranging from air craft engines to insurance, medical technology and plastics.",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "diversified",
+        "B": "short ened",
+        "C": "summoned",
+        "D": "vaporized"
+      }
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Them ortg age market has been in the since the financial crisis cripp led the bank ing industry last year.",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "excursion",
+        "B": "celebrity",
+        "C": "doldrums",
+        "D": "incidence"
+      }
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "There was so much in the streets that travel was slow.",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "compression",
+        "B": "combustion",
+        "C": "congestion",
+        "D": "confiscation"
+      }
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "This coffeeis too strong. Please itby add ing some water.",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "digest",
+        "B": "dilute",
+        "C": "revise",
+        "D": "pacify"
+      }
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Usinga(n) thermal icestor age system, the device keep scool with the equivalent of 13,000 tons ofice.",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "naive",
+        "B": "innovative",
+        "C": "retarded",
+        "D": "over estimated"
+      }
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "A recent study found that a positive attitude towards learningi nearly grades is to success.",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "anxious",
+        "B": "crucial",
+        "C": "insecure",
+        "D": "romantic"
+      }
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Which of the following is NOT mentioned in the passage?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "Colors can exp and your personality.",
+        "B": "Colors can reveal your feeling.",
+        "C": "Colors can change your mood.",
+        "D": "Colors can cause you tore act differently."
+      },
+      "passage": "請依下文回答第37題至第41題: It is believed that the color choices you make reflect adeeper meaning about your personalitytra its. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflect ion of how you are feeling at the moment. Add itionally, wearing certain colors may cause you tore act different lyto certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compa red to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strong est during day light hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required toquantify this."
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Which of the following is considered aslowon the visibility index?",
+      "section": null,
+      "answer": "B",
+      "options": {
+        "A": "Expansive colors",
+        "B": "Contractive colors",
+        "C": "Light colors",
+        "D": "Transparent colors"
+      },
+      "passage": "請依下文回答第37題至第41題: It is believed that the color choices you make reflect adeeper meaning about your personalitytra its. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflect ion of how you are feeling at the moment. Add itionally, wearing certain colors may cause you tore act different lyto certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compa red to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strong est during day light hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required toquantify this."
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Which of the following might be the safest vehicle color according to the study?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "black",
+        "B": "red",
+        "C": "silver",
+        "D": "white"
+      },
+      "passage": "請依下文回答第37題至第41題: It is believed that the color choices you make reflect adeeper meaning about your personalitytra its. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflect ion of how you are feeling at the moment. Add itionally, wearing certain colors may cause you tore act different lyto certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compa red to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strong est during day light hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required toquantify this."
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "According to the passage, which of the following statements is true?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "Vehicle swith dark colors have higher crash risk during day light hours.",
+        "B": "Vehicle swith light colors have higher crash risk during day light hours.",
+        "C": "Vehicle swith dark colors have lower crash risk during day light hours.",
+        "D": "Vehicle swith light colors have more severe crashes during day light hours."
+      },
+      "passage": "請依下文回答第37題至第41題: It is believed that the color choices you make reflect adeeper meaning about your personalitytra its. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflect ion of how you are feeling at the moment. Add itionally, wearing certain colors may cause you tore act different lyto certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compa red to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strong est during day light hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required toquantify this."
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "Which of the following correlative factors has NOT been prove nto be significant?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "Vehicle color and environmental factors",
+        "B": "Vehicle color and crash risk",
+        "C": "Vehicle color and time of the day",
+        "D": "Vehicle color and crash severity"
+      },
+      "passage": "請依下文回答第37題至第41題: It is believed that the color choices you make reflect adeeper meaning about your personalitytra its. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflect ion of how you are feeling at the moment. Add itionally, wearing certain colors may cause you tore act different lyto certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compa red to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strong est during day light hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required toquantify this."
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "What is the best top icof this passage?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "The Foundation of Chrono biology.",
+        "B": "The Feature of Life Cycle.",
+        "C": "The Internal and External Environments.",
+        "D": "The Over view of Biological Mechanism."
+      },
+      "passage": "請依下文回答第42題至第46題: One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise froma time keeping system within the organism. This time keeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associate dwith day and night, there byensuring that the organism will“do the right thing”at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad day light, the rodent would be exceptionally easy prey for other animals. Sim ilarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and theac company ing sleep loss. The mechanism sunderlying the biological time keeping systems and the potentialconsequencesof their failure are among the issues addressed by researchers in the field of chrono biology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chrono biology, studies conducted in the 1950 s on circadian rhythmi city in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chrono biology, evolved some what independently, with the identification of various sleep stages around the same time."
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "What does the word“subsumed”mean in the last paragraph?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "Included",
+        "B": "Reduced",
+        "C": "Down sized",
+        "D": "Under estimated"
+      },
+      "passage": "請依下文回答第42題至第46題: One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise froma time keeping system within the organism. This time keeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associate dwith day and night, there byensuring that the organism will“do the right thing”at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad day light, the rodent would be exceptionally easy prey for other animals. Sim ilarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and theac company ing sleep loss. The mechanism sunderlying the biological time keeping systems and the potentialconsequencesof their failure are among the issues addressed by researchers in the field of chrono biology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chrono biology, studies conducted in the 1950 s on circadian rhythmi city in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chrono biology, evolved some what independently, with the identification of various sleep stages around the same time."
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "Which of the following is the result ofanasynchronyofa nor ganism with its internal environment?",
+      "section": null,
+      "answer": "C",
+      "options": {
+        "A": "Daily leaf movement sofa plant expose dto sunlight.",
+        "B": "Noc turn alanimals having a sound sleep during day light.",
+        "C": "People experiencing difficult yfalling asleep at night.",
+        "D": "People feeling shocked when witness inga car accident in the day time."
+      },
+      "passage": "請依下文回答第42題至第46題: One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise froma time keeping system within the organism. This time keeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associate dwith day and night, there byensuring that the organism will“do the right thing”at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad day light, the rodent would be exceptionally easy prey for other animals. Sim ilarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and theac company ing sleep loss. The mechanism sunderlying the biological time keeping systems and the potentialconsequencesof their failure are among the issues addressed by researchers in the field of chrono biology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chrono biology, studies conducted in the 1950 s on circadian rhythmi city in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chrono biology, evolved some what independently, with the identification of various sleep stages around the same time."
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "Which of the following is considered a next ernal environment?",
+      "section": null,
+      "answer": "A",
+      "options": {
+        "A": "An office setting.",
+        "B": "Ameditative activity.",
+        "C": "A biological time keeping system.",
+        "D": "Ade sir eto change one’sbehavior."
+      },
+      "passage": "請依下文回答第42題至第46題: One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise froma time keeping system within the organism. This time keeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associate dwith day and night, there byensuring that the organism will“do the right thing”at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad day light, the rodent would be exceptionally easy prey for other animals. Sim ilarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and theac company ing sleep loss. The mechanism sunderlying the biological time keeping systems and the potentialconsequencesof their failure are among the issues addressed by researchers in the field of chrono biology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chrono biology, studies conducted in the 1950 s on circadian rhythmi city in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chrono biology, evolved some what independently, with the identification of various sleep stages around the same time."
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "According to this passage, which of the following statements is true?",
+      "section": null,
+      "answer": "D",
+      "options": {
+        "A": "Chrono biology began with the studies oncircadianrhythmin fruit flies and humans.",
+        "B": "All species simply respond to the cycle of day and night.",
+        "C": "All species have aninternalclock that is crucial for their survival.",
+        "D": "Jetlagisa failureofa biological time keeping mechanism."
+      },
+      "passage": "請依下文回答第42題至第46題: One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise froma time keeping system within the organism. This time keeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associate dwith day and night, there byensuring that the organism will“do the right thing”at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad day light, the rodent would be exceptionally easy prey for other animals. Sim ilarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and theac company ing sleep loss. The mechanism sunderlying the biological time keeping systems and the potentialconsequencesof their failure are among the issues addressed by researchers in the field of chrono biology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chrono biology, studies conducted in the 1950 s on circadian rhythmi city in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chrono biology, evolved some what independently, with the identification of various sleep stages around the same time."
+    }
+  ],
+  "year": 108,
+  "category": "犯罪防治矯治組",
+  "subject": "法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+  "source_pdf": "考古題庫\\犯罪防治矯治組\\108年\\法學知識與英文（包括中華民國憲法、法學緒論、英文）\\試題.pdf",
+  "file_type": "試題"
+}
