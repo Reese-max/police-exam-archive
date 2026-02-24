@@ -171,7 +171,7 @@ def parse_112_guowen_choice(notes):
 
 def fix_112_guowen(apply=False):
     """S1: 112年國文"""
-    fp = BASE / '112年' / '[三等] 國文(作文與測驗)' / '試題.json'
+    fp = BASE / '112年' / '國文(作文與測驗)' / '試題.json'
     if not fp.exists():
         print(f"  找不到: {fp}")
         return 0
@@ -209,7 +209,7 @@ def fix_112_guowen(apply=False):
 
 def fix_114_guowen(apply=False):
     """S2: 114年國文"""
-    fp = BASE / '114年' / '[三等] 國文(作文與測驗)' / '試題.json'
+    fp = BASE / '114年' / '國文(作文與測驗)' / '試題.json'
     if not fp.exists():
         print(f"  找不到: {fp}")
         return 0
@@ -267,7 +267,7 @@ def fix_114_guowen(apply=False):
 
 def fix_112_korean(apply=False):
     """S3: 112年韓文"""
-    fp = BASE / '112年' / '[三等] 外國文(韓文兼試移民專業英文)' / '試題.json'
+    fp = BASE / '112年' / '外國文(韓文兼試移民專業英文)' / '試題.json'
     if not fp.exists():
         print(f"  找不到: {fp}")
         return 0

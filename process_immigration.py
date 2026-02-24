@@ -228,7 +228,7 @@ def process_immigration_pdfs():
                 stats['total'] += 1
 
                 raw_subject = subject_dir.name
-                subject_display = f"[{level}] {shorten_subject(raw_subject)}"
+                subject_display = shorten_subject(raw_subject)
 
                 # 輸出目錄
                 out_dir = OUTPUT_DIR / f"{year}年" / subject_display

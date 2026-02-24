@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "exam_type": "111",
+    "level": "三等",
+    "subject": "外國文(俄文兼試移民專業英文)",
+    "exam_time": "2小時",
+    "code": "63440",
+    "exam_name": "移民行政人員特種考試",
+    "year": 111
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "共20題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "Переведите следующие тексты на китайский язык.(每小題 10 分,共 20 分)\nКак ответственный член международного сообщества Тайвань намерен\nи далее оказывать посильную гуманитарную помощь нуждающимся и\nпринимать меры по контролю за распространением инфекционных\nболезней, а также активно участвовать в глобальных усилиях по\nпротиводействию изменению климата, терроризму и трансграничной\nпреступности. В будущем Тайвань намерен всесторонне укреплять\nпартнёрские отношения с союзными и дружественными странами\nпосредством более тесного взаимодействия между правительствами и\nувеличения масштабов инвестиционной деятельности, а также\nнамерен сотрудничать со своими партнёрами во всём мире в деле\nподдержания и продвижения универсальных ценностей мира,\nсвободы, демократии и прав человека.\nНеоднократно приходилось слышать мнение, что поступить на\nгосслужбу, как бы идеалистично это ни звучало, людей мотивирует\nжелание сделать страну лучше. Они приходят в эту сферу со своими\nидеями и верой в то, что их можно реализовать, а также осознавая, что\nгосударственная служба – это, прежде всего, служение внешним, а не\nсобственным интересам. Если человек ориентируется на повышение\nматериального уровня, то ищет работу преимущественно в области\nэкономики. Здесь же изначальная мотивация к финансовой свободе\nстремится к нулю.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "Переведите следующие тексты на русский язык.(每小題 15 分,共 30 分)\n移民在我們的社會和經濟中能夠扮演極重要的角色,所以我們不能允\n許那些鼓吹種族主義和偏執的人破壞我們的民主價值觀,並否定屬於\n任何人的人格尊嚴,無論其民族、出身或人種。賴於相互理解的程度\n提高,移民和移入國之間的互動發展將有助於消除障礙並驅散仇外情緒。\n臺灣長期以來一直是一個融合不同民族的熔爐,包括來自全世界不同\n國家的移民為代表的各個民族群體。近年大量來自中國和東南亞的移\n民湧入 ― 主要是通婚的結果。目前新住民人數超過 57 萬。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "Напишите эссе на тему: «Равнодушие и отзывчивость»(25 分)\n(Эссе объёмом не менее 150 слов.)",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "Anew economic immigration bill was passed in 2018 to recruit foreign workers and talent necessaryfor Taiwan’s national development without affecting job opportunities andwagelevel.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "intrinsic",
+        "B": "communal",
+        "C": "societal",
+        "D": "domestic"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "Interpol is aninternational organizationthat worldwidepolicecooperationandcrimecontrol.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "probes",
+        "B": "mediates",
+        "C": "facilitates",
+        "D": "alleviates"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "Thelawprovides that an asylum seeker, arecognizedrefugee,or aperson underhumanitarian protection maynot be tothesituationwhichwouldthreatenhis/herlifeorfreedom.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "returned",
+        "B": "replaced",
+        "C": "refined",
+        "D": "relayed"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "Under the Level 3 epidemic alert, the visa extension will be automatically on the agency’s computer system.Visitors who would like formal documentation can have their passports stamped at the servicestations as well.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "registered",
+        "B": "enlisted",
+        "C": "coined",
+        "D": "forged"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "The Coast Guard Administration seized thousands of packs of cigarettes, which had a street valueof14millionNTD,from afishingboat inKeelung.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "snuggled",
+        "B": "smuggled",
+        "C": "smashed",
+        "D": "shrugged"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "Whilesomeimmigrantsareabletoholddualormultiplecitizenship,othersarerequiredto their original citizenshipiftheyofficiallychangetheir nationality.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "announce",
+        "B": "denounce",
+        "C": "renounce",
+        "D": "pronounce"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "Tennisstar Novak Djokovicfaceddeportationafterthe Australiangovernment hisvisaonpublic interest grounds, threedays beforethe Australian Openwas tobegin.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "erased",
+        "B": "disarmed",
+        "C": "discharged",
+        "D": "revoked"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "The digital environment opens new channels for education; however, children can also come across harmfulandviolent content or ofinformationonline.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "manipulation",
+        "B": "manifestation",
+        "C": "marginalization",
+        "D": "materialization"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "Inspired by Malala’s courage, many young people all over the globe are joining her to combat genderdiscrimination.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "cruiser",
+        "B": "crusade",
+        "C": "comrade",
+        "D": "command"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "The chapters in this book combine theory and extensive empirical data to provide a balanced account of government performance underthepresident’s .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "reign",
+        "B": "forum",
+        "C": "bureau",
+        "D": "commission"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Owingto",
+        "B": "As aresult of",
+        "C": "Inoppositionto",
+        "D": "In agreement with"
+      },
+      "answer": "C",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joiningwastoescapefromabrokenhomebecausetherewereasmanymembersfrom 12 asfrombroken homes. Neitherdid Jankowski findthattheyjoinedtoseek asubstitute familysinceasmanyboys saidtheywere closetotheirfamiliesassaidtheywerenot. Rather,theboysjoinedtogainaccesstomoney,tohave 13 ,such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising,but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand,manyadultsoncebelongedtogangs,andstatedthatsincegangmembersarethechildrenofpeoplewho liveintheneighborhood, theyoftenprovidebetter protectionthanthepolice.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "rich",
+        "B": "tidy",
+        "C": "foster",
+        "D": "intact"
+      },
+      "answer": "D",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joiningwastoescapefromabrokenhomebecausetherewereasmanymembersfrom 12 asfrombroken homes. Neitherdid Jankowski findthattheyjoinedtoseek asubstitute familysinceasmanyboys saidtheywere closetotheirfamiliesassaidtheywerenot. Rather,theboysjoinedtogainaccesstomoney,tohave 13 ,such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising,but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand,manyadultsoncebelongedtogangs,andstatedthatsincegangmembersarethechildrenofpeoplewho liveintheneighborhood, theyoftenprovidebetter protectionthanthepolice.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "recreation",
+        "B": "aspiration",
+        "C": "delusion",
+        "D": "fusion"
+      },
+      "answer": "A",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joiningwastoescapefromabrokenhomebecausetherewereasmanymembersfrom 12 asfrombroken homes. Neitherdid Jankowski findthattheyjoinedtoseek asubstitute familysinceasmanyboys saidtheywere closetotheirfamiliesassaidtheywerenot. Rather,theboysjoinedtogainaccesstomoney,tohave 13 ,such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising,but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand,manyadultsoncebelongedtogangs,andstatedthatsincegangmembersarethechildrenofpeoplewho liveintheneighborhood, theyoftenprovidebetter protectionthanthepolice.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "dilemma",
+        "B": "treatment",
+        "C": "alternative",
+        "D": "orientation"
+      },
+      "answer": "C",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joiningwastoescapefromabrokenhomebecausetherewereasmanymembersfrom 12 asfrombroken homes. Neitherdid Jankowski findthattheyjoinedtoseek asubstitute familysinceasmanyboys saidtheywere closetotheirfamiliesassaidtheywerenot. Rather,theboysjoinedtogainaccesstomoney,tohave 13 ,such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising,but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand,manyadultsoncebelongedtogangs,andstatedthatsincegangmembersarethechildrenofpeoplewho liveintheneighborhood, theyoftenprovidebetter protectionthanthepolice.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "frustrated",
+        "B": "ambivalent",
+        "C": "determined",
+        "D": "light-hearted"
+      },
+      "answer": "B",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joiningwastoescapefromabrokenhomebecausetherewereasmanymembersfrom 12 asfrombroken homes. Neitherdid Jankowski findthattheyjoinedtoseek asubstitute familysinceasmanyboys saidtheywere closetotheirfamiliesassaidtheywerenot. Rather,theboysjoinedtogainaccesstomoney,tohave 13 ,such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising,but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand,manyadultsoncebelongedtogangs,andstatedthatsincegangmembersarethechildrenofpeoplewho liveintheneighborhood, theyoftenprovidebetter protectionthanthepolice.",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "Accordingtothis passage,theword“sterile”means .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "lifeless",
+        "B": "clean",
+        "C": "empty",
+        "D": "safe"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "Themainpatternoforganizationofthesecondparagraphis .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "timeorder",
+        "B": "definitionandexample",
+        "C": "causeand effect",
+        "D": "comparison and/orcontrast"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "We can conclude from the passage that the two professors might have guessed the purpose of the study theywereinbecause .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "theyhadreadabout theinterests oftheresearchers",
+        "B": "oneofthetworooms theytaught inwasdecoratedunusually",
+        "C": "researchassistants gavethem hints about thepurposeofthestudy",
+        "D": "thestudywas carried out manytimes beforetheyparticipatedinthis study"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "Thesentence“ ”best expresses thecentral point ofthis passage.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Collegeclassrooms areoftendrabanddrearyplaces.",
+        "B": "In one study, over 80% of university students rated their classrooms negatively, describing them as ugly, cramped,stuffy,anduncomfortable.",
+        "C": "Theresearchbyenvironmentalpsychologistsisbeginningtoshowthatunattractiveclassroomsarenot onlyunappealing; theymayalso adverselyaffect academicperformance.",
+        "D": "The researchers investigated how these two different environments affected performance in actual collegeclasses."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "The sentence “ ” is NOT relevant support for the setting of the two classrooms designed by the researchers.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Theresearchers selectedtwoidentical classrooms locatedsidebysideinthepsychologybuilding.",
+        "B": "Besides, analcohol-basedbeautiful handsanitizerwas placedintheroom forstudents touse.",
+        "C": "Severalwallswerepaintedbrightcolors,artpostershungonthewalls,largeplantsaddedtotheroom, andcolorful Chinesekites hungfrom theceiling.",
+        "D": "In addition to traditional desks, a part of the room was outfitted with area rugs, color-coordinated cushions, andwoodencubes toprovidenontraditional seating."
+      },
+      "answer": "B"
+    }
+  ],
+  "year": 111,
+  "category": "移民特考",
+  "subject": "外國文(俄文兼試移民專業英文)",
+  "level": "三等",
+  "original_subject": "外國文（俄文兼試移民專業英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/111年/三等/外國文(俄文兼試移民專業英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 23
+}

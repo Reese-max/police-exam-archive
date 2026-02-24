@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "level": "三等",
+    "subject": "外國文（日文兼試移民專業英文）",
+    "exam_time": "2 小時 座號：",
+    "code": "90240"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本測驗試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "共20題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "請將下列日文譯成中文:(25 分)\nミケランジェロは、自分のところへ届けられた大理石の塊をじっと\n見つめることによってしか彫像を着想することができなかったとい\nう。このエピソードは、芸術作品の発送と材料との実際的な関係を語\nっていて、興味深い。私たちは、作品の具体的な構想がまずできあが\nってそれから大理石を仕入れに出かけるもの、と思いがちだ。が、ミ\nケランジェロにとっては、モデル(発想)は目の前の大理石(材料)\nから生まれたのだ。\n文章表現の場合にもこれと同じことが言える。私たちは時々錯覚す\nる、頭の中に書こうとする内容がまとまったものとして先にあり、そ\nれを詞に置き換えていくのが作文だと。だから、文章が書けないのは\nたくさんの言葉を知らないからだ、とか、修辞法のいろいろを知らな\nいからだ、とか......。だが、実際は違うのだ。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "請將下列中文譯成日文:",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 7,
+      "type": "essay",
+      "stem": "月初旬時以西日本為中心的紀錄性豪雨使日本各地災情頻傳。蔡英 文總統在推特發文表示:「臺灣已經準備好提供日本所需的任何援 助」。(9 分) 每次回家故鄉都有所改變,昔日那悠閒的田園風光正逐漸消失。(9 分) 只有互相幫助才能稱上是真正的朋友不是嗎?(7 分)",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "作文:「スマートフォンについて」\n※請務必以日文書寫,且文長需達 400 字以上。(25 分)",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "Illegal immigrants are considered by some to be an economic on the country because they use services while paying almost no taxes.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "drain",
+        "B": "response",
+        "C": "indicator",
+        "D": "reform"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "Most immigrants readily form or join existing cultural, recreational, social or \"homeland\" associations, where mutual aid and cooperative efforts .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "confiscate",
+        "B": "discriminate",
+        "C": "eradicate",
+        "D": "germinate"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "For countries where dual citizenships are not permitted, the of original nationality should be required.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "renunciation",
+        "B": "recalibration",
+        "C": "retribution",
+        "D": "restoration"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "In many countries, the immigration law puts a ban on employing aliens unless they are lawfully for permanent residence or authorized to be employed.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "admitted",
+        "B": "applied",
+        "C": "accustomed",
+        "D": "attributed"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "Tourism operators targeting senior tourists usually provide activities that are not too physically .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "adapting",
+        "B": "demanding",
+        "C": "adjusting",
+        "D": "yielding"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "A passenger would be deemed a/an when he/she is interdicted by an immigration officer for attempting to use a stolen passport to board a plane.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "agent",
+        "B": "courier",
+        "C": "broker",
+        "D": "impostor"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "People who skip or skimp on breakfast are more likely to have signs of plaque in their arteries than those who eat breakfast.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "submissive",
+        "B": "subordinate",
+        "C": "subsidiary",
+        "D": "substantial"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "Gender stereotypes are set in children as early as age 6, so it's crucial to introduce an age- curriculum with regard to gender equality.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "proof",
+        "B": "appropriate",
+        "C": "eligible",
+        "D": "resistant"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "Love, positivity, health, and family are all ingredients found in the to happiness.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "receipt",
+        "B": "reception",
+        "C": "reaction",
+        "D": "recipe"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "Full-time foreign students are not to receive a work permit. That is, they are not allowed to work temporarily in this country.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "eligible",
+        "B": "overloaded",
+        "C": "overruled",
+        "D": "exclusive 請依下文回答第11題至第15題: Roger White (2016) assumes that religion is a potential marker of cultural similarity between societies. Two societies that share a common religion or that 11 the same dominant religion are likely more culturally similar than are two societies that stick to different religious beliefs. Similar to language, which acts as a representation of culture and a means 12 culture can be transmitted, to the extent that religious views 13 or influence broader attitudes, norms, expectations, and mores, it can be viewed as a 14 that allows culture to be communicated across people and time periods. 15 , the researcher employs two measures off religious distance between parent and host countries as a potential proxy variable for cultural differences. The results obtained from his study support his assumptions."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "adhere to",
+        "B": "agonize",
+        "C": "deter from",
+        "D": "disregard"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "by which",
+        "B": "even though",
+        "C": "so as",
+        "D": "in case"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "align with",
+        "B": "conflict with",
+        "C": "deviate from",
+        "D": "separate from"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "block",
+        "B": "pedal",
+        "C": "terminal",
+        "D": "vessel"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Accordingly",
+        "B": "Contrarily",
+        "C": "Surprisingly",
+        "D": "Unexpectedly 請依下文回答第16題至第20題: In April 1968, Britain was debating the Race Relations Act, which made it illegal to deny a person employment, housing or public services based on race or national origin. The law was intended to protect immigrants from Commonwealth nations, especially former colonies in the Caribbean, India, and Pakistan. The first of these immigrants, 492 Jamaicans, had arrived 20 years earlier. Hundreds of thousands followed. \"The immigrants were called over,\" says Sathnam Sanghera, an author whose Sikh parents emigrated from India during that time. \"There was a labor shortage. There weren't enough people to run the factories after the war.\" The immigrants were granted British citizenship and helped rebuild Britain after World War II. But they faced racism. Landlords wouldn't rent to them. Some employers turned them away. The Race Relations Act was intended to protect immigrants. The tension was especially obvious in Wolverhampton, one of the first cities in Britain to experience mass immigration. Enoch Powell, who represented Wolverhampton in Parliament, feared a race war coming because of mass immigration. On April 20, 1968, he took the stage at a Conservative Party event at the Midlands Hotel in Birmingham and gave an incendiary speech that would come to define him — and divide his country. In the speech, Powell warned, \"that tragic and intractable phenomenon which we watch with horror on the other side of the Atlantic ... is coming upon us here by our own volition and our own neglect.\" He attacked the bill that outlawed discrimination. He said it was whites who were facing deprivation and that Britain \"must be mad, literally mad, as a nation to be permitting\" large numbers of immigrants to enter. The Times of London immediately labeled it an \"evil speech.\" Conservative Party leader Edward Heath dismissed Powell from the party leadership. But polls showed a majority of Britons supported Powell. Many protested, saying, \"Powell was right.\" The speech emboldened racists."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "What is this passage mainly about?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Race Relations Act.",
+        "B": "Wolverhampton's mass immigration.",
+        "C": "Britain's making immigration laws.",
+        "D": "Anti-immigration in Britain."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "Which of the following best describes the intention of drafting the Race Relations Act?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "To boost population growth of the country.",
+        "B": "To welcome commonwealth nationals to become labors in Britain.",
+        "C": "To safeguard immigrants from being treated based on race.",
+        "D": "To trigger race war in Wolverhampton."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "What is the main idea of the second paragraph?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Sathnam Sanghera's parents emigrated from India.",
+        "B": "Factories did not have enough people after World War II.",
+        "C": "Immigrants helped rebuild Britain but faced racism.",
+        "D": "Details of the Race Relations Act are explained."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "According to the third paragraph, why did Powell attack the bill?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Immigrants were being mistreated.",
+        "B": "People neglected immigration laws.",
+        "C": "Britain must permit large numbers of immigrants to enter.",
+        "D": "White people were being discriminated."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "Which of the following is true about Enoch Powell and his speech?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Powell's speech initiated Britain's immigration laws.",
+        "B": "Powell's speech terminated the Race Relations Act.",
+        "C": "Powell's political party did not support his racist view.",
+        "D": "Powell was right about the prospect of improved race relations."
+      },
+      "answer": "C"
+    }
+  ],
+  "year": 107,
+  "category": "移民特考",
+  "subject": "[三等] 外國文（日文兼試移民專業英文）",
+  "level": "三等",
+  "original_subject": "外國文（日文兼試移民專業英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/107年/三等/外國文（日文兼試移民專業英文）/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 24
+}

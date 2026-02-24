@@ -1,0 +1,686 @@
+{
+  "metadata": {
+    "exam_type": "112",
+    "level": "三等",
+    "subject": "法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+    "exam_time": "1 小時",
+    "exam_name": "移民行政人員特種考試",
+    "year": 112
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依據憲法增修條文第10條第4項之規定,國家對於公營金融機構之管理,應本何項原則?",
+      "section": null,
+      "options": {
+        "A": "企業經營化",
+        "B": "國際化",
+        "C": "最大利潤化",
+        "D": "全面自由化"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院釋字第499號解釋,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "為確保修憲決定不受任何不當壓力影響,修憲應符合秘密原則",
+        "B": "修憲若未先得到人民公投之明確授權,不得從事修憲",
+        "C": "修憲雖為國民主權之展現,仍不可修改具本質重要性的憲法條文",
+        "D": "修憲應向所屬政黨負責,以貫徹政黨政治精神"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "關於秘密通訊自由之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "旨在確保人民就通訊之有無、對象、時間、方式及內容等事項,不受國家及他人任意侵擾",
+        "B": "為憲法保障隱私權之具體態樣之一",
+        "C": "國家為確保國家安全及維護社會秩序所必要,於符合法定之實體及程序要件下,得對人民之秘密通訊為 監察",
+        "D": "檢察官與司法警察機關,無須經法官審查,可同時負責通訊監察書之聲請與核發"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依據釋憲實務見解,關於宗教結社自由,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "保障範圍包括寺廟組織內部結構",
+        "B": "保障範圍包括寺廟是否加入其他宗教團體成為團體會員",
+        "C": "保障範圍包括寺廟財產之管理、處分",
+        "D": "未經合法設立登記之宗教團體不受憲法宗教結社自由之保障"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "禁止恣意之差別待遇為下列何種基本權之內涵?",
+      "section": null,
+      "options": {
+        "A": "平等權",
+        "B": "工作權",
+        "C": "言論自由",
+        "D": "人身自由"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "下列何者屬於憲法第16條訴訟權之保障範圍?",
+      "section": null,
+      "options": {
+        "A": "擔任民、刑事訴訟或行政訴訟之證人",
+        "B": "擔任民、刑事訴訟或行政訴訟之鑑定人",
+        "C": "公務員根據公務員懲戒法規定,提起再審之訴",
+        "D": "監察院將彈劾案連同證據,移送懲戒法院審理"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列何者規定係屬違反平等權?",
+      "section": null,
+      "options": {
+        "A": "兵役法規定「中華民國男子依法皆有服兵役之義務」,而女子則無此義務",
+        "B": "菸害防制法規定「限制菸品業者以公司名義顯名贊助任何形式之活動」,而「酒類產品」無此限制",
+        "C": "社會秩序維護法有規定就「意圖得利與人姦、宿者」為相關處罰,即僅處罰意圖得利之一方,而不處罰 支付對價之相對人",
+        "D": "警察大學招生簡章規定「以有無色盲」作為能否取得入學資格的條件,使色盲者無法通過入學考試"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "下列何者不是司法院大法官解釋已承認為憲法第22條所保障之自由或權利?",
+      "section": null,
+      "options": {
+        "A": "健康權",
+        "B": "環境權",
+        "C": "婚姻自由",
+        "D": "契約自由"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "下列何者不是僅限於中華民國國民才能享有的基本權利?",
+      "section": null,
+      "options": {
+        "A": "選舉、罷免、創制及複決之權",
+        "B": "受國民教育之權利",
+        "C": "服公職權",
+        "D": "訴訟權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依司法院釋字第419號解釋,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "行政院院長於新任總統就職時提出總辭,並非其憲法上之義務",
+        "B": "總統無須向立法院負責",
+        "C": "總統對行政院院長非憲法上義務之辭職應如何處理,乃總統之裁量權限",
+        "D": "立法院決議要求總統為一定行為或不為一定行為,總統應受拘束"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "下列何者係依據司法院大法官解釋而得向立法院提出法律案?",
+      "section": null,
+      "options": {
+        "A": "考試院",
+        "B": "立法委員",
+        "C": "行政院",
+        "D": "司法院"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "有關監察院院長之職權,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "參與總統院際協商",
+        "B": "赴立法院備詢",
+        "C": "綜理院務監督所屬機關",
+        "D": "主持監察院會議"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,下列何者不屬於憲法法庭得審查之標的?",
+      "section": null,
+      "options": {
+        "A": "政黨違憲之解散",
+        "B": "地方自治法規與上級自治團體自治條例有無牴觸發生疑義",
+        "C": "自治事項有無違背中央法規發生疑義",
+        "D": "院與院間權限爭議"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,最高司法行政機關得本於其司法行政監督權而發布相關命令,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "不得違反審判獨立",
+        "B": "不得牴觸法律",
+        "C": "需有法律具體明確授權,才可對人民權利有所限制",
+        "D": "若有涉及審判上之法律見解,法院應受其拘束"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "原屬國家或其他上級地方自治團體本身的行政事務,委由地方自治團體執行,其法律性質為何?",
+      "section": null,
+      "options": {
+        "A": "委辦事項",
+        "B": "委任事項",
+        "C": "委託事項",
+        "D": "行政委託"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "法是人類共同生活中,為形成秩序、解決紛爭、實現自由之規範。下列敘述中,何者屬於符合此定義的規 範?",
+      "section": null,
+      "options": {
+        "A": "為了考上國考,自己規定每天6點起床唸書,要唸滿10小時,若沒做到就不能休息",
+        "B": "朋友結婚請喜宴時,要包禮金",
+        "C": "交通警察以手勢指揮車輛行駛的順序或方式",
+        "D": "伊斯蘭教中不吃豬肉的戒律"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "下列關於強行法與任意法的敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "法律行為違反強行法規定時,該法律行為一概無效",
+        "B": "強行法又可再區分為強制規定及禁止規定",
+        "C": "任意法又可再區分為補充規定及解釋規定",
+        "D": "強行法與任意法的區分標準,在於是否容許基於當事人之自由意思,決定該法律應否加以適用"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "下列有關「準用」的敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "準用是以法條明文規定的類推適用",
+        "B": "準用只適用於法律原因,不適用於法律效果",
+        "C": "「比照」其意同於「準用」",
+        "D": "「亦同」其意同於「準用」"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "下列何者不是行政法上比例原則之內涵?",
+      "section": null,
+      "options": {
+        "A": "手段應有助於公益目的之達成",
+        "B": "應選擇對人民侵害最小之手段",
+        "C": "手段應符合信賴利益之保護",
+        "D": "手段對人民之侵害不得與公益目的顯失均衡"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "下列關於「刑之加減」之敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "無期徒刑加重者,為死刑",
+        "B": "死刑減輕者,為不得假釋之無期徒刑",
+        "C": "有期徒刑加重者,僅加重其最高度",
+        "D": "拘役加重者,僅加重其最高度"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "監所管理員甲因為疏忽,將鑰匙遺落於地上,羈押中的被告乙撿到鑰匙後,以該鑰匙打開大門逃之夭夭。 甲有何刑責?",
+      "section": null,
+      "options": {
+        "A": "甲不構成犯罪",
+        "B": "甲構成刑法第161條第1項的脫逃罪",
+        "C": "甲構成刑法第162條第1項的縱放或便利脫逃罪",
+        "D": "甲構成刑法第163條第2項的公務員過失縱放或便利脫逃罪"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "依勞動基準法第 84 條之 1 規定,於特定之情況下,勞工之工作條件得約定有一定之彈性放寬。下列敘述 何者正確?",
+      "section": null,
+      "options": {
+        "A": "不待主管機關公告,任何勞工都可以直接透過勞資合意,成為適用勞基法第84條之1之對象",
+        "B": "勞動條件放寬之約定,必須以書面為之,並且不能有損勞工健康福祉",
+        "C": "雇主可以任意指定企業內特定職位之勞工,成為適用第84條之1工時彈性的責任制勞工",
+        "D": "適用第84條之1的勞工,只要有勞資雙方合意,不必送到主管機關核備"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "下列何者非行政院所轄相當二級機關之獨立機關?",
+      "section": null,
+      "options": {
+        "A": "中央選舉委員會",
+        "B": "中央銀行",
+        "C": "公平交易委員會",
+        "D": "國家通訊傳播委員會"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "歌手甲於演唱會上演唱由乙填詞、丙作曲的一首歌曲,經丁公司將甲的現場表演錄製為唱片(以下簡稱為 「A唱片」),並對外發售。有關著作權之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "甲在演唱會上的表演,為一獨立之著作而受著作權法保護",
+        "B": "丁公司於錄製A唱片前,僅須取得甲之同意,毋庸取得乙、丙之同意",
+        "C": "丁公司錄製之A唱片為錄音著作,其著作財產權存續至著作公開發表後五十年",
+        "D": "戊在臺北車站某唱片行購入一張丁所發售的A唱片,嗣後得自由轉售給其他人,毋庸取得甲、乙、丙、 丁之同意"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "依據性別工作平等法,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "性別工作平等法於雇主依勞動基準法所招生之技術生,亦有適用",
+        "B": "性別工作平等法僅適用於一般私人企業,教育人員及軍職人員均不適用",
+        "C": "雇主與受僱者之約定若與性別工作平等法之規定有不同時,一律適用性別工作平等法",
+        "D": "公私立高中修習校外實習課程之實習生,若於實習期間遭受性騷擾,無性別工作平等法之適用"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,關於法庭之友制度,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "當事人及關係人以外之人民、機關或團體均得擔任法庭之友",
+        "B": "法庭之友得提出具參考價值之專業意見",
+        "C": "法庭之友應以書面敘明其與審理案件之關聯性,聲請憲法法庭許可",
+        "D": "經憲法法庭裁定許可,法庭之友得自行提出具參考價值之資料,無須委任代理人為之"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,關於聲請之撤回,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "於裁判宣示或公告前得撤回聲請之全部或一部",
+        "B": "聲請案件於憲法上具原則重要性者,憲法法庭得不准許撤回",
+        "C": "聲請之撤回應以書面為之",
+        "D": "案件經撤回者,聲請人得在聲請不變期間內,更行聲請"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "依民法之規定,下列關於瑕疵擔保責任之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "出賣人應擔保第三人就買賣之標的物,對於買受人不得主張任何權利",
+        "B": "債權之出賣人,原則上對於債務人之支付能力,不負擔保責任",
+        "C": "買受人於契約成立時,知有權利之瑕疵者,原則上出賣人應負擔保之責",
+        "D": "出賣人應擔保其物無滅失或減少其預定效用之瑕疵"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "關於先占,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "須以所有之意思而占有",
+        "B": "標的得為動產或不動產",
+        "C": "限制行為能力人得為先占",
+        "D": "無主之動產先占人取得無主動產之所有權"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "甲、乙為夫妻,婚後育有子女丙、丁二人。甲因生病死亡,遺留有遺產新臺幣120萬元。依法定應繼分分 配遺產,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "乙分60萬元、丙分30萬元、丁分30萬元",
+        "B": "乙、丙、丁各分40萬元",
+        "C": "乙分80萬元,丙、丁各分20萬元",
+        "D": "乙分60萬元、丙分40萬元、丁分20萬元"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Itwas_____thatverydayeventhoughwehadthefanrattlingbehindus.",
+      "section": null,
+      "options": {
+        "A": "rollicking",
+        "B": "stifling",
+        "C": "rummaging",
+        "D": "rumbling"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Ifyourskintypeis_____oily,theporesaroundtheT-zonewouldproducethemostoilandtendtowardblackhead formation.",
+      "section": null,
+      "options": {
+        "A": "prehistorically",
+        "B": "predominantly",
+        "C": "predictably",
+        "D": "preeminently"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Thenewsoftheforestfirefilledthemwith_____becausetheyhadjusthadagoodvacationthere.",
+      "section": null,
+      "options": {
+        "A": "dismay",
+        "B": "relief",
+        "C": "turbulence",
+        "D": "lucidity"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "Aftertheirgeneralhadbeencaptivated,theenemytroopswereforcedto_____aftermonthsofintensefighting.",
+      "section": null,
+      "options": {
+        "A": "survive",
+        "B": "weather",
+        "C": "surrender",
+        "D": "withstand"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Many successful leaders believe that a _____ approachshould be taken in order to solve complex problems,with feasiblesolutionsoftenbeingpreferredovermoreidealisticones.",
+      "section": null,
+      "options": {
+        "A": "resilient",
+        "B": "resistant",
+        "C": "pragmatic",
+        "D": "precarious"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Thethriller movie hadtheaudienceonthe_____ of theirseats, who eagerlyanticipatedthenexttwist andturnin theplot.",
+      "section": null,
+      "options": {
+        "A": "ledge",
+        "B": "surface",
+        "C": "edge",
+        "D": "corner"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Weweretoldaboutthemeetingjustonedaybefore.Ourreportwaspreparedinsucha_____andcontainedseveral mistakes.",
+      "section": null,
+      "options": {
+        "A": "stupor",
+        "B": "privilege",
+        "C": "haste",
+        "D": "torment"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Instead of treating you like an expert, some caring and sympathetic doctors would give youmore _____ explanations.",
+      "section": null,
+      "options": {
+        "A": "ambiguous",
+        "B": "furious",
+        "C": "portable",
+        "D": "comprehensible"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "AutumnforMaxisa_____seasonanditeasilybringsabouthisdeeperfeelingsandthoughtsofjustaboutanything.",
+      "section": null,
+      "options": {
+        "A": "compulsory",
+        "B": "legitimate",
+        "C": "negligible",
+        "D": "sentimental"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "In Japan, combined junior high and senior high schools are mostly _____, but the number of public ones is increasing.",
+      "section": null,
+      "options": {
+        "A": "collective",
+        "B": "communal",
+        "C": "shared",
+        "D": "private"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "Patricia'srecentbehaviorshavebecomeso_____thatnobodycanreallyunderstandwhatsheisdoing.",
+      "section": null,
+      "options": {
+        "A": "integral",
+        "B": "lavish",
+        "C": "obscure",
+        "D": "relevant"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "Ienjoygoingtoseemusicalsatthetheaterbecausetheliveperformancesandmusicarevery_____tome.",
+      "section": null,
+      "options": {
+        "A": "captious",
+        "B": "captivating",
+        "C": "precarious",
+        "D": "preventive"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "UncleJonesisalwaysabit_____;therefore,hisrelativesandacquaintanceskeephimatagreatdistance.",
+      "section": null,
+      "options": {
+        "A": "proficient",
+        "B": "elastic",
+        "C": "decent",
+        "D": "eccentric"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "Wecanseemanycoralreefsoccurinshallowwaterwherethesunprovides_____energyforthemtogrowrapidly.",
+      "section": null,
+      "options": {
+        "A": "lucrative",
+        "B": "abundant",
+        "C": "exuberant",
+        "D": "modest"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "Theretiredaircraftwillbe_____andsomeofitspartscanbereusedinotherairplanes.",
+      "section": null,
+      "options": {
+        "A": "detoured",
+        "B": "dismantled",
+        "C": "diminished",
+        "D": "descended"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whatpromptedNormanRosenthaltostudyseasonaldepression?",
+      "section": null,
+      "options": {
+        "A": "Hispatients’symptoms.",
+        "B": "Hispersonalexperiences.",
+        "C": "Problemsofpreviousstudies.",
+        "D": "Risingcasesof New York Cityadults."
+      },
+      "answer": "B",
+      "passage": "When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressedduringthecold,shortdaysofthecity’swintersthanhehadinhishomecountry. Yearslater,hepublishedthe first paper to scientifically name the winter blues: Seasonal Affective Disorder (SAD). Subsequent studies have found that the seasonal depression affects those in northern latitudes more and that about 10 percent of SAD sufferers have symptomsinthesummertimeinstead. Themostcommonlyreportedsymptomsofwinterdepressionarehypersomnia,thedesiretosleepmorethanusual, as well as an increased appetite and lack of interest in things. According to experts, most people experience symptoms inyoungadulthood,but SADcanbeginatanystageoflife. Theconditionalsovariesbysex. Aboutthreetimesasmany womenasmenget SAD. Butwhydoeslessdaylightmakesomepeopleclinicallydepressed? Oneleadingtheoryisthatthechangeindaylight disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of daylight dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biologicalnight. Asforsummer SAD,triggersmightincludetheheatandhumidity. Insteadoffeelinglethargic,summer SADpatientsmoreoftenfeelirritableandagitated. Expertssayaprofessionaldiagnosisisacrucialfirststeptowardtreatmentandself-diagnosisisnotsuggested. One commontreatmentissittinginfrontofabrightboxoflightfor30minutestosignaltothebodythatit’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Anothertreatmentthatmayhavelongerlastingbenefitsis Cognitive Behavioral Therapy(CBT),aformoftalktherapy. As negative thinkingtendsto breednegative emotions, CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” Moreover, finding wintertime hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,orgoingtothegym,toboosttheirmood. Whetherusinglightortalktherapy,thereisnoreasontonot seekmentalhealthtreatment,evenifsymptomsareonlypresentforafewmonthsoutoftheyear.",
+      "passage_intro": "請依下文回答第46題至第50題:"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whathastobedonebeforereceivingSADtreatments?",
+      "section": null,
+      "options": {
+        "A": "Gettingagoodlightbox.",
+        "B": "Talkingtofamilyorfriends.",
+        "C": "Seekingaprofessionaldiagnosis.",
+        "D": "Comparingtheeffectsofdifferenttreatments."
+      },
+      "answer": "C",
+      "passage": "When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressedduringthecold,shortdaysofthecity’swintersthanhehadinhishomecountry. Yearslater,hepublishedthe first paper to scientifically name the winter blues: Seasonal Affective Disorder (SAD). Subsequent studies have found that the seasonal depression affects those in northern latitudes more and that about 10 percent of SAD sufferers have symptomsinthesummertimeinstead. Themostcommonlyreportedsymptomsofwinterdepressionarehypersomnia,thedesiretosleepmorethanusual, as well as an increased appetite and lack of interest in things. According to experts, most people experience symptoms inyoungadulthood,but SADcanbeginatanystageoflife. Theconditionalsovariesbysex. Aboutthreetimesasmany womenasmenget SAD. Butwhydoeslessdaylightmakesomepeopleclinicallydepressed? Oneleadingtheoryisthatthechangeindaylight disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of daylight dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biologicalnight. Asforsummer SAD,triggersmightincludetheheatandhumidity. Insteadoffeelinglethargic,summer SADpatientsmoreoftenfeelirritableandagitated. Expertssayaprofessionaldiagnosisisacrucialfirststeptowardtreatmentandself-diagnosisisnotsuggested. One commontreatmentissittinginfrontofabrightboxoflightfor30minutestosignaltothebodythatit’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Anothertreatmentthatmayhavelongerlastingbenefitsis Cognitive Behavioral Therapy(CBT),aformoftalktherapy. As negative thinkingtendsto breednegative emotions, CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” Moreover, finding wintertime hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,orgoingtothegym,toboosttheirmood. Whetherusinglightortalktherapy,thereisnoreasontonot seekmentalhealthtreatment,evenifsymptomsareonlypresentforafewmonthsoutoftheyear.",
+      "passage_intro": "請依下文回答第46題至第50題:"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingisNOThelpfulintreatingSAD?",
+      "section": null,
+      "options": {
+        "A": "Usinglightboxesdaily.",
+        "B": "Beingindoorsandrestinginwinter.",
+        "C": "Regulatingtheproductionofmelatonin.",
+        "D": "Changingthewaypeoplethink."
+      },
+      "answer": "B",
+      "passage": "When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressedduringthecold,shortdaysofthecity’swintersthanhehadinhishomecountry. Yearslater,hepublishedthe first paper to scientifically name the winter blues: Seasonal Affective Disorder (SAD). Subsequent studies have found that the seasonal depression affects those in northern latitudes more and that about 10 percent of SAD sufferers have symptomsinthesummertimeinstead. Themostcommonlyreportedsymptomsofwinterdepressionarehypersomnia,thedesiretosleepmorethanusual, as well as an increased appetite and lack of interest in things. According to experts, most people experience symptoms inyoungadulthood,but SADcanbeginatanystageoflife. Theconditionalsovariesbysex. Aboutthreetimesasmany womenasmenget SAD. Butwhydoeslessdaylightmakesomepeopleclinicallydepressed? Oneleadingtheoryisthatthechangeindaylight disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of daylight dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biologicalnight. Asforsummer SAD,triggersmightincludetheheatandhumidity. Insteadoffeelinglethargic,summer SADpatientsmoreoftenfeelirritableandagitated. Expertssayaprofessionaldiagnosisisacrucialfirststeptowardtreatmentandself-diagnosisisnotsuggested. One commontreatmentissittinginfrontofabrightboxoflightfor30minutestosignaltothebodythatit’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Anothertreatmentthatmayhavelongerlastingbenefitsis Cognitive Behavioral Therapy(CBT),aformoftalktherapy. As negative thinkingtendsto breednegative emotions, CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” Moreover, finding wintertime hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,orgoingtothegym,toboosttheirmood. Whetherusinglightortalktherapy,thereisnoreasontonot seekmentalhealthtreatment,evenifsymptomsareonlypresentforafewmonthsoutoftheyear.",
+      "passage_intro": "請依下文回答第46題至第50題:"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Whichofthefollowingisclosestinmeaningtotheword“lethargic”inthepassage?",
+      "section": null,
+      "options": {
+        "A": "Guarded.",
+        "B": "Furious.",
+        "C": "Inactive.",
+        "D": "Superior."
+      },
+      "answer": "C",
+      "passage": "When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressedduringthecold,shortdaysofthecity’swintersthanhehadinhishomecountry. Yearslater,hepublishedthe first paper to scientifically name the winter blues: Seasonal Affective Disorder (SAD). Subsequent studies have found that the seasonal depression affects those in northern latitudes more and that about 10 percent of SAD sufferers have symptomsinthesummertimeinstead. Themostcommonlyreportedsymptomsofwinterdepressionarehypersomnia,thedesiretosleepmorethanusual, as well as an increased appetite and lack of interest in things. According to experts, most people experience symptoms inyoungadulthood,but SADcanbeginatanystageoflife. Theconditionalsovariesbysex. Aboutthreetimesasmany womenasmenget SAD. Butwhydoeslessdaylightmakesomepeopleclinicallydepressed? Oneleadingtheoryisthatthechangeindaylight disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of daylight dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biologicalnight. Asforsummer SAD,triggersmightincludetheheatandhumidity. Insteadoffeelinglethargic,summer SADpatientsmoreoftenfeelirritableandagitated. Expertssayaprofessionaldiagnosisisacrucialfirststeptowardtreatmentandself-diagnosisisnotsuggested. One commontreatmentissittinginfrontofabrightboxoflightfor30minutestosignaltothebodythatit’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Anothertreatmentthatmayhavelongerlastingbenefitsis Cognitive Behavioral Therapy(CBT),aformoftalktherapy. As negative thinkingtendsto breednegative emotions, CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” Moreover, finding wintertime hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,orgoingtothegym,toboosttheirmood. Whetherusinglightortalktherapy,thereisnoreasontonot seekmentalhealthtreatment,evenifsymptomsareonlypresentforafewmonthsoutoftheyear.",
+      "passage_intro": "請依下文回答第46題至第50題:"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Accordingtothepassage,whichofthefollowingstatementsistrue?",
+      "section": null,
+      "options": {
+        "A": "SADaffectsmenmorethanwomen.",
+        "B": "SummerSADislesscommonthanwinterSAD.",
+        "C": "Winterdepressionisoftentriggeredbyhumidity.",
+        "D": "Sufferersofwinterdepressionarelikelytoloseappetite."
+      },
+      "answer": "B",
+      "passage": "When he moved from South Africa to New York City, Norman Rosenthal, a psychiatrist, noticed he felt more depressedduringthecold,shortdaysofthecity’swintersthanhehadinhishomecountry. Yearslater,hepublishedthe first paper to scientifically name the winter blues: Seasonal Affective Disorder (SAD). Subsequent studies have found that the seasonal depression affects those in northern latitudes more and that about 10 percent of SAD sufferers have symptomsinthesummertimeinstead. Themostcommonlyreportedsymptomsofwinterdepressionarehypersomnia,thedesiretosleepmorethanusual, as well as an increased appetite and lack of interest in things. According to experts, most people experience symptoms inyoungadulthood,but SADcanbeginatanystageoflife. Theconditionalsovariesbysex. Aboutthreetimesasmany womenasmenget SAD. Butwhydoeslessdaylightmakesomepeopleclinicallydepressed? Oneleadingtheoryisthatthechangeindaylight disrupts our bodies' release of melatonin, a hormone the brain releases every night to promote sleep. As the supply of daylight dwindles in winter, melatonin may wear off later. That means in the morning the body is still in a state of biologicalnight. Asforsummer SAD,triggersmightincludetheheatandhumidity. Insteadoffeelinglethargic,summer SADpatientsmoreoftenfeelirritableandagitated. Expertssayaprofessionaldiagnosisisacrucialfirststeptowardtreatmentandself-diagnosisisnotsuggested. One commontreatmentissittinginfrontofabrightboxoflightfor30minutestosignaltothebodythatit’stimetowakeup. But the drawback to light boxes is that they only work on the day that you use them, so you need to use them daily. Anothertreatmentthatmayhavelongerlastingbenefitsis Cognitive Behavioral Therapy(CBT),aformoftalktherapy. As negative thinkingtendsto breednegative emotions, CBTaims to encourage more neutralthoughts. For example, “I hate winter” might be reframed as “winter isn’t my favorite season, but I still find things to enjoy.” Moreover, finding wintertime hobbies may also help. People with SAD often have hobbies that are summer specific, such as growing gardens or beach going. Instead of hibernating under a blanket, people are encouraged to find indoor hobbies, such as knitting,reading,orgoingtothegym,toboosttheirmood. Whetherusinglightortalktherapy,thereisnoreasontonot seekmentalhealthtreatment,evenifsymptomsareonlypresentforafewmonthsoutoftheyear.",
+      "passage_intro": "請依下文回答第46題至第50題:"
+    }
+  ],
+  "year": 112,
+  "category": "移民特考",
+  "subject": "法學知識與英文(包括中華民國憲法、法學緒論、英文)",
+  "level": "三等",
+  "original_subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/112年/三等/法學知識與英文(包括中華民國憲法、法學緒論、英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

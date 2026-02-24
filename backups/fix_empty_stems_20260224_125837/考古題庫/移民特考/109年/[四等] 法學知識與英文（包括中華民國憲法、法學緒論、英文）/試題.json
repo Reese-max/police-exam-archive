@@ -1,0 +1,684 @@
+{
+  "metadata": {
+    "exam_type": "109",
+    "level": "四等",
+    "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+    "exam_time": "1小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "下列何者為監察院彈劾之對象?",
+      "section": null,
+      "options": {
+        "A": "總統",
+        "B": "直轄市市長",
+        "C": "未兼任行政職務之國立大學教授",
+        "D": "縣議員"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列何項權利,非屬憲法居住、遷徙自由之保障範圍?",
+      "section": null,
+      "options": {
+        "A": "設定住居所",
+        "B": "旅行",
+        "C": "入出國境",
+        "D": "駕駛汽車"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,副總統缺位時應如何處理?",
+      "section": null,
+      "options": {
+        "A": "由行政院院長代行其職權",
+        "B": "總統應於三個月內提名候選人,由立法院補選,繼任至原任期屆滿為止",
+        "C": "副總統繼任總統時,其缺位無須補選",
+        "D": "憲法增修條文並無明文規定"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依憲法增修條文之規定,關於立法院決議之覆議,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "得提請覆議之標的為立法院決議之法律案、預算案及條約案",
+        "B": "行政院移請立法院覆議,須經總統核可",
+        "C": "立法院對於覆議案逾期未議決者,原決議失效",
+        "D": "覆議時,如經全體立法委員二分之一以上決議維持原案,行政院院長應即接受該決議或辭職"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,下列何種經費應優先編列?",
+      "section": null,
+      "options": {
+        "A": "傳統醫藥研究發展",
+        "B": "國民教育",
+        "C": "中小型經濟事業扶助",
+        "D": "交通水利"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於民法第195條第1項後段規定,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "法院不得以判決命加害人公開道歉,作為回復名譽之適當處分,否則即逾越必要之程度",
+        "B": "於侵害名譽事件,若為回復受害人之名譽,有限制加害人不表意自由之必要時,應符合比例原則",
+        "C": "以判決命加害人登報道歉,涉及憲法第11條言論自由所保障之不表意自由",
+        "D": "名譽權旨在維護個人主體性及人格之完整,為實現人性尊嚴所必要,受憲法第22條所保障"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關正當法律程序,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "主管機關就其徵收之土地,未定期通知原土地所有權人土地之後續使用情形,致其無從於充分資訊下, 行使收回權,不符憲法要求之正當行政程序",
+        "B": "未賦予有辯護人之被告直接獲知卷證資訊之權利,與憲法第16條保障訴訟權之正當法律程序原則意旨尚 無不符",
+        "C": "內政部移民署對受驅逐出國之外國人,就遣送所需合理作業期間,得逕以行政處分暫予收容,非憲法所 不許",
+        "D": "為阻絕傳染病之傳染蔓延,施以強制隔離對人身自由之限制,與憲法第8條依正當法律程序之意旨尚無 違背"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "有關憲法及增修條文中之平等規定,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "各民族一律平等",
+        "B": "選舉之方法應以普通、平等、直接及無記名投票之方式行之",
+        "C": "國家應依民族意願,保障原住民族之教育平等",
+        "D": "國家應維護婦女之人格尊嚴,促進兩性地位之實質平等"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於隱私權,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "隱私權為憲法明文規定之權利",
+        "B": "個人在公共場所不具有合理期待不受他人侵擾之權利",
+        "C": "警察臨檢若於公共場所實施,對人民隱私權侵害輕微,得不以已生或易生危害為要件",
+        "D": "秘密通訊自由乃憲法保障隱私權之具體態樣"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "關於憲法第22條之意涵,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "屬於概括條款,透過該條之規定,將未明文列舉之基本權利,納入憲法保障之範圍",
+        "B": "人民之自由及權利,僅有在不妨礙社會秩序公共利益之前提下,方受憲法保障",
+        "C": "以憲法第22條為依據之基本權利,其重要性低於明文列舉之基本權利",
+        "D": "人民依其意志作為或不作為之自由,亦受憲法第22條之保障"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "有關憲法保障之人民基本權利,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "外國之國家公權力及國際組織,亦受我國憲法基本權利之拘束",
+        "B": "國家公權力為基本權利之拘束對象",
+        "C": "國家之私經濟行為不受基本權利之拘束",
+        "D": "受委託行使公權力之私人不受基本權利之拘束"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "下列何種基本權利不適用於私法人?",
+      "section": null,
+      "options": {
+        "A": "人身自由",
+        "B": "出版自由",
+        "C": "財產權",
+        "D": "結社自由"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "關於行政院重要政策之變更,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "行政院院長或有關各部會首長,應向立法院院會適時提出報告,並備質詢",
+        "B": "如涉法定預算之停止執行,立法院亦有國家重要事項之參與決策權",
+        "C": "立法院聽取報告後不予支持並作成反對決議,行政院應受該決議之拘束",
+        "D": "立法院聽取報告後不予支持並作成反對決議,行政院院長得建請總統進行協調"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "下列釋憲聲請案,何者依法應不受理?",
+      "section": null,
+      "options": {
+        "A": "法官就其受理之案件,對所適用之法律或命令,確信有牴觸憲法之疑義,聲請解釋",
+        "B": "中央或地方機關,於其行使職權,適用憲法發生疑義,聲請解釋",
+        "C": "立法委員就其行使職權,適用憲法發生疑義,聲請解釋",
+        "D": "人民就檢察官之不起訴處分,聲請解釋"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "有關司法院大法官之審理程序,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "統一解釋法律,應有出席人三分之二同意,方得通過",
+        "B": "審理解釋案件,必要時,得行言詞辯論",
+        "C": "宣告命令牴觸憲法,以出席人過半數同意行之",
+        "D": "審理違憲政黨解散案件,應組成憲法法庭"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "依地方制度法第27條規定,自治規則應分別冠以各該地方自治團體之名稱,並得依其性質,定名為:",
+      "section": null,
+      "options": {
+        "A": "規章、規則、細則、辦法、要點、基準或準則",
+        "B": "規程、規約、細則、辦法、綱要、基準或原則",
+        "C": "規程、規則、細則、辦法、綱要、標準或準則",
+        "D": "規章、規約、細則、辦法、要點、基準或原則"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "下列何者亦稱為消極依法行政原則?",
+      "section": null,
+      "options": {
+        "A": "行政保留原則",
+        "B": "法律保留原則",
+        "C": "法律優位原則",
+        "D": "憲法優越原則"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "最先適用於授益行政處分撤銷之法律原則為下列何者?",
+      "section": null,
+      "options": {
+        "A": "平等原則",
+        "B": "比例原則",
+        "C": "明確性原則",
+        "D": "信賴保護原則"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "關於實體法與程序法之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "行政程序法兼具有程序法及實體法之性質",
+        "B": "規定如何實現權利義務之法規為程序法",
+        "C": "法院裁判適用法律時,先適用實體法,後適用程序法",
+        "D": "民法為典型的實體法,但亦有程序的規定"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "下列何者,非源自於法治國家原則?",
+      "section": null,
+      "options": {
+        "A": "國家賠償制度",
+        "B": "國民主權理論",
+        "C": "司法獨立制度",
+        "D": "權力分立原則"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "依中央法規標準法第5條之規定,下列何者不屬於應以法律規定之事項?",
+      "section": null,
+      "options": {
+        "A": "人民之權利義務事項",
+        "B": "國家各機關之組織事項",
+        "C": "重要事項",
+        "D": "執行法律之細節性事項"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "下列何種契約,性質上為法定要式契約?",
+      "section": null,
+      "options": {
+        "A": "房屋租賃契約",
+        "B": "人事保證契約",
+        "C": "債權讓與契約",
+        "D": "合夥契約"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "依民法規定,旅店主人或其他供客人住宿為目的之場所主人,對於客人所攜帶物品之毀損或喪失,應負擔 何種責任?",
+      "section": null,
+      "options": {
+        "A": "通常事變責任",
+        "B": "不可抗力責任",
+        "C": "故意責任",
+        "D": "抽象輕過失責任"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "下列關於最高限額抵押權之敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "最高限額抵押權所擔保的債權,得為不特定法律關係所生的債權",
+        "B": "最高限額抵押權約定其所擔保原債權應確定之期日,不得變更",
+        "C": "最高限額抵押權所擔保的債權,不得為票據債權",
+        "D": "最高限額抵押權所擔保的債權,於原債權確定前讓與他人,其最高限額抵押權不隨同移轉"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "甲已喪偶,育有乙、丙、丁3名子女,甲死亡時留下1,100萬元存款,負債200萬元,死亡前一年將一塊價值 300萬元的土地贈與丁為生日禮物,並於遺囑交代,遺產全數由乙繼承,則丙繼承之金額為若干?",
+      "section": null,
+      "options": {
+        "A": "0元",
+        "B": "150萬元",
+        "C": "200萬元",
+        "D": "300萬元"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "有關民法上之死亡宣告制度,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "失蹤人失蹤滿1年後,法院得因利害關係人之聲請,為死亡之宣告",
+        "B": "受死亡宣告者,以判決內所確定死亡之時,視為死亡之時",
+        "C": "失蹤人為80歲以上者,得於失蹤滿3年後,為死亡之宣告",
+        "D": "失蹤人為遭遇特別災難者,得於特別災難終了滿5年後,為死亡之宣告"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "土地增值稅之納稅義務人為出賣人,今甲為出賣人、乙為買受人,雙方約定買賣土地契約,契約中約定由 乙負擔土地增值稅之繳納,該約定對甲、乙之效力如何?",
+      "section": null,
+      "options": {
+        "A": "有效",
+        "B": "無效",
+        "C": "效力未定",
+        "D": "得撤銷"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "房東出租女生宿舍,公告出租給女性房客,甲男貌似女性,房東誤甲男為女性,與之簽訂租賃契約。事後 房東發現甲竟為男性不願出租,想要撤銷該租賃契約,下列何者可為依據?",
+      "section": null,
+      "options": {
+        "A": "被脅迫而為意思表示",
+        "B": "單獨虛偽意思表示",
+        "C": "傳達人傳達不實",
+        "D": "當事人資格為交易上認為重要之錯誤"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "依全民健康保險法規定,保險對象發生對第三人有損害賠償請求權之保險事故,保險人於提供保險給付後, 得代位行使損害賠償請求權,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "甲停紅燈時遭後方來車追撞致傷,保險人於提供保險給付後始得向加害第三人請求損害賠償",
+        "B": "甲停紅燈時遭後方來車追撞致傷,保險人於提供保險給付後始得向強制汽車責任保險之保險人請求損害賠償",
+        "C": "甲停紅燈時遭後方來車追撞致傷,保險人得於提供保險給付前,向加害第三人請求損害賠償",
+        "D": "甲停紅燈時遭後方來車追撞致傷,保險人得於提供保險給付前,向強制汽車責任保險之保險人請求損害賠償"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "依勞動基準法之規定,勞工在同一雇主或事業單位,繼續工作滿一定期間者,享有特別休假。下列有關特 別休假的年資及日數之規定,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "6個月以上1年未滿者,3日",
+        "B": "1年以上2年未滿者,7日",
+        "C": "2年以上3年未滿者,14日",
+        "D": "10年以上者,每1年加給1日,加至30日為止"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "Yourextrapaywouldbe accordingtothenumberofhoursyouspendwiththestudentsduringthesummer.",
+      "section": null,
+      "options": {
+        "A": "paralyzed",
+        "B": "overcharged",
+        "C": "reckoned",
+        "D": "peered"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Pressuregroupsurgedthepublicto goodsfromcompaniesthatusechildlabor.",
+      "section": null,
+      "options": {
+        "A": "boycott",
+        "B": "detach",
+        "C": "contain",
+        "D": "retreat"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "Thewateris ;youcaneasilyseeeverythingclearlythroughit.",
+      "section": null,
+      "options": {
+        "A": "additional",
+        "B": "affordable",
+        "C": "polluted",
+        "D": "transparent"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "The French Vietnam in the 1800s, which explains why French cuisine has had lots of influence on Vietnamesefoodculture.",
+      "section": null,
+      "options": {
+        "A": "colonized",
+        "B": "diminished",
+        "C": "migrated",
+        "D": "subscribed"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Children onabalanceddietandsufficientexercise.",
+      "section": null,
+      "options": {
+        "A": "deprive",
+        "B": "thrive",
+        "C": "throw",
+        "D": "depart"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Citrusfruits, oranges,lemons,andgrapefruits,areloadedwithhighlevelsofvitaminC.",
+      "section": null,
+      "options": {
+        "A": "asto",
+        "B": "infact",
+        "C": "inshort",
+        "D": "suchas"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "Aerobicsisaperfect ofpowerandbeautythathelpsyouloseweightandboostmetabolism.",
+      "section": null,
+      "options": {
+        "A": "combination",
+        "B": "depression",
+        "C": "inspection",
+        "D": "possession"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Ginkgo biloba is said to be effective at boostingmemory, but there is also that it may increase the risk of strokes.",
+      "section": null,
+      "options": {
+        "A": "privacy",
+        "B": "concern",
+        "C": "modesty",
+        "D": "regulation"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "Twoweeksafterthehurricane,theremotevillageisstillsufferinga_____needofwater,food,andmedicalsupplies.",
+      "section": null,
+      "options": {
+        "A": "denial",
+        "B": "reluctant",
+        "C": "desperate",
+        "D": "possessive"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "Toomuch inaperson'sbloodmightleadtoheartdisease.",
+      "section": null,
+      "options": {
+        "A": "cholesterol",
+        "B": "diabetes",
+        "C": "diagnosis",
+        "D": "atmosphere"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "Itisonlyhumantobe ofsuccessfulpeoplebutyoumaylearntoappreciateyourownuniquetalents.",
+      "section": null,
+      "options": {
+        "A": "cautious",
+        "B": "digital",
+        "C": "general",
+        "D": "jealous"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "Agreat oftensucceedsbythinkingoutofthebox.",
+      "section": null,
+      "options": {
+        "A": "commuter",
+        "B": "inventor",
+        "C": "elevator",
+        "D": "register"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "Theelderlyaremost tocoldweatherandfluviruses,sotheyshouldreceivemorecareinwinter.",
+      "section": null,
+      "options": {
+        "A": "valuable",
+        "B": "considerate",
+        "C": "vulnerable",
+        "D": "resistible"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "Withthecomingoftheelection,bothofthecandidateswillneedto theirsupportinordertowin.",
+      "section": null,
+      "options": {
+        "A": "consolidate",
+        "B": "contribute",
+        "C": "deprive",
+        "D": "deceive"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "Thebudgethasbeenapprovedbytheboard,includingincreased onresearchanddevelopment.",
+      "section": null,
+      "options": {
+        "A": "endurance",
+        "B": "evacuation",
+        "C": "expenditure",
+        "D": "extension"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "ratherthan",
+        "B": "insteadof",
+        "C": "deprivedof",
+        "D": "dueto"
+      },
+      "answer": "D",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "increase",
+        "B": "aversion",
+        "C": "division",
+        "D": "ratio"
+      },
+      "answer": "A",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "therefore",
+        "B": "likewise",
+        "C": "though",
+        "D": "once"
+      },
+      "answer": "C",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "promoted",
+        "B": "complained",
+        "C": "reminded",
+        "D": "prescribed"
+      },
+      "answer": "B",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "Tosolve",
+        "B": "Aftersolving",
+        "C": "Todepict",
+        "D": "Afterdepicting"
+      },
+      "answer": "A",
+      "passage": "Thoughttohavebeenconstructedsincethe1930s,PerthBlueBoatHousehasbeenrebuiltandrepairedonanumber of occasions and has had lots of uses.For decades,locals drove past this bright blue woodenhouse several times a day without noticing. But recently, 46 its popularity on Instagram, the boathouse has become a well-known tourist attraction.Therehasbeena(n) 47 ofvisitorstothisarea,withtourbusesandself-drivenvisitorsstoppingherefor pictures. Popularity, 48 , can come with problems.The closest public toilet is 1.5 miles away. Tourists go to a nearby restaurant to use the toilets. The owner 49 that some had been rude, disruptive and even verbally abusive. 50 this problem,Perth’s citycouncil has decided to build its first solar-powered toilet.It will reportedly costUS$278,000toinstallandanadditional$14,000peryearformaintenance.",
+      "passage_intro": "請回答下列第46題至第50題"
+    }
+  ],
+  "year": 109,
+  "category": "移民特考",
+  "subject": "[四等] 法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "level": "四等",
+  "original_subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/109年/四等/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

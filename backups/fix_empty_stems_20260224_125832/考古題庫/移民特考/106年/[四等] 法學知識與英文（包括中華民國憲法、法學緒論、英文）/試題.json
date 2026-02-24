@@ -1,0 +1,673 @@
+{
+  "metadata": {
+    "level": "四等",
+    "subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+    "exam_time": "1 小時 座號："
+  },
+  "notes": [
+    "※注意：本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "下列何者非屬立法院行使人事同意權之對象?",
+      "section": null,
+      "options": {
+        "A": "考試院院長",
+        "B": "司法院院長",
+        "C": "監察院院長",
+        "D": "行政院院長"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依憲法增修條文之規定,下列何者由地方自治團體之人民選舉產生?",
+      "section": null,
+      "options": {
+        "A": "省主席",
+        "B": "鄉鎮市長",
+        "C": "縣長",
+        "D": "村里長"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "憲法前言明定,憲法係依據孫中山先生創立中華民國之遺教所制定,而遺教有關中央與地方之權限劃分, 係採用何者制度?",
+      "section": null,
+      "options": {
+        "A": "中央集權主義",
+        "B": "地方分權主義",
+        "C": "妥協主義",
+        "D": "均權主義"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "下列何者為憲法明定有權解釋憲法之機關?",
+      "section": null,
+      "options": {
+        "A": "監察院",
+        "B": "立法院",
+        "C": "司法院",
+        "D": "行政院"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "我國憲法規定,司法院為國家最高司法機關,掌理民事、刑事、行政訴訟之審判,以及公務員之:",
+      "section": null,
+      "options": {
+        "A": "懲處",
+        "B": "懲戒",
+        "C": "褒獎",
+        "D": "級俸"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "下列有關立法院行使質詢權之敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "一般人民亦得為立法院委員會邀請備詢之對象",
+        "B": "立法院院會得對參謀總長進行質詢",
+        "C": "立法院院會得邀請偵辦特定賄選案的檢察官備詢",
+        "D": "在法律未明文規定的情況下,地方官員原則上有備詢之義務"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "下列何者不具有法律案提案權?",
+      "section": null,
+      "options": {
+        "A": "一般人民",
+        "B": "行政院",
+        "C": "立法委員",
+        "D": "監察院"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依據司法院釋字第468號解釋,下列關於總統副總統選舉罷免法就連署與保證金之規定,較不涉及下列何 項憲法規定?",
+      "section": null,
+      "options": {
+        "A": "被選舉權",
+        "B": "法律明確性",
+        "C": "比例原則",
+        "D": "平等權"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "下列何者並非宗教自由保障之範圍?",
+      "section": null,
+      "options": {
+        "A": "儀式自由",
+        "B": "傳教自由",
+        "C": "基於宗教信仰自由而拒絕服兵役義務",
+        "D": "不信仰宗教之自由"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "如某以營利為目的之國營事業要求女性員工上班不得穿著褲裝,應依下列何種理論,檢視該要求是否限 制女性員工之基本權利?",
+      "section": null,
+      "options": {
+        "A": "特別權力關係理論",
+        "B": "私法自治契約自由理論",
+        "C": "基本權之第三人效力理論",
+        "D": "基本權之制度性保障"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "司法院大法官所肯認之制度性保障,不包括下列何者?",
+      "section": null,
+      "options": {
+        "A": "宗教自由",
+        "B": "大學自治",
+        "C": "公務員之保障",
+        "D": "婚姻及家庭"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "依司法院釋字第649號解釋,禁止非視障者從事按摩業,係對人民職業自由之何種限制?",
+      "section": null,
+      "options": {
+        "A": "職業執行方式之限制",
+        "B": "選擇職業自由主觀條件之限制",
+        "C": "選擇職業自由客觀條件之限制",
+        "D": "人民向國家請求工作權利之限制"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "審計長應於行政院提出決算後,至遲幾個月內,依法完成其審核?",
+      "section": null,
+      "options": {
+        "A": "一個月",
+        "B": "二個月",
+        "C": "三個月",
+        "D": "五個月"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "依憲法增修條文第10條之規定,國家應重視社會救助、福利服務、國民就業、社會保險及醫療保健等社 會福利工作,對於社會救助和國民就業等救濟性支出應如何編列?",
+      "section": null,
+      "options": {
+        "A": "跨年編列",
+        "B": "優先編列",
+        "C": "核實編列",
+        "D": "擇要編列"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "依憲法第165條規定,國家應依國民經濟之進展,隨時提高待遇,以保障其生活,不包括下列何者?",
+      "section": null,
+      "options": {
+        "A": "教育工作者",
+        "B": "藝術工作者",
+        "C": "勞動工作者",
+        "D": "科學工作者"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "受僱者在育嬰留職停薪期滿而申請復職時,雇主應優先採取下列何項措施?",
+      "section": null,
+      "options": {
+        "A": "改調其他任何職位",
+        "B": "改調其他性質相當職位",
+        "C": "以業務緊縮為由加以拒絕",
+        "D": "回復受僱者申請育嬰停薪時之原有工作"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "依全民健康保險法第33條之規定,補充保險費率,於本法中華民國一百年一月四日修正之條文施行第一 年,以多少計算?",
+      "section": null,
+      "options": {
+        "A": "以百分之二計算",
+        "B": "以百分之三計算",
+        "C": "以百分之四計算",
+        "D": "以百分之五計算"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "關於股份有限公司董事及監察人之選任與解任,下列敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "非公開發行公司之董事,於任期中轉讓超過選任當時所持有之公司股份半數時,當然解任",
+        "B": "董事及監察人不得採分期改選制度",
+        "C": "董事及監察人之任期未屆滿前,股東會應有代表已發行股份總數過半數股東之出席,決議改選全體董 事及監察人",
+        "D": "公開發行公司得依章程規定,採取董事及監察人候選人提名制度"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "未公開發行之 A 股份有限公司已發行股份總數為 100 萬股,股東張三現持有 5 萬股。A 公司擬再現金增 資發行200萬股,保留其中百分之十由公司員工承購,則張三至多得以股東身分優先認購多少股?",
+      "section": null,
+      "options": {
+        "A": "4.5萬股",
+        "B": "5萬股",
+        "C": "9萬股",
+        "D": "10萬股"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "下列何者係屬法條競合?",
+      "section": null,
+      "options": {
+        "A": "同種想像競合關係",
+        "B": "異種想像競合關係",
+        "C": "實質競合關係",
+        "D": "特別關係"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "關於有期徒刑加減之規定,下列何者正確?",
+      "section": null,
+      "options": {
+        "A": "本刑僅加減其最高度",
+        "B": "本刑僅加減其最低度",
+        "C": "本刑其最高度及最低度同加減",
+        "D": "本刑由法官自由裁量"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "下列何種被繼承人,其所立的遺囑於死亡時,會發生效力?",
+      "section": null,
+      "options": {
+        "A": "剛年滿十五歲之人",
+        "B": "剛年滿十六歲之精神錯亂之人",
+        "C": "年滿二十歲之受輔助宣告人",
+        "D": "年滿二十歲之受監護宣告人"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "甲有市價 10 萬元之盆栽,託乙照料,乙竟為自己之利益而將之以 20 萬元之價格出售並交付於善意且無 重大過失之丙。下列敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "乙乃不法管理",
+        "B": "丙善意取得盆栽之所有權",
+        "C": "甲可依侵權行為之規定向乙請求10萬元",
+        "D": "甲可依不當得利之規定向乙請求20萬元"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "關於違約金,下列敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "違約金契約是從契約",
+        "B": "違約金契約是要物契約",
+        "C": "約定之違約金雖有過高情事,法院仍不得減至相當之金額",
+        "D": "懲罰性之違約金雖有過高情事,法院仍不得核減"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "行政程序法之制定,係下列那一原則之具體實現?",
+      "section": null,
+      "options": {
+        "A": "衡平原則",
+        "B": "分權原則",
+        "C": "均衡原則",
+        "D": "民主原則"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "下列何者不屬於行政程序法第2條第2項所定義之行政機關?",
+      "section": null,
+      "options": {
+        "A": "法務部矯正署",
+        "B": "法務部廉政署",
+        "C": "法務部調查局",
+        "D": "法務部檢察司"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "司法院釋字第38號解釋略謂:「所謂依據法律者,係以法律為審判之主要依據,並非除法律以外與憲法 或法律不相牴觸之有效規章,均行排斥而不用。」上述針對司法機關適用法律所為之解釋,係為落實下 列何項原則之具體表現?",
+      "section": null,
+      "options": {
+        "A": "依法審判",
+        "B": "審判獨立",
+        "C": "審判須在法庭",
+        "D": "不告不理"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "乙向甲借款,乙為擔保其債務之清償,乃在自己土地上設定抵押權給甲,下列何種情形甲之抵押權會受影響?",
+      "section": null,
+      "options": {
+        "A": "乙於抵押權設定後,將該土地讓與丙時",
+        "B": "乙將該土地之一部讓與丙時",
+        "C": "甲之債權經分割時",
+        "D": "甲之債權請求權已因時效而消滅,且甲於消滅時效完成後,逾十年不實行其抵押權"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "依據中央法規標準法之規定,於下列何種情形,得暫停適用法規之一部或全部?",
+      "section": null,
+      "options": {
+        "A": "因國家遭遇非常事故,一時不能適用者",
+        "B": "基於政策或事實之需要,有暫停適用之必要者",
+        "C": "同一事項規定於二以上之法規,有暫停適用其中一法規之必要者",
+        "D": "法規之主管機關或執行機關已裁併或變更者"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "下列有關法源之敘述,何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "憲法、法律、命令、判例被稱為成文法源",
+        "B": "學說、法理、解釋、習慣被稱為不成文法源",
+        "C": "國際條約得為法源",
+        "D": "自治條例亦屬於法源"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "John twisted his ankle. Therefore, he couldn’t walk but .",
+      "section": null,
+      "options": {
+        "A": "limp",
+        "B": "lump",
+        "C": "lame",
+        "D": "limb"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "Many people are convinced that digital learning is the most important in education since the printing press.",
+      "section": null,
+      "options": {
+        "A": "innovation",
+        "B": "procreation",
+        "C": "evolution",
+        "D": "resolution"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "The baby when his mother tickled his armpit and belly.",
+      "section": null,
+      "options": {
+        "A": "giggled",
+        "B": "stripped",
+        "C": "strangled",
+        "D": "grumbled"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "Millions of people fled across the border because of the situation of the civil war.",
+      "section": null,
+      "options": {
+        "A": "rejuvenating",
+        "B": "flourishing",
+        "C": "deteriorating",
+        "D": "improving"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Jack said his neighbor bit a dog yesterday. It was absolutely to us.",
+      "section": null,
+      "options": {
+        "A": "unmarketable",
+        "B": "unbelievable",
+        "C": "interactive",
+        "D": "introductory"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "Until recently, trans fats nearly all the cooking oil used in fast food restaurants.",
+      "section": null,
+      "options": {
+        "A": "accounted for",
+        "B": "consisted of",
+        "C": "depended on",
+        "D": "responded to"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "He is such a careless driver. It seems that some tragic accident may happen to him anytime.",
+      "section": null,
+      "options": {
+        "A": "flexible",
+        "B": "inevitable",
+        "C": "portable",
+        "D": "trainable"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "Beatrice Potter’s tales have been popular with adults, as well as children, since The Tale of Peter Rabbit was published in 1902.",
+      "section": null,
+      "options": {
+        "A": "partially",
+        "B": "occasionally",
+        "C": "consistently",
+        "D": "accidentally"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "It has become a(n) of the digital age that one can purchase almost anything online.",
+      "section": null,
+      "options": {
+        "A": "guideline",
+        "B": "principle",
+        "C": "reality",
+        "D": "illusion"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "Rock ’n’ roll in the 1950s. Elvis Presley was one of the first very famous rock ’n’ roll singers.",
+      "section": null,
+      "options": {
+        "A": "oriented",
+        "B": "originated",
+        "C": "organized",
+        "D": "ordered 請依下文回答第41題至第45題: Climate change will force some species of birds to migrate; water resources will increase or decrease; there will be more floods and droughts. Sea levels will rise in some coastal areas. There will be heat-waves and more air pollution, which in turn will cause infectious diseases to spread. There will, however, be some benefits, too. Moderate warming will favor some farmers. Some areas will have more water and more sunshine. There are ways of attempting to slow climate change, such as replanting and increasing the area of the world’s forests, because plants and trees reduce the effects of carbon dioxide, but on its own this is not enough to stop global warming. For this to happen, we must cut down on our production of carbon dioxide. One way to do this is to cut down on our use of fossil fuels like coal and oil, which is possible but must be done gradually: coal and oil can be replaced over a period of time by wind energy and solar power. Climate change is not entirely new; it happened two hundred years ago when the Industrial Revolution started. In recent years, the United States has been responsible for 25% of greenhouse gas emissions. In the future, India and China will produce more greenhouse gases than the United States and Europe."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "According to the passage, which of the following is true about climate change?",
+      "section": null,
+      "options": {
+        "A": "It will only bring disasters to human beings.",
+        "B": "It will cut down on the use of coal and oil.",
+        "C": "It will bring both destructive and beneficial effects on humans.",
+        "D": "It will force China and India to cut down on their greenhouse gas emissions."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "According to the passage, when can the use of coal and oil be replaced by wind energy and solar power?",
+      "section": null,
+      "options": {
+        "A": "immediately",
+        "B": "over a period of time",
+        "C": "after a long time",
+        "D": "never"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "What does the underlined “thisˮ refer to in this passage?",
+      "section": null,
+      "options": {
+        "A": "to plant more forests",
+        "B": "to stop global warming",
+        "C": "to cut down on the use of coal and oil",
+        "D": "to have less carbon dioxide"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "According to the passage, why are plants important in slowing down the climate change?",
+      "section": null,
+      "options": {
+        "A": "They help reduce the use of coal and oil.",
+        "B": "They help decrease the effects of carbon dioxide.",
+        "C": "They help increase greenhouse gas emissions.",
+        "D": "They help stop infectious diseases to spread."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "According to the passage, which of the following countries produces the most greenhouse gases in recent years?",
+      "section": null,
+      "options": {
+        "A": "France",
+        "B": "America",
+        "C": "India",
+        "D": "China 請依下文回答第46題至第50題: As you may know, Ms. Rothe will be retiring at the end of the year. She has made a great contribution to our company, and will be missed by all her 46 . She has been with the company for fifteen years, 47 up from Sales Assistant to Sales Manager during that time. We will also present her with a small gift. I have asked Mary to organize the 48 for the gift, and she will be coming round with a large brown envelope if you want to make a 49 . The 50 you give is entirely your choice. The leaving party will be after work on December 20th. I look forward to seeing everyone there."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "coworkers",
+        "B": "family",
+        "C": "neighbors",
+        "D": "students"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "flying",
+        "B": "covering",
+        "C": "moving",
+        "D": "rounding"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "business",
+        "B": "cooperation",
+        "C": "distribution",
+        "D": "collection"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "mission",
+        "B": "sacrifice",
+        "C": "contribution",
+        "D": "condition"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "amount",
+        "B": "effect",
+        "C": "reason",
+        "D": "period"
+      },
+      "answer": "A"
+    }
+  ],
+  "year": 106,
+  "category": "移民特考",
+  "subject": "[四等] 法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "level": "四等",
+  "original_subject": "法學知識與英文（包括中華民國憲法、法學緒論、英文）",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/106年/四等/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

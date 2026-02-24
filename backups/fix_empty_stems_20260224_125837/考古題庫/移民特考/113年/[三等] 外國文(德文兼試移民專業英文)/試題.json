@@ -1,0 +1,324 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "level": "三等",
+    "subject": "外國文（德文兼試移民專業英文）",
+    "exam_time": "2 小時 座號：",
+    "code": "80250"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "共20題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "Übersetzen Sie den folgenden Text ins Chinesische!(25 分)\nDie berüchtigten Sittenwächter im Iran hatten vor einigen Woche strengere\nKopftuchkontrollen angekündigt. Dieses Vorhaben haben sie nun offenbar in\ndie Tat umgesetzt. Nach Informationen des UN-Menschenrechtsbüros wurden\nzahlreiche Mädchen und Frauen wegen Verstößen festgenommen.\nHunderte Unternehmen seien geschlossen worden, weil sie die strikten\nKopftuchkontrollen nicht umgesetzt hätten, teilte das Büro in Genf mit. Das\nHochkommissariat teilte mit, dass die Regierung auch Überwachungskameras\neinsetze, um Fahrerinnen zu identifizieren, die sich nicht an die Gesetze\nhielten. Seit den Protesten im Herbst 2022 hatten immer mehr Frauen die\nKopftuchpflicht ignoriert.\nDer UN-Hochkommissar für Menschenrechte, Volker Türk, kritisierte ein\ngeplantes Gesetz, das Haftstrafen von zehn Jahren sowie Auspeitschen als\nStrafe für Verstöße gegen die Kopftuchvorschriften vorsieht. Er appellierte an\ndie Regierung in Teheran, alle Formen von geschlechtsspezifischer\nDiskriminierung und Gewalt zu beseitigen.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "Übersetzen Sie den folgenden Text ins Deutsche!(25 分)\n臺灣的國家人權博物館是亞洲第一座闡述威權統治之下侵害人權的博\n物館,亦是見證臺灣人權發展的紀念地景。人權博物館保存著許多政治\n受難者的記憶,也推動威權統治時期的文物典藏與檔案研究,以及從事\n教育推廣、展示與國際交流,並支持當代人權議題和實踐人權理念的組\n織,協助臺灣落實民主、自由、公義等普世價值。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "Schreiben Sie einenAufsatz ab 160 Wörtern zumThema „Integrationsbereitschaft\nder Einwanderer*Innen bzw. Gastarbeiter*Innen in Taiwan“!\nSeit den letzten Jahrzehnten gibt es immer mehr Einwander*Innen und\nGastarbeiter*Innen in Taiwan. Der Umgang mit Leuten aus verschiedenen\nkulturellen Hintergründen gehört allmählich zumAlltag unserer Gesellschaft.\nHaben Sie schon Erfahrungen damit gemacht? Sind Einwander*Innen und\nGastarbeiter*Innen in Taiwan integrationsbereit? Wie soll unsere Regierung\nIhrer Meinung nach darauf reagieren?\nKriterien der Bewertung:\nInhalt (Aufbau und Logik) bzw. Darstellung(15 分)\nWortschatz und Satzstrukturen (10 分)",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "WhileTSMC (TaiwanSemiconductorManufacturingCompany) claimedtheApril-third earthquake did not haveamajor onits production,it sawsomedisruptiontoits operations.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "satisfaction",
+        "B": "impact",
+        "C": "interest",
+        "D": "license"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "Those who facilitate or aid foreigners to engage in activities in Taiwan that are inconsistent with the reasons of their permitted visit or residence shall be to a fine of NT$200,000 or more and up to NT$1million.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "subject",
+        "B": "object",
+        "C": "projected",
+        "D": "rejected"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "Before arriving in Taiwan, please an online immigration arrival card on the website of the National ImmigrationAgency.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "communicate",
+        "B": "complete",
+        "C": "contempt",
+        "D": "contemplate"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "ThemaximumdurationofprohibitionfromenteringTaiwanforforeignerswhooverstaybeyondthe periodofvisit orresidenceinTaiwanhas beenrevisedfrom 3 years to7 years.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "improved",
+        "B": "sensible",
+        "C": "authorized",
+        "D": "evident"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "For foreigners who have no certain domicile or residence in Taiwan, the National Immigration Agency oftheMinistryoftheInteriormayordersuchforeignerstoexittheStatevoluntarilywithintendaysprior totheforcible .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "deportation",
+        "B": "importation",
+        "C": "exportation",
+        "D": "teleportation"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "Nationals without household registration who hold a valid R.O.C. (Taiwan) biometric passport and possess areturnticket are from applyingforanentrypermit.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "excelled",
+        "B": "examined",
+        "C": "exempt",
+        "D": "performed"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "Law enforcement agencies have 11 people who ran a food fraud operation that produced more than68,000gallons ofoliveoil unfit forconsumption.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "occupied",
+        "B": "rested",
+        "C": "joined",
+        "D": "arrested"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "OnFebruary14th,aChinesefishingboatoverturnedwhilebeingchasedbytheTaiwanesecoast guards, killing two Chinese fishermen on board. While between Taiwan and China soared, disinformationabout theincident alsotookoff.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "peace",
+        "B": "tension",
+        "C": "match",
+        "D": "sanctions"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "For any applicant who is unable to pay the fee, he/she may request a fee by submitting his/her caseforfurtherconsideration.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "increase",
+        "B": "expansion",
+        "C": "waiver",
+        "D": "resistance"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "Rememberto youraddresswiththisofficetoensurethat youcanreceiveallcorrespondenceand notifications from us inatimelymanner.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "fill",
+        "B": "retrieve",
+        "C": "update",
+        "D": "inform"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 12,
+      "type": "essay",
+      "stem": ", students need modeling, practice, and feedback. For example, when students preview a text, theytap into what they alreadyknow and that knowledge will help them understand the text theyare about to read. In other words, their 13 knowledge provides a framework for any new information they read. Moreover, when students make predictions about the text they are about to read, this exercise sets up 14 based on theirpriorknowledgeabout similartopics. As theyread,students maymentallyrevisetheirpredictionas they gain more information. In addition, identifying the main ideas and making a summary requires students to 15 what points are important and put those points in their own words. Furthermore, asking and answering questions about a text is another strategy that helps students focus on the meaning of the text. Teacherscanhelpbymodelingboththeprocessofaskinggoodquestionsandstrategiesforfindingtheanswers inthetext.",
+      "section": "乙、測驗題"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "associate",
+        "B": "contact",
+        "C": "cling",
+        "D": "organize"
+      },
+      "answer": "A",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "restrictions",
+        "B": "regulations",
+        "C": "simulations",
+        "D": "strategies"
+      },
+      "answer": "D",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "perished",
+        "B": "acquired",
+        "C": "excluded",
+        "D": "paralyzed"
+      },
+      "answer": "B",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "locations",
+        "B": "operations",
+        "C": "establishments",
+        "D": "expectations"
+      },
+      "answer": "D",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "dislocate",
+        "B": "determine",
+        "C": "unsettle",
+        "D": "cultivate 請依下文回答第16 題至第20題 The United States has more immigrants than any other country in the world. Today, more than 40 million people living in the US were born in another country, accounting for about one-fifth of the world’s migrants. Also, the population of immigrants is very diverse, with just about every country in the world represented among US immigrants. Pew Research Center regularly publishes statistical portraits of the nation’s foreign- born population, which include historical trends since 1960. These portraits provide more details on the US immigrant population. The US foreign-born population reached a record 44.8 million in 2018. Since 1965, when US immigration laws replaced a national quota system, the number of immigrants living in the US has more than quadrupled. Immigrants today account for 13.7% of the US population, nearly triple the share (4.8%) in 1970. However, today’s immigrant share remains below the record 14.8% share in 1890 when 9.2 million immigrants lived in theUS. Most immigrants (77%) are in the countrylegally, while almost a quarter are unauthorized, according tonew Pew Research Center estimates based on census data adjusted for undercount. In 2017, 45% were naturalized UScitizens,27%ofimmigrantswerepermanentresidents,and5%weretemporaryresidentsin2017.Another 23% of all immigrants were unauthorized immigrants. From 1990 to 2007, the unauthorized immigrant populationwas morethantripledinsize–from 3.5milliontoarecordhigh of12.2millionin2007.By2017, that numberhaddeclined by1.7million,or14%.Therewere10.5millionunauthorizedimmigrants intheUS in2017,accountingfor3.2%ofthenation’spopulation.Thedeclineintheunauthorizedimmigrantpopulation isduelargelytoafallinthenumberfromMexico–thesinglelargestgroupofunauthorizedimmigrantsinthe US."
+      },
+      "answer": "B",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them.Youngchildrenlistentothewords, seethepictures inthebook,and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "What is thebest titleforthis passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Diverse Backgrounds of Immigrants.",
+        "B": "KeyFindings about US Immigrants.",
+        "C": "Reasons for BecomingImmigrants.",
+        "D": "Rights andObligations of Immigrants."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "Accordingto thepassage,whichofthefollowingstatements is NOTtrue?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Thenumberofimmigrants intheUS occupies one-fifthofthetotal ofimmigrants intheworld.",
+        "B": "The yearof2018markedtherecordhighfortheforeign-bornpopulationintheUS.",
+        "C": "Morethanone-thirdofimmigrants intheUS areunauthorized.",
+        "D": "TheUS usedtohave anational quotasystem."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "What is thefocus ofthefinal paragraph?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Thelegal status ofimmigrants intheUS.",
+        "B": "Theestablishment of PewResearchCenter.",
+        "C": "TheimportanceofNational Census.",
+        "D": "Theinfluenceofimmigrants from Mexico."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "According to the passage, what is the main contributor to the decline in the unauthorized immigrant populationin2017?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Theimplementationofnewimmigrationlaws intheUS.",
+        "B": "Theundercount adjustment tothecensus data.",
+        "C": "Theincreaseofnaturalizedcitizens andpermanent residents.",
+        "D": "Thedecreaseofimmigrants from Mexico."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "Accordingto thepassage,whichofthefollowingstatistics is NOTcorrect?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Ever since the US immigration laws replaced a national quota system in 1965, the number of immigrants livinginthe US has grownmorethan sixtimes.",
+        "B": "In1970,immigrants accountedfor4.8%ofthe US population.",
+        "C": "In2017, about 23%of all immigrants wereunauthorizedimmigrants.",
+        "D": "In2017,unauthorizedimmigrants intheUS accountedfor3.2%ofthe US population."
+      },
+      "answer": "A"
+    }
+  ],
+  "year": 113,
+  "category": "移民特考",
+  "subject": "[三等] 外國文(德文兼試移民專業英文)",
+  "level": "三等",
+  "original_subject": "外國文(德文兼試移民專業英文)",
+  "source_pdf": "/home/user/police-exam-archive/移民特考PDF/113年/三等/外國文(德文兼試移民專業英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 24
+}
