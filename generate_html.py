@@ -20,13 +20,32 @@ from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 
-# ===== 類科定義 =====
-CATEGORIES_ORDER = [
-    '行政警察', '外事警察', '刑事警察', '公共安全',
-    '犯罪防治預防組', '犯罪防治矯治組',
-    '消防警察', '交通警察交通組', '交通警察電訊組', '資訊管理',
-    '鑑識科學', '國境警察', '水上警察', '警察法制', '行政管理',
+# ===== 類科定義（按警大學系分組） =====
+# 甲組 — 警察科技學院
+CATEGORIES_GROUP_A = [
+    '刑事警察',       # 刑事警察學系
+    '鑑識科學',       # 鑑識科學學系
+    '交通警察交通組', # 交通學系交通組
+    '交通警察電訊組', # 交通學系電訊組
+    '消防警察',       # 消防學系
+    '水上警察',       # 水上警察學系
+    '資訊管理',       # 資訊管理學系
 ]
+
+# 乙組 — 警政管理學院
+CATEGORIES_GROUP_B = [
+    '行政警察',       # 行政警察學系
+    '外事警察',       # 外事警察學系
+    '公共安全',       # 公共安全學系
+    '犯罪防治預防組', # 犯罪防治學系預防組
+    '犯罪防治矯治組', # 犯罪防治學系矯治組
+    '國境警察',       # 國境警察學系國境管理組
+    '移民特考',       # 國境警察學系移民事務組
+    '行政管理',       # 行政管理學系
+    '警察法制',       # 法律學系
+]
+
+CATEGORIES_ORDER = CATEGORIES_GROUP_A + CATEGORIES_GROUP_B
 
 CATEGORIES_INFO = {
     '行政警察': {'code': 501, 'icon': '&#128110;', 'color': '#2563eb'},
@@ -44,6 +63,7 @@ CATEGORIES_INFO = {
     '水上警察': {'code': 511, 'icon': '&#9875;', 'color': '#0369a1'},
     '警察法制': {'code': 512, 'icon': '&#9878;', 'color': '#b45309'},
     '行政管理': {'code': 513, 'icon': '&#128203;', 'color': '#6366f1'},
+    '移民特考': {'code': 590, 'icon': '&#9992;', 'color': '#0891b2'},
 }
 
 # 圖標對照（純文字版，用於 Python 端）
@@ -55,6 +75,7 @@ CATEGORIES_EMOJI = {
     '資訊管理': '💻', '鑑識科學': '🔬',
     '國境警察': '🛂', '水上警察': '⚓', '警察法制': '⚖',
     '行政管理': '📋',
+    '移民特考': '✈',
 }
 
 
@@ -1450,8 +1471,8 @@ def generate_category_page(category_name, years_data, output_dir):
     subject_keys_json = json.dumps(subject_keys, ensure_ascii=False)
     subject_keys_script = f'<script>const SUBJECT_KEYS={subject_keys_json};</script>'
 
-    exam_prefix = '警察特考三等'
-    site_name = '三等警察特考考古題總覽'
+    exam_prefix = '' if category_name == '移民特考' else '警察特考三等'
+    site_name = '考古題總覽' if category_name == '移民特考' else '三等警察特考考古題總覽'
 
     page_html = f'''<!DOCTYPE html>
 <html lang="zh-TW">
@@ -1569,15 +1590,20 @@ def generate_index_page(output_dir, categories_stats):
     total_questions = sum(s.get('questions', 0) for s in categories_stats.values())
     total_categories = len(categories_stats)
 
-    items_html = ''
-    for cat_name in CATEGORIES_ORDER:
-        if cat_name not in categories_stats:
-            continue
-        info = CATEGORIES_INFO.get(cat_name, {'code': 0, 'icon': '&#128196;', 'color': '#1a365d'})
-        emoji = CATEGORIES_EMOJI.get(cat_name, '')
-        stats = categories_stats[cat_name]
-        items_html += f'''
+    def _build_items(cat_list, categories_stats):
+        html = ''
+        for cat_name in cat_list:
+            if cat_name not in categories_stats:
+                continue
+            info = CATEGORIES_INFO.get(cat_name, {'code': 0, 'icon': '&#128196;', 'color': '#1a365d'})
+            emoji = CATEGORIES_EMOJI.get(cat_name, '')
+            stats = categories_stats[cat_name]
+            html += f'''
     <li><a href="{cat_name}/{cat_name}考古題總覽.html" style="--item-color: {info['color']}"><span class="item-icon">{emoji}</span><span class="item-name">{escape_html(cat_name)}</span><span class="item-count">{stats.get('questions', 0)} 題</span><span class="item-arrow">&#8594;</span></a></li>'''
+        return html
+
+    group_a_html = _build_items(CATEGORIES_GROUP_A, categories_stats)
+    group_b_html = _build_items(CATEGORIES_GROUP_B, categories_stats)
 
     index_html = f'''<!DOCTYPE html>
 <html lang="zh-TW">
@@ -1621,6 +1647,9 @@ body {{ font-family: "Noto Sans TC", "Microsoft JhengHei", -apple-system, sans-s
 .item-count {{ font-size: 0.78rem; color: var(--text-light); white-space: nowrap; }}
 .item-arrow {{ font-size: 0.9rem; color: var(--border); transition: color 0.15s ease, transform 0.15s ease; }}
 .category-list a:hover .item-arrow {{ color: var(--accent); transform: translateX(3px); }}
+.group-title {{ font-size: 0.92rem; font-weight: 700; color: var(--text-light); padding: 0.6rem 1.25rem; background: color-mix(in srgb, var(--border) 40%, var(--bg)); letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }}
+.group-title:not(:first-child) {{ border-top: 2px solid var(--border); }}
+html.dark .group-title {{ background: color-mix(in srgb, var(--border) 30%, var(--card-bg)); }}
 .site-footer {{ text-align: center; padding: 2rem; font-size: 0.82rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }}
 .dark-toggle {{ position: fixed; bottom: 2rem; left: 2rem; z-index: 200; width: 44px; height: 44px; border-radius: 50%; background: var(--card-bg); border: 2px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }}
 .dark-toggle:hover {{ border-color: var(--accent); transform: scale(1.1); }}
@@ -1666,7 +1695,9 @@ body {{ overflow-x: hidden; }}
 <main class="container">
   <h2 class="section-title">選擇類科</h2>
   <nav aria-label="類科導航">
-  <ul class="category-list" id="categories">{items_html}
+  <ul class="category-list" id="categories">
+    <li class="group-title">甲組 — 警察科技學院</li>{group_a_html}
+    <li class="group-title">乙組 — 警政管理學院</li>{group_b_html}
   </ul>
   </nav>
 </main>
