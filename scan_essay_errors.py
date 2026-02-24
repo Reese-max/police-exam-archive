@@ -6,7 +6,7 @@ import os
 import re
 import glob
 
-EXAM_DIR = "考古題庫/移民特考"
+EXAM_DIR = "考古題庫/國境警察學系移民組"
 
 def load_json(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:

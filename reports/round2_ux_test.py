@@ -11,7 +11,7 @@ from playwright.sync_api import sync_playwright
 
 SITE_ROOT = Path(r"C:\Users\User\Desktop\考古題下載\考古題網站")
 INDEX_URL = (SITE_ROOT / "index.html").as_uri()
-CATEGORY_URL = (SITE_ROOT / "行政警察" / "行政警察考古題總覽.html").as_uri()
+CATEGORY_URL = (SITE_ROOT / "行政警察學系" / "行政警察學系考古題總覽.html").as_uri()
 REPORT_DIR = Path(r"C:\Users\User\Desktop\考古題下載\reports")
 SCREENSHOT_DIR = REPORT_DIR / "screenshots"
 SCREENSHOT_DIR.mkdir(parents=True, exist_ok=True)
@@ -763,7 +763,7 @@ def run_all():
     report_lines.append(f"**測試工具**: Playwright (Python sync API, Chromium headless)")
     report_lines.append(f"**測試頁面**:")
     report_lines.append(f"- 首頁: `index.html`")
-    report_lines.append(f"- 類科頁面: `行政警察/行政警察考古題總覽.html`")
+    report_lines.append(f"- 類科頁面: `行政警察學系/行政警察學系考古題總覽.html`")
     report_lines.append("")
     report_lines.append("**測試視口**:")
     report_lines.append("- 桌面: 1280x800")

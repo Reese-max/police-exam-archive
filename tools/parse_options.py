@@ -5,7 +5,7 @@
 用法:
   python tools/parse_options.py                    # 處理所有 JSON 檔案
   python tools/parse_options.py --dry-run          # 只顯示會怎麼改，不實際寫入
-  python tools/parse_options.py --category 行政警察 # 只處理特定類科
+  python tools/parse_options.py --category 行政警察學系 # 只處理特定類科
 """
 
 import os

@@ -11,7 +11,7 @@ from playwright.sync_api import sync_playwright
 
 BASE = "file:///C:/Users/User/Desktop/考古題下載/考古題網站"
 INDEX_URL = f"{BASE}/index.html"
-CATEGORY_URL = f"{BASE}/行政警察/行政警察考古題總覽.html"
+CATEGORY_URL = f"{BASE}/行政警察學系/行政警察學系考古題總覽.html"
 SCREENSHOT_DIR = "C:/Users/User/Desktop/考古題下載/reports/screenshots"
 os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 
@@ -920,7 +920,7 @@ def generate_report():
 **測試工具**: Playwright {os.popen('pip show playwright 2>/dev/null').read().split("Version: ")[1].split()[0] if False else '1.58.0'}
 **測試頁面**:
 - 首頁: `index.html`
-- 類科頁面: `行政警察/行政警察考古題總覽.html`
+- 類科頁面: `行政警察學系/行政警察學系考古題總覽.html`
 
 ## 問題總覽
 

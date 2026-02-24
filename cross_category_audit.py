@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-移民特考 vs 警察特考 跨分類對比審查腳本
+國境警察學系移民組 vs 警察特考 跨分類對比審查腳本
 比較 JSON 結構、科目命名規範、品質指標、轉換邏輯差異
 """
 
@@ -102,14 +102,14 @@ def audit_json_structure():
             'sample_count': sample_count,
         }
 
-    # 以移民特考為基準，與其他分類比較
-    imm = category_schemas.get('移民特考')
+    # 以國境警察學系移民組為基準，與其他分類比較
+    imm = category_schemas.get('國境警察學系移民組')
     if not imm:
-        print("  [錯誤] 找不到移民特考資料")
+        print("  [錯誤] 找不到國境警察學系移民組資料")
         return
 
-    print(f"\n  移民特考 Top-level 欄位: {sorted(imm['top_keys'])}")
-    print(f"  移民特考 Question 欄位:  {sorted(imm['q_keys'])}")
+    print(f"\n  國境警察學系移民組 Top-level 欄位: {sorted(imm['top_keys'])}")
+    print(f"  國境警察學系移民組 Question 欄位:  {sorted(imm['q_keys'])}")
     print()
 
     # 表格：各分類 top-level 欄位比較
@@ -124,7 +124,7 @@ def audit_json_structure():
     print()
     print("  " + "-" * (22 + 13 * len(all_top_keys)))
 
-    for cat in ['移民特考'] + [c for c in CATEGORIES if c != '移民特考']:
+    for cat in ['國境警察學系移民組'] + [c for c in CATEGORIES if c != '國境警察學系移民組']:
         s = category_schemas.get(cat)
         if not s:
             continue
@@ -136,10 +136,10 @@ def audit_json_structure():
                 print(f"{'--':>13}", end='')
         print()
 
-    # 移民特考獨有欄位
-    print(f"\n  --- 移民特考獨有的 Top-level 欄位（其他分類沒有）---")
+    # 國境警察學系移民組獨有欄位
+    print(f"\n  --- 國境警察學系移民組獨有的 Top-level 欄位（其他分類沒有）---")
     for cat in CATEGORIES:
-        if cat == '移民特考':
+        if cat == '國境警察學系移民組':
             continue
         s = category_schemas.get(cat)
         if not s:
@@ -149,7 +149,7 @@ def audit_json_structure():
         if only_imm or only_other:
             print(f"  vs {cat}:")
             if only_imm:
-                print(f"    移民特考獨有: {sorted(only_imm)}")
+                print(f"    國境警察學系移民組獨有: {sorted(only_imm)}")
             if only_other:
                 print(f"    {cat}獨有: {sorted(only_other)}")
 
@@ -166,7 +166,7 @@ def audit_json_structure():
     print()
     print("  " + "-" * (18 + 10 * len(all_q_keys)))
 
-    for cat in ['移民特考'] + [c for c in CATEGORIES if c != '移民特考']:
+    for cat in ['國境警察學系移民組'] + [c for c in CATEGORIES if c != '國境警察學系移民組']:
         s = category_schemas.get(cat)
         if not s:
             continue
@@ -253,8 +253,8 @@ def audit_naming_conventions():
             print(f"  {cat:<16}: 全形 {full_width:>4} / 半形 {half_width:>4} / 混用 {mixed:>4}")
 
     # 檢查同一科目跨年命名不一致
-    print("\n  --- 移民特考科目名稱跨年一致性問題 ---")
-    cat_dir = BASE_DIR / '移民特考'
+    print("\n  --- 國境警察學系移民組科目名稱跨年一致性問題 ---")
+    cat_dir = BASE_DIR / '國境警察學系移民組'
     # 提取科目核心名（去掉年份和 [等級] 前綴）
     subj_by_year = defaultdict(set)
     for year_dir in sorted(cat_dir.iterdir()):
@@ -304,7 +304,7 @@ def audit_naming_conventions():
                               f"(缺 {','.join(absent_years[:3])}...)")
 
     # 特別檢查括號不一致（同一科目在不同年份使用不同括號）
-    print("\n  --- 移民特考：同科目跨年括號不一致的例子 ---")
+    print("\n  --- 國境警察學系移民組：同科目跨年括號不一致的例子 ---")
     # 取核心名稱（去掉等級前綴、去掉括號型態差異後）
     def normalize_for_compare(name):
         n = prefix_pat.sub('', name)
@@ -412,24 +412,24 @@ def audit_quality_metrics():
     print(f"\n{header}")
     print("  " + "-" * (len(header) - 2))
 
-    # 先印移民特考
-    for cat in ['移民特考'] + [c for c in sorted(CATEGORIES) if c != '移民特考']:
+    # 先印國境警察學系移民組
+    for cat in ['國境警察學系移民組'] + [c for c in sorted(CATEGORIES) if c != '國境警察學系移民組']:
         s = cat_stats.get(cat)
         if not s:
             continue
-        marker = " <<<" if cat == '移民特考' else ""
+        marker = " <<<" if cat == '國境警察學系移民組' else ""
         print(f"  {cat:<16} {s['files']:>5} {s['years']:>4} {s['total_q']:>6} "
               f"{s['choice']:>6} {s['essay']:>6} {s['avg_q']:>9.1f} "
               f"{s['answer_rate']:>7.1f}% {s['opt_4_rate']:>6.1f}% {s['empty_pct']:>5.1f}%{marker}")
 
-    # 計算整體平均（不含移民特考）
-    other_cats = [c for c in CATEGORIES if c != '移民特考' and c in cat_stats]
+    # 計算整體平均（不含國境警察學系移民組）
+    other_cats = [c for c in CATEGORIES if c != '國境警察學系移民組' and c in cat_stats]
     if other_cats:
         avg_q = sum(cat_stats[c]['avg_q'] for c in other_cats) / len(other_cats)
         avg_ans = sum(cat_stats[c]['answer_rate'] for c in other_cats) / len(other_cats)
         avg_opt = sum(cat_stats[c]['opt_4_rate'] for c in other_cats) / len(other_cats)
         avg_empty = sum(cat_stats[c]['empty_pct'] for c in other_cats) / len(other_cats)
-        imm = cat_stats.get('移民特考', {})
+        imm = cat_stats.get('國境警察學系移民組', {})
 
         print()
         print(f"  {'其他分類平均':<16} {'':>5} {'':>4} {'':>6} "
@@ -474,7 +474,7 @@ def audit_script_differences():
         ("OCR 修復 (fix_ocr)", "無（透過 import 使用）", "有"),
         ("normalize_text()", "匯入使用", "原始定義"),
         ("fallback_extract_essays()", "匯入使用", "原始定義"),
-        ("category 推斷", "硬編碼 '移民特考'", "從目錄結構推斷"),
+        ("category 推斷", "硬編碼 '國境警察學系移民組'", "從目錄結構推斷"),
     ]
 
     print(f"\n  {'功能/特性':<35} {'process_immigration.py':<35} {'pdf_to_questions.py':<30}")
@@ -484,7 +484,7 @@ def audit_script_differences():
 
     print("\n  --- 關鍵差異分析 ---")
     print("""
-  1. process_immigration.py 額外做了 PUA Unicode 預處理。考選部的移民特考 PDF
+  1. process_immigration.py 額外做了 PUA Unicode 預處理。考選部的國境警察學系移民組 PDF
      使用私有 Unicode 字元（U+E18C~U+E18F）作為選項標記，需要先轉換為標準
      (A)(B)(C)(D) 格式。pdf_to_questions.py 不需要這步，因為警察特考 PDF 直接
      使用標準格式。
@@ -548,10 +548,10 @@ def audit_shared_subjects():
                     cat_formats[cat] = set()
                 cat_formats[cat].add(fmt_key)
 
-        # 比較移民特考 vs 其他
-        imm_fmts = cat_formats.get('移民特考', set())
+        # 比較國境警察學系移民組 vs 其他
+        imm_fmts = cat_formats.get('國境警察學系移民組', set())
         for cat in CATEGORIES:
-            if cat == '移民特考':
+            if cat == '國境警察學系移民組':
                 continue
             other_fmts = cat_formats.get(cat, set())
             if not other_fmts:
@@ -574,7 +574,7 @@ def audit_shared_subjects():
                 q_diff_other = other_q - imm_q
 
                 if top_diff_imm or top_diff_other or q_diff_imm or q_diff_other:
-                    print(f"    移民特考 vs {cat}:")
+                    print(f"    國境警察學系移民組 vs {cat}:")
                     if top_diff_imm:
                         print(f"      移民獨有 top-level: {sorted(top_diff_imm)}")
                     if top_diff_other:
@@ -586,16 +586,16 @@ def audit_shared_subjects():
 
     # 5b. 同年同科目是否重複
     print(f"\n  --- 5b. 同年共用科目試題重複檢查 ---")
-    print("  (比較移民特考與警察特考的同年「國文」「法學知識與英文」是否為相同試題)")
+    print("  (比較國境警察學系移民組與警察特考的同年「國文」「法學知識與英文」是否為相同試題)")
 
-    comparison_cats = ['行政警察', '刑事警察', '國境警察']
+    comparison_cats = ['行政警察學系', '刑事警察學系', '國境警察學系境管組']
 
     for keyword in ['國文', '法學知識與英文']:
         print(f"\n  科目: 「{keyword}」")
 
-        # 收集移民特考的題目
+        # 收集國境警察學系移民組的題目
         imm_by_year = {}
-        for year, subj, data, path in all_records.get('移民特考', []):
+        for year, subj, data, path in all_records.get('國境警察學系移民組', []):
             if data is None:
                 continue
             subj_core = re.sub(r'^\[[^\]]+\]\s*', '', subj)
@@ -635,25 +635,25 @@ def audit_shared_subjects():
                     overlap_pct = len(overlap) / min(len(comp_stems), len(imm_by_year[year]['stems'])) * 100 if min(len(comp_stems), len(imm_by_year[year]['stems'])) > 0 else 0
                     if overlap:
                         status = "相同試題" if overlap_pct > 80 else "部分重疊" if overlap_pct > 20 else "不同試題"
-                        print(f"    {year}年 移民特考 vs {comp_cat}: "
+                        print(f"    {year}年 國境警察學系移民組 vs {comp_cat}: "
                               f"重疊 {len(overlap)} 題 / "
                               f"移民 {len(imm_by_year[year]['stems'])} 題 vs {comp_cat} {len(comp_stems)} 題 "
                               f"({overlap_pct:.0f}%) => {status}")
                         found_overlap = True
 
             if not found_overlap:
-                print(f"    移民特考 vs {comp_cat}: 無重疊年份或無選擇題可比較")
+                print(f"    國境警察學系移民組 vs {comp_cat}: 無重疊年份或無選擇題可比較")
 
     # 5c. 等級標注問題
-    print(f"\n  --- 5c. 移民特考等級標注 vs 警察特考 ---")
-    print("  移民特考有 [二等]/[三等]/[四等] 前綴，警察特考各分類沒有。")
+    print(f"\n  --- 5c. 國境警察學系移民組等級標注 vs 警察特考 ---")
+    print("  國境警察學系移民組有 [二等]/[三等]/[四等] 前綴，警察特考各分類沒有。")
     print("  這導致：")
-    print("    - 移民特考同一年有多個等級的同科目（如 [三等] 國文 和 [四等] 國文）")
+    print("    - 國境警察學系移民組同一年有多個等級的同科目（如 [三等] 國文 和 [四等] 國文）")
     print("    - 警察特考每年每科只有一個目錄（無等級區分）")
 
     # 統計各分類每年科目數
     print(f"\n  每年平均科目數比較:")
-    for cat in ['移民特考'] + comparison_cats:
+    for cat in ['國境警察學系移民組'] + comparison_cats:
         records = all_records.get(cat, [])
         year_counts = defaultdict(int)
         for year, subj, data, path in records:
@@ -671,7 +671,7 @@ def audit_shared_subjects():
 
 def main():
     print("=" * 80)
-    print("  移民特考 vs 警察特考 跨分類對比審查報告")
+    print("  國境警察學系移民組 vs 警察特考 跨分類對比審查報告")
     print(f"  檢查目錄: {BASE_DIR}")
     print(f"  分類數: {len(CATEGORIES)} ({', '.join(CATEGORIES)})")
     print("=" * 80)

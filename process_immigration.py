@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-移民特考 PDF → JSON 轉換腳本
-從 移民特考PDF/ 目錄讀取 PDF，解析為結構化 JSON 並輸出到 考古題庫/移民特考/
+國境警察學系移民組 PDF → JSON 轉換腳本
+從 國境警察學系移民組PDF/ 目錄讀取 PDF，解析為結構化 JSON 並輸出到 考古題庫/國境警察學系移民組/
 
 用法:
   python process_immigration.py
@@ -50,8 +50,8 @@ def preprocess_immigration_text(pages_text):
     return result
 
 
-PDF_DIR = Path(__file__).parent / '移民特考PDF'
-OUTPUT_DIR = Path(__file__).parent / '考古題庫' / '移民特考'
+PDF_DIR = Path(__file__).parent / '國境警察學系移民組PDF'
+OUTPUT_DIR = Path(__file__).parent / '考古題庫' / '國境警察學系移民組'
 
 # 跳過重複的 三等_英文組（與 三等 完全相同）
 SKIP_LEVELS = {'三等_英文組'}
@@ -178,7 +178,7 @@ def merge_answer_data(questions, answer_pdf_path):
 
 
 def process_immigration_pdfs():
-    """處理所有移民特考 PDF"""
+    """處理所有國境警察學系移民組 PDF"""
     if not PDF_DIR.exists():
         print(f"找不到目錄: {PDF_DIR}")
         return
@@ -288,7 +288,7 @@ def process_immigration_pdfs():
 
                 # 補充 metadata
                 result['year'] = year
-                result['category'] = '移民特考'
+                result['category'] = '國境警察學系移民組'
                 result['subject'] = subject_display
                 result['level'] = level
                 result['original_subject'] = raw_subject
@@ -318,7 +318,7 @@ def process_immigration_pdfs():
 
     # 統計報告
     print(f"\n{'=' * 60}")
-    print("移民特考 PDF → JSON 轉換完成！")
+    print("國境警察學系移民組 PDF → JSON 轉換完成！")
     print(f"{'=' * 60}")
     print(f"處理: {stats['total']} 個 PDF")
     print(f"成功: {stats['success']} 個")

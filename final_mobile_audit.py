@@ -97,8 +97,8 @@ try:
         errs = []
         page.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
 
-        page.goto(f'{BASE}/行政警察/行政警察考古題總覽.html', wait_until='networkidle')
-        check('行政警察頁面載入', page.query_selector('.page-title') is not None)
+        page.goto(f'{BASE}/行政警察學系/行政警察學系考古題總覽.html', wait_until='networkidle')
+        check('行政警察學系頁面載入', page.query_selector('.page-title') is not None)
 
         # 展開卡片
         headers = page.query_selector_all('.subject-header')
@@ -175,7 +175,7 @@ try:
         errs = []
         page.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
 
-        page.goto(f'{BASE}/資訊管理/資訊管理考古題總覽.html', wait_until='networkidle')
+        page.goto(f'{BASE}/資訊管理學系/資訊管理學系考古題總覽.html', wait_until='networkidle')
 
         # 系統偏好深色 → 自動啟用
         is_dark = page.evaluate('() => document.documentElement.classList.contains("dark")')
@@ -259,7 +259,7 @@ try:
         errs = []
         page.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
 
-        page.goto(f'{BASE}/消防警察/消防警察考古題總覽.html', wait_until='networkidle')
+        page.goto(f'{BASE}/消防學系/消防學系考古題總覽.html', wait_until='networkidle')
         check('Galaxy Fold 頁面載入', page.query_selector('.page-title') is not None)
 
         # 標題不溢出
@@ -298,7 +298,7 @@ try:
         errs = []
         page.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
 
-        page.goto(f'{BASE}/鑑識科學/鑑識科學考古題總覽.html', wait_until='networkidle')
+        page.goto(f'{BASE}/鑑識科學學系/鑑識科學學系考古題總覽.html', wait_until='networkidle')
 
         # ARIA 完整性
         search_box = page.query_selector('#searchInput')
@@ -375,7 +375,7 @@ try:
         errs = []
         page.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
 
-        page.goto(f'{BASE}/刑事警察/刑事警察考古題總覽.html', wait_until='networkidle')
+        page.goto(f'{BASE}/刑事警察學系/刑事警察學系考古題總覽.html', wait_until='networkidle')
         check('iPad 頁面載入', page.query_selector('.page-title') is not None)
 
         # sidebar 可見（>768px 應顯示 sidebar）
@@ -410,7 +410,7 @@ try:
         errs = []
         page.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
 
-        page.goto(f'{BASE}/水上警察/水上警察考古題總覽.html', wait_until='networkidle')
+        page.goto(f'{BASE}/水上警察學系/水上警察學系考古題總覽.html', wait_until='networkidle')
 
         # 檢查列印 CSS 規則存在
         print_rules = page.evaluate('''() => {

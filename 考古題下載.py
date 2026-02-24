@@ -419,8 +419,8 @@ def parse_exam_page(html_content, exam_name=""):
         # === 內軌判定：必須有這三種英文科目之一 ===
         is_internal = (
             '中華民國憲法與警察專業英文' in subjects_text or
-            '中華民國憲法與消防警察專業英文' in subjects_text or
-            '中華民國憲法與水上警察專業英文' in subjects_text
+            '中華民國憲法與消防學系專業英文' in subjects_text or
+            '中華民國憲法與水上警察學系專業英文' in subjects_text
         )
 
         if not is_internal:
@@ -466,29 +466,29 @@ def parse_exam_page(html_content, exam_name=""):
 
         # === 以下為內軌14個類科 ===
 
-        # 1. 行政警察人員：警察學與警察勤務 + 警察政策與犯罪預防
+        # 1. 行政警察學系人員：警察學與警察勤務 + 警察政策與犯罪預防
         if '警察學與警察勤務' in subjects_text:
-            return '警察人員考試三等考試_行政警察人員'
+            return '警察人員考試三等考試_行政警察學系人員'
 
-        # 2. 外事警察人員：外事警察學
-        if '外事警察學' in subjects_text:
-            return '警察人員考試三等考試_外事警察人員'
+        # 2. 外事警察學系人員：外事警察學系學
+        if '外事警察學系學' in subjects_text:
+            return '警察人員考試三等考試_外事警察學系人員'
 
-        # 3. 刑事警察人員：犯罪偵查學 + 刑案現場處理
+        # 3. 刑事警察學系人員：犯罪偵查學 + 刑案現場處理
         if '犯罪偵查學' in subjects_text and '刑案現場處理' in subjects_text:
-            return '警察人員考試三等考試_刑事警察人員'
+            return '警察人員考試三等考試_刑事警察學系人員'
 
-        # 4. 公共安全人員：情報學 + 國家安全情報法制
+        # 4. 公共安全學系社安組人員：情報學 + 國家安全情報法制
         if '情報學' in subjects_text and '國家安全情報法制' in subjects_text:
-            return '警察人員考試三等考試_公共安全人員'
+            return '警察人員考試三等考試_公共安全學系社安組人員'
 
         # 5. 犯罪防治人員預防組：諮商輔導與婦幼保護 + 犯罪分析
         if '諮商輔導與婦幼保護' in subjects_text and '犯罪分析' in subjects_text:
             return '警察人員考試三等考試_犯罪防治人員預防組'
 
-        # 6. 消防警察人員：火災學與消防化學 + 消防安全設備
+        # 6. 消防學系人員：火災學與消防化學 + 消防安全設備
         if '火災學與消防化學' in subjects_text and '消防安全設備' in subjects_text:
-            return '警察人員考試三等考試_消防警察人員'
+            return '警察人員考試三等考試_消防學系人員'
 
         # 7. 交通警察人員交通組：交通警察學 + 交通統計與分析
         if '交通警察學' in subjects_text and '交通統計與分析' in subjects_text:
@@ -498,29 +498,29 @@ def parse_exam_page(html_content, exam_name=""):
         if '通訊犯罪偵查' in subjects_text and '通訊系統' in subjects_text and '電路學' in subjects_text:
             return '警察人員考試三等考試_交通警察人員電訊組'
 
-        # 9. 警察資訊管理人員：電腦犯罪偵查 + 數位鑑識執法 + 警政資訊管理與應用
+        # 9. 警察資訊管理學系人員：電腦犯罪偵查 + 數位鑑識執法 + 警政資訊管理學系與應用
         if '電腦犯罪偵查' in subjects_text and '數位鑑識執法' in subjects_text:
-            return '警察人員考試三等考試_警察資訊管理人員'
+            return '警察人員考試三等考試_警察資訊管理學系人員'
 
         # 10. 刑事鑑識人員：物理鑑識 + 刑事化學 + 刑事生物
         if '物理鑑識' in subjects_text and '刑事化學' in subjects_text and '刑事生物' in subjects_text:
             return '警察人員考試三等考試_刑事鑑識人員'
 
-        # 11. 國境警察人員：移民情勢與政策分析 + 國境執法
+        # 11. 國境警察學系境管組人員：移民情勢與政策分析 + 國境執法
         if '移民情勢與政策分析' in subjects_text and '國境執法' in subjects_text:
-            return '警察人員考試三等考試_國境警察人員'
+            return '警察人員考試三等考試_國境警察學系境管組人員'
 
-        # 12. 水上警察人員：水上警察學 + 海上犯罪偵查法學 + 國際海洋法
-        if '水上警察學' in subjects_text and '海上犯罪偵查法學' in subjects_text:
-            return '警察人員考試三等考試_水上警察人員'
+        # 12. 水上警察學系人員：水上警察學系學 + 海上犯罪偵查法學 + 國際海洋法
+        if '水上警察學系學' in subjects_text and '海上犯罪偵查法學' in subjects_text:
+            return '警察人員考試三等考試_水上警察學系人員'
 
-        # 13. 警察法制人員：警察法制作業 + 行政法與警察行政違規調查裁處作業
-        if '警察法制作業' in subjects_text and '行政法與警察行政違規調查裁處作業' in subjects_text:
-            return '警察人員考試三等考試_警察法制人員'
+        # 13. 法律學系人員：法律學系作業 + 行政法與警察行政違規調查裁處作業
+        if '法律學系作業' in subjects_text and '行政法與警察行政違規調查裁處作業' in subjects_text:
+            return '警察人員考試三等考試_法律學系人員'
 
-        # 14. 行政管理人員：警察人事行政與法制 + 警察組織與事務管理
+        # 14. 行政管理學系人員：警察人事行政與法制 + 警察組織與事務管理
         if '警察人事行政與法制' in subjects_text and '警察組織與事務管理' in subjects_text:
-            return '警察人員考試三等考試_行政管理人員'
+            return '警察人員考試三等考試_行政管理學系人員'
 
         return None
 
@@ -644,34 +644,34 @@ def download_exam(session, exam_info, base_folder, stats):
         file_count = 0
         for category_name, subjects in exam_structure.items():
             # 縮短類科資料夾名稱
-            if '行政警察人員' in category_name:
-                short_category_name = '行政警察'
-            elif '外事警察人員' in category_name:
-                short_category_name = '外事警察'
-            elif '刑事警察人員' in category_name:
-                short_category_name = '刑事警察'
-            elif '公共安全人員' in category_name:
-                short_category_name = '公共安全'
+            if '行政警察學系人員' in category_name:
+                short_category_name = '行政警察學系'
+            elif '外事警察學系人員' in category_name:
+                short_category_name = '外事警察學系'
+            elif '刑事警察學系人員' in category_name:
+                short_category_name = '刑事警察學系'
+            elif '公共安全學系社安組人員' in category_name:
+                short_category_name = '公共安全學系社安組'
             elif '犯罪防治人員' in category_name:
                 short_category_name = '犯罪防治'
-            elif '消防警察人員' in category_name:
-                short_category_name = '消防警察'
+            elif '消防學系人員' in category_name:
+                short_category_name = '消防學系'
             elif '交通警察人員交通組' in category_name:
                 short_category_name = '交通警察_交通'
             elif '交通警察人員電訊組' in category_name:
                 short_category_name = '交通警察_電訊'
-            elif '警察資訊管理人員' in category_name:
-                short_category_name = '資訊管理'
+            elif '警察資訊管理學系人員' in category_name:
+                short_category_name = '資訊管理學系'
             elif '刑事鑑識人員' in category_name:
                 short_category_name = '刑事鑑識'
-            elif '國境警察人員' in category_name:
-                short_category_name = '國境警察'
-            elif '水上警察人員' in category_name:
-                short_category_name = '水上警察'
-            elif '警察法制人員' in category_name:
-                short_category_name = '警察法制'
-            elif '行政管理人員' in category_name:
-                short_category_name = '行政管理'
+            elif '國境警察學系境管組人員' in category_name:
+                short_category_name = '國境警察學系境管組'
+            elif '水上警察學系人員' in category_name:
+                short_category_name = '水上警察學系'
+            elif '法律學系人員' in category_name:
+                short_category_name = '法律學系'
+            elif '行政管理學系人員' in category_name:
+                short_category_name = '行政管理學系'
             elif '監獄官' in category_name:
                 short_category_name = '監獄官'
             else:

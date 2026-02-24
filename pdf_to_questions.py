@@ -6,7 +6,7 @@ PDF → 結構化題目提取器
 
 用法:
   python pdf_to_questions.py                     # 處理 考古題庫/ 下所有 PDF
-  python pdf_to_questions.py --input 考古題庫/資訊管理  # 只處理資訊管理
+  python pdf_to_questions.py --input 考古題庫/資訊管理學系  # 只處理資訊管理學系
   python pdf_to_questions.py --input path/to/試題.pdf   # 處理單一 PDF
 """
 
@@ -475,11 +475,11 @@ def process_single_pdf(pdf_path, output_dir=None):
         if re.match(r'\d{3}年$', part):
             result['year'] = int(part.replace('年', ''))
         if i > 0 and any(cat in parts[i-1] for cat in [
-            '行政警察', '外事警察', '刑事警察', '公共安全',
-            '犯罪防治預防組', '犯罪防治矯治組', '犯罪防治',
-            '消防警察', '交通警察交通組', '交通警察電訊組', '交通警察',
-            '資訊管理', '鑑識科學', '國境警察',
-            '水上警察', '警察法制', '行政管理'
+            '行政警察學系', '外事警察學系', '刑事警察學系', '公共安全學系社安組',
+            '犯罪防治學系預防組', '犯罪防治學系矯治組', '犯罪防治',
+            '消防學系', '交通學系交通組', '交通學系電訊組', '交通警察',
+            '資訊管理學系', '鑑識科學學系', '國境警察學系境管組',
+            '水上警察學系', '法律學系', '行政管理學系'
         ]):
             result['category'] = parts[i-1]
 

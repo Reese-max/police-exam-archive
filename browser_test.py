@@ -28,8 +28,8 @@ try:
 
         # ===== 載入測試 =====
         print('\n=== 1. 頁面載入 ===')
-        page.goto('http://localhost:8765/行政警察/行政警察考古題總覽.html', wait_until='networkidle')
-        check('頁面載入', '行政警察' in page.title(), page.title())
+        page.goto('http://localhost:8765/行政警察學系/行政警察學系考古題總覽.html', wait_until='networkidle')
+        check('頁面載入', '行政警察學系' in page.title(), page.title())
         check('Sidebar 存在', page.is_visible('#sidebar'))
         check('搜尋框存在', page.is_visible('#searchInput'))
         check('Toolbar 存在', page.is_visible('#toolbar'))
@@ -136,7 +136,7 @@ try:
 
         # ===== URL Hash =====
         print('\n=== 7. URL Hash 導航 ===')
-        page.goto('http://localhost:8765/行政警察/行政警察考古題總覽.html#year-114', wait_until='networkidle')
+        page.goto('http://localhost:8765/行政警察學系/行政警察學系考古題總覽.html#year-114', wait_until='networkidle')
         page.wait_for_timeout(500)
         year_el = page.query_selector('#year-114')
         check('Hash 年份定位', year_el is not None)

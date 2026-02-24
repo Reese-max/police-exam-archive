@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-移民特考考畢試題下載器
+國境警察學系移民組考畢試題下載器
 從考選部考畢試題查詢平臺下載 106-114 年移民行政人員考試 PDF 試題
 支援二等、三等（含各語組）、四等
 
@@ -38,16 +38,16 @@ HEADERS = {
 # 預設年份範圍：民國 106-114 年
 DEFAULT_YEARS = list(range(106, 115))
 
-# 考試名稱篩選關鍵字（移民特考與司法特考合辦）
+# 考試名稱篩選關鍵字（國境警察學系移民組與司法特考合辦）
 EXAM_KEYWORDS = [
     "移民行政人員考試",
     "移民行政人員特考",
-    "司法人員考試",       # 移民特考常與司法特考合辦
+    "司法人員考試",       # 國境警察學系移民組常與司法特考合辦
     "司法官考試",
     "警察人員考試",       # 114年起與警察特考合辦
 ]
 
-# 移民特考等別識別
+# 國境警察學系移民組等別識別
 # 二等：有「研究」二字的科目
 # 三等：有「外國文」或「移民專業英文」
 # 四等：科目名含「概要」
@@ -116,10 +116,10 @@ def mark_cached(cache, url, file_path, size):
 
 def identify_immigration_level(subjects_text):
     """
-    從科目名稱識別移民特考等別
+    從科目名稱識別國境警察學系移民組等別
     Returns: ('二等', None) / ('三等', '英文組') / ('四等', None) / None
     """
-    # 先確認是移民特考科目（而非其他考試）
+    # 先確認是國境警察學系移民組科目（而非其他考試）
     immigration_keywords = [
         '入出國及移民法規', '移民政策', '移民執法',
         '國土安全', '移民情勢', '移民專業'
@@ -183,7 +183,7 @@ def get_exam_list(session, year):
 
 def parse_exam_page_immigration(session, year, exam_code):
     """
-    解析考試頁面，提取移民特考相關科目
+    解析考試頁面，提取國境警察學系移民組相關科目
 
     Returns:
         dict: {
@@ -238,7 +238,7 @@ def parse_exam_page_immigration(session, year, exam_code):
             'url': html_module.unescape(href)
         })
 
-    # 根據科目特徵識別移民特考等別
+    # 根據科目特徵識別國境警察學系移民組等別
     # 策略：先找出各 cat_code 的等別，再去重合併
     # 對於三等，各語組的共同科目（國文、行政法等）只保留第一次出現的
     # 但各語組獨有的「外國文」科目要保留
@@ -305,7 +305,7 @@ def download_file(session, url, path, cache):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='移民特考考畢試題下載器')
+    parser = argparse.ArgumentParser(description='國境警察學系移民組考畢試題下載器')
     parser.add_argument('--years', '-y', type=str, default='106-114',
                         help='年份範圍，如: 106-114, 110, 110,112,114')
     parser.add_argument('--levels', '-l', nargs='+',
@@ -313,7 +313,7 @@ def main():
                         default=['all'],
                         help='選擇等別（預設: all）')
     parser.add_argument('--output', '-o', type=str, default=None,
-                        help='輸出目錄（預設: 移民特考PDF/）')
+                        help='輸出目錄（預設: 國境警察學系移民組PDF/）')
     parser.add_argument('--no-cache', action='store_true',
                         help='不使用快取')
     parser.add_argument('--list', action='store_true',
@@ -337,14 +337,14 @@ def main():
         target_levels = set(args.levels)
 
     # 輸出目錄
-    save_dir = args.output or os.path.join(os.path.dirname(__file__), "移民特考PDF")
+    save_dir = args.output or os.path.join(os.path.dirname(__file__), "國境警察學系移民組PDF")
     os.makedirs(save_dir, exist_ok=True)
 
     # 快取
     cache = {} if args.no_cache else load_cache()
 
     print("=" * 70)
-    print("  移民特考考畢試題下載器")
+    print("  國境警察學系移民組考畢試題下載器")
     print(f"  目標年份: 民國 {years[0]}~{years[-1]} 年")
     if target_levels:
         print(f"  目標等別: {', '.join(target_levels)}")

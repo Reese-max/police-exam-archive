@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "109",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "刑事生物",
+    "exam_time": "2 小時",
+    "code": "51070"
+  },
+  "notes": [
+    "※注意：①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "陳男因債務糾紛飲用「不明液體」自殺身亡。現場遺留沒有標示成分之\n空瓶證物。遺體經法醫與鑑識人員解剖鑑驗後發現,該遺體消化道呈現\n嚴重的凝固性壞死(coagulative necrosis)現象。請回答下列問題:\n①該「不明液體」之「酸鹼」屬性為何?(5 分)\n②詳述消化道「凝固性壞死」之病理特徵。(15 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "據聞印度、菲律賓、伊朗與越南接連出現數百人因誤信飲用甲醇\n(methanol)可以殺死新型冠狀病毒(COVID-19)而死亡之案例。請回\n答下列問題:\n①甲醇中毒之毒理機轉與其對人體會產生的傷害。(15 分)\n②如何利用氣相層析儀檢測「尿液」與「血液」內甲醇存在的事實?(5 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "陳小弟因為誤食大量外形類似巧克力之「老鼠藥」而中毒送醫。請回答\n下列問題:\n①詳述老鼠藥中毒之毒理機轉。(15 分)\n②臨床上可以利用何種治療藥物予以解毒?(5 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "請敘述下列名詞之意涵並詳述其「原理」:(每小題 10 分,共 40 分)\n① ICP-MS (Inductively Coupled Plasma-Mass Spectrometry)\n② Southern hybridization\n③ Capillary electrophoresis\n④ Real-time Quantitative Polymerase Chain Reaction",
+      "section": null
+    }
+  ],
+  "year": 109,
+  "category": "鑑識科學學系",
+  "subject": "刑事生物",
+  "source_pdf": "考古題庫\\鑑識科學學系\\109年\\刑事生物\\試題.pdf",
+  "file_type": "試題"
+}

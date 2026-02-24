@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "level": "三等",
+    "subject": "情報學(含各國安全制度)",
+    "exam_time": "2 小時",
+    "code": "60150"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "在各種情報機構所提供的「情報產品」(Intelligence Product)中,以「動\n態情報」(Current Intelligence)通常最為決策者所重視,但此種情況卻\n常引發一些爭議,請說明何謂「動態情報」?(5 分)以及上述情況所\n引發的爭議為何?(20 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "在情報分析的流程中,對證據的評估具有關鍵的重要性,請說明評估證\n據的根本問題為何?(5 分)情報分析人員應依照那些步驟來評估證據?\n(10 分)以及在評估的過程中如何運用「奧卡姆剃刀原理」(Occam’s\nRazor)來進行證據評估?(10 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "「秘密行動」(Covert Action)在情報活動中最受爭議的原因之一,是不\n易進行有效的監督,而美國為加強對「秘密行動」的監督,於 2010 年\n的「情報授權法案」(Intelligence Authorization Act for Fiscal Year 2010)\n中特別對這方面加以修正,以增加國會的監督功能,請說明該次法案修\n正的重點及所造成的影響。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "隨著科技的進步,「科技情報」(Technical Intelligence)的蒐集日益重要,\n英國也早於 1946 年起正式成立「政府通訊總部」(Government\nCommunications Headquarters, GCHQ),請說明「政府通訊總部」的性質\n與權責?(10 分)以及該機構從冷戰以來的發展及與「五眼聯盟」(Five\nEyes International Intelligence Alliances)之間的關係?(15 分)",
+      "section": null
+    }
+  ],
+  "year": 108,
+  "category": "公共安全學系社安組學系情報組",
+  "subject": "情報學(含各國安全制度)",
+  "source_pdf": "考古題庫\\公共安全學系社安組學系情報組\\108年\\情報學(含各國安全制度)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 4
+}

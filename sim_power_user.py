@@ -27,19 +27,19 @@ def check(name, condition, detail=''):
 
 # ===== 類科對應表 =====
 CATEGORIES = {
-    '行政警察': '行政警察/行政警察考古題總覽.html',
-    '刑事警察': '刑事警察/刑事警察考古題總覽.html',
-    '消防警察': '消防警察/消防警察考古題總覽.html',
-    '鑑識科學': '鑑識科學/鑑識科學考古題總覽.html',
-    '資訊管理': '資訊管理/資訊管理考古題總覽.html',
+    '行政警察學系': '行政警察學系/行政警察學系考古題總覽.html',
+    '刑事警察學系': '刑事警察學系/刑事警察學系考古題總覽.html',
+    '消防學系': '消防學系/消防學系考古題總覽.html',
+    '鑑識科學學系': '鑑識科學學系/鑑識科學學系考古題總覽.html',
+    '資訊管理學系': '資訊管理學系/資訊管理學系考古題總覽.html',
 }
 
 SEARCH_KEYWORDS = {
-    '行政警察': '憲法',
-    '刑事警察': '偵查',
-    '消防警察': '消防',
-    '鑑識科學': '鑑識',
-    '資訊管理': '資訊',
+    '行政警察學系': '憲法',
+    '刑事警察學系': '偵查',
+    '消防學系': '消防',
+    '鑑識科學學系': '鑑識',
+    '資訊管理學系': '資訊',
 }
 
 try:
@@ -89,7 +89,7 @@ try:
         # =================================================================
         print('\n=== 測試 3: 快速功能切換 ===')
         page = make_page()
-        page.goto(f'{BASE}/{CATEGORIES["行政警察"]}', wait_until='networkidle')
+        page.goto(f'{BASE}/{CATEGORIES["行政警察學系"]}', wait_until='networkidle')
 
         err_before = len(console_errors_global)
 
@@ -123,7 +123,7 @@ try:
         # =================================================================
         print('\n=== 測試 4: 空搜尋處理 ===')
         page = make_page()
-        page.goto(f'{BASE}/{CATEGORIES["行政警察"]}', wait_until='networkidle')
+        page.goto(f'{BASE}/{CATEGORIES["行政警察學系"]}', wait_until='networkidle')
 
         err_before = len(console_errors_global)
 
@@ -152,7 +152,7 @@ try:
         # =================================================================
         print('\n=== 測試 5: 特殊字元搜尋 ===')
         page = make_page()
-        page.goto(f'{BASE}/{CATEGORIES["行政警察"]}', wait_until='networkidle')
+        page.goto(f'{BASE}/{CATEGORIES["行政警察學系"]}', wait_until='networkidle')
 
         err_before = len(console_errors_global)
 
@@ -180,7 +180,7 @@ try:
         # =================================================================
         print('\n=== 測試 6: 超長關鍵字 ===')
         page = make_page()
-        page.goto(f'{BASE}/{CATEGORIES["行政警察"]}', wait_until='networkidle')
+        page.goto(f'{BASE}/{CATEGORIES["行政警察學系"]}', wait_until='networkidle')
 
         err_before = len(console_errors_global)
         long_str = 'A' * 200
@@ -246,7 +246,7 @@ try:
         # =================================================================
         print('\n=== 測試 8: 練習模式壓力 ===')
         page = make_page()
-        page.goto(f'{BASE}/{CATEGORIES["行政警察"]}', wait_until='networkidle')
+        page.goto(f'{BASE}/{CATEGORIES["行政警察學系"]}', wait_until='networkidle')
 
         err_before = len(console_errors_global)
 
@@ -283,7 +283,7 @@ try:
         # =================================================================
         print('\n=== 測試 9: 大量展開 ===')
         page = make_page()
-        page.goto(f'{BASE}/{CATEGORIES["行政警察"]}', wait_until='networkidle')
+        page.goto(f'{BASE}/{CATEGORIES["行政警察學系"]}', wait_until='networkidle')
 
         err_before = len(console_errors_global)
 
@@ -314,7 +314,7 @@ try:
         # =================================================================
         print('\n=== 測試 10: URL hash 直接訪問 ===')
         page = make_page()
-        base_url = f'{BASE}/{CATEGORIES["行政警察"]}'
+        base_url = f'{BASE}/{CATEGORIES["行政警察學系"]}'
 
         err_before = len(console_errors_global)
 
@@ -357,7 +357,7 @@ try:
         # =================================================================
         print('\n=== 測試 11: 刷新保持深色模式 ===')
         page = make_page()
-        page.goto(f'{BASE}/{CATEGORIES["行政警察"]}', wait_until='networkidle')
+        page.goto(f'{BASE}/{CATEGORIES["行政警察學系"]}', wait_until='networkidle')
 
         # 先確保是淺色模式
         is_dark = page.evaluate('() => document.documentElement.classList.contains("dark")')
@@ -387,7 +387,7 @@ try:
         # =================================================================
         print('\n=== 測試 12: 列印樣式 ===')
         page = make_page()
-        page.goto(f'{BASE}/{CATEGORIES["行政警察"]}', wait_until='networkidle')
+        page.goto(f'{BASE}/{CATEGORIES["行政警察學系"]}', wait_until='networkidle')
 
         # 檢查是否有 @media print 規則
         has_print = page.evaluate('''() => {
@@ -429,7 +429,7 @@ try:
         # =================================================================
         print('\n=== 測試 13: a11y 基本檢查 ===')
         page = make_page()
-        page.goto(f'{BASE}/{CATEGORIES["行政警察"]}', wait_until='networkidle')
+        page.goto(f'{BASE}/{CATEGORIES["行政警察學系"]}', wait_until='networkidle')
 
         # 深色模式切換有 aria-label
         dark_label = page.evaluate('() => document.getElementById("darkToggle").getAttribute("aria-label")')

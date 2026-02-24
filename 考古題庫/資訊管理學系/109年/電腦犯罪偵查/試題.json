@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "109",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "電腦犯罪偵查",
+    "exam_time": "2 小時",
+    "code": "50950"
+  },
+  "notes": [
+    "※注意：①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "請根據我國刑法回答下列問題:\n①請條列說明妨害電腦使用罪之行為並註記那些屬告訴乃論。(20 分)\n②承上題,那些行為之對象為公務機關之電腦或其相關設備時,加重其\n刑,又加重之程度為何?(5 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "請依個人資料保護法回答下列問題:\n①公務機關對個人資料之蒐集或處理,除法律明文規定外,應有特定目\n的,並符合那些可能情形之一。(6 分)\n②公務機關對個人資料之利用,除法律明文規定外,應於執行法定職務\n必要範圍內為之,並與蒐集之特定目的相符。但有那些情形之一者,\n得為特定目的外之利用。(19 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "請根據政府機關(構)資安事件數位證據保全標準作業程序,說明數位\n證據封緘作業。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "請解釋說明下列 OWASP 公告之網站安全弱點。(每小題 5 分,共 25 分)\n① Security Misconfiguration\n② Cross-Site Scripting\n③ Insecure Deserialization\n④ Injection Flaws\n⑤ Broken Authentication",
+      "section": null
+    }
+  ],
+  "year": 109,
+  "category": "資訊管理學系",
+  "subject": "電腦犯罪偵查",
+  "source_pdf": "考古題庫\\資訊管理學系\\109年\\電腦犯罪偵查\\試題.pdf",
+  "file_type": "試題"
+}

@@ -7,7 +7,7 @@ from playwright.sync_api import sync_playwright
 
 BASE = "file:///C:/Users/User/Desktop/考古題下載/考古題網站"
 INDEX_URL = f"{BASE}/index.html"
-CATEGORY_URL = f"{BASE}/行政警察/行政警察考古題總覽.html"
+CATEGORY_URL = f"{BASE}/行政警察學系/行政警察學系考古題總覽.html"
 SCREENSHOT_DIR = "C:/Users/User/Desktop/考古題下載/reports/screenshots"
 
 extra_issues = []

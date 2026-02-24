@@ -515,12 +515,10 @@ function bindOptionClicks() {
         opt.classList.add('correct');
       } else {
         opt.classList.add('wrong');
-        /* 標示正確選項 */
         block.querySelectorAll('.mc-opt').forEach(function(o) {
           if (o.getAttribute('data-val') === answer) o.classList.add('correct-reveal');
         });
       }
-      /* 顯示逐題答案 */
       var ansEl = block.querySelector('.q-answer');
       if (ansEl) ansEl.classList.add('revealed');
       updateScoreUI();

@@ -3,7 +3,7 @@
 import json, glob, os, re
 from collections import defaultdict
 
-TARGET_DIR = "C:/Users/User/Desktop/考古題下載/考古題庫/移民特考"
+TARGET_DIR = "C:/Users/User/Desktop/考古題下載/考古題庫/國境警察學系移民組"
 files = sorted(glob.glob(os.path.join(TARGET_DIR, "**", "試題.json"), recursive=True))
 
 # ========================================
@@ -201,13 +201,13 @@ for pattern, file_list in sorted(meta_patterns.items(), key=lambda x: -len(x[1])
         print(f"    ... 還有 {len(file_list) - 3} 個")
 
 # ========================================
-# 5. 對比行政警察的格式差異
+# 5. 對比行政警察學系的格式差異
 # ========================================
 print("\n" + "=" * 80)
-print("  移民特考 vs 行政警察 格式差異")
+print("  國境警察學系移民組 vs 行政警察學系 格式差異")
 print("=" * 80)
 
-REF_DIR = "C:/Users/User/Desktop/考古題下載/考古題庫/行政警察"
+REF_DIR = "C:/Users/User/Desktop/考古題下載/考古題庫/行政警察學系"
 ref_files = glob.glob(os.path.join(REF_DIR, "**", "試題.json"), recursive=True)
 
 ref_has_exam_name = 0
@@ -235,7 +235,7 @@ for f in files:
     if "category" in data: imm_has_category += 1
     if "total_questions" in data: imm_has_total_questions += 1
 
-print(f"\n  {'欄位':<30} {'行政警察':<20} {'移民特考':<20}")
+print(f"\n  {'欄位':<30} {'行政警察學系':<20} {'國境警察學系移民組':<20}")
 print(f"  {'-'*70}")
 print(f"  {'metadata.exam_name':<30} {ref_has_exam_name}/{len(ref_files):<20} {imm_has_exam_name}/{len(files):<20}")
 print(f"  {'頂層 year':<30} {ref_has_year}/{len(ref_files):<20} {imm_has_year}/{len(files):<20}")

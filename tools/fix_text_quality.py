@@ -10,7 +10,7 @@
 用法:
   python tools/fix_text_quality.py                    # 修復所有 JSON
   python tools/fix_text_quality.py --dry-run          # 只顯示會怎麼改
-  python tools/fix_text_quality.py --category 行政警察 # 只處理特定類科
+  python tools/fix_text_quality.py --category 行政警察學系 # 只處理特定類科
 """
 
 import os

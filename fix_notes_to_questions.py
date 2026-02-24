@@ -17,7 +17,7 @@ import shutil
 import sys
 from pathlib import Path
 
-BASE = Path(__file__).parent / '考古題庫' / '移民特考'
+BASE = Path(__file__).parent / '考古題庫' / '國境警察學系移民組'
 
 # 答案（已從答案 PDF 確認）
 ANSWERS_112_GUOWEN = {

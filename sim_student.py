@@ -53,10 +53,10 @@ try:
 
         # 確認所有類科名稱
         expected_categories = [
-            '行政警察', '外事警察', '刑事警察', '公共安全',
-            '犯罪防治預防組', '犯罪防治矯治組', '消防警察',
-            '交通警察交通組', '交通警察電訊組', '資訊管理',
-            '鑑識科學', '國境警察', '水上警察', '警察法制', '行政管理'
+            '行政警察學系', '外事警察學系', '刑事警察學系', '公共安全學系社安組',
+            '犯罪防治學系預防組', '犯罪防治學系矯治組', '消防學系',
+            '交通學系交通組', '交通學系電訊組', '資訊管理學系',
+            '鑑識科學學系', '國境警察學系境管組', '水上警察學系', '法律學系', '行政管理學系'
         ]
         card_titles = [c.query_selector('.card-title').text_content().strip() for c in category_cards]
         all_found = all(cat in card_titles for cat in expected_categories)
@@ -64,21 +64,21 @@ try:
               f'缺少: {[c for c in expected_categories if c not in card_titles]}' if not all_found else '全部正確')
 
         # ============================================================
-        # 步驟 2：進入「行政警察」類科
+        # 步驟 2：進入「行政警察學系」類科
         # ============================================================
         print('\n' + '=' * 60)
-        print('步驟 2：進入「行政警察」類科')
+        print('步驟 2：進入「行政警察學系」類科')
         print('=' * 60)
 
-        # 點擊行政警察卡片
-        admin_police_card = page.query_selector('.category-card:has(.card-title:text("行政警察"))')
+        # 點擊行政警察學系卡片
+        admin_police_card = page.query_selector('.category-card:has(.card-title:text("行政警察學系"))')
         if admin_police_card is None:
             # fallback: 第一個卡片
             admin_police_card = category_cards[0]
         admin_police_card.click()
         page.wait_for_load_state('networkidle')
 
-        check('2', '進入行政警察頁面', '行政警察' in page.title(), page.title())
+        check('2', '進入行政警察學系頁面', '行政警察學系' in page.title(), page.title())
         check('2', 'Sidebar 存在', page.is_visible('#sidebar'))
         check('2', '搜尋框存在', page.is_visible('#searchInput'))
         check('2', 'Toolbar 存在', page.is_visible('#toolbar'))
@@ -444,7 +444,7 @@ try:
         print('步驟 16：URL Hash 導航')
         print('=' * 60)
 
-        page.goto(f'{BASE}/行政警察/行政警察考古題總覽.html#year-114', wait_until='networkidle')
+        page.goto(f'{BASE}/行政警察學系/行政警察學系考古題總覽.html#year-114', wait_until='networkidle')
         page.wait_for_timeout(500)
 
         # 確認 sidebar 中 114年 被 active

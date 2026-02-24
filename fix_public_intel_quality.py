@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-公共情報題目品質修復腳本
-Fix quality issues in 公共情報 exam question JSON files.
+公共安全學系社安組學系情報組題目品質修復腳本
+Fix quality issues in 公共安全學系社安組學系情報組 exam question JSON files.
 
 Issues fixed:
 1. PASSAGE_IN_OPTION: Reading passages stuck in option D → extract to passage field
@@ -17,8 +17,8 @@ import re
 import shutil
 from datetime import datetime
 
-BASE_DIR = "考古題庫/公共情報"
-BACKUP_DIR = "backups/公共情報_fix_" + datetime.now().strftime("%Y%m%d_%H%M%S")
+BASE_DIR = "考古題庫/公共安全學系社安組學系情報組"
+BACKUP_DIR = "backups/公共安全學系社安組學系情報組_fix_" + datetime.now().strftime("%Y%m%d_%H%M%S")
 
 stats = {
     "files_processed": 0,
@@ -239,7 +239,7 @@ def process_file(fpath):
 
 def main():
     print("=" * 70)
-    print("公共情報 題目品質修復")
+    print("公共安全學系社安組學系情報組 題目品質修復")
     print("=" * 70)
     print(f"備份目錄: {BACKUP_DIR}")
     print()

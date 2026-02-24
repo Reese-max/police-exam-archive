@@ -295,7 +295,7 @@ def process_file(json_path):
             modified = True
 
     # 特定修復：109年憲法英文 Q31
-    if '109年' in rel_path and '憲法' in rel_path and '警察法制' in str(json_path):
+    if '109年' in rel_path and '憲法' in rel_path and '法律學系' in str(json_path):
         n = fix_109_q31_truncation(data)
         stats['stem_truncation_fixed'] += n
         if n:

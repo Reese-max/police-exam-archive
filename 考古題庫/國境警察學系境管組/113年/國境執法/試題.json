@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "國境執法",
+    "exam_time": "2 小時",
+    "code": "51030"
+  },
+  "notes": [
+    "※注意：①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "我國於民國 98 年 6 月施行《人口販運防制法》迄今,於去(112)年大\n幅度修正,並於今(113)年 1 月 1 日施行。請就本次修法其中主軸:接\n軌國際規範及趨勢、深化保護被害人權益內涵,加以申論說明。(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "聯合國犯罪預防暨刑事司法委員會(The UN Commission for Crime\nPrevention and Criminal Justice),曾就人口販運複合人體器官移植犯罪,\n進行歸納分析。請說明該複合型犯罪危害情勢。(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "當前國境安全維護,經常面臨各種「假訊息」(Fake news)或「錯誤訊\n息」(Falsenews)衝擊。請就該衝擊常見之「假資訊」(Mis-information)、\n「錯誤/不正確資訊」(Dis-information)樣態,加以描述分析。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "國際刑警組織於今(2024)年 3 月 11 日發布全球科技促動金融詐騙犯罪\n評估報告(INTERPOL Financial Fraud Assessment:A Global Threat\nBoosted by Technology),其中商務電子郵件詐騙(Business Email\nCompromise, 又稱「變臉詐騙」),往往從攻擊入侵高階主管郵件帳號或\n任何公開郵件帳號開始。請說明商務電子郵件詐騙,為何會衝擊國境安\n全維護?(25 分)",
+      "section": null
+    }
+  ],
+  "year": 113,
+  "category": "國境警察學系境管組",
+  "subject": "國境執法",
+  "source_pdf": "考古題庫\\國境警察學系境管組\\113年\\國境執法\\試題.pdf",
+  "file_type": "試題"
+}

@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "110",
+    "level": "三等",
+    "subject": "情報學(含各國安全制度)",
+    "exam_time": "2 小時",
+    "code": "35260"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "危機處理過程中,情報是危機決策的重要依據。1996 年臺海危機事件,\n情報即發揮關鍵作用。請從情報蒐集、情報研析、決策者認知及決策者\n對情報過程的影響等四面向,說明情報在 1996 年臺海危機處理過程中\n的功能為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "情報分析(intelligence analysis)是情報過程(intelligence process)及情\n報工作非常重要的環節,亦是影響情報品質與決策的關鍵因素。請說明\n情報分析受那些因素的制約,影響研析人員和決策者的判斷?(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "觀察國際與我國近年間諜案例,反情報工作攸關國家安全與機密維護。\n請說明反情報(counterintelligence)、反諜報(counterespionage)與安全\n防護(security)的關聯性及異同處為何?現階段我國安全防護工作體系\n的制度運作及各單位分工與職責為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "情報是攸關國家安全的實用學科,向來受到各國政府的重視。請從情報學\n理與實踐經驗,說明情報(intelligence)與政策(policy)之關係為何?在\n制度面向與實際運作面向,二者應如何維持妥適的互動關係,以避免情報\n政治化(politicization of intelligence)的負面效應?(25 分)",
+      "section": null
+    }
+  ],
+  "year": 110,
+  "category": "公共安全學系社安組學系情報組",
+  "subject": "情報學(含各國安全制度)",
+  "source_pdf": "考古題庫\\公共安全學系社安組學系情報組\\110年\\情報學(含各國安全制度)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 4
+}

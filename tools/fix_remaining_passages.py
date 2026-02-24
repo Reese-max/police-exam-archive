@@ -107,7 +107,7 @@ def fix_water_110(data):
     return count
 
 
-# ── 犯罪防治矯治組 113 Q31 ──────────────────────────────────────
+# ── 犯罪防治學系矯治組 113 Q31 ──────────────────────────────────────
 
 def fix_criminal_113_q31(data):
     count = 0
@@ -135,7 +135,7 @@ def fix_criminal_113_q31(data):
     return count
 
 
-# ── 犯罪防治矯治組 113 Q46-50 passage ──────────────────────────────────
+# ── 犯罪防治學系矯治組 113 Q46-50 passage ──────────────────────────────────
 
 CRIMINAL_113_Q46_OLD_MARKER = "region sof Morocco"
 
@@ -187,13 +187,13 @@ def fix_criminal_113_q46(data):
 # ── Simple replacements in Chinese-mixed text ──────────────────────────────
 
 SIMPLE_FIXES = {
-    "公共安全/114年/情報學/試題.json": [
+    "公共安全學系社安組/114年/情報學/試題.json": [
         ("FiveEyes", "Five Eyes"),
     ],
-    "犯罪防治矯治組/113年/監獄學/試題.json": [
+    "犯罪防治學系矯治組/113年/監獄學/試題.json": [
         ("PrisonRiot", "Prison Riot"),
     ],
-    "行政管理/113年/警察危機應變與安全管理/試題.json": [
+    "行政管理學系/113年/警察危機應變與安全管理/試題.json": [
         ("StevenFink", "Steven Fink"),
     ],
 }
@@ -223,12 +223,12 @@ if __name__ == "__main__":
     print()
 
     fix_file(
-        "水上警察/110年/中華民國憲法與水上警察專業英文/試題.json",
+        "水上警察學系/110年/中華民國憲法與水上警察學系專業英文/試題.json",
         fix_water_110,
     )
 
     fix_file(
-        "犯罪防治矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
+        "犯罪防治學系矯治組/113年/法學知識與英文（包括中華民國憲法、法學緒論、英文）/試題.json",
         lambda data: fix_criminal_113_q31(data) + fix_criminal_113_q46(data),
     )
 
