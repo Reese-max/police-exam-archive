@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>三等警察特考考古題總覽</title>
 <meta name="description" content="三等警察特考（內軌）全部 17 個類科考古題總覽，共 1090 份試卷、22523 道題目">
-<meta name="theme-color" content="#2563eb">
+<meta name="theme-color" content="#1e3a5f">
 <meta name="robots" content="index, follow">
+<link rel="manifest" href="manifest.json">
 <meta property="og:title" content="三等警察特考考古題總覽">
 <meta property="og:description" content="三等警察特考（內軌）17 個類科，1090 份試卷，22523 道題目">
 <meta property="og:type" content="website">
@@ -130,6 +131,11 @@ body { overflow-x: hidden; }
     try { localStorage.setItem('exam-dark', isDark); } catch(e) {}
   });
 })();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').catch(function() {});
+}
 </script>
 </body>
 </html>

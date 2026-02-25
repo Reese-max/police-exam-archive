@@ -391,6 +391,7 @@ function buildSubjectView() {
     });
   });
   const sortedKeys = Object.keys(groups).sort();
+  const fragment = document.createDocumentFragment();
   sortedKeys.forEach(function(key) {
     const section = document.createElement('div');
     section.className = 'subject-view-section';
@@ -437,8 +438,9 @@ function buildSubjectView() {
       }
       section.appendChild(clone);
     });
-    container.appendChild(section);
+    fragment.appendChild(section);
   });
+  container.appendChild(fragment);
   subjectViewBuilt = true;
   if (window._cardTextCache) {
     document.querySelectorAll('#subjectView .subject-card').forEach(function(card) {
@@ -750,6 +752,10 @@ function showExportPanel() {
   var isOpen = panel.style.display !== 'none';
   panel.style.display = isOpen ? 'none' : '';
   if (!isOpen && !_exportSelectorsBuilt) _buildExportSelectors();
+  /* 手機端預載 PDF 函式庫與字型（背景靜默載入） */
+  if (!isOpen && isMobileDevice() && !_pdfLibLoaded) {
+    _loadPdfLibraries().catch(function() {});
+  }
   /* 手機底部彈出板需要 overlay */
   if (window.innerWidth <= 768) {
     var overlay = document.getElementById('sidebarOverlay');
@@ -852,9 +858,12 @@ function _exportPDFNative(includeAnswers) {
 /* === 手機端 PDF 匯出 (Phase 10) === */
 
 function isMobileDevice() {
+  if (typeof window.matchMedia !== 'function') {
+    // matchMedia 不支援時用 UA + 螢幕寬度判斷
+    return /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) && screen.width <= 1024;
+  }
   if (!window.matchMedia('(pointer:coarse)').matches) return false;
   if (!window.matchMedia('(hover:none)').matches) return false;
-  // 排除大型觸控螢幕（如觸控桌面顯示器）
   if (Math.min(screen.width, screen.height) > 1024) return false;
   return true;
 }
@@ -1015,3 +1024,238 @@ function showPdfProgress() {
 
   return api;
 }
+
+/* === 錯誤監控模組 (Error Monitor) === */
+(function() {
+  'use strict';
+  var ERROR_KEY = 'exam-error-log';
+  var MAX_ERRORS = 20;
+
+  function _getErrors() {
+    try { return JSON.parse(localStorage.getItem(ERROR_KEY)) || []; }
+    catch(e) { return []; }
+  }
+
+  function _saveError(entry) {
+    try {
+      var errors = _getErrors();
+      errors.unshift(entry);
+      if (errors.length > MAX_ERRORS) errors = errors.slice(0, MAX_ERRORS);
+      localStorage.setItem(ERROR_KEY, JSON.stringify(errors));
+      _updateBtnVisibility();
+    } catch(e) {}
+  }
+
+  function _createEntry(msg, source, line, col) {
+    return {
+      time: new Date().toISOString(),
+      msg: String(msg).substring(0, 500),
+      source: source || '',
+      line: line || 0,
+      col: col || 0,
+      ua: navigator.userAgent.substring(0, 200),
+      url: location.pathname,
+      device: /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop'
+    };
+  }
+
+  /* 全域錯誤捕捉 */
+  window.onerror = function(msg, source, line, col, err) {
+    _saveError(_createEntry(msg, source, line, col));
+  };
+
+  window.addEventListener('unhandledrejection', function(e) {
+    var msg = e.reason ? (e.reason.message || String(e.reason)) : 'Unhandled Promise rejection';
+    _saveError(_createEntry(msg, 'promise', 0, 0));
+  });
+
+  /* 更新按鈕顯示狀態 */
+  function _updateBtnVisibility() {
+    var btn = document.getElementById('errorReportBtn');
+    if (!btn) return;
+    var errors = _getErrors();
+    btn.style.display = errors.length > 0 ? '' : 'none';
+    var badge = btn.querySelector('.error-badge');
+    if (badge) badge.textContent = errors.length;
+  }
+
+  /* 格式化時間 */
+  function _formatTime(isoStr) {
+    try {
+      var d = new Date(isoStr);
+      var pad = function(n) { return n < 10 ? '0' + n : '' + n; };
+      return d.getFullYear() + '/' + pad(d.getMonth() + 1) + '/' + pad(d.getDate()) +
+        ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+    } catch(e) { return isoStr; }
+  }
+
+  /* 顯示錯誤日誌面板 */
+  window._showErrorReport = function() {
+    /* 防止重複開啟 */
+    if (document.getElementById('errorReportOverlay')) return;
+
+    var errors = _getErrors();
+    var overlay = document.createElement('div');
+    overlay.className = 'error-report-overlay';
+    overlay.id = 'errorReportOverlay';
+
+    var panel = document.createElement('div');
+    panel.className = 'error-report-panel';
+
+    /* 標題列 */
+    var header = document.createElement('div');
+    header.className = 'error-report-header';
+    var title = document.createElement('h3');
+    title.textContent = '\u932F\u8AA4\u65E5\u8A8C\uFF08\u6700\u8FD1 ' + errors.length + ' \u7B46\uFF09';
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'error-report-close';
+    closeBtn.textContent = '\u2715';
+    closeBtn.title = '\u95DC\u9589';
+    closeBtn.addEventListener('click', function() {
+      overlay.classList.remove('visible');
+      setTimeout(function() { if (overlay.parentNode) overlay.parentNode.removeChild(overlay); }, 300);
+    });
+    header.appendChild(title);
+    header.appendChild(closeBtn);
+    panel.appendChild(header);
+
+    /* 錯誤列表 */
+    var list = null;
+    if (errors.length === 0) {
+      var empty = document.createElement('div');
+      empty.className = 'error-report-empty';
+      empty.textContent = '\u76EE\u524D\u6C92\u6709\u932F\u8AA4\u8A18\u9304\u3002';
+      panel.appendChild(empty);
+    } else {
+      list = document.createElement('div');
+      list.className = 'error-report-list';
+      errors.forEach(function(err) {
+        var entry = document.createElement('div');
+        entry.className = 'error-entry';
+
+        var meta = document.createElement('div');
+        meta.className = 'error-entry-meta';
+        var timeSpan = document.createElement('span');
+        timeSpan.className = 'error-time';
+        timeSpan.textContent = _formatTime(err.time);
+        var deviceSpan = document.createElement('span');
+        deviceSpan.className = 'error-device';
+        deviceSpan.textContent = err.device === 'mobile' ? '\u624B\u6A5F' : '\u684C\u9762';
+        var pageSpan = document.createElement('span');
+        pageSpan.className = 'error-page';
+        pageSpan.textContent = err.url || '/';
+        meta.appendChild(timeSpan);
+        meta.appendChild(deviceSpan);
+        meta.appendChild(pageSpan);
+
+        var msgEl = document.createElement('div');
+        msgEl.className = 'error-msg';
+        msgEl.textContent = err.msg;
+
+        entry.appendChild(meta);
+        entry.appendChild(msgEl);
+
+        if (err.source && err.source !== 'promise') {
+          var loc = document.createElement('div');
+          loc.className = 'error-loc';
+          loc.textContent = err.source + (err.line ? ':' + err.line : '') + (err.col ? ':' + err.col : '');
+          entry.appendChild(loc);
+        }
+
+        list.appendChild(entry);
+      });
+      panel.appendChild(list);
+    }
+
+    /* 底部操作列 */
+    var footer = document.createElement('div');
+    footer.className = 'error-report-footer';
+
+    var clearBtn = document.createElement('button');
+    clearBtn.className = 'error-report-clear';
+    clearBtn.textContent = '\u6E05\u9664\u6240\u6709\u8A18\u9304';
+    clearBtn.addEventListener('click', function() {
+      window._clearErrorLog();
+      title.textContent = '\u932F\u8AA4\u65E5\u8A8C\uFF08\u6700\u8FD1 0 \u7B46\uFF09';
+      if (list && list.parentNode) list.parentNode.removeChild(list);
+      var empty2 = document.createElement('div');
+      empty2.className = 'error-report-empty';
+      empty2.textContent = '\u5DF2\u6E05\u9664\u6240\u6709\u932F\u8AA4\u8A18\u9304\u3002';
+      panel.insertBefore(empty2, footer);
+    });
+
+    var hint = document.createElement('span');
+    hint.className = 'error-report-hint';
+    hint.textContent = '\u622A\u5716\u6B64\u756B\u9762\u53EF\u5354\u52A9\u958B\u767C\u8005\u6392\u9664\u554F\u984C';
+    footer.appendChild(clearBtn);
+    footer.appendChild(hint);
+    panel.appendChild(footer);
+
+    overlay.appendChild(panel);
+    document.body.appendChild(overlay);
+
+    /* 點擊背景關閉 */
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        overlay.classList.remove('visible');
+        setTimeout(function() { if (overlay.parentNode) overlay.parentNode.removeChild(overlay); }, 300);
+      }
+    });
+
+    /* Escape 關閉 */
+    var escHandler = function(e) {
+      if (e.key === 'Escape') {
+        overlay.classList.remove('visible');
+        setTimeout(function() { if (overlay.parentNode) overlay.parentNode.removeChild(overlay); }, 300);
+        document.removeEventListener('keydown', escHandler);
+      }
+    };
+    document.addEventListener('keydown', escHandler);
+
+    /* 觸發進場動畫 */
+    overlay.offsetHeight;
+    overlay.classList.add('visible');
+  };
+
+  /* 清除錯誤日誌 */
+  window._clearErrorLog = function() {
+    try { localStorage.removeItem(ERROR_KEY); } catch(e) {}
+    _updateBtnVisibility();
+  };
+
+  /* DOM ready 後建立回報按鈕 */
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.createElement('button');
+    btn.id = 'errorReportBtn';
+    btn.className = 'error-report-btn';
+    btn.title = '\u67E5\u770B\u932F\u8AA4\u65E5\u8A8C';
+    btn.style.display = 'none';
+    var icon = document.createTextNode('\u26A0');
+    btn.appendChild(icon);
+    var badge = document.createElement('span');
+    badge.className = 'error-badge';
+    badge.textContent = '0';
+    btn.appendChild(badge);
+    btn.setAttribute('aria-label', '\u56DE\u5831\u554F\u984C');
+    btn.addEventListener('click', window._showErrorReport);
+    document.body.appendChild(btn);
+    _updateBtnVisibility();
+  });
+})();
+
+/* === 離線/上線提示 === */
+(function() {
+  function showToast(msg, type) {
+    var t = document.createElement('div');
+    t.className = 'network-toast ' + (type || '');
+    t.textContent = msg;
+    document.body.appendChild(t);
+    requestAnimationFrame(function() { t.classList.add('visible'); });
+    setTimeout(function() {
+      t.classList.remove('visible');
+      setTimeout(function() { if (t.parentNode) t.parentNode.removeChild(t); }, 300);
+    }, 3000);
+  }
+  window.addEventListener('online', function() { showToast('網路已連線', 'online'); });
+  window.addEventListener('offline', function() { showToast('已進入離線模式，仍可瀏覽已快取的內容', 'offline'); });
+})();

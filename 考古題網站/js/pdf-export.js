@@ -681,12 +681,22 @@
     var pdfDoc = await PDFLib.PDFDocument.create();
     pdfDoc.registerFontkit(window.fontkit);
 
-    // 載入字型
+    // 載入字型（優先 WOFF2 + Cache API，失敗則 fallback OTF）
     var fontUrl = _getFontUrl();
-    progress(5, '正在下載字型...');
-    var fontResponse = await fetch(fontUrl);
-    if (!fontResponse.ok) throw new Error('字型載入失敗');
-    var fontBytes = await fontResponse.arrayBuffer();
+    progress(5, '正在載入字型...');
+    var fontBytes;
+    try {
+      fontBytes = await _loadFontWithCache(fontUrl);
+    } catch (e) {
+      // WOFF2 失敗，嘗試 OTF fallback
+      var fallbackUrl = _getFontUrlFallback();
+      if (fallbackUrl !== fontUrl) {
+        progress(8, '正在載入備用字型...');
+        fontBytes = await _loadFontWithCache(fallbackUrl);
+      } else {
+        throw e;
+      }
+    }
     progress(15, '正在嵌入字型...');
     var font = await pdfDoc.embedFont(fontBytes, { subset: true });
 
@@ -784,6 +794,10 @@
           processedItems++;
           var pct = 25 + Math.round((processedItems / totalItems) * 65);
           progress(Math.min(pct, 90), '正在產生 PDF... (' + processedItems + '/' + totalItems + ')');
+          // 每 30 項 yield 一次讓 UI 更新
+          if (processedItems % 30 === 0) {
+            await new Promise(function(r) { setTimeout(r, 0); });
+          }
         }
       }
     }
@@ -835,6 +849,11 @@
     document.body.appendChild(a);
     a.click();
 
+    // iOS Safari 某些版本 a.click() 無效，改用 window.open
+    if (/iPhone|iPad/i.test(navigator.userAgent) && !a.dispatchEvent) {
+      window.open(url, '_blank');
+    }
+
     setTimeout(function () {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
@@ -860,24 +879,70 @@
   }
 
   function _getFontUrl() {
-    var fontName = 'fonts/NotoSansTC-Regular-subset.otf';
+    // 優先使用 WOFF2（體積較小），OTF 作為 fallback
+    var woff2Name = 'fonts/NotoSansTC-Regular-subset.woff2';
+    var otfName = 'fonts/NotoSansTC-Regular-subset.otf';
+    var base = _getBaseUrl();
+    // 檢查瀏覽器是否支援 WOFF2（透過 createImageBitmap 作為現代瀏覽器指標）
+    // 所有支援 WOFF2 的瀏覽器都支援 fetch + Response
+    if (typeof Response !== 'undefined') {
+      return base + woff2Name;
+    }
+    return base + otfName;
+  }
+
+  function _getFontUrlFallback() {
+    return _getBaseUrl() + 'fonts/NotoSansTC-Regular-subset.otf';
+  }
+
+  function _getBaseUrl() {
     // 策略 1：從 app.js 的 script 標籤推算基礎路徑
     var scripts = document.querySelectorAll('script[src*="app.js"]');
     if (scripts.length) {
       var src = scripts[0].getAttribute('src');
       // 處理各種路徑格式：../js/app.js, js/app.js, /js/app.js
       var base = src.replace(/js\/app\.js.*$/, '');
-      if (base) return base + fontName;
+      if (base) return base;
     }
     // 策略 2：從 <link> 標籤推算
     var links = document.querySelectorAll('link[href*="style.css"]');
     if (links.length) {
       var href = links[0].getAttribute('href');
       var base2 = href.replace(/css\/style\.css.*$/, '');
-      if (base2) return base2 + fontName;
+      if (base2) return base2;
     }
     // 策略 3：固定相對路徑
-    return '../' + fontName;
+    return '../';
+  }
+
+  /**
+   * 透過 Cache API 載入字型（快取命中時不重新下載）
+   * @param {string} url - 字型 URL
+   * @returns {Promise<ArrayBuffer>}
+   */
+  async function _loadFontWithCache(url) {
+    // 嘗試使用 Cache API
+    if (typeof caches !== 'undefined') {
+      try {
+        var cache = await caches.open('exam-pdf-fonts');
+        var cached = await cache.match(url);
+        if (cached) {
+          return await cached.arrayBuffer();
+        }
+        // 無快取，下載並存入
+        var response = await fetch(url);
+        if (!response.ok) throw new Error('字型下載失敗: ' + response.status);
+        // 將 response clone 存入 cache（response body 只能讀一次）
+        cache.put(url, response.clone());
+        return await response.arrayBuffer();
+      } catch (e) {
+        // Cache API 失敗，降級為普通 fetch
+      }
+    }
+    // Cache API 不可用，直接 fetch
+    var resp = await fetch(url);
+    if (!resp.ok) throw new Error('字型下載失敗: ' + resp.status);
+    return await resp.arrayBuffer();
   }
 
   function _buildFilename(title, years, includeAnswers) {

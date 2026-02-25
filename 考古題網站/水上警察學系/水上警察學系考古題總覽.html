@@ -7,6 +7,7 @@
 <meta name="description" content="警察特考三等水上警察學系考古題總覽，涵蓋106-114年共 63 份試卷、1189 道題目">
 <meta name="theme-color" content="#0369a1">
 <meta name="robots" content="index, follow">
+<link rel="manifest" href="../manifest.json">
 <meta property="og:title" content="水上警察學系考古題總覽 (106-114年)">
 <meta property="og:description" content="警察特考三等水上警察學系，106-114年共 63 份試卷、1189 道題目">
 <meta property="og:type" content="website">
@@ -11675,5 +11676,10 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('../sw.js', {scope: '../'}).catch(function() {});
+}
+</script>
 </body>
 </html>
