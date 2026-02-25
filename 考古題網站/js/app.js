@@ -752,7 +752,7 @@ function showExportPanel() {
   var isOpen = panel.style.display !== 'none';
   panel.style.display = isOpen ? 'none' : '';
   if (!isOpen && !_exportSelectorsBuilt) _buildExportSelectors();
-  /* 手機端預載 PDF 函式庫與字型（背景靜默載入） */
+  /* 手機端：開啟匯出面板時背景預載 PDF 函式庫與字型 */
   if (!isOpen && isMobileDevice() && !_pdfLibLoaded) {
     _loadPdfLibraries().catch(function() {});
   }
