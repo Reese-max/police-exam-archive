@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.1.0';
+var CACHE_VERSION = 'v1.2.0';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -10,7 +10,9 @@ var CORE_ASSETS = [
   './css/style.css',
   './js/app.js',
   './js/pdf-export.js',
-  './manifest.json'
+  './manifest.json',
+  './icons/icon-192.svg',
+  './icons/icon-512.svg'
 ];
 
 /* install: pre-cache core assets */

@@ -167,7 +167,9 @@
            (code >= 0x3000 && code <= 0x303F) ||
            (code >= 0xFF00 && code <= 0xFFEF) ||
            (code >= 0x3400 && code <= 0x4DBF) ||
-           (code >= 0xF900 && code <= 0xFAFF);
+           (code >= 0xF900 && code <= 0xFAFF) ||
+           (code >= 0x2600 && code <= 0x27BF) ||
+           (code >= 0xD800 && code <= 0xDBFF);
   }
 
   function _charWidth(ch, fontSize, font) {
@@ -873,7 +875,7 @@
       .replace(/\r\n/g, '\n')
       .replace(/\r/g, '\n')
       .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ' ')
-      .replace(/[\uFEFF\uFFFE\uFFFF]/g, '')           // BOM & specials
+      .replace(/[\u200B-\u200F\u2060-\u2064\uFEFF\uFFFE\uFFFF]/g, '')  // zero-width chars, BOM & specials
       .replace(/[\u2028\u2029]/g, '\n')                // Unicode line/paragraph separators
       .replace(/[\uD800-\uDFFF]/g, ' ');               // lone surrogates
   }

@@ -307,7 +307,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* === Bookmarks === */
 function getStore(key) { try { return JSON.parse(localStorage.getItem(key)) || {}; } catch(e) { return {}; } }
-function setStore(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {} }
+var _storageWarned = false;
+function setStore(key, val) {
+  try { localStorage.setItem(key, JSON.stringify(val)); }
+  catch(e) {
+    if (!_storageWarned && e.name === 'QuotaExceededError') {
+      _storageWarned = true;
+      console.warn('localStorage 配額已滿');
+    }
+  }
+}
+
+function _syncBookmarkBtn(cardId, isActive) {
+  var pairs = [
+    document.getElementById(cardId),
+    document.getElementById('sv-' + cardId)
+  ];
+  pairs.forEach(function(card) {
+    if (!card) return;
+    var btn = card.querySelector('.bookmark-btn');
+    if (btn) {
+      btn.classList.toggle('active', isActive);
+      btn.textContent = isActive ? '\u2605' : '\u2606';
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    }
+  });
+}
 
 function initBookmarks() {
   const bookmarks = getStore('exam-bookmarks');
@@ -324,13 +349,10 @@ function initBookmarks() {
     bmBtn.setAttribute('aria-pressed', bookmarks[id] ? 'true' : 'false');
     bmBtn.onclick = function(e) {
       e.stopPropagation();
-      const bm = getStore('exam-bookmarks');
-      if (bm[id]) { delete bm[id]; this.classList.remove('active'); this.textContent = '☆'; }
-      else { bm[id] = true; this.classList.add('active'); this.textContent = '★'; }
-      this.setAttribute('aria-pressed', bm[id] ? 'true' : 'false');
+      var bm = getStore('exam-bookmarks');
+      if (bm[id]) { delete bm[id]; } else { bm[id] = true; }
       setStore('exam-bookmarks', bm);
-      const svCard = document.getElementById('sv-' + id);
-      if (svCard) { const svBtn = svCard.querySelector('.bookmark-btn'); if (svBtn) { svBtn.classList.toggle('active', !!bm[id]); svBtn.textContent = bm[id] ? '★' : '☆'; } }
+      _syncBookmarkBtn(id, !!bm[id]);
     };
     header.appendChild(bmBtn);
     header.removeAttribute('onclick');
@@ -424,15 +446,10 @@ function buildSubjectView() {
         (function(btn, cid) {
           btn.onclick = function(e) {
             e.stopPropagation();
-            const bm = getStore('exam-bookmarks');
-            if (bm[cid]) { delete bm[cid]; btn.classList.remove('active'); btn.textContent = '☆'; }
-            else { bm[cid] = true; btn.classList.add('active'); btn.textContent = '★'; }
+            var bm = getStore('exam-bookmarks');
+            if (bm[cid]) { delete bm[cid]; } else { bm[cid] = true; }
             setStore('exam-bookmarks', bm);
-            const origCard = document.getElementById(cid);
-            if (origCard) {
-              const ob = origCard.querySelector('.bookmark-btn');
-              if (ob) { ob.classList.toggle('active', !!bm[cid]); ob.textContent = bm[cid] ? '★' : '☆'; }
-            }
+            _syncBookmarkBtn(cid, !!bm[cid]);
           };
         })(bmBtn, origId);
       }
@@ -871,17 +888,14 @@ function isMobileDevice() {
 var _pdfLibLoaded = false;
 var _pdfLibLoading = false;
 var _pdfLibError = null;
+var _pdfLibCallbacks = [];
 
 function _loadPdfLibraries() {
   if (_pdfLibLoaded) return Promise.resolve();
   if (_pdfLibError) return Promise.reject(_pdfLibError);
   if (_pdfLibLoading) {
     return new Promise(function(resolve, reject) {
-      var check = setInterval(function() {
-        if (_pdfLibLoaded) { clearInterval(check); resolve(); }
-        if (_pdfLibError) { clearInterval(check); reject(_pdfLibError); }
-      }, 100);
-      setTimeout(function() { clearInterval(check); reject(new Error('載入逾時')); }, 30000);
+      _pdfLibCallbacks.push({ resolve: resolve, reject: reject });
     });
   }
   _pdfLibLoading = true;
@@ -914,10 +928,14 @@ function _loadPdfLibraries() {
     .then(function() {
       _pdfLibLoaded = true;
       _pdfLibLoading = false;
+      _pdfLibCallbacks.forEach(function(cb) { cb.resolve(); });
+      _pdfLibCallbacks = [];
     })
     .catch(function(err) {
       _pdfLibLoading = false;
       _pdfLibError = err;
+      _pdfLibCallbacks.forEach(function(cb) { cb.reject(err); });
+      _pdfLibCallbacks = [];
       throw err;
     });
 }

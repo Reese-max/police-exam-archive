@@ -305,3 +305,166 @@ test.describe('書籤篩選', () => {
     await expect(filterBtn).toHaveText('只看書籤');
   });
 });
+
+/* ===== 深度檢查新增測試 ===== */
+test.describe('深度檢查修復驗證', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/%E8%A1%8C%E6%94%BF%E8%AD%A6%E5%AF%9F%E5%AD%B8%E7%B3%BB/%E8%A1%8C%E6%94%BF%E8%AD%A6%E5%AF%9F%E5%AD%B8%E7%B3%BB%E8%80%83%E5%8F%A4%E9%A1%8C%E7%B8%BD%E8%A6%BD.html');
+    await page.waitForLoadState('domcontentloaded');
+  });
+
+  /* 3.1 Hash 導航自動展開 */
+  test('Hash 導航：帶 hash 開啟時卡片自動展開', async ({ page }) => {
+    // 先取得第一張卡片的 id
+    const firstCardId = await page.locator('#yearView .subject-card[id]').first().getAttribute('id');
+    // 導航到帶 hash 的 URL
+    await page.goto('/%E8%A1%8C%E6%94%BF%E8%AD%A6%E5%AF%9F%E5%AD%B8%E7%B3%BB/%E8%A1%8C%E6%94%BF%E8%AD%A6%E5%AF%9F%E5%AD%B8%E7%B3%BB%E8%80%83%E5%8F%A4%E9%A1%8C%E7%B8%BD%E8%A6%BD.html#' + firstCardId);
+    await page.waitForLoadState('domcontentloaded');
+    // 等待 handleHash 的 rAF 完成
+    await page.waitForTimeout(500);
+    // 卡片應自動展開
+    const card = page.locator('[id="' + firstCardId + '"]');
+    await expect(card).toHaveClass(/open/);
+  });
+
+  /* 3.2 鍵盤 `/` 聚焦搜尋 */
+  test('鍵盤快捷鍵：按 / 聚焦搜尋框', async ({ page }) => {
+    // 先確認搜尋框未聚焦
+    const searchInput = page.locator('#searchInput');
+    await expect(searchInput).not.toBeFocused();
+    // 按 `/` 鍵
+    await page.keyboard.press('/');
+    // 搜尋框應被聚焦
+    await expect(searchInput).toBeFocused();
+  });
+
+  /* 3.3 鍵盤 Escape 清空 */
+  test('鍵盤快捷鍵：搜尋框中按 Escape 清空並失焦', async ({ page }) => {
+    const searchInput = page.locator('#searchInput');
+    // 先輸入文字
+    await searchInput.fill('憲法');
+    await page.waitForTimeout(400);
+    await searchInput.focus();
+    // 按 Escape
+    await page.keyboard.press('Escape');
+    // 搜尋框應清空
+    await expect(searchInput).toHaveValue('');
+    // 搜尋框應失焦
+    await expect(searchInput).not.toBeFocused();
+  });
+
+  /* 3.4 錯誤監控 UI */
+  test('錯誤監控：觸發錯誤後顯示報告按鈕和面板', async ({ page }) => {
+    // 注入一個 JS 錯誤到 onerror
+    await page.evaluate(() => {
+      window.onerror('Test error message', 'test.js', 1, 1, new Error('test'));
+    });
+    await page.waitForTimeout(300);
+    // 錯誤報告按鈕應出現
+    const errorBtn = page.locator('#errorReportBtn');
+    await expect(errorBtn).toBeVisible();
+    // 點擊開啟面板
+    await errorBtn.click();
+    await page.waitForTimeout(300);
+    const overlay = page.locator('#errorReportOverlay');
+    await expect(overlay).toBeVisible();
+    // 面板中應包含錯誤訊息
+    const errorMsg = page.locator('.error-msg');
+    expect(await errorMsg.count()).toBeGreaterThan(0);
+    // 清理：清除錯誤日誌
+    await page.evaluate(() => { window._clearErrorLog(); });
+  });
+
+  /* 3.5 搜尋跳轉按鈕 */
+  test('搜尋跳轉：多匹配時出現 ◀▶ 按鈕', async ({ page }) => {
+    const searchInput = page.locator('#searchInput');
+    // 輸入常見詞讓多張卡片匹配
+    await searchInput.fill('法');
+    await page.waitForTimeout(500);
+    // 確認有多個 highlight
+    const highlights = page.locator('.highlight');
+    const highlightCount = await highlights.count();
+    if (highlightCount > 1) {
+      // 跳轉按鈕應出現
+      const jumpBtns = page.locator('.search-jump button');
+      await expect(jumpBtns).toHaveCount(2); // ◀ 和 ▶
+      // 點擊 ▶ 應更新計數器
+      await jumpBtns.nth(1).click();
+      const counter = page.locator('#hitCounter');
+      await expect(counter).toContainText('/');
+    }
+  });
+
+  /* 3.6 科目篩選 */
+  test('科目篩選：選擇科目後只顯示匹配卡片', async ({ page }) => {
+    const subjectFilter = page.locator('#subjectFilter');
+    // 取得第一個非空選項
+    const options = subjectFilter.locator('option');
+    const optionCount = await options.count();
+    expect(optionCount).toBeGreaterThan(1); // 至少有「全部」和一個科目
+    // 選擇第二個選項（第一個科目）
+    const firstSubjectValue = await options.nth(1).getAttribute('value');
+    await subjectFilter.selectOption(firstSubjectValue);
+    // 等待篩選
+    await page.waitForTimeout(300);
+    // 顯示的卡片標題都應包含該科目名
+    const visibleCards = page.locator('#yearView .subject-card:not([style*="display: none"])');
+    const count = await visibleCards.count();
+    expect(count).toBeGreaterThan(0);
+    for (let i = 0; i < count; i++) {
+      const title = await visibleCards.nth(i).locator('.subject-header h3').textContent();
+      expect(title).toContain(firstSubjectValue);
+    }
+  });
+
+  /* 3.7 匯出全選/取消 */
+  test('匯出面板：全選與取消功能', async ({ page }) => {
+    // 開啟匯出面板
+    await page.locator('#exportBtn').click();
+    await expect(page.locator('#exportPanel')).toBeVisible();
+
+    // 找到年度的「全選」按鈕（可能文字是「全選」或「取消全選」）
+    const yearToggle = page.locator('.export-group').first().locator('.export-toggle-all');
+    const yearChecks = page.locator('#exportSelectors input[data-export-year]');
+    const totalYears = await yearChecks.count();
+
+    // 初始應該全部勾選
+    for (let i = 0; i < totalYears; i++) {
+      await expect(yearChecks.nth(i)).toBeChecked();
+    }
+
+    // 點擊全選按鈕（因為已全選，應變成全取消）
+    await yearToggle.click();
+    for (let i = 0; i < totalYears; i++) {
+      await expect(yearChecks.nth(i)).not.toBeChecked();
+    }
+
+    // 再點一次應全選
+    await yearToggle.click();
+    for (let i = 0; i < totalYears; i++) {
+      await expect(yearChecks.nth(i)).toBeChecked();
+    }
+  });
+
+  /* 3.8 reduced-motion */
+  test('reduced-motion：動畫持續時間應趨近 0', async ({ page }) => {
+    // 模擬 reduced-motion
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    // 重新載入讓 CSS 生效
+    await page.reload();
+    await page.waitForLoadState('domcontentloaded');
+
+    // 檢查任意有動畫的元素，其動畫時長應為 0.01ms
+    const duration = await page.evaluate(() => {
+      const el = document.querySelector('.subject-card') || document.querySelector('.toolbar-btn');
+      if (!el) return null;
+      const style = window.getComputedStyle(el);
+      return style.transitionDuration;
+    });
+    // 在 reduced-motion 下，transition-duration 應為 0.01ms 或 0s
+    if (duration) {
+      const ms = parseFloat(duration);
+      expect(ms).toBeLessThanOrEqual(0.02);
+    }
+  });
+});
