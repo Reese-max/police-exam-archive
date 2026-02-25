@@ -630,10 +630,126 @@ function clearPracticeSession() {
 }
 
 /* === 匯出 PDF (Phase 9) === */
+var _exportSelectorsBuilt = false;
+function _buildExportSelectors() {
+  var container = document.getElementById('exportSelectors');
+  if (!container) return;
+  container.innerHTML = '';
+
+  /* 年度區 */
+  var years = [];
+  document.querySelectorAll('#yearView .year-heading').forEach(function(h) {
+    var m = h.textContent.trim().match(/(\d+)/);
+    if (m) years.push(m[1]);
+  });
+  if (years.length) {
+    var yGroup = document.createElement('div');
+    yGroup.className = 'export-group';
+    var yLabel = document.createElement('div');
+    yLabel.className = 'export-group-header';
+    yLabel.innerHTML = '<span class="export-group-title">年度</span><button type="button" class="export-toggle-all" onclick="_toggleExportAll(\'year\',this)">全選</button>';
+    yGroup.appendChild(yLabel);
+    var yList = document.createElement('div');
+    yList.className = 'export-check-list';
+    years.forEach(function(y) {
+      var label = document.createElement('label');
+      label.className = 'export-check';
+      label.innerHTML = '<input type="checkbox" checked data-export-year="' + y + '"><span>' + y + '年</span>';
+      yList.appendChild(label);
+    });
+    yGroup.appendChild(yList);
+    container.appendChild(yGroup);
+  }
+
+  /* 科目區 */
+  if (typeof SUBJECT_KEYS !== 'undefined' && SUBJECT_KEYS.length) {
+    var sGroup = document.createElement('div');
+    sGroup.className = 'export-group';
+    var sLabel = document.createElement('div');
+    sLabel.className = 'export-group-header';
+    sLabel.innerHTML = '<span class="export-group-title">科目</span><button type="button" class="export-toggle-all" onclick="_toggleExportAll(\'subject\',this)">全選</button>';
+    sGroup.appendChild(sLabel);
+    var sList = document.createElement('div');
+    sList.className = 'export-check-list';
+    SUBJECT_KEYS.forEach(function(sk) {
+      var label = document.createElement('label');
+      label.className = 'export-check';
+      label.innerHTML = '<input type="checkbox" checked data-export-subject="' + sk.replace(/"/g, '&quot;') + '"><span>' + sk + '</span>';
+      sList.appendChild(label);
+    });
+    sGroup.appendChild(sList);
+    container.appendChild(sGroup);
+  }
+
+  /* 匯出數量預覽 */
+  var countEl = document.createElement('div');
+  countEl.className = 'export-count';
+  countEl.id = 'exportCount';
+  container.appendChild(countEl);
+  _updateExportCount();
+
+  /* 監聽 checkbox 變化更新數量 + 同步 checked class（:has 的 JS fallback） */
+  container.addEventListener('change', function(e) {
+    if (e.target.type === 'checkbox') {
+      var lbl = e.target.closest('.export-check');
+      if (lbl) lbl.classList.toggle('checked', e.target.checked);
+    }
+    _updateExportCount();
+  });
+  /* 初始化 checked class */
+  container.querySelectorAll('.export-check input:checked').forEach(function(cb) {
+    cb.closest('.export-check').classList.add('checked');
+  });
+  _exportSelectorsBuilt = true;
+}
+
+function _toggleExportAll(type, btn) {
+  var attr = type === 'year' ? 'data-export-year' : 'data-export-subject';
+  var boxes = document.querySelectorAll('#exportSelectors input[' + attr + ']');
+  var allChecked = true;
+  boxes.forEach(function(cb) { if (!cb.checked) allChecked = false; });
+  var newState = !allChecked;
+  boxes.forEach(function(cb) {
+    cb.checked = newState;
+    var lbl = cb.closest('.export-check');
+    if (lbl) lbl.classList.toggle('checked', newState);
+  });
+  _updateExportCount();
+}
+
+function _getExportSelection() {
+  var years = [];
+  document.querySelectorAll('#exportSelectors input[data-export-year]:checked').forEach(function(cb) {
+    years.push(cb.getAttribute('data-export-year'));
+  });
+  var subjects = [];
+  document.querySelectorAll('#exportSelectors input[data-export-subject]:checked').forEach(function(cb) {
+    subjects.push(cb.getAttribute('data-export-subject'));
+  });
+  return { years: years, subjects: subjects };
+}
+
+function _updateExportCount() {
+  var sel = _getExportSelection();
+  var count = 0;
+  document.querySelectorAll('#yearView .year-section').forEach(function(sec) {
+    var hText = sec.querySelector('.year-heading').textContent.trim();
+    var m = hText.match(/(\d+)/);
+    if (!m || sel.years.indexOf(m[1]) === -1) return;
+    sec.querySelectorAll('.subject-card').forEach(function(card) {
+      var name = card.querySelector('.subject-header h3').textContent.trim();
+      if (sel.subjects.indexOf(name) !== -1) count++;
+    });
+  });
+  var el = document.getElementById('exportCount');
+  if (el) el.textContent = count > 0 ? '將匯出 ' + count + ' 份試卷' : '請至少選擇一個年度及科目';
+}
+
 function showExportPanel() {
   var panel = document.getElementById('exportPanel');
   var isOpen = panel.style.display !== 'none';
   panel.style.display = isOpen ? 'none' : '';
+  if (!isOpen && !_exportSelectorsBuilt) _buildExportSelectors();
   /* 手機底部彈出板需要 overlay */
   if (window.innerWidth <= 768) {
     var overlay = document.getElementById('sidebarOverlay');
@@ -647,24 +763,32 @@ function hideExportPanel() {
 }
 
 function _preparePrintDOM(includeAnswers) {
-  var vs = getActiveViewSelector();
-  var cards = document.querySelectorAll(vs + ' .subject-card');
-  var otherView = vs === '#yearView' ? '#subjectView' : '#yearView';
+  var sel = _getExportSelection();
 
-  document.querySelector(otherView).classList.add('print-hidden');
+  /* 永遠用 yearView 列印（結構最穩定） */
+  document.querySelector('#subjectView').classList.add('print-hidden');
 
   var visibleCount = 0;
-  cards.forEach(function(card) {
-    if (card.style.display === 'none') {
-      card.classList.add('print-hidden');
-    } else {
-      card.classList.add('open');
-      visibleCount++;
+  document.querySelectorAll('#yearView .year-section').forEach(function(sec) {
+    var hText = sec.querySelector('.year-heading').textContent.trim();
+    var m = hText.match(/(\d+)/);
+    /* 該年度未被勾選 → 整區隱藏 */
+    if (!m || sel.years.indexOf(m[1]) === -1) {
+      sec.classList.add('print-hidden');
+      return;
     }
-  });
-
-  document.querySelectorAll(vs + ' .year-section, ' + vs + ' .subject-view-section').forEach(function(s) {
-    if (s.style.display === 'none') s.classList.add('print-hidden');
+    var hasVisible = false;
+    sec.querySelectorAll('.subject-card').forEach(function(card) {
+      var name = card.querySelector('.subject-header h3').textContent.trim();
+      if (sel.subjects.indexOf(name) === -1) {
+        card.classList.add('print-hidden');
+      } else {
+        card.classList.add('open');
+        visibleCount++;
+        hasVisible = true;
+      }
+    });
+    if (!hasVisible) sec.classList.add('print-hidden');
   });
 
   if (!includeAnswers) document.body.classList.add('print-no-answers');
@@ -676,14 +800,10 @@ function _preparePrintDOM(includeAnswers) {
   var h1 = document.createElement('h1');
   h1.textContent = document.querySelector('.page-title').textContent;
   var info = document.createElement('p');
-  var filterInfo = [];
-  if (activeYearFilter) filterInfo.push(activeYearFilter + '年');
-  var searchVal = document.getElementById('searchInput').value.trim();
-  if (searchVal) filterInfo.push('關鍵字: ' + searchVal);
-  if (bookmarkFilterActive) filterInfo.push('僅書籤');
   var answerText = includeAnswers ? '含答案' : '不含答案';
+  var yearText = sel.years.join(', ') + '年';
   info.textContent = visibleCount + ' 份試卷 \u00b7 ' + answerText +
-    (filterInfo.length ? ' \u00b7 篩選: ' + filterInfo.join(', ') : '') +
+    ' \u00b7 ' + yearText +
     ' \u00b7 ' + new Date().toLocaleDateString('zh-TW');
   header.appendChild(h1);
   header.appendChild(info);
@@ -701,9 +821,12 @@ function _cleanupPrintDOM() {
 }
 
 function exportPDF(includeAnswers) {
+  var sel = _getExportSelection();
+  if (!sel.years.length || !sel.subjects.length) {
+    alert('請至少選擇一個年度及一個科目。');
+    return;
+  }
   hideExportPanel();
-  /* 統一使用 window.print()：現代手機瀏覽器皆支援，
-     且由瀏覽器原生渲染，不佔額外記憶體、PDF 可搜尋文字 */
   _exportPDFNative(includeAnswers);
 }
 
