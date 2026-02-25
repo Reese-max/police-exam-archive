@@ -827,7 +827,11 @@ function exportPDF(includeAnswers) {
     return;
   }
   hideExportPanel();
-  _exportPDFNative(includeAnswers);
+  if (isMobileDevice()) {
+    _exportPDFMobile(includeAnswers);
+  } else {
+    _exportPDFNative(includeAnswers);
+  }
 }
 
 function _exportPDFNative(includeAnswers) {
@@ -843,4 +847,150 @@ function _exportPDFNative(includeAnswers) {
     window.addEventListener('afterprint', cleanup, { once: true });
   }
   setTimeout(cleanup, 30000);
+}
+
+/* === 手機端 PDF 匯出 (Phase 10) === */
+
+function isMobileDevice() {
+  return window.matchMedia('(pointer:coarse)').matches &&
+         window.matchMedia('(hover:none)').matches;
+}
+
+var _pdfLibLoaded = false;
+var _pdfLibLoading = false;
+
+function _loadPdfLibraries() {
+  if (_pdfLibLoaded) return Promise.resolve();
+  if (_pdfLibLoading) {
+    return new Promise(function(resolve, reject) {
+      var check = setInterval(function() {
+        if (_pdfLibLoaded) { clearInterval(check); resolve(); }
+      }, 100);
+      setTimeout(function() { clearInterval(check); reject(new Error('載入逾時')); }, 30000);
+    });
+  }
+  _pdfLibLoading = true;
+
+  function loadScript(url) {
+    return new Promise(function(resolve, reject) {
+      var s = document.createElement('script');
+      s.src = url;
+      s.onload = resolve;
+      s.onerror = function() { reject(new Error('載入失敗: ' + url)); };
+      document.head.appendChild(s);
+    });
+  }
+
+  return loadScript('https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js')
+    .then(function() {
+      return loadScript('https://cdn.jsdelivr.net/npm/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js');
+    })
+    .then(function() {
+      // 載入 pdf-export.js（與 app.js 同目錄）
+      var appScript = document.querySelector('script[src*="app.js"]');
+      var base = appScript ? appScript.getAttribute('src').replace('app.js', '') : '../js/';
+      return loadScript(base + 'pdf-export.js');
+    })
+    .then(function() {
+      _pdfLibLoaded = true;
+      _pdfLibLoading = false;
+    })
+    .catch(function(err) {
+      _pdfLibLoading = false;
+      throw err;
+    });
+}
+
+function _exportPDFMobile(includeAnswers) {
+  var sel = _getExportSelection();
+  var progressUI = showPdfProgress();
+
+  _loadPdfLibraries()
+    .then(function() {
+      return window.PdfExport.generatePdf(sel, includeAnswers, function(pct, msg) {
+        progressUI.update(pct, msg);
+      });
+    })
+    .then(function(result) {
+      progressUI.update(100, '下載中...');
+      return window.PdfExport.deliverPdf(result.bytes, result.filename);
+    })
+    .then(function() {
+      progressUI.close();
+    })
+    .catch(function(err) {
+      progressUI.close();
+      console.error('PDF 匯出失敗:', err);
+      var msg = '手機端 PDF 匯出失敗';
+      if (err && err.message) msg += '：' + err.message;
+      msg += '\n\n是否改用瀏覽器列印功能？';
+      if (confirm(msg)) {
+        _exportPDFNative(includeAnswers);
+      }
+    });
+}
+
+function showPdfProgress() {
+  // 建立覆蓋層
+  var overlay = document.createElement('div');
+  overlay.className = 'pdf-progress-overlay';
+  overlay.id = 'pdfProgressOverlay';
+
+  var card = document.createElement('div');
+  card.className = 'pdf-progress-card';
+
+  var title = document.createElement('div');
+  title.className = 'pdf-progress-title';
+  title.textContent = '正在產生 PDF...';
+
+  var barWrap = document.createElement('div');
+  barWrap.className = 'pdf-progress-bar';
+  var barFill = document.createElement('div');
+  barFill.className = 'pdf-progress-fill';
+  barFill.style.width = '0%';
+  barWrap.appendChild(barFill);
+
+  var msg = document.createElement('div');
+  msg.className = 'pdf-progress-msg';
+  msg.textContent = '準備中...';
+
+  var cancelBtn = document.createElement('button');
+  cancelBtn.className = 'pdf-progress-cancel';
+  cancelBtn.textContent = '取消';
+  cancelBtn.type = 'button';
+
+  card.appendChild(title);
+  card.appendChild(barWrap);
+  card.appendChild(msg);
+  card.appendChild(cancelBtn);
+  overlay.appendChild(card);
+  document.body.appendChild(overlay);
+
+  // 強制 reflow 後加上 visible class 觸發動畫
+  overlay.offsetHeight;
+  overlay.classList.add('visible');
+
+  var closed = false;
+  function close() {
+    if (closed) return;
+    closed = true;
+    overlay.classList.remove('visible');
+    setTimeout(function() {
+      if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+    }, 300);
+  }
+
+  cancelBtn.addEventListener('click', function() {
+    close();
+    // 取消無法真正中斷 Promise，但會隱藏 UI
+  });
+
+  return {
+    update: function(pct, message) {
+      if (closed) return;
+      barFill.style.width = Math.min(pct, 100) + '%';
+      if (message) msg.textContent = message;
+    },
+    close: close
+  };
 }
