@@ -682,6 +682,19 @@
       }
     },
     {
+      "number": 51,
+      "type": "choice",
+      "stem": "Fire doors are specialist doors which have been tested against the elements and purpose-built to withstand roaring fires for as long as possible. The tenable building should stop and delay the spread of fire from one area to another, andform a crucial part ofa passive fire protection strategy.",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "compartmentalize",
+        "B": "communicate",
+        "C": "compreh end",
+        "D": "compromise"
+      }
+    },
+    {
       "number": 52,
       "type": "choice",
       "stem": "",
@@ -738,19 +751,6 @@
       "passage": "請依下文回答第52題至第56題 Taitung’s Zhiben Wet lands caught fire late Sunday afternoon, burning into the night, fuel edby strong winds, 52 over an area of five hectares. The fire drew the suspicion of environmental ists who comp let eda surveyof end ange red bird species in the wet land earlierin the day. They called 53 the Taitung Fire Department tothoroughly investigate whether the fire was an act of 54 . The Society of Wilder ness (SOW) and the Wild Bird Society of Taitung County conducted a wild bird field study on Sunday morning, count ing the number ofen danger edbird 55 suchas ring-neckedpheasants, orioles, and Taiwan thrush. Many of these birds 56 in the shrubs on the north bank of the Zhiben River mouth."
     },
     {
-      "number": 51,
-      "type": "choice",
-      "stem": "Fire doors are specialist doors which have been tested against the elements and purpose-built to withstand roaring fires for as long as possible. The tenable building should stop and delay the spread of fire from one area to another, andform a crucial part ofa passive fire protection strategy.",
-      "section": "乙、測驗題",
-      "answer": "A",
-      "options": {
-        "A": "compartmentalize",
-        "B": "communicate",
-        "C": "compreh end",
-        "D": "compromise"
-      }
-    },
-    {
       "number": 56,
       "type": "choice",
       "stem": "What is the main idea of the passage?",
@@ -805,6 +805,21 @@
         "D": "Rein for cing"
       },
       "passage": "請依下文回答第56題至第59題 Fireis one of human kind’smost significant discover ies, but it canalso bea great source of danger in accidents. On average 8 in 1,000,000 people are kil led annual lyin Europe, and more are hospital ized due tofire. For tunately, government sthat have continuouslyadjusted fire safety strategies have address edt his risk. As a positive result, in the past 30 years, fire deaths dropped by 65%in Europe. Build ings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting build ings specifically. Plastics are used in various building and construction applications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignit ability and limited impact on fire spread, contri but ingto the on going red uction off atalities, injuries, and property damage due to fire. The most crucial aspect of a building’s safety in the face of fire is the possibilityof a safe escape. A necessary pre condition is that fire safety facilities enable independent and adequate fire response per for man ces by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning build ings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understand how to be have in the event of afire. Fire safety has always been and continue sto bea major objective for the industry and anintegral part of product design and manufacturing. However, to provide adequate fire safety in build ings, consideration must be given to various connected design and use aspects. In addition, training and education to help building occupants respond adequately in the face of fire also plays avital role in building fire safety."
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "What does “insulation”inthesecondparagraph most likelymean? Exposure Display Reducing Reinforcing",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第57題至第60題 Fireis oneofhumankind’smost significant discoveries, but it canalso beagreat sourceofdangerin accidents. On average8in1,000,000peoplearekilledannuallyinEurope, andmorearehospitalizeddue tofire.Fortunately,governmentsthathavecontinuouslyadjustedfiresafetystrategieshaveaddressedthis risk. As apositiveresult,inthepast 30 years, fire deaths droppedby65%inEurope. Buildings notably represent an important part of the places where fire has fatal consequences. Therefore, numerous national and regional fire safety regulations have been implemented targeting buildings specifically. Plastics are used in various building and construction applications, from durable pipes and window frames to state-of-the-art insulation solutions. Over the years, the industry has increased efforts to develop plastic materials, products, and construction solutions with lower ignitability andlimitedimpactonfirespread,contributingtotheongoingreductionoffatalities,injuries,andproperty damageduetofire. The most crucial aspect of a building’s safetyin the face of fire is the possibilityof a safe escape. A necessary precondition is that fire safety facilities enable independent and adequate fire response performances by the building’s occupants. In practice, the measures currently required by law do not always provide the support people need in burning buildings. Fire evacuation is essential to bring fire safety measures into line with occupants’ needs during an incident. Training and education at all levels play a vital part in this. The management responsible for a building must ensure that the occupants understandhowtobehaveintheevent of afire. Firesafetyhasalwaysbeenandcontinuestobeamajorobjectivefortheindustryandanintegralpart ofproductdesignandmanufacturing.However,toprovideadequatefiresafetyinbuildings,consideration must be given to various connected design and use aspects. In addition, training and education to help buildingoccupants respondadequatelyintheface offirealso plays avital roleinbuildingfiresafety.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "Exposure",
+        "B": "Display",
+        "C": "Reducing",
+        "D": "Reinforcing"
+      },
+      "answer": "D"
     }
   ],
   "year": 112,

@@ -595,6 +595,71 @@
         "C": "Its pro fit able market ing of the traditional puppet shows.",
         "D": "Its wise utilization of contemporary cultural asset."
       }
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "What is the rhetorical mode employed in this passage? Exposition Narration Persuasion Classification",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "immobility",
+        "B": "impediment",
+        "C": "imminence",
+        "D": "immunity"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Which following definition of the creative and cultural industries corresponds closely to the UK’s version? They involve an imitation of knowledge and skills in order to open up possibilities for trades and businesses. They require originality, skill and talent that can create jobs and generate revenues with the activation of intellectual property. They entail creativity and culture that inspire individual talent and skills to develop social welfare. They use intellectual property to protect personal knowledge and skills in order to gain profits in the market.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "confusing",
+        "B": "confining",
+        "C": "combining",
+        "D": "combating"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Which sector listed below is part of the creative and cultural industries? Transportation Manufacturing Web Services Video Games",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "arrested",
+        "B": "terminated",
+        "C": "seized",
+        "D": "decoded"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "What is the secret lying behind the successful story of PiLi International? Its outstanding performance of the traditional puppet shows. Its innovative adaptation of the puppets as main characters in a film. Its notable merchandising of the puppets into popular culture figures. Its productive integration of the old and the new into the puppet shows.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "terrorist",
+        "B": "scooterist",
+        "C": "psychiatrist",
+        "D": "tourist"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "In which aspect does PiLi International set a good example for other industries to look up to? Its successful implementation of promotion strategies. Its cutting-edge conversion of the traditional puppet shows. Its profitable marketing of the traditional puppet shows. Its wise utilization of contemporary cultural asset.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "exhibit",
+        "B": "approve",
+        "C": "prohibit",
+        "D": "approach"
+      },
+      "answer": "C"
     }
   ],
   "year": 107,

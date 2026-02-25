@@ -681,6 +681,32 @@
       }
     },
     {
+      "number": 51,
+      "type": "choice",
+      "stem": "Policing is most often performed by the public forces that patrol public spaces, often in marked cars, and whose members wear a uniform.",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "congressional",
+        "B": "constabulary",
+        "C": "constitutional",
+        "D": "continental"
+      }
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "Methods to prevent work place harassment include all but .",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "policy development",
+        "B": "negative discipline",
+        "C": "training",
+        "D": "supervision"
+      }
+    },
+    {
       "number": 53,
       "type": "choice",
       "stem": "",
@@ -723,32 +749,6 @@
       "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is seve rely limited if the police cannot contact you. You may specify how you are contacted and if contact ing you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Hand lers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
     },
     {
-      "number": 51,
-      "type": "choice",
-      "stem": "Policing is most often performed by the public forces that patrol public spaces, often in marked cars, and whose members wear a uniform.",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "congressional",
-        "B": "constabulary",
-        "C": "constitutional",
-        "D": "continental"
-      }
-    },
-    {
-      "number": 52,
-      "type": "choice",
-      "stem": "Methods to prevent work place harassment include all but .",
-      "section": "乙、測驗題",
-      "answer": "B",
-      "options": {
-        "A": "policy development",
-        "B": "negative discipline",
-        "C": "training",
-        "D": "supervision"
-      }
-    },
-    {
       "number": 56,
       "type": "choice",
       "stem": "What would be the most appropriate title for the passage?",
@@ -789,6 +789,36 @@
         "D": "4/5"
       },
       "passage": "請依下文回答第56題至第58題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than out siders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical consider ations dictated living near the work place since mass transit was limited and expensive."
+    },
+    {
+      "number": 59,
+      "type": "choice",
+      "stem": "According to the passage, which of the following is NOT true? NYPD was established more than 170 years ago. Local control was a political necessity in the middle of 19th century. Since the residency requirement was enforced, two-thirds to three-fourths of the police lived in the ward in which they worked. The cost of transportation was one of the reasons why the police would like to live near their workplace.",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than outsiders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical considerations dictated living near the workplace since mass transit was limited and expensive.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "affect",
+        "B": "alarm",
+        "C": "attack",
+        "D": "effect"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "According to the passage, what is the most likely percentage of the NYPD officers living in the precinct they worked in the second half of the 19th century? 3/4 1/4 3/5 4/5",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than outsiders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical considerations dictated living near the workplace since mass transit was limited and expensive.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "multi-dimension",
+        "B": "multi-color",
+        "C": "multi-purpose",
+        "D": "multi-discipline"
+      },
+      "answer": "B"
     }
   ],
   "year": 106,

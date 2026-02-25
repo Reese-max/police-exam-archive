@@ -745,6 +745,81 @@
         "C": "adopted",
         "D": "allowed"
       }
+    },
+    {
+      "number": 56,
+      "type": "choice",
+      "stem": "sent off sounded rang went off",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "imminent",
+        "B": "persistent",
+        "C": "civilian",
+        "D": "humble"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 57,
+      "type": "choice",
+      "stem": "to pass pass passed passing",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "quite",
+        "B": "never",
+        "C": "even",
+        "D": "over"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 58,
+      "type": "choice",
+      "stem": "span extent spread range",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "To",
+        "B": "For",
+        "C": "Beside",
+        "D": "Unlike"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 59,
+      "type": "choice",
+      "stem": "pull down pull out pull in pull off",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "indicator",
+        "B": "example",
+        "C": "decision",
+        "D": "principle"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "from of in at",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department.",
+      "subtype": "cloze",
+      "options": {
+        "A": "because",
+        "B": "unless",
+        "C": "when",
+        "D": "or"
+      },
+      "answer": "C"
     }
   ],
   "year": 107,

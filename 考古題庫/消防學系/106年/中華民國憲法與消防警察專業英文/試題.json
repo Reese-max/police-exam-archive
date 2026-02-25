@@ -744,6 +744,81 @@
         "C": "violated",
         "D": "launched"
       }
+    },
+    {
+      "number": 56,
+      "type": "choice",
+      "stem": "provocative protrusive protective productive",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: Professional firefighters must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, trousers, and work gloves. Firefighters’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, firefighters have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, firefighters also need Personal 58 Apparatus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when firefighters are in danger or do not move for about 30 seconds. Pike poles allow firefighters to search behind walls and ceilings for fire and to ventilate structures by breaking windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly breaking through walls, ceilings, or locked doors of buildings on fire.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "provocative",
+        "B": "protrusive",
+        "C": "protective",
+        "D": "productive"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 57,
+      "type": "choice",
+      "stem": "components numbers ingredients contents",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: Professional firefighters must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, trousers, and work gloves. Firefighters’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, firefighters have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, firefighters also need Personal 58 Apparatus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when firefighters are in danger or do not move for about 30 seconds. Pike poles allow firefighters to search behind walls and ceilings for fire and to ventilate structures by breaking windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly breaking through walls, ceilings, or locked doors of buildings on fire.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "components",
+        "B": "numbers",
+        "C": "ingredients",
+        "D": "contents"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 58,
+      "type": "choice",
+      "stem": "Bathing Branching Binding Breathing",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: Professional firefighters must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, trousers, and work gloves. Firefighters’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, firefighters have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, firefighters also need Personal 58 Apparatus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when firefighters are in danger or do not move for about 30 seconds. Pike poles allow firefighters to search behind walls and ceilings for fire and to ventilate structures by breaking windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly breaking through walls, ceilings, or locked doors of buildings on fire.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "Bathing",
+        "B": "Branching",
+        "C": "Binding",
+        "D": "Breathing"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 59,
+      "type": "choice",
+      "stem": "affect alarm attack effect",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: Professional firefighters must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, trousers, and work gloves. Firefighters’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, firefighters have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, firefighters also need Personal 58 Apparatus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when firefighters are in danger or do not move for about 30 seconds. Pike poles allow firefighters to search behind walls and ceilings for fire and to ventilate structures by breaking windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly breaking through walls, ceilings, or locked doors of buildings on fire.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "affect",
+        "B": "alarm",
+        "C": "attack",
+        "D": "effect"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "multi-dimension multi-color multi-purpose multi-discipline",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: Professional firefighters must know each piece of equipment and how to use it. The Bunker Gear, which keeps them from being burned by flames, includes 56 helmet, hood, coat, boot, trousers, and work gloves. Firefighters’ clothes are often made up of three main 57 :an outer shell, a moisture barrier, and a thermal barrier. To accomplish their jobs, firefighters have certain tools, such as fire axe, fire hose, hydrant, ladder, and sledgehammer. To provide them with clean oxygen, firefighters also need Personal 58 Apparatus (PBA), which is made up of a high-pressure tank, a pressure regulator, and an inhalation connection. Attached to the PBA is a Pass device, an 59 that sounds when firefighters are in danger or do not move for about 30 seconds. Pike poles allow firefighters to search behind walls and ceilings for fire and to ventilate structures by breaking windows and walls. The Halligan bar, designed by and named after a New York City Fire Department First Deputy Chief named Hugh Halligan in 1948, consisting of a claw (or fork), a blade (wedge or adze), and a tapered pick, is a 60 tool especially useful in quickly breaking through walls, ceilings, or locked doors of buildings on fire.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "multi-dimension",
+        "B": "multi-color",
+        "C": "multi-purpose",
+        "D": "multi-discipline"
+      },
+      "answer": "B"
     }
   ],
   "year": 106,

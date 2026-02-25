@@ -596,6 +596,71 @@
         "C": "A study found that the presenceofrefugeesin Uganda had decreasedconsumption per household.",
         "D": "Each new refugee household boosted total income more than the cost of the aid the household was given."
       }
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Whatisthemainideaofthispassage? Allowingrefugeestoworkcanbringbenefits. Barringrefugeesfromworkingboostseconomy. TheUgandanapproachtorefugeesprovesproblematic. Ugandanshostrefugeestoreceiveforeignaid.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Allowingrefugeestoworkcanbringbenefits.",
+        "B": "Barringrefugeesfromworkingboostseconomy.",
+        "C": "TheUgandanapproachtorefugeesprovesproblematic.",
+        "D": "Ugandanshostrefugeestoreceiveforeignaid."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Whydomanygovernmentsbarrefugeesfromworkingintheformaleconomy? Refugeeswouldrathertakeoddjobsinabarthanformaljobs. Thegovernmentsintendtopreservejobsforthelocalnatives. Theresearchshowsthatimmigrantsrarelytakenativeworkers’jobs. Theresearchshowsthatrefugeeshaveincreasedconsumptionperhousehold.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Refugeeswouldrathertakeoddjobsinabarthanformaljobs.",
+        "B": "Thegovernmentsintendtopreservejobsforthelocalnatives.",
+        "C": "Theresearchshowsthatimmigrantsrarelytakenativeworkers’jobs.",
+        "D": "Theresearchshowsthatrefugeeshaveincreasedconsumptionperhousehold."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Whichofthefollowingwordsisclosestinmeaningto“spillover”? Dividend. Magnet. Presence. Excess.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Dividend.",
+        "B": "Magnet.",
+        "C": "Presence.",
+        "D": "Excess."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Whatistheimplicationofthestatement,“suchattitudesarestilltheexception”? Themajorityofrefugeesprefertoresideinrichcountries. Themajorityofgovernmentsgiverefugeeslandplots. Themajorityofpeopleconsiderrefugeestobeaburden. Themajorityoflocalbusinessesseerefugeesasabenefit.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Themajorityofrefugeesprefertoresideinrichcountries.",
+        "B": "Themajorityofgovernmentsgiverefugeeslandplots.",
+        "C": "Themajorityofpeopleconsiderrefugeestobeaburden.",
+        "D": "Themajorityoflocalbusinessesseerefugeesasabenefit."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Whichofthefollowingstatementsistrue? Ugandanswelcomedrefugeesbecausethecentralgovernmentpromisednewschools,clinicsandadecentroad. Mostrefugeesstayedinpoorcountriesinordertoboostlocalbusinessesandactasamagnetforforeignaid. AstudyfoundthatthepresenceofrefugeesinUgandahaddecreasedconsumptionperhousehold. Eachnewrefugeehouseholdboostedtotalincomemorethanthecostoftheaidthehouseholdwasgiven.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Ugandanswelcomedrefugeesbecausethecentralgovernmentpromisednewschools,clinicsandadecentroad.",
+        "B": "Mostrefugeesstayedinpoorcountriesinordertoboostlocalbusinessesandactasamagnetforforeignaid.",
+        "C": "AstudyfoundthatthepresenceofrefugeesinUgandahaddecreasedconsumptionperhousehold.",
+        "D": "Eachnewrefugeehouseholdboostedtotalincomemorethanthecostoftheaidthehouseholdwasgiven."
+      },
+      "answer": "D"
     }
   ],
   "year": 109,

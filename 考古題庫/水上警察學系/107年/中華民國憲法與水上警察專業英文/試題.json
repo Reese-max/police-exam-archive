@@ -680,6 +680,156 @@
         "C": "in car nations",
         "D": "aes the tics"
       }
+    },
+    {
+      "number": 51,
+      "type": "choice",
+      "stem": "commuters terminals referees vessels",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and positioning information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all passenger ships 52 size are required by the International Maritime Organization to carry AIS equipment. AIS transponders automatically broadcast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In addition, voyage related data is broadcast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transmits and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "commuters",
+        "B": "terminals",
+        "C": "referees",
+        "D": "vessels"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "free from irrespective of in contrast to by order of",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and positioning information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all passenger ships 52 size are required by the International Maritime Organization to carry AIS equipment. AIS transponders automatically broadcast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In addition, voyage related data is broadcast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transmits and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "free from",
+        "B": "irrespective of",
+        "C": "in contrast to",
+        "D": "by order of"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "rituals episodes intervals fragments",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and positioning information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all passenger ships 52 size are required by the International Maritime Organization to carry AIS equipment. AIS transponders automatically broadcast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In addition, voyage related data is broadcast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transmits and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "rituals",
+        "B": "episodes",
+        "C": "intervals",
+        "D": "fragments"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "What does it in the second sentence refer to? Misleading information. The legal doctrine.",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and positioning information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all passenger ships 52 size are required by the International Maritime Organization to carry AIS equipment. AIS transponders automatically broadcast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In addition, voyage related data is broadcast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transmits and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "People’s",
+        "B": "right.",
+        "C": "The",
+        "D": "public."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "without through under except 請依下文回答第56題至第60題: The International Maritime Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 maritime security, the Organization develops suitable regulations and guidance through the Maritime Safety Committee and with input from its Facilitation Committee and Legal Committee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980s. In the late 1990s and the early 2000s, the focus was on the South China Sea and the Straits of Malacca and Singapore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implementing a strategy for enhancing maritime security in West and Central Africa, 59 the region’s maritime security agreements. The Organization, with support and cooperation from the shipping industry, has developed and adopted several antipiracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第51題至第55題: The Automatic Identification System (AIS) is a short-range coastal tracking system currently used on ships. It was developed to provide identification and positioning information to both 51 and shore stations. Ships of 300 gross tonnage or more sailing on international voyages, freighter ships of 500 gross tonnage or more sailing in local waters, and all passenger ships 52 size are required by the International Maritime Organization to carry AIS equipment. AIS transponders automatically broadcast information at regular 53 . Navigational status data is transmitted every 2 to 180 seconds, depending on a ship’s activity. In addition, voyage related data is broadcast every 6 minutes. These signals are received by AIS transponders installed on other ships or by land-based systems. The AIS signals have a horizontal range of about 40 nautical miles, 54 that AIS traffic information is only available around coastal zones or in a ship-to-ship zone. AIS communication takes place using two VHF frequencies, 161.975 MHz and 162.025 MHz. Although only one radio channel is necessary, each station transmits and receives over two radio channels to avoid interference problems and to allow channels to be shifted among ships 55 communication loss.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "without",
+        "B": "through",
+        "C": "under",
+        "D": "except"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 56,
+      "type": "choice",
+      "stem": "undermine encompass manifest irritate",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The International Maritime Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 maritime security, the Organization develops suitable regulations and guidance through the Maritime Safety Committee and with input from its Facilitation Committee and Legal Committee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980s. In the late 1990s and the early 2000s, the focus was on the South China Sea and the Straits of Malacca and Singapore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implementing a strategy for enhancing maritime security in West and Central Africa, 59 the region’s maritime security agreements. The Organization, with support and cooperation from the shipping industry, has developed and adopted several antipiracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "imminent",
+        "B": "persistent",
+        "C": "civilian",
+        "D": "humble"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 57,
+      "type": "choice",
+      "stem": "armful armless arming armed",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The International Maritime Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 maritime security, the Organization develops suitable regulations and guidance through the Maritime Safety Committee and with input from its Facilitation Committee and Legal Committee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980s. In the late 1990s and the early 2000s, the focus was on the South China Sea and the Straits of Malacca and Singapore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implementing a strategy for enhancing maritime security in West and Central Africa, 59 the region’s maritime security agreements. The Organization, with support and cooperation from the shipping industry, has developed and adopted several antipiracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "quite",
+        "B": "never",
+        "C": "even",
+        "D": "over"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 58,
+      "type": "choice",
+      "stem": "off upon below through",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The International Maritime Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 maritime security, the Organization develops suitable regulations and guidance through the Maritime Safety Committee and with input from its Facilitation Committee and Legal Committee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980s. In the late 1990s and the early 2000s, the focus was on the South China Sea and the Straits of Malacca and Singapore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implementing a strategy for enhancing maritime security in West and Central Africa, 59 the region’s maritime security agreements. The Organization, with support and cooperation from the shipping industry, has developed and adopted several antipiracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "To",
+        "B": "For",
+        "C": "Beside",
+        "D": "Unlike"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 59,
+      "type": "choice",
+      "stem": "for fear of in line with at the cost of on the way to",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The International Maritime Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 maritime security, the Organization develops suitable regulations and guidance through the Maritime Safety Committee and with input from its Facilitation Committee and Legal Committee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980s. In the late 1990s and the early 2000s, the focus was on the South China Sea and the Straits of Malacca and Singapore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implementing a strategy for enhancing maritime security in West and Central Africa, 59 the region’s maritime security agreements. The Organization, with support and cooperation from the shipping industry, has developed and adopted several antipiracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "indicator",
+        "B": "example",
+        "C": "decision",
+        "D": "principle"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "disputes offenses incidents measures",
+      "section": "乙、測驗題",
+      "passage": "請依下文回答第56題至第60題: The International Maritime Organization (IMO) has within its mandate to make trade and travel by sea as safe and secure as possible. To reduce any threats with the potential to 56 maritime security, the Organization develops suitable regulations and guidance through the Maritime Safety Committee and with input from its Facilitation Committee and Legal Committee. The threat posed by piracy and 57 robbery against ships has been on the IMO’s agenda since the early 1980s. In the late 1990s and the early 2000s, the focus was on the South China Sea and the Straits of Malacca and Singapore. More recently, since 2005, the Organization has focused on piracy 58 the coast of Somalia, in the Gulf of Aden and the wider Indian Ocean. Currently, it is implementing a strategy for enhancing maritime security in West and Central Africa, 59 the region’s maritime security agreements. The Organization, with support and cooperation from the shipping industry, has developed and adopted several antipiracy 60 , which have contributed to the mitigation of the negative impact posed by piracy worldwide.",
+      "subtype": "reading_comprehension",
+      "options": {
+        "A": "because",
+        "B": "unless",
+        "C": "when",
+        "D": "or"
+      },
+      "answer": "C"
     }
   ],
   "year": 107,
