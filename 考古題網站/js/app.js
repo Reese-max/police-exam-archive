@@ -630,6 +630,19 @@ function clearPracticeSession() {
 }
 
 /* === 匯出 PDF (Phase 9) === */
+var _html2pdfLoaded = false;
+function _loadHtml2Pdf(cb) {
+  if (_html2pdfLoaded) { cb(); return; }
+  var s = document.createElement('script');
+  s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js';
+  s.onload = function() { _html2pdfLoaded = true; cb(); };
+  s.onerror = function() { cb(new Error('html2pdf 載入失敗')); };
+  document.head.appendChild(s);
+}
+function _isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    || (window.innerWidth <= 768 && 'ontouchstart' in window);
+}
 function showExportPanel() {
   var panel = document.getElementById('exportPanel');
   var isOpen = panel.style.display !== 'none';
@@ -645,8 +658,8 @@ function hideExportPanel() {
   document.getElementById('exportPanel').style.display = 'none';
   if (window.innerWidth <= 768) { var overlay = document.getElementById('sidebarOverlay'); overlay.classList.remove('active'); }
 }
-function exportPDF(includeAnswers) {
-  hideExportPanel();
+
+function _preparePrintDOM(includeAnswers) {
   var vs = getActiveViewSelector();
   var cards = document.querySelectorAll(vs + ' .subject-card');
   var otherView = vs === '#yearView' ? '#subjectView' : '#yearView';
@@ -672,6 +685,7 @@ function exportPDF(includeAnswers) {
   var header = document.createElement('div');
   header.className = 'print-header';
   header.id = 'printHeader';
+  header.style.display = 'block';
   var h1 = document.createElement('h1');
   h1.textContent = document.querySelector('.page-title').textContent;
   var info = document.createElement('p');
@@ -689,19 +703,90 @@ function exportPDF(includeAnswers) {
   var mainEl = document.querySelector('.main');
   mainEl.insertBefore(header, mainEl.firstChild);
 
-  window.print();
+  return { visibleCount: visibleCount, title: h1.textContent };
+}
 
+function _cleanupPrintDOM() {
+  var h = document.getElementById('printHeader');
+  if (h) h.remove();
+  document.body.classList.remove('print-no-answers');
+  document.querySelectorAll('.print-hidden').forEach(function(el) { el.classList.remove('print-hidden'); });
+}
+
+function exportPDF(includeAnswers) {
+  hideExportPanel();
+
+  if (_isMobile()) {
+    _exportPDFMobile(includeAnswers);
+  } else {
+    _exportPDFDesktop(includeAnswers);
+  }
+}
+
+function _exportPDFDesktop(includeAnswers) {
+  _preparePrintDOM(includeAnswers);
+  window.print();
   var _cleaned = false;
   function cleanup() {
     if (_cleaned) return;
     _cleaned = true;
-    var h = document.getElementById('printHeader');
-    if (h) h.remove();
-    document.body.classList.remove('print-no-answers');
-    document.querySelectorAll('.print-hidden').forEach(function(el) { el.classList.remove('print-hidden'); });
+    _cleanupPrintDOM();
   }
   if (window.onafterprint !== undefined) {
     window.addEventListener('afterprint', cleanup, { once: true });
   }
   setTimeout(cleanup, 30000);
+}
+
+function _exportPDFMobile(includeAnswers) {
+  var exportBtn = document.getElementById('exportBtn');
+  if (exportBtn) { exportBtn.disabled = true; exportBtn.textContent = '生成中...'; }
+
+  _loadHtml2Pdf(function(err) {
+    if (err) {
+      alert('PDF 元件載入失敗，請檢查網路連線後重試。');
+      if (exportBtn) { exportBtn.disabled = false; exportBtn.textContent = '匯出 PDF'; }
+      return;
+    }
+
+    var info = _preparePrintDOM(includeAnswers);
+    var mainEl = document.querySelector('.main');
+
+    /* 暫時調整樣式以確保正確渲染 */
+    var origML = mainEl.style.marginLeft;
+    var origMW = mainEl.style.maxWidth;
+    mainEl.style.marginLeft = '0';
+    mainEl.style.maxWidth = '100%';
+
+    /* 隱藏不需要的 UI 元素 */
+    var hideEls = document.querySelectorAll('.sidebar, .search-box, .toolbar, .dark-toggle, .back-to-top, .hamburger, .sidebar-reopen, .sidebar-overlay, .export-panel, .practice-score, .self-score-panel, .skip-link');
+    hideEls.forEach(function(el) { el.classList.add('pdf-export-hide'); });
+
+    var filename = (info.title || '考古題').replace(/[\/\\:*?"<>|]/g, '_') + '.pdf';
+
+    var opt = {
+      margin: [8, 5, 8, 5],
+      filename: filename,
+      image: { type: 'jpeg', quality: 0.92 },
+      html2canvas: { scale: 1.5, useCORS: true, logging: false, scrollY: 0 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+
+    html2pdf().set(opt).from(mainEl).save().then(function() {
+      _cleanupPrintDOM();
+      mainEl.style.marginLeft = origML;
+      mainEl.style.maxWidth = origMW;
+      hideEls.forEach(function(el) { el.classList.remove('pdf-export-hide'); });
+      if (exportBtn) { exportBtn.disabled = false; exportBtn.textContent = '匯出 PDF'; }
+    }).catch(function(e) {
+      console.error('PDF 生成失敗:', e);
+      _cleanupPrintDOM();
+      mainEl.style.marginLeft = origML;
+      mainEl.style.maxWidth = origMW;
+      hideEls.forEach(function(el) { el.classList.remove('pdf-export-hide'); });
+      if (exportBtn) { exportBtn.disabled = false; exportBtn.textContent = '匯出 PDF'; }
+      alert('PDF 生成失敗，請稍後重試。');
+    });
+  });
 }
