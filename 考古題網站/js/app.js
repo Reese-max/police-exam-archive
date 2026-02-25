@@ -630,19 +630,6 @@ function clearPracticeSession() {
 }
 
 /* === 匯出 PDF (Phase 9) === */
-var _html2pdfLoaded = false;
-function _loadHtml2Pdf(cb) {
-  if (_html2pdfLoaded) { cb(); return; }
-  var s = document.createElement('script');
-  s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js';
-  s.onload = function() { _html2pdfLoaded = true; cb(); };
-  s.onerror = function() { cb(new Error('html2pdf 載入失敗')); };
-  document.head.appendChild(s);
-}
-function _isMobile() {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-    || (window.innerWidth <= 768 && 'ontouchstart' in window);
-}
 function showExportPanel() {
   var panel = document.getElementById('exportPanel');
   var isOpen = panel.style.display !== 'none';
@@ -715,15 +702,12 @@ function _cleanupPrintDOM() {
 
 function exportPDF(includeAnswers) {
   hideExportPanel();
-
-  if (_isMobile()) {
-    _exportPDFMobile(includeAnswers);
-  } else {
-    _exportPDFDesktop(includeAnswers);
-  }
+  /* 統一使用 window.print()：現代手機瀏覽器皆支援，
+     且由瀏覽器原生渲染，不佔額外記憶體、PDF 可搜尋文字 */
+  _exportPDFNative(includeAnswers);
 }
 
-function _exportPDFDesktop(includeAnswers) {
+function _exportPDFNative(includeAnswers) {
   _preparePrintDOM(includeAnswers);
   window.print();
   var _cleaned = false;
@@ -736,103 +720,4 @@ function _exportPDFDesktop(includeAnswers) {
     window.addEventListener('afterprint', cleanup, { once: true });
   }
   setTimeout(cleanup, 30000);
-}
-
-function _exportPDFMobile(includeAnswers) {
-  var exportBtn = document.getElementById('exportBtn');
-  if (exportBtn) { exportBtn.disabled = true; exportBtn.textContent = '生成中...'; }
-
-  /* --- 建立 loading overlay（含取消鈕） --- */
-  var _cancelled = false;
-  var overlay = document.createElement('div');
-  overlay.id = 'pdfLoadingOverlay';
-  overlay.innerHTML =
-    '<div class="pdf-loading-box">' +
-      '<div class="pdf-loading-spinner"></div>' +
-      '<p class="pdf-loading-text">正在生成 PDF，請稍候⋯</p>' +
-      '<p class="pdf-loading-hint">如頁面過多可能需要較長時間</p>' +
-      '<button class="pdf-loading-cancel" id="pdfCancelBtn">取消</button>' +
-    '</div>';
-  document.body.appendChild(overlay);
-  document.getElementById('pdfCancelBtn').addEventListener('click', function() {
-    _cancelled = true;
-    cleanup();
-    alert('已取消 PDF 匯出。');
-  });
-
-  /* --- 共用清理函式，確保狀態一定還原 --- */
-  var _cleaned = false;
-  var _hideEls = null;
-  var _origML = '';
-  var _origMW = '';
-  var _mainEl = null;
-  var _timer = null;
-
-  function cleanup() {
-    if (_cleaned) return;
-    _cleaned = true;
-    if (_timer) { clearTimeout(_timer); _timer = null; }
-    _cleanupPrintDOM();
-    if (_mainEl) { _mainEl.style.marginLeft = _origML; _mainEl.style.maxWidth = _origMW; }
-    if (_hideEls) { _hideEls.forEach(function(el) { el.classList.remove('pdf-export-hide'); }); }
-    if (exportBtn) { exportBtn.disabled = false; exportBtn.textContent = '匯出 PDF'; }
-    var ov = document.getElementById('pdfLoadingOverlay');
-    if (ov) ov.remove();
-  }
-
-  _loadHtml2Pdf(function(err) {
-    if (_cancelled) return;
-    if (err) {
-      alert('PDF 元件載入失敗，請檢查網路連線後重試。');
-      cleanup();
-      return;
-    }
-
-    /* 用 rAF 讓瀏覽器先渲染 overlay，再做 DOM 操作 */
-    requestAnimationFrame(function() {
-      if (_cancelled) return;
-
-      var info = _preparePrintDOM(includeAnswers);
-      _mainEl = document.querySelector('.main');
-
-      _origML = _mainEl.style.marginLeft;
-      _origMW = _mainEl.style.maxWidth;
-      _mainEl.style.marginLeft = '0';
-      _mainEl.style.maxWidth = '100%';
-
-      _hideEls = document.querySelectorAll('.sidebar, .search-box, .toolbar, .dark-toggle, .back-to-top, .hamburger, .sidebar-reopen, .sidebar-overlay, .export-panel, .practice-score, .self-score-panel, .skip-link');
-      _hideEls.forEach(function(el) { el.classList.add('pdf-export-hide'); });
-
-      var filename = (info.title || '考古題').replace(/[\/\\:*?"<>|]/g, '_') + '.pdf';
-
-      /* 降低 scale 與 image quality 以減少行動裝置記憶體用量 */
-      var opt = {
-        margin: [8, 5, 8, 5],
-        filename: filename,
-        image: { type: 'jpeg', quality: 0.75 },
-        html2canvas: { scale: 1, useCORS: true, logging: false, scrollY: 0 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['css', 'legacy'] }
-      };
-
-      /* 60 秒逾時保護：避免頁面永遠卡住 */
-      _timer = setTimeout(function() {
-        if (!_cleaned) {
-          console.error('PDF 生成逾時 (60s)');
-          cleanup();
-          alert('PDF 生成逾時，試卷數量可能過多。\n建議先篩選少量試卷再匯出。');
-        }
-      }, 60000);
-
-      html2pdf().set(opt).from(_mainEl).save().then(function() {
-        if (!_cancelled) cleanup();
-      }).catch(function(e) {
-        console.error('PDF 生成失敗:', e);
-        if (!_cancelled) {
-          cleanup();
-          alert('PDF 生成失敗。\n建議先篩選較少試卷再重試。');
-        }
-      });
-    });
-  });
 }
