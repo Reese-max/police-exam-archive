@@ -471,27 +471,31 @@
 
     // 題號 + 題幹
     var qLabel = item.num + '. ';
-    var labelW = this.font.widthOfTextAtSize(_sanitizeText(qLabel), FONT_SIZE.body);
+    var safeLabel = _sanitizeText(qLabel);
+    var labelW = this.font.widthOfTextAtSize(safeLabel, FONT_SIZE.body);
     this.cursorY -= 3;
 
-    // 題號
-    try {
-      this.currentPage.drawText(_sanitizeText(qLabel), {
-        x: MARGIN.left,
-        y: this.cursorY - lineH,
-        size: FONT_SIZE.body,
-        font: this.font,
-        color: _rgb(0.15, 0.39, 0.92)
-      });
-    } catch (e) { /* ignore */ }
+    // 記住題號位置所在頁面，繪製後驗證
+    var numPage = this.currentPage;
+    var numY = this.cursorY - lineH;
 
     // 題幹（縮排）
-    var savedY = this.cursorY;
     this._drawText(item.text, FONT_SIZE.body, {
       x: MARGIN.left,
       indent: labelW,
       maxWidth: CONTENT_W - labelW
     });
+
+    // 題號繪製於題幹首行同頁（_ensureSpace 已保證首行不換頁）
+    try {
+      numPage.drawText(safeLabel, {
+        x: MARGIN.left,
+        y: numY,
+        size: FONT_SIZE.body,
+        font: this.font,
+        color: _rgb(0.15, 0.39, 0.92)
+      });
+    } catch (e) { /* ignore */ }
 
     // 題目內圖片
     if (item.figures && item.figures.length) {
@@ -556,7 +560,7 @@
   /* 繪製閱讀測驗段落 */
   PdfLayoutEngine.prototype.drawPassage = function (text) {
     this._ensureSpace(FONT_SIZE.body * LINE_HEIGHT_FACTOR * 2);
-    // 左側邊線
+    var startPage = this.currentPage;
     var startY = this.cursorY;
     this._drawText(text, FONT_SIZE.body, {
       indent: 8,
@@ -564,12 +568,15 @@
     });
     var endY = this.cursorY;
 
-    this.currentPage.drawLine({
-      start: { x: MARGIN.left + 3, y: startY },
-      end: { x: MARGIN.left + 3, y: endY },
-      thickness: 2,
-      color: _rgb(0.15, 0.39, 0.92)
-    });
+    // 左側邊線（僅在未跨頁時繪製，跨頁邊線會錯位）
+    if (this.currentPage === startPage) {
+      this.currentPage.drawLine({
+        start: { x: MARGIN.left + 3, y: startY },
+        end: { x: MARGIN.left + 3, y: endY },
+        thickness: 2,
+        color: _rgb(0.15, 0.39, 0.92)
+      });
+    }
 
     this.cursorY -= PARAGRAPH_GAP;
   };
@@ -804,19 +811,18 @@
    */
   async function deliverPdf(pdfBytes, filename) {
     var blob = new Blob([pdfBytes], { type: 'application/pdf' });
-    var file = new File([blob], filename, { type: 'application/pdf' });
 
     // 策略 1：Web Share API（iOS 原生分享）
-    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-      try {
-        await navigator.share({
-          files: [file],
-          title: filename
-        });
-        return;
-      } catch (e) {
-        if (e.name === 'AbortError') return; // 使用者取消
-        // 降級到策略 2
+    if (navigator.share && navigator.canShare) {
+      var file = new File([blob], filename, { type: 'application/pdf' });
+      if (navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file], title: filename });
+          return;
+        } catch (e) {
+          if (e.name === 'AbortError') return; // 使用者取消
+          // 降級到策略 2
+        }
       }
     }
 
@@ -843,24 +849,35 @@
 
   function _sanitizeText(text) {
     if (!text) return '';
-    // 替換常見問題字元
     return text
       .replace(/\t/g, '    ')
       .replace(/\r\n/g, '\n')
       .replace(/\r/g, '\n')
-      .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ' ');
+      .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ' ')
+      .replace(/[\uFEFF\uFFFE\uFFFF]/g, '')           // BOM & specials
+      .replace(/[\u2028\u2029]/g, '\n')                // Unicode line/paragraph separators
+      .replace(/[\uD800-\uDFFF]/g, ' ');               // lone surrogates
   }
 
   function _getFontUrl() {
-    // 計算相對於目前頁面的字型路徑
+    var fontName = 'fonts/NotoSansTC-Regular-subset.otf';
+    // 策略 1：從 app.js 的 script 標籤推算基礎路徑
     var scripts = document.querySelectorAll('script[src*="app.js"]');
     if (scripts.length) {
       var src = scripts[0].getAttribute('src');
+      // 處理各種路徑格式：../js/app.js, js/app.js, /js/app.js
       var base = src.replace(/js\/app\.js.*$/, '');
-      return base + 'fonts/NotoSansTC-Regular-subset.otf';
+      if (base) return base + fontName;
     }
-    // fallback
-    return '../fonts/NotoSansTC-Regular-subset.otf';
+    // 策略 2：從 <link> 標籤推算
+    var links = document.querySelectorAll('link[href*="style.css"]');
+    if (links.length) {
+      var href = links[0].getAttribute('href');
+      var base2 = href.replace(/css\/style\.css.*$/, '');
+      if (base2) return base2 + fontName;
+    }
+    // 策略 3：固定相對路徑
+    return '../' + fontName;
   }
 
   function _buildFilename(title, years, includeAnswers) {

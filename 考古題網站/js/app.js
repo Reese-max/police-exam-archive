@@ -828,7 +828,7 @@ function exportPDF(includeAnswers) {
   }
   hideExportPanel();
   if (isMobileDevice()) {
-    _exportPDFMobile(includeAnswers);
+    _exportPDFMobile(includeAnswers, sel);
   } else {
     _exportPDFNative(includeAnswers);
   }
@@ -852,27 +852,39 @@ function _exportPDFNative(includeAnswers) {
 /* === 手機端 PDF 匯出 (Phase 10) === */
 
 function isMobileDevice() {
-  return window.matchMedia('(pointer:coarse)').matches &&
-         window.matchMedia('(hover:none)').matches;
+  if (!window.matchMedia('(pointer:coarse)').matches) return false;
+  if (!window.matchMedia('(hover:none)').matches) return false;
+  // 排除大型觸控螢幕（如觸控桌面顯示器）
+  if (Math.min(screen.width, screen.height) > 1024) return false;
+  return true;
 }
 
 var _pdfLibLoaded = false;
 var _pdfLibLoading = false;
+var _pdfLibError = null;
 
 function _loadPdfLibraries() {
   if (_pdfLibLoaded) return Promise.resolve();
+  if (_pdfLibError) return Promise.reject(_pdfLibError);
   if (_pdfLibLoading) {
     return new Promise(function(resolve, reject) {
       var check = setInterval(function() {
         if (_pdfLibLoaded) { clearInterval(check); resolve(); }
+        if (_pdfLibError) { clearInterval(check); reject(_pdfLibError); }
       }, 100);
       setTimeout(function() { clearInterval(check); reject(new Error('載入逾時')); }, 30000);
     });
   }
   _pdfLibLoading = true;
+  _pdfLibError = null;
 
   function loadScript(url) {
     return new Promise(function(resolve, reject) {
+      // 防止重複載入同一 script
+      if (document.querySelector('script[src="' + url + '"]')) {
+        resolve();
+        return;
+      }
       var s = document.createElement('script');
       s.src = url;
       s.onload = resolve;
@@ -886,7 +898,6 @@ function _loadPdfLibraries() {
       return loadScript('https://cdn.jsdelivr.net/npm/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js');
     })
     .then(function() {
-      // 載入 pdf-export.js（與 app.js 同目錄）
       var appScript = document.querySelector('script[src*="app.js"]');
       var base = appScript ? appScript.getAttribute('src').replace('app.js', '') : '../js/';
       return loadScript(base + 'pdf-export.js');
@@ -897,29 +908,36 @@ function _loadPdfLibraries() {
     })
     .catch(function(err) {
       _pdfLibLoading = false;
+      _pdfLibError = err;
       throw err;
     });
 }
 
-function _exportPDFMobile(includeAnswers) {
-  var sel = _getExportSelection();
+function _exportPDFMobile(includeAnswers, sel) {
   var progressUI = showPdfProgress();
+  var cancelled = false;
+
+  progressUI.onCancel = function() { cancelled = true; };
 
   _loadPdfLibraries()
     .then(function() {
+      if (cancelled) throw new Error('已取消');
       return window.PdfExport.generatePdf(sel, includeAnswers, function(pct, msg) {
+        if (cancelled) throw new Error('已取消');
         progressUI.update(pct, msg);
       });
     })
     .then(function(result) {
+      if (cancelled) return;
       progressUI.update(100, '下載中...');
       return window.PdfExport.deliverPdf(result.bytes, result.filename);
     })
     .then(function() {
-      progressUI.close();
+      if (!cancelled) progressUI.close();
     })
     .catch(function(err) {
       progressUI.close();
+      if (cancelled || (err && err.message === '已取消')) return;
       console.error('PDF 匯出失敗:', err);
       var msg = '手機端 PDF 匯出失敗';
       if (err && err.message) msg += '：' + err.message;
@@ -980,17 +998,20 @@ function showPdfProgress() {
     }, 300);
   }
 
-  cancelBtn.addEventListener('click', function() {
-    close();
-    // 取消無法真正中斷 Promise，但會隱藏 UI
-  });
-
-  return {
+  var api = {
     update: function(pct, message) {
       if (closed) return;
       barFill.style.width = Math.min(pct, 100) + '%';
       if (message) msg.textContent = message;
     },
-    close: close
+    close: close,
+    onCancel: null
   };
+
+  cancelBtn.addEventListener('click', function() {
+    close();
+    if (typeof api.onCancel === 'function') api.onCancel();
+  });
+
+  return api;
 }
