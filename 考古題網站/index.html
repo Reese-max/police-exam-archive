@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>三等警察特考考古題總覽</title>
 <meta name="description" content="三等警察特考（內軌）全部 17 個類科考古題總覽，共 1090 份試卷、22523 道題目">
-<meta name="theme-color" content="#1e3a5f">
+<meta name="theme-color" content="#f0ece6">
 <meta name="robots" content="index, follow">
 <link rel="manifest" href="manifest.json">
 <meta property="og:title" content="三等警察特考考古題總覽">
@@ -19,52 +19,44 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap"></noscript>
 <style>
-:root { --primary: #2563eb; --primary-light: #3b82f6; --accent: #6366f1; --bg: #f8fafc; --card-bg: #ffffff; --border: #e2e8f0; --text: #1e293b; --text-light: #64748b; --gold: #fbbf24; --shadow-sm: 0 1px 2px rgba(0,0,0,0.05); --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.05); }
+:root { --bg: #faf8f5; --card-bg: #ffffff; --border: #e5e0d8; --text: #2d2a26; --text-light: #78716c; --accent: #4a7c5e; --accent-hover: #3d6b50; --header-bg: #f0ece6; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: "Noto Sans TC", "Microsoft JhengHei", -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh; -webkit-font-smoothing: antialiased; }
-.site-header { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #6366f1 100%); color: #fff; padding: 3.5rem 2rem; text-align: center; }
-.site-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.15); letter-spacing: 0.05em; }
-.site-subtitle { font-size: 1rem; opacity: 0.85; margin-bottom: 2rem; }
-.hero-stats { display: inline-flex; justify-content: center; gap: 3rem; flex-wrap: wrap; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(255,255,255,0.1); border-radius: 16px; border: 1px solid rgba(255,255,255,0.2); padding: 1.5rem 2.5rem; }
+body { font-family: "Noto Sans TC", "Microsoft JhengHei", -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+.site-header { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem 2rem; text-align: center; }
+.site-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.3rem; letter-spacing: 0.02em; color: var(--text); }
+.site-subtitle { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem; }
+.hero-stats { display: inline-flex; gap: 2.5rem; flex-wrap: wrap; }
 .hero-stat { text-align: center; }
-.hero-stat-value { font-size: 2.5rem; font-weight: 800; color: #fbbf24; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
-.hero-stat-label { font-size: 0.85rem; opacity: 0.85; }
-.container { max-width: 660px; margin: 0 auto; padding: 2rem 1.5rem; }
-.section-title { font-size: 1.3rem; font-weight: 700; color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1.25rem; }
-.category-list { list-style: none; background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
+.hero-stat-value { font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+.hero-stat-label { font-size: 0.8rem; color: var(--text-light); }
+.container { max-width: 620px; margin: 0 auto; padding: 2rem 1.5rem; }
+.section-title { font-size: 0.85rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+.category-list { list-style: none; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
 .category-list li { border-bottom: 1px solid var(--border); }
 .category-list li:last-child { border-bottom: none; }
-.category-list a { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; text-decoration: none; color: var(--text); transition: background 0.15s ease, padding-left 0.15s ease; }
-.category-list a:hover { background: color-mix(in srgb, var(--item-color, var(--primary)) 6%, transparent); padding-left: 1.5rem; }
-.item-icon { font-size: 1.3rem; flex-shrink: 0; width: 28px; text-align: center; }
-.item-name { flex: 1; font-size: 0.95rem; font-weight: 600; }
-.item-count { font-size: 0.78rem; color: var(--text-light); white-space: nowrap; }
-.item-arrow { font-size: 0.9rem; color: var(--border); transition: color 0.15s ease, transform 0.15s ease; }
-.category-list a:hover .item-arrow { color: var(--accent); transform: translateX(3px); }
-.group-title { font-size: 0.92rem; font-weight: 700; color: var(--text-light); padding: 0.6rem 1.25rem; background: color-mix(in srgb, var(--border) 40%, var(--bg)); letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
-.group-title:not(:first-child) { border-top: 2px solid var(--border); }
-html.dark .group-title { background: color-mix(in srgb, var(--border) 30%, var(--card-bg)); }
-.site-footer { text-align: center; padding: 2rem; font-size: 0.82rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
-.dark-toggle { position: fixed; bottom: 2rem; left: 2rem; z-index: 200; width: 44px; height: 44px; border-radius: 50%; background: var(--card-bg); border: 2px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-.dark-toggle:hover { border-color: var(--accent); transform: scale(1.1); }
-.dark-toggle svg { width: 22px; height: 22px; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-.dark-toggle:active svg { transform: rotate(360deg); }
+.category-list a { display: flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1rem; text-decoration: none; color: var(--text); transition: background 0.12s ease; }
+.category-list a:hover { background: rgba(74, 124, 94, 0.06); }
+.item-icon { font-size: 1.1rem; flex-shrink: 0; width: 24px; text-align: center; }
+.item-name { flex: 1; font-size: 0.92rem; font-weight: 500; }
+.item-count { font-size: 0.75rem; color: var(--text-light); white-space: nowrap; }
+.item-arrow { font-size: 0.85rem; color: var(--border); transition: color 0.12s ease; }
+.category-list a:hover .item-arrow { color: var(--accent); }
+.group-title { font-size: 0.78rem; font-weight: 600; color: var(--text-light); padding: 0.5rem 1rem; background: var(--bg); letter-spacing: 0.04em; border-bottom: 1px solid var(--border); }
+.group-title:not(:first-child) { border-top: 1px solid var(--border); }
+.site-footer { text-align: center; padding: 2rem; font-size: 0.78rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+.dark-toggle { position: fixed; bottom: 1.5rem; left: 1.5rem; z-index: 200; width: 40px; height: 40px; border-radius: 50%; background: var(--card-bg); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.15s ease; }
+.dark-toggle:hover { border-color: var(--accent); }
+.dark-toggle svg { width: 18px; height: 18px; }
 .dark-icon-moon, .dark-icon-sun { display: block; }
 html.dark .dark-icon-moon { display: none; }
 html:not(.dark) .dark-icon-sun { display: none; }
-html.dark { --primary: #818cf8; --primary-light: #6366f1; --accent: #a5b4fc; --bg: #0f172a; --card-bg: #1e293b; --border: #334155; --text: #f1f5f9; --text-light: #94a3b8; --gold: #fbbf24; --shadow-sm: 0 1px 2px rgba(0,0,0,0.2); --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -4px rgba(0,0,0,0.3); }
-html.dark .site-header { background: linear-gradient(135deg, #020617 0%, #1e1b4b 50%, #312e81 100%); }
-html.dark .category-list { background: #1e293b; border-color: #334155; }
-html.dark .category-list li { border-color: #334155; }
-html.dark .category-list a:hover { background: color-mix(in srgb, var(--item-color, var(--primary)) 10%, transparent); }
-html.dark .dark-toggle { background: #1e293b; border-color: #334155; }
+html.dark { --bg: #1c1b18; --card-bg: #27261f; --border: #3d3a33; --text: #e5e0d8; --text-light: #9c978e; --accent: #7db892; --accent-hover: #6ba87f; --header-bg: #222119; }
+html.dark .category-list a:hover { background: rgba(125, 184, 146, 0.08); }
 a, button, input, select, [role="button"] { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-body { overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
-@media (max-width: 768px) { .site-header { padding: 2rem 1.5rem; } .site-title { font-size: 1.6rem; letter-spacing: 0.03em; } .site-subtitle { font-size: 0.88rem; margin-bottom: 1.25rem; } .hero-stats { gap: 1.5rem; padding: 1rem 1.5rem; border-radius: 12px; } .hero-stat-value { font-size: 1.8rem; } .container { padding: 1.5rem 1rem; } .dark-toggle { bottom: 1.5rem; left: 1.5rem; } }
+@media (max-width: 768px) { .site-header { padding: 2rem 1.5rem 1.5rem; } .site-title { font-size: 1.3rem; } .site-subtitle { font-size: 0.85rem; margin-bottom: 1rem; } .hero-stats { gap: 1.5rem; } .hero-stat-value { font-size: 1.3rem; } .container { padding: 1.5rem 1rem; } }
 @supports (padding: env(safe-area-inset-bottom)) { @media (max-width: 768px) { .dark-toggle { bottom: calc(1.5rem + env(safe-area-inset-bottom)); } .site-footer { padding-bottom: calc(2rem + env(safe-area-inset-bottom)); } } }
-@media (max-width: 768px) and (orientation: landscape) { .site-header { padding: 1.5rem; } .hero-stat-value { font-size: 1.5rem; } .hero-stats { gap: 1rem; padding: 0.75rem 1.25rem; } }
-.skip-link { position: absolute; top: -100%; left: 1rem; background: var(--primary); color: #fff; padding: 0.5rem 1rem; border-radius: 0 0 6px 6px; z-index: 999; text-decoration: none; font-size: 0.9rem; }
+.skip-link { position: absolute; top: -100%; left: 1rem; background: var(--accent); color: #fff; padding: 0.5rem 1rem; border-radius: 0 0 6px 6px; z-index: 999; text-decoration: none; font-size: 0.9rem; }
 .skip-link:focus { top: 0; }
 </style>
 <script type="application/ld+json">{
@@ -78,37 +70,37 @@ body { overflow-x: hidden; }
 <body>
 <a href="#categories" class="skip-link">跳至類科列表</a>
 <header class="site-header">
-  <h1 class="site-title">三等警察特考考古題總覽</h1>
+  <h1 class="site-title">三等警察特考考古題</h1>
   <p class="site-subtitle">內軌 17 個類科完整試題庫</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-value">17</div><div class="hero-stat-label">類科</div></div>
-    <div class="hero-stat"><div class="hero-stat-value">1090</div><div class="hero-stat-label">試卷</div></div>
-    <div class="hero-stat"><div class="hero-stat-value">22523</div><div class="hero-stat-label">題目</div></div>
+    <div class="hero-stat"><div class="hero-stat-value">1,090</div><div class="hero-stat-label">份試卷</div></div>
+    <div class="hero-stat"><div class="hero-stat-value">22,523</div><div class="hero-stat-label">道題目</div></div>
   </div>
 </header>
 <main class="container">
-  <h2 class="section-title">選擇類科</h2>
+  <h2 class="section-title">類科列表</h2>
   <nav aria-label="類科導航">
   <ul class="category-list" id="categories">
     <li class="group-title">甲組 — 警察科技學院</li>
-    <li><a href="刑事警察學系/刑事警察學系考古題總覽.html" style="--item-color: #d97706"><span class="item-icon">🔍</span><span class="item-name">刑事警察學系</span><span class="item-count">1601 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="鑑識科學學系/鑑識科學學系考古題總覽.html" style="--item-color: #059669"><span class="item-icon">🔬</span><span class="item-name">鑑識科學學系</span><span class="item-count">1400 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="交通學系交通組/交通學系交通組考古題總覽.html" style="--item-color: #475569"><span class="item-icon">🚦</span><span class="item-name">交通學系交通組</span><span class="item-count">1193 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="交通學系電訊組/交通學系電訊組考古題總覽.html" style="--item-color: #0284c7"><span class="item-icon">📡</span><span class="item-name">交通學系電訊組</span><span class="item-count">536 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="消防學系/消防學系考古題總覽.html" style="--item-color: #dc2626"><span class="item-icon">🚒</span><span class="item-name">消防學系</span><span class="item-count">1191 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="水上警察學系/水上警察學系考古題總覽.html" style="--item-color: #0369a1"><span class="item-icon">⚓</span><span class="item-name">水上警察學系</span><span class="item-count">1189 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="資訊管理學系/資訊管理學系考古題總覽.html" style="--item-color: #2563eb"><span class="item-icon">💻</span><span class="item-name">資訊管理學系</span><span class="item-count">1194 題</span><span class="item-arrow">&#8594;</span></a></li>
+    <li><a href="刑事警察學系/刑事警察學系考古題總覽.html"><span class="item-name">刑事警察學系</span><span class="item-count">1,601 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="鑑識科學學系/鑑識科學學系考古題總覽.html"><span class="item-name">鑑識科學學系</span><span class="item-count">1,400 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="交通學系交通組/交通學系交通組考古題總覽.html"><span class="item-name">交通學系交通組</span><span class="item-count">1,193 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="交通學系電訊組/交通學系電訊組考古題總覽.html"><span class="item-name">交通學系電訊組</span><span class="item-count">536 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="消防學系/消防學系考古題總覽.html"><span class="item-name">消防學系</span><span class="item-count">1,191 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="水上警察學系/水上警察學系考古題總覽.html"><span class="item-name">水上警察學系</span><span class="item-count">1,189 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="資訊管理學系/資訊管理學系考古題總覽.html"><span class="item-name">資訊管理學系</span><span class="item-count">1,194 題</span><span class="item-arrow">&#8250;</span></a></li>
     <li class="group-title">乙組 — 警政管理學院</li>
-    <li><a href="行政警察學系/行政警察學系考古題總覽.html" style="--item-color: #2563eb"><span class="item-icon">👮</span><span class="item-name">行政警察學系</span><span class="item-count">1812 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="外事警察學系/外事警察學系考古題總覽.html" style="--item-color: #0d9488"><span class="item-icon">🌐</span><span class="item-name">外事警察學系</span><span class="item-count">1157 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="公共安全學系社安組/公共安全學系社安組考古題總覽.html" style="--item-color: #7c3aed"><span class="item-icon">🛡</span><span class="item-name">公共安全學系社安組</span><span class="item-count">1192 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="公共安全學系情報組/公共安全學系情報組考古題總覽.html" style="--item-color: #4f46e5"><span class="item-icon">👁</span><span class="item-name">公共安全學系情報組</span><span class="item-count">972 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="犯罪防治學系預防組/犯罪防治學系預防組考古題總覽.html" style="--item-color: #e11d48"><span class="item-icon">🤝</span><span class="item-name">犯罪防治學系預防組</span><span class="item-count">1192 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="犯罪防治學系矯治組/犯罪防治學系矯治組考古題總覽.html" style="--item-color: #ea580c"><span class="item-icon">🔒</span><span class="item-name">犯罪防治學系矯治組</span><span class="item-count">725 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="國境警察學系境管組/國境警察學系境管組考古題總覽.html" style="--item-color: #7c3aed"><span class="item-icon">🛂</span><span class="item-name">國境警察學系境管組</span><span class="item-count">1192 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="國境警察學系移民組/國境警察學系移民組考古題總覽.html" style="--item-color: #0891b2"><span class="item-icon">✈</span><span class="item-name">國境警察學系移民組</span><span class="item-count">3186 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="行政管理學系/行政管理學系考古題總覽.html" style="--item-color: #6366f1"><span class="item-icon">📋</span><span class="item-name">行政管理學系</span><span class="item-count">1398 題</span><span class="item-arrow">&#8594;</span></a></li>
-    <li><a href="法律學系/法律學系考古題總覽.html" style="--item-color: #b45309"><span class="item-icon">⚖</span><span class="item-name">法律學系</span><span class="item-count">1393 題</span><span class="item-arrow">&#8594;</span></a></li>
+    <li><a href="行政警察學系/行政警察學系考古題總覽.html"><span class="item-name">行政警察學系</span><span class="item-count">1,812 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="外事警察學系/外事警察學系考古題總覽.html"><span class="item-name">外事警察學系</span><span class="item-count">1,157 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="公共安全學系社安組/公共安全學系社安組考古題總覽.html"><span class="item-name">公共安全學系社安組</span><span class="item-count">1,192 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="公共安全學系情報組/公共安全學系情報組考古題總覽.html"><span class="item-name">公共安全學系情報組</span><span class="item-count">972 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="犯罪防治學系預防組/犯罪防治學系預防組考古題總覽.html"><span class="item-name">犯罪防治學系預防組</span><span class="item-count">1,192 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="犯罪防治學系矯治組/犯罪防治學系矯治組考古題總覽.html"><span class="item-name">犯罪防治學系矯治組</span><span class="item-count">725 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="國境警察學系境管組/國境警察學系境管組考古題總覽.html"><span class="item-name">國境警察學系境管組</span><span class="item-count">1,192 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="國境警察學系移民組/國境警察學系移民組考古題總覽.html"><span class="item-name">國境警察學系移民組</span><span class="item-count">3,186 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="行政管理學系/行政管理學系考古題總覽.html"><span class="item-name">行政管理學系</span><span class="item-count">1,398 題</span><span class="item-arrow">&#8250;</span></a></li>
+    <li><a href="法律學系/法律學系考古題總覽.html"><span class="item-name">法律學系</span><span class="item-count">1,393 題</span><span class="item-arrow">&#8250;</span></a></li>
   </ul>
   </nav>
 </main>
