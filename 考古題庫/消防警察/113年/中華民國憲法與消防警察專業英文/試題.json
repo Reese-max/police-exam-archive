@@ -678,13 +678,13 @@
         "A": "spreader",
         "B": "dehumidifier",
         "C": "generator",
-        "D": "ventilator 請依下文回答第51題至第55題 Increasing crime rates, particularly in urban areas, have recently become a growing concern for citizensandpolicymakersalikeinmanycountries.Forexample,therehasbeenanoticeable 51 inpublic safety across various parts of the United States. Factors 52 to this trend include socioeconomic inequalities, drug trafficking, and gang violence. Additionally, the spread of firearms has worsened the situation,makingviolent crimemore 53 .Allofthesethingscombinedfurtherstrainedlawenforcement resources and intensified social and economic inequalities, leading to an unprecedented 54 in social injustice. To address this issue, communities are advocating for comprehensive strategies that 55 crime preventionandcommunitypolicing.Increasedcollaborationbetweenlawenforcementagenciesandcommunity leadersisessentialtoensurethewell-beingofallresidents."
+        "D": "ventilator"
       }
     },
     {
       "number": 51,
       "type": "choice",
-      "stem": "(A)rise (B)riddle (C)decline (D)default",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -692,12 +692,13 @@
         "B": "riddle",
         "C": "decline",
         "D": "default"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 Increasing crime rates, particularly in urban areas, have recently become a growing concern for citizensandpolicymakersalikeinmanycountries.Forexample,therehasbeenanoticeable 51 inpublic safety across various parts of the United States. Factors 52 to this trend include socioeconomic inequalities, drug trafficking, and gang violence. Additionally, the spread of firearms has worsened the situation,makingviolent crimemore 53 .Allofthesethingscombinedfurtherstrainedlawenforcement resources and intensified social and economic inequalities, leading to an unprecedented 54 in social injustice. To address this issue, communities are advocating for comprehensive strategies that 55 crime preventionandcommunitypolicing.Increasedcollaborationbetweenlawenforcementagenciesandcommunity leadersisessentialtoensurethewell-beingofallresidents."
     },
     {
       "number": 52,
       "type": "choice",
-      "stem": "(A)sticking (B)adjusting (C)objecting (D)contributing",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -705,12 +706,13 @@
         "B": "adjusting",
         "C": "objecting",
         "D": "contributing"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 Increasing crime rates, particularly in urban areas, have recently become a growing concern for citizensandpolicymakersalikeinmanycountries.Forexample,therehasbeenanoticeable 51 inpublic safety across various parts of the United States. Factors 52 to this trend include socioeconomic inequalities, drug trafficking, and gang violence. Additionally, the spread of firearms has worsened the situation,makingviolent crimemore 53 .Allofthesethingscombinedfurtherstrainedlawenforcement resources and intensified social and economic inequalities, leading to an unprecedented 54 in social injustice. To address this issue, communities are advocating for comprehensive strategies that 55 crime preventionandcommunitypolicing.Increasedcollaborationbetweenlawenforcementagenciesandcommunity leadersisessentialtoensurethewell-beingofallresidents."
     },
     {
       "number": 53,
       "type": "choice",
-      "stem": "(A)scarce (B)prevalent (C)diminished (D)exceptional",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -718,12 +720,13 @@
         "B": "prevalent",
         "C": "diminished",
         "D": "exceptional"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 Increasing crime rates, particularly in urban areas, have recently become a growing concern for citizensandpolicymakersalikeinmanycountries.Forexample,therehasbeenanoticeable 51 inpublic safety across various parts of the United States. Factors 52 to this trend include socioeconomic inequalities, drug trafficking, and gang violence. Additionally, the spread of firearms has worsened the situation,makingviolent crimemore 53 .Allofthesethingscombinedfurtherstrainedlawenforcement resources and intensified social and economic inequalities, leading to an unprecedented 54 in social injustice. To address this issue, communities are advocating for comprehensive strategies that 55 crime preventionandcommunitypolicing.Increasedcollaborationbetweenlawenforcementagenciesandcommunity leadersisessentialtoensurethewell-beingofallresidents."
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "(A)growth (B)hamper (C)deduction (D)reduction",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -731,20 +734,22 @@
         "B": "hamper",
         "C": "deduction",
         "D": "reduction"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 Increasing crime rates, particularly in urban areas, have recently become a growing concern for citizensandpolicymakersalikeinmanycountries.Forexample,therehasbeenanoticeable 51 inpublic safety across various parts of the United States. Factors 52 to this trend include socioeconomic inequalities, drug trafficking, and gang violence. Additionally, the spread of firearms has worsened the situation,makingviolent crimemore 53 .Allofthesethingscombinedfurtherstrainedlawenforcement resources and intensified social and economic inequalities, leading to an unprecedented 54 in social injustice. To address this issue, communities are advocating for comprehensive strategies that 55 crime preventionandcommunitypolicing.Increasedcollaborationbetweenlawenforcementagenciesandcommunity leadersisessentialtoensurethewell-beingofallresidents."
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "(A)refute (B)fortify (C)impede (D)downplay 請依下文回答第56題至第60題 Firefighters confront an array of perils each time they respond to an emergency summons, jeopardizingtheirlivestorescueindividualsandsafeguardproperty.Foremostamongthesehazardsisthe searing heat and fury of a large fire. These infernos can reach temperatures surpassing 1,000 degrees Celsius, presenting a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In addition tothephysicalrisksposedbyflames,firefightersmustcontendwithunpredictablestructuralcollapses,as burning buildings deteriorate and crumble suddenly. These architectural hazards can trap and injure firefighters, transforminganalreadydangerous situationintoalife-and-deaththreat. Furthermore,theharmfulsmokegeneratedbyfiresconstitutesatacityetlethalmenacetofirefighters. Inhaling smoke can induce breathing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratoryapparatus,firefightersremainaneasytargetforlong-termhealthissuesfromrepeatedexposure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, firefighters confrontenvironmentalthreatssuchasextremeweatherconditionsandnaturaldisasters.Whetherbattling wildfiresinintenseheat,rescuingpeopleduringfloods,ornavigatingtreacherousterraininremote areas, firefighters must adapt todifferent andchallengingenvironments tofulfill theirdutyofsavinglives. Moreover, the psychological toll of firefighting is profound and enduring. Bearing witness to traumatic scenes, such as severe injuries, deaths, and the devastation caused by fires, can impose a profoundemotionaltollonfirefighters.Theyoftenstrugglewithfeelingsofguilt,grief,andpost-traumatic stress disorder,addingto thedemands oftheir exacting vocation. Despite these dangers, firefighters bravely confront adversity with unyielding courage and determination. Their unwaveringdedication to protecting lives and property, even at significant personal risk, demonstrates their selflessness and commitment to the well-being of others. Daily, they epitomize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice strengthens their reputation as society’s guardians, embodying the timeless values ofcourageandaltruism.",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "refute",
         "B": "fortify",
         "C": "impede",
-        "D": "downplay 請依下文回答第56題至第60題 Firefighters confront an array of perils each time they respond to an emergency summons, jeopardizingtheirlivestorescueindividualsandsafeguardproperty.Foremostamongthesehazardsisthe searing heat and fury of a large fire. These infernos can reach temperatures surpassing 1,000 degrees Celsius, presenting a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In addition tothephysicalrisksposedbyflames,firefightersmustcontendwithunpredictablestructuralcollapses,as burning buildings deteriorate and crumble suddenly. These architectural hazards can trap and injure firefighters, transforminganalreadydangerous situationintoalife-and-deaththreat. Furthermore,theharmfulsmokegeneratedbyfiresconstitutesatacityetlethalmenacetofirefighters. Inhaling smoke can induce breathing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratoryapparatus,firefightersremainaneasytargetforlong-termhealthissuesfromrepeatedexposure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, firefighters confrontenvironmentalthreatssuchasextremeweatherconditionsandnaturaldisasters.Whetherbattling wildfiresinintenseheat,rescuingpeopleduringfloods,ornavigatingtreacherousterraininremote areas, firefighters must adapt todifferent andchallengingenvironments tofulfill theirdutyofsavinglives. Moreover, the psychological toll of firefighting is profound and enduring. Bearing witness to traumatic scenes, such as severe injuries, deaths, and the devastation caused by fires, can impose a profoundemotionaltollonfirefighters.Theyoftenstrugglewithfeelingsofguilt,grief,andpost-traumatic stress disorder,addingto thedemands oftheir exacting vocation. Despite these dangers, firefighters bravely confront adversity with unyielding courage and determination. Their unwaveringdedication to protecting lives and property, even at significant personal risk, demonstrates their selflessness and commitment to the well-being of others. Daily, they epitomize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice strengthens their reputation as society’s guardians, embodying the timeless values ofcourageandaltruism."
-      }
+        "D": "downplay"
+      },
+      "passage": "請依下文回答第51題至第55題 Increasing crime rates, particularly in urban areas, have recently become a growing concern for citizensandpolicymakersalikeinmanycountries.Forexample,therehasbeenanoticeable 51 inpublic safety across various parts of the United States. Factors 52 to this trend include socioeconomic inequalities, drug trafficking, and gang violence. Additionally, the spread of firearms has worsened the situation,makingviolent crimemore 53 .Allofthesethingscombinedfurtherstrainedlawenforcement resources and intensified social and economic inequalities, leading to an unprecedented 54 in social injustice. To address this issue, communities are advocating for comprehensive strategies that 55 crime preventionandcommunitypolicing.Increasedcollaborationbetweenlawenforcementagenciesandcommunity leadersisessentialtoensurethewell-beingofallresidents."
     },
     {
       "number": 56,
@@ -757,7 +762,8 @@
         "B": "ThePsychological Effects ofFirefighting",
         "C": "TheDifferent Hazards CausedbyFirefighting",
         "D": "TheEnvironmental Challenges FacedbyFirefighters"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Firefighters confront an array of perils each time they respond to an emergency summons, jeopardizingtheirlivestorescueindividualsandsafeguardproperty.Foremostamongthesehazardsisthe searing heat and fury of a large fire. These infernos can reach temperatures surpassing 1,000 degrees Celsius, presenting a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In addition tothephysicalrisksposedbyflames,firefightersmustcontendwithunpredictablestructuralcollapses,as burning buildings deteriorate and crumble suddenly. These architectural hazards can trap and injure firefighters, transforminganalreadydangerous situationintoalife-and-deaththreat. Furthermore,theharmfulsmokegeneratedbyfiresconstitutesatacityetlethalmenacetofirefighters. Inhaling smoke can induce breathing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratoryapparatus,firefightersremainaneasytargetforlong-termhealthissuesfromrepeatedexposure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, firefighters confrontenvironmentalthreatssuchasextremeweatherconditionsandnaturaldisasters.Whetherbattling wildfiresinintenseheat,rescuingpeopleduringfloods,ornavigatingtreacherousterraininremote areas, firefighters must adapt todifferent andchallengingenvironments tofulfill theirdutyofsavinglives. Moreover, the psychological toll of firefighting is profound and enduring. Bearing witness to traumatic scenes, such as severe injuries, deaths, and the devastation caused by fires, can impose a profoundemotionaltollonfirefighters.Theyoftenstrugglewithfeelingsofguilt,grief,andpost-traumatic stress disorder,addingto thedemands oftheir exacting vocation. Despite these dangers, firefighters bravely confront adversity with unyielding courage and determination. Their unwaveringdedication to protecting lives and property, even at significant personal risk, demonstrates their selflessness and commitment to the well-being of others. Daily, they epitomize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice strengthens their reputation as society’s guardians, embodying the timeless values ofcourageandaltruism."
     },
     {
       "number": 57,
@@ -770,7 +776,8 @@
         "B": "Suckinginhazardous fume.",
         "C": "Witnessingtraumatic scenes.",
         "D": "Travelingthroughdangerous lands."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Firefighters confront an array of perils each time they respond to an emergency summons, jeopardizingtheirlivestorescueindividualsandsafeguardproperty.Foremostamongthesehazardsisthe searing heat and fury of a large fire. These infernos can reach temperatures surpassing 1,000 degrees Celsius, presenting a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In addition tothephysicalrisksposedbyflames,firefightersmustcontendwithunpredictablestructuralcollapses,as burning buildings deteriorate and crumble suddenly. These architectural hazards can trap and injure firefighters, transforminganalreadydangerous situationintoalife-and-deaththreat. Furthermore,theharmfulsmokegeneratedbyfiresconstitutesatacityetlethalmenacetofirefighters. Inhaling smoke can induce breathing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratoryapparatus,firefightersremainaneasytargetforlong-termhealthissuesfromrepeatedexposure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, firefighters confrontenvironmentalthreatssuchasextremeweatherconditionsandnaturaldisasters.Whetherbattling wildfiresinintenseheat,rescuingpeopleduringfloods,ornavigatingtreacherousterraininremote areas, firefighters must adapt todifferent andchallengingenvironments tofulfill theirdutyofsavinglives. Moreover, the psychological toll of firefighting is profound and enduring. Bearing witness to traumatic scenes, such as severe injuries, deaths, and the devastation caused by fires, can impose a profoundemotionaltollonfirefighters.Theyoftenstrugglewithfeelingsofguilt,grief,andpost-traumatic stress disorder,addingto thedemands oftheir exacting vocation. Despite these dangers, firefighters bravely confront adversity with unyielding courage and determination. Their unwaveringdedication to protecting lives and property, even at significant personal risk, demonstrates their selflessness and commitment to the well-being of others. Daily, they epitomize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice strengthens their reputation as society’s guardians, embodying the timeless values ofcourageandaltruism."
     },
     {
       "number": 58,
@@ -783,7 +790,8 @@
         "B": "Structural collapses.",
         "C": "Environmental threats.",
         "D": "Burningheat andflames."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Firefighters confront an array of perils each time they respond to an emergency summons, jeopardizingtheirlivestorescueindividualsandsafeguardproperty.Foremostamongthesehazardsisthe searing heat and fury of a large fire. These infernos can reach temperatures surpassing 1,000 degrees Celsius, presenting a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In addition tothephysicalrisksposedbyflames,firefightersmustcontendwithunpredictablestructuralcollapses,as burning buildings deteriorate and crumble suddenly. These architectural hazards can trap and injure firefighters, transforminganalreadydangerous situationintoalife-and-deaththreat. Furthermore,theharmfulsmokegeneratedbyfiresconstitutesatacityetlethalmenacetofirefighters. Inhaling smoke can induce breathing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratoryapparatus,firefightersremainaneasytargetforlong-termhealthissuesfromrepeatedexposure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, firefighters confrontenvironmentalthreatssuchasextremeweatherconditionsandnaturaldisasters.Whetherbattling wildfiresinintenseheat,rescuingpeopleduringfloods,ornavigatingtreacherousterraininremote areas, firefighters must adapt todifferent andchallengingenvironments tofulfill theirdutyofsavinglives. Moreover, the psychological toll of firefighting is profound and enduring. Bearing witness to traumatic scenes, such as severe injuries, deaths, and the devastation caused by fires, can impose a profoundemotionaltollonfirefighters.Theyoftenstrugglewithfeelingsofguilt,grief,andpost-traumatic stress disorder,addingto thedemands oftheir exacting vocation. Despite these dangers, firefighters bravely confront adversity with unyielding courage and determination. Their unwaveringdedication to protecting lives and property, even at significant personal risk, demonstrates their selflessness and commitment to the well-being of others. Daily, they epitomize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice strengthens their reputation as society’s guardians, embodying the timeless values ofcourageandaltruism."
     },
     {
       "number": 59,
@@ -796,7 +804,8 @@
         "B": "Flexible.",
         "C": "Tolerant.",
         "D": "Simplified."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Firefighters confront an array of perils each time they respond to an emergency summons, jeopardizingtheirlivestorescueindividualsandsafeguardproperty.Foremostamongthesehazardsisthe searing heat and fury of a large fire. These infernos can reach temperatures surpassing 1,000 degrees Celsius, presenting a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In addition tothephysicalrisksposedbyflames,firefightersmustcontendwithunpredictablestructuralcollapses,as burning buildings deteriorate and crumble suddenly. These architectural hazards can trap and injure firefighters, transforminganalreadydangerous situationintoalife-and-deaththreat. Furthermore,theharmfulsmokegeneratedbyfiresconstitutesatacityetlethalmenacetofirefighters. Inhaling smoke can induce breathing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratoryapparatus,firefightersremainaneasytargetforlong-termhealthissuesfromrepeatedexposure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, firefighters confrontenvironmentalthreatssuchasextremeweatherconditionsandnaturaldisasters.Whetherbattling wildfiresinintenseheat,rescuingpeopleduringfloods,ornavigatingtreacherousterraininremote areas, firefighters must adapt todifferent andchallengingenvironments tofulfill theirdutyofsavinglives. Moreover, the psychological toll of firefighting is profound and enduring. Bearing witness to traumatic scenes, such as severe injuries, deaths, and the devastation caused by fires, can impose a profoundemotionaltollonfirefighters.Theyoftenstrugglewithfeelingsofguilt,grief,andpost-traumatic stress disorder,addingto thedemands oftheir exacting vocation. Despite these dangers, firefighters bravely confront adversity with unyielding courage and determination. Their unwaveringdedication to protecting lives and property, even at significant personal risk, demonstrates their selflessness and commitment to the well-being of others. Daily, they epitomize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice strengthens their reputation as society’s guardians, embodying the timeless values ofcourageandaltruism."
     },
     {
       "number": 60,
@@ -809,7 +818,8 @@
         "B": "Environmentalthreatsfacedbyfirefightersincludesevereweatherandunforeseennaturalevents.",
         "C": "Firefightersaretrainedtoprioritizetheirownsafetyaboveallelse,evenduringrescueoperations.",
         "D": "Firefighters’psychologicalwell-beingneedstoremainunaffectedbythechallengesoftheirprofession."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Firefighters confront an array of perils each time they respond to an emergency summons, jeopardizingtheirlivestorescueindividualsandsafeguardproperty.Foremostamongthesehazardsisthe searing heat and fury of a large fire. These infernos can reach temperatures surpassing 1,000 degrees Celsius, presenting a grave peril of burns, heat exhaustion, and inhalation of noxious fumes. In addition tothephysicalrisksposedbyflames,firefightersmustcontendwithunpredictablestructuralcollapses,as burning buildings deteriorate and crumble suddenly. These architectural hazards can trap and injure firefighters, transforminganalreadydangerous situationintoalife-and-deaththreat. Furthermore,theharmfulsmokegeneratedbyfiresconstitutesatacityetlethalmenacetofirefighters. Inhaling smoke can induce breathing distress, lung-related injury, and even fatality, particularly when it contains hurtful chemicals and cancer-induced substances. Despite wearing protective attire and respiratoryapparatus,firefightersremainaneasytargetforlong-termhealthissuesfromrepeatedexposure to smoke and dangerous substances. Beyond the immediate hazards of fire and smoke, firefighters confrontenvironmentalthreatssuchasextremeweatherconditionsandnaturaldisasters.Whetherbattling wildfiresinintenseheat,rescuingpeopleduringfloods,ornavigatingtreacherousterraininremote areas, firefighters must adapt todifferent andchallengingenvironments tofulfill theirdutyofsavinglives. Moreover, the psychological toll of firefighting is profound and enduring. Bearing witness to traumatic scenes, such as severe injuries, deaths, and the devastation caused by fires, can impose a profoundemotionaltollonfirefighters.Theyoftenstrugglewithfeelingsofguilt,grief,andpost-traumatic stress disorder,addingto thedemands oftheir exacting vocation. Despite these dangers, firefighters bravely confront adversity with unyielding courage and determination. Their unwaveringdedication to protecting lives and property, even at significant personal risk, demonstrates their selflessness and commitment to the well-being of others. Daily, they epitomize the quintessence of heroism, imperiling their own well-being to ensure the safety and welfare of others. Every act of bravery and sacrifice strengthens their reputation as society’s guardians, embodying the timeless values ofcourageandaltruism."
     }
   ],
   "year": 113,

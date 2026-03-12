@@ -678,13 +678,13 @@
         "A": "certified",
         "B": "navigated",
         "C": "acclaimed",
-        "D": "undermined 請依下文回答第51題至第55題: Backdraftsareofgreatdanger.Theyoften 51 evenhighlyexperiencedfirefighters.Abackdraftcan occur when a compartment fire has little or no 52 . Due to this, little or no oxygen can flow into the compartment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentrationbecomestoo 54 tosupportcombustion,thismaycauseaphenomenoninwhichwhen materialisheatedenough,itbeginstobreakdownintosmallercompounds,includinghydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the compartment, e.g. by opening a door or window to a closed room, while the gasses are still hot enoughto auto-ignite, combustionwill oftenrestart abruptly."
+        "D": "undermined"
       }
     },
     {
       "number": 51,
       "type": "choice",
-      "stem": "(A)mourn (B)revere (C)delight (D)surprise",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -692,12 +692,13 @@
         "B": "revere",
         "C": "delight",
         "D": "surprise"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Backdraftsareofgreatdanger.Theyoften 51 evenhighlyexperiencedfirefighters.Abackdraftcan occur when a compartment fire has little or no 52 . Due to this, little or no oxygen can flow into the compartment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentrationbecomestoo 54 tosupportcombustion,thismaycauseaphenomenoninwhichwhen materialisheatedenough,itbeginstobreakdownintosmallercompounds,includinghydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the compartment, e.g. by opening a door or window to a closed room, while the gasses are still hot enoughto auto-ignite, combustionwill oftenrestart abruptly."
     },
     {
       "number": 52,
       "type": "choice",
-      "stem": "(A)existence (B)obligation (C)ventilation (D)manipulation",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -705,12 +706,13 @@
         "B": "obligation",
         "C": "ventilation",
         "D": "manipulation"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Backdraftsareofgreatdanger.Theyoften 51 evenhighlyexperiencedfirefighters.Abackdraftcan occur when a compartment fire has little or no 52 . Due to this, little or no oxygen can flow into the compartment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentrationbecomestoo 54 tosupportcombustion,thismaycauseaphenomenoninwhichwhen materialisheatedenough,itbeginstobreakdownintosmallercompounds,includinghydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the compartment, e.g. by opening a door or window to a closed room, while the gasses are still hot enoughto auto-ignite, combustionwill oftenrestart abruptly."
     },
     {
       "number": 53,
       "type": "choice",
-      "stem": "(A)reduce (B)promote (C)provoke (D)strengthen",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -718,12 +720,13 @@
         "B": "promote",
         "C": "provoke",
         "D": "strengthen"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Backdraftsareofgreatdanger.Theyoften 51 evenhighlyexperiencedfirefighters.Abackdraftcan occur when a compartment fire has little or no 52 . Due to this, little or no oxygen can flow into the compartment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentrationbecomestoo 54 tosupportcombustion,thismaycauseaphenomenoninwhichwhen materialisheatedenough,itbeginstobreakdownintosmallercompounds,includinghydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the compartment, e.g. by opening a door or window to a closed room, while the gasses are still hot enoughto auto-ignite, combustionwill oftenrestart abruptly."
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "(A)low (B)filled (C)dense (D)flooded",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -731,20 +734,22 @@
         "B": "filled",
         "C": "dense",
         "D": "flooded"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Backdraftsareofgreatdanger.Theyoften 51 evenhighlyexperiencedfirefighters.Abackdraftcan occur when a compartment fire has little or no 52 . Due to this, little or no oxygen can flow into the compartment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentrationbecomestoo 54 tosupportcombustion,thismaycauseaphenomenoninwhichwhen materialisheatedenough,itbeginstobreakdownintosmallercompounds,includinghydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the compartment, e.g. by opening a door or window to a closed room, while the gasses are still hot enoughto auto-ignite, combustionwill oftenrestart abruptly."
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "(A)prosperity (B)temperature (C)significance (D)resistance 請依下文回答第56題至第60題: More often, people have heard about PTSD (post-traumatic stress disorder) in the context of war, with combat -exposed veterans. While combat veterans often return to the normality of the civilian life after deployment, the job of firefighters, police officers and emergency medical services workers involves regular,routine exposuretoall types oftraumas, for years anddecades oftheircareers. Research shows that 20% of firefighters pass the diagnostic threshold for PTSD at some point in their career. The symptoms developed include frequent nightmares, flashbacks, avoiding reminders of trauma and being easily startled. Depression, anxiety, and substance use are the consequences caused by cumulativetraumaexposure. Theproblem-solvingand“beingincharge”workattitudethatisastrengthoffirefighterscansometimes becomeabarrierinseekinghelp,astheymightseevulnerabilityasasignoffailure.Itisoftenheardfrom firefightersthefeelingofshameandworriesthatothersmightseethemasweakforsharinganddiscussing thetraumaticexperiencetheyhavebeingthrough.Consequently,firefighters’toughworkceasestobethe conversationtopicat theirfamilydinnertable. Left unaddressed, trauma and chronic stress can lead to not only mental health consequences but also physical illness. Fortunately, serious efforts are beingmade to spread awareness and fight stigma related to mental health. A variety of programs are launched to fight stigma by explaining the mechanisms of trauma and stress in the body and brain. This approach can also reframe these traumatic experiences as vulnerability rather than weakness. The “don’t quit” mentality of firefighters can be shifted toward encouragingfightingthe mental healthconsequences oftrauma,insteadof avoidinganddenyingit.",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "prosperity",
         "B": "temperature",
         "C": "significance",
-        "D": "resistance 請依下文回答第56題至第60題: More often, people have heard about PTSD (post-traumatic stress disorder) in the context of war, with combat -exposed veterans. While combat veterans often return to the normality of the civilian life after deployment, the job of firefighters, police officers and emergency medical services workers involves regular,routine exposuretoall types oftraumas, for years anddecades oftheircareers. Research shows that 20% of firefighters pass the diagnostic threshold for PTSD at some point in their career. The symptoms developed include frequent nightmares, flashbacks, avoiding reminders of trauma and being easily startled. Depression, anxiety, and substance use are the consequences caused by cumulativetraumaexposure. Theproblem-solvingand“beingincharge”workattitudethatisastrengthoffirefighterscansometimes becomeabarrierinseekinghelp,astheymightseevulnerabilityasasignoffailure.Itisoftenheardfrom firefightersthefeelingofshameandworriesthatothersmightseethemasweakforsharinganddiscussing thetraumaticexperiencetheyhavebeingthrough.Consequently,firefighters’toughworkceasestobethe conversationtopicat theirfamilydinnertable. Left unaddressed, trauma and chronic stress can lead to not only mental health consequences but also physical illness. Fortunately, serious efforts are beingmade to spread awareness and fight stigma related to mental health. A variety of programs are launched to fight stigma by explaining the mechanisms of trauma and stress in the body and brain. This approach can also reframe these traumatic experiences as vulnerability rather than weakness. The “don’t quit” mentality of firefighters can be shifted toward encouragingfightingthe mental healthconsequences oftrauma,insteadof avoidinganddenyingit."
-      }
+        "D": "resistance"
+      },
+      "passage": "請依下文回答第51題至第55題: Backdraftsareofgreatdanger.Theyoften 51 evenhighlyexperiencedfirefighters.Abackdraftcan occur when a compartment fire has little or no 52 . Due to this, little or no oxygen can flow into the compartment. Then, because fires 53 oxygen, the oxygen concentration decreases. When the concentrationbecomestoo 54 tosupportcombustion,thismaycauseaphenomenoninwhichwhen materialisheatedenough,itbeginstobreakdownintosmallercompounds,includinghydrogen.However, the hydrogen and smoke remain at a hot 55 enough to auto-ignite. If oxygen is then re-introduced to the compartment, e.g. by opening a door or window to a closed room, while the gasses are still hot enoughto auto-ignite, combustionwill oftenrestart abruptly."
     },
     {
       "number": 56,
@@ -757,7 +762,8 @@
         "B": "TheUnhappyMarriageofa Firefighter",
         "C": "BeatingBackVulnerability",
         "D": "FacingUptoPTSD"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: More often, people have heard about PTSD (post-traumatic stress disorder) in the context of war, with combat -exposed veterans. While combat veterans often return to the normality of the civilian life after deployment, the job of firefighters, police officers and emergency medical services workers involves regular,routine exposuretoall types oftraumas, for years anddecades oftheircareers. Research shows that 20% of firefighters pass the diagnostic threshold for PTSD at some point in their career. The symptoms developed include frequent nightmares, flashbacks, avoiding reminders of trauma and being easily startled. Depression, anxiety, and substance use are the consequences caused by cumulativetraumaexposure. Theproblem-solvingand“beingincharge”workattitudethatisastrengthoffirefighterscansometimes becomeabarrierinseekinghelp,astheymightseevulnerabilityasasignoffailure.Itisoftenheardfrom firefightersthefeelingofshameandworriesthatothersmightseethemasweakforsharinganddiscussing thetraumaticexperiencetheyhavebeingthrough.Consequently,firefighters’toughworkceasestobethe conversationtopicat theirfamilydinnertable. Left unaddressed, trauma and chronic stress can lead to not only mental health consequences but also physical illness. Fortunately, serious efforts are beingmade to spread awareness and fight stigma related to mental health. A variety of programs are launched to fight stigma by explaining the mechanisms of trauma and stress in the body and brain. This approach can also reframe these traumatic experiences as vulnerability rather than weakness. The “don’t quit” mentality of firefighters can be shifted toward encouragingfightingthe mental healthconsequences oftrauma,insteadof avoidinganddenyingit."
     },
     {
       "number": 57,
@@ -770,7 +776,8 @@
         "B": "Usingviolence",
         "C": "Impulsebuying",
         "D": "Usingbadlanguage"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: More often, people have heard about PTSD (post-traumatic stress disorder) in the context of war, with combat -exposed veterans. While combat veterans often return to the normality of the civilian life after deployment, the job of firefighters, police officers and emergency medical services workers involves regular,routine exposuretoall types oftraumas, for years anddecades oftheircareers. Research shows that 20% of firefighters pass the diagnostic threshold for PTSD at some point in their career. The symptoms developed include frequent nightmares, flashbacks, avoiding reminders of trauma and being easily startled. Depression, anxiety, and substance use are the consequences caused by cumulativetraumaexposure. Theproblem-solvingand“beingincharge”workattitudethatisastrengthoffirefighterscansometimes becomeabarrierinseekinghelp,astheymightseevulnerabilityasasignoffailure.Itisoftenheardfrom firefightersthefeelingofshameandworriesthatothersmightseethemasweakforsharinganddiscussing thetraumaticexperiencetheyhavebeingthrough.Consequently,firefighters’toughworkceasestobethe conversationtopicat theirfamilydinnertable. Left unaddressed, trauma and chronic stress can lead to not only mental health consequences but also physical illness. Fortunately, serious efforts are beingmade to spread awareness and fight stigma related to mental health. A variety of programs are launched to fight stigma by explaining the mechanisms of trauma and stress in the body and brain. This approach can also reframe these traumatic experiences as vulnerability rather than weakness. The “don’t quit” mentality of firefighters can be shifted toward encouragingfightingthe mental healthconsequences oftrauma,insteadof avoidinganddenyingit."
     },
     {
       "number": 58,
@@ -783,7 +790,8 @@
         "B": "takecomplete control ofthesituation",
         "C": "feel pleasedabout what theyaredoing",
         "D": "leavethefireengineoncharge"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: More often, people have heard about PTSD (post-traumatic stress disorder) in the context of war, with combat -exposed veterans. While combat veterans often return to the normality of the civilian life after deployment, the job of firefighters, police officers and emergency medical services workers involves regular,routine exposuretoall types oftraumas, for years anddecades oftheircareers. Research shows that 20% of firefighters pass the diagnostic threshold for PTSD at some point in their career. The symptoms developed include frequent nightmares, flashbacks, avoiding reminders of trauma and being easily startled. Depression, anxiety, and substance use are the consequences caused by cumulativetraumaexposure. Theproblem-solvingand“beingincharge”workattitudethatisastrengthoffirefighterscansometimes becomeabarrierinseekinghelp,astheymightseevulnerabilityasasignoffailure.Itisoftenheardfrom firefightersthefeelingofshameandworriesthatothersmightseethemasweakforsharinganddiscussing thetraumaticexperiencetheyhavebeingthrough.Consequently,firefighters’toughworkceasestobethe conversationtopicat theirfamilydinnertable. Left unaddressed, trauma and chronic stress can lead to not only mental health consequences but also physical illness. Fortunately, serious efforts are beingmade to spread awareness and fight stigma related to mental health. A variety of programs are launched to fight stigma by explaining the mechanisms of trauma and stress in the body and brain. This approach can also reframe these traumatic experiences as vulnerability rather than weakness. The “don’t quit” mentality of firefighters can be shifted toward encouragingfightingthe mental healthconsequences oftrauma,insteadof avoidinganddenyingit."
     },
     {
       "number": 59,
@@ -796,7 +804,8 @@
         "B": "Sharing painful experience is tantamount to whining, so it is the last thing a brave firefighter shoulddo.",
         "C": "CombatveteransaremorevulnerabletoPTSDthanfirefighters,andtheconsequencesareusually farmoreserious.",
         "D": "Firefighters are advised to confront PTSD with the same courage and determination with which theybeat backfireonthe fireground."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: More often, people have heard about PTSD (post-traumatic stress disorder) in the context of war, with combat -exposed veterans. While combat veterans often return to the normality of the civilian life after deployment, the job of firefighters, police officers and emergency medical services workers involves regular,routine exposuretoall types oftraumas, for years anddecades oftheircareers. Research shows that 20% of firefighters pass the diagnostic threshold for PTSD at some point in their career. The symptoms developed include frequent nightmares, flashbacks, avoiding reminders of trauma and being easily startled. Depression, anxiety, and substance use are the consequences caused by cumulativetraumaexposure. Theproblem-solvingand“beingincharge”workattitudethatisastrengthoffirefighterscansometimes becomeabarrierinseekinghelp,astheymightseevulnerabilityasasignoffailure.Itisoftenheardfrom firefightersthefeelingofshameandworriesthatothersmightseethemasweakforsharinganddiscussing thetraumaticexperiencetheyhavebeingthrough.Consequently,firefighters’toughworkceasestobethe conversationtopicat theirfamilydinnertable. Left unaddressed, trauma and chronic stress can lead to not only mental health consequences but also physical illness. Fortunately, serious efforts are beingmade to spread awareness and fight stigma related to mental health. A variety of programs are launched to fight stigma by explaining the mechanisms of trauma and stress in the body and brain. This approach can also reframe these traumatic experiences as vulnerability rather than weakness. The “don’t quit” mentality of firefighters can be shifted toward encouragingfightingthe mental healthconsequences oftrauma,insteadof avoidinganddenyingit."
     },
     {
       "number": 60,
@@ -809,7 +818,8 @@
         "B": "proudof",
         "C": "takenintoaccount",
         "D": "compliedwith"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: More often, people have heard about PTSD (post-traumatic stress disorder) in the context of war, with combat -exposed veterans. While combat veterans often return to the normality of the civilian life after deployment, the job of firefighters, police officers and emergency medical services workers involves regular,routine exposuretoall types oftraumas, for years anddecades oftheircareers. Research shows that 20% of firefighters pass the diagnostic threshold for PTSD at some point in their career. The symptoms developed include frequent nightmares, flashbacks, avoiding reminders of trauma and being easily startled. Depression, anxiety, and substance use are the consequences caused by cumulativetraumaexposure. Theproblem-solvingand“beingincharge”workattitudethatisastrengthoffirefighterscansometimes becomeabarrierinseekinghelp,astheymightseevulnerabilityasasignoffailure.Itisoftenheardfrom firefightersthefeelingofshameandworriesthatothersmightseethemasweakforsharinganddiscussing thetraumaticexperiencetheyhavebeingthrough.Consequently,firefighters’toughworkceasestobethe conversationtopicat theirfamilydinnertable. Left unaddressed, trauma and chronic stress can lead to not only mental health consequences but also physical illness. Fortunately, serious efforts are beingmade to spread awareness and fight stigma related to mental health. A variety of programs are launched to fight stigma by explaining the mechanisms of trauma and stress in the body and brain. This approach can also reframe these traumatic experiences as vulnerability rather than weakness. The “don’t quit” mentality of firefighters can be shifted toward encouragingfightingthe mental healthconsequences oftrauma,insteadof avoidinganddenyingit."
     }
   ],
   "year": 111,

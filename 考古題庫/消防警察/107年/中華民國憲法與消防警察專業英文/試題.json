@@ -743,13 +743,13 @@
         "A": "admired",
         "B": "adored",
         "C": "adopted",
-        "D": "allowed 請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department."
+        "D": "allowed"
       }
     },
     {
       "number": 56,
       "type": "choice",
-      "stem": "(A)sent off (B)sounded (C)rang (D)went off",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -757,12 +757,13 @@
         "B": "sounded",
         "C": "rang",
         "D": "went off"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department."
     },
     {
       "number": 57,
       "type": "choice",
-      "stem": "(A)to pass (B)pass (C)passed (D)passing",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -770,12 +771,13 @@
         "B": "pass",
         "C": "passed",
         "D": "passing"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department."
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "(A)span (B)extent (C)spread (D)range",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -783,12 +785,13 @@
         "B": "extent",
         "C": "spread",
         "D": "range"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department."
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "(A)pull down (B)pull out (C)pull in (D)pull off",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -796,12 +799,13 @@
         "B": "pull out",
         "C": "pull in",
         "D": "pull off"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "(A)from (B)of (C)in (D)at",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -809,7 +813,8 @@
         "B": "of",
         "C": "in",
         "D": "at"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The Roman emperor Augustus is credited with instituting a corps of fire-fighting watchmen in 24 BC. In that era most cities had watchmen who 56 an alarm at signs of fire. The principal piece of fire-fighting equipment in ancient Rome and into early modern times was the bucket, 57 from hand to hand to deliver water to the fire. Another important fire-fighting tool was the ax, used to remove the fuel and prevent the 58 of fire as well as to make openings that would allow heat and smoke to escape a burning building. In major blazes long hooks with ropes were used to 59 buildings. When explosives were available, they would be used for this same purpose. The first modern standards for the operation of a fire department were not established until 1830, in Edinburgh, Scotland. These standards explained, for the first time, what was expected 60 a good fire department."
     }
   ],
   "year": 107,

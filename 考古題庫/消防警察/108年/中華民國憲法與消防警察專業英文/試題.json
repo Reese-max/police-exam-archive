@@ -678,13 +678,13 @@
         "A": "Scoop and Run",
         "B": "Stay and Play",
         "C": "Stay and Run",
-        "D": "Scoop and Play 請依下文回答第51題至第55題 Historically, physicists created a graphical representation detailing the three elements of fire (fire triangle). In recent years, one more point has been added, 51 the fire tetrahedron. The four elements needed to 52 combustion are: fuel, oxygen, heat and a chemical chain reaction. To extinguish a fire, it is 53 to remove one or more of the four components of combustion. Removing any of these components of the fire tetrahedron will stop the other elements from interacting and not allow combustion to 54 . Firefighters work on limiting 55 (fuel that is in jeopardy of being ignited by nearby flame or from radiant heat), containing and extinguishing fire and then overhauling charred and burned debris from the affected areas as well as extinguishing all hidden fires to prevent a rekindle."
+        "D": "Scoop and Play"
       }
     },
     {
       "number": 51,
       "type": "choice",
-      "stem": "(A)boiling (B)creating (C)deleting (D)naming",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -692,12 +692,13 @@
         "B": "creating",
         "C": "deleting",
         "D": "naming"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 Historically, physicists created a graphical representation detailing the three elements of fire (fire triangle). In recent years, one more point has been added, 51 the fire tetrahedron. The four elements needed to 52 combustion are: fuel, oxygen, heat and a chemical chain reaction. To extinguish a fire, it is 53 to remove one or more of the four components of combustion. Removing any of these components of the fire tetrahedron will stop the other elements from interacting and not allow combustion to 54 . Firefighters work on limiting 55 (fuel that is in jeopardy of being ignited by nearby flame or from radiant heat), containing and extinguishing fire and then overhauling charred and burned debris from the affected areas as well as extinguishing all hidden fires to prevent a rekindle."
     },
     {
       "number": 52,
       "type": "choice",
-      "stem": "(A)prevent (B)repress (C)sustain (D)discharge",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -705,12 +706,13 @@
         "B": "repress",
         "C": "sustain",
         "D": "discharge"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 Historically, physicists created a graphical representation detailing the three elements of fire (fire triangle). In recent years, one more point has been added, 51 the fire tetrahedron. The four elements needed to 52 combustion are: fuel, oxygen, heat and a chemical chain reaction. To extinguish a fire, it is 53 to remove one or more of the four components of combustion. Removing any of these components of the fire tetrahedron will stop the other elements from interacting and not allow combustion to 54 . Firefighters work on limiting 55 (fuel that is in jeopardy of being ignited by nearby flame or from radiant heat), containing and extinguishing fire and then overhauling charred and burned debris from the affected areas as well as extinguishing all hidden fires to prevent a rekindle."
     },
     {
       "number": 53,
       "type": "choice",
-      "stem": "(A)forbidden (B)mandatory (C)tumultuous (D)stimulating",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -718,12 +720,13 @@
         "B": "mandatory",
         "C": "tumultuous",
         "D": "stimulating"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 Historically, physicists created a graphical representation detailing the three elements of fire (fire triangle). In recent years, one more point has been added, 51 the fire tetrahedron. The four elements needed to 52 combustion are: fuel, oxygen, heat and a chemical chain reaction. To extinguish a fire, it is 53 to remove one or more of the four components of combustion. Removing any of these components of the fire tetrahedron will stop the other elements from interacting and not allow combustion to 54 . Firefighters work on limiting 55 (fuel that is in jeopardy of being ignited by nearby flame or from radiant heat), containing and extinguishing fire and then overhauling charred and burned debris from the affected areas as well as extinguishing all hidden fires to prevent a rekindle."
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "(A)cease (B)proceed (C)halt (D)desist",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -731,20 +734,22 @@
         "B": "proceed",
         "C": "halt",
         "D": "desist"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題 Historically, physicists created a graphical representation detailing the three elements of fire (fire triangle). In recent years, one more point has been added, 51 the fire tetrahedron. The four elements needed to 52 combustion are: fuel, oxygen, heat and a chemical chain reaction. To extinguish a fire, it is 53 to remove one or more of the four components of combustion. Removing any of these components of the fire tetrahedron will stop the other elements from interacting and not allow combustion to 54 . Firefighters work on limiting 55 (fuel that is in jeopardy of being ignited by nearby flame or from radiant heat), containing and extinguishing fire and then overhauling charred and burned debris from the affected areas as well as extinguishing all hidden fires to prevent a rekindle."
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "(A)exhausts (B)expeditions (C)explosives (D)exposures 請依下文回答第56題至第60題 Mark Finney at the US Forest Service and his colleagues sometimes do the unthinkable. They go out into the bush and start a fire. But they’re not arsonists and these fires aren’t sprawling or highly destructive. They’re controlled burns of real vegetation that give scientists a better understanding of how flames leap from one branch to another. Studying that can help predict how real wildfires may spread. Among the measurements Finney and his team take include the amount of time that flames spend burning in one area, how quickly they propagate through vegetation and what kind of heat exchange is going on as they do so. These experiments have taken place in New Zealand. The burn areas are cordoned off by barriers that stop the fire getting out of control. “We have drones that fly over and give us a view of what’s going on from the air, we have cameras that are protected by an aluminum and insulation housing that allow you to put them inside the fire,” he says. “It usually takes a day or more to set up all the instruments and of course you have to have the weather conditions cooperating.” It’s all part of a modern human quest – to know what makes fire tick. A supposedly crucial moment in the history of human evolution is the “discovery” of fire. But fire has been a natural occurrence on Earth since long before our ancestors took their first steps. And today, far from being something under our control, fire often takes the form of a man-made disaster. In the US, well over 80% of wildfires are started, usually accidentally, by people. This year, like last year, many parts of the planet have experienced very hot and dry summers, sharply raising the chance of wildfires taking hold once ignited. Woodlands have blazed in Greece, Sweden, and Siberia among other hotspots. The southwestern US state of California has just recorded its largest wildfire on record. What if we’d known when and where these fires would start? Or how they would wax and wane? If we had such knowledge, we’d surely be better able to protect the towns and communities that are at risk from destruction. Finney hopes that data from his experiments will improve the existing models that are used to project wildfire spread. Some of those models are too simplistic, he explains.",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "exhausts",
         "B": "expeditions",
         "C": "explosives",
-        "D": "exposures 請依下文回答第56題至第60題 Mark Finney at the US Forest Service and his colleagues sometimes do the unthinkable. They go out into the bush and start a fire. But they’re not arsonists and these fires aren’t sprawling or highly destructive. They’re controlled burns of real vegetation that give scientists a better understanding of how flames leap from one branch to another. Studying that can help predict how real wildfires may spread. Among the measurements Finney and his team take include the amount of time that flames spend burning in one area, how quickly they propagate through vegetation and what kind of heat exchange is going on as they do so. These experiments have taken place in New Zealand. The burn areas are cordoned off by barriers that stop the fire getting out of control. “We have drones that fly over and give us a view of what’s going on from the air, we have cameras that are protected by an aluminum and insulation housing that allow you to put them inside the fire,” he says. “It usually takes a day or more to set up all the instruments and of course you have to have the weather conditions cooperating.” It’s all part of a modern human quest – to know what makes fire tick. A supposedly crucial moment in the history of human evolution is the “discovery” of fire. But fire has been a natural occurrence on Earth since long before our ancestors took their first steps. And today, far from being something under our control, fire often takes the form of a man-made disaster. In the US, well over 80% of wildfires are started, usually accidentally, by people. This year, like last year, many parts of the planet have experienced very hot and dry summers, sharply raising the chance of wildfires taking hold once ignited. Woodlands have blazed in Greece, Sweden, and Siberia among other hotspots. The southwestern US state of California has just recorded its largest wildfire on record. What if we’d known when and where these fires would start? Or how they would wax and wane? If we had such knowledge, we’d surely be better able to protect the towns and communities that are at risk from destruction. Finney hopes that data from his experiments will improve the existing models that are used to project wildfire spread. Some of those models are too simplistic, he explains."
-      }
+        "D": "exposures"
+      },
+      "passage": "請依下文回答第51題至第55題 Historically, physicists created a graphical representation detailing the three elements of fire (fire triangle). In recent years, one more point has been added, 51 the fire tetrahedron. The four elements needed to 52 combustion are: fuel, oxygen, heat and a chemical chain reaction. To extinguish a fire, it is 53 to remove one or more of the four components of combustion. Removing any of these components of the fire tetrahedron will stop the other elements from interacting and not allow combustion to 54 . Firefighters work on limiting 55 (fuel that is in jeopardy of being ignited by nearby flame or from radiant heat), containing and extinguishing fire and then overhauling charred and burned debris from the affected areas as well as extinguishing all hidden fires to prevent a rekindle."
     },
     {
       "number": 56,
@@ -757,7 +762,8 @@
         "B": "The Rise and Fall of Wildfires.",
         "C": "The Quest to Predict and Stop the Spread of Wildfires.",
         "D": "The Models of Predicting and Stopping Wildfires."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Mark Finney at the US Forest Service and his colleagues sometimes do the unthinkable. They go out into the bush and start a fire. But they’re not arsonists and these fires aren’t sprawling or highly destructive. They’re controlled burns of real vegetation that give scientists a better understanding of how flames leap from one branch to another. Studying that can help predict how real wildfires may spread. Among the measurements Finney and his team take include the amount of time that flames spend burning in one area, how quickly they propagate through vegetation and what kind of heat exchange is going on as they do so. These experiments have taken place in New Zealand. The burn areas are cordoned off by barriers that stop the fire getting out of control. “We have drones that fly over and give us a view of what’s going on from the air, we have cameras that are protected by an aluminum and insulation housing that allow you to put them inside the fire,” he says. “It usually takes a day or more to set up all the instruments and of course you have to have the weather conditions cooperating.” It’s all part of a modern human quest – to know what makes fire tick. A supposedly crucial moment in the history of human evolution is the “discovery” of fire. But fire has been a natural occurrence on Earth since long before our ancestors took their first steps. And today, far from being something under our control, fire often takes the form of a man-made disaster. In the US, well over 80% of wildfires are started, usually accidentally, by people. This year, like last year, many parts of the planet have experienced very hot and dry summers, sharply raising the chance of wildfires taking hold once ignited. Woodlands have blazed in Greece, Sweden, and Siberia among other hotspots. The southwestern US state of California has just recorded its largest wildfire on record. What if we’d known when and where these fires would start? Or how they would wax and wane? If we had such knowledge, we’d surely be better able to protect the towns and communities that are at risk from destruction. Finney hopes that data from his experiments will improve the existing models that are used to project wildfire spread. Some of those models are too simplistic, he explains."
     },
     {
       "number": 57,
@@ -770,7 +776,8 @@
         "B": "Thorny.",
         "C": "Perfect.",
         "D": "Simplistic."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Mark Finney at the US Forest Service and his colleagues sometimes do the unthinkable. They go out into the bush and start a fire. But they’re not arsonists and these fires aren’t sprawling or highly destructive. They’re controlled burns of real vegetation that give scientists a better understanding of how flames leap from one branch to another. Studying that can help predict how real wildfires may spread. Among the measurements Finney and his team take include the amount of time that flames spend burning in one area, how quickly they propagate through vegetation and what kind of heat exchange is going on as they do so. These experiments have taken place in New Zealand. The burn areas are cordoned off by barriers that stop the fire getting out of control. “We have drones that fly over and give us a view of what’s going on from the air, we have cameras that are protected by an aluminum and insulation housing that allow you to put them inside the fire,” he says. “It usually takes a day or more to set up all the instruments and of course you have to have the weather conditions cooperating.” It’s all part of a modern human quest – to know what makes fire tick. A supposedly crucial moment in the history of human evolution is the “discovery” of fire. But fire has been a natural occurrence on Earth since long before our ancestors took their first steps. And today, far from being something under our control, fire often takes the form of a man-made disaster. In the US, well over 80% of wildfires are started, usually accidentally, by people. This year, like last year, many parts of the planet have experienced very hot and dry summers, sharply raising the chance of wildfires taking hold once ignited. Woodlands have blazed in Greece, Sweden, and Siberia among other hotspots. The southwestern US state of California has just recorded its largest wildfire on record. What if we’d known when and where these fires would start? Or how they would wax and wane? If we had such knowledge, we’d surely be better able to protect the towns and communities that are at risk from destruction. Finney hopes that data from his experiments will improve the existing models that are used to project wildfire spread. Some of those models are too simplistic, he explains."
     },
     {
       "number": 58,
@@ -783,7 +790,8 @@
         "B": "To grow stronger and then weaker again",
         "C": "To stop and then start again",
         "D": "To die and become alive again"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Mark Finney at the US Forest Service and his colleagues sometimes do the unthinkable. They go out into the bush and start a fire. But they’re not arsonists and these fires aren’t sprawling or highly destructive. They’re controlled burns of real vegetation that give scientists a better understanding of how flames leap from one branch to another. Studying that can help predict how real wildfires may spread. Among the measurements Finney and his team take include the amount of time that flames spend burning in one area, how quickly they propagate through vegetation and what kind of heat exchange is going on as they do so. These experiments have taken place in New Zealand. The burn areas are cordoned off by barriers that stop the fire getting out of control. “We have drones that fly over and give us a view of what’s going on from the air, we have cameras that are protected by an aluminum and insulation housing that allow you to put them inside the fire,” he says. “It usually takes a day or more to set up all the instruments and of course you have to have the weather conditions cooperating.” It’s all part of a modern human quest – to know what makes fire tick. A supposedly crucial moment in the history of human evolution is the “discovery” of fire. But fire has been a natural occurrence on Earth since long before our ancestors took their first steps. And today, far from being something under our control, fire often takes the form of a man-made disaster. In the US, well over 80% of wildfires are started, usually accidentally, by people. This year, like last year, many parts of the planet have experienced very hot and dry summers, sharply raising the chance of wildfires taking hold once ignited. Woodlands have blazed in Greece, Sweden, and Siberia among other hotspots. The southwestern US state of California has just recorded its largest wildfire on record. What if we’d known when and where these fires would start? Or how they would wax and wane? If we had such knowledge, we’d surely be better able to protect the towns and communities that are at risk from destruction. Finney hopes that data from his experiments will improve the existing models that are used to project wildfire spread. Some of those models are too simplistic, he explains."
     },
     {
       "number": 59,
@@ -796,7 +804,8 @@
         "B": "To understand why fire is a man-made disaster",
         "C": "To see how drones work in a wildfire",
         "D": "To see how cameras are protected by an aluminum in a fire"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Mark Finney at the US Forest Service and his colleagues sometimes do the unthinkable. They go out into the bush and start a fire. But they’re not arsonists and these fires aren’t sprawling or highly destructive. They’re controlled burns of real vegetation that give scientists a better understanding of how flames leap from one branch to another. Studying that can help predict how real wildfires may spread. Among the measurements Finney and his team take include the amount of time that flames spend burning in one area, how quickly they propagate through vegetation and what kind of heat exchange is going on as they do so. These experiments have taken place in New Zealand. The burn areas are cordoned off by barriers that stop the fire getting out of control. “We have drones that fly over and give us a view of what’s going on from the air, we have cameras that are protected by an aluminum and insulation housing that allow you to put them inside the fire,” he says. “It usually takes a day or more to set up all the instruments and of course you have to have the weather conditions cooperating.” It’s all part of a modern human quest – to know what makes fire tick. A supposedly crucial moment in the history of human evolution is the “discovery” of fire. But fire has been a natural occurrence on Earth since long before our ancestors took their first steps. And today, far from being something under our control, fire often takes the form of a man-made disaster. In the US, well over 80% of wildfires are started, usually accidentally, by people. This year, like last year, many parts of the planet have experienced very hot and dry summers, sharply raising the chance of wildfires taking hold once ignited. Woodlands have blazed in Greece, Sweden, and Siberia among other hotspots. The southwestern US state of California has just recorded its largest wildfire on record. What if we’d known when and where these fires would start? Or how they would wax and wane? If we had such knowledge, we’d surely be better able to protect the towns and communities that are at risk from destruction. Finney hopes that data from his experiments will improve the existing models that are used to project wildfire spread. Some of those models are too simplistic, he explains."
     },
     {
       "number": 60,
@@ -809,7 +818,8 @@
         "B": "Humans know exactly how wildfires work.",
         "C": "Over 80% of wildfires in the US are started by humans on purpose.",
         "D": "The fire started by Finney is controlled and hence not destructive."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題 Mark Finney at the US Forest Service and his colleagues sometimes do the unthinkable. They go out into the bush and start a fire. But they’re not arsonists and these fires aren’t sprawling or highly destructive. They’re controlled burns of real vegetation that give scientists a better understanding of how flames leap from one branch to another. Studying that can help predict how real wildfires may spread. Among the measurements Finney and his team take include the amount of time that flames spend burning in one area, how quickly they propagate through vegetation and what kind of heat exchange is going on as they do so. These experiments have taken place in New Zealand. The burn areas are cordoned off by barriers that stop the fire getting out of control. “We have drones that fly over and give us a view of what’s going on from the air, we have cameras that are protected by an aluminum and insulation housing that allow you to put them inside the fire,” he says. “It usually takes a day or more to set up all the instruments and of course you have to have the weather conditions cooperating.” It’s all part of a modern human quest – to know what makes fire tick. A supposedly crucial moment in the history of human evolution is the “discovery” of fire. But fire has been a natural occurrence on Earth since long before our ancestors took their first steps. And today, far from being something under our control, fire often takes the form of a man-made disaster. In the US, well over 80% of wildfires are started, usually accidentally, by people. This year, like last year, many parts of the planet have experienced very hot and dry summers, sharply raising the chance of wildfires taking hold once ignited. Woodlands have blazed in Greece, Sweden, and Siberia among other hotspots. The southwestern US state of California has just recorded its largest wildfire on record. What if we’d known when and where these fires would start? Or how they would wax and wane? If we had such knowledge, we’d surely be better able to protect the towns and communities that are at risk from destruction. Finney hopes that data from his experiments will improve the existing models that are used to project wildfire spread. Some of those models are too simplistic, he explains."
     }
   ],
   "year": 108,

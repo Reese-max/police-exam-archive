@@ -600,13 +600,13 @@
         "A": "spin",
         "B": "merge",
         "C": "rust",
-        "D": "crack 請依下文回答第45題至第49題: Wheninterviewingchildren,interpreterscanbeusedinmanydifferentways,dependingontheneeds and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are interviewing the child, not the interpreter. The interview should be conducted in a waythat does notisolatethechildatanytime.Further,youshouldalwaysaddressthechildinthe 47 personwhen youaskaquestion,likeTommy,ratherthanTomPeterson.Inotherwords,donotasktheinterpreterabout thechild,phrase yourquestion 48 thechildcanunderstand you.Evenwhenaskingforclarification about aresponse, youshouldalways 49 the child,not theinterpreter."
+        "D": "crack"
       }
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "(A)linguistic (B)dramatic (C)chaotic (D)fantastic",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -614,12 +614,13 @@
         "B": "dramatic",
         "C": "chaotic",
         "D": "fantastic"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: Wheninterviewingchildren,interpreterscanbeusedinmanydifferentways,dependingontheneeds and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are interviewing the child, not the interpreter. The interview should be conducted in a waythat does notisolatethechildatanytime.Further,youshouldalwaysaddressthechildinthe 47 personwhen youaskaquestion,likeTommy,ratherthanTomPeterson.Inotherwords,donotasktheinterpreterabout thechild,phrase yourquestion 48 thechildcanunderstand you.Evenwhenaskingforclarification about aresponse, youshouldalways 49 the child,not theinterpreter."
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "(A)recognition (B)adoration (C)imitation (D)classification",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -627,12 +628,13 @@
         "B": "adoration",
         "C": "imitation",
         "D": "classification"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: Wheninterviewingchildren,interpreterscanbeusedinmanydifferentways,dependingontheneeds and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are interviewing the child, not the interpreter. The interview should be conducted in a waythat does notisolatethechildatanytime.Further,youshouldalwaysaddressthechildinthe 47 personwhen youaskaquestion,likeTommy,ratherthanTomPeterson.Inotherwords,donotasktheinterpreterabout thechild,phrase yourquestion 48 thechildcanunderstand you.Evenwhenaskingforclarification about aresponse, youshouldalways 49 the child,not theinterpreter."
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "(A)first (B)second (C)third (D)fourth",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -640,12 +642,13 @@
         "B": "second",
         "C": "third",
         "D": "fourth"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: Wheninterviewingchildren,interpreterscanbeusedinmanydifferentways,dependingontheneeds and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are interviewing the child, not the interpreter. The interview should be conducted in a waythat does notisolatethechildatanytime.Further,youshouldalwaysaddressthechildinthe 47 personwhen youaskaquestion,likeTommy,ratherthanTomPeterson.Inotherwords,donotasktheinterpreterabout thechild,phrase yourquestion 48 thechildcanunderstand you.Evenwhenaskingforclarification about aresponse, youshouldalways 49 the child,not theinterpreter."
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "(A)as if (B)eventhough (C)except for (D)orelse",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -653,12 +656,13 @@
         "B": "eventhough",
         "C": "except for",
         "D": "orelse"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: Wheninterviewingchildren,interpreterscanbeusedinmanydifferentways,dependingontheneeds and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are interviewing the child, not the interpreter. The interview should be conducted in a waythat does notisolatethechildatanytime.Further,youshouldalwaysaddressthechildinthe 47 personwhen youaskaquestion,likeTommy,ratherthanTomPeterson.Inotherwords,donotasktheinterpreterabout thechild,phrase yourquestion 48 thechildcanunderstand you.Evenwhenaskingforclarification about aresponse, youshouldalways 49 the child,not theinterpreter."
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "(A)address (B)identify (C)order (D)evaluate",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -666,7 +670,8 @@
         "B": "identify",
         "C": "order",
         "D": "evaluate"
-      }
+      },
+      "passage": "請依下文回答第45題至第49題: Wheninterviewingchildren,interpreterscanbeusedinmanydifferentways,dependingontheneeds and the 45 capabilities of the child. The appropriate use of an interpreter requires the 46 that you are interviewing the child, not the interpreter. The interview should be conducted in a waythat does notisolatethechildatanytime.Further,youshouldalwaysaddressthechildinthe 47 personwhen youaskaquestion,likeTommy,ratherthanTomPeterson.Inotherwords,donotasktheinterpreterabout thechild,phrase yourquestion 48 thechildcanunderstand you.Evenwhenaskingforclarification about aresponse, youshouldalways 49 the child,not theinterpreter."
     },
     {
       "number": 50,

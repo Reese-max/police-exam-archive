@@ -672,13 +672,13 @@
         "A": "vaccine",
         "B": "accentuation",
         "C": "diagnosis",
-        "D": "infection - - 請依下文回答第51題至第55題: Would Covid masks help criminals get away with it? It was the question posed by police, academics and many others when face coverings became 51 in shops and other places last year. Now, it seems, theyhave their answer as Kent police in the UK say catching a person guilty of a crime has become even 52 as puttingtogether an accurate efit (electronic facial identification technique) –which officers use like wanted posters – is difficult when the person 53 is wearing a mask. Susan Morrison, a civil supervisor at Kent police’s identification office, said, “We are seeing an increase in reports of guilty people wearing masks. And while we view each case separately, sometimes it can be more stressful for the victim to go through the process of making an efit, than the result is useful to the investigation.”Thephenomenonis 54 limitedtotheUK.USmediaoutletshavereportsonacouple in Connecticut committed a series of crime in a day, during which they are accused of robbing several shops while disguised in medical masks. In order to 55 an increase in mask-assisted crime, professors at Leeds University’s law school warned shop owners to look out for robbers returning for a second bite of the cherry. This is because theyknowthat successful commercial robbers return to thesame, nearbyorsame-typeplaces."
+        "D": "infection"
       }
     },
     {
       "number": 51,
       "type": "choice",
-      "stem": "(A)essential (B)memorial (C)beneficial (D)imperial",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -686,12 +686,13 @@
         "B": "memorial",
         "C": "beneficial",
         "D": "imperial"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Would Covid masks help criminals get away with it? It was the question posed by police, academics and many others when face coverings became 51 in shops and other places last year. Now, it seems, theyhave their answer as Kent police in the UK say catching a person guilty of a crime has become even 52 as puttingtogether an accurate efit (electronic facial identification technique) –which officers use like wanted posters – is difficult when the person 53 is wearing a mask. Susan Morrison, a civil supervisor at Kent police’s identification office, said, “We are seeing an increase in reports of guilty people wearing masks. And while we view each case separately, sometimes it can be more stressful for the victim to go through the process of making an efit, than the result is useful to the investigation.”Thephenomenonis 54 limitedtotheUK.USmediaoutletshavereportsonacouple in Connecticut committed a series of crime in a day, during which they are accused of robbing several shops while disguised in medical masks. In order to 55 an increase in mask-assisted crime, professors at Leeds University’s law school warned shop owners to look out for robbers returning for a second bite of the cherry. This is because theyknowthat successful commercial robbers return to thesame, nearbyorsame-typeplaces."
     },
     {
       "number": 52,
       "type": "choice",
-      "stem": "(A)smoother (B)trickier (C)clumsier (D)guiltier",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -699,12 +700,13 @@
         "B": "trickier",
         "C": "clumsier",
         "D": "guiltier"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Would Covid masks help criminals get away with it? It was the question posed by police, academics and many others when face coverings became 51 in shops and other places last year. Now, it seems, theyhave their answer as Kent police in the UK say catching a person guilty of a crime has become even 52 as puttingtogether an accurate efit (electronic facial identification technique) –which officers use like wanted posters – is difficult when the person 53 is wearing a mask. Susan Morrison, a civil supervisor at Kent police’s identification office, said, “We are seeing an increase in reports of guilty people wearing masks. And while we view each case separately, sometimes it can be more stressful for the victim to go through the process of making an efit, than the result is useful to the investigation.”Thephenomenonis 54 limitedtotheUK.USmediaoutletshavereportsonacouple in Connecticut committed a series of crime in a day, during which they are accused of robbing several shops while disguised in medical masks. In order to 55 an increase in mask-assisted crime, professors at Leeds University’s law school warned shop owners to look out for robbers returning for a second bite of the cherry. This is because theyknowthat successful commercial robbers return to thesame, nearbyorsame-typeplaces."
     },
     {
       "number": 53,
       "type": "choice",
-      "stem": "(A)intheory (B)incommon (C)inquestion (D)ingeneral",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -712,12 +714,13 @@
         "B": "incommon",
         "C": "inquestion",
         "D": "ingeneral"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Would Covid masks help criminals get away with it? It was the question posed by police, academics and many others when face coverings became 51 in shops and other places last year. Now, it seems, theyhave their answer as Kent police in the UK say catching a person guilty of a crime has become even 52 as puttingtogether an accurate efit (electronic facial identification technique) –which officers use like wanted posters – is difficult when the person 53 is wearing a mask. Susan Morrison, a civil supervisor at Kent police’s identification office, said, “We are seeing an increase in reports of guilty people wearing masks. And while we view each case separately, sometimes it can be more stressful for the victim to go through the process of making an efit, than the result is useful to the investigation.”Thephenomenonis 54 limitedtotheUK.USmediaoutletshavereportsonacouple in Connecticut committed a series of crime in a day, during which they are accused of robbing several shops while disguised in medical masks. In order to 55 an increase in mask-assisted crime, professors at Leeds University’s law school warned shop owners to look out for robbers returning for a second bite of the cherry. This is because theyknowthat successful commercial robbers return to thesame, nearbyorsame-typeplaces."
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "(A)from nowon (B)timeandagain (C)all theway (D)bynomeans",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -725,20 +728,22 @@
         "B": "timeandagain",
         "C": "all theway",
         "D": "bynomeans"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Would Covid masks help criminals get away with it? It was the question posed by police, academics and many others when face coverings became 51 in shops and other places last year. Now, it seems, theyhave their answer as Kent police in the UK say catching a person guilty of a crime has become even 52 as puttingtogether an accurate efit (electronic facial identification technique) –which officers use like wanted posters – is difficult when the person 53 is wearing a mask. Susan Morrison, a civil supervisor at Kent police’s identification office, said, “We are seeing an increase in reports of guilty people wearing masks. And while we view each case separately, sometimes it can be more stressful for the victim to go through the process of making an efit, than the result is useful to the investigation.”Thephenomenonis 54 limitedtotheUK.USmediaoutletshavereportsonacouple in Connecticut committed a series of crime in a day, during which they are accused of robbing several shops while disguised in medical masks. In order to 55 an increase in mask-assisted crime, professors at Leeds University’s law school warned shop owners to look out for robbers returning for a second bite of the cherry. This is because theyknowthat successful commercial robbers return to thesame, nearbyorsame-typeplaces."
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "(A)cease (B)march (C)pursue (D)obtain 請依下文回答第56題至第60題: The killing of George Floyd by police officers in Minneapolis and the shooting of Jacob Blake by police in Wisconsin have led many police departments in the US to deal with unpleasant situations they have avoidedtill now.As thousands havemarched inthestreets to protest against racial inequality, many others have also been forced to ask some difficult questions about their levels of prejudice. While some people mistake racism as being only plain prejudice, there is another crucial component that affects our decision and actions towards others: implicit bias. An implicit bias is any prejudice that has formed accidentallyandwithoutourdirectknowledge–anditcanoftencounterourobviousbeliefsandbehaviors. Usually, it reflects a mixture of personal experience, attitudes around us as we have grown up, and our wilder exposure to society and culture –including the books we read, television we watch and news we follow. Many police departments in the US have pointed to strategies aimed at tackling implicit bias as evidence oftheirattempts toroot out racism from theirranks. Policedepartments are not alone inhoping tackling unconscious bias can bring about change. Multinational corporations have also commanded implicit bias traininginresponsetoracist incidents involvingtheiremployees.",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
         "A": "cease",
         "B": "march",
         "C": "pursue",
-        "D": "obtain 請依下文回答第56題至第60題: The killing of George Floyd by police officers in Minneapolis and the shooting of Jacob Blake by police in Wisconsin have led many police departments in the US to deal with unpleasant situations they have avoidedtill now.As thousands havemarched inthestreets to protest against racial inequality, many others have also been forced to ask some difficult questions about their levels of prejudice. While some people mistake racism as being only plain prejudice, there is another crucial component that affects our decision and actions towards others: implicit bias. An implicit bias is any prejudice that has formed accidentallyandwithoutourdirectknowledge–anditcanoftencounterourobviousbeliefsandbehaviors. Usually, it reflects a mixture of personal experience, attitudes around us as we have grown up, and our wilder exposure to society and culture –including the books we read, television we watch and news we follow. Many police departments in the US have pointed to strategies aimed at tackling implicit bias as evidence oftheirattempts toroot out racism from theirranks. Policedepartments are not alone inhoping tackling unconscious bias can bring about change. Multinational corporations have also commanded implicit bias traininginresponsetoracist incidents involvingtheiremployees."
-      }
+        "D": "obtain"
+      },
+      "passage": "請依下文回答第51題至第55題: Would Covid masks help criminals get away with it? It was the question posed by police, academics and many others when face coverings became 51 in shops and other places last year. Now, it seems, theyhave their answer as Kent police in the UK say catching a person guilty of a crime has become even 52 as puttingtogether an accurate efit (electronic facial identification technique) –which officers use like wanted posters – is difficult when the person 53 is wearing a mask. Susan Morrison, a civil supervisor at Kent police’s identification office, said, “We are seeing an increase in reports of guilty people wearing masks. And while we view each case separately, sometimes it can be more stressful for the victim to go through the process of making an efit, than the result is useful to the investigation.”Thephenomenonis 54 limitedtotheUK.USmediaoutletshavereportsonacouple in Connecticut committed a series of crime in a day, during which they are accused of robbing several shops while disguised in medical masks. In order to 55 an increase in mask-assisted crime, professors at Leeds University’s law school warned shop owners to look out for robbers returning for a second bite of the cherry. This is because theyknowthat successful commercial robbers return to thesame, nearbyorsame-typeplaces."
     },
     {
       "number": 56,
@@ -751,7 +756,8 @@
         "B": "Policeandcorporations tackleracism together.",
         "C": "Peoplemistakeracism as accidental prejudice.",
         "D": "TheUS policehavemadeevidenceoftacklingbias."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The killing of George Floyd by police officers in Minneapolis and the shooting of Jacob Blake by police in Wisconsin have led many police departments in the US to deal with unpleasant situations they have avoidedtill now.As thousands havemarched inthestreets to protest against racial inequality, many others have also been forced to ask some difficult questions about their levels of prejudice. While some people mistake racism as being only plain prejudice, there is another crucial component that affects our decision and actions towards others: implicit bias. An implicit bias is any prejudice that has formed accidentallyandwithoutourdirectknowledge–anditcanoftencounterourobviousbeliefsandbehaviors. Usually, it reflects a mixture of personal experience, attitudes around us as we have grown up, and our wilder exposure to society and culture –including the books we read, television we watch and news we follow. Many police departments in the US have pointed to strategies aimed at tackling implicit bias as evidence oftheirattempts toroot out racism from theirranks. Policedepartments are not alone inhoping tackling unconscious bias can bring about change. Multinational corporations have also commanded implicit bias traininginresponsetoracist incidents involvingtheiremployees."
     },
     {
       "number": 57,
@@ -764,7 +770,8 @@
         "B": "Peoplearebarelyawareofhavingimplicit bias.",
         "C": "Corporations havealsocommandedimplicit bias.",
         "D": "TheUS policeavoidfixingunpleasant situations."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The killing of George Floyd by police officers in Minneapolis and the shooting of Jacob Blake by police in Wisconsin have led many police departments in the US to deal with unpleasant situations they have avoidedtill now.As thousands havemarched inthestreets to protest against racial inequality, many others have also been forced to ask some difficult questions about their levels of prejudice. While some people mistake racism as being only plain prejudice, there is another crucial component that affects our decision and actions towards others: implicit bias. An implicit bias is any prejudice that has formed accidentallyandwithoutourdirectknowledge–anditcanoftencounterourobviousbeliefsandbehaviors. Usually, it reflects a mixture of personal experience, attitudes around us as we have grown up, and our wilder exposure to society and culture –including the books we read, television we watch and news we follow. Many police departments in the US have pointed to strategies aimed at tackling implicit bias as evidence oftheirattempts toroot out racism from theirranks. Policedepartments are not alone inhoping tackling unconscious bias can bring about change. Multinational corporations have also commanded implicit bias traininginresponsetoracist incidents involvingtheiremployees."
     },
     {
       "number": 58,
@@ -777,7 +784,8 @@
         "B": "ProcessAnalysis.",
         "C": "CauseandEffect.",
         "D": "SimpleListing."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The killing of George Floyd by police officers in Minneapolis and the shooting of Jacob Blake by police in Wisconsin have led many police departments in the US to deal with unpleasant situations they have avoidedtill now.As thousands havemarched inthestreets to protest against racial inequality, many others have also been forced to ask some difficult questions about their levels of prejudice. While some people mistake racism as being only plain prejudice, there is another crucial component that affects our decision and actions towards others: implicit bias. An implicit bias is any prejudice that has formed accidentallyandwithoutourdirectknowledge–anditcanoftencounterourobviousbeliefsandbehaviors. Usually, it reflects a mixture of personal experience, attitudes around us as we have grown up, and our wilder exposure to society and culture –including the books we read, television we watch and news we follow. Many police departments in the US have pointed to strategies aimed at tackling implicit bias as evidence oftheirattempts toroot out racism from theirranks. Policedepartments are not alone inhoping tackling unconscious bias can bring about change. Multinational corporations have also commanded implicit bias traininginresponsetoracist incidents involvingtheiremployees."
     },
     {
       "number": 59,
@@ -790,7 +798,8 @@
         "B": "Qualities involvinginthepolice.",
         "C": "Positions relatedtothepolice.",
         "D": "Peoplebelongingtothepolice."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The killing of George Floyd by police officers in Minneapolis and the shooting of Jacob Blake by police in Wisconsin have led many police departments in the US to deal with unpleasant situations they have avoidedtill now.As thousands havemarched inthestreets to protest against racial inequality, many others have also been forced to ask some difficult questions about their levels of prejudice. While some people mistake racism as being only plain prejudice, there is another crucial component that affects our decision and actions towards others: implicit bias. An implicit bias is any prejudice that has formed accidentallyandwithoutourdirectknowledge–anditcanoftencounterourobviousbeliefsandbehaviors. Usually, it reflects a mixture of personal experience, attitudes around us as we have grown up, and our wilder exposure to society and culture –including the books we read, television we watch and news we follow. Many police departments in the US have pointed to strategies aimed at tackling implicit bias as evidence oftheirattempts toroot out racism from theirranks. Policedepartments are not alone inhoping tackling unconscious bias can bring about change. Multinational corporations have also commanded implicit bias traininginresponsetoracist incidents involvingtheiremployees."
     },
     {
       "number": 60,
@@ -803,7 +812,8 @@
         "B": "Respectful.",
         "C": "Sympathetic.",
         "D": "Disapproving."
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: The killing of George Floyd by police officers in Minneapolis and the shooting of Jacob Blake by police in Wisconsin have led many police departments in the US to deal with unpleasant situations they have avoidedtill now.As thousands havemarched inthestreets to protest against racial inequality, many others have also been forced to ask some difficult questions about their levels of prejudice. While some people mistake racism as being only plain prejudice, there is another crucial component that affects our decision and actions towards others: implicit bias. An implicit bias is any prejudice that has formed accidentallyandwithoutourdirectknowledge–anditcanoftencounterourobviousbeliefsandbehaviors. Usually, it reflects a mixture of personal experience, attitudes around us as we have grown up, and our wilder exposure to society and culture –including the books we read, television we watch and news we follow. Many police departments in the US have pointed to strategies aimed at tackling implicit bias as evidence oftheirattempts toroot out racism from theirranks. Policedepartments are not alone inhoping tackling unconscious bias can bring about change. Multinational corporations have also commanded implicit bias traininginresponsetoracist incidents involvingtheiremployees."
     }
   ],
   "year": 110,

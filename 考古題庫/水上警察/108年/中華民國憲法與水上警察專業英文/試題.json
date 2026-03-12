@@ -717,13 +717,13 @@
         "A": "evacuation",
         "B": "transaction",
         "C": "transmission",
-        "D": "ejection 請依下文回答第54題至第55題 Marine police often inspect boats to ensure they are 54 with regulations. In some parts of the country, the marine police are also responsible for 55 smuggling operations and arresting criminals."
+        "D": "ejection"
       }
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "(A)satisfied (B)complying (C)tampering (D)pleased",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -731,12 +731,13 @@
         "B": "complying",
         "C": "tampering",
         "D": "pleased"
-      }
+      },
+      "passage": "請依下文回答第54題至第55題 Marine police often inspect boats to ensure they are 54 with regulations. In some parts of the country, the marine police are also responsible for 55 smuggling operations and arresting criminals."
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "(A)interdicting (B)interceding (C)permitting (D)sanctioning",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -744,7 +745,8 @@
         "B": "interceding",
         "C": "permitting",
         "D": "sanctioning"
-      }
+      },
+      "passage": "請依下文回答第54題至第55題 Marine police often inspect boats to ensure they are 54 with regulations. In some parts of the country, the marine police are also responsible for 55 smuggling operations and arresting criminals."
     },
     {
       "number": 56,
@@ -756,7 +758,7 @@
         "A": "paramedics",
         "B": "cookers",
         "C": "pharmacist",
-        "D": "helper 請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Throughout history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncovered of a Mayan salt production center in Guatemala located next to a principal riverine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who controlled its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathered in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the artistic and scientific innovations of the Italian Renaissance. The role salt has played throughout history is impressive. Columbus’s voyage of discovery to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
+        "D": "helper"
       }
     },
     {
@@ -770,7 +772,8 @@
         "B": "The decrease of our need for salt over time",
         "C": "Salt’s impact on civilizations throughout history",
         "D": "The possible uses of salt in the future"
-      }
+      },
+      "passage": "請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Throughout history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncovered of a Mayan salt production center in Guatemala located next to a principal riverine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who controlled its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathered in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the artistic and scientific innovations of the Italian Renaissance. The role salt has played throughout history is impressive. Columbus’s voyage of discovery to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
     },
     {
       "number": 58,
@@ -783,7 +786,8 @@
         "B": "They produced salt in coastal areas.",
         "C": "They became powerful with salt money.",
         "D": "They invited foreigners to inspect their salt trade."
-      }
+      },
+      "passage": "請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Throughout history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncovered of a Mayan salt production center in Guatemala located next to a principal riverine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who controlled its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathered in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the artistic and scientific innovations of the Italian Renaissance. The role salt has played throughout history is impressive. Columbus’s voyage of discovery to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
     },
     {
       "number": 59,
@@ -796,7 +800,8 @@
         "B": "vessel",
         "C": "product",
         "D": "currency"
-      }
+      },
+      "passage": "請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Throughout history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncovered of a Mayan salt production center in Guatemala located next to a principal riverine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who controlled its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathered in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the artistic and scientific innovations of the Italian Renaissance. The role salt has played throughout history is impressive. Columbus’s voyage of discovery to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
     },
     {
       "number": 60,
@@ -809,7 +814,8 @@
         "B": "It was distributed far beyond the Adriatic region.",
         "C": "It was of a poorer quality than before.",
         "D": "It was produced primarily in the lagoons near Venice."
-      }
+      },
+      "passage": "請依下文回答第57題至第60題 There is perhaps no single substance so vital to life yet so often taken for granted in modern times as salt. Throughout history, salt has played pivotal roles in human health as an agent of both nutrition and food preservation. Salt is so important, in fact, that in the past access to it could determine the success or failure of a population. Many of the earliest cities were founded and thrived specifically due to their proximity to a natural salt source. The ancient world was made up of regions where salt was abundant and others where it was not; therefore, salt was one of the original motivators for trade. Given the weight of the commodity, it was most easily transported by boat. Evidence has been uncovered of a Mayan salt production center in Guatemala located next to a principal riverine trading route. The marine salt trade in the Mediterranean region is well documented, and Marco Polo noted during his visit to China that salt was shipped from the coast up the Yangtze River in great quantities. The high value of salt provided great power to those who controlled its distribution, and many of history’s great cities owed their affluence to it. Venice, for example, gained prominence partly as a result of the salt gathered in its lagoons. By 1350, Venice had secured a monopoly, and all salt produced in the Adriatic region had to pass through Venice, where its price was marked up substantially before it could be sold. The wealth derived from this trade helped fuel the artistic and scientific innovations of the Italian Renaissance. The role salt has played throughout history is impressive. Columbus’s voyage of discovery to the New World was financed by salt production in Southern Spain. France’s territorial expansions under Napoleon were largely paid for by a tax charged on salt purchases, and the State of New York used a similar tax to fund the creation of its 363-mile Erie Canal."
     }
   ],
   "year": 108,

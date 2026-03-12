@@ -671,7 +671,7 @@
         "A": "surrounding",
         "B": "neglecting",
         "C": "excepting",
-        "D": "omitting 請依下文回答第51題至第55題: Patrol vessels around the world vary in size in direct proportion to the distance they are expected to operate offshore. High Seas boarding 51 a patrol vessel that can work comfortably at distances of 200 nautical miles and further from 52 . The vessel must have the speed, range, maneuverability, communications sophistication, and 53 technology to accomplish the patrol function efficiently. In total, this equates to the description of a"
+        "D": "omitting"
       }
     },
     {
@@ -686,12 +686,13 @@
         "B": "fishing",
         "C": "naval",
         "D": "recreational"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Patrol vessels around the world vary in size in direct proportion to the distance they are expected to operate offshore. High Seas boarding 51 a patrol vessel that can work comfortably at distances of 200 nautical miles and further from 52 . The vessel must have the speed, range, maneuverability, communications sophistication, and 53 technology to accomplish the patrol function efficiently. In total, this equates to the description of a"
     },
     {
       "number": 51,
       "type": "choice",
-      "stem": "(A)abandons (B)foretells (C)requires (D)unifies",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -699,12 +700,13 @@
         "B": "foretells",
         "C": "requires",
         "D": "unifies"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Patrol vessels around the world vary in size in direct proportion to the distance they are expected to operate offshore. High Seas boarding 51 a patrol vessel that can work comfortably at distances of 200 nautical miles and further from 52 . The vessel must have the speed, range, maneuverability, communications sophistication, and 53 technology to accomplish the patrol function efficiently. In total, this equates to the description of a"
     },
     {
       "number": 52,
       "type": "choice",
-      "stem": "(A)destination (B)radius (C)shore (D)terminus",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -712,12 +714,13 @@
         "B": "radius",
         "C": "shore",
         "D": "terminus"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Patrol vessels around the world vary in size in direct proportion to the distance they are expected to operate offshore. High Seas boarding 51 a patrol vessel that can work comfortably at distances of 200 nautical miles and further from 52 . The vessel must have the speed, range, maneuverability, communications sophistication, and 53 technology to accomplish the patrol function efficiently. In total, this equates to the description of a"
     },
     {
       "number": 53,
       "type": "choice",
-      "stem": "(A)catering (B)culinary (C)suspicion (D)surveillance",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -725,25 +728,27 @@
         "B": "culinary",
         "C": "suspicion",
         "D": "surveillance"
-      }
+      },
+      "passage": "請依下文回答第51題至第55題: Patrol vessels around the world vary in size in direct proportion to the distance they are expected to operate offshore. High Seas boarding 51 a patrol vessel that can work comfortably at distances of 200 nautical miles and further from 52 . The vessel must have the speed, range, maneuverability, communications sophistication, and 53 technology to accomplish the patrol function efficiently. In total, this equates to the description of a"
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "(A)larger (B)less (C)more (D)superior 請依下文回答第56題至第60題: Preventing migrant smuggling by sea requires states to balance their obligations in international law with their legitimate interests in protecting state sovereignty 56 violation by organized crime groups. But law enforcement efforts 57 are not adequate to prevent migrant smuggling by sea; the Migrant Smuggling Protocol stresses that prevention efforts must address root causes that lead a person into the hands of 58 in the first place. Suggestions are also made to raise awareness of those who influence political and policy decisions, so policies put in place protect state sovereignty, uphold international obligations, and are not 59 to exploitation by smugglers. Also emphasized is the responsibility of coastal states of departure to intercept smuggling vessels before they embark on 60 journeys. Beyond this, comprehensive data collection, analysis and research are suggested to strengthen evidence‐based responses.",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "larger",
         "B": "less",
         "C": "more",
-        "D": "superior 請依下文回答第56題至第60題: Preventing migrant smuggling by sea requires states to balance their obligations in international law with their legitimate interests in protecting state sovereignty 56 violation by organized crime groups. But law enforcement efforts 57 are not adequate to prevent migrant smuggling by sea; the Migrant Smuggling Protocol stresses that prevention efforts must address root causes that lead a person into the hands of 58 in the first place. Suggestions are also made to raise awareness of those who influence political and policy decisions, so policies put in place protect state sovereignty, uphold international obligations, and are not 59 to exploitation by smugglers. Also emphasized is the responsibility of coastal states of departure to intercept smuggling vessels before they embark on 60 journeys. Beyond this, comprehensive data collection, analysis and research are suggested to strengthen evidence‐based responses."
-      }
+        "D": "superior"
+      },
+      "passage": "請依下文回答第51題至第55題: Patrol vessels around the world vary in size in direct proportion to the distance they are expected to operate offshore. High Seas boarding 51 a patrol vessel that can work comfortably at distances of 200 nautical miles and further from 52 . The vessel must have the speed, range, maneuverability, communications sophistication, and 53 technology to accomplish the patrol function efficiently. In total, this equates to the description of a"
     },
     {
       "number": 56,
       "type": "choice",
-      "stem": "(A)beyond (B)from (C)toward (D)under",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -751,12 +756,13 @@
         "B": "from",
         "C": "toward",
         "D": "under"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: Preventing migrant smuggling by sea requires states to balance their obligations in international law with their legitimate interests in protecting state sovereignty 56 violation by organized crime groups. But law enforcement efforts 57 are not adequate to prevent migrant smuggling by sea; the Migrant Smuggling Protocol stresses that prevention efforts must address root causes that lead a person into the hands of 58 in the first place. Suggestions are also made to raise awareness of those who influence political and policy decisions, so policies put in place protect state sovereignty, uphold international obligations, and are not 59 to exploitation by smugglers. Also emphasized is the responsibility of coastal states of departure to intercept smuggling vessels before they embark on 60 journeys. Beyond this, comprehensive data collection, analysis and research are suggested to strengthen evidence‐based responses."
     },
     {
       "number": 57,
       "type": "choice",
-      "stem": "(A)abroad (B)alone (C)apart (D)awhile",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -764,12 +770,13 @@
         "B": "alone",
         "C": "apart",
         "D": "awhile"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: Preventing migrant smuggling by sea requires states to balance their obligations in international law with their legitimate interests in protecting state sovereignty 56 violation by organized crime groups. But law enforcement efforts 57 are not adequate to prevent migrant smuggling by sea; the Migrant Smuggling Protocol stresses that prevention efforts must address root causes that lead a person into the hands of 58 in the first place. Suggestions are also made to raise awareness of those who influence political and policy decisions, so policies put in place protect state sovereignty, uphold international obligations, and are not 59 to exploitation by smugglers. Also emphasized is the responsibility of coastal states of departure to intercept smuggling vessels before they embark on 60 journeys. Beyond this, comprehensive data collection, analysis and research are suggested to strengthen evidence‐based responses."
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "(A)defectors (B)legislators (C)patrollers (D)smugglers",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -777,12 +784,13 @@
         "B": "legislators",
         "C": "patrollers",
         "D": "smugglers"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: Preventing migrant smuggling by sea requires states to balance their obligations in international law with their legitimate interests in protecting state sovereignty 56 violation by organized crime groups. But law enforcement efforts 57 are not adequate to prevent migrant smuggling by sea; the Migrant Smuggling Protocol stresses that prevention efforts must address root causes that lead a person into the hands of 58 in the first place. Suggestions are also made to raise awareness of those who influence political and policy decisions, so policies put in place protect state sovereignty, uphold international obligations, and are not 59 to exploitation by smugglers. Also emphasized is the responsibility of coastal states of departure to intercept smuggling vessels before they embark on 60 journeys. Beyond this, comprehensive data collection, analysis and research are suggested to strengthen evidence‐based responses."
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "(A)attributable (B)detrimental (C)reversible (D)vulnerable",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -790,12 +798,13 @@
         "B": "detrimental",
         "C": "reversible",
         "D": "vulnerable"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: Preventing migrant smuggling by sea requires states to balance their obligations in international law with their legitimate interests in protecting state sovereignty 56 violation by organized crime groups. But law enforcement efforts 57 are not adequate to prevent migrant smuggling by sea; the Migrant Smuggling Protocol stresses that prevention efforts must address root causes that lead a person into the hands of 58 in the first place. Suggestions are also made to raise awareness of those who influence political and policy decisions, so policies put in place protect state sovereignty, uphold international obligations, and are not 59 to exploitation by smugglers. Also emphasized is the responsibility of coastal states of departure to intercept smuggling vessels before they embark on 60 journeys. Beyond this, comprehensive data collection, analysis and research are suggested to strengthen evidence‐based responses."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "(A)bountiful (B)traumatic (C)homeward (D)sea",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -803,7 +812,8 @@
         "B": "traumatic",
         "C": "homeward",
         "D": "sea"
-      }
+      },
+      "passage": "請依下文回答第56題至第60題: Preventing migrant smuggling by sea requires states to balance their obligations in international law with their legitimate interests in protecting state sovereignty 56 violation by organized crime groups. But law enforcement efforts 57 are not adequate to prevent migrant smuggling by sea; the Migrant Smuggling Protocol stresses that prevention efforts must address root causes that lead a person into the hands of 58 in the first place. Suggestions are also made to raise awareness of those who influence political and policy decisions, so policies put in place protect state sovereignty, uphold international obligations, and are not 59 to exploitation by smugglers. Also emphasized is the responsibility of coastal states of departure to intercept smuggling vessels before they embark on 60 journeys. Beyond this, comprehensive data collection, analysis and research are suggested to strengthen evidence‐based responses."
     }
   ],
   "year": 106,

@@ -703,13 +703,13 @@
         "A": "policy development",
         "B": "negative discipline",
         "C": "training",
-        "D": "supervision - - 請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is severely limited if the police cannot contact you. You may specify how you are contacted and if contacting you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Handlers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
+        "D": "supervision"
       }
     },
     {
       "number": 53,
       "type": "choice",
-      "stem": "(A)defense (B)detention (C)offence (D)offer",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -717,12 +717,13 @@
         "B": "detention",
         "C": "offence",
         "D": "offer"
-      }
+      },
+      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is severely limited if the police cannot contact you. You may specify how you are contacted and if contacting you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Handlers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "(A)project (B)produce (C)protect (D)prosecute",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -730,12 +731,13 @@
         "B": "produce",
         "C": "protect",
         "D": "prosecute"
-      }
+      },
+      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is severely limited if the police cannot contact you. You may specify how you are contacted and if contacting you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Handlers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "(A)contently (B)confidentially (C)conversely (D)consistently",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -743,12 +745,13 @@
         "B": "confidentially",
         "C": "conversely",
         "D": "consistently"
-      }
+      },
+      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is severely limited if the police cannot contact you. You may specify how you are contacted and if contacting you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Handlers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
     },
     {
       "number": 56,
       "type": "choice",
-      "stem": "(A)assess (B)allow (C)appoint (D)approach",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -756,20 +759,22 @@
         "B": "allow",
         "C": "appoint",
         "D": "approach"
-      }
+      },
+      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is severely limited if the police cannot contact you. You may specify how you are contacted and if contacting you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Handlers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
     },
     {
       "number": 57,
       "type": "choice",
-      "stem": "(A)simply (B)only (C)naturally (D)barely 請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than outsiders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical considerations dictated living near the workplace since mass transit was limited and expensive.",
+      "stem": "請選擇最適當的答案。",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "simply",
         "B": "only",
         "C": "naturally",
-        "D": "barely 請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than outsiders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical considerations dictated living near the workplace since mass transit was limited and expensive."
-      }
+        "D": "barely"
+      },
+      "passage": "請依下文回答第53題至第57題: We take all personal crimes very seriously and will record and investigate this 53 even if you do not want to give your details. However, you must know that the investigation and ability to 54 the suspect(s) is severely limited if the police cannot contact you. You may specify how you are contacted and if contacting you would cause you any difficulties. We will not pass on your details without your consent and would ask you to consider giving your details 55 . Once submitted, our Contact Handlers will review the form’s contents within 24 hours, 56 the risk and take appropriate action. Please be assured that we will 57 contact you if you have given us permission to do so."
     },
     {
       "number": 58,
@@ -782,7 +787,8 @@
         "B": "The Political Necessity",
         "C": "New York City’s Peace Officers",
         "D": "The Patrolman’s Own Neighborhood"
-      }
+      },
+      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than outsiders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical considerations dictated living near the workplace since mass transit was limited and expensive."
     },
     {
       "number": 59,
@@ -795,7 +801,8 @@
         "B": "Local control was a political necessity in the middle of 19th century.",
         "C": "Since the residency requirement was enforced, two-thirds to three-fourths of the police lived in the ward in which they worked.",
         "D": "The cost of transportation was one of the reasons why the police would like to live near their workplace."
-      }
+      },
+      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than outsiders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical considerations dictated living near the workplace since mass transit was limited and expensive."
     },
     {
       "number": 60,
@@ -808,7 +815,8 @@
         "B": "1/4",
         "C": "3/5",
         "D": "4/5"
-      }
+      },
+      "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than outsiders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical considerations dictated living near the workplace since mass transit was limited and expensive."
     }
   ],
   "year": 106,

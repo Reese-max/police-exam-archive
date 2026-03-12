@@ -529,13 +529,13 @@
         "A": "promoted",
         "B": "prompted",
         "C": "prevented",
-        "D": "preempted 請依下文回答第41題至第45題: TheworldrenownedSongkran,muchcelebratedonApril13theachyear,istheThaiNewYear’snationalday.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9th to 16th. The word, “Songkran,” which is “samkrānti” in Sanskrit, carries the meaning of “astrological passage” with its 42 of transformation or change. Viewed as ritual cleansing, the Songkran celebrations have people engage themselvesto waterfightingin public. Ithasthusbecome 43 and widespreadamongThaiandforeign visitors.The origin of Songkran Festival can be 44 back to a Buddhist folk myth concerning harvest and spring. In the city of SukhavatiinSuvvannabhumi,Indra,KingofDevas,witnessedtheoccurrenceofcorruptioninthecitywherepeoplewere sinfulfortheirbadbehaviorsandtheyledalifewithoutfaithinDhamma.Thekingthendecidedtopunishpeoplebyhaving them 45 bylackofwaterandfood.Thereisevenadroughtwithahotsunburningpeopletodeath."
+        "D": "preempted"
       }
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "(A)compressed (B)abridged (C)extended (D)abbreviated",
+      "stem": "請選擇最適當的答案。",
       "section": null,
       "answer": "C",
       "options": {
@@ -543,12 +543,13 @@
         "B": "abridged",
         "C": "extended",
         "D": "abbreviated"
-      }
+      },
+      "passage": "請依下文回答第41題至第45題: TheworldrenownedSongkran,muchcelebratedonApril13theachyear,istheThaiNewYear’snationalday.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9th to 16th. The word, “Songkran,” which is “samkrānti” in Sanskrit, carries the meaning of “astrological passage” with its 42 of transformation or change. Viewed as ritual cleansing, the Songkran celebrations have people engage themselvesto waterfightingin public. Ithasthusbecome 43 and widespreadamongThaiandforeign visitors.The origin of Songkran Festival can be 44 back to a Buddhist folk myth concerning harvest and spring. In the city of SukhavatiinSuvvannabhumi,Indra,KingofDevas,witnessedtheoccurrenceofcorruptioninthecitywherepeoplewere sinfulfortheirbadbehaviorsandtheyledalifewithoutfaithinDhamma.Thekingthendecidedtopunishpeoplebyhaving them 45 bylackofwaterandfood.Thereisevenadroughtwithahotsunburningpeopletodeath."
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "(A)capability (B)complexity (C)coincidence (D)connotation",
+      "stem": "請選擇最適當的答案。",
       "section": null,
       "answer": "D",
       "options": {
@@ -556,12 +557,13 @@
         "B": "complexity",
         "C": "coincidence",
         "D": "connotation"
-      }
+      },
+      "passage": "請依下文回答第41題至第45題: TheworldrenownedSongkran,muchcelebratedonApril13theachyear,istheThaiNewYear’snationalday.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9th to 16th. The word, “Songkran,” which is “samkrānti” in Sanskrit, carries the meaning of “astrological passage” with its 42 of transformation or change. Viewed as ritual cleansing, the Songkran celebrations have people engage themselvesto waterfightingin public. Ithasthusbecome 43 and widespreadamongThaiandforeign visitors.The origin of Songkran Festival can be 44 back to a Buddhist folk myth concerning harvest and spring. In the city of SukhavatiinSuvvannabhumi,Indra,KingofDevas,witnessedtheoccurrenceofcorruptioninthecitywherepeoplewere sinfulfortheirbadbehaviorsandtheyledalifewithoutfaithinDhamma.Thekingthendecidedtopunishpeoplebyhaving them 45 bylackofwaterandfood.Thereisevenadroughtwithahotsunburningpeopletodeath."
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "(A)prevalent (B)negligible (C)isolated (D)occasional",
+      "stem": "請選擇最適當的答案。",
       "section": null,
       "answer": "A",
       "options": {
@@ -569,12 +571,13 @@
         "B": "negligible",
         "C": "isolated",
         "D": "occasional"
-      }
+      },
+      "passage": "請依下文回答第41題至第45題: TheworldrenownedSongkran,muchcelebratedonApril13theachyear,istheThaiNewYear’snationalday.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9th to 16th. The word, “Songkran,” which is “samkrānti” in Sanskrit, carries the meaning of “astrological passage” with its 42 of transformation or change. Viewed as ritual cleansing, the Songkran celebrations have people engage themselvesto waterfightingin public. Ithasthusbecome 43 and widespreadamongThaiandforeign visitors.The origin of Songkran Festival can be 44 back to a Buddhist folk myth concerning harvest and spring. In the city of SukhavatiinSuvvannabhumi,Indra,KingofDevas,witnessedtheoccurrenceofcorruptioninthecitywherepeoplewere sinfulfortheirbadbehaviorsandtheyledalifewithoutfaithinDhamma.Thekingthendecidedtopunishpeoplebyhaving them 45 bylackofwaterandfood.Thereisevenadroughtwithahotsunburningpeopletodeath."
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "(A)traced (B)spread (C)merged (D)disregarded",
+      "stem": "請選擇最適當的答案。",
       "section": null,
       "answer": "A",
       "options": {
@@ -582,20 +585,22 @@
         "B": "spread",
         "C": "merged",
         "D": "disregarded"
-      }
+      },
+      "passage": "請依下文回答第41題至第45題: TheworldrenownedSongkran,muchcelebratedonApril13theachyear,istheThaiNewYear’snationalday.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9th to 16th. The word, “Songkran,” which is “samkrānti” in Sanskrit, carries the meaning of “astrological passage” with its 42 of transformation or change. Viewed as ritual cleansing, the Songkran celebrations have people engage themselvesto waterfightingin public. Ithasthusbecome 43 and widespreadamongThaiandforeign visitors.The origin of Songkran Festival can be 44 back to a Buddhist folk myth concerning harvest and spring. In the city of SukhavatiinSuvvannabhumi,Indra,KingofDevas,witnessedtheoccurrenceofcorruptioninthecitywherepeoplewere sinfulfortheirbadbehaviorsandtheyledalifewithoutfaithinDhamma.Thekingthendecidedtopunishpeoplebyhaving them 45 bylackofwaterandfood.Thereisevenadroughtwithahotsunburningpeopletodeath."
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "(A)nurtured (B)impaired (C)intact (D)sound 請依下文回答第46題至第50題: Pollinators, such as bees, butterflies, and birds, contribute roughly $500 billion a year to global food production. Beingtheprimarypollinatorsofmostwildplantsandmanycrops,beesareparticularlycrucialtobothecosystemstability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capturedtheattentionofscientists,governments,media,andthegeneralpublic. Severalanthropogenicdrivershavebeenassociatedwithdecliningbeepopulations,suchasdisturbancesoftheirnatural habitatsasresultofagriculturalintensificationsandurbanization,climatechange,pesticides,andmanagementpractices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in temperature and rainfallcancausesignificantalterationsinnaturalhabitats,thusreducingtheirsuitabilityforwildbeepopulations. Pesticideshavereceivedmuchattentionfortheirpotentialeffectsonbees.Inarecentstudy,theresearchgroupreviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using artificial intelligence tools, the researchersexplorehowpesticideexposurecontributestodeclinesinpopulationsofhoneybees,bumblebees,andstingless bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sophistication when tacklingquestionsconcerningthedecliningbeepopulationsassociatedwiththepesticidecontamination. However,littleresearchattentionhasbeengiventopotentialeffectsofmanagement techniquesonbeedeclines.Not untilrecently,a groupofresearchershasaddressedtheimportanceofimprovingbeekeepingtechniquesandconservation strategies to avoid reduction of genetic diversity in both managed and wild honey bees.Theyconclude that artificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to pathogens.However,moreresearchneedstobeconductedonpotentialeffectsofmanagementtechniquesonbeedeclines. Itisimportanttoemphasizethatscientificeffortsalonearenotenough.Additionalstrategiesshouldbeencouraged, including improvements of environmental education programs, changes in public awareness about wild bees through appropriate media coverage, and improvements in dialogue between scientists, industry, stakeholders, and legislators. Only comprehensive approaches, discussed by different societal actors, will result in efficient and long-term strategies toreducethedeclineofwildbeepopulations.",
+      "stem": "請選擇最適當的答案。",
       "section": null,
       "answer": "B",
       "options": {
         "A": "nurtured",
         "B": "impaired",
         "C": "intact",
-        "D": "sound 請依下文回答第46題至第50題: Pollinators, such as bees, butterflies, and birds, contribute roughly $500 billion a year to global food production. Beingtheprimarypollinatorsofmostwildplantsandmanycrops,beesareparticularlycrucialtobothecosystemstability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capturedtheattentionofscientists,governments,media,andthegeneralpublic. Severalanthropogenicdrivershavebeenassociatedwithdecliningbeepopulations,suchasdisturbancesoftheirnatural habitatsasresultofagriculturalintensificationsandurbanization,climatechange,pesticides,andmanagementpractices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in temperature and rainfallcancausesignificantalterationsinnaturalhabitats,thusreducingtheirsuitabilityforwildbeepopulations. Pesticideshavereceivedmuchattentionfortheirpotentialeffectsonbees.Inarecentstudy,theresearchgroupreviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using artificial intelligence tools, the researchersexplorehowpesticideexposurecontributestodeclinesinpopulationsofhoneybees,bumblebees,andstingless bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sophistication when tacklingquestionsconcerningthedecliningbeepopulationsassociatedwiththepesticidecontamination. However,littleresearchattentionhasbeengiventopotentialeffectsofmanagement techniquesonbeedeclines.Not untilrecently,a groupofresearchershasaddressedtheimportanceofimprovingbeekeepingtechniquesandconservation strategies to avoid reduction of genetic diversity in both managed and wild honey bees.Theyconclude that artificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to pathogens.However,moreresearchneedstobeconductedonpotentialeffectsofmanagementtechniquesonbeedeclines. Itisimportanttoemphasizethatscientificeffortsalonearenotenough.Additionalstrategiesshouldbeencouraged, including improvements of environmental education programs, changes in public awareness about wild bees through appropriate media coverage, and improvements in dialogue between scientists, industry, stakeholders, and legislators. Only comprehensive approaches, discussed by different societal actors, will result in efficient and long-term strategies toreducethedeclineofwildbeepopulations."
-      }
+        "D": "sound"
+      },
+      "passage": "請依下文回答第41題至第45題: TheworldrenownedSongkran,muchcelebratedonApril13theachyear,istheThaiNewYear’snationalday.Inorder to let people go home for this holiday, the Thai government 41 the festival to a seven-day holiday beginning from April 9th to 16th. The word, “Songkran,” which is “samkrānti” in Sanskrit, carries the meaning of “astrological passage” with its 42 of transformation or change. Viewed as ritual cleansing, the Songkran celebrations have people engage themselvesto waterfightingin public. Ithasthusbecome 43 and widespreadamongThaiandforeign visitors.The origin of Songkran Festival can be 44 back to a Buddhist folk myth concerning harvest and spring. In the city of SukhavatiinSuvvannabhumi,Indra,KingofDevas,witnessedtheoccurrenceofcorruptioninthecitywherepeoplewere sinfulfortheirbadbehaviorsandtheyledalifewithoutfaithinDhamma.Thekingthendecidedtopunishpeoplebyhaving them 45 bylackofwaterandfood.Thereisevenadroughtwithahotsunburningpeopletodeath."
     },
     {
       "number": 46,
@@ -608,7 +613,8 @@
         "B": "CausesforDecliningBeePopulations.",
         "C": "PollinatorsandTheirContributiontoFoodProduction.",
         "D": "MeasuresforKeepingBeesfromBecomingEndangered."
-      }
+      },
+      "passage": "請依下文回答第46題至第50題: Pollinators, such as bees, butterflies, and birds, contribute roughly $500 billion a year to global food production. Beingtheprimarypollinatorsofmostwildplantsandmanycrops,beesareparticularlycrucialtobothecosystemstability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capturedtheattentionofscientists,governments,media,andthegeneralpublic. Severalanthropogenicdrivershavebeenassociatedwithdecliningbeepopulations,suchasdisturbancesoftheirnatural habitatsasresultofagriculturalintensificationsandurbanization,climatechange,pesticides,andmanagementpractices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in temperature and rainfallcancausesignificantalterationsinnaturalhabitats,thusreducingtheirsuitabilityforwildbeepopulations. Pesticideshavereceivedmuchattentionfortheirpotentialeffectsonbees.Inarecentstudy,theresearchgroupreviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using artificial intelligence tools, the researchersexplorehowpesticideexposurecontributestodeclinesinpopulationsofhoneybees,bumblebees,andstingless bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sophistication when tacklingquestionsconcerningthedecliningbeepopulationsassociatedwiththepesticidecontamination. However,littleresearchattentionhasbeengiventopotentialeffectsofmanagement techniquesonbeedeclines.Not untilrecently,a groupofresearchershasaddressedtheimportanceofimprovingbeekeepingtechniquesandconservation strategies to avoid reduction of genetic diversity in both managed and wild honey bees.Theyconclude that artificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to pathogens.However,moreresearchneedstobeconductedonpotentialeffectsofmanagementtechniquesonbeedeclines. Itisimportanttoemphasizethatscientificeffortsalonearenotenough.Additionalstrategiesshouldbeencouraged, including improvements of environmental education programs, changes in public awareness about wild bees through appropriate media coverage, and improvements in dialogue between scientists, industry, stakeholders, and legislators. Only comprehensive approaches, discussed by different societal actors, will result in efficient and long-term strategies toreducethedeclineofwildbeepopulations."
     },
     {
       "number": 47,
@@ -621,7 +627,8 @@
         "B": "Artificialintelligencetoolshavebeenusedtoexploredecliningbeepopulations.",
         "C": "Moreresearchisneededtostudythelinkbetweenpesticideuseandbeedeclines.",
         "D": "Researchersaretryingtoprovedamagingeffectsofpesticidesonbeepopulations."
-      }
+      },
+      "passage": "請依下文回答第46題至第50題: Pollinators, such as bees, butterflies, and birds, contribute roughly $500 billion a year to global food production. Beingtheprimarypollinatorsofmostwildplantsandmanycrops,beesareparticularlycrucialtobothecosystemstability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capturedtheattentionofscientists,governments,media,andthegeneralpublic. Severalanthropogenicdrivershavebeenassociatedwithdecliningbeepopulations,suchasdisturbancesoftheirnatural habitatsasresultofagriculturalintensificationsandurbanization,climatechange,pesticides,andmanagementpractices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in temperature and rainfallcancausesignificantalterationsinnaturalhabitats,thusreducingtheirsuitabilityforwildbeepopulations. Pesticideshavereceivedmuchattentionfortheirpotentialeffectsonbees.Inarecentstudy,theresearchgroupreviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using artificial intelligence tools, the researchersexplorehowpesticideexposurecontributestodeclinesinpopulationsofhoneybees,bumblebees,andstingless bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sophistication when tacklingquestionsconcerningthedecliningbeepopulationsassociatedwiththepesticidecontamination. However,littleresearchattentionhasbeengiventopotentialeffectsofmanagement techniquesonbeedeclines.Not untilrecently,a groupofresearchershasaddressedtheimportanceofimprovingbeekeepingtechniquesandconservation strategies to avoid reduction of genetic diversity in both managed and wild honey bees.Theyconclude that artificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to pathogens.However,moreresearchneedstobeconductedonpotentialeffectsofmanagementtechniquesonbeedeclines. Itisimportanttoemphasizethatscientificeffortsalonearenotenough.Additionalstrategiesshouldbeencouraged, including improvements of environmental education programs, changes in public awareness about wild bees through appropriate media coverage, and improvements in dialogue between scientists, industry, stakeholders, and legislators. Only comprehensive approaches, discussed by different societal actors, will result in efficient and long-term strategies toreducethedeclineofwildbeepopulations."
     },
     {
       "number": 48,
@@ -634,7 +641,8 @@
         "B": "Effectsofmanagementtechniquesonbeedeclineshavebeenwellstudied.",
         "C": "Bees’exposuretopesticidehascontributedtodeclinesintheirpopulations.",
         "D": "Changesinpublicawarenessaboutwildbeescanhelpreducetheirdeclines."
-      }
+      },
+      "passage": "請依下文回答第46題至第50題: Pollinators, such as bees, butterflies, and birds, contribute roughly $500 billion a year to global food production. Beingtheprimarypollinatorsofmostwildplantsandmanycrops,beesareparticularlycrucialtobothecosystemstability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capturedtheattentionofscientists,governments,media,andthegeneralpublic. Severalanthropogenicdrivershavebeenassociatedwithdecliningbeepopulations,suchasdisturbancesoftheirnatural habitatsasresultofagriculturalintensificationsandurbanization,climatechange,pesticides,andmanagementpractices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in temperature and rainfallcancausesignificantalterationsinnaturalhabitats,thusreducingtheirsuitabilityforwildbeepopulations. Pesticideshavereceivedmuchattentionfortheirpotentialeffectsonbees.Inarecentstudy,theresearchgroupreviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using artificial intelligence tools, the researchersexplorehowpesticideexposurecontributestodeclinesinpopulationsofhoneybees,bumblebees,andstingless bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sophistication when tacklingquestionsconcerningthedecliningbeepopulationsassociatedwiththepesticidecontamination. However,littleresearchattentionhasbeengiventopotentialeffectsofmanagement techniquesonbeedeclines.Not untilrecently,a groupofresearchershasaddressedtheimportanceofimprovingbeekeepingtechniquesandconservation strategies to avoid reduction of genetic diversity in both managed and wild honey bees.Theyconclude that artificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to pathogens.However,moreresearchneedstobeconductedonpotentialeffectsofmanagementtechniquesonbeedeclines. Itisimportanttoemphasizethatscientificeffortsalonearenotenough.Additionalstrategiesshouldbeencouraged, including improvements of environmental education programs, changes in public awareness about wild bees through appropriate media coverage, and improvements in dialogue between scientists, industry, stakeholders, and legislators. Only comprehensive approaches, discussed by different societal actors, will result in efficient and long-term strategies toreducethedeclineofwildbeepopulations."
     },
     {
       "number": 49,
@@ -647,7 +655,8 @@
         "B": "Disengagements",
         "C": "Disruptions",
         "D": "Dissatisfactions"
-      }
+      },
+      "passage": "請依下文回答第46題至第50題: Pollinators, such as bees, butterflies, and birds, contribute roughly $500 billion a year to global food production. Beingtheprimarypollinatorsofmostwildplantsandmanycrops,beesareparticularlycrucialtobothecosystemstability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capturedtheattentionofscientists,governments,media,andthegeneralpublic. Severalanthropogenicdrivershavebeenassociatedwithdecliningbeepopulations,suchasdisturbancesoftheirnatural habitatsasresultofagriculturalintensificationsandurbanization,climatechange,pesticides,andmanagementpractices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in temperature and rainfallcancausesignificantalterationsinnaturalhabitats,thusreducingtheirsuitabilityforwildbeepopulations. Pesticideshavereceivedmuchattentionfortheirpotentialeffectsonbees.Inarecentstudy,theresearchgroupreviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using artificial intelligence tools, the researchersexplorehowpesticideexposurecontributestodeclinesinpopulationsofhoneybees,bumblebees,andstingless bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sophistication when tacklingquestionsconcerningthedecliningbeepopulationsassociatedwiththepesticidecontamination. However,littleresearchattentionhasbeengiventopotentialeffectsofmanagement techniquesonbeedeclines.Not untilrecently,a groupofresearchershasaddressedtheimportanceofimprovingbeekeepingtechniquesandconservation strategies to avoid reduction of genetic diversity in both managed and wild honey bees.Theyconclude that artificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to pathogens.However,moreresearchneedstobeconductedonpotentialeffectsofmanagementtechniquesonbeedeclines. Itisimportanttoemphasizethatscientificeffortsalonearenotenough.Additionalstrategiesshouldbeencouraged, including improvements of environmental education programs, changes in public awareness about wild bees through appropriate media coverage, and improvements in dialogue between scientists, industry, stakeholders, and legislators. Only comprehensive approaches, discussed by different societal actors, will result in efficient and long-term strategies toreducethedeclineofwildbeepopulations."
     },
     {
       "number": 50,
@@ -660,7 +669,8 @@
         "B": "Controllingclimatechangescanresolvetheproblemofbees'habitatloss.",
         "C": "Artificialselectionhasreplacednaturalselectionforgeneticdiversityinbees.",
         "D": "Groupscientificeffortsarekeytokeepingwildbeesfrombecomingendangered."
-      }
+      },
+      "passage": "請依下文回答第46題至第50題: Pollinators, such as bees, butterflies, and birds, contribute roughly $500 billion a year to global food production. Beingtheprimarypollinatorsofmostwildplantsandmanycrops,beesareparticularlycrucialtobothecosystemstability and agricultural productivity. However, bee populations have been on the decline worldwide over the years, which has capturedtheattentionofscientists,governments,media,andthegeneralpublic. Severalanthropogenicdrivershavebeenassociatedwithdecliningbeepopulations,suchasdisturbancesoftheirnatural habitatsasresultofagriculturalintensificationsandurbanization,climatechange,pesticides,andmanagementpractices.Bees’ habitat loss and fragmentation are considered a major driver of their declines. Besides,climate changes in temperature and rainfallcancausesignificantalterationsinnaturalhabitats,thusreducingtheirsuitabilityforwildbeepopulations. Pesticideshavereceivedmuchattentionfortheirpotentialeffectsonbees.Inarecentstudy,theresearchgroupreviews important agrochemicals with demonstrated deleterious effects on eusocial bees. Using artificial intelligence tools, the researchersexplorehowpesticideexposurecontributestodeclinesinpopulationsofhoneybees,bumblebees,andstingless bees. Still, many knowledge gaps remain. Future studies should continue to increase their focus and sophistication when tacklingquestionsconcerningthedecliningbeepopulationsassociatedwiththepesticidecontamination. However,littleresearchattentionhasbeengiventopotentialeffectsofmanagement techniquesonbeedeclines.Not untilrecently,a groupofresearchershasaddressedtheimportanceofimprovingbeekeepingtechniquesandconservation strategies to avoid reduction of genetic diversity in both managed and wild honey bees.Theyconclude that artificial and natural selection are needed to maintain genetic diversity in honey bees to combat, for example, the bee susceptibility to pathogens.However,moreresearchneedstobeconductedonpotentialeffectsofmanagementtechniquesonbeedeclines. Itisimportanttoemphasizethatscientificeffortsalonearenotenough.Additionalstrategiesshouldbeencouraged, including improvements of environmental education programs, changes in public awareness about wild bees through appropriate media coverage, and improvements in dialogue between scientists, industry, stakeholders, and legislators. Only comprehensive approaches, discussed by different societal actors, will result in efficient and long-term strategies toreducethedeclineofwildbeepopulations."
     }
   ],
   "year": 114,
