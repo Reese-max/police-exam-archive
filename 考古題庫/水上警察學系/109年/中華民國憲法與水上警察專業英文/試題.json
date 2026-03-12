@@ -684,7 +684,7 @@
     {
       "number": 51,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第51題至第55題:",
       "options": {
         "A": "stranded",
         "B": "strangled",
@@ -697,7 +697,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第51題至第55題:",
       "options": {
         "A": "despair",
         "B": "distress",
@@ -710,7 +710,7 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第51題至第55題:",
       "options": {
         "A": "at atimeof",
         "B": "intheextent of",
@@ -723,7 +723,7 @@
     {
       "number": 54,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第51題至第55題:",
       "options": {
         "A": "it",
         "B": "that",
@@ -736,7 +736,7 @@
     {
       "number": 55,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第51題至第55題:",
       "options": {
         "A": "dug up",
         "B": "raised up",
@@ -749,7 +749,7 @@
     {
       "number": 56,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "assault",
         "B": "completion",
@@ -762,7 +762,7 @@
     {
       "number": 57,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "attribute",
         "B": "isolate",
@@ -775,7 +775,7 @@
     {
       "number": 58,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "grade",
         "B": "registry",
@@ -788,7 +788,7 @@
     {
       "number": 59,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "approaching to",
         "B": "depriving of",
@@ -801,7 +801,7 @@
     {
       "number": 60,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "harmonize",
         "B": "presume",

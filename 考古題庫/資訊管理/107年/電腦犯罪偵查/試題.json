@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "exam_type": "107",
+    "exam_name": "一般警察人員考試",
+    "code": "50950"
+  },
+  "notes": [
+    "※注意： 禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "數位證據(Digital Evidence)之意義為何與有何特性?(5分)如何分類並請繪圖說明。\n(10分)在犯罪偵查過程中,不論是傳統犯罪或電腦網路犯罪常見用來證明待證事實\n之數位證據有那些?(10分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "資通安全(資安)是一種風險管理的概念,需要控制可能產生的資安風險,需透過資安預\n防(Prevention)、資安防護(Protection)、證據保全(Preservation)與專業鑑識(Presentation)\n等四大構面(4P’s Model),落實以風險管理為核心的資安防禦策略,請詳細說明這四\n大構面內容及控制機制,並繪圖說明之。(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "請試述下列名詞之意涵:(每小題 5 分,共 25 分)\nLegal Hold\nRansomware Worm\nAPT(Advanced Persistent Threat)\nCybercrime\nDistributed Denial of Service Attack",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "何謂網路詐欺犯罪模式及偵查模式?(5 分)其常見網路詐欺型態及手法為何?(5\n分)又警察人員如何偵辦此網路詐欺犯罪?(5 分)另如何針對網路詐欺發展一有效\n整合之偵查機制,請詳細舉例說明,並繪圖之。(10 分)",
+      "section": null
+    }
+  ],
+  "year": 107,
+  "category": "資訊管理",
+  "subject": "電腦犯罪偵查",
+  "source_pdf": "考古題庫\\資訊管理\\107年\\電腦犯罪偵查\\試題.pdf",
+  "file_type": "試題"
+}

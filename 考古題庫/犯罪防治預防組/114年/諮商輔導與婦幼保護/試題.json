@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "114",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "諮商輔導與婦幼保護",
+    "exam_time": "2 小時 座號：",
+    "code": "50560"
+  },
+  "notes": [
+    "※注意：①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "人本主義諮商的創始人羅吉斯(C.Rogers)在其個人中心諮商法中提及,\n欲達到諮商效果的三項要件分別為:真誠一致(genuineness or\ncongruence)、無條件積極關切(unconditional positive regard)及共鳴性\n了解(empathic understanding)。試就這三項要件分別加以舉例說明並予\n以深入探討。(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "主張理情行為治療法(REBT)的艾里斯(A.Ellis),曾提出十二種非理\n性信念。請列出其中的五項,並舉例加以說明其中非理性之所在。(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "多元模式治療是由拉澤斯(A.Lazarus)發展出來的技術折衷主義,並提\n出七大模組元素,簡稱為 BASIC I.D.。請列出此七項的中文名稱,並分\n別扼要說明。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "不管是家庭暴力或是職場霸凌,任何暴力傷害都是野蠻的行為。請列出\n至少五項家庭暴力或職場霸凌行為的類型,並請各舉一例詳細說明。\n(25 分)",
+      "section": null
+    }
+  ],
+  "year": 114,
+  "category": "犯罪防治預防組",
+  "subject": "諮商輔導與婦幼保護",
+  "source_pdf": "考古題庫\\犯罪防治預防組\\114年\\諮商輔導與婦幼保護\\試題.pdf",
+  "file_type": "試題"
+}

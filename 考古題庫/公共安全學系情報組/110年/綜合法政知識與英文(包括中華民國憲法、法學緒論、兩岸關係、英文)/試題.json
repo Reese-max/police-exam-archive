@@ -535,7 +535,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第41題至第45題:",
       "section": null,
       "options": {
         "A": "turnin",
@@ -550,7 +550,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第41題至第45題:",
       "section": null,
       "options": {
         "A": "theyare",
@@ -565,7 +565,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第41題至第45題:",
       "section": null,
       "options": {
         "A": "advocates",
@@ -580,7 +580,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第41題至第45題:",
       "section": null,
       "options": {
         "A": "Likewise",
@@ -595,7 +595,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第41題至第45題:",
       "section": null,
       "options": {
         "A": "elaboration",

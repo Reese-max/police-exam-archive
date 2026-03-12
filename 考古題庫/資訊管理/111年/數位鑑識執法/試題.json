@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "exam_type": "111",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "數位鑑識執法",
+    "exam_time": "2 小時 座號：",
+    "code": "50970"
+  },
+  "notes": [
+    "※注意：①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "請說明依循 ISO/IEC  標準來進行數位鑑識的目的為何?(30 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "請定義在數位鑑識執行過程中「再現性或可重現性(Reproducibility)」\n為何?並請舉例說明之。(20 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "試詳述雜湊函數(HF:Hash Function)與訊息鑑別碼(MAC:Message\nAuthentication Code)之異同。(20 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "請試述下列數位證據相關名詞之意涵。(每小題 5 分,共 15 分)\n① DEFR(Digital Evidence First Responder)\n② DES(Digital Evidence Specialist)\n③ Digital Forensic Analyst",
+      "section": null
+    },
+    {
+      "number": "五",
+      "type": "essay",
+      "stem": "請列出 ISO/IEC  中規範「數位證據處理」的三個基本需求為何?\n(15 分)",
+      "section": null
+    }
+  ],
+  "year": 111,
+  "category": "資訊管理",
+  "subject": "數位鑑識執法",
+  "source_pdf": "考古題庫\\資訊管理\\111年\\數位鑑識執法\\試題.pdf",
+  "file_type": "試題"
+}

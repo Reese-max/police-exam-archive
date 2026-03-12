@@ -299,7 +299,7 @@
     {
       "number": 21,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題:",
       "section": "乙、測驗題",
       "options": {
         "A": "oversees",
@@ -314,7 +314,7 @@
     {
       "number": 22,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題:",
       "section": "乙、測驗題",
       "options": {
         "A": "convinced",
@@ -329,7 +329,7 @@
     {
       "number": 23,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題:",
       "section": "乙、測驗題",
       "options": {
         "A": "tolerant",
@@ -344,7 +344,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題:",
       "section": "乙、測驗題",
       "options": {
         "A": "layer",
@@ -359,7 +359,7 @@
     {
       "number": 25,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題:",
       "section": "乙、測驗題",
       "options": {
         "A": "debarked",
@@ -374,7 +374,7 @@
     {
       "number": 26,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題:",
       "section": "乙、測驗題",
       "options": {
         "A": "what is possible",
@@ -389,7 +389,7 @@
     {
       "number": 27,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題:",
       "section": "乙、測驗題",
       "options": {
         "A": "refrains",
@@ -404,7 +404,7 @@
     {
       "number": 28,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題:",
       "section": "乙、測驗題",
       "options": {
         "A": "overdose",
@@ -419,7 +419,7 @@
     {
       "number": 29,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題:",
       "section": "乙、測驗題",
       "options": {
         "A": "Moreover",
@@ -434,7 +434,7 @@
     {
       "number": 30,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題:",
       "section": "乙、測驗題",
       "options": {
         "A": "observe",

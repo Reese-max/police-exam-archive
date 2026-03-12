@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "exam_type": "109",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "電路學",
+    "exam_time": "2 小時 座號：",
+    "code": "50870"
+  },
+  "notes": [
+    "※注意：①可以使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "某電路及其等效電路圖如下圖所示,試計算:\n①該電路圖(a)各分支之 v 、v 、i 、v 、v 及 i 之值。(15 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "某理想運算放大器電路如下圖,若輸入端之 v =3 V 且 v =1 V,請計算\na b\ni 、i 、i 以及 v 、v 、v 。(20 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "一雙埠電路如下圖所示,請以雙埠網路方式計算出流經 4 負載電阻之\n電流值為多少?(20 分)\ni i",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "下示電阻電容電感之電路圖在 t <0 時,電路的開關 S 保持為閉合,且電\n路已達穩態。當 t = 0 時,開關打開,試求在 t > 0 時,請計算該電路中\n之電容器兩端的電壓值。(20 分)",
+      "section": null
+    },
+    {
+      "number": "五",
+      "type": "essay",
+      "stem": "以下電路為史密特(Schmitt)觸發電路,請說明該電路之功能及輸入與\n輸出訊號之運作關係。該電路中 R 及 C 之功用為何?(10 分)\nE 1\n+V\ncc\nC\nR 1 R",
+      "section": null
+    }
+  ],
+  "year": 109,
+  "category": "交通警察電訊組",
+  "subject": "電路學",
+  "source_pdf": "考古題庫\\交通警察電訊組\\109年\\電路學\\試題.pdf",
+  "file_type": "試題"
+}

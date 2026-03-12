@@ -293,7 +293,7 @@
     {
       "number": 21,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "at least",
@@ -308,7 +308,7 @@
     {
       "number": 22,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "dialect",
@@ -323,7 +323,7 @@
     {
       "number": 23,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "compete",
@@ -338,7 +338,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "takeon",
@@ -353,7 +353,7 @@
     {
       "number": 25,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "beyond",
@@ -368,7 +368,7 @@
     {
       "number": 26,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "count on",
@@ -383,7 +383,7 @@
     {
       "number": 27,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "raid",
@@ -398,7 +398,7 @@
     {
       "number": 28,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "reliant on",
@@ -413,7 +413,7 @@
     {
       "number": 29,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "agents",
@@ -428,7 +428,7 @@
     {
       "number": 30,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "critics",

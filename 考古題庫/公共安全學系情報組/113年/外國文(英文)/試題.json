@@ -293,7 +293,7 @@
     {
       "number": 21,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "countries",
@@ -308,7 +308,7 @@
     {
       "number": 22,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "accounted for",
@@ -323,7 +323,7 @@
     {
       "number": 23,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "In additionto",
@@ -338,7 +338,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "regression",
@@ -353,7 +353,7 @@
     {
       "number": 25,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第21題至第25題",
       "section": "乙、測驗題",
       "options": {
         "A": "officers",
@@ -368,7 +368,7 @@
     {
       "number": 26,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "sanitary",
@@ -383,7 +383,7 @@
     {
       "number": 27,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "condensed",
@@ -398,7 +398,7 @@
     {
       "number": 28,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "arguments",
@@ -413,7 +413,7 @@
     {
       "number": 29,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "cram",
@@ -428,7 +428,7 @@
     {
       "number": 30,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第26題至第30題",
       "section": "乙、測驗題",
       "options": {
         "A": "relation",

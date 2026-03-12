@@ -697,7 +697,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第52題至第56題",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -711,7 +711,7 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第52題至第56題",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -725,7 +725,7 @@
     {
       "number": 54,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第52題至第56題",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -739,7 +739,7 @@
     {
       "number": 55,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第52題至第56題",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {

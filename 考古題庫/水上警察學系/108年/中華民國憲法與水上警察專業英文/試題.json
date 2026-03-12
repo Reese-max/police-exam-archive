@@ -684,7 +684,7 @@
     {
       "number": 54,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第54題至第55題",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -698,7 +698,7 @@
     {
       "number": 55,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第54題至第55題",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {

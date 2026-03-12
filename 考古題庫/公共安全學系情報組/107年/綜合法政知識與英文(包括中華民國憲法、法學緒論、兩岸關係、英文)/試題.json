@@ -534,7 +534,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 41 題空格)",
       "section": null,
       "options": {
         "A": "contestant",
@@ -549,7 +549,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 42 題空格)",
       "section": null,
       "options": {
         "A": "image",
@@ -564,7 +564,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 43 題空格)",
       "section": null,
       "options": {
         "A": "According to",
@@ -579,7 +579,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 44 題空格)",
       "section": null,
       "options": {
         "A": "fault",
@@ -594,7 +594,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 45 題空格)",
       "section": null,
       "options": {
         "A": "funeral",

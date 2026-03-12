@@ -677,7 +677,7 @@
     {
       "number": 51,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第51題至第55題:",
       "options": {
         "A": "abandons",
         "B": "foretells",
@@ -690,7 +690,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第51題至第55題:",
       "options": {
         "A": "destination",
         "B": "radius",
@@ -703,7 +703,7 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第51題至第55題:",
       "options": {
         "A": "catering",
         "B": "culinary",
@@ -716,7 +716,7 @@
     {
       "number": 55,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第51題至第55題:",
       "options": {
         "A": "larger",
         "B": "less",
@@ -729,7 +729,7 @@
     {
       "number": 56,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "beyond",
         "B": "from",
@@ -742,7 +742,7 @@
     {
       "number": 57,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "abroad",
         "B": "alone",
@@ -755,7 +755,7 @@
     {
       "number": 58,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "defectors",
         "B": "legislators",
@@ -768,7 +768,7 @@
     {
       "number": 59,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "attributable",
         "B": "detrimental",
@@ -781,7 +781,7 @@
     {
       "number": 60,
       "type": "choice",
-      "stem": "",
+      "stem": "請依下文回答第56題至第60題:",
       "options": {
         "A": "bountiful",
         "B": "traumatic",

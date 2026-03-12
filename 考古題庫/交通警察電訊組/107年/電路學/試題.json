@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "exam_type": "107",
+    "exam_name": "一般警察人員考試",
+    "level": "三等",
+    "subject": "電路學",
+    "code": "50870"
+  },
+  "notes": [
+    "※注意： ①可以使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "如圖①之直流電路,請應用戴維寧定理(Thevenin’s theorem),試求 a 與 b 端點之間\n之戴維寧等效電路?(20 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "如圖②之雙埠電路,其傳輸參數(transmission parameter, T)矩陣定義如下,試求負\n載電阻 10 Ω 所消耗之功率?(20 分)\n(cid:1848) (cid:1848) 5 10 Ω (cid:1848)\n(cid:2869) (cid:2870) (cid:2870)\n(cid:3428) (cid:3432) (cid:3404) (cid:4670)(cid:1846)](cid:3428) (cid:3432)=(cid:4674) (cid:4675)(cid:3428) (cid:3432)\n(cid:1835) (cid:3398)(cid:1835) 0.4 S 1 (cid:3398)(cid:1835)\n(cid:2869) (cid:2870) (cid:2870)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "如圖③之一階電路,開關於 t < 0 維持打開,並使電路達穩定狀態;開關於 t = 0 瞬間\n閉合,試求電流 i(t > 0)=?(20 分)\ni(t)\n6Ω 3 Ω",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "如圖④之交流電路包含一理想運算放大器(operational amplifier),試求輸出電壓 V =?\no\n(20 分) 10kΩ\n-j2 kΩ 5 kΩ\nV\no\n1∠30°V -j kΩ\n圖④",
+      "section": null
+    },
+    {
+      "number": "五",
+      "type": "essay",
+      "stem": "如圖⑤所示為包含一理想變壓器(transformer)之交流電路,試求負載電阻 R 可獲\nL\n得之最大輸出功率?(20 分)",
+      "section": null
+    }
+  ],
+  "year": 107,
+  "category": "交通警察電訊組",
+  "subject": "電路學",
+  "source_pdf": "考古題庫\\交通警察電訊組\\107年\\電路學\\試題.pdf",
+  "file_type": "試題"
+}

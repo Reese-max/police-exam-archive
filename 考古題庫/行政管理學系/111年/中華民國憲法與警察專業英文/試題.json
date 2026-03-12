@@ -684,7 +684,7 @@
     {
       "number": 51,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 51 題空格)",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -698,7 +698,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 52 題空格)",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -712,7 +712,7 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 53 題空格)",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -726,7 +726,7 @@
     {
       "number": 54,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 54 題空格)",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -768,7 +768,7 @@
     {
       "number": 57,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 57 題空格)",
       "options": {
         "A": "when",
         "B": "where",
@@ -781,7 +781,7 @@
     {
       "number": 58,
       "type": "choice",
-      "stem": "",
+      "stem": "(見文章第 58 題空格)",
       "options": {
         "A": "no fewer than",
         "B": "no more than",
