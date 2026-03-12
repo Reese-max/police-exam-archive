@@ -407,7 +407,7 @@
     {
       "number": 31,
       "type": "choice",
-      "stem": "Themanagerisverycarefulaboutqualitycontrol; healwayssaysthattheproblemsweignorenowwillcomeback to us.",
+      "stem": "Themanagerisverycarefulaboutqualitycontrol; he always says that the problems we ignore now will comeback to us.",
       "section": null,
       "options": {
         "A": "fascinate",
@@ -420,7 +420,7 @@
     {
       "number": 32,
       "type": "choice",
-      "stem": "Therehave been discussionswithstrongnegativeemotionsforthenewpowerplant: Somethinkitwould bringjobs, whileotherssayitwoulddamagethenaturalenvironment.",
+      "stem": "Therehave been discussions with strong negative emotions for the new powerplant: Somethinkitwould bringjobs, while others say it would damage the natural environment.",
       "section": null,
       "options": {
         "A": "warmly",
@@ -485,7 +485,7 @@
     {
       "number": 37,
       "type": "choice",
-      "stem": "Ifyouhaveaknownordiagnosedallergytoa COVID-19vaccine , youshouldnotgetvaccinated.",
+      "stem": "Ifyouhaveaknownordiagnosedallergytoa COVID-19vaccine , you should not get vaccinated.",
       "section": null,
       "options": {
         "A": "ingredient",
@@ -537,7 +537,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Collective trauma finds outlet in public of a community or a nation, as it seems to remember or forget a painfulperiodinitshistory.",
+      "stem": "Collective trauma finds outlet in public of a community or a nation, as it seems to remember or forget a painful period in its history.",
       "section": null,
       "options": {
         "A": "articulation",
@@ -563,7 +563,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "Itwassucha sightwhentheysawswarmsofstarvingchildrenseekingfoodonthestreets.",
+      "stem": "Itwassucha sight when they saw swarms of starving children seeking food on the streets.",
       "section": null,
       "options": {
         "A": "remedial",
@@ -602,7 +602,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "Thepandemichas forallparentsandteachershowindispensableonlinelearningisforeducationtoday.",
+      "stem": "Thepandemichas for all parents and teacher show indispensable online learning is for education today.",
       "section": null,
       "options": {
         "A": "underscored",
@@ -654,7 +654,7 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Insteadofconcentratingonincentivizingshort-termtransactivebehaviors, today’sfirmsfocusonbuildingauthentic and relationshipswithcustomers.",
+      "stem": "Insteadofconcentratingonincentivizingshort-term trans active behaviors, today’s firms focus on building authentic and relationships with customers.",
       "section": null,
       "options": {
         "A": "transitional",

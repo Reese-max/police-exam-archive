@@ -156,7 +156,7 @@
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "試劑含有二甲氨基苯甲醛(p-dimethylaminobenzaldehyde)",
+        "A": "試劑含有二甲氨基苯甲醛(p-dimethyl amino benz aldehyde)",
         "B": "當試劑呈現粉紅色時表示有古柯鹼存在",
         "C": "當試劑呈現紫色時表示有古柯鹼存在",
         "D": "試劑含有硫氰酸鈷(Cobalt(II)thiocyanate)"
@@ -282,7 +282,7 @@
     {
       "number": 20,
       "type": "choice",
-      "stem": "關於古柯鹼鹽酸鹽(cocaineHCl)及古柯鹼游離鹼(cocaine free base)的敘述,下列何者正確?",
+      "stem": "關於古柯鹼鹽酸鹽(cocaine HCl)及古柯鹼游離鹼(cocaine free base)的敘述,下列何者正確?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {

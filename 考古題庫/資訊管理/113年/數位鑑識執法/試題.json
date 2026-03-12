@@ -23,7 +23,7 @@
     {
       "number": "二",
       "type": "essay",
-      "stem": "手機取證的方式有分為邏輯提取(Logical Extraction)、檔案系統提取\n(File SystemExtraction)以及實體提取(PhysicalExtraction),請說明三\n種提取方式差異。而這三種提取方式有一種目前已知道在新型的手機上\n實務上不可行,請說明其原因。(25 分)",
+      "stem": "手機取證的方式有分為邏輯提取(Logical Extraction)、檔案系統提取\n(File System Extraction)以及實體提取(Physical Extraction),請說明三\n種提取方式差異。而這三種提取方式有一種目前已知道在新型的手機上\n實務上不可行,請說明其原因。(25 分)",
       "section": null
     },
     {

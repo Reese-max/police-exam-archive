@@ -165,7 +165,7 @@
     {
       "number": 11,
       "type": "choice",
-      "stem": "有關 DNA 鑑定實務,請選出正確者:1 dNTP 可使合成中的 DNA 鏈終止反應,故可用來做為定 序法之試劑 2親子指數PI(Paternity Index)之計算, PI=X/Y,其中Y為隨機男子具有此生父必 備對偶基因之頻率 3 CODIS 鑑定系統中,作為性別判定的Amelogenin,其乃是一個基因 4 STR DNA並非基因,不會產製出蛋白質 5 STR分析出現之stutter訊號為偽訊號,非為對偶基因型別",
+      "stem": "有關 DNA 鑑定實務,請選出正確者:1 d NTP 可使合成中的 DNA 鏈終止反應,故可用來做為定 序法之試劑 2親子指數PI(Paternity Index)之計算, PI=X/Y,其中Y為隨機男子具有此生父必 備對偶基因之頻率 3 CODIS 鑑定系統中,作為性別判定的Amelogenin,其乃是一個基因 4 STR DNA並非基因,不會產製出蛋白質 5 STR分析出現之stutter訊號為偽訊號,非為對偶基因型別",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -178,7 +178,7 @@
     {
       "number": 12,
       "type": "choice",
-      "stem": "與刑事鑑識有關之血清學運用,請選出正確者:1 A 型血液是個體之紅血球細胞膜有 A 型抗體 物質,會與外來A抗原形成凝集反應 2酸性磷酸酶(ACP)又稱為PSA,水解後產物可與Fast blueB反應 3血液之結晶試驗,如Takayama試驗,其特異性(specificity)很高 4 Luminol 檢 測後之血跡仍可進行後續DNA檢測 5 MUP(4-methylumbel life rylphosphate)試劑可與酸性磷 酸酶反應,在紫外光下呈現螢光反應",
+      "stem": "與刑事鑑識有關之血清學運用,請選出正確者:1 A 型血液是個體之紅血球細胞膜有 A 型抗體 物質,會與外來A抗原形成凝集反應 2酸性磷酸酶(ACP)又稱為PSA,水解後產物可與Fast blue B反應 3血液之結晶試驗,如Takayama試驗,其特異性(specificity)很高 4 Luminol 檢 測後之血跡仍可進行後續DNA檢測 5 MUP(4-methylumbel life rylphosphate)試劑可與酸性磷 酸酶反應,在紫外光下呈現螢光反應",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -351,10 +351,10 @@
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "原子吸收光譜法(AAS;A tom icabsorptionspectros copy)",
+        "A": "原子吸收光譜法(AAS;A tom ic absorption spec tros copy)",
         "B": "導感耦合電漿原子發射光譜法(ICP-AES;Inductively coupled plasma atomic emission spectros copy)",
         "C": "氣相層析質譜法(GC-MS;Gas chromatography mass spectrome try)",
-        "D": "掃描電子顯微鏡/X光能譜法(SEM/EDX;Scanningelectron micros copy/energy dis per siveX-ray spectrome try)"
+        "D": "掃描電子顯微鏡/X光能譜法(SEM/EDX;Scanningelectron micros copy/energy dis per sive X-ray spectrome try)"
       }
     }
   ],

@@ -94,7 +94,7 @@
         "A": "報案反應(reactivestance)",
         "B": "機先預警(proactive stance)",
         "C": "專業化發展(professional)",
-        "D": "公私協力(publicprivatepartnership)"
+        "D": "公私協力(public private partnership)"
       }
     },
     {
@@ -113,7 +113,7 @@
     {
       "number": 7,
       "type": "choice",
-      "stem": "下列有關於預測性警政(predictivepolicing)策略的各項敘述,何者錯誤?",
+      "stem": "下列有關於預測性警政(predictive policing)策略的各項敘述,何者錯誤?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {

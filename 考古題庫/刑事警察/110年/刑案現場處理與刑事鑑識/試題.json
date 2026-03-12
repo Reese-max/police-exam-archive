@@ -139,13 +139,13 @@
     {
       "number": 9,
       "type": "choice",
-      "stem": "拉曼光譜儀(RamanSpectrometer)應用於微物跡證、火藥爆裂物與毒品等未知物的分析,下列敘 述何者正確?",
+      "stem": "拉曼光譜儀(Raman Spectrometer)應用於微物跡證、火藥爆裂物與毒品等未知物的分析,下列敘 述何者正確?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
         "A": "拉曼光譜激發光源能量越強能提供更容易分析的光譜訊號",
         "B": "斯托克斯位移(Stokes shift)的激發光源波長大於放射光源波長",
-        "C": "含水成分較多的樣品因為C─H與C=O鍵結等極化率(polarizability)較差,拉曼光譜訊號比較 弱,因此較適合採用拉曼光譜儀(RamanSpectrometer)進行分析",
+        "C": "含水成分較多的樣品因為C─H與C=O鍵結等極化率(polarizability)較差,拉曼光譜訊號比較 弱,因此較適合採用拉曼光譜儀(Raman Spectrometer)進行分析",
         "D": "一化合物的拉曼光譜和紅外吸收光譜完全相同,但拉曼光譜儀使用上較方便"
       }
     },
@@ -156,7 +156,7 @@
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "試劑含有二甲氨基苯甲醛(p-dimethylaminobenzaldehyde)",
+        "A": "試劑含有二甲氨基苯甲醛(p-dimethyl amino benz aldehyde)",
         "B": "當試劑呈現粉紅色時表示有古柯鹼存在",
         "C": "當試劑呈現紫色時表示有古柯鹼存在",
         "D": "試劑含有硫氰酸鈷(Cobalt(II)thiocyanate)"
@@ -170,7 +170,7 @@
       "answer": "D",
       "options": {
         "A": "微量擴散法(microdiffusion test)採用氣相層析法(gas chromatography)不須加入催化劑可直 接分析血液中血紅素的濃度",
-        "B": "微量擴散法採用分光光度法(spectrophotometricmethod)不須加入催化劑可直接分析血液中一 氧化碳的濃度",
+        "B": "微量擴散法採用分光光度法(spec tro photometric method)不須加入催化劑可直接分析血液中一 氧化碳的濃度",
         "C": "目前一氧化碳的分析方法已改用放射免疫分析(radioimmunoassay)",
         "D": "火災現場罹難者因吸入大量不完全燃燒的碳氫化合物而導致血液中一氧化碳濃度含量極高,可 用來判斷是抵達火災現場之前或之後死亡"
       }
@@ -185,13 +185,13 @@
         "A": "以顯微鏡比對樣品的直徑與顏色",
         "B": "判定纖維是人造或天然纖維",
         "C": "是否含有長鏈狀的高分子聚合物",
-        "D": "分析樣品的個化性特徵(individualcharacteristics)"
+        "D": "分析樣品的個化性特徵(individual characteristics)"
       }
     },
     {
       "number": 13,
       "type": "choice",
-      "stem": "現場發現之骨骼遺骸(sketetalremains),經法醫人類學家(forensicanthopoligist)鑑定後確認為 股骨(femur)。以骨骼遺骸推估死者身高,下列敘述何者正確?",
+      "stem": "現場發現之骨骼遺骸(sketetalremains),經法醫人類學家(forensic an tho poli gist)鑑定後確認為 股骨(femur)。以骨骼遺骸推估死者身高,下列敘述何者正確?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -204,7 +204,7 @@
     {
       "number": 14,
       "type": "choice",
-      "stem": "以眼球液(vitreoushumor)中鉀離子濃度推估死亡時間(postmorteminterval),下列敘述何者正確?",
+      "stem": "以眼球液(vitreoushumor)中鉀離子濃度推估死亡時間(postmortem interval),下列敘述何者正確?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -256,7 +256,7 @@
     {
       "number": 18,
       "type": "choice",
-      "stem": "以偏光顯微鏡(polarizedlightmicroscopy)判定證物是否具有非均向性(anisotropic),下列敘述 何者正確?",
+      "stem": "以偏光顯微鏡(polarized light microscopy)判定證物是否具有非均向性(anisotropic),下列敘述 何者正確?",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -282,14 +282,14 @@
     {
       "number": 20,
       "type": "choice",
-      "stem": "關於古柯鹼鹽酸鹽(cocaineHCl)及古柯鹼游離鹼(cocainefreebase)的敘述,下列何者正確?",
+      "stem": "關於古柯鹼鹽酸鹽(cocaine HCl)及古柯鹼游離鹼(cocainefreebase)的敘述,下列何者正確?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "古柯鹼游離鹼的熔點比古柯鹼鹽酸鹽要來得高",
         "B": "古柯鹼鹽酸鹽與碳酸氫鈉反應可產生古柯鹼游離鹼",
-        "C": "兩者無法以傅立葉轉換紅外光譜(Fourier-transform infraredspectroscopy, FTIR)進行區分",
-        "D": "兩者可以使用紫外-可見光光譜(Ultraviolet–visiblespectroscopy,UV-Vis)進行區分"
+        "C": "兩者無法以傅立葉轉換紅外光譜(Fourier-transform infrared spectroscopy, FTIR)進行區分",
+        "D": "兩者可以使用紫外-可見光光譜(Ultraviolet–visible spectroscopy,UV-Vis)進行區分"
       }
     },
     {
@@ -325,10 +325,10 @@
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "感應耦合原子發射光譜法(InductivelyCoupledPlasmaAtomicEmissionSpectroscopy)",
-        "B": "原子吸收光譜法(AtomicAbsorptionSpectroscopy)",
+        "A": "感應耦合原子發射光譜法(Inductively Coupled Plasma Atomic Emission Spectroscopy)",
+        "B": "原子吸收光譜法(Atomic Absorption Spectroscopy)",
         "C": "熱裂解氣相層析質譜法(Pyrolysis-Gas Chromatography-Mass Spectrometry)",
-        "D": "中子活化分析(NeutronActivationAnalysis)"
+        "D": "中子活化分析(Neutron Activation Analysis)"
       }
     },
     {

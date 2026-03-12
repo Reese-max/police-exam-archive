@@ -65,7 +65,7 @@
     {
       "number": 3,
       "type": "choice",
-      "stem": "Hehas beensmokingcigarettes formanyyears. Thehabit is his _____andformidablefoe.",
+      "stem": "Hehas been smoking cigarettes formanyyears. Thehabit is his _____andformidablefoe.",
       "section": "乙、測驗題",
       "options": {
         "A": "reconfigured",
@@ -91,7 +91,7 @@
     {
       "number": 5,
       "type": "choice",
-      "stem": "Weatheris _____, so it is unwisetotravel without checkingtheforecast.",
+      "stem": "Weatheris _____, so it is unwisetotravel without checking the forecast.",
       "section": "乙、測驗題",
       "options": {
         "A": "unparalleled",
@@ -143,7 +143,7 @@
     {
       "number": 9,
       "type": "choice",
-      "stem": "Stevewas accusedofpayingtheemployeefortradesecrets and_____information.",
+      "stem": "Stevewas accused of paying the employee for trade secrets and_____information.",
       "section": "乙、測驗題",
       "options": {
         "A": "autonomous",
@@ -156,7 +156,7 @@
     {
       "number": 10,
       "type": "choice",
-      "stem": "The Transportation Security Administration program has existed since 2010 as an effort to _____ the threat posedbypossibleterrorists afteridentifyingpeoplebasedontheirtravel historyorothercriteria.",
+      "stem": "The Transportation Security Administration program has existed since 2010 as an effort to _____ the threat posed by possible terrorists after identifying people based on their travel history or other criteria.",
       "section": "乙、測驗題",
       "options": {
         "A": "mitigate",
@@ -182,7 +182,7 @@
     {
       "number": 12,
       "type": "choice",
-      "stem": "The government of Sierra Leone had ordered its people to shelter at home because the Ebola _____ was out ofcontrol. It was timetotakedesperatemeasures tostopthespreadingofthis disease.",
+      "stem": "The government of Sierra Leone had ordered its people to shelter at home because the Ebola _____ was out ofcontrol. It was time to take desperate measures to stop the spreading of this disease.",
       "section": "乙、測驗題",
       "options": {
         "A": "epic",
@@ -208,7 +208,7 @@
     {
       "number": 14,
       "type": "choice",
-      "stem": "The policemen in Australia have identified an _____ serial killer behind three previously unlinked murders, but theycan’t arrest thesuspect duetolackofevidence.",
+      "stem": "The policemen in Australia have identified an _____ serial killer behind three previously unlinked murders, but theycan’t arrest thesuspect due to lack of evidence.",
       "section": "乙、測驗題",
       "options": {
         "A": "allied",
@@ -221,7 +221,7 @@
     {
       "number": 15,
       "type": "choice",
-      "stem": "Agroupof Mexicanmen, all members ofaninternational sextraffickingorganization, were_____tothe United States andtriedforcrimes committedinthestateof New York.",
+      "stem": "Agroupof Mexicanmen, all members ofaninternational sex trafficking organization, were_____tothe United States andtriedforcrimes committed in the state of New York.",
       "section": "乙、測驗題",
       "options": {
         "A": "escaped",
@@ -234,7 +234,7 @@
     {
       "number": 16,
       "type": "choice",
-      "stem": "While there has been a considerable population of migrant workers in Taiwan for quite a few years now, it is debatablewhetherit has become easier forthem to_____intosociety.",
+      "stem": "While there has been a considerable population of migrant workers in Taiwan for quite a few years now, it is debatable whether it has become easier forthem to_____intosociety.",
       "section": "乙、測驗題",
       "options": {
         "A": "formulate",
@@ -247,7 +247,7 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "The cruel treatment inflicted upon these prisoners of war irrefutably _____ the UN human rights convention, yetlittleactionhasbeentakenagainst thetyrannical governmentresponsiblefortheatrocity.",
+      "stem": "The cruel treatment inflicted upon these prisoners of war irrefutably _____ the UN human rights convention, yet little action has been taken against thetyrannical government responsible for the atrocity.",
       "section": "乙、測驗題",
       "options": {
         "A": "contravenes",
@@ -273,7 +273,7 @@
     {
       "number": 19,
       "type": "choice",
-      "stem": "Creative methods of drug _____ were devised, with women swallowing plastic baggies of cocaine and travellingintothecountry.",
+      "stem": "Creative methods of drug _____ were devised, with women swallowing plastic baggies of cocaine and travelling into the country.",
       "section": "乙、測驗題",
       "options": {
         "A": "smuggling",
@@ -286,7 +286,7 @@
     {
       "number": 20,
       "type": "choice",
-      "stem": "Whenpeoplefeelso_____aboutstayingintheirhomecountry, theymightpresumablyseekhelptomove toabetterplace.",
+      "stem": "Whenpeoplefeelso_____aboutstayingintheirhomecountry, they might presumably seek help to move toabetterplace.",
       "section": "乙、測驗題",
       "options": {
         "A": "numb",
@@ -308,7 +308,7 @@
         "D": "suspend"
       },
       "answer": "B",
-      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 such as slashing canines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 by years of further development before they reach reproductive maturity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
       "passage_question_range": "21-25"
     },
     {
@@ -323,7 +323,7 @@
         "D": "disasters"
       },
       "answer": "A",
-      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 such as slashing canines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 by years of further development before they reach reproductive maturity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
       "passage_question_range": "21-25"
     },
     {
@@ -338,7 +338,7 @@
         "D": "diagnosed"
       },
       "answer": "C",
-      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 such as slashing canines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 by years of further development before they reach reproductive maturity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
       "passage_question_range": "21-25"
     },
     {
@@ -353,7 +353,7 @@
         "D": "permitted"
       },
       "answer": "D",
-      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 such as slashing canines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 by years of further development before they reach reproductive maturity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
       "passage_question_range": "21-25"
     },
     {
@@ -368,7 +368,7 @@
         "D": "as well as -"
       },
       "answer": "A",
-      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 suchasslashingcanines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 byyearsoffurtherdevelopmentbeforetheyreach reproductivematurity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
+      "passage": "請回答下列第21題至第25題\nHumans are a fundamentally social species. They are unable to reproduce and 21 to reproductive age withoutagroup. Theylacknatural 22 such as slashing canines, bodilyarmor, orfleetnessoffoot; theyhavean extendedinfancy 23 by years of further development before they reach reproductive maturity. Manyofthe evolved characteristics that have 24 humans to adapt to a wide range of physical environments, such as tool making and feeding on both animals and plants, and create dependence on collective knowledge and cooperative information sharing 25 individuals and between generations. Humans are, indeed, an obligately interdependent species.",
       "passage_question_range": "21-25"
     },
     {
@@ -383,7 +383,7 @@
         "D": "spoken"
       },
       "answer": "C",
-      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracy and undermining society. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likely to be far less significant than climate change”but that climate change is too complicated and doesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’t understand the risks facing them. Sensationalism, drama, 30 argumentation and a concentration on frivolity make it hard to appreciate the complexities of the world. Theeffectisnotmerelytomisleaditsreaders about the state of the world but todistort thewholepolitical process.",
       "passage_question_range": "26-30"
     },
     {
@@ -398,7 +398,7 @@
         "D": "dwelledon"
       },
       "answer": "B",
-      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracy and undermining society. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likely to be far less significant than climate change”but that climate change is too complicated and doesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’t understand the risks facing them. Sensationalism, drama, 30 argumentation and a concentration on frivolity make it hard to appreciate the complexities of the world. Theeffectisnotmerelytomisleaditsreaders about the state of the world but todistort thewholepolitical process.",
       "passage_question_range": "26-30"
     },
     {
@@ -413,7 +413,7 @@
         "D": "with"
       },
       "answer": "D",
-      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracy and undermining society. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likely to be far less significant than climate change”but that climate change is too complicated and doesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’t understand the risks facing them. Sensationalism, drama, 30 argumentation and a concentration on frivolity make it hard to appreciate the complexities of the world. Theeffectisnotmerelytomisleaditsreaders about the state of the world but todistort thewholepolitical process.",
       "passage_question_range": "26-30"
     },
     {
@@ -428,7 +428,7 @@
         "D": "whereas"
       },
       "answer": "D",
-      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracy and undermining society. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likely to be far less significant than climate change”but that climate change is too complicated and doesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’t understand the risks facing them. Sensationalism, drama, 30 argumentation and a concentration on frivolity make it hard to appreciate the complexities of the world. Theeffectisnotmerelytomisleaditsreaders about the state of the world but todistort thewholepolitical process.",
       "passage_question_range": "26-30"
     },
     {
@@ -443,7 +443,7 @@
         "D": "neutral"
       },
       "answer": "A",
-      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracyandunderminingsociety. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likelytobefarlesssignificantthanclimatechange”butthatclimatechangeistoocomplicatedanddoesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’tunderstandtherisksfacingthem. Sensationalism, drama, 30 argumentationandaconcentrationon frivolitymakeithardtoappreciatethecomplexitiesoftheworld. Theeffectisnotmerelytomisleaditsreaders about thestateoftheworld but todistort thewholepolitical process.",
+      "passage": "請回答下列第26題至第30題\nThe mass media are a powerful influence on most people. News media and journalism outlets influence public opinion and democracy itself so their reach and power is not to be 26 lightly. The press has responsibilities to the public interest. Good journalism is good for democracy, but unfortunately the most popular news feeds in most Western countries have 27 poor-quality sensationalism, which is affecting democracy and undermining society. Theworst culprit ofthelast fewdecades hasbeenthe Murdoch empire’s outputs, complete 28 secret political deals that have made and broken entire governments. One of the UK government’s former chief scientific advisers, Sir David King, pointed out that “the threat of terrorism is likely to be far less significant than climate change”but that climate change is too complicated and doesn’tsell well, 29 terrorism “fits the requirements of our news culture perfectly.” The result is a populace that don’t understand the risks facing them. Sensationalism, drama, 30 argumentation and a concentration on frivolity make it hard to appreciate the complexities of the world. Theeffectisnotmerelytomisleaditsreaders about the state of the world but todistort thewholepolitical process.",
       "passage_question_range": "26-30"
     },
     {
@@ -458,52 +458,52 @@
         "D": "The Useof AIto Entrench Discriminatory Legal Practices in Canada."
       },
       "answer": "B",
-      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)to in form how it mounts legal challenges to immigration and refugee claims as part of a new pilot program. Ottawaplansonusingtheemergingtechnology to reduce government lawyers’need to perform their own legal research, acostlyandtime-consumingprocess. But there are already concerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admits that it hopes to use AIandmachinelearning, eventually, to help determine refugee applications themselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
       "passage_question_range": "31-35"
     },
     {
       "number": 32,
       "type": "choice",
-      "stem": "Accordingtothepassage, whatmaybethereasonforthe Canadiangovernmenttousetheemergingtechnology?",
+      "stem": "Accordingtothepassage, what maybe the reason for the Canadiangovernmenttousetheemergingtechnology?",
       "section": "乙、測驗題",
       "options": {
-        "A": "It mayaid industryto submit theirowntechnological solutions forimmigration.",
-        "B": "It mayleadtomassivehuman-rights implications ingovernment computersystems.",
-        "C": "It mayreducetheneedtoperform costlyandtime-consuminglegal research.",
-        "D": "It mayreplacehuman workwithalgorithms andposepotential human-rights concerns. -"
+        "A": "It mayaid industryto submit their own technological solutions forimmigration.",
+        "B": "It may lead to massive human-rights implications ingovernment computersystems.",
+        "C": "It may reduce the need to perform costlyandtime-consuminglegal research.",
+        "D": "It mayreplacehuman work with algorithms andposepotential human-rights concerns. -"
       },
       "answer": "C",
-      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)to in form how it mounts legal challenges to immigration and refugee claims as part of a new pilot program. Ottawaplansonusingtheemergingtechnology to reduce government lawyers’need to perform their own legal research, acostlyandtime-consumingprocess. But there are already concerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admits that it hopes to use AIandmachinelearning, eventually, to help determine refugee applications themselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
       "passage_question_range": "31-35"
     },
     {
       "number": 33,
       "type": "choice",
-      "stem": "Accordingtothepassage, whichofthefollowingstatements is true?",
+      "stem": "Accordingtothepassage, which of the following statements is true?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Using AItechnologyinimmigrationin Canada mayraisehumanrights issues.",
-        "B": "Ottawahas adoptedtheemergingtechnologytopredict litigationoutcomes.",
-        "C": "The Canadian government has successfullyused AIto determinerefugeeapplications.",
+        "A": "Using AItechnologyinimmigrationin Canada may raise human rights issues.",
+        "B": "Ottawahas adopted the emerging technology to predict litigation outcomes.",
+        "C": "The Canadian government has successfullyused AIto determine refugee applications.",
         "D": "Thedataonthe Canadiangovernment computersystems is itselfflawed."
       },
       "answer": "A",
-      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)to in form how it mounts legal challenges to immigration and refugee claims as part of a new pilot program. Ottawaplansonusingtheemergingtechnology to reduce government lawyers’need to perform their own legal research, acostlyandtime-consumingprocess. But there are already concerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admits that it hopes to use AIandmachinelearning, eventually, to help determine refugee applications themselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
       "passage_question_range": "31-35"
     },
     {
       "number": 34,
       "type": "choice",
-      "stem": "Accordingtothelastsentenceinthepassage, whichofthefollowingbestdescribesthedecisionof Ottawa?",
+      "stem": "Accordingtothelastsentenceinthepassage, which of the following best describes the decision of Ottawa?",
       "section": "乙、測驗題",
       "options": {
         "A": "Ottawais about toestimaterisks ofthepilot project.",
-        "B": "Ottawais alreadyterminatingthepilot project.",
-        "C": "Ottawais consideringtopostponethepilot project.",
-        "D": "Ottawais gettingreadytoexecutethepilot project."
+        "B": "Ottawais already terminating the pilot project.",
+        "C": "Ottawais considering to postpone the pilot project.",
+        "D": "Ottawais getting ready to execute the pilot project."
       },
       "answer": "D",
-      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)to in form how it mounts legal challenges to immigration and refugee claims as part of a new pilot program. Ottawaplansonusingtheemergingtechnology to reduce government lawyers’need to perform their own legal research, acostlyandtime-consumingprocess. But there are already concerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admits that it hopes to use AIandmachinelearning, eventually, to help determine refugee applications themselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
       "passage_question_range": "31-35"
     },
     {
@@ -518,22 +518,22 @@
         "D": "Somewhat annoyed."
       },
       "answer": "C",
-      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)toinformhowitmountslegalchallenges toimmigrationandrefugeeclaimsaspartofanewpilotprogram. Ottawaplansonusingtheemergingtechnology toreducegovernmentlawyers’needtoperformtheirownlegalresearch, acostlyandtime-consumingprocess. But therearealreadyconcerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admitsthatithopestouse AIandmachinelearning, eventually, tohelpdeterminerefugeeapplicationsthemselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
+      "passage": "請回答下列第31題至第35題\nThe Canadiangovernmentishopingtouseartificialintelligence(AI)to in form how it mounts legal challenges to immigration and refugee claims as part of a new pilot program. Ottawaplansonusingtheemergingtechnology to reduce government lawyers’need to perform their own legal research, acostlyandtime-consumingprocess. But there are already concerns that thenuanced and difficult nature ofmanyrefugee andimmigration claims maybe lost on those government computer systems, leading to massive human-rights implications. And the government admits that it hopes to use AIandmachinelearning, eventually, to help determine refugee applications themselves. Theplanisalllaidoutinarequestforinformationsubmittedtoindustry. The request for information asks industry to submit their own technological solutions for a joint pilot project, run by Citizenship and Immigration Canada and Justice Canada, to “support case law and legal research, facilitate trend analysis in litigation, predict litigation outcomes, and help develop legal advice and assessments,” according to a government spokesperson. The government hopes that, if the pilot is a success, front-line immigration officials in Canada and abroad could use this technology“to aid in their assessment of themerits ofanapplication beforedecisions arefinalized.” Lex Gill, a research fellow who specializes in AI and public policy, said replacing human work with algorithms, especiallyif the data that goes into them is itself flawed, will always pose potential human-rights concerns. “There is the risk that instead of improving the situation, these technologies may just entrench or encourage unfair or discriminatory practices,” she said. But while the debate around those risks continues, Ottawais alreadygettingset toroll out thepilot project.",
       "passage_question_range": "31-35"
     },
     {
       "number": 36,
       "type": "choice",
-      "stem": "What is themainmessageofthis passage?",
+      "stem": "What is the main message of this passage?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Morecompanies arenowchangingtosubscriptionapproachtomakeprofits.",
-        "B": "Amazon Primeis agoodexampletoillustratethenewsubscriptionaddiction.",
-        "C": "Dropbox andmanyotherstarfirms are floatingtheirshares.",
-        "D": "Morehome-deliverycompaniesareofferingnewprograms to get more “payingusers.”"
+        "A": "Morecompanies are now changing to subscription approach to make profits.",
+        "B": "Amazon Primeis a good example to illustrate the new subscription addiction.",
+        "C": "Dropbox and many other star firms are floating their shares.",
+        "D": "Morehome-delivery companies are offering new programs to get more “payingusers.”"
       },
       "answer": "A",
-      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, rather than from customers who can easily switch to another provider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-known subscription model is probably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedy delivery of goods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
       "passage_question_range": "36-40"
     },
     {
@@ -544,26 +544,26 @@
       "options": {
         "A": "theemperor’s new clothes",
         "B": "thereligious fountain",
-        "C": "theultimatesolution",
+        "C": "the ultimate solution",
         "D": "thewayhome"
       },
       "answer": "C",
-      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, rather than from customers who can easily switch to another provider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-known subscription model is probably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedy delivery of goods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
       "passage_question_range": "36-40"
     },
     {
       "number": 38,
       "type": "choice",
-      "stem": "Whichofthefollowingis NOT aproblem forcompanies that adopt subscriptionmodels?",
+      "stem": "Whichofthefollowingis NOT aproblem forcompanies that adopt subscription models?",
       "section": "乙、測驗題",
       "options": {
         "A": "Thehigh cost tofindsubscribers.",
-        "B": "Most subscribersliabletobefrom thehigh-incomefamily.",
-        "C": "Thesubscribers incapableofcontrollingtheirdesiretochangetheirproviders.",
+        "B": "Most subscribers liable to be from thehigh-incomefamily.",
+        "C": "Thesubscribers incapable of controlling their desire to change their providers.",
         "D": "Subscribers proneto makepurchases withseveral firms at thesametime."
       },
       "answer": "B",
-      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, rather than from customers who can easily switch to another provider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-known subscription model is probably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedy delivery of goods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
       "passage_question_range": "36-40"
     },
     {
@@ -578,7 +578,7 @@
         "D": "Noadverts formusic"
       },
       "answer": "D",
-      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, rather than from customers who can easily switch to another provider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-known subscription model is probably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedy delivery of goods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
       "passage_question_range": "36-40"
     },
     {
@@ -593,7 +593,7 @@
         "D": "Dropbox"
       },
       "answer": "D",
-      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, ratherthanfromcustomerswhocaneasilyswitchtoanotherprovider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-knownsubscriptionmodelisprobably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedydeliveryofgoods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
+      "passage": "請回答下列第36題至第40題\nOne of the most fashionable ideas in business is that companies should earn their crust from subscribers, whoare“lockedin”foraperiodoftime, rather than from customers who can easily switch to another provider at any time. Subscription models are seen by many investors and executives as the holy grail, because they promise a recurring stream of revenue. But the approach suffers from three underappreaciated problems. Acquiring subscribers can be eye-wateringly expensive. Their urge to run away is often only temporarily suppressed. Andconsumers mayhavemorethan onerelationshipat atime. Thebest-known subscription model is probably Amazon Prime. Ithasabout80mmembersin America aloneandfor$99a year offers film andmusic, speedy delivery of goods andevendiscounts ongoods such as babyfood. There are manyother examples. Netflix offers a wall of TVfor a monthlyfee. And more are coming. Venture-capital firms are pouring money into subscription-based home-delivery firms that bring to your doorstep meals, pills or even fresh underpants. Zuora, a software firm, talks of the rise of the “subscription economy.” Severalstarfirmsfloatingtheirsharesthisyearhavesubscriptionmodels. Dropbox, acloud-storagefirm, listed on NASDAQ on March 23rd and is worth $13bn. It boasts 500m registered users and wants to convert them into “paying users,” of whom there are already 11m, who get a superior service. Spotify, a music streaming firm that listed on April 3rd, has 159m users but derives its $27bn valuation from 71m “premium subscribers” who pay to listen without adverts. On average each generates 13 times more sales and 27 times moregross profit thanusers whopayno fee.",
       "passage_question_range": "36-40"
     }
   ],

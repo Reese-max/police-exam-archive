@@ -17,13 +17,13 @@
     {
       "number": "一",
       "type": "essay",
-      "stem": "請以國內學者所提出數位證據鑑識標準程序(Digital Evidence Forensics\nStandard Operating Procedure,DEFSOP)四大階段(原理概念階段、準備\n階段、操作階段、報告階段)為基礎及參考國際資安鑑識相關標準(如\nISO/IEC /// 等),如何建立一套完整行動鑑識標準\n作業程序(DEFSOPforMobileForensics,DEFSOP-MF)?並請舉例及繪\n圖表說明之。(25 分)",
+      "stem": "請以國內學者所提出數位證據鑑識標準程序(Digital Evidence Forensics\nStandard Operating Procedure,DEFSOP)四大階段(原理概念階段、準備\n階段、操作階段、報告階段)為基礎及參考國際資安鑑識相關標準(如\nISO/IEC /// 等),如何建立一套完整行動鑑識標準\n作業程序(DEFSOPfor Mobile Forensics,DEFSOP-MF)?並請舉例及繪\n圖表說明之。(25 分)",
       "section": null
     },
     {
       "number": "二",
       "type": "essay",
-      "stem": "請說明電腦鑑識(ComputerForensics)、軟體鑑識(SoftwareForensics)、\n資料鑑識(DataForensics)、網路鑑識(Network Forensics)、行動鑑識\n(Mobile Forensics)、雲端鑑識(Cloud Forensics)及資安鑑識(Cyber\nForensics)的異同處(含定義、原理、功能及應用等)。並請舉例及繪\n圖表說明之。(25 分)",
+      "stem": "請說明電腦鑑識(Computer Forensics)、軟體鑑識(Software Forensics)、\n資料鑑識(Data Forensics)、網路鑑識(Network Forensics)、行動鑑識\n(Mobile Forensics)、雲端鑑識(Cloud Forensics)及資安鑑識(Cyber\nForensics)的異同處(含定義、原理、功能及應用等)。並請舉例及繪\n圖表說明之。(25 分)",
       "section": null
     },
     {

@@ -717,12 +717,12 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "Coast Guard Administration is a agency toexecuteregulations toenhance national security by discover ing, deterring, rehabilitating, orpunishing people who violate the rules and nor ms.",
+      "stem": "Coast Guard Administration is a agency to execute regulations toenhance national security by discover ing, deterring, rehabilitating, orpunishing people who violate the rules and nor ms.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "standard implementation",
-        "B": "principleexecution",
+        "B": "principle execution",
         "C": "rodfulfilment",
         "D": "law enforcement"
       }

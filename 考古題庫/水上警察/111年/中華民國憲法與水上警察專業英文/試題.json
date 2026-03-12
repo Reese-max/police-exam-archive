@@ -561,7 +561,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Coast Guard Administration plays a vital role in national of which the jurisdiction covers thewaters surroundingKinmen,Matzu,Penghu,and themain islandofTaiwan.",
+      "stem": "Coast Guard Administration plays a vital role in national of which the jurisdiction covers thewaters surrounding Kinmen,Matzu,Penghu,and themain islandof Taiwan.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -587,7 +587,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "OneoftheCoastGuardAdministrationmissionsistoinvestigatethe topreventpeoplefrom movinggoods illegallyintoorout ofthecountry.",
+      "stem": "Oneofthe Coast Guard Administrationmissionsistoinvestigatethe to prevent people from movinggoods illegally into or out ofthecountry.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -652,7 +652,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "WhenNationalRescueCommandCenter(NRCC)receivesandverifiesa call,CoastGuard Administration and various agencies relative to maritime search and rescue will be alerted to take actions in accordance with the standard operation procedures of \"Executive Yuan National Rescue CommandCenterOperations Manual\".",
+      "stem": "When National Rescue Command Center(NRCC)receives and verifies a call,Coast Guard Administration and various agencies relative to maritime search and rescue will be alerted to take actions in accordance with the standard operation procedures of \"Executive Yuan National Rescue Command Center Operations Manual\".",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -665,7 +665,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Weneedtotake before wedoadangerous activitylikeparachuting.",
+      "stem": "Weneedtotake before wedoadangerous activity like parachuting.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
@@ -678,7 +678,7 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Theyworked all night becausetheyhadmade a toturnintheirproject thenext day.",
+      "stem": "Theyworked all night because they had made a to turn in their project thenext day.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
@@ -691,7 +691,7 @@
     {
       "number": 51,
       "type": "choice",
-      "stem": "Someadvertisements are andgiveinformationthat is not true.",
+      "stem": "Someadvertisements are and give information that is not true.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -704,7 +704,7 @@
     {
       "number": 52,
       "type": "choice",
-      "stem": "NAVTEX is an international automated medium frequency (518 kHz) direct-printing service for delivery of navigational and warnings and forecasts, as well as urgent marine safety informationtoships.",
+      "stem": "NAVTEX is an international automated medium frequency (518 k Hz) direct-printing service for delivery of navigational and warnings and forecasts, as well as urgent marine safety information to ships.",
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
@@ -717,12 +717,12 @@
     {
       "number": 53,
       "type": "choice",
-      "stem": "Coast GuardAdministrationis a agencytoexecuteregulations toenhancenational security bydiscovering,deterring,rehabilitating,orpunishingpeople whoviolatetherules andnorms.",
+      "stem": "Coast Guard Administrationis a agency to execute regulations toenhancenational security bydiscovering,deterring,rehabilitating,orpunishingpeople who violate the rules andnorms.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
-        "A": "standardimplementation",
-        "B": "principleexecution",
+        "A": "standard implementation",
+        "B": "principle execution",
         "C": "rodfulfilment",
         "D": "lawenforcement"
       }
@@ -730,13 +730,13 @@
     {
       "number": 54,
       "type": "choice",
-      "stem": "Hallucinogens andmarijuanaare whichshouldbebannedfrom borders.",
+      "stem": "Hallucinogens andmarijuanaare which should be banned from borders.",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {
         "A": "weapons",
         "B": "illegal drugs",
-        "C": "legitimatesubstances",
+        "C": "legitimate substances",
         "D": "sound materials"
       }
     },
@@ -756,7 +756,7 @@
     {
       "number": 56,
       "type": "choice",
-      "stem": "Ship in restricted areas undertaken by Coast Guard Administration ensures that any illegal activitieswill not takeplaceonboardvessels.",
+      "stem": "Ship in restricted areas undertaken by Coast Guard Administration ensures that any illegal activitieswill not take place onboard vessels.",
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
@@ -775,7 +775,7 @@
       "options": {
         "A": "ballast water",
         "B": "fuel oil",
-        "C": "breathingapparatus",
+        "C": "breathing apparatus",
         "D": "potablewater"
       }
     },
@@ -808,7 +808,7 @@
     {
       "number": 60,
       "type": "choice",
-      "stem": "Thesearchand rescueoperationwill be_______ duetothedisappearance ofdensefog.",
+      "stem": "Thesearchand rescue operation will be_______ due to the disappearance ofdensefog.",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {

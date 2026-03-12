@@ -74,14 +74,14 @@
     {
       "number": 4,
       "type": "choice",
-      "stem": "測量血液中酒精含量(BloodAlcoholConcentration;BAC)就可估計體內酒精總量。酒精經由血 液到達腦部對中樞神經系統作用,下列敘述何者錯誤?",
+      "stem": "測量血液中酒精含量(Blood Alcohol Concentration;BAC)就可估計體內酒精總量。酒精經由血 液到達腦部對中樞神經系統作用,下列敘述何者錯誤?",
       "section": "乙、測驗題",
       "answer": "D",
       "options": {
         "A": "隨著BAC 的增高,自主功能系統逐漸受到影響",
         "B": "BAC 在0.09-0.25%情緒不穩,自制力減退,尚失基本的判斷力",
         "C": "BAC≧0.45%可能引起呼吸器官的麻痺導致死亡",
-        "D": "BAC 為0.05%時,表示每100mL呼氣內含200 μg酒精"
+        "D": "BAC 為0.05%時,表示每100m L呼氣內含200 μg酒精"
       }
     },
     {
@@ -183,7 +183,7 @@
       "answer": "D",
       "options": {
         "A": "Ninhydrin",
-        "B": "AmidoBlack",
+        "B": "Amido Black",
         "C": "Tetramethylbenzidine",
         "D": "p-Dimethylaminobenzaldehyde"
       }
@@ -247,8 +247,8 @@
       "section": "乙、測驗題",
       "answer": "C",
       "options": {
-        "A": "血紅素F(HbF)",
-        "B": "血紅素H(HbH)",
+        "A": "血紅素F(Hb F)",
+        "B": "血紅素H(Hb H)",
         "C": "血紅素結合素(haptoglobin)",
         "D": "纖維蛋白原(fibrinogen)"
       }
@@ -260,10 +260,10 @@
       "section": "乙、測驗題",
       "answer": "A",
       "options": {
-        "A": "25μg/mL",
-        "B": "50μg/mL",
-        "C": "25ng/mL",
-        "D": "50ng/mL"
+        "A": "25μg/m L",
+        "B": "50μg/m L",
+        "C": "25ng/m L",
+        "D": "50ng/m L"
       }
     },
     {
@@ -275,8 +275,8 @@
       "options": {
         "A": "順向引子",
         "B": "逆向引子",
-        "C": "dNTP",
-        "D": "ddNTP"
+        "C": "d NTP",
+        "D": "dd NTP"
       }
     },
     {

@@ -52,7 +52,7 @@
     {
       "number": 2,
       "type": "choice",
-      "stem": "There are reasons why food prices seem to be immune to the general downturn: poor harvests, international tradebarriers, thewarin Ukraine, highcosts forrawmaterials andrisinglaborcosts.",
+      "stem": "There are reasons why food prices seem to be immune to the general downturn: poor harvests, international tradebarriers, thewarin Ukraine, highcosts forrawmaterials and rising labor costs.",
       "section": "乙、測驗題",
       "options": {
         "A": "numerous",
@@ -65,7 +65,7 @@
     {
       "number": 3,
       "type": "choice",
-      "stem": "India is expected to overtake China as the world’s most country with almost 3 million more peoplebythemiddleofthis year, accordingto UNfigures.",
+      "stem": "India is expected to overtake China as the world’s most country with almost 3 million more people by the middle of this year, accordingto UNfigures.",
       "section": "乙、測驗題",
       "options": {
         "A": "popular",
@@ -78,7 +78,7 @@
     {
       "number": 4,
       "type": "choice",
-      "stem": "UNpopulationofficials sayit is not possibleto adatebecauseofuncertaintyabout data.",
+      "stem": "UNpopulationofficials sayit is not possibleto a date because of uncertainty about data.",
       "section": "乙、測驗題",
       "options": {
         "A": "have",
@@ -91,7 +91,7 @@
     {
       "number": 5,
       "type": "choice",
-      "stem": "Theoldhouseswillsoon be andrebuiltbecauseoftheseveredamagecausedbytheearthquake.",
+      "stem": "Theoldhouseswillsoon be and rebuilt because of the severe damage caused by the earthquake.",
       "section": "乙、測驗題",
       "options": {
         "A": "knockedout",
@@ -104,7 +104,7 @@
     {
       "number": 6,
       "type": "choice",
-      "stem": "Withbordersasitstheme, the11theditionof Kyoto’scitywidefestival______arangeofissuesincluding grief, dementia, discriminationandmigrationwithartistsfromasfarafieldas Ivory Coast and Hackney.",
+      "stem": "Withbordersasitstheme, the11theditionof Kyoto’scitywidefestival______arangeofissuesincluding grief, dementia, discrimination and migration with artists from as far a field as Ivory Coast and Hackney.",
       "section": "乙、測驗題",
       "options": {
         "A": "explores",
@@ -117,7 +117,7 @@
     {
       "number": 7,
       "type": "choice",
-      "stem": "Record Store Daywillhavemusicfans thisweekend–buthowdotheseshopssurvive, andwhat dotheybringtothehigh street in2023?",
+      "stem": "Record Store Daywillhavemusicfans thisweekend–but how do these shops survive, andwhat do they bring to the high street in2023?",
       "section": "乙、測驗題",
       "options": {
         "A": "gettingup",
@@ -130,7 +130,7 @@
     {
       "number": 8,
       "type": "choice",
-      "stem": "Thewordwrittenontheblackboardis ______. It has morethanonedefinition.",
+      "stem": "Thewordwrittenontheblackboardis ______. It has more than one definition.",
       "section": "乙、測驗題",
       "options": {
         "A": "ambiguous",
@@ -169,7 +169,7 @@
     {
       "number": 11,
       "type": "choice",
-      "stem": "Themain______ofthis test is tofindout howmuchstudents havelearned injuniorhighschool.",
+      "stem": "Themain______ofthis test is tofindout howmuchstudents havelearned in junior highschool.",
       "section": "乙、測驗題",
       "options": {
         "A": "category",
@@ -182,7 +182,7 @@
     {
       "number": 12,
       "type": "choice",
-      "stem": "Don’t imaginethat reducinginflationis an______forall oureconomicills.",
+      "stem": "Don’t imaginethat reducing inflation is an______forall oureconomicills.",
       "section": "乙、測驗題",
       "options": {
         "A": "avenue",
@@ -208,7 +208,7 @@
     {
       "number": 14,
       "type": "choice",
-      "stem": "Heat-relateddeathsareexpectedtotrebleby2050. Currently7millionpeopledie______eachyearfrom airpollution, morethanthedeath toll duringtheentirepandemic.",
+      "stem": "Heat-relateddeathsareexpectedtotrebleby2050. Currently7millionpeopledie______eachyearfrom airpollution, morethanthedeath toll during the entire pandemic.",
       "section": "乙、測驗題",
       "options": {
         "A": "inevitably",
@@ -247,7 +247,7 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "Thegovernment has ______that electricitycharges will goupnext month.",
+      "stem": "Thegovernment has ______that electricity charges will goupnext month.",
       "section": "乙、測驗題",
       "options": {
         "A": "announced",
@@ -273,7 +273,7 @@
     {
       "number": 19,
       "type": "choice",
-      "stem": "Pleasedon’t ask ______ questions; it is veryimpolitetodoso.",
+      "stem": "Pleasedon’t ask ______ questions; it is very impolite to do so.",
       "section": "乙、測驗題",
       "options": {
         "A": "earnest",
@@ -286,7 +286,7 @@
     {
       "number": 20,
       "type": "choice",
-      "stem": "______multitaskingreduces ourabilitytothinkclearlyandcreatively, and torememberinformation.",
+      "stem": "______multitaskingreduces our ability to think clearly and creatively, and to remember information.",
       "section": "乙、測驗題",
       "options": {
         "A": "Excessive",
@@ -308,7 +308,7 @@
         "D": "server"
       },
       "answer": "C",
-      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated awiderangeofproblem-solvingtechniques.",
+      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated a wide range of problem-solvingtechniques.",
       "passage_question_range": "21-25"
     },
     {
@@ -323,7 +323,7 @@
         "D": "severe"
       },
       "answer": "A",
-      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated awiderangeofproblem-solvingtechniques.",
+      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated a wide range of problem-solvingtechniques.",
       "passage_question_range": "21-25"
     },
     {
@@ -338,7 +338,7 @@
         "D": "jargon"
       },
       "answer": "D",
-      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated awiderangeofproblem-solvingtechniques.",
+      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated a wide range of problem-solvingtechniques.",
       "passage_question_range": "21-25"
     },
     {
@@ -353,7 +353,7 @@
         "D": "AI"
       },
       "answer": "A",
-      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated awiderangeofproblem-solvingtechniques.",
+      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated a wide range of problem-solvingtechniques.",
       "passage_question_range": "21-25"
     },
     {
@@ -368,7 +368,7 @@
         "D": "afforded"
       },
       "answer": "A",
-      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated awiderangeofproblem-solvingtechniques.",
+      "passage": "請依下文回答第21 題至25題\nChat GPT is one consumer-facing deep learning model. GPT is a(n) 21 for “generative pre-trained transformer,” meaning that it is able to generate responses based on a large language model. Artificial intelligence, or AI, has been a 22 topic of late, but what is it? And how does it work? In this article (which was written by a real person and not AI, just to be clear), we will go over some of the key terms connectedto AIandrelatedcomputerprocesses. Wearegoingtobreakdownthetechnical 23 todescribe how these processes and programs work in real terms. As you will see, while the concept of AI sounds very complex and even mystical, 24 actually follows some very simple, easy-to-follow principles. AI researchershave 25 andintegrated a wide range of problem-solvingtechniques.",
       "passage_question_range": "21-25"
     },
     {
@@ -383,7 +383,7 @@
         "D": "Though"
       },
       "answer": "A",
-      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’tworrytoomuchaboutfindingeducationaltoys. 26 , concentrateonfindingtoysthat are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings yourchildcandowiththetoy. Andfinally, funis important intoys, but safetyis vital.",
+      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’t worry too much about finding educational toys. 26 , concentrate on finding toys that are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings your child can do with the toy. Andfinally, funis important intoys, but safetyis vital.",
       "passage_question_range": "26-30"
     },
     {
@@ -398,7 +398,7 @@
         "D": "recite"
       },
       "answer": "A",
-      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’tworrytoomuchaboutfindingeducationaltoys. 26 , concentrateonfindingtoysthat are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings yourchildcandowiththetoy. Andfinally, funis important intoys, but safetyis vital.",
+      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’t worry too much about finding educational toys. 26 , concentrate on finding toys that are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings your child can do with the toy. Andfinally, funis important intoys, but safetyis vital.",
       "passage_question_range": "26-30"
     },
     {
@@ -413,7 +413,7 @@
         "D": "redundant"
       },
       "answer": "C",
-      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’tworrytoomuchaboutfindingeducationaltoys. 26 , concentrateonfindingtoysthat are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings yourchildcandowiththetoy. Andfinally, funis important intoys, but safetyis vital.",
+      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’t worry too much about finding educational toys. 26 , concentrate on finding toys that are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings your child can do with the toy. Andfinally, funis important intoys, but safetyis vital.",
       "passage_question_range": "26-30"
     },
     {
@@ -428,7 +428,7 @@
         "D": "tiredof"
       },
       "answer": "D",
-      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’tworrytoomuchaboutfindingeducationaltoys. 26 , concentrateonfindingtoysthat are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings yourchildcandowiththetoy. Andfinally, funis important intoys, but safetyis vital.",
+      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’t worry too much about finding educational toys. 26 , concentrate on finding toys that are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings your child can do with the toy. Andfinally, funis important intoys, but safetyis vital.",
       "passage_question_range": "26-30"
     },
     {
@@ -443,13 +443,13 @@
         "D": "where"
       },
       "answer": "B",
-      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’tworrytoomuchaboutfindingeducationaltoys. 26 , concentrateonfindingtoysthat are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings yourchildcandowiththetoy. Andfinally, funis important intoys, but safetyis vital.",
+      "passage": "請依下文回答第26 題至30題\nEvery year at Christmastime, the experts offer parents a great deal of advice about how to choose toys for children. First, don’t worry too much about finding educational toys. 26 , concentrate on finding toys that are fun. This doesn’t mean toys that you think are fun, but toys that will 27 the interest of your child at her/his 28 age level. The experts also warn that children soon become 29 toys that simply walk or talk or jump at the touch of a button. For this reason, you should put emphasis not on 30 thetoy cando, but onwhetherthereis avarietyofthings your child can do with the toy. Andfinally, funis important intoys, but safetyis vital.",
       "passage_question_range": "26-30"
     },
     {
       "number": 31,
       "type": "choice",
-      "stem": "Whichofthefollowingwouldbethebest titleforthepassage?",
+      "stem": "Whichofthefollowingwouldbethebest title for the passage?",
       "section": "乙、測驗題",
       "options": {
         "A": "Buying Real Estatefor Speculationin New England",
@@ -458,22 +458,22 @@
         "D": "The Building Construction Industryduringthe American Civil War -"
       },
       "answer": "B",
-      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependenceamongindustriesdemandedcentralizationofbusinessadministration. Theleadershipof New York Cityasanoceanport, alongwithitsproximitytomajorarteriesoflandtransportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; eventodayitisaprimaryadministrativeandbankingcenter. Thefinancialresourcesforthehighbuildingwere there; thedevelopmentofsafeelevatortransportationandtheorganizationofconstructionfacilitiessoonmade them areality.",
+      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependence among industries demanded centralization of business administration. Theleadershipof New York Cityasanoceanport, along with its proximity to major arteries of land transportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; even today it is a primary administrative and banking center. Thefinancialresourcesforthehighbuildingwere there; the development of safe elevator transportation and the organization of construction facilities soon made them areality.",
       "passage_question_range": "31-35"
     },
     {
       "number": 32,
       "type": "choice",
-      "stem": "Accordingto thepassage, whywereso many New York Citybuildings constructedonnarrowlots?",
+      "stem": "Accordingto thepassage, whywereso many New York Citybuildings constructed on narrow lots?",
       "section": "乙、測驗題",
       "options": {
-        "A": "It becametoo expensivetobuildonlargelots.",
+        "A": "It becametoo expensive to build on large lots.",
         "B": "Oldland-userestrictions hadneverbeen changed.",
-        "C": "Hookups forelectricpowerwerenarrowlyspaced.",
+        "C": "Hookups for electric power were narrowly spaced.",
         "D": "Heavytraffic conditions madeit necessaryto widenstreets."
       },
       "answer": "A",
-      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependenceamongindustriesdemandedcentralizationofbusinessadministration. Theleadershipof New York Cityasanoceanport, alongwithitsproximitytomajorarteriesoflandtransportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; eventodayitisaprimaryadministrativeandbankingcenter. Thefinancialresourcesforthehighbuildingwere there; thedevelopmentofsafeelevatortransportationandtheorganizationofconstructionfacilitiessoonmade them areality.",
+      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependence among industries demanded centralization of business administration. Theleadershipof New York Cityasanoceanport, along with its proximity to major arteries of land transportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; even today it is a primary administrative and banking center. Thefinancialresourcesforthehighbuildingwere there; the development of safe elevator transportation and the organization of construction facilities soon made them areality.",
       "passage_question_range": "31-35"
     },
     {
@@ -482,13 +482,13 @@
       "stem": "Accordingto thepassage, business interests came to New York Citybecause______.",
       "section": "乙、測驗題",
       "options": {
-        "A": "most manufacturingcities werelocatedcloseby",
-        "B": "landandseatransportationroutes convergedthere",
-        "C": "thereal estatebusiness was highlydevelopedthere",
-        "D": "nearbymineral resources facilitatedindustrial development"
+        "A": "most manufacturing cities were located close by",
+        "B": "land and sea transportation routes convergedthere",
+        "C": "thereal estatebusiness was highly developed there",
+        "D": "nearbymineral resources facilitated industrial development"
       },
       "answer": "B",
-      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependenceamongindustriesdemandedcentralizationofbusinessadministration. Theleadershipof New York Cityasanoceanport, alongwithitsproximitytomajorarteriesoflandtransportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; eventodayitisaprimaryadministrativeandbankingcenter. Thefinancialresourcesforthehighbuildingwere there; thedevelopmentofsafeelevatortransportationandtheorganizationofconstructionfacilitiessoonmade them areality.",
+      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependence among industries demanded centralization of business administration. Theleadershipof New York Cityasanoceanport, along with its proximity to major arteries of land transportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; even today it is a primary administrative and banking center. Thefinancialresourcesforthehighbuildingwere there; the development of safe elevator transportation and the organization of construction facilities soon made them areality.",
       "passage_question_range": "31-35"
     },
     {
@@ -497,13 +497,13 @@
       "stem": "Whichofthefollowingdid NOTcontributetotherapidconstructionofhigh-risebuildingsin New York City?",
       "section": "乙、測驗題",
       "options": {
-        "A": "theexpansionofindustry",
-        "B": "improvedelevatorsystems",
+        "A": "the expansion of industry",
+        "B": "improved elevator systems",
         "C": "sufficient monetarybacking",
-        "D": "theincreasedavailabilityofland"
+        "D": "the increased availability of land"
       },
       "answer": "D",
-      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependenceamongindustriesdemandedcentralizationofbusinessadministration. Theleadershipof New York Cityasanoceanport, alongwithitsproximitytomajorarteriesoflandtransportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; eventodayitisaprimaryadministrativeandbankingcenter. Thefinancialresourcesforthehighbuildingwere there; thedevelopmentofsafeelevatortransportationandtheorganizationofconstructionfacilitiessoonmade them areality.",
+      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependence among industries demanded centralization of business administration. Theleadershipof New York Cityasanoceanport, along with its proximity to major arteries of land transportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; even today it is a primary administrative and banking center. Thefinancialresourcesforthehighbuildingwere there; the development of safe elevator transportation and the organization of construction facilities soon made them areality.",
       "passage_question_range": "31-35"
     },
     {
@@ -512,19 +512,19 @@
       "stem": "Theparagraphprecedingthepassagemost probablydiscusses ______.",
       "section": "乙、測驗題",
       "options": {
-        "A": "thesocial andeconomicfactors affectingarchitecture",
-        "B": "theinfluenceofweatherconditions onurbanarchitecture",
+        "A": "thesocial and economic factors affecting architecture",
+        "B": "the influence of weather conditions on urban architecture",
         "C": "thelegal decisions about buildingstandards in New York",
-        "D": "theengineeringprinciples necessaryintheconstructionofelevators"
+        "D": "the engineering principles necessary in the construction of elevators"
       },
       "answer": "A",
-      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependenceamongindustriesdemandedcentralizationofbusinessadministration. Theleadershipof New York Cityasanoceanport, alongwithitsproximitytomajorarteriesoflandtransportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; eventodayitisaprimaryadministrativeandbankingcenter. Thefinancialresourcesforthehighbuildingwere there; thedevelopmentofsafeelevatortransportationandtheorganizationofconstructionfacilitiessoonmade them areality.",
+      "passage": "請依下文回答第31 題至35題\nThe economic conditions that necessitate the construction of veryhigh buildings on narrow lots first emerged as a decisive factor in New York City. Intensive land use, with the resulting speculative traffic in real estate, was itself a consequence of more powerful and pervasive forces. Industrial expansion was the primaryfactor, and in the period following the American Civil War much of that expansion continued to be concentrated in New England and the Middle Atlantic states. Financial institutions had longbeen located mainly in Boston, but the center was rapidly shifting to New York around the time of the War. A new pattern of close interdependence among industries demanded centralization of business administration. Theleadershipof New York Cityasanoceanport, along with its proximity to major arteries of land transportation, wasalocalfactor that helped to make the city an irresistible magnet. Its power to attract, once established, has never waned; even today it is a primary administrative and banking center. Thefinancialresourcesforthehighbuildingwere there; the development of safe elevator transportation and the organization of construction facilities soon made them areality.",
       "passage_question_range": "31-35"
     },
     {
       "number": 36,
       "type": "choice",
-      "stem": "Withwhat topicis thepassagemainlyconcerned?",
+      "stem": "Withwhat topicis the passage mainly concerned?",
       "section": "乙、測驗題",
       "options": {
         "A": "Breedinghabits ofwhales",
@@ -533,7 +533,7 @@
         "D": "Differences between whales"
       },
       "answer": "D",
-      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborderoftoothedwhalesknownas Odontoceti, alongwithporpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
+      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborder of toothed whales known as Odontoceti, along with porpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
       "passage_question_range": "36-40"
     },
     {
@@ -548,7 +548,7 @@
         "D": "asubmarine"
       },
       "answer": "A",
-      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborderoftoothedwhalesknownas Odontoceti, alongwithporpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
+      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborder of toothed whales known as Odontoceti, along with porpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
       "passage_question_range": "36-40"
     },
     {
@@ -563,7 +563,7 @@
         "D": "teeth"
       },
       "answer": "D",
-      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborderoftoothedwhalesknownas Odontoceti, alongwithporpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
+      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborder of toothed whales known as Odontoceti, along with porpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
       "passage_question_range": "36-40"
     },
     {
@@ -575,25 +575,25 @@
         "A": "disease",
         "B": "hunting",
         "C": "insufficient supplyof food",
-        "D": "increasedpollutionoftheseas"
+        "D": "increased pollution of these as"
       },
       "answer": "B",
-      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborderoftoothedwhalesknownas Odontoceti, alongwithporpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
+      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborder of toothed whales known as Odontoceti, along with porpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
       "passage_question_range": "36-40"
     },
     {
       "number": 40,
       "type": "choice",
-      "stem": "Accordingto thepassage, whichofthefollowingaccuratelydescribes therelativesizes oftwowhales?",
+      "stem": "Accordingto thepassage, which of the following accurately describes therelativesizes oftwowhales?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Thebelugais largerthanthebluewhale.",
-        "B": "Theporpoiseis larger thanthekillerwhale.",
-        "C": "Thebluewhaleis largerthanthesperm whale.",
-        "D": "Thekillerwhaleis largerthanthesperm whale."
+        "A": "Thebelugais larger than the blue whale.",
+        "B": "Theporpoiseis larger than the killer whale.",
+        "C": "Thebluewhaleis larger than the sperm whale.",
+        "D": "Thekillerwhaleis larger than the sperm whale."
       },
       "answer": "C",
-      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborderoftoothedwhalesknownas Odontoceti, alongwithporpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
+      "passage": "請依下文回答第36 題至40題\nAll whales fall into two groups, those with teeth and those without. Both beluga and dolphins belong to the suborder of toothed whales known as Odontoceti, along with porpoises, narwhales, pilotwhales, killerwhales, and the largest toothed creature in the world, the sperm whale. Size differences among the Odontoceti are remarkable. A common porpoise will run only4 or 5 feet in length and 300 pounds in weight; a sperm whale may be 10 times as long and 300 times as heavy. The beluga falls in between, weighing up to 2,000 pounds. And it does chirp. In fact, it makes a great variety of squeaking, whistling, and clicking sounds, which have earned it the name of sea canary. The toothless, or baleen, whales belongto the suborder of Mysticeti. This is a group of generally large whales, formerly abundant in all the oceans of the world. Though reduced by hunting, most species are still found along the coasts of the United States and Canada. All but two of the Mysticeti reach 40 feet or more at maturity, with the blue whale runningup to 100 feet and tippingthe scales at up to 130 tons. This whale is byfar the largest creature that has ever lived on the Earth, 4 times the weight ofthelargest dinosaur, and30times that ofanelephant.",
       "passage_question_range": "36-40"
     }
   ],

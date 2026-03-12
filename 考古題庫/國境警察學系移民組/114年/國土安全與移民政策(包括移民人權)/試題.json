@@ -36,7 +36,7 @@
     {
       "number": 1,
       "type": "choice",
-      "stem": "2019年,美國國土安全部推出「國家關鍵功能」(NationalCriticalFunctions)的分析框架,旨在 透過使用何種視角(lens)來理解跨及多個部門的關鍵基礎設施之相互依賴關係?",
+      "stem": "2019年,美國國土安全部推出「國家關鍵功能」(National Critical Functions)的分析框架,旨在 透過使用何種視角(lens)來理解跨及多個部門的關鍵基礎設施之相互依賴關係?",
       "section": "乙、測驗題",
       "options": {
         "A": "任務視角",
@@ -182,10 +182,10 @@
       "stem": "歐盟執委會(European Commission)於今年 3 月提出何項計畫?該計畫如獲通過,未來歐盟 國家將可在第三國設置遣返中心,將非法移民或庇護遭拒者送至第三國,但排除有幼童的家庭 或孤身兒童:",
       "section": "乙、測驗題",
       "options": {
-        "A": "盧安達庇護計畫(RwandaAsylum Plan)",
-        "B": "人道假釋計畫(HumanitarianParole)",
+        "A": "盧安達庇護計畫(Rwanda Asylum Plan)",
+        "B": "人道假釋計畫(Humanitarian Parole)",
         "C": "童年抵達者暫緩驅逐辦法(DACA)",
-        "D": "歐洲遣返系統(EuropeanSystem forReturns)"
+        "D": "歐洲遣返系統(European System for Returns)"
       },
       "answer": "D"
     },

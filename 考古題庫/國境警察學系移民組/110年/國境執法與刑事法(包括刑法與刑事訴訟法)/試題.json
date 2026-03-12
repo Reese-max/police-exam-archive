@@ -140,7 +140,7 @@
     {
       "number": 9,
       "type": "choice",
-      "stem": "下列那些屬於「通關迅速化」的國境線上人流管理機制?1我國的入出國自動查驗通關系統 (E-GATE) 2我國的「外來人口個人生物特徵識別系統」 3美國的「全球入境計畫」(Global EntryProgram) 4美國運輸安全管理局的預先安檢計畫(TSAPre✓®)",
+      "stem": "下列那些屬於「通關迅速化」的國境線上人流管理機制?1我國的入出國自動查驗通關系統 (E-GATE) 2我國的「外來人口個人生物特徵識別系統」 3美國的「全球入境計畫」(Global Entry Program) 4美國運輸安全管理局的預先安檢計畫(TSAPre✓®)",
       "section": "乙、測驗題",
       "options": {
         "A": "僅123",
@@ -153,10 +153,10 @@
     {
       "number": 10,
       "type": "choice",
-      "stem": "下列何項不屬於美國的信任旅客計畫(TrustedTravelerProgram)內容之一?",
+      "stem": "下列何項不屬於美國的信任旅客計畫(Trusted Traveler Program)內容之一?",
       "section": "乙、測驗題",
       "options": {
-        "A": "全球入境計畫(Global EntryProgram)",
+        "A": "全球入境計畫(Global Entry Program)",
         "B": "旅客快速查驗安全電子網路(SENTRI)",
         "C": "航前旅客資訊系統(APIS)",
         "D": "美國、加拿大聯合快速入境通關計畫(NEXUS)"

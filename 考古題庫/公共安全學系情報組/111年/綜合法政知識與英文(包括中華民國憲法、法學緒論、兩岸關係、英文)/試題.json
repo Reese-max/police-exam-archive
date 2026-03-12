@@ -431,7 +431,7 @@
     {
       "number": 33,
       "type": "choice",
-      "stem": "Thetalentedyoungmanchosetosetuphisownfirm, ratherthanbecomeaprofessor, becausehewantedto_____ whathehadlearnedinindustrialsites.",
+      "stem": "Thetalentedyoungmanchosetosetuphisownfirm, rather than become a professor, becausehewantedto_____ what he had learned in industrial sites.",
       "section": null,
       "options": {
         "A": "correspond",
@@ -444,7 +444,7 @@
     {
       "number": 34,
       "type": "choice",
-      "stem": "Thephysiciantold Helentogetbedrest,_____herfeet, andtakesomemedication.",
+      "stem": "Thephysiciantold Helentogetbedrest,_____herfeet, and take some medication.",
       "section": null,
       "options": {
         "A": "disclose",
@@ -457,7 +457,7 @@
     {
       "number": 35,
       "type": "choice",
-      "stem": "Unfortunately, manycouldseethatthepublichealthinsuranceanditsnewregulationscould_____thepoorfrom gettingthemedicalcaretheyneed.",
+      "stem": "Unfortunately, manycouldseethatthepublichealthinsuranceanditsnewregulationscould_____thepoorfrom getting the medical care they need.",
       "section": null,
       "options": {
         "A": "invade",
@@ -483,7 +483,7 @@
     {
       "number": 37,
       "type": "choice",
-      "stem": "Predation by avian predators is an important cause of _____ in some bird species during all life stages and has beenlinkedtoimpairedreproductiveperformance.",
+      "stem": "Predation by avian predators is an important cause of _____ in some bird species during all life stages and has been linked to impaired reproductive performance.",
       "section": null,
       "options": {
         "A": "mentality",
@@ -535,7 +535,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "_____bythehorrifyingmurderscene, thelittleboycouldn'tevenutteraword, letalonecryforhelp.",
+      "stem": "_____bythehorrifyingmurderscene, the little boy couldn'tevenutteraword, let alone cry for help.",
       "section": null,
       "options": {
         "A": "Detached",
@@ -600,7 +600,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "The United Stateshas experiencedadramaticincreaseinoverdosedeathsoverthe past20years, whichhasbeen welldocumentedandlargely_____towhathasbeentermedtheopioidcrisisoropioidepidemic.",
+      "stem": "The United Stateshas experienced a dramatic increase in overdose deaths over the past20years, whichhasbeen welldocumentedandlargely_____towhathasbeentermedtheopioidcrisisoropioidepidemic.",
       "section": null,
       "options": {
         "A": "accumulated",
@@ -626,7 +626,7 @@
     {
       "number": 48,
       "type": "choice",
-      "stem": "Manyrefugees, inthefaceoftortureanddeath, decidetoseekan_____inforeignlands.",
+      "stem": "Manyrefugees, in the face of torture and death, decidetoseekan_____inforeignlands.",
       "section": null,
       "options": {
         "A": "asylum",
@@ -639,7 +639,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Thesurgeonwaspleasedwiththeresultandscheduleda_____meetingwiththepatientoneweekafterthesurgery tomakesurethateverythingisundercontrol.",
+      "stem": "Thesurgeonwaspleasedwiththeresultandscheduleda_____meetingwiththepatientoneweekafterthesurgery to make sure that everything is under control.",
       "section": null,
       "options": {
         "A": "choke-up",
@@ -652,7 +652,7 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Innovations, suchasthesteamengine, electrificationanddigitalization, have_____radicalchangesinthewayin whichweproducegoodsandservices.",
+      "stem": "Innovations, such as the steam engine, electrification and digital iz ation, have_____radicalchangesinthewayin which we produce goods and services.",
       "section": null,
       "options": {
         "A": "underpinned",

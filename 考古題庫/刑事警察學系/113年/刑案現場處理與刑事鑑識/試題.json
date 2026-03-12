@@ -42,7 +42,7 @@
         "A": "濃縮DNA",
         "B": "降低DNA-STR 圖譜分析訊號強度(peak)之研判標準",
         "C": "增加PCR 複製之循環數(cycle)",
-        "D": "增加毛細管電泳分析之電磁導注(electrokineticinjection)時間"
+        "D": "增加毛細管電泳分析之電磁導注(electro kinetic injection)時間"
       }
     },
     {
@@ -217,7 +217,7 @@
     {
       "number": 15,
       "type": "choice",
-      "stem": "由刑案現場採取之不同編號生物跡證,經以即時聚合酶連鎖反應(Real-TimePCR)檢測人類DNA 含量,檢測結果以檢量線Ct 值(Cycle Threshold Value)換算人類DNA濃度。檢測結果:編號 1 Ct 值為26.58,編號2 Ct 值為28.21,編號3 Ct 值為22.27,編號4 Ct 值為22.75,請問所測人 類DNA濃度由高至低依序排列編號為何?",
+      "stem": "由刑案現場採取之不同編號生物跡證,經以即時聚合酶連鎖反應(Real-Time PCR)檢測人類DNA 含量,檢測結果以檢量線Ct 值(Cycle Threshold Value)換算人類DNA濃度。檢測結果:編號 1 Ct 值為26.58,編號2 Ct 值為28.21,編號3 Ct 值為22.27,編號4 Ct 值為22.75,請問所測人 類DNA濃度由高至低依序排列編號為何?",
       "section": "乙、測驗題",
       "answer": "B",
       "options": {

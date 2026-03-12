@@ -41,7 +41,7 @@
     {
       "number": 1,
       "type": "choice",
-      "stem": "依據「國家關鍵基礎設施安全防護指導綱要」,其國家關鍵基礎設施安全防護(Critical InfrastructureProtection,CIP)的目標在於:",
+      "stem": "依據「國家關鍵基礎設施安全防護指導綱要」,其國家關鍵基礎設施安全防護(Critical Infrastructure Protection,CIP)的目標在於:",
       "section": "乙、測驗題",
       "options": {
         "A": "維護國家重要功能持續運作,以全災害為安全防護,因應各類災害所造成的衝擊",

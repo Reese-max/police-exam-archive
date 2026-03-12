@@ -261,7 +261,7 @@
     {
       "number": 20,
       "type": "choice",
-      "stem": "中華電信的IP分為行動上網(中華電信emome)及居家寬頻光纖網路(中華電信HiNet)兩種形式, 而HiNet所屬的 IP 網段是可以在投單系統中查調,但中華行動上網 emome所屬的 IP 網段必須發文 向中華電信查詢,下列何者非屬該IP之查詢依據?",
+      "stem": "中華電信的IP分為行動上網(中華電信emome)及居家寬頻光纖網路(中華電信Hi Net)兩種形式, 而Hi Net所屬的 IP 網段是可以在投單系統中查調,但中華行動上網 emome所屬的 IP 網段必須發文 向中華電信查詢,下列何者非屬該IP之查詢依據?",
       "section": null,
       "answer": "D",
       "options": {

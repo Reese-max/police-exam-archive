@@ -261,8 +261,8 @@
       "answer": "A",
       "options": {
         "A": "實體擷取(Physical Acquisition)",
-        "B": "備份檔案擷取(BackupfileAcquisition)",
-        "C": "翻拍擷取(PhotoAcquisition)",
+        "B": "備份檔案擷取(Backupfile Acquisition)",
+        "C": "翻拍擷取(Photo Acquisition)",
         "D": "邏輯擷取(Logical Acquisition)"
       }
     },

@@ -793,30 +793,30 @@
     {
       "number": 59,
       "type": "choice",
-      "stem": "According to the passage, which of the following is NOT true? NYPD was established more than 170 years ago. Local control was a political necessity in the middle of 19th century. Since the residency requirement was enforced, two-thirds to three-fourths of the police lived in the ward in which they worked. The cost of transportation was one of the reasons why the police would like to live near their workplace.",
+      "stem": "According to the passage, which of the following is NOT true? (A)NYPD was established more than 170 years ago. (B)Local control was a political necessity in the middle of 19th century. (C)Since the residency requirement was enforced, two-thirds to three-fourths of the police lived in the ward in which they worked. (D)The cost of transportation was one of the reasons why the police would like to live near their workplace.",
       "section": "乙、測驗題",
       "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than outsiders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical considerations dictated living near the workplace since mass transit was limited and expensive.",
       "subtype": "reading_comprehension",
       "options": {
-        "A": "affect",
-        "B": "alarm",
-        "C": "attack",
-        "D": "effect"
+        "A": "(A)affect",
+        "B": "(B)alarm",
+        "C": "(C)attack",
+        "D": "(D)effect"
       },
       "answer": "C"
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "According to the passage, what is the most likely percentage of the NYPD officers living in the precinct they worked in the second half of the 19th century? 3/4 1/4 3/5 4/5",
+      "stem": "According to the passage, what is the most likely percentage of the NYPD officers living in the precinct they worked in the second half of the 19th century? (A)3/4 (B)1/4 (C)3/5 (D)4/5",
       "section": "乙、測驗題",
       "passage": "請依下文回答第58題至第60題: When the New York Police Department (NYPD) was established in 1845, Mayor Isaac Varian expressed the hope that the city’s peace officers would be “but a part of the citizens” rather than outsiders. To that end, each ward had its own police station, while policemen were required to live in the precinct. Local control was a political necessity of the time, but with the department established, localism began a long decline. The residency requirement was never strictly enforced, but at first, two-thirds to three-fourths of the police lived in the ward in which they worked. After the requirement was abolished in 1857, the number of local residents dropped to less than half. Regardless of the rules, practical considerations dictated living near the workplace since mass transit was limited and expensive.",
       "subtype": "reading_comprehension",
       "options": {
-        "A": "multi-dimension",
-        "B": "multi-color",
-        "C": "multi-purpose",
-        "D": "multi-discipline"
+        "A": "(A)multi-dimension",
+        "B": "(B)multi-color",
+        "C": "(C)multi-purpose",
+        "D": "(D)multi-discipline"
       },
       "answer": "B"
     }

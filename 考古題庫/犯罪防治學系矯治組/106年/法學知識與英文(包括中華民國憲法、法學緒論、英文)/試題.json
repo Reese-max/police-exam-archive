@@ -599,65 +599,65 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "What is the purpose of this passage? To explain the increasing rate of volcanic activities. To explain some facts about volcanoes. To describe the causes of volcanic eruptions. To analyze the threats of volcanic eruptions.",
+      "stem": "What is the purpose of this passage? (A)To explain the increasing rate of volcanic activities. (B)To explain some facts about volcanoes. (C)To describe the causes of volcanic eruptions. (D)To analyze the threats of volcanic eruptions.",
       "section": "乙、測驗題",
       "options": {
-        "A": "flexible",
-        "B": "critical",
-        "C": "abstract",
-        "D": "available"
+        "A": "(A)flexible",
+        "B": "(B)critical",
+        "C": "(C)abstract",
+        "D": "(D)available"
       },
       "answer": "B"
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "Which of the following statements is true about volcanic activities in Paragraph Two? They have been on the increase over the years. They are no more frequent than they used to be. They increase as the human population becomes larger. They are more frequently observed as a result of increased population.",
+      "stem": "Which of the following statements is true about volcanic activities in Paragraph Two? (A)They have been on the increase over the years. (B)They are no more frequent than they used to be. (C)They increase as the human population becomes larger. (D)They are more frequently observed as a result of increased population.",
       "section": "乙、測驗題",
       "options": {
-        "A": "collapsed",
-        "B": "floated",
-        "C": "prevented",
-        "D": "terrified"
+        "A": "(A)collapsed",
+        "B": "(B)floated",
+        "C": "(C)prevented",
+        "D": "(D)terrified"
       },
       "answer": "C"
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "In Paragraph Four, what does one refer to? A wet cloth. A volcanic eruption. An emergency mask. A long-sleeved shirt.",
+      "stem": "In Paragraph Four, what does one refer to? (A)A wet cloth. (B)A volcanic eruption. (C)An emergency mask. (D)A long-sleeved shirt.",
       "section": "乙、測驗題",
       "options": {
-        "A": "submerged",
-        "B": "diverged",
-        "C": "hesitated",
-        "D": "abolished"
+        "A": "(A)submerged",
+        "B": "(B)diverged",
+        "C": "(C)hesitated",
+        "D": "(D)abolished"
       },
       "answer": "D"
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "According to the passage, what is the right thing to do when being caught near a volcanic eruption? Drive to low-lying regions right away. Walk along river areas as soon as possible. Wear short-sleeved shirts before leaving the house. Close all the windows and doors when staying indoors.",
+      "stem": "According to the passage, what is the right thing to do when being caught near a volcanic eruption? (A)Drive to low-lying regions right away. (B)Walk along river areas as soon as possible. (C)Wear short-sleeved shirts before leaving the house. (D)Close all the windows and doors when staying indoors.",
       "section": "乙、測驗題",
       "options": {
-        "A": "affectionate",
-        "B": "diligent",
-        "C": "suspicious",
-        "D": "intelligent"
+        "A": "(A)affectionate",
+        "B": "(B)diligent",
+        "C": "(C)suspicious",
+        "D": "(D)intelligent"
       },
       "answer": "B"
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "According to the passage, which of the following is true? Volcanic eruptions can last as long as thirty years. Most volcanic eruptions last no longer than three months. Ojos del Salado in South America is the highest volcano on the surface of the earth. It has been proved by scientists that volcanoes have become more active than ever.",
+      "stem": "According to the passage, which of the following is true? (A)Volcanic eruptions can last as long as thirty years. (B)Most volcanic eruptions last no longer than three months. (C)Ojos del Salado in South America is the highest volcano on the surface of the earth. (D)It has been proved by scientists that volcanoes have become more active than ever.",
       "section": "乙、測驗題",
       "options": {
-        "A": "cripples",
-        "B": "debris",
-        "C": "councils",
-        "D": "destinations"
+        "A": "(A)cripples",
+        "B": "(B)debris",
+        "C": "(C)councils",
+        "D": "(D)destinations"
       },
       "answer": "B"
     }
