@@ -603,10 +603,10 @@
       "stem": "Whatisthemainideaofthispassage? (A)Allowingrefugeestoworkcanbringbenefits. (B)Barringrefugeesfromworkingboostseconomy. (C)The Ugandanapproachtorefugeesprovesproblematic. (D)Ugandanshostrefugeestoreceiveforeignaid.",
       "section": "乙、測驗題",
       "options": {
-        "A": "(A)Allowingrefugeestoworkcanbringbenefits.",
-        "B": "(B)Barringrefugeesfromworkingboostseconomy.",
-        "C": "(C)The Ugandanapproachtorefugeesprovesproblematic.",
-        "D": "(D)Ugandanshostrefugeestoreceiveforeignaid."
+        "A": "Allowingrefugeestoworkcanbringbenefits.",
+        "B": "Barringrefugeesfromworkingboostseconomy.",
+        "C": "The Ugandanapproachtorefugeesprovesproblematic.",
+        "D": "Ugandanshostrefugeestoreceiveforeignaid."
       },
       "answer": "A"
     },
@@ -616,10 +616,10 @@
       "stem": "Whydomanygovernmentsbarrefugeesfromworkingintheformaleconomy? (A)Refugeeswouldrathertakeoddjobsinabarthanformaljobs. (B)Thegovernmentsintendtopreservejobsforthelocalnatives. (C)Theresearchshowsthatimmigrantsrarelytakenativeworkers’jobs. (D)Theresearchshowsthatrefugeeshaveincreasedconsumptionperhousehold.",
       "section": "乙、測驗題",
       "options": {
-        "A": "(A)Refugeeswouldrathertakeoddjobsinabarthanformaljobs.",
-        "B": "(B)Thegovernmentsintendtopreservejobsforthelocalnatives.",
-        "C": "(C)Theresearchshowsthatimmigrantsrarelytakenativeworkers’jobs.",
-        "D": "(D)Theresearchshowsthatrefugeeshaveincreasedconsumptionperhousehold."
+        "A": "Refugeeswouldrathertakeoddjobsinabarthanformaljobs.",
+        "B": "Thegovernmentsintendtopreservejobsforthelocalnatives.",
+        "C": "Theresearchshowsthatimmigrantsrarelytakenativeworkers’jobs.",
+        "D": "Theresearchshowsthatrefugeeshaveincreasedconsumptionperhousehold."
       },
       "answer": "B"
     },
@@ -629,10 +629,10 @@
       "stem": "Whichofthefollowingwordsisclosestinmeaningto“spillover”? (A)Dividend. (B)Magnet. (C)Presence. (D)Excess.",
       "section": "乙、測驗題",
       "options": {
-        "A": "(A)Dividend.",
-        "B": "(B)Magnet.",
-        "C": "(C)Presence.",
-        "D": "(D)Excess."
+        "A": "Dividend.",
+        "B": "Magnet.",
+        "C": "Presence.",
+        "D": "Excess."
       },
       "answer": "D"
     },
@@ -642,10 +642,10 @@
       "stem": "Whatistheimplicationofthestatement,“such attitudes are still the exception”? (A)Themajorityofrefugeesprefertoresideinrichcountries. (B)Themajorityofgovernmentsgiverefugeeslandplots. (C)Themajorityofpeopleconsiderrefugeestobeaburden. (D)Themajorityoflocalbusinessesseerefugeesasabenefit.",
       "section": "乙、測驗題",
       "options": {
-        "A": "(A)Themajorityofrefugeesprefertoresideinrichcountries.",
-        "B": "(B)Themajorityofgovernmentsgiverefugeeslandplots.",
-        "C": "(C)Themajorityofpeopleconsiderrefugeestobeaburden.",
-        "D": "(D)Themajorityoflocalbusinessesseerefugeesasabenefit."
+        "A": "Themajorityofrefugeesprefertoresideinrichcountries.",
+        "B": "Themajorityofgovernmentsgiverefugeeslandplots.",
+        "C": "Themajorityofpeopleconsiderrefugeestobeaburden.",
+        "D": "Themajorityoflocalbusinessesseerefugeesasabenefit."
       },
       "answer": "C"
     },
@@ -655,10 +655,10 @@
       "stem": "Whichofthefollowingstatementsistrue? (A)Ugandanswelcomedrefugeesbecausethecentralgovernmentpromisednewschools,clinics and a decent road. (B)Mostrefugeesstayedinpoorcountriesinordertoboostlocalbusinessesandactasamagnetforforeignaid. (C)Astudyfoundthatthepresenceofrefugeesin Ugandahaddecreasedconsumptionperhousehold. (D)Eachnewrefugeehouseholdboostedtotalincomemorethanthecostoftheaidthehouseholdwasgiven.",
       "section": "乙、測驗題",
       "options": {
-        "A": "(A)Ugandanswelcomedrefugeesbecausethecentralgovernmentpromisednewschools,clinics and a decent road.",
-        "B": "(B)Mostrefugeesstayedinpoorcountriesinordertoboostlocalbusinessesandactasamagnetforforeignaid.",
-        "C": "(C)Astudyfoundthatthepresenceofrefugeesin Ugandahaddecreasedconsumptionperhousehold.",
-        "D": "(D)Eachnewrefugeehouseholdboostedtotalincomemorethanthecostoftheaidthehouseholdwasgiven."
+        "A": "Ugandanswelcomedrefugeesbecausethecentralgovernmentpromisednewschools,clinics and a decent road.",
+        "B": "Mostrefugeesstayedinpoorcountriesinordertoboostlocalbusinessesandactasamagnetforforeignaid.",
+        "C": "Astudyfoundthatthepresenceofrefugeesin Ugandahaddecreasedconsumptionperhousehold.",
+        "D": "Eachnewrefugeehouseholdboostedtotalincomemorethanthecostoftheaidthehouseholdwasgiven."
       },
       "answer": "D"
     }

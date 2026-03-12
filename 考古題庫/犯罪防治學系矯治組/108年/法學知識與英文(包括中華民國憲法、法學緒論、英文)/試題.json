@@ -627,10 +627,10 @@
       "passage": "請依下文回答第46題至第50題: One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise froma timekeeping systemwithin the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night,there by ensuring that the organism will“do therightthing”at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. Themechanismsunderlyingthebiologicaltimekeepingsystemsandthepotentialconsequencesoftheirfailureare among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the sametime.",
       "subtype": "reading_comprehension",
       "options": {
-        "A": "(A)Included",
-        "B": "(B)Reduced",
-        "C": "(C)Downsized",
-        "D": "(D)Underestimated"
+        "A": "Included",
+        "B": "Reduced",
+        "C": "Downsized",
+        "D": "Underestimated"
       },
       "answer": "C"
     },
@@ -642,10 +642,10 @@
       "passage": "請依下文回答第46題至第50題: One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise froma timekeeping systemwithin the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night,there by ensuring that the organism will“do therightthing”at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. Themechanismsunderlyingthebiologicaltimekeepingsystemsandthepotentialconsequencesoftheirfailureare among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the sametime.",
       "subtype": "reading_comprehension",
       "options": {
-        "A": "(A)Dailyleafmovementsofaplantexposedtosunlight.",
-        "B": "(B)Nocturnalanimalshavingasoundsleepduringdaylight.",
-        "C": "(C)Peopleexperiencingdifficultyfallingasleepatnight.",
-        "D": "(D)Peoplefeelingshockedwhenwitnessingacaraccidentinthedaytime."
+        "A": "Dailyleafmovementsofaplantexposedtosunlight.",
+        "B": "Nocturnalanimalshavingasoundsleepduringdaylight.",
+        "C": "Peopleexperiencingdifficultyfallingasleepatnight.",
+        "D": "Peoplefeelingshockedwhenwitnessingacaraccidentinthedaytime."
       },
       "answer": "A"
     },
@@ -672,10 +672,10 @@
       "passage": "請依下文回答第46題至第50題: One of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise froma timekeeping systemwithin the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night,there by ensuring that the organism will“do therightthing”at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. Themechanismsunderlyingthebiologicaltimekeepingsystemsandthepotentialconsequencesoftheirfailureare among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the sametime.",
       "subtype": "reading_comprehension",
       "options": {
-        "A": "(A)Chronobiologybeganwiththestudiesoncircadianrhythminfruitfliesandhumans.",
-        "B": "(B)Allspeciessimplyrespondtothecycleofdayandnight.",
-        "C": "(C)Allspecieshaveaninternalclockthatiscrucialfortheirsurvival.",
-        "D": "(D)Jetlagisafailureofabiologicaltimekeepingmechanism."
+        "A": "Chronobiologybeganwiththestudiesoncircadianrhythminfruitfliesandhumans.",
+        "B": "Allspeciessimplyrespondtothecycleofdayandnight.",
+        "C": "Allspecieshaveaninternalclockthatiscrucialfortheirsurvival.",
+        "D": "Jetlagisafailureofabiologicaltimekeepingmechanism."
       },
       "answer": "D"
     }
