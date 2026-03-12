@@ -81,3 +81,4 @@ _tmp_*.py
 experiments.log
 .autoresearch_checkpoint.json
 .autoresearch_memory.json
+exam.db

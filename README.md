@@ -131,6 +131,46 @@
 2. 移民組 111 年入出國法規 Q7 選項 B 與 D 內容相同，為原卷出題瑕疵（已加 `_note` 說明）
 3. 同年同等級共用考卷（國文、英文等）會在多個學系資料夾中重複出現
 
+## 查詢工具
+
+內建 SQLite 索引查詢 API，支援命令列和 Python 兩種方式。
+
+```bash
+# 建立索引（首次使用）
+python examdb.py build
+
+# 關鍵字搜尋
+python examdb.py query --keyword "基本權" --year 112
+
+# 按科目查詢
+python examdb.py query --subject "憲法" --category "行政警察"
+
+# 隨機抽題練習
+python examdb.py random --count 5 --subject "刑法"
+
+# 統計摘要
+python examdb.py stats
+```
+
+```python
+# Python API
+from examdb import ExamDB
+
+with ExamDB() as db:
+    results = db.search(year=112, keyword="基本權", limit=10)
+    stats = db.stats()
+    random_qs = db.random(n=5, subject="憲法")
+```
+
+查詢速度：~40ms/次（41,811 題全文搜尋）。
+
+## 驗證
+
+```bash
+# 執行 18 項自動化品質測試
+python -m pytest tests/ -v
+```
+
 ## 資料來源
 
 所有題目與答案來自[考選部全球資訊網](https://wwwq.moex.gov.tw/exam/)公開的考試題目及測驗式試題答案 PDF。
