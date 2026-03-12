@@ -139,6 +139,49 @@ def fix_f2_copy_112_113_choice():
     print(f'F2: 修復 {fixed} 個檔案（{fixed * 10} 題）')
     return fixed
 
+def fix_f3_english_mistyped():
+    """F3: 修正 108年外國文 essay→choice + 嘗試從 stem 解析 options"""
+    f = glob.glob(f'{BASE}/公共安全學系情報組/108年/外國文*英文*/試題.json')
+    if not f:
+        print('F3: 找不到 108年外國文檔案')
+        return 0
+
+    filepath = f[0]
+    data = load_json(filepath)
+    backup_file(filepath)
+
+    option_pattern = re.compile(
+        r'[\(（]([A-Da-d])[\)）]\s*(.+?)(?=[\(（][A-Da-d][\)）]|$)',
+        re.DOTALL
+    )
+
+    fixed = 0
+    for q in data['questions']:
+        num = q['number']
+        # Q1-Q40 (int) should be choice, not essay
+        if isinstance(num, int) and 1 <= num <= 40 and q['type'] == 'essay':
+            q['type'] = 'choice'
+
+            # 嘗試從 stem 中提取 options
+            stem = q.get('stem', '')
+            matches = option_pattern.findall(stem)
+            if len(matches) >= 4:
+                q['options'] = {}
+                # 找到第一個選項位置來分離 stem
+                for marker in ['(A)', '（A）']:
+                    pos = stem.find(marker)
+                    if pos > 0:
+                        q['stem'] = stem[:pos].strip()
+                        break
+                for letter, text in matches[:4]:
+                    q['options'][letter.upper()] = text.strip()
+
+            fixed += 1
+
+    save_json(filepath, data)
+    print(f'F3: 修正 {fixed} 題 essay→choice')
+    return fixed
+
 if __name__ == '__main__':
     os.makedirs(BACKUP_DIR, exist_ok=True)
     print(f'備份目錄: {BACKUP_DIR}')
@@ -146,3 +189,4 @@ if __name__ == '__main__':
     fix_f4_empty_stems()
     fix_f1_copy_chinese_choice()
     fix_f2_copy_112_113_choice()
+    fix_f3_english_mistyped()
