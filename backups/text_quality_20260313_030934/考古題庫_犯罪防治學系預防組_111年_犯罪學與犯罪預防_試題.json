@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "exam_type": "111",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "犯罪學與犯罪預防",
+    "exam_time": "2 小時",
+    "code": "50560"
+  },
+  "notes": [
+    "※注意：①禁止使用電子計算器。",
+    "②不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "③本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "請說明有那些測量犯罪的資料來源經常被用來呈現與比較國際間犯罪\n狀況?以及這些資料來源的優點及限制為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "請說明 Sykes and Matza(1957)提出的中立化技巧(techniques of\nneutralization)是什麼?提出的主要原因?其次,舉例說明五種中立化技\n巧的內涵?最後,中立化技巧對犯罪學的貢獻及其受到的批評為何?\n(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "學者克勞渥和奧林(Cloward and Ohlin)在 1960 年代提出的差別機會理\n論(differential opportunitytheory)結合了墨頓的緊張理論和蘇哲蘭的差\n別接觸理論,指出個人可以使用非法機會獲取資源的機會也因人而異,\n因而產生了不同的副文化。請說明何謂差別機會理論?並舉例說明、比\n較他們所提出的犯罪副文化(criminalsubculture)、衝突副文化(conflict\nsubculture)以及退化副文化(retreatistsubculture)的形成區域特徵,及\n青少年在其中較可能從事那些犯罪行為?(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "全球的趨勢似乎是將酒後駕車犯罪化,且加重對於酒後駕駛以及因而肇\n事者的處罰,我國也在 1999 年將酒後不能安全駕駛罪納入公共危險罪\n章規範。首先,請分別從無被害者犯罪(Victimless Crime)以及問題行\n為症候群(Problem Behavior Syndrome)等概念探討與剖析酒後駕駛(無\n肇事)行為。其次,請從嚇阻理論的觀點討論及列舉嚴格的立法與執法\n可能奏效的原因及其副作用。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 111,
+  "category": "犯罪防治學系預防組",
+  "subject": "犯罪學與犯罪預防",
+  "source_pdf": "考古題庫\\犯罪防治學系預防組\\111年\\犯罪學與犯罪預防\\試題.pdf",
+  "file_type": "試題"
+}

@@ -1,0 +1,825 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "中華民國憲法與警察專業英文",
+    "exam_time": "2 小時",
+    "code": "50120"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "①不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "②請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "①本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "②共60題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "英文作文:(25 分)\n近年來,詐騙(scam)集團日益猖獗,針對此現象,請寫一篇長約 200\n字的英文短文,首先在第一段中,說明詐騙常見的型態,其次在第二\n段中,教導民眾如何預防詐騙。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "立法委員於審議經濟部之年度預算時,提議將某預算科目的一定比例移至其他科目,但預算 總額並未增加。依憲法及司法院大法官解釋,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "立法委員本來即有審議預算的權力,故其提議並未牴觸憲法",
+        "B": "立法委員之預算變動有實質正當理由,其變動即屬合憲",
+        "C": "預算總額於移動後並無增加,即無增加政府支出,故非憲法所不許",
+        "D": "預算總額雖未增加,但就被移動而增加或追加之原預算項目而言,亦屬增加支出之提議, 而與憲法不符"
+      }
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關人民義務之規定,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "行政機關得依憲法規定逕命人民履行該義務",
+        "B": "除憲法明定者外,國家不得課予人民其他義務",
+        "C": "就人民義務之具體內容,立法者有形成自由",
+        "D": "人民義務不適用憲法第23條之規定"
+      }
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關總統之國家機密特權,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "總統就國家機密事項於刑事訴訟程序,應享有拒絕證言權",
+        "B": "總統有拒絕提交相關證物之權",
+        "C": "就涉及總統國家機密特權範圍內之國家機密事項之訊問,是否妨害國家之利益,應由總統 證明之",
+        "D": "檢察官若以總統所提交相關證物作為終結偵查之處分,有造成國家安全危險之合理顧慮 者,應認有妨害國家利益之虞"
+      }
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "下列何者享有憲法上之主權?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "花蓮縣",
+        "B": "臺北市",
+        "C": "臺北市政府",
+        "D": "中華民國"
+      }
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依現行憲法規定,憲法修正案應由下列何機關提出?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "修憲國民大會",
+        "B": "總統",
+        "C": "行政院",
+        "D": "立法院"
+      }
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "依司法院釋字第798號解釋,財政部以令函限制同一法人於同一行政區域內之分支機構所有 車輛,以3輛為限,始免徵使用牌照稅,係違反下列何者而違憲?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "憲法第7條之平等權",
+        "B": "憲法第23條之比例原則",
+        "C": "憲法第19條之租稅法律主義",
+        "D": "憲法第19條之實質課稅原則"
+      }
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "有關憲法上之條約,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "指中華民國與其他國家或國際組織所締結之國際書面協定",
+        "B": "經法律授權之國際書面協定,不必送立法院審議",
+        "C": "公約或協定而附有批准條款者,不必送立法院審議",
+        "D": "國際書面協定,如其内容與國内法律相同者,不必送立法院審議"
+      }
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "有關憲法教育文化之基本國策規定,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "國家得制定出版法,針對公私立文化機構之出版品內容實施檢查,並對有礙於國民身心道 德健康發展之出版品,禁止其出版",
+        "B": "依憲法第164條規定,市、縣政府所編列之教、科、文經費,均不得低於其預算總額百分 之二十五",
+        "C": "國家得制定學位授予法規範私立大學所授予之各種學位,並不至於因此侵害私人興學之自由",
+        "D": "國家應對6歲至15歲之學齡兒童提供免納學費之基本教育"
+      }
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "法律規定對性侵害犯罪者施以強制治療,限制人身自由。依司法院大法官解釋意旨,應採何 種標準審查此一法律是否符合比例原則?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "輕度審查標準",
+        "B": "中度審查標準",
+        "C": "嚴格審查標準",
+        "D": "釋憲實務對此尚無明確見解"
+      }
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "有關非現役軍人不受軍事審判之規定,係為保障下列何基本權?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "言論自由",
+        "B": "居住自由",
+        "C": "遷徙自由",
+        "D": "人身自由"
+      }
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依司法院釋字第509號解釋意旨,關於誹謗性言論,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "不受憲法言論自由之保障",
+        "B": "行為人必須自行證明其言論內容確屬真實,始能免於刑責",
+        "C": "依行為人所提證據資料,認為其有相當理由確信言論內容為真實者,即不構成誹謗罪",
+        "D": "行為人言論內容如經法院調查發現並非真實,即構成誹謗罪"
+      }
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,關於大學自治,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "大學自治為憲法第11條講學自由之保障範圍",
+        "B": "大學對於教學、研究與學習之事項,享有自治權",
+        "C": "大學自治事項範圍包括內部組織、課程設計、考試規則、畢業條件及入學資格",
+        "D": "國家對於大學之監督,應以法律為之,為健全學生體格,得規定大學應設體育室"
+      }
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "下列何種基本權利與秘密通訊自由最具有密不可分之關係?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "平等權",
+        "B": "財產權",
+        "C": "隱私權",
+        "D": "參政權"
+      }
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,下列何者並未牴觸憲法第13條宗教自由之保障?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "法律規定某特定宗教為國教",
+        "B": "法律規定人民不得因宗教信仰而拒服兵役",
+        "C": "法律規定信仰某特定宗教之人民得享有減稅優惠",
+        "D": "法律規定不信仰某特定宗教之人民得領取生活津貼"
+      }
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "關於憲法第7條男女平等,司法院大法官曾作過的違憲宣告解釋,不包括下列何者?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "舊民法第 1089 條關於父母對於未成年子女權利之行使意思不一致時,由父行使之規定部 分,違憲",
+        "B": "舊民法第1002條「妻以夫之住所為住所」之規定,違憲",
+        "C": "民法夫妻財產制修正後對修正前已發生之夫妻聯合財產,規定仍由夫繼續享有之部分,違憲",
+        "D": "陸軍官校基於其歷史傳統而以性別為錄取學生之標準,違憲"
+      }
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "地價稅法關於免徵土地增值稅之規定,僅就依都市計畫法指定之公共設施保留地免徵其土地 增值稅,而非都市土地經編定為交通用地且依法核定為公共用地者,則不予免徵。司法院大 法官解釋認定上開規定違反平等權之理由為:",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "此差別待遇之手段與立法目的之達成間欠缺合理關聯性",
+        "B": "此差別待遇未符合比例原則",
+        "C": "以與事物本質無關之要素,作為差別待遇之基準",
+        "D": "未將與事物本質有關聯之要素,列為差別待遇之基準"
+      }
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關憲法第15條之生存權,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "憲法第15條之生存權保障範圍包含生命權",
+        "B": "大法官解釋曾認墮胎罪違憲",
+        "C": "生存權之主要目的在保障國民之最低生活水準",
+        "D": "大法官解釋曾認死刑合憲"
+      }
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "憲法本文有關憲法基本權利之規定 ,下列何者之規定內容最為具體?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "憲法第14條之集會、結社自由",
+        "B": "憲法第11條之言論、講學、著作及出版自由",
+        "C": "憲法第8條之人身自由",
+        "D": "憲法第7條之平等權"
+      }
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "下列有關訴訟權之敘述,何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "憲法保障人民訴訟權,係指人民於其權利或法律上利益遭受侵害時,有請求法院救濟之權利",
+        "B": "此乃基於有權利即有救濟之憲法原理",
+        "C": "訴訟權之具體內容,應由立法機關制定法院組織與訴訟程序有關之法律,始得實現",
+        "D": "立法機關得因身分之不同,而予以限制,不受憲法第23條之拘束"
+      }
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,關於國家賠償之憲法保障內涵,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "如果沒有法律規定,人民尚不得依照憲法第24條,直接行使國家賠償請求權",
+        "B": "就公務員怠於執行職務之國家賠償責任,不以人民應先請求公務員執行而怠於執行為必要",
+        "C": "就公務員執行職務之國家賠償責任,立法者對於是否採無過失責任享有立法形成自由",
+        "D": "法律規範目的如有保障人民生命、身體及財產等法益之意旨時,即可直接認定被害人得向 國家請求損害賠償"
+      }
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "受國民教育以外教育之權利,係下列何憲法條文之保障範圍?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "第21條受國民教育之權利",
+        "B": "第22條之其他自由或權利",
+        "C": "第159條國民受教育之機會平等",
+        "D": "第163條國家應注重各地區教育之均衡發展"
+      }
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "關於基本權利之第三人效力,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "意指國家不得干預人民間的契約自由,以保障私法自治",
+        "B": "意指基本權利拘束行政、立法、司法各部門",
+        "C": "意指透過解釋私法上的一般條款與不確定法律概念,使基本權利得直接適用於私人關係",
+        "D": "有直接適用、間接適用和無拘束力等不同見解"
+      }
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "某國營事業的工廠排放工業廢氣及廢水,導致居民因惡性腫瘤的死亡率明顯高於全國平均值 。下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "基本權不僅拘束國家公權力行為,也拘束行政私法行為",
+        "B": "國營事業的工廠排放廢水及廢氣,屬於公權力行為",
+        "C": "國營事業並非政府,故人民無法主張生存權受到侵害",
+        "D": "健康權非我國憲法所明文保障,故人民無法主張健康權受到侵害"
+      }
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "依司法院釋字第688號解釋,立法者於制定法律時,創設一具有體系規範意義之法律原則時 ,除有基於重大公益之考量外,應受其原則拘束以維持法律體系之一貫性,是為體系之正義 。其後立法有違背此體系正義時,係違反下列何原則?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "比例原則",
+        "B": "平等原則",
+        "C": "信賴保護原則",
+        "D": "誠信原則"
+      }
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,公務人員依法銓敘取得之官等俸級,非經公務員懲戒機關依法定程序 之審議決定,不得降級或減俸,係對何種權利之保障?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "參政權",
+        "B": "應考試權",
+        "C": "訴訟權",
+        "D": "服公職權"
+      }
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "下列何者屬於自然人能夠享有,法人不能享有的權利?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "居住遷徙自由",
+        "B": "工作之自由",
+        "C": "參政權",
+        "D": "集會結社自由"
+      }
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "關於總統、副總統之缺位或不能視事,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "總統缺位時,由副總統繼任,至總統任期屆滿為止",
+        "B": "副總統缺位時,總統應於3個月內提名候選人,由立法院補選,繼任至原任期屆滿為止",
+        "C": "總統、副總統均缺位時,由行政院院長代行其職權,至原任期屆滿為止",
+        "D": "總統、副總統均不能視事時,由行政院院長代行其職權"
+      }
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "依憲法增修條文第2條第5項關於解散立法院之規定,總統於立法院通過對於行政院院長之 不信任案後10日內,經諮詢何人後,得宣告解散立法院?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "行政院院長",
+        "B": "立法院院長",
+        "C": "司法院院長",
+        "D": "監察院院長"
+      }
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "關於憲法本文及增修條文有關行政院院長之產生規定,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "憲法本文中規定行政院院長由總統提名,經立法院同意任命之",
+        "B": "憲法增修條文規定行政院院長由總統任命之",
+        "C": "憲法增修條文規定行政院院長辭職時,在總統尚未任命行政院院長前,由總統暫行代理",
+        "D": "憲法本文規定立法院休會期間,行政院院長辭職,應由行政院副院長代理其職務"
+      }
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,關於行政院行使憲法覆議權之要件及程序,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "立法院決議變更行政院重要政策時,行政院得移請覆議",
+        "B": "須經總統之核可",
+        "C": "須於立法院決議案送達行政院10日內為之",
+        "D": "立法院於開議期間,對於行政院移請覆議案,應於送達15日內作成決議"
+      }
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,關於立法院調查權,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "立法院之調查權為立法院行使憲法職權所必要之輔助性權力,與監察權之調查權各有不同 依據",
+        "B": "立法院於行使其調查權時,得要求與調查事項相關之人民陳述證言或表示意見",
+        "C": "立法院於例外特殊情形,得制定特別法委任相關專業人士協助其行使調查權",
+        "D": "立法院為行使調查權,得強制行政部門提供涉及國家安全之機密文件"
+      }
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "依據憲法增修條文第4條之規定,立法委員的任期為何?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "2年",
+        "B": "3年",
+        "C": "4年",
+        "D": "6年"
+      }
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "2022年1月4日施行的憲法訴訟法,引進下列那一制度?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "職務法庭制度",
+        "B": "國民法官制度",
+        "C": "大法庭制度",
+        "D": "裁判憲法審查制度"
+      }
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "監察院於調查後,要求內政部就其違法部分應注意改善。此種職權之名稱為何?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "糾正",
+        "B": "糾舉",
+        "C": "糾察",
+        "D": "彈劾"
+      }
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "關於憲法第81條所定法官之身分保障,下列敘述何者錯誤?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "司法院大法官為法官,亦適用憲法第81條及有關法官終身職待遇之規定",
+        "B": "法官非依法律,不得停職、轉任或減俸",
+        "C": "法官非受刑事或懲戒處分,或禁治產之宣告,不得免職",
+        "D": "法官為終身職"
+      }
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,司法院設大法官幾人、任期多少年、得否連任?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "共9人、終身職、不得連任",
+        "B": "共15人、任期8年、不得連任",
+        "C": "共17人、任期9年、得連任",
+        "D": "共11人、任期8年、得連任"
+      }
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "憲法法庭如擬將與聲請解釋標的有關,但非聲請範圍之法令納入審查,通常會援引下列何種 理論或原則?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "不告不理原則",
+        "B": "重要關聯性理論",
+        "C": "重要因果關係理論",
+        "D": "無漏洞權利救濟原則"
+      }
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "依憲法訴訟法規定,下列何者屬於憲法法庭之審理事項?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "中央機關關於適用憲法發生疑義之事項",
+        "B": "人民認確定終局裁判及其所適用之法律或命令有牴觸憲法之事項",
+        "C": "關於省自治法、省法規有無牴觸憲法之事項",
+        "D": "國家最高機關聲請宣告其所受不利確定終決裁判違憲"
+      }
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "關於中央與地方間之垂直權力分立,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "直轄市政府辦理自治事項違背憲法、法律或中央法規者,由內政部予以撤銷、變更、廢止 或停止其執行",
+        "B": "如有憲法未列舉事項發生,並有爭議時,由立法院解決之",
+        "C": "行政院對於地方公務員之銓敘、保障等事項,得進行監督",
+        "D": "縣自治條例發布後,應報行政院備查"
+      }
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "關於縣議會議長之選舉方式,依司法院大法官解釋,下列敘述何者正確?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "如採記名投票方式,違反秘密選舉原則而違憲",
+        "B": "各議會得本於議事自治原則,自行決定採記名或不記名投票",
+        "C": "人事案本應以不記名投票為之,記名投票違憲",
+        "D": "憲法129條適用於本憲法所規定之選舉,不包括地方議會議長之選舉"
+      }
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "Some officials were accused of _____ the stolen funds overseas before returning them to their country.",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "laundering",
+        "B": "lauding",
+        "C": "loaning",
+        "D": "longing"
+      }
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "Tom is fighting _____ to the U.K. to face trial on murder charges.",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "expedition",
+        "B": "extradition",
+        "C": "extraction",
+        "D": "exclusion"
+      }
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "According to the current law, you are entitled to a tax _____for each of your dependents.",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "exposition",
+        "B": "extension",
+        "C": "excursion",
+        "D": "exemption"
+      }
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "Jennifer was charged for committing credit card _____ because she had secretly made several transactions by using many people's card accounts.",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "fraught",
+        "B": "freight",
+        "C": "fraud",
+        "D": "fraction"
+      }
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "The April 3 earthquake in Taiwan was a _____ event for Ms. Wang because she lost her only son during this big disaster. Overwhelmed with great sadness, she often wept day and night whenever she was alone in her house.",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "traumatic",
+        "B": "terrestrial",
+        "C": "tremendous",
+        "D": "tenacious"
+      }
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "Much of Taiwan's dominance can be _____ to TSMC, the world's largest contract chip manufacturer that counts Apple and Nvidia its biggest clients.",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "apprehended",
+        "B": "appropriated",
+        "C": "assimilated",
+        "D": "attributed"
+      }
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "Nowadays the rapid development of AI has made it difficult for the police to detect and prevent cyber crimes because criminals usually use some AI techniques to _____ malicious URLs to trick users into clicking on those phishing links.",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "distinguish",
+        "B": "disguise",
+        "C": "deposit",
+        "D": "deprive"
+      }
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Having been charged with corruption, John is _____ to the court to reduce the sentence to a fine.",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "appealing",
+        "B": "alluding",
+        "C": "aspiring",
+        "D": "ascribing"
+      }
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Because of a previous________, the judge refused to grant David bail, so he had to spend Christmas in the jail this year.",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "convention",
+        "B": "conservation",
+        "C": "conviction",
+        "D": "convulsion"
+      }
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "With new technological means, _____ warfare sets agendas and spreads disinformation, to change people's perceptions and thus alter their self-identity. As a result, many people are unable to differentiate between legitimate and manipulated information.",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "collaborative",
+        "B": "cognitive",
+        "C": "contemplative",
+        "D": "conductive"
+      }
+    },
+    {
+      "number": 51,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "was usedto",
+        "B": "usedto",
+        "C": "had been usedto",
+        "D": "had usedto"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses. Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step. What 51 affect only those who could afford indulgence, now affects the world at large. The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore, once 55 tore cover, the ability to identify one's feeling sis vitally important."
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "for",
+        "B": "to",
+        "C": "at",
+        "D": "in"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses. Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step. What 51 affect only those who could afford indulgence, now affects the world at large. The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore, once 55 tore cover, the ability to identify one's feeling sis vitally important."
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "to",
+        "B": "of",
+        "C": "by",
+        "D": "in"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses. Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step. What 51 affect only those who could afford indulgence, now affects the world at large. The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore, once 55 tore cover, the ability to identify one's feeling sis vitally important."
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "surviving",
+        "B": "being survived",
+        "C": "for surviving",
+        "D": "tosurvive"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses. Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step. What 51 affect only those who could afford indulgence, now affects the world at large. The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore, once 55 tore cover, the ability to identify one's feeling sis vitally important."
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "decided",
+        "B": "decides",
+        "C": "deciding",
+        "D": "being decided"
+      },
+      "passage": "請依下文回答第51題至第55題 Add iction has become one of our society'smostpres sing problem sand most tragicillnesses. Every year, ittears away at the heart of million soffamilies and creeps close rto children'sdoor step. What 51 affect only those who could afford indulgence, now affects the world at large. The humans oulyearns 52 love and accept ance and the mind often thinks we need to alter ourselves in order to achieve that. Add iction 53 any nature is spiritual bank ruptcy. By and large, people who are add icted are very spiritual. The successful results of the Twelve Step Program, which is based on a connection to a Higher Power, prove just that. Sen sit ive people have a very difficult time 54 the heart break in our world. In the midst of all the confusion and injury, substance is used in order to numb feel ings. Therefore, once 55 tore cover, the ability to identify one's feeling sis vitally important."
+    },
+    {
+      "number": 56,
+      "type": "choice",
+      "stem": "What is the main challenge mentioned regarding the impact of artificial intelligence on the workforce?",
+      "section": "乙、測驗題",
+      "answer": "B",
+      "options": {
+        "A": "Loss of jobs to machines.",
+        "B": "Evolution of workforce responsibilities.",
+        "C": "Creation of new job opportunities.",
+        "D": "Uncertainty in the job market."
+      },
+      "passage": "請依下文回答第56題至第60題 Artificial intelligence will definitely cause our workforce to evolve. The alarmist headlines emphasize the loss of jobs to machines, but the real challenge is for humans to find their passion with new responsibilities that require their uniquely human abilities. According to Pw C,7 million existing jobs will be replaced by AI in the UK from 2017-2037, but 7.2 million jobs could be created. This uncertainty and the changes to how some will make a living could be challenging. The transformative impact of artificial intelligence on our society will have far-reaching economic, legal, political, and regulatory implications that we need to be discussing and preparing for. Determining who is at fault if an autonomous vehicle hurts a pedestrian or how to manage a global autonomous arms race are just a couple of examples of the challenges to be faced. Will machines become super-intelligent and will humans eventually lose control? While there is debate about how likely this scenario will be, we do know that there are always unforeseen consequences when new technology is introduced. Those unintended outcomes of artificial intelligence will likely challenge us all. Another issue is ensuring that AI doesn't become so proficient at doing the job it was designed to do that it crosses over ethical or legal boundaries. While the original intent and goal of the AI is to benefit humanity, if it chooses to go about achieving the desired goal in a destructive (yet efficient way) it would negatively impact society. The AI algorithms must be built to align with the overarching goals of humans. Artificial intelligence algorithms are powered by data. As more and more data is collected about every single minute of every person's day, our privacy gets compromised. If businesses and governments decide to make decisions based on the intelligence they gather about you like China is doing with its social credit system, it could evolve into social oppression."
+    },
+    {
+      "number": 57,
+      "type": "choice",
+      "stem": "According to Pw C, how many jobs in the UK are projected to be created by AI from 2017-2037?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "7.2 million",
+        "B": "7 million",
+        "C": "14.2 million",
+        "D": "0.2 million"
+      },
+      "passage": "請依下文回答第56題至第60題 Artificial intelligence will definitely cause our workforce to evolve. The alarmist headlines emphasize the loss of jobs to machines, but the real challenge is for humans to find their passion with new responsibilities that require their uniquely human abilities. According to Pw C,7 million existing jobs will be replaced by AI in the UK from 2017-2037, but 7.2 million jobs could be created. This uncertainty and the changes to how some will make a living could be challenging. The transformative impact of artificial intelligence on our society will have far-reaching economic, legal, political, and regulatory implications that we need to be discussing and preparing for. Determining who is at fault if an autonomous vehicle hurts a pedestrian or how to manage a global autonomous arms race are just a couple of examples of the challenges to be faced. Will machines become super-intelligent and will humans eventually lose control? While there is debate about how likely this scenario will be, we do know that there are always unforeseen consequences when new technology is introduced. Those unintended outcomes of artificial intelligence will likely challenge us all. Another issue is ensuring that AI doesn't become so proficient at doing the job it was designed to do that it crosses over ethical or legal boundaries. While the original intent and goal of the AI is to benefit humanity, if it chooses to go about achieving the desired goal in a destructive (yet efficient way) it would negatively impact society. The AI algorithms must be built to align with the overarching goals of humans. Artificial intelligence algorithms are powered by data. As more and more data is collected about every single minute of every person's day, our privacy gets compromised. If businesses and governments decide to make decisions based on the intelligence they gather about you like China is doing with its social credit system, it could evolve into social oppression."
+    },
+    {
+      "number": 58,
+      "type": "choice",
+      "stem": "Based on the above passage, what is cited as an example of the economic, legal, and political challenges posed by artificial intelligence?",
+      "section": "乙、測驗題",
+      "answer": "A",
+      "options": {
+        "A": "Global autonomous arms race.",
+        "B": "Breakdown of autonomous vehicles on the streets.",
+        "C": "Loss of human control over machines.",
+        "D": "Unforeseen consequences of new technology."
+      },
+      "passage": "請依下文回答第56題至第60題 Artificial intelligence will definitely cause our workforce to evolve. The alarmist headlines emphasize the loss of jobs to machines, but the real challenge is for humans to find their passion with new responsibilities that require their uniquely human abilities. According to Pw C,7 million existing jobs will be replaced by AI in the UK from 2017-2037, but 7.2 million jobs could be created. This uncertainty and the changes to how some will make a living could be challenging. The transformative impact of artificial intelligence on our society will have far-reaching economic, legal, political, and regulatory implications that we need to be discussing and preparing for. Determining who is at fault if an autonomous vehicle hurts a pedestrian or how to manage a global autonomous arms race are just a couple of examples of the challenges to be faced. Will machines become super-intelligent and will humans eventually lose control? While there is debate about how likely this scenario will be, we do know that there are always unforeseen consequences when new technology is introduced. Those unintended outcomes of artificial intelligence will likely challenge us all. Another issue is ensuring that AI doesn't become so proficient at doing the job it was designed to do that it crosses over ethical or legal boundaries. While the original intent and goal of the AI is to benefit humanity, if it chooses to go about achieving the desired goal in a destructive (yet efficient way) it would negatively impact society. The AI algorithms must be built to align with the overarching goals of humans. Artificial intelligence algorithms are powered by data. As more and more data is collected about every single minute of every person's day, our privacy gets compromised. If businesses and governments decide to make decisions based on the intelligence they gather about you like China is doing with its social credit system, it could evolve into social oppression."
+    },
+    {
+      "number": 59,
+      "type": "choice",
+      "stem": "According to this passage, which statement below about AI technology is TRUE?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "The AI algorithms must be built to align with the highest efficiency.",
+        "B": "As long as the AI is doing the job efficiently, we may as well take some risks.",
+        "C": "There are always unforeseen consequences when new technology is introduced.",
+        "D": "When machines becomes uper-intelligent, humans will lose control of them."
+      },
+      "passage": "請依下文回答第56題至第60題 Artificial intelligence will definitely cause our workforce to evolve. The alarmist headlines emphasize the loss of jobs to machines, but the real challenge is for humans to find their passion with new responsibilities that require their uniquely human abilities. According to Pw C,7 million existing jobs will be replaced by AI in the UK from 2017-2037, but 7.2 million jobs could be created. This uncertainty and the changes to how some will make a living could be challenging. The transformative impact of artificial intelligence on our society will have far-reaching economic, legal, political, and regulatory implications that we need to be discussing and preparing for. Determining who is at fault if an autonomous vehicle hurts a pedestrian or how to manage a global autonomous arms race are just a couple of examples of the challenges to be faced. Will machines become super-intelligent and will humans eventually lose control? While there is debate about how likely this scenario will be, we do know that there are always unforeseen consequences when new technology is introduced. Those unintended outcomes of artificial intelligence will likely challenge us all. Another issue is ensuring that AI doesn't become so proficient at doing the job it was designed to do that it crosses over ethical or legal boundaries. While the original intent and goal of the AI is to benefit humanity, if it chooses to go about achieving the desired goal in a destructive (yet efficient way) it would negatively impact society. The AI algorithms must be built to align with the overarching goals of humans. Artificial intelligence algorithms are powered by data. As more and more data is collected about every single minute of every person's day, our privacy gets compromised. If businesses and governments decide to make decisions based on the intelligence they gather about you like China is doing with its social credit system, it could evolve into social oppression."
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "How does the passage suggest AI could compromise privacy?",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "options": {
+        "A": "Through autonomous vehicles.",
+        "B": "By creating job uncertainty.",
+        "C": "By crossing ethical boundaries.",
+        "D": "By collecting vast amounts of data."
+      },
+      "passage": "請依下文回答第56題至第60題 Artificial intelligence will definitely cause our workforce to evolve. The alarmist headlines emphasize the loss of jobs to machines, but the real challenge is for humans to find their passion with new responsibilities that require their uniquely human abilities. According to Pw C,7 million existing jobs will be replaced by AI in the UK from 2017-2037, but 7.2 million jobs could be created. This uncertainty and the changes to how some will make a living could be challenging. The transformative impact of artificial intelligence on our society will have far-reaching economic, legal, political, and regulatory implications that we need to be discussing and preparing for. Determining who is at fault if an autonomous vehicle hurts a pedestrian or how to manage a global autonomous arms race are just a couple of examples of the challenges to be faced. Will machines become super-intelligent and will humans eventually lose control? While there is debate about how likely this scenario will be, we do know that there are always unforeseen consequences when new technology is introduced. Those unintended outcomes of artificial intelligence will likely challenge us all. Another issue is ensuring that AI doesn't become so proficient at doing the job it was designed to do that it crosses over ethical or legal boundaries. While the original intent and goal of the AI is to benefit humanity, if it chooses to go about achieving the desired goal in a destructive (yet efficient way) it would negatively impact society. The AI algorithms must be built to align with the overarching goals of humans. Artificial intelligence algorithms are powered by data. As more and more data is collected about every single minute of every person's day, our privacy gets compromised. If businesses and governments decide to make decisions based on the intelligence they gather about you like China is doing with its social credit system, it could evolve into social oppression."
+    }
+  ],
+  "year": 113,
+  "category": "刑事警察學系",
+  "subject": "中華民國憲法與警察專業英文",
+  "source_pdf": "考古題庫\\刑事警察學系\\113年\\中華民國憲法與警察專業英文\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 61
+}

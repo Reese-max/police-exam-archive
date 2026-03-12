@@ -1,0 +1,699 @@
+{
+  "metadata": {
+    "level": "三等",
+    "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+    "exam_time": "1 小時"
+  },
+  "notes": [
+    "※注意： 本試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。",
+    "禁止使用電子計算器。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關獨立行政機關之地位及組織,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "獨立行政機關對一般性政策及個案之決定,均不受行政院指揮監督",
+        "B": "行政院總辭時,獨立行政機關委員仍應同時辭職",
+        "C": "立法院得以立法規定獨立行政機關委員由總統與立法院各任命半數,以確保其獨立性",
+        "D": "行政院仍得依公務員懲戒法規定,對於獨立行政機關委員予以停職"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,關於司法審判獨立原則之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "法官之身分或職位不因審判之結果而受影響",
+        "B": "審判獨立乃自由民主憲政秩序權力分立與制衡之重要原則",
+        "C": "司法行政監督權之行使,應以提升審判效率及維持裁判正確為主要目標",
+        "D": "最高司法機關依司法自主性發布之規則,得規定審理程序之細節性事項"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "下列何者非屬憲法增修條文所明定之事項?",
+      "section": null,
+      "options": {
+        "A": "促進兩性地位之實質平等",
+        "B": "扶助並保護中小型經濟事業之生存與發展",
+        "C": "促進現代和傳統醫藥之研究發展",
+        "D": "推動公營事業民營化"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依憲法及司法院大法官解釋,關於學術自由之保障,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "其依據為憲法第11條保障之講學自由",
+        "B": "學術自由之保障應自大學組織及其他相關制度加以確保",
+        "C": "大學課程之自主,因與教學、學習自由有關,屬學術自由保障之範圍",
+        "D": "學術自由之保障範圍限於研究、教學有關之事項,不包括預算之籌措與分配"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關受刑人之通信檢查,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "受刑人發受書信,由監獄長官檢閱之,與憲法第12條保障秘密通訊自由之意旨不符",
+        "B": "受刑人撰寫之文稿,須題意正確且無礙監獄紀律及信譽者,始得准許投寄報章雜誌,與憲法保障 表現自由之意旨不符",
+        "C": "監獄長官不得刪除受刑人書信之內容,否則即違反憲法保障秘密通訊及表現自由之意旨",
+        "D": "以施行細則規定,受刑人撰寫無礙監獄紀律及信譽之文稿,得准許投寄報章雜誌,無違法律保留 原則"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "下列各基本權利中,何者與人格發展關係最為密切?",
+      "section": null,
+      "options": {
+        "A": "財產權",
+        "B": "環境權",
+        "C": "資訊隱私權",
+        "D": "契約自由"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,司法院之年度概算,由下列何機關編入中央政府總預算案,送立法院審議?",
+      "section": null,
+      "options": {
+        "A": "考試院",
+        "B": "行政院",
+        "C": "司法院",
+        "D": "審計部"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "依憲法增修條文規定,關於立法委員之不逮捕特權,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "如為現行犯,得予以逮捕",
+        "B": "於常會會期中,非經立法院之同意,不得逮捕或拘禁",
+        "C": "於臨時會會期中,非經立法院之同意,不得逮捕拘禁",
+        "D": "立法委員任期中,非經立法院之同意,不得逮捕拘禁"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "依憲法及司法院大法官解釋,關於地方自治團體之財政權,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "地方政府因國家整體國防政策而獲有利益,有義務分擔國防相關經費之支出",
+        "B": "中央如有增加地方自治團體財政負擔之立法時,應有該地方自治團體之代表,參與陳述意見",
+        "C": "涉及地方自治團體財政自主權之事項,有法律保留原則之適用",
+        "D": "關於中央與地方辦理事項之財政責任分配,憲法並無明文"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "依據憲法及增修條文規定,關於大法官的敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "司法院大法官任期8年,不分屆次,個別計算,並不得連任",
+        "B": "司法院院長與副院長,並不當然兼具大法官身分,因此不受任期保障",
+        "C": "司法院大法官由總統提名,經立法院同意任命之",
+        "D": "除法官轉任者外,司法院大法官不適用法官終身職待遇之規定"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "依司法院釋字第 717 號解釋,政府就已經退休公務人員設定公務人員保險優惠存款上限,應避免何 種情況?",
+      "section": null,
+      "options": {
+        "A": "因男性或女性而有歧視性差別待遇",
+        "B": "單因身分地位決定給付多寡",
+        "C": "逾越照顧弱勢族群之必要程度",
+        "D": "退休所得降低至影響生活尊嚴之程度"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "收養經法院認可裁定確定後,自何時發生效力?",
+      "section": null,
+      "options": {
+        "A": "法院裁定認可收養時",
+        "B": "向法院聲請認可收養時",
+        "C": "書面訂立收養契約時",
+        "D": "口頭訂立收養契約時"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "有關法律對於人的效力之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "凡屬本國人民不問其在國內或國外均適用本國法律者,稱為屬人主義",
+        "B": "於該國領土境內之人,不論本國人或外國人一體適用該國法律者,稱為屬地主義",
+        "C": "無論採用屬人主義或屬地主義,一經採用皆不容許任何例外情形",
+        "D": "我國現行刑法兼採屬人主義及屬地主義"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "集會遊行法第26條規定「集會遊行之不予許可、限制或命令解散,應公平合理考量人民集會、遊行 權利與其他法益間之均衡維護,以適當之方法為之,不得逾越所欲達成目的之必要限度」,與下列 何種原則最為相關?",
+      "section": null,
+      "options": {
+        "A": "平等原則",
+        "B": "權力分立原則",
+        "C": "法律保留原則",
+        "D": "比例原則"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "警察人員處理家庭暴力案件,必要時應採取方法保護被害人及防止家庭暴力之發生,下列敘述何者 錯誤?",
+      "section": null,
+      "options": {
+        "A": "法院核發緊急保護令前,警察可以在被害人住居所守護",
+        "B": "保護被害人及其子女至庇護所或醫療機構",
+        "C": "訪查相對人及其家庭成員,並提供必要之安全措施",
+        "D": "告知被害人其得行使之權利、救濟途徑及服務措施"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "關於習慣法之敘述,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "就同一事件反覆實施",
+        "B": "一般人對之有法的確信",
+        "C": "因屬慣行與確信,得與法律不同",
+        "D": "不得違背公序良俗"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "關於法律之地的效力,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "關於刑法之內亂罪,採世界主義",
+        "B": "關於刑法之外患罪,採世界主義",
+        "C": "關於刑法第333條之海盜罪,採保護主義",
+        "D": "關於刑法第214條之偽造文書罪,採保護主義"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "依司法院解釋意旨,關於我國地方自治,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "各級地方自治團體對上級監督機關之行政處分,認為違法或不當,致損害其權利或利益者,得提 起訴願",
+        "B": "地方自治團體就其自治事項,於合理範圍內以自治條例限制居民之基本權,與憲法第23條所規定 之法律保留原則尚無牴觸",
+        "C": "全民健康保險法規定地方分擔保險費之補助,尚非憲法所不許",
+        "D": "地方自治團體行政機關人員受立法院各種委員會邀請到會備詢時,均負有到會備詢之義務"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "甲搭乘乙所駕駛之個人計程車,上車後甲即閉眼休息,在路經閃光黃燈有斑馬線之路口時,乙未注 意而撞傷正在穿越斑馬線之行人丙。下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "只有甲應向丙負損害賠償責任",
+        "B": "只有乙應向丙負損害賠償責任",
+        "C": "甲和乙應對丙負連帶賠償責任",
+        "D": "甲和乙對丙均無庸負責"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "在政府公告禁止自口蹄疫區進口豬肉之前,甲向乙訂購疫區進口之豬肉一批,乙因該公告無法進口 豬肉交貨。關於買賣契約之效力,下列敘述何者正確?",
+      "section": null,
+      "options": {
+        "A": "買賣契約有效,甲得向乙主張損害賠償",
+        "B": "買賣契約有效,乙免為給付豬肉,甲免為支付價金",
+        "C": "買賣契約無效",
+        "D": "買賣契約得撤銷之"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "中共設有「中央對臺工作領導小組」,負責涉臺事務,中共針對重要事務常設若干高層領導小組或 委員會,做為「議事協調機構」。請問下列那一個不是中共設置的領導小組或委員會?",
+      "section": null,
+      "options": {
+        "A": "中央冤案平反工作領導小組",
+        "B": "中央巡視工作領導小組",
+        "C": "中央黨的建設工作領導小組",
+        "D": "中央軍民融合發展委員會"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "有關北京所謂的「一個中國原則」(One China Principle),下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "世界上只有一個中國,臺灣是中國的一部分,中華人民共和國是中國的唯一合法政府",
+        "B": "大陸和臺灣同屬一個中國,中國的主權和領土完整不容分割",
+        "C": "反對「兩德(統一)模式」",
+        "D": "北京的「一個中國原則」和美國的「一個中國政策」(One China Policy)是一樣的內涵"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "2019年有多個周年紀念,下列何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "五四運動90年",
+        "B": "臺灣關係法40年",
+        "C": "天安門事件30年",
+        "D": "兩岸隔海分治70年"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "北京對臺統戰工作的所謂「三戰」,其包含的項目,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "政治戰",
+        "B": "法律戰",
+        "C": "輿論戰",
+        "D": "心理戰"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "美國的「臺灣旅行法」條文中,不包含下列那一項?",
+      "section": null,
+      "options": {
+        "A": "美國閣員級官員可以來臺",
+        "B": "中華民國高層官員得以訪美",
+        "C": "美國軍艦得來臺靠泊訪問",
+        "D": "美方官員應可參加我駐美代表處主辦活動"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "中共領導人習近平 2019 年 1 月 2 日在《告臺灣同胞書》發表 40 周年紀念會上發表講話,提及「探 索『兩制』臺灣方案,豐富和平統一實踐」,在臺灣引發相當的爭辯。請問《中華人民共和國全國 人大常委會告臺灣同胞書》係在下列那一位主持下,於1979年1月1日提出?",
+      "section": null,
+      "options": {
+        "A": "李先念",
+        "B": "葉劍英",
+        "C": "鄧小平",
+        "D": "胡耀邦"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "中共中央總書記習近平上任之後,強調「四個全面」戰略布局,不包括下列那一個?",
+      "section": null,
+      "options": {
+        "A": "全面依法治國",
+        "B": "全面深化改革",
+        "C": "全面建成小康社會",
+        "D": "全面完成祖國統一"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "北京所提過針對臺灣的「一國兩制」之內容,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "堅持一個中國,制度可以不同,但在國際上代表中國的,只能是中華人民共和國",
+        "B": "大陸方面不會派軍隊到臺灣,但是臺灣也不能保留軍隊",
+        "C": "臺灣人事自主,大陸不派任何官員到臺灣",
+        "D": "臺灣繼續保留政府架構,大陸方面將不對臺灣現行的政治制度(違背一個中國原則的除外)進行 干預,臺灣的各種選舉仍將照常舉行"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "有關美國的兩岸政策,下列敘述何者錯誤?",
+      "section": null,
+      "options": {
+        "A": "美國聲明不排除扮演兩岸調停人的角色,以維持臺海的和平穩定",
+        "B": "美國承諾提供防禦性武器給臺灣人民,對臺軍售不設定終止期限",
+        "C": "臺灣關係法並沒有規定美國一定須防衛臺灣",
+        "D": "美國不支持臺灣獨立"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "建立兩岸「軍事互信機制」以維持臺海和平的討論,自 1990 年代以來已有 20 多年,下列有關此一 機制一直難以建立之敘述,何者正確?",
+      "section": null,
+      "options": {
+        "A": "臺灣人不想要和平",
+        "B": "北京長期以來否定以「軍事互信機制」來維持和平的功用,拒絶和各方談判此一概念",
+        "C": "蔡英文政府樂見在没有前提條件之下兩岸「軍事互信機制」的談判,然而北京堅持臺灣須先接受 「一個中國框架」才能談判,這是兩岸「軍事互信機制」的談判難以開展的原因",
+        "D": "美國表態反對兩岸進行「軍事互信機制」的談判"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "This company has been . It makes products ranging from aircraft engines to insurance, medical technology and plastics.",
+      "section": null,
+      "options": {
+        "A": "diversified",
+        "B": "shortened",
+        "C": "summoned",
+        "D": "vaporized"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "The mortgage market has been in the since the financial crisis crippled the banking industry last year.",
+      "section": null,
+      "options": {
+        "A": "excursion",
+        "B": "celebrity",
+        "C": "doldrums",
+        "D": "incidence"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "There was so much in the streets that travel was slow.",
+      "section": null,
+      "options": {
+        "A": "compression",
+        "B": "combustion",
+        "C": "congestion",
+        "D": "confiscation"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "This coffee is too strong. Please it by adding some water.",
+      "section": null,
+      "options": {
+        "A": "digest",
+        "B": "dilute",
+        "C": "revise",
+        "D": "pacify"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "Using a(n) thermal ice storage system, the device keeps cool with the equivalent of 13,000 tons of ice.",
+      "section": null,
+      "options": {
+        "A": "naive",
+        "B": "innovative",
+        "C": "retarded",
+        "D": "overestimated"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "A recent study found that a positive attitude towards learning in early grades is to success.",
+      "section": null,
+      "options": {
+        "A": "anxious",
+        "B": "crucial",
+        "C": "insecure",
+        "D": "romantic"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "They also found that during sleep, the brain’s cells shrink, or become smaller.",
+        "B": "While we sleep, our brains are doing much more than getting ready for the next day.",
+        "C": "She said the results demonstrate just how important sleep is to health and fighting disease.",
+        "D": "The brain expert says our brains perform two very different jobs."
+      },
+      "answer": "B",
+      "passage": "第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bedtime just a time for dreaming? Do our brains turn off for the night? What if I told you that scientists recently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the University of Rochester found that the brain may be busy cleaning house -- cleaning out harmful waste materials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected into their brains. They observed the mice brains as they slept and when they were awake. The researchers say they saw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a day job. And this study says that is what our brains seem to be doing – working an extra job at night without additional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we are awake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 This shrinking permits waste to be removed more effectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body. “So our study suggests that we need to sleep because we have a macroscopic cleaning system that removes many of the toxic waste products from the brain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
+      "passage_question_range": "37-40"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "They also found that during sleep, the brain’s cells shrink, or become smaller.",
+        "B": "While we sleep, our brains are doing much more than getting ready for the next day.",
+        "C": "She said the results demonstrate just how important sleep is to health and fighting disease.",
+        "D": "The brain expert says our brains perform two very different jobs."
+      },
+      "answer": "D",
+      "passage": "第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bedtime just a time for dreaming? Do our brains turn off for the night? What if I told you that scientists recently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the University of Rochester found that the brain may be busy cleaning house -- cleaning out harmful waste materials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected into their brains. They observed the mice brains as they slept and when they were awake. The researchers say they saw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a day job. And this study says that is what our brains seem to be doing – working an extra job at night without additional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we are awake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 This shrinking permits waste to be removed more effectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body. “So our study suggests that we need to sleep because we have a macroscopic cleaning system that removes many of the toxic waste products from the brain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
+      "passage_question_range": "37-40"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "They also found that during sleep, the brain’s cells shrink, or become smaller.",
+        "B": "While we sleep, our brains are doing much more than getting ready for the next day.",
+        "C": "She said the results demonstrate just how important sleep is to health and fighting disease.",
+        "D": "The brain expert says our brains perform two very different jobs."
+      },
+      "answer": "A",
+      "passage": "第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bedtime just a time for dreaming? Do our brains turn off for the night? What if I told you that scientists recently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the University of Rochester found that the brain may be busy cleaning house -- cleaning out harmful waste materials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected into their brains. They observed the mice brains as they slept and when they were awake. The researchers say they saw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a day job. And this study says that is what our brains seem to be doing – working an extra job at night without additional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we are awake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 This shrinking permits waste to be removed more effectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body. “So our study suggests that we need to sleep because we have a macroscopic cleaning system that removes many of the toxic waste products from the brain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
+      "passage_question_range": "37-40"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "",
+      "section": null,
+      "options": {
+        "A": "They also found that during sleep, the brain’s cells shrink, or become smaller.",
+        "B": "While we sleep, our brains are doing much more than getting ready for the next day.",
+        "C": "She said the results demonstrate just how important sleep is to health and fighting disease.",
+        "D": "The brain expert says our brains perform two very different jobs."
+      },
+      "answer": "C",
+      "passage": "第37題至第40題為篇章結構題組,各題請依文意,從四個選項中選出最合適者,各題答案內容不重複: Is bedtime just a time for dreaming? Do our brains turn off for the night? What if I told you that scientists recently discovered that our brains may be just as busy at night as they are during the day? 37 Researchers at the University of Rochester found that the brain may be busy cleaning house -- cleaning out harmful waste materials. As with many studies, the researchers turned to mice for help. They studied mice that had colored dye injected into their brains. They observed the mice brains as they slept and when they were awake. The researchers say they saw that the brains of sleeping mice were hard at work. Dr. Maiken Nedergaard led the study. 38 It seems they have daytime jobs. Later they “moonlight” at a nighttime job. “Moonlighting” is working a nighttime job in addition to a day job. And this study says that is what our brains seem to be doing – working an extra job at night without additional pay for overtime. Whereas during sleep, they work very, very hard at removing all the waste that builds up when we are awake. “When we are awake, the brain cells are working very hard at processing all the information about our surroundings. The researchers say that the waste material includes poisons, or toxins, responsible for brain disorders such as Alzheimer’s disease. It is not just beauty sleep. The brain needs us to sleep so it can get to work. 39 This shrinking permits waste to be removed more effectively. Dr. Nedergaard says these toxins end up in the liver. There, they are broken down and then removed from the body. “So our study suggests that we need to sleep because we have a macroscopic cleaning system that removes many of the toxic waste products from the brain.” The brain’s cleaning system could only be studied with new imaging technologies. The test animal must be alive in order that this brain process may be seen as it happens. Dr. Nedergaard says the next step is to look for the process in human brains. 40 The research may also one day lead to treatments to prevent or help fight neurological disorders.",
+      "passage_question_range": "37-40"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "Which of the following is NOT mentioned in the passage?",
+      "section": null,
+      "options": {
+        "A": "Colors can expand your personality.",
+        "B": "Colors can reveal your feeling.",
+        "C": "Colors can change your mood.",
+        "D": "Colors can cause you to react differently."
+      },
+      "answer": "B",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "Which of the following is considered as low on the visibility index?",
+      "section": null,
+      "options": {
+        "A": "Expansive colors",
+        "B": "Contractive colors",
+        "C": "Light colors",
+        "D": "Transparent colors"
+      },
+      "answer": "D",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "Which of the following might be the safest vehicle color according to the study?",
+      "section": null,
+      "options": {
+        "A": "black",
+        "B": "red",
+        "C": "silver",
+        "D": "white"
+      },
+      "answer": "A",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "According to the passage, which of the following statements is true?",
+      "section": null,
+      "options": {
+        "A": "Vehicles with dark colors have higher crash risk during daylight hours.",
+        "B": "Vehicles with light colors have higher crash risk during daylight hours.",
+        "C": "Vehicles with dark colors have lower crash risk during daylight hours.",
+        "D": "Vehicles with light colors have more severe crashes during daylight hours."
+      },
+      "answer": "A",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "Which of the following correlative factors has NOT been proven to be significant?",
+      "section": null,
+      "options": {
+        "A": "Vehicle color and environmental factors",
+        "B": "Vehicle color and crash risk",
+        "C": "Vehicle color and time of the day",
+        "D": "Vehicle color and crash severity"
+      },
+      "answer": "D",
+      "passage": "請依下文回答第41題至第45題:\nIt is believed that the color choices you make reflect a deeper meaning about your personality traits. For example, introverts and extroverts are likely to choose different colors – blue and red respectively. The colors you choose to wear might also say something about how you are feeling that day. Some days you may feel like wearing something lighter, something red, or something blue. These choices are often a reflection of how you are feeling at the moment. Additionally, wearing certain colors may cause you to react differently to certain situations. The research also shows there may be a link between car color and serious injuries as a result of car accidents. From a safe perspective, it is recommended to choose expansive color with bright colors rather than contractive color with dark colors. Cars in light colors make lighter and cleaner impression than those in other colors. The study in Australia identified a clear statistically significant relationship between vehicle color and crash risk. Compared to white vehicles, a number of colors, generally those lower on the visibility index, were associated with higher crash risk. The association between vehicle color and crash risk was strongest during daylight hours. The analysis results also suggested that vehicle color has an association with crash severity with lower visibility colors having higher risks of more severe crashes, although environmental factors can also modify the relationship between vehicle color and crash risk. Further work is required to quantify this.",
+      "passage_question_range": "41-45"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "What is the best topic of this passage?",
+      "section": null,
+      "options": {
+        "A": "The Foundation of Chronobiology.",
+        "B": "The Feature of Life Cycle.",
+        "C": "The Internal and External Environments.",
+        "D": "The Overview of Biological Mechanism."
+      },
+      "answer": "A",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "What does the word “subsumed” mean in the last paragraph?",
+      "section": null,
+      "options": {
+        "A": "Included",
+        "B": "Reduced",
+        "C": "Downsized",
+        "D": "Underestimated"
+      },
+      "answer": "C",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "Which of the following is the result of an asynchrony of an organism with its internal environment?",
+      "section": null,
+      "options": {
+        "A": "Daily leaf movements of a plant exposed to sunlight.",
+        "B": "Nocturnal animals having a sound sleep during daylight.",
+        "C": "People experiencing difficulty falling asleep at night.",
+        "D": "People feeling shocked when witnessing a car accident in the daytime."
+      },
+      "answer": "A",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "Which of the following is considered an external environment?",
+      "section": null,
+      "options": {
+        "A": "An office setting.",
+        "B": "A meditative activity.",
+        "C": "A biological timekeeping system.",
+        "D": "A desire to change one’s behavior."
+      },
+      "answer": "D",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "According to this passage, which of the following statements is true?",
+      "section": null,
+      "options": {
+        "A": "Chronobiology began with the studies on circadian rhythm in fruit flies and humans.",
+        "B": "All species simply respond to the cycle of day and night.",
+        "C": "All species have an internal clock that is crucial for their survival.",
+        "D": "Jet lag is a failure of a biological timekeeping mechanism."
+      },
+      "answer": "D",
+      "passage": "請依下文回答第46題至第50題:\nOne of the most dramatic features of the world is the cycle of day and night. Almost all species exhibit daily changes in their behavior and/or physiology. These daily rhythms are not simply a response to the 24-hour changes in the physical environment imposed by the earth turning on its axis but, instead, arise from a timekeeping system within the organism. This timekeeping system, or biological “clock,” allows the organism to anticipate and prepare for the changes in the physical environment that are associated with day and night, thereby ensuring that the organism will “do the right thing” at the right time of the day. The synchrony of an organism with both its external and internal environments is critical to the organism’s well-being and survival; a lack of synchrony between the organism and the external environment may lead to the individual’s immediate demise. For example, if a nocturnal rodent were to venture from its burrow during broad daylight, the rodent would be exceptionally easy prey for other animals. Similarly, a lack of synchrony within the internal environment might lead to health problems in the individual, such as those associated with jet lag, shift work, and the accompanying sleep loss. The mechanisms underlying the biological timekeeping systems and the potential consequences of their failure are among the issues addressed by researchers in the field of chronobiology. Although no single experiment serves as the defining event from which to date the beginning of modern research in chronobiology, studies conducted in the 1950s on circadian rhythmicity in fruit flies and in humans can be considered its foundation. The area of sleep research, which also is subsumed under the field of chronobiology, evolved somewhat independently, with the identification of various sleep stages around the same time.",
+      "passage_question_range": "46-50"
+    }
+  ],
+  "year": 108,
+  "category": "公共安全學系社安組學系情報組",
+  "subject": "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)",
+  "source_pdf": "考古題庫\\公共安全學系社安組學系情報組\\108年\\綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)\\試題.pdf",
+  "file_type": "試題",
+  "total_questions": 50
+}

@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "exam_type": "113",
+    "level": "三等",
+    "subject": "外國文(印尼文兼試移民專業英文)",
+    "exam_time": "2 小時",
+    "code": "80850",
+    "exam_name": "移民行政人員特種考試",
+    "year": 113
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "本試題為單一選擇題，請選出一個正確或最適當答案。",
+    "共20題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "Terjemahkan tulisan di bawah ini ke dalam bahasa Mandarin.(25 分)\nFenomena Tenaga kerja Indonesia atau TKI kaburan di Taiwan nampaknya\nbelum berakhir. Menurut Laporan Statistik dari National Immigration Agency\n(NIA) Taiwan, sampai dengan saat ini jumlah kaburan sekitar 24,000 orang\ndan telah menjadi perhatian sejumlah pihak. Ternyata, TKI kaburan dinilai\nsangat berisiko dan bisa jadi pemicu masalah bagi dirinya sendiri atau bahkan\nbagi pemerintah Indonesia dan Taiwan. TKI kaburan dapat diartikan sebagai\nTKI yang kabur dari majikan atau mereka yang bekerja di Taiwan secara\nilegal, melalui agen ilegal atau bahkan tidak memiliki visa untuk bekerja.\nKaburan umumnya dipicu oleh ketidakbetahan, ketidakpuasan, gagal\nmenyesuaikan diri dengan kondisi yang ada, pekerjaan tidak sesuai dengan\nyang diharapkan, tidak mengetahui saluran pengaduan, maupun dipengaruhi\noleh oknum tertentu dengan iming-iming gaji tinggi atau fasilitas yang lebih\nbaik, atau ingin mendapatkan kebebasan.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "Terjemahkan tulisan di bawah ini ke dalam bahasa Indonesia.(25 分)\n「直接聘僱聯合服務中心」是勞動部所成立的單一服務窗口,協助希望\n使用直接聘僱方式的雇主引進移工,並提供各國語言的諮詢服務,而且\n還不收取任何服務費用。若是需要重新招募同一看護工的家庭類雇主,\n現在有了不同的選擇,可以不透過仲介業者,以「直接聘僱」方式向勞\n動部申請移工。直接聘僱最大的好處是不須支付仲介公司服務費,讓移\n工實領較高的薪資。不過,即使有些大型工廠或公司已經開始使用直接\n聘僱的方式,甚至願意飛到海外去面試移工,但是數據顯示,對於一般\n家庭雇主來說,自己招聘移工還是具有一定的難度,仍然是相對不容易\n以及不友善的選項。關注移工權益的非營利組織表示,政府應該舉辦更\n多的說明會或課程;或簡化申請流程,以協助雇主進行直接聘僱的申請。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "Mengarang.(25 分)\nPekerja migran asing di Taiwan menyerukan permintaan amendemen hukum\nagar mengizinkan PMA bebas berganti majikan. Apakah Anda setuju dengan\npermintaan tersebut?\nBuatlah karangan dalam bahasa Indonesia sesuai dengan jawaban atas\npertanyaan di atas sebanyak minimum 200 kata dan maksimum 500 kata.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "While TSMC (Taiwan Semiconductor Manufacturing Company) claimedthe April-third earthquake did not haveamajor onits production, it sawsomedisruptiontoits operations.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "satisfaction",
+        "B": "impact",
+        "C": "interest",
+        "D": "license"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "Those who facilitate or aid foreigners to engage in activities in Taiwan that are inconsistent with the reasons of their permitted visit or residence shall be to a fine of NT$200,000 or more and up to NT$1million.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "subject",
+        "B": "object",
+        "C": "projected",
+        "D": "rejected"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "Before arriving in Taiwan, please an online immigration arrival card on the website of the National Immigration Agency.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "communicate",
+        "B": "complete",
+        "C": "contempt",
+        "D": "contemplate"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "Themaximumdurationofprohibitionfromentering Taiwanforforeignerswhooverstaybeyondthe periodofvisit orresidencein Taiwanhas beenrevisedfrom 3 years to7 years.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "improved",
+        "B": "sensible",
+        "C": "authorized",
+        "D": "evident"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "For foreigners who have no certain domicile or residence in Taiwan, the National Immigration Agency ofthe Ministryofthe Interiormayordersuchforeignerstoexitthe Statevoluntarilywithintendaysprior totheforcible .",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "deportation",
+        "B": "importation",
+        "C": "exportation",
+        "D": "teleportation"
+      },
+      "answer": "A"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "Nationals without household registration who hold a valid R.O.C. (Taiwan) biometric passport and possess areturnticket are from applyingforanentrypermit.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "excelled",
+        "B": "examined",
+        "C": "exempt",
+        "D": "performed"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "Law enforcement agencies have 11 people who ran a food fraud operation that produced more than68,000gallons ofoliveoil unfit forconsumption.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "occupied",
+        "B": "rested",
+        "C": "joined",
+        "D": "arrested"
+      },
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "On February14th, a Chinesefishingboatoverturnedwhilebeingchasedbythe Taiwanesecoast guards, killing two Chinese fishermen on board. While between Taiwan and China soared, disinformationabout theincident alsotookoff.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "peace",
+        "B": "tension",
+        "C": "match",
+        "D": "sanctions"
+      },
+      "answer": "B"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "For any applicant who is unable to pay the fee, he/she may request a fee by submitting his/her caseforfurtherconsideration.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "increase",
+        "B": "expansion",
+        "C": "waiver",
+        "D": "resistance"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "Rememberto youraddresswiththisofficetoensurethat youcanreceiveallcorrespondenceand notifications from us inatimelymanner.",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "fill",
+        "B": "retrieve",
+        "C": "update",
+        "D": "inform"
+      },
+      "answer": "C"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "associate",
+        "B": "contact",
+        "C": "cling",
+        "D": "organize"
+      },
+      "answer": "A",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them. Youngchildrenlistentothewords, seethepictures inthebook, and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "restrictions",
+        "B": "regulations",
+        "C": "simulations",
+        "D": "strategies"
+      },
+      "answer": "D",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them. Youngchildrenlistentothewords, seethepictures inthebook, and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "perished",
+        "B": "acquired",
+        "C": "excluded",
+        "D": "paralyzed"
+      },
+      "answer": "B",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them. Youngchildrenlistentothewords, seethepictures inthebook, and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "locations",
+        "B": "operations",
+        "C": "establishments",
+        "D": "expectations"
+      },
+      "answer": "D",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them. Youngchildrenlistentothewords, seethepictures inthebook, and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "（承上題組）",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "dislocate",
+        "B": "determine",
+        "C": "unsettle",
+        "D": "cultivate"
+      },
+      "answer": "B",
+      "passage": "Before children can read, the process of comprehending text begins when someone reads a picture book to them. Youngchildrenlistentothewords, seethepictures inthebook, and maystart to 11 the words on thepagewiththewords theyarehearingandtheideas thesewords represent. Inordertolearncomprehension",
+      "passage_intro": "請依下文回答第11 題至第15題"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "What is thebest titleforthis passage?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Diverse Backgrounds of Immigrants.",
+        "B": "Key Findings about US Immigrants.",
+        "C": "Reasons for Becoming Immigrants.",
+        "D": "Rights and Obligations of Immigrants."
+      },
+      "answer": "B"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "Accordingto thepassage, whichofthefollowingstatements is NOTtrue?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Thenumberofimmigrants inthe US occupies one-fifthofthetotal ofimmigrants intheworld.",
+        "B": "The yearof2018markedtherecordhighfortheforeign-bornpopulationinthe US.",
+        "C": "Morethanone-thirdofimmigrants inthe US areunauthorized.",
+        "D": "The US usedtohave anational quotasystem."
+      },
+      "answer": "C"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "What is thefocus ofthefinal paragraph?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Thelegal status ofimmigrants inthe US.",
+        "B": "Theestablishment of Pew Research Center.",
+        "C": "Theimportanceof National Census.",
+        "D": "Theinfluenceofimmigrants from Mexico."
+      },
+      "answer": "A"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "According to the passage, what is the main contributor to the decline in the unauthorized immigrant populationin2017?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Theimplementationofnewimmigrationlaws inthe US.",
+        "B": "Theundercount adjustment tothecensus data.",
+        "C": "Theincreaseofnaturalizedcitizens andpermanent residents.",
+        "D": "Thedecreaseofimmigrants from Mexico."
+      },
+      "answer": "D"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "Accordingto thepassage, whichofthefollowingstatistics is NOTcorrect?",
+      "section": "乙、測驗題",
+      "options": {
+        "A": "Ever since the US immigration laws replaced a national quota system in 1965, the number of immigrants livinginthe US has grownmorethan sixtimes.",
+        "B": "In1970, immigrants accountedfor4.8%ofthe US population.",
+        "C": "In2017, about 23%of all immigrants wereunauthorizedimmigrants.",
+        "D": "In2017, unauthorizedimmigrants inthe US accountedfor3.2%ofthe US population."
+      },
+      "answer": "A"
+    }
+  ],
+  "year": 113,
+  "category": "國境警察學系移民組",
+  "subject": "外國文(印尼文兼試移民專業英文)",
+  "level": "三等",
+  "original_subject": "外國文（印尼文兼試移民專業英文）",
+  "source_pdf": "/home/user/police-exam-archive/國境警察學系移民組PDF/113年/三等/外國文(印尼文兼試移民專業英文)/試題.pdf",
+  "file_type": "試題",
+  "total_questions": 23
+}

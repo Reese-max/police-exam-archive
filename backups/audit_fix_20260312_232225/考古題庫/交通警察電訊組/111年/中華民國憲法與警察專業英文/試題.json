@@ -1,0 +1,461 @@
+{
+  "metadata": {
+    "exam_type": "111",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "中華民國憲法與警察專業英文",
+    "exam_time": "2 小時 座號：",
+    "code": "50120"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "①不必抄題，作答時請將試題題號及答案依照順序寫在申論試卷上，於本試題上作答者，不予計分。",
+    "②請以藍、黑色鋼筆或原子筆在申論試卷上作答。",
+    "①本測驗試題為單一選擇題，請選出一個正確或最適當的答案，複選作答者，該題不予計分。",
+    "②共60題，每題1.25分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題或申論試卷上作答者，不予計分。"
+  ],
+  "sections": [
+    "甲、申論題",
+    "乙、測驗題"
+  ],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "英譯中:(10 分)\nNot until the late 19th century did imprisonment become the most common\npenalty for most crimes. This resulted in great part from the work of\ncriminologists who persuaded society against the uselessness of other\npunishments.",
+      "section": "甲、申論題"
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "中譯英:(15 分)\n傳統上人們被教導,努力工作就會成功。但事實上,一開始就快樂的\n人比較容易成功,一開始就不快樂的人比較可能失敗。",
+      "section": "甲、申論題"
+    },
+    {
+      "number": 1,
+      "type": "choice",
+      "stem": "依憲法及司法院大法官解釋,關於立法院質詢權,下列敘述何者錯誤? (A)只有行政院院長及行政院各部會首長有至立法院院會接受質詢之義務 (B)立法院各委員會得邀請民間團體代表到會備詢 (C)司法院院長得列席立法院院會陳述意見 (D)參謀總長並無至立法院各委員會備詢之義務",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "stem": "依司法院釋字第627號解釋,下列有關總統國家機密特權之敘述,何者錯誤? (A)於法院訴訟程序進行中,總統尚非不得將系爭資訊依法改核定為國家機密 (B)法院審理個案,如涉及總統已提出之資訊者,即無國家機密保護法之適用 (C)依國家機密特權,總統就國家機密事項於刑事訴訟程序應享有拒絕證言權 (D)總統就有關國家安全、國防以及外交之國家機密事項,有決定不予公開之權力 - -",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 3,
+      "type": "choice",
+      "stem": "依憲法對於社會安全之規定,下列敘述何者錯誤? (A)犯罪被害人所受損害,應由國家予以賠償 (B)人民具有工作能力者,國家應予以適當之工作機會 (C)兒童從事勞動者,應予以特別之保護 (D)國家應制定保護農民之法律",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 4,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於行政一體原則,下列敘述何者錯誤? (A)行政院為國家最高行政機關,須為其所屬機關之整體施政表現負責 (B)除憲法別有規定外,無論各行政專業單位如何分工,所有國家之行政事務最終均歸由行政 院指揮監督 (C)立法院得立法設置獨立機關,自主運作,完全排除行政院之監督 (D)立法院得以法律限制行政院對獨立機關之人事決定權,但有其界限",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關憲法第8條第2項規定之提審,下列敘述何者錯誤? (A)法律如以「非法逮捕拘禁」為聲請提審之條件,即與憲法第8條第2項規定有所違背 (B)受理提審聲請之法院,僅指負責審判之法院,不包括檢察官 (C)提審期間不應計入逮捕機關拘禁人民之24小時期間 (D)外國人非法入境而遭內政部移民署暫時收容者,因非屬刑事案件,故無憲法第8條之適用",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 6,
+      "type": "choice",
+      "stem": "下列那些職權非總統所享有? (A)預算提案權 (B)三軍統帥權 (C)宣戰媾和權 (D)宣告戒嚴權",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "stem": "下列何者並非憲法總綱之規定? (A)中華民國為民有民治民享之民主共和國 (B)中華民國之主權屬於國民全體 (C)中華民國領土依其固有之疆域,非經國民全體投票複決,不得變更之 (D)中華民國各民族一律平等",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "type": "choice",
+      "stem": "憲法第7條所明文規定之禁止歧視事由,不包括下列何者? (A)宗教 (B)階級 (C)職業 (D)黨派",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關人民納稅義務,下列敘述何者錯誤? (A)租稅與特別公課之性質並無不同 (B)依租稅平等原則納稅義務人應按其實質稅負能力,負擔應負之稅捐 (C)憲法第19條規定人民有依法律納稅之義務,依法律即是租稅法定主義 (D)空氣污染防治費性質上屬於特別公課",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 10,
+      "type": "choice",
+      "stem": "土地所有權人提供私有騎樓土地供公眾通行,不得請求補償。關於其法理,下列敘述何者正確? (A)未喪失所有權而無須補償 (B)人民之土地負有社會義務 (C)缺乏相關補償之法令依據 (D)基於財政考量而無須補償",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 12,
+      "type": "choice",
+      "stem": "法律規定主管機關為防治控制疫情之需要,得實施必要之應變處置或措施。主管機關據此發 布公告,暫時禁止輸入特定之進口貨物。下列敘述何者正確? (A)公告欠缺法律依據 (B)公告違反平等原則之虞 (C)公告逾越法律授權之虞 (D)公告違反信賴保護原則之虞",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 13,
+      "type": "choice",
+      "stem": "依憲法增修條文的規定,下列何者不需經公民投票複決? (A)憲法修正案 (B)總統彈劾案 (C)領土變更案 (D)總統罷免案 - -",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 14,
+      "type": "choice",
+      "stem": "下列有關軍人之敘述,何者錯誤? (A)應服從總統之統率 (B)應效忠國家、愛護人民 (C)須超出個人、地域及黨派關係以外 (D)軍人退役後不得擔任文官",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 15,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於軍事審判,下列敘述何者錯誤? (A)軍事審判權之行使涉及人身自由 (B)軍事審判權之行使涉及訴訟權 (C)軍事審判機關對軍人違紀有專屬審判權 (D)軍事審判程序為特別刑事訴訟程序",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "choice",
+      "stem": "下述何者不屬於憲法第10條居住自由之保障範圍? (A)承租人於租賃之房間 (B)旅客於旅館之房間 (C)受僱人於工作場所 (D)屋主於車庫",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "choice",
+      "stem": "關於憲法保障言論自由之理論基礎,下列敘述何者錯誤? (A)保障言論自由有助於發現真理 (B)保障言論自由有助於健全民主政治運作 (C)保障言論自由有助於提升政府效率 (D)保障言論自由有助於個人自我實現",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 18,
+      "type": "choice",
+      "stem": "依司法院釋字第631號解釋意旨,關於憲法對秘密通訊之保障,下列敘述何者正確? (A)國家對人民秘密通訊之限制,如通過法律保留與比例原則之檢驗,即與憲法無違 (B)通訊監察書之聲請與核發,涉關個人權利之保障,而非權力分立之問題 (C)人民之秘密通訊自由僅能對抗國家之侵害,私人間之刺探竊聽行為純屬刑法規範事項,與 憲法完全無關 (D)通訊監察之執行,可能同時侵害受監察人及無辜第三人之秘密通訊自由",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "choice",
+      "stem": "關於宗教自由保障之主體,下列敘述何者正確? (A)宗教自由之保障主體僅限於本國人,不包括外國人 (B)宗教自由之保障主體僅限於本國自然人,不包括本國法人及外國人 (C)宗教自由之保障主體僅限於本國及外國自然人,不包括法人 (D)宗教自由之保障主體包括自然人與法人",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 20,
+      "type": "choice",
+      "stem": "下列敘述,何者與生存權之保障無涉? (A)優生保健法第9條允許墮胎之立法 (B)符合人性尊嚴之生活 (C)建立最低工資保障 (D)人民有信仰自由,得自行創立宗教",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 21,
+      "type": "choice",
+      "stem": "甲女與乙男結婚後懷有丙胎兒,甲女決定墮胎。墮胎最可能涉及到下列何種之基本權衝突情形? (A)甲女身體自決權與丙胎兒生存權 (B)甲女身體自決權與乙男家庭權 (C)丙胎兒生存權與甲女及乙男家庭權 (D)甲女身體自決權與丙胎兒自由權",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 22,
+      "type": "choice",
+      "stem": "下列何者非屬對於人民職業選擇自由之主觀條件限制? (A)禁止曾犯特定罪者駕駛計程車為業 (B)藥師執業處所應以一處為限 (C)經主管機關核准之證券投資顧問事業方得舉辦證券投資講習 (D)公務員於其離職後三年內,不得擔任與其離職前五年內之職務直接相關之營利事業董事、 監察人、經理、執行業務之股東或顧問",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 23,
+      "type": "choice",
+      "stem": "刑事訴訟法規定,被告經第一審判決無罪,但第二審變更為有罪判決者,不得上訴於第三審 法院,依司法院大法官解釋意旨,係爭規定是否違憲? (A)與憲法第16條保障人民訴訟權之意旨有違,違憲 (B)與憲法第7條保障人民平等權之意旨有違,違憲 (C)與憲法第23條信賴保護原則之意旨有違,違憲 (D)與憲法第23條比例原則之意旨有違,違憲 - -",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 24,
+      "type": "choice",
+      "stem": "關於服兵役義務,下列敘述何者錯誤? (A)服兵役屬義務,故就徵兵機關就役男應否服兵役及應服何種兵役所為之決定,不得救濟 (B)有關人民服兵役及其違背義務之制裁手段,應由立法機關衡酌國家安全、社會發展之需要, 以法律定之 (C)針對後備軍人意圖避免召集處理,而有居住處所遷移,無故不依規定申報之情事者,應處 以刑事罰或行政罰,屬立法機關得自由形成之權限 (D)如符合公平等條件,國家得實施替代役",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "憲法本文所規定之基本人權,下列何者兼具權利及義務之性質? (A)言論自由 (B)人身自由 (C)接受國民教育 (D)集會結社自由",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 26,
+      "type": "choice",
+      "stem": "依現行憲法增修條文相關內容規定,關於立法委員之選舉,下列何者錯誤? (A)任期四年,連選得連任 (B)採單一選區兩票制 (C)全國不分區及僑居國外國民立法委員依政黨名單投票選舉之,由獲得百分之五以上政黨票 之政黨依得票比率選出 (D)採聯立制兩票制,區域代表與政黨比例代表之選票分別計算,互不影響",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 27,
+      "type": "choice",
+      "stem": "依司法院釋字第780號解釋意旨,道路交通管理處罰條例對違規駕駛人處以罰鍰、吊照或接 受講習等規定,與憲法第22條保障人民之下列何種權利的意旨尚無違背? (A)一般行為自由 (B)接受資訊自由 (C)精神自主 (D)集體受教育",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 28,
+      "type": "choice",
+      "stem": "有關個人資料自主權,下列敘述何者錯誤? (A)個人對自己之指紋具有資料自主權 (B)個人在公共場域之行動軌跡不得主張資料自主權 (C)以衛星定位方式追蹤個人行動足跡為侵害個人資料自主權 (D)個人得主張自己之前科紀錄不被任意公開",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 29,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,關於憲法保障之人格發展自由,下列敘述何者錯誤? (A)個人得經由締結契約,實現人格發展 (B)可藉由個人與他人生活資源之交換,實現人格發展 (C)兒童與少年的人格發展,較成年人更須保護 (D)收養行為係成立法定血親,無助於人格發展自由之實現",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 30,
+      "type": "choice",
+      "stem": "依司法院大法官解釋意旨,關於緊急命令,下列敘述何者錯誤? (A)具有暫時替代法律、變更法律效力之功能 (B)以不得再授權為補充規定即可逕予執行為原則 (C)例外有待執行機關以命令補充者,應於緊急命令中明文規定其意旨,於立法院完成追認程 序後,再行發布 (D)立法院就緊急命令行使追認權時,如認部分內容不當,得為部分變更",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 31,
+      "type": "choice",
+      "stem": "依憲法規定及司法院大法官解釋,關於行政院組織,下列敘述何者錯誤? (A)各機關之組織、編制及員額,應依立法者所制訂之準則性法律,基於政策或業務需要決定之 (B)立法者制定單獨組織法時,不得牴觸立法者所制訂之準則性法律 (C)國家機關之職權、設立程序及總員額,得以法律為準則性之規定 (D)立法院得以法律明定或授權以命令訂定行政院所屬各級機關之設置與組織",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 32,
+      "type": "choice",
+      "stem": "依據憲法增修條文對於「行政院對立法院負責」的規範設計,下列敘述何者正確? (A)行政院院長若有辭職或出缺之情事,在總統未任命行政院院長之前,應由立法院院長暫行 代理之責 (B)行政院認為立法院決議之條約案窒礙難行,得經總統核可於該決議案送達行政院10日內, 移請立法院覆議 (C)立法院得經全體立法委員3分之1以上連署,經總統核可後,對行政院院長提出不信任案 (D)立法院對於行政院之重要政策不贊同時,得以決議移請行政院變更之 - -",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 33,
+      "type": "choice",
+      "stem": "下列何者非屬立法院之職權? (A)中央與地方權限爭議之解決權 (B)總統發布緊急命令之追認權 (C)總統宣布戒嚴之決議或追認權 (D)院際間爭議之調解權",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 34,
+      "type": "choice",
+      "stem": "下列何者非屬考試院掌理之事項? (A)依法考選專門職業人員執業資格 (B)依法任免公務人員 (C)辦理公務人員考績之法制事項 (D)辦理公務人員褒獎之法制事項",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 35,
+      "type": "choice",
+      "stem": "關於司法院大法官,下列敘述何者錯誤? (A)並為院長、副院長之大法官,不受任期之保障 (B)司法院大法官組成憲法法庭,依法審理法規範憲法審查及裁判憲法審查、機關爭議、法官 懲戒等案件 (C)曾實際執行律師業務25年以上而聲譽卓著者,具備大法官資格 (D)司法院院長、副院長同時出缺時,由總統就大法官中指定1人代理院長",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 36,
+      "type": "choice",
+      "stem": "有關我國釋憲制度,下列敘述何者錯誤? (A)法律違憲之審查採集中制 (B)兼有具體審查與抽象審查 (C)命令違憲之審查為分散制 (D)統一法令解釋亦屬違憲審查",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 37,
+      "type": "choice",
+      "stem": "依憲法訴訟法之規定,下列何者屬於「機關爭議案件」? (A)臺北市認為其憲法上的地方自治權限為中央所侵害 (B)考試院認為其關於考試行政的權限為行政院所侵害 (C)行政院認為立法院所制定某個法律中的條文,致使其行政權被侵害 (D)臺北市認為其地方制度法所保障的自治權限為新北市所侵害",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 38,
+      "type": "choice",
+      "stem": "依司法院大法官解釋,有關地方自治,下列敘述何者錯誤? (A)地方自治團體行政機關人員受立法院各種委員會邀請到會備詢時,有到會備詢之義務 (B)地方自治團體在憲法及法律保障之範圍內,享有自主及獨立之地位 (C)使地方人民對於地方事務及公共政策有直接參與或形成之權,在於實現住民自治之理念 (D)立法院不得以地方自治團體所屬公務員之未到會備詢為理由,而刪減或擱置中央機關依法 對地方自治團體補助款預算",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 39,
+      "type": "choice",
+      "stem": "依我國憲法及法律規定,下列何者非屬地方自治團體? (A)臺東市 (B)桃園市復興區 (C)臺中市霧峰區 (D)新北市烏來區",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 40,
+      "type": "choice",
+      "stem": "總統與副總統當選後,就職未滿一定期間不得罷免,其期間為: (A)一年 (B)一年半 (C)二年 (D)二年半",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "type": "choice",
+      "stem": "TheMinistryofJusticelaunchedthreemobileunitsoutfittedwithforensicimagingsystemstobetter support prosecutors and police investigations. The truck can go wherever needed for post-_____ examinations, and the new scanning devices provide better-quality images, helping solve criminal cases andprovidingeasyaccess todigital data for presentationat court hearings. (A)trauma (B)perseverance (C)penetration (D)mortem",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 42,
+      "type": "choice",
+      "stem": "On April 16, Kaohsiung’s police bureau clarified the origins of footage showing police shooting a mobsterdeadinarecentdisinformationvideothathasbeenwidelycirculatingonsocialmedia.The police repeated their request that the public _____ from sharingthis video so as not to cause undue panicinthecommunity. (A)integrate (B)counterfeit (C)refrain (D)substitute - -",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 43,
+      "type": "choice",
+      "stem": "Themanaccusedofshooting10peopleonaBrooklynsubwaytrainwasarrestedonWednesdayand chargedwithafederalterrorismoffenseafterthesuspectcalledpolicetocomegethim.FrankJames, 62, was taken into _____ about 30 hours after the violence on a rush-hour train, which left people aroundthecityonedge. (A)transformation (B)accommodation (C)custody (D)influx",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 44,
+      "type": "choice",
+      "stem": "TainanpolicebegantosearchforChangaftertheprosecutors’officeissuedawarrantforhisarrest. Chang, a former elementary-school teacher from Tainan, who was convicted of sexually_____ one ofhisstudents,hadbeenwanted,afterhefailedtohandhimselfovertotheauthoritiestostartserving his prison sentence. (A)supervising (B)banishing (C)lingering (D)assaulting",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 45,
+      "type": "choice",
+      "stem": "Taichung police reported a physical _____ between scooter riders who tried to cross Dajia River BridgewhiletheDajiaMatsuprocessionwas also crossing. (A)condemn (B)altercation (C)sanction (D)velocity",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 46,
+      "type": "choice",
+      "stem": "The Ciaotou District Court has sentenced a farmer to one year and four months in prison and fined himNT$30,000formodifyinganairsoftguntomakeitmoredangerous.Thecollegiatebenchruled that thefarmer’s_____ was minorandhandeddownalighterpunishment. (A)transaction (B)announcement (C)infraction (D)mutation",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 47,
+      "type": "choice",
+      "stem": "For a domestic violence incident, if a police officer has probable cause to believe that a crime has beencommitted,theofficermust attempt toidentifyandarrest the_____. (A)jury (B)perpetrator (C)plaintiff (D)victim",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 48,
+      "type": "choice",
+      "stem": "reporting of any suspicious activity to the Police Department can help us prevent further crimes,apprehendthesuspectsandprovideaccuratedataforfederallymandatedstatisticalreporting. (A)Hesitating (B)Violent (C)Prompt (D)Delayed",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 49,
+      "type": "choice",
+      "stem": "A person who a minor under the age of twentyto leave his or her familyor guardian, shall besentencedtoimprisonment fornomorethanthree years. (A)counterfeits (B)forges (C)inspects (D)abducts",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 50,
+      "type": "choice",
+      "stem": "Laos police have seized a record haul of illicit drugs in the Golden Triangle region. More than 55 million methamphetamine tablets and over 1.5 tons of crystal methamphetamine were by Laos police. (A)accused (B)served (C)appealed (D)intercepted",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 51,
+      "type": "choice",
+      "stem": "Anyone filing a false police report may be prosecuted under accusation section of the Criminal Code. (A)mutual (B)benevolent (C)compassionate (D)malicious 請依下文回答第52 題至第54 題: Mark Karpeles, arrested in Japan after his bitcoin exchange collapsed from massive hacking, is starting a new business around the same computer technology that 52 his legal troubles. Karpeles told reporters that he wants to make Japan a global leader in blockchain, the technology behind virtual money like bitcoin. The 34-year-old Frenchman 53 embezzlement and fraud allegations in March, but is appealing a conviction for manipulating electronic data. Karpeles was arrested in 2015, and spent",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 11,
+      "type": "choice",
+      "stem": "months 54 . Karpeles received a suspended sentence, meaning he is not serving jail time. Prosecutorshaddemanded10yearsinprison.HislawyerNobuyasuOgatasaidtheverdicthighlightslegal uncertainties inthenewareaof cryptocurrencycrime.",
+      "section": "乙、測驗題",
+      "answer": "D",
+      "subtype": "passage_fragment"
+    },
+    {
+      "number": 52,
+      "type": "choice",
+      "stem": "(A)filteredout (B)referredto (C)indulgedin (D)ledto",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 53,
+      "type": "choice",
+      "stem": "(A)wasdeprivedof (B)was clearedof (C)was composedof (D)was trespassedon",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 54,
+      "type": "choice",
+      "stem": "(A)indetention (B)forthemotion (C)inresponse (D)inthis case - - 請依下文回答第55 題至第58 題: The Legislative Yuan passed an amendment that reduces the minimum prison sentence for growing marijuana for personal use from five years to one year and lowered the fine from NT$5 million to NT$1 million. Before the change in the law was made, the Narcotics Hazard Prevention Act (毒品危害防制條 例) stipulated that people 55 guilty of cultivating marijuana with \"intentions to supply for manufacturingnarcotics\" facedaminimum sentenceoffive years inprison andcouldalso result inafine of up to NT$5 million. However, because the cultivation of cannabis covers a wide range, Judicial Yuan Interpretation No. 790 in 2020 ruled that the penalties for growing marijuana for personal use failed to meettheprincipleofproportionalpunishment 56 stipulatedintheConstitution.Citingtheruling,the Cabinet in March 2021 proposed a revision to the act to impose appropriate punishment for planting marijuana that is commensurate with the crime. A new article stated that those who grow the plant for personal use and 57 the \"circumstances are minor\" should be sentenced to a minimum prison sentence of one year and a maximum of seven years and a fine of 58 NT$1 million. On Tuesday, thethirdreadingoftheamendmentpassedtheLegislativeYuanwithoutanyobjectionsbyanylegislators present.",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 55,
+      "type": "choice",
+      "stem": "(A)wasfound (B)finding (C)found (D)find",
+      "section": "乙、測驗題",
+      "answer": "C"
+    },
+    {
+      "number": 56,
+      "type": "choice",
+      "stem": "(A)so (B)with (C)for (D)as",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 57,
+      "type": "choice",
+      "stem": "(A)when (B)where (C)how (D)why",
+      "section": "乙、測驗題",
+      "answer": "A"
+    },
+    {
+      "number": 58,
+      "type": "choice",
+      "stem": "(A)nofewerthan (B)nomorethan (C)nosoonerthan (D)nolaterthan 請依下文回答第59 題至第60 題: The linkages between terrorism and organized crime are multifaceted and can manifest themselves indifferentways.Generallyspeaking,terroristgroupsandorganizedcrimegroups(OCGs)haveintheory distinct objectives. Terrorist groups deliberately challenge State authority and seek to produce political change through violent means; their motivations are related to several factors, including, but not limited toideologicalones.OCGsontheotherhandtypicallyengageinsecretoperationssoastoobtainafinancial or other material benefit while avoiding detection by law enforcement authorities. Rather than aiming to effect political change, the disruption they seek to impose on territories under State authorityis meant to perpetuate conditions that arebeneficial totheiroperations. Inpracticalterms,thelinkagesbetweenterrorismandorganizedcrimebecomeapparentmostnotably in the financing of terrorism. In other cases, these linkages may involve the smuggling of migrants and illicit arms trafficking involvingsmall arms, light weapons and other militaryequipment, car theft, illicit mineral extraction, kidnapping for ransom, drug trafficking, trafficking in other illicit goods. Instances involving OCGs facilitating the transport of terrorists across borders activities also represent possible scenarios wherethesetwophenomenabecomeintertwined.",
+      "section": "乙、測驗題",
+      "answer": "B"
+    },
+    {
+      "number": 59,
+      "type": "choice",
+      "stem": "What is thepurposeofthis passage? (A)It provides solutions tocombat thesetwotypes ofcrimes. (B)It argues that organized crime groups and terrorist groups can be reconciled if ideological problems canbe resolved. (C)It shows howterrorist groups financeorganized crime groups fortheiroperations. (D)It shows howtheseorganizedcrime groups and terrorist groups areoften united.",
+      "section": "乙、測驗題",
+      "answer": "D"
+    },
+    {
+      "number": 60,
+      "type": "choice",
+      "stem": "What does thepronoun“they”referto inthelast sentenceofthefirst paragraph? “Ratherthanaimingtoeffectpoliticalchange,thedisruptiontheyseektoimposeonterritoriesunder Stateauthorityis meant toperpetuate conditions that arebeneficial totheir operations.” (A)theterrorist groups. (B)theorganizedcrime groups. (C)smugglingactivities. (D)illicit goods.",
+      "section": "乙、測驗題",
+      "answer": "B"
+    }
+  ],
+  "year": 111,
+  "category": "交通警察電訊組",
+  "subject": "中華民國憲法與警察專業英文",
+  "source_pdf": "考古題庫\\交通警察電訊組\\111年\\中華民國憲法與警察專業英文\\試題.pdf",
+  "file_type": "試題"
+}
