@@ -48,9 +48,15 @@
     {
       "number": 2,
       "type": "choice",
-      "stem": "影像光譜比對儀(VideoSpectralComparator;VSC)可用以鑑識遭竄改之圖文資料,關於該儀器之光 源選擇及顯像之敘述:1可選擇紅外線反射光(Infrared Reflectance)光源 2可選擇紅外線冷光 (InfraredLuminescence)光源 3可選擇紫外線(Ultravioletlight)光源 4可選用適當濾鏡,以紅 外線感光攝影機顯像 5可選擇適當濾鏡,以紫外線感光攝影機顯像,下列何者正確? (A)124 (B)1345 (C)2345 (D)",
+      "stem": "影像光譜比對儀(VideoSpectralComparator;VSC)可用以鑑識遭竄改之圖文資料,關於該儀器之光 源選擇及顯像之敘述:1可選擇紅外線反射光(Infrared Reflectance)光源 2可選擇紅外線冷光 (InfraredLuminescence)光源 3可選擇紫外線(Ultravioletlight)光源 4可選用適當濾鏡,以紅 外線感光攝影機顯像 5可選擇適當濾鏡,以紫外線感光攝影機顯像,下列何者正確?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "①②④",
+        "B": "①③④⑤",
+        "C": "②③④⑤",
+        "D": "①②③④⑤"
+      }
     },
     {
       "number": 3,
@@ -159,9 +165,15 @@
     {
       "number": 11,
       "type": "choice",
-      "stem": "關於儀器應用於物證之鑑識,下列敘述何者正確?1原子吸收光譜儀(AAS)可用非破壞性之方 式以檢測物證的微量元素 2氣相層析質譜儀(GC/MS)之質譜儀(MS)係用來將化合物檢體 電漿化 3掃描式電子顯微鏡/X光能譜儀(SEM/EDX)係使用電磁透鏡聚焦電子束以分析檢體 4拉曼儀器(Ramanspectroscopy)可用來檢測假酒中之甲醇成分 5操作FTIR(Fourier-transform infraredspectroscopy)儀器時,可加入KBr藥品與待測固態樣品混合,經打錠後再上機實驗之 (A)125 (B)345 (C)2345 (D)",
+      "stem": "關於儀器應用於物證之鑑識,下列敘述何者正確?1原子吸收光譜儀(AAS)可用非破壞性之方 式以檢測物證的微量元素 2氣相層析質譜儀(GC/MS)之質譜儀(MS)係用來將化合物檢體 電漿化 3掃描式電子顯微鏡/X光能譜儀(SEM/EDX)係使用電磁透鏡聚焦電子束以分析檢體 4拉曼儀器(Ramanspectroscopy)可用來檢測假酒中之甲醇成分 5操作FTIR(Fourier-transform infraredspectroscopy)儀器時,可加入KBr藥品與待測固態樣品混合,經打錠後再上機實驗之",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "①②⑤",
+        "B": "③④⑤",
+        "C": "②③④⑤",
+        "D": "①②③④⑤"
+      }
     },
     {
       "number": 12,
@@ -231,9 +243,15 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "「刑事生物識別術(forensic biometrics)」之標記(marker)可區分為兩類別:生理性 (physiological)與行為性(behavioral)。下列那些是屬於生理性識別(physiologicalbiometrics) 之標記(marker)?1指紋(fingerprints) 2手(hand) 3虹膜(iris) 4視網膜(retina) 5聲音(voice) 6臉部特徵掃描(facial scans) (A)134 (B)1234 (C) (D)123456",
+      "stem": "「刑事生物識別術(forensic biometrics)」之標記(marker)可區分為兩類別:生理性 (physiological)與行為性(behavioral)。下列那些是屬於生理性識別(physiologicalbiometrics) 之標記(marker)?1指紋(fingerprints) 2手(hand) 3虹膜(iris) 4視網膜(retina) 5聲音(voice) 6臉部特徵掃描(facial scans)",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "①③④",
+        "B": "①②③④",
+        "C": "①②③④⑥",
+        "D": "①②③④⑤⑥"
+      }
     },
     {
       "number": 18,
@@ -329,9 +347,15 @@
     {
       "number": 25,
       "type": "choice",
-      "stem": "破裂的玻璃通常與竊案、槍擊、火災等案件相關,由玻璃裂痕可研判的資訊,下列敘述何者正確? 1撞擊力的方向(如由內而外) 2撞擊力的角度 3槍擊順序 4燃燒的溫度 5燃燒行進方向 (A) (B)僅1234 (C)僅123 (D)僅134",
+      "stem": "破裂的玻璃通常與竊案、槍擊、火災等案件相關,由玻璃裂痕可研判的資訊,下列敘述何者正確? 1撞擊力的方向(如由內而外) 2撞擊力的角度 3槍擊順序 4燃燒的溫度 5燃燒行進方向",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "①②③④⑤",
+        "B": "僅①②③④",
+        "C": "僅①②③",
+        "D": "僅①③④"
+      }
     }
   ],
   "year": 111,

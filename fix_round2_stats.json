@@ -1,13 +1,13 @@
 {
-  "files_processed": 910,
-  "files_modified": 397,
-  "fixes": {
-    "option_trailing_garbage_removed": 974,
-    "answer_star_to_songfen": 88,
-    "ocr_advanced_stem": 266,
-    "duplicate_number_fixed": 29,
-    "single_empty_option_removed": 31,
-    "remaining_empty_stem_removed": 18,
-    "ocr_advanced_option": 164
-  }
+  "p0_1_fixed": 40,
+  "p0_2_fixed": 33,
+  "p0_3_fixed": 18,
+  "p0_4_fixed": 10,
+  "embedded_fixed": 0,
+  "p1_haijun_fixed": 1,
+  "p1_114_files": 11,
+  "p1_114_essays": 11,
+  "p1_essay_dup_fixed": 16,
+  "p2_star_fixed": 88,
+  "p2_metadata_fixed": 4
 }

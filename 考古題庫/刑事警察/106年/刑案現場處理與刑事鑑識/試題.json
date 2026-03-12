@@ -242,9 +242,15 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "下列那些屬於二級高爆藥及其爆速特性?1RDX 2TATP 3TNT 4DDNP 5dynamite 6爆速在每秒1000公尺以上 (A)1245 (B) (C)2345 (D)1346",
+      "stem": "下列那些屬於二級高爆藥及其爆速特性?1RDX 2TATP 3TNT 4DDNP 5dynamite 6爆速在每秒1000公尺以上",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "①②④⑤",
+        "B": "①②③⑤⑥",
+        "C": "②③④⑤",
+        "D": "①③④⑥"
+      }
     },
     {
       "number": 18,

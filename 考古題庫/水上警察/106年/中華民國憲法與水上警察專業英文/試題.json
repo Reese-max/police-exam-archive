@@ -680,7 +680,13 @@
       "stem": "vessel. The problem is that not all member states have large vessels and the crews to run them. Still, we should discourage any thought of chartering a fishing vessel, or transport, or out-of-work research vessel and attempting to mount a 55 than qualified high seas patrol effort.",
       "section": "乙、測驗題",
       "answer": "C",
-      "subtype": "passage_fragment"
+      "subtype": "passage_fragment",
+      "options": {
+        "A": "cargo",
+        "B": "fishing",
+        "C": "naval",
+        "D": "recreational"
+      }
     },
     {
       "number": 51,

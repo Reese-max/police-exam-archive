@@ -684,10 +684,16 @@
     {
       "number": 11,
       "type": "choice",
-      "stem": "months 54 . Karpeles received a suspended sentence, meaning he is not serving jail time. Prosecutorshaddemanded10yearsinprison.HislawyerNobuyasuOgatasaidtheverdicthighlightslegal uncertainties inthenewareaof cryptocurrencycrime.",
+      "stem": "關於公務員之懲戒，下列敘述何者錯誤？",
       "section": "乙、測驗題",
       "answer": "D",
-      "subtype": "passage_fragment"
+      "subtype": "passage_fragment",
+      "options": {
+        "A": "公務員之懲戒屬於司法權",
+        "B": "於合理範圍內，公務員之懲戒得以法律規定由公務員之長官行使",
+        "C": "依公務人員考績法所為免職之懲處處分，實質上屬於懲戒處分",
+        "D": "公務人員對於懲處處分不服，得向懲戒法院請求救濟"
+      }
     },
     {
       "number": 52,
