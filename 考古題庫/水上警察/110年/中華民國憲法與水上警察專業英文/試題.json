@@ -34,422 +34,782 @@
     {
       "number": 1,
       "type": "choice",
-      "stem": "依憲法及司法院大法官解釋,有關依政黨比例代表制選出之代表,下列敘述何者錯誤? (A)僅限於獲得百分之五以上政黨選舉票之政黨才能分配席位 (B)依政黨比例代表制產生之代表,仍得由選民罷免 (C)依政黨比例代表制產生之代表出缺後有遞補制度 (D)僅限於立法委員選舉才有政黨比例代表",
+      "stem": "依憲法及司法院大法官解釋,有關依政黨比例代表制選出之代表,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "僅限於獲得百分之五以上政黨選舉票之政黨才能分配席位",
+        "B": "依政黨比例代表制產生之代表,仍得由選民罷免",
+        "C": "依政黨比例代表制產生之代表出缺後有遞補制度",
+        "D": "僅限於立法委員選舉才有政黨比例代表"
+      }
     },
     {
       "number": 2,
       "type": "choice",
-      "stem": "關於考試院之職權,下列敘述何者錯誤? (A)公務人員之任用資格,應經考試院依法考選銓定之 (B)考試院職權之行使限制人民權利者,須有法律之依據,始得為之 (C)考試院就其所掌事項之法律案,有對立法院提案之權 (D)考試院對立法院通過之法律案,得經總統核可,移請立法院覆議",
+      "stem": "關於考試院之職權,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "公務人員之任用資格,應經考試院依法考選銓定之",
+        "B": "考試院職權之行使限制人民權利者,須有法律之依據,始得為之",
+        "C": "考試院就其所掌事項之法律案,有對立法院提案之權",
+        "D": "考試院對立法院通過之法律案,得經總統核可,移請立法院覆議"
+      }
     },
     {
       "number": 3,
       "type": "choice",
-      "stem": "依司法院大法官解釋之意旨,關於立法院文件調閱權,下列敘述何者錯誤? (A)立法院使用調閱權所取得之資訊,於使用時應注意維護關係人之名譽隱私及營業秘密 (B)立法院不得調閱檢察機關偵查中之案件卷證 (C)立法院得調閱已偵查終結之所有案件之卷證 (D)立法院得立法對拒絕配合文件調閱者科處罰鍰",
+      "stem": "依司法院大法官解釋之意旨,關於立法院文件調閱權,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "立法院使用調閱權所取得之資訊,於使用時應注意維護關係人之名譽隱私及營業秘密",
+        "B": "立法院不得調閱檢察機關偵查中之案件卷證",
+        "C": "立法院得調閱已偵查終結之所有案件之卷證",
+        "D": "立法院得立法對拒絕配合文件調閱者科處罰鍰"
+      }
     },
     {
       "number": 4,
       "type": "choice",
-      "stem": "下列何者非屬立法委員得主動提出之議案? (A)預算案 (B)法律案 (C)憲法修正案 (D)總統罷免案",
+      "stem": "下列何者非屬立法委員得主動提出之議案?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "預算案",
+        "B": "法律案",
+        "C": "憲法修正案",
+        "D": "總統罷免案"
+      }
     },
     {
       "number": 5,
       "type": "choice",
-      "stem": "關於總統特權,下列敘述何者正確? (A)現職總統競選連任時,無刑事豁免權 (B)總統任內就其犯罪行為享有實體之免責權 (C)總統享有之國家機密特權,包括所有國家內政事項 (D)總統依其國家機密特權,就國家機密事項於刑事訴訟程序應享有拒絕證言權",
+      "stem": "關於總統特權,下列敘述何者正確?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "現職總統競選連任時,無刑事豁免權",
+        "B": "總統任內就其犯罪行為享有實體之免責權",
+        "C": "總統享有之國家機密特權,包括所有國家內政事項",
+        "D": "總統依其國家機密特權,就國家機密事項於刑事訴訟程序應享有拒絕證言權"
+      }
     },
     {
       "number": 6,
       "type": "choice",
-      "stem": "下列何者非屬憲法第77條所定司法權之範圍? (A)民事訴訟之審判 (B)行政訴訟之審判 (C)公務員之懲戒 (D)檢察官之偵查起訴",
+      "stem": "下列何者非屬憲法第77條所定司法權之範圍?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "民事訴訟之審判",
+        "B": "行政訴訟之審判",
+        "C": "公務員之懲戒",
+        "D": "檢察官之偵查起訴"
+      }
     },
     {
       "number": 7,
       "type": "choice",
-      "stem": "憲法基本國策章有關國防與外交之規定,下列敘述何者正確? (A)中華民國之國防,以維護世界和平為其目的之一 (B)現役軍人得兼任文官 (C)要求軍人須超出黨派,侵害其政黨結社自由 (D)依平等互惠原則,我國並非聯合國會員國,自不須尊重聯合國憲章",
+      "stem": "憲法基本國策章有關國防與外交之規定,下列敘述何者正確?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "中華民國之國防,以維護世界和平為其目的之一",
+        "B": "現役軍人得兼任文官",
+        "C": "要求軍人須超出黨派,侵害其政黨結社自由",
+        "D": "依平等互惠原則,我國並非聯合國會員國,自不須尊重聯合國憲章"
+      }
     },
     {
       "number": 8,
       "type": "choice",
-      "stem": "依司法院大法官解釋,有關人民居住遷徙自由之限制,下列何者違憲? (A)犯罪嫌疑人被法院限制住居 (B)破產人非經法院之許可,不得離開其住居地 (C)役男出境處理辦法規定役男出國旅遊須先經核准,每次不得逾4個月 (D)「國人入境短期停留長期居留及戶籍登記作業要點」規定在臺灣地區無戶籍人民申請在臺 灣地區長期居留得不予許可並限期離境",
+      "stem": "依司法院大法官解釋,有關人民居住遷徙自由之限制,下列何者違憲?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "犯罪嫌疑人被法院限制住居",
+        "B": "破產人非經法院之許可,不得離開其住居地",
+        "C": "役男出境處理辦法規定役男出國旅遊須先經核准,每次不得逾4個月",
+        "D": "「國人入境短期停留長期居留及戶籍登記作業要點」規定在臺灣地區無戶籍人民申請在臺 灣地區長期居留得不予許可並限期離境"
+      }
     },
     {
       "number": 9,
       "type": "choice",
-      "stem": "下列何者不屬於憲法第18條服公職權之保障範圍? (A)俸給 (B)陞遷 (C)工作地點 (D)退休金",
+      "stem": "下列何者不屬於憲法第18條服公職權之保障範圍?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "俸給",
+        "B": "陞遷",
+        "C": "工作地點",
+        "D": "退休金"
+      }
     },
     {
       "number": 10,
       "type": "choice",
-      "stem": "憲法有關人民基本義務之規定,係人民相對於國家處於何種地位? (A)積極地位 (B)消極地位 (C)主動地位 (D)被動地位",
+      "stem": "憲法有關人民基本義務之規定,係人民相對於國家處於何種地位?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "積極地位",
+        "B": "消極地位",
+        "C": "主動地位",
+        "D": "被動地位"
+      }
     },
     {
       "number": 11,
       "type": "choice",
-      "stem": "道路交通管理處罰條例規定,機車駕駛人未依規定戴安全帽者,處新臺幣 500 元罰鍰。有關 此規定,下列敘述何者正確? (A)不戴安全帽並非憲法所保障之基本權利 (B)處新臺幣500元罰鍰顯屬輕微,尚未對人民之基本權利構成限制 (C)條例非法律,此規定違反法律保留原則 (D)此規定之目的係為增進公共利益",
+      "stem": "道路交通管理處罰條例規定,機車駕駛人未依規定戴安全帽者,處新臺幣 500 元罰鍰。有關 此規定,下列敘述何者正確?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "不戴安全帽並非憲法所保障之基本權利",
+        "B": "處新臺幣500元罰鍰顯屬輕微,尚未對人民之基本權利構成限制",
+        "C": "條例非法律,此規定違反法律保留原則",
+        "D": "此規定之目的係為增進公共利益"
+      }
     },
     {
       "number": 12,
       "type": "choice",
-      "stem": "關於總統、副總統之缺位與繼任,下列敘述何者錯誤? (A)副總統缺位時,總統應於3個月內提名候選人,由立法院補選,繼任至原任期屆滿為止 (B)我國曾出現總統缺位、副總統繼任,但無副總統補選之憲政經驗 (C)總統缺位時,由副總統繼任,至總統任期屆滿為止 (D)行政院院長代行總統職權時,其期限不得逾2個月",
+      "stem": "關於總統、副總統之缺位與繼任,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "副總統缺位時,總統應於3個月內提名候選人,由立法院補選,繼任至原任期屆滿為止",
+        "B": "我國曾出現總統缺位、副總統繼任,但無副總統補選之憲政經驗",
+        "C": "總統缺位時,由副總統繼任,至總統任期屆滿為止",
+        "D": "行政院院長代行總統職權時,其期限不得逾2個月"
+      }
     },
     {
       "number": 13,
       "type": "choice",
-      "stem": "依現行規定,下列何者非立法院之職權? (A)法律案之議決權 (B)條約案之議決權 (C)國家重要事項之參與決策權 (D)行政院院長任命之同意權",
+      "stem": "依現行規定,下列何者非立法院之職權?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "法律案之議決權",
+        "B": "條約案之議決權",
+        "C": "國家重要事項之參與決策權",
+        "D": "行政院院長任命之同意權"
+      }
     },
     {
       "number": 14,
       "type": "choice",
-      "stem": "依據憲法本文及增修條文規定,有關監察委員之身分及地位,下列敘述何者錯誤? (A)監察委員在院內之言論或表決,已無免責權 (B)除現行犯外,非經監察院之許可,不得逮捕或拘禁 (C)不得兼任其他公職 (D)依據法律獨立行使職權",
+      "stem": "依據憲法本文及增修條文規定,有關監察委員之身分及地位,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "監察委員在院內之言論或表決,已無免責權",
+        "B": "除現行犯外,非經監察院之許可,不得逮捕或拘禁",
+        "C": "不得兼任其他公職",
+        "D": "依據法律獨立行使職權"
+      }
     },
     {
       "number": 15,
       "type": "choice",
-      "stem": "依司法院大法官審理案件法規定,關於憲法法庭審理政黨違憲解散案件之程序,下列敘述何 者正確? (A)憲法法庭行言詞辯論,須有大法官現有總額三分之二以上出席 (B)以書面審理為原則,必要時,得行言詞辯論 (C)得囑託檢察官或調度司法警察為搜索、扣押 (D)作成附具理由書之解釋,大法官得提出不同意見書",
+      "stem": "依司法院大法官審理案件法規定,關於憲法法庭審理政黨違憲解散案件之程序,下列敘述何 者正確?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "憲法法庭行言詞辯論,須有大法官現有總額三分之二以上出席",
+        "B": "以書面審理為原則,必要時,得行言詞辯論",
+        "C": "得囑託檢察官或調度司法警察為搜索、扣押",
+        "D": "作成附具理由書之解釋,大法官得提出不同意見書"
+      }
     },
     {
       "number": 16,
       "type": "choice",
-      "stem": "依司法院大法官解釋,關於立法委員之質詢及政府人員之備詢,下列敘述何者錯誤? (A)立法院對政府人員的質詢權,源自於行政院應對立法院負責的憲法規定 (B)立法院邀請政府人員出席備詢時,行政院各部會首長及其所屬人員,除依法獨立行使職權, 不受外部干涉之人員外,均有應邀說明之義務 (C)質詢權係為貫徹民意政治及責任政治之制度設計 (D)地方自治團體辦理自治事項仍受中央政府之適法監督,故受立法院邀請出席備詢時,亦有 應邀說明之義務",
+      "stem": "依司法院大法官解釋,關於立法委員之質詢及政府人員之備詢,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "立法院對政府人員的質詢權,源自於行政院應對立法院負責的憲法規定",
+        "B": "立法院邀請政府人員出席備詢時,行政院各部會首長及其所屬人員,除依法獨立行使職權, 不受外部干涉之人員外,均有應邀說明之義務",
+        "C": "質詢權係為貫徹民意政治及責任政治之制度設計",
+        "D": "地方自治團體辦理自治事項仍受中央政府之適法監督,故受立法院邀請出席備詢時,亦有 應邀說明之義務"
+      }
     },
     {
       "number": 17,
       "type": "choice",
-      "stem": "下列何者並非憲法第129條所定之選舉基本原則? (A)普通 (B)優先 (C)直接 (D)無記名",
+      "stem": "下列何者並非憲法第129條所定之選舉基本原則?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "普通",
+        "B": "優先",
+        "C": "直接",
+        "D": "無記名"
+      }
     },
     {
       "number": 18,
       "type": "choice",
-      "stem": "依憲法、增修條文及司法院大法官解釋,關於罷免,下列敘述何者錯誤? (A)總統、副總統之罷免,須經立法委員之提案,選舉人總額過半數之投票,且有效票過半數 同意罷免時,方能通過 (B)總統、副總統之彈劾案如不成立,立法院即不得再提案罷免 (C)對於操守不佳之大法官,仍不能透過罷免追究其責任 (D)直轄市、縣市立法委員之罷免,僅原選舉區之選舉人方有投票權",
+      "stem": "依憲法、增修條文及司法院大法官解釋,關於罷免,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "總統、副總統之罷免,須經立法委員之提案,選舉人總額過半數之投票,且有效票過半數 同意罷免時,方能通過",
+        "B": "總統、副總統之彈劾案如不成立,立法院即不得再提案罷免",
+        "C": "對於操守不佳之大法官,仍不能透過罷免追究其責任",
+        "D": "直轄市、縣市立法委員之罷免,僅原選舉區之選舉人方有投票權"
+      }
     },
     {
       "number": 19,
       "type": "choice",
-      "stem": "有關總統制,下列敘述何者正確? (A)國家元首與行政首長二元化 (B)以行政、立法人事分離為原則 (C)在常態下國會可迫使總統去職,總統也有權解散國會 (D)司法權嚴守憲法分際,絕對不擔任各方利益衝突時之最後仲裁者",
+      "stem": "有關總統制,下列敘述何者正確?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "國家元首與行政首長二元化",
+        "B": "以行政、立法人事分離為原則",
+        "C": "在常態下國會可迫使總統去職,總統也有權解散國會",
+        "D": "司法權嚴守憲法分際,絕對不擔任各方利益衝突時之最後仲裁者"
+      }
     },
     {
       "number": 20,
       "type": "choice",
-      "stem": "下列何者係由中央立法並執行之,或交由省、縣執行之? (A)國稅與省稅、縣稅之劃分 (B)度量衡 (C)行政區劃 (D)縣警衛之實施",
+      "stem": "下列何者係由中央立法並執行之,或交由省、縣執行之?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "國稅與省稅、縣稅之劃分",
+        "B": "度量衡",
+        "C": "行政區劃",
+        "D": "縣警衛之實施"
+      }
     },
     {
       "number": 21,
       "type": "choice",
-      "stem": "依司法院大法官解釋,下列那一基本權利受憲法絕對保障? (A)內在信仰之自由 (B)藝術自由 (C)生命權 (D)隱私權",
+      "stem": "依司法院大法官解釋,下列那一基本權利受憲法絕對保障?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "內在信仰之自由",
+        "B": "藝術自由",
+        "C": "生命權",
+        "D": "隱私權"
+      }
     },
     {
       "number": 22,
       "type": "choice",
-      "stem": "依司法院大法官釋字第328號解釋,有關中華民國領土之敘述,下列何者正確? (A)憲法對於領土採列舉方式 (B)憲法並未設有領土變更之程序 (C)固有疆域範圍之界定,為重大之政治問題 (D)國家領土之範圍,可由行使司法權之釋憲機關予以解釋",
+      "stem": "依司法院大法官釋字第328號解釋,有關中華民國領土之敘述,下列何者正確?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "憲法對於領土採列舉方式",
+        "B": "憲法並未設有領土變更之程序",
+        "C": "固有疆域範圍之界定,為重大之政治問題",
+        "D": "國家領土之範圍,可由行使司法權之釋憲機關予以解釋"
+      }
     },
     {
       "number": 23,
       "type": "choice",
-      "stem": "下列何者不構成財產權之特別犧牲? (A)私有土地被列入公共設施保留地 (B)私有道路被認定為具公共地役關係之既成道路 (C)私有土地被徵收 (D)私有騎樓通道經行政機關公告禁止設攤",
+      "stem": "下列何者不構成財產權之特別犧牲?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "私有土地被列入公共設施保留地",
+        "B": "私有道路被認定為具公共地役關係之既成道路",
+        "C": "私有土地被徵收",
+        "D": "私有騎樓通道經行政機關公告禁止設攤"
+      }
     },
     {
       "number": 24,
       "type": "choice",
-      "stem": "依司法院大法官解釋,下列何者並非憲法第22條保障之非明文憲法權利? (A)更名權 (B)參加全民健康保險之契約自由 (C)個人自主控制個人資料之權利 (D)名譽權",
+      "stem": "依司法院大法官解釋,下列何者並非憲法第22條保障之非明文憲法權利?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "更名權",
+        "B": "參加全民健康保險之契約自由",
+        "C": "個人自主控制個人資料之權利",
+        "D": "名譽權"
+      }
     },
     {
       "number": 25,
       "type": "choice",
-      "stem": "依司法院大法官解釋,關於職業自由,下列敘述何者錯誤? (A)職業自由受憲法工作權保障 (B)執行職業之自由,得為追求一般公共利益而加以限制 (C)行業獨占制度,屬於職業之客觀條件限制 (D)為追求重要之公共利益,得對於特定職業設定客觀條件限制",
+      "stem": "依司法院大法官解釋,關於職業自由,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "職業自由受憲法工作權保障",
+        "B": "執行職業之自由,得為追求一般公共利益而加以限制",
+        "C": "行業獨占制度,屬於職業之客觀條件限制",
+        "D": "為追求重要之公共利益,得對於特定職業設定客觀條件限制"
+      }
     },
     {
       "number": 26,
       "type": "choice",
-      "stem": "依司法院大法官解釋,下列何者不違反平等原則? (A)排除色盲考生進入警察大學就讀 (B)對於性交易僅處罰意圖得利之一方 (C)扶養親屬限於「未滿20歲或滿60歲以上者」始得減除免稅額 (D)禁止明眼人從事按摩業",
+      "stem": "依司法院大法官解釋,下列何者不違反平等原則?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "排除色盲考生進入警察大學就讀",
+        "B": "對於性交易僅處罰意圖得利之一方",
+        "C": "扶養親屬限於「未滿20歲或滿60歲以上者」始得減除免稅額",
+        "D": "禁止明眼人從事按摩業"
+      }
     },
     {
       "number": 27,
       "type": "choice",
-      "stem": "主管機關進入營業場所檢查消防及相關安全設施是否合法,與下列何種基本權利之限制最無關? (A)隱私權 (B)營業自由 (C)人身自由 (D)財產權",
+      "stem": "主管機關進入營業場所檢查消防及相關安全設施是否合法,與下列何種基本權利之限制最無關?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "隱私權",
+        "B": "營業自由",
+        "C": "人身自由",
+        "D": "財產權"
+      }
     },
     {
       "number": 28,
       "type": "choice",
-      "stem": "某社區規約約定,區分所有權人不得於其住宅內設置各種中途之家。社區住戶甲因於其所有 之獨棟住宅內設置「未婚媽媽中途之家」,為社區管理委員依規約訴請甲遷離社區。於法院審 理本案時,甲得主張下列何種憲法理論? (A)國民主權及參政權之理論 (B)基本權對國庫行為之效力 (C)正當法律程序原則 (D)基本權之第三人效力理論",
+      "stem": "某社區規約約定,區分所有權人不得於其住宅內設置各種中途之家。社區住戶甲因於其所有 之獨棟住宅內設置「未婚媽媽中途之家」,為社區管理委員依規約訴請甲遷離社區。於法院審 理本案時,甲得主張下列何種憲法理論?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "國民主權及參政權之理論",
+        "B": "基本權對國庫行為之效力",
+        "C": "正當法律程序原則",
+        "D": "基本權之第三人效力理論"
+      }
     },
     {
       "number": 29,
       "type": "choice",
-      "stem": "依司法院大法官釋字第380號解釋,學術自由之保障,係由下列何項憲法權利導出? (A)言論自由 (B)講學自由 (C)著作自由 (D)出版自由",
+      "stem": "依司法院大法官釋字第380號解釋,學術自由之保障,係由下列何項憲法權利導出?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "言論自由",
+        "B": "講學自由",
+        "C": "著作自由",
+        "D": "出版自由"
+      }
     },
     {
       "number": 30,
       "type": "choice",
-      "stem": "下列何種言論,受到憲法保障之程度最低? (A)批評企業的學術論文 (B)菸商贊助公益活動之宣傳 (C)鼓吹受僱者參與遊行之傳單 (D)鄉民討論明星服裝造型的網路留言",
+      "stem": "下列何種言論,受到憲法保障之程度最低?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "批評企業的學術論文",
+        "B": "菸商贊助公益活動之宣傳",
+        "C": "鼓吹受僱者參與遊行之傳單",
+        "D": "鄉民討論明星服裝造型的網路留言"
+      }
     },
     {
       "number": 31,
       "type": "choice",
-      "stem": "憲法第23條規定,人民權利得以法律限制之,下列敘述何者正確? (A)法律僅指立法院通過之中央法律 (B)對於財產權,得以法律或法律明確授權之命令予以限制 (C)地方自治團體不得制定自治條例限制地方人民之基本權利 (D)行政機關不得訂定法規命令限制人民之基本權利",
+      "stem": "憲法第23條規定,人民權利得以法律限制之,下列敘述何者正確?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "法律僅指立法院通過之中央法律",
+        "B": "對於財產權,得以法律或法律明確授權之命令予以限制",
+        "C": "地方自治團體不得制定自治條例限制地方人民之基本權利",
+        "D": "行政機關不得訂定法規命令限制人民之基本權利"
+      }
     },
     {
       "number": 32,
       "type": "choice",
-      "stem": "甲為慶祝其成年,租用私營旅館內庭園與眾多好友同樂,是否須經主管機關許可? (A)雖屬室外集會,仍可自由為之 (B)屬室外集會,須先經許可 (C)屬室內集會,可自由為之 (D)雖屬室內集會,仍須先經許可",
+      "stem": "甲為慶祝其成年,租用私營旅館內庭園與眾多好友同樂,是否須經主管機關許可?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "雖屬室外集會,仍可自由為之",
+        "B": "屬室外集會,須先經許可",
+        "C": "屬室內集會,可自由為之",
+        "D": "雖屬室內集會,仍須先經許可"
+      }
     },
     {
       "number": 33,
       "type": "choice",
-      "stem": "下列何者涉及憲法生存權之保障? (A)禁止刑求行為 (B)禁止安樂死行為 (C)禁止通姦行為 (D)禁止人民團體之成立",
+      "stem": "下列何者涉及憲法生存權之保障?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "禁止刑求行為",
+        "B": "禁止安樂死行為",
+        "C": "禁止通姦行為",
+        "D": "禁止人民團體之成立"
+      }
     },
     {
       "number": 34,
       "type": "choice",
-      "stem": "依司法院大法官解釋,下列何者不屬憲法租稅義務之內涵? (A)租稅法律主義 (B)租稅公平原則 (C)構成財產權之限制 (D)預先指定稅捐之用途",
+      "stem": "依司法院大法官解釋,下列何者不屬憲法租稅義務之內涵?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "租稅法律主義",
+        "B": "租稅公平原則",
+        "C": "構成財產權之限制",
+        "D": "預先指定稅捐之用途"
+      }
     },
     {
       "number": 35,
       "type": "choice",
-      "stem": "依憲法增修條文規定,有關司法院,下列敘述何者正確? (A)司法院設大法官15人,並以其中1人為院長,1人為副院長 (B)司法院大法官,由總統提名,經監察院同意任命之 (C)司法院大法官,均適用憲法第81條及有關法官終身職待遇之規定 (D)司法院大法官任期9年,不分屆次,個別計算",
+      "stem": "依憲法增修條文規定,有關司法院,下列敘述何者正確?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "司法院設大法官15人,並以其中1人為院長,1人為副院長",
+        "B": "司法院大法官,由總統提名,經監察院同意任命之",
+        "C": "司法院大法官,均適用憲法第81條及有關法官終身職待遇之規定",
+        "D": "司法院大法官任期9年,不分屆次,個別計算"
+      }
     },
     {
       "number": 36,
       "type": "choice",
-      "stem": "依憲法增修條文、司法院大法官解釋及地方制度法規定,有關我國之地方層級劃分,下列敘 述何者錯誤? (A)村里為地方自治團體 (B)縣劃分為鄉、鎮、縣轄市 (C)直轄市劃分為區 (D)省不是地方自治團體",
+      "stem": "依憲法增修條文、司法院大法官解釋及地方制度法規定,有關我國之地方層級劃分,下列敘 述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "村里為地方自治團體",
+        "B": "縣劃分為鄉、鎮、縣轄市",
+        "C": "直轄市劃分為區",
+        "D": "省不是地方自治團體"
+      }
     },
     {
       "number": 37,
       "type": "choice",
-      "stem": "依憲法增修條文及司法院大法官解釋,有關地方自治,下列敘述何者錯誤? (A)屬於縣之立法權,由縣議會行之 (B)縣就自治事項,得在法律授權範圍內制定自治條例 (C)縣長由縣民選舉之 (D)縣議會議長選舉之投票方式,純屬地方自治事項",
+      "stem": "依憲法增修條文及司法院大法官解釋,有關地方自治,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "屬於縣之立法權,由縣議會行之",
+        "B": "縣就自治事項,得在法律授權範圍內制定自治條例",
+        "C": "縣長由縣民選舉之",
+        "D": "縣議會議長選舉之投票方式,純屬地方自治事項"
+      }
     },
     {
       "number": 38,
       "type": "choice",
-      "stem": "下列何者不適用「罷免」的規定? (A)全國不分區選出之立法委員 (B)總統 (C)直轄市議員 (D)村(里)長",
+      "stem": "下列何者不適用「罷免」的規定?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "全國不分區選出之立法委員",
+        "B": "總統",
+        "C": "直轄市議員",
+        "D": "村(里)長"
+      }
     },
     {
       "number": 39,
       "type": "choice",
-      "stem": "行政院會議之主席由下列何者擔任? (A)總統 (B)行政院院長 (C)行政院秘書長 (D)內政部部長",
+      "stem": "行政院會議之主席由下列何者擔任?",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "總統",
+        "B": "行政院院長",
+        "C": "行政院秘書長",
+        "D": "內政部部長"
+      }
     },
     {
       "number": 40,
       "type": "choice",
-      "stem": "依司法院大法官審理案件法規定,關於人民聲請釋憲制度,下列敘述何者錯誤? (A)政黨亦得聲請釋憲 (B)須主張憲法上之權利受不法侵害 (C)須用盡一般之法律救濟途徑而未獲得救濟 (D)對於違憲之判決大法官應撤銷發回更審",
+      "stem": "依司法院大法官審理案件法規定,關於人民聲請釋憲制度,下列敘述何者錯誤?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "政黨亦得聲請釋憲",
+        "B": "須主張憲法上之權利受不法侵害",
+        "C": "須用盡一般之法律救濟途徑而未獲得救濟",
+        "D": "對於違憲之判決大法官應撤銷發回更審"
+      }
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "Safe navigation is more than just finding a vessel’s present location; it includes predicting future locations, routeplanningandcollision . (A)avatar (B)avoidance (C)avocado (D)avocation",
+      "stem": "Safe navigation is more than just finding a vessel’s present location; it includes predicting future locations, routeplanningandcollision .",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "avatar",
+        "B": "avoidance",
+        "C": "avocado",
+        "D": "avocation"
+      }
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "Fundamental to low-speed maneuvering in sea navigation is an understanding of the and handedness ofthepropellers. (A)contour (B)concoction (C)circumference (D)configuration",
+      "stem": "Fundamental to low-speed maneuvering in sea navigation is an understanding of the and handedness ofthepropellers.",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "contour",
+        "B": "concoction",
+        "C": "circumference",
+        "D": "configuration"
+      }
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "Damagecontroltrainingis bymostseafarers,buttheengineeringstaffaremostexperienced inmakinglastingrepairs. (A)undergrown (B)understrapped (C)undersupplied (D)undertaken",
+      "stem": "Damagecontroltrainingis bymostseafarers,buttheengineeringstaffaremostexperienced inmakinglastingrepairs.",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "undergrown",
+        "B": "understrapped",
+        "C": "undersupplied",
+        "D": "undertaken"
+      }
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "Unlessfullyequippedtoperformsearchandrescue,noboatsshouldbe toinitiateanyrescue operations. (A)deployed (B)deposed (C)deposited (D)deputed",
+      "stem": "Unlessfullyequippedtoperformsearchandrescue,noboatsshouldbe toinitiateanyrescue operations.",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "deployed",
+        "B": "deposed",
+        "C": "deposited",
+        "D": "deputed"
+      }
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "There is in the case of piracy, which means that anynation may pursue pirates on the high seas. (A)international convention (B)universal jurisdiction (C)maritime (D)jurisdiction",
+      "stem": "There is in the case of piracy, which means that anynation may pursue pirates on the high seas.",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "international convention",
+        "B": "universal jurisdiction",
+        "C": "maritime",
+        "D": "jurisdiction"
+      }
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "No high seas boarding & inspection scheme consideration if the expected level of contact betweenpatrol vessels andfishingvessels is rareornonexistent. (A)merits (B)merges (C)meshes (D)mentions",
+      "stem": "No high seas boarding & inspection scheme consideration if the expected level of contact betweenpatrol vessels andfishingvessels is rareornonexistent.",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "merits",
+        "B": "merges",
+        "C": "meshes",
+        "D": "mentions"
+      }
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "An often overlooked goal for a comprehensive boarding & inspection scheme is to document the business planofthevessel . (A)undersurveillance (B)incustody (C)underscrutiny (D)indrifting",
+      "stem": "An often overlooked goal for a comprehensive boarding & inspection scheme is to document the business planofthevessel .",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "undersurveillance",
+        "B": "incustody",
+        "C": "underscrutiny",
+        "D": "indrifting"
+      }
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "One mission of the Taiwan Coast Guard Administration is the investigation and of smugglingoperations andillegal vessels orpeopleenteringor exitingthecountry. (A)seizor (B)seizure (C)seizer (D)seizen",
+      "stem": "One mission of the Taiwan Coast Guard Administration is the investigation and of smugglingoperations andillegal vessels orpeopleenteringor exitingthecountry.",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "seizor",
+        "B": "seizure",
+        "C": "seizer",
+        "D": "seizen"
+      }
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "All mariners have adutytosavethelives ofothers without expectationofreward. (A)incoercion (B)inabsentia (C)inperil (D)inreview",
+      "stem": "All mariners have adutytosavethelives ofothers without expectationofreward.",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "incoercion",
+        "B": "inabsentia",
+        "C": "inperil",
+        "D": "inreview"
+      }
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "All patrols should with a planning and briefing session for key participants to ensure that everyoneknows what to expect. (A)comment (B)commend (C)command (D)commence",
+      "stem": "All patrols should with a planning and briefing session for key participants to ensure that everyoneknows what to expect.",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "comment",
+        "B": "commend",
+        "C": "command",
+        "D": "commence"
+      }
     },
     {
       "number": 51,
       "type": "choice",
-      "stem": "Offshorepatrol vessels, thoughusuallycostly, are necessaryfor actual operations. (A)appropriation (B)apprehension (C)appreciation (D)approbation",
+      "stem": "Offshorepatrol vessels, thoughusuallycostly, are necessaryfor actual operations.",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "appropriation",
+        "B": "apprehension",
+        "C": "appreciation",
+        "D": "approbation"
+      }
     },
     {
       "number": 52,
       "type": "choice",
-      "stem": "Ashipdesigner must knowthat the ofthevessel is equal tothe sum ofthe deadweight and thelightweight tonnages. (A)replacement (B)impingement (C)displacement (D)implement",
+      "stem": "Ashipdesigner must knowthat the ofthevessel is equal tothe sum ofthe deadweight and thelightweight tonnages.",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "replacement",
+        "B": "impingement",
+        "C": "displacement",
+        "D": "implement"
+      }
     },
     {
       "number": 53,
       "type": "choice",
-      "stem": "Tostabilizeashipcarryingnocargo, wateris takenindedicatedtanks intheship. (A)blast (B)ballast (C)balsam (D)ballistic",
+      "stem": "Tostabilizeashipcarryingnocargo, wateris takenindedicatedtanks intheship.",
       "section": "乙、測驗題",
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "blast",
+        "B": "ballast",
+        "C": "balsam",
+        "D": "ballistic"
+      }
     },
     {
       "number": 54,
       "type": "choice",
-      "stem": "Unlikeoldendays, modernshipbuildingmakes considerableuseof sections. (A)prefabricated (B)preconfigured (C)preponderant (D)preposterous",
+      "stem": "Unlikeoldendays, modernshipbuildingmakes considerableuseof sections.",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "prefabricated",
+        "B": "preconfigured",
+        "C": "preponderant",
+        "D": "preposterous"
+      }
     },
     {
       "number": 55,
       "type": "choice",
-      "stem": "An inspection performed on an authorized vessel could be by a minimum number of operational days withintheregulatoryarea. (A)triaged (B)triangulated (C)trialated (D)triggered 請依下文回答第56題至第60題: Members of jury have found former Minneapolis police officer guilty for the death of an African American,GeorgeFloyd.FloyddiedonMay25,2020afterthepoliceofficerheldhiskneeagainstFloyd’s neck or upper body for nearly nine minutes. This police officer was accused of third-degree murder and second-degreemanslaughter.Thistrialisprobablyoneofthemostcloselywatchedtrialsinrecentdecades, because it involves a law enforcement officer; and Floyd’s death under the knee of this officer has reverberated around the world. Although, the jury members have announced that this police officer is guiltyinallcharges,thisunfortunateincidentandFloyd’slastwords—Icannotbreathe—havebeendeeply ingrainedintheminds ofAmericanandhaveincitednumerous marches, andprotests across the country. Responding to the result of this trial, former US president, Barack Obama, asked this thought- provoking question: “Would justice be done” after we learned about the verdict of this trail? While this verdict may have somewhat uplifted the minds of Floyd’s family and is a necessary step on the road to justice,itisfarfromasufficientone.AccordingtoObama,truejusticeis “aboutmuchmorethana single verdict ina singletrial.” Obamaargues that wecannot override what has happened, but it’s important for all citizenstorecognizethat millionsofpeopleofcolorliveinfearthat theirnext encounterwithapolice officer could be their last member trace. Obama maintained that all of us—in particular the people in education—havetostartdoingsomethingthathelpsunitepeopleofdifferentcolorsandofdifferentethnic backgrounds. Additionally, Obama also posited that people in law and law enforcement have to follow through the concrete reforms that may incrementally eliminate racial bias in the criminal justice system and to ensure that full measure of justice that Floyd and so many others have been denied. Last but not least, policy makers have to start enacting laws that can expand the economic opportunities for those minority groups that have been too long marginalized. The above works may look trivial, thankless and difficult,but theyarenecessarytomaketheAmericathecountryUS people believeinagain.",
+      "stem": "An inspection performed on an authorized vessel could be by a minimum number of operational days withintheregulatoryarea.",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "triaged",
+        "B": "triangulated",
+        "C": "trialated",
+        "D": "triggered 請依下文回答第56題至第60題: Members of jury have found former Minneapolis police officer guilty for the death of an African American,GeorgeFloyd.FloyddiedonMay25,2020afterthepoliceofficerheldhiskneeagainstFloyd’s neck or upper body for nearly nine minutes. This police officer was accused of third-degree murder and second-degreemanslaughter.Thistrialisprobablyoneofthemostcloselywatchedtrialsinrecentdecades, because it involves a law enforcement officer; and Floyd’s death under the knee of this officer has reverberated around the world. Although, the jury members have announced that this police officer is guiltyinallcharges,thisunfortunateincidentandFloyd’slastwords—Icannotbreathe—havebeendeeply ingrainedintheminds ofAmericanandhaveincitednumerous marches, andprotests across the country. Responding to the result of this trial, former US president, Barack Obama, asked this thought- provoking question: “Would justice be done” after we learned about the verdict of this trail? While this verdict may have somewhat uplifted the minds of Floyd’s family and is a necessary step on the road to justice,itisfarfromasufficientone.AccordingtoObama,truejusticeis “aboutmuchmorethana single verdict ina singletrial.” Obamaargues that wecannot override what has happened, but it’s important for all citizenstorecognizethat millionsofpeopleofcolorliveinfearthat theirnext encounterwithapolice officer could be their last member trace. Obama maintained that all of us—in particular the people in education—havetostartdoingsomethingthathelpsunitepeopleofdifferentcolorsandofdifferentethnic backgrounds. Additionally, Obama also posited that people in law and law enforcement have to follow through the concrete reforms that may incrementally eliminate racial bias in the criminal justice system and to ensure that full measure of justice that Floyd and so many others have been denied. Last but not least, policy makers have to start enacting laws that can expand the economic opportunities for those minority groups that have been too long marginalized. The above works may look trivial, thankless and difficult,but theyarenecessarytomaketheAmericathecountryUS people believeinagain."
+      }
     },
     {
       "number": 56,
       "type": "choice",
-      "stem": "Whichofthefollowingis themost appropriateTITLE forthis passage? (A)Theuncensoredtruth about ourvaluesystem (B)Thechronologyofthe US lawenforcement (C)What prosecutors and judges must prove? (D)Thelessons welearnedfrom Floyd’s unfortunatedeath",
+      "stem": "Whichofthefollowingis themost appropriateTITLE forthis passage?",
       "section": "乙、測驗題",
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "Theuncensoredtruth about ourvaluesystem",
+        "B": "Thechronologyofthe US lawenforcement",
+        "C": "What prosecutors and judges must prove?",
+        "D": "Thelessons welearnedfrom Floyd’s unfortunatedeath"
+      }
     },
     {
       "number": 57,
       "type": "choice",
-      "stem": "What canweinferfrom this passage? (A)Thereforms tobringjusticebackmaynot be appreciatedbyall people. (B)Racial bias is never anissueinthecriminal trials intheUS. (C)Thenow-firedofficer’s conduct was reasonable,andFloyddiedfrom illegal druguse. (D) Inordertorebuildthejusticesystem intheUS,weneedtodependexclusivelyonthereform and effort from thelaw enforcement.",
+      "stem": "What canweinferfrom this passage?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "Thereforms tobringjusticebackmaynot be appreciatedbyall people.",
+        "B": "Racial bias is never anissueinthecriminal trials intheUS.",
+        "C": "Thenow-firedofficer’s conduct was reasonable,andFloyddiedfrom illegal druguse.",
+        "D": "Inordertorebuildthejusticesystem intheUS,weneedtodependexclusivelyonthereform and effort from thelaw enforcement."
+      }
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "Theword“reverberate” is closest inmeaningto (A)resound (B)inspire (C)secure (D)arouse",
+      "stem": "Theword“reverberate” is closest inmeaningto",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "resound",
+        "B": "inspire",
+        "C": "secure",
+        "D": "arouse"
+      }
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "Which statement can be added to the very end of the second paragraph without disrupting the flow ofthis passage? (A)Americans reactedtothisverdictviolentlyasformerMinneapolispoliceofficerwas foundguilty ofthemurderofGeorge Floyd. (B)There are always bad apples in the police force; and we just need to swallow what happened to GeorgeFloyd. (C)We can draw on the strength from millions of American people who protested and spoke up, shiningalight oninequityand callingfor change. (D)Floyd’s verdict has been criticized by law enforcement officials and advocates who fear it will handicappolice.",
+      "stem": "Which statement can be added to the very end of the second paragraph without disrupting the flow ofthis passage?",
       "section": "乙、測驗題",
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "Americans reactedtothisverdictviolentlyasformerMinneapolispoliceofficerwas foundguilty ofthemurderofGeorge Floyd.",
+        "B": "There are always bad apples in the police force; and we just need to swallow what happened to GeorgeFloyd.",
+        "C": "We can draw on the strength from millions of American people who protested and spoke up, shiningalight oninequityand callingfor change.",
+        "D": "Floyd’s verdict has been criticized by law enforcement officials and advocates who fear it will handicappolice."
+      }
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "Whichofthefollowingbest describes the author’s toneinthis passage? (A)reflectivebut hopeful (B)ignorant andunforgivable (C)relievedand cheerful (D)remorseful andcynical",
+      "stem": "Whichofthefollowingbest describes the author’s toneinthis passage?",
       "section": "乙、測驗題",
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "reflectivebut hopeful",
+        "B": "ignorant andunforgivable",
+        "C": "relievedand cheerful",
+        "D": "remorseful andcynical"
+      }
     }
   ],
   "year": 110,

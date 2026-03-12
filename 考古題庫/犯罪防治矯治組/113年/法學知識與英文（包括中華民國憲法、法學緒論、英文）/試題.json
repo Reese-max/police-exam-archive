@@ -15,352 +15,652 @@
     {
       "number": 1,
       "type": "choice",
-      "stem": "下列何者並非憲法法治國原則之內涵? (A)依法行政原則 (B)基本權的保障 (C)定期選舉 (D)權力分立原則",
+      "stem": "下列何者並非憲法法治國原則之內涵?",
       "section": null,
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "依法行政原則",
+        "B": "基本權的保障",
+        "C": "定期選舉",
+        "D": "權力分立原則"
+      }
     },
     {
       "number": 2,
       "type": "choice",
-      "stem": "關於憲法基本國策土地利用之規定,下列敘述何者錯誤? (A)私有土地應照價納稅,政府並得照價收買 (B)附著於土地之礦產屬於國家所有,但人民依法取得土地所有權後,附著於該土地之礦產所有權亦歸該人所有 (C)國家應規劃土地利用,開發農業資源,促成農業之工業化 (D)土地價值非因施以勞力資本而增加者,應由國家徵收土地增值稅,歸人民共享之",
+      "stem": "關於憲法基本國策土地利用之規定,下列敘述何者錯誤?",
       "section": null,
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "私有土地應照價納稅,政府並得照價收買",
+        "B": "附著於土地之礦產屬於國家所有,但人民依法取得土地所有權後,附著於該土地之礦產所有權亦歸該人所有",
+        "C": "國家應規劃土地利用,開發農業資源,促成農業之工業化",
+        "D": "土地價值非因施以勞力資本而增加者,應由國家徵收土地增值稅,歸人民共享之"
+      }
     },
     {
       "number": 3,
       "type": "choice",
-      "stem": "關於憲法第10條規定人民有居住、遷徙自由之保障範圍,下列何者所受限制最大? (A)設定住居所 (B)本國人及外國人出境 (C)往來國內各地 (D)本國人及外國人入境",
+      "stem": "關於憲法第10條規定人民有居住、遷徙自由之保障範圍,下列何者所受限制最大?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "設定住居所",
+        "B": "本國人及外國人出境",
+        "C": "往來國內各地",
+        "D": "本國人及外國人入境"
+      }
     },
     {
       "number": 4,
       "type": "choice",
-      "stem": "有關言論自由之保障,下列敘述何者正確? (A)甲欲透過焚燒旗幟來表達對政府的抗議,這樣的行為無涉言論自由之保護 (B)猥褻言論之目的雖在傳達性的訊息,仍受言論自由之保護 (C)針對言論內容所做的管制規定,應與針對言論的時間與地點所做的管制規定,採相同的審查標準 (D)憲法對於言論自由之應有保障,僅針對積極權利行使之表意自由,不包括消極的不為表意之自由",
+      "stem": "有關言論自由之保障,下列敘述何者正確?",
       "section": null,
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "甲欲透過焚燒旗幟來表達對政府的抗議,這樣的行為無涉言論自由之保護",
+        "B": "猥褻言論之目的雖在傳達性的訊息,仍受言論自由之保護",
+        "C": "針對言論內容所做的管制規定,應與針對言論的時間與地點所做的管制規定,採相同的審查標準",
+        "D": "憲法對於言論自由之應有保障,僅針對積極權利行使之表意自由,不包括消極的不為表意之自由"
+      }
     },
     {
       "number": 5,
       "type": "choice",
-      "stem": "依社會救助法規定,低收入戶得申請生活扶助,此涉及何種基本權利? (A)工作權 (B)人身自由權 (C)生存權 (D)適足居住權",
+      "stem": "依社會救助法規定,低收入戶得申請生活扶助,此涉及何種基本權利?",
       "section": null,
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "工作權",
+        "B": "人身自由權",
+        "C": "生存權",
+        "D": "適足居住權"
+      }
     },
     {
       "number": 6,
       "type": "choice",
-      "stem": "大法官解釋曾宣告國軍老舊眷村改建條例之部分規定違憲,主要係違反下列那項原則? (A)法律保留原則 (B)信賴保護原則 (C)法律明確性原則 (D)平等原則",
+      "stem": "大法官解釋曾宣告國軍老舊眷村改建條例之部分規定違憲,主要係違反下列那項原則?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "法律保留原則",
+        "B": "信賴保護原則",
+        "C": "法律明確性原則",
+        "D": "平等原則"
+      }
     },
     {
       "number": 7,
       "type": "choice",
-      "stem": "有關租稅法律主義,依大法官解釋之意旨,下列敘述何者錯誤? (A)租稅構成要件應以法律定之 (B)租稅主體、租稅客體、稅基、稅率應以法律定之 (C)稅捐稽徵之程序,應以法律定之,除有明確之法律授權,不得以命令為不同規定 (D)給予人民減免稅捐之優惠,非增加人民負擔,得由稅捐機關逕以命令定之",
+      "stem": "有關租稅法律主義,依大法官解釋之意旨,下列敘述何者錯誤?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "租稅構成要件應以法律定之",
+        "B": "租稅主體、租稅客體、稅基、稅率應以法律定之",
+        "C": "稅捐稽徵之程序,應以法律定之,除有明確之法律授權,不得以命令為不同規定",
+        "D": "給予人民減免稅捐之優惠,非增加人民負擔,得由稅捐機關逕以命令定之"
+      }
     },
     {
       "number": 8,
       "type": "choice",
-      "stem": "依大法官解釋及憲法法庭判決,有關憲法第22條所保障之其他自由權利,下列敘述何者錯誤? (A)跨國(境)婚姻媒合不得要求或期約報酬,有違憲法第22條所保障契約自由之意旨 (B)刑法通姦罪,係對憲法第22條性自主權之限制 (C)對汽車肇事駕駛人強制實施血液酒精濃度測試,構成身體權及資訊隱私權之重大限制 (D)以子女是否從原住民身分之父或母姓氏,為取得原住民身分之要件,侵害憲法第 22 條保障之原住民身 分認同權",
+      "stem": "依大法官解釋及憲法法庭判決,有關憲法第22條所保障之其他自由權利,下列敘述何者錯誤?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "跨國(境)婚姻媒合不得要求或期約報酬,有違憲法第22條所保障契約自由之意旨",
+        "B": "刑法通姦罪,係對憲法第22條性自主權之限制",
+        "C": "對汽車肇事駕駛人強制實施血液酒精濃度測試,構成身體權及資訊隱私權之重大限制",
+        "D": "以子女是否從原住民身分之父或母姓氏,為取得原住民身分之要件,侵害憲法第 22 條保障之原住民身 分認同權"
+      }
     },
     {
       "number": 9,
       "type": "choice",
-      "stem": "依相關大法官解釋及憲法法庭裁判,有關人格權之保障,下列敘述何者錯誤? (A)姓名權為人格權之一種 (B)名譽權之保障亦在維護個人人格權 (C)為保護少年人格權,國家負有特別保護義務 (D)寵物因他人侵害致死,亦屬對飼主人格權之侵害",
+      "stem": "依相關大法官解釋及憲法法庭裁判,有關人格權之保障,下列敘述何者錯誤?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "姓名權為人格權之一種",
+        "B": "名譽權之保障亦在維護個人人格權",
+        "C": "為保護少年人格權,國家負有特別保護義務",
+        "D": "寵物因他人侵害致死,亦屬對飼主人格權之侵害"
+      }
     },
     {
       "number": 10,
       "type": "choice",
-      "stem": "有關總統之刑事豁免權,下列敘述何者正確? (A)若發現總統有犯罪嫌疑者,得為必要之證據保全 (B)不得因他人刑事案件而對總統為證據調查與證據保全 (C)得對總統身體進行鑑定 (D)總統無於他人刑事案件為證人之義務",
+      "stem": "有關總統之刑事豁免權,下列敘述何者正確?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "若發現總統有犯罪嫌疑者,得為必要之證據保全",
+        "B": "不得因他人刑事案件而對總統為證據調查與證據保全",
+        "C": "得對總統身體進行鑑定",
+        "D": "總統無於他人刑事案件為證人之義務"
+      }
     },
     {
       "number": 11,
       "type": "choice",
-      "stem": "依憲法及增修條文之規定,下列何者須由行政院院長副署? (A)總統公布法律案 (B)總統發布解散立法院之命令 (C)總統任命考試院考試委員 (D)總統發布審計長免職之命令",
+      "stem": "依憲法及增修條文之規定,下列何者須由行政院院長副署?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "總統公布法律案",
+        "B": "總統發布解散立法院之命令",
+        "C": "總統任命考試院考試委員",
+        "D": "總統發布審計長免職之命令"
+      }
     },
     {
       "number": 12,
       "type": "choice",
-      "stem": "依憲法及司法院大法官解釋,有關立法院召開臨時會,下列敘述何者錯誤? (A)經總統之咨請,得開臨時會 (B)立法委員4分之1以上之請求,得開臨時會 (C)不信任案不得於為其他特定事項召開之立法院臨時會提出 (D)憲法第69條僅規範立法院臨時會召開之程序,並未限制臨時會得審議之事項",
+      "stem": "依憲法及司法院大法官解釋,有關立法院召開臨時會,下列敘述何者錯誤?",
       "section": null,
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "經總統之咨請,得開臨時會",
+        "B": "立法委員4分之1以上之請求,得開臨時會",
+        "C": "不信任案不得於為其他特定事項召開之立法院臨時會提出",
+        "D": "憲法第69條僅規範立法院臨時會召開之程序,並未限制臨時會得審議之事項"
+      }
     },
     {
       "number": 13,
       "type": "choice",
-      "stem": "下列何者並非憲法第80條審判獨立所適用之對象? (A)行政法院法官 (B)司法院大法官 (C)檢察官 (D)懲戒法院法官",
+      "stem": "下列何者並非憲法第80條審判獨立所適用之對象?",
       "section": null,
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "行政法院法官",
+        "B": "司法院大法官",
+        "C": "檢察官",
+        "D": "懲戒法院法官"
+      }
     },
     {
       "number": 14,
       "type": "choice",
-      "stem": "有關法院聲請釋憲之程序,下列敘述何者錯誤? (A)於憲法訴訟法施行前,聲請依據為司法院釋字第371、572、590號解釋 (B)法院於審理案件時,對於應適用之判例,認為有牴觸憲法之疑義者,得聲請解釋 (C)已明文規定於憲法訴訟法第55條 (D)法院於審理案件時,得認定命令為違憲而逕行拒絕適用",
+      "stem": "有關法院聲請釋憲之程序,下列敘述何者錯誤?",
       "section": null,
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "於憲法訴訟法施行前,聲請依據為司法院釋字第371、572、590號解釋",
+        "B": "法院於審理案件時,對於應適用之判例,認為有牴觸憲法之疑義者,得聲請解釋",
+        "C": "已明文規定於憲法訴訟法第55條",
+        "D": "法院於審理案件時,得認定命令為違憲而逕行拒絕適用"
+      }
     },
     {
       "number": 15,
       "type": "choice",
-      "stem": "有關中央與地方自治事項之權限劃分,下列敘述何者錯誤? (A)有關地方自治及中央與地方如何分權,憲法及憲法增修條文已分別就中央、省、縣之立法及執行事項, 設有明文 (B)直轄市之自治事項,憲法或其增修條文均無明文規定予以直接保障,而係以憲法規定授權立法院以法律 定之 (C)憲法除明定專屬中央立法之事項外,並同時明定有專屬地方,且中央不得干預之立法或執行事項 (D)監督地方自治之中央主管機關依地方制度法規定,就牴觸中央法律之自治法規,得函告無效或不予核定",
+      "stem": "有關中央與地方自治事項之權限劃分,下列敘述何者錯誤?",
       "section": null,
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "有關地方自治及中央與地方如何分權,憲法及憲法增修條文已分別就中央、省、縣之立法及執行事項, 設有明文",
+        "B": "直轄市之自治事項,憲法或其增修條文均無明文規定予以直接保障,而係以憲法規定授權立法院以法律 定之",
+        "C": "憲法除明定專屬中央立法之事項外,並同時明定有專屬地方,且中央不得干預之立法或執行事項",
+        "D": "監督地方自治之中央主管機關依地方制度法規定,就牴觸中央法律之自治法規,得函告無效或不予核定"
+      }
     },
     {
       "number": 16,
       "type": "choice",
-      "stem": "農業部就動物保護法第20條第2項規定之具攻擊性之寵物為何,發布公告加以定義,係屬下列何種解釋? (A)立法解釋 (B)行政解釋 (C)司法解釋 (D)學理解釋",
+      "stem": "農業部就動物保護法第20條第2項規定之具攻擊性之寵物為何,發布公告加以定義,係屬下列何種解釋?",
       "section": null,
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "立法解釋",
+        "B": "行政解釋",
+        "C": "司法解釋",
+        "D": "學理解釋"
+      }
     },
     {
       "number": 17,
       "type": "choice",
-      "stem": "下列何者為適用勞動基準法之勞工? (A)受委任工作者 (B)派遣勞工 (C)自營作業者 (D)實際從事勞動之雇主",
+      "stem": "下列何者為適用勞動基準法之勞工?",
       "section": null,
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "受委任工作者",
+        "B": "派遣勞工",
+        "C": "自營作業者",
+        "D": "實際從事勞動之雇主"
+      }
     },
     {
       "number": 18,
       "type": "choice",
-      "stem": "大法官解釋宣告舊刑法第239條通姦罪違憲,下列何者與大法官解釋意旨不相符? (A)刑罰對於通姦及相姦行為,無法產生嚇阻之效力 (B)通姦違反婚姻忠誠義務,但尚不至明顯損及公益,國家非必須使用刑罰 (C)對於通姦及相姦之追訴、審判過程,對個人之隱私權干預程度重大 (D)國家權力介入婚姻,可能會對於婚姻關係產生負面影響",
+      "stem": "大法官解釋宣告舊刑法第239條通姦罪違憲,下列何者與大法官解釋意旨不相符?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "刑罰對於通姦及相姦行為,無法產生嚇阻之效力",
+        "B": "通姦違反婚姻忠誠義務,但尚不至明顯損及公益,國家非必須使用刑罰",
+        "C": "對於通姦及相姦之追訴、審判過程,對個人之隱私權干預程度重大",
+        "D": "國家權力介入婚姻,可能會對於婚姻關係產生負面影響"
+      }
     },
     {
       "number": 19,
       "type": "choice",
-      "stem": "直轄市市長若犯內亂、外患或貪污罪,經判決確定者,行政院應予: (A)停止職權 (B)暫時休職 (C)解除職務 (D)調任非主管職務",
+      "stem": "直轄市市長若犯內亂、外患或貪污罪,經判決確定者,行政院應予:",
       "section": null,
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "停止職權",
+        "B": "暫時休職",
+        "C": "解除職務",
+        "D": "調任非主管職務"
+      }
     },
     {
       "number": 20,
       "type": "choice",
-      "stem": "依司法院大法官解釋意旨,關於法律明確性之敘述,下列何者正確? (A)立法上不得運用概括條款,否則即有違法律明確性原則 (B)為求明確,行政處分僅限於以書面為之 (C)法規範之涵義於個案中不得由適當組成、立場公正之機構決定 (D)只要法規範意義非難以理解,為受規範者可預見,可經由司法審查加以確認,即不違反法律明確性原則",
+      "stem": "依司法院大法官解釋意旨,關於法律明確性之敘述,下列何者正確?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "立法上不得運用概括條款,否則即有違法律明確性原則",
+        "B": "為求明確,行政處分僅限於以書面為之",
+        "C": "法規範之涵義於個案中不得由適當組成、立場公正之機構決定",
+        "D": "只要法規範意義非難以理解,為受規範者可預見,可經由司法審查加以確認,即不違反法律明確性原則"
+      }
     },
     {
       "number": 21,
       "type": "choice",
-      "stem": "下列何者非屬憲法或憲法增修條文明定,須依據法律獨立行使職權者? (A)監察委員 (B)法官 (C)考試委員 (D)國家通訊傳播委員會主任委員",
+      "stem": "下列何者非屬憲法或憲法增修條文明定,須依據法律獨立行使職權者?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "監察委員",
+        "B": "法官",
+        "C": "考試委員",
+        "D": "國家通訊傳播委員會主任委員"
+      }
     },
     {
       "number": 22,
       "type": "choice",
-      "stem": "依司法院釋字第775號解釋,下列敘述何者錯誤? (A)刑法第 48 條前段「裁判確定後,發覺為累犯者,依前條之規定更定其刑。」之規定與憲法一事不再理 原則有違 (B)累犯加重本刑部分,不生違反憲法一行為不二罰原則之問題 (C)刑法第47條第1項之規定累犯不分情節,一律加重最低本刑,不符憲法罪刑相當原則 (D)累犯加重本刑之規定,與憲法意旨有違,自司法院釋字第775號解釋公布之日起失其效力",
+      "stem": "依司法院釋字第775號解釋,下列敘述何者錯誤?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "刑法第 48 條前段「裁判確定後,發覺為累犯者,依前條之規定更定其刑。」之規定與憲法一事不再理 原則有違",
+        "B": "累犯加重本刑部分,不生違反憲法一行為不二罰原則之問題",
+        "C": "刑法第47條第1項之規定累犯不分情節,一律加重最低本刑,不符憲法罪刑相當原則",
+        "D": "累犯加重本刑之規定,與憲法意旨有違,自司法院釋字第775號解釋公布之日起失其效力"
+      }
     },
     {
       "number": 23,
       "type": "choice",
-      "stem": "有關「刑」的敘述,下列何者正確? (A)主刑有四種,分別為死刑、無期徒刑、有期徒刑、罰金 (B)褫奪公權係褫奪為公務員之資格、為公職候選人與選舉人之資格 (C)無期徒刑不得假釋 (D)有期徒刑執行未滿六個月者,不得假釋",
+      "stem": "有關「刑」的敘述,下列何者正確?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "主刑有四種,分別為死刑、無期徒刑、有期徒刑、罰金",
+        "B": "褫奪公權係褫奪為公務員之資格、為公職候選人與選舉人之資格",
+        "C": "無期徒刑不得假釋",
+        "D": "有期徒刑執行未滿六個月者,不得假釋"
+      }
     },
     {
       "number": 24,
       "type": "choice",
-      "stem": "甲挑選十位當代文學作家的著作,彙整為「當代文學十大名家作品集」(以下簡稱為「A作品集」)一書。 甲就所收錄作品的選擇及編排頗具巧思,具有創作性。依我國著作權法,下列敘述何者錯誤? (A)A作品集為編輯著作,可獨立受著作權法保護 (B)乙出版社擬出版A作品集時,除應取得甲之同意外,尚應取得所收錄個別作品之著作權人同意 (C)若丙擅自重製A作品集的其中一篇個別作品,僅侵害該個別作品之著作權,未侵害甲的權利 (D)若丁擅自重製整本A作品集,僅侵害各該個別作品之著作權,未侵害甲的權利",
+      "stem": "甲挑選十位當代文學作家的著作,彙整為「當代文學十大名家作品集」(以下簡稱為「A作品集」)一書。 甲就所收錄作品的選擇及編排頗具巧思,具有創作性。依我國著作權法,下列敘述何者錯誤?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "A作品集為編輯著作,可獨立受著作權法保護",
+        "B": "乙出版社擬出版A作品集時,除應取得甲之同意外,尚應取得所收錄個別作品之著作權人同意",
+        "C": "若丙擅自重製A作品集的其中一篇個別作品,僅侵害該個別作品之著作權,未侵害甲的權利",
+        "D": "若丁擅自重製整本A作品集,僅侵害各該個別作品之著作權,未侵害甲的權利"
+      }
     },
     {
       "number": 25,
       "type": "choice",
-      "stem": "下列那一種權利或法益受侵害時,不得請求慰撫金? (A)自由權 (B)人格權 (C)財產權 (D)身分法益",
+      "stem": "下列那一種權利或法益受侵害時,不得請求慰撫金?",
       "section": null,
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "自由權",
+        "B": "人格權",
+        "C": "財產權",
+        "D": "身分法益"
+      }
     },
     {
       "number": 26,
       "type": "choice",
-      "stem": "下列收養情況,何者原則上係得撤銷? (A)8歲的甲出養給丙,未經其監護人乙之同意 (B)甲與其最小的姑姑乙年齡相仿,乙未婚生一子A,交由甲收養 (C)甲與乙育有一子A,甲乙離婚後,由甲行使親權,乙僅有會面交往權;乙每月均有給付A子扶養費;甲 再婚後,未經乙同意,將A出養給新配偶丙 (D)甲婚前育有一子A,甲、乙結婚後,乙收養A,乙與A相差15歲",
+      "stem": "下列收養情況,何者原則上係得撤銷?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "8歲的甲出養給丙,未經其監護人乙之同意",
+        "B": "甲與其最小的姑姑乙年齡相仿,乙未婚生一子A,交由甲收養",
+        "C": "甲與乙育有一子A,甲乙離婚後,由甲行使親權,乙僅有會面交往權;乙每月均有給付A子扶養費;甲 再婚後,未經乙同意,將A出養給新配偶丙",
+        "D": "甲婚前育有一子A,甲、乙結婚後,乙收養A,乙與A相差15歲"
+      }
     },
     {
       "number": 27,
       "type": "choice",
-      "stem": "關於取得時效,下列敘述何者錯誤? (A)未登記之不動產占有之始為善意並無過失者,取得時效期間為10年 (B)取得時效為不變期間,無中斷之問題 (C)動產占有之始為善意並無過失者,取得時效期間為5年 (D)地上權亦得準用取得時效之規定",
+      "stem": "關於取得時效,下列敘述何者錯誤?",
       "section": null,
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "未登記之不動產占有之始為善意並無過失者,取得時效期間為10年",
+        "B": "取得時效為不變期間,無中斷之問題",
+        "C": "動產占有之始為善意並無過失者,取得時效期間為5年",
+        "D": "地上權亦得準用取得時效之規定"
+      }
     },
     {
       "number": 28,
       "type": "choice",
-      "stem": "關於民法與刑法規定,下列敘述何者正確? (A)行為之處罰,以行為時法律有明文規定者為限 (B)沒收與拘束行為人之自由的保安處分,應適用行為時之法律 (C)人之行為能力,始於出生,終於心智喪失時 (D)人之行為能力,以非死產者為限,視為有行為能力,並由其自然血親之生父,代其行使法律行為",
+      "stem": "關於民法與刑法規定,下列敘述何者正確?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "行為之處罰,以行為時法律有明文規定者為限",
+        "B": "沒收與拘束行為人之自由的保安處分,應適用行為時之法律",
+        "C": "人之行為能力,始於出生,終於心智喪失時",
+        "D": "人之行為能力,以非死產者為限,視為有行為能力,並由其自然血親之生父,代其行使法律行為"
+      }
     },
     {
       "number": 29,
       "type": "choice",
-      "stem": "清治時期臺灣的婚姻型態多元,但不包括下列何者? (A)招贅婚姻/招入婚姻 (B)妾婚姻 (C)童養媳婚姻 (D)神聖婚姻(一夫一妻、一生一世之婚姻型態)",
+      "stem": "清治時期臺灣的婚姻型態多元,但不包括下列何者?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "招贅婚姻/招入婚姻",
+        "B": "妾婚姻",
+        "C": "童養媳婚姻",
+        "D": "神聖婚姻(一夫一妻、一生一世之婚姻型態)"
+      }
     },
     {
       "number": 30,
       "type": "choice",
-      "stem": "關於地方制度法所稱之自治條例,下列敘述何者正確? (A)自治條例由地方立法機關通過,並由各該行政機關公布,其應分別冠以各該地方自治團體之名稱 (B)自治條例得規定罰則,但以十萬元以下之罰鍰為限,惟不得為連續處罰 (C)自治條例所規定之罰則僅限罰鍰,不得處以勒令停工或停止營業等不利益處分 (D)自治條例經地方行政機關公布後,應報中央各該主管機關轉立法院備查",
+      "stem": "關於地方制度法所稱之自治條例,下列敘述何者正確?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "自治條例由地方立法機關通過,並由各該行政機關公布,其應分別冠以各該地方自治團體之名稱",
+        "B": "自治條例得規定罰則,但以十萬元以下之罰鍰為限,惟不得為連續處罰",
+        "C": "自治條例所規定之罰則僅限罰鍰,不得處以勒令停工或停止營業等不利益處分",
+        "D": "自治條例經地方行政機關公布後,應報中央各該主管機關轉立法院備查"
+      }
     },
     {
       "number": 31,
       "type": "choice",
-      "stem": "Ineedtocheckthe dateonthemilkbeforeusingittomakesureitisstillfresh. (A)expert (B)expiry (C)expatriate (D)extensive",
+      "stem": "Ineedtocheckthe dateonthemilkbeforeusingittomakesureitisstillfresh.",
       "section": null,
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "expert",
+        "B": "expiry",
+        "C": "expatriate",
+        "D": "extensive"
+      }
     },
     {
       "number": 32,
       "type": "choice",
-      "stem": "WhentheEuropeansarrived,theIndiansintheSouthwestAmericahadbeen theirfarmlandforcenturies. (A)irrigating (B)inveigling (C)irradiating (D)intimidating",
+      "stem": "WhentheEuropeansarrived,theIndiansintheSouthwestAmericahadbeen theirfarmlandforcenturies.",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "irrigating",
+        "B": "inveigling",
+        "C": "irradiating",
+        "D": "intimidating"
+      }
     },
     {
       "number": 33,
       "type": "choice",
-      "stem": "Sometypesofanimalshaveceasedtoexist;theyhavebecome fromtheearth. (A)prevalent (B)insured (C)obtained (D)extinct",
+      "stem": "Sometypesofanimalshaveceasedtoexist;theyhavebecome fromtheearth.",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "prevalent",
+        "B": "insured",
+        "C": "obtained",
+        "D": "extinct"
+      }
     },
     {
       "number": 34,
       "type": "choice",
-      "stem": "Ican’t tell you what theingredientsareforthat cake,butI’ll phone youwhen Iget home andhavealook atmyrecipebook. (A)offhand (B)onward (C)vigorously (D)bashfully",
+      "stem": "Ican’t tell you what theingredientsareforthat cake,butI’ll phone youwhen Iget home andhavealook atmyrecipebook.",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "offhand",
+        "B": "onward",
+        "C": "vigorously",
+        "D": "bashfully"
+      }
     },
     {
       "number": 35,
       "type": "choice",
-      "stem": "Thelittlegirlcaughta ofherbirthdaycakebeforehermothershutthekitchendoor. (A)gaze (B)stare (C)survey (D)glimpse",
+      "stem": "Thelittlegirlcaughta ofherbirthdaycakebeforehermothershutthekitchendoor.",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "gaze",
+        "B": "stare",
+        "C": "survey",
+        "D": "glimpse"
+      }
     },
     {
       "number": 36,
       "type": "choice",
-      "stem": "Thestrangeoccurrenceinthesky thescientists,whohadneverseenanythinglikeitbefore. (A)drizzled (B)muffled (C)ruffled (D)puzzled",
+      "stem": "Thestrangeoccurrenceinthesky thescientists,whohadneverseenanythinglikeitbefore.",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "drizzled",
+        "B": "muffled",
+        "C": "ruffled",
+        "D": "puzzled"
+      }
     },
     {
       "number": 37,
       "type": "choice",
-      "stem": "Byregulation,itis forallworkerstowearprotectiveclothingwhentheyareoperatingthemachine. (A)diligent (B)overwhelming (C)industrious (D)obligatory",
+      "stem": "Byregulation,itis forallworkerstowearprotectiveclothingwhentheyareoperatingthemachine.",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "diligent",
+        "B": "overwhelming",
+        "C": "industrious",
+        "D": "obligatory"
+      }
     },
     {
       "number": 38,
       "type": "choice",
-      "stem": "Theorientalrugsondisplaywerewovenona byhandstrictlyfollowingthetraditionaltechnique. (A)doom (B)loom (C)boom (D)bloom",
+      "stem": "Theorientalrugsondisplaywerewovenona byhandstrictlyfollowingthetraditionaltechnique.",
       "section": null,
-      "answer": "B"
+      "answer": "B",
+      "options": {
+        "A": "doom",
+        "B": "loom",
+        "C": "boom",
+        "D": "bloom"
+      }
     },
     {
       "number": 39,
       "type": "choice",
-      "stem": "Dana and Joe fell in love with each other, which neither of them ever expected to happen, after getting togetheragainattheclassreunion. (A)accidentally (B)effectively (C)influentially (D)occasionally",
+      "stem": "Dana and Joe fell in love with each other, which neither of them ever expected to happen, after getting togetheragainattheclassreunion.",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "accidentally",
+        "B": "effectively",
+        "C": "influentially",
+        "D": "occasionally"
+      }
     },
     {
       "number": 40,
       "type": "choice",
-      "stem": "Thesuddennewsofthisworld-renownedcompany’sbankruptcyfilledtheemployeeswith anduncertainty abouttheirnearfuture. (A)discrepancy (B)distinction (C)dismantle (D)dismay",
+      "stem": "Thesuddennewsofthisworld-renownedcompany’sbankruptcyfilledtheemployeeswith anduncertainty abouttheirnearfuture.",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "discrepancy",
+        "B": "distinction",
+        "C": "dismantle",
+        "D": "dismay"
+      }
     },
     {
       "number": 41,
       "type": "choice",
-      "stem": "Lucyworkeddiligentlytofinishwritinguptheprojectherbossassignedtoher.Infact,she tohelpoutwith theparthercolleaguewassupposedtodo. (A)wentanextramile (B)drewtheline (C)twistedherarm (D)wentdowninflames",
+      "stem": "Lucyworkeddiligentlytofinishwritinguptheprojectherbossassignedtoher.Infact,she tohelpoutwith theparthercolleaguewassupposedtodo.",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "wentanextramile",
+        "B": "drewtheline",
+        "C": "twistedherarm",
+        "D": "wentdowninflames"
+      }
     },
     {
       "number": 42,
       "type": "choice",
-      "stem": "Walkinginto an interviewwitha panel of stern-faced executives can be quite for even the most confident jobapplicant. (A)intimate (B)intelligent (C)intellectual (D)intimidating",
+      "stem": "Walkinginto an interviewwitha panel of stern-faced executives can be quite for even the most confident jobapplicant.",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "intimate",
+        "B": "intelligent",
+        "C": "intellectual",
+        "D": "intimidating"
+      }
     },
     {
       "number": 43,
       "type": "choice",
-      "stem": "Teenagerssometimesactinarebelliouswaysimplyin oftheirparents’expectations. (A)finance (B)defense (C)defiance (D)definition",
+      "stem": "Teenagerssometimesactinarebelliouswaysimplyin oftheirparents’expectations.",
       "section": null,
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "finance",
+        "B": "defense",
+        "C": "defiance",
+        "D": "definition"
+      }
     },
     {
       "number": 44,
       "type": "choice",
-      "stem": "Duetoa ofmaterials,theconstructionofthenewbuildinghastobedelayed. (A)shortage (B)storage (C)surplus (D)supplement",
+      "stem": "Duetoa ofmaterials,theconstructionofthenewbuildinghastobedelayed.",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "shortage",
+        "B": "storage",
+        "C": "surplus",
+        "D": "supplement"
+      }
     },
     {
       "number": 45,
       "type": "choice",
-      "stem": "Insteadofavoidingconversation,LisaandDanielarewillingtohaveanhonest, talkaboutthecrisisintheirmarriage. (A)candid (B)finite (C)timid (D)static 請依下文回答第46題至第50題 TheSaharanregionsofMoroccoarehometotheBerbers,anethnicgroupnativetoNorthAfrica.Madfouna—astuffed flatbreadpreparedbyusingahandfulofstapleingredients—istraditionallybakedinafirepitinthesandoramudoven, andhaslongservedasawholesomemealformanyBerberfamilies.Oncebaked,thebreadsocloselyresemblesapizza thatitislocallynicknamed\"theBerberpizza.\" UsinganancientSaharanbreadrecipeincorporatingflour,yeast,salt,oliveoil,andwater,thedoughiskneadedandthen rolled into a round shape before being stretched over fillings—including beef, eggs, nuts,onions, and garlic, and herbs andspicessuchascumin,paprika,turmeric,ginger,andparsley—andpinchedclosed.Everyfamilyhastheirownversion ofmadfouna.Someuse morebasicingredientssuchaseggs,tomatoes,andsunflowerorpoppyseeds,whileothersadd almonds,cashews,olives,lamb,chicken,mincedbeef,orslicesofcookedsteak.Theoptionsarevirtuallyendless. Whicheveringredientsmakeupthefilling,onethingisagreeduponacrosstheregion:theauthenticmethodsofcooking madfouna in desert sands or using a mud oven undoubtedly lead to the most delicious version, complete with an unrivalledsmokytastethatamodern,conventionalovencannotreplicate. Today, madfouna can mostly be found in small Berber pizza takeaway joints in Rissani, a sleepy Saharan town famed for the dish. In Rissani, a slightly faster pace of life than in the desert leads to a greater demand for fast food. Tucked withinthenarrowstreetsofthemarketandconvenientlyplacednearthetaxistandsliesmalltakeawayjointswith\"pizza\" symbolstomarkwhereyoucanorderatakeawaymadfouna,theprimarydishonthemenu. It’snotuncommonfortheseplacestogetsobusythatpeoplequeueformorethananhourasthechefsrotatetheorders in the large fire ovens. Each madfouna is so particular to each individual’s tastes that locals often bring their own fillings—sourcedfromtrustedbutchersorpreparedathomebyfamilymembers—whichtheyaskthechefstobakeinto theirorders.",
+      "stem": "Insteadofavoidingconversation,LisaandDanielarewillingtohaveanhonest, talkaboutthecrisisintheirmarriage.",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "candid",
+        "B": "finite",
+        "C": "timid",
+        "D": "static 請依下文回答第46題至第50題 TheSaharanregionsofMoroccoarehometotheBerbers,anethnicgroupnativetoNorthAfrica.Madfouna—astuffed flatbreadpreparedbyusingahandfulofstapleingredients—istraditionallybakedinafirepitinthesandoramudoven, andhaslongservedasawholesomemealformanyBerberfamilies.Oncebaked,thebreadsocloselyresemblesapizza thatitislocallynicknamed\"theBerberpizza.\" UsinganancientSaharanbreadrecipeincorporatingflour,yeast,salt,oliveoil,andwater,thedoughiskneadedandthen rolled into a round shape before being stretched over fillings—including beef, eggs, nuts,onions, and garlic, and herbs andspicessuchascumin,paprika,turmeric,ginger,andparsley—andpinchedclosed.Everyfamilyhastheirownversion ofmadfouna.Someuse morebasicingredientssuchaseggs,tomatoes,andsunflowerorpoppyseeds,whileothersadd almonds,cashews,olives,lamb,chicken,mincedbeef,orslicesofcookedsteak.Theoptionsarevirtuallyendless. Whicheveringredientsmakeupthefilling,onethingisagreeduponacrosstheregion:theauthenticmethodsofcooking madfouna in desert sands or using a mud oven undoubtedly lead to the most delicious version, complete with an unrivalledsmokytastethatamodern,conventionalovencannotreplicate. Today, madfouna can mostly be found in small Berber pizza takeaway joints in Rissani, a sleepy Saharan town famed for the dish. In Rissani, a slightly faster pace of life than in the desert leads to a greater demand for fast food. Tucked withinthenarrowstreetsofthemarketandconvenientlyplacednearthetaxistandsliesmalltakeawayjointswith\"pizza\" symbolstomarkwhereyoucanorderatakeawaymadfouna,theprimarydishonthemenu. It’snotuncommonfortheseplacestogetsobusythatpeoplequeueformorethananhourasthechefsrotatetheorders in the large fire ovens. Each madfouna is so particular to each individual’s tastes that locals often bring their own fillings—sourcedfromtrustedbutchersorpreparedathomebyfamilymembers—whichtheyaskthechefstobakeinto theirorders."
+      }
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "Whichofthefollowingisthebesttitleforthepassage? (A)Madfouna,theBerberPizza (B)TheLostCultureoftheSaharaDesert (C)FoodHistoryofNorthAfrica (D)TheGlobalizationofPizza",
+      "stem": "Whichofthefollowingisthebesttitleforthepassage?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "Madfouna,theBerberPizza",
+        "B": "TheLostCultureoftheSaharaDesert",
+        "C": "FoodHistoryofNorthAfrica",
+        "D": "TheGlobalizationofPizza"
+      }
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "Accordingtothepassage,whichofthefollowingstatementsaboutmadfounaistrue? (A)TheBerberstooktheideaoftheItalianpizzaandmodifiedittolocaltastes. (B)Traditionalmadfounahasbeef,chicken,eggs,andnutshavelatelybeenusedashealthieroptions. (C)Thebest-tastingmadfounahasasmokyflavor,butyoucanonlygetthatfromafirepitinthesandoramudoven. (D)InRissani,communalovensareprovidedforcustomerstobaketheirmadfounawiththeirownfillings.",
+      "stem": "Accordingtothepassage,whichofthefollowingstatementsaboutmadfounaistrue?",
       "section": null,
-      "answer": "C"
+      "answer": "C",
+      "options": {
+        "A": "TheBerberstooktheideaoftheItalianpizzaandmodifiedittolocaltastes.",
+        "B": "Traditionalmadfounahasbeef,chicken,eggs,andnutshavelatelybeenusedashealthieroptions.",
+        "C": "Thebest-tastingmadfounahasasmokyflavor,butyoucanonlygetthatfromafirepitinthesandoramudoven.",
+        "D": "InRissani,communalovensareprovidedforcustomerstobaketheirmadfounawiththeirownfillings."
+      }
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "Accordingtothepassage,whichofthefollowingstatementsabouttheBerbersisNOTtrue? (A)TheBerbersliveintheSaharaDesertwithinthebordersofMorocco. (B)BakinginfirepitsinthesandandinmudoversaretraditionalBerbercookingmethods. (C)Berbercuisinefeaturesbread,meat,oliveoil,nuts,herbsandspices. (D)ManyBerbershavelefttheirhomesandarenowsellingmadfounainRissani.",
+      "stem": "Accordingtothepassage,whichofthefollowingstatementsabouttheBerbersisNOTtrue?",
       "section": null,
-      "answer": "D"
+      "answer": "D",
+      "options": {
+        "A": "TheBerbersliveintheSaharaDesertwithinthebordersofMorocco.",
+        "B": "BakinginfirepitsinthesandandinmudoversaretraditionalBerbercookingmethods.",
+        "C": "Berbercuisinefeaturesbread,meat,oliveoil,nuts,herbsandspices.",
+        "D": "ManyBerbershavelefttheirhomesandarenowsellingmadfounainRissani."
+      }
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "Accordingtothepassage,whatdoestheword“joints”mean? (A)Placesthatsellfoodanddrinksatlowprices. (B)Largecutsofmeat. (C)SpecialcookingmethodsoftheNorthernSahara. (D)Fooddeliveryservices.",
+      "stem": "Accordingtothepassage,whatdoestheword“joints”mean?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "Placesthatsellfoodanddrinksatlowprices.",
+        "B": "Largecutsofmeat.",
+        "C": "SpecialcookingmethodsoftheNorthernSahara.",
+        "D": "Fooddeliveryservices."
+      }
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "Wherewouldthispassagemostlikelyappear? (A)Atravelguide. (B)Ageographytextbook. (C)Anarchaeologystudy. (D)Ahotelguide.",
+      "stem": "Wherewouldthispassagemostlikelyappear?",
       "section": null,
-      "answer": "A"
+      "answer": "A",
+      "options": {
+        "A": "Atravelguide.",
+        "B": "Ageographytextbook.",
+        "C": "Anarchaeologystudy.",
+        "D": "Ahotelguide."
+      }
     }
   ],
   "year": 113,

@@ -182,6 +182,80 @@ def fix_f3_english_mistyped():
     print(f'F3: 修正 {fixed} 題 essay→choice')
     return fixed
 
+def fix_f5_missing_q54():
+    """F5: 補入水上警察 106年 Q54"""
+    f = glob.glob(f'{BASE}/水上警察學系/106年/中華民國憲法與水上*專業英文/試題.json')
+    if not f:
+        print('F5: 找不到水上警察 106年英文檔案')
+        return 0
+
+    filepath = f[0]
+    data = load_json(filepath)
+
+    nums = [q['number'] for q in data['questions'] if isinstance(q.get('number'), int)]
+    if 54 in nums:
+        print('F5: Q54 已存在，跳過')
+        return 0
+
+    backup_file(filepath)
+
+    q53 = next((q for q in data['questions'] if q.get('number') == 53), None)
+    passage = q53.get('passage', '') if q53 else ''
+
+    q54 = {
+        'number': 54,
+        'type': 'choice',
+        'stem': '(見文章第 54 題空格)',
+        'section': q53.get('section', '乙、測驗題') if q53 else '乙、測驗題',
+        'passage': passage,
+        'options': {'A': '[待補]', 'B': '[待補]', 'C': '[待補]', 'D': '[待補]'},
+        'answer': '[待補]',
+        '_todo': '需從考選部 PDF 補完整內容'
+    }
+
+    for i, q in enumerate(data['questions']):
+        if q.get('number') == 53:
+            data['questions'].insert(i + 1, q54)
+            break
+
+    save_json(filepath, data)
+    print('F5: 補入 Q54 佔位（需從 PDF 補完整內容）')
+    return 1
+
+def fix_extra_embedded_options():
+    """額外: 修復選擇題 stem 中內嵌選項但無 options 欄位的問題"""
+    option_pattern = re.compile(
+        r'[\(（]([A-Da-d])[\)）]\s*(.+?)(?=\s*[\(（][A-Da-d][\)）]|\s*$)',
+        re.DOTALL
+    )
+
+    fixed = 0
+    files_fixed = 0
+    for f in sorted(glob.glob(f'{BASE}/**/試題.json', recursive=True)):
+        data = load_json(f)
+        modified = False
+        for q in data['questions']:
+            if q.get('type') == 'choice' and not q.get('options'):
+                stem = q.get('stem', '')
+                matches = option_pattern.findall(stem)
+                if len(matches) >= 4:
+                    if not modified:
+                        backup_file(f)
+                    for marker in ['(A)', '（A）']:
+                        pos = stem.find(marker)
+                        if pos > 0:
+                            q['stem'] = stem[:pos].strip()
+                            break
+                    q['options'] = {letter.upper(): text.strip() for letter, text in matches[:4]}
+                    modified = True
+                    fixed += 1
+        if modified:
+            save_json(f, data)
+            files_fixed += 1
+
+    print(f'額外: 修復 {fixed} 題內嵌選項（{files_fixed} 個檔案）')
+    return fixed
+
 if __name__ == '__main__':
     os.makedirs(BACKUP_DIR, exist_ok=True)
     print(f'備份目錄: {BACKUP_DIR}')
@@ -190,3 +264,5 @@ if __name__ == '__main__':
     fix_f1_copy_chinese_choice()
     fix_f2_copy_112_113_choice()
     fix_f3_english_mistyped()
+    fix_f5_missing_q54()
+    fix_extra_embedded_options()
