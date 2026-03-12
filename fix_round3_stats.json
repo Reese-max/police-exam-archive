@@ -1,0 +1,13 @@
+{
+  "p1_1_essay_added": 6,
+  "p1_2_question_added": 5,
+  "p1_3_merged": 1,
+  "p2_1_cleaned": 1,
+  "p2_2_merged": 1,
+  "duplicates_removed": 9,
+  "notes_cleaned": 13,
+  "skipped": [
+    "P1-2: 水上警察學系/109年已修復或不需處理"
+  ],
+  "errors": []
+}

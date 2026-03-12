@@ -340,6 +340,19 @@
         "C": "STR 2 11/12 b/c 2",
         "D": "STR 3 13/14 d/e 3 2a, 2bc, 2de 2a, bc, de a2, 2bc, 2de a2, bc, de"
       }
+    },
+    {
+      "number": 25,
+      "type": "choice",
+      "stem": "某刑案之嫌犯與生物跡證之三組STR DNA型別比對結果皆相符(如下所示),計算所得之相符值(match statistic)為下表之123,其值分別應為下列何者?",
+      "section": "乙、測驗題",
+      "answer": "C",
+      "options": {
+        "A": "STR基因座 基因型 對偶基因型頻率 相符值",
+        "B": "STR 1 10/10 a/a 1",
+        "C": "STR 2 11/12 b/c 2",
+        "D": "STR 3 13/14 d/e 3 2a, 2bc, 2de 2a, bc, de a2, 2bc, 2de a2, bc, de"
+      }
     }
   ],
   "year": 107,
