@@ -78,3 +78,6 @@ _tmp_*.py
 # Environment variables
 .env
 .env.local
+experiments.log
+.autoresearch_checkpoint.json
+.autoresearch_memory.json
