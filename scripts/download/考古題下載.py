@@ -139,8 +139,7 @@ def get_year_input():
                 if not (
                         AVAILABLE_YEARS[0] <= start <= max_year and AVAILABLE_YEARS[0] <= end <= max_year and start <= end):
                     print(
-                        f"❌ 年份範圍必須在 {
-                            AVAILABLE_YEARS[0]}-{max_year} 之間，且起始年份不可大於結束年份\n")
+                        f"❌ 年份範圍必須在 {AVAILABLE_YEARS[0]}-{max_year} 之間，且起始年份不可大於結束年份\n")
                     continue
 
                 years = list(range(start, end + 1))
@@ -605,8 +604,7 @@ def download_exam(session, exam_info, base_folder, stats):
     print(f"{'=' * 70}")
 
     try:
-        url = f"{BASE_URL}wFrmExamQandASearch.aspx?y={
-            year + 1911}&e={exam_code}"
+        url = f"{BASE_URL}wFrmExamQandASearch.aspx?y={year + 1911}&e={exam_code}"
         response = session.get(url, timeout=30, verify=False)
         response.raise_for_status()
 
@@ -638,8 +636,7 @@ def download_exam(session, exam_info, base_folder, stats):
         )
 
         print(
-            f"   📊 類科: {
-                len(exam_structure)} 個 | 科目: {total_subjects} 個 | 檔案: {total_files} 個")
+            f"   📊 類科: {len(exam_structure)} 個 | 科目: {total_subjects} 個 | 檔案: {total_files} 個")
 
         file_count = 0
         for category_name, subjects in exam_structure.items():

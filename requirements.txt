@@ -5,7 +5,9 @@ beautifulsoup4>=4.12.0
 lxml>=5.0.0
 urllib3>=2.0.0
 pdfplumber>=0.10.0
-wordninja>=2.0.0
+
+# 選用依賴 (僅 archive/fixes/fix_pdf_text_quality.py 需要)
+# wordninja>=2.0.0
 
 # ===== 開發/測試依賴 (Development/Testing Dependencies) =====
 # 測試框架
