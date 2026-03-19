@@ -74,6 +74,7 @@ _tmp_*.py
 # Cache
 .download_cache.json
 .download_cache_immigration.json
+.test_cache.json
 
 # Environment variables
 .env
