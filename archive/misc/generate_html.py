@@ -1497,7 +1497,6 @@ def generate_category_page(category_name, years_data, output_dir):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&amp;display=swap"></noscript>
 <link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script type="application/ld+json">{{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -1572,9 +1571,6 @@ def generate_category_page(category_name, years_data, output_dir):
 </footer>
 {subject_keys_script}
 <script src="../js/app.js" defer></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
-  onload="renderMathInElement(document.body,{{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'$',right:'$',display:false}}],throwOnError:false}});"></script>
 </body>
 </html>'''
 

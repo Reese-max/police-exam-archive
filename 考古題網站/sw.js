@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.2.0';
+var CACHE_VERSION = 'v1.3.0';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
