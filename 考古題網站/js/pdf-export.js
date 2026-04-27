@@ -881,16 +881,10 @@
   }
 
   function _getFontUrl() {
-    // 優先使用 WOFF2（體積較小），OTF 作為 fallback
-    var woff2Name = 'fonts/NotoSansTC-Regular-subset.woff2';
-    var otfName = 'fonts/NotoSansTC-Regular-subset.otf';
-    var base = _getBaseUrl();
-    // 檢查瀏覽器是否支援 WOFF2（透過 createImageBitmap 作為現代瀏覽器指標）
-    // 所有支援 WOFF2 的瀏覽器都支援 fetch + Response
-    if (typeof Response !== 'undefined') {
-      return base + woff2Name;
-    }
-    return base + otfName;
+    // 直接用 OTF：@pdf-lib/fontkit 對該 WOFF2 subset 會在 save() 階段拋
+    // 'offsets' undefined（lazy parse、無法用 try/catch 攔截）。
+    // OTF 雖大（~5.9MB vs 2MB），但 SW + Cache API 雙快取，第一次後零成本。
+    return _getBaseUrl() + 'fonts/NotoSansTC-Regular-subset.otf';
   }
 
   function _getFontUrlFallback() {
