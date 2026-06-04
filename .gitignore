@@ -83,3 +83,9 @@ experiments.log
 .autoresearch_checkpoint.json
 .autoresearch_memory.json
 exam.db
+
+# === 2026-06-04 commit 前盤點追加（Codex 審查建議） ===
+backups/
+cache/
+pdfs_missing/
+scripts/download/.download_cache_all.json

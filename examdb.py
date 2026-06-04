@@ -30,11 +30,22 @@ DB_PATH = Path(__file__).resolve().parent / "exam.db"
 DATA_DIR = Path(__file__).resolve().parent / "考古題庫"
 
 
+def _resolve_data_dir(override: str | None = None) -> Path:
+    """資料來源根目錄：CLI override > 環境變數 EXAMDB_DATA_DIR > 預設 考古題庫/。"""
+    if override:
+        return Path(override).resolve()
+    env = os.environ.get("EXAMDB_DATA_DIR")
+    if env:
+        return Path(env).resolve()
+    return DATA_DIR
+
+
 class ExamDB:
     """考古題資料庫查詢介面"""
 
-    def __init__(self, db_path=None):
+    def __init__(self, db_path=None, data_dir=None):
         self.db_path = str(db_path or DB_PATH)
+        self.data_dir = _resolve_data_dir(data_dir)
         if not os.path.exists(self.db_path):
             print(f"索引不存在，正在建立: {self.db_path}")
             self.build()
@@ -86,7 +97,7 @@ class ExamDB:
             );
         """)
 
-        files = glob.glob(str(DATA_DIR / "**" / "試題.json"), recursive=True)
+        files = glob.glob(str(self.data_dir / "**" / "試題.json"), recursive=True)
         file_id = 0
         q_count = 0
 
@@ -101,7 +112,7 @@ class ExamDB:
             meta = d.get('metadata', {})
 
             # 從路徑推斷 category 和 year
-            rel = os.path.relpath(fp, str(DATA_DIR))
+            rel = os.path.relpath(fp, str(self.data_dir))
             parts = rel.replace(os.sep, '/').split('/')
             category = parts[0] if len(parts) > 0 else ''
             year_str = parts[1].replace('年', '') if len(parts) > 1 else ''
@@ -117,13 +128,19 @@ class ExamDB:
             for q in d.get('questions', []):
                 q_count += 1
                 opts = q.get('options', {})
+                # answer 可能是 str / list (多答案) / None (送分) → 統一字串
+                ans = q.get('answer')
+                if isinstance(ans, list):
+                    ans = ','.join(ans)
+                elif ans is None:
+                    ans = ''
                 c.execute(
                     "INSERT INTO questions VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
                     (q_count, file_id, str(q.get('number', '')),
                      q.get('type', ''), q.get('stem', ''),
                      opts.get('A', ''), opts.get('B', ''),
                      opts.get('C', ''), opts.get('D', ''),
-                     q.get('answer', ''), q.get('passage', ''),
+                     ans, q.get('passage', ''),
                      q.get('section', ''))
                 )
 
@@ -259,6 +276,15 @@ def format_question(q):
 
 def main():
     parser = argparse.ArgumentParser(description='考古題資料庫查詢工具')
+    parser.add_argument(
+        '--data-dir', default=None,
+        help='資料來源根目錄（也可用環境變數 EXAMDB_DATA_DIR）。'
+             '預設 考古題庫/，可改成 cache/full_out',
+    )
+    parser.add_argument(
+        '--db', default=None,
+        help='SQLite 索引路徑（預設 exam.db）',
+    )
     sub = parser.add_subparsers(dest='command')
 
     # build
@@ -286,11 +312,15 @@ def main():
     args = parser.parse_args()
 
     if args.command == 'build':
-        db = ExamDB()
+        # build 模式 — 強制重建
+        db_path = args.db or DB_PATH
+        if os.path.exists(db_path):
+            os.remove(db_path)
+        db = ExamDB(db_path=db_path, data_dir=args.data_dir)
         db.close()
 
     elif args.command == 'query':
-        with ExamDB() as db:
+        with ExamDB(db_path=args.db, data_dir=args.data_dir) as db:
             results = db.search(
                 keyword=args.keyword, year=args.year,
                 category=args.category, subject=args.subject,
@@ -302,7 +332,7 @@ def main():
                 print("─" * 60)
 
     elif args.command == 'stats':
-        with ExamDB() as db:
+        with ExamDB(db_path=args.db, data_dir=args.data_dir) as db:
             s = db.stats()
             print(f"檔案: {s['files']}")
             print(f"總題數: {s['total_questions']} (選擇: {s['choice']}, 申論: {s['essay']})")
@@ -314,7 +344,7 @@ def main():
                 print(f"  {a}: {c}")
 
     elif args.command == 'random':
-        with ExamDB() as db:
+        with ExamDB(db_path=args.db, data_dir=args.data_dir) as db:
             results = db.random(n=args.count, year=args.year, subject=args.subject)
             print(f"隨機 {len(results)} 題：\n")
             for q in results:

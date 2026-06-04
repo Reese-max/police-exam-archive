@@ -27,14 +27,57 @@
 │   └── .../
 ├── scripts/                     # 工具腳本
 │   ├── download/                # 從考選部下載 PDF
-│   ├── parse/                   # PDF → JSON 解析
+│   │   ├── concurrent_download.py    # 併發排程
+│   │   ├── http_client.py            # Retry/Resume/PDF 完整性
+│   │   └── ...
+│   ├── parse/                   # PDF → JSON 解析（v2）
+│   │   ├── pdf_to_questions.py       # CLI 入口（併發 + 增量）
+│   │   ├── patterns.py               # 正則集中地
+│   │   ├── ocr_fallback.py           # PyMuPDF + rapidocr
+│   │   ├── ocr_repair.py             # wordninja 修復英文斷字
+│   │   └── manifest.py               # 增量處理 manifest
 │   └── audit/                   # 資料品質驗證
+├── tests/                       # pytest 單元測試
+├── cache/                       # parse_manifest.json, ocr/, http_meta.json
 ├── archive/                     # 歷史腳本（已完成的一次性修復）
 ├── config.py, logger.py, ...    # 核心支援模組
 └── README.md
 ```
 
 每個 `試題.json` 對應一個學系/類別在特定年份的一個科目考卷。
+
+## 解析 Pipeline (v2)
+
+```bash
+# 全量解析（首次或 --force）
+python scripts/parse/pdf_to_questions.py --input 考古題庫 --workers 8
+
+# 增量重跑：未變更的 PDF 自動跳過（檢查 sha256+mtime+size）
+python scripts/parse/pdf_to_questions.py --input 考古題庫
+
+# 停用 OCR fallback（只用 pdfplumber）
+python scripts/parse/pdf_to_questions.py --no-ocr
+
+# 跑單一 PDF
+python scripts/parse/pdf_to_questions.py --input path/to/試題.pdf
+```
+
+主要優化：
+
+| 模組 | 變更 |
+|---|---|
+| `pdf_to_questions.py` | ProcessPoolExecutor 併發 + tqdm 進度條 |
+| `manifest.py` | 增量處理：跳過未變更 PDF（sha256+mtime） |
+| `ocr_fallback.py` | pdfplumber 抽不到文字 → PyMuPDF 渲染 + rapidocr-onnxruntime |
+| `ocr_repair.py` | wordninja 取代硬編 OCR_FIXES 規則 list |
+| `patterns.py` | 所有正則集中 + pytest 覆蓋 |
+| `http_client.py` | Retry/Backoff + Range 續傳 + PDF 完整性 + 304 cache |
+
+OCR fallback 需要選用依賴：
+
+```bash
+pip install PyMuPDF rapidocr-onnxruntime
+```
 
 ## JSON 結構
 

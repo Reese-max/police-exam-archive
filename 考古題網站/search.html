@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>考古題全文搜尋｜三等警察特考</title>
+<meta name="description" content="跨部門搜尋警察特考考古題，支援關鍵字、年份、類科、科目、題型、答案篩選">
+<meta name="theme-color" content="#f0ece6">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%8D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f1e8;
+  --card:#ffffff;
+  --card-2:#fbfaf7;
+  --border:#e5e0d8;
+  --border-strong:#d8d1c5;
+  --text:#2d2a26;
+  --text-2:#78716c;
+  --text-3:#a39b8f;
+  --header:#f0ece6;
+  --primary:#4a7c5e;
+  --primary-hover:#3d6b50;
+  --primary-soft:#e8f0ea;
+  --primary-tint:#f3f7f4;
+  --warm:#c9a66b;
+  --warm-soft:#f4ecdd;
+  --blue:#2563eb;
+  --blue-soft:#e6edfd;
+  --pink:#d65a8a;
+  --pink-soft:#fbe8f0;
+  --highlight:#fce89a;
+  --highlight-text:#6b5a16;
+  --shadow-sm:0 1px 2px rgba(45,42,38,.04), 0 1px 3px rgba(45,42,38,.05);
+  --shadow-md:0 2px 4px rgba(45,42,38,.04), 0 8px 24px rgba(45,42,38,.06);
+  --shadow-lg:0 4px 8px rgba(45,42,38,.05), 0 16px 40px rgba(45,42,38,.09);
+  --shadow-xl:0 8px 16px rgba(45,42,38,.06), 0 24px 60px rgba(45,42,38,.12);
+  --radius:16px;
+  --radius-lg:20px;
+  --radius-sm:11px;
+}
+[data-theme="dark"]{
+  --bg:#1c1b18;
+  --card:#27261f;
+  --card-2:#22211b;
+  --border:#3d3a33;
+  --border-strong:#494539;
+  --text:#e5e0d8;
+  --text-2:#a8a096;
+  --text-3:#7a746a;
+  --header:#211f1a;
+  --primary:#7db892;
+  --primary-hover:#92c8a5;
+  --primary-soft:#243029;
+  --primary-tint:#21271f;
+  --warm:#cdab73;
+  --warm-soft:#2c281f;
+  --blue:#6ea0f5;
+  --blue-soft:#1f2733;
+  --pink:#e88bb4;
+  --pink-soft:#2e2129;
+  --highlight:#5e5320;
+  --highlight-text:#fce89a;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.2);
+  --shadow-md:0 2px 4px rgba(0,0,0,.2), 0 8px 24px rgba(0,0,0,.28);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.25), 0 16px 40px rgba(0,0,0,.4);
+  --shadow-xl:0 8px 16px rgba(0,0,0,.3), 0 24px 60px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans TC",system-ui,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  transition:background .4s ease,color .4s ease;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;overflow:hidden;
+  padding:24px 0 40px;
+  background:var(--header);
+  border-bottom:1px solid var(--border);
+  transition:background .4s,border-color .4s;
+}
+.hero::before{
+  content:"";position:absolute;left:-140px;top:-140px;width:440px;height:440px;
+  background:radial-gradient(circle, var(--primary-soft) 0%, transparent 68%);
+  opacity:.85;pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;right:-110px;bottom:-150px;width:380px;height:380px;
+  background:radial-gradient(circle, var(--warm-soft) 0%, transparent 70%);
+  opacity:.6;pointer-events:none;
+}
+.hero .wrap{position:relative;z-index:1}
+.back-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--text-2);font-size:14px;font-weight:600;
+  padding:8px 15px;border-radius:30px;background:var(--card);border:1px solid var(--border);
+  box-shadow:var(--shadow-sm);transition:.2s;
+}
+.back-link:hover{color:var(--primary);transform:translateX(-2px);box-shadow:var(--shadow-md)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+  font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--primary);
+  background:var(--primary-soft);border:1px solid var(--border);
+  padding:7px 15px;border-radius:30px;box-shadow:var(--shadow-sm);
+}
+.eyebrow .pip{width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.hero h1{font-size:38px;font-weight:800;letter-spacing:-.025em;line-height:1.14;margin-top:18px;display:flex;align-items:center;gap:12px}
+.hero .lead{margin-top:12px;font-size:17px;font-weight:500;color:var(--text-2)}
+
+/* ===== Search card ===== */
+.search-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:24px;box-shadow:var(--shadow-lg);margin-top:-22px;position:relative;z-index:2;
+  transition:background .4s,border-color .4s;
+}
+.search-row{display:flex;gap:12px}
+.search-input{
+  flex:1;display:flex;align-items:center;gap:12px;
+  background:var(--card-2);border:1.5px solid var(--border-strong);border-radius:var(--radius);
+  padding:0 18px;transition:.2s;
+}
+.search-input:focus-within{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.search-input .si{font-size:20px;color:var(--text-3);flex-shrink:0}
+.search-input input{
+  flex:1;border:none;background:transparent;font-family:inherit;font-size:16.5px;font-weight:500;
+  color:var(--text);padding:16px 0;
+}
+.search-input input:focus{outline:none}
+.search-input input::placeholder{color:var(--text-3);font-weight:500}
+.search-btn{
+  flex-shrink:0;display:inline-flex;align-items:center;gap:8px;
+  background:var(--primary);color:#fff;border:none;font-family:inherit;font-size:16px;font-weight:700;
+  padding:0 28px;border-radius:var(--radius);cursor:pointer;transition:.2s;box-shadow:var(--shadow-sm);
+}
+.search-btn:hover{background:var(--primary-hover);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.search-btn:active{transform:translateY(0)}
+.filters{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
+.select-wrap{position:relative}
+.select-wrap::after{
+  content:"";position:absolute;right:13px;top:50%;width:8px;height:8px;
+  border-right:2px solid var(--text-2);border-bottom:2px solid var(--text-2);
+  transform:translateY(-65%) rotate(45deg);pointer-events:none;
+}
+select{
+  width:100%;appearance:none;font-family:inherit;font-size:13.5px;font-weight:600;
+  color:var(--text);background:var(--card-2);border:1.5px solid var(--border-strong);
+  border-radius:var(--radius-sm);padding:10px 32px 10px 14px;cursor:pointer;transition:.2s;
+}
+select:hover{border-color:var(--primary)}
+select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+
+/* ===== Stats bar ===== */
+.stats-bar{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  margin-top:24px;padding:14px 20px;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);font-size:14px;color:var(--text-2);font-weight:500;
+  transition:background .4s,border-color .4s;
+}
+.stats-bar b{color:var(--text);font-weight:800;font-variant-numeric:tabular-nums}
+.stats-bar .hit b{color:var(--primary)}
+.stats-bar .sep{width:4px;height:4px;border-radius:50%;background:var(--text-3);margin:0 6px}
+.stats-bar .ms{margin-left:auto;font-size:13px;color:var(--text-3);font-weight:600}
+
+/* ===== Result cards ===== */
+.results{margin-top:18px;display:flex;flex-direction:column;gap:16px}
+.result{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px 24px;box-shadow:var(--shadow-md);
+  transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,background .4s,border-color .4s;
+}
+.result:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tag{font-size:12px;font-weight:700;padding:4px 11px;border-radius:20px;letter-spacing:.01em}
+.tag.year{color:var(--blue);background:var(--blue-soft)}
+.tag.cat{color:var(--text-2);background:var(--card-2);border:1px solid var(--border)}
+.tag.subj{color:var(--text-2);background:var(--card-2);border:1px solid var(--border)}
+.tag.type{color:var(--primary);background:var(--primary-soft)}
+.tag.ans{color:var(--pink);background:var(--pink-soft)}
+.stem{font-size:16px;font-weight:600;color:var(--text);line-height:1.7;margin-bottom:16px}
+.stem .hl{background:var(--highlight);color:var(--highlight-text);padding:1px 4px;border-radius:4px;font-weight:700}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+.opt{
+  display:flex;align-items:flex-start;gap:9px;font-size:14.5px;color:var(--text-2);font-weight:500;
+  padding:10px 13px;border-radius:var(--radius-sm);border:1px solid transparent;transition:.18s;
+}
+.opt .lbl{
+  flex-shrink:0;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;
+  font-size:12.5px;font-weight:700;background:var(--card-2);border:1px solid var(--border);color:var(--text-2);
+}
+.opt.correct{background:var(--primary-tint);border-color:var(--primary-soft)}
+.opt.correct .lbl{background:var(--primary);color:#fff;border-color:transparent}
+.opt.correct .otxt{color:var(--primary);font-weight:700}
+.ans-row{margin-top:15px;padding-top:14px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.ans-row .al{font-size:13px;color:var(--text-3);font-weight:600}
+.ans-pill{
+  font-size:14px;font-weight:800;color:#fff;background:var(--primary);
+  padding:5px 16px;border-radius:20px;letter-spacing:.02em;box-shadow:var(--shadow-sm);
+}
+
+/* ===== Footer / load more ===== */
+.load-more{
+  display:block;margin:26px auto 0;font-family:inherit;font-size:14.5px;font-weight:700;color:var(--primary);
+  background:var(--card);border:1.5px solid var(--border-strong);border-radius:30px;
+  padding:12px 32px;cursor:pointer;transition:.2s;box-shadow:var(--shadow-sm);
+}
+.load-more:hover{border-color:var(--primary);background:var(--primary-soft);transform:translateY(-2px)}
+.empty{background:var(--card);border:1px dashed var(--border-strong);border-radius:var(--radius);padding:44px 20px;text-align:center;color:var(--text-2);font-weight:600;font-size:15px}
+footer{margin-top:48px;padding:28px 0 56px;border-top:1px solid var(--border);text-align:center;color:var(--text-3);font-size:13.5px;font-weight:500}
+footer strong{color:var(--text-2);font-weight:700}
+
+/* ===== Theme toggle ===== */
+.theme-toggle{
+  position:fixed;right:24px;bottom:24px;z-index:50;
+  display:flex;align-items:center;gap:9px;
+  background:var(--card);border:1px solid var(--border);color:var(--text);
+  font-family:inherit;font-size:14px;font-weight:600;
+  padding:11px 16px;border-radius:30px;cursor:pointer;
+  box-shadow:var(--shadow-lg);transition:transform .2s,background .4s,border-color .4s;
+}
+.theme-toggle:hover{transform:translateY(-2px) scale(1.02)}
+.theme-toggle .ti{font-size:17px;line-height:1}
+.theme-toggle .tlabel{white-space:nowrap}
+
+/* ===== Responsive ===== */
+@media (max-width:720px){
+  .filters{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .hero h1{font-size:29px}
+  .search-row{flex-direction:column}
+  .search-btn{padding:14px;justify-content:center}
+  .filters{grid-template-columns:1fr 1fr}
+  .options{grid-template-columns:1fr}
+  .stats-bar .ms{margin-left:0;width:100%}
+  .theme-toggle .tlabel{display:none}
+  .theme-toggle{padding:13px;right:16px;bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← 回到首頁</a>
+    <span class="eyebrow"><span class="pip"></span>考古題資料庫 · 全文檢索</span>
+    <h1><span>🔍</span>考古題全文搜尋</h1>
+    <p class="lead">跨部門搜尋 41,811 道警察特考考古題。</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- Search card -->
+  <div class="search-card">
+    <div class="search-row">
+      <label class="search-input">
+        <span class="si">🔍</span>
+        <input type="text" id="q" placeholder="輸入關鍵字，如：基本權、刑法、酒駕…" autofocus aria-label="搜尋關鍵字">
+      </label>
+      <button class="search-btn" id="searchBtn">搜尋</button>
+    </div>
+    <div class="filters">
+      <div class="select-wrap"><select id="fYear" aria-label="年份篩選"><option value="">全部年份</option></select></div>
+      <div class="select-wrap"><select id="fCategory" aria-label="類科篩選"><option value="">全部類科</option></select></div>
+      <div class="select-wrap"><select id="fSubject" aria-label="科目篩選"><option value="">全部科目</option></select></div>
+      <div class="select-wrap"><select id="fType" aria-label="題型篩選"><option value="">全部題型</option><option value="choice">選擇題</option><option value="essay">申論題</option></select></div>
+      <div class="select-wrap"><select id="fAnswer" aria-label="答案篩選"><option value="">全部答案</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="送分">送分</option></select></div>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <span>已索引 <b id="statTotal">—</b> 題</span>
+    <span class="sep"></span>
+    <span class="hit">找到 <b id="statFound">—</b> 題</span>
+    <span class="ms" id="statTime">載入索引中…</span>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results"></div>
+
+  <button class="load-more" id="loadMore" style="display:none">載入更多結果</button>
+
+  <footer>
+    資料來源：<strong>考選部考畢試題查詢平臺</strong>
+  </footer>
+</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="切換深色模式">
+  <span class="ti" id="themeIcon">🌙</span>
+  <span class="tlabel" id="themeLabel">深色模式</span>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
+<script src="js/search-engine.js"></script>
+<script>
+/* ===== 真實搜尋引擎整合（minisearch + search-engine.js） ===== */
+(function(){
+  'use strict';
+  var PAGE_SIZE = 50;
+  var LIMIT = 500;
+  var ready = false;
+  var allResults = [];
+  var displayCount = 0;
+  var currentQuery = '';
+
+  function _esc(s){ if(!s) return ''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function _highlight(text){
+    if(!currentQuery || !currentQuery.trim()) return text;
+    currentQuery.trim().split(/\s+/).forEach(function(w){
+      if(w.length < 1) return;
+      var re = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi');
+      text = text.replace(re,'<span class="hl">$1</span>');
+    });
+    return text;
+  }
+
+  function _card(q){
+    var tags = '<span class="tag year">' + q.yr + ' 年</span>' +
+      '<span class="tag cat">' + _esc(q.cat) + '</span>' +
+      '<span class="tag subj">' + _esc(q.sub) + '</span>' +
+      '<span class="tag type">' + (q.type==='choice'?'選擇題':'申論題') + '</span>' +
+      (q.ans ? '<span class="tag ans">答案 ' + q.ans + '</span>' : '');
+    var html = '<article class="result"><div class="tags">' + tags + '</div>' +
+      '<p class="stem">' + _highlight(_esc(q.type==='essay' ? q.stem.substring(0,300) : q.stem)) + '</p>';
+    if(q.type==='choice' && q.optA){
+      var opts='';
+      ['A','B','C','D'].forEach(function(L){
+        var v=q['opt'+L]; if(!v) return;
+        opts += '<div class="opt'+(q.ans===L?' correct':'')+'"><span class="lbl">'+L+'</span><span class="otxt">'+_highlight(_esc(v))+'</span></div>';
+      });
+      html += '<div class="options">'+opts+'</div>';
+      if(q.ans) html += '<div class="ans-row"><span class="al">正確答案</span><span class="ans-pill">'+q.ans+'</span></div>';
+    }
+    return html + '</article>';
+  }
+
+  function _renderNextPage(){
+    var area=document.getElementById('results');
+    if(allResults.length===0){
+      area.innerHTML='<div class="empty">找不到符合條件的題目，請嘗試其他關鍵字或調整篩選條件。</div>';
+      document.getElementById('loadMore').style.display='none';
+      return;
+    }
+    var end=Math.min(displayCount+PAGE_SIZE, allResults.length);
+    var html='';
+    for(var i=displayCount;i<end;i++) html+=_card(allResults[i]);
+    if(displayCount===0) area.innerHTML=html; else area.insertAdjacentHTML('beforeend',html);
+    displayCount=end;
+    document.getElementById('loadMore').style.display = displayCount<allResults.length?'':'none';
+  }
+
+  function doSearch(){
+    currentQuery=document.getElementById('q').value;
+    var yv=document.getElementById('fYear').value;
+    var filters={
+      yr: yv?parseInt(yv,10):null,
+      cat:document.getElementById('fCategory').value,
+      sub:document.getElementById('fSubject').value,
+      type:document.getElementById('fType').value,
+      ans:document.getElementById('fAnswer').value,
+    };
+    var t0=performance.now();
+    allResults=SearchEngine.search(currentQuery,filters,LIMIT);
+    document.getElementById('statFound').textContent =
+      allResults.length >= LIMIT ? LIMIT.toLocaleString()+'+' : allResults.length.toLocaleString();
+    document.getElementById('statTime').textContent='耗時 '+Math.round(performance.now()-t0)+'ms';
+    displayCount=0;
+    _renderNextPage();
+  }
+
+  function _fill(id, items, suffix){
+    var sel=document.getElementById(id);
+    items.forEach(function(it){
+      var o=document.createElement('option'); o.value=String(it); o.textContent=it+suffix; sel.appendChild(o);
+    });
+  }
+
+  document.getElementById('results').innerHTML='<div class="empty">⏳ 正在載入搜尋索引（約 7MB）…</div>';
+  SearchEngine.loadIndex().then(function(stats){
+    ready = true;
+    document.getElementById('statTotal').textContent=stats.total.toLocaleString();
+    document.getElementById('statTime').textContent='索引就緒';
+    document.getElementById('results').innerHTML='<div class="empty">輸入關鍵字開始搜尋</div>';
+    var f=SearchEngine.getFacets();
+    _fill('fYear', f.years.map(String).reverse(),' 年');
+    _fill('fCategory', f.categories,'');
+    _fill('fSubject', f.subjects,'');
+  }).catch(function(err){
+    document.getElementById('results').innerHTML='<div class="empty">索引載入失敗：'+_esc(err.message)+'</div>';
+  });
+
+  document.getElementById('searchBtn').addEventListener('click', doSearch);
+  document.getElementById('loadMore').addEventListener('click', _renderNextPage);
+  document.getElementById('q').addEventListener('keydown', function(e){ if(e.key==='Enter'){e.preventDefault();doSearch();} });
+  ['fYear','fCategory','fSubject','fType','fAnswer'].forEach(function(id){
+    document.getElementById(id).addEventListener('change', function(){
+      if(ready) doSearch(); // 任一篩選變更（含清空回「全部」）都重新搜尋，避免殘留過期結果
+    });
+  });
+})();
+
+// theme — 全站共用 localStorage key「exam-dark」(true/false)
+(function(){
+  const btn=document.getElementById('themeToggle');
+  const icon=document.getElementById('themeIcon');
+  const label=document.getElementById('themeLabel');
+  function apply(dark){
+    document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+    icon.textContent=dark?'☀️':'🌙';
+    label.textContent=dark?'淺色模式':'深色模式';
+    try{localStorage.setItem('exam-dark',dark);}catch(e){}
+  }
+  let saved=null; try{saved=localStorage.getItem('exam-dark');}catch(e){}
+  apply(saved==='true'||(saved===null&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches));
+  btn.addEventListener('click',()=>{
+    apply(document.documentElement.getAttribute('data-theme')!=='dark');
+  });
+})();
+</script>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').catch(function(){}); }
+</script>
+</body>
+</html>

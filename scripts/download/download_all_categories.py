@@ -133,6 +133,13 @@ CATEGORIES = {
         'key_subjects': ['移民情勢與政策分析', '國境執法'],
         'description': '移民情勢與政策分析、國境執法',
     },
+    '國境警察學系移民組': {
+        'code': 801,
+        'short': '國境警察學系移民組',
+        'full': '警察人員考試三等考試_國境警察學系移民組人員',
+        'key_subjects': ['入出國及移民法規', '國土安全與移民政策', '外國文'],
+        'description': '入出國及移民法規、國土安全與移民政策、國境執法與刑事法、外國文（7種語言組）',
+    },
     '水上警察學系': {
         'code': 511,
         'short': '水上警察學系',
@@ -265,16 +272,28 @@ def identify_category_from_subjects(subjects_text):
             '警察專業英文' not in subjects_text):
         return '公共安全學系社安組學系情報組'
 
-    # === 內軌判定：必須有這三種英文科目之一 ===
+    # === 移民組（外軌，英文科目為「法學知識與英文」而非「警察專業英文」）===
+    # 必須在內軌判定之前，否則會被 is_internal 擋掉
+    if '入出國及移民法規' in subjects_text and '國土安全與移民政策' in subjects_text:
+        return '國境警察學系移民組'
+    if '入出國及移民法規概要' in subjects_text and '國土安全概要與移民政策' in subjects_text:
+        return '國境警察學系移民組'
+    if '移民情勢與移民政策分析研究' in subjects_text and '入出國及移民法規' in subjects_text:
+        return '國境警察學系移民組'
+
+    # === 內軌判定：必須有英文科目之一 ===
+    # 考選部用語：「消防警察」而非「消防學系」、「水上警察」而非「水上警察學系」
     is_internal = (
         '中華民國憲法與警察專業英文' in subjects_text or
         '中華民國憲法與消防學系專業英文' in subjects_text or
-        '中華民國憲法與水上警察學系專業英文' in subjects_text
+        '中華民國憲法與消防警察專業英文' in subjects_text or
+        '中華民國憲法與水上警察學系專業英文' in subjects_text or
+        '中華民國憲法與水上警察專業英文' in subjects_text
     )
     if not is_internal:
         return None
 
-    # 按特徵科目識別 14 個警察特考類科組別
+    # 按特徵科目識別警察特考類科組別
     if '警察學與警察勤務' in subjects_text:
         return '行政警察學系'
     if '外事警察學系學' in subjects_text:
@@ -285,7 +304,12 @@ def identify_category_from_subjects(subjects_text):
         return '公共安全學系社安組'
     if '諮商輔導與婦幼保護' in subjects_text and '犯罪分析' in subjects_text:
         return '犯罪防治學系預防組'
-    if '火災學與消防化學' in subjects_text and '消防安全設備' in subjects_text:
+    # 消防學系：「火災學與消防化學」或「火災學概要」+「消防安全設備」
+    if ('火災學與消防化學' in subjects_text or '火災學概要' in subjects_text):
+        if '消防安全設備' in subjects_text:
+            return '消防學系'
+    # 消防四等：「消防戰術」+「消防與災害防救法規概要」
+    if '消防戰術' in subjects_text and '消防與災害防救法規概要' in subjects_text:
         return '消防學系'
     # 交通警察：電訊組必須在交通組之前判斷（電訊組科目更獨特）
     if '通訊犯罪偵查' in subjects_text and '通訊系統' in subjects_text and '電路學' in subjects_text:
@@ -300,6 +324,11 @@ def identify_category_from_subjects(subjects_text):
         return '國境警察學系境管組'
     if '水上警察學系學' in subjects_text and '海上犯罪偵查法學' in subjects_text:
         return '水上警察學系'
+    # 法律學系：「行政法」+「立法程序與法制作業」或「警察法制作業」
+    if '行政法' in subjects_text and '立法程序與法制作業' in subjects_text:
+        return '法律學系'
+    if '行政法' in subjects_text and '警察法制作業' in subjects_text:
+        return '法律學系'
     if '法律學系作業' in subjects_text:
         return '法律學系'
     if '警察人事行政與法制' in subjects_text and '警察組織與事務管理' in subjects_text:
@@ -380,7 +409,11 @@ def parse_exam_page(session, year, exam_code, target_categories=None):
         if target_categories and category_name not in target_categories:
             continue
 
-        results[category_name] = subjects_dict
+        # 合併同類科的科目（移民組有 801-807 多個語言組，都要保留）
+        if category_name in results:
+            results[category_name].update(subjects_dict)
+        else:
+            results[category_name] = subjects_dict
 
     return results
 

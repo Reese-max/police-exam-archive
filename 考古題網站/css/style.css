@@ -10,3 +10,69 @@
 .network-toast.offline{background:#f59e0b}
 html.dark .network-toast.offline{background:#d97706}
 @media print{.pdf-progress-overlay,.network-toast,.filter-bar,.bookmark-btn,.view-toggle,.export-btn{display:none !important;}.subject-card{content-visibility:visible !important;break-inside:avoid;}.year-section{break-before:auto;}}
+/* === PDF 下載連結 === */
+.pdf-links { display: flex; gap: 0.5rem; flex-wrap: wrap; padding: 0.4rem 0 0.6rem; }
+.pdf-link { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; font-size: 0.78rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; text-decoration: none; transition: border-color 0.15s, color 0.15s; }
+.pdf-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ============================================================
+   綠調升級 Upgrade Layer — 讓 17 個類科總覽頁與 4 個 app 頁
+   設計語言一致（暖米×鼠尾草綠、氛圍漸層、柔和陰影分層）。
+   僅覆寫視覺；所有互動由 app.js 驅動，未更動。
+   ============================================================ */
+:root{
+  --bg:#f5f1e8;--card-bg:#fffdf8;--card-bg-2:#f7f2e8;
+  --border:#e7e0d2;--border-soft:rgba(74,124,94,0.14);
+  --text:#2b2722;--text-light:#7c7367;--text-faint:#a59c8d;
+  --accent:#4a7c5e;--accent-hover:#3d6b50;--accent-deep:#2f5642;
+  --accent-soft:rgba(74,124,94,0.10);--accent-line:rgba(74,124,94,0.28);
+  --header-bg:#efe7d8;
+  --bg-tint-1:rgba(74,124,94,0.07);--bg-tint-2:rgba(201,168,106,0.08);
+  --feature-bg:linear-gradient(152deg,#4a7c5e,#2f5642);--feature-text:#fffdf8;
+  --shadow-sm:0 1px 2px rgba(60,52,40,0.05),0 3px 10px rgba(60,52,40,0.05);
+  --shadow-md:0 6px 18px rgba(60,52,40,0.09),0 16px 34px rgba(47,86,66,0.08);
+  --r-sm:10px;--r:14px;--r-lg:18px;
+}
+html.dark{
+  --bg:#15140f;--card-bg:#211e16;--card-bg-2:#1a1812;
+  --border:#37332a;--border-soft:rgba(125,184,146,0.16);
+  --text:#e9e3d6;--text-light:#a39a8b;--text-faint:#7d7567;
+  --accent:#7db892;--accent-hover:#6ba87f;--accent-deep:#a6d4b5;
+  --accent-soft:rgba(125,184,146,0.12);--accent-line:rgba(125,184,146,0.30);
+  --header-bg:#1c1a13;
+  --bg-tint-1:rgba(125,184,146,0.08);--bg-tint-2:rgba(201,168,106,0.05);
+  --feature-bg:linear-gradient(152deg,#2f5a43,#1d3e2d);--feature-text:#eaf3ec;
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.3),0 3px 10px rgba(0,0,0,0.28);
+  --shadow-md:0 8px 20px rgba(0,0,0,0.42),0 18px 36px rgba(0,0,0,0.32);
+}
+body{background:radial-gradient(125% 80% at 10% -10%,var(--bg-tint-1),transparent 58%),radial-gradient(100% 65% at 100% 0%,var(--bg-tint-2),transparent 52%),var(--bg) !important;font-feature-settings:"tnum" 1}
+.page-title{font-weight:800;letter-spacing:-0.01em}
+.stat-item{background:var(--card-bg);border:1px solid var(--border) !important;border-radius:var(--r) !important;box-shadow:var(--shadow-sm);padding:0.7rem 1.2rem}
+.stat-value{color:var(--accent) !important;font-weight:800;letter-spacing:-0.02em}
+.search-box{border-radius:var(--r-lg) !important;box-shadow:var(--shadow-sm)}
+.search-input{border-radius:var(--r-sm) !important;box-shadow:var(--shadow-sm);transition:border-color .2s,box-shadow .2s}
+.search-input:focus{box-shadow:0 0 0 3px var(--accent-soft) !important}
+.filter-chip{border-radius:999px !important;transition:background .2s,border-color .2s,color .2s}
+.filter-chip.active{background:var(--feature-bg) !important;color:var(--feature-text) !important;border-color:transparent !important}
+.toolbar{border-radius:var(--r) !important}
+.toolbar-btn{border-radius:var(--r-sm) !important;transition:border-color .2s,background .2s,color .2s}
+.toolbar-btn.active{background:var(--feature-bg) !important;color:var(--feature-text) !important;border-color:transparent !important}
+.toolbar-select{border-radius:var(--r-sm) !important}
+.practice-score{border-radius:var(--r) !important}
+.export-panel{border-radius:var(--r) !important;box-shadow:var(--shadow-md)}
+.export-option{border-radius:var(--r-sm) !important}
+.year-heading{color:var(--accent) !important;font-weight:800}
+.subject-card{border-radius:var(--r-lg) !important;box-shadow:var(--shadow-sm);border:1px solid var(--border) !important;transition:box-shadow .25s,transform .25s}
+.subject-card:hover{box-shadow:var(--shadow-md)}
+.subject-header h3{font-weight:700}
+.meta-tag{border-radius:999px !important;background:var(--accent-soft) !important;color:var(--accent) !important;border:1px solid var(--accent-line) !important}
+.pdf-link{border-radius:999px !important}
+.q-number{background:var(--accent-soft) !important;color:var(--accent) !important;font-weight:800;border-radius:8px !important}
+.q-answer{color:var(--accent) !important;font-weight:700}
+.mc-opt{border-radius:8px !important;transition:background .15s,border-color .15s}
+.exam-section-marker{color:var(--accent) !important;font-weight:700}
+.sidebar{box-shadow:var(--shadow-md)}
+.sidebar-home{color:var(--accent) !important;font-weight:600}
+.dark-toggle,.back-to-top{border-radius:50% !important;box-shadow:var(--shadow-md);transition:transform .2s}
+.dark-toggle:hover{transform:scale(1.08) rotate(-8deg)}
+.back-to-top:hover{transform:translateY(-3px)}

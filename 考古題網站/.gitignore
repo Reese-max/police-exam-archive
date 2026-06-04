@@ -1,3 +1,11 @@
 node_modules/
 test-results/
 playwright-report/
+
+# Generated data (run scripts/build_*.py to regenerate)
+# 注意：本檔位於 考古題網站/ 內，規則須相對本目錄
+/data/
+
+# Claude Design 原始匯出存檔與舊版備份（不進版控）
+/_cd_export/
+/_upgraded_backup/

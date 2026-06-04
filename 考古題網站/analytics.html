@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>出題趨勢分析｜警察特考考古題</title>
+<meta name="description" content="警察特考考古題出題趨勢分析 Dashboard，歷年出題分佈、答案比例、關鍵字詞雲">
+<meta name="theme-color" content="#f0ece6">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#faf8f5;
+  --card:#ffffff;
+  --card-2:#fbfaf7;
+  --border:#e5e0d8;
+  --border-strong:#d8d1c5;
+  --text:#2d2a26;
+  --text-2:#78716c;
+  --text-3:#a39b8f;
+  --header:#f0ece6;
+  --primary:#4a7c5e;
+  --primary-hover:#3d6b50;
+  --primary-soft:#e8f0ea;
+  --primary-tint:#f3f7f4;
+  --warm:#c9a66b;
+  --warm-soft:#f4ecdd;
+  --shadow-sm:0 1px 2px rgba(45,42,38,.04), 0 1px 3px rgba(45,42,38,.05);
+  --shadow-md:0 2px 4px rgba(45,42,38,.04), 0 8px 24px rgba(45,42,38,.06);
+  --shadow-lg:0 4px 8px rgba(45,42,38,.05), 0 16px 40px rgba(45,42,38,.09);
+  --radius:14px;
+  --radius-sm:10px;
+  --grid-line:#ece7df;
+  --chart-text:#9a9288;
+}
+[data-theme="dark"]{
+  --bg:#1c1b18;
+  --card:#27261f;
+  --card-2:#22211b;
+  --border:#3d3a33;
+  --border-strong:#494539;
+  --text:#e5e0d8;
+  --text-2:#a8a096;
+  --text-3:#7a746a;
+  --header:#211f1a;
+  --primary:#7db892;
+  --primary-hover:#92c8a5;
+  --primary-soft:#243029;
+  --primary-tint:#21271f;
+  --warm:#cdab73;
+  --warm-soft:#2c281f;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.2);
+  --shadow-md:0 2px 4px rgba(0,0,0,.2), 0 8px 24px rgba(0,0,0,.28);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.25), 0 16px 40px rgba(0,0,0,.4);
+  --grid-line:#34322b;
+  --chart-text:#8a8278;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans TC",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  transition:background .4s ease, color .4s ease;
+}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* ===== Header ===== */
+header.hero{
+  background:var(--header);
+  border-bottom:1px solid var(--border);
+  padding:24px 0 40px;
+  transition:background .4s ease,border-color .4s ease;
+  position:relative;
+  overflow:hidden;
+}
+header.hero::after{
+  content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;
+  background:radial-gradient(circle, var(--primary-soft) 0%, transparent 70%);
+  opacity:.7;pointer-events:none;
+}
+.back-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500;
+  padding:7px 12px;border-radius:8px;transition:.2s;position:relative;z-index:1;
+}
+.back-link:hover{background:var(--card);color:var(--primary);box-shadow:var(--shadow-sm)}
+.hero-title{
+  display:flex;align-items:center;gap:14px;margin-top:24px;position:relative;z-index:1;
+}
+.hero-title .emoji{
+  font-size:38px;line-height:1;
+  filter:drop-shadow(0 2px 4px rgba(74,124,94,.25));
+}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.hero .sub{
+  margin-top:8px;color:var(--text-2);font-size:15.5px;font-weight:500;
+  position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+}
+.hero .sub .dot{width:4px;height:4px;border-radius:50%;background:var(--text-3)}
+
+/* ===== Stat cards ===== */
+.stats{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:16px;
+  margin-top:-22px;position:relative;z-index:2;
+}
+.stat{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 18px 16px;box-shadow:var(--shadow-md);
+  transition:transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s, background .4s, border-color .4s;
+  position:relative;overflow:hidden;
+}
+.stat::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent,var(--primary));
+  opacity:.85;
+}
+.stat:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.stat .label{font-size:13px;color:var(--text-2);font-weight:600;margin-bottom:8px}
+.stat .num{
+  font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--text);
+  font-variant-numeric:tabular-nums;line-height:1;
+}
+.stat .unit{font-size:14px;font-weight:600;color:var(--text-3);margin-left:3px}
+
+/* ===== Section ===== */
+section{margin-top:40px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px;gap:16px;flex-wrap:wrap}
+.section-head h2{font-size:21px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.section-head h2::before{content:"";width:5px;height:20px;border-radius:3px;background:var(--primary)}
+.section-head .hint{font-size:13px;color:var(--text-3);font-weight:500}
+
+/* ===== Filter ===== */
+.filter-bar{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px 20px;box-shadow:var(--shadow-sm);transition:background .4s,border-color .4s;
+}
+.filter-bar .flabel{font-size:14px;font-weight:600;color:var(--text-2);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.select-wrap{position:relative;flex:1;max-width:340px;min-width:200px}
+.select-wrap::after{
+  content:"";position:absolute;right:16px;top:50%;width:9px;height:9px;
+  border-right:2px solid var(--text-2);border-bottom:2px solid var(--text-2);
+  transform:translateY(-65%) rotate(45deg);pointer-events:none;
+}
+select{
+  width:100%;appearance:none;font-family:inherit;font-size:14.5px;font-weight:600;
+  color:var(--text);background:var(--card-2);border:1.5px solid var(--border-strong);
+  border-radius:var(--radius-sm);padding:11px 40px 11px 16px;cursor:pointer;
+  transition:.2s;
+}
+select:hover{border-color:var(--primary)}
+select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.filter-tag{
+  margin-left:auto;font-size:13px;font-weight:600;color:var(--primary);
+  background:var(--primary-soft);padding:6px 14px;border-radius:20px;
+}
+
+/* ===== Chart grid ===== */
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px 24px 20px;box-shadow:var(--shadow-md);
+  transition:background .4s,border-color .4s,box-shadow .25s;
+}
+.card-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.card-title h3{font-size:16px;font-weight:700;color:var(--text)}
+.card-title .badge{
+  font-size:11.5px;font-weight:700;color:var(--primary);background:var(--primary-soft);
+  padding:4px 10px;border-radius:20px;letter-spacing:.02em;
+}
+.card-sub{font-size:13px;color:var(--text-3);margin-bottom:14px;font-weight:500}
+.chart-box{position:relative;height:300px}
+.chart-box.tall{height:340px}
+
+/* legend for donut */
+.donut-legend{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:8px}
+.donut-legend .li{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--text-2)}
+.donut-legend .sw{width:11px;height:11px;border-radius:3px}
+
+/* ===== Keyword Top 50 ===== */
+.kw-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:24px 26px;box-shadow:var(--shadow-md);transition:background .4s,border-color .4s;
+}
+.kw-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:6px 32px;
+}
+.kw-row{
+  display:flex;align-items:center;gap:12px;padding:9px 6px;border-radius:8px;
+  transition:background .15s;cursor:default;
+}
+.kw-row:hover{background:var(--primary-tint)}
+.kw-rank{
+  flex-shrink:0;width:26px;text-align:center;font-size:13px;font-weight:700;
+  color:var(--text-3);font-variant-numeric:tabular-nums;
+}
+.kw-row.top .kw-rank{color:var(--primary)}
+.kw-name{flex-shrink:0;width:104px;font-size:14px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kw-bar-track{flex:1;height:9px;background:var(--grid-line);border-radius:5px;overflow:hidden}
+.kw-bar-fill{height:100%;border-radius:5px;width:0;transition:width 1s cubic-bezier(.2,.7,.3,1)}
+.kw-count{flex-shrink:0;width:48px;text-align:right;font-size:13px;font-weight:700;color:var(--text-2);font-variant-numeric:tabular-nums}
+
+/* ===== Theme toggle ===== */
+.theme-toggle{
+  position:fixed;left:24px;bottom:24px;z-index:50;
+  display:flex;align-items:center;gap:9px;
+  background:var(--card);border:1px solid var(--border);
+  color:var(--text);font-family:inherit;font-size:14px;font-weight:600;
+  padding:11px 16px;border-radius:30px;cursor:pointer;
+  box-shadow:var(--shadow-lg);transition:transform .2s, background .4s, border-color .4s;
+}
+.theme-toggle:hover{transform:translateY(-2px) scale(1.02)}
+.theme-toggle .ti{font-size:17px;line-height:1}
+.theme-toggle .tlabel{transition:.2s;white-space:nowrap}
+
+footer{margin:56px 0 40px;text-align:center;color:var(--text-3);font-size:13px;font-weight:500}
+
+/* ===== Responsive ===== */
+@media (max-width:880px){
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .chart-grid{grid-template-columns:1fr}
+  .kw-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .hero h1{font-size:27px}
+  .hero-title .emoji{font-size:30px}
+  .stats{grid-template-columns:repeat(2,1fr);gap:12px}
+  .stat .num{font-size:25px}
+  .chart-box{height:260px}
+  .theme-toggle .tlabel{display:none}
+  .theme-toggle{padding:13px;left:16px;bottom:16px}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.reveal{animation:fadeUp .6s cubic-bezier(.2,.7,.3,1) both}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← 回到首頁</a>
+    <div class="hero-title">
+      <span class="emoji">📊</span>
+      <h1>出題趨勢分析</h1>
+    </div>
+    <p class="sub">
+      <span>歷年出題分佈</span><span class="dot"></span>
+      <span>答案比例</span><span class="dot"></span>
+      <span>關鍵字分析</span>
+    </p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- Stat cards -->
+  <div class="stats" id="stats">
+    <div class="stat" style="--accent:#4a7c5e"><div class="label">總題數</div><div><span class="num" data-target="41811">0</span></div></div>
+    <div class="stat" style="--accent:#6b9e7f"><div class="label">選擇題</div><div><span class="num" data-target="36210">0</span></div></div>
+    <div class="stat" style="--accent:#8fbfa0"><div class="label">申論題</div><div><span class="num" data-target="5601">0</span></div></div>
+    <div class="stat" style="--accent:#c9a66b"><div class="label">類科</div><div><span class="num" data-target="49">0</span></div></div>
+    <div class="stat" style="--accent:#bca06a"><div class="label">科目</div><div><span class="num" data-target="101">0</span></div></div>
+    <div class="stat" style="--accent:#9e8b5e"><div class="label">年份</div><div><span class="num">106–114</span></div></div>
+  </div>
+
+  <!-- Filter -->
+  <section style="margin-top:32px">
+    <div class="filter-bar">
+      <span class="flabel">🎯 類科篩選（熱門前 15）</span>
+      <div class="select-wrap">
+        <select id="catSelect">
+          <option value="all">全部類科</option>
+        </select>
+      </div>
+      <span class="filter-tag" id="filterTag">全部類科 · 41,811 題</span>
+    </div>
+  </section>
+
+  <!-- Charts row 1 -->
+  <section>
+    <div class="section-head">
+      <h2>出題分佈總覽</h2>
+      <span class="hint">資料更新至 114 年第二次考試</span>
+    </div>
+    <div class="chart-grid">
+      <div class="card">
+        <div class="card-title"><h3>各年度出題數</h3><span class="badge">106–114</span></div>
+        <p class="card-sub">近九年每年命題量變化</p>
+        <div class="chart-box"><canvas id="yearChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title"><h3>答案分佈</h3><span class="badge">選擇題</span></div>
+        <p class="card-sub">A／B／C／D 正解比例</p>
+        <div class="chart-box"><canvas id="donutChart"></canvas></div>
+        <div class="donut-legend" id="donutLegend"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category horizontal bar -->
+  <section>
+    <div class="section-head">
+      <h2>各類科題目數</h2>
+      <span class="hint">熱門前 15 類科・依累計題數排序</span>
+    </div>
+    <div class="card">
+      <div class="chart-box tall"><canvas id="catChart"></canvas></div>
+    </div>
+  </section>
+
+  <!-- Keyword Top 50 -->
+  <section>
+    <div class="section-head">
+      <h2>熱門關鍵字 Top 50</h2>
+      <span class="hint">題幹與選項出現次數</span>
+    </div>
+    <div class="kw-card">
+      <div class="kw-grid" id="kwGrid"></div>
+    </div>
+  </section>
+
+  <!-- Multi-line trend -->
+  <section>
+    <div class="section-head">
+      <h2>各類科歷年出題趨勢</h2>
+      <span class="hint">主要類科逐年命題量</span>
+    </div>
+    <div class="card">
+      <div class="card-title"><h3>趨勢比較</h3><span class="badge">106–114</span></div>
+      <p class="card-sub">五大熱門類科逐年變化</p>
+      <div class="chart-box tall"><canvas id="trendChart"></canvas></div>
+    </div>
+  </section>
+
+  <footer>警察特考考古題 · 出題趨勢分析 · 資料來源：考選部考畢試題查詢平臺</footer>
+</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="切換深色模式">
+  <span class="ti" id="themeIcon">🌙</span>
+  <span class="tlabel" id="themeLabel">深色模式</span>
+</button>
+
+<script src="analytics-chart-data.js"></script>
+<script src="analytics-chart.js"></script>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').catch(function(){}); }
+</script>
+</body>
+</html>

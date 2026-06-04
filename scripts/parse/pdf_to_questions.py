@@ -1,395 +1,331 @@
 # -*- coding: utf-8 -*-
 """
-PDF → 結構化題目提取器
-將考古題 PDF 自動轉成結構化的 JSON 題目資料
-支援選擇題、申論題、閱讀測驗等題型
+PDF → 結構化題目提取器（v2，優化版）
+
+新增：
+  * 解析併發化（ProcessPoolExecutor + tqdm）
+  * 增量 manifest：未變更檔案自動跳過
+  * OCR fallback：pdfplumber 抽不到文字時轉 OCR（PyMuPDF + rapidocr）
+  * wordninja 修復英文 OCR 斷字
 
 用法:
-  python pdf_to_questions.py                     # 處理 考古題庫/ 下所有 PDF
-  python pdf_to_questions.py --input 考古題庫/資訊管理學系  # 只處理資訊管理學系
-  python pdf_to_questions.py --input path/to/試題.pdf   # 處理單一 PDF
+  python pdf_to_questions.py                     # 處理整個 考古題庫/
+  python pdf_to_questions.py --input <dir>       # 指定目錄
+  python pdf_to_questions.py --input <pdf>       # 處理單一 PDF
+  python pdf_to_questions.py --force             # 忽略 manifest 強制重跑
+  python pdf_to_questions.py --workers 8         # 自訂併發數
+  python pdf_to_questions.py --no-ocr            # 停用 OCR fallback
 """
 
+from __future__ import annotations
+
+import argparse
+import json
+import logging
 import os
 import re
-import json
-import argparse
-import unicodedata
-from pathlib import Path
+import sys
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from dataclasses import dataclass, field
 from datetime import datetime
+from multiprocessing import cpu_count
+from pathlib import Path
+from typing import List, Optional
+
+# scripts/parse 內部模組
+_THIS = Path(__file__).resolve()
+_ROOT = _THIS.parents[2]
+sys.path.insert(0, str(_ROOT))
+
+from scripts.parse import patterns as P  # noqa: E402
+from scripts.parse.answer_extractor import (  # noqa: E402
+    find_answer_pdf,
+    merge_answers_into_questions,
+    parse_answer_pdf,
+)
+from scripts.parse.extractors import EXTRACTORS, ExtractorFn, get_extractor  # noqa: E402
+from scripts.parse.manifest import ParseManifest  # noqa: E402
+from scripts.parse.ocr_fallback import extract_text_with_fallback  # noqa: E402
+from scripts.parse.ocr_repair import normalize_with_ocr_repair  # noqa: E402
+from scripts.parse.quality import QualityReport, assess_quality  # noqa: E402
+
+# pdfplumber 仍用於 fallback_extract_essays（需 page.extract_words 取 Y 座標）
+import pdfplumber  # noqa: E402
 
 try:
-    import pdfplumber
+    from tqdm import tqdm
 except ImportError:
-    print("需要安裝 pdfplumber: pip install pdfplumber")
-    raise
+    def tqdm(it, **kw):  # type: ignore
+        return it
 
-# ===== 考卷標頭解析模式 =====
-HEADER_PATTERNS = {
-    'exam_type': re.compile(r'(\d{2,3})\s*年\s*(特種考試|公務人員特種考試)'),
-    'exam_name': re.compile(r'(警察人員考試|一般警察人員考試)'),
-    'level': re.compile(r'(三等|四等)考試'),
-    'category': re.compile(r'類\s*科[：:]\s*(.+)'),
-    'subject': re.compile(r'科\s*目[：:]\s*(.+)'),
-    'exam_time': re.compile(r'考試時間[：:]\s*(.+)'),
-    'code': re.compile(r'代號[：:]\s*(\d{5})'),
-}
 
-# ===== 結構解析模式 =====
-# 選擇題題號: 1. / 1、/ 1 / ① 等
-CHOICE_Q_PATTERN = re.compile(
-    r'^[\s]*(\d{1,3})\s*[\.、．)\s]\s*(.+)', re.DOTALL
+logger = logging.getLogger(__name__)
+
+
+CATEGORIES = (
+    "行政警察學系", "外事警察學系", "刑事警察學系", "公共安全學系社安組",
+    "犯罪防治學系預防組", "犯罪防治學系矯治組", "犯罪防治",
+    "消防學系", "交通學系交通組", "交通學系電訊組", "交通警察",
+    "資訊管理學系", "鑑識科學學系", "國境警察學系境管組",
+    "水上警察學系", "法律學系", "行政管理學系",
 )
 
-# 選項: (A) / （A）/ A. / A、等
-OPTION_PATTERN = re.compile(
-    r'[\(（]([A-Da-d])[\)）]\s*(.+?)(?=[\(（][A-Da-d][\)）]|$)',
-    re.DOTALL
-)
 
-# 單行內多選項
-INLINE_OPTIONS_PATTERN = re.compile(
-    r'[\(（]([A-Da-d])[\)）]\s*(.+?)(?=\s*[\(（][A-Da-d][\)）]|\s*$)'
-)
+# ============================================================
+# 文字抽取（預設 PyMuPDF + OCR fallback）
+# ============================================================
+def extract_pdf_text(
+    pdf_path: Path,
+    enable_ocr: bool = True,
+    extractor: ExtractorFn | None = None,
+) -> tuple[List[str], bool]:
+    """抽 PDF 文字，必要時走 OCR fallback。回傳 (pages_text, used_ocr)。
 
-# 申論題題號: 一、 / 二、 / 三、等
-ESSAY_Q_PATTERN = re.compile(
-    r'^[\s]*([一二三四五六七八九十]+)\s*[、．.]\s*(.+)', re.DOTALL
-)
-
-# 考卷分段標記
-SECTION_PATTERN = re.compile(
-    r'^[\s]*(甲|乙)\s*[、．.]\s*(申論題|測驗題|選擇題)'
-)
-
-# 注意事項
-NOTE_PATTERN = re.compile(
-    r'^[\s]*[※＊\*]?\s*注意\s*[：:]'
-)
-
-# 考卷標頭行
-HEADER_LINE_PATTERNS = [
-    re.compile(r'^\d{2,3}年(公務|特種)'),
-    re.compile(r'^代號[:：]'),
-    re.compile(r'^頁次[:：]'),
-    re.compile(r'^考試(別|時間)'),
-    re.compile(r'^等\s*別[:：]'),
-    re.compile(r'^類\s*科'),
-    re.compile(r'^科\s*目[:：]'),
-    re.compile(r'^座號'),
-    re.compile(r'^(全一張|全一頁)'),
-    re.compile(r'^-?\d+-?$'),
-    re.compile(r'^\d{5}$'),
-    re.compile(r'^(請接背面|請以背面)'),
-    re.compile(r'^(背面尚有|請翻頁)'),
-]
+    Args:
+        pdf_path: PDF 路徑
+        enable_ocr: 是否啟用 OCR fallback
+        extractor: 主抽器 callable；None 則用預設（PyMuPDF）
+    """
+    extractor = extractor or get_extractor("pymupdf")
+    return extract_text_with_fallback(pdf_path, extractor, enable_ocr=enable_ocr)
 
 
-# ===== OCR 修復規則（簡化版，從 fix_ocr.py 提取核心規則）=====
-OCR_FIXES = [
-    # -tion 拆字
-    (re.compile(r'(\w)ti on\b'), r'\1tion'),
-    # -sion 拆字
-    (re.compile(r'(\w)si on\b'), r'\1sion'),
-    # th 系列
-    (re.compile(r'\bth at\b'), 'that'),
-    (re.compile(r'\bth is\b'), 'this'),
-    (re.compile(r'\bth e\b'), 'the'),
-    (re.compile(r'\bth ey\b'), 'they'),
-    (re.compile(r'\bth eir\b'), 'their'),
-    (re.compile(r'\bth ere\b'), 'there'),
-    (re.compile(r'\bth ese\b'), 'these'),
-    (re.compile(r'\bth ose\b'), 'those'),
-    (re.compile(r'\bth rough\b'), 'through'),
-    # wh 系列
-    (re.compile(r'\bwh at\b'), 'what'),
-    (re.compile(r'\bwh en\b'), 'when'),
-    (re.compile(r'\bwh ere\b'), 'where'),
-    (re.compile(r'\bwh ich\b'), 'which'),
-    (re.compile(r'\bwh ile\b'), 'while'),
-    # 常見
-    (re.compile(r'\bf or\b'), 'for'),
-    (re.compile(r'\bf rom\b'), 'from'),
-    (re.compile(r'\bin to\b'), 'into'),
-    (re.compile(r'\bhum an\b'), 'human'),
-    (re.compile(r'\bpers on\b'), 'person'),
-    (re.compile(r'\bpris on\b'), 'prison'),
-    (re.compile(r'\breas on\b'), 'reason'),
-    (re.compile(r'\bcomm on\b'), 'common'),
-    (re.compile(r'\bmonit or\b'), 'monitor'),
-]
+# ============================================================
+# 解析
+# ============================================================
+@dataclass
+class ParseResult:
+    metadata: dict = field(default_factory=dict)
+    notes: list = field(default_factory=list)
+    sections: list = field(default_factory=list)
+    questions: list = field(default_factory=list)
+    year: Optional[int] = None
+    category: Optional[str] = None
+    subject: Optional[str] = None
+    source_pdf: Optional[str] = None
+    file_type: Optional[str] = None
+    used_ocr: bool = False
+
+    def to_dict(self) -> dict:
+        d = {
+            "metadata": self.metadata,
+            "notes": self.notes,
+            "sections": self.sections,
+            "questions": self.questions,
+        }
+        for k in ("year", "category", "subject", "source_pdf", "file_type"):
+            v = getattr(self, k)
+            if v is not None:
+                d[k] = v
+        if self.used_ocr:
+            d["used_ocr"] = True
+        return d
 
 
-def fix_ocr(text):
-    """套用 OCR 修復規則"""
-    for pattern, replacement in OCR_FIXES:
-        text = pattern.sub(replacement, text)
-    return text
-
-
-def normalize_text(text):
-    """正規化文字"""
-    text = unicodedata.normalize('NFKC', text)
-    # 移除考卷代號（5位數字）
-    text = re.sub(r'\b\d{5}\b', '', text)
-    text = fix_ocr(text)
-    return text.strip()
-
-
-def is_header_line(line):
-    """判斷是否為考卷標頭行"""
-    line = line.strip()
-    if not line:
-        return True
-    for pat in HEADER_LINE_PATTERNS:
-        if pat.match(line):
-            return True
-    if any(kw in line for kw in ['人員考試', '考試別', '退除役軍人']):
-        if len(line) < 80:
-            return True
-    return False
-
-
-def is_note_line(line):
-    """判斷是否為注意事項"""
-    line = line.strip()
-    return bool(NOTE_PATTERN.match(line)) or \
-        '不必抄題' in line or '不予計分' in line or \
-        '禁止使用電子計算器' in line or \
-        '本試題為單一選擇題' in line or \
-        '鋼筆或原子筆' in line or \
-        '2B鉛筆' in line or \
-        '應使用本國文字' in line or \
-        '可以使用電子計算器' in line
-
-
-def extract_pdf_text(pdf_path):
-    """從 PDF 提取文字"""
-    pages_text = []
-    with pdfplumber.open(pdf_path) as pdf:
-        for page in pdf.pages:
-            text = page.extract_text()
-            if text:
-                pages_text.append(text)
-    return pages_text
-
-
-def parse_metadata(text):
-    """從 PDF 文字中提取考卷元資料"""
+def parse_metadata(text: str) -> dict:
     metadata = {}
-    for key, pattern in HEADER_PATTERNS.items():
-        match = pattern.search(text[:500])  # 只搜尋前500字元
-        if match:
-            metadata[key] = match.group(1) if match.lastindex else match.group(0)
+    head = text[:500]
+    for key, pattern in P.HEADER_PATTERNS.items():
+        m = pattern.search(head)
+        if m:
+            metadata[key] = m.group(1) if m.lastindex else m.group(0)
     return metadata
 
 
-def parse_questions(pages_text):
-    """
-    解析 PDF 文字為結構化題目
-    Returns:
-        dict: {
-            'metadata': {...},
-            'notes': [...],
-            'sections': [...],
-            'questions': [...]
-        }
-    """
-    full_text = '\n'.join(pages_text)
+def parse_questions(pages_text: List[str]) -> dict:
+    # 先把 PUA 字元（）替換為 (A)(B)(C)(D)，讓後續解析能認出選項
+    pages_text = [P.replace_pua_chars(p) for p in pages_text]
+    full_text = "\n".join(pages_text)
     metadata = parse_metadata(full_text)
 
-    # 收集所有內容行（排除標頭和注意事項）
-    content_lines = []
-    notes = []
+    # 第一輪：分離 notes / content
+    content_lines: list[str] = []
+    notes: list[str] = []
     in_note = False
 
     for page_text in pages_text:
-        for line in page_text.split('\n'):
+        for line in page_text.split("\n"):
             stripped = line.strip()
             if not stripped:
                 continue
-
-            if is_header_line(stripped):
+            if P.is_header_line(stripped):
                 continue
-
-            if is_note_line(stripped):
+            if P.is_note_line(stripped):
                 notes.append(stripped)
                 in_note = True
                 continue
-
-            if in_note and not CHOICE_Q_PATTERN.match(stripped) and \
-               not ESSAY_Q_PATTERN.match(stripped) and \
-               not SECTION_PATTERN.match(stripped):
+            if (
+                in_note
+                and not P.CHOICE_Q_PATTERN.match(stripped)
+                and not P.match_essay(stripped)
+                and not P.SECTION_PATTERN.match(stripped)
+            ):
                 notes.append(stripped)
                 continue
-
             in_note = False
             content_lines.append(stripped)
 
-    # 解析內容行
-    questions = []
-    sections = []
-    current_section = None
+    # 第二輪：解析題目結構
+    questions: list[dict] = []
+    sections: list[str] = []
+    current_section: Optional[str] = None
 
     i = 0
     while i < len(content_lines):
         line = content_lines[i]
 
-        # 檢查分段標記
-        section_match = SECTION_PATTERN.match(line)
-        if section_match:
-            current_section = f"{section_match.group(1)}、{section_match.group(2)}"
+        # 分段
+        sec = P.SECTION_PATTERN.match(line)
+        if sec:
+            current_section = f"{sec.group(1)}、{sec.group(2)}"
             sections.append(current_section)
             i += 1
             continue
 
-        # 嘗試匹配申論題
-        essay_match = ESSAY_Q_PATTERN.match(line)
-        if essay_match:
-            num_str = essay_match.group(1)
-            stem = essay_match.group(2).strip()
-
-            # 收集後續行（直到下一個題目或結束）
+        # 申論題
+        essay = P.match_essay(line)
+        if essay:
+            num_str = essay.group(1)
+            stem = essay.group(2).strip()
             i += 1
             while i < len(content_lines):
-                next_line = content_lines[i]
-                if ESSAY_Q_PATTERN.match(next_line) or \
-                   CHOICE_Q_PATTERN.match(next_line) or \
-                   SECTION_PATTERN.match(next_line):
+                nxt = content_lines[i]
+                if (
+                    P.match_essay(nxt)
+                    or P.CHOICE_Q_PATTERN.match(nxt)
+                    or P.SECTION_PATTERN.match(nxt)
+                ):
                     break
-                stem += '\n' + next_line
+                stem += "\n" + nxt
                 i += 1
-
             questions.append({
-                'number': num_str,
-                'type': 'essay',
-                'stem': normalize_text(stem),
-                'section': current_section,
+                "number": num_str,
+                "type": "essay",
+                "stem": normalize_with_ocr_repair(stem),
+                "section": current_section,
             })
             continue
 
-        # 嘗試匹配選擇題
-        choice_match = CHOICE_Q_PATTERN.match(line)
-        if choice_match:
-            num = int(choice_match.group(1))
-            stem = choice_match.group(2).strip()
-
-            # 收集題幹後續行和選項
+        # 選擇題
+        choice = P.CHOICE_Q_PATTERN.match(line)
+        if choice:
+            num = int(choice.group(1))
+            stem_lines: list[str] = [choice.group(2).strip()]
+            unmarked_lines: list[str] = []  # 題幹 ? 後續行（可能是 unmarked options）
+            stem_ended = any(c in stem_lines[0] for c in "?？")
             i += 1
-            options_text = ''
+            options_text = ""
+            in_options_block = False
             while i < len(content_lines):
-                next_line = content_lines[i]
-                # 到下一題了
-                if CHOICE_Q_PATTERN.match(next_line) or \
-                   ESSAY_Q_PATTERN.match(next_line) or \
-                   SECTION_PATTERN.match(next_line):
+                nxt = content_lines[i]
+                if (
+                    P.CHOICE_Q_PATTERN.match(nxt)
+                    or P.match_essay(nxt)
+                    or P.SECTION_PATTERN.match(nxt)
+                ):
                     break
-
-                # 檢查是否為選項行
-                if re.match(r'\s*[\(（][A-Da-d][\)）]', next_line):
-                    options_text += ' ' + next_line
-                elif options_text:
-                    # 已經開始選項了，後續行也是選項的延續
-                    options_text += ' ' + next_line
+                if re.match(r"\s*[(（][A-Da-d][)）]", nxt):
+                    options_text += " " + nxt
+                    in_options_block = True
+                elif in_options_block:
+                    options_text += " " + nxt
+                elif stem_ended:
+                    # 題幹 ? 結尾後的行視為 unmarked options 候選
+                    unmarked_lines.append(nxt)
                 else:
-                    # 還是題幹的延續
-                    stem += ' ' + next_line
+                    stem_lines.append(nxt)
+                    if any(c in nxt for c in "?？"):
+                        stem_ended = True
                 i += 1
 
-            # 解析選項
-            options = {}
+            options: dict[str, str] = {}
             if options_text:
-                opt_matches = INLINE_OPTIONS_PATTERN.findall(options_text)
-                for label, text in opt_matches:
-                    options[label.upper()] = normalize_text(text.strip())
+                for label, text in P.INLINE_OPTIONS_PATTERN.findall(options_text):
+                    options[label.upper()] = normalize_with_ocr_repair(text.strip())
 
-            # 也嘗試從題幹末尾提取選項
+            # 嘗試從 unmarked_lines 切 ABCD（每行一選項版本，適合長選項）
+            if not options and unmarked_lines:
+                unmarked = P.split_unmarked_options_by_lines(unmarked_lines)
+                if unmarked:
+                    options = {
+                        k: normalize_with_ocr_repair(v)
+                        for k, v in unmarked.items()
+                    }
+
+            # 仍無 options：試 token-split 版（4 個短語並排在 stem_lines 末尾）
+            if not options and len(stem_lines) >= 2:
+                for n in range(min(3, len(stem_lines) - 1), 0, -1):
+                    tail = " ".join(stem_lines[-n:])
+                    unmarked = P.split_unmarked_options(tail)
+                    if unmarked:
+                        options = {
+                            k: normalize_with_ocr_repair(v)
+                            for k, v in unmarked.items()
+                        }
+                        stem_lines = stem_lines[:-n]
+                        break
+
+            # 仍無 options 但 unmarked_lines 有資料 → 至少當作備援放回 stem
+            if not options and unmarked_lines:
+                stem_lines.extend(unmarked_lines)
+
+            stem = " ".join(stem_lines)
+
             if not options:
-                opt_matches = INLINE_OPTIONS_PATTERN.findall(stem)
-                if opt_matches:
-                    # 從題幹中移除選項部分
-                    first_opt_pos = stem.find('(A)')
-                    if first_opt_pos == -1:
-                        first_opt_pos = stem.find('（A）')
-                    if first_opt_pos > 0:
-                        options_part = stem[first_opt_pos:]
-                        stem = stem[:first_opt_pos].strip()
-                        opt_matches = INLINE_OPTIONS_PATTERN.findall(options_part)
-                        for label, text in opt_matches:
-                            options[label.upper()] = normalize_text(text.strip())
+                # 嘗試從題幹末尾抽選項
+                first_opt_pos = max(stem.find("(A)"), stem.find("（A）"))
+                if first_opt_pos > 0:
+                    options_part = stem[first_opt_pos:]
+                    stem = stem[:first_opt_pos].strip()
+                    for label, text in P.INLINE_OPTIONS_PATTERN.findall(options_part):
+                        options[label.upper()] = normalize_with_ocr_repair(text.strip())
 
             q = {
-                'number': num,
-                'type': 'choice',
-                'stem': normalize_text(stem),
-                'section': current_section,
+                "number": num,
+                "type": "choice",
+                "stem": normalize_with_ocr_repair(stem),
+                "section": current_section,
             }
             if options:
-                q['options'] = options
+                q["options"] = options
             questions.append(q)
             continue
 
-        # 未識別的行，跳過
         i += 1
 
     return {
-        'metadata': metadata,
-        'notes': notes,
-        'sections': sections,
-        'questions': questions,
+        "metadata": metadata,
+        "notes": notes,
+        "sections": sections,
+        "questions": questions,
     }
 
 
-# ===== Fallback: Y 座標間距偵測無編號申論題 =====
-CN_NUMS = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十',
-           '十一', '十二', '十三', '十四', '十五']
-
-SCORE_PATTERN = re.compile(r'[（(]\s*\d+\s*分\s*[）)]')
-
-
-def _collapse_spaced_cjk(text):
-    """移除 CJK 字元間的多餘空格（PDF 排版造成的）"""
-    # 例: "交 通 事 業" → "交通事業"（需多次替換直到穩定）
-    prev = None
-    while prev != text:
-        prev = text
-        text = re.sub(r'([\u4e00-\u9fff])\s+([\u4e00-\u9fff])', r'\1\2', text)
-    return text
-
-
-def _is_header_or_note(line):
-    """結合 header/note 判斷，並處理 CJK 空格問題"""
-    collapsed = _collapse_spaced_cjk(line)
-    return is_header_line(collapsed) or is_note_line(collapsed)
-
-
-def fallback_extract_essays(pdf_path):
-    """
-    Fallback: 用 Y 座標間距偵測無標準編號的申論題。
-    適用於題目不以「一、」「二、」開頭的純申論考卷。
-    """
+# ============================================================
+# Fallback：Y 座標間距偵測純申論題
+# ============================================================
+def fallback_extract_essays(pdf_path: Path) -> list[dict]:
     try:
         with pdfplumber.open(str(pdf_path)) as pdf:
-            all_lines = []  # [(y, text), ...]
-            page_offset = 0
+            all_lines: list[tuple[float, str]] = []
+            page_offset = 0.0
             for page in pdf.pages:
                 words = page.extract_words(y_tolerance=3)
                 if not words:
                     continue
-                # 依 Y 座標分行
-                current_words = [words[0]]
+                current = [words[0]]
                 for w in words[1:]:
-                    if abs(w['top'] - current_words[-1]['top']) < 5:
-                        current_words.append(w)
+                    if abs(w["top"] - current[-1]["top"]) < 5:
+                        current.append(w)
                     else:
-                        text = ' '.join(cw['text'] for cw in current_words)
-                        y = page_offset + current_words[0]['top']
-                        all_lines.append((y, text))
-                        current_words = [w]
-                if current_words:
-                    text = ' '.join(cw['text'] for cw in current_words)
-                    y = page_offset + current_words[0]['top']
-                    all_lines.append((y, text))
+                        text = " ".join(cw["text"] for cw in current)
+                        all_lines.append(
+                            (page_offset + current[0]["top"], text)
+                        )
+                        current = [w]
+                if current:
+                    text = " ".join(cw["text"] for cw in current)
+                    all_lines.append((page_offset + current[0]["top"], text))
                 page_offset += page.height
     except Exception:
         return []
@@ -397,22 +333,22 @@ def fallback_extract_essays(pdf_path):
     if not all_lines:
         return []
 
-    # 過濾標頭/注意事項
-    filtered = [(y, t) for y, t in all_lines if not _is_header_or_note(t)]
+    filtered = [
+        (y, t)
+        for y, t in all_lines
+        if not P.is_header_line(P.collapse_spaced_cjk(t))
+        and not P.is_note_line(P.collapse_spaced_cjk(t))
+    ]
     if not filtered:
         return []
 
-    # 計算行距中位數，設定段落門檻為 1.5 倍
-    gaps = [filtered[i][0] - filtered[i - 1][0]
-            for i in range(1, len(filtered))]
+    gaps = [filtered[i][0] - filtered[i - 1][0] for i in range(1, len(filtered))]
     if gaps:
-        sorted_gaps = sorted(gaps)
-        median_gap = sorted_gaps[len(sorted_gaps) // 2]
-        threshold = max(median_gap * 1.5, 30)  # 至少 30
+        sg = sorted(gaps)
+        threshold = max(sg[len(sg) // 2] * 1.5, 30)
     else:
         threshold = 30
 
-    # 依間距切割段落
     paragraphs = [[filtered[0][1]]]
     for i in range(1, len(filtered)):
         gap = filtered[i][0] - filtered[i - 1][0]
@@ -420,188 +356,444 @@ def fallback_extract_essays(pdf_path):
             paragraphs.append([])
         paragraphs[-1].append(filtered[i][1])
 
-    # 每個含分數標記的段落視為一道申論題
     questions = []
     for para in paragraphs:
-        stem = normalize_text('\n'.join(para))
-        if stem and SCORE_PATTERN.search(stem):
-            idx = len(questions)
-            num_str = CN_NUMS[idx] if idx < len(CN_NUMS) else str(idx + 1)
+        stem = normalize_with_ocr_repair("\n".join(para))
+        if stem and P.SCORE_PATTERN.search(stem):
             questions.append({
-                'number': num_str,
-                'type': 'essay',
-                'stem': stem,
-                'section': None,
+                "number": P.cn_number(len(questions)),
+                "type": "essay",
+                "stem": stem,
+                "section": None,
             })
-
     return questions
 
 
-def process_single_pdf(pdf_path, output_dir=None):
-    """
-    處理單一 PDF 檔案
+# ============================================================
+# 單檔處理
+# ============================================================
+def _infer_year_category(pdf_path: Path) -> tuple[Optional[int], Optional[str]]:
+    year, category = None, None
+    parts = pdf_path.parts
+    for i, part in enumerate(parts):
+        if re.match(r"\d{3}年$", part):
+            try:
+                year = int(part.replace("年", ""))
+            except ValueError:
+                pass
+        if i > 0 and any(c in parts[i - 1] for c in CATEGORIES):
+            category = parts[i - 1]
+    return year, category
+
+
+def _try_parse(
+    pdf_path: Path,
+    extractor_name: str,
+    enable_ocr: bool,
+    force_ocr: bool = False,
+) -> tuple[Optional[dict], bool, Optional[str]]:
+    """嘗試用指定 extractor 解析。回 (result, used_ocr, error)。
+
     Args:
-        pdf_path: PDF 檔案路徑
-        output_dir: JSON 輸出目錄（None 則與 PDF 同目錄）
-    Returns:
-        dict: 解析結果
+        force_ocr: 強制 OCR（跳過 needs_ocr 判斷，給最後 retry 用）
+    """
+    try:
+        if force_ocr:
+            from scripts.parse.ocr_fallback import ocr_pdf_pages
+            pages_text = ocr_pdf_pages(pdf_path)
+            used_ocr = True
+        else:
+            pages_text, used_ocr = extract_pdf_text(
+                pdf_path,
+                enable_ocr=enable_ocr,
+                extractor=get_extractor(extractor_name),
+            )
+    except Exception as e:
+        return None, False, f"extract_failed: {e}"
+
+    if not pages_text:
+        return None, False, "no_text"
+
+    result = parse_questions(pages_text)
+    if not result.get("questions"):
+        fb = fallback_extract_essays(pdf_path)
+        if fb:
+            result["questions"] = fb
+    return result, used_ocr, None
+
+
+def process_single_pdf(
+    pdf_path: Path,
+    output_dir: Optional[Path] = None,
+    enable_ocr: bool = True,
+    extractor_name: str = "pdfplumber",
+    auto_retry: bool = True,
+    quality_threshold: float = 0.7,
+    retry_extractors: tuple = ("pymupdf-columns",),
+) -> Optional[dict]:
+    """處理單一 PDF，回傳結果 dict（含 used_ocr / quality）；失敗回 None。
+
+    Retry 策略順序：
+      1. extractor_name（預設 pdfplumber）+ 不啟用 OCR
+      2. retry_extractors 內每個 extractor + 不啟用 OCR
+      3. extractor_name + 強制 OCR fallback（救純圖文 PDF）
     """
     pdf_path = Path(pdf_path)
     if not pdf_path.exists():
-        print(f"  找不到檔案: {pdf_path}")
         return None
 
-    try:
-        pages_text = extract_pdf_text(pdf_path)
-    except Exception as e:
-        print(f"  PDF 讀取失敗: {pdf_path.name} - {e}")
+    # 第一次嘗試（不強制 OCR）
+    result, used_ocr, err = _try_parse(pdf_path, extractor_name, enable_ocr=False)
+    best_result = result
+    best_used_ocr = used_ocr
+    best_quality = assess_quality(result) if result else QualityReport(score=0.0)
+    strategies_tried = [extractor_name]
+
+    # quality 太低 → retry 其他 extractor（仍不 OCR）
+    if auto_retry and not best_quality.is_good(quality_threshold):
+        for retry_ext in retry_extractors:
+            if retry_ext == extractor_name:
+                continue
+            strategies_tried.append(retry_ext)
+            r, ocr, _ = _try_parse(pdf_path, retry_ext, enable_ocr=False)
+            if not r:
+                continue
+            q = assess_quality(r)
+            if q.score > best_quality.score:
+                best_result = r
+                best_used_ocr = ocr
+                best_quality = q
+            if best_quality.is_good(quality_threshold):
+                break
+
+    # 仍 quality 低且允許 OCR → 強制 OCR 再試（救純圖文 PDF）
+    if (
+        auto_retry
+        and enable_ocr
+        and not best_quality.is_good(quality_threshold)
+    ):
+        strategies_tried.append("force_ocr")
+        r, ocr, _ = _try_parse(
+            pdf_path, extractor_name, enable_ocr=True, force_ocr=True
+        )
+        if r:
+            q = assess_quality(r)
+            if q.score > best_quality.score:
+                best_result = r
+                best_used_ocr = ocr
+                best_quality = q
+
+    result = best_result
+    used_ocr = best_used_ocr
+    if not result:
+        logger.warning(f"PDF 解析全失敗 {pdf_path.name}: {err}")
         return None
 
-    if not pages_text:
-        print(f"  PDF 無內容: {pdf_path.name}")
-        return None
+    year, category = _infer_year_category(pdf_path)
+    if year is not None:
+        result["year"] = year
+    if category:
+        result["category"] = category
+    result["subject"] = pdf_path.parent.name
+    result["source_pdf"] = str(pdf_path)
+    result["file_type"] = pdf_path.stem
+    if used_ocr:
+        result["used_ocr"] = True
 
-    result = parse_questions(pages_text)
+    # 合併同目錄答案 PDF（更正答案優先）
+    answer_pdf = find_answer_pdf(pdf_path, prefer_corrected=True)
+    if answer_pdf:
+        answers = parse_answer_pdf(answer_pdf)
+        if answers:
+            merged = merge_answers_into_questions(result["questions"], answers)
+            result["_answer_source"] = answer_pdf.name
+            result["_answers_merged"] = merged
 
-    # Fallback: 若主解析器找不到題目，嘗試 Y 座標間距法
-    if not result.get('questions') and pages_text:
-        fallback_qs = fallback_extract_essays(pdf_path)
-        if fallback_qs:
-            result['questions'] = fallback_qs
+    # 寫入 quality 摘要（給 audit / 增量重跑用）
+    result["_quality"] = {
+        "score": round(best_quality.score, 3),
+        "issues": best_quality.issues,
+        "strategies_tried": strategies_tried,
+    }
 
-    # 從目錄結構推斷年份、類科、科目
-    parts = pdf_path.parts
-    for i, part in enumerate(parts):
-        if re.match(r'\d{3}年$', part):
-            result['year'] = int(part.replace('年', ''))
-        if i > 0 and any(cat in parts[i-1] for cat in [
-            '行政警察學系', '外事警察學系', '刑事警察學系', '公共安全學系社安組',
-            '犯罪防治學系預防組', '犯罪防治學系矯治組', '犯罪防治',
-            '消防學系', '交通學系交通組', '交通學系電訊組', '交通警察',
-            '資訊管理學系', '鑑識科學學系', '國境警察學系境管組',
-            '水上警察學系', '法律學系', '行政管理學系'
-        ]):
-            result['category'] = parts[i-1]
-
-    # 科目名稱取自父目錄
-    result['subject'] = pdf_path.parent.name
-    result['source_pdf'] = str(pdf_path)
-    result['file_type'] = pdf_path.stem  # 試題/答案/更正答案
-
-    # 輸出 JSON
-    if output_dir:
-        out_dir = Path(output_dir)
-    else:
-        out_dir = pdf_path.parent
-
-    os.makedirs(out_dir, exist_ok=True)
+    out_dir = Path(output_dir) if output_dir else pdf_path.parent
+    out_dir.mkdir(parents=True, exist_ok=True)
     json_path = out_dir / f"{pdf_path.stem}.json"
 
-    with open(json_path, 'w', encoding='utf-8') as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
-
+    # 寫入 JSON 時把 _quality 一起寫但放最後（保持 backward compat）
+    payload = {k: v for k, v in result.items() if not k.startswith("_")}
+    payload["_quality"] = result["_quality"]
+    if "_answer_source" in result:
+        payload["_answer_source"] = result["_answer_source"]
+        payload["_answers_merged"] = result["_answers_merged"]
+    json_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    result["_output_json"] = str(json_path)
     return result
 
 
-def process_directory(input_dir, output_dir=None):
-    """
-    遞迴處理目錄下所有 PDF
-    """
+def _worker(args: tuple) -> tuple[str, Optional[dict], Optional[str]]:
+    """ProcessPool worker — 回 (pdf_path, result, error)。"""
+    pdf_path, output_dir, enable_ocr, extractor_name, quality_threshold = args
+    try:
+        result = process_single_pdf(
+            Path(pdf_path), output_dir, enable_ocr, extractor_name,
+            quality_threshold=quality_threshold,
+        )
+        return pdf_path, result, None
+    except Exception as e:
+        return pdf_path, None, str(e)
+
+
+# ============================================================
+# 目錄處理（併發）
+# ============================================================
+def process_directory(
+    input_dir: Path,
+    output_dir: Optional[Path] = None,
+    workers: Optional[int] = None,
+    force: bool = False,
+    enable_ocr: bool = True,
+    manifest_path: Optional[Path] = None,
+    extractor_name: str = "pdfplumber",
+    quality_threshold: float = 0.7,
+) -> dict:
     input_dir = Path(input_dir)
     if not input_dir.exists():
         print(f"目錄不存在: {input_dir}")
-        return
+        return {}
 
-    pdf_files = sorted(input_dir.rglob('試題.pdf'))
+    pdf_files = sorted(input_dir.rglob("試題.pdf"))
     if not pdf_files:
-        pdf_files = sorted(input_dir.rglob('*.pdf'))
+        pdf_files = sorted(input_dir.rglob("*.pdf"))
 
-    print(f"找到 {len(pdf_files)} 個 PDF 檔案")
-    print("-" * 60)
+    print(f"找到 {len(pdf_files)} 個 PDF")
 
-    stats = {
-        'total': len(pdf_files),
-        'success': 0,
-        'failed': 0,
-        'total_questions': 0,
-        'choice_questions': 0,
-        'essay_questions': 0,
-    }
+    manifest_path = manifest_path or (_ROOT / "cache" / "parse_manifest.json")
+    manifest = ParseManifest(manifest_path)
 
-    for pdf_path in pdf_files:
-        # 計算相對路徑
-        try:
-            rel = pdf_path.relative_to(input_dir)
-        except ValueError:
-            rel = pdf_path.name
-
-        # 決定輸出目錄
+    # 過濾出真正需要處理的檔案
+    tasks: list[tuple] = []
+    skipped = 0
+    for pdf in pdf_files:
+        if not force and manifest.is_unchanged(pdf):
+            skipped += 1
+            continue
         if output_dir:
-            out = Path(output_dir) / rel.parent
+            try:
+                rel = pdf.relative_to(input_dir)
+                out = Path(output_dir) / rel.parent
+            except ValueError:
+                out = Path(output_dir)
         else:
             out = None
+        tasks.append((
+            str(pdf), str(out) if out else None,
+            enable_ocr, extractor_name, quality_threshold,
+        ))
 
-        result = process_single_pdf(pdf_path, out)
-        if result and result.get('questions'):
-            q_count = len(result['questions'])
-            choice_count = sum(1 for q in result['questions'] if q['type'] == 'choice')
-            essay_count = sum(1 for q in result['questions'] if q['type'] == 'essay')
+    print(f"  跳過（manifest 命中）: {skipped}")
+    print(f"  需處理: {len(tasks)}")
 
-            stats['success'] += 1
-            stats['total_questions'] += q_count
-            stats['choice_questions'] += choice_count
-            stats['essay_questions'] += essay_count
+    stats = {
+        "total_pdfs": len(pdf_files),
+        "skipped": skipped,
+        "processed": 0,
+        "failed": 0,
+        "ocr_used": 0,
+        "suspicious": 0,
+        "total_questions": 0,
+        "choice_questions": 0,
+        "essay_questions": 0,
+    }
+    problematic: list[dict] = []
 
-            print(f"  {rel}: {q_count} 題 ({choice_count} 選擇 + {essay_count} 申論)")
-        else:
-            stats['failed'] += 1
-            print(f"  {rel}: 解析失敗或無題目")
+    if not tasks:
+        print("無需處理。")
+        return stats
 
-    # 統計報告
-    print(f"\n{'=' * 60}")
-    print("提取完成！")
-    print(f"{'=' * 60}")
-    print(f"處理: {stats['total']} 個 PDF")
-    print(f"成功: {stats['success']} 個")
-    print(f"失敗: {stats['failed']} 個")
-    print(f"總題數: {stats['total_questions']}")
-    print(f"  選擇題: {stats['choice_questions']}")
-    print(f"  申論題: {stats['essay_questions']}")
+    workers = workers or max(1, min(cpu_count(), 8))
+    print(f"  併發 worker: {workers}")
+    print("-" * 60)
 
-    # 儲存統計
-    if output_dir:
-        stats_path = Path(output_dir) / 'extraction_stats.json'
-    else:
-        stats_path = input_dir / 'extraction_stats.json'
+    with ProcessPoolExecutor(max_workers=workers) as ex:
+        futures = {ex.submit(_worker, t): t[0] for t in tasks}
+        with tqdm(total=len(tasks), desc="解析中", unit="pdf") as pbar:
+            for fut in as_completed(futures):
+                pdf_path, result, error = fut.result()
+                pdf_p = Path(pdf_path)
 
-    stats['timestamp'] = datetime.now().isoformat()
-    with open(stats_path, 'w', encoding='utf-8') as f:
-        json.dump(stats, f, ensure_ascii=False, indent=2)
+                if error or not result:
+                    stats["failed"] += 1
+                    logger.warning(f"失敗 {pdf_p.name}: {error}")
+                elif not result.get("questions"):
+                    stats["failed"] += 1
+                else:
+                    stats["processed"] += 1
+                    qs = result["questions"]
+                    stats["total_questions"] += len(qs)
+                    stats["choice_questions"] += sum(
+                        1 for q in qs if q["type"] == "choice"
+                    )
+                    stats["essay_questions"] += sum(
+                        1 for q in qs if q["type"] == "essay"
+                    )
+                    if result.get("used_ocr"):
+                        stats["ocr_used"] += 1
+
+                    quality = result.get("_quality") or {}
+                    score = quality.get("score", 1.0)
+                    if score < quality_threshold:
+                        stats["suspicious"] += 1
+                        problematic.append({
+                            "pdf": str(pdf_p),
+                            "score": score,
+                            "issues": quality.get("issues", []),
+                            "strategies_tried": quality.get("strategies_tried", []),
+                            "questions": len(qs),
+                            "used_ocr": bool(result.get("used_ocr")),
+                        })
+
+                    out_json = result.get("_output_json")
+                    if out_json:
+                        manifest.record(
+                            pdf_p,
+                            Path(out_json),
+                            questions=len(qs),
+                            used_ocr=bool(result.get("used_ocr")),
+                        )
+                pbar.update(1)
+
+    manifest.save()
+
+    print("\n" + "=" * 60)
+    print("提取完成")
+    print("=" * 60)
+    for k, v in stats.items():
+        print(f"  {k}: {v}")
+
+    base = output_dir or input_dir
+    stats_path = base / "extraction_stats.json"
+    stats["timestamp"] = datetime.now().isoformat()
+    Path(stats_path).write_text(
+        json.dumps(stats, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     print(f"統計報告: {stats_path}")
 
+    if problematic:
+        # 依分數低 → 高排序，方便先處理最爛的
+        problematic.sort(key=lambda x: x["score"])
+        prob_path = base / "problematic_pdfs.json"
+        Path(prob_path).write_text(
+            json.dumps(
+                {
+                    "timestamp": stats["timestamp"],
+                    "threshold": quality_threshold,
+                    "count": len(problematic),
+                    "items": problematic,
+                },
+                ensure_ascii=False,
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+        print(f"可疑檔案清單: {prob_path}（共 {len(problematic)} 個低品質 PDF）")
 
+    return stats
+
+
+# ============================================================
+# CLI
+# ============================================================
 def main():
-    parser = argparse.ArgumentParser(description='PDF → 結構化題目提取器')
-    parser.add_argument('--input', '-i', type=str,
-                        default=os.path.join(os.path.dirname(__file__), '考古題庫'),
-                        help='輸入路徑（PDF 檔案或目錄）')
-    parser.add_argument('--output', '-o', type=str, default=None,
-                        help='輸出目錄（預設: 與輸入同目錄）')
+    parser = argparse.ArgumentParser(description="PDF → 結構化題目提取器")
+    parser.add_argument(
+        "--input", "-i",
+        default=os.path.join(os.path.dirname(__file__), "考古題庫"),
+        help="輸入路徑（PDF 檔案或目錄）",
+    )
+    parser.add_argument("--output", "-o", default=None, help="輸出目錄")
+    parser.add_argument(
+        "--workers", "-w", type=int, default=None,
+        help="併發 worker 數（預設 min(cpu_count, 8)）",
+    )
+    parser.add_argument(
+        "--force", "-f", action="store_true",
+        help="忽略 manifest 強制重跑所有 PDF",
+    )
+    parser.add_argument(
+        "--no-ocr", action="store_true",
+        help="停用 OCR fallback（只用主抽器）",
+    )
+    parser.add_argument(
+        "--extractor", "-e",
+        choices=list(EXTRACTORS.keys()),
+        default="pdfplumber",
+        help=(
+            "主文字抽取器："
+            "pdfplumber（預設，分欄處理最穩）/ "
+            "pymupdf（最快但不支援雙欄）/ "
+            "pymupdf-columns（PyMuPDF + 雙欄重組，仍在實驗）/ "
+            "pymupdf4llm"
+        ),
+    )
+    parser.add_argument(
+        "--manifest", default=None,
+        help="自訂 manifest 檔案路徑",
+    )
+    parser.add_argument(
+        "--quality-threshold", type=float, default=0.7,
+        help="品質門檻（0~1）。低於此分視為 suspicious 並 retry。預設 0.7",
+    )
+    parser.add_argument(
+        "--no-retry", action="store_true",
+        help="停用 quality 低時自動 retry 其他 extractor",
+    )
+    parser.add_argument(
+        "--log-level", default="WARNING",
+        help="日誌等級 (DEBUG/INFO/WARNING/ERROR)",
+    )
     args = parser.parse_args()
 
+    logging.basicConfig(
+        level=getattr(logging, args.log_level.upper(), logging.WARNING),
+        format="%(asctime)s [%(levelname)s] %(message)s",
+    )
+
     input_path = Path(args.input)
-
     print("=" * 60)
-    print("  PDF → 結構化題目提取器")
+    print("  PDF → 結構化題目提取器 (v2)")
     print("=" * 60)
 
-    if input_path.is_file() and input_path.suffix.lower() == '.pdf':
-        result = process_single_pdf(input_path, args.output)
+    if input_path.is_file() and input_path.suffix.lower() == ".pdf":
+        result = process_single_pdf(
+            input_path,
+            Path(args.output) if args.output else None,
+            enable_ocr=not args.no_ocr,
+            extractor_name=args.extractor,
+            auto_retry=not args.no_retry,
+            quality_threshold=args.quality_threshold,
+        )
         if result:
-            q_count = len(result.get('questions', []))
-            print(f"\n提取完成: {q_count} 題")
+            q = result.get("_quality", {})
+            print(
+                f"完成: {len(result.get('questions', []))} 題"
+                f" (OCR: {result.get('used_ocr', False)},"
+                f" quality: {q.get('score', '?')},"
+                f" issues: {q.get('issues', [])})"
+            )
     elif input_path.is_dir():
-        process_directory(input_path, args.output)
+        process_directory(
+            input_path,
+            Path(args.output) if args.output else None,
+            workers=args.workers,
+            force=args.force,
+            enable_ocr=not args.no_ocr,
+            manifest_path=Path(args.manifest) if args.manifest else None,
+            extractor_name=args.extractor,
+            quality_threshold=args.quality_threshold,
+        )
     else:
         print(f"無效的輸入路徑: {input_path}")
 
