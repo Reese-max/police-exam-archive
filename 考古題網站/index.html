@@ -33,13 +33,13 @@
   --blue-soft:#e6edfd;
   --purple:#8b5cf6;
   --purple-soft:#efe9fd;
-  --shadow-sm:0 1px 2px rgba(45,42,38,.04), 0 1px 3px rgba(45,42,38,.05);
-  --shadow-md:0 2px 4px rgba(45,42,38,.04), 0 8px 24px rgba(45,42,38,.06);
-  --shadow-lg:0 4px 8px rgba(45,42,38,.05), 0 16px 40px rgba(45,42,38,.09);
-  --shadow-xl:0 8px 16px rgba(45,42,38,.06), 0 24px 60px rgba(45,42,38,.12);
-  --radius:16px;
-  --radius-lg:20px;
-  --radius-sm:11px;
+  --shadow-sm:0 1px 2px rgba(45,42,38,.05);
+  --shadow-md:0 1px 2px rgba(45,42,38,.05);
+  --shadow-lg:0 1px 3px rgba(45,42,38,.06);
+  --shadow-xl:0 1px 3px rgba(45,42,38,.06);
+  --radius:8px;
+  --radius-lg:10px;
+  --radius-sm:6px;
 }
 [data-theme="dark"]{
   --bg:#1c1b18;
@@ -61,10 +61,10 @@
   --blue-soft:#1f2733;
   --purple:#b29bf0;
   --purple-soft:#26222f;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.2);
-  --shadow-md:0 2px 4px rgba(0,0,0,.2), 0 8px 24px rgba(0,0,0,.28);
-  --shadow-lg:0 4px 8px rgba(0,0,0,.25), 0 16px 40px rgba(0,0,0,.4);
-  --shadow-xl:0 8px 16px rgba(0,0,0,.3), 0 24px 60px rgba(0,0,0,.5);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.25);
+  --shadow-md:0 1px 2px rgba(0,0,0,.25);
+  --shadow-lg:0 1px 3px rgba(0,0,0,.3);
+  --shadow-xl:0 1px 3px rgba(0,0,0,.3);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -85,24 +85,11 @@ a{color:inherit;text-decoration:none}
   border-bottom:1px solid var(--border);
   transition:background .4s,border-color .4s;
 }
-.hero::before{
-  content:"";position:absolute;left:-140px;top:-120px;width:480px;height:480px;
-  background:radial-gradient(circle, var(--primary-soft) 0%, transparent 68%);
-  opacity:.85;pointer-events:none;
-}
-.hero::after{
-  content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;
-  background:radial-gradient(circle, var(--warm-soft) 0%, transparent 70%);
-  opacity:.6;pointer-events:none;
-}
 .hero .wrap{position:relative;z-index:1}
 .eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--primary);
-  background:var(--primary-soft);border:1px solid var(--border);
-  padding:7px 15px;border-radius:30px;box-shadow:var(--shadow-sm);
+  display:inline-block;
+  font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--text-2);
 }
-.eyebrow .pip{width:6px;height:6px;border-radius:50%;background:var(--primary)}
 .hero h1{
   font-size:46px;font-weight:800;letter-spacing:-.025em;line-height:1.12;
   margin-top:22px;
@@ -116,19 +103,14 @@ a{color:inherit;text-decoration:none}
   padding:22px 22px 20px;box-shadow:var(--shadow-md);position:relative;overflow:hidden;
   transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,background .4s,border-color .4s;
 }
-.hstat:hover{transform:translateY(-5px);box-shadow:var(--shadow-xl)}
 .hstat .hnum{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
 .hstat .hlabel{margin-top:9px;font-size:14px;font-weight:600;color:var(--text-2)}
 .hstat.feature{
-  background:linear-gradient(150deg,var(--primary) 0%,var(--primary-hover) 100%);
+  background:var(--primary);
   border-color:transparent;
 }
 .hstat.feature .hnum{color:#fff}
 .hstat.feature .hlabel{color:rgba(255,255,255,.86)}
-.hstat.feature::after{
-  content:"";position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;
-  background:rgba(255,255,255,.1);
-}
 
 /* ===== Section ===== */
 section{margin-top:52px}
@@ -144,7 +126,7 @@ section{margin-top:52px}
   padding:26px 24px;box-shadow:var(--shadow-md);position:relative;overflow:hidden;
   transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,background .4s,border-color .4s;
 }
-.tool:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl)}
+.tool:hover{border-color:var(--primary)}
 .tool .ticon{
   width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:26px;
   background:var(--accent-soft);margin-bottom:18px;transition:.25s;
@@ -155,18 +137,12 @@ section{margin-top:52px}
   margin-top:18px;display:inline-flex;align-items:center;gap:6px;
   font-size:13.5px;font-weight:700;color:var(--accent);transition:gap .2s;
 }
-.tool:hover .go{gap:11px}
 .tool.featured{
-  background:linear-gradient(155deg,var(--primary) 0%,var(--primary-hover) 100%);
+  background:var(--primary);
   border-color:transparent;color:#fff;
 }
-.tool.featured .ticon{background:rgba(255,255,255,.16)}
 .tool.featured p{color:rgba(255,255,255,.85)}
 .tool.featured .go{color:#fff}
-.tool.featured::after{
-  content:"";position:absolute;right:-40px;bottom:-40px;width:160px;height:160px;border-radius:50%;
-  background:rgba(255,255,255,.08);
-}
 
 /* ===== Category groups ===== */
 .cat-group{
@@ -181,7 +157,7 @@ section{margin-top:52px}
 }
 .cat-group-head .gt{font-size:17.5px;font-weight:700;letter-spacing:-.01em}
 .cat-group-head .gs{font-size:13px;color:var(--text-3);font-weight:600;margin-top:2px}
-.cat-group-head .gcount{margin-left:auto;font-size:13px;font-weight:700;color:var(--primary);background:var(--primary-soft);padding:6px 14px;border-radius:20px;white-space:nowrap}
+.cat-group-head .gcount{margin-left:auto;font-size:13px;font-weight:700;color:var(--primary);background:var(--primary-soft);padding:6px 14px;border-radius:var(--radius-sm);white-space:nowrap}
 .cat-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
 .cat-item{
   display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:var(--radius-sm);
@@ -191,7 +167,7 @@ section{margin-top:52px}
 .cat-item .dept{flex:1;font-size:15px;font-weight:600;letter-spacing:-.01em}
 .cat-item .pill{
   flex-shrink:0;font-size:13px;font-weight:700;color:var(--text-2);background:var(--card-2);
-  border:1px solid var(--border);padding:4px 12px;border-radius:20px;font-variant-numeric:tabular-nums;
+  border:1px solid var(--border);padding:4px 12px;border-radius:var(--radius-sm);font-variant-numeric:tabular-nums;
   transition:.18s;
 }
 .cat-item:hover .pill{background:var(--primary);color:#fff;border-color:transparent}
@@ -209,10 +185,10 @@ footer strong{color:var(--text-2);font-weight:700}
   display:flex;align-items:center;gap:9px;
   background:var(--card);border:1px solid var(--border);color:var(--text);
   font-family:inherit;font-size:14px;font-weight:600;
-  padding:11px 16px;border-radius:30px;cursor:pointer;
+  padding:11px 16px;border-radius:8px;cursor:pointer;
   box-shadow:var(--shadow-lg);transition:transform .2s,background .4s,border-color .4s;
 }
-.theme-toggle:hover{transform:translateY(-2px) scale(1.02)}
+.theme-toggle:hover{border-color:var(--primary)}
 .theme-toggle .ti{font-size:17px;line-height:1}
 .theme-toggle .tlabel{white-space:nowrap}
 
@@ -235,16 +211,13 @@ footer strong{color:var(--text-2);font-weight:700}
   .theme-toggle .tlabel{display:none}
   .theme-toggle{padding:13px;right:16px;bottom:16px}
 }
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.reveal{opacity:0}
-.reveal.in{animation:fadeUp .6s cubic-bezier(.2,.7,.3,1) forwards}
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow"><span class="pip"></span>三等警察特考 · 內軌</span>
+    <span class="eyebrow">三等警察特考 · 內軌</span>
     <h1>三等警察特考考古題</h1>
     <p class="lead">內軌 17 個類科完整試題庫，歷年試卷一站掌握。</p>
     <div class="hero-stats">
@@ -260,27 +233,20 @@ footer strong{color:var(--text-2);font-weight:700}
   <!-- Tools -->
   <section>
     <div class="section-head">
-      <h2>快速開始</h2>
-      <p>選擇適合你的練習方式</p>
+      <h2>功能</h2>
     </div>
     <div class="tools">
-      <a class="tool featured" href="search.html" style="--accent:var(--primary);--accent-soft:var(--primary-soft)">
-        <div class="ticon">🔍</div>
+      <a class="tool featured" href="search.html">
         <h3>跨部門全文搜尋</h3>
-        <p>22,523 題全文檢索，依關鍵字、類科、年份快速定位。</p>
-        <span class="go">開始搜尋 →</span>
+        <p>22,523 題全文檢索，依關鍵字、類科、年份篩選。</p>
       </a>
-      <a class="tool" href="quiz.html" style="--accent:var(--blue);--accent-soft:var(--blue-soft)">
-        <div class="ticon">📝</div>
+      <a class="tool" href="quiz.html">
         <h3>模擬考試</h3>
-        <p>隨機組卷練習，仿真作答環境與計時。</p>
-        <span class="go">開始測驗 →</span>
+        <p>隨機組卷、計時作答、自動批改。</p>
       </a>
-      <a class="tool" href="analytics.html" style="--accent:var(--purple);--accent-soft:var(--purple-soft)">
-        <div class="ticon">📊</div>
+      <a class="tool" href="analytics.html">
         <h3>出題趨勢</h3>
-        <p>資料分析儀表板，掌握歷年出題分佈與熱門關鍵字。</p>
-        <span class="go">查看分析 →</span>
+        <p>歷年出題分佈、答案比例與熱門關鍵字統計。</p>
       </a>
     </div>
   </section>
@@ -323,7 +289,6 @@ footer strong{color:var(--text-2);font-weight:700}
 </div>
 
 <button class="theme-toggle" id="themeToggle" aria-label="切換深色模式">
-  <span class="ti" id="themeIcon">🌙</span>
   <span class="tlabel" id="themeLabel">深色模式</span>
 </button>
 
@@ -345,27 +310,19 @@ function renderCats(id,data){
 renderCats('groupA',GROUP_A);
 renderCats('groupB',GROUP_B);
 
-// count-up
+// 統計數字直接呈現（不做 count-up 動畫）
 function countUp(){
   document.querySelectorAll('.hnum[data-target]').forEach(el=>{
-    const target=+el.dataset.target, dur=1200, t0=performance.now();
-    function step(now){
-      const t=Math.min((now-t0)/dur,1), e=1-Math.pow(1-t,3);
-      el.textContent=Math.round(target*e).toLocaleString();
-      if(t<1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
+    el.textContent=(+el.dataset.target).toLocaleString();
   });
 }
 
 // theme — 全站共用 localStorage key「exam-dark」(true/false)，與類科總覽頁同步
 (function(){
   const btn=document.getElementById('themeToggle');
-  const icon=document.getElementById('themeIcon');
   const label=document.getElementById('themeLabel');
   function apply(dark){
     document.documentElement.setAttribute('data-theme',dark?'dark':'light');
-    icon.textContent=dark?'☀️':'🌙';
     label.textContent=dark?'淺色模式':'深色模式';
     try{localStorage.setItem('exam-dark',dark);}catch(e){}
   }
@@ -375,14 +332,6 @@ function countUp(){
     apply(document.documentElement.getAttribute('data-theme')!=='dark');
   });
 })();
-
-// reveal on scroll
-const io=new IntersectionObserver((es)=>{
-  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-},{threshold:.12});
-document.querySelectorAll('.tool,.cat-group').forEach((el,i)=>{
-  el.classList.add('reveal');el.style.animationDelay=(i*60)+'ms';io.observe(el);
-});
 
 function runInit(){ countUp(); }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',runInit);

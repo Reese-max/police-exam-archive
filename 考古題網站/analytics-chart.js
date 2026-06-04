@@ -169,8 +169,8 @@
     }).join('');
   }
   function animateKeywords(){
-    document.querySelectorAll('.kw-bar-fill').forEach((el,i)=>{
-      setTimeout(()=>{ el.style.width = el.dataset.pct + '%'; }, 60 + i*12);
+    document.querySelectorAll('.kw-bar-fill').forEach(el=>{
+      el.style.width = el.dataset.pct + '%';
     });
   }
   function recolorKeywords(){
@@ -180,18 +180,10 @@
     });
   }
 
-  // ===== 統計卡 count-up =====
+  // ===== 統計卡（直接呈現，不做 count-up 動畫）=====
   function countUp(){
     document.querySelectorAll('.num[data-target]').forEach(el=>{
-      const target = +el.dataset.target;
-      const dur = 1100, t0 = performance.now();
-      function step(now){
-        const t = Math.min((now-t0)/dur,1);
-        const e = 1-Math.pow(1-t,3);
-        el.textContent = Math.round(target*e).toLocaleString();
-        if(t<1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
+      el.textContent = (+el.dataset.target).toLocaleString();
     });
   }
 
@@ -217,11 +209,9 @@
   // ===== 主題切換 =====
   function setupTheme(){
     const btn = document.getElementById('themeToggle');
-    const icon = document.getElementById('themeIcon');
     const label = document.getElementById('themeLabel');
     function apply(dark){
       document.documentElement.setAttribute('data-theme', dark?'dark':'light');
-      icon.textContent = dark ? '☀️' : '🌙';
       label.textContent = dark ? '淺色模式' : '深色模式';
       try{localStorage.setItem('exam-dark', dark);}catch(e){}
     }

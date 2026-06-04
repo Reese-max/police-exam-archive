@@ -35,13 +35,13 @@
   --pink-soft:#fbe8f0;
   --highlight:#fce89a;
   --highlight-text:#6b5a16;
-  --shadow-sm:0 1px 2px rgba(45,42,38,.04), 0 1px 3px rgba(45,42,38,.05);
-  --shadow-md:0 2px 4px rgba(45,42,38,.04), 0 8px 24px rgba(45,42,38,.06);
-  --shadow-lg:0 4px 8px rgba(45,42,38,.05), 0 16px 40px rgba(45,42,38,.09);
-  --shadow-xl:0 8px 16px rgba(45,42,38,.06), 0 24px 60px rgba(45,42,38,.12);
-  --radius:16px;
-  --radius-lg:20px;
-  --radius-sm:11px;
+  --shadow-sm:0 1px 2px rgba(45,42,38,.05);
+  --shadow-md:0 1px 2px rgba(45,42,38,.05);
+  --shadow-lg:0 1px 3px rgba(45,42,38,.06);
+  --shadow-xl:0 1px 3px rgba(45,42,38,.06);
+  --radius:8px;
+  --radius-lg:10px;
+  --radius-sm:6px;
 }
 [data-theme="dark"]{
   --bg:#1c1b18;
@@ -65,10 +65,10 @@
   --pink-soft:#2e2129;
   --highlight:#5e5320;
   --highlight-text:#fce89a;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.2);
-  --shadow-md:0 2px 4px rgba(0,0,0,.2), 0 8px 24px rgba(0,0,0,.28);
-  --shadow-lg:0 4px 8px rgba(0,0,0,.25), 0 16px 40px rgba(0,0,0,.4);
-  --shadow-xl:0 8px 16px rgba(0,0,0,.3), 0 24px 60px rgba(0,0,0,.5);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.25);
+  --shadow-md:0 1px 2px rgba(0,0,0,.25);
+  --shadow-lg:0 1px 3px rgba(0,0,0,.3);
+  --shadow-xl:0 1px 3px rgba(0,0,0,.3);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -89,31 +89,18 @@ a{color:inherit;text-decoration:none}
   border-bottom:1px solid var(--border);
   transition:background .4s,border-color .4s;
 }
-.hero::before{
-  content:"";position:absolute;left:-140px;top:-140px;width:440px;height:440px;
-  background:radial-gradient(circle, var(--primary-soft) 0%, transparent 68%);
-  opacity:.85;pointer-events:none;
-}
-.hero::after{
-  content:"";position:absolute;right:-110px;bottom:-150px;width:380px;height:380px;
-  background:radial-gradient(circle, var(--warm-soft) 0%, transparent 70%);
-  opacity:.6;pointer-events:none;
-}
 .hero .wrap{position:relative;z-index:1}
 .back-link{
   display:inline-flex;align-items:center;gap:6px;
   color:var(--text-2);font-size:14px;font-weight:600;
-  padding:8px 15px;border-radius:30px;background:var(--card);border:1px solid var(--border);
-  box-shadow:var(--shadow-sm);transition:.2s;
+  padding:7px 13px;border-radius:var(--radius-sm);background:var(--card);border:1px solid var(--border);
+  transition:.2s;
 }
-.back-link:hover{color:var(--primary);transform:translateX(-2px);box-shadow:var(--shadow-md)}
+.back-link:hover{color:var(--primary);border-color:var(--primary)}
 .eyebrow{
-  display:inline-flex;align-items:center;gap:8px;margin-top:22px;
-  font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--primary);
-  background:var(--primary-soft);border:1px solid var(--border);
-  padding:7px 15px;border-radius:30px;box-shadow:var(--shadow-sm);
+  display:inline-block;margin-top:22px;
+  font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--text-2);
 }
-.eyebrow .pip{width:6px;height:6px;border-radius:50%;background:var(--primary)}
 .hero h1{font-size:38px;font-weight:800;letter-spacing:-.025em;line-height:1.14;margin-top:18px;display:flex;align-items:center;gap:12px}
 .hero .lead{margin-top:12px;font-size:17px;font-weight:500;color:var(--text-2)}
 
@@ -142,8 +129,7 @@ a{color:inherit;text-decoration:none}
   background:var(--primary);color:#fff;border:none;font-family:inherit;font-size:16px;font-weight:700;
   padding:0 28px;border-radius:var(--radius);cursor:pointer;transition:.2s;box-shadow:var(--shadow-sm);
 }
-.search-btn:hover{background:var(--primary-hover);transform:translateY(-1px);box-shadow:var(--shadow-md)}
-.search-btn:active{transform:translateY(0)}
+.search-btn:hover{background:var(--primary-hover)}
 .filters{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
 .select-wrap{position:relative}
 .select-wrap::after{
@@ -179,9 +165,9 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
   padding:22px 24px;box-shadow:var(--shadow-md);
   transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,background .4s,border-color .4s;
 }
-.result:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.result:hover{border-color:var(--border-strong)}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.tag{font-size:12px;font-weight:700;padding:4px 11px;border-radius:20px;letter-spacing:.01em}
+.tag{font-size:12px;font-weight:700;padding:4px 11px;border-radius:6px;letter-spacing:.01em}
 .tag.year{color:var(--blue);background:var(--blue-soft)}
 .tag.cat{color:var(--text-2);background:var(--card-2);border:1px solid var(--border)}
 .tag.subj{color:var(--text-2);background:var(--card-2);border:1px solid var(--border)}
@@ -205,16 +191,16 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .ans-row .al{font-size:13px;color:var(--text-3);font-weight:600}
 .ans-pill{
   font-size:14px;font-weight:800;color:#fff;background:var(--primary);
-  padding:5px 16px;border-radius:20px;letter-spacing:.02em;box-shadow:var(--shadow-sm);
+  padding:5px 16px;border-radius:6px;letter-spacing:.02em;box-shadow:var(--shadow-sm);
 }
 
 /* ===== Footer / load more ===== */
 .load-more{
   display:block;margin:26px auto 0;font-family:inherit;font-size:14.5px;font-weight:700;color:var(--primary);
-  background:var(--card);border:1.5px solid var(--border-strong);border-radius:30px;
+  background:var(--card);border:1.5px solid var(--border-strong);border-radius:8px;
   padding:12px 32px;cursor:pointer;transition:.2s;box-shadow:var(--shadow-sm);
 }
-.load-more:hover{border-color:var(--primary);background:var(--primary-soft);transform:translateY(-2px)}
+.load-more:hover{border-color:var(--primary);background:var(--primary-soft)}
 .empty{background:var(--card);border:1px dashed var(--border-strong);border-radius:var(--radius);padding:44px 20px;text-align:center;color:var(--text-2);font-weight:600;font-size:15px}
 footer{margin-top:48px;padding:28px 0 56px;border-top:1px solid var(--border);text-align:center;color:var(--text-3);font-size:13.5px;font-weight:500}
 footer strong{color:var(--text-2);font-weight:700}
@@ -225,10 +211,10 @@ footer strong{color:var(--text-2);font-weight:700}
   display:flex;align-items:center;gap:9px;
   background:var(--card);border:1px solid var(--border);color:var(--text);
   font-family:inherit;font-size:14px;font-weight:600;
-  padding:11px 16px;border-radius:30px;cursor:pointer;
+  padding:11px 16px;border-radius:8px;cursor:pointer;
   box-shadow:var(--shadow-lg);transition:transform .2s,background .4s,border-color .4s;
 }
-.theme-toggle:hover{transform:translateY(-2px) scale(1.02)}
+.theme-toggle:hover{border-color:var(--primary)}
 .theme-toggle .ti{font-size:17px;line-height:1}
 .theme-toggle .tlabel{white-space:nowrap}
 
@@ -254,8 +240,8 @@ footer strong{color:var(--text-2);font-weight:700}
 <header class="hero">
   <div class="wrap">
     <a href="index.html" class="back-link">← 回到首頁</a>
-    <span class="eyebrow"><span class="pip"></span>考古題資料庫 · 全文檢索</span>
-    <h1><span>🔍</span>考古題全文搜尋</h1>
+    <span class="eyebrow">考古題資料庫 · 全文檢索</span>
+    <h1>考古題全文搜尋</h1>
     <p class="lead">跨部門搜尋 41,811 道警察特考考古題。</p>
   </div>
 </header>
@@ -266,7 +252,6 @@ footer strong{color:var(--text-2);font-weight:700}
   <div class="search-card">
     <div class="search-row">
       <label class="search-input">
-        <span class="si">🔍</span>
         <input type="text" id="q" placeholder="輸入關鍵字，如：基本權、刑法、酒駕…" autofocus aria-label="搜尋關鍵字">
       </label>
       <button class="search-btn" id="searchBtn">搜尋</button>
@@ -299,7 +284,6 @@ footer strong{color:var(--text-2);font-weight:700}
 </div>
 
 <button class="theme-toggle" id="themeToggle" aria-label="切換深色模式">
-  <span class="ti" id="themeIcon">🌙</span>
   <span class="tlabel" id="themeLabel">深色模式</span>
 </button>
 
@@ -388,7 +372,7 @@ footer strong{color:var(--text-2);font-weight:700}
     });
   }
 
-  document.getElementById('results').innerHTML='<div class="empty">⏳ 正在載入搜尋索引（約 7MB）…</div>';
+  document.getElementById('results').innerHTML='<div class="empty">正在載入搜尋索引（約 7MB）…</div>';
   SearchEngine.loadIndex().then(function(stats){
     ready = true;
     document.getElementById('statTotal').textContent=stats.total.toLocaleString();
@@ -415,11 +399,9 @@ footer strong{color:var(--text-2);font-weight:700}
 // theme — 全站共用 localStorage key「exam-dark」(true/false)
 (function(){
   const btn=document.getElementById('themeToggle');
-  const icon=document.getElementById('themeIcon');
   const label=document.getElementById('themeLabel');
   function apply(dark){
     document.documentElement.setAttribute('data-theme',dark?'dark':'light');
-    icon.textContent=dark?'☀️':'🌙';
     label.textContent=dark?'淺色模式':'深色模式';
     try{localStorage.setItem('exam-dark',dark);}catch(e){}
   }

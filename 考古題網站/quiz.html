@@ -22,11 +22,11 @@
   --warm:#c9a66b; --warm-soft:#f4ecdd;
   --blue:#2563eb; --blue-soft:#e6edfd;
   --danger:#c0492f; --danger-soft:#fae9e4;
-  --shadow-sm:0 1px 2px rgba(45,42,38,.04), 0 1px 3px rgba(45,42,38,.05);
-  --shadow-md:0 2px 4px rgba(45,42,38,.04), 0 8px 24px rgba(45,42,38,.06);
-  --shadow-lg:0 4px 8px rgba(45,42,38,.05), 0 16px 40px rgba(45,42,38,.09);
-  --shadow-xl:0 8px 16px rgba(45,42,38,.06), 0 24px 60px rgba(45,42,38,.12);
-  --radius:16px; --radius-lg:20px; --radius-sm:11px;
+  --shadow-sm:0 1px 2px rgba(45,42,38,.05);
+  --shadow-md:0 1px 2px rgba(45,42,38,.05);
+  --shadow-lg:0 1px 3px rgba(45,42,38,.06);
+  --shadow-xl:0 1px 3px rgba(45,42,38,.06);
+  --radius:8px; --radius-lg:10px; --radius-sm:6px;
 }
 [data-theme="dark"]{
   --bg:#1c1b18; --card:#27261f; --card-2:#22211b;
@@ -37,10 +37,10 @@
   --warm:#cdab73; --warm-soft:#2c281f;
   --blue:#6ea0f5; --blue-soft:#1f2733;
   --danger:#e0816b; --danger-soft:#2f211c;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.2);
-  --shadow-md:0 2px 4px rgba(0,0,0,.2), 0 8px 24px rgba(0,0,0,.28);
-  --shadow-lg:0 4px 8px rgba(0,0,0,.25), 0 16px 40px rgba(0,0,0,.4);
-  --shadow-xl:0 8px 16px rgba(0,0,0,.3), 0 24px 60px rgba(0,0,0,.5);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.25);
+  --shadow-md:0 1px 2px rgba(0,0,0,.25);
+  --shadow-lg:0 1px 3px rgba(0,0,0,.3);
+  --shadow-xl:0 1px 3px rgba(0,0,0,.3);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -50,13 +50,10 @@ a{color:inherit;text-decoration:none}
 
 /* Hero */
 .hero{position:relative;overflow:hidden;padding:24px 0 40px;background:var(--header);border-bottom:1px solid var(--border);transition:background .4s,border-color .4s}
-.hero::before{content:"";position:absolute;left:-140px;top:-140px;width:440px;height:440px;background:radial-gradient(circle,var(--primary-soft) 0%,transparent 68%);opacity:.85;pointer-events:none}
-.hero::after{content:"";position:absolute;right:-110px;bottom:-150px;width:380px;height:380px;background:radial-gradient(circle,var(--warm-soft) 0%,transparent 70%);opacity:.6;pointer-events:none}
 .hero .wrap{position:relative;z-index:1}
-.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-2);font-size:14px;font-weight:600;padding:8px 15px;border-radius:30px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:.2s}
-.back-link:hover{color:var(--primary);transform:translateX(-2px);box-shadow:var(--shadow-md)}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--primary);background:var(--primary-soft);border:1px solid var(--border);padding:7px 15px;border-radius:30px;box-shadow:var(--shadow-sm)}
-.eyebrow .pip{width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-2);font-size:14px;font-weight:600;padding:7px 13px;border-radius:var(--radius-sm);background:var(--card);border:1px solid var(--border);transition:.2s}
+.back-link:hover{color:var(--primary);border-color:var(--primary)}
+.eyebrow{display:inline-block;margin-top:22px;font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--text-2)}
 .hero h1{font-size:38px;font-weight:800;letter-spacing:-.025em;line-height:1.14;margin-top:18px;display:flex;align-items:center;gap:12px}
 .hero .lead{margin-top:12px;font-size:17px;font-weight:500;color:var(--text-2)}
 
@@ -80,7 +77,7 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .seg button:hover{border-color:var(--primary);color:var(--primary)}
 .seg button.on{background:var(--primary);color:#fff;border-color:transparent;box-shadow:var(--shadow-sm)}
 .start-btn{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--primary);color:#fff;border:none;font-family:inherit;font-size:17px;font-weight:700;padding:16px;border-radius:var(--radius);cursor:pointer;transition:.2s;box-shadow:var(--shadow-md)}
-.start-btn:hover{background:var(--primary-hover);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.start-btn:hover{background:var(--primary-hover)}
 .match-note{margin-top:16px;text-align:center;font-size:14px;color:var(--text-2);font-weight:500}
 .match-note b{color:var(--primary);font-weight:800;font-variant-numeric:tabular-nums}
 
@@ -100,9 +97,9 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 
 .q-card{padding:26px 28px;margin-top:16px}
 .q-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.q-num{font-size:13px;font-weight:800;color:#fff;background:var(--primary);padding:5px 14px;border-radius:20px}
+.q-num{font-size:13px;font-weight:800;color:#fff;background:var(--primary);padding:5px 14px;border-radius:6px}
 .q-meta{font-size:13px;color:var(--text-3);font-weight:600}
-.flag-btn{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;font-weight:700;color:var(--text-2);background:var(--card-2);border:1.5px solid var(--border-strong);border-radius:20px;padding:6px 14px;cursor:pointer;transition:.18s}
+.flag-btn{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;font-weight:700;color:var(--text-2);background:var(--card-2);border:1.5px solid var(--border-strong);border-radius:6px;padding:6px 14px;cursor:pointer;transition:.18s}
 .flag-btn:hover{border-color:var(--warm);color:var(--warm)}
 .flag-btn.on{background:var(--warm-soft);border-color:var(--warm);color:var(--warm)}
 .q-stem{font-size:17px;font-weight:600;line-height:1.7;margin-bottom:20px}
@@ -154,11 +151,11 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .review-head{margin-top:38px;margin-bottom:16px;display:flex;align-items:center;gap:11px}
 .review-head h2{font-size:21px;font-weight:700;display:flex;align-items:center;gap:11px}
 .review-head h2::before{content:"";width:5px;height:21px;border-radius:3px;background:var(--danger)}
-.review-head .rc{margin-left:auto;font-size:13px;font-weight:700;color:var(--danger);background:var(--danger-soft);padding:6px 14px;border-radius:20px}
+.review-head .rc{margin-left:auto;font-size:13px;font-weight:700;color:var(--danger);background:var(--danger-soft);padding:6px 14px;border-radius:6px}
 .review{display:flex;flex-direction:column;gap:14px}
 .rv-card{padding:22px 24px}
 .rv-head{display:flex;align-items:center;gap:11px;margin-bottom:13px}
-.rv-num{font-size:12.5px;font-weight:800;color:var(--text-2);background:var(--card-2);border:1px solid var(--border);padding:4px 12px;border-radius:20px}
+.rv-num{font-size:12.5px;font-weight:800;color:var(--text-2);background:var(--card-2);border:1px solid var(--border);padding:4px 12px;border-radius:6px}
 .rv-stem{font-size:15.5px;font-weight:600;line-height:1.65;margin-bottom:15px}
 .rv-opts{display:flex;flex-direction:column;gap:8px}
 .rv-opt{display:flex;align-items:flex-start;gap:11px;font-size:14.5px;padding:10px 14px;border-radius:var(--radius-sm);border:1px solid transparent}
@@ -177,7 +174,7 @@ footer{margin-top:48px;padding:28px 0 64px;border-top:1px solid var(--border);te
 footer strong{color:var(--text-2);font-weight:700}
 
 /* theme toggle */
-.theme-toggle{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:14px;font-weight:600;padding:11px 16px;border-radius:30px;cursor:pointer;box-shadow:var(--shadow-lg);transition:transform .2s,background .4s,border-color .4s}
+.theme-toggle{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:14px;font-weight:600;padding:11px 16px;border-radius:8px;cursor:pointer;box-shadow:var(--shadow-lg);transition:transform .2s,background .4s,border-color .4s}
 .theme-toggle:hover{transform:translateY(-2px) scale(1.02)}
 .theme-toggle .ti{font-size:17px;line-height:1}
 .theme-toggle .tlabel{white-space:nowrap}
@@ -205,8 +202,8 @@ footer strong{color:var(--text-2);font-weight:700}
 <header class="hero">
   <div class="wrap">
     <a href="index.html" class="back-link">← 回到首頁</a>
-    <span class="eyebrow"><span class="pip"></span>考古題資料庫 · 模擬測驗</span>
-    <h1><span>📝</span>模擬考試</h1>
+    <span class="eyebrow">考古題資料庫 · 模擬測驗</span>
+    <h1>模擬考試</h1>
     <p class="lead">隨機出題・計時作答・自動批改。</p>
   </div>
 </header>
@@ -256,7 +253,7 @@ footer strong{color:var(--text-2);font-weight:700}
         </div>
       </div>
 
-      <button class="start-btn" id="startBtn">開始考試 →</button>
+      <button class="start-btn" id="startBtn">開始考試</button>
       <p class="match-note">符合條件的選擇題：<b id="matchCount">載入索引中…</b></p>
     </div>
   </div>
@@ -264,7 +261,7 @@ footer strong{color:var(--text-2);font-weight:700}
   <!-- ===== EXAM ===== -->
   <div id="examView" class="view hidden">
     <div class="timer-bar">
-      <div class="timer" id="timer"><span class="ti">⏱</span><span id="timerText">60:00</span></div>
+      <div class="timer" id="timer"><span id="timerText">60:00</span></div>
       <div class="prog">第 <b id="curNum">1</b> / <span id="totalNum">20</span> 題</div>
       <div class="nav-btns">
         <button id="prevBtn" aria-label="上一題">←</button>
@@ -277,7 +274,7 @@ footer strong{color:var(--text-2);font-weight:700}
       <div class="q-head">
         <span class="q-num" id="qNum">第 1 題</span>
         <span class="q-meta" id="qMeta">憲法 · 選擇題</span>
-        <button class="flag-btn" id="flagBtn">🚩 標記回顧</button>
+        <button class="flag-btn" id="flagBtn">標記回顧</button>
       </div>
       <p class="q-stem" id="qStem"></p>
       <div class="choices" id="choices" role="radiogroup" aria-label="作答選項"></div>
@@ -305,8 +302,8 @@ footer strong{color:var(--text-2);font-weight:700}
         </svg>
         <div class="pct"><span class="big" id="scorePct">0%</span><span class="lbl">正確率</span></div>
       </div>
-      <div class="result-title" id="resultTitle">作答完成！</div>
-      <div class="result-sub" id="resultSub">繼續加油，錯題已為你整理好。</div>
+      <div class="result-title" id="resultTitle">作答完成</div>
+      <div class="result-sub" id="resultSub">錯題與未答題整理於下方。</div>
 
       <div class="res-stats">
         <div class="rstat ok"><div class="rn" id="sOk">0</div><div class="rl">答對</div></div>
@@ -332,7 +329,6 @@ footer strong{color:var(--text-2);font-weight:700}
 </div>
 
 <button class="theme-toggle" id="themeToggle" aria-label="切換深色模式">
-  <span class="ti" id="themeIcon">🌙</span>
   <span class="tlabel" id="themeLabel">深色模式</span>
 </button>
 
@@ -497,14 +493,11 @@ function finish(){
   // ring
   const circ = 490;
   setTimeout(()=>{ $('ringFill').style.strokeDashoffset = circ*(1-pct/100); },120);
-  // count up pct
-  let p=0; const ti=setInterval(()=>{p++; $('scorePct').textContent=p+'%'; if(p>=pct)clearInterval(ti);},14);
+  $('scorePct').textContent=pct+'%';
   $('sOk').textContent=ok; $('sNo').textContent=no; $('sSkip').textContent=skip;
   $('sTime').textContent=fmt(elapsed);
-  // title
-  if(pct>=80){$('resultTitle').textContent='表現優異！';$('resultSub').textContent='正確率很高，繼續保持這個節奏。';}
-  else if(pct>=60){$('resultTitle').textContent='穩定成長中';$('resultSub').textContent='基礎不錯，加強錯題就能更上層樓。';}
-  else {$('resultTitle').textContent='繼續加油！';$('resultSub').textContent='錯題已為你整理好，逐題突破。';}
+  $('resultTitle').textContent='作答完成';
+  $('resultSub').textContent='錯題與未答題整理於下方。';
   // review (wrong + skipped)
   const wrong = questions.map((q,i)=>({q,i})).filter(({q,i})=>answers[i]!==q.ans);
   $('reviewCount').textContent = wrong.length+' 題';
@@ -522,7 +515,7 @@ function finish(){
       <p class="rv-stem">${q.stem}</p>
       <div class="rv-opts">${opts}</div>
     </article>`;
-  }).join('') || '<div class="card rv-card" style="text-align:center;color:var(--text-2)">🎉 全部答對，沒有錯題！</div>';
+  }).join('') || '<div class="card rv-card" style="text-align:center;color:var(--text-2)">全部答對，沒有錯題。</div>';
 }
 
 $('retryBtn').addEventListener('click',()=>{
@@ -539,10 +532,10 @@ function switchView(v){
 
 /* ===== theme — 全站共用 localStorage key「exam-dark」(true/false) ===== */
 (function(){
-  const btn=$('themeToggle'),icon=$('themeIcon'),label=$('themeLabel');
+  const btn=$('themeToggle'),label=$('themeLabel');
   function apply(dark){
     document.documentElement.setAttribute('data-theme',dark?'dark':'light');
-    icon.textContent=dark?'☀️':'🌙';label.textContent=dark?'淺色模式':'深色模式';
+    label.textContent=dark?'淺色模式':'深色模式';
     try{localStorage.setItem('exam-dark',dark);}catch(e){}
   }
   let saved=null; try{saved=localStorage.getItem('exam-dark');}catch(e){}
