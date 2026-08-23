@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>三等警察特考考古題</title>
-<meta name="description" content="三等警察特考（內軌）全部 17 個類科考古題總覽，共 1090 份試卷、22523 道題目">
+<meta name="description" content="三等警察特考（內軌）17 個類科考古題總覽，提供歷年試卷、全文搜尋、模擬考試與出題趨勢。">
 <meta name="theme-color" content="#f0ece6">
 <meta name="robots" content="index, follow">
 <link rel="manifest" href="manifest.json">
@@ -14,331 +14,109 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f1e8;
-  --card:#ffffff;
-  --card-2:#fbfaf7;
-  --border:#e5e0d8;
-  --border-strong:#d8d1c5;
-  --text:#2d2a26;
-  --text-2:#78716c;
-  --text-3:#a39b8f;
-  --header:#f0ece6;
-  --primary:#4a7c5e;
-  --primary-hover:#3d6b50;
-  --primary-soft:#e8f0ea;
-  --primary-tint:#f3f7f4;
-  --warm:#c9a66b;
-  --warm-soft:#f4ecdd;
-  --blue:#2563eb;
-  --blue-soft:#e6edfd;
-  --purple:#8b5cf6;
-  --purple-soft:#efe9fd;
-  --shadow-sm:0 1px 2px rgba(45,42,38,.05);
-  --shadow-md:0 1px 2px rgba(45,42,38,.05);
-  --shadow-lg:0 1px 3px rgba(45,42,38,.06);
-  --shadow-xl:0 1px 3px rgba(45,42,38,.06);
-  --radius:8px;
-  --radius-lg:10px;
-  --radius-sm:6px;
+  --bg:#f5f1e8;--card:#ffffff;--card-2:#fbfaf7;--border:#e5e0d8;--border-strong:#d8d1c5;
+  --text:#2d2a26;--text-2:#78716c;--text-3:#a39b8f;--header:#f0ece6;
+  --primary:#4a7c5e;--primary-hover:#3d6b50;--primary-soft:#e8f0ea;--primary-tint:#f3f7f4;
+  --warm:#c9a66b;--warm-soft:#f4ecdd;--blue:#2563eb;--blue-soft:#e6edfd;--purple:#8b5cf6;--purple-soft:#efe9fd;
+  --shadow-sm:0 1px 2px rgba(45,42,38,.05);--shadow-md:0 1px 2px rgba(45,42,38,.05);
+  --shadow-lg:0 1px 3px rgba(45,42,38,.06);--shadow-xl:0 1px 3px rgba(45,42,38,.06);
+  --radius:8px;--radius-lg:10px;--radius-sm:6px;
 }
 [data-theme="dark"]{
-  --bg:#1c1b18;
-  --card:#27261f;
-  --card-2:#22211b;
-  --border:#3d3a33;
-  --border-strong:#494539;
-  --text:#e5e0d8;
-  --text-2:#a8a096;
-  --text-3:#7a746a;
-  --header:#211f1a;
-  --primary:#7db892;
-  --primary-hover:#92c8a5;
-  --primary-soft:#243029;
-  --primary-tint:#21271f;
-  --warm:#cdab73;
-  --warm-soft:#2c281f;
-  --blue:#6ea0f5;
-  --blue-soft:#1f2733;
-  --purple:#b29bf0;
-  --purple-soft:#26222f;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.25);
-  --shadow-md:0 1px 2px rgba(0,0,0,.25);
-  --shadow-lg:0 1px 3px rgba(0,0,0,.3);
-  --shadow-xl:0 1px 3px rgba(0,0,0,.3);
+  --bg:#1c1b18;--card:#27261f;--card-2:#22211b;--border:#3d3a33;--border-strong:#494539;
+  --text:#e5e0d8;--text-2:#a8a096;--text-3:#7a746a;--header:#211f1a;
+  --primary:#7db892;--primary-hover:#92c8a5;--primary-soft:#243029;--primary-tint:#21271f;
+  --warm:#cdab73;--warm-soft:#2c281f;--blue:#6ea0f5;--blue-soft:#1f2733;--purple:#b29bf0;--purple-soft:#26222f;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.25);--shadow-md:0 1px 2px rgba(0,0,0,.25);
+  --shadow-lg:0 1px 3px rgba(0,0,0,.3);--shadow-xl:0 1px 3px rgba(0,0,0,.3);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:"Noto Sans TC",system-ui,sans-serif;
-  background:var(--bg);color:var(--text);line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  transition:background .4s ease,color .4s ease;
-}
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-a{color:inherit;text-decoration:none}
-
-/* ===== Hero ===== */
-.hero{
-  position:relative;overflow:hidden;
-  padding:64px 0 56px;
-  background:var(--header);
-  border-bottom:1px solid var(--border);
-  transition:background .4s,border-color .4s;
-}
-.hero .wrap{position:relative;z-index:1}
-.eyebrow{
-  display:inline-block;
-  font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--text-2);
-}
-.hero h1{
-  font-size:46px;font-weight:800;letter-spacing:-.025em;line-height:1.12;
-  margin-top:22px;
-}
-.hero .lead{margin-top:14px;font-size:18px;font-weight:500;color:var(--text-2);max-width:560px}
-
-/* ===== Hero stat cards ===== */
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .4s ease,color .4s ease}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}a{color:inherit;text-decoration:none}
+.hero{position:relative;overflow:hidden;padding:64px 0 56px;background:var(--header);border-bottom:1px solid var(--border);transition:background .4s,border-color .4s}
+.hero .wrap{position:relative;z-index:1}.eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--text-2)}
+.hero h1{font-size:46px;font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-top:22px}.hero .lead{margin-top:14px;font-size:18px;font-weight:500;color:var(--text-2);max-width:560px}
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;max-width:680px}
-.hstat{
-  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:22px 22px 20px;box-shadow:var(--shadow-md);position:relative;overflow:hidden;
-  transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,background .4s,border-color .4s;
-}
-.hstat .hnum{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
-.hstat .hlabel{margin-top:9px;font-size:14px;font-weight:600;color:var(--text-2)}
-.hstat.feature{
-  background:var(--primary);
-  border-color:transparent;
-}
-.hstat.feature .hnum{color:#fff}
-.hstat.feature .hlabel{color:rgba(255,255,255,.86)}
-
-/* ===== Section ===== */
-section{margin-top:52px}
-.section-head{margin-bottom:20px}
-.section-head h2{font-size:23px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:11px}
-.section-head h2::before{content:"";width:5px;height:22px;border-radius:3px;background:var(--primary)}
-.section-head p{margin-top:6px;font-size:14.5px;color:var(--text-2);font-weight:500;padding-left:16px}
-
-/* ===== Tool cards ===== */
-.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.tool{
-  display:block;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);
-  padding:26px 24px;box-shadow:var(--shadow-md);position:relative;overflow:hidden;
-  transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,background .4s,border-color .4s;
-}
-.tool:hover{border-color:var(--primary)}
-.tool .ticon{
-  width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:26px;
-  background:var(--accent-soft);margin-bottom:18px;transition:.25s;
-}
-.tool h3{font-size:18.5px;font-weight:700;letter-spacing:-.01em}
-.tool p{margin-top:7px;font-size:14px;color:var(--text-2);font-weight:500;line-height:1.55}
-.tool .go{
-  margin-top:18px;display:inline-flex;align-items:center;gap:6px;
-  font-size:13.5px;font-weight:700;color:var(--accent);transition:gap .2s;
-}
-.tool.featured{
-  background:var(--primary);
-  border-color:transparent;color:#fff;
-}
-.tool.featured p{color:rgba(255,255,255,.85)}
-.tool.featured .go{color:#fff}
-
-/* ===== Category groups ===== */
-.cat-group{
-  background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);
-  padding:26px 28px 22px;box-shadow:var(--shadow-md);margin-bottom:22px;
-  transition:background .4s,border-color .4s;
-}
-.cat-group-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-.cat-badge{
-  flex-shrink:0;font-size:15px;font-weight:800;color:#fff;background:var(--primary);
-  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;box-shadow:var(--shadow-sm);
-}
-.cat-group-head .gt{font-size:17.5px;font-weight:700;letter-spacing:-.01em}
-.cat-group-head .gs{font-size:13px;color:var(--text-3);font-weight:600;margin-top:2px}
-.cat-group-head .gcount{margin-left:auto;font-size:13px;font-weight:700;color:var(--primary);background:var(--primary-soft);padding:6px 14px;border-radius:var(--radius-sm);white-space:nowrap}
-.cat-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
-.cat-item{
-  display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:var(--radius-sm);
-  border:1px solid transparent;transition:.18s;cursor:pointer;
-}
-.cat-item:hover{background:var(--primary-tint);border-color:var(--border)}
-.cat-item .dept{flex:1;font-size:15px;font-weight:600;letter-spacing:-.01em}
-.cat-item .pill{
-  flex-shrink:0;font-size:13px;font-weight:700;color:var(--text-2);background:var(--card-2);
-  border:1px solid var(--border);padding:4px 12px;border-radius:var(--radius-sm);font-variant-numeric:tabular-nums;
-  transition:.18s;
-}
-.cat-item:hover .pill{background:var(--primary);color:#fff;border-color:transparent}
-
-/* ===== Footer ===== */
-footer{
-  margin-top:60px;padding:32px 0 48px;border-top:1px solid var(--border);
-  text-align:center;color:var(--text-3);font-size:13.5px;font-weight:500;
-}
-footer strong{color:var(--text-2);font-weight:700}
-
-/* ===== Theme toggle ===== */
-.theme-toggle{
-  position:fixed;right:24px;bottom:24px;z-index:50;
-  display:flex;align-items:center;gap:9px;
-  background:var(--card);border:1px solid var(--border);color:var(--text);
-  font-family:inherit;font-size:14px;font-weight:600;
-  padding:11px 16px;border-radius:8px;cursor:pointer;
-  box-shadow:var(--shadow-lg);transition:transform .2s,background .4s,border-color .4s;
-}
-.theme-toggle:hover{border-color:var(--primary)}
-.theme-toggle .ti{font-size:17px;line-height:1}
-.theme-toggle .tlabel{white-space:nowrap}
-
-/* ===== Responsive ===== */
-@media (max-width:880px){
-  .hero h1{font-size:38px}
-  .tools{grid-template-columns:1fr}
-  .hero-stats{max-width:none}
-}
-@media (max-width:600px){
-  .wrap{padding:0 16px}
-  .hero{padding:48px 0 44px}
-  .hero h1{font-size:30px}
-  .hero .lead{font-size:16px}
-  .hero-stats{grid-template-columns:1fr;gap:12px}
-  .hstat .hnum{font-size:30px}
-  .cat-list{grid-template-columns:1fr}
-  .cat-group-head{flex-wrap:wrap}
-  .cat-group-head .gcount{margin-left:0;width:100%;text-align:center;margin-top:6px}
-  .theme-toggle .tlabel{display:none}
-  .theme-toggle{padding:13px;right:16px;bottom:16px}
-}
+.hstat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 22px 20px;box-shadow:var(--shadow-md);position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,background .4s,border-color .4s}
+.hstat .hnum{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}.hstat .hlabel{margin-top:9px;font-size:14px;font-weight:600;color:var(--text-2)}
+.hstat.feature{background:var(--primary);border-color:transparent}.hstat.feature .hnum{color:#fff}.hstat.feature .hlabel{color:rgba(255,255,255,.86)}
+section{margin-top:52px}.section-head{margin-bottom:20px}.section-head h2{font-size:23px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:11px}.section-head h2::before{content:"";width:5px;height:22px;border-radius:3px;background:var(--primary)}.section-head p{margin-top:6px;font-size:14.5px;color:var(--text-2);font-weight:500;padding-left:16px}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.tool{display:block;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px 24px;box-shadow:var(--shadow-md);position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,background .4s,border-color .4s}.tool:hover{border-color:var(--primary)}.tool h3{font-size:18.5px;font-weight:700;letter-spacing:-.01em}.tool p{margin-top:7px;font-size:14px;color:var(--text-2);font-weight:500;line-height:1.55}.tool.featured{background:var(--primary);border-color:transparent;color:#fff}.tool.featured p{color:rgba(255,255,255,.85)}
+.cat-group{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px 28px 22px;box-shadow:var(--shadow-md);margin-bottom:22px;transition:background .4s,border-color .4s}.cat-group-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--border)}.cat-badge{flex-shrink:0;font-size:15px;font-weight:800;color:#fff;background:var(--primary);width:42px;height:42px;border-radius:12px;display:grid;place-items:center;box-shadow:var(--shadow-sm)}.cat-group-head .gt{font-size:17.5px;font-weight:700;letter-spacing:-.01em}.cat-group-head .gs{font-size:13px;color:var(--text-3);font-weight:600;margin-top:2px}.cat-group-head .gcount{margin-left:auto;font-size:13px;font-weight:700;color:var(--primary);background:var(--primary-soft);padding:6px 14px;border-radius:var(--radius-sm);white-space:nowrap}.cat-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}.cat-item{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:var(--radius-sm);border:1px solid transparent;transition:.18s;cursor:pointer}.cat-item:hover{background:var(--primary-tint);border-color:var(--border)}.cat-item .dept{flex:1;font-size:15px;font-weight:600;letter-spacing:-.01em}.cat-item .pill{flex-shrink:0;font-size:13px;font-weight:700;color:var(--text-2);background:var(--card-2);border:1px solid var(--border);padding:4px 12px;border-radius:var(--radius-sm);font-variant-numeric:tabular-nums;transition:.18s}.cat-item:hover .pill{background:var(--primary);color:#fff;border-color:transparent}
+footer{margin-top:60px;padding:32px 0 48px;border-top:1px solid var(--border);text-align:center;color:var(--text-3);font-size:13.5px;font-weight:500}footer strong{color:var(--text-2);font-weight:700}.theme-toggle{position:fixed;right:24px;bottom:24px;z-index:50;display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:14px;font-weight:600;padding:11px 16px;border-radius:8px;cursor:pointer;box-shadow:var(--shadow-lg);transition:transform .2s,background .4s,border-color .4s}.theme-toggle:hover{border-color:var(--primary)}.theme-toggle .tlabel{white-space:nowrap}
+@media (max-width:880px){.hero h1{font-size:38px}.tools{grid-template-columns:1fr}.hero-stats{max-width:none}}@media (max-width:600px){.wrap{padding:0 16px}.hero{padding:48px 0 44px}.hero h1{font-size:30px}.hero .lead{font-size:16px}.hero-stats{grid-template-columns:1fr;gap:12px}.hstat .hnum{font-size:30px}.cat-list{grid-template-columns:1fr}.cat-group-head{flex-wrap:wrap}.cat-group-head .gcount{margin-left:0;width:100%;text-align:center;margin-top:6px}.theme-toggle .tlabel{display:none}.theme-toggle{padding:13px;right:16px;bottom:16px}}
 </style>
 </head>
 <body>
-
-<header class="hero">
-  <div class="wrap">
-    <span class="eyebrow">三等警察特考 · 內軌</span>
-    <h1>三等警察特考考古題</h1>
-    <p class="lead">內軌 17 個類科完整試題庫，歷年試卷一站掌握。</p>
-    <div class="hero-stats">
-      <div class="hstat feature"><div class="hnum" data-target="17">0</div><div class="hlabel">類科</div></div>
-      <div class="hstat"><div class="hnum" data-target="1090">0</div><div class="hlabel">試卷</div></div>
-      <div class="hstat"><div class="hnum" data-target="22523">0</div><div class="hlabel">題目</div></div>
-    </div>
-  </div>
-</header>
-
+<header class="hero"><div class="wrap"><span class="eyebrow">三等警察特考 · 內軌</span><h1>三等警察特考考古題</h1><p class="lead">內軌 17 個類科完整試題庫，歷年試卷一站掌握。</p><div class="hero-stats"><div class="hstat feature"><div class="hnum" id="statCategories">17</div><div class="hlabel">類科</div></div><div class="hstat"><div class="hnum" id="statPapers" aria-live="polite">—</div><div class="hlabel">試卷</div></div><div class="hstat"><div class="hnum" id="statQuestions" aria-live="polite">—</div><div class="hlabel">題目</div></div></div></div></header>
 <div class="wrap">
-
-  <!-- Tools -->
-  <section>
-    <div class="section-head">
-      <h2>功能</h2>
-    </div>
-    <div class="tools">
-      <a class="tool featured" href="search.html">
-        <h3>跨部門全文搜尋</h3>
-        <p>22,523 題全文檢索，依關鍵字、類科、年份篩選。</p>
-      </a>
-      <a class="tool" href="quiz.html">
-        <h3>模擬考試</h3>
-        <p>隨機組卷、計時作答、自動批改。</p>
-      </a>
-      <a class="tool" href="analytics.html">
-        <h3>出題趨勢</h3>
-        <p>歷年出題分佈、答案比例與熱門關鍵字統計。</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- Categories -->
-  <section>
-    <div class="section-head">
-      <h2>類科試題庫</h2>
-      <p>內軌 17 個類科，依學院分組</p>
-    </div>
-
-    <div class="cat-group">
-      <div class="cat-group-head">
-        <span class="cat-badge">甲組</span>
-        <div>
-          <div class="gt">警察科技學院</div>
-          <div class="gs">7 個類科</div>
-        </div>
-        <span class="gcount">8,304 題</span>
-      </div>
-      <div class="cat-list" id="groupA"></div>
-    </div>
-
-    <div class="cat-group">
-      <div class="cat-group-head">
-        <span class="cat-badge">乙組</span>
-        <div>
-          <div class="gt">警政管理學院</div>
-          <div class="gs">10 個類科</div>
-        </div>
-        <span class="gcount">14,219 題</span>
-      </div>
-      <div class="cat-list" id="groupB"></div>
-    </div>
-  </section>
-
-  <footer>
-    資料來源：<strong>考選部考畢試題查詢平臺</strong>
-  </footer>
-</div>
-
-<button class="theme-toggle" id="themeToggle" aria-label="切換深色模式">
-  <span class="tlabel" id="themeLabel">深色模式</span>
-</button>
-
+<section><div class="section-head"><h2>功能</h2></div><div class="tools"><a class="tool featured" href="search.html"><h3>跨部門全文搜尋</h3><p id="searchCount">載入可搜尋題數中…</p></a><a class="tool" href="quiz.html"><h3>模擬考試</h3><p>隨機組卷、計時作答、自動批改。</p></a><a class="tool" href="analytics.html"><h3>出題趨勢</h3><p>歷年出題分佈、答案比例與熱門關鍵字統計。</p></a></div></section>
+<section><div class="section-head"><h2>類科試題庫</h2><p>內軌 17 個類科，依學院分組</p></div>
+<div class="cat-group"><div class="cat-group-head"><span class="cat-badge">甲組</span><div><div class="gt">警察科技學院</div><div class="gs">7 個類科</div></div><span class="gcount" id="groupACount">—</span></div><div class="cat-list" id="groupA"></div></div>
+<div class="cat-group"><div class="cat-group-head"><span class="cat-badge">乙組</span><div><div class="gt">警政管理學院</div><div class="gs">10 個類科</div></div><span class="gcount" id="groupBCount">—</span></div><div class="cat-list" id="groupB"></div></div>
+</section>
+<footer>資料來源：<strong>考選部考畢試題查詢平臺</strong></footer></div>
+<button class="theme-toggle" id="themeToggle" aria-label="切換深色模式"><span class="tlabel" id="themeLabel">深色模式</span></button>
 <script>
-const GROUP_A = [
-  ['刑事警察學系',1601,'刑事警察學系/刑事警察學系考古題總覽.html'],['鑑識科學學系',1400,'鑑識科學學系/鑑識科學學系考古題總覽.html'],['交通學系（交通組）',1193,'交通學系交通組/交通學系交通組考古題總覽.html'],
-  ['交通學系（電訊組）',536,'交通學系電訊組/交通學系電訊組考古題總覽.html'],['消防學系',1191,'消防學系/消防學系考古題總覽.html'],['水上警察學系',1189,'水上警察學系/水上警察學系考古題總覽.html'],['資訊管理學系',1194,'資訊管理學系/資訊管理學系考古題總覽.html'],
+const GROUP_A=[
+  ['刑事警察學系','刑事警察學系','刑事警察學系/刑事警察學系考古題總覽.html'],
+  ['鑑識科學學系','鑑識科學學系','鑑識科學學系/鑑識科學學系考古題總覽.html'],
+  ['交通學系（交通組）','交通學系交通組','交通學系交通組/交通學系交通組考古題總覽.html'],
+  ['交通學系（電訊組）','交通學系電訊組','交通學系電訊組/交通學系電訊組考古題總覽.html'],
+  ['消防學系','消防學系','消防學系/消防學系考古題總覽.html'],
+  ['水上警察學系','水上警察學系','水上警察學系/水上警察學系考古題總覽.html'],
+  ['資訊管理學系','資訊管理學系','資訊管理學系/資訊管理學系考古題總覽.html']
 ];
-const GROUP_B = [
-  ['行政警察學系',1812,'行政警察學系/行政警察學系考古題總覽.html'],['外事警察學系',1157,'外事警察學系/外事警察學系考古題總覽.html'],['公共安全學系（社安組）',1192,'公共安全學系社安組/公共安全學系社安組考古題總覽.html'],
-  ['公共安全學系（情報組）',972,'公共安全學系情報組/公共安全學系情報組考古題總覽.html'],['犯罪防治學系（預防組）',1192,'犯罪防治學系預防組/犯罪防治學系預防組考古題總覽.html'],['犯罪防治學系（矯治組）',725,'犯罪防治學系矯治組/犯罪防治學系矯治組考古題總覽.html'],
-  ['國境警察學系（境管組）',1192,'國境警察學系境管組/國境警察學系境管組考古題總覽.html'],['國境警察學系（移民組）',3186,'國境警察學系移民組/國境警察學系移民組考古題總覽.html'],['行政管理學系',1398,'行政管理學系/行政管理學系考古題總覽.html'],['法律學系',1393,'法律學系/法律學系考古題總覽.html'],
+const GROUP_B=[
+  ['行政警察學系','行政警察學系','行政警察學系/行政警察學系考古題總覽.html'],
+  ['外事警察學系','外事警察學系','外事警察學系/外事警察學系考古題總覽.html'],
+  ['公共安全學系（社安組）','公共安全學系社安組','公共安全學系社安組/公共安全學系社安組考古題總覽.html'],
+  ['公共安全學系（情報組）','公共安全學系情報組','公共安全學系情報組/公共安全學系情報組考古題總覽.html'],
+  ['犯罪防治學系（預防組）','犯罪防治學系預防組','犯罪防治學系預防組/犯罪防治學系預防組考古題總覽.html'],
+  ['犯罪防治學系（矯治組）','犯罪防治學系矯治組','犯罪防治學系矯治組/犯罪防治學系矯治組考古題總覽.html'],
+  ['國境警察學系（境管組）','國境警察學系境管組','國境警察學系境管組/國境警察學系境管組考古題總覽.html'],
+  ['國境警察學系（移民組）','國境警察學系移民組','國境警察學系移民組/國境警察學系移民組考古題總覽.html'],
+  ['行政管理學系','行政管理學系','行政管理學系/行政管理學系考古題總覽.html'],
+  ['法律學系','法律學系','法律學系/法律學系考古題總覽.html']
 ];
-function renderCats(id,data){
-  document.getElementById(id).innerHTML = data.map(c=>
-    `<a class="cat-item" href="${c[2]}"><span class="dept">${c[0]}</span><span class="pill">${c[1].toLocaleString()}</span></a>`
-  ).join('');
-}
-renderCats('groupA',GROUP_A);
-renderCats('groupB',GROUP_B);
 
-// 統計數字直接呈現（不做 count-up 動畫）
-function countUp(){
-  document.querySelectorAll('.hnum[data-target]').forEach(el=>{
-    el.textContent=(+el.dataset.target).toLocaleString();
+function renderCats(id,data,stats){
+  document.getElementById(id).innerHTML=data.map(function(c){
+    var count=stats&&stats[c[1]]?stats[c[1]].questions:null;
+    return '<a class="cat-item" href="'+c[2]+'"><span class="dept">'+c[0]+'</span><span class="pill">'+(count===null?'—':count.toLocaleString())+'</span></a>';
+  }).join('');
+}
+
+function applyStats(stats){
+  if(!stats||stats.schema_version!==1||stats.category_count!==17) throw new Error('首頁統計格式不符');
+  document.getElementById('statCategories').textContent=stats.category_count.toLocaleString();
+  document.getElementById('statPapers').textContent=stats.paper_count.toLocaleString();
+  document.getElementById('statQuestions').textContent=stats.question_count.toLocaleString();
+  document.getElementById('groupACount').textContent=stats.groups.A.questions.toLocaleString()+' 題';
+  document.getElementById('groupBCount').textContent=stats.groups.B.questions.toLocaleString()+' 題';
+  document.getElementById('searchCount').textContent=stats.searchable_question_count.toLocaleString()+' 題全文檢索（跨類科共用卷去重），依關鍵字、類科、年份篩選。';
+  renderCats('groupA',GROUP_A,stats.categories);
+  renderCats('groupB',GROUP_B,stats.categories);
+}
+
+function loadStats(){
+  renderCats('groupA',GROUP_A,null);renderCats('groupB',GROUP_B,null);
+  fetch('data/home-stats.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();}).then(applyStats).catch(function(err){
+    console.warn('首頁統計載入失敗',err);
+    document.getElementById('searchCount').textContent='全文搜尋可正常使用；首頁統計目前無法載入。';
   });
 }
 
-// theme — 全站共用 localStorage key「exam-dark」(true/false)，與類科總覽頁同步
 (function(){
-  const btn=document.getElementById('themeToggle');
-  const label=document.getElementById('themeLabel');
-  function apply(dark){
-    document.documentElement.setAttribute('data-theme',dark?'dark':'light');
-    label.textContent=dark?'淺色模式':'深色模式';
-    try{localStorage.setItem('exam-dark',dark);}catch(e){}
-  }
-  let saved=null; try{saved=localStorage.getItem('exam-dark');}catch(e){}
+  const btn=document.getElementById('themeToggle'),label=document.getElementById('themeLabel');
+  function apply(dark){document.documentElement.setAttribute('data-theme',dark?'dark':'light');label.textContent=dark?'淺色模式':'深色模式';try{localStorage.setItem('exam-dark',dark);}catch(e){}}
+  let saved=null;try{saved=localStorage.getItem('exam-dark');}catch(e){}
   apply(saved==='true'||(saved===null&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches));
-  btn.addEventListener('click',()=>{
-    apply(document.documentElement.getAttribute('data-theme')!=='dark');
-  });
+  btn.addEventListener('click',function(){apply(document.documentElement.getAttribute('data-theme')!=='dark');});
 })();
 
-function runInit(){ countUp(); }
-if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',runInit);
-else runInit();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',loadStats);else loadStats();
 </script>
-<script>
-if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').catch(function(){}); }
-</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(function(){});}</script>
 </body>
 </html>
