@@ -77,7 +77,7 @@ jobs:
       - name: Apply all audited fixes
         run: python scripts/remediate_115_audit.py --apply
 
-      - name: Remove temporary bootstrap files
+      - name: Remove temporary bootstrap files from verified output
         run: |
           rm -f scripts/.remediation.part00 scripts/.remediation.part01 scripts/.remediation.part02 scripts/.remediation.part03
           rm -f scripts/.patch_115_english.py scripts/.patch_115_idempotence.py
@@ -114,16 +114,29 @@ jobs:
       - name: Confirm remediation is idempotent
         run: python scripts/remediate_115_audit.py
 
-      - name: Commit verified remediation
+      - name: Commit verified non-workflow remediation
         env:
           HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          # GITHUB_TOKEN cannot push workflow changes. Restore only workflow and
+          # bootstrap paths; the connected GitHub integration applies those
+          # separately after this verified data/code commit lands.
+          git restore --source=HEAD -- .github/workflows
+          git restore --source=HEAD -- \
+            scripts/.remediation.part00 \
+            scripts/.remediation.part01 \
+            scripts/.remediation.part02 \
+            scripts/.remediation.part03 \
+            scripts/.patch_115_english.py \
+            scripts/.patch_115_idempotence.py
+
           git add -A
           if git diff --cached --quiet; then
-            echo 'No remediation changes to commit.'
+            echo 'No non-workflow remediation changes to commit.'
             exit 0
           fi
-          git commit -m 'fix: complete 115 exam audit remediation'
+          git commit -m 'fix: complete 115 exam data and frontend remediation'
           git push origin "HEAD:${HEAD_BRANCH}"
