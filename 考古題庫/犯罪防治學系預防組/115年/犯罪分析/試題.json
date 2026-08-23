@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "exam_type": "115",
+    "exam_name": "警察人員考試",
+    "level": "三等",
+    "subject": "犯罪分析",
+    "exam_time": "2 小時 座號：",
+    "code": "20570"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "何謂危險評估(risk assessment)?並請依據 Bonta(1996)及 Andrews,\nBonta&Wormith(2006)之見解,說明危險評估之四代發展內涵。(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "請說明取樣方法中滾雪球法(snowballsampling)之具體做法與實施時應\n注意之事項。(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "娛樂用大麻(recreationalcannabis)與醫療用大麻(medical cannabis)在\n主要成分與作用上有何差異?並說明濫用娛樂性大麻可能造成之社會\n衝擊與個人身心危害。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "孤狼(lone wolf)恐怖攻擊之意涵與主要特徵為何?並依學者 Hamm 及\nSpaaij(2015)之見解,說明孤狼恐怖攻擊之激進化過程。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 115,
+  "category": "犯罪防治學系預防組",
+  "subject": "犯罪分析",
+  "source_pdf": "考古題庫/犯罪防治學系預防組/115年/犯罪分析/試題.pdf",
+  "file_type": "試題",
+  "_quality": {
+    "score": 1.0,
+    "issues": [],
+    "strategies_tried": [
+      "pdfplumber"
+    ]
+  }
+}
