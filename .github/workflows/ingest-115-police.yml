@@ -15,6 +15,7 @@ on:
       - scripts/parse/.recover_115_missing_choices.py.gz.b64
       - scripts/parse/repair_115_choice_blocks.py
       - scripts/parse/sanitize_115_pua.py
+      - scripts/parse/validate_115_declared_choice_count.py
       - scripts/audit/.finalize_115_import.py.gz.b64
       - .gitignore
 
@@ -71,6 +72,7 @@ jobs:
           python -m py_compile scripts/parse/recover_115_missing_choices.py
           python -m py_compile scripts/parse/repair_115_choice_blocks.py
           python -m py_compile scripts/parse/sanitize_115_pua.py
+          python -m py_compile scripts/parse/validate_115_declared_choice_count.py
           python -m py_compile scripts/audit/finalize_115_import.py
 
       - name: Set up Python
@@ -143,6 +145,9 @@ jobs:
 
       - name: Sanitize known PUA characters
         run: python scripts/parse/sanitize_115_pua.py --root 考古題庫
+
+      - name: Validate official declared choice counts
+        run: python scripts/parse/validate_115_declared_choice_count.py --root 考古題庫
 
       - name: Normalize and audit import
         run: python scripts/audit/finalize_115_import.py --root .
