@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>類科考古題｜三等警察特考</title>
+<meta name="description" content="依最新題庫索引動態瀏覽三等警察特考各類科歷年考古題。">
+<meta name="theme-color" content="#f0ece6">
+<style>
+:root{--bg:#f5f1e8;--card:#fff;--border:#e5e0d8;--text:#2d2a26;--muted:#78716c;--primary:#4a7c5e;--soft:#e8f0ea;--blue:#2563eb;--blue-soft:#e6edfd}*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text)}a{color:inherit;text-decoration:none}.wrap{max-width:960px;margin:auto;padding:0 20px}.hero{background:#f0ece6;border-bottom:1px solid var(--border);padding:28px 0 34px}.back{display:inline-block;background:var(--card);border:1px solid var(--border);padding:7px 12px;border-radius:7px;color:var(--muted);font-size:14px}.hero h1{font-size:34px;margin:20px 0 8px}.lead{color:var(--muted);margin:0}.controls{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.controls select,.controls input{font:inherit;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 12px}.controls input{flex:1;min-width:220px}.summary{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:14px 16px;margin-bottom:18px;color:var(--muted)}.summary b{color:var(--text)}.results{display:flex;flex-direction:column;gap:12px}.card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:18px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}.tag{font-size:12px;font-weight:700;padding:4px 9px;border-radius:6px;background:#faf9f6;border:1px solid var(--border);color:var(--muted)}.tag.year{background:var(--blue-soft);color:var(--blue);border:none}.tag.type{background:var(--soft);color:var(--primary);border:none}.stem{font-size:16px;font-weight:600;line-height:1.7}.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;margin-top:12px}.opt{font-size:14px;color:var(--muted);padding:8px 10px;border-radius:7px;background:#fbfaf7}.answer{margin-top:12px;color:var(--primary);font-weight:700}.more{display:block;margin:22px auto 40px;border:1px solid var(--border);background:var(--card);color:var(--primary);font:inherit;font-weight:700;padding:10px 24px;border-radius:8px}.empty{text-align:center;background:var(--card);border:1px dashed var(--border);padding:38px;border-radius:9px;color:var(--muted)}@media(max-width:600px){.hero h1{font-size:27px}.opts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><a class="back" href="index.html">← 回到首頁</a><h1 id="title">類科考古題</h1><p class="lead" id="lead">載入最新題庫中…</p></div></header>
+<main class="wrap">
+<div class="controls"><select id="year"><option value="">全部年份</option></select><select id="subject"><option value="">全部科目</option></select><input id="q" type="search" placeholder="在此類科內搜尋題目…"></div>
+<div class="summary" id="summary">載入中…</div><div class="results" id="results"></div><button class="more" id="more" hidden>載入更多</button>
+</main>
+<script>
+(function(){
+'use strict';
+var PAGE=80, shown=0, rows=[], filtered=[];
+var params=new URLSearchParams(location.search), cat=params.get('cat')||'';
+function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function val(cols,key,i){return cols[key]&&cols[key][i]!=null?cols[key][i]:''}
+function renderCard(r){var h='<article class="card"><div class="tags"><span class="tag year">'+esc(r.yr)+' 年</span><span class="tag">'+esc(r.sub)+'</span><span class="tag type">'+(r.type==='choice'?'選擇題':'申論題')+'</span><span class="tag">第 '+esc(r.no)+' 題</span></div><div class="stem">'+esc(r.stem)+'</div>';if(r.type==='choice'){h+='<div class="opts">';['A','B','C','D'].forEach(function(k){if(r['opt'+k])h+='<div class="opt"><b>'+k+'.</b> '+esc(r['opt'+k])+'</div>'});h+='</div>';if(r.ans)h+='<div class="answer">答案：'+esc(r.ans)+'</div>'}return h+'</article>'}
+function apply(){var y=document.getElementById('year').value,s=document.getElementById('subject').value,q=document.getElementById('q').value.trim().toLowerCase();filtered=rows.filter(function(r){if(y&&String(r.yr)!==y)return false;if(s&&r.sub!==s)return false;if(q&&((r.stem+' '+r.sub+' '+r.optA+' '+r.optB+' '+r.optC+' '+r.optD).toLowerCase().indexOf(q)<0))return false;return true});shown=0;document.getElementById('results').innerHTML='';document.getElementById('summary').innerHTML='<b>'+esc(cat)+'</b> · 找到 <b>'+filtered.length.toLocaleString()+'</b> 題';more()}
+function more(){var end=Math.min(shown+PAGE,filtered.length),html='';for(var i=shown;i<end;i++)html+=renderCard(filtered[i]);if(!html&&shown===0)html='<div class="empty">目前沒有符合條件的題目。</div>';document.getElementById('results').insertAdjacentHTML('beforeend',html);shown=end;document.getElementById('more').hidden=shown>=filtered.length}
+if(!cat){document.getElementById('lead').textContent='網址缺少類科參數';document.getElementById('summary').textContent='請由首頁選擇類科。';return}
+document.title=cat+'考古題｜三等警察特考';document.getElementById('title').textContent=cat+'考古題';
+fetch('data/search-index.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(function(data){var c=data.columns||{},n=(c.cat||[]).length;for(var i=0;i<n;i++){if(val(c,'cat',i)!==cat)continue;rows.push({yr:val(c,'yr',i),sub:val(c,'sub',i),no:val(c,'no',i),type:val(c,'type',i),stem:val(c,'stem',i),optA:val(c,'optA',i),optB:val(c,'optB',i),optC:val(c,'optC',i),optD:val(c,'optD',i),ans:val(c,'ans',i)})}var years=[...new Set(rows.map(function(r){return r.yr}))].sort(function(a,b){return b-a}),subs=[...new Set(rows.map(function(r){return r.sub}))].sort();years.forEach(function(v){var o=document.createElement('option');o.value=String(v);o.textContent=v+' 年';document.getElementById('year').appendChild(o)});subs.forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;document.getElementById('subject').appendChild(o)});document.getElementById('lead').textContent=(years.length?Math.min.apply(null,years)+'–'+Math.max.apply(null,years)+' 年 · ':'')+rows.length.toLocaleString()+' 題，資料直接來自最新搜尋索引';apply()}).catch(function(e){document.getElementById('lead').textContent='題庫載入失敗';document.getElementById('summary').textContent=e.message;document.getElementById('results').innerHTML='<div class="empty">請重新整理頁面，或稍後再試。</div>'});
+['year','subject'].forEach(function(id){document.getElementById(id).addEventListener('change',apply)});document.getElementById('q').addEventListener('input',apply);document.getElementById('more').addEventListener('click',more);
+})();
+</script>
+</body></html>
