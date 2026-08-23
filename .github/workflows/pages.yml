@@ -31,6 +31,9 @@ jobs:
       - name: Generate homepage stats
         run: python scripts/build_home_stats.py
 
+      - name: Rebuild full category pages
+        run: python scripts/build_category_pages.py
+
       - name: Generate search index
         run: python scripts/build_search_index.py
 
@@ -45,6 +48,7 @@ jobs:
           python scripts/build_home_stats.py --check
           python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
           node --check 考古題網站/sw.js
+          node --check 考古題網站/js/app.js
           node --check 考古題網站/analytics-chart.js
           node --check 考古題網站/analytics-chart-data.js
 
@@ -56,5 +60,3 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
-
-# Touch this workflow to force a fresh deployment after the 115-year data rollout.

@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.5.0';
+var CACHE_VERSION = 'v1.6.0';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -7,6 +7,7 @@ var DYNAMIC_CACHE = 'dynamic-' + CACHE_VERSION;
 var CORE_ASSETS = [
   './',
   './index.html',
+  './category.html',
   './analytics.html',
   './analytics-chart.js',
   './analytics-chart-data.js',
@@ -30,7 +31,7 @@ self.addEventListener('install', function(event) {
   );
 });
 
-/* activate: clean old caches */
+/* activate: clean old caches, including the temporary simplified category pages */
 self.addEventListener('activate', function(event) {
   var validCaches = [CORE_CACHE, FONT_CACHE, CDN_CACHE, DYNAMIC_CACHE];
   event.waitUntil(
