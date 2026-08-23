@@ -1,39 +1,50 @@
-/* === quiz-engine.js — 模擬考試引擎 === */
-/* 依賴：search-engine.js（需先載入 search-index.json） */
+/* 可重用模擬考引擎；依賴 SearchEngine，建議先載入 AnswerUtils。 */
 (function (window) {
   'use strict';
 
   var state = {
-    questions: [],    // 本輪抽到的題目
-    answers: {},      // { idx: chosenLetter }
-    marked: {},       // { idx: true } 標記回顧
-    current: 0,       // 當前題號 index
-    timer: null,      // setInterval id
-    secondsLeft: 0,   // 剩餘秒數
-    totalSeconds: 0,  // 總秒數
+    questions: [],
+    answers: {},
+    marked: {},
+    current: 0,
+    timer: null,
+    secondsLeft: 0,
+    totalSeconds: 0,
     started: false,
-    finished: false,
+    finished: false
   };
 
-  /* ── 抽題 ── */
+  function utils() {
+    if (window.AnswerUtils) return window.AnswerUtils;
+    return {
+      isBonus: function (answer) { return answer === '送分' || answer === '*'; },
+      isValid: function (answer) { return answer === '送分' || answer === '*' || /[A-D]/.test(String(answer || '')); },
+      isCorrect: function (chosen, answer) {
+        if (answer === '送分' || answer === '*') return true;
+        return String(answer || '').match(/[A-D]/g).indexOf(chosen) !== -1;
+      }
+    };
+  }
+
   function prepareQuiz(opts) {
-    // opts: { cat, yr, sub, count }
+    opts = opts || {};
     var filters = {
       cat: opts.cat || '',
       yr: opts.yr ? parseInt(opts.yr, 10) : null,
       sub: opts.sub || '',
-      type: 'choice',  // 模擬考試只出選擇題
-      ans: '',          // 不篩選答案
+      type: 'choice',
+      ans: ''
     };
-
-    var pool = SearchEngine.search('', filters, 9999);
-
-    // 隨機抽題
+    var pool = SearchEngine.search('', filters, 99999).filter(function (question) {
+      return question.optA && question.optB && question.optC && question.optD && utils().isValid(question.ans);
+    });
     var count = Math.min(opts.count || 20, pool.length);
     var shuffled = pool.slice();
-    for (var i = shuffled.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp;
+    if (opts.random !== false) {
+      for (var i = shuffled.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp;
+      }
     }
     state.questions = shuffled.slice(0, count);
     state.answers = {};
@@ -41,17 +52,15 @@
     state.current = 0;
     state.started = false;
     state.finished = false;
-
     return { total: state.questions.length, poolSize: pool.length };
   }
 
-  /* ── 開始考試 ── */
   function startQuiz(minutes) {
     state.started = true;
     state.finished = false;
-    state.totalSeconds = minutes * 60;
+    state.totalSeconds = Math.max(0, Number(minutes) || 0) * 60;
     state.secondsLeft = state.totalSeconds;
-    _startTimer();
+    if (state.totalSeconds > 0) _startTimer();
   }
 
   function _startTimer() {
@@ -64,92 +73,90 @@
         state.timer = null;
         finishQuiz();
       }
-      if (typeof window.onTick === 'function') {
-        window.onTick(state.secondsLeft, state.totalSeconds);
-      }
+      if (typeof window.onTick === 'function') window.onTick(state.secondsLeft, state.totalSeconds);
     }, 1000);
   }
 
-  /* ── 作答 ── */
   function answer(idx, letter) {
-    if (state.finished) return;
-    state.answers[idx] = letter;
+    if (state.finished || idx < 0 || idx >= state.questions.length) return;
+    if (!/^[A-D]$/.test(String(letter || '').toUpperCase())) return;
+    state.answers[idx] = String(letter).toUpperCase();
   }
 
-  /* ── 標記回顧 ── */
   function toggleMark(idx) {
+    if (idx < 0 || idx >= state.questions.length) return false;
     if (state.marked[idx]) delete state.marked[idx];
     else state.marked[idx] = true;
+    return !!state.marked[idx];
   }
 
-  /* ── 導航 ── */
   function goTo(idx) {
     if (idx >= 0 && idx < state.questions.length) state.current = idx;
   }
   function next() { goTo(state.current + 1); }
   function prev() { goTo(state.current - 1); }
 
-  /* ── 交卷 ── */
   function finishQuiz() {
     if (state.timer) { clearInterval(state.timer); state.timer = null; }
     state.finished = true;
-
-    var correct = 0, wrong = 0, unanswered = 0;
+    var correct = 0, wrong = 0, unanswered = 0, bonus = 0;
     var wrongList = [];
 
-    state.questions.forEach(function (q, i) {
-      var chosen = state.answers[i];
-      if (!chosen) { unanswered++; return; }
-      if (chosen === q.ans) {
+    state.questions.forEach(function (question, index) {
+      var chosen = state.answers[index];
+      if (utils().isBonus(question.ans)) {
+        bonus++;
+        correct++;
+      } else if (!chosen) {
+        unanswered++;
+        wrongList.push({ idx: index, question: question, chosen: null });
+      } else if (utils().isCorrect(chosen, question.ans)) {
         correct++;
       } else {
         wrong++;
-        wrongList.push({ idx: i, question: q, chosen: chosen });
+        wrongList.push({ idx: index, question: question, chosen: chosen });
       }
     });
 
-    var elapsed = state.totalSeconds - state.secondsLeft;
-
+    var elapsed = state.totalSeconds > 0 ? state.totalSeconds - state.secondsLeft : 0;
     return {
       correct: correct,
       wrong: wrong,
       unanswered: unanswered,
+      bonus: bonus,
       total: state.questions.length,
-      pct: state.questions.length > 0 ? Math.round(correct / state.questions.length * 100) : 0,
+      pct: state.questions.length ? Math.round(correct / state.questions.length * 100) : 0,
       elapsed: elapsed,
-      wrongList: wrongList,
+      wrongList: wrongList
     };
   }
 
-  /* ── 讀取 ── */
   function getState() { return state; }
   function getQuestion(idx) { return state.questions[idx] || null; }
-  function getCurrentQuestion() { return state.questions[state.current] || null; }
+  function getCurrentQuestion() { return getQuestion(state.current); }
   function getAnswer(idx) { return state.answers[idx]; }
   function isMarked(idx) { return !!state.marked[idx]; }
 
-  /* ── 歷史紀錄 ── */
   function saveHistory(result) {
     try {
-      var history = JSON.parse(localStorage.getItem('exam-quiz-history') || '[]');
+      var history = JSON.parse(localStorage.getItem('exam-quiz-history-v2') || '[]');
       history.unshift({
         date: new Date().toISOString(),
         correct: result.correct,
         total: result.total,
         pct: result.pct,
         elapsed: result.elapsed,
+        bonus: result.bonus || 0
       });
-      if (history.length > 50) history = history.slice(0, 50);
-      localStorage.setItem('exam-quiz-history', JSON.stringify(history));
-    } catch (e) {}
+      localStorage.setItem('exam-quiz-history-v2', JSON.stringify(history.slice(0, 50)));
+    } catch (error) {}
   }
 
   function getHistory() {
-    try { return JSON.parse(localStorage.getItem('exam-quiz-history') || '[]'); }
-    catch (e) { return []; }
+    try { return JSON.parse(localStorage.getItem('exam-quiz-history-v2') || '[]'); }
+    catch (error) { return []; }
   }
 
-  /* ── 匯出 ── */
   window.QuizEngine = {
     prepareQuiz: prepareQuiz,
     startQuiz: startQuiz,
@@ -165,6 +172,6 @@
     getAnswer: getAnswer,
     isMarked: isMarked,
     saveHistory: saveHistory,
-    getHistory: getHistory,
+    getHistory: getHistory
   };
 })(window);
