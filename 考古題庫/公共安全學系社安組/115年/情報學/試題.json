@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "exam_type": "115",
+    "exam_name": "公務人員特種考試警察人員考試",
+    "level": "三等",
+    "subject": "情報學",
+    "exam_time": "2 小時 座號：",
+    "code": "20430",
+    "year": 115,
+    "official_exam_code": "115060",
+    "official_category_code": "204",
+    "official_category": "公共安全人員",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=204&s=1209&q=1",
+    "source_sha256": "d6cdacdbc26634c5c4b51d2b824e0db6024d63dbf3aea278a284dabd73370fff"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "我國「國家情報工作法」第 3 條,對情報機關(Intelligencecommunity)\n與視同情報機關做出明確定義;美國國家情報總監辦公室(The office of\nthe Director of National Intelligence),也經常以 Intelligence community 指\n涉整體情報工作與組織範疇。請說明 Intelligencecommunity 該專業用詞,\n當其既指政府公務機關彼此關係,又涉及需要公私協力進行情報工作時\n的具體內涵為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "情報工作向來與謀略作為互為體用,請就當前合作打擊跨境犯罪,如何\n應用「大謀謀國,小謀謀身」觀念,實踐情報工作?(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "常見中共透過惡意影響力行動(Malign influence operations),遂行對臺\n與涉外情報工作,美國國家情報總監辦公室更成立惡意影響力行動中心\n(The Foreign Malign Influence Center)以積極應處。請說明當前我國國\n家安全利益受中共惡意影響力行動之主要危害態樣為何?(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "2026 年 5 月 1 日美國白宮發布「2026 年美國防制恐怖主義戰略報告書」\n(United States Counterterrorism Strategy 2026),其中指出涉毒恐怖分子\n(Narcoterrorists)已成為當前美國首要威脅。事實上,涉毒恐怖分子危\n害,已對全球情報工作構成新興挑戰。基此,請加以說明其新興挑戰為\n何?(25 分)",
+      "section": null
+    }
+  ],
+  "year": 115,
+  "category": "公共安全學系社安組",
+  "subject": "情報學",
+  "source_pdf": "考古題庫/公共安全學系社安組/115年/情報學/試題.pdf",
+  "file_type": "試題",
+  "_quality": {
+    "score": 1.0,
+    "issues": [],
+    "strategies_tried": [
+      "pdfplumber"
+    ]
+  }
+}

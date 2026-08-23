@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "exam_type": "115",
+    "exam_name": "公務人員特種考試警察人員考試",
+    "level": "三等",
+    "subject": "犯罪學與犯罪預防",
+    "exam_time": "2 小時 座號：",
+    "code": "20530",
+    "year": 115,
+    "official_exam_code": "115060",
+    "official_category_code": "205",
+    "official_category": "犯罪防治人員預防組",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=205&s=1102&q=1",
+    "source_sha256": "265f05b2101516f839f425e4bfa0253875ffda35a6d9f941e077121925c23562"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "Akers 在 1970 年代發展差別增強理論(differential reinforcement theory),\n此理論修正 Sutherland 的差別接觸理論、融入 Skinner 的操作制約與\nBandura 的社會學習理論。該理論引述操作制約觀點,認為人們學習社\n會行為會受其結果所影響,行為因受到獎賞或避免懲罰而受到增強,它\n也認為犯罪行為是透過學習而來的,其核心在於行為受到增強(獎賞)\n或懲罰的結果。差別增強理論主要包含四個元素概念來解釋行為如何被\n選擇與持續,請說明這四個元素概念與主張。(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "Felson 和 Clarke 所提出的新機會理論(new opportunitytheories)整合了\n日常活動理論、犯罪型態理論與理性選擇理論三個理論架構,這些理論\n共同強調「機會」在犯罪發生過程中的核心角色。請說明新機會理論中\n關於機會與犯罪的十項原則,並運用新機會理論的觀點解釋詐欺被害的\n可能成因。(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "Hagan 曾經提出權力控制理論(power control theory),用以解釋階級結\n構、性別與青少年偏差行為之關係,同時也詮釋女性從事犯罪及其他非\n法活動的原因,請說明權力控制理論的核心要點與其理論的實證適用\n性。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "犯罪預防是指預防、控制與減少犯罪行為之發生,公共衛生領域所採用\n之「三級預防策略」(初級、次級、三級),亦可作為犯罪預防之思維模\n式。請說明三級預防策略分別如何應用於犯罪預防,並請舉例說明「情\n境犯罪預防」(situational crime prevention)所提之 25 項策略中,可如何\n對應並運用於此三級預防框架中。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 115,
+  "category": "犯罪防治學系預防組",
+  "subject": "犯罪學與犯罪預防",
+  "source_pdf": "考古題庫/犯罪防治學系預防組/115年/犯罪學與犯罪預防/試題.pdf",
+  "file_type": "試題",
+  "_quality": {
+    "score": 1.0,
+    "issues": [],
+    "strategies_tried": [
+      "pdfplumber"
+    ]
+  }
+}
