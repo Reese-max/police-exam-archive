@@ -8,6 +8,7 @@ on:
       - .github/workflows/import-115-police-third.yml
       - scripts/download/import_115_police_third.py
       - scripts/parse/repair_115_police_third.py
+      - scripts/parse/clean_115_metadata.py
       - scripts/audit/validate_115_police_third_strict.py
       - tests/test_data_quality.py
       - "考古題庫/*/115年/**/試題.json"
@@ -65,6 +66,12 @@ jobs:
         continue-on-error: true
         run: python scripts/parse/repair_115_police_third.py
 
+      - name: Remove leaked page metadata from question text
+        id: clean
+        if: always()
+        continue-on-error: true
+        run: python scripts/parse/clean_115_metadata.py
+
       - name: Validate the 115 import
         id: validate
         if: always()
@@ -103,12 +110,14 @@ jobs:
           git commit -m "data: import 115 third-class police exam questions"
           git push origin HEAD:"${TARGET_BRANCH}"
 
-      - name: Enforce repair, validation, and test results
+      - name: Enforce repair, cleanup, validation, and test results
         if: always()
         run: |
           echo "repair=${{ steps.repair.outcome }}"
+          echo "clean=${{ steps.clean.outcome }}"
           echo "validate=${{ steps.validate.outcome }}"
           echo "tests=${{ steps.tests.outcome }}"
           test "${{ steps.repair.outcome }}" = "success"
+          test "${{ steps.clean.outcome }}" = "success"
           test "${{ steps.validate.outcome }}" = "success"
           test "${{ steps.tests.outcome }}" = "success"
