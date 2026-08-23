@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from scripts.parse.answer_extractor import (  # noqa: E402
+    _declared_single_choice_count,
     find_answer_pdf,
     merge_answers_into_questions,
     normalize_answer,
@@ -83,6 +84,12 @@ class TestParseAnswerText:
 
     def test_empty_text(self):
         assert parse_answer_text("") == {}
+
+    def test_declared_single_choice_count(self):
+        text = "單選題數：25題 單選每題配分：2.00分"
+        assert _declared_single_choice_count(text) == 25
+        assert _declared_single_choice_count("單選題數: 60 題") == 60
+        assert _declared_single_choice_count("沒有題數宣告") is None
 
 
 class TestParseAnswerTable:
