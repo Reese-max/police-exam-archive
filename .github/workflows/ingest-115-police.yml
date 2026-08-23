@@ -16,6 +16,7 @@ on:
       - scripts/parse/repair_115_choice_blocks.py
       - scripts/parse/sanitize_115_pua.py
       - scripts/parse/validate_115_declared_choice_count.py
+      - scripts/parse/repair_115_text_quality.py
       - scripts/audit/.finalize_115_import.py.gz.b64
       - .gitignore
 
@@ -73,6 +74,7 @@ jobs:
           python -m py_compile scripts/parse/repair_115_choice_blocks.py
           python -m py_compile scripts/parse/sanitize_115_pua.py
           python -m py_compile scripts/parse/validate_115_declared_choice_count.py
+          python -m py_compile scripts/parse/repair_115_text_quality.py
           python -m py_compile scripts/audit/finalize_115_import.py
 
       - name: Set up Python
@@ -148,6 +150,9 @@ jobs:
 
       - name: Validate official declared choice counts
         run: python scripts/parse/validate_115_declared_choice_count.py --root 考古題庫
+
+      - name: Repair and diagnose text quality
+        run: python scripts/parse/repair_115_text_quality.py --root 考古題庫
 
       - name: Normalize and audit import
         run: python scripts/audit/finalize_115_import.py --root .
