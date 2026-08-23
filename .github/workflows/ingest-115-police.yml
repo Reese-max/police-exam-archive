@@ -19,6 +19,12 @@ on:
       - scripts/parse/validate_115_declared_choice_count.py
       - scripts/parse/repair_115_text_quality.py
       - scripts/build_home_stats.py
+      - scripts/build_analytics.py
+      - scripts/sync_analytics_frontend.py
+      - 考古題網站/_gen_data.js
+      - 考古題網站/analytics.html
+      - 考古題網站/analytics-chart.js
+      - 考古題網站/analytics-chart-data.js
       - scripts/audit/.finalize_115_import.py.gz.b64
       - .gitignore
 
@@ -79,6 +85,7 @@ jobs:
           python -m py_compile scripts/parse/validate_115_declared_choice_count.py
           python -m py_compile scripts/parse/repair_115_text_quality.py
           python -m py_compile scripts/build_home_stats.py
+          python -m py_compile scripts/sync_analytics_frontend.py
           python -m py_compile scripts/audit/finalize_115_import.py
 
       - name: Set up Python
@@ -164,6 +171,11 @@ jobs:
       - name: Rebuild homepage stats
         run: python scripts/build_home_stats.py
 
+      - name: Rebuild analytics frontend
+        run: |
+          python scripts/build_analytics.py --output /tmp/analytics.json
+          python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json
+
       - name: Run full data-quality suite
         run: python -m pytest tests/ -v --tb=short
 
@@ -172,6 +184,7 @@ jobs:
           python scripts/build_home_stats.py --check
           python scripts/build_search_index.py --output /tmp/search-index.json
           python scripts/build_analytics.py --output /tmp/analytics.json
+          python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
 
       - name: Show import report
         run: |
@@ -207,3 +220,4 @@ jobs:
             考古題庫/115_import_manifest.json
             考古題庫/dataset_manifest.json
             考古題網站/data/home-stats.json
+            考古題網站/analytics-chart-data.js

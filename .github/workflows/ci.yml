@@ -37,3 +37,6 @@ jobs:
 
       - name: Verify analytics generation
         run: python scripts/build_analytics.py --output /tmp/analytics.json
+
+      - name: Verify analytics frontend is current
+        run: python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
