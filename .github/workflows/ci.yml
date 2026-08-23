@@ -40,3 +40,10 @@ jobs:
 
       - name: Verify analytics frontend is current
         run: python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
+
+      - name: Verify frontend JavaScript syntax
+        run: |
+          node --check 考古題網站/sw.js
+          node --check 考古題網站/analytics-chart.js
+          node --check 考古題網站/analytics-chart-data.js
+          node --check 考古題網站/_gen_data.js
