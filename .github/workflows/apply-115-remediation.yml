@@ -106,8 +106,20 @@ jobs:
           test -s /tmp/search-index.json
           test -s /tmp/analytics.json
 
-      - name: Confirm remediation is idempotent
-        run: python scripts/remediate_115_audit.py
+      - name: Diagnose and require remediation idempotence
+        shell: bash
+        run: |
+          set -euo pipefail
+          target='scripts/parse/repair_115_choice_blocks.py'
+          cp "$target" /tmp/repair.before.py
+          if python scripts/remediate_115_audit.py; then
+            echo 'Remediation is idempotent.'
+            exit 0
+          fi
+          python scripts/remediate_115_audit.py --apply
+          echo '--- Exact second-application diff ---'
+          diff -u /tmp/repair.before.py "$target" || true
+          exit 1
 
       - name: Commit verified remediation
         env:
