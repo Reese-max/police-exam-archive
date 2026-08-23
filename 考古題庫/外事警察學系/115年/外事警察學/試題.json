@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "exam_type": "115",
+    "exam_name": "公務人員特種考試警察人員考試",
+    "level": "三等",
+    "subject": "外事警察學",
+    "exam_time": "2 小時 座號：",
+    "code": "20260",
+    "year": 115,
+    "official_exam_code": "115060",
+    "official_category_code": "202",
+    "official_category": "外事警察人員(選試英語)",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=202&s=0912&q=1",
+    "source_sha256": "ed6326af6bdc04b2e547f36e9b7b3cabcf7806159e73d6e428481e5134efeea0"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "民眾因為求職、出國旅行、求學、移民等因素,常需要至警察機關申請\n警察刑事紀錄證明(簡稱警紀證,俗稱良民證)。試問:依據規定,警察\n機關不核發警紀證予申請人之情形有那些?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "內政部警政署「警察機關使用通譯注意事項」旨在保障不通曉國語或聾\n啞人士的司法權益,規定警察詢問時,若有需求應選任通譯。試問:警\n察機關使用通譯時,應事先告知通譯,要遵循那些通譯倫理規範事項?\n(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "人口販運是國際社會公認惡性重大、嚴重侵害人權及殘害生命的萬國公\n罪。人口販運的認定,依據人口販運被害人鑑別的三大核心原則及參考\n指標,進行綜合判斷。試問:人口販運被害人鑑別的三大核心原則為何?\n(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "外事警察是警察機關涉外治安案件處理的主責窗口。試問:當前涉外治\n安案件區分類型及處理通報時限規定為何?(25 分)",
+      "section": null
+    }
+  ],
+  "year": 115,
+  "category": "外事警察學系",
+  "subject": "外事警察學",
+  "source_pdf": "考古題庫/外事警察學系/115年/外事警察學/試題.pdf",
+  "file_type": "試題",
+  "_quality": {
+    "score": 1.0,
+    "issues": [],
+    "strategies_tried": [
+      "pdfplumber"
+    ]
+  }
+}

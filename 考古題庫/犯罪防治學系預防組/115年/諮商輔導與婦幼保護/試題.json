@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "exam_type": "115",
+    "exam_name": "公務人員特種考試警察人員考試",
+    "level": "三等",
+    "subject": "諮商輔導與婦幼保護",
+    "exam_time": "2 小時 座號：",
+    "code": "20560",
+    "year": 115,
+    "official_exam_code": "115060",
+    "official_category_code": "205",
+    "official_category": "犯罪防治人員預防組",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=205&s=0805&q=1",
+    "source_sha256": "1f6fc7fd04e2cb213b3721f744936aecf611826ea99f915042ccc3e64f0c5e7c"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "1.以羅傑斯(Carl Rogers)的個案中心理論,說明何謂「有機體評價歷\n程」(organismic valuing process)及「無條件積極尊重」(unconditional\npositive regard)。2.小華嫉妒剛出生的妹妹受到長輩們的關愛,父母對他\n說「如果你不愛妹妹,我們也不愛你」。請說明此例中的「有機體評價歷\n程」及「無條件積極尊重」。(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "說明「修復式司法」的定義、應用場域,以及應用時須考量的議題。\n(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "說明何謂犯罪暴力類型中的「工具性暴力」、「反應性暴力」,以及犯罪暴\n力成因的「神經生物因素」。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "說明社會安全網對脆弱家庭、危機家庭的定義與家庭暴力成人保護案件\n之開案標準。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 115,
+  "category": "犯罪防治學系預防組",
+  "subject": "諮商輔導與婦幼保護",
+  "source_pdf": "考古題庫/犯罪防治學系預防組/115年/諮商輔導與婦幼保護/試題.pdf",
+  "file_type": "試題",
+  "_quality": {
+    "score": 1.0,
+    "issues": [],
+    "strategies_tried": [
+      "pdfplumber"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-23T04:27:13.254726+00:00",
+  "coverage": {
+    "first_year": 106,
+    "last_year": 115,
+    "years": [
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115
+    ]
+  },
+  "counts": {
+    "json_files": 2049,
+    "questions": 42518,
+    "choice": 36760,
+    "essay": 5758,
+    "categories": 49,
+    "subjects": 101
+  },
+  "latest_import": {
+    "year": 115,
+    "exam_code": "115060",
+    "official_page": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115060&y=2026",
+    "category_count": 13,
+    "subject_copies": 90,
+    "unique_files": 49,
+    "duplicate_files": 41
+  }
+}

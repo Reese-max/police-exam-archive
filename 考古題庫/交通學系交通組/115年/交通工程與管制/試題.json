@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "exam_type": "115",
+    "exam_name": "公務人員特種考試警察人員考試",
+    "level": "三等",
+    "subject": "交通工程與管制",
+    "exam_time": "2 小時 座號：",
+    "code": "20730",
+    "year": 115,
+    "official_exam_code": "115060",
+    "official_category_code": "207",
+    "official_category": "交通警察人員交通組",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=207&s=0916&q=1",
+    "source_sha256": "49ccb5666cc6cbb6790589bc1e8a1c543bd3d07f66a39b323ea72f86c53bf3aa"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "請回答下列有關交通號誌設計或交通控制之問題:\n長週期與短週期之交通號誌設計,對車流之運作有何影響?(8 分)\n號誌化交岔路口採用「閃光號誌」與「三色號誌」運作,對車流運作\n效率與安全有何差別?(8 分)\n何謂號誌連鎖之時差(offset)?理想之號誌連鎖時差(idealoffset)如\n何計算?(9 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "高速公路匝道管制之目的為何?(10 分)其實施之作法為何?(15 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "根據我國「道路交通安全規則」之規定,駕駛人行經沒有「紅黃綠/三色\n交通號誌管制」之交岔路口與他車交會時:\n如何判斷其所通行之道路為「幹線道」或「支線道」?(10 分)\n如何決定其行向(轉彎或直行)是否擁有優先通行路權?(10 分)\n「優先方」與「非優先方」各該採取何種因應動作?(5 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "請回答下列有關自由車流速率(Free-Flow Speed)之問題:\n自由車流速率(Free-Flow Speed)之定義為何?(8 分)\n影響自由車流速率之因素有那些?(8 分)\n在實務操作上,如何量測道路之自由車流速率?(9 分)",
+      "section": null
+    }
+  ],
+  "year": 115,
+  "category": "交通學系交通組",
+  "subject": "交通工程與管制",
+  "source_pdf": "考古題庫/交通學系交通組/115年/交通工程與管制/試題.pdf",
+  "file_type": "試題",
+  "_quality": {
+    "score": 1.0,
+    "issues": [],
+    "strategies_tried": [
+      "pdfplumber"
+    ]
+  }
+}

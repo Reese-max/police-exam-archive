@@ -43,16 +43,16 @@ class TestDataScale:
     """資料規模基本檢查"""
 
     def test_file_count(self):
-        assert len(ALL_FILES) == 2000, f"預期 2000 個非重複檔案，實際 {len(ALL_FILES)}"
+        assert len(ALL_FILES) == 2049, f"預期 2049 個非重複檔案，實際 {len(ALL_FILES)}"
 
     def test_total_questions(self):
-        assert len(ALL_QUESTIONS) == 41811, f"預期 41811 題，實際 {len(ALL_QUESTIONS)}"
+        assert len(ALL_QUESTIONS) == 42518, f"預期 42518 題，實際 {len(ALL_QUESTIONS)}"
 
     def test_choice_count(self):
-        assert len(CHOICE_QUESTIONS) == 36210, f"預期 36210 選擇題，實際 {len(CHOICE_QUESTIONS)}"
+        assert len(CHOICE_QUESTIONS) == 36760, f"預期 36760 選擇題，實際 {len(CHOICE_QUESTIONS)}"
 
     def test_essay_count(self):
-        assert len(ESSAY_QUESTIONS) == 5601, f"預期 5601 申論題，實際 {len(ESSAY_QUESTIONS)}"
+        assert len(ESSAY_QUESTIONS) == 5758, f"預期 5758 申論題，實際 {len(ESSAY_QUESTIONS)}"
 
 
 class TestStructuralIntegrity:
@@ -69,11 +69,11 @@ class TestStructuralIntegrity:
 
     def test_all_choice_have_valid_answer(self):
         """每個選擇題都有合法答案"""
-        valid_answers = {'A', 'B', 'C', 'D', '送分', 'C或D'}
+        valid_answer = re.compile(r'^[A-D](?:或[A-D])*$')
         invalid = []
         for fp, q in CHOICE_QUESTIONS:
             ans = q.get('answer', '')
-            if ans not in valid_answers:
+            if ans != '送分' and not valid_answer.fullmatch(ans):
                 invalid.append((fp, q.get('number'), ans))
         assert len(invalid) == 0, f"{len(invalid)} 題答案不合法: {invalid[:5]}"
 

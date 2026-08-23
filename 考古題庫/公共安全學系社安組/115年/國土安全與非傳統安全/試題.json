@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "exam_type": "115",
+    "exam_name": "公務人員特種考試警察人員考試",
+    "level": "三等",
+    "subject": "國土安全與非傳統安全",
+    "exam_time": "2 小時 座號：",
+    "code": "20460",
+    "year": 115,
+    "official_exam_code": "115060",
+    "official_category_code": "204",
+    "official_category": "公共安全人員",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=204&s=1203&q=1",
+    "source_sha256": "b41e4c9d6a0fb49dee31e3b9f634ea6435bbdd571f6ed761f3e76d0c33d1a568"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "國土安全及傳統國家安全概念有那些主要差異?就我國而言,可能面臨\n那些較嚴重或特殊之國土安全威脅?我國因應國土安全威脅的執法行\n為須遵守那些人權規範?(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "關鍵基礎設施防護可發揮何種維繫國土安全之功能?對我國而言,海事\n領域有那些關鍵基礎設施防護重點?針對此等重點,我國國內法上有那\n些因應規範?(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "能源安全被視為非傳統安全的主題,請由能源的種類、能源與國際衝突,\n說明一個國家如何達到能源安全的目標。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "環境安全的範疇多元,天然災害是環境安全與非傳統安全其中的一環,\n我國政府在災害防救,有「躍升災防力、調適智慧化」的願景,其中基\n本方針有三大主軸,請說明之。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 115,
+  "category": "公共安全學系社安組",
+  "subject": "國土安全與非傳統安全",
+  "source_pdf": "考古題庫/公共安全學系社安組/115年/國土安全與非傳統安全/試題.pdf",
+  "file_type": "試題",
+  "_quality": {
+    "score": 1.0,
+    "issues": [],
+    "strategies_tried": [
+      "pdfplumber"
+    ]
+  }
+}

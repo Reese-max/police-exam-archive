@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "exam_type": "115",
+    "exam_name": "公務人員特種考試警察人員考試",
+    "level": "三等",
+    "subject": "警政資訊管理與應用",
+    "exam_time": "2 小時 座號：",
+    "code": "20860",
+    "year": 115,
+    "official_exam_code": "115060",
+    "official_category_code": "208",
+    "official_category": "警察資訊管理人員",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=208&s=1309&q=1",
+    "source_sha256": "ae8d9e14252f8a4527f0f1bb1f86ed4d20f0b9bea63e132073d2d953d60b6be7"
+  },
+  "notes": [
+    "※注意：禁止使用電子計算器。",
+    "不必抄題，作答時請將試題題號及答案依照順序寫在試卷上，於本試題上作答者，不予計分。",
+    "本科目除專門名詞或數理公式外，應使用本國文字作答。"
+  ],
+  "sections": [],
+  "questions": [
+    {
+      "number": "一",
+      "type": "essay",
+      "stem": "現行警政資訊系統面臨日益嚴峻的駭客與網路攻擊。請解釋何謂「零信\n任(Zero Trust)」架構之核心原則,並說明應該如何將此架構應用於\n「M-Police 警用行動電腦」的網路管理,以強化資料存取安全。(25 分)",
+      "section": null
+    },
+    {
+      "number": "二",
+      "type": "essay",
+      "stem": "網路詐騙常利用虛擬貨幣作為洗錢工具。請說明現行警政系統在追蹤虛\n擬貨幣支付流向時所面臨的挑戰,並從「資通訊技術」與「警政作業程\n序」兩方面提出加強防堵的具體建議。(25 分)",
+      "section": null
+    },
+    {
+      "number": "三",
+      "type": "essay",
+      "stem": "在警政資訊管理中,「治安斑點圖」是強化治安作為的重要工具。請說明\n製作治安斑點圖至少需要那兩類關鍵資料,並說明斑點圖對第一線派出\n所勤務編排有何實質幫助。(25 分)",
+      "section": null
+    },
+    {
+      "number": "四",
+      "type": "essay",
+      "stem": "假設警察局欲開發一項針對「打擊電信詐欺」的即時情資整合平台。\n請評估使用傳統「系統開發生命週期(SDLC)」與「敏捷開發(Agile)」\n的適用性,並說明在此類高度變動的犯罪環境下,如何取捨這兩種開發\n方法。(25 分)",
+      "section": null
+    }
+  ],
+  "year": 115,
+  "category": "資訊管理學系",
+  "subject": "警政資訊管理與應用",
+  "source_pdf": "考古題庫/資訊管理學系/115年/警政資訊管理與應用/試題.pdf",
+  "file_type": "試題",
+  "_quality": {
+    "score": 1.0,
+    "issues": [],
+    "strategies_tried": [
+      "pdfplumber"
+    ]
+  }
+}
