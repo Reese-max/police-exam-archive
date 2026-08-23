@@ -1,0 +1,89 @@
+name: Merge 115 import after PR CI
+
+on:
+  push:
+    branches:
+      - data/add-115-police-exam
+    paths:
+      - .github/workflows/merge-115-after-ci.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+  actions: read
+
+jobs:
+  merge-after-green:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Locate the verified import pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 60); do
+            number=$(gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --head data/add-115-police-exam \
+              --base master \
+              --state open \
+              --json number \
+              --jq '.[0].number // empty')
+            if [ -n "$number" ]; then
+              echo "number=$number" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'No open 115 import pull request was created.' >&2
+          exit 1
+
+      - name: Wait until PR checks are registered
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 60); do
+            count=$(gh pr checks "$PR_NUMBER" \
+              --repo "$GITHUB_REPOSITORY" \
+              --json name \
+              --jq 'length' 2>/dev/null || echo 0)
+            if [ "$count" -gt 0 ]; then
+              echo "Registered checks: $count"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'No PR checks were registered.' >&2
+          exit 1
+
+      - name: Require every PR check to pass
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          gh pr checks "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --watch \
+            --interval 10 \
+            --fail-fast
+
+      - name: Squash merge verified 115 import
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          gh pr merge "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --squash \
+            --delete-branch \
+            --subject 'data: 收錄 115 年三等警察特考考古題'
