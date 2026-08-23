@@ -18,8 +18,10 @@ from typing import Dict, Iterable, List, Optional
 logger = logging.getLogger(__name__)
 
 _QUESTION_NUM_RE = re.compile(r"第\s*(\d{1,3})\s*題")
+# 多答案只允許明確分隔符（或／、／逗號／斜線）或無空白連寫（AB）。
+# 不能把標準答案列中的「A B C D」誤判成一題的多答案。
 _ANSWER_TOKEN_RE = re.compile(
-    r"送分|[A-DＡ-Ｄ](?:(?:\s*[或、,，/／]\s*|\s*)[A-DＡ-Ｄ]){0,3}"
+    r"送分|[A-DＡ-Ｄ](?:(?:\s*[或、,，/／]\s*)[A-DＡ-Ｄ]){1,3}|[A-DＡ-Ｄ]{1,4}"
 )
 _FULLWIDTH_TRANS = str.maketrans({
     "Ａ": "A", "Ｂ": "B", "Ｃ": "C", "Ｄ": "D",
