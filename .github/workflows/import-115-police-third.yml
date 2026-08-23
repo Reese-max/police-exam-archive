@@ -8,7 +8,7 @@ on:
       - .github/workflows/import-115-police-third.yml
       - scripts/download/import_115_police_third.py
       - scripts/parse/repair_115_police_third.py
-      - scripts/audit/validate_115_police_third.py
+      - scripts/audit/validate_115_police_third_strict.py
       - tests/test_data_quality.py
       - "考古題庫/*/115年/**/試題.json"
   workflow_dispatch:
@@ -69,7 +69,7 @@ jobs:
         id: validate
         if: always()
         continue-on-error: true
-        run: python scripts/audit/validate_115_police_third.py
+        run: python scripts/audit/validate_115_police_third_strict.py
 
       - name: Run repository tests
         id: tests
@@ -101,7 +101,6 @@ jobs:
             exit 0
           fi
           git commit -m "data: import 115 third-class police exam questions"
-          git pull --rebase origin "${TARGET_BRANCH}"
           git push origin HEAD:"${TARGET_BRANCH}"
 
       - name: Enforce repair, validation, and test results
