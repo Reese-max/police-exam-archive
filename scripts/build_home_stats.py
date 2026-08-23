@@ -114,6 +114,8 @@ def main() -> int:
             raise SystemExit(f"首頁統計檔不存在：{args.output}")
         current = args.output.read_text(encoding="utf-8")
         if current != rendered:
+            print("--- 應有首頁統計 ---")
+            print(rendered)
             raise SystemExit(
                 "首頁統計已過期；請執行 python scripts/build_home_stats.py 後提交變更"
             )
