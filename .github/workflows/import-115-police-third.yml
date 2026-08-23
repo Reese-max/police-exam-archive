@@ -1,14 +1,6 @@
 name: Import 115 police third-class exams
 
 on:
-  push:
-    branches:
-      - data/import-115-police-third
-    paths:
-      - .github/workflows/import-115-police-third.yml
-      - scripts/download/import_115_police_third.py
-      - scripts/parse/repair_115_police_third.py
-      - scripts/audit/validate_115_police_third.py
   pull_request:
     branches:
       - master
@@ -17,6 +9,8 @@ on:
       - scripts/download/import_115_police_third.py
       - scripts/parse/repair_115_police_third.py
       - scripts/audit/validate_115_police_third.py
+      - tests/test_data_quality.py
+      - "考古題庫/*/115年/**/試題.json"
   workflow_dispatch:
 
 permissions:
@@ -24,7 +18,7 @@ permissions:
 
 concurrency:
   group: import-115-police-third-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   import:
@@ -66,17 +60,21 @@ jobs:
             --manifest /tmp/parse_manifest_115.json \
             --log-level INFO
 
-      - name: Repair known PDF-layout edge cases
-        if: ${{ hashFiles('scripts/parse/repair_115_police_third.py') != '' }}
+      - name: Repair PDF-layout edge cases and apply official corrections
+        id: repair
+        continue-on-error: true
         run: python scripts/parse/repair_115_police_third.py
 
       - name: Validate the 115 import
         id: validate
+        if: always()
         continue-on-error: true
         run: python scripts/audit/validate_115_police_third.py
 
       - name: Run repository tests
+        id: tests
         if: always()
+        continue-on-error: true
         run: python -m pytest tests/ -q --tb=short
 
       - name: Remove ignored source PDFs and restore aggregate reports
@@ -103,10 +101,15 @@ jobs:
             exit 0
           fi
           git commit -m "data: import 115 third-class police exam questions"
+          git pull --rebase origin "${TARGET_BRANCH}"
           git push origin HEAD:"${TARGET_BRANCH}"
 
-      - name: Enforce validation result
-        if: always() && steps.validate.outcome != 'success'
+      - name: Enforce repair, validation, and test results
+        if: always()
         run: |
-          echo "115 import data was retained on the branch for diagnosis, but validation failed."
-          exit 1
+          echo "repair=${{ steps.repair.outcome }}"
+          echo "validate=${{ steps.validate.outcome }}"
+          echo "tests=${{ steps.tests.outcome }}"
+          test "${{ steps.repair.outcome }}" = "success"
+          test "${{ steps.validate.outcome }}" = "success"
+          test "${{ steps.tests.outcome }}" = "success"
