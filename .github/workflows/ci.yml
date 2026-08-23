@@ -29,6 +29,9 @@ jobs:
       - name: Run all tests
         run: python -m pytest tests/ -v --tb=short
 
+      - name: Verify homepage stats are current
+        run: python scripts/build_home_stats.py --check
+
       - name: Verify search index generation
         run: python scripts/build_search_index.py --output /tmp/search-index.json
 
