@@ -28,9 +28,9 @@ const CATEGORIES = cats.map((c, i) => ({
 const TREND_CATS = CATEGORIES.slice(0, 5).map(c => c.id);
 const KEYWORDS = (a.top_keywords || []).slice(0, 50).map(k => [k.word, k.count]);
 const STATS = {
-  total: a.stats.total_questions,
-  choice: a.stats.choice_questions,
-  essay: a.stats.essay_questions,
+  total: a.stats.total,
+  choice: a.stats.choice,
+  essay: a.stats.essay,
   categories: a.stats.categories,
   subjects: a.stats.subjects,
   firstYear: Math.min(...a.stats.years),
