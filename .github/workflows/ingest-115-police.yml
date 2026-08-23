@@ -12,6 +12,7 @@ on:
       - .github/workflows/ingest-115-police.yml
       - scripts/download/download_115_police.py
       - scripts/download/run_115_police_import.py
+      - scripts/parse/answer_extractor.py
       - scripts/parse/.recover_115_missing_choices.py.gz.b64
       - scripts/parse/repair_115_choice_blocks.py
       - scripts/parse/sanitize_115_pua.py
@@ -70,6 +71,7 @@ jobs:
           PY
           python -m py_compile scripts/download/download_115_police.py
           python -m py_compile scripts/download/run_115_police_import.py
+          python -m py_compile scripts/parse/answer_extractor.py
           python -m py_compile scripts/parse/recover_115_missing_choices.py
           python -m py_compile scripts/parse/repair_115_choice_blocks.py
           python -m py_compile scripts/parse/sanitize_115_pua.py
