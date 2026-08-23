@@ -11,6 +11,7 @@ on:
       - scripts/.remediation.part02
       - scripts/.remediation.part03
       - scripts/.patch_115_english.py
+      - scripts/.patch_115_idempotence.py
 
 permissions:
   contents: write
@@ -57,16 +58,20 @@ jobs:
           target.write_bytes(data)
           print(f'restored {target} ({len(data)} bytes)')
           PY
-          python -m py_compile scripts/remediate_115_audit.py scripts/.patch_115_english.py
+          python -m py_compile \
+            scripts/remediate_115_audit.py \
+            scripts/.patch_115_english.py \
+            scripts/.patch_115_idempotence.py
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
-      - name: Extend remediation for all detected English defects
+      - name: Extend and harden remediation source
         run: |
           python scripts/.patch_115_english.py
+          python scripts/.patch_115_idempotence.py
           python -m py_compile scripts/remediate_115_audit.py
 
       - name: Apply all audited fixes
@@ -75,7 +80,7 @@ jobs:
       - name: Remove temporary bootstrap files
         run: |
           rm -f scripts/.remediation.part00 scripts/.remediation.part01 scripts/.remediation.part02 scripts/.remediation.part03
-          rm -f scripts/.patch_115_english.py
+          rm -f scripts/.patch_115_english.py scripts/.patch_115_idempotence.py
           rm -f .github/workflows/apply-115-remediation.yml
 
       - name: Compile changed Python sources
@@ -106,20 +111,8 @@ jobs:
           test -s /tmp/search-index.json
           test -s /tmp/analytics.json
 
-      - name: Diagnose and require remediation idempotence
-        shell: bash
-        run: |
-          set -euo pipefail
-          target='scripts/parse/repair_115_choice_blocks.py'
-          cp "$target" /tmp/repair.before.py
-          if python scripts/remediate_115_audit.py; then
-            echo 'Remediation is idempotent.'
-            exit 0
-          fi
-          python scripts/remediate_115_audit.py --apply
-          echo '--- Exact second-application diff ---'
-          diff -u /tmp/repair.before.py "$target" || true
-          exit 1
+      - name: Confirm remediation is idempotent
+        run: python scripts/remediate_115_audit.py
 
       - name: Commit verified remediation
         env:
