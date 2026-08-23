@@ -112,6 +112,32 @@ REQUIRED_UI_MARKERS = (
     '<script src="../js/app.js" defer></script>',
 )
 
+SIMPLIFIED_REDIRECT_MARKER = "location.replace('../category.html?cat='"
+
+
+def _category_page(output_root: Path, category: str) -> Path:
+    return output_root / category / f"{category}考古題總覽.html"
+
+
+def _validate_ui_shell(path: Path, category: str) -> str:
+    if not path.is_file():
+        raise RuntimeError(f"未找到類科頁：{path}")
+
+    text = path.read_text(encoding="utf-8")
+    missing_markers = [marker for marker in REQUIRED_UI_MARKERS if marker not in text]
+    if missing_markers:
+        raise RuntimeError(f"{category} 缺少原有 UI 功能標記：{missing_markers}")
+    if SIMPLIFIED_REDIRECT_MARKER in text:
+        raise RuntimeError(f"{category} 仍是簡化轉址頁，完整 UI 未恢復")
+    return text
+
+
+def _validate_source_pages(output_root: Path) -> None:
+    """防止儲存庫再次把完整頁面提交成薄轉址頁。"""
+    for category in CATEGORIES:
+        _validate_ui_shell(_category_page(output_root, category), category)
+    print("原始 17 個類科頁均保有完整 UI 與功能")
+
 
 def _load_generator() -> types.ModuleType:
     if not LEGACY_GENERATOR.is_file():
@@ -134,30 +160,23 @@ def _load_generator() -> types.ModuleType:
     return module
 
 
-def _validate_page(path: Path, category: str, years: list[int]) -> None:
-    if not path.is_file():
-        raise RuntimeError(f"未產生類科頁：{path}")
+def _validate_generated_page(path: Path, category: str, years: list[int]) -> None:
+    text = _validate_ui_shell(path, category)
 
-    text = path.read_text(encoding="utf-8")
-    missing_markers = [marker for marker in REQUIRED_UI_MARKERS if marker not in text]
-    if missing_markers:
-        raise RuntimeError(f"{category} 缺少原有 UI 功能標記：{missing_markers}")
-
+    first = min(years)
     latest = max(years)
     if f'id="year-{latest}"' not in text:
         raise RuntimeError(f"{category} 缺少最新年度區塊：{latest}")
     if f'data-year="{latest}"' not in text:
         raise RuntimeError(f"{category} 缺少最新年度篩選：{latest}")
+    if f"{first}年至{latest}年" not in text:
+        raise RuntimeError(f"{category} 的頁面年份摘要不是 {first}–{latest} 年")
 
     if 115 in years:
         if 'id="year-115"' not in text or 'data-year="115"' not in text:
             raise RuntimeError(f"{category} 的 115 年資料未寫入完整類科頁")
-        if "106年至115年" not in text:
-            raise RuntimeError(f"{category} 的頁面年份摘要未更新至 115 年")
-
-    # 防止再次部署成 PR #52 的簡化轉址頁。
-    if "location.replace('../category.html?cat='" in text:
-        raise RuntimeError(f"{category} 仍是簡化轉址頁，完整 UI 未恢復")
+        if 'class="year-heading">115年' not in text:
+            raise RuntimeError(f"{category} 的 115 年標題未正常產生")
 
 
 def build_pages(input_root: Path, output_root: Path) -> dict[str, dict[str, int]]:
@@ -177,7 +196,7 @@ def build_pages(input_root: Path, output_root: Path) -> dict[str, dict[str, int]
 
         years = sorted(int(year) for year in years_data)
         path = Path(page)
-        _validate_page(path, category, years)
+        _validate_generated_page(path, category, years)
 
         paper_count = sum(len(subjects) for subjects in years_data.values())
         question_count = sum(
@@ -200,7 +219,7 @@ def build_pages(input_root: Path, output_root: Path) -> dict[str, dict[str, int]
     if len(with_115) != 13:
         raise RuntimeError(f"預期 13 個類科含 115 年，實際為 {len(with_115)}：{with_115}")
 
-    print(f"完整類科頁重建完成：17 個類科，其中 13 個已含 115 年")
+    print("完整類科頁重建完成：17 個類科，其中 13 個已含 115 年")
     return summary
 
 
@@ -211,17 +230,18 @@ def main() -> int:
     parser.add_argument(
         "--check",
         action="store_true",
-        help="在暫存目錄完整產生並驗證，不修改正式網站目錄",
+        help="驗證儲存庫 UI，並在暫存目錄完整產生最新頁面",
     )
     args = parser.parse_args()
 
     input_root = args.input.resolve()
+    output_root = args.output.resolve()
     if args.check:
+        _validate_source_pages(output_root)
         with tempfile.TemporaryDirectory(prefix="police-exam-category-pages-") as tmp:
             build_pages(input_root, Path(tmp))
         return 0
 
-    output_root = args.output.resolve()
     output_root.mkdir(parents=True, exist_ok=True)
     build_pages(input_root, output_root)
     return 0
