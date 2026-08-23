@@ -1,0 +1,216 @@
+name: Finalize verified 115 police exam import
+
+on:
+  push:
+    branches:
+      - data/add-115-police-exam
+    paths:
+      - .github/workflows/finalize-115-pipeline.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+  actions: read
+
+concurrency:
+  group: finalize-115-police-exam-import
+  cancel-in-progress: false
+
+jobs:
+  finalize-test-and-merge:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Check out ingestion branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Normalize answer regex and run focused tests
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/parse/answer_extractor.py')
+          text = path.read_text(encoding='utf-8')
+          old = r'(?:(?:\s*[或、,，/／]\s*|\s*)[A-DＡ-Ｄ])'
+          new = r'(?:(?:\s*[或、,，/／]\s*)[A-DＡ-Ｄ])'
+          if old in text:
+              text = text.replace(old, new)
+              path.write_text(text, encoding='utf-8')
+          PY
+          python -m py_compile \
+            scripts/download/download_115_police.py \
+            scripts/parse/answer_extractor.py \
+            scripts/audit/finalize_115_import.py
+          python -m pytest tests/test_answer_extractor.py -q
+
+      - name: Download official 115 exam PDFs
+        run: |
+          python scripts/download/download_115_police.py \
+            --output 考古題庫 \
+            --workers 4 | tee /tmp/115-download.log
+
+      - name: Verify exact official PDF coverage
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f 考古題庫/115_import_manifest.json
+          questions=$(find 考古題庫 -type f -path '*/115年/*/試題.pdf' | wc -l | tr -d ' ')
+          corrections=$(find 考古題庫 -type f -path '*/115年/*/更正答案.pdf' | wc -l | tr -d ' ')
+          categories=$(find 考古題庫 -mindepth 2 -maxdepth 2 -type d -name '115年' | wc -l | tr -d ' ')
+          echo "categories=${categories}; question PDFs=${questions}; corrected answers=${corrections}"
+          test "${categories}" -eq 13
+          test "${questions}" -eq 90
+          test "${corrections}" -eq 4
+
+      - name: Parse all 115 question PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          : > /tmp/115-parse.log
+          while IFS= read -r -d '' year_dir; do
+            echo "Parsing ${year_dir}" | tee -a /tmp/115-parse.log
+            python scripts/parse/pdf_to_questions.py \
+              --input "${year_dir}" \
+              --workers 2 \
+              --force \
+              --quality-threshold 0.70 \
+              --log-level WARNING | tee -a /tmp/115-parse.log
+          done < <(find 考古題庫 -mindepth 2 -maxdepth 2 -type d -name '115年' -print0 | sort -z)
+
+      - name: Finalize metadata, corrections, duplicates and frozen counts
+        run: |
+          python scripts/audit/finalize_115_import.py | tee /tmp/115-audit.log
+
+      - name: Run full repository tests
+        run: |
+          python -m pytest tests/ -v --tb=short | tee /tmp/115-pytest.log
+
+      - name: Build frontend search and analytics outputs
+        run: |
+          python scripts/build_search_index.py --output /tmp/search-index.json
+          python scripts/build_analytics.py --output /tmp/analytics.json
+          test -s /tmp/search-index.json
+          test -s /tmp/analytics.json
+
+      - name: Upload verification evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-115-police-exam-verification
+          if-no-files-found: error
+          path: |
+            /tmp/115-download.log
+            /tmp/115-parse.log
+            /tmp/115-audit.log
+            /tmp/115-pytest.log
+            docs/115-import-report.md
+            考古題庫/115_import_manifest.json
+            考古題庫/dataset_manifest.json
+
+      - name: Remove one-time orchestration workflows
+        run: |
+          rm -f \
+            .github/workflows/ingest-115-police.yml \
+            .github/workflows/verify-115-and-open-pr.yml \
+            .github/workflows/merge-115-after-ci.yml \
+            .github/workflows/finalize-115-pipeline.yml
+
+      - name: Commit verified import to branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: add verified 115 police exam archive'
+            git push origin HEAD:data/add-115-police-exam
+          fi
+
+      - name: Create or update pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          number=$(gh pr list \
+            --repo "$GITHUB_REPOSITORY" \
+            --head data/add-115-police-exam \
+            --base master \
+            --state open \
+            --json number \
+            --jq '.[0].number // empty')
+          if [ -z "$number" ]; then
+            url=$(gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --head data/add-115-police-exam \
+              --base master \
+              --title 'data: 收錄 115 年三等警察特考考古題' \
+              --body-file docs/115-import-report.md)
+            number=${url##*/}
+          else
+            gh pr edit "$number" \
+              --repo "$GITHUB_REPOSITORY" \
+              --title 'data: 收錄 115 年三等警察特考考古題' \
+              --body-file docs/115-import-report.md
+          fi
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+
+      - name: Wait until PR checks are registered
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 90); do
+            count=$(gh pr checks "$PR_NUMBER" \
+              --repo "$GITHUB_REPOSITORY" \
+              --json name \
+              --jq 'length' 2>/dev/null || echo 0)
+            if [ "$count" -gt 0 ]; then
+              echo "Registered checks: $count"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'No PR checks were registered.' >&2
+          exit 1
+
+      - name: Require every pull request check to pass
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          gh pr checks "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --watch \
+            --interval 10 \
+            --fail-fast
+
+      - name: Squash merge verified import
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          gh pr merge "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --squash \
+            --delete-branch \
+            --subject 'data: 收錄 115 年三等警察特考考古題'
