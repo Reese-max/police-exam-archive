@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/import-115-police-third.yml
       - scripts/download/import_115_police_third.py
+      - scripts/parse/repair_115_police_third.py
       - scripts/audit/validate_115_police_third.py
   pull_request:
     branches:
@@ -14,6 +15,7 @@ on:
     paths:
       - .github/workflows/import-115-police-third.yml
       - scripts/download/import_115_police_third.py
+      - scripts/parse/repair_115_police_third.py
       - scripts/audit/validate_115_police_third.py
   workflow_dispatch:
 
@@ -64,13 +66,21 @@ jobs:
             --manifest /tmp/parse_manifest_115.json \
             --log-level INFO
 
+      - name: Repair known PDF-layout edge cases
+        if: ${{ hashFiles('scripts/parse/repair_115_police_third.py') != '' }}
+        run: python scripts/parse/repair_115_police_third.py
+
       - name: Validate the 115 import
+        id: validate
+        continue-on-error: true
         run: python scripts/audit/validate_115_police_third.py
 
       - name: Run repository tests
+        if: always()
         run: python -m pytest tests/ -q --tb=short
 
       - name: Remove ignored source PDFs and restore aggregate reports
+        if: always()
         run: |
           find 考古題庫 -type f -name '*.pdf' -delete
           git restore --source=HEAD -- \
@@ -79,6 +89,7 @@ jobs:
             考古題庫/problematic_pdfs.json 2>/dev/null || true
 
       - name: Commit generated JSON data to the import branch
+        if: always()
         env:
           TARGET_BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
         run: |
@@ -93,3 +104,9 @@ jobs:
           fi
           git commit -m "data: import 115 third-class police exam questions"
           git push origin HEAD:"${TARGET_BRANCH}"
+
+      - name: Enforce validation result
+        if: always() && steps.validate.outcome != 'success'
+        run: |
+          echo "115 import data was retained on the branch for diagnosis, but validation failed."
+          exit 1
