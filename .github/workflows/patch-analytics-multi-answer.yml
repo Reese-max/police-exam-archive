@@ -1,0 +1,49 @@
+name: Patch analytics for multi-answer questions
+
+on:
+  push:
+    branches:
+      - data/import-115-police-third
+    paths:
+      - .github/workflows/patch-analytics-multi-answer.yml
+      - scripts/patch_build_analytics_multi_answer.py
+
+permissions:
+  contents: write
+
+concurrency:
+  group: patch-analytics-multi-answer
+  cancel-in-progress: true
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out import branch
+        uses: actions/checkout@v4
+        with:
+          ref: data/import-115-police-third
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Patch analytics builder
+        run: python scripts/patch_build_analytics_multi_answer.py
+
+      - name: Verify analytics generation
+        run: python scripts/build_analytics.py --output /tmp/analytics.json
+
+      - name: Commit compatibility fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/build_analytics.py
+          if git diff --cached --quiet; then
+            echo "No patch required."
+            exit 0
+          fi
+          git commit -m "fix: support multi-answer arrays in analytics"
+          git push origin HEAD:data/import-115-police-third
