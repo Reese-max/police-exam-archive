@@ -20,19 +20,38 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify official 115 common English fixture
+        run: python scripts/repair/fix_115_common_english.py --check
 
       - name: Generate homepage stats
         run: python scripts/build_home_stats.py
 
-      - name: Generate search index
+      - name: Generate unified search and practice index
         run: python scripts/build_search_index.py
+
+      - name: Verify search index schema v2
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('考古題網站/data/search-index.json').read_text(encoding='utf-8'))
+          assert data['v'] == 2
+          assert 'passage' in data['columns']
+          assert 'cats' in data['columns']
+          assert len(data['columns']['cat']) == data['stats']['total']
+          PY
 
       - name: Generate analytics
         run: python scripts/build_analytics.py --output /tmp/analytics.json
@@ -40,13 +59,20 @@ jobs:
       - name: Sync analytics frontend
         run: python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json
 
-      - name: Verify generated frontend assets
+      - name: Verify generated assets and frontend semantics
         run: |
           python scripts/build_home_stats.py --check
           python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
+          python scripts/check_frontend_inline_js.py
           node --check 考古題網站/sw.js
+          node --check 考古題網站/js/answer-utils.js
+          node --check 考古題網站/js/search-engine.js
+          node --check 考古題網站/js/quiz-engine.js
           node --check 考古題網站/analytics-chart.js
           node --check 考古題網站/analytics-chart-data.js
+          node 考古題網站/tests/answer-utils.test.js
+          node 考古題網站/tests/search-engine-v2.test.js
+          node 考古題網站/tests/quiz-engine-v2.test.js
 
       - uses: actions/configure-pages@v5
 
@@ -56,5 +82,3 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
-
-# Touch this workflow to force a fresh deployment after the 115-year data rollout.
