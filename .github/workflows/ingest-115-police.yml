@@ -12,6 +12,7 @@ on:
       - .github/workflows/ingest-115-police.yml
       - scripts/download/download_115_police.py
       - scripts/download/run_115_police_import.py
+      - scripts/parse/repair_115_choice_blocks.py
       - scripts/audit/.finalize_115_import.py.gz.b64
       - .gitignore
 
@@ -55,6 +56,7 @@ jobs:
           PY
           python -m py_compile scripts/download/download_115_police.py
           python -m py_compile scripts/download/run_115_police_import.py
+          python -m py_compile scripts/parse/repair_115_choice_blocks.py
           python -m py_compile scripts/audit/finalize_115_import.py
 
       - name: Set up Python
@@ -118,6 +120,9 @@ jobs:
                   check=True,
               )
           PY
+
+      - name: Repair cloze and option blocks
+        run: python scripts/parse/repair_115_choice_blocks.py --root 考古題庫
 
       - name: Normalize and audit import
         run: python scripts/audit/finalize_115_import.py --root .
