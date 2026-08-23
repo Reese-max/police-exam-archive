@@ -1,0 +1,155 @@
+name: Ingest 115 police exam
+
+on:
+  push:
+    branches:
+      - data/add-115-police-exam
+    paths:
+      - .github/workflows/ingest-115-police.yml
+      - scripts/download/download_115_police.py
+      - scripts/audit/.finalize_115_import.py.gz.b64
+      - .gitignore
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest-115-police-exam
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout import branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore audit script
+        run: |
+          python - <<'PY'
+          import base64
+          import gzip
+          import hashlib
+          from pathlib import Path
+
+          source = Path("scripts/audit/.finalize_115_import.py.gz.b64")
+          target = Path("scripts/audit/finalize_115_import.py")
+          data = gzip.decompress(base64.b64decode(source.read_text().strip()))
+          actual = hashlib.sha256(data).hexdigest()
+          expected = "ee17bc513c20461d8f567e158e0b9798bdca0c5b50a78fc98e7e3974430adc8b"
+          if actual != expected:
+              raise SystemExit(f"稽核器 SHA-256 不符：{actual}")
+          target.write_bytes(data)
+          print(f"已還原 {target}（{len(data)} bytes）")
+          PY
+          python -m py_compile scripts/download/download_115_police.py
+          python -m py_compile scripts/audit/finalize_115_import.py
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Download official 115 exam files
+        run: |
+          python scripts/download/download_115_police.py \
+            --output 考古題庫 \
+            --overwrite
+
+      - name: Parse 115 question PDFs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          folders = [
+              "行政警察學系",
+              "外事警察學系",
+              "刑事警察學系",
+              "公共安全學系社安組",
+              "犯罪防治學系預防組",
+              "消防學系",
+              "交通學系交通組",
+              "資訊管理學系",
+              "鑑識科學學系",
+              "國境警察學系境管組",
+              "水上警察學系",
+              "法律學系",
+              "行政管理學系",
+          ]
+
+          for folder in folders:
+              target = Path("考古題庫") / folder / "115年"
+              if not target.is_dir():
+                  raise SystemExit(f"缺少下載目錄：{target}")
+              print(f"\n=== 解析 {target} ===", flush=True)
+              subprocess.run(
+                  [
+                      sys.executable,
+                      "scripts/parse/pdf_to_questions.py",
+                      "--input",
+                      str(target),
+                      "--workers",
+                      "2",
+                      "--force",
+                      "--quality-threshold",
+                      "0.70",
+                  ],
+                  check=True,
+              )
+          PY
+
+      - name: Normalize and audit import
+        run: python scripts/audit/finalize_115_import.py --root .
+
+      - name: Run full data-quality suite
+        run: python -m pytest tests/ -v --tb=short
+
+      - name: Rebuild smoke checks
+        run: |
+          python scripts/build_search_index.py --output /tmp/search-index.json
+          python scripts/build_analytics.py --output /tmp/analytics.json
+
+      - name: Show import report
+        run: |
+          cat docs/115-import-report.md
+          cat docs/115-import-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit verified data
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config core.quotepath false
+          git add -A
+          if git diff --cached --quiet; then
+            echo "沒有需要提交的變更"
+            exit 0
+          fi
+          git status --short
+          git commit -m "data: 匯入並驗證 115 年警察三等考古題"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: police-exam-115-import-audit
+          if-no-files-found: warn
+          retention-days: 30
+          path: |
+            docs/115-import-report.md
+            考古題庫/115_import_manifest.json
+            考古題庫/dataset_manifest.json
