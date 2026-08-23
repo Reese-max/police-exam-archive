@@ -7,7 +7,7 @@ HTML 生成器 — 從 JSON 題目資料生成靜態 HTML 考古題網站
 用法:
   python generate_html.py                              # 從 考古題庫/ 生成到 考古題網站/
   python generate_html.py --input 考古題庫 --output 考古題網站
-  python generate_html.py --category 行政警察學系學系       # 只生成一個類科
+  python generate_html.py --category 行政警察學系       # 只生成一個類科
 """
 
 import os
@@ -23,62 +23,62 @@ from collections import defaultdict
 # ===== 類科定義（按警大學系分組） =====
 # 甲組 — 警察科技學院
 CATEGORIES_GROUP_A = [
-    '刑事警察學系學系',
-    '鑑識科學學系學系',
+    '刑事警察學系',
+    '鑑識科學學系',
     '交通學系交通組',
     '交通學系電訊組',
     '消防學系',
-    '水上警察學系學系',
-    '資訊管理學系學系',
+    '水上警察學系',
+    '資訊管理學系',
 ]
 
 # 乙組 — 警政管理學院
 CATEGORIES_GROUP_B = [
-    '行政警察學系學系',
-    '外事警察學系學系',
-    '公共安全學系社安組學系社安組',
-    '公共安全學系社安組學系情報組',
+    '行政警察學系',
+    '外事警察學系',
+    '公共安全學系社安組',
+    '公共安全學系情報組',
     '犯罪防治學系預防組',
     '犯罪防治學系矯治組',
-    '國境警察學系境管組學系境管組',
-    '國境警察學系境管組學系移民組',
-    '行政管理學系學系',
+    '國境警察學系境管組',
+    '國境警察學系移民組',
+    '行政管理學系',
     '法律學系',
 ]
 
 CATEGORIES_ORDER = CATEGORIES_GROUP_A + CATEGORIES_GROUP_B
 
 CATEGORIES_INFO = {
-    '行政警察學系學系': {'code': 501, 'icon': '&#128110;', 'color': '#2563eb'},
-    '外事警察學系學系': {'code': 502, 'icon': '&#127760;', 'color': '#0d9488'},
-    '刑事警察學系學系': {'code': 503, 'icon': '&#128269;', 'color': '#d97706'},
-    '公共安全學系社安組學系社安組': {'code': 504, 'icon': '&#128737;', 'color': '#7c3aed'},
+    '行政警察學系': {'code': 501, 'icon': '&#128110;', 'color': '#2563eb'},
+    '外事警察學系': {'code': 502, 'icon': '&#127760;', 'color': '#0d9488'},
+    '刑事警察學系': {'code': 503, 'icon': '&#128269;', 'color': '#d97706'},
+    '公共安全學系社安組': {'code': 504, 'icon': '&#128737;', 'color': '#7c3aed'},
     '犯罪防治學系預防組': {'code': 505, 'icon': '&#129309;', 'color': '#e11d48'},
     '犯罪防治學系矯治組': {'code': '505b', 'icon': '&#128274;', 'color': '#ea580c'},
     '消防學系': {'code': 506, 'icon': '&#128658;', 'color': '#dc2626'},
     '交通學系交通組': {'code': 507, 'icon': '&#128678;', 'color': '#475569'},
     '交通學系電訊組': {'code': '507b', 'icon': '&#128225;', 'color': '#0284c7'},
-    '資訊管理學系學系': {'code': 508, 'icon': '&#128187;', 'color': '#2563eb'},
-    '鑑識科學學系學系': {'code': 509, 'icon': '&#128300;', 'color': '#059669'},
-    '國境警察學系境管組學系境管組': {'code': 510, 'icon': '&#128706;', 'color': '#7c3aed'},
-    '水上警察學系學系': {'code': 511, 'icon': '&#9875;', 'color': '#0369a1'},
+    '資訊管理學系': {'code': 508, 'icon': '&#128187;', 'color': '#2563eb'},
+    '鑑識科學學系': {'code': 509, 'icon': '&#128300;', 'color': '#059669'},
+    '國境警察學系境管組': {'code': 510, 'icon': '&#128706;', 'color': '#7c3aed'},
+    '水上警察學系': {'code': 511, 'icon': '&#9875;', 'color': '#0369a1'},
     '法律學系': {'code': 512, 'icon': '&#9878;', 'color': '#b45309'},
-    '行政管理學系學系': {'code': 513, 'icon': '&#128203;', 'color': '#6366f1'},
-    '國境警察學系境管組學系移民組': {'code': 590, 'icon': '&#9992;', 'color': '#0891b2'},
-    '公共安全學系社安組學系情報組': {'code': 'nsi', 'icon': '&#128065;', 'color': '#4f46e5'},
+    '行政管理學系': {'code': 513, 'icon': '&#128203;', 'color': '#6366f1'},
+    '國境警察學系移民組': {'code': 590, 'icon': '&#9992;', 'color': '#0891b2'},
+    '公共安全學系情報組': {'code': 'nsi', 'icon': '&#128065;', 'color': '#4f46e5'},
 }
 
 # 圖標對照（純文字版，用於 Python 端）
 CATEGORIES_EMOJI = {
-    '行政警察學系學系': '👮', '外事警察學系學系': '🌐', '刑事警察學系學系': '🔍',
-    '公共安全學系社安組學系社安組': '🛡', '犯罪防治學系預防組': '🤝', '犯罪防治學系矯治組': '🔒',
+    '行政警察學系': '👮', '外事警察學系': '🌐', '刑事警察學系': '🔍',
+    '公共安全學系社安組': '🛡', '犯罪防治學系預防組': '🤝', '犯罪防治學系矯治組': '🔒',
     '消防學系': '🚒',
     '交通學系交通組': '🚦', '交通學系電訊組': '📡',
-    '資訊管理學系學系': '💻', '鑑識科學學系學系': '🔬',
-    '國境警察學系境管組學系境管組': '🛂', '水上警察學系學系': '⚓', '法律學系': '⚖',
-    '行政管理學系學系': '📋',
-    '國境警察學系境管組學系移民組': '✈',
-    '公共安全學系社安組學系情報組': '👁',
+    '資訊管理學系': '💻', '鑑識科學學系': '🔬',
+    '國境警察學系境管組': '🛂', '水上警察學系': '⚓', '法律學系': '⚖',
+    '行政管理學系': '📋',
+    '國境警察學系移民組': '✈',
+    '公共安全學系情報組': '👁',
 }
 
 
@@ -99,6 +99,13 @@ def format_passage_html(text):
     """
     # 先做 HTML 跳脫，但不轉義引號（段落在 div 內容中，不需要跳脫引號）
     escaped = html_module.escape(str(text), quote=False)
+
+    # 新格式以 [[題號]] 明確保存填空位置，不依賴 PDF 空白寬度。
+    explicit_placeholder = re.compile(r"\[\[(\d{1,3})\]\]")
+    escaped = explicit_placeholder.sub(
+        lambda match: f'<strong class="passage-qnum">[{match.group(1)}]</strong>',
+        escaped,
+    )
 
     # 先提取題號範圍（如 51-55），用於後續只標記範圍內的數字
     range_match = re.search(r'請依下文回答第(\d+)題至第(\d+)題', escaped)
@@ -1474,8 +1481,8 @@ def generate_category_page(category_name, years_data, output_dir):
     subject_keys_json = json.dumps(subject_keys, ensure_ascii=False)
     subject_keys_script = f'<script>const SUBJECT_KEYS={subject_keys_json};</script>'
 
-    exam_prefix = '' if category_name == '國境警察學系境管組學系移民組' else '警察特考三等'
-    site_name = '考古題總覽' if category_name == '國境警察學系境管組學系移民組' else '三等警察特考考古題總覽'
+    exam_prefix = '' if category_name == '國境警察學系移民組' else '警察特考三等'
+    site_name = '考古題總覽' if category_name == '國境警察學系移民組' else '三等警察特考考古題總覽'
 
     page_html = f'''<!DOCTYPE html>
 <html lang="zh-TW">
