@@ -10,6 +10,7 @@ on:
       - scripts/.remediation.part01
       - scripts/.remediation.part02
       - scripts/.remediation.part03
+      - scripts/.patch_115_english.py
 
 permissions:
   contents: write
@@ -37,210 +38,35 @@ jobs:
           python-version: '3.12'
           cache: pip
 
-      - name: Restore transparent remediation source
-        shell: bash
+      - name: Restore import remediation source
         run: |
-          set -euo pipefail
-          cat scripts/.remediation.part00 scripts/.remediation.part01 scripts/.remediation.part02 scripts/.remediation.part03 > /tmp/remediation.b64
           python - <<'PY'
           import base64
           import gzip
           import hashlib
           from pathlib import Path
 
-          encoded = Path('/tmp/remediation.b64').read_text(encoding='ascii')
-          source = gzip.decompress(base64.b64decode(encoded))
-          actual = hashlib.sha256(source).hexdigest()
+          sources = [Path(f'scripts/.remediation.part{i:02d}') for i in range(4)]
+          encoded = ''.join(source.read_text(encoding='ascii') for source in sources)
+          data = gzip.decompress(base64.b64decode(encoded))
+          actual = hashlib.sha256(data).hexdigest()
           expected = 'b6b410d156595f3f88a071ea18fedad64cda335a5ecb07a040880379f2c9f9f8'
           if actual != expected:
               raise SystemExit(f'remediation SHA-256 mismatch: {actual}')
           target = Path('scripts/remediate_115_audit.py')
-          target.write_bytes(source)
-          print(f'restored {target} ({len(source)} bytes)')
+          target.write_bytes(data)
+          print(f'restored {target} ({len(data)} bytes)')
           PY
-          python -m py_compile scripts/remediate_115_audit.py
+          python -m py_compile scripts/remediate_115_audit.py scripts/.patch_115_english.py
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
-      - name: Extend remediation for every 115 English glue defect
-        shell: bash
+      - name: Extend remediation for all detected English defects
         run: |
-          set -euo pipefail
-          python - <<'PY'
-          from pathlib import Path
-
-          path = Path('scripts/remediate_115_audit.py')
-          text = path.read_text(encoding='utf-8')
-          marker = 'def patch_115_english_spacing_and_passages() -> None:'
-          if marker not in text:
-              anchor = '\ndef canonical_path_for('
-              if anchor not in text:
-                  raise SystemExit('cannot locate canonical_path_for insertion point')
-              insertion = r'''
-
-ENGLISH_TOKEN_RE = re.compile(r"[A-Za-z]{12,}")
-EMBEDDED_PASSAGE_RE = re.compile(
-    r"\s*請依下文回答第\s*(\d{1,3})\s*題至第\s*(\d{1,3})\s*題\s*(.+)$",
-    re.DOTALL,
-)
-
-
-def repair_english_spacing(value: str) -> str:
-    """以保守的語言模型分詞修復 PDF 抽取造成的英文黏字。"""
-    import wordninja
-
-    common = {
-        "a", "an", "and", "as", "at", "before", "by", "for", "from",
-        "how", "in", "into", "is", "it", "of", "on", "or", "that", "the",
-        "their", "this", "to", "was", "were", "what", "when", "which",
-        "who", "why", "with", "without",
-    }
-
-    def replace(match: re.Match[str]) -> str:
-        original = match.group(0)
-        # 混有多個大寫字母者通常是縮寫或代碼，不作自動拆分。
-        if sum(char.isupper() for char in original) > 1:
-            return original
-        lower = original.lower()
-        parts = wordninja.split(lower)
-        if len(parts) < 2 or "".join(parts) != lower:
-            return original
-        if any(len(part) == 1 and part not in {"a", "i", "s"} for part in parts):
-            return original
-        # 短複合字只有在包含功能詞或拆成三段以上時才處理，避免過度分詞。
-        if len(original) < 18 and len(parts) < 3 and not common.intersection(parts):
-            return original
-
-        if (
-            match.start() > 0
-            and match.string[match.start() - 1] in {"'", "’"}
-            and parts[0] == "s"
-        ):
-            return "s" + (" " + " ".join(parts[1:]) if len(parts) > 1 else "")
-
-        joined = " ".join(parts)
-        if original[0].isupper():
-            joined = joined[0].upper() + joined[1:]
-        return joined
-
-    previous = None
-    current = value
-    # 分詞後可能露出下一段可修復 token；最多三輪避免非預期循環。
-    for _ in range(3):
-        if current == previous:
-            break
-        previous = current
-        current = ENGLISH_TOKEN_RE.sub(replace, current)
-    current = re.sub(r"[ \t]{2,}", " ", current)
-    return current.strip()
-
-
-def patch_115_english_spacing_and_passages() -> None:
-    """修復所有 115 年英文長黏字，並把誤併入選項的閱讀文章回填題組。"""
-    paths = sorted(DATA_DIR.glob("*/115年/*/試題.json"))
-    for path in paths:
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        questions = payload.get("questions")
-        if not isinstance(questions, list):
-            continue
-        by_number = {
-            q.get("number"): q
-            for q in questions
-            if isinstance(q, dict) and isinstance(q.get("number"), int)
-        }
-        changed = False
-
-        # 先抽離誤黏在上一題題幹或選項後面的「請依下文」文章。
-        for question in questions:
-            if not isinstance(question, dict):
-                continue
-            candidates: list[tuple[str, str | None, str]] = []
-            stem = question.get("stem")
-            if isinstance(stem, str):
-                candidates.append(("stem", None, stem))
-            options = question.get("options")
-            if isinstance(options, dict):
-                for label, option in list(options.items()):
-                    if isinstance(option, str):
-                        candidates.append(("option", str(label), option))
-
-            for kind, label, value in candidates:
-                match = EMBEDDED_PASSAGE_RE.search(value)
-                if not match:
-                    continue
-                start = int(match.group(1))
-                end = int(match.group(2))
-                if start > end or any(number not in by_number for number in range(start, end + 1)):
-                    raise RuntimeError(f"題組範圍無法對應：{path} {start}-{end}")
-                prefix = value[:match.start()].rstrip(" -、；;:")
-                passage = repair_english_spacing(match.group(3))
-                if not prefix or not passage:
-                    raise RuntimeError(f"題組抽離結果為空：{path} {start}-{end}")
-                if kind == "stem":
-                    question["stem"] = prefix
-                else:
-                    assert isinstance(question.get("options"), dict) and label is not None
-                    question["options"][label] = prefix
-                for number in range(start, end + 1):
-                    target = by_number[number]
-                    if target.get("passage") != passage:
-                        target["passage"] = passage
-                changed = True
-
-        # 再修復所有題幹、文章與選項的英文黏字。
-        for question in questions:
-            if not isinstance(question, dict):
-                continue
-            for field in ("stem", "passage"):
-                value = question.get(field)
-                if isinstance(value, str):
-                    repaired = repair_english_spacing(value)
-                    if repaired != value:
-                        question[field] = repaired
-                        changed = True
-            options = question.get("options")
-            if isinstance(options, dict):
-                for label, value in list(options.items()):
-                    if not isinstance(value, str):
-                        continue
-                    repaired = repair_english_spacing(value)
-                    if repaired != value:
-                        options[label] = repaired
-                        changed = True
-
-        leftovers: list[tuple[object, str]] = []
-        for question in questions:
-            if not isinstance(question, dict):
-                continue
-            values = [question.get("stem"), question.get("passage")]
-            options = question.get("options")
-            if isinstance(options, dict):
-                values.extend(options.values())
-            for value in values:
-                if not isinstance(value, str):
-                    continue
-                found = re.search(r"\b[a-z]{25,}\b", value)
-                if found:
-                    leftovers.append((question.get("number"), found.group(0)))
-        if leftovers:
-            raise RuntimeError(f"仍有英文長黏字：{path}：{leftovers[:20]}")
-        if changed:
-            write_json(path, payload)
-'''
-              text = text.replace(anchor, insertion + anchor, 1)
-
-          call = '\n    patch_common_english()\n'
-          extended_call = call + '    patch_115_english_spacing_and_passages()\n'
-          if '    patch_115_english_spacing_and_passages()\n' not in text:
-              if call not in text:
-                  raise SystemExit('cannot locate patch_common_english call')
-              text = text.replace(call, extended_call, 1)
-
-          path.write_text(text, encoding='utf-8')
-          PY
+          python scripts/.patch_115_english.py
           python -m py_compile scripts/remediate_115_audit.py
 
       - name: Apply all audited fixes
@@ -249,6 +75,7 @@ def patch_115_english_spacing_and_passages() -> None:
       - name: Remove temporary bootstrap files
         run: |
           rm -f scripts/.remediation.part00 scripts/.remediation.part01 scripts/.remediation.part02 scripts/.remediation.part03
+          rm -f scripts/.patch_115_english.py
           rm -f .github/workflows/apply-115-remediation.yml
 
       - name: Compile changed Python sources
@@ -285,9 +112,7 @@ def patch_115_english_spacing_and_passages() -> None:
       - name: Commit verified remediation
         env:
           HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
-        shell: bash
         run: |
-          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
