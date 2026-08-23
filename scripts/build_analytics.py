@@ -84,10 +84,27 @@ def build_analytics(questions: list[dict]) -> dict:
     answer_dist = Counter()
     answer_by_year = defaultdict(Counter)
     for q in questions:
-        if q["type"] == "choice" and q["ans"]:
-            answer_dist[q["ans"]] += 1
-            if q["yr"]:
-                answer_by_year[str(q["yr"])][q["ans"]] += 1
+        if q["type"] != "choice" or not q["ans"]:
+            continue
+
+        answer = q["ans"]
+        if isinstance(answer, list):
+            # Preserve all accepted options as one stable analytics bucket,
+            # consistent with the repository's existing ``A或C`` convention.
+            values = [
+                str(value).strip()
+                for value in answer
+                if str(value).strip()
+            ]
+            answer = "或".join(dict.fromkeys(values))
+        elif not isinstance(answer, str):
+            answer = str(answer).strip()
+
+        if not answer:
+            continue
+        answer_dist[answer] += 1
+        if q["yr"]:
+            answer_by_year[str(q["yr"])][answer] += 1
 
     # 3. 各類科題目數
     cat_total = Counter(q["cat"] for q in questions if q["cat"])
