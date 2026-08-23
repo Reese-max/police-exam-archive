@@ -46,7 +46,7 @@
   // 取得目前資料集（依篩選）
   function dataFor(){
     if(currentCat === 'all'){
-      return { year: ALL_YEAR, donut: ALL_DONUT, total: 41811 };
+      return { year: ALL_YEAR, donut: ALL_DONUT, total: STATS.total };
     }
     const c = CATEGORIES.find(x=>x.id===currentCat);
     return { year: c.year, donut: c.donut, total: c.total };
