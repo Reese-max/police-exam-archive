@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="三等警察特考歷屆試題線上練習，支援 106 至 115 年、類科篩選、閱讀題組、複數正解、送分題、計時與錯題回顧。">
+<meta name="theme-color" content="#17324d">
+<link rel="canonical" href="practice.html">
+<link rel="manifest" href="manifest.json">
+<title>線上練習｜三等警察特考題庫</title>
+<style>
+:root{--bg:#f3f5f7;--surface:#fff;--surface-2:#f7f9fb;--line:#dbe2e8;--text:#17212b;--muted:#607080;--primary:#173f5f;--primary-2:#0c6b58;--soft:#e8f1f6;--warn:#a35c00;--danger:#a83232;--ok:#167047;--shadow:0 8px 28px rgba(20,42,60,.08);--radius:14px}
+[data-theme="dark"]{--bg:#111820;--surface:#1a2530;--surface-2:#202d39;--line:#344452;--text:#edf3f7;--muted:#a8b5bf;--primary:#7eb5d8;--primary-2:#72cbb1;--soft:#243847;--warn:#ffc46c;--danger:#ff9696;--ok:#75d5a8;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.65}button,select{font:inherit}button{cursor:pointer}.shell{width:min(980px,calc(100% - 28px));margin:auto}.top{background:#17324d;color:#fff;padding:18px 0 48px}.top-row{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;letter-spacing:.02em}.top a{color:#fff;text-decoration:none}.nav{display:flex;gap:16px;font-size:14px}.theme{border:1px solid rgba(255,255,255,.45);background:transparent;color:#fff;border-radius:999px;padding:7px 12px}.hero{margin-top:34px}.hero h1{font-size:clamp(30px,6vw,48px);line-height:1.15;margin:0}.hero p{max-width:700px;margin:12px 0 0;color:#d9e5ed}.main{margin-top:-28px;padding-bottom:60px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.setup{padding:26px}.setup h2,.result h2{margin:0 0 5px}.sub{color:var(--muted);font-size:14px;margin:0 0 22px}.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.field label{display:block;font-weight:700;font-size:14px;margin-bottom:7px}.field select{width:100%;padding:11px 12px;background:var(--surface-2);color:var(--text);border:1px solid var(--line);border-radius:10px}.segments{display:flex;gap:8px;flex-wrap:wrap}.segments button{flex:1;min-width:62px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:10px;padding:10px}.segments button.active{background:var(--primary);border-color:var(--primary);color:#fff}.setup-actions{display:flex;gap:10px;margin-top:22px}.primary,.secondary,.danger{border-radius:10px;padding:12px 18px;font-weight:750}.primary{border:1px solid var(--primary);background:var(--primary);color:#fff}.secondary{border:1px solid var(--line);background:var(--surface);color:var(--text)}.danger{border:1px solid var(--danger);background:transparent;color:var(--danger)}button:disabled{opacity:.5;cursor:not-allowed}.availability{margin:14px 0 0;color:var(--muted);font-size:14px}.availability strong{color:var(--primary-2)}.hidden{display:none!important}.exam-toolbar{position:sticky;top:8px;z-index:10;margin-bottom:12px;padding:12px 16px;display:flex;align-items:center;gap:14px}.timer{font-size:21px;font-weight:850;color:var(--primary)}.timer.warning{color:var(--danger)}.progress{color:var(--muted);font-size:14px}.toolbar-actions{margin-left:auto;display:flex;gap:8px}.toolbar-actions button{border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:9px;padding:8px 12px}.question-card{padding:24px}.question-head{display:flex;align-items:center;gap:10px;margin-bottom:18px}.number{display:inline-flex;background:var(--primary);color:#fff;border-radius:8px;padding:5px 11px;font-weight:800}.meta{color:var(--muted);font-size:13px}.mark{margin-left:auto;border:1px solid var(--line);background:var(--surface-2);color:var(--muted);border-radius:9px;padding:7px 11px}.mark.active{color:var(--warn);border-color:var(--warn)}.passage{white-space:pre-line;background:var(--surface-2);border-left:4px solid var(--primary-2);border-radius:8px;padding:17px 18px;margin-bottom:20px;font-size:15px}.blank{background:#fff0ae;color:#513800;border-radius:5px;padding:1px 5px;font-weight:800}.stem{font-size:18px;font-weight:700;margin:0 0 18px}.choices{display:grid;gap:10px}.choice{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;border:1px solid var(--line);background:var(--surface-2);color:var(--text);padding:14px 15px;border-radius:11px}.choice:hover{border-color:var(--primary)}.choice.selected{background:var(--soft);border-color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary)}.letter{display:grid;place-items:center;flex:0 0 28px;height:28px;border:1px solid var(--line);border-radius:8px;font-weight:800;background:var(--surface)}.choice.selected .letter{background:var(--primary);border-color:var(--primary);color:#fff}.exam-nav{display:flex;gap:10px;margin-top:20px}.exam-nav .secondary{flex:1}.grid-card{margin-top:12px;padding:18px}.grid-title{font-weight:800;margin-bottom:12px}.question-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:7px}.qdot{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);color:var(--muted);font-weight:700}.qdot.answered{background:var(--primary);color:#fff;border-color:var(--primary)}.qdot.marked{outline:2px solid var(--warn)}.qdot.current{box-shadow:0 0 0 3px var(--soft);border-color:var(--primary)}.result{padding:28px}.score{display:flex;align-items:baseline;gap:10px;margin:18px 0}.score strong{font-size:54px;line-height:1;color:var(--primary)}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.stat{padding:14px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px}.stat b{display:block;font-size:22px}.review-title{margin:30px 0 12px}.review-list{display:grid;gap:12px}.review{padding:20px}.review h3{font-size:16px;margin:0 0 8px}.review .passage{font-size:14px}.review-option{padding:9px 11px;border-radius:8px;margin-top:6px;background:var(--surface-2);border:1px solid var(--line)}.review-option.correct{border-color:var(--ok);color:var(--ok)}.review-option.chosen-wrong{border-color:var(--danger);color:var(--danger)}.history{margin-top:14px;padding:20px}.history h2{font-size:18px;margin:0 0 12px}.history-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:14px}.notice{padding:13px 15px;border:1px solid var(--line);background:var(--surface-2);border-radius:9px;margin-bottom:14px;color:var(--muted)}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:720px){.nav{display:none}.top{padding-bottom:40px}.form-grid{grid-template-columns:1fr}.setup{padding:20px}.setup-actions{flex-direction:column}.exam-toolbar{top:0;border-radius:0;flex-wrap:wrap}.toolbar-actions{width:100%;margin:0}.toolbar-actions button{flex:1}.question-card{padding:18px}.question-grid{grid-template-columns:repeat(5,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.stats .stat:last-child{grid-column:span 2}.stem{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="shell">
+    <div class="top-row">
+      <a class="brand" href="index.html">三等警察特考題庫</a>
+      <nav class="nav" aria-label="主要導覽"><a href="search.html">全文搜尋</a><a href="analytics.html">統計分析</a></nav>
+      <button class="theme" id="themeBtn" type="button">深色模式</button>
+    </div>
+    <div class="hero"><h1>線上練習</h1><p>直接使用考古題資料庫，不再維護另一份重複題庫。支援民國 106–115 年、閱讀題組、複數正解、送分題、計時與錯題回顧。</p></div>
+  </div>
+</header>
+<main class="shell main">
+  <section id="setupView" class="card setup">
+    <h2>建立練習</h2><p class="sub">選擇類科、年度與科目；未選代表全部。</p>
+    <div id="migrationNotice" class="notice hidden">你是從舊版練習站轉入，題庫已整合至本頁，網址參數會繼續套用。</div>
+    <div class="form-grid">
+      <div class="field"><label for="category">類科</label><select id="category"><option value="">全部類科</option></select></div>
+      <div class="field"><label for="year">年度</label><select id="year"><option value="">全部年度</option></select></div>
+      <div class="field"><label for="subject">科目</label><select id="subject"><option value="">全部科目</option></select></div>
+    </div>
+    <div class="form-grid" style="margin-top:18px">
+      <div class="field"><label>題數</label><div class="segments" id="countSegments"><button data-value="10">10</button><button class="active" data-value="20">20</button><button data-value="40">40</button><button data-value="all">全部</button></div></div>
+      <div class="field"><label>時間</label><div class="segments" id="timeSegments"><button data-value="0">不限時</button><button data-value="30">30 分</button><button class="active" data-value="60">60 分</button><button data-value="90">90 分</button></div></div>
+      <div class="field"><label>出題方式</label><div class="segments" id="orderSegments"><button class="active" data-value="random">隨機</button><button data-value="ordered">依題號</button></div></div>
+    </div>
+    <div class="setup-actions"><button id="startBtn" class="primary" disabled>開始練習</button><button id="resumeBtn" class="secondary hidden">繼續上次進度</button></div>
+    <p class="availability">符合條件：<strong id="poolCount">索引載入中…</strong></p>
+  </section>
+
+  <section id="examView" class="hidden" aria-live="polite">
+    <div class="card exam-toolbar"><div id="timer" class="timer">60:00</div><div class="progress">第 <strong id="currentLabel">1</strong>／<span id="totalLabel">20</span> 題</div><div class="toolbar-actions"><button id="prevTop">上一題</button><button id="nextTop">下一題</button><button id="submitBtn" class="danger">交卷</button></div></div>
+    <article class="card question-card">
+      <div class="question-head"><span class="number" id="questionNumber">第 1 題</span><span class="meta" id="questionMeta"></span><button id="markBtn" class="mark">標記回顧</button></div>
+      <div id="passage" class="passage hidden"></div>
+      <p id="stem" class="stem"></p>
+      <div id="choices" class="choices" role="radiogroup" aria-label="作答選項"></div>
+      <div class="exam-nav"><button id="prevBtn" class="secondary">上一題</button><button id="nextBtn" class="primary">下一題</button></div>
+    </article>
+    <section class="card grid-card"><div class="grid-title">答題狀況</div><div id="questionGrid" class="question-grid"></div></section>
+  </section>
+
+  <section id="resultView" class="card result hidden">
+    <h2>練習結果</h2><p class="sub">送分題依官方答案自動給分。</p>
+    <div class="score"><strong id="scorePct">0%</strong><span>正確率</span></div>
+    <div class="stats"><div class="stat"><b id="correctCount">0</b>答對</div><div class="stat"><b id="wrongCount">0</b>答錯</div><div class="stat"><b id="unansweredCount">0</b>未答</div><div class="stat"><b id="bonusCount">0</b>送分</div><div class="stat"><b id="elapsedLabel">0:00</b>用時</div></div>
+    <div class="setup-actions"><button id="retryBtn" class="primary">再練一次</button><button id="newBtn" class="secondary">重新設定</button></div>
+    <h2 class="review-title">錯題與未答題回顧</h2><div id="reviewList" class="review-list"></div>
+  </section>
+
+  <section id="historyCard" class="card history hidden"><h2>最近紀錄</h2><div id="historyList"></div></section>
+  <p id="live" class="sr" aria-live="polite"></p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
+<script src="js/answer-utils.js"></script>
+<script src="js/search-engine.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id)};
+var STORAGE='police-exam-practice-state-v2';
+var HISTORY='police-exam-practice-history-v2';
+var pool=[],questions=[],answers=[],marked=[],current=0,timerId=null,startedAt=0,endAt=0,elapsedBase=0;
+var settings={cat:'',year:null,sub:'',count:20,minutes:60,order:'random'};
+
+function esc(value){return String(value||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function passageHtml(value){return esc(value).replace(/\[\[(\d+)\]\]/g,'<mark class="blank">[$1]</mark>').replace(/\n/g,'<br>')}
+function formatTime(seconds){seconds=Math.max(0,Math.floor(seconds));return Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0')}
+function shuffle(items){for(var i=items.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=items[i];items[i]=items[j];items[j]=t}return items}
+function currentSettings(){return {cat:$('category').value,year:$('year').value?parseInt($('year').value,10):null,sub:$('subject').value,count:selected('countSegments'),minutes:Number(selected('timeSegments')),order:selected('orderSegments')}}
+function selected(id){var node=$(id).querySelector('.active');return node?node.dataset.value:''}
+function setSegment(id,value){$(id).querySelectorAll('button').forEach(function(button){button.classList.toggle('active',String(button.dataset.value)===String(value))})}
+function setupSegments(id,onChange){$(id).addEventListener('click',function(event){var button=event.target.closest('button');if(!button)return;setSegment(id,button.dataset.value);if(onChange)onChange()})}
+
+function applyQuery(){var query=new URLSearchParams(location.search);var mapping=[['category','category'],['cat','category'],['year','year'],['subject','subject'],['sub','subject']];mapping.forEach(function(pair){var value=query.get(pair[0]);if(value)$(pair[1]).dataset.pending=value});if(query.get('from')==='legacy')$('migrationNotice').classList.remove('hidden')}
+function applyPending(){['category','year','subject'].forEach(function(id){var value=$(id).dataset.pending;if(value&&Array.from($(id).options).some(function(option){return option.value===value}))$(id).value=value;delete $(id).dataset.pending})}
+function fill(select,items,suffix){items.forEach(function(item){var option=document.createElement('option');option.value=String(item);option.textContent=String(item)+(suffix||'');select.appendChild(option)})}
+
+function refreshSubjects(){if(!window.SearchEngine)return;var keep=$('subject').value||$('subject').dataset.pending||'';var matches=SearchEngine.search('',{cat:$('category').value,yr:$('year').value?parseInt($('year').value,10):null,type:'choice'},99999);var subjects=Array.from(new Set(matches.map(function(q){return q.sub}).filter(Boolean))).sort();$('subject').innerHTML='<option value="">全部科目</option>';fill($('subject'),subjects,'');if(subjects.indexOf(keep)!==-1)$('subject').value=keep;refreshPool()}
+function refreshPool(){if(!window.SearchEngine)return;var s=currentSettings();pool=SearchEngine.search('',{cat:s.cat,yr:s.year,sub:s.sub,type:'choice'},99999).filter(function(q){return q.optA&&q.optB&&q.optC&&q.optD&&AnswerUtils.isValid(q.ans)});$('poolCount').textContent=pool.length.toLocaleString()+' 題';$('startBtn').disabled=pool.length===0;renderResume()}
+
+function renderResume(){var saved=loadState();var valid=saved&&Date.now()-saved.savedAt<7*86400000&&saved.settings&&saved.questionIds&&saved.questionIds.length;var button=$('resumeBtn');button.classList.toggle('hidden',!valid)}
+function loadState(){try{return JSON.parse(localStorage.getItem(STORAGE)||'null')}catch(error){return null}}
+function saveState(){if(!questions.length)return;try{localStorage.setItem(STORAGE,JSON.stringify({version:2,savedAt:Date.now(),settings:settings,questionIds:questions.map(function(q){return q.idx}),answers:answers,marked:marked,current:current,startedAt:startedAt,endAt:endAt,elapsedBase:elapsedBase}))}catch(error){}}
+function clearState(){try{localStorage.removeItem(STORAGE)}catch(error){}}
+
+function startNew(){settings=currentSettings();var count=settings.count==='all'?pool.length:Math.min(Number(settings.count)||20,pool.length);var source=pool.slice();if(settings.order==='random')shuffle(source);else source.sort(function(a,b){return (a.yr-b.yr)||String(a.sub).localeCompare(String(b.sub))||(Number(a.no)-Number(b.no))});questions=source.slice(0,count);answers=new Array(questions.length).fill(null);marked=new Array(questions.length).fill(false);current=0;startedAt=Date.now();endAt=settings.minutes>0?startedAt+settings.minutes*60000:0;elapsedBase=0;openExam();saveState()}
+function resume(){var saved=loadState();if(!saved)return;settings=saved.settings;var search=SearchEngine.search('',{cat:settings.cat,yr:settings.year,sub:settings.sub,type:'choice'},99999);var byId=new Map(search.map(function(q){return [q.idx,q]}));questions=saved.questionIds.map(function(id){return byId.get(id)}).filter(Boolean);if(questions.length!==saved.questionIds.length){clearState();alert('題庫已更新，舊進度無法完整還原，請重新開始。');return}answers=saved.answers||new Array(questions.length).fill(null);marked=saved.marked||new Array(questions.length).fill(false);current=Math.min(saved.current||0,questions.length-1);startedAt=saved.startedAt||Date.now();endAt=saved.endAt||0;elapsedBase=saved.elapsedBase||0;openExam()}
+function openExam(){$('setupView').classList.add('hidden');$('resultView').classList.add('hidden');$('examView').classList.remove('hidden');$('historyCard').classList.add('hidden');$('totalLabel').textContent=questions.length;renderQuestion();renderGrid();startTimer();scrollTo({top:0})}
+function startTimer(){clearInterval(timerId);tick();timerId=setInterval(tick,1000)}
+function tick(){var now=Date.now(),seconds;if(endAt){seconds=Math.ceil((endAt-now)/1000);$('timer').classList.toggle('warning',seconds<=60);if(seconds<=0){$('timer').textContent='0:00';finish(true);return}}else{seconds=elapsedBase+Math.floor((now-startedAt)/1000)}$('timer').textContent=formatTime(seconds)}
+function elapsedSeconds(){return endAt?Math.max(0,Math.round((Date.now()-startedAt)/1000)):elapsedBase+Math.floor((Date.now()-startedAt)/1000)}
+
+function renderQuestion(){var q=questions[current];if(!q)return;$('currentLabel').textContent=current+1;$('questionNumber').textContent='第 '+(current+1)+' 題';$('questionMeta').textContent=q.yr+' 年 · '+q.sub+' · 原題號 '+q.no;$('stem').textContent=q.stem||'';var passage=$('passage');if(q.passage){passage.innerHTML=passageHtml(q.passage);passage.classList.remove('hidden')}else{passage.innerHTML='';passage.classList.add('hidden')}$('markBtn').classList.toggle('active',!!marked[current]);$('markBtn').textContent=marked[current]?'已標記':'標記回顧';var options=['A','B','C','D'].map(function(letter){return {letter:letter,text:q['opt'+letter]}});$('choices').innerHTML=options.map(function(option){var chosen=answers[current]===option.letter;return '<button type="button" class="choice'+(chosen?' selected':'')+'" data-letter="'+option.letter+'" role="radio" aria-checked="'+chosen+'"><span class="letter">'+option.letter+'</span><span>'+esc(option.text)+'</span></button>'}).join('');$('choices').querySelectorAll('.choice').forEach(function(button){button.addEventListener('click',function(){answers[current]=button.dataset.letter;renderQuestion();renderGrid();saveState()})});$('prevBtn').disabled=current===0;$('prevTop').disabled=current===0;$('nextBtn').textContent=current===questions.length-1?'檢查並交卷':'下一題';$('nextTop').disabled=current===questions.length-1;$('live').textContent='第 '+(current+1)+' 題，共 '+questions.length+' 題'}
+function renderGrid(){$('questionGrid').innerHTML=questions.map(function(_,index){var classes=['qdot'];if(answers[index])classes.push('answered');if(marked[index])classes.push('marked');if(index===current)classes.push('current');return '<button type="button" class="'+classes.join(' ')+'" data-index="'+index+'">'+(index+1)+'</button>'}).join('');$('questionGrid').querySelectorAll('button').forEach(function(button){button.addEventListener('click',function(){go(Number(button.dataset.index))})})}
+function go(index){if(index<0||index>=questions.length)return;current=index;renderQuestion();renderGrid();saveState();scrollTo({top:0,behavior:'smooth'})}
+function next(){if(current<questions.length-1)go(current+1);else submit()}
+function submit(){var unanswered=answers.filter(function(value){return !value}).length;if(unanswered&&!confirm('尚有 '+unanswered+' 題未作答，仍要交卷嗎？'))return;finish(false)}
+
+function finish(auto){clearInterval(timerId);var result={correct:0,wrong:0,unanswered:0,bonus:0,elapsed:elapsedSeconds(),items:[]};questions.forEach(function(q,index){var chosen=answers[index];var bonus=AnswerUtils.isBonus(q.ans);var correct=AnswerUtils.isCorrect(chosen,q.ans);if(bonus){result.bonus++;result.correct++}else if(!chosen){result.unanswered++;result.items.push({q:q,index:index,chosen:null})}else if(correct){result.correct++}else{result.wrong++;result.items.push({q:q,index:index,chosen:chosen})}});result.total=questions.length;result.pct=result.total?Math.round(result.correct/result.total*100):0;clearState();saveHistory(result);$('examView').classList.add('hidden');$('resultView').classList.remove('hidden');$('scorePct').textContent=result.pct+'%';$('correctCount').textContent=result.correct;$('wrongCount').textContent=result.wrong;$('unansweredCount').textContent=result.unanswered;$('bonusCount').textContent=result.bonus;$('elapsedLabel').textContent=formatTime(result.elapsed);renderReview(result.items);$('live').textContent=(auto?'時間到，已自動交卷。':'已交卷。')+'正確率 '+result.pct+'%';scrollTo({top:0})}
+function renderReview(items){if(!items.length){$('reviewList').innerHTML='<div class="notice">全部答對，沒有錯題或未答題。</div>';return}$('reviewList').innerHTML=items.map(function(item){var q=item.q;var options=['A','B','C','D'].map(function(letter){var correct=AnswerUtils.acceptedAnswers(q.ans).indexOf(letter)!==-1;var wrong=item.chosen===letter&&!correct;return '<div class="review-option'+(correct?' correct':'')+(wrong?' chosen-wrong':'')+'"><strong>'+letter+'</strong> '+esc(q['opt'+letter])+(correct?'　正解':'')+(wrong?'　你的答案':'')+'</div>'}).join('');return '<article class="card review"><div class="meta">第 '+(item.index+1)+' 題 · '+esc(q.yr+' 年 '+q.sub)+'</div>'+(q.passage?'<div class="passage">'+passageHtml(q.passage)+'</div>':'')+'<h3>'+esc(q.stem)+'</h3>'+options+'<p class="meta">官方答案：'+esc(AnswerUtils.display(q.ans))+'</p></article>'}).join('')}
+
+function saveHistory(result){try{var history=JSON.parse(localStorage.getItem(HISTORY)||'[]');history.unshift({date:new Date().toISOString(),pct:result.pct,correct:result.correct,total:result.total,elapsed:result.elapsed,cat:settings.cat,year:settings.year,sub:settings.sub});localStorage.setItem(HISTORY,JSON.stringify(history.slice(0,20)))}catch(error){}renderHistory()}
+function renderHistory(){var history=[];try{history=JSON.parse(localStorage.getItem(HISTORY)||'[]')}catch(error){}$('historyCard').classList.toggle('hidden',!history.length);$('historyList').innerHTML=history.slice(0,8).map(function(item){return '<div class="history-row"><span>'+new Date(item.date).toLocaleDateString('zh-TW')+' · '+esc(item.year||'全部年度')+' · '+esc(item.sub||item.cat||'綜合')+'</span><strong>'+item.pct+'%（'+item.correct+'/'+item.total+'）</strong></div>'}).join('')}
+function resetSetup(){$('resultView').classList.add('hidden');$('setupView').classList.remove('hidden');renderHistory();renderResume();scrollTo({top:0})}
+
+setupSegments('countSegments');setupSegments('timeSegments');setupSegments('orderSegments');
+$('category').addEventListener('change',refreshSubjects);$('year').addEventListener('change',refreshSubjects);$('subject').addEventListener('change',refreshPool);
+$('startBtn').addEventListener('click',startNew);$('resumeBtn').addEventListener('click',resume);$('prevBtn').addEventListener('click',function(){go(current-1)});$('prevTop').addEventListener('click',function(){go(current-1)});$('nextBtn').addEventListener('click',next);$('nextTop').addEventListener('click',next);$('submitBtn').addEventListener('click',submit);$('markBtn').addEventListener('click',function(){marked[current]=!marked[current];renderQuestion();renderGrid();saveState()});$('retryBtn').addEventListener('click',startNew);$('newBtn').addEventListener('click',resetSetup);
+document.addEventListener('keydown',function(event){if($('examView').classList.contains('hidden')||event.target.closest('select,button'))return;if(['1','2','3','4'].indexOf(event.key)!==-1){answers[current]='ABCD'[Number(event.key)-1];renderQuestion();renderGrid();saveState()}else if(/^[a-dA-D]$/.test(event.key)){answers[current]=event.key.toUpperCase();renderQuestion();renderGrid();saveState()}else if(event.key==='ArrowRight')next();else if(event.key==='ArrowLeft')go(current-1);else if(event.key.toLowerCase()==='m'){$('markBtn').click()}});
+window.addEventListener('beforeunload',saveState);
+
+$('themeBtn').addEventListener('click',function(){var dark=document.documentElement.dataset.theme!=='dark';document.documentElement.dataset.theme=dark?'dark':'light';$('themeBtn').textContent=dark?'淺色模式':'深色模式';try{localStorage.setItem('exam-dark',String(dark))}catch(error){}});try{if(localStorage.getItem('exam-dark')==='true'){$('themeBtn').click()}}catch(error){}
+applyQuery();
+SearchEngine.loadIndex().then(function(){var facets=SearchEngine.getFacets();fill($('category'),facets.categories,'');fill($('year'),facets.years.slice().reverse(),' 年');applyPending();refreshSubjects();applyPending();refreshPool();renderHistory()}).catch(function(error){$('poolCount').textContent='索引載入失敗：'+error.message});
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(function(){});
+})();
+</script>
+</body>
+</html>
