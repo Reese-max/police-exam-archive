@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.4.0';
+var CACHE_VERSION = 'v1.5.0';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -7,6 +7,9 @@ var DYNAMIC_CACHE = 'dynamic-' + CACHE_VERSION;
 var CORE_ASSETS = [
   './',
   './index.html',
+  './analytics.html',
+  './analytics-chart.js',
+  './analytics-chart-data.js',
   './data/home-stats.json',
   './css/style.css',
   './js/app.js',
@@ -52,9 +55,17 @@ self.addEventListener('fetch', function(event) {
   /* Only handle GET requests */
   if (event.request.method !== 'GET') return;
 
-  /* Homepage stats: always prefer fresh data, keep offline fallback */
+  /* Generated homepage stats: always prefer fresh data, keep offline fallback */
   if (url.origin === self.location.origin &&
       url.pathname.endsWith('/data/home-stats.json')) {
+    event.respondWith(networkFirst(event.request, CORE_CACHE));
+    return;
+  }
+
+  /* Analytics code + generated data must update together; never serve stale first. */
+  if (url.origin === self.location.origin &&
+      (url.pathname.endsWith('/analytics-chart.js') ||
+       url.pathname.endsWith('/analytics-chart-data.js'))) {
     event.respondWith(networkFirst(event.request, CORE_CACHE));
     return;
   }
