@@ -26,6 +26,9 @@ jobs:
           pip install pytest pytest-cov
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+      - name: Run independent 115 integrity audit
+        run: python scripts/audit/verify_115_integrity.py
+
       - name: Run all tests
         run: python -m pytest tests/ -v --tb=short
 
@@ -38,12 +41,21 @@ jobs:
       - name: Verify analytics generation
         run: python scripts/build_analytics.py --output /tmp/analytics.json
 
+      - name: Verify category overview generation
+        run: python scripts/build_category_pages.py --output /tmp/category-pages
+
+      - name: Verify quiz answer contract
+        run: node 考古題網站/tests/quiz-answer-contract.js
+
       - name: Verify analytics frontend is current
         run: python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
 
       - name: Verify frontend JavaScript syntax
         run: |
           node --check 考古題網站/sw.js
+          node --check 考古題網站/js/answer-utils.js
+          node --check 考古題網站/js/search-engine.js
+          node --check 考古題網站/js/quiz-engine.js
           node --check 考古題網站/analytics-chart.js
           node --check 考古題網站/analytics-chart-data.js
           node --check 考古題網站/_gen_data.js

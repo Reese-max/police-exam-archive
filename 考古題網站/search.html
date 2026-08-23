@@ -242,7 +242,7 @@ footer strong{color:var(--text-2);font-weight:700}
     <a href="index.html" class="back-link">← 回到首頁</a>
     <span class="eyebrow">考古題資料庫 · 全文檢索</span>
     <h1>考古題全文搜尋</h1>
-    <p class="lead">跨部門搜尋 41,811 道警察特考考古題。</p>
+    <p class="lead">跨類科搜尋歷年警察特考考古題與閱讀題組。</p>
   </div>
 </header>
 
@@ -289,6 +289,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
 <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
 <script src="js/search-engine.js"></script>
+<script src="js/answer-utils.js"></script>
 <script>
 /* ===== 真實搜尋引擎整合（minisearch + search-engine.js） ===== */
 (function(){
@@ -317,13 +318,14 @@ footer strong{color:var(--text-2);font-weight:700}
       '<span class="tag subj">' + _esc(q.sub) + '</span>' +
       '<span class="tag type">' + (q.type==='choice'?'選擇題':'申論題') + '</span>' +
       (q.ans ? '<span class="tag ans">答案 ' + q.ans + '</span>' : '');
-    var html = '<article class="result"><div class="tags">' + tags + '</div>' +
+    var passage = q.passage ? '<div class="passage">' + _highlight(_esc(q.passage)).replace(/\[\[(\d+)\]\]/g,'<mark>[$1]</mark>') + '</div>' : '';
+    var html = '<article class="result"><div class="tags">' + tags + '</div>' + passage +
       '<p class="stem">' + _highlight(_esc(q.type==='essay' ? q.stem.substring(0,300) : q.stem)) + '</p>';
     if(q.type==='choice' && q.optA){
       var opts='';
       ['A','B','C','D'].forEach(function(L){
         var v=q['opt'+L]; if(!v) return;
-        opts += '<div class="opt'+(q.ans===L?' correct':'')+'"><span class="lbl">'+L+'</span><span class="otxt">'+_highlight(_esc(v))+'</span></div>';
+        opts += '<div class="opt'+(AnswerUtils.accepts(q.ans,L)?' correct':'')+'"><span class="lbl">'+L+'</span><span class="otxt">'+_highlight(_esc(v))+'</span></div>';
       });
       html += '<div class="options">'+opts+'</div>';
       if(q.ans) html += '<div class="ans-row"><span class="al">正確答案</span><span class="ans-pill">'+q.ans+'</span></div>';

@@ -11,7 +11,13 @@
     "official_category_code": "211",
     "official_category": "水上警察人員",
     "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=211&s=0207&q=1",
-    "source_sha256": "23e03c8134819261caefb1fce645ae73efa59e6755def310a3d97236ff6dacf3"
+    "source_sha256": "23e03c8134819261caefb1fce645ae73efa59e6755def310a3d97236ff6dacf3",
+    "categories": [
+      "水上警察學系"
+    ],
+    "official_subject": "中華民國憲法與水上警察專業英文",
+    "path_subject": "中華民國憲法與水上警察專業英文",
+    "category_membership": "水上警察學系"
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -560,7 +566,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Therescueteam quickly thesurvivors from thedriftingboat beforenightfall.",
+      "stem": "The rescue team quickly the survivors from the drifting boat before nightfall.",
       "section": "乙、測驗題",
       "options": {
         "A": "evacuated",
@@ -573,7 +579,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "Thecoast guardissueda warningtovessels enteringa areaduetostrongcurrents.",
+      "stem": "Thecoast guard issued a warning to vessels enteringa area due to strong currents.",
       "section": "乙、測驗題",
       "options": {
         "A": "balanced",
@@ -586,7 +592,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "All crewmembers must wearlifejackets incase ofan emergency at sea.",
+      "stem": "All crewmembers must wear life jackets incase ofan emergency at sea.",
       "section": "乙、測驗題",
       "options": {
         "A": "schedule",
@@ -599,7 +605,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "Thepatrol boat was sent to illegal fishingactivities neartheboundaryline.",
+      "stem": "Thepatrol boat was sent to illegal fishingactivities near the boundary line.",
       "section": "乙、測驗題",
       "options": {
         "A": "investigate",
@@ -612,7 +618,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "Theinjuredfishermanwas immediatelygiven first aidandthen toanearbyhospital.",
+      "stem": "The injured fisherman was immediatelygiven first aidandthen to a nearby hospital.",
       "section": "乙、測驗題",
       "options": {
         "A": "reported",
@@ -625,7 +631,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "Theauthorities imposed strict measures to illegal smugglingactivities.",
+      "stem": "The authorities imposed strict measures to illegal smuggling activities.",
       "section": "乙、測驗題",
       "options": {
         "A": "combat",
@@ -638,7 +644,7 @@
     {
       "number": 47,
       "type": "choice",
-      "stem": "Thecrewhadbeen adrift bytheirhijackers fortwoweeks beforebeingrescued.",
+      "stem": "The crew had been adrift by their hijackers fortwoweeks before being rescued.",
       "section": "乙、測驗題",
       "options": {
         "A": "cast",
@@ -664,7 +670,7 @@
     {
       "number": 49,
       "type": "choice",
-      "stem": "Afterboardingavessel, theinspectorshouldask themasterto the crewondeck.",
+      "stem": "After boarding a vessel, the inspector should ask themasterto the crewondeck.",
       "section": "乙、測驗題",
       "options": {
         "A": "join",
@@ -677,13 +683,13 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Thecoast guardattemptedto thesuspect vessel beforeit reachedinternational waters.",
+      "stem": "Thecoast guard attempted to thesuspect vessel beforeit reached international waters.",
       "section": "乙、測驗題",
       "options": {
         "A": "efficient",
         "B": "rapid",
         "C": "timely",
-        "D": "urgent 請依下文回答第56題至第60題 Vietnam’sasymmetrictacticstargeting Chinaaimstoprevent Beijingdeployingitswarshipsincase low-intensity conflicts break out. It means that warships of the Vietnam People’s navy (VPN) are deployed to protect paramilitary ships operating around Vietnam’s islands. “Asymmetric” weapon systemsrender Chinesenavy’sactivitieswithinthedistanceof200–300nauticalmilesfromthecoastline of Vietnam. Themostimportanttaskofanasymmetricaldoctrineistodenyenemy’sforcestotakecontrolofthe waters around strategic choke points in the South China Sea or important sea lines of communication (SLOCs). However, a key question regarding the VPN is how an asymmetric strategy, which essentially relies oncost imposition,prevents anenemyfrom controllingSLOCs ordistant chokepoints whichmany couldnot be inthe VPN’s area of responsibility(AOR).This questionis hardto concretelyanswer at the moment,becausewedonothaveenoughinformationonthedetailedtacticalandstrategicplanningofthe VPN regardingthe issue. However, given the current modernization trajectory, at least the VPN is trying its best in order to have a comprehensive response and sound anti-access/area denial capabilities within its current AOR (which possibly extends beyond the waters of the Spratlys and Paracels but still within the boundary of the South China Sea). It is definitely the vpn’s mission to deal with the conventional aspects of war, but the service at the moment still does not have enough capabilities to cover the vast territorial waters under its protection. The Navy simply has too few ships, aircraft and armaments for a vast AOR.The Vietnam Coast Guard(VCG)therefore wouldrepresent the go-to guarantorofsecurityof the less important strategic points to relieve the Navy of such tasks. Basically, the VPN would provide a backstop should serious conflict erupt. But VCG commanders will need the capabilities and hold their ownagainstrivalforcesuntilreinforcementsarrive.Theultimateoutcomeifanavalconflictbreaksoutis not to “win” in its literal meaning but rather to inflict as much damage as possible to the enemyin order for the political and diplomatic channels to maximize their voices in international arena against the “aggressor.” It is in this context that the role of vietnam’s armed forces and other forces relating to maritimesecurityisjustpartsofabiggerandmorecomprehensivegrandstrategytoprotectthecountry’s “sacred”sovereignty."
+        "D": "urgent"
       },
       "answer": "A"
     },
@@ -760,54 +766,58 @@
     {
       "number": 56,
       "type": "choice",
-      "stem": "What is themainideaofthesecondparagraph?",
+      "stem": "What is the main idea of the second paragraph?",
       "section": "乙、測驗題",
       "options": {
         "A": "How Vietnam People’s Navyfights Chinese Navy.",
         "B": "How Vietnam Coast Guardworks with Vietnam People’s navy.",
-        "C": "How Vietnam Coast Guardprotects theirarea ofresponsibility.",
-        "D": "How Vietnam People’s Navycouldwininaconflict in South China Sea."
+        "C": "How Vietnam Coast Guardprotects theirarea of responsibility.",
+        "D": "How Vietnam People’s Navy could win in a conflict in South China Sea."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "Vietnam’s asymmetric tactics targeting China aims to prevent Beijing deploying its warships in case low-intensity conflicts break out. It means that warships of the Vietnam People’s navy (VPN) are deployed to protect paramilitary ships operating around Vietnam’s islands. “Asymmetric” weapon systemsrender Chinesenavy’s activities within the distance of200–300nautical miles from the coastline of Vietnam. The most important task of an asymmetrical doctrine is to deny enemy’s forces to take control of the waters around strategic choke points in the South China Sea or important sea lines of communication (SLOCs). However, a key question regarding the VPN is how an asymmetric strategy, which essentially relies oncost imposition,prevents anenemyfrom controllingSLOCs ordistant chokepoints whichmany couldnot be inthe VPN’s area of responsibility(AOR).This questionis hardto concretelyanswer at the moment,because we do not have enough information on the detailed tactical and strategic planning of the VPN regarding the issue. However, given the current modernization trajectory, at least the VPN is trying its best in order to have a comprehensive response and sound anti-access/area denial capabilities within its current AOR (which possibly extends beyond the waters of the Spratlys and Paracels but still within the boundary of the South China Sea). It is definitely the vpn’s mission to deal with the conventional aspects of war, but the service at the moment still does not have enough capabilities to cover the vast territorial waters under its protection. The Navy simply has too few ships, aircraft and armaments for a vast AOR.The Vietnam Coast Guard(VCG)therefore wouldrepresent the go-to guarantor of security of the less important strategic points to relieve the Navy of such tasks. Basically, the VPN would provide a backstop should serious conflict erupt. But VCG commanders will need the capabilities and hold their own against rival forces until reinforcements arrive.The ultimate outcome if a naval conflict breaks out is not to “win” in its literal meaning but rather to inflict as much damage as possible to the enemyin order for the political and diplomatic channels to maximize their voices in international arena against the “aggressor.” It is in this context that the role of vietnam’s armed forces and other forces relating to maritime security is just parts of a bigger and more comprehensive grand strategy to protect the country’s “sacred”sovereignty."
     },
     {
       "number": 57,
       "type": "choice",
-      "stem": "Whichis anasymmetrical strategymentionedinthepassage?",
+      "stem": "Whichis an asymmetrical strategy mentioned in the passage?",
       "section": "乙、測驗題",
       "options": {
         "A": "DeployVCGtoless critical areas.",
-        "B": "Prevent anescalation ofaconflict.",
-        "C": "Utilizediplomaticchannels toreach adeal.",
+        "B": "Prevent an escalation ofaconflict.",
+        "C": "Utilize diplomatic channels toreach adeal.",
         "D": "Claim alargerarea of responsibilityforVPN."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Vietnam’s asymmetric tactics targeting China aims to prevent Beijing deploying its warships in case low-intensity conflicts break out. It means that warships of the Vietnam People’s navy (VPN) are deployed to protect paramilitary ships operating around Vietnam’s islands. “Asymmetric” weapon systemsrender Chinesenavy’s activities within the distance of200–300nautical miles from the coastline of Vietnam. The most important task of an asymmetrical doctrine is to deny enemy’s forces to take control of the waters around strategic choke points in the South China Sea or important sea lines of communication (SLOCs). However, a key question regarding the VPN is how an asymmetric strategy, which essentially relies oncost imposition,prevents anenemyfrom controllingSLOCs ordistant chokepoints whichmany couldnot be inthe VPN’s area of responsibility(AOR).This questionis hardto concretelyanswer at the moment,because we do not have enough information on the detailed tactical and strategic planning of the VPN regarding the issue. However, given the current modernization trajectory, at least the VPN is trying its best in order to have a comprehensive response and sound anti-access/area denial capabilities within its current AOR (which possibly extends beyond the waters of the Spratlys and Paracels but still within the boundary of the South China Sea). It is definitely the vpn’s mission to deal with the conventional aspects of war, but the service at the moment still does not have enough capabilities to cover the vast territorial waters under its protection. The Navy simply has too few ships, aircraft and armaments for a vast AOR.The Vietnam Coast Guard(VCG)therefore wouldrepresent the go-to guarantor of security of the less important strategic points to relieve the Navy of such tasks. Basically, the VPN would provide a backstop should serious conflict erupt. But VCG commanders will need the capabilities and hold their own against rival forces until reinforcements arrive.The ultimate outcome if a naval conflict breaks out is not to “win” in its literal meaning but rather to inflict as much damage as possible to the enemyin order for the political and diplomatic channels to maximize their voices in international arena against the “aggressor.” It is in this context that the role of vietnam’s armed forces and other forces relating to maritime security is just parts of a bigger and more comprehensive grand strategy to protect the country’s “sacred”sovereignty."
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "What is themaingoal inanasymmetricwar?",
+      "stem": "What is themaingoal in an asymmetric war?",
       "section": "乙、測驗題",
       "options": {
         "A": "Useas fewer conventional weapons as possible.",
-        "B": "Control as manychokepoints andSLOCs as possible.",
-        "C": "Causeas muchdamageas possiblewithas littlecost as possible.",
-        "D": "Destroyas manyenemies as possiblewhilelosingas fewersoldiers as possible."
+        "B": "Control as many choke points andSLOCs as possible.",
+        "C": "Causeas much damage as possible with as littlecost as possible.",
+        "D": "Destroyas manyenemies as possible while losing as fewersoldiers as possible."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "Vietnam’s asymmetric tactics targeting China aims to prevent Beijing deploying its warships in case low-intensity conflicts break out. It means that warships of the Vietnam People’s navy (VPN) are deployed to protect paramilitary ships operating around Vietnam’s islands. “Asymmetric” weapon systemsrender Chinesenavy’s activities within the distance of200–300nautical miles from the coastline of Vietnam. The most important task of an asymmetrical doctrine is to deny enemy’s forces to take control of the waters around strategic choke points in the South China Sea or important sea lines of communication (SLOCs). However, a key question regarding the VPN is how an asymmetric strategy, which essentially relies oncost imposition,prevents anenemyfrom controllingSLOCs ordistant chokepoints whichmany couldnot be inthe VPN’s area of responsibility(AOR).This questionis hardto concretelyanswer at the moment,because we do not have enough information on the detailed tactical and strategic planning of the VPN regarding the issue. However, given the current modernization trajectory, at least the VPN is trying its best in order to have a comprehensive response and sound anti-access/area denial capabilities within its current AOR (which possibly extends beyond the waters of the Spratlys and Paracels but still within the boundary of the South China Sea). It is definitely the vpn’s mission to deal with the conventional aspects of war, but the service at the moment still does not have enough capabilities to cover the vast territorial waters under its protection. The Navy simply has too few ships, aircraft and armaments for a vast AOR.The Vietnam Coast Guard(VCG)therefore wouldrepresent the go-to guarantor of security of the less important strategic points to relieve the Navy of such tasks. Basically, the VPN would provide a backstop should serious conflict erupt. But VCG commanders will need the capabilities and hold their own against rival forces until reinforcements arrive.The ultimate outcome if a naval conflict breaks out is not to “win” in its literal meaning but rather to inflict as much damage as possible to the enemyin order for the political and diplomatic channels to maximize their voices in international arena against the “aggressor.” It is in this context that the role of vietnam’s armed forces and other forces relating to maritime security is just parts of a bigger and more comprehensive grand strategy to protect the country’s “sacred”sovereignty."
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "Accordingtothepassage,what is theroleofVCG inthe South China Sea?",
+      "stem": "According to the passage,what is theroleofVCG inthe South China Sea?",
       "section": "乙、測驗題",
       "options": {
         "A": "Fleeright away.",
-        "B": "Attackfirst beforebeingattacked.",
-        "C": "Defend against theaggressoras longas possible.",
-        "D": "Negotiatethebest deal withtheaggressorbeforesurrender."
+        "B": "Attackfirst before being attacked.",
+        "C": "Defend against the aggressor as longas possible.",
+        "D": "Negotiate the best deal with the aggressor before surrender."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "Vietnam’s asymmetric tactics targeting China aims to prevent Beijing deploying its warships in case low-intensity conflicts break out. It means that warships of the Vietnam People’s navy (VPN) are deployed to protect paramilitary ships operating around Vietnam’s islands. “Asymmetric” weapon systemsrender Chinesenavy’s activities within the distance of200–300nautical miles from the coastline of Vietnam. The most important task of an asymmetrical doctrine is to deny enemy’s forces to take control of the waters around strategic choke points in the South China Sea or important sea lines of communication (SLOCs). However, a key question regarding the VPN is how an asymmetric strategy, which essentially relies oncost imposition,prevents anenemyfrom controllingSLOCs ordistant chokepoints whichmany couldnot be inthe VPN’s area of responsibility(AOR).This questionis hardto concretelyanswer at the moment,because we do not have enough information on the detailed tactical and strategic planning of the VPN regarding the issue. However, given the current modernization trajectory, at least the VPN is trying its best in order to have a comprehensive response and sound anti-access/area denial capabilities within its current AOR (which possibly extends beyond the waters of the Spratlys and Paracels but still within the boundary of the South China Sea). It is definitely the vpn’s mission to deal with the conventional aspects of war, but the service at the moment still does not have enough capabilities to cover the vast territorial waters under its protection. The Navy simply has too few ships, aircraft and armaments for a vast AOR.The Vietnam Coast Guard(VCG)therefore wouldrepresent the go-to guarantor of security of the less important strategic points to relieve the Navy of such tasks. Basically, the VPN would provide a backstop should serious conflict erupt. But VCG commanders will need the capabilities and hold their own against rival forces until reinforcements arrive.The ultimate outcome if a naval conflict breaks out is not to “win” in its literal meaning but rather to inflict as much damage as possible to the enemyin order for the political and diplomatic channels to maximize their voices in international arena against the “aggressor.” It is in this context that the role of vietnam’s armed forces and other forces relating to maritime security is just parts of a bigger and more comprehensive grand strategy to protect the country’s “sacred”sovereignty."
     },
     {
       "number": 60,
@@ -821,7 +831,8 @@
       },
       "answer": "C",
       "section": "乙、測驗題",
-      "_recovered_from_pdf_page": 8
+      "_recovered_from_pdf_page": 8,
+      "passage": "Vietnam’s asymmetric tactics targeting China aims to prevent Beijing deploying its warships in case low-intensity conflicts break out. It means that warships of the Vietnam People’s navy (VPN) are deployed to protect paramilitary ships operating around Vietnam’s islands. “Asymmetric” weapon systemsrender Chinesenavy’s activities within the distance of200–300nautical miles from the coastline of Vietnam. The most important task of an asymmetrical doctrine is to deny enemy’s forces to take control of the waters around strategic choke points in the South China Sea or important sea lines of communication (SLOCs). However, a key question regarding the VPN is how an asymmetric strategy, which essentially relies oncost imposition,prevents anenemyfrom controllingSLOCs ordistant chokepoints whichmany couldnot be inthe VPN’s area of responsibility(AOR).This questionis hardto concretelyanswer at the moment,because we do not have enough information on the detailed tactical and strategic planning of the VPN regarding the issue. However, given the current modernization trajectory, at least the VPN is trying its best in order to have a comprehensive response and sound anti-access/area denial capabilities within its current AOR (which possibly extends beyond the waters of the Spratlys and Paracels but still within the boundary of the South China Sea). It is definitely the vpn’s mission to deal with the conventional aspects of war, but the service at the moment still does not have enough capabilities to cover the vast territorial waters under its protection. The Navy simply has too few ships, aircraft and armaments for a vast AOR.The Vietnam Coast Guard(VCG)therefore wouldrepresent the go-to guarantor of security of the less important strategic points to relieve the Navy of such tasks. Basically, the VPN would provide a backstop should serious conflict erupt. But VCG commanders will need the capabilities and hold their own against rival forces until reinforcements arrive.The ultimate outcome if a naval conflict breaks out is not to “win” in its literal meaning but rather to inflict as much damage as possible to the enemyin order for the political and diplomatic channels to maximize their voices in international arena against the “aggressor.” It is in this context that the role of vietnam’s armed forces and other forces relating to maritime security is just parts of a bigger and more comprehensive grand strategy to protect the country’s “sacred”sovereignty."
     }
   ],
   "year": 115,
@@ -839,5 +850,8 @@
     ]
   },
   "_answer_source": "答案.pdf",
-  "_answers_merged": 60
+  "_answers_merged": 60,
+  "categories": [
+    "水上警察學系"
+  ]
 }
