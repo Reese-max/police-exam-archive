@@ -23,6 +23,7 @@ _QUESTION_NUM_RE = re.compile(r"第\s*(\d{1,3})\s*題")
 _ANSWER_TOKEN_RE = re.compile(
     r"送分|[A-DＡ-Ｄ](?:(?:\s*[或、,，/／]\s*)[A-DＡ-Ｄ]){1,3}|[A-DＡ-Ｄ]{1,4}"
 )
+_DECLARED_SINGLE_COUNT_RE = re.compile(r"單選題數\s*[：:]\s*(\d{1,3})\s*題")
 _FULLWIDTH_TRANS = str.maketrans({
     "Ａ": "A", "Ｂ": "B", "Ｃ": "C", "Ｄ": "D",
     "，": ",", "／": "/",
@@ -177,6 +178,15 @@ def parse_answer_text(text: str) -> Dict[int, str]:
     return answers
 
 
+def _declared_single_choice_count(text: str) -> Optional[int]:
+    """讀取考選部答案表宣告的單選題數，避免 1–100 空白模板被視為有效題號。"""
+    match = _DECLARED_SINGLE_COUNT_RE.search(text or "")
+    if not match:
+        return None
+    count = int(match.group(1))
+    return count if count > 0 else None
+
+
 def _parse_pdf_only(pdf_path: Path) -> Dict[int, str]:
     try:
         import pdfplumber
@@ -199,11 +209,24 @@ def _parse_pdf_only(pdf_path: Path) -> Dict[int, str]:
         logger.warning("答案 PDF 讀取失敗 %s: %s", pdf_path, exc)
         return {}
 
-    text_answers = parse_answer_text("\n".join(text_parts))
+    full_text = "\n".join(text_parts)
+    text_answers = parse_answer_text(full_text)
     # 表格通常較準；更正文字必須最後覆蓋。
     merged = dict(text_answers)
     merged.update(table_answers)
-    merged.update(_parse_correction_notes("\n".join(text_parts)))
+    merged.update(_parse_correction_notes(full_text))
+
+    # 考選部答案 PDF 固定使用 1–100 題模板，即使實際只有 10、20、25 題，
+    # PDF 文字層仍可能出現第 26–100 題的空白題號。以官方明載題數裁切，
+    # 才不會把版型占位誤認成真實試題。
+    declared_count = _declared_single_choice_count(full_text)
+    if declared_count is not None:
+        merged = {
+            number: value
+            for number, value in merged.items()
+            if 1 <= number <= declared_count
+        }
+
     return merged
 
 
