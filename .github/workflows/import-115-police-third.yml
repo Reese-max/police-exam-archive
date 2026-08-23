@@ -8,13 +8,20 @@ on:
       - .github/workflows/import-115-police-third.yml
       - scripts/download/import_115_police_third.py
       - scripts/audit/validate_115_police_third.py
+  pull_request:
+    branches:
+      - master
+    paths:
+      - .github/workflows/import-115-police-third.yml
+      - scripts/download/import_115_police_third.py
+      - scripts/audit/validate_115_police_third.py
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: import-115-police-third
+  group: import-115-police-third-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -26,6 +33,7 @@ jobs:
       - name: Check out import branch
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
           fetch-depth: 0
 
       - name: Set up Python
@@ -71,6 +79,8 @@ jobs:
             考古題庫/problematic_pdfs.json 2>/dev/null || true
 
       - name: Commit generated JSON data to the import branch
+        env:
+          TARGET_BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -82,4 +92,4 @@ jobs:
             exit 0
           fi
           git commit -m "data: import 115 third-class police exam questions"
-          git push origin HEAD:${GITHUB_REF_NAME}
+          git push origin HEAD:"${TARGET_BRANCH}"
