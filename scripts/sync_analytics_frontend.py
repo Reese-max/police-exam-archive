@@ -23,16 +23,12 @@ def sync_text(text: str, stats: dict) -> str:
     first_year = min(stats["years"])
     last_year = max(stats["years"])
     year_range = f"{first_year}–{last_year}"
-    total = stats["total_questions"]
-    choice = stats["choice_questions"]
-    essay = stats["essay_questions"]
+    total = stats["total"]
+    choice = stats["choice"]
+    essay = stats["essay"]
     categories = stats["categories"]
     subjects = stats["subjects"]
 
-    replacements = [
-        (r'data-target="\d+">0</span></div></div>', None),
-    ]
-    # 依卡片標籤精準更新，避免碰到其他 data-target。
     for label, value in [
         ("總題數", total),
         ("選擇題", choice),
@@ -142,7 +138,7 @@ def main() -> int:
     CHART_JS.write_text(chart_after, encoding="utf-8")
     CHART_DATA.write_text(data_after, encoding="utf-8")
     print(
-        f"Analytics 已同步：{stats['total_questions']:,} 題，"
+        f"Analytics 已同步：{stats['total']:,} 題，"
         f"{min(stats['years'])}–{max(stats['years'])} 年"
     )
     return 0
