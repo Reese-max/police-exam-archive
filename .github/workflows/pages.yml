@@ -28,11 +28,25 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Generate homepage stats
+        run: python scripts/build_home_stats.py
+
       - name: Generate search index
         run: python scripts/build_search_index.py
 
       - name: Generate analytics
-        run: python scripts/build_analytics.py
+        run: python scripts/build_analytics.py --output /tmp/analytics.json
+
+      - name: Sync analytics frontend
+        run: python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json
+
+      - name: Verify generated frontend assets
+        run: |
+          python scripts/build_home_stats.py --check
+          python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
+          node --check 考古題網站/sw.js
+          node --check 考古題網站/analytics-chart.js
+          node --check 考古題網站/analytics-chart-data.js
 
       - uses: actions/configure-pages@v5
 
