@@ -11,6 +11,7 @@ on:
     paths:
       - .github/workflows/ingest-115-police.yml
       - scripts/download/download_115_police.py
+      - scripts/download/run_115_police_import.py
       - scripts/audit/.finalize_115_import.py.gz.b64
       - .gitignore
 
@@ -53,6 +54,7 @@ jobs:
           print(f"已還原 {target}（{len(data)} bytes）")
           PY
           python -m py_compile scripts/download/download_115_police.py
+          python -m py_compile scripts/download/run_115_police_import.py
           python -m py_compile scripts/audit/finalize_115_import.py
 
       - name: Set up Python
@@ -68,7 +70,7 @@ jobs:
 
       - name: Download official 115 exam files
         run: |
-          python scripts/download/download_115_police.py \
+          python scripts/download/run_115_police_import.py \
             --output 考古題庫 \
             --overwrite
 
