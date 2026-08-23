@@ -56,3 +56,5 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
+
+# Touch this workflow to force a fresh deployment after the 115-year data rollout.
