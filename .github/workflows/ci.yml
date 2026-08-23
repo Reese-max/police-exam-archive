@@ -7,9 +7,10 @@ on:
     branches: [master]
 
 jobs:
-  test:
+  python-tests:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         python-version: ['3.10', '3.11', '3.12']
 
@@ -20,20 +21,34 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+          cache: pip
 
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install pytest pytest-cov
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Run all tests
+      - name: Verify official 115 common English fixture
+        run: python scripts/repair/fix_115_common_english.py --check
+
+      - name: Run all Python tests
         run: python -m pytest tests/ -v --tb=short
 
       - name: Verify homepage stats are current
         run: python scripts/build_home_stats.py --check
 
-      - name: Verify search index generation
-        run: python scripts/build_search_index.py --output /tmp/search-index.json
+      - name: Verify search index v2 generation
+        run: |
+          python scripts/build_search_index.py --output /tmp/search-index.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('/tmp/search-index.json').read_text(encoding='utf-8'))
+          assert data['v'] == 2
+          assert 'passage' in data['columns']
+          assert 'cats' in data['columns']
+          PY
 
       - name: Verify analytics generation
         run: python scripts/build_analytics.py --output /tmp/analytics.json
@@ -41,9 +56,33 @@ jobs:
       - name: Verify analytics frontend is current
         run: python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
 
-      - name: Verify frontend JavaScript syntax
+  frontend-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify JavaScript syntax
         run: |
           node --check 考古題網站/sw.js
+          node --check 考古題網站/js/answer-utils.js
+          node --check 考古題網站/js/search-engine.js
+          node --check 考古題網站/js/quiz-engine.js
           node --check 考古題網站/analytics-chart.js
           node --check 考古題網站/analytics-chart-data.js
           node --check 考古題網站/_gen_data.js
+          python scripts/check_frontend_inline_js.py
+
+      - name: Run unified frontend semantic tests
+        run: |
+          node 考古題網站/tests/answer-utils.test.js
+          node 考古題網站/tests/search-engine-v2.test.js
+          node 考古題網站/tests/quiz-engine-v2.test.js
