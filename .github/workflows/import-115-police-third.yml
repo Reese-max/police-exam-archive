@@ -1,24 +1,19 @@
-name: Import 115 police third-class exams
+name: Rebuild 115 police third-class exams
 
 on:
-  pull_request:
-    branches:
-      - master
-    paths:
-      - .github/workflows/import-115-police-third.yml
-      - scripts/download/import_115_police_third.py
-      - scripts/parse/repair_115_police_third.py
-      - scripts/parse/clean_115_metadata.py
-      - scripts/audit/validate_115_police_third_strict.py
-      - tests/test_data_quality.py
-      - "考古題庫/*/115年/**/試題.json"
   workflow_dispatch:
+    inputs:
+      target_branch:
+        description: Existing branch that will receive the rebuilt 115 JSON files
+        required: true
+        default: data/import-115-police-third
+        type: string
 
 permissions:
   contents: write
 
 concurrency:
-  group: import-115-police-third-${{ github.event.pull_request.number || github.ref }}
+  group: rebuild-115-police-third-${{ inputs.target_branch }}
   cancel-in-progress: true
 
 jobs:
@@ -27,10 +22,10 @@ jobs:
     timeout-minutes: 90
 
     steps:
-      - name: Check out import branch
+      - name: Check out target branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+          ref: ${{ inputs.target_branch }}
           fetch-depth: 0
 
       - name: Set up Python
@@ -93,10 +88,10 @@ jobs:
             考古題庫/extraction_stats.json \
             考古題庫/problematic_pdfs.json 2>/dev/null || true
 
-      - name: Commit generated JSON data to the import branch
+      - name: Commit generated JSON data to the target branch
         if: always()
         env:
-          TARGET_BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+          TARGET_BRANCH: ${{ inputs.target_branch }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -107,7 +102,7 @@ jobs:
             echo "No generated changes to commit."
             exit 0
           fi
-          git commit -m "data: import 115 third-class police exam questions"
+          git commit -m "data: rebuild 115 third-class police exam questions"
           git push origin HEAD:"${TARGET_BRANCH}"
 
       - name: Enforce repair, cleanup, validation, and test results
