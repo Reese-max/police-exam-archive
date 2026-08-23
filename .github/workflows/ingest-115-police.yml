@@ -12,6 +12,7 @@ on:
       - .github/workflows/ingest-115-police.yml
       - scripts/download/download_115_police.py
       - scripts/download/run_115_police_import.py
+      - scripts/parse/.recover_115_missing_choices.py.gz.b64
       - scripts/parse/repair_115_choice_blocks.py
       - scripts/audit/.finalize_115_import.py.gz.b64
       - .gitignore
@@ -36,7 +37,7 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: Restore audit script
+      - name: Restore import audit tools
         run: |
           python - <<'PY'
           import base64
@@ -44,18 +45,29 @@ jobs:
           import hashlib
           from pathlib import Path
 
-          source = Path("scripts/audit/.finalize_115_import.py.gz.b64")
-          target = Path("scripts/audit/finalize_115_import.py")
-          data = gzip.decompress(base64.b64decode(source.read_text().strip()))
-          actual = hashlib.sha256(data).hexdigest()
-          expected = "ee17bc513c20461d8f567e158e0b9798bdca0c5b50a78fc98e7e3974430adc8b"
-          if actual != expected:
-              raise SystemExit(f"稽核器 SHA-256 不符：{actual}")
-          target.write_bytes(data)
-          print(f"已還原 {target}（{len(data)} bytes）")
+          payloads = [
+              (
+                  Path("scripts/audit/.finalize_115_import.py.gz.b64"),
+                  Path("scripts/audit/finalize_115_import.py"),
+                  "ee17bc513c20461d8f567e158e0b9798bdca0c5b50a78fc98e7e3974430adc8b",
+              ),
+              (
+                  Path("scripts/parse/.recover_115_missing_choices.py.gz.b64"),
+                  Path("scripts/parse/recover_115_missing_choices.py"),
+                  "54ff2da728f1cda5a1f601305384d53393e03e2a43352b609e40dd902732a816",
+              ),
+          ]
+          for source, target, expected in payloads:
+              data = gzip.decompress(base64.b64decode(source.read_text().strip()))
+              actual = hashlib.sha256(data).hexdigest()
+              if actual != expected:
+                  raise SystemExit(f"工具 SHA-256 不符：{source}：{actual}")
+              target.write_bytes(data)
+              print(f"已還原 {target}（{len(data)} bytes）")
           PY
           python -m py_compile scripts/download/download_115_police.py
           python -m py_compile scripts/download/run_115_police_import.py
+          python -m py_compile scripts/parse/recover_115_missing_choices.py
           python -m py_compile scripts/parse/repair_115_choice_blocks.py
           python -m py_compile scripts/audit/finalize_115_import.py
 
@@ -120,6 +132,9 @@ jobs:
                   check=True,
               )
           PY
+
+      - name: Recover missing choices from PDF layout
+        run: python scripts/parse/recover_115_missing_choices.py --root 考古題庫
 
       - name: Repair cloze and option blocks
         run: python scripts/parse/repair_115_choice_blocks.py --root 考古題庫
