@@ -3,39 +3,107 @@
   "scope": "三等警察特考內軌 17 類科",
   "category_count": 17,
   "paper_count": 1180,
-  "question_count": 24447,
-  "searchable_question_count": 23230,
+  "question_count": 24876,
+  "searchable_question_count": 23659,
   "groups": {
     "A": {
       "category_count": 7,
-      "papers": 0,
-      "questions": 9181,
-      "searchable_questions": 0
+      "papers": 448,
+      "questions": 9372,
+      "searchable_questions": 8887
     },
     "B": {
       "category_count": 10,
-      "papers": 0,
-      "questions": 15266,
-      "searchable_questions": 0
+      "papers": 732,
+      "questions": 15504,
+      "searchable_questions": 14772
     }
   },
   "categories": {
-    "刑事警察學系": {"papers": 0, "questions": 1781, "searchable_questions": 0},
-    "鑑識科學學系": {"papers": 0, "questions": 1557, "searchable_questions": 0},
-    "交通學系交通組": {"papers": 0, "questions": 1327, "searchable_questions": 0},
-    "交通學系電訊組": {"papers": 0, "questions": 536, "searchable_questions": 0},
-    "消防學系": {"papers": 0, "questions": 1327, "searchable_questions": 0},
-    "水上警察學系": {"papers": 0, "questions": 1325, "searchable_questions": 0},
-    "資訊管理學系": {"papers": 0, "questions": 1328, "searchable_questions": 0},
-    "行政警察學系": {"papers": 0, "questions": 2015, "searchable_questions": 0},
-    "外事警察學系": {"papers": 0, "questions": 1287, "searchable_questions": 0},
-    "公共安全學系社安組": {"papers": 0, "questions": 1326, "searchable_questions": 0},
-    "公共安全學系情報組": {"papers": 0, "questions": 972, "searchable_questions": 0},
-    "犯罪防治學系預防組": {"papers": 0, "questions": 1326, "searchable_questions": 0},
-    "犯罪防治學系矯治組": {"papers": 0, "questions": 725, "searchable_questions": 0},
-    "國境警察學系境管組": {"papers": 0, "questions": 1326, "searchable_questions": 0},
-    "國境警察學系移民組": {"papers": 0, "questions": 3186, "searchable_questions": 0},
-    "行政管理學系": {"papers": 0, "questions": 1555, "searchable_questions": 0},
-    "法律學系": {"papers": 0, "questions": 1548, "searchable_questions": 0}
+    "刑事警察學系": {
+      "papers": 70,
+      "questions": 1811,
+      "searchable_questions": 1689
+    },
+    "鑑識科學學系": {
+      "papers": 70,
+      "questions": 1585,
+      "searchable_questions": 1490
+    },
+    "交通學系交通組": {
+      "papers": 70,
+      "questions": 1354,
+      "searchable_questions": 1232
+    },
+    "交通學系電訊組": {
+      "papers": 28,
+      "questions": 551,
+      "searchable_questions": 551
+    },
+    "消防學系": {
+      "papers": 70,
+      "questions": 1359,
+      "searchable_questions": 1347
+    },
+    "水上警察學系": {
+      "papers": 70,
+      "questions": 1357,
+      "searchable_questions": 1345
+    },
+    "資訊管理學系": {
+      "papers": 70,
+      "questions": 1355,
+      "searchable_questions": 1233
+    },
+    "行政警察學系": {
+      "papers": 70,
+      "questions": 2042,
+      "searchable_questions": 2042
+    },
+    "外事警察學系": {
+      "papers": 60,
+      "questions": 1314,
+      "searchable_questions": 1192
+    },
+    "公共安全學系社安組": {
+      "papers": 70,
+      "questions": 1353,
+      "searchable_questions": 1231
+    },
+    "公共安全學系情報組": {
+      "papers": 54,
+      "questions": 972,
+      "searchable_questions": 972
+    },
+    "犯罪防治學系預防組": {
+      "papers": 70,
+      "questions": 1353,
+      "searchable_questions": 1231
+    },
+    "犯罪防治學系矯治組": {
+      "papers": 72,
+      "questions": 774,
+      "searchable_questions": 774
+    },
+    "國境警察學系境管組": {
+      "papers": 70,
+      "questions": 1353,
+      "searchable_questions": 1231
+    },
+    "國境警察學系移民組": {
+      "papers": 126,
+      "questions": 3186,
+      "searchable_questions": 3186
+    },
+    "行政管理學系": {
+      "papers": 70,
+      "questions": 1582,
+      "searchable_questions": 1460
+    },
+    "法律學系": {
+      "papers": 70,
+      "questions": 1575,
+      "searchable_questions": 1453
+    }
   }
 }
