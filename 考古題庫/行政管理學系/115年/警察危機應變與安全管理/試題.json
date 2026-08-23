@@ -23,7 +23,7 @@
     {
       "number": "二",
       "type": "essay",
-      "stem": "為有效因應危機,危機管理專家希斯(RobertHeath)提出危機管理「4R」\n模式,即縮減力(Reduction)、預備力(Readiness)、反應力(Response)、\n恢復力(Recovery)四個階段作為。此外,卡波尼格羅(Caponigro)在\n擬定危機管理流程與步驟時,提出「SAFETY」為危機管理六階段,即檢\n視(Search)、防範(Avoid)、可行計畫(Feasible plan)、緊急行動(Emergency\nActions)、溝通時機(Timing for Communications)、建立信譽(Yield\nGoodwill)。試引用警政相關案例分別申論之。(25 分)",
+      "stem": "為有效因應危機,危機管理專家希斯(Robert Heath)提出危機管理「4R」\n模式,即縮減力(Reduction)、預備力(Readiness)、反應力(Response)、\n恢復力(Recovery)四個階段作為。此外,卡波尼格羅(Caponigro)在\n擬定危機管理流程與步驟時,提出「SAFETY」為危機管理六階段,即檢\n視(Search)、防範(Avoid)、可行計畫(Feasible plan)、緊急行動(Emergency\nActions)、溝通時機(Timing for Communications)、建立信譽(Yield\nGoodwill)。試引用警政相關案例分別申論之。(25 分)",
       "section": null
     },
     {
@@ -48,7 +48,12 @@
     "score": 1.0,
     "issues": [],
     "strategies_tried": [
-      "pdfplumber"
+      "pdfplumber",
+      "pymupdf",
+      "pymupdf-columns",
+      "pdfplumber-layout",
+      "inline-numbered-repair"
     ]
-  }
+  },
+  "_official_source": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115060&y=2026"
 }

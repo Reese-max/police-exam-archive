@@ -23,19 +23,19 @@
     {
       "number": "二",
       "type": "essay",
-      "stem": "國際標準 ISO/IEC  系列(Information Technology—Electronic\nDiscovery)係針對「電子發現(ElectronicDiscovery, eDiscovery)」所制\n定的標準。請說明該標準如何定義「電子儲存資訊(ElectronicallyStored\nInformation)」的生命週期?(15 分)並請詳述其中「保存(Preservation)」\n階段如何透過「法律保留通知(LegalHold)」防止證據遭到惡意破壞?\n(10 分)",
+      "stem": "國際標準 ISO/IEC 系列(Information Technology—Electronic\nDiscovery)係針對「電子發現(Electronic Discovery, e Discovery)」所制\n定的標準。請說明該標準如何定義「電子儲存資訊(Electronically Stored\nInformation)」的生命週期?(15 分)並請詳述其中「保存(Preservation)」\n階段如何透過「法律保留通知(Legal Hold)」防止證據遭到惡意破壞?\n(10 分)",
       "section": null
     },
     {
       "number": "三",
       "type": "essay",
-      "stem": "依據「打詐 2.0」之後端快速反應機制,在面對詐騙廣告刊登不逾 2 日的\n高度時效性下,請從電腦犯罪現場偵查角度,論述應如何執行主動式防\n禦並優先保全揮發性證據(VolatileEvidence)?(10 分)其與 ISO27035\n系列資訊安全事件管理(Information SecurityIncident Management)國際\n標準的管理流程之關聯為何?(15 分)",
+      "stem": "依據「打詐 2.0」之後端快速反應機制,在面對詐騙廣告刊登不逾 2 日的\n高度時效性下,請從電腦犯罪現場偵查角度,論述應如何執行主動式防\n禦並優先保全揮發性證據(Volatile Evidence)?(10 分)其與 ISO27035\n系列資訊安全事件管理(Information Security Incident Management)國際\n標準的管理流程之關聯為何?(15 分)",
       "section": null
     },
     {
       "number": "四",
       "type": "essay",
-      "stem": "結合 ISO/IEC  資安事件調查原則與流程與 ISO/IEC  數位證\n據識別、收集、獲取與保存指南,請從數位鑑識執法角度,論述數位證\n據處理程序中的「監管鏈(Chain of Custody)」應如何落實?(15 分)\n在調查勒索軟體攻擊事件時,如何透過雜湊值(Hash)比對與日誌記錄,\n確保從「初始化」到「報告」階段的證物不被二次污染?(10 分)",
+      "stem": "結合 ISO/IEC 資安事件調查原則與流程與 ISO/IEC 數位證\n據識別、收集、獲取與保存指南,請從數位鑑識執法角度,論述數位證\n據處理程序中的「監管鏈(Chain of Custody)」應如何落實?(15 分)\n在調查勒索軟體攻擊事件時,如何透過雜湊值(Hash)比對與日誌記錄,\n確保從「初始化」到「報告」階段的證物不被二次污染?(10 分)",
       "section": null
     }
   ],
@@ -48,7 +48,12 @@
     "score": 1.0,
     "issues": [],
     "strategies_tried": [
-      "pdfplumber"
+      "pdfplumber",
+      "pymupdf",
+      "pymupdf-columns",
+      "pdfplumber-layout",
+      "inline-numbered-repair"
     ]
-  }
+  },
+  "_official_source": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115060&y=2026"
 }

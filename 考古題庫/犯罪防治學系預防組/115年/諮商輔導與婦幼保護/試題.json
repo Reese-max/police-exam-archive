@@ -17,7 +17,7 @@
     {
       "number": "一",
       "type": "essay",
-      "stem": "以羅傑斯(Carl Rogers)的個案中心理論,說明何謂「有機體評價歷\n程」(organismic valuing process)及「無條件積極尊重」(unconditional\npositive regard)。小華嫉妒剛出生的妹妹受到長輩們的關愛,父母對他\n說「如果你不愛妹妹,我們也不愛你」。請說明此例中的「有機體評價歷\n程」及「無條件積極尊重」。(25 分)",
+      "stem": "以羅傑斯(Carl Rogers)的個案中心理論,說明何謂「有機體評價歷\n程」(organismic valuing process)及「無條件積極尊重」(unconditional\npositive regard)。小華嫉妒剛出生的妹妹受到長輩們的關愛,父母對他\n說「如果你不愛妹妹,我們也不愛你」。請說明此例中的「有機體評價歷\n程」及「無條件積極尊重」。(25 分)",
       "section": null
     },
     {
@@ -48,7 +48,12 @@
     "score": 1.0,
     "issues": [],
     "strategies_tried": [
-      "pdfplumber"
+      "pdfplumber",
+      "pymupdf",
+      "pymupdf-columns",
+      "pdfplumber-layout",
+      "inline-numbered-repair"
     ]
-  }
+  },
+  "_official_source": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115060&y=2026"
 }

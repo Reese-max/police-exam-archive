@@ -48,7 +48,12 @@
     "score": 1.0,
     "issues": [],
     "strategies_tried": [
-      "pdfplumber"
+      "pdfplumber",
+      "pymupdf",
+      "pymupdf-columns",
+      "pdfplumber-layout",
+      "inline-numbered-repair"
     ]
-  }
+  },
+  "_official_source": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115060&y=2026"
 }

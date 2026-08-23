@@ -40,7 +40,7 @@
     }
   ],
   "year": 115,
-  "category": "交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)",
+  "category": "交通學系交通組",
   "subject": "交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)",
   "source_pdf": "考古題庫/交通學系交通組/115年/交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)/試題.pdf",
   "file_type": "試題",
@@ -48,7 +48,12 @@
     "score": 1.0,
     "issues": [],
     "strategies_tried": [
-      "pdfplumber"
+      "pdfplumber",
+      "pymupdf",
+      "pymupdf-columns",
+      "pdfplumber-layout",
+      "inline-numbered-repair"
     ]
-  }
+  },
+  "_official_source": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115060&y=2026"
 }

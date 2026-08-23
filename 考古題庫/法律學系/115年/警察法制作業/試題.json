@@ -33,12 +33,15 @@
   "source_pdf": "考古題庫/法律學系/115年/警察法制作業/試題.pdf",
   "file_type": "試題",
   "_quality": {
-    "score": 0.85,
-    "issues": [
-      "too_few_questions=2"
-    ],
+    "score": 1.0,
+    "issues": [],
     "strategies_tried": [
-      "pdfplumber"
+      "pdfplumber",
+      "pymupdf",
+      "pymupdf-columns",
+      "pdfplumber-layout",
+      "inline-numbered-repair"
     ]
-  }
+  },
+  "_official_source": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=115060&y=2026"
 }
