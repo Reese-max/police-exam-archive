@@ -34,6 +34,9 @@ jobs:
       - name: Rebuild full category pages
         run: python scripts/build_category_pages.py
 
+      - name: Apply layout refinements
+        run: python scripts/apply_layout_refinements.py
+
       - name: Generate search index
         run: python scripts/build_search_index.py
 
@@ -46,6 +49,7 @@ jobs:
       - name: Verify generated frontend assets
         run: |
           python scripts/build_home_stats.py --check
+          python scripts/apply_layout_refinements.py --check
           python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
           node --check 考古題網站/sw.js
           node --check 考古題網站/js/app.js
