@@ -1,0 +1,230 @@
+/* Layout refinements v2
+ * 只調整空間、密度與響應式排版，不改題庫內容或互動功能。
+ */
+
+/* ===== 類科頁：桌機內容置中並善用可用寬度 ===== */
+@media (min-width: 769px) {
+  .main {
+    width: calc(100% - var(--sidebar-w));
+    max-width: none !important;
+    padding-inline: clamp(1.75rem, 3vw, 3.5rem);
+  }
+
+  body.sidebar-collapsed .main {
+    width: 100%;
+    max-width: none !important;
+  }
+
+  .main > .page-title,
+  .main > .page-subtitle,
+  .main > .stats-bar,
+  .main > .search-box,
+  .main > .practice-score,
+  .main > .toolbar,
+  .main > .export-panel,
+  .main > #yearView,
+  .main > #subjectView {
+    width: min(100%, 1120px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.subject-header h3 {
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+.subject-body {
+  padding: clamp(1rem, 2vw, 1.75rem);
+}
+
+.q-text,
+.opt-text,
+.essay-question,
+.reading-passage {
+  text-wrap: pretty;
+}
+
+/* ===== 首頁：縮短手機首屏，讓功能入口更快出現 ===== */
+@media (max-width: 600px) {
+  .hero {
+    padding: 36px 0 30px;
+  }
+
+  .hero h1 {
+    margin-top: 14px;
+    font-size: clamp(28px, 8vw, 32px);
+  }
+
+  .hero .lead {
+    margin-top: 10px;
+    line-height: 1.55;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .hstat {
+    min-width: 0;
+    padding: 14px 6px 12px;
+    text-align: center;
+  }
+
+  .hstat .hnum {
+    font-size: clamp(21px, 6vw, 26px);
+  }
+
+  .hstat .hlabel {
+    margin-top: 6px;
+    font-size: 11.5px;
+  }
+
+  section {
+    margin-top: 36px;
+  }
+
+  .tools {
+    gap: 12px;
+  }
+
+  .tool {
+    padding: 20px 18px;
+  }
+
+  .cat-group {
+    padding: 20px 16px 16px;
+  }
+}
+
+/* ===== 類科頁：手機資訊密度與觸控排版 ===== */
+@media (max-width: 768px) {
+  .main {
+    padding: calc(4rem + env(safe-area-inset-top, 0px)) 1rem
+      calc(5.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .page-subtitle {
+    margin-bottom: 1.25rem;
+    line-height: 1.55;
+  }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    padding: 0.65rem;
+  }
+
+  .stat-item {
+    min-width: 0;
+    padding: 0.55rem 0.35rem;
+  }
+
+  .toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+
+  .toolbar-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    padding: 0.5rem 0.6rem;
+    line-height: 1.35;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #exportBtn,
+  .toolbar-btn.bookmark-filter {
+    grid-column: auto;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .toolbar-select {
+    grid-column: 1 / -1;
+  }
+
+  .subject-header {
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .subject-header h3 {
+    line-height: 1.55;
+  }
+
+  .subject-toggle {
+    margin-top: 0.1rem;
+  }
+
+  .search-box::after {
+    background: linear-gradient(to right, rgba(250, 248, 245, 0), var(--bg));
+  }
+
+  /* 將三個輔助按鈕集中在右下，避免四個角落都被占用。 */
+  .dark-toggle,
+  .back-to-top,
+  .error-report-btn {
+    width: 40px;
+    height: 40px;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .dark-toggle {
+    left: auto;
+    right: 6.5rem;
+  }
+
+  .error-report-btn {
+    right: 3.75rem;
+  }
+
+  .back-to-top {
+    right: 1rem;
+  }
+
+  .network-toast {
+    bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+    width: min(calc(100% - 2rem), 420px);
+    text-align: center;
+  }
+
+  .export-panel {
+    max-height: min(72vh, 620px);
+  }
+}
+
+@media (max-width: 360px) {
+  .toolbar-btn {
+    font-size: 0.73rem;
+    padding-inline: 0.35rem;
+  }
+
+  .dark-toggle {
+    right: 6rem;
+  }
+
+  .error-report-btn {
+    right: 3.5rem;
+  }
+
+  .back-to-top {
+    right: 1rem;
+  }
+}
+
+@media print {
+  .main,
+  .main > * {
+    width: auto !important;
+    max-width: none !important;
+  }
+}
