@@ -110,3 +110,23 @@ def test_frontend_contract_has_image_paths_for_search_quiz_and_pdf() -> None:
     assert "option.image" in pdf_js and "source" in pdf_js
     assert "drawOptionImage" in pdf_js and "載入失敗" in pdf_js
     assert "sourceLocator" in search_engine
+
+
+def test_pdf_export_keeps_mixed_options_before_answer_and_provenance() -> None:
+    pdf_js = (SITE_ROOT / "js" / "pdf-export.js").read_text(encoding="utf-8")
+    question_start = pdf_js.index("case 'mc-question':")
+    question_end = pdf_js.index("case 'figure':", question_start)
+    question_flow = pdf_js[question_start:question_end]
+    draw_start = pdf_js.index("PdfLayoutEngine.prototype.drawMCQuestion")
+    draw_end = pdf_js.index("/* 繪製段落註記 */", draw_start)
+    draw_method = pdf_js[draw_start:draw_end]
+
+    assert "if (opt.image) continue" not in draw_method
+    assert question_flow.index("for (var oi = 0; oi < item.options.length; oi++)") < question_flow.index(
+        "engine.drawAnswer(item.answer"
+    )
+    assert question_flow.index("engine.drawAnswer(item.answer") < question_flow.index(
+        "var sourceName"
+    )
+    assert "engine.drawOptionText(option, questionLayout.optionIndent)" in question_flow
+    assert "engine.drawOptionImage(item, option, optionImageData)" in question_flow

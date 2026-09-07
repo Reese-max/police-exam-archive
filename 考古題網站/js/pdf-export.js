@@ -522,32 +522,31 @@
       }
     }
 
-    // 選項
+    // 選項在非同步圖片載入階段依原始順序繪製。
     var optIndent = labelW + 10;
-    for (var i = 0; i < item.options.length; i++) {
-      var opt = item.options[i];
-      // Image choices are rendered below, after their bytes are loaded, so the
-      // label can stay attached to its image on the same PDF page.
-      if (opt.image) continue;
-      var optText = opt.label + ' ' + (opt.image ? '圖片選項' : opt.text);
-      this._drawText(optText, FONT_SIZE.body, {
-        x: MARGIN.left,
-        indent: optIndent,
-        maxWidth: CONTENT_W - optIndent
-      });
-    }
-
-    // 答案
-    if (item.answer) {
-      this.cursorY -= 2;
-      this._drawText(item.answer, FONT_SIZE.small, {
-        x: MARGIN.left,
-        indent: optIndent,
-        color: _rgb(0.06, 0.73, 0.51)  // #10b981
-      });
-    }
-
     this.cursorY -= PARAGRAPH_GAP;
+    return { optionIndent: optIndent };
+  };
+
+  /* 依題目原始順序繪製文字選項 */
+  PdfLayoutEngine.prototype.drawOptionText = function (option, optionIndent) {
+    var optText = option.label + ' ' + option.text;
+    this._drawText(optText, FONT_SIZE.body, {
+      x: MARGIN.left,
+      indent: optionIndent,
+      maxWidth: CONTENT_W - optionIndent
+    });
+  };
+
+  /* 在所有選項之後繪製答案 */
+  PdfLayoutEngine.prototype.drawAnswer = function (answer, optionIndent) {
+    if (!answer) return;
+    this.cursorY -= 2;
+    this._drawText(answer, FONT_SIZE.small, {
+      x: MARGIN.left,
+      indent: optionIndent,
+      color: _rgb(0.06, 0.73, 0.51)  // #10b981
+    });
   };
 
   /* 繪製段落註記 */
@@ -820,7 +819,7 @@
               engine.drawEssay(item.text);
               break;
             case 'mc-question':
-              engine.drawMCQuestion(item);
+              var questionLayout = engine.drawMCQuestion(item);
               // 嵌入題目內圖片
               if (item.figures && item.figures.length) {
                 for (var fi = 0; fi < item.figures.length; fi++) {
@@ -832,6 +831,21 @@
                   }
                 }
               }
+              // 文字與圖片選項共用同一個序列，保留原始 A–D 順序。
+              for (var oi = 0; oi < item.options.length; oi++) {
+                var option = item.options[oi];
+                if (option.image) {
+                  var optionImage = option.image;
+                  var optionImageData = optionImage.src
+                    ? await embedImage(pdfDoc, optionImage.src)
+                    : null;
+                  engine.drawOptionImage(item, option, optionImageData);
+                } else {
+                  engine.drawOptionText(option, questionLayout.optionIndent);
+                }
+              }
+              // 答案必須在全部選項後，且 includeAnswers=false 時 item.answer 為空。
+              engine.drawAnswer(item.answer, questionLayout.optionIndent);
               // 選項圖片與題目來源保留在匯出內容中，讓離線 PDF 仍可追溯原卷。
               if (item.source && (item.source.page || item.source.pdf || item.source.sha256)) {
                 var sourceName = item.source.pdf ? item.source.pdf.split(/[\\/]/).pop() : '';
@@ -839,12 +853,6 @@
                 if (sourceName) sourceText += '（' + sourceName + '）';
                 if (item.source.sha256) sourceText += '；PDF SHA-256 ' + item.source.sha256;
                 engine.drawNote(sourceText);
-              }
-              for (var oi = 0; oi < item.options.length; oi++) {
-                var optionImage = item.options[oi].image;
-                if (!optionImage || !optionImage.src) continue;
-                var optionImageData = await embedImage(pdfDoc, optionImage.src);
-                engine.drawOptionImage(item, item.options[oi], optionImageData);
               }
               break;
             case 'figure':
