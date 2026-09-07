@@ -8,7 +8,12 @@
   var loading = null;   // Promise cache
 
   /* 欄位定義（與 build_search_index.py 同步） */
-  var FIELDS = ['cat', 'yr', 'sub', 'no', 'type', 'stem', 'optA', 'optB', 'optC', 'optD', 'ans'];
+  var FIELDS = [
+    'cat', 'yr', 'sub', 'no', 'type', 'stem', 'optA', 'optB', 'optC', 'optD', 'ans',
+    'optImageA', 'optImageB', 'optImageC', 'optImageD',
+    'optAltA', 'optAltB', 'optAltC', 'optAltD',
+    'sourcePdf', 'sourcePage', 'sourceSha256', 'sourceLocator'
+  ];
 
   /* ── 載入索引 ── */
   function loadIndex(basePath) {
@@ -40,14 +45,21 @@
     for (var i = 0; i < total; i++) {
       var doc = { id: i };
       for (var f = 0; f < FIELDS.length; f++) {
-        doc[FIELDS[f]] = cols[FIELDS[f]][i];
+        // 舊版索引沒有圖片／來源欄位，讀取時以空字串保持相容。
+        var values = cols[FIELDS[f]] || [];
+        doc[FIELDS[f]] = values[i] || '';
       }
       docs[i] = doc;
     }
 
     ms = new MiniSearch({
       fields: ['stem', 'optA', 'optB', 'optC', 'optD', 'sub'],
-      storeFields: ['cat', 'yr', 'sub', 'no', 'type', 'ans'],
+      storeFields: [
+        'cat', 'yr', 'sub', 'no', 'type', 'ans',
+        'optImageA', 'optImageB', 'optImageC', 'optImageD',
+        'optAltA', 'optAltB', 'optAltC', 'optAltD',
+        'sourcePdf', 'sourcePage', 'sourceSha256', 'sourceLocator'
+      ],
       searchOptions: {
         boost: { stem: 3, sub: 1 },
         prefix: true,
@@ -138,6 +150,18 @@
         optC: cols.optC[r.id],
         optD: cols.optD[r.id],
         ans: cols.ans[r.id],
+        optImageA: (cols.optImageA || [])[r.id] || '',
+        optImageB: (cols.optImageB || [])[r.id] || '',
+        optImageC: (cols.optImageC || [])[r.id] || '',
+        optImageD: (cols.optImageD || [])[r.id] || '',
+        optAltA: (cols.optAltA || [])[r.id] || '',
+        optAltB: (cols.optAltB || [])[r.id] || '',
+        optAltC: (cols.optAltC || [])[r.id] || '',
+        optAltD: (cols.optAltD || [])[r.id] || '',
+        sourcePdf: (cols.sourcePdf || [])[r.id] || '',
+        sourcePage: (cols.sourcePage || [])[r.id] || '',
+        sourceSha256: (cols.sourceSha256 || [])[r.id] || '',
+        sourceLocator: (cols.sourceLocator || [])[r.id] || '',
       };
     });
   }

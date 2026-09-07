@@ -187,6 +187,10 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .opt.correct{background:var(--primary-tint);border-color:var(--primary-soft)}
 .opt.correct .lbl{background:var(--primary);color:#fff;border-color:transparent}
 .opt.correct .otxt{color:var(--primary);font-weight:700}
+.opt-media{display:inline-flex;flex-direction:column;align-items:flex-start;gap:5px;max-width:100%}
+.opt-media img{display:block;max-width:min(100%,24rem);max-height:18rem;width:auto;height:auto;border:1px solid var(--border);border-radius:8px;background:#fff;padding:4px}
+.opt-media a{color:var(--primary);font-size:12px;text-decoration:underline;min-height:32px;display:inline-flex;align-items:center}
+.opt-media a:focus-visible{outline:3px solid var(--primary);outline-offset:2px;border-radius:4px}
 .ans-row{margin-top:15px;padding-top:14px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px}
 .ans-row .al{font-size:13px;color:var(--text-3);font-weight:600}
 .ans-pill{
@@ -311,6 +315,18 @@ footer strong{color:var(--text-2);font-weight:700}
     return text;
   }
 
+  function _renderOption(q, label, value){
+    var image = q['optImage' + label];
+    if(!image) return '<span class="otxt">' + _highlight(_esc(value)) + '</span>';
+    var alt = q['optAlt' + label] || ('第' + q.no + '題 ' + label + '選項圖片');
+    var page = q.sourcePage ? '（原始試卷第' + _esc(String(q.sourcePage)) + '頁）' : '';
+    return '<span class="opt-media">' +
+      '<a href="' + _esc(image) + '" target="_blank" rel="noopener" aria-label="開啟 ' + label + ' 選項來源圖片">' +
+      '<img src="' + _esc(image) + '" alt="' + _esc(alt) + '" loading="lazy" decoding="async"></a>' +
+      '<a href="' + _esc(image) + '" target="_blank" rel="noopener">查看' + label + '選項來源圖片' + page + '</a>' +
+      '</span>';
+  }
+
   function _card(q){
     var tags = '<span class="tag year">' + q.yr + ' 年</span>' +
       '<span class="tag cat">' + _esc(q.cat) + '</span>' +
@@ -323,7 +339,7 @@ footer strong{color:var(--text-2);font-weight:700}
       var opts='';
       ['A','B','C','D'].forEach(function(L){
         var v=q['opt'+L]; if(!v) return;
-        opts += '<div class="opt'+(q.ans===L?' correct':'')+'"><span class="lbl">'+L+'</span><span class="otxt">'+_highlight(_esc(v))+'</span></div>';
+        opts += '<div class="opt'+(q.ans===L?' correct':'')+'"><span class="lbl">'+L+'</span>'+_renderOption(q,L,v)+'</div>';
       });
       html += '<div class="options">'+opts+'</div>';
       if(q.ans) html += '<div class="ans-row"><span class="al">正確答案</span><span class="ans-pill">'+q.ans+'</span></div>';

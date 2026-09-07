@@ -125,15 +125,29 @@
     var textEl = qEl.querySelector('.q-text');
     var qNum = numEl ? numEl.textContent.trim() : '';
     var qText = textEl ? textEl.textContent.trim() : '';
+    var source = {
+      pdf: block.getAttribute('data-source-pdf') || '',
+      page: block.getAttribute('data-source-page') || '',
+      sha256: block.getAttribute('data-source-sha256') || ''
+    };
 
     var options = [];
     block.querySelectorAll('.mc-opt').forEach(function (opt) {
       var label = opt.querySelector('.opt-label');
       var text = opt.querySelector('.opt-text');
-      options.push({
+      var image = opt.querySelector('.opt-image img');
+      var option = {
         label: label ? label.textContent.trim() : '',
         text: text ? text.textContent.trim() : ''
-      });
+      };
+      if (image) {
+        option.image = {
+          src: image.currentSrc || image.src || '',
+          alt: image.alt || '',
+          sourcePage: source.page
+        };
+      }
+      options.push(option);
     });
 
     var answer = '';
@@ -154,7 +168,8 @@
       text: qText,
       options: options,
       answer: answer,
-      figures: figures
+      figures: figures,
+      source: source
     };
   }
 
@@ -511,7 +526,7 @@
     var optIndent = labelW + 10;
     for (var i = 0; i < item.options.length; i++) {
       var opt = item.options[i];
-      var optText = opt.label + ' ' + opt.text;
+      var optText = opt.label + ' ' + (opt.image ? '圖片選項' : opt.text);
       this._drawText(optText, FONT_SIZE.body, {
         x: MARGIN.left,
         indent: optIndent,
@@ -777,6 +792,24 @@
                   } else {
                     engine.drawFigurePlaceholder(item.figures[fi].alt);
                   }
+                }
+              }
+              // 選項圖片與題目來源保留在匯出內容中，讓離線 PDF 仍可追溯原卷。
+              if (item.source && (item.source.page || item.source.pdf || item.source.sha256)) {
+                var sourceName = item.source.pdf ? item.source.pdf.split(/[\\/]/).pop() : '';
+                var sourceText = '選項圖片來源：原始試卷' + (item.source.page ? '第' + item.source.page + '頁' : '');
+                if (sourceName) sourceText += '（' + sourceName + '）';
+                if (item.source.sha256) sourceText += '；PDF SHA-256 ' + item.source.sha256;
+                engine.drawNote(sourceText);
+              }
+              for (var oi = 0; oi < item.options.length; oi++) {
+                var optionImage = item.options[oi].image;
+                if (!optionImage || !optionImage.src) continue;
+                var optionImageData = await embedImage(pdfDoc, optionImage.src);
+                if (optionImageData) {
+                  await engine.drawImage(optionImageData);
+                } else {
+                  engine.drawFigurePlaceholder(optionImage.alt || '圖片選項');
                 }
               }
               break;
