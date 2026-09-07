@@ -470,8 +470,18 @@ function renderQuestion(){
   }).join('');
   $('choices').querySelectorAll('.choice').forEach(el=>{
     const pick = ()=>{ answers[cur] = +el.dataset.i; renderQuestion(); renderMini(); };
-    el.addEventListener('click', pick);
-    el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); } });
+    el.addEventListener('click', e=>{
+      // Image/source links are independent controls inside the radio option.
+      // Let their default target=_blank behaviour run without selecting an answer.
+      if(e.target.closest('a')) return;
+      pick();
+    });
+    el.addEventListener('keydown', e=>{
+      // Enter/Space still select when the custom radio itself has focus; source
+      // links keep their own keyboard activation and focus.
+      if(e.target.closest('a')) return;
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); }
+    });
   });
   $('prevBtn').disabled = cur===0;
   $('nextBtn').disabled = cur===total-1;

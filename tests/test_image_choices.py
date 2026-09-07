@@ -86,10 +86,16 @@ def test_search_index_and_generator_preserve_image_and_source_fields(tmp_path: P
     data = generator.collect_json_data(str(DATA_ROOT))
     water_page = Path(generator.generate_category_page("水上警察學系", data["水上警察學系"], str(tmp_path)))
     fire_page = Path(generator.generate_category_page("消防學系", data["消防學系"], str(tmp_path)))
-    assert 'data-source-page="2"' in water_page.read_text(encoding="utf-8")
-    assert water_page.read_text(encoding="utf-8").count('class="opt-image"') == 4
-    assert 'data-source-page="4"' in fire_page.read_text(encoding="utf-8")
-    assert fire_page.read_text(encoding="utf-8").count('class="opt-image"') == 4
+    water_html = water_page.read_text(encoding="utf-8")
+    fire_html = fire_page.read_text(encoding="utf-8")
+    assert 'data-source-page="2"' in water_html
+    assert water_html.count('class="opt-image"') == 4
+    assert 'data-source-page="4"' in fire_html
+    assert fire_html.count('class="opt-image"') == 4
+    # app.js builds the year/subject checkboxes only inside this container;
+    # keep the generator and its generated export contract in sync.
+    assert water_html.count('id="exportSelectors"') == 1
+    assert fire_html.count('id="exportSelectors"') == 1
 
 
 def test_frontend_contract_has_image_paths_for_search_quiz_and_pdf() -> None:
@@ -100,5 +106,7 @@ def test_frontend_contract_has_image_paths_for_search_quiz_and_pdf() -> None:
 
     assert "optImage' + label" in search_html and "查看" in search_html
     assert "imageOpts" in quiz_html and "查看" in quiz_html
+    assert "if(e.target.closest('a')) return;" in quiz_html
     assert "option.image" in pdf_js and "source" in pdf_js
+    assert "drawOptionImage" in pdf_js and "載入失敗" in pdf_js
     assert "sourceLocator" in search_engine

@@ -526,6 +526,9 @@
     var optIndent = labelW + 10;
     for (var i = 0; i < item.options.length; i++) {
       var opt = item.options[i];
+      // Image choices are rendered below, after their bytes are loaded, so the
+      // label can stay attached to its image on the same PDF page.
+      if (opt.image) continue;
       var optText = opt.label + ' ' + (opt.image ? '圖片選項' : opt.text);
       this._drawText(optText, FONT_SIZE.body, {
         x: MARGIN.left,
@@ -641,22 +644,9 @@
   PdfLayoutEngine.prototype.drawImage = async function (imgData) {
     if (!imgData) return;
 
-    var maxW = CONTENT_W - 20;
-    var maxH = CONTENT_H * 0.4;
-    var w = imgData.width;
-    var h = imgData.height;
-
-    // 縮放
-    if (w > maxW) {
-      var scale = maxW / w;
-      w *= scale;
-      h *= scale;
-    }
-    if (h > maxH) {
-      var scale2 = maxH / h;
-      w *= scale2;
-      h *= scale2;
-    }
+    var size = this._fitImage(imgData);
+    var w = size.width;
+    var h = size.height;
 
     this._ensureSpace(h + 10);
     this.cursorY -= h + 5;
@@ -669,6 +659,54 @@
       height: h
     });
 
+    this.cursorY -= 5;
+  };
+
+  PdfLayoutEngine.prototype._fitImage = function (imgData) {
+    var maxW = CONTENT_W - 20;
+    var maxH = CONTENT_H * 0.4;
+    var w = imgData.width;
+    var h = imgData.height;
+
+    if (w > maxW) {
+      var scale = maxW / w;
+      w *= scale;
+      h *= scale;
+    }
+    if (h > maxH) {
+      var scale2 = maxH / h;
+      w *= scale2;
+      h *= scale2;
+    }
+    return { width: w, height: h };
+  };
+
+  PdfLayoutEngine.prototype.drawOptionImage = function (item, option, imgData) {
+    var label = _sanitizeText(item.num + '. ' + (option.label || '') + ' 圖片選項');
+    var labelHeight = FONT_SIZE.body * LINE_HEIGHT_FACTOR;
+
+    if (!imgData) {
+      // Reserve the label and failure marker together so a failed image never
+      // leaves an unlabeled gap or moves its label to a different page.
+      this._ensureSpace(labelHeight + FONT_SIZE.small * LINE_HEIGHT_FACTOR + 12);
+      this._drawText(label, FONT_SIZE.body, { color: _rgb(0.15, 0.39, 0.92) });
+      this.drawFigurePlaceholder((option.label || '圖片選項') + '載入失敗');
+      return;
+    }
+
+    var size = this._fitImage(imgData);
+    // Reserve both label and image before drawing either, keeping their page
+    // association when an option image crosses the current page boundary.
+    this._ensureSpace(labelHeight + size.height + 16);
+    this._drawText(label, FONT_SIZE.body, { color: _rgb(0.15, 0.39, 0.92) });
+    this.cursorY -= size.height + 5;
+    var x = MARGIN.left + (CONTENT_W - size.width) / 2;
+    this.currentPage.drawImage(imgData.image, {
+      x: x,
+      y: this.cursorY,
+      width: size.width,
+      height: size.height
+    });
     this.cursorY -= 5;
   };
 
@@ -806,11 +844,7 @@
                 var optionImage = item.options[oi].image;
                 if (!optionImage || !optionImage.src) continue;
                 var optionImageData = await embedImage(pdfDoc, optionImage.src);
-                if (optionImageData) {
-                  await engine.drawImage(optionImageData);
-                } else {
-                  engine.drawFigurePlaceholder(optionImage.alt || '圖片選項');
-                }
+                engine.drawOptionImage(item, item.options[oi], optionImageData);
               }
               break;
             case 'figure':

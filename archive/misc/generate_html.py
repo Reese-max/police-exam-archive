@@ -1593,6 +1593,7 @@ def generate_category_page(category_name, years_data, output_dir):
 </div>
 <div class="export-panel" id="exportPanel" style="display:none" role="dialog" aria-label="匯出設定">
   <p class="export-title">匯出設定</p>
+  <div id="exportSelectors"></div>
   <button class="export-option" onclick="exportPDF(true)">&#128203; 含答案（複習用）</button>
   <button class="export-option" onclick="exportPDF(false)">&#128221; 不含答案（練習用）</button>
   <button class="export-cancel" onclick="hideExportPanel()">取消</button>
