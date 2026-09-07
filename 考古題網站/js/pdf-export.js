@@ -125,15 +125,29 @@
     var textEl = qEl.querySelector('.q-text');
     var qNum = numEl ? numEl.textContent.trim() : '';
     var qText = textEl ? textEl.textContent.trim() : '';
+    var source = {
+      pdf: block.getAttribute('data-source-pdf') || '',
+      page: block.getAttribute('data-source-page') || '',
+      sha256: block.getAttribute('data-source-sha256') || ''
+    };
 
     var options = [];
     block.querySelectorAll('.mc-opt').forEach(function (opt) {
       var label = opt.querySelector('.opt-label');
       var text = opt.querySelector('.opt-text');
-      options.push({
+      var image = opt.querySelector('.opt-image img');
+      var option = {
         label: label ? label.textContent.trim() : '',
         text: text ? text.textContent.trim() : ''
-      });
+      };
+      if (image) {
+        option.image = {
+          src: image.currentSrc || image.src || '',
+          alt: image.alt || '',
+          sourcePage: source.page
+        };
+      }
+      options.push(option);
     });
 
     var answer = '';
@@ -154,7 +168,8 @@
       text: qText,
       options: options,
       answer: answer,
-      figures: figures
+      figures: figures,
+      source: source
     };
   }
 
@@ -507,29 +522,31 @@
       }
     }
 
-    // 選項
+    // 選項在非同步圖片載入階段依原始順序繪製。
     var optIndent = labelW + 10;
-    for (var i = 0; i < item.options.length; i++) {
-      var opt = item.options[i];
-      var optText = opt.label + ' ' + opt.text;
-      this._drawText(optText, FONT_SIZE.body, {
-        x: MARGIN.left,
-        indent: optIndent,
-        maxWidth: CONTENT_W - optIndent
-      });
-    }
-
-    // 答案
-    if (item.answer) {
-      this.cursorY -= 2;
-      this._drawText(item.answer, FONT_SIZE.small, {
-        x: MARGIN.left,
-        indent: optIndent,
-        color: _rgb(0.06, 0.73, 0.51)  // #10b981
-      });
-    }
-
     this.cursorY -= PARAGRAPH_GAP;
+    return { optionIndent: optIndent };
+  };
+
+  /* 依題目原始順序繪製文字選項 */
+  PdfLayoutEngine.prototype.drawOptionText = function (option, optionIndent) {
+    var optText = option.label + ' ' + option.text;
+    this._drawText(optText, FONT_SIZE.body, {
+      x: MARGIN.left,
+      indent: optionIndent,
+      maxWidth: CONTENT_W - optionIndent
+    });
+  };
+
+  /* 在所有選項之後繪製答案 */
+  PdfLayoutEngine.prototype.drawAnswer = function (answer, optionIndent) {
+    if (!answer) return;
+    this.cursorY -= 2;
+    this._drawText(answer, FONT_SIZE.small, {
+      x: MARGIN.left,
+      indent: optionIndent,
+      color: _rgb(0.06, 0.73, 0.51)  // #10b981
+    });
   };
 
   /* 繪製段落註記 */
@@ -626,22 +643,9 @@
   PdfLayoutEngine.prototype.drawImage = async function (imgData) {
     if (!imgData) return;
 
-    var maxW = CONTENT_W - 20;
-    var maxH = CONTENT_H * 0.4;
-    var w = imgData.width;
-    var h = imgData.height;
-
-    // 縮放
-    if (w > maxW) {
-      var scale = maxW / w;
-      w *= scale;
-      h *= scale;
-    }
-    if (h > maxH) {
-      var scale2 = maxH / h;
-      w *= scale2;
-      h *= scale2;
-    }
+    var size = this._fitImage(imgData);
+    var w = size.width;
+    var h = size.height;
 
     this._ensureSpace(h + 10);
     this.cursorY -= h + 5;
@@ -654,6 +658,54 @@
       height: h
     });
 
+    this.cursorY -= 5;
+  };
+
+  PdfLayoutEngine.prototype._fitImage = function (imgData) {
+    var maxW = CONTENT_W - 20;
+    var maxH = CONTENT_H * 0.4;
+    var w = imgData.width;
+    var h = imgData.height;
+
+    if (w > maxW) {
+      var scale = maxW / w;
+      w *= scale;
+      h *= scale;
+    }
+    if (h > maxH) {
+      var scale2 = maxH / h;
+      w *= scale2;
+      h *= scale2;
+    }
+    return { width: w, height: h };
+  };
+
+  PdfLayoutEngine.prototype.drawOptionImage = function (item, option, imgData) {
+    var label = _sanitizeText(item.num + '. ' + (option.label || '') + ' 圖片選項');
+    var labelHeight = FONT_SIZE.body * LINE_HEIGHT_FACTOR;
+
+    if (!imgData) {
+      // Reserve the label and failure marker together so a failed image never
+      // leaves an unlabeled gap or moves its label to a different page.
+      this._ensureSpace(labelHeight + FONT_SIZE.small * LINE_HEIGHT_FACTOR + 12);
+      this._drawText(label, FONT_SIZE.body, { color: _rgb(0.15, 0.39, 0.92) });
+      this.drawFigurePlaceholder((option.label || '圖片選項') + '載入失敗');
+      return;
+    }
+
+    var size = this._fitImage(imgData);
+    // Reserve both label and image before drawing either, keeping their page
+    // association when an option image crosses the current page boundary.
+    this._ensureSpace(labelHeight + size.height + 16);
+    this._drawText(label, FONT_SIZE.body, { color: _rgb(0.15, 0.39, 0.92) });
+    this.cursorY -= size.height + 5;
+    var x = MARGIN.left + (CONTENT_W - size.width) / 2;
+    this.currentPage.drawImage(imgData.image, {
+      x: x,
+      y: this.cursorY,
+      width: size.width,
+      height: size.height
+    });
     this.cursorY -= 5;
   };
 
@@ -767,7 +819,7 @@
               engine.drawEssay(item.text);
               break;
             case 'mc-question':
-              engine.drawMCQuestion(item);
+              var questionLayout = engine.drawMCQuestion(item);
               // 嵌入題目內圖片
               if (item.figures && item.figures.length) {
                 for (var fi = 0; fi < item.figures.length; fi++) {
@@ -778,6 +830,29 @@
                     engine.drawFigurePlaceholder(item.figures[fi].alt);
                   }
                 }
+              }
+              // 文字與圖片選項共用同一個序列，保留原始 A–D 順序。
+              for (var oi = 0; oi < item.options.length; oi++) {
+                var option = item.options[oi];
+                if (option.image) {
+                  var optionImage = option.image;
+                  var optionImageData = optionImage.src
+                    ? await embedImage(pdfDoc, optionImage.src)
+                    : null;
+                  engine.drawOptionImage(item, option, optionImageData);
+                } else {
+                  engine.drawOptionText(option, questionLayout.optionIndent);
+                }
+              }
+              // 答案必須在全部選項後，且 includeAnswers=false 時 item.answer 為空。
+              engine.drawAnswer(item.answer, questionLayout.optionIndent);
+              // 選項圖片與題目來源保留在匯出內容中，讓離線 PDF 仍可追溯原卷。
+              if (item.source && (item.source.page || item.source.pdf || item.source.sha256)) {
+                var sourceName = item.source.pdf ? item.source.pdf.split(/[\\/]/).pop() : '';
+                var sourceText = '選項圖片來源：原始試卷' + (item.source.page ? '第' + item.source.page + '頁' : '');
+                if (sourceName) sourceText += '（' + sourceName + '）';
+                if (item.source.sha256) sourceText += '；PDF SHA-256 ' + item.source.sha256;
+                engine.drawNote(sourceText);
               }
               break;
             case 'figure':

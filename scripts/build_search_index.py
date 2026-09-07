@@ -22,7 +22,23 @@ DEFAULT_DATA_DIR = ROOT / "考古題庫"
 DEFAULT_OUTPUT = ROOT / "考古題網站" / "data" / "search-index.json"
 
 # 欄位定義（順序即為 column index）
-FIELDS = ["cat", "yr", "sub", "no", "type", "stem", "optA", "optB", "optC", "optD", "ans"]
+FIELDS = [
+    "cat", "yr", "sub", "no", "type", "stem", "optA", "optB", "optC", "optD", "ans",
+    "optImageA", "optImageB", "optImageC", "optImageD",
+    "optAltA", "optAltB", "optAltC", "optAltD",
+    "sourcePdf", "sourcePage", "sourceSha256", "sourceLocator",
+]
+
+
+def _option_image_value(question: dict, label: str, key: str) -> str:
+    """取得圖片選項的公開路徑或可及性文字，缺欄位時保持舊資料相容。"""
+    image = (question.get("option_images") or {}).get(label)
+    if not isinstance(image, dict):
+        return ""
+    value = image.get(key)
+    if key == "public_src":
+        value = value or image.get("src")
+    return str(value or "")
 
 
 def load_exam_files(data_dir: Path) -> list[tuple]:
@@ -61,6 +77,7 @@ def load_exam_files(data_dir: Path) -> list[tuple]:
         for q in d.get("questions", []):
             qtype = q.get("type", "")
             opts = q.get("options", {}) if qtype == "choice" else {}
+            locator = q.get("source_locator") or {}
             row = (
                 category,                       # cat
                 year,                            # yr
@@ -73,6 +90,18 @@ def load_exam_files(data_dir: Path) -> list[tuple]:
                 opts.get("C", ""),               # optC
                 opts.get("D", ""),               # optD
                 q.get("answer", "") if qtype == "choice" else "",  # ans
+                _option_image_value(q, "A", "public_src"),
+                _option_image_value(q, "B", "public_src"),
+                _option_image_value(q, "C", "public_src"),
+                _option_image_value(q, "D", "public_src"),
+                _option_image_value(q, "A", "alt"),
+                _option_image_value(q, "B", "alt"),
+                _option_image_value(q, "C", "alt"),
+                _option_image_value(q, "D", "alt"),
+                str(d.get("source_pdf", "") or ""),
+                str(locator.get("page", "") or ""),
+                str(locator.get("pdf_sha256", "") or ""),
+                json.dumps(locator, ensure_ascii=False, separators=(",", ":")) if locator else "",
             )
             rows.append(row)
 
@@ -96,7 +125,7 @@ def build_index(data_dir: Path) -> dict:
         columns[field] = [r[i] for r in rows]
 
     return {
-        "v": 1,
+        "v": 2,
         "fields": FIELDS,
         "stats": {
             "total": len(rows),

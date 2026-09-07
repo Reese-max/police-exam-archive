@@ -111,6 +111,10 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .choice.sel .clbl{background:var(--primary);color:#fff;border-color:transparent}
 .choice .ctxt{font-size:15.5px;font-weight:500;color:var(--text);padding-top:1px}
 .choice.sel .ctxt{color:var(--primary);font-weight:600}
+.choice-media,.review-media{display:inline-flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:0}
+.choice-media img,.review-media img{display:block;max-width:min(100%,24rem);max-height:18rem;width:auto;height:auto;border:1px solid var(--border);border-radius:8px;background:#fff;padding:4px}
+.choice-media .option-image-source,.review-media .option-image-source{min-height:40px;color:var(--primary);font-size:12px;text-decoration:underline}
+.choice-media .option-image-source:focus-visible,.review-media .option-image-source:focus-visible{outline:3px solid var(--primary);outline-offset:2px;border-radius:4px}
 
 .mini-nav{margin-top:18px;padding:20px 22px}
 .mini-nav .mt{font-size:14px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
@@ -340,6 +344,7 @@ let POOL = [];
 let indexReady = false;
 
 function _esc(s){ if(!s) return ''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function _escAttr(s){ return _esc(String(s||'')).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 function _short(s,n){ s=s||''; return s.length>n ? s.slice(0,n)+'…' : s; }
 
 function refreshPool(){
@@ -378,6 +383,11 @@ function buildQuestions(n){
     subj: q.yr + '年 ' + _esc(_short(q.sub,14)),
     stem: _esc(q.stem),
     opts: [q.optA,q.optB,q.optC,q.optD].map(_esc),
+    imageOpts: ['A','B','C','D'].map(label=>({
+      src: _escAttr(q['optImage'+label] || ''),
+      alt: _escAttr(q['optAlt'+label] || ''),
+      sourcePage: _escAttr(q.sourcePage || '')
+    })),
     ans: 'ABCD'.indexOf(q.ans),
   }));
   answers = new Array(questions.length).fill(null);
@@ -437,6 +447,16 @@ function startTimer(countdown){
 }
 
 /* ===== render question ===== */
+function _quizOptionMarkup(q, i, text, kind){
+  const label = 'ABCD'[i];
+  const media = q.imageOpts && q.imageOpts[i];
+  if(media && media.src){
+    const page = media.sourcePage ? '（原始試卷第'+media.sourcePage+'頁）' : '';
+    const alt = media.alt || ('第'+label+'選項圖片');
+    return `<span class="${kind}-media"><a href="${media.src}" target="_blank" rel="noopener" aria-label="開啟${label}選項來源圖片${page}"><img src="${media.src}" alt="${alt}" loading="lazy" decoding="async"></a><a class="option-image-source" href="${media.src}" target="_blank" rel="noopener">查看${label}選項來源圖片${page}</a></span>`;
+  }
+  return `<span class="${kind==='choice'?'ctxt':'rt'}">${text}</span>`;
+}
 function renderQuestion(){
   const q = questions[cur];
   $('qNum').textContent = '第 '+(cur+1)+' 題';
@@ -446,12 +466,22 @@ function renderQuestion(){
   $('flagBtn').classList.toggle('on', flags[cur]);
   $('choices').innerHTML = q.opts.map((o,i)=>{
     const sel = answers[cur]===i;
-    return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span><span class="ctxt">${o}</span></div>`;
+    return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span>${_quizOptionMarkup(q,i,o,'choice')}</div>`;
   }).join('');
   $('choices').querySelectorAll('.choice').forEach(el=>{
     const pick = ()=>{ answers[cur] = +el.dataset.i; renderQuestion(); renderMini(); };
-    el.addEventListener('click', pick);
-    el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); } });
+    el.addEventListener('click', e=>{
+      // Image/source links are independent controls inside the radio option.
+      // Let their default target=_blank behaviour run without selecting an answer.
+      if(e.target.closest('a')) return;
+      pick();
+    });
+    el.addEventListener('keydown', e=>{
+      // Enter/Space still select when the custom radio itself has focus; source
+      // links keep their own keyboard activation and focus.
+      if(e.target.closest('a')) return;
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); }
+    });
   });
   $('prevBtn').disabled = cur===0;
   $('nextBtn').disabled = cur===total-1;
@@ -508,7 +538,7 @@ function finish(){
       let cls='rv-opt', tag='';
       if(isCorrect){cls+=' correct';tag='<span class="tagy">正解</span>';}
       else if(isWrong){cls+=' wrong';tag='<span class="tagy">你的答案</span>';}
-      return `<div class="${cls}"><span class="rl2">${'ABCD'[j]}</span><span class="rt">${o}</span>${tag}</div>`;
+      return `<div class="${cls}"><span class="rl2">${'ABCD'[j]}</span>${_quizOptionMarkup(q,j,o,'review')}${tag}</div>`;
     }).join('');
     return `<article class="card rv-card">
       <div class="rv-head"><span class="rv-num">第 ${i+1} 題</span><span class="q-meta">${q.subj} · 選擇題</span></div>

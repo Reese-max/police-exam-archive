@@ -65,7 +65,47 @@
         "C": "[圖片選項]",
         "D": "[圖片選項]"
       },
-      "_note": "選項為拖帶方式示意圖，無法從 PDF 文字提取"
+      "_note": "選項為拖帶方式示意圖，無法從 PDF 文字提取",
+      "source_locator": {
+        "pdf": "考古題庫\\水上警察\\109年\\水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）\\試題.pdf",
+        "page": 2,
+        "pdf_sha256": "2e609419e2580ff05aabfa10269f5d71017625e8f6be647cdf1940cfcda2d173",
+        "description": "原始試卷第2頁嵌入圖片，依 A-D 順序對應"
+      },
+      "option_images": {
+        "A": {
+          "src": "images/q2-option-A.png",
+          "public_src": "水上警察學系/images/q2-option-A.png",
+          "alt": "第2題 A選項：原始試卷示意圖（第2頁左上）",
+          "source_page": 2,
+          "source_index": 1,
+          "sha256": "65eaf710117355e2d25a6bf291201fde7530a15423d5f818990be826135919c9"
+        },
+        "B": {
+          "src": "images/q2-option-B.png",
+          "public_src": "水上警察學系/images/q2-option-B.png",
+          "alt": "第2題 B選項：原始試卷示意圖（第2頁右上）",
+          "source_page": 2,
+          "source_index": 2,
+          "sha256": "c23d9e200c5edd99bd7c034cb65a01979b244382162d9f83f30ff5b595cae5c6"
+        },
+        "C": {
+          "src": "images/q2-option-C.png",
+          "public_src": "水上警察學系/images/q2-option-C.png",
+          "alt": "第2題 C選項：原始試卷示意圖（第2頁左下）",
+          "source_page": 2,
+          "source_index": 3,
+          "sha256": "6f1a36eb9026d69aada2b2365a82990ce0e3786e3fe102dfc6db448fa5e11d17"
+        },
+        "D": {
+          "src": "images/q2-option-D.png",
+          "public_src": "水上警察學系/images/q2-option-D.png",
+          "alt": "第2題 D選項：原始試卷示意圖（第2頁右下）",
+          "source_page": 2,
+          "source_index": 4,
+          "sha256": "d0a2e578037bd15495c14f13980438d9f13400d2bef645c21b823620457606fb"
+        }
+      }
     },
     {
       "number": 3,
