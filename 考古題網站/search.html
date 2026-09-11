@@ -323,7 +323,9 @@ footer strong{color:var(--text-2);font-weight:700}
       var opts='';
       ['A','B','C','D'].forEach(function(L){
         var v=q['opt'+L]; if(!v) return;
-        opts += '<div class="opt'+(q.ans===L?' correct':'')+'"><span class="lbl">'+L+'</span><span class="otxt">'+_highlight(_esc(v))+'</span></div>';
+        var isImg = v === '[圖片選項]';
+        var label = isImg ? '（原卷為圖片選項，網站暫無法呈現；來源標註見資料集）' : _highlight(_esc(v));
+        opts += '<div class="opt'+(q.ans===L?' correct':'')+'"><span class="lbl">'+L+'</span><span class="otxt"'+(isImg?' style="color:var(--muted,#888);font-style:italic"':'')+'>'+label+'</span></div>';
       });
       html += '<div class="options">'+opts+'</div>';
       if(q.ans) html += '<div class="ans-row"><span class="al">正確答案</span><span class="ans-pill">'+q.ans+'</span></div>';
