@@ -444,9 +444,12 @@ function renderQuestion(){
   $('qMeta').textContent = q.subj + ' · 選擇題';
   $('qStem').innerHTML = q.stem; // 題幹於 buildQuestions 已 escape
   $('flagBtn').classList.toggle('on', flags[cur]);
-  $('choices').innerHTML = q.opts.map((o,i)=>{
+  const imgOnly = q.opts.length === 4 && q.opts.every(o => o === '[圖片選項]');
+  $('choices').innerHTML = (imgOnly ? '<div style="padding:12px 14px;border:1.5px dashed var(--border-strong);border-radius:var(--radius-sm);color:var(--text-2);font-size:14px;margin-bottom:11px">本題原卷選項為圖片，目前無法以文字呈現；選項圖需自查閱原卷 PDF。仍可作答練習，正確答案見詳解。</div>' : '') +
+    q.opts.map((o,i)=>{
     const sel = answers[cur]===i;
-    return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span><span class="ctxt">${o}</span></div>`;
+    const txt = imgOnly ? `（圖片選項 ${'ABCD'[i]}）` : o;
+    return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span><span class="ctxt">${txt}</span></div>`;
   }).join('');
   $('choices').querySelectorAll('.choice').forEach(el=>{
     const pick = ()=>{ answers[cur] = +el.dataset.i; renderQuestion(); renderMini(); };
@@ -508,7 +511,8 @@ function finish(){
       let cls='rv-opt', tag='';
       if(isCorrect){cls+=' correct';tag='<span class="tagy">正解</span>';}
       else if(isWrong){cls+=' wrong';tag='<span class="tagy">你的答案</span>';}
-      return `<div class="${cls}"><span class="rl2">${'ABCD'[j]}</span><span class="rt">${o}</span>${tag}</div>`;
+      const txt = o === '[圖片選項]' ? `（圖片選項 ${'ABCD'[j]}，原卷為圖）` : o;
+      return `<div class="${cls}"><span class="rl2">${'ABCD'[j]}</span><span class="rt">${txt}</span>${tag}</div>`;
     }).join('');
     return `<article class="card rv-card">
       <div class="rv-head"><span class="rv-num">第 ${i+1} 題</span><span class="q-meta">${q.subj} · 選擇題</span></div>

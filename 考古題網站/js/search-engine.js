@@ -8,7 +8,7 @@
   var loading = null;   // Promise cache
 
   /* 欄位定義（與 build_search_index.py 同步） */
-  var FIELDS = ['cat', 'yr', 'sub', 'no', 'type', 'stem', 'optA', 'optB', 'optC', 'optD', 'ans'];
+  var FIELDS = ['cat', 'yr', 'sub', 'no', 'type', 'stem', 'optA', 'optB', 'optC', 'optD', 'ans', 'img'];
 
   /* ── 載入索引 ── */
   function loadIndex(basePath) {
@@ -138,6 +138,7 @@
         optC: cols.optC[r.id],
         optD: cols.optD[r.id],
         ans: cols.ans[r.id],
+        img: cols.img ? cols.img[r.id] : '',
       };
     });
   }

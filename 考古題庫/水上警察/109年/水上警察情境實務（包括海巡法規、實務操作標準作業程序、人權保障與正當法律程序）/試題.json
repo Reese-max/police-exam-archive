@@ -65,7 +65,12 @@
         "C": "[圖片選項]",
         "D": "[圖片選項]"
       },
-      "_note": "選項為拖帶方式示意圖，無法從 PDF 文字提取"
+      "_note": "選項為拖帶方式示意圖，無法從 PDF 文字提取",
+      "image_options": {
+        "note": "選項為拖帶方式示意圖，無法從 PDF 文字提取",
+        "status": "pending-source-pdf",
+        "provenance": "選項圖需自原卷 PDF 擷取；目前資料保留文字佔位與來源標註"
+      }
     },
     {
       "number": 3,
