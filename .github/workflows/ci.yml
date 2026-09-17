@@ -41,6 +41,9 @@ jobs:
       - name: Verify homepage stats are current
         run: python scripts/build_home_stats.py --check
 
+      - name: Verify corpus quality summary and public claims
+        run: python scripts/check_corpus_claims.py
+
       - name: Verify search index generation
         run: python scripts/build_search_index.py --output /tmp/search-index.json
 
