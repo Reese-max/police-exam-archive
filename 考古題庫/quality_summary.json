@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-17T08:40:43.079015+00:00",
+  "source_commit": "a0b5dbb9352b5558dbe62445c6452947dbd2501b",
+  "dataset_fingerprint": "sha256:5d9bc136b462863b6110143507aed39e2cfbd4299199fe1bca5bd41ec896cd28",
+  "dataset": {
+    "root": "考古題庫",
+    "file_pattern": "**/試題.json",
+    "inclusion_rule": "僅計入 metadata._is_duplicate 不為 true 的 試題.json",
+    "exclusion_rule": "metadata._is_duplicate == true 的跨類科共用考卷副本僅列入 duplicate_* 計數，不混入唯一題數",
+    "known_inconsistencies": [
+      "9 份檔案僅在頂層標記 _is_duplicate（metadata 未標記）；依正典規則仍計入唯一題數"
+    ]
+  },
+  "counts": {
+    "total_files": 2090,
+    "json_files": 2049,
+    "duplicate_files": 41,
+    "questions": 42518,
+    "choice": 36760,
+    "essay": 5758,
+    "duplicate_questions": 1217,
+    "duplicate_choice": 1145,
+    "duplicate_essay": 72,
+    "categories": 49,
+    "subjects": 101,
+    "top_level_only_duplicate_flags": 9,
+    "files_without_year": 0
+  },
+  "coverage": {
+    "first_year": 106,
+    "last_year": 115,
+    "years": [
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115
+    ]
+  },
+  "by_year": {
+    "106": {
+      "choice": 3950,
+      "essay": 621,
+      "total": 4571
+    },
+    "107": {
+      "choice": 4180,
+      "essay": 664,
+      "total": 4844
+    },
+    "108": {
+      "choice": 3990,
+      "essay": 678,
+      "total": 4668
+    },
+    "109": {
+      "choice": 4100,
+      "essay": 646,
+      "total": 4746
+    },
+    "110": {
+      "choice": 4140,
+      "essay": 626,
+      "total": 4766
+    },
+    "111": {
+      "choice": 4140,
+      "essay": 653,
+      "total": 4793
+    },
+    "112": {
+      "choice": 3870,
+      "essay": 576,
+      "total": 4446
+    },
+    "113": {
+      "choice": 3930,
+      "essay": 579,
+      "total": 4509
+    },
+    "114": {
+      "choice": 3910,
+      "essay": 558,
+      "total": 4468
+    },
+    "115": {
+      "choice": 550,
+      "essay": 157,
+      "total": 707
+    }
+  },
+  "quality": {
+    "option_completeness": {
+      "numerator": 36760,
+      "denominator": 36760,
+      "rate": 1.0,
+      "scope": "counts.choice（所有非重複選擇題）",
+      "rule": "options 恰好含 A/B/C/D 四個鍵"
+    },
+    "answer_validity": {
+      "numerator": 36760,
+      "denominator": 36760,
+      "rate": 1.0,
+      "scope": "counts.choice（所有非重複選擇題）",
+      "rule": "answer 為 '送分' 或符合 ^[A-D](或[A-D])*$"
+    }
+  },
+  "special_values": {
+    "free_score_questions": 178,
+    "multi_answer_questions": 3
+  },
+  "image_placeholders": {
+    "choice_questions": 4,
+    "marker": "[圖片選項]",
+    "note": "僅驗證選項鍵存在；圖片內容本身的可用性尚未驗證（追蹤於 issue #58），不對外宣稱可用"
+  },
+  "projections": {
+    "site": {
+      "schema_version": 1,
+      "scope": "三等警察特考內軌 17 類科",
+      "category_count": 17,
+      "paper_count": 1180,
+      "question_count": 24876,
+      "searchable_question_count": 23659,
+      "groups": {
+        "A": {
+          "category_count": 7,
+          "papers": 448,
+          "questions": 9372,
+          "searchable_questions": 8887
+        },
+        "B": {
+          "category_count": 10,
+          "papers": 732,
+          "questions": 15504,
+          "searchable_questions": 14772
+        }
+      },
+      "categories": {
+        "刑事警察學系": {
+          "papers": 70,
+          "questions": 1811,
+          "searchable_questions": 1689
+        },
+        "鑑識科學學系": {
+          "papers": 70,
+          "questions": 1585,
+          "searchable_questions": 1490
+        },
+        "交通學系交通組": {
+          "papers": 70,
+          "questions": 1354,
+          "searchable_questions": 1232
+        },
+        "交通學系電訊組": {
+          "papers": 28,
+          "questions": 551,
+          "searchable_questions": 551
+        },
+        "消防學系": {
+          "papers": 70,
+          "questions": 1359,
+          "searchable_questions": 1347
+        },
+        "水上警察學系": {
+          "papers": 70,
+          "questions": 1357,
+          "searchable_questions": 1345
+        },
+        "資訊管理學系": {
+          "papers": 70,
+          "questions": 1355,
+          "searchable_questions": 1233
+        },
+        "行政警察學系": {
+          "papers": 70,
+          "questions": 2042,
+          "searchable_questions": 2042
+        },
+        "外事警察學系": {
+          "papers": 60,
+          "questions": 1314,
+          "searchable_questions": 1192
+        },
+        "公共安全學系社安組": {
+          "papers": 70,
+          "questions": 1353,
+          "searchable_questions": 1231
+        },
+        "公共安全學系情報組": {
+          "papers": 54,
+          "questions": 972,
+          "searchable_questions": 972
+        },
+        "犯罪防治學系預防組": {
+          "papers": 70,
+          "questions": 1353,
+          "searchable_questions": 1231
+        },
+        "犯罪防治學系矯治組": {
+          "papers": 72,
+          "questions": 774,
+          "searchable_questions": 774
+        },
+        "國境警察學系境管組": {
+          "papers": 70,
+          "questions": 1353,
+          "searchable_questions": 1231
+        },
+        "國境警察學系移民組": {
+          "papers": 126,
+          "questions": 3186,
+          "searchable_questions": 3186
+        },
+        "行政管理學系": {
+          "papers": 70,
+          "questions": 1582,
+          "searchable_questions": 1460
+        },
+        "法律學系": {
+          "papers": 70,
+          "questions": 1575,
+          "searchable_questions": 1453
+        }
+      }
+    }
+  }
+}
