@@ -123,6 +123,7 @@
 
     // 附加完整資料
     var cols = rawData.columns;
+    var optionImages = rawData.optionImages || {};
     return results.map(function (r) {
       return {
         idx: r.id,
@@ -138,6 +139,8 @@
         optC: cols.optC[r.id],
         optD: cols.optD[r.id],
         ans: cols.ans[r.id],
+        // 圖片選項稀疏表（僅少數題目有）：{options:{A:{src,alt}}, source:{pdf,page,sha256}}
+        optImages: optionImages[r.id] || null,
       };
     });
   }
