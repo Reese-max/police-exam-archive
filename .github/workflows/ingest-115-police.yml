@@ -204,6 +204,15 @@ jobs:
             echo "沒有需要提交的變更"
             exit 0
           fi
+          if python scripts/audit/import_delta.py; then
+            echo "只有執行時間更新；保留本次稽核 artifact，不改寫 PR 分支"
+            exit 0
+          else
+            delta_exit=$?
+            if [ "$delta_exit" -ne 1 ]; then
+              exit "$delta_exit"
+            fi
+          fi
           git status --short
           git commit -m "data: 匯入並驗證 115 年警察三等考古題"
           git push origin "HEAD:${HEAD_BRANCH}"
