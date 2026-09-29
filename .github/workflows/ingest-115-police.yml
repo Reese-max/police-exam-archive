@@ -21,6 +21,7 @@ on:
       - scripts/build_home_stats.py
       - scripts/build_analytics.py
       - scripts/sync_analytics_frontend.py
+      - scripts/audit/import_delta.py
       - 考古題網站/_gen_data.js
       - 考古題網站/analytics.html
       - 考古題網站/analytics-chart.js
