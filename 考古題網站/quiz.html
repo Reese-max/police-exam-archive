@@ -585,7 +585,12 @@ function resumeExam(cp){
   const timeStr = cp.timed ? '剩餘 '+fmt(cp.remain) : '已用 '+fmt(cp.elapsed);
   $('resumeText').textContent = '共 '+cp.questions.length+' 題・已答 '+answered+' 題・'+timeStr;
   $('resumeCard').classList.remove('hidden');
-  $('resumeBtn').addEventListener('click',()=>resumeExam(cp));
+  $('resumeBtn').addEventListener('click',()=>{
+    // 提示可能停留很久；點擊時重新計算中斷期間經過的時間。
+    const latest = QuizSession.load();
+    if(!latest){ $('resumeCard').classList.add('hidden'); return; }
+    resumeExam(latest);
+  });
   $('discardBtn').addEventListener('click',()=>{
     QuizSession.clear();
     $('resumeCard').classList.add('hidden');

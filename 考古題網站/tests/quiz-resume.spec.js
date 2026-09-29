@@ -126,6 +126,26 @@ test.describe('模擬考試中斷恢復', () => {
     await expect(page.locator('#miniGrid .mini.done')).toHaveCount(1);
   });
 
+  test('恢復提示停留期間不會暫停限時考試倒數', async ({ page }) => {
+    await gotoQuizWithFixture(page);
+    await startFixtureExam(page);
+    await page.reload();
+    await expect(page.locator('#resumeCard')).toBeVisible();
+
+    // pagehide 會寫回 checkpoint，因此在恢復提示出現後才模擬時間流逝。
+    await page.evaluate(key => {
+      const cp = JSON.parse(localStorage.getItem(key));
+      cp.remain = 30;
+      cp.elapsed = cp.durSec - 30;
+      cp.savedAt = Date.now() - 31_000;
+      localStorage.setItem(key, JSON.stringify(cp));
+    }, SESSION_KEY);
+    expect(await page.evaluate(() => QuizSession.load().expired)).toBe(true);
+    await page.locator('#resumeBtn').click();
+    await expect(page.locator('#resultView')).toBeVisible();
+    expect(await readCheckpoint(page)).toBeNull();
+  });
+
   test('不限時模式恢復後計時從已用時間繼續（非重置為 0）', async ({ page }) => {
     await gotoQuizWithFixture(page);
     await page.locator('#segCount button[data-v="10"]').click();
