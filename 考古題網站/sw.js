@@ -10,6 +10,7 @@ var CORE_ASSETS = [
   './category.html',
   './analytics.html',
   './analytics-chart-bundle.js',
+  './vendor/chart.js-4.4.1/chart.umd.js',
   './data/home-stats.json',
   './css/style.css',
   './js/app.js',
