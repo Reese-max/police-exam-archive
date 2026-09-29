@@ -26,6 +26,7 @@ on:
       - 考古題網站/analytics-chart.js
       - 考古題網站/analytics-chart-data.js
       - scripts/audit/.finalize_115_import.py.gz.b64
+      - scripts/audit/import_delta.py
       - .gitignore
 
 permissions:
