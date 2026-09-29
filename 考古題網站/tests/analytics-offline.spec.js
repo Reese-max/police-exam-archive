@@ -33,6 +33,9 @@ test('first offline Analytics visit renders charts after only visiting the homep
     disconnected = true;
     await page.goto(`${origin}/analytics.html`, { waitUntil: 'domcontentloaded', timeout: 15000 });
     await expect(page).toHaveTitle(/出題趨勢分析/);
+    expect(await page.evaluate(() => [...document.scripts]
+      .filter(script => script.src && new URL(script.src).origin !== location.origin)
+      .map(script => script.src))).toEqual([]);
     await expect.poll(() => page.evaluate(() =>
       typeof Chart === 'function' &&
       ['yearChart', 'donutChart', 'catChart', 'trendChart'].every(id =>
