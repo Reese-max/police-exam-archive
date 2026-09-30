@@ -1,0 +1,14 @@
+{
+  "pr": 78,
+  "head": "4c9a9dc1c356223cf409466b7596812d5d45a298",
+  "findings": [
+    {
+      "severity": "low",
+      "file": "tests/test_analytics_pair.py",
+      "line": 14,
+      "issue": "The new subprocess wrapper decodes Node's UTF-8 output with the platform default encoding. On CP950 Windows the reader thread raises UnicodeDecodeError even on green runs; a failing Node test loses its diagnostics and raises TypeError while concatenating stdout. Reproduced with an actual failing Node test under a forced CP950 default."
+    }
+  ],
+  "fixed": true,
+  "summary": "Reviewed #78 against #74 and the Phase 3 checklist; the single generated bundle supplies the required code/data consistency boundary. Fixed one low-severity Windows encoding defect in the Python test wrapper, with a deterministic failing Node test proving red before the fix and preserving UTF-8 diagnostics after it. All 139 pytest tests and 5 Node pair tests pass; JavaScript syntax and regenerated Analytics consistency checks also pass."
+}
