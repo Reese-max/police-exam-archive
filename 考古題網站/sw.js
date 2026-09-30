@@ -14,6 +14,7 @@ var CORE_ASSETS = [
   './data/home-stats.json',
   './css/style.css',
   './js/app.js',
+  './js/answer-utils.js',
   './js/pdf-export.js',
   './manifest.json',
   './icons/icon-192.svg',

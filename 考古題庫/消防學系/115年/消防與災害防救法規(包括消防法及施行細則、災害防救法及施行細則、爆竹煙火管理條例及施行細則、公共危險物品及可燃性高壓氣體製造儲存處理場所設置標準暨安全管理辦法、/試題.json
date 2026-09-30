@@ -11,7 +11,13 @@
     "official_category_code": "206",
     "official_category": "消防警察人員",
     "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=206&s=1002&q=1",
-    "source_sha256": "7b9296e44eb688a1596359e6eb792c3ff690d04fcdb963363cb00f3fb4ba4a5f"
+    "source_sha256": "7b9296e44eb688a1596359e6eb792c3ff690d04fcdb963363cb00f3fb4ba4a5f",
+    "categories": [
+      "消防學系"
+    ],
+    "official_subject": "消防與災害防救法規（包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體製造儲存處理場所設置標準暨安全管理辦法、緊急救護辦法、緊急醫療救護法及施行細則、直轄市縣市消防機關火場指揮及搶救作業要點）",
+    "path_subject": "消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體製造儲存處理場所設置標準暨安全管理辦法、",
+    "category_membership": "消防學系"
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -380,5 +386,8 @@
     ]
   },
   "_answer_source": "答案.pdf",
-  "_answers_merged": 25
+  "_answers_merged": 25,
+  "categories": [
+    "消防學系"
+  ]
 }
