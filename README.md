@@ -205,6 +205,8 @@ with ExamDB() as db:
     random_qs = db.random(n=5, subject="憲法")
 ```
 
+圖片題（4 題）的查詢結果額外帶 `option_images` 與 `source_locator` 欄位（JSON 字串），保留圖片路徑、alt、sha256 與原卷頁碼/PDF sha256，CLI 輸出會列出各選項的圖片檔位置。
+
 查詢速度依執行環境而異（目前 42,518 題全文搜尋）。
 
 ## 驗證

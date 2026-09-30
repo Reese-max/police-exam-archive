@@ -172,3 +172,74 @@ def test_frontend_surfaces_wire_option_images():
     assert "optImages" in quiz_html
     assert "opt-image" in pdf_js
     assert "drawOptionImage" in pdf_js
+
+
+# ── 查詢 API（examdb）合約 ──
+
+def test_examdb_api_preserves_image_references(tmp_path):
+    """examdb 查詢 API 不得把 [圖片選項] 裸回傳：結果須附圖片參照與來源出處。"""
+    sys.path.insert(0, str(PROJECT_ROOT))
+    from examdb import ExamDB
+
+    db = ExamDB(db_path=str(tmp_path / "exam.db"), data_dir=str(DATA_DIR))
+    try:
+        seen = {}
+        for category, year in [
+            ("水上警察", 109), ("水上警察學系", 109),
+            ("消防警察", 113), ("消防學系", 113),
+        ]:
+            rows = db.search(year=year, category=category,
+                             subject="情境實務", limit=100)
+            for r in rows:
+                if PLACEHOLDER not in (r.get("option_a") or ""):
+                    continue
+                key = (r["category"], r["number"])
+                images = json.loads(r["option_images"])
+                loc = json.loads(r["source_locator"])
+                assert set(images) >= {"A", "B", "C", "D"}, key
+                for label, meta in images.items():
+                    assert meta.get("src") and meta.get("alt"), (key, label)
+                    assert re.fullmatch(r"[0-9a-f]{64}", meta.get("sha256", ""))
+                assert loc.get("pdf") and loc.get("page"), key
+                assert re.fullmatch(r"[0-9a-f]{64}", loc.get("pdf_sha256", ""))
+                seen[key] = True
+        # category LIKE 會讓「水上警察」同時撈到學系列，以 (category, number) 去重後應為 4 題
+        assert len(seen) == 4, f"API 只回傳 {len(seen)} 題圖片題"
+    finally:
+        db.close()
+
+
+def test_examdb_rebuilds_stale_index(tmp_path):
+    """舊 schema 的既有 exam.db 應自動重建，不得默默丟棄圖片欄位。"""
+    import sqlite3
+    sys.path.insert(0, str(PROJECT_ROOT))
+    from examdb import ExamDB
+
+    db_path = tmp_path / "exam.db"
+    conn = sqlite3.connect(str(db_path))
+    conn.executescript("""
+        CREATE TABLE files (
+            id INTEGER PRIMARY KEY, path TEXT NOT NULL, category TEXT,
+            year INTEGER, subject TEXT, exam_name TEXT, level TEXT
+        );
+        CREATE TABLE questions (
+            id INTEGER PRIMARY KEY, file_id INTEGER NOT NULL, number TEXT,
+            type TEXT NOT NULL, stem TEXT, option_a TEXT, option_b TEXT,
+            option_c TEXT, option_d TEXT, answer TEXT, passage TEXT,
+            section TEXT, FOREIGN KEY (file_id) REFERENCES files(id)
+        );
+    """)
+    conn.commit()
+    conn.close()
+
+    db = ExamDB(db_path=str(db_path), data_dir=str(DATA_DIR))
+    try:
+        cols = {r[1] for r in db.conn.execute("PRAGMA table_info(questions)")}
+        assert {"option_images", "source_locator"} <= cols
+        row = db.conn.execute(
+            "SELECT option_images FROM questions WHERE option_a LIKE ? LIMIT 1",
+            (f"%{PLACEHOLDER}%",),
+        ).fetchone()
+        assert row is not None and row["option_images"]
+    finally:
+        db.close()
