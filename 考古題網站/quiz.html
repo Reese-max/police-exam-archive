@@ -81,6 +81,28 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .match-note{margin-top:16px;text-align:center;font-size:14px;color:var(--text-2);font-weight:500}
 .match-note b{color:var(--primary);font-weight:800;font-variant-numeric:tabular-nums}
 
+/* ===== Review queue / local learner state ===== */
+.review-tools{padding:24px 30px;margin-top:16px}
+.review-tools-head{display:flex;align-items:center;gap:10px}
+.review-tools-head h2{font-size:18px;font-weight:800}
+.queue-count{margin-left:auto;font-size:13px;font-weight:700;color:var(--primary);background:var(--primary-soft);padding:5px 10px;border-radius:6px}
+.review-tools-sub{margin-top:5px;font-size:13.5px;color:var(--text-2)}
+.deadline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.deadline-grid label{display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:var(--text-2)}
+.deadline-grid label:first-child{justify-content:flex-end;flex-direction:row;align-items:center;padding-bottom:10px}
+.deadline-grid input{width:100%;font:inherit;color:var(--text);background:var(--card-2);border:1.5px solid var(--border-strong);border-radius:var(--radius-sm);padding:9px 10px}
+.deadline-grid input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.queue-status{margin-top:14px;padding:11px 13px;border-radius:var(--radius-sm);font-size:13px;color:var(--text-2);background:var(--card-2);border:1px solid var(--border)}
+.queue-status.overload{color:var(--danger);background:var(--danger-soft);border-color:transparent;font-weight:700}
+.queue-list{margin-top:10px;display:flex;flex-direction:column;gap:6px;max-height:190px;overflow:auto}
+.queue-list:empty{display:none}
+.queue-list-item{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:var(--radius-sm);background:var(--card-2);font-size:12.5px}
+.queue-list-item .qid{min-width:0;overflow:hidden;text-overflow:ellipsis;font-weight:700;color:var(--text-2);white-space:nowrap}
+.queue-list-item .qreason{margin-left:auto;color:var(--primary);font-weight:700;text-align:right}
+.review-tools-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.review-tools-actions .btn{flex:0 1 auto;padding:10px 14px;font-size:13.5px}
+.reason-badge{margin-left:auto;font-size:11.5px;font-weight:700;color:var(--warm);background:var(--warm-soft);padding:3px 8px;border-radius:12px}
+
 /* ===== Exam view ===== */
 .timer-bar{position:sticky;top:0;z-index:30;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);padding:13px 18px;display:flex;align-items:center;gap:14px;margin-top:18px;transition:background .4s,border-color .4s}
 .timer{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;color:var(--primary);font-variant-numeric:tabular-nums;letter-spacing:.01em}
@@ -189,6 +211,9 @@ footer strong{color:var(--text-2);font-weight:700}
   .res-actions{flex-direction:column}
   .mini-grid{grid-template-columns:repeat(8,1fr)}
   .timer-bar{flex-wrap:wrap}
+  .review-tools{padding:22px 18px}
+  .deadline-grid{grid-template-columns:1fr 1fr}
+  .deadline-grid label:first-child{grid-column:1/-1;justify-content:flex-start;padding-bottom:0}
   .nav-btns{margin-left:0;width:100%;justify-content:flex-end;margin-top:4px}
   .theme-toggle .tlabel{display:none}
   .theme-toggle{padding:13px;right:16px;bottom:16px}
@@ -255,6 +280,29 @@ footer strong{color:var(--text-2);font-weight:700}
 
       <button class="start-btn" id="startBtn">開始考試</button>
       <p class="match-note">符合條件的選擇題：<b id="matchCount">載入索引中…</b></p>
+    </div>
+
+    <div class="card review-tools" id="reviewTools">
+      <div class="review-tools-head">
+        <h2>今日複習</h2>
+        <span class="queue-count" id="queueCount">載入中…</span>
+      </div>
+      <p class="review-tools-sub">根據每題的作答事實、標記與科目覆蓋，產生可重播的官方題目佇列。</p>
+      <div class="deadline-grid">
+        <label><span><input type="checkbox" id="deadlineEnabled"> 啟用考前截止日</span></label>
+        <label>目標考試日<input type="date" id="targetExamDate"></label>
+        <label>每日題量上限<input type="number" id="dailyQuestionLimit" min="1" max="999" step="1"></label>
+        <label>每日分鐘上限<input type="number" id="dailyMinutes" min="0" max="1440" step="5"></label>
+      </div>
+      <div class="queue-status" id="queueStatus">完成一次模擬考後，這裡會出現帶原因的複習建議。</div>
+      <ol class="queue-list" id="reviewQueueList" aria-label="今日複習題目與原因"></ol>
+      <div class="review-tools-actions">
+        <button class="btn primary" id="reviewStartBtn" type="button" disabled>開始今日複習</button>
+        <button class="btn ghost" id="exportLearningBtn" type="button">匯出學習資料</button>
+        <button class="btn ghost" id="importLearningBtn" type="button">匯入學習資料</button>
+        <button class="btn ghost" id="clearLearningBtn" type="button">清除學習資料</button>
+        <input id="importLearningFile" type="file" accept="application/json" hidden>
+      </div>
     </div>
   </div>
 
@@ -334,6 +382,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
 <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
 <script src="js/search-engine.js"></script>
+<script src="js/attempt-ledger.js"></script>
 <script>
 /* ===== 真實題庫（minisearch + search-engine.js，36,210 道選擇題） ===== */
 let POOL = [];
@@ -351,14 +400,20 @@ function refreshPool(){
   }, 99999).filter(q => q.optA && q.optB && q.optC && q.optD && 'ABCD'.indexOf(q.ans) >= 0);
   $('matchCount').textContent = POOL.length.toLocaleString() + ' 題';
   $('startBtn').disabled = POOL.length === 0;
+  refreshReviewQueue();
 }
 
 /* state */
 const TOTAL = 20;
 let questions = [], answers = [], flags = [], cur = 0;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
+let currentQuizMode = 'official', currentFilters = {}, reviewQueue = null, finished = false;
 
 const $ = id => document.getElementById(id);
+
+function selectedFilters(){
+  return {cat:$('fCat').value, yr:$('fYear').value ? parseInt($('fYear').value,10) : null, sub:$('fSubj').value, type:'choice'};
+}
 
 /* segmented controls */
 function setupSeg(id){
@@ -370,19 +425,40 @@ function setupSeg(id){
 }
 setupSeg('segCount'); setupSeg('segTime');
 
-function buildQuestions(n){
-  // 洗牌真實題池，抽前 n 題，轉成本頁題目格式（文字先 escape，渲染端用 innerHTML）
-  const pool = [...POOL];
-  for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+function buildQuestions(n, source, preserveOrder){
+  // 題目保留 stable locator 與原始內容；渲染時才 escape，ledger 才能計算題目級 hash。
+  const pool = [...(source || POOL)];
+  if(!preserveOrder){
+    for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  }
   questions = pool.slice(0,n).map(q=>({
-    subj: q.yr + '年 ' + _esc(_short(q.sub,14)),
-    stem: _esc(q.stem),
-    opts: [q.optA,q.optB,q.optC,q.optD].map(_esc),
-    ans: 'ABCD'.indexOf(q.ans),
+    questionId: q.questionId || AttemptLedger.questionId(q),
+    datasetVersion: SearchEngine.getDatasetVersion() || q.datasetVersion,
+    cat: q.cat, yr: q.yr, sub: q.sub, no: q.no, type: q.type,
+    subj: q.yr + '年 ' + _short(q.sub,14),
+    stem: q.stem || '',
+    opts: [q.optA,q.optB,q.optC,q.optD],
+    ans: q.ans,
   }));
   answers = new Array(questions.length).fill(null);
   flags = new Array(questions.length).fill(false);
   cur = 0;
+}
+
+function startRun(n, minutes, mode, source, preserveOrder){
+  buildQuestions(n, source, preserveOrder);
+  total = questions.length;
+  if(!total) return false;
+  currentQuizMode = mode || 'official';
+  currentFilters = selectedFilters();
+  finished = false;
+  $('totalNum').textContent = total;
+  durSec = minutes*60; remain = durSec; elapsed = 0;
+  switchView('exam');
+  renderQuestion(); renderMini();
+  startTimer(minutes>0);
+  window.scrollTo({top:0});
+  return true;
 }
 
 /* ===== start ===== */
@@ -391,14 +467,7 @@ $('startBtn').addEventListener('click', ()=>{
   const tmin = +document.querySelector('#segTime .on').dataset.v;
   if(POOL.length===0){ alert('沒有符合條件的題目，請調整篩選條件。'); return; }
   if(POOL.length<want && !confirm('符合條件的題目只有 '+POOL.length+' 題，將全部出題。確定開始？')) return;
-  buildQuestions(want);
-  total = questions.length;
-  $('totalNum').textContent = total;
-  durSec = tmin*60; remain = durSec; elapsed = 0;
-  switchView('exam');
-  renderQuestion(); renderMini();
-  startTimer(tmin>0);
-  window.scrollTo({top:0});
+  startRun(want, tmin, 'official', POOL, false);
 });
 
 /* ===== 載入真實索引 + facets ===== */
@@ -416,6 +485,83 @@ SearchEngine.loadIndex().then(()=>{
   refreshPool();
 }).catch(err=>{ $('matchCount').textContent = '索引載入失敗：' + err.message; });
 ['fCat','fYear','fSubj'].forEach(id=>$(id).addEventListener('change', refreshPool));
+
+/* ===== local learner settings and deterministic review queue ===== */
+function syncReviewSettings(){
+  const settings = AttemptLedger.getSettings();
+  $('deadlineEnabled').checked = settings.deadlineEnabled;
+  $('targetExamDate').value = settings.targetExamDate;
+  $('dailyQuestionLimit').value = settings.dailyQuestionLimit;
+  $('dailyMinutes').value = settings.dailyMinutes;
+}
+
+function saveReviewSettingsFromForm(){
+  AttemptLedger.saveSettings({
+    deadlineEnabled: $('deadlineEnabled').checked,
+    targetExamDate: $('targetExamDate').value,
+    dailyQuestionLimit: $('dailyQuestionLimit').value,
+    dailyMinutes: $('dailyMinutes').value,
+  });
+  refreshReviewQueue();
+}
+
+function refreshReviewQueue(){
+  if(!indexReady || !POOL.length) return;
+  reviewQueue = AttemptLedger.buildQueue(POOL, {limit: AttemptLedger.getSettings().dailyQuestionLimit});
+  const count = reviewQueue.items.length;
+  $('queueCount').textContent = count + ' 題';
+  $('reviewStartBtn').disabled = count === 0;
+  $('reviewQueueList').innerHTML = reviewQueue.items.slice(0, 12).map(item=>
+    '<li class="queue-list-item"><span class="qid">' + _esc(item.questionId) + '</span><span class="qreason">' + _esc(item.reasonCodes.join(' · ')) + '</span></li>'
+  ).join('');
+  const status = $('queueStatus');
+  status.classList.toggle('overload', reviewQueue.overload);
+  if(reviewQueue.overload){
+    status.textContent = '目前有 ' + reviewQueue.weakCount + ' 題弱項，截止日前可安排 ' + reviewQueue.capacity + ' 題，還有 ' + reviewQueue.backlogCount + ' 題 backlog；請增加每日容量或延後目標日。';
+  }else if(reviewQueue.deadline){
+    status.textContent = '截止日模式已啟用：今日佇列 ' + count + ' 題，剩餘弱項可在目前容量內安排。';
+  }else if(count){
+    status.textContent = '佇列依序涵蓋錯題、未答、標記、到期與科目覆蓋；相同資料會重建相同順序。';
+  }else{
+    status.textContent = '目前沒有可安排的複習題。';
+  }
+}
+
+syncReviewSettings();
+['deadlineEnabled','targetExamDate','dailyQuestionLimit','dailyMinutes'].forEach(id=>$(id).addEventListener('change', saveReviewSettingsFromForm));
+
+$('reviewStartBtn').addEventListener('click', ()=>{
+  if(!reviewQueue || !reviewQueue.items.length) return;
+  const settings = AttemptLedger.getSettings();
+  startRun(reviewQueue.items.length, settings.dailyMinutes, 'review', reviewQueue.items.map(item=>item.question), true);
+});
+
+$('exportLearningBtn').addEventListener('click', ()=>{
+  const blob = new Blob([AttemptLedger.exportData()], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url; link.download = 'police-exam-learning-data.json';
+  document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
+});
+
+$('importLearningBtn').addEventListener('click', ()=>$('importLearningFile').click());
+$('importLearningFile').addEventListener('change', event=>{
+  const file = event.target.files && event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    try{ AttemptLedger.importData(reader.result); syncReviewSettings(); refreshReviewQueue(); }
+    catch(err){ alert('匯入失敗：' + err.message); }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+});
+
+$('clearLearningBtn').addEventListener('click', ()=>{
+  if(!confirm('只清除本機作答與複習設定，不會影響題庫或書籤。確定清除？')) return;
+  AttemptLedger.clearLearnerData();
+  syncReviewSettings(); refreshReviewQueue();
+});
 
 /* ===== timer ===== */
 function fmt(s){const m=Math.floor(s/60),sec=s%60;return m+':'+String(sec).padStart(2,'0')}
@@ -442,11 +588,11 @@ function renderQuestion(){
   $('qNum').textContent = '第 '+(cur+1)+' 題';
   $('curNum').textContent = cur+1;
   $('qMeta').textContent = q.subj + ' · 選擇題';
-  $('qStem').innerHTML = q.stem; // 題幹於 buildQuestions 已 escape
+  $('qStem').innerHTML = _esc(q.stem);
   $('flagBtn').classList.toggle('on', flags[cur]);
   $('choices').innerHTML = q.opts.map((o,i)=>{
     const sel = answers[cur]===i;
-    return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span><span class="ctxt">${o}</span></div>`;
+    return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span><span class="ctxt">${_esc(o)}</span></div>`;
   }).join('');
   $('choices').querySelectorAll('.choice').forEach(el=>{
     const pick = ()=>{ answers[cur] = +el.dataset.i; renderQuestion(); renderMini(); };
@@ -480,14 +626,29 @@ $('submitBtn').addEventListener('click',()=>{
   finish();
 });
 function finish(){
+  if(finished) return;
+  finished = true;
   clearInterval(timerId);
   let ok=0,no=0,skip=0;
   questions.forEach((q,i)=>{
     if(answers[i]===null) skip++;
-    else if(answers[i]===q.ans) ok++;
+    else if(answers[i]===('ABCD'.indexOf(q.ans))) ok++;
     else no++;
   });
   const pct = Math.round(ok/total*100);
+  AttemptLedger.recordQuiz({
+    questions: questions,
+    answers: answers,
+    marked: flags,
+    quizMode: currentQuizMode,
+    filters: currentFilters,
+  });
+  refreshReviewQueue();
+  try{
+    const history = JSON.parse(localStorage.getItem('exam-quiz-history') || '[]');
+    history.unshift({date:new Date().toISOString(), correct:ok, total:total, pct:pct, elapsed:elapsed});
+    localStorage.setItem('exam-quiz-history', JSON.stringify(history.slice(0,50)));
+  }catch(e){}
   switchView('result');
   window.scrollTo({top:0});
   // ring
@@ -499,20 +660,22 @@ function finish(){
   $('resultTitle').textContent='作答完成';
   $('resultSub').textContent='錯題與未答題整理於下方。';
   // review (wrong + skipped)
-  const wrong = questions.map((q,i)=>({q,i})).filter(({q,i})=>answers[i]!==q.ans);
+  const wrong = questions.map((q,i)=>({q,i})).filter(({q,i})=>answers[i]!==('ABCD'.indexOf(q.ans)) || flags[i]);
   $('reviewCount').textContent = wrong.length+' 題';
   $('review').innerHTML = wrong.map(({q,i})=>{
     const opts = q.opts.map((o,j)=>{
-      const isCorrect = j===q.ans;
-      const isWrong = answers[i]===j && j!==q.ans;
+      const isCorrect = j===('ABCD'.indexOf(q.ans));
+      const isWrong = answers[i]===j && j!==('ABCD'.indexOf(q.ans));
       let cls='rv-opt', tag='';
       if(isCorrect){cls+=' correct';tag='<span class="tagy">正解</span>';}
       else if(isWrong){cls+=' wrong';tag='<span class="tagy">你的答案</span>';}
-      return `<div class="${cls}"><span class="rl2">${'ABCD'[j]}</span><span class="rt">${o}</span>${tag}</div>`;
+      return `<div class="${cls}"><span class="rl2">${'ABCD'[j]}</span><span class="rt">${_esc(o)}</span>${tag}</div>`;
     }).join('');
+    const reviewState = AttemptLedger.getReviewState(q);
+    const reasons = reviewState.reasonCodes.filter(code=>code!=='到期複習').slice(0,3).join(' · ') || '本次作答紀錄';
     return `<article class="card rv-card">
-      <div class="rv-head"><span class="rv-num">第 ${i+1} 題</span><span class="q-meta">${q.subj} · 選擇題</span></div>
-      <p class="rv-stem">${q.stem}</p>
+      <div class="rv-head"><span class="rv-num">第 ${i+1} 題</span><span class="q-meta">${_esc(q.subj)} · 選擇題</span><span class="reason-badge">${_esc(reasons)}</span></div>
+      <p class="rv-stem">${_esc(q.stem)}</p>
       <div class="rv-opts">${opts}</div>
     </article>`;
   }).join('') || '<div class="card rv-card" style="text-align:center;color:var(--text-2)">全部答對，沒有錯題。</div>';

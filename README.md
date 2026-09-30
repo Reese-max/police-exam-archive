@@ -214,6 +214,14 @@ with ExamDB() as db:
 python -m pytest tests/ -v
 ```
 
+## 模擬考逐題複習
+
+網站的「模擬考試」會在瀏覽器本機保存逐題 Attempt Ledger，而不只保存總分。每筆紀錄包含 stable question locator（類科／年份／科目／題號）、作答結果、選擇答案、作答時間（資料可靠時）、題目內容 hash、資料集版本、測驗模式與篩選條件；答案結果與「標記回顧」是分開保存的。
+
+「今日複習」由 ledger deterministic 派生，優先安排答錯、未答、標記與到期題，並以科目覆蓋避免單一弱項長期壟斷。每題會顯示如「上次答錯」「連續 2 次答錯」「標記回顧」「21 天未複習」等原因。使用者可設定目標考試日、每日題量與分鐘預算；截止日模式會將 due date 限制在考試日前，容量不足則明確顯示 backlog/overload。
+
+學習資料可從模擬考頁匯出／匯入 JSON。匯入會保留原始 ledger，題目 hash 或資料集版本不相容時標記為 `STALE/REVIEW_REQUIRED`，不會靜默套用舊狀態。清除學習資料只移除 `exam-question-attempt-ledger` 與 `exam-review-settings`，不會刪除題庫或書籤；資料不會離開瀏覽器。
+
 ## 115 年資料更新
 
 115 年警察人員三等考試已依考選部考畢試題查詢平臺匯入，包含 13 類科、90 科次的試題，以及官方標準答案與更正答案。匯入來源、SHA-256 與檢查結果詳見 `docs/115-import-report.md`。

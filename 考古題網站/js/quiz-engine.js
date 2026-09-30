@@ -131,6 +131,24 @@
   /* ── 歷史紀錄 ── */
   function saveHistory(result) {
     try {
+      // Keep the old aggregate history for compatibility, but make the
+      // per-question ledger the source of truth for future review queues.
+      if (window.AttemptLedger && state.questions.length) {
+        var answers = state.questions.map(function (_, i) { return state.answers[i]; });
+        var marked = state.questions.map(function (_, i) { return !!state.marked[i]; });
+        var datasetVersion = window.SearchEngine && typeof window.SearchEngine.getDatasetVersion === 'function'
+          ? window.SearchEngine.getDatasetVersion()
+          : undefined;
+        var questions = state.questions.map(function (question) {
+          return datasetVersion ? Object.assign({}, question, { datasetVersion: datasetVersion }) : question;
+        });
+        window.AttemptLedger.recordQuiz({
+          questions: questions,
+          answers: answers,
+          marked: marked,
+          quizMode: 'official',
+        });
+      }
       var history = JSON.parse(localStorage.getItem('exam-quiz-history') || '[]');
       history.unshift({
         date: new Date().toISOString(),
