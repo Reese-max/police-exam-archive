@@ -4,15 +4,18 @@
 
 ## 資料規模
 
+<!-- corpus-stats:begin 由 scripts/check_corpus_claims.py 驗證，請勿手改 -->
 | 項目 | 數量 |
 |------|------|
 | 學系/類別 | 49 個 |
 | 年份 | 106-115 年（10 年） |
 | 科目 | 101 個 |
 | JSON 檔案 | 2,049 個（非重複） |
+| 重複副本 | 41 份（共 1,217 題，不計入題數） |
 | 選擇題 | 36,760 題 |
 | 申論題 | 5,758 題 |
 | 總題數 | 42,518 題 |
+<!-- corpus-stats:end -->
 
 ## 目錄結構
 
@@ -142,8 +145,8 @@ pip install PyMuPDF rapidocr-onnxruntime
 
 ### 特殊值
 
-- `answer: "送分"` — 該題所有考生均給分（176 題）
-- `answer: "C或D"` — 官方公布 C 或 D 皆給分（1 題）
+- `answer: "送分"` — 該題所有考生均給分（178 題）
+- `answer: "C或D"` 等「或」複選答案 — 官方公布所列選項皆給分（3 題）
 - `options: {"A": "[圖片選項]", ...}` — 原卷為圖片題，無法文字化（4 題）
 - `_is_duplicate: true` — metadata 中標記為已知重複資料夾
 
@@ -160,8 +163,13 @@ pip install PyMuPDF rapidocr-onnxruntime
 本資料庫經過多輪自動化品質檢查與修復：
 
 - **結構完整性**: P0=0, P1=0, P2=0（deep_audit 全通過）
-- **選項完整率**: 36,210/36,210 = 100%
-- **答案合法率**: 36,210/36,210 = 100%
+<!-- corpus-quality:begin 由 scripts/check_corpus_claims.py 驗證，請勿手改 -->
+- **選項完整率**: 36,760/36,760 = 100%
+- **答案合法率**: 36,760/36,760 = 100%
+- **驗證範圍**: 2,049 份非重複試題 JSON、36,760 道選擇題（含 115 年 550 題；另有 41 份重複副本共 1,217 題另行列出，不混入唯一題數）
+- **圖片佔位題**: 4 題以 `[圖片選項]` 佔位，僅驗證選項鍵存在（詳見下方已知限制）
+- **統計基準**: `考古題庫/quality_summary.json`（含資料指紋與納入/排除規則）
+<!-- corpus-quality:end -->
 - **題號連續性**: 無缺漏、無重複
 - **PUA 字元**: 已全數替換為正確文字
 - **英文連字**: 已全數修復（wordninja 分詞）
@@ -210,8 +218,27 @@ with ExamDB() as db:
 ## 驗證
 
 ```bash
-# 執行 18 項自動化品質測試
+# 執行自動化品質測試套件
 python -m pytest tests/ -v
+
+# 驗證公開題數/品質分母與 quality_summary.json 一致（CI 同項檢查）
+python scripts/check_corpus_claims.py
+```
+
+### 語料統計單一來源
+
+`考古題庫/quality_summary.json` 是所有公開題數與品質分母的 machine-readable
+來源，包含資料指紋（sha256）、納入/排除規則、逐年度題數、選項完整率與
+答案合法率的分子/分母，以及首頁（內軌 17 類科）投影。
+
+```bash
+# 語料更新後：重建摘要並重填 README / quiz / manifest 受管區塊
+python scripts/check_corpus_claims.py --write
+
+# 其餘衍生檔由各自產生器維護
+python scripts/build_home_stats.py
+python scripts/build_analytics.py
+python scripts/sync_analytics_frontend.py --analytics 考古題網站/data/analytics.json
 ```
 
 ## 115 年資料更新
