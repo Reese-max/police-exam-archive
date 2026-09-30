@@ -1071,7 +1071,10 @@ def patch_frontend_sources() -> None:
 
     sw = SITE_DIR / "sw.js"
     text = sw.read_text(encoding="utf-8")
-    text = re.sub(r"var CACHE_VERSION = 'v[^']+';", "var CACHE_VERSION = 'v1.5.0';", text, count=1)
+    # 只把低於 v1.5.0 的快取版本升到 v1.5.0；master 已推出更新版本（如 v1.6.0），不得降級。
+    version = re.search(r"var CACHE_VERSION = 'v(\d+)\.(\d+)\.(\d+)';", text)
+    if version and tuple(int(part) for part in version.groups()) < (1, 5, 0):
+        text = re.sub(r"var CACHE_VERSION = 'v[^']+';", "var CACHE_VERSION = 'v1.5.0';", text, count=1)
     if "'./js/answer-utils.js'" not in text:
         text = text.replace("'./js/app.js',", "'./js/app.js',\n  './js/answer-utils.js',")
     write_text(sw, text)
@@ -1547,43 +1550,6 @@ def test_common_english_contract():
 '''
 
 
-def node_test_source() -> str:
-    return '''const assert = require('assert');
-const fs = require('fs');
-const vm = require('vm');
-const path = require('path');
-
-const root = path.resolve(__dirname, '..');
-global.window = {};
-global.localStorage = { getItem: () => null, setItem: () => {} };
-vm.runInThisContext(fs.readFileSync(path.join(root, 'js', 'answer-utils.js'), 'utf8'));
-vm.runInThisContext(fs.readFileSync(path.join(root, 'js', 'quiz-engine.js'), 'utf8'));
-
-assert.deepStrictEqual(window.AnswerUtils.parse('A或C').accepted, ['A', 'C']);
-assert.strictEqual(window.AnswerUtils.accepts('A或C', 'A'), true);
-assert.strictEqual(window.AnswerUtils.accepts('A或C', 'C'), true);
-assert.strictEqual(window.AnswerUtils.accepts('A或C', 'B'), false);
-assert.strictEqual(window.AnswerUtils.parse('送分').bonus, true);
-
-function grade(answer, chosen) {
-  const state = window.QuizEngine.getState();
-  state.questions = [{ ans: answer }];
-  state.answers = {};
-  state.secondsLeft = 0;
-  state.totalSeconds = 0;
-  state.finished = false;
-  if (chosen) state.answers[0] = chosen;
-  return window.QuizEngine.finishQuiz();
-}
-
-assert.strictEqual(grade('A或C', 'A').correct, 1);
-assert.strictEqual(grade('A或C', 'C').correct, 1);
-assert.strictEqual(grade('A或C', 'B').wrong, 1);
-assert.strictEqual(grade('送分').correct, 1);
-console.log('quiz answer contract: ok');
-'''
-
-
 def maintenance_doc() -> str:
     return '''# 115 年題庫維護與驗收
 
@@ -1594,7 +1560,10 @@ def maintenance_doc() -> str:
 3. `scripts/audit/finalize_115_import.py` 為資料遷移工具，會寫入資料；不得當成獨立驗證器。
 4. CI 與合併前驗收只使用 `scripts/audit/verify_115_integrity.py`，該工具唯讀且不得產生 git diff。
 5. 跨類科共同卷保留各類科副本供瀏覽，但搜尋索引只收正本，並以 `categories` 保存所有 membership。
-6. 類科總覽頁在 Pages 建置時由 `scripts/build_category_pages.py` 重建。
+6. 類科總覽頁在 Pages 建置時由 `scripts/build_category_pages.py` 重建；該腳本
+   重建全部 17 個類科頁並保留完整 UI（`--check` 驗證模式），其中 13 個類科含 115 年。
+   `scripts/remediate_115_audit.py` 為一次性修補的歷史腳本，再次執行不得把此建置器
+   降級回 13 類科精簡版。
 
 ## 合併門檻
 

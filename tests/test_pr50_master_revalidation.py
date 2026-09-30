@@ -100,3 +100,17 @@ def test_one_shot_remediator_cannot_downgrade_master_builder():
         if "build_category_pages.py" in change
     ]
     assert not builder_notes, f"一次性腳本會覆寫完整版類科頁建置器：{builder_notes}"
+
+
+def test_one_shot_remediator_cannot_downgrade_merged_frontend():
+    # 檢查模式下，前端相關修補在合併後的工作樹上必須完全冪等：
+    # sw.js 的 CACHE_VERSION 不得被降回 v1.5.0，維護文件不得被回退。
+    from scripts import remediate_115_audit
+
+    remediate_115_audit.APPLY = False
+    remediate_115_audit.CHANGES.clear()
+    remediate_115_audit.patch_frontend_sources()
+    remediate_115_audit.patch_tests_docs_and_ci()
+    assert not remediate_115_audit.CHANGES, (
+        f"一次性腳本與合併結果不一致：{remediate_115_audit.CHANGES}"
+    )
