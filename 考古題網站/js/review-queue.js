@@ -413,7 +413,9 @@
     // exploration slice; leftovers fall back to the remaining queue.
     var explorationQuota = Math.min(exploration.length, Math.max(1, Math.floor(capacity * 0.2)));
     staleItems.forEach(add);
-    var explorationReserve = exploration.length && selected.length < capacity
+    // The exploration floor only applies when the queue can actually share:
+    // at capacity 1 the single slot goes to the highest-priority item.
+    var explorationReserve = exploration.length && capacity >= 2 && selected.length < capacity
       ? Math.min(explorationQuota, capacity - selected.length) : 0;
     var strongQuota = Math.min(strong.length, Math.max(0, Math.min(
       Math.ceil(capacity * 0.6), capacity - selected.length - explorationReserve)));

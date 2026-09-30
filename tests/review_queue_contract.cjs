@@ -236,6 +236,14 @@ const tinyCap = ReviewQueue.buildReviewQueue(
 assert.equal(tinyCap.items.length, 2);
 assert.ok(tinyCap.items.some((item) => item.reason_code === 'coverage_gap'));
 
+// At capacity 1 the single slot goes to the highest-priority item.
+const oneSlot = ReviewQueue.buildReviewQueue(
+  [a[1], c[0]], ReviewQueue.getLedger(storage),
+  ReviewQueue.normalizeSettings({ daily_question_limit: 1 }), now, datasetVersion,
+);
+assert.equal(oneSlot.items.length, 1);
+assert.equal(oneSlot.items[0].reason_code, 'last_wrong');
+
 // An unparseable target date is discarded instead of fabricating a deadline.
 const badDate = ReviewQueue.buildReviewQueue(
   [...a, ...b], ReviewQueue.getLedger(storage),
