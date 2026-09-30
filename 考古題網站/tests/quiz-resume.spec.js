@@ -247,4 +247,73 @@ test.describe('模擬考試中斷恢復', () => {
     await expect(page.locator('#setupView')).toBeVisible();
     expect(await page.evaluate(k => localStorage.getItem(k), SESSION_KEY)).toBeNull();
   });
+
+  for (const minutes of [60, 0]) {
+    test(`中斷補償：${minutes} 分鐘模式在計時器停頓後保存及重開仍計入經過時間`, async ({ page, context }) => {
+      await page.clock.install();
+      await gotoQuizWithFixture(page);
+      await page.locator('#segCount button[data-v="10"]').click();
+      await page.locator(`#segTime button[data-v="${minutes}"]`).click();
+      await page.locator('#startBtn').click();
+      await page.locator('#choices .choice').first().click();
+      const before = await readCheckpoint(page);
+
+      // 模擬背景分頁／系統暫停：時間前進，但 interval 只補發一次。
+      await page.clock.fastForward(31_000);
+      await page.evaluate(() => window.dispatchEvent(new Event('pagehide')));
+      const saved = await readCheckpoint(page);
+      expect(saved.elapsed).toBeGreaterThanOrEqual(before.elapsed + 31);
+      if (minutes) expect(saved.remain).toBeLessThanOrEqual(before.remain - 31);
+
+      await page.close();
+      const reopened = await context.newPage();
+      await gotoQuizWithFixture(reopened);
+      await reopened.locator('#resumeBtn').click();
+      await expect(reopened.locator('#examView')).toBeVisible();
+      await expect(reopened.locator('#miniGrid .mini.done')).toHaveCount(1);
+    });
+  }
+
+  test('損毀計時資料：拒絕非布林模式及互相矛盾的計時欄位', async ({ page }) => {
+    await gotoQuizWithFixture(page);
+    await startFixtureExam(page);
+    const checkpoint = await readCheckpoint(page);
+    const invalid = [
+      { timed: 'false' }, { timed: null }, { timed: 1 },
+      { timed: false }, { durSec: 0, remain: 0 },
+      { timed: false, durSec: 0, remain: 'invalid' },
+    ];
+    for (const changes of invalid) {
+      const loaded = await page.evaluate(({ key, checkpoint, changes }) => {
+        localStorage.setItem(key, JSON.stringify({ ...checkpoint, ...changes }));
+        return QuizSession.load();
+      }, { key: SESSION_KEY, checkpoint, changes });
+      expect(loaded, JSON.stringify(changes)).toBeNull();
+    }
+  });
+
+  test('損毀題目資料：checkpoint 不能將 HTML 帶入題幹、選項或交卷回顧', async ({ page }) => {
+    await gotoQuizWithFixture(page);
+    await startFixtureExam(page);
+    const checkpoint = await readCheckpoint(page);
+    await page.reload();
+    await expect(page.locator('#resumeCard')).toBeVisible();
+
+    for (const field of ['stem', 'subj', 'opts']) {
+      const loaded = await page.evaluate(({ key, checkpoint, field }) => {
+        const cp = JSON.parse(JSON.stringify(checkpoint));
+        const markup = '<img src="invalid:" onerror="window.checkpointScriptRan=true">';
+        if (field === 'opts') cp.questions[0].opts[0] = markup;
+        else cp.questions[0][field] = markup;
+        localStorage.setItem(key, JSON.stringify(cp));
+        return QuizSession.load();
+      }, { key: SESSION_KEY, checkpoint, field });
+      expect(loaded, field).toBeNull();
+    }
+    await page.locator('#resumeBtn').click();
+    await expect(page.locator('#resumeCard')).toBeHidden();
+    await expect(page.locator('#setupView')).toBeVisible();
+    expect(await readCheckpoint(page)).toBeNull();
+    expect(await page.evaluate(() => window.checkpointScriptRan)).toBeUndefined();
+  });
 });

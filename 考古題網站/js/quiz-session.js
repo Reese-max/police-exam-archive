@@ -29,12 +29,14 @@
 
   /* ── 驗證 ── */
   function _isInt(n) { return typeof n === 'number' && isFinite(n) && Math.floor(n) === n; }
+  // v1 題目由 buildQuestions escape 後儲存；不可讓 checkpoint 繞過 HTML 邊界。
+  function _validText(s) { return typeof s === 'string' && !/[<>]/.test(s); }
 
   function _validQuestion(q) {
     return q && typeof q === 'object' &&
-      typeof q.subj === 'string' && typeof q.stem === 'string' &&
+      _validText(q.subj) && _validText(q.stem) &&
       Array.isArray(q.opts) && q.opts.length === 4 &&
-      q.opts.every(function (o) { return typeof o === 'string'; }) &&
+      q.opts.every(_validText) &&
       _isInt(q.ans) && q.ans >= 0 && q.ans <= 3;
   }
 
@@ -52,10 +54,9 @@
         !cp.flags.every(function (f) { return typeof f === 'boolean'; })) return false;
     if (!_isInt(cp.cur) || cp.cur < 0 || cp.cur >= n) return false;
     if (!_isInt(cp.durSec) || cp.durSec < 0) return false;
+    if (typeof cp.timed !== 'boolean' || cp.timed !== (cp.durSec > 0)) return false;
     if (!_isInt(cp.elapsed) || cp.elapsed < 0) return false;
-    if (cp.timed) {
-      if (!_isInt(cp.remain) || cp.durSec <= 0 || cp.remain < 0 || cp.remain > cp.durSec) return false;
-    }
+    if (!_isInt(cp.remain) || cp.remain < 0 || cp.remain > cp.durSec) return false;
     return true;
   }
 

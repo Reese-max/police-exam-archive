@@ -377,10 +377,13 @@ const TOTAL = 20;
 let questions = [], answers = [], flags = [], cur = 0;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
 let examActive = false;
+let timerStartedAt = 0;
 
 /* ===== 中斷恢復 checkpoint（quiz-session.js） ===== */
 function saveCheckpoint(){
   if(!examActive || !questions.length) return;
+  updateTimer();
+  if(!examActive) return;
   QuizSession.save({ timed: durSec>0, questions, answers, flags, cur, durSec, remain, elapsed });
 }
 
@@ -425,7 +428,7 @@ $('startBtn').addEventListener('click', ()=>{
   $('resumeCard').classList.add('hidden'); // 新考試直接覆蓋舊 checkpoint，隱藏殘留提示
   switchView('exam');
   renderQuestion(); renderMini();
-  startTimer(tmin>0);
+  startTimer();
   saveCheckpoint();
   window.scrollTo({top:0});
 });
@@ -449,20 +452,23 @@ SearchEngine.loadIndex().then(()=>{
 /* ===== timer ===== */
 function fmt(s){const m=Math.floor(s/60),sec=s%60;return m+':'+String(sec).padStart(2,'0')}
 function fmtMMSS(s){const m=Math.floor(s/60),sec=s%60;return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0')}
-function startTimer(countdown){
+function syncTime(){
+  if(!examActive) return;
+  elapsed = Math.max(elapsed, Math.floor((Date.now()-timerStartedAt)/1000));
+  if(durSec>0){ elapsed = Math.min(durSec, elapsed); remain = durSec-elapsed; }
+}
+function updateTimer(){
+  if(!examActive) return;
+  syncTime();
+  $('timerText').textContent = fmtMMSS(durSec>0 ? remain : elapsed);
+  $('timer').classList.toggle('warn', durSec>0 && remain<=60);
+  if(durSec>0 && remain<=0) finish();
+}
+function startTimer(){
   clearInterval(timerId);
-  if(countdown){
-    $('timerText').textContent = fmtMMSS(remain);
-    timerId = setInterval(()=>{
-      remain--; elapsed++;
-      $('timerText').textContent = fmtMMSS(Math.max(remain,0));
-      if(remain<=60) $('timer').classList.add('warn');
-      if(remain<=0){clearInterval(timerId); finish();}
-    },1000);
-  } else {
-    $('timerText').textContent = fmtMMSS(elapsed); // 恢復時從已用時間繼續
-    timerId = setInterval(()=>{ elapsed++; $('timerText').textContent = fmtMMSS(elapsed); },1000);
-  }
+  timerStartedAt = Date.now()-elapsed*1000;
+  timerId = setInterval(updateTimer,1000);
+  updateTimer();
 }
 
 /* ===== render question ===== */
@@ -509,6 +515,7 @@ $('submitBtn').addEventListener('click',()=>{
   finish();
 });
 function finish(){
+  syncTime();
   clearInterval(timerId);
   examActive = false;
   QuizSession.clear();
@@ -567,6 +574,7 @@ function resumeExam(cp){
   cur = cp.cur; total = questions.length;
   durSec = cp.durSec; remain = cp.remain;
   elapsed = cp.timed ? durSec - remain : cp.elapsed;
+  timerStartedAt = Date.now()-elapsed*1000;
   examActive = true;
   $('totalNum').textContent = total;
   $('timer').classList.toggle('warn', cp.timed && remain<=60);
@@ -574,7 +582,7 @@ function resumeExam(cp){
   switchView('exam');
   renderQuestion(); renderMini();
   if(cp.expired){ finish(); return; } // 中斷期間已逾時 → 直接批改保留成績
-  startTimer(cp.timed);
+  startTimer();
   window.scrollTo({top:0});
 }
 
@@ -598,7 +606,11 @@ function resumeExam(cp){
 })();
 
 window.addEventListener('pagehide', saveCheckpoint);
-document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='hidden') saveCheckpoint(); });
+window.addEventListener('pageshow', updateTimer);
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='hidden') saveCheckpoint();
+  else updateTimer();
+});
 
 /* ===== theme — 全站共用 localStorage key「exam-dark」(true/false) ===== */
 (function(){
