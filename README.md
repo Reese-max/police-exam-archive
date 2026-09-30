@@ -218,9 +218,9 @@ python -m pytest tests/ -v
 
 網站的「模擬考試」會在瀏覽器本機保存逐題 Attempt Ledger，而不只保存總分。每筆紀錄包含 stable question locator（類科／年份／科目／題號）、作答結果、選擇答案、作答時間（資料可靠時）、題目內容 hash、資料集版本、測驗模式與篩選條件；答案結果與「標記回顧」是分開保存的。
 
-「今日複習」由 ledger deterministic 派生，優先安排答錯、未答、標記與到期題，並以科目覆蓋避免單一弱項長期壟斷。每題會顯示如「上次答錯」「連續 2 次答錯」「標記回顧」「21 天未複習」等原因。使用者可設定目標考試日、每日題量與分鐘預算；截止日模式會將 due date 限制在考試日前，容量不足則明確顯示 backlog/overload。
+「今日複習」由 ledger deterministic 派生，排除未到期且無其他複習原因的正答題。最多一半名額依類科／科目最近作答時間輪替覆蓋，其餘優先安排答錯、未答、標記與到期題；每日僅一題時先輪替覆蓋。每題會顯示如「上次答錯」「連續 2 次答錯」「標記回顧」「21 天未複習」等原因。使用者可設定目標考試日、每日題量與分鐘預算；截止日模式會將 due date 限制在考試日前，依每日題量估算容量不足時顯示 backlog/overload。分鐘目前僅控制測驗計時（0 表示不限時），尚未換算為可完成題數。
 
-學習資料可從模擬考頁匯出／匯入 JSON。匯入會保留原始 ledger，題目 hash 或資料集版本不相容時標記為 `STALE/REVIEW_REQUIRED`，不會靜默套用舊狀態。清除學習資料只移除 `exam-question-attempt-ledger` 與 `exam-review-settings`，不會刪除題庫或書籤；資料不會離開瀏覽器。
+學習資料可從模擬考頁匯出／匯入 JSON。匯入先驗證 schema、逐題事實與設定；無效檔案會拒絕匯入，設定寫入失敗時還原原 ledger。題目 hash 改變或缺失時標記為 `STALE/REVIEW_REQUIRED`，重新作答後可由相容紀錄恢復進度；只有整體資料集版本改變、題目內容未變時仍保留進度，build version 留作來源紀錄。交卷儲存失敗會提示並保留本頁答案供重試。清除學習資料只移除 `exam-question-attempt-ledger`、`exam-review-settings` 與 `exam-quiz-history`，不會刪除題庫或書籤；資料不會離開瀏覽器。目前 localStorage 寫入尚未支援跨分頁交易，請避免同時在多個分頁交卷或匯入。
 
 ## 115 年資料更新
 

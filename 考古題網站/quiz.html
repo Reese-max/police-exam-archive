@@ -496,17 +496,19 @@ function syncReviewSettings(){
 }
 
 function saveReviewSettingsFromForm(){
-  AttemptLedger.saveSettings({
-    deadlineEnabled: $('deadlineEnabled').checked,
-    targetExamDate: $('targetExamDate').value,
-    dailyQuestionLimit: $('dailyQuestionLimit').value,
-    dailyMinutes: $('dailyMinutes').value,
-  });
+  try {
+    AttemptLedger.saveSettings({
+      deadlineEnabled: $('deadlineEnabled').checked,
+      targetExamDate: $('targetExamDate').value,
+      dailyQuestionLimit: $('dailyQuestionLimit').value,
+      dailyMinutes: $('dailyMinutes').value,
+    });
+  } catch(err) { alert('複習設定未儲存：' + err.message); syncReviewSettings(); }
   refreshReviewQueue();
 }
 
 function refreshReviewQueue(){
-  if(!indexReady || !POOL.length) return;
+  if(!indexReady) return;
   reviewQueue = AttemptLedger.buildQueue(POOL, {limit: AttemptLedger.getSettings().dailyQuestionLimit});
   const count = reviewQueue.items.length;
   $('queueCount').textContent = count + ' 題';
@@ -519,7 +521,7 @@ function refreshReviewQueue(){
   if(reviewQueue.overload){
     status.textContent = '目前有 ' + reviewQueue.weakCount + ' 題弱項，截止日前可安排 ' + reviewQueue.capacity + ' 題，還有 ' + reviewQueue.backlogCount + ' 題 backlog；請增加每日容量或延後目標日。';
   }else if(reviewQueue.deadline){
-    status.textContent = '截止日模式已啟用：今日佇列 ' + count + ' 題，剩餘弱項可在目前容量內安排。';
+    status.textContent = '截止日模式已啟用：今日佇列 ' + count + ' 題，依每日題量估算尚無 backlog；分鐘上限僅用於本次計時。';
   }else if(count){
     status.textContent = '佇列依序涵蓋錯題、未答、標記、到期與科目覆蓋；相同資料會重建相同順序。';
   }else{
@@ -636,13 +638,19 @@ function finish(){
     else no++;
   });
   const pct = Math.round(ok/total*100);
-  AttemptLedger.recordQuiz({
-    questions: questions,
-    answers: answers,
-    marked: flags,
-    quizMode: currentQuizMode,
-    filters: currentFilters,
-  });
+  try {
+    AttemptLedger.recordQuiz({
+      questions: questions,
+      answers: answers,
+      marked: flags,
+      quizMode: currentQuizMode,
+      filters: currentFilters,
+    });
+  } catch(err) {
+    finished = false;
+    alert('本次作答未儲存，請保留本頁與答案，排除儲存問題後重試交卷：' + err.message);
+    return;
+  }
   refreshReviewQueue();
   try{
     const history = JSON.parse(localStorage.getItem('exam-quiz-history') || '[]');

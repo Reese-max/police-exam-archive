@@ -1,5 +1,97 @@
 const { test, expect } = require('@playwright/test');
 
+async function routeLedgerFixture(page, version = 'v1') {
+  const questions = [
+    { cat: 'A', yr: 113, sub: 'Law', no: '1', type: 'choice', stem: version === 'v1' ? 'Q1' : 'Revised Q1', optA: 'A', optB: 'B', optC: 'C', optD: 'D', ans: 'A' },
+    { cat: 'B', yr: 114, sub: 'Other', no: '2', type: 'choice', stem: 'Q2', optA: 'A', optB: 'B', optC: 'C', optD: 'D', ans: 'A' },
+  ];
+  await page.unroute('**/data/search-index.json');
+  await page.route('**/data/search-index.json', route => route.fulfill({ json: {
+    v: 1, datasetVersion: version, stats: { total: 2 },
+    facets: { categories: ['A', 'B'], years: [113, 114], subjects: ['Law', 'Other'] },
+    columns: Object.fromEntries(Object.keys(questions[0]).map(key => [key, questions.map(q => q[key])])),
+  } }));
+}
+
+test.describe('PR80 UI regression', () => {
+  test.use({ serviceWorkers: 'block', viewport: { width: 390, height: 844 } });
+  test.beforeEach(async ({ page }) => {
+    // These flows use SearchEngine's column filter, not CDN text search.
+    await page.route('**/minisearch@*/**', route => route.fulfill({
+      contentType: 'application/javascript', body: 'window.MiniSearch = class { addAll() {} };',
+    }));
+    await routeLedgerFixture(page);
+    await page.goto('/quiz.html');
+    await expect(page.locator('#queueCount')).toHaveText('2 題');
+  });
+
+  test('empty filters clear the old review queue', async ({ page }) => {
+    await page.locator('#fCat').selectOption('B');
+    await page.locator('#fYear').selectOption('113');
+    await expect(page.locator('#matchCount')).toHaveText('0 題');
+    await expect(page.locator('#queueCount')).toHaveText('0 題');
+    await expect(page.locator('#reviewQueueList li')).toHaveCount(0);
+    await expect(page.locator('#reviewStartBtn')).toBeDisabled();
+  });
+
+  test('failed persistence keeps answers available for resubmission', async ({ page }) => {
+    await page.locator('#reviewStartBtn').click();
+    await page.locator('.choice[data-i="0"]').click();
+    await page.locator('#nextBtn').click();
+    await page.locator('.choice[data-i="0"]').click();
+    await page.evaluate(() => {
+      window.originalSetItem = Storage.prototype.setItem;
+      Storage.prototype.setItem = function (key, value) {
+        if (key === 'exam-question-attempt-ledger') throw new DOMException('Full', 'QuotaExceededError');
+        window.originalSetItem.call(this, key, value);
+      };
+    });
+    const messages = [];
+    page.on('dialog', async dialog => { messages.push(dialog.message()); await dialog.accept(); });
+    await page.locator('#submitBtn').click();
+    await expect(page.locator('#examView')).toBeVisible();
+    expect(messages.join(' ')).toContain('未儲存');
+    await page.evaluate(() => { Storage.prototype.setItem = window.originalSetItem; });
+    await page.locator('#submitBtn').click();
+    await expect(page.locator('#sOk')).toHaveText('2');
+    expect(await page.evaluate(() => AttemptLedger.getLedger().length)).toBe(2);
+  });
+
+  test('mobile submission reload versions and JSON roundtrip', async ({ page }) => {
+    page.on('dialog', dialog => dialog.accept());
+    await page.locator('#reviewStartBtn').click();
+    await page.locator('.choice[data-i="0"]').click();
+    await page.locator('#flagBtn').click();
+    await page.locator('#nextBtn').click();
+    await page.locator('#submitBtn').click();
+    await expect(page.locator('#sOk')).toHaveText('1');
+    await expect(page.locator('#sSkip')).toHaveText('1');
+    await page.reload();
+    const before = await page.evaluate(() => AttemptLedger.getLedger());
+    expect(before).toHaveLength(2);
+    expect(before[0]).toMatchObject({ answerOutcome: 'correct', markedReview: true, quizMode: 'review', datasetVersion: 'v1' });
+    const downloadPromise = page.waitForEvent('download');
+    await page.locator('#exportLearningBtn').click();
+    const download = await downloadPromise;
+    const payload = await require('fs/promises').readFile(await download.path());
+    await page.locator('#clearLearningBtn').click();
+    await page.locator('#importLearningFile').setInputFiles({ name: 'learning.json', mimeType: 'application/json', buffer: payload });
+    await expect.poll(() => page.evaluate(() => AttemptLedger.getLedger())).toEqual(before);
+    await routeLedgerFixture(page, 'v2');
+    await page.reload();
+    await expect(page.locator('#queueCount')).toHaveText('2 題');
+    const states = await page.evaluate(() => SearchEngine.search('', {}, 10).map(q => AttemptLedger.getReviewState(q)));
+    expect(states[0].sourceCompat).toBe('stale');
+    expect(states[1].sourceCompat).toBe('current');
+    await page.locator('#deadlineEnabled').check();
+    const today = await page.evaluate(() => new Date().toLocaleDateString('en-CA'));
+    await page.locator('#targetExamDate').fill(today);
+    await page.locator('#dailyQuestionLimit').fill('1');
+    await page.locator('#dailyQuestionLimit').blur();
+    await expect(page.locator('#queueStatus')).toContainText('backlog');
+  });
+});
+
 test.describe('逐題作答 ledger 與考前複習佇列', () => {
   test('可保存逐題事實並以截止日 deterministic 產生帶原因的複習佇列', async ({ page }) => {
     await page.goto('/quiz.html');

@@ -34,12 +34,8 @@
   }
 
   function writeJson(key, value) {
-    try {
-      window.localStorage.setItem(key, JSON.stringify(value));
-      return true;
-    } catch (e) {
-      return false;
-    }
+    window.localStorage.setItem(key, JSON.stringify(value));
+    return true;
   }
 
   function text(value) {
@@ -205,7 +201,7 @@
     settings.deadlineEnabled = saved.deadlineEnabled === true || saved.enabled === true;
     settings.enabled = settings.deadlineEnabled;
     settings.dailyQuestionLimit = Math.max(1, Math.floor(Number(settings.dailyQuestionLimit) || DEFAULT_SETTINGS.dailyQuestionLimit));
-    settings.dailyMinutes = Math.max(0, Math.floor(Number(settings.dailyMinutes) || DEFAULT_SETTINGS.dailyMinutes));
+    settings.dailyMinutes = Math.max(0, Math.floor(Number.isFinite(Number(settings.dailyMinutes)) ? Number(settings.dailyMinutes) : DEFAULT_SETTINGS.dailyMinutes));
     settings.targetExamDate = /^\d{4}-\d{2}-\d{2}$/.test(text(settings.targetExamDate)) ? settings.targetExamDate : '';
     return settings;
   }
@@ -220,7 +216,7 @@
     next.deadlineEnabled = next.deadlineEnabled === true;
     next.enabled = next.deadlineEnabled;
     next.dailyQuestionLimit = Math.max(1, Math.floor(Number(next.dailyQuestionLimit) || DEFAULT_SETTINGS.dailyQuestionLimit));
-    next.dailyMinutes = Math.max(0, Math.floor(Number(next.dailyMinutes) || DEFAULT_SETTINGS.dailyMinutes));
+    next.dailyMinutes = Math.max(0, Math.floor(Number.isFinite(Number(next.dailyMinutes)) ? Number(next.dailyMinutes) : DEFAULT_SETTINGS.dailyMinutes));
     next.targetExamDate = /^\d{4}-\d{2}-\d{2}$/.test(text(next.targetExamDate)) ? next.targetExamDate : '';
     writeJson(SETTINGS_KEY, next);
     return clone(next);
@@ -247,12 +243,13 @@
     var currentHash = questionHash(question);
     var currentVersion = datasetVersionFor(question);
     var compatible = matching.filter(function (event) {
-      return event.questionHash && event.questionHash === currentHash && event.datasetVersion === currentVersion;
+      // Build versions record provenance; compatibility is question-specific.
+      return event.questionHash && event.questionHash === currentHash;
     });
-    var stale = matching.length > 0 && compatible.length !== matching.length;
-    var sourceCompat = matching.length === 0 ? 'current' : (stale ? 'stale' : 'current');
-    if (matching.length > 0 && matching.some(function (event) { return !event.questionHash; })) sourceCompat = 'review_required';
-    var usable = stale ? [] : compatible;
+    var latestFact = matching.length ? matching[matching.length - 1] : null;
+    var sourceCompat = !latestFact || latestFact.questionHash === currentHash ? 'current' : 'stale';
+    if (latestFact && !latestFact.questionHash) sourceCompat = 'review_required';
+    var usable = sourceCompat === 'current' ? compatible : [];
     var latest = usable.length ? usable[usable.length - 1] : null;
     var wrongCount = usable.filter(function (event) { return event.answerOutcome === 'wrong'; }).length;
     var unansweredCount = usable.filter(function (event) { return event.answerOutcome === 'unanswered'; }).length;
@@ -294,6 +291,10 @@
     if (!matching.length) reasonCodes.push('探索新題');
 
     var targetMs = options.targetDateMs;
+    if (targetMs === undefined) {
+      var settings = Object.assign({}, getSettings(), options.settings || {});
+      targetMs = settings.deadlineEnabled || settings.enabled ? targetDateMs(settings.targetExamDate) : null;
+    }
     if (targetMs && dueAt && parseNow(dueAt) > targetMs) {
       dueAt = new Date(targetMs).toISOString();
       reasonCodes.push('考試日前完成');
@@ -314,6 +315,7 @@
       datasetVersion: currentVersion,
       questionHash: currentHash,
       subject: locatorFor(question).subject,
+      group: JSON.stringify([locatorFor(question).cat, locatorFor(question).subject]),
     };
   }
 
@@ -332,8 +334,8 @@
     if (latestUnanswered) { priority = Math.max(priority, 390); category = 'urgent'; }
     if (latestWrong) { priority = Math.max(priority, 400); category = 'urgent'; }
     if (marked) { priority = Math.max(priority, 420); category = 'urgent'; }
-    if (coverage) { priority = Math.max(priority, 200); category = 'coverage'; }
-    if (explore) { priority = Math.max(priority, 100); category = 'exploration'; }
+    if (coverage && priority < 200) { priority = 200; category = 'coverage'; }
+    if (explore && priority < 100) { priority = 100; category = 'exploration'; }
     return {
       questionId: state.questionId,
       question: question,
@@ -345,6 +347,7 @@
       priority: priority,
       category: category,
       subject: state.subject || text(question.sub || question.subject || question.cat),
+      group: state.group,
     };
   }
 
@@ -360,31 +363,35 @@
     states.forEach(function (state) { byId[state.questionId] = state; });
     var subjectCounts = {};
     states.forEach(function (state) {
-      var subject = state.subject || '_unknown';
-      if (!subjectCounts[subject]) subjectCounts[subject] = { seen: 0, candidates: 0 };
-      if (state.attempts > 0 && state.sourceCompat === 'current') subjectCounts[subject].seen++;
+      var subject = state.group;
+      if (!subjectCounts[subject]) subjectCounts[subject] = { lastSeen: -Infinity, candidate: null };
+      if (state.lastSeen) subjectCounts[subject].lastSeen = Math.max(subjectCounts[subject].lastSeen, parseNow(state.lastSeen));
     });
     states.forEach(function (state) {
-      var subject = state.subject || '_unknown';
-      if (subjectCounts[subject].seen === 0) state.reasonCodes.push('本科目近期覆蓋不足');
+      if (nowMs - subjectCounts[state.group].lastSeen >= 21 * DAY_MS) state.reasonCodes.push('本科目近期覆蓋不足');
     });
     var candidates = (questions || []).map(function (question) {
       return candidateFor(question, byId[questionId(question)], nowMs);
-    });
-    candidates.forEach(function (candidate) {
-      if (candidate.reasonCodes.indexOf('本科目近期覆蓋不足') >= 0) subjectCounts[candidate.subject].candidates++;
-    });
+    }).filter(function (candidate) { return candidate.priority > 0; });
     candidates.sort(function (a, b) {
       return b.priority - a.priority || a.questionId.localeCompare(b.questionId);
+    });
+    candidates.forEach(function (candidate) {
+      if (!subjectCounts[candidate.group].candidate) subjectCounts[candidate.group].candidate = candidate;
     });
 
     var limit = Math.max(1, Math.floor(Number(options.limit || settings.dailyQuestionLimit) || 1));
     var selected = [];
     var selectedIds = {};
-    var subjects = Object.keys(subjectCounts).sort();
+    // ponytail: one-question sessions rotate coverage; larger sessions reserve at least half for priority.
+    var coverageSlots = Math.max(1, Math.floor(limit / 2));
+    var subjects = Object.keys(subjectCounts).filter(function (subject) { return subjectCounts[subject].candidate; }).sort(function (a, b) {
+      var left = subjectCounts[a], right = subjectCounts[b];
+      return left.lastSeen - right.lastSeen || right.candidate.priority - left.candidate.priority || a.localeCompare(b);
+    });
     subjects.forEach(function (subject) {
-      if (selected.length >= limit) return;
-      var candidate = candidates.find(function (item) { return item.subject === subject; });
+      if (selected.length >= coverageSlots) return;
+      var candidate = subjectCounts[subject].candidate;
       if (candidate && !selectedIds[candidate.questionId]) {
         selected.push(candidate);
         selectedIds[candidate.questionId] = true;
@@ -406,7 +413,7 @@
     var overload = false;
     var backlogCount = 0;
     if (settings.deadlineEnabled && targetMs) {
-      var availableDays = Math.max(1, Math.ceil((targetMs - nowMs) / DAY_MS));
+      var availableDays = Math.max(0, Math.ceil((targetMs - nowMs) / DAY_MS));
       capacity = availableDays * settings.dailyQuestionLimit;
       overload = weak > capacity;
       backlogCount = Math.max(0, weak - capacity);
@@ -436,9 +443,39 @@
   function importData(payload) {
     var data = typeof payload === 'string' ? JSON.parse(payload) : payload;
     if (!data || !Array.isArray(data.attemptLedger)) throw new Error('匯入檔缺少 attemptLedger');
-    var imported = data.attemptLedger.map(normaliseEvent).filter(Boolean);
+    if (data.schemaVersion !== SCHEMA_VERSION) throw new Error('不支援的學習資料版本');
+    data.attemptLedger.forEach(function (event) {
+      if (!event || typeof event.questionId !== 'string' || !event.questionId ||
+          !event.sourceLocator || ['cat', 'year', 'subject', 'no'].some(function (key) { return typeof event.sourceLocator[key] !== 'string' || !event.sourceLocator[key]; }) ||
+          typeof event.attemptedAt !== 'string' || !Number.isFinite(Date.parse(event.attemptedAt)) ||
+          ['correct', 'wrong', 'unanswered'].indexOf(event.answerOutcome) < 0 ||
+          event.outcome !== event.answerOutcome || typeof event.markedReview !== 'boolean' ||
+          !(event.chosenAnswer === null || (typeof event.chosenAnswer === 'string' && /^[ABCD]$/.test(event.chosenAnswer))) ||
+          typeof event.datasetVersion !== 'string' || !event.datasetVersion ||
+          typeof event.questionHash !== 'string' || !event.questionHash ||
+          typeof event.quizMode !== 'string' || !event.filters || typeof event.filters !== 'object' || Array.isArray(event.filters) ||
+          (event.elapsedMs !== undefined && (!Number.isFinite(event.elapsedMs) || event.elapsedMs < 0))) {
+        throw new Error('匯入檔含無效作答紀錄');
+      }
+    });
+    var settings = data.reviewSettings;
+    if (settings !== undefined && (!settings || typeof settings !== 'object' || Array.isArray(settings) ||
+        ['deadlineEnabled', 'enabled'].some(function (key) { return settings[key] !== undefined && typeof settings[key] !== 'boolean'; }) ||
+        ['dailyQuestionLimit', 'dailyMinutes'].some(function (key) { return settings[key] !== undefined && (!Number.isInteger(settings[key]) || settings[key] < (key === 'dailyMinutes' ? 0 : 1)); }) ||
+        (settings.targetExamDate !== undefined && settings.targetExamDate !== '' &&
+          (!targetDateMs(settings.targetExamDate) || new Date(settings.targetExamDate + 'T00:00:00Z').toISOString().slice(0, 10) !== settings.targetExamDate)))) {
+      throw new Error('匯入檔含無效複習設定');
+    }
+    var imported = data.attemptLedger.map(normaliseEvent);
+    var previousLedger = window.localStorage.getItem(LEDGER_KEY);
     replace(imported);
-    if (data.reviewSettings) saveSettings(data.reviewSettings);
+    try {
+      if (settings) saveSettings(settings);
+    } catch (e) {
+      if (previousLedger === null) window.localStorage.removeItem(LEDGER_KEY);
+      else window.localStorage.setItem(LEDGER_KEY, previousLedger);
+      throw e;
+    }
     return { attempts: imported.length, settings: getSettings() };
   }
 
