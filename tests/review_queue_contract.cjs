@@ -125,6 +125,66 @@ const changedQueue = ReviewQueue.buildReviewQueue([changed], ReviewQueue.getLedg
 assert.equal(changedQueue.items[0].reason_code, 'dataset_changed');
 assert.equal(changedQueue.items[0].state.wrong_count, 0, 'stale attempts must not be silently reused');
 
+// Re-attempting the changed content must clear STALE instead of pinning it.
+ReviewQueue.recordQuizAttempt([changed], ['A'], [false], { attemptedAt: '2026-09-30T13:00:00.000Z', datasetVersion: 'search-index-fixture-v2' }, storage);
+const recovered = ReviewQueue.deriveReviewState(
+  changed, ReviewQueue.getLedger(storage).attempts, now, 'search-index-fixture-v2',
+);
+assert.equal(recovered.status, 'CURRENT');
+assert.equal(recovered.attempts, 1);
+assert.equal(recovered.correct_streak, 1);
+
+// A dataset rebuild that leaves content untouched must re-map existing attempts.
+const remapped = ReviewQueue.deriveReviewState(
+  a[1], ReviewQueue.getLedger(storage).attempts, now, 'search-index-fixture-v9',
+);
+assert.equal(remapped.status, 'CURRENT');
+assert.equal(remapped.wrong_count, 1);
+
+// Deadline mode without a target date must not fabricate a backlog.
+const noDeadlineDate = ReviewQueue.buildReviewQueue(
+  [...a, ...b, ...c, ...d], ReviewQueue.getLedger(storage),
+  ReviewQueue.normalizeSettings({ deadline_enabled: true, target_date: null, daily_question_limit: 2 }),
+  now, datasetVersion,
+);
+assert.equal(noDeadlineDate.overload.is_overloaded, false);
+assert.equal(noDeadlineDate.overload.backlog, 0);
+
+// A target date already in the past reports the full weak set as backlog.
+const pastDeadline = ReviewQueue.buildReviewQueue(
+  [...a, ...b, ...c, ...d], ReviewQueue.getLedger(storage),
+  ReviewQueue.normalizeSettings({ deadline_enabled: true, target_date: '2026-09-01', daily_question_limit: 2 }),
+  now, datasetVersion,
+);
+assert.equal(pastDeadline.overload.is_overloaded, true);
+assert.equal(pastDeadline.overload.available_capacity, 0);
+assert.equal(pastDeadline.overload.backlog, pastDeadline.overload.required);
+
+// Import must drop malformed attempt rows instead of corrupting derived state.
+const malformedStorage = makeStorage();
+ReviewQueue.importData({
+  schema_version: 1,
+  ledger: { schema_version: 1, attempts: [
+    { question_id: '', outcome: 'correct', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000' },
+    { question_id: 'q1', outcome: 'guessed', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000' },
+    { question_id: 'q2', outcome: 'wrong', attempted_at: 'not-a-date', source_hash: 'fnv1a-00000000' },
+    { question_id: 'q3', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000' },
+  ] },
+}, malformedStorage);
+assert.equal(ReviewQueue.getLedger(malformedStorage).attempts.length, 1);
+assert.equal(ReviewQueue.getLedger(malformedStorage).attempts[0].question_id, 'q3');
+
+// Persistence failure must be reported to the caller, not swallowed.
+const failingStorage = {
+  getItem() { return null; },
+  setItem() { throw new Error('quota exceeded'); },
+  removeItem() {},
+};
+const failedRecord = ReviewQueue.recordQuizAttempt(
+  [a[0]], ['A'], [false], { attemptedAt: now, datasetVersion }, failingStorage,
+);
+assert.equal(failedRecord.persisted, false);
+
 const importedStorage = makeStorage();
 ReviewQueue.saveSettings(settings, storage);
 const exportedWithSettings = ReviewQueue.exportData(storage, datasetVersion);

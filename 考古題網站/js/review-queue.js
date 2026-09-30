@@ -6,6 +6,8 @@
   var LEDGER_KEY = 'exam-attempt-ledger-v1';
   var SETTINGS_KEY = 'exam-review-settings-v1';
   var HISTORY_KEY = 'exam-quiz-history';
+  var MINUTES_PER_QUESTION = 2;
+  var VALID_OUTCOMES = { correct: true, wrong: true, unanswered: true };
   var DEFAULT_SETTINGS = {
     deadline_enabled: false,
     target_date: null,
@@ -172,7 +174,7 @@
       return event;
     });
     ledger.attempts = ledger.attempts.concat(events);
-    saveLedger(ledger, storage);
+    ledger.persisted = saveLedger(ledger, storage);
     return ledger;
   }
 
@@ -213,10 +215,14 @@
   function deriveReviewState(question, attempts, now, datasetVersion) {
     var identity = questionIdentity(question, datasetVersion);
     var all = (attempts || []).filter(function (item) { return item.question_id === identity.question_id; });
+    // Compatibility keys on the content fingerprint, not the dataset version:
+    // attempts against identical question content re-map across index rebuilds,
+    // and re-attempting changed content lets the state recover instead of
+    // pinning STALE forever. Old-version events stay in the ledger as facts.
     var compatible = all.filter(function (item) {
-      return item.dataset_version === identity.dataset_version && item.source_hash === identity.source_hash;
+      return item.source_hash === identity.source_hash;
     });
-    var stale = all.length > compatible.length;
+    var stale = all.length > 0 && compatible.length === 0;
     var ordered = compatible.slice().sort(function (a, b) {
       return String(a.attempted_at).localeCompare(String(b.attempted_at));
     });
@@ -242,7 +248,7 @@
     if (latest && latest.outcome === 'wrong') reasons.push(wrongCount >= 2 ? 'repeated_wrong' : 'last_wrong');
     if (latest && latest.outcome === 'unanswered') reasons.push('unanswered');
     if (latest && dueAt && dueAt <= isoDate(now)) reasons.push('due');
-    if (!latest) reasons.push('coverage_gap');
+    if (!latest && !stale) reasons.push('coverage_gap');
 
     return {
       status: stale ? 'STALE' : 'CURRENT',
@@ -362,7 +368,7 @@
     });
 
     var capacity = normalized.daily_question_limit;
-    if (normalized.daily_minutes) capacity = Math.min(capacity, Math.max(1, Math.floor(normalized.daily_minutes / 2)));
+    if (normalized.daily_minutes) capacity = Math.min(capacity, Math.max(1, Math.floor(normalized.daily_minutes / MINUTES_PER_QUESTION)));
     var strong = roundRobin(records.filter(function (item) { return item.priority === 1; }));
     var selected = [];
     var selectedIds = {};
@@ -382,14 +388,16 @@
     strong.slice(strongQuota).forEach(add);
 
     var weakCount = records.filter(function (item) { return item.priority <= 2; }).length;
+    var hasDeadline = normalized.deadline_enabled && !!normalized.target_date;
     var availableCapacity = capacity;
-    if (normalized.deadline_enabled && normalized.target_date) {
+    var daysRemaining = null;
+    if (hasDeadline) {
       var today = parseDate(current);
-      var target = parseDate(normalized.target_date + 'T23:59:59.999Z');
-      var days = today && target ? Math.max(1, Math.floor((target - today) / 86400000) + 1) : 1;
-      availableCapacity = capacity * days;
+      var target = parseDate(deadlineEnd(normalized.target_date));
+      daysRemaining = today && target ? Math.max(0, Math.floor((target - today) / 86400000) + 1) : 0;
+      availableCapacity = capacity * daysRemaining;
     }
-    var backlog = Math.max(0, weakCount - availableCapacity);
+    var backlog = hasDeadline ? Math.max(0, weakCount - availableCapacity) : 0;
     return {
       schema_version: SCHEMA_VERSION,
       generated_at: current,
@@ -397,10 +405,11 @@
       items: selected,
       total_candidates: records.length,
       overload: {
-        is_overloaded: normalized.deadline_enabled && backlog > 0,
-        backlog: normalized.deadline_enabled ? backlog : 0,
+        is_overloaded: hasDeadline && backlog > 0,
+        backlog: backlog,
         required: weakCount,
         available_capacity: availableCapacity,
+        days_remaining: daysRemaining,
       },
     };
   }
@@ -419,7 +428,13 @@
     if (!payload || payload.schema_version !== SCHEMA_VERSION || !payload.ledger || !Array.isArray(payload.ledger.attempts)) {
       throw new Error('無法匯入：複習資料格式不相容');
     }
-    saveLedger({ schema_version: SCHEMA_VERSION, attempts: payload.ledger.attempts }, storage);
+    var attempts = payload.ledger.attempts.filter(function (item) {
+      return item && typeof item.question_id === 'string' && item.question_id
+        && VALID_OUTCOMES[item.outcome] === true
+        && typeof item.source_hash === 'string' && item.source_hash
+        && !!parseDate(item.attempted_at);
+    });
+    saveLedger({ schema_version: SCHEMA_VERSION, attempts: attempts }, storage);
     saveSettings(payload.settings || DEFAULT_SETTINGS, storage);
     return { ledger: getLedger(storage), settings: getSettings(storage) };
   }

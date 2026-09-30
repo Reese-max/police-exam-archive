@@ -385,13 +385,15 @@ let indexReady = false;
 function _esc(s){ if(!s) return ''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function _short(s,n){ s=s||''; return s.length>n ? s.slice(0,n)+'…' : s; }
 
+function isAnswerableChoice(q){ return q.optA && q.optB && q.optC && q.optD && 'ABCD'.indexOf(q.ans) >= 0; }
+
 function refreshPool(){
   if(!indexReady) return;
   const yv = $('fYear').value;
   POOL = SearchEngine.search('', {
     cat: $('fCat').value, yr: yv?parseInt(yv,10):null, sub: $('fSubj').value,
     type:'choice', ans:'',
-  }, 99999).filter(q => q.optA && q.optB && q.optC && q.optD && 'ABCD'.indexOf(q.ans) >= 0);
+  }, 99999).filter(isAnswerableChoice);
   $('matchCount').textContent = POOL.length.toLocaleString() + ' 題';
   $('startBtn').disabled = POOL.length === 0;
   refreshReviewPlanner();
@@ -404,6 +406,7 @@ let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
 let quizMode = 'simulated', activeFilters = {}, finished = false;
 let datasetMeta = { datasetVersion: 'unknown', datasetHash: null };
 let reviewPreview = null;
+let REVIEW_POOL = [];
 
 const $ = id => document.getElementById(id);
 
@@ -465,6 +468,7 @@ function plannerSettings(){
 }
 
 function loadPlannerSettings(){
+  if(!window.ReviewQueue) return;
   const settings = ReviewQueue.getSettings();
   $('deadlineEnabled').checked = settings.deadline_enabled;
   $('targetDate').value = settings.target_date || '';
@@ -473,10 +477,10 @@ function loadPlannerSettings(){
 }
 
 function refreshReviewPlanner(){
-  if(!indexReady || !datasetMeta) return;
+  if(!indexReady || !datasetMeta || !window.ReviewQueue) return;
   const settings = plannerSettings();
   reviewPreview = ReviewQueue.buildReviewQueue(
-    POOL, ReviewQueue.getLedger(), settings, new Date().toISOString(), datasetMeta.datasetVersion,
+    REVIEW_POOL, ReviewQueue.getLedger(), settings, new Date().toISOString(), datasetMeta.datasetVersion,
   );
   const status = $('reviewStatus');
   const count = reviewPreview.items.length;
@@ -492,6 +496,7 @@ function refreshReviewPlanner(){
 }
 
 function savePlannerSettings(){
+  if(!window.ReviewQueue) return;
   const saved = ReviewQueue.saveSettings(plannerSettings());
   $('deadlineEnabled').checked = saved.deadline_enabled;
   $('targetDate').value = saved.target_date || '';
@@ -501,6 +506,7 @@ function savePlannerSettings(){
 }
 
 function startReview(){
+  if(!window.ReviewQueue){ alert('複習模組未載入，請重新整理頁面。'); return; }
   savePlannerSettings();
   if(!reviewPreview || !reviewPreview.items.length){ alert('目前沒有可安排的複習題目。'); return; }
   quizMode = 'review';
@@ -543,6 +549,8 @@ loadPlannerSettings();
 SearchEngine.loadIndex().then(()=>{
   indexReady = true;
   datasetMeta = SearchEngine.getDatasetMeta() || datasetMeta;
+  // 複習佇列以完整題庫為範圍，不受左側篩選條件影響，避免弱題被篩選器藏起來。
+  REVIEW_POOL = SearchEngine.search('', { type:'choice' }, 99999).filter(isAnswerableChoice);
   const f = SearchEngine.getFacets();
   _fill('fCat', f.categories, '');
   _fill('fYear', f.years.map(String).reverse(), ' 年');
@@ -554,6 +562,7 @@ SearchEngine.loadIndex().then(()=>{
 $('saveReviewSettingsBtn').addEventListener('click', savePlannerSettings);
 $('startReviewBtn').addEventListener('click', startReview);
 $('exportLearningBtn').addEventListener('click', ()=>{
+  if(!window.ReviewQueue){ alert('複習模組未載入，請重新整理頁面。'); return; }
   const blob = new Blob([ReviewQueue.exportData(null, datasetMeta.datasetVersion)], {type:'application/json'});
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
@@ -563,6 +572,7 @@ $('exportLearningBtn').addEventListener('click', ()=>{
 });
 $('importLearningBtn').addEventListener('click', ()=>$('importLearningFile').click());
 $('clearLearningBtn').addEventListener('click',()=>{
+  if(!window.ReviewQueue){ alert('複習模組未載入，請重新整理頁面。'); return; }
   if(!confirm('只清除本機逐題作答、排程與測驗歷史，不會刪除題庫或書籤。確定？')) return;
   ReviewQueue.clearLearnerData();
   loadPlannerSettings();
@@ -573,6 +583,7 @@ $('importLearningFile').addEventListener('change', async e=>{
   const file = e.target.files && e.target.files[0];
   if(!file) return;
   try{
+    if(!window.ReviewQueue) throw new Error('複習模組未載入');
     ReviewQueue.importData(await file.text());
     loadPlannerSettings();
     refreshReviewPlanner();
@@ -656,14 +667,17 @@ function finish(){
     else no++;
   });
   const pct = Math.round(ok/total*100);
-  const attemptedAt = new Date().toISOString();
-  ReviewQueue.recordQuizAttempt(
-    questions.map(q=>q.source), answers, flags,
-    { attemptedAt, datasetVersion: datasetMeta.datasetVersion, quizMode, filters: activeFilters },
-  );
-  ReviewQueue.saveQuizSummary({
-    date: attemptedAt, correct: ok, total, pct, elapsed, mode: quizMode,
-  });
+  let persisted = false;
+  if(window.ReviewQueue){
+    const attemptedAt = new Date().toISOString();
+    const record = ReviewQueue.recordQuizAttempt(
+      questions.map(q=>q.source), answers, flags,
+      { attemptedAt, datasetVersion: datasetMeta.datasetVersion, quizMode, filters: activeFilters },
+    );
+    persisted = !!(record && record.persisted) && ReviewQueue.saveQuizSummary({
+      date: attemptedAt, correct: ok, total, pct, elapsed, mode: quizMode,
+    });
+  }
   switchView('result');
   window.scrollTo({top:0});
   // ring
@@ -673,7 +687,9 @@ function finish(){
   $('sOk').textContent=ok; $('sNo').textContent=no; $('sSkip').textContent=skip;
   $('sTime').textContent=fmt(elapsed);
   $('resultTitle').textContent='作答完成';
-  $('resultSub').textContent='錯題與未答題整理於下方；逐題作答紀錄已保存於本機。';
+  $('resultSub').textContent = persisted
+    ? '錯題與未答題整理於下方；逐題作答紀錄已保存於本機。'
+    : '錯題與未答題整理於下方；逐題作答紀錄未能保存（本機儲存不可用）。';
   // review (wrong + skipped)
   const wrong = questions.map((q,i)=>({q,i})).filter(({q,i})=>answers[i]!==q.ans);
   $('reviewCount').textContent = wrong.length+' 題';
