@@ -1324,7 +1324,13 @@ def patch_generator_and_pages() -> None:
             raise RuntimeError("generate_html.py 找不到 passage escape 標記")
         text = text.replace(needle, insertion, 1)
     write_text(path, text)
-    write_text(ROOT / "scripts/build_category_pages.py", build_category_pages_source())
+
+    # master 後來把類科頁建置升級成保留完整 UI 的版本（含 _validate_ui_shell 與
+    # --check）。本工具是一次性 115 修補腳本，不得把較新實作降級回精簡版。
+    builder_path = ROOT / "scripts/build_category_pages.py"
+    existing_builder = builder_path.read_text(encoding="utf-8") if builder_path.is_file() else ""
+    if "_validate_ui_shell" not in existing_builder:
+        write_text(builder_path, build_category_pages_source())
 
     pages = ROOT / ".github/workflows/pages.yml"
     text = pages.read_text(encoding="utf-8")

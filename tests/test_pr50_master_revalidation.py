@@ -85,3 +85,18 @@ def test_ci_and_pages_syntax_checks_cover_both_sides():
         for script in FRONTEND_SYNTAX_CHECKS:
             needle = f"node --check 考古題網站/{script}"
             assert needle in text, f"{name} 缺少語法檢查：{script}"
+
+
+def test_one_shot_remediator_cannot_downgrade_master_builder():
+    # remediate_115_audit.py 是歷史一次性修補腳本；再次以檢查模式執行時，
+    # 不得把 master 的完整類科頁建置器標記為待覆寫成 13 類科精簡版。
+    from scripts import remediate_115_audit
+
+    remediate_115_audit.APPLY = False
+    remediate_115_audit.CHANGES.clear()
+    remediate_115_audit.patch_generator_and_pages()
+    builder_notes = [
+        change for change in remediate_115_audit.CHANGES
+        if "build_category_pages.py" in change
+    ]
+    assert not builder_notes, f"一次性腳本會覆寫完整版類科頁建置器：{builder_notes}"
