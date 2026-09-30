@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.6.0';
+var CACHE_VERSION = 'v1.6.1';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -9,8 +9,7 @@ var CORE_ASSETS = [
   './index.html',
   './category.html',
   './analytics.html',
-  './analytics-chart.js',
-  './analytics-chart-data.js',
+  './analytics-chart-bundle.js',
   './data/home-stats.json',
   './css/style.css',
   './js/app.js',
@@ -63,11 +62,10 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-  /* Analytics code + generated data must update together; never serve stale first. */
+  /* One bundle response contains both Analytics code and its generated data. */
   if (url.origin === self.location.origin &&
-      (url.pathname.endsWith('/analytics-chart.js') ||
-       url.pathname.endsWith('/analytics-chart-data.js'))) {
-    event.respondWith(networkFirst(event.request, CORE_CACHE));
+      url.pathname.endsWith('/analytics-chart-bundle.js')) {
+    event.respondWith(analyticsBundle(event.request));
     return;
   }
 
@@ -139,6 +137,31 @@ function networkFirst(request, cacheName) {
           request.headers.get('accept').indexOf('text/html') !== -1) {
         return caches.match('./index.html');
       }
+    });
+  });
+}
+
+function analyticsBundle(request) {
+  return fetch(request, { cache: 'no-store' }).then(function(response) {
+    if (!response || !response.ok) {
+      throw new Error('Analytics bundle unavailable');
+    }
+    var clone = response.clone();
+    return caches.open(CORE_CACHE).then(function(cache) {
+      return cache.put(request, clone).then(function() {
+        return response;
+      }, function() {
+        /* A fresh response is still a complete pair if cache storage fails. */
+        return response;
+      });
+    }, function() {
+      /* A fresh response is still a complete pair if cache storage fails. */
+      return response;
+    });
+  }).catch(function() {
+    return caches.match(request).then(function(cached) {
+      /* Never assemble Analytics from two independently cached resources. */
+      return cached || Response.error();
     });
   });
 }
