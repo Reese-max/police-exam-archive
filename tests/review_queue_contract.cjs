@@ -77,12 +77,40 @@ const correctStreakState = ReviewQueue.deriveReviewState(correctStreakQuestion, 
 assert.equal(correctStreakState.correct_streak, 2);
 assert.equal(correctStreakState.due_at, '2026-10-02T12:00:00.000Z');
 
+// wrong → correct → wrong is not "連續答錯": the streak label must be consecutive.
+const mixedQuestion = question('streak', '連續測試', 3);
+ReviewQueue.recordQuizAttempt([mixedQuestion], ['B'], [false], { attemptedAt: '2026-09-25T12:00:00.000Z', datasetVersion }, storage);
+ReviewQueue.recordQuizAttempt([mixedQuestion], ['A'], [false], { attemptedAt: '2026-09-26T12:00:00.000Z', datasetVersion }, storage);
+ReviewQueue.recordQuizAttempt([mixedQuestion], ['B'], [false], { attemptedAt: '2026-09-27T12:00:00.000Z', datasetVersion }, storage);
+const mixedState = ReviewQueue.deriveReviewState(mixedQuestion, ReviewQueue.getLedger(storage).attempts, now, datasetVersion);
+assert.equal(mixedState.wrong_count, 2);
+assert.ok(mixedState.reason_codes.includes('last_wrong'));
+assert.ok(!mixedState.reason_codes.includes('repeated_wrong'));
+
 const settings = ReviewQueue.normalizeSettings({
   deadline_enabled: true,
   target_date: '2026-10-14',
   daily_question_limit: 5,
   daily_minutes: 40,
 });
+
+// An unanswered attempt must enter the queue under the unanswered reason.
+const skippedQuestion = question('skip', '未答測試', 1);
+ReviewQueue.recordQuizAttempt([skippedQuestion], [null], [false], { attemptedAt: now, datasetVersion }, storage);
+const skipState = ReviewQueue.deriveReviewState(skippedQuestion, ReviewQueue.getLedger(storage).attempts, now, datasetVersion);
+assert.ok(skipState.reason_codes.includes('unanswered'));
+const skipQueue = ReviewQueue.buildReviewQueue(
+  [skippedQuestion], ReviewQueue.getLedger(storage), settings, now, datasetVersion,
+);
+assert.equal(skipQueue.items[0].reason_code, 'unanswered');
+
+// A never-seen question in an already-covered subject is exploration, not a gap.
+const newInCovered = question('A', '科目 A', 99);
+const exploreQueue = ReviewQueue.buildReviewQueue(
+  [newInCovered], ReviewQueue.getLedger(storage), settings, now, datasetVersion,
+);
+assert.equal(exploreQueue.items[0].reason_code, 'unseen');
+assert.equal(exploreQueue.items[0].priority, 4);
 const firstQueue = ReviewQueue.buildReviewQueue(
   [...a, ...b, ...c, ...d], ReviewQueue.getLedger(storage), settings, now, datasetVersion,
 );
@@ -124,6 +152,15 @@ assert.ok(changedState.reason_codes.includes('dataset_changed'));
 const changedQueue = ReviewQueue.buildReviewQueue([changed], ReviewQueue.getLedger(storage), settings, now, datasetVersion);
 assert.equal(changedQueue.items[0].reason_code, 'dataset_changed');
 assert.equal(changedQueue.items[0].state.wrong_count, 0, 'stale attempts must not be silently reused');
+
+// Stale items outrank everything else, even at the smallest capacity.
+const staleFirst = ReviewQueue.buildReviewQueue(
+  [changed, a[1]], ReviewQueue.getLedger(storage),
+  ReviewQueue.normalizeSettings({ daily_question_limit: 1 }),
+  now, datasetVersion,
+);
+assert.equal(staleFirst.items.length, 1);
+assert.equal(staleFirst.items[0].reason_code, 'dataset_changed');
 
 // Re-attempting the changed content must clear STALE instead of pinning it.
 ReviewQueue.recordQuizAttempt([changed], ['A'], [false], { attemptedAt: '2026-09-30T13:00:00.000Z', datasetVersion: 'search-index-fixture-v2' }, storage);
@@ -169,10 +206,13 @@ ReviewQueue.importData({
     { question_id: 'q1', outcome: 'guessed', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000' },
     { question_id: 'q2', outcome: 'wrong', attempted_at: 'not-a-date', source_hash: 'fnv1a-00000000' },
     { question_id: 'q3', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000' },
+    { question_id: 'q4', outcome: 'correct', attempted_at: '2026-03-03', source_hash: 'fnv1a-00000000' },
   ] },
 }, malformedStorage);
-assert.equal(ReviewQueue.getLedger(malformedStorage).attempts.length, 1);
+assert.equal(ReviewQueue.getLedger(malformedStorage).attempts.length, 2);
 assert.equal(ReviewQueue.getLedger(malformedStorage).attempts[0].question_id, 'q3');
+// Non-ISO timestamps are normalized so lexicographic ordering stays valid.
+assert.equal(ReviewQueue.getLedger(malformedStorage).attempts[1].attempted_at, '2026-03-03T00:00:00.000Z');
 
 // Persistence failure must be reported to the caller, not swallowed.
 const failingStorage = {
@@ -184,6 +224,8 @@ const failedRecord = ReviewQueue.recordQuizAttempt(
   [a[0]], ['A'], [false], { attemptedAt: now, datasetVersion }, failingStorage,
 );
 assert.equal(failedRecord.persisted, false);
+assert.equal(ReviewQueue.saveQuizSummary({ date: now, correct: 1, total: 1, pct: 100, elapsed: 5 }, failingStorage), false);
+assert.equal(ReviewQueue.saveQuizSummary({ date: now, correct: 1, total: 1, pct: 100, elapsed: 5 }, makeStorage()), true);
 
 const importedStorage = makeStorage();
 ReviewQueue.saveSettings(settings, storage);

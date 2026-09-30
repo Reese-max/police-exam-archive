@@ -597,6 +597,7 @@ function fmt(s){const m=Math.floor(s/60),sec=s%60;return m+':'+String(sec).padSt
 function fmtMMSS(s){const m=Math.floor(s/60),sec=s%60;return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0')}
 function startTimer(countdown){
   clearInterval(timerId);
+  $('timer').classList.remove('warn');
   if(countdown){
     $('timerText').textContent = fmtMMSS(remain);
     timerId = setInterval(()=>{

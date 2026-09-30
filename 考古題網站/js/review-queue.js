@@ -7,6 +7,7 @@
   var SETTINGS_KEY = 'exam-review-settings-v1';
   var HISTORY_KEY = 'exam-quiz-history';
   var MINUTES_PER_QUESTION = 2;
+  var UNSEEN_CANDIDATES_PER_SUBJECT = 4;
   var VALID_OUTCOMES = { correct: true, wrong: true, unanswered: true };
   var DEFAULT_SETTINGS = {
     deadline_enabled: false,
@@ -21,6 +22,7 @@
     unanswered: '上次未答',
     due: '已到期複習',
     coverage_gap: '本科目近期覆蓋不足',
+    unseen: '尚未作答過',
     dataset_changed: '資料版本變更，需重新確認',
   };
 
@@ -145,7 +147,7 @@
   function recordQuizAttempt(questions, answers, marked, options, storage) {
     var opts = options || {};
     var ledger = getLedger(storage);
-    var attemptedAt = opts.attemptedAt || new Date().toISOString();
+    var attemptedAt = isoDate(opts.attemptedAt) || new Date().toISOString();
     var datasetVersion = opts.datasetVersion || 'unknown';
     var mode = opts.quizMode || 'simulated';
     var filters = opts.filters || {};
@@ -184,8 +186,7 @@
     var history = readJson(target, HISTORY_KEY, []);
     if (!Array.isArray(history)) history = [];
     history.unshift(summary);
-    writeJson(target, HISTORY_KEY, history.slice(0, 50));
-    return true;
+    return writeJson(target, HISTORY_KEY, history.slice(0, 50));
   }
 
   function parseDate(value) {
@@ -231,6 +232,8 @@
     var unansweredCount = ordered.filter(function (item) { return item.outcome === 'unanswered'; }).length;
     var correctStreak = 0;
     for (var i = ordered.length - 1; i >= 0 && ordered[i].outcome === 'correct'; i--) correctStreak++;
+    var wrongStreak = 0;
+    for (var j = ordered.length - 1; j >= 0 && ordered[j].outcome === 'wrong'; j--) wrongStreak++;
     var lastWrong = ordered.reduce(function (last, item) {
       return item.outcome === 'wrong' || item.outcome === 'unanswered' ? item.attempted_at : last;
     }, null);
@@ -245,7 +248,7 @@
     var reasons = [];
     if (stale) reasons.push('dataset_changed');
     if (latest && latest.marked_review) reasons.push('marked_review');
-    if (latest && latest.outcome === 'wrong') reasons.push(wrongCount >= 2 ? 'repeated_wrong' : 'last_wrong');
+    if (latest && latest.outcome === 'wrong') reasons.push(wrongStreak >= 2 ? 'repeated_wrong' : 'last_wrong');
     if (latest && latest.outcome === 'unanswered') reasons.push('unanswered');
     if (latest && dueAt && dueAt <= isoDate(now)) reasons.push('due');
     if (!latest && !stale) reasons.push('coverage_gap');
@@ -276,6 +279,10 @@
   function subjectKey(question) {
     var q = questionSource(question);
     return stableText(q.sub || q.subject) || stableText(q.cat || q.category);
+  }
+
+  function locatorSubject(locator) {
+    return locator ? (stableText(locator.subject) || stableText(locator.category)) : '';
   }
 
   function roundRobin(items) {
@@ -311,10 +318,10 @@
     sourceLedger.forEach(function (attempt) {
       if (!attemptsByQuestion[attempt.question_id]) attemptsByQuestion[attempt.question_id] = [];
       attemptsByQuestion[attempt.question_id].push(attempt);
-      var subject = attempt.source_locator && attempt.source_locator.subject;
+      var subject = locatorSubject(attempt.source_locator);
       if (subject) coveredSubjects[subject] = true;
     });
-    var coverageSubjects = {};
+    var unseenPerSubject = {};
     var records = [];
     (questions || []).forEach(function (question) {
       var q = questionSource(question);
@@ -322,16 +329,22 @@
       var questionAttempts = attemptsByQuestion[id];
       var state;
       if (!questionAttempts) {
+        // Unseen questions: a bounded number per subject become exploration
+        // candidates. A subject with no attempt history is a coverage gap;
+        // one already covered still contributes a small trickle of new items.
         var subject = subjectKey(q);
-        if (coveredSubjects[subject] || coverageSubjects[subject]) return;
-        coverageSubjects[subject] = true;
+        var gap = !coveredSubjects[subject];
+        var code = gap ? 'coverage_gap' : 'unseen';
+        var key = (gap ? 'gap|' : 'new|') + subject;
+        if ((unseenPerSubject[key] || 0) >= UNSEEN_CANDIDATES_PER_SUBJECT) return;
+        unseenPerSubject[key] = (unseenPerSubject[key] || 0) + 1;
         var identity = questionIdentity(q, datasetVersion || q.dataset_version);
         state = {
           status: 'CURRENT', source_compatible: true, question_id: identity.question_id,
           source_locator: identity.source_locator, source_hash: identity.source_hash,
           dataset_version: identity.dataset_version, attempts: 0, wrong_count: 0,
           unanswered_count: 0, correct_streak: 0, last_seen: null, last_wrong: null,
-          due_at: null, marked_review: false, reason_codes: ['coverage_gap'],
+          due_at: null, marked_review: false, reason_codes: [code],
         };
       } else {
         state = deriveReviewState(q, questionAttempts, current, datasetVersion || q.dataset_version);
@@ -348,7 +361,8 @@
       } else if (state.reason_codes.indexOf('due') >= 0) {
         reason = 'due'; priority = 2;
       } else if (!state.attempts) {
-        reason = 'coverage_gap'; priority = 3;
+        reason = state.reason_codes[0] === 'unseen' ? 'unseen' : 'coverage_gap';
+        priority = reason === 'unseen' ? 4 : 3;
       } else {
         return null;
       }
@@ -369,7 +383,12 @@
 
     var capacity = normalized.daily_question_limit;
     if (normalized.daily_minutes) capacity = Math.min(capacity, Math.max(1, Math.floor(normalized.daily_minutes / MINUTES_PER_QUESTION)));
+    var staleItems = roundRobin(records.filter(function (item) { return item.priority === 0; }));
     var strong = roundRobin(records.filter(function (item) { return item.priority === 1; }));
+    var dueCandidates = roundRobin(records.filter(function (item) { return item.priority === 2; }));
+    var coverageCandidates = roundRobin(records.filter(function (item) { return item.priority === 3; }));
+    var unseenCandidates = roundRobin(records.filter(function (item) { return item.priority === 4; }));
+    var exploration = coverageCandidates.concat(unseenCandidates);
     var selected = [];
     var selectedIds = {};
     function add(item) {
@@ -377,15 +396,20 @@
       selectedIds[item.question_id] = true;
       selected.push(item);
     }
+    // Fill order honors the declared tiers: stale items need re-confirmation
+    // first, then a bounded share of weak items, due reviews, and a small
+    // exploration slice; leftovers fall back to the remaining queue.
     var strongQuota = Math.min(strong.length, Math.max(1, Math.ceil(capacity * 0.6)));
+    var explorationQuota = Math.min(exploration.length, Math.max(1, Math.floor(capacity * 0.2)));
+    staleItems.forEach(add);
     strong.slice(0, strongQuota).forEach(add);
-    roundRobin(records.filter(function (item) { return item.priority === 0; })).forEach(add);
-    var dueCandidates = roundRobin(records.filter(function (item) { return item.priority === 2; }));
-    var coverageCandidates = roundRobin(records.filter(function (item) { return item.priority === 3; }));
-    var coverageReserve = coverageCandidates.length && selected.length < capacity ? 1 : 0;
-    dueCandidates.slice(0, Math.max(0, capacity - selected.length - coverageReserve)).forEach(add);
-    coverageCandidates.forEach(add);
+    var explorationReserve = exploration.length && selected.length < capacity
+      ? Math.min(explorationQuota, capacity - selected.length) : 0;
+    dueCandidates.slice(0, Math.max(0, capacity - selected.length - explorationReserve)).forEach(add);
+    exploration.slice(0, explorationQuota).forEach(add);
     strong.slice(strongQuota).forEach(add);
+    dueCandidates.forEach(add);
+    exploration.slice(explorationQuota).forEach(add);
 
     var weakCount = records.filter(function (item) { return item.priority <= 2; }).length;
     var hasDeadline = normalized.deadline_enabled && !!normalized.target_date;
@@ -433,6 +457,9 @@
         && VALID_OUTCOMES[item.outcome] === true
         && typeof item.source_hash === 'string' && item.source_hash
         && !!parseDate(item.attempted_at);
+    }).map(function (item) {
+      // Canonicalize timestamps: lexicographic ordering only works on ISO text.
+      return Object.assign({}, item, { attempted_at: parseDate(item.attempted_at).toISOString() });
     });
     saveLedger({ schema_version: SCHEMA_VERSION, attempts: attempts }, storage);
     saveSettings(payload.settings || DEFAULT_SETTINGS, storage);
