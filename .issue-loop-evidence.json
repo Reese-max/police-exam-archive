@@ -1,0 +1,15 @@
+{
+  "repo": "Reese-max/police-exam-archive",
+  "issue": 78,
+  "base_sha": "4c9a9dc1c356223cf409466b7596812d5d45a298",
+  "red_proof": "Before adding encoding='utf-8', Git Bash command `python -m pytest -q tests/test_analytics_pair.py::test_node_failure_keeps_utf8_diagnostics` exited 1: 1 failed, 1 warning. The regression launches an actual failing Node test with Chinese diagnostics and forces CP950 as the default subprocess text encoding. Node output decoding raised UnicodeDecodeError, and the wrapper raised TypeError: unsupported operand type(s) for +: 'NoneType' and 'str', instead of reporting the original assertion diagnostics.",
+  "test_command": "python -m pytest -q",
+  "test_exit": 0,
+  "tests_passed": 139,
+  "tests_failed": 0,
+  "summary": "Explicit UTF-8 decoding fixes the new Node regression wrapper on non-UTF-8 hosts. The new diagnostic regression and full pytest suite pass without warnings. Separately, node --test 考古題網站/tests/analytics-pair.test.js passed 5/5; node --check passed for sw.js and analytics-chart-bundle.js; rebuilding Analytics from all 42,518 questions followed by sync_analytics_frontend.py --check confirmed generated assets are current. Review found no additional actionable runtime, SQL/data-safety, concurrency, trust-boundary, enum, scope, or documentation defects.",
+  "not_done": [
+    "No push or changes to other branches; the driver decides whether to publish the local commit.",
+    "Remote CI and deployed browser verification were not run; local automated checks do not establish deployed acceptance for #74."
+  ]
+}

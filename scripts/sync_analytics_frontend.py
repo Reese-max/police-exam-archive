@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import subprocess
@@ -16,7 +17,15 @@ DEFAULT_ANALYTICS = Path("/tmp/analytics.json")
 HTML = SITE / "analytics.html"
 CHART_JS = SITE / "analytics-chart.js"
 CHART_DATA = SITE / "analytics-chart-data.js"
+CHART_BUNDLE = SITE / "analytics-chart-bundle.js"
 GEN = SITE / "_gen_data.js"
+
+
+def chart_bundle(data: str, chart: str) -> str:
+    """Build one deterministic response that contains a versioned pair."""
+    pair = data.rstrip("\n") + "\n" + chart.rstrip("\n") + "\n"
+    digest = hashlib.sha256(pair.encode("utf-8")).hexdigest()
+    return f"/* Generated Analytics code/data pair SHA-256: {digest} */\n" + pair
 
 
 def sync_text(text: str, stats: dict) -> str:
@@ -120,6 +129,7 @@ def main() -> int:
             check=True,
         )
         data_after = generated.read_text(encoding="utf-8")
+    bundle_after = chart_bundle(data_after, chart_after)
 
     if args.check:
         problems = []
@@ -129,6 +139,8 @@ def main() -> int:
             problems.append("analytics-chart.js 尚未同步")
         if not CHART_DATA.exists() or CHART_DATA.read_text(encoding="utf-8") != data_after:
             problems.append("analytics-chart-data.js 尚未同步")
+        if not CHART_BUNDLE.exists() or CHART_BUNDLE.read_text(encoding="utf-8") != bundle_after:
+            problems.append("analytics-chart-bundle.js 尚未同步")
         if problems:
             raise SystemExit("；".join(problems))
         print("Analytics 前端與資料庫一致")
@@ -137,6 +149,7 @@ def main() -> int:
     HTML.write_text(html_after, encoding="utf-8")
     CHART_JS.write_text(chart_after, encoding="utf-8")
     CHART_DATA.write_text(data_after, encoding="utf-8")
+    CHART_BUNDLE.write_text(bundle_after, encoding="utf-8")
     print(
         f"Analytics 已同步：{stats['total']:,} 題，"
         f"{min(stats['years'])}–{max(stats['years'])} 年"
