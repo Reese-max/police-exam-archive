@@ -38,6 +38,7 @@
 │   │   └── manifest.py               # 增量處理 manifest
 │   └── audit/                   # 資料品質驗證
 ├── tests/                       # pytest 單元測試
+├── 考古題網站/                  # 靜態 PWA（含 Analytics 離線資產）
 ├── cache/                       # parse_manifest.json, ocr/, http_meta.json
 ├── archive/                     # 歷史腳本（已完成的一次性修復）
 ├── config.py, logger.py, ...    # 核心支援模組
@@ -45,6 +46,13 @@
 ```
 
 每個 `試題.json` 對應一個學系/類別在特定年份的一個科目考卷。
+
+## Analytics 離線資產
+
+`考古題網站/analytics.html` 使用版本固定的本地 Chart.js bundle；`sw.js` 將
+它與 Analytics 頁面一起放入版本化的 core cache。升級 Chart.js 時，請同步更新
+`考古題網站/vendor/chart.js-4.4.1/`、Analytics 的 script URL、`CACHE_VERSION`
+與 `CORE_ASSETS`，並執行 `python3 -m pytest -q` 及網站的 Playwright 離線回歸測試。
 
 ## 解析 Pipeline (v2)
 
