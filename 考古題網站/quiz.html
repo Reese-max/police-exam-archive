@@ -80,6 +80,24 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .start-btn:hover{background:var(--primary-hover)}
 .match-note{margin-top:16px;text-align:center;font-size:14px;color:var(--text-2);font-weight:500}
 .match-note b{color:var(--primary);font-weight:800;font-variant-numeric:tabular-nums}
+.review-planner{padding:24px 30px;margin-top:18px}
+.review-planner h2{font-size:18px;font-weight:800;margin-bottom:4px}
+.review-planner .planner-sub{font-size:14px;color:var(--text-2);font-weight:500;margin-bottom:18px}
+.planner-settings{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.planner-settings label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:var(--text-2)}
+.planner-settings input[type="date"],.planner-settings input[type="number"]{width:100%;font:inherit;font-size:14px;color:var(--text);background:var(--card-2);border:1.5px solid var(--border-strong);border-radius:var(--radius-sm);padding:10px 11px}
+.planner-settings input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.deadline-toggle{display:flex !important;flex-direction:row !important;align-items:center;gap:8px !important;grid-column:1 / -1;color:var(--text) !important}
+.deadline-toggle input{accent-color:var(--primary)}
+.planner-actions{display:flex;gap:10px;flex-wrap:wrap}
+.planner-actions button{flex:1;min-width:150px;font:inherit;font-size:14px;font-weight:700;padding:11px 14px;border-radius:var(--radius);cursor:pointer;border:1.5px solid var(--border-strong);background:var(--card-2);color:var(--text-2)}
+.planner-actions button.danger{color:var(--danger)}
+.planner-actions button.primary{background:var(--primary);color:#fff;border-color:transparent}
+.planner-actions button:hover{border-color:var(--primary);color:var(--primary)}
+.planner-actions button.primary:hover{color:#fff;background:var(--primary-hover)}
+.review-status{margin-top:15px;padding:12px 14px;border-radius:var(--radius-sm);background:var(--primary-tint);color:var(--text-2);font-size:13.5px;font-weight:600;line-height:1.55}
+.review-status.warn{background:var(--warm-soft);color:var(--text)}
+.review-status strong{color:var(--text);font-weight:800}
 
 /* ===== Exam view ===== */
 .timer-bar{position:sticky;top:0;z-index:30;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);padding:13px 18px;display:flex;align-items:center;gap:14px;margin-top:18px;transition:background .4s,border-color .4s}
@@ -99,6 +117,7 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .q-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .q-num{font-size:13px;font-weight:800;color:#fff;background:var(--primary);padding:5px 14px;border-radius:6px}
 .q-meta{font-size:13px;color:var(--text-3);font-weight:600}
+.reason-chip{font-size:12px;font-weight:800;color:var(--primary);background:var(--primary-soft);padding:5px 10px;border-radius:999px}
 .flag-btn{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;font-weight:700;color:var(--text-2);background:var(--card-2);border:1.5px solid var(--border-strong);border-radius:6px;padding:6px 14px;cursor:pointer;transition:.18s}
 .flag-btn:hover{border-color:var(--warm);color:var(--warm)}
 .flag-btn.on{background:var(--warm-soft);border-color:var(--warm);color:var(--warm)}
@@ -185,6 +204,8 @@ footer strong{color:var(--text-2);font-weight:700}
   .wrap{padding:0 16px}
   .hero h1{font-size:29px}
   .field-grid{grid-template-columns:1fr}
+  .planner-settings{grid-template-columns:1fr}
+  .deadline-toggle{grid-column:auto}
   .res-stats{grid-template-columns:1fr 1fr}
   .res-actions{flex-direction:column}
   .mini-grid{grid-template-columns:repeat(8,1fr)}
@@ -256,6 +277,26 @@ footer strong{color:var(--text-2);font-weight:700}
       <button class="start-btn" id="startBtn">開始考試</button>
       <p class="match-note">符合條件的選擇題：<b id="matchCount">載入索引中…</b></p>
     </div>
+
+    <div class="card review-planner">
+      <h2>今日複習</h2>
+      <p class="planner-sub">依照逐題作答紀錄，優先安排錯題、未答題、標記題與已到期題目；所有資料只留在本機。</p>
+      <div class="planner-settings">
+        <label class="deadline-toggle"><input type="checkbox" id="deadlineEnabled"> 啟用考前截止日模式</label>
+        <label>目標考試日<input type="date" id="targetDate"></label>
+        <label>每日題量上限<input type="number" id="dailyQuestionLimit" min="1" max="200" step="1"></label>
+        <label>每日分鐘上限（選填）<input type="number" id="dailyMinutes" min="1" max="1440" step="1" placeholder="不限制"></label>
+      </div>
+      <div class="planner-actions">
+        <button class="primary" id="startReviewBtn">開始今日複習</button>
+        <button id="saveReviewSettingsBtn">儲存排程設定</button>
+        <button id="exportLearningBtn">匯出學習資料</button>
+        <button id="importLearningBtn">匯入學習資料</button>
+        <button class="danger" id="clearLearningBtn">清除學習資料</button>
+        <input type="file" id="importLearningFile" accept="application/json" hidden>
+      </div>
+      <div class="review-status" id="reviewStatus">載入逐題作答紀錄中…</div>
+    </div>
   </div>
 
   <!-- ===== EXAM ===== -->
@@ -274,6 +315,7 @@ footer strong{color:var(--text-2);font-weight:700}
       <div class="q-head">
         <span class="q-num" id="qNum">第 1 題</span>
         <span class="q-meta" id="qMeta">憲法 · 選擇題</span>
+        <span class="reason-chip hidden" id="qReason"></span>
         <button class="flag-btn" id="flagBtn">標記回顧</button>
       </div>
       <p class="q-stem" id="qStem"></p>
@@ -334,6 +376,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
 <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
 <script src="js/search-engine.js"></script>
+<script src="js/review-queue.js"></script>
 <script>
 /* ===== 真實題庫（minisearch + search-engine.js，36,210 道選擇題） ===== */
 let POOL = [];
@@ -351,12 +394,16 @@ function refreshPool(){
   }, 99999).filter(q => q.optA && q.optB && q.optC && q.optD && 'ABCD'.indexOf(q.ans) >= 0);
   $('matchCount').textContent = POOL.length.toLocaleString() + ' 題';
   $('startBtn').disabled = POOL.length === 0;
+  refreshReviewPlanner();
 }
 
 /* state */
 const TOTAL = 20;
 let questions = [], answers = [], flags = [], cur = 0;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
+let quizMode = 'simulated', activeFilters = {}, finished = false;
+let datasetMeta = { datasetVersion: 'unknown', datasetHash: null };
+let reviewPreview = null;
 
 const $ = id => document.getElementById(id);
 
@@ -379,10 +426,93 @@ function buildQuestions(n){
     stem: _esc(q.stem),
     opts: [q.optA,q.optB,q.optC,q.optD].map(_esc),
     ans: 'ABCD'.indexOf(q.ans),
+    source: q,
+    reasonCode: '',
+    reasonLabel: '',
   }));
   answers = new Array(questions.length).fill(null);
   flags = new Array(questions.length).fill(false);
   cur = 0;
+  finished = false;
+}
+
+function buildReviewQuestions(items){
+  questions = items.map(item=>{
+    const q = item.question;
+    return {
+      subj: q.yr + '年 ' + _esc(_short(q.sub,14)),
+      stem: _esc(q.stem),
+      opts: [q.optA,q.optB,q.optC,q.optD].map(_esc),
+      ans: 'ABCD'.indexOf(q.ans),
+      source: q,
+      reasonCode: item.reason_code,
+      reasonLabel: item.reason_label,
+    };
+  });
+  answers = new Array(questions.length).fill(null);
+  flags = new Array(questions.length).fill(false);
+  cur = 0;
+  finished = false;
+}
+
+function plannerSettings(){
+  return ReviewQueue.normalizeSettings({
+    deadline_enabled: $('deadlineEnabled').checked,
+    target_date: $('targetDate').value || null,
+    daily_question_limit: $('dailyQuestionLimit').value,
+    daily_minutes: $('dailyMinutes').value || null,
+  });
+}
+
+function loadPlannerSettings(){
+  const settings = ReviewQueue.getSettings();
+  $('deadlineEnabled').checked = settings.deadline_enabled;
+  $('targetDate').value = settings.target_date || '';
+  $('dailyQuestionLimit').value = settings.daily_question_limit;
+  $('dailyMinutes').value = settings.daily_minutes || '';
+}
+
+function refreshReviewPlanner(){
+  if(!indexReady || !datasetMeta) return;
+  const settings = plannerSettings();
+  reviewPreview = ReviewQueue.buildReviewQueue(
+    POOL, ReviewQueue.getLedger(), settings, new Date().toISOString(), datasetMeta.datasetVersion,
+  );
+  const status = $('reviewStatus');
+  const count = reviewPreview.items.length;
+  let text = count ? '今天可做 ' + count + ' 題，' + reviewPreview.total_candidates + ' 題符合複習條件。' : '目前沒有需要排入今日複習的題目。';
+  if(reviewPreview.overload.is_overloaded){
+    text += ' 複習量超過截止日前容量，尚有 ' + reviewPreview.overload.backlog + ' 題 backlog，請調高每日預算或提早開始。';
+    status.classList.add('warn');
+  }else{
+    status.classList.remove('warn');
+  }
+  status.innerHTML = text;
+  $('startReviewBtn').disabled = count === 0;
+}
+
+function savePlannerSettings(){
+  const saved = ReviewQueue.saveSettings(plannerSettings());
+  $('deadlineEnabled').checked = saved.deadline_enabled;
+  $('targetDate').value = saved.target_date || '';
+  $('dailyQuestionLimit').value = saved.daily_question_limit;
+  $('dailyMinutes').value = saved.daily_minutes || '';
+  refreshReviewPlanner();
+}
+
+function startReview(){
+  savePlannerSettings();
+  if(!reviewPreview || !reviewPreview.items.length){ alert('目前沒有可安排的複習題目。'); return; }
+  quizMode = 'review';
+  activeFilters = { review: true };
+  buildReviewQuestions(reviewPreview.items);
+  total = questions.length;
+  $('totalNum').textContent = total;
+  durSec = 0; remain = 0; elapsed = 0;
+  switchView('exam');
+  renderQuestion(); renderMini();
+  startTimer(false);
+  window.scrollTo({top:0});
 }
 
 /* ===== start ===== */
@@ -391,6 +521,8 @@ $('startBtn').addEventListener('click', ()=>{
   const tmin = +document.querySelector('#segTime .on').dataset.v;
   if(POOL.length===0){ alert('沒有符合條件的題目，請調整篩選條件。'); return; }
   if(POOL.length<want && !confirm('符合條件的題目只有 '+POOL.length+' 題，將全部出題。確定開始？')) return;
+  quizMode = 'simulated';
+  activeFilters = { cat: $('fCat').value, yr: $('fYear').value, sub: $('fSubj').value };
   buildQuestions(want);
   total = questions.length;
   $('totalNum').textContent = total;
@@ -407,8 +539,10 @@ function _fill(id, items, sfx){
   items.forEach(it=>{ const o=document.createElement('option'); o.value=String(it); o.textContent=it+sfx; sel.appendChild(o); });
 }
 $('startBtn').disabled = true;
+loadPlannerSettings();
 SearchEngine.loadIndex().then(()=>{
   indexReady = true;
+  datasetMeta = SearchEngine.getDatasetMeta() || datasetMeta;
   const f = SearchEngine.getFacets();
   _fill('fCat', f.categories, '');
   _fill('fYear', f.years.map(String).reverse(), ' 年');
@@ -416,6 +550,36 @@ SearchEngine.loadIndex().then(()=>{
   refreshPool();
 }).catch(err=>{ $('matchCount').textContent = '索引載入失敗：' + err.message; });
 ['fCat','fYear','fSubj'].forEach(id=>$(id).addEventListener('change', refreshPool));
+['deadlineEnabled','targetDate','dailyQuestionLimit','dailyMinutes'].forEach(id=>$(id).addEventListener('change', refreshReviewPlanner));
+$('saveReviewSettingsBtn').addEventListener('click', savePlannerSettings);
+$('startReviewBtn').addEventListener('click', startReview);
+$('exportLearningBtn').addEventListener('click', ()=>{
+  const blob = new Blob([ReviewQueue.exportData(null, datasetMeta.datasetVersion)], {type:'application/json'});
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'police-exam-learning-data.json';
+  link.click();
+  setTimeout(()=>URL.revokeObjectURL(link.href), 0);
+});
+$('importLearningBtn').addEventListener('click', ()=>$('importLearningFile').click());
+$('clearLearningBtn').addEventListener('click',()=>{
+  if(!confirm('只清除本機逐題作答、排程與測驗歷史，不會刪除題庫或書籤。確定？')) return;
+  ReviewQueue.clearLearnerData();
+  loadPlannerSettings();
+  refreshReviewPlanner();
+  $('reviewStatus').textContent = '學習資料已清除；題庫與書籤未受影響。';
+});
+$('importLearningFile').addEventListener('change', async e=>{
+  const file = e.target.files && e.target.files[0];
+  if(!file) return;
+  try{
+    ReviewQueue.importData(await file.text());
+    loadPlannerSettings();
+    refreshReviewPlanner();
+    $('reviewStatus').textContent = '學習資料已匯入，複習佇列已重新建立。';
+  }catch(err){ alert(err.message || '匯入失敗'); }
+  e.target.value = '';
+});
 
 /* ===== timer ===== */
 function fmt(s){const m=Math.floor(s/60),sec=s%60;return m+':'+String(sec).padStart(2,'0')}
@@ -442,6 +606,8 @@ function renderQuestion(){
   $('qNum').textContent = '第 '+(cur+1)+' 題';
   $('curNum').textContent = cur+1;
   $('qMeta').textContent = q.subj + ' · 選擇題';
+  $('qReason').textContent = q.reasonLabel || '';
+  $('qReason').classList.toggle('hidden', !q.reasonLabel);
   $('qStem').innerHTML = q.stem; // 題幹於 buildQuestions 已 escape
   $('flagBtn').classList.toggle('on', flags[cur]);
   $('choices').innerHTML = q.opts.map((o,i)=>{
@@ -480,6 +646,8 @@ $('submitBtn').addEventListener('click',()=>{
   finish();
 });
 function finish(){
+  if(finished) return;
+  finished = true;
   clearInterval(timerId);
   let ok=0,no=0,skip=0;
   questions.forEach((q,i)=>{
@@ -488,6 +656,14 @@ function finish(){
     else no++;
   });
   const pct = Math.round(ok/total*100);
+  const attemptedAt = new Date().toISOString();
+  ReviewQueue.recordQuizAttempt(
+    questions.map(q=>q.source), answers, flags,
+    { attemptedAt, datasetVersion: datasetMeta.datasetVersion, quizMode, filters: activeFilters },
+  );
+  ReviewQueue.saveQuizSummary({
+    date: attemptedAt, correct: ok, total, pct, elapsed, mode: quizMode,
+  });
   switchView('result');
   window.scrollTo({top:0});
   // ring
@@ -497,7 +673,7 @@ function finish(){
   $('sOk').textContent=ok; $('sNo').textContent=no; $('sSkip').textContent=skip;
   $('sTime').textContent=fmt(elapsed);
   $('resultTitle').textContent='作答完成';
-  $('resultSub').textContent='錯題與未答題整理於下方。';
+  $('resultSub').textContent='錯題與未答題整理於下方；逐題作答紀錄已保存於本機。';
   // review (wrong + skipped)
   const wrong = questions.map((q,i)=>({q,i})).filter(({q,i})=>answers[i]!==q.ans);
   $('reviewCount').textContent = wrong.length+' 題';
@@ -510,17 +686,20 @@ function finish(){
       else if(isWrong){cls+=' wrong';tag='<span class="tagy">你的答案</span>';}
       return `<div class="${cls}"><span class="rl2">${'ABCD'[j]}</span><span class="rt">${o}</span>${tag}</div>`;
     }).join('');
+    const reason = q.reasonLabel ? `<span class="reason-chip">${q.reasonLabel}</span>` : '';
     return `<article class="card rv-card">
-      <div class="rv-head"><span class="rv-num">第 ${i+1} 題</span><span class="q-meta">${q.subj} · 選擇題</span></div>
+      <div class="rv-head"><span class="rv-num">第 ${i+1} 題</span><span class="q-meta">${q.subj} · 選擇題</span>${reason}</div>
       <p class="rv-stem">${q.stem}</p>
       <div class="rv-opts">${opts}</div>
     </article>`;
   }).join('') || '<div class="card rv-card" style="text-align:center;color:var(--text-2)">全部答對，沒有錯題。</div>';
+  if(indexReady) refreshReviewPlanner();
 }
 
 $('retryBtn').addEventListener('click',()=>{
   switchView('setup');
   $('timer').classList.remove('warn');
+  if(indexReady) refreshReviewPlanner();
   window.scrollTo({top:0});
 });
 
