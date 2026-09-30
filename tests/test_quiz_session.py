@@ -37,6 +37,8 @@ if (!session) throw new Error('QuizSession was not installed');
 
 const question = { subj: 'subject', stem: 'stem', opts: ['a', 'b', 'c', 'd'], ans: 0 };
 session.save({
+  force: true,
+  sessionId: 'test-session-123',
   timed: true,
   questions: [question],
   answers: [null],
@@ -54,6 +56,8 @@ values.set(key, JSON.stringify({ ...saved, timed: false }));
 if (session.load(1000000) !== null) throw new Error('inconsistent timer mode was accepted');
 
 session.save({
+  force: true,
+  sessionId: 'test-session-123',
   timed: true,
   questions: [question],
   answers: [null],

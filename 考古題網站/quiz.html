@@ -378,15 +378,25 @@ let questions = [], answers = [], flags = [], cur = 0;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
 let examActive = false;
 let timerStartedAt = 0;
+let examSessionId = null;
 
 const $ = id => document.getElementById(id);
 
 /* ===== 中斷恢復 checkpoint（quiz-session.js） ===== */
-function saveCheckpoint(){
+function saveCheckpoint(force){
   if(!examActive || !questions.length) return;
   updateTimer();
   if(!examActive) return;
-  QuizSession.save({ timed: durSec>0, questions, answers, flags, cur, durSec, remain, elapsed });
+  const saved = QuizSession.save({
+    force: !!force,
+    sessionId: examSessionId,
+    timed: durSec>0,
+    questions, answers, flags, cur, durSec, remain, elapsed,
+  });
+  if(!saved && !force){
+    clearInterval(timerId);
+    examActive = false;
+  }
 }
 
 /* segmented controls */
@@ -425,11 +435,12 @@ $('startBtn').addEventListener('click', ()=>{
   $('totalNum').textContent = total;
   durSec = tmin*60; remain = durSec; elapsed = 0;
   examActive = true;
+  examSessionId = QuizSession.newSessionId();
   $('resumeCard').classList.add('hidden');
   switchView('exam');
   renderQuestion(); renderMini();
   startTimer();
-  saveCheckpoint();
+  saveCheckpoint(true);
   window.scrollTo({top:0});
 });
 
@@ -521,7 +532,7 @@ function finish(){
   syncTime();
   clearInterval(timerId);
   examActive = false;
-  QuizSession.clear();
+  QuizSession.clear(examSessionId);
   let ok=0,no=0,skip=0;
   questions.forEach((q,i)=>{
     if(answers[i]===null) skip++;
@@ -582,6 +593,7 @@ function resumeExam(checkpoint){
   remain = checkpoint.remain;
   elapsed = checkpoint.timed ? durSec-remain : checkpoint.elapsed;
   timerStartedAt = Date.now()-elapsed*1000;
+  examSessionId = checkpoint.sessionId;
   examActive = true;
   $('totalNum').textContent = total;
   $('timer').classList.toggle('warn', checkpoint.timed && remain<=60);
@@ -608,13 +620,30 @@ function resumeExam(checkpoint){
     resumeExam(latest);
   });
   $('discardBtn').addEventListener('click',()=>{
-    QuizSession.clear();
+    QuizSession.clear(checkpoint.sessionId);
     $('resumeCard').classList.add('hidden');
   });
 })();
 
-window.addEventListener('pagehide', saveCheckpoint);
+window.addEventListener('pagehide',()=>saveCheckpoint(false));
 window.addEventListener('pageshow', updateTimer);
+window.addEventListener('storage', event=>{
+  if(!examActive || event.key!==QuizSession.KEY) return;
+  if(!event.newValue){
+    clearInterval(timerId);
+    examActive = false;
+    return;
+  }
+  try{
+    if(JSON.parse(event.newValue).sessionId!==examSessionId){
+      clearInterval(timerId);
+      examActive = false;
+    }
+  }catch(e){
+    clearInterval(timerId);
+    examActive = false;
+  }
+});
 document.addEventListener('visibilitychange',()=>{
   if(document.visibilityState==='hidden') saveCheckpoint();
   else updateTimer();

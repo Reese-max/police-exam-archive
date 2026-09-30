@@ -108,6 +108,26 @@ test.describe('模擬考試中斷恢復', () => {
     await expect(page.locator('#miniGrid .mini.done')).toHaveCount(1);
   });
 
+  test('已完成的分頁不會被舊分頁的 pagehide checkpoint 復活', async ({ page, context }) => {
+    await gotoQuizWithFixture(page);
+    await startFixtureExam(page);
+    const secondPage = await context.newPage();
+    await gotoQuizWithFixture(secondPage);
+    await secondPage.locator('#resumeBtn').click();
+    secondPage.on('dialog', dialog => dialog.accept());
+    await secondPage.locator('#submitBtn').click();
+    await expect(secondPage.locator('#resultView')).toBeVisible();
+    expect(await readCheckpoint(secondPage)).toBeNull();
+
+    await page.close();
+    const reopened = await context.newPage();
+    await gotoQuizWithFixture(reopened);
+    await expect(reopened.locator('#resumeCard')).toBeHidden();
+    await expect(reopened.locator('#setupView')).toBeVisible();
+    await secondPage.close();
+    await reopened.close();
+  });
+
   test('可捨棄已保存的考試並開始新考試', async ({ page }) => {
     await gotoQuizWithFixture(page);
     await startFixtureExam(page);

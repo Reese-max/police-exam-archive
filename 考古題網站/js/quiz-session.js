@@ -11,6 +11,13 @@
     return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
   }
 
+  function newSessionId() {
+    try {
+      if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    } catch (error) {}
+    return Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
+  }
+
   /* Questions are escaped before they are rendered with innerHTML. */
   function isSafeText(value) {
     return typeof value === 'string' && !/[<>]/.test(value);
@@ -27,6 +34,7 @@
   function validate(checkpoint, now) {
     now = typeof now === 'number' ? now : Date.now();
     if (!checkpoint || typeof checkpoint !== 'object' || checkpoint.v !== VERSION) return false;
+    if (typeof checkpoint.sessionId !== 'string' || checkpoint.sessionId.length < 8) return false;
     if (!isInt(checkpoint.savedAt) || checkpoint.savedAt <= 0 || checkpoint.savedAt > now + 60000) return false;
     if (now - checkpoint.savedAt > MAX_AGE_MS) return false;
 
@@ -54,10 +62,17 @@
   }
 
   function save(state) {
+    if (!state || typeof state.sessionId !== 'string') return false;
     try {
+      if (!state.force) {
+        var current = localStorage.getItem(KEY);
+        var currentCheckpoint = current ? JSON.parse(current) : null;
+        if (!currentCheckpoint || currentCheckpoint.sessionId !== state.sessionId) return false;
+      }
       localStorage.setItem(KEY, JSON.stringify({
         v: VERSION,
         savedAt: Date.now(),
+        sessionId: state.sessionId,
         timed: !!state.timed,
         questions: state.questions,
         answers: state.answers,
@@ -67,13 +82,23 @@
         remain: state.remain,
         elapsed: state.elapsed,
       }));
+      return true;
     } catch (error) {
       // Private browsing and a full storage quota must not interrupt an exam.
+      return false;
     }
   }
 
-  function clear() {
-    try { localStorage.removeItem(KEY); } catch (error) {}
+  function clear(sessionId) {
+    try {
+      if (typeof sessionId !== 'string') {
+        localStorage.removeItem(KEY);
+        return;
+      }
+      var current = localStorage.getItem(KEY);
+      var checkpoint = current ? JSON.parse(current) : null;
+      if (checkpoint && checkpoint.sessionId === sessionId) localStorage.removeItem(KEY);
+    } catch (error) {}
   }
 
   function load(now) {
@@ -101,6 +126,7 @@
     KEY: KEY,
     VERSION: VERSION,
     MAX_AGE_MS: MAX_AGE_MS,
+    newSessionId: newSessionId,
     save: save,
     load: load,
     clear: clear,
