@@ -7,7 +7,10 @@
 3. `scripts/audit/finalize_115_import.py` 為資料遷移工具，會寫入資料；不得當成獨立驗證器。
 4. CI 與合併前驗收只使用 `scripts/audit/verify_115_integrity.py`，該工具唯讀且不得產生 git diff。
 5. 跨類科共同卷保留各類科副本供瀏覽，但搜尋索引只收正本，並以 `categories` 保存所有 membership。
-6. 類科總覽頁在 Pages 建置時由 `scripts/build_category_pages.py` 重建。
+6. 類科總覽頁在 Pages 建置時由 `scripts/build_category_pages.py` 重建；該腳本
+   重建全部 17 個類科頁並保留完整 UI（`--check` 驗證模式），其中 13 個類科含 115 年。
+   `scripts/remediate_115_audit.py` 為一次性修補的歷史腳本，再次執行不得把此建置器
+   降級回 13 類科精簡版。
 
 ## 合併門檻
 
