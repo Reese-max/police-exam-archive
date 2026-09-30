@@ -11,7 +11,13 @@
     "official_category_code": "208",
     "official_category": "警察資訊管理人員",
     "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=208&s=1112&q=1",
-    "source_sha256": "b42d058dc33f87882d6b9abd8042668d1478464c3fbe57b1b21c318fdf510d8d"
+    "source_sha256": "b42d058dc33f87882d6b9abd8042668d1478464c3fbe57b1b21c318fdf510d8d",
+    "categories": [
+      "資訊管理學系"
+    ],
+    "official_subject": "電腦犯罪偵查",
+    "path_subject": "電腦犯罪偵查",
+    "category_membership": "資訊管理學系"
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -56,5 +62,8 @@
     "strategies_tried": [
       "pdfplumber"
     ]
-  }
+  },
+  "categories": [
+    "資訊管理學系"
+  ]
 }

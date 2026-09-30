@@ -43,6 +43,9 @@ jobs:
       - name: Generate analytics
         run: python scripts/build_analytics.py --output /tmp/analytics.json
 
+      - name: Generate category overview pages
+        run: python scripts/build_category_pages.py
+
       - name: Sync analytics frontend
         run: python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json
 
@@ -53,6 +56,9 @@ jobs:
           python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
           node --check 考古題網站/sw.js
           node --check 考古題網站/js/app.js
+          node --check 考古題網站/js/answer-utils.js
+          node --check 考古題網站/js/search-engine.js
+          node --check 考古題網站/js/quiz-engine.js
           node --check 考古題網站/analytics-chart.js
           node --check 考古題網站/analytics-chart-data.js
 

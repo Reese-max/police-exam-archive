@@ -11,7 +11,13 @@
     "official_category_code": "203",
     "official_category": "刑事警察人員",
     "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=203&s=1501&q=1",
-    "source_sha256": "eda7547cd800a81680fbd5994b923b7612b34a8571401c5616eb38c97a1107d7"
+    "source_sha256": "eda7547cd800a81680fbd5994b923b7612b34a8571401c5616eb38c97a1107d7",
+    "categories": [
+      "刑事警察學系"
+    ],
+    "official_subject": "刑案現場處理與刑事鑑識",
+    "path_subject": "刑案現場處理與刑事鑑識",
+    "category_membership": "刑事警察學系"
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -46,7 +52,7 @@
       "options": {
         "A": "現場採獲沾有潮濕血液或體液之衣物,為防止檢體乾燥揮發並阻絕外界環境污染,應立即 將其密封於阻氣性佳之聚乙烯(PE)塑膠袋或夾鏈袋中送驗",
         "B": "肇事逃逸現場採集之大片玻璃破片,因其斷裂面可能與嫌疑車輛殘留玻璃產生極具個化價 值之物理吻合(Physicalmatch),包裝時應妥善防護固定(如置於堅固盒內),以避免運 送過程中發生二次碰撞碎裂",
-        "C": "現場採集之可疑紙張文書證物(Questioneddocuments),為便於歸檔儲存與避免遺失,應 將其適當摺疊放入標準證物信封內,並直接於封套表面以原子筆用力書寫註明案號與特徵",
+        "C": "現場採集之可疑紙張文書證物(Questioned documents),為便於歸檔儲存與避免遺失,應 將其適當摺疊放入標準證物信封內,並直接於封套表面以原子筆用力書寫註明案號與特徵",
         "D": "針對火災現場疑似含有可燃性液體殘跡(Ignitable liquid residues)之碳化殘渣,因其含有 大量水分與灰燼,應優先使用透氣之牛皮紙袋包裝,以防止證物發霉腐敗"
       },
       "answer": "B"
@@ -57,10 +63,10 @@
       "stem": "鑑識人員於兇殺命案現場勘察時,在平滑的牆面上發現數滴呈現橢圓形且具方向性之中速噴 濺血跡。經挑選其中一枚輪廓最完整之血跡進行精細測量,其短軸(寬度)為11mm,長軸 (長度)為22mm,且該血跡之尖銳端(Tail)朝向右方。依據血跡型態分析(Bloodstain Pattern Analysis)之學理與現場重建原則,下列敘述何者最適當?",
       "section": "乙、測驗題",
       "options": {
-        "A": "依據三角函數公式計算,該血滴撞擊牆面之入射角(Angleofimpact)約為30度;且血跡 尖銳端朝右,代表血滴撞擊牆面時的行進方向為「由右向左」",
-        "B": "依據三角函數公式計算,該血滴撞擊牆面之入射角(Angleofimpact)約為60度;該主血 跡周圍若伴隨產生衛星血跡(Satellitestains),其尖銳端通常會指向與主血跡行進方向「相 同」的方向",
-        "C": "依據三角函數公式計算,該血滴撞擊牆面之入射角(Angleofimpact)約為60度;鑑識人 員可利用此角度數值,直接在 2D 平面上以拉線法找出出血點的「匯合區域(Area of convergence)」",
-        "D": "依據三角函數公式計算,該血滴撞擊牆面之入射角(Angleofimpact)約為30度;且血跡 尖銳端朝右,代表血滴撞擊牆面時的行進方向為「由左向右」"
+        "A": "依據三角函數公式計算,該血滴撞擊牆面之入射角(Angle of impact)約為30度;且血跡 尖銳端朝右,代表血滴撞擊牆面時的行進方向為「由右向左」",
+        "B": "依據三角函數公式計算,該血滴撞擊牆面之入射角(Angle of impact)約為60度;該主血 跡周圍若伴隨產生衛星血跡(Satellitestains),其尖銳端通常會指向與主血跡行進方向「相 同」的方向",
+        "C": "依據三角函數公式計算,該血滴撞擊牆面之入射角(Angle of impact)約為60度;鑑識人 員可利用此角度數值,直接在 2D 平面上以拉線法找出出血點的「匯合區域(Area of convergence)」",
+        "D": "依據三角函數公式計算,該血滴撞擊牆面之入射角(Angle of impact)約為30度;且血跡 尖銳端朝右,代表血滴撞擊牆面時的行進方向為「由左向右」"
       },
       "answer": "D"
     },
@@ -84,9 +90,9 @@
       "section": "乙、測驗題",
       "options": {
         "A": "螺旋式搜尋法(Spiral search method):由單人由外向內或由內向外呈螺旋狀進行。實務 上,此方法不受現場障礙物或邊界缺乏的影響,人員能輕易走出完美的螺旋軌跡,是確保 微物跡證絕對不被遺漏的最佳搜尋法",
-        "B": "依據《雪梨宣言》原則 2:現場調查是一項需要科學專業知識的科學與診斷任務(Scene investigationisascientificanddiagnosticendeavourrequiringscientificexpertise)。現場調查 的目標是透過殘存的跡證推論並重建事件,這不僅僅是技術性的蒐集工作,更是高度智力 與分析性的挑戰。這項任務必須由具備廣泛科學知識、熟知自然法則的通才鑑識科學家來 執行,以便在現場辨識跡證的相對位置、方向與互動關係,從而提出潛在的事件解釋",
-        "C": "輻射狀或派餅式搜尋法(Wheelorraysearchmethod):以現場中心為起點向外放射。由於 射線之間的扇形區域會隨著向外延伸而逐漸重疊,能對外圍的微小物證進行多次重複檢 視,為大範圍室外現場之首選",
-        "D": "方格式搜尋法(Gridsearchmethod):為單線式搜尋法的一種,由多名搜尋人員僅沿著單 一方向平行前進。其缺點為無法對同一位置進行交叉搜尋,極易遺漏跡證,因此在現代勘 察實務中已較少被採用"
+        "B": "依據《雪梨宣言》原則 2:現場調查是一項需要科學專業知識的科學與診斷任務(Scene investigation is a scientific and diagnostic endeavour requiring scientific expertise)。現場調查 的目標是透過殘存的跡證推論並重建事件,這不僅僅是技術性的蒐集工作,更是高度智力 與分析性的挑戰。這項任務必須由具備廣泛科學知識、熟知自然法則的通才鑑識科學家來 執行,以便在現場辨識跡證的相對位置、方向與互動關係,從而提出潛在的事件解釋",
+        "C": "輻射狀或派餅式搜尋法(Wheel or ray search method):以現場中心為起點向外放射。由於 射線之間的扇形區域會隨著向外延伸而逐漸重疊,能對外圍的微小物證進行多次重複檢 視,為大範圍室外現場之首選",
+        "D": "方格式搜尋法(Grid search method):為單線式搜尋法的一種,由多名搜尋人員僅沿著單 一方向平行前進。其缺點為無法對同一位置進行交叉搜尋,極易遺漏跡證,因此在現代勘 察實務中已較少被採用"
       },
       "answer": "B"
     },
@@ -132,7 +138,7 @@
     {
       "number": 8,
       "type": "choice",
-      "stem": "三過氧化三丙酮(Triacetonetriperoxide,TATP),俗稱撒旦之母,國內曾有查獲相關案例; 然而近期已陸續有相關研究指出,某一特定化學試劑,可能因多年保存不當,亦會自發性變 質而產生TATP,請問該特定試劑為何?",
+      "stem": "三過氧化三丙酮(Tri acetone tri peroxide,TATP),俗稱撒旦之母,國內曾有查獲相關案例; 然而近期已陸續有相關研究指出,某一特定化學試劑,可能因多年保存不當,亦會自發性變 質而產生TATP,請問該特定試劑為何?",
       "section": "乙、測驗題",
       "options": {
         "A": "異丙醇(2-propanol)",
@@ -148,8 +154,8 @@
       "stem": "近年來國內外爆炸物與爆裂物案件頻傳,從土製炸藥到軍規炸藥均可能出現於刑案現場。關 於各類爆炸物之化學特性、現場初篩與實驗室分析技術,下列敘述何者最適當?",
       "section": "乙、測驗題",
       "options": {
-        "A": "三過氧化三丙酮(Triacetonetriperoxide,TATP)為一種具高度摩擦與撞擊敏感性之土製炸 藥,其合成方式係將丙酮(Acetone)與雙氧水(Hydrogenperoxide)在酸性催化劑(如鹽 酸)存在下反應製得",
-        "B": "離子移動光譜儀(Ion Mobility Spectrometer,IMS)常作為現場爆炸物殘跡之初篩工具,但 其無法偵測如三過氧化三丙酮(Triacetonetriperoxide,TATP)等不含硝基之過氧化物炸藥",
+        "A": "三過氧化三丙酮(Tri acetone tri peroxide,TATP)為一種具高度摩擦與撞擊敏感性之土製炸 藥,其合成方式係將丙酮(Acetone)與雙氧水(Hydrogenperoxide)在酸性催化劑(如鹽 酸)存在下反應製得",
+        "B": "離子移動光譜儀(Ion Mobility Spectrometer,IMS)常作為現場爆炸物殘跡之初篩工具,但 其無法偵測如三過氧化三丙酮(Tri acetone tri peroxide,TATP)等不含硝基之過氧化物炸藥",
         "C": "低爆藥(Lowexplosives)之分解速度較慢,係以超音速之震波進行反應,此過程稱為爆燃 (Deflagration);而高爆藥(High explosives)則產生次音速之壓力波,此過程稱為爆轟 (Detonation)",
         "D": "實驗室進行爆炸殘跡前處理時,無論是有機高爆藥(如三硝基甲苯 Trinitrotoluene,簡稱 TNT)或無機低爆藥(如氯酸鹽、硝酸鹽),均應統一使用丙酮(Acetone)作為溶劑進行 洗滌萃取,以利後續儀器分析"
       },
@@ -188,9 +194,9 @@
       "section": "乙、測驗題",
       "options": {
         "A": "對於深色複雜圖案的兇刀,應首選黑碳粉末顯現,再使用紫外光源觀察;恐嚇信則優先使 用寧海德林(Ninhydrin),因其顯現陳舊指紋之靈敏度為目前最高",
-        "B": "兇刀因具複雜圖案與反光,宜使用螢光粉末並配合特定波長多波域光源激發以排除背景干 擾;恐嚇信可先使用 DFO(1,8-Diazafluoren-9-one)處理,因其顯現紙張潛伏指紋的靈敏 度高於寧海德林",
+        "B": "兇刀因具複雜圖案與反光,宜使用螢光粉末並配合特定波長多波域光源激發以排除背景干 擾;恐嚇信可先使用 DFO(1,8-Diaz a flu or en-9-one)處理,因其顯現紙張潛伏指紋的靈敏 度高於寧海德林",
         "C": "兇刀表面應優先使用碘燻法(Iodine fuming),因其蒸氣能與金屬表面產生穩定永久的共 價鍵印痕;恐嚇信則應使用物理顯現法(Physical Developer)與殘留的胺基酸反應",
-        "D": "兇刀宜使用氰基丙烯酸酯(Cyanoacrylate)處理後,利用寧海德林染色以產生螢光;恐嚇 信因屬吸水性材質,僅能使用小粒子浮液法(Small particlereagent,SPR)處理"
+        "D": "兇刀宜使用氰基丙烯酸酯(Cyano a cry late)處理後,利用寧海德林染色以產生螢光;恐嚇 信因屬吸水性材質,僅能使用小粒子浮液法(Small particlereagent,SPR)處理"
       },
       "answer": "B"
     },
@@ -301,7 +307,7 @@
     {
       "number": 21,
       "type": "choice",
-      "stem": "警方接獲報案,於一處公寓內發現一具仰臥的男性屍體。法醫與鑑識人員抵達現場後,記錄 下相關的死後變化(Postmortemchanges)特徵:發現屍斑(Livormortis)主要沉積於背部且 呈現「指壓會褪色(Blanching)」之狀態;屍僵(Rigormortis)現象僅初步出現於下頷與頸 部,四肢肌肉仍具柔軟度;現場測量其肛溫為 31°C,而當時室內環境溫度為 20°C。綜合上 述屍體現象,法醫推斷其死亡時間(Postmorteminterval,PMI)最可能落於下列那一個區間?",
+      "stem": "警方接獲報案,於一處公寓內發現一具仰臥的男性屍體。法醫與鑑識人員抵達現場後,記錄 下相關的死後變化(Postmortemchanges)特徵:發現屍斑(Livormortis)主要沉積於背部且 呈現「指壓會褪色(Blanching)」之狀態;屍僵(Rigormortis)現象僅初步出現於下頷與頸 部,四肢肌肉仍具柔軟度;現場測量其肛溫為 31°C,而當時室內環境溫度為 20°C。綜合上 述屍體現象,法醫推斷其死亡時間(Postmortem interval,PMI)最可能落於下列那一個區間?",
       "section": "乙、測驗題",
       "options": {
         "A": "3~8小時",
@@ -331,7 +337,7 @@
       "section": "乙、測驗題",
       "options": {
         "A": "酚酞試劑(Kastle-Meyer test)",
-        "B": "高山氏試驗(Takayamatest)",
+        "B": "高山氏試驗(Takaya mate st)",
         "C": "胺黑試劑(Amido Black)",
         "D": "發光胺試劑(Luminol test)"
       },
@@ -356,10 +362,10 @@
       "stem": "聚合酶連鎖反應(Polymerase Chain Reaction,PCR)為現代刑事DNA鑑定普遍使用之核心技 術,其熱循環(Thermalcycle)包含三個主要步驟。關於此三步驟之先後次序及其對應之分 子作用機制,下列敘述何者最適當?",
       "section": "乙、測驗題",
       "options": {
-        "A": "變性(Denaturation)→延伸(Extension)→黏合(Annealing)。變性係使用高溫破壞細胞 核膜;延伸係利用72°C高溫強迫游離核苷酸延長;最後降溫至60°C進行雙股黏合",
-        "B": "黏合(Annealing)→變性(Denaturation)→延伸(Extension)。黏合係加入限制酶(Restriction enzymes)尋找目標序列;變性係升溫至 94°C切斷雙股 DNA;延伸係降溫至 60°C進行互 補鹼基配對",
-        "C": "變性(Denaturation)→黏合(Annealing)→延伸(Extension)。變性係加熱至約 94°C使 雙股DNA解鍊為單股;黏合係降溫至約60°C使引子(Primers)與目標序列結合;延伸則 升溫至72°C由DNA聚合酶(DNApolymerase)進行複製",
-        "D": "延伸(Extension)→變性(Denaturation)→黏合(Annealing)。延伸係先讓引子延長;再 加熱至94°C變性解開雙股;最後降至60°C進行黏合與修復"
+        "A": "變性(De natura tion)→延伸(Extension)→黏合(Annealing)。變性係使用高溫破壞細胞 核膜;延伸係利用72°C高溫強迫游離核苷酸延長;最後降溫至60°C進行雙股黏合",
+        "B": "黏合(Annealing)→變性(De natura tion)→延伸(Extension)。黏合係加入限制酶(Restriction enzymes)尋找目標序列;變性係升溫至 94°C切斷雙股 DNA;延伸係降溫至 60°C進行互 補鹼基配對",
+        "C": "變性(De natura tion)→黏合(Annealing)→延伸(Extension)。變性係加熱至約 94°C使 雙股DNA解鍊為單股;黏合係降溫至約60°C使引子(Primers)與目標序列結合;延伸則 升溫至72°C由DNA聚合酶(DNApolymerase)進行複製",
+        "D": "延伸(Extension)→變性(De natura tion)→黏合(Annealing)。延伸係先讓引子延長;再 加熱至94°C變性解開雙股;最後降至60°C進行黏合與修復"
       },
       "answer": "C"
     }
@@ -377,5 +383,8 @@
     ]
   },
   "_answer_source": "更正答案.pdf",
-  "_answers_merged": 25
+  "_answers_merged": 25,
+  "categories": [
+    "刑事警察學系"
+  ]
 }
