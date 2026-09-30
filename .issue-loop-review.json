@@ -1,0 +1,32 @@
+{
+  "pr": 73,
+  "head": "e0b7f67f337a1881c8fd2c47e6999ce31f1696d6",
+  "findings": [
+    {
+      "severity": "high",
+      "file": "考古題網站/js/quiz-session.js",
+      "line": 26,
+      "issue": "needs-human: Two tabs can restore the same checkpoint. After tab B finishes and removes it, tab A's pagehide unconditionally saves its stale state and resurrects the completed exam; an old tab can also clear a newer exam. A complete fix needs an explicit single-session ownership/takeover policy and atomic cross-tab storage operations (for example Web Locks), including a compatibility decision for contexts without that API. Token checks or storage events alone leave a TOCTOU window."
+    },
+    {
+      "severity": "med",
+      "file": "考古題網站/quiz.html",
+      "line": 600,
+      "issue": "After a background/frozen page resumes, interval counters can lag wall time. pagehide/visibilitychange then save the old remain/elapsed together with a fresh savedAt, erasing the interruption from subsequent recovery. Countdown and untimed exams must derive elapsed time from a wall-clock anchor before rendering, finishing or saving."
+    },
+    {
+      "severity": "med",
+      "file": "考古題網站/js/quiz-session.js",
+      "line": 55,
+      "issue": "validate accepts non-boolean timed and timed=false with a positive durSec, and skips remain validation for untimed checkpoints. Corrupt data can restore a countdown as an unlimited exam and change modes again on the next save instead of failing safely to setup."
+    },
+    {
+      "severity": "med",
+      "file": "考古題網站/js/quiz-session.js",
+      "line": 35,
+      "issue": "Checkpoint question strings are validated only by type, but resumeExam bypasses buildQuestions' escaping and feeds them to innerHTML in question, choice and result rendering. Raw HTML in stored stem/opts/subj is accepted and can execute handlers. No remote attacker-controlled storage write path was established; reject strings that violate the existing escaped-text checkpoint format."
+    }
+  ],
+  "fixed": false,
+  "summary": "Fixed three findings with red-to-green regressions: lost elapsed time after suspended timers, inconsistent timer metadata, and unchecked checkpoint HTML; focused Chromium tests pass 13/13. needs-human: stale-tab writes can still resurrect a completed exam, so cross-tab ownership/takeover and atomic-storage compatibility need a decision; fixed=false reflects this unresolved high finding. Full site tests finish 41 passed / 4 pre-existing homepage failures, Python tests pass 137/137, and deployed/default-branch acceptance remains unverified."
+}

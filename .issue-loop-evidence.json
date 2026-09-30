@@ -1,0 +1,12 @@
+{
+  "repo": "Reese-max/police-exam-archive",
+  "issue": 73,
+  "base_sha": "e0b7f67f337a1881c8fd2c47e6999ce31f1696d6",
+  "red_proof": "Before changing production code at e0b7f67f337a1881c8fd2c47e6999ce31f1696d6, ran: cd '考古題網站' && npx playwright test tests/quiz-resume.spec.js --workers=1 --grep '中斷補償|損毀計時資料|損毀題目資料'. Exit 1, 4 failed: 60-minute suspended-timer case expected elapsed >=31, received 2; untimed case expected elapsed >=31, received 1; timed='false' expected QuizSession.load() to return null, received a checkpoint; HTML stem expected null, received checkpoint containing <img src=\"invalid:\" onerror=\"window.checkpointScriptRan=true\">.",
+  "test_command": "cd '考古題網站' && npx playwright test tests/quiz-resume.spec.js --workers=1",
+  "test_exit": 0,
+  "tests_passed": 13,
+  "tests_failed": 0,
+  "summary": "Fixed three self-review findings for PR #73 / issue #69: timers now derive elapsed time from a wall-clock anchor before render/save/finish, and checkpoints reject inconsistent timer metadata and raw HTML that bypasses the v1 escaped-text format. Four new regressions failed before the fix; the relevant Chromium suite now passes 13/13, including the existing 375px path and new closed/reopened-page cases. README documents recovery semantics and the remaining single-tab limitation.",
+  "not_done": "needs-human: stale tabs can still overwrite or resurrect a checkpoint cleared by another tab; choose a single-session ownership/takeover policy and atomic-storage compatibility contract before changing that behavior/API. Review fixed=false deliberately reflects this unresolved high finding. Baseline full Playwright run was 37 passed / 4 failed (exit 1): existing homepage title, category links, statistics selector and dark-mode selector assertions; homepage HTML, app.js and exam-site.spec.js match master. Final full Playwright run (cd '考古題網站' && npm test -- --workers=1): 41 passed / the same 4 failed (exit 1); no previously passing test regressed. Python suite: 137 passed (exit 0). No push, merge, other-branch changes, CI run, deployed/default-branch browser replay, native BFCache verification or physical-device test."
+}
