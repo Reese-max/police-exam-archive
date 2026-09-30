@@ -138,6 +138,7 @@
         optC: cols.optC[r.id],
         optD: cols.optD[r.id],
         ans: cols.ans[r.id],
+        datasetVersion: getDatasetVersion(),
       };
     });
   }
@@ -153,11 +154,17 @@
     return rawData.stats;
   }
 
+  function getDatasetVersion() {
+    if (!rawData) return null;
+    return rawData.datasetVersion || rawData.datasetHash || ('search-index-v' + (rawData.v || 1));
+  }
+
   /* ── 匯出 ── */
   window.SearchEngine = {
     loadIndex: loadIndex,
     search: search,
     getFacets: getFacets,
     getStats: getStats,
+    getDatasetVersion: getDatasetVersion,
   };
 })(window);
