@@ -227,6 +227,41 @@ assert.equal(failedRecord.persisted, false);
 assert.equal(ReviewQueue.saveQuizSummary({ date: now, correct: 1, total: 1, pct: 100, elapsed: 5 }, failingStorage), false);
 assert.equal(ReviewQueue.saveQuizSummary({ date: now, correct: 1, total: 1, pct: 100, elapsed: 5 }, makeStorage()), true);
 
+// The exploration reserve binds the weak-item quota too: at capacity 2 the
+// queue still keeps a coverage slot instead of being all wrong items.
+const tinyCap = ReviewQueue.buildReviewQueue(
+  [...a, c[0]], ReviewQueue.getLedger(storage),
+  ReviewQueue.normalizeSettings({ daily_question_limit: 2 }), now, datasetVersion,
+);
+assert.equal(tinyCap.items.length, 2);
+assert.ok(tinyCap.items.some((item) => item.reason_code === 'coverage_gap'));
+
+// An unparseable target date is discarded instead of fabricating a deadline.
+const badDate = ReviewQueue.buildReviewQueue(
+  [...a, ...b], ReviewQueue.getLedger(storage),
+  ReviewQueue.normalizeSettings({ deadline_enabled: true, target_date: 'not-a-date', daily_question_limit: 2 }),
+  now, datasetVersion,
+);
+assert.equal(badDate.settings.target_date, null);
+assert.equal(badDate.overload.is_overloaded, false);
+
+// A minute budget under one question honestly yields an empty queue.
+const zeroCap = ReviewQueue.buildReviewQueue(
+  [...a, ...b], ReviewQueue.getLedger(storage),
+  ReviewQueue.normalizeSettings({ deadline_enabled: true, target_date: '2026-10-14', daily_minutes: 1 }),
+  now, datasetVersion,
+);
+assert.equal(zeroCap.items.length, 0);
+assert.ok(zeroCap.overload.is_overloaded);
+
+// A corrupt or foreign ledger blob is quarantined, not silently destroyed.
+const corruptStorage = makeStorage();
+corruptStorage.setItem('exam-attempt-ledger-v1', '{"schema_version":999,"attempts":[]}');
+assert.equal(ReviewQueue.getLedger(corruptStorage).attempts.length, 0);
+assert.equal(corruptStorage.getItem('exam-attempt-ledger-v1.corrupt'), '{"schema_version":999,"attempts":[]}');
+ReviewQueue.clearLearnerData(corruptStorage);
+assert.equal(corruptStorage.getItem('exam-attempt-ledger-v1.corrupt'), null);
+
 const importedStorage = makeStorage();
 ReviewQueue.saveSettings(settings, storage);
 const exportedWithSettings = ReviewQueue.exportData(storage, datasetVersion);

@@ -55,10 +55,19 @@
 
   function getLedger(storage) {
     var ledger = readJson(storage, LEDGER_KEY, null);
-    if (!ledger || ledger.schema_version !== SCHEMA_VERSION || !Array.isArray(ledger.attempts)) {
-      return emptyLedger();
+    if (ledger && ledger.schema_version === SCHEMA_VERSION && Array.isArray(ledger.attempts)) {
+      return { schema_version: SCHEMA_VERSION, attempts: ledger.attempts.slice() };
     }
-    return { schema_version: SCHEMA_VERSION, attempts: ledger.attempts.slice() };
+    // Quarantine an unreadable/foreign blob instead of letting the next write
+    // silently destroy it.
+    var target = storageOrDefault(storage);
+    if (target) {
+      try {
+        var raw = target.getItem(LEDGER_KEY);
+        if (raw) target.setItem(LEDGER_KEY + '.corrupt', raw);
+      } catch (e) {}
+    }
+    return emptyLedger();
   }
 
   function saveLedger(ledger, storage) {
@@ -74,6 +83,9 @@
     var minutes = value.daily_minutes != null ? value.daily_minutes : value.dailyMinutes;
     minutes = minutes === '' || minutes == null ? null : Number(minutes);
     var target = value.target_date || value.targetDate || null;
+    if (target && (!/^\d{4}-\d{2}-\d{2}$/.test(target) || !parseDate(target + 'T00:00:00.000Z'))) {
+      target = null;
+    }
     return {
       deadline_enabled: !!(value.deadline_enabled != null ? value.deadline_enabled : value.deadlineEnabled),
       target_date: target || null,
@@ -382,7 +394,7 @@
     });
 
     var capacity = normalized.daily_question_limit;
-    if (normalized.daily_minutes) capacity = Math.min(capacity, Math.max(1, Math.floor(normalized.daily_minutes / MINUTES_PER_QUESTION)));
+    if (normalized.daily_minutes) capacity = Math.min(capacity, Math.max(0, Math.floor(normalized.daily_minutes / MINUTES_PER_QUESTION)));
     var staleItems = roundRobin(records.filter(function (item) { return item.priority === 0; }));
     var strong = roundRobin(records.filter(function (item) { return item.priority === 1; }));
     var dueCandidates = roundRobin(records.filter(function (item) { return item.priority === 2; }));
@@ -399,12 +411,13 @@
     // Fill order honors the declared tiers: stale items need re-confirmation
     // first, then a bounded share of weak items, due reviews, and a small
     // exploration slice; leftovers fall back to the remaining queue.
-    var strongQuota = Math.min(strong.length, Math.max(1, Math.ceil(capacity * 0.6)));
     var explorationQuota = Math.min(exploration.length, Math.max(1, Math.floor(capacity * 0.2)));
     staleItems.forEach(add);
-    strong.slice(0, strongQuota).forEach(add);
     var explorationReserve = exploration.length && selected.length < capacity
       ? Math.min(explorationQuota, capacity - selected.length) : 0;
+    var strongQuota = Math.min(strong.length, Math.max(0, Math.min(
+      Math.ceil(capacity * 0.6), capacity - selected.length - explorationReserve)));
+    strong.slice(0, strongQuota).forEach(add);
     dueCandidates.slice(0, Math.max(0, capacity - selected.length - explorationReserve)).forEach(add);
     exploration.slice(0, explorationQuota).forEach(add);
     strong.slice(strongQuota).forEach(add);
@@ -471,6 +484,7 @@
     if (!target) return;
     try {
       target.removeItem(LEDGER_KEY);
+      target.removeItem(LEDGER_KEY + '.corrupt');
       target.removeItem(SETTINGS_KEY);
       target.removeItem(HISTORY_KEY);
     } catch (e) {}

@@ -675,7 +675,8 @@ function finish(){
       questions.map(q=>q.source), answers, flags,
       { attemptedAt, datasetVersion: datasetMeta.datasetVersion, quizMode, filters: activeFilters },
     );
-    persisted = !!(record && record.persisted) && ReviewQueue.saveQuizSummary({
+    persisted = !!(record && record.persisted);
+    ReviewQueue.saveQuizSummary({
       date: attemptedAt, correct: ok, total, pct, elapsed, mode: quizMode,
     });
   }
