@@ -1,0 +1,12 @@
+{
+  "repo": "Reese-max/police-exam-archive",
+  "issue": 79,
+  "base_sha": "5ffab7bef5107fd058c4d609c51a760e3aa2855a",
+  "red_proof": "With the stalled-HTTPS proxy regression added before the fix, (cd '考古題網站' && npx playwright test tests/analytics-offline.spec.js) exited 1: TimeoutError: page.goto: Timeout 15000ms exceeded; navigating to /analytics.html, waiting until domcontentloaded; 1 failed (50.4s). Adding request isolation alone then exposed the fixture's cached .html redirect: page.goto: net::ERR_FAILED at /analytics.html; 1 failed. Keeping .html URLs stable and isolating third-party requests made the same original chart assertions pass.",
+  "test_command": "python -X utf8 -m pytest tests/ -q && (cd '考古題網站' && npx playwright test tests/analytics-offline.spec.js)",
+  "test_exit": 0,
+  "tests_passed": 139,
+  "tests_failed": 0,
+  "summary": "Fixed the deterministic browser/PWA regression required by #75 without changing production code or weakening assertions. A fresh context visits only the homepage online, waits for the actual service-worker precache, then renders all four Analytics charts after origin loss while third-party HTTPS is stalled. Verified the declared command under Git Bash: 138 Python tests and 1 offline browser test passed; category-page checks, generated frontend consistency, layout application/check in a temporary copy, JavaScript syntax and diff checks also passed.",
+  "not_done": "The full Playwright suite on the unmodified reviewed HEAD returned exit 1 with 29 passed and 4 pre-existing homepage failures: old title, .category-list links, .hero-stat-value counts and #darkToggle selector (exam-site.spec.js lines 11, 15, 30, 38). Both index.html and exam-site.spec.js have identical Git blobs on master and the reviewed HEAD; these unrelated failures were not changed. No Linux CI run, deployed/OS-level offline acceptance, push, deployment, PR comment, or other branch modification was performed."
+}

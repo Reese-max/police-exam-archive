@@ -1,0 +1,14 @@
+{
+  "pr": 79,
+  "head": "5ffab7bef5107fd058c4d609c51a760e3aa2855a",
+  "findings": [
+    {
+      "severity": "med",
+      "file": "考古題網站/tests/analytics-offline.spec.js",
+      "line": 35,
+      "issue": "The deterministic offline regression still depends on live Google Fonts: disconnected only cuts the local origin, leaving the external render-blocking stylesheet uncontrolled. With third-party HTTPS held pending by a local proxy, the test fails at the Analytics navigation with page.goto: Timeout 15000ms exceeded before it can verify any chart. Isolate external requests while preserving the real service worker and local precache path."
+    }
+  ],
+  "fixed": true,
+  "summary": "Fixed one medium-severity isolation defect in the offline browser regression: external font requests are blocked, a local stalled-HTTPS proxy guards against regression, and stable .html fixture URLs avoid reliance on Chromium's redirect cache. The regression failed before the fix and now passes alongside all 138 Python tests using the declared Git Bash command. The broader browser suite has four pre-existing homepage failures on unchanged base files (29 passed, 4 failed); deployed offline behavior remains unverified."
+}

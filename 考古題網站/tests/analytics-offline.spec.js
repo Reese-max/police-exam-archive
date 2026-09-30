@@ -6,23 +6,35 @@ const serveHandler = require('serve-handler');
 test('first offline Analytics visit renders charts after only visiting the homepage online', async ({ browser }) => {
   test.setTimeout(60000);
   let disconnected = false;
+  const proxySockets = new Set();
   const server = http.createServer((request, response) => {
     if (disconnected) {
       request.socket.destroy();
       return;
     }
-    serveHandler(request, response, { public: path.join(__dirname, '..') })
+    // Keep .html URLs stable without relying on the browser's redirect cache.
+    serveHandler(request, response, { public: path.join(__dirname, '..'), cleanUrls: false })
       .catch(error => {
         response.statusCode = 500;
         response.end(String(error));
       });
   });
+  // Keep third-party HTTPS connections pending to reproduce a stalled font CDN.
+  server.on('connect', (request, socket) => {
+    proxySockets.add(socket);
+    socket.on('close', () => proxySockets.delete(socket));
+    socket.on('error', () => {});
+  });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const origin = `http://127.0.0.1:${server.address().port}`;
-  const context = await browser.newContext({ serviceWorkers: 'allow' });
+  const context = await browser.newContext({
+    serviceWorkers: 'allow',
+    proxy: { server: origin, bypass: '127.0.0.1' },
+  });
   const page = await context.newPage();
 
   try {
+    await context.route(url => url.origin !== origin, route => route.abort());
     await page.goto(`${origin}/index.html`);
     await page.waitForFunction(() => navigator.serviceWorker.controller !== null);
     expect(await page.evaluate(async () => Boolean(
@@ -45,6 +57,7 @@ test('first offline Analytics visit renders charts after only visiting the homep
     expect(errors).toEqual([]);
   } finally {
     await context.close();
+    for (const socket of proxySockets) socket.destroy();
     server.closeAllConnections();
     await new Promise(resolve => server.close(resolve));
   }
