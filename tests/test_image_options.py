@@ -256,7 +256,7 @@ def test_source_locator_uses_existing_canonical_exam_directory():
         assert key in expected_category, f"unexpected image-option question: {key}"
 
         raw_pdf = (q.get("source_locator") or {}).get("pdf", "")
-        source_pdf = Path(raw_pdf.replace("\\\\", "/"))
+        source_pdf = Path(raw_pdf.replace(chr(92), "/"))
         assert source_pdf.parts[0] == "考古題庫", f"{fp} locator is not archive-relative: {raw_pdf}"
         assert source_pdf.parts[1] == expected_category[key], f"{fp} locator uses an alias category: {raw_pdf}"
         assert source_pdf.parts[2] == f"{key[0]}年", f"{fp} locator has the wrong year: {raw_pdf}"
