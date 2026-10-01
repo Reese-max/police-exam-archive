@@ -214,6 +214,22 @@ with ExamDB() as db:
 python -m pytest tests/ -v
 ```
 
+## Analytics 前端同步（圖表程式／資料同版）
+
+`考古題網站/analytics.html` 只載入 `analytics-chart-bundle.js`：圖表程式（`analytics-chart.js`）與產生資料（`analytics-chart-data.js`）由 `scripts/sync_analytics_frontend.py` 合成單一 bundle，檔頭以 SHA-256 標記兩者的共同版本。這讓 service worker 只需一個請求就能快取整組 pair——要嘛是完整的最新版本，要嘛是完整的已快取版本，離線時不會混用不同版本的程式與資料；舊版頁面分別請求兩支檔案時會直接失敗封閉。
+
+```bash
+# 資料異動後重新產生（含 bundle）
+python scripts/build_analytics.py --output /tmp/analytics.json
+python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json
+
+# CI 檢查：前端與資料庫一致（包含 bundle digest）
+python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
+
+# service worker 回歸測試（需要 node）
+node --test 考古題網站/tests/analytics-pair.test.js
+```
+
 ## 115 年資料更新
 
 115 年警察人員三等考試已依考選部考畢試題查詢平臺匯入，包含 13 類科、90 科次的試題，以及官方標準答案與更正答案。匯入來源、SHA-256 與檢查結果詳見 `docs/115-import-report.md`。

@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.6.0';
+var CACHE_VERSION = 'v1.6.1';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -9,8 +9,7 @@ var CORE_ASSETS = [
   './index.html',
   './category.html',
   './analytics.html',
-  './analytics-chart.js',
-  './analytics-chart-data.js',
+  './analytics-chart-bundle.js',
   './data/home-stats.json',
   './css/style.css',
   './js/app.js',
@@ -63,11 +62,21 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-  /* Analytics code + generated data must update together; never serve stale first. */
+  /* Analytics chart code and its generated data ship as one versioned
+     bundle, so the pair is fetched and cached as a single request. */
+  if (url.origin === self.location.origin &&
+      url.pathname.endsWith('/analytics-chart-bundle.js')) {
+    event.respondWith(analyticsBundle(event.request));
+    return;
+  }
+
+  /* Cached pages may still ask for the two halves separately. Answering one
+     of them from network or cache could pair mismatched versions, so both
+     fail closed instead of composing a mixed pair. */
   if (url.origin === self.location.origin &&
       (url.pathname.endsWith('/analytics-chart.js') ||
        url.pathname.endsWith('/analytics-chart-data.js'))) {
-    event.respondWith(networkFirst(event.request, CORE_CACHE));
+    event.respondWith(Promise.resolve(Response.error()));
     return;
   }
 
@@ -139,6 +148,29 @@ function networkFirst(request, cacheName) {
           request.headers.get('accept').indexOf('text/html') !== -1) {
         return caches.match('./index.html');
       }
+    });
+  });
+}
+
+/* One complete Analytics pair per response: a fresh fetch replaces the cached
+     pair as a single cache entry, and the offline fallback may only serve a
+     cached pair — never two independently cached halves. */
+function analyticsBundle(request) {
+  return fetch(request, { cache: 'no-store' }).then(function(response) {
+    if (!response || !response.ok) {
+      throw new Error('Analytics pair unavailable');
+    }
+    var fresh = response.clone();
+    return caches.open(CORE_CACHE).then(function(cache) {
+      return cache.put(request, fresh);
+    }).catch(function() {
+      /* A fresh complete pair is still safe when cache storage fails. */
+    }).then(function() {
+      return response;
+    });
+  }).catch(function() {
+    return caches.match(request, { cacheName: CORE_CACHE }).then(function(cached) {
+      return cached || Response.error();
     });
   });
 }
