@@ -182,6 +182,18 @@ def test_quiz_html_discard_and_new_exam_clear_checkpoint() -> None:
     )
 
 
+def test_quiz_html_build_questions_escapes_all_snapshot_fields() -> None:
+    """buildQuestions must escape every string field that lands in a checkpoint —
+    validate() rejects raw < >, so an unescaped field would silently disable
+    checkpointing (and unescaped markup would render via innerHTML)."""
+    html = QUIZ_HTML.read_text(encoding="utf-8")
+    m = re.search(r"questions\s*=\s*pool\.slice\(0,n\)\.map\(q=>\(\{(.*?)\}\)\)", html, re.S)
+    assert m, "quiz.html must define buildQuestions() with the snapshot shape"
+    body = m.group(1)
+    for frag in ("_esc(String(q.yr))", "_esc(q.stem)", "map(_esc)"):
+        assert frag in body, f"buildQuestions must escape via {frag!r}"
+
+
 def test_checkpoint_roundtrip_restores_in_progress_exam() -> None:
     """save() then load() on a fresh page must restore the identical session."""
     proc = run_node(

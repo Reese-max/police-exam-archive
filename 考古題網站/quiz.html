@@ -406,7 +406,7 @@ function buildQuestions(n){
   const pool = [...POOL];
   for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
   questions = pool.slice(0,n).map(q=>({
-    subj: q.yr + '年 ' + _esc(_short(q.sub,14)),
+    subj: _esc(String(q.yr)) + '年 ' + _esc(_short(q.sub,14)),
     stem: _esc(q.stem),
     opts: [q.optA,q.optB,q.optC,q.optD].map(_esc),
     ans: 'ABCD'.indexOf(q.ans),
