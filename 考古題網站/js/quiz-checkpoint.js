@@ -23,12 +23,16 @@
     catch (e) { return null; }
   }
 
+  /* 題目文字於 buildQuestions 已 escape，合法快照不應含原始 < >； */
+  /* 拒絕未轉義標記可避免被竄改的 localStorage 快照經 innerHTML 注入 DOM。 */
+  function _hasMarkup(s) { return /[<>]/.test(s); }
+
   function _validQuestion(q) {
     return !!q && typeof q === 'object' && !Array.isArray(q)
-      && typeof q.subj === 'string'
-      && typeof q.stem === 'string' && q.stem.length > 0
+      && typeof q.subj === 'string' && !_hasMarkup(q.subj)
+      && typeof q.stem === 'string' && !_hasMarkup(q.stem)
       && Array.isArray(q.opts) && q.opts.length === 4
-      && q.opts.every(function (o) { return typeof o === 'string'; })
+      && q.opts.every(function (o) { return typeof o === 'string' && !_hasMarkup(o); })
       && _isInt(q.ans) && q.ans >= 0 && q.ans <= 3;
   }
 

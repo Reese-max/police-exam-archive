@@ -424,6 +424,9 @@ $('startBtn').addEventListener('click', ()=>{
   if(POOL.length<want && !confirm('符合條件的題目只有 '+POOL.length+' 題，將全部出題。確定開始？')) return;
   pendingResume = null;
   $('resumeBanner').classList.add('hidden');
+  // 先清掉舊檢查點：若接下來 saveCheckpoint() 失敗（容量/隱私模式），
+  // 才不會讓上一場的殘留檢查點在下次載入時被誤判為可回復。
+  if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear();
   buildQuestions(want);
   total = questions.length;
   $('totalNum').textContent = total;

@@ -133,6 +133,55 @@ def test_quiz_html_checkpoint_guards() -> None:
     ), "finish() must clear the checkpoint before rendering results"
 
 
+def test_quiz_html_resume_restores_full_state() -> None:
+    """The resume button must repopulate the whole exam state and restart the timer."""
+    html = QUIZ_HTML.read_text(encoding="utf-8")
+    m = re.search(
+        r"\$\('resumeBtn'\)\.addEventListener\('click'.*?(?=\$\('discardResumeBtn'\))",
+        html,
+        re.S,
+    )
+    assert m, "quiz.html must wire the resume button"
+    body = m.group(0)
+    for frag in (
+        "questions = snap.questions",
+        "answers = snap.answers",
+        "flags = snap.flags",
+        "cur = snap.cur",
+        "remain = snap.remain",
+        "elapsed = snap.elapsed",
+        "durSec = snap.durSec",
+        "examDone = false",
+        "renderQuestion()",
+        "renderMini()",
+        "startTimer(",
+    ):
+        assert frag in body, f"resume handler must restore via {frag!r}"
+
+
+def test_quiz_html_discard_and_new_exam_clear_checkpoint() -> None:
+    """Discard must clear the checkpoint, and starting a fresh exam must clear the
+    previous one before building new state (a failed save can't leave it stale)."""
+    html = QUIZ_HTML.read_text(encoding="utf-8")
+    m = re.search(
+        r"\$\('discardResumeBtn'\)\.addEventListener\('click'.*?\}\);",
+        html,
+        re.S,
+    )
+    assert m, "quiz.html must wire the discard button"
+    assert "QuizCheckpoint.clear()" in m.group(0), "discard must clear the checkpoint"
+
+    m = re.search(
+        r"\$\('startBtn'\)\.addEventListener\('click'.*?buildQuestions\(want\)",
+        html,
+        re.S,
+    )
+    assert m, "quiz.html must wire the start button"
+    assert "QuizCheckpoint.clear()" in m.group(0), (
+        "start must clear any previous checkpoint before the new exam overwrites it"
+    )
+
+
 def test_checkpoint_roundtrip_restores_in_progress_exam() -> None:
     """save() then load() on a fresh page must restore the identical session."""
     proc = run_node(
@@ -275,6 +324,22 @@ def test_corrupt_or_stale_checkpoint_fails_safe_to_setup() -> None:
             bad.questions = [];
             store.setItem(QC.KEY, JSON.stringify(bad));
             expectNull('empty questions');
+
+            // Crafted markup payload — legit snapshots are pre-escaped by
+            // buildQuestions, so raw < > must be rejected rather than injected
+            // into the DOM via innerHTML on restore.
+            bad = QC.build(inProgressState(), NOW);
+            bad.questions[0].stem = '<img src=x onerror=alert(1)>';
+            store.setItem(QC.KEY, JSON.stringify(bad));
+            expectNull('markup stem');
+            bad = QC.build(inProgressState(), NOW);
+            bad.questions[0].opts[1] = '<svg onload=alert(1)>';
+            store.setItem(QC.KEY, JSON.stringify(bad));
+            expectNull('markup opt');
+            bad = QC.build(inProgressState(), NOW);
+            bad.questions[0].subj = '115年 <b>測試</b>';
+            store.setItem(QC.KEY, JSON.stringify(bad));
+            expectNull('markup subj');
             console.log('corrupt-ok');
             """
         )
@@ -303,6 +368,14 @@ def test_save_rejects_invalid_state_and_untimed_exam_roundtrip() -> None:
             assert.strictEqual(snap.durSec, 0);
             assert.strictEqual(snap.remain, 0);
             assert.strictEqual(snap.elapsed, 125, 'offline seconds accrue to elapsed');
+
+            // A question with an empty stem is odd but renderable — it must not
+            // silently disable checkpointing for the whole exam.
+            const withEmptyStem = inProgressState();
+            withEmptyStem.questions[2].stem = '';
+            assert.strictEqual(QC.save(withEmptyStem, store, NOW), true, 'empty stem must still checkpoint');
+            const restoredEmpty = QC.load(store, NOW);
+            assert.strictEqual(restoredEmpty.questions[2].stem, '');
             console.log('untimed-ok');
             """
         )
