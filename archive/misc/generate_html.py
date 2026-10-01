@@ -264,10 +264,14 @@ body.sidebar-collapsed .sidebar-reopen { display: flex; }
 .q-block:last-child { border-bottom: none; margin-bottom: 0; }
 .q-block:last-child::after { display: none; }
 .mc-options { padding-left: 2.3rem; margin: 0.2rem 0 0.15rem; }
-.mc-opt { display: flex; gap: 0.4rem; padding: 0.25rem 0.4rem; align-items: baseline; border-radius: 8px; transition: all 0.15s ease; cursor: default; margin: 0.1rem -0.4rem; }
+.mc-opt { display: flex; gap: 0.4rem; padding: 0.25rem 0.4rem; align-items: flex-start; border-radius: 8px; transition: all 0.15s ease; cursor: default; margin: 0.1rem -0.4rem; }
 .mc-opt:hover { background: rgba(99, 102, 241, 0.06); }
 .opt-label { font-weight: 700; color: var(--accent); flex-shrink: 0; font-size: 0.88rem; }
 .opt-text { font-size: 0.9rem; line-height: 1.7; overflow-wrap: break-word; word-break: break-word; }
+.opt-image { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0.25rem; max-width: 100%; }
+.opt-image img { display: block; max-width: min(100%, 24rem); max-height: 18rem; width: auto; height: auto; border: 1px solid var(--border); border-radius: 8px; background: #fff; padding: 0.25rem; }
+.option-image-source { display: inline-flex; align-items: center; min-height: 44px; color: var(--primary); font-size: 0.78rem; text-decoration: underline; }
+.option-image-source:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 /* === Answer Visibility === */
 .q-answer { display: none; font-size: 0.85rem; color: var(--success); font-weight: 700; padding: 0.45rem 0.85rem; margin: 0.4rem 0 0.15rem 2.3rem; background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 3px solid var(--success); border-radius: 0 8px 8px 0; letter-spacing: 0.02em; }
 .q-answer::before { content: '\\2713 '; font-weight: 800; margin-right: 0.15em; }
@@ -1272,6 +1276,29 @@ def _render_figure_placeholder(q):
     return ''
 
 
+def _render_choice_option(q, label):
+    """渲染選擇題選項，保留圖片選項的原圖與可及性來源控制。"""
+    value = (q.get('options') or {}).get(label, '')
+    image = (q.get('option_images') or {}).get(label)
+    if isinstance(image, dict) and image.get('src'):
+        src = escape_html(str(image['src']))
+        alt = escape_html(str(image.get('alt') or f'第{q.get("number", "")}題 {label}選項圖片'))
+        source_page = image.get('source_page') or (q.get('source_locator') or {}).get('page')
+        page_text = f'（原始試卷第{source_page}頁）' if source_page else ''
+        link_text = f'查看{label}選項來源圖片{page_text}'
+        return (
+            f'<span class="opt-image" data-source-page="{escape_html(str(source_page or ""))}">'
+            f'<a href="{src}" target="_blank" rel="noopener" '
+            f'aria-label="開啟 {escape_html(label)} 選項來源圖片">'
+            f'<img src="{src}" alt="{alt}" loading="lazy" decoding="async">'
+            f'</a>'
+            f'<a class="option-image-source" href="{src}" target="_blank" rel="noopener">'
+            f'{escape_html(link_text)}</a>'
+            f'</span>'
+        )
+    return f'<span class="opt-text">{escape_html(str(value))}</span>'
+
+
 def render_question_html(question):
     """將單一題目渲染為 HTML（含逐題選項與答案）"""
     q = question
@@ -1315,9 +1342,18 @@ def render_question_html(question):
         else:
             subtype_attr = ''
 
-        # 題目區塊包含題幹、選項、逐題答案
+        # 題目區塊包含題幹、選項、逐題答案與來源定位
+        source_locator = q.get('source_locator') or {}
+        source_attrs = ''
+        for attr, key in (
+            ('data-source-pdf', 'pdf'),
+            ('data-source-page', 'page'),
+            ('data-source-sha256', 'pdf_sha256'),
+        ):
+            if source_locator.get(key) not in (None, ''):
+                source_attrs += f' {attr}="{escape_html(str(source_locator[key]))}"'
         html_parts.append(
-            f'<div class="q-block" data-qnum="{q["number"]}"{answer_attr}>\n'
+            f'<div class="q-block" data-qnum="{q["number"]}"{answer_attr}{source_attrs}>\n'
         )
 
         # 題幹
@@ -1350,7 +1386,7 @@ def render_question_html(question):
                     html_parts.append(
                         f'<div class="mc-opt" data-val="{label}">'
                         f'<span class="opt-label">({label})</span>'
-                        f'<span class="opt-text">{escape_html(q["options"][label])}</span>'
+                        f'{_render_choice_option(q, label)}'
                         f'</div>\n'
                     )
             html_parts.append('</div>\n')

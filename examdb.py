@@ -51,6 +51,17 @@ class ExamDB:
             self.build()
         self.conn = sqlite3.connect(self.db_path)
         self.conn.row_factory = sqlite3.Row
+        self._ensure_schema()
+
+    def _ensure_schema(self):
+        """既有索引若建於舊 schema（缺 option_images/source_locator），自動重建。"""
+        cols = {r[1] for r in self.conn.execute("PRAGMA table_info(questions)")}
+        if "option_images" not in cols:
+            print("索引為舊 schema，重建以保留圖片選項欄位")
+            self.conn.close()
+            self.build()
+            self.conn = sqlite3.connect(self.db_path)
+            self.conn.row_factory = sqlite3.Row
 
     def close(self):
         self.conn.close()
@@ -93,6 +104,8 @@ class ExamDB:
                 answer TEXT,
                 passage TEXT,
                 section TEXT,
+                option_images TEXT,
+                source_locator TEXT,
                 FOREIGN KEY (file_id) REFERENCES files(id)
             );
         """)
@@ -134,14 +147,19 @@ class ExamDB:
                     ans = ','.join(ans)
                 elif ans is None:
                     ans = ''
+                # 圖片選項題保留圖片參照與來源出處（JSON 字串），查詢結果不丟棄
+                option_images = q.get('option_images')
+                source_locator = q.get('source_locator')
                 c.execute(
-                    "INSERT INTO questions VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "INSERT INTO questions VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (q_count, file_id, str(q.get('number', '')),
                      q.get('type', ''), q.get('stem', ''),
                      opts.get('A', ''), opts.get('B', ''),
                      opts.get('C', ''), opts.get('D', ''),
                      ans, q.get('passage', ''),
-                     q.get('section', ''))
+                     q.get('section', ''),
+                     json.dumps(option_images, ensure_ascii=False) if option_images else None,
+                     json.dumps(source_locator, ensure_ascii=False) if source_locator else None)
                 )
 
         # 建立索引
@@ -266,11 +284,33 @@ def format_question(q):
         lines.append(f"段落: {q['passage'][:100]}...")
     lines.append(f"題幹: {q['stem']}")
     if q['type'] == 'choice':
+        images = q.get('option_images')
+        if images:
+            try:
+                images = json.loads(images)
+            except (TypeError, json.JSONDecodeError):
+                images = None
         for letter in 'ABCD':
             val = q.get(f'option_{letter.lower()}', '')
+            img = (images or {}).get(letter) or {}
+            if img.get('src'):
+                # public_src 為網站根目錄相對路徑，從儲存庫根目錄可直接解析
+                asset = img.get('public_src') or img['src']
+                val = f"{val} [圖片檔: 考古題網站/{asset}]"
             marker = " ★" if q.get('answer') == letter else ""
             lines.append(f"  ({letter}) {val}{marker}")
         lines.append(f"答案: {q['answer']}")
+        loc = q.get('source_locator')
+        if loc:
+            try:
+                loc = json.loads(loc)
+            except (TypeError, json.JSONDecodeError):
+                loc = None
+            if loc:
+                lines.append(
+                    f"來源: {loc.get('pdf', '')} 第{loc.get('page', '?')}頁"
+                    f" (SHA-256 {str(loc.get('pdf_sha256', ''))[:16]}…)"
+                )
     return "\n".join(lines)
 
 

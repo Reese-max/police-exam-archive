@@ -25,10 +25,15 @@ DEFAULT_OUTPUT = ROOT / "考古題網站" / "data" / "search-index.json"
 FIELDS = ["cat", "yr", "sub", "no", "type", "stem", "optA", "optB", "optC", "optD", "ans"]
 
 
-def load_exam_files(data_dir: Path) -> list[tuple]:
-    """載入所有試題.json，回傳 tuple 列表（每個 tuple 對應一題的 FIELDS）。"""
+def load_exam_files(data_dir: Path) -> tuple[list[tuple], dict]:
+    """載入所有試題.json，回傳 (tuple 列表, 圖片選項稀疏表)。
+
+    稀疏表以列索引為鍵：只為帶 option_images 的題目記錄圖片與來源，
+    避免對全庫數萬列各加欄位造成索引膨脹。
+    """
     files = sorted(glob.glob(str(data_dir / "**" / "試題.json"), recursive=True))
     rows = []
+    option_images = {}
     skipped = 0
 
     for fp in files:
@@ -76,14 +81,35 @@ def load_exam_files(data_dir: Path) -> list[tuple]:
             )
             rows.append(row)
 
+            imgs = q.get("option_images")
+            if imgs:
+                entry = {
+                    "options": {
+                        label: {
+                            "src": meta.get("public_src") or meta.get("src", ""),
+                            "alt": meta.get("alt", ""),
+                        }
+                        for label, meta in imgs.items()
+                        if isinstance(meta, dict)
+                    },
+                }
+                loc = q.get("source_locator") or {}
+                if loc:
+                    entry["source"] = {
+                        "pdf": loc.get("pdf", ""),
+                        "page": str(loc.get("page", "")),
+                        "sha256": loc.get("pdf_sha256", ""),
+                    }
+                option_images[str(len(rows) - 1)] = entry
+
     if skipped:
         print(f"  跳過 {skipped} 個無法讀取的檔案", file=sys.stderr)
-    return rows
+    return rows, option_images
 
 
 def build_index(data_dir: Path) -> dict:
     """建立 column-oriented 搜尋索引。"""
-    rows = load_exam_files(data_dir)
+    rows, option_images = load_exam_files(data_dir)
 
     # 收集 facets
     categories = sorted({r[0] for r in rows if r[0]})
@@ -96,7 +122,7 @@ def build_index(data_dir: Path) -> dict:
         columns[field] = [r[i] for r in rows]
 
     return {
-        "v": 1,
+        "v": 2,
         "fields": FIELDS,
         "stats": {
             "total": len(rows),
@@ -111,6 +137,7 @@ def build_index(data_dir: Path) -> dict:
             "years": years,
         },
         "columns": columns,
+        "optionImages": option_images,
     }
 
 

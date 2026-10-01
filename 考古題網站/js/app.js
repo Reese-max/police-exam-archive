@@ -521,8 +521,10 @@ function bindOptionClicks() {
   document.querySelectorAll('.mc-opt').forEach(function(opt) {
     if (opt._boundClick) return;
     opt._boundClick = true;
-    opt.addEventListener('click', function() {
+    opt.addEventListener('click', function(e) {
       if (!practiceMode) return;
+      // 圖片選項內的來源連結是獨立控制項，點擊不計入作答
+      if (e.target && e.target.closest && e.target.closest('a')) return;
       var block = opt.closest('.q-block');
       if (!block || block.classList.contains('answered')) return;
       var answer = block.getAttribute('data-answer');
