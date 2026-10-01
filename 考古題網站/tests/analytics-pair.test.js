@@ -45,15 +45,18 @@ function makeWorker(network) {
   };
   vm.runInNewContext(worker, sandbox, { filename: 'sw.js' });
   const request = new Request(`${origin}/analytics-chart-bundle.js`);
+  async function dispatch(request) {
+    let response;
+    listeners.get('fetch')({ request, respondWith: promise => { response = promise; } });
+    assert.ok(response, 'service worker must own the Analytics asset request');
+    return response;
+  }
   return {
     calls,
-    seed: async body => cache.put(request, new Response(body, { headers: { 'content-type': 'text/javascript' } })),
-    fetchBundle: async () => {
-      let response;
-      listeners.get('fetch')({ request, respondWith: promise => { response = promise; } });
-      assert.ok(response, 'service worker must own the bundle request');
-      return response;
-    },
+    seed: async (body, url = request.url) => cache.put(new Request(url),
+      new Response(body, { headers: { 'content-type': 'text/javascript' } })),
+    fetchAsset: pathname => dispatch(new Request(`${origin}${pathname}`)),
+    fetchBundle: () => dispatch(request),
   };
 }
 
@@ -112,6 +115,18 @@ test('a complete new pair replaces the old cached pair as one response', async (
   assert.equal(JSON.stringify(await executedPair(await workerFixture.fetchBundle())),
     JSON.stringify({ data: 'new', code: 'new' }));
 });
+
+for (const legacyPath of ['/analytics-chart.js', '/analytics-chart-data.js']) {
+  test(`legacy standalone asset ${legacyPath} fails closed even when cached`, async () => {
+    const workerFixture = makeWorker(() => {
+      throw new Error('legacy asset must not reach the network');
+    });
+    await workerFixture.seed(makePair('stale'), `${origin}${legacyPath}`);
+    const response = await workerFixture.fetchAsset(legacyPath);
+    assert.equal(response.type, 'error');
+    assert.deepEqual(workerFixture.calls, []);
+  });
+}
 
 test('without a known pair, a failed bundle request cannot execute either half', async () => {
   const workerFixture = makeWorker(() => Promise.reject(new Error('offline')));

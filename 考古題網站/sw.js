@@ -70,6 +70,14 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
+  /* Old pages may request code and data separately; never let cache strategies split the pair. */
+  if (url.origin === self.location.origin &&
+      (url.pathname.endsWith('/analytics-chart.js') ||
+       url.pathname.endsWith('/analytics-chart-data.js'))) {
+    event.respondWith(Promise.resolve(Response.error()));
+    return;
+  }
+
   /* fonts/* -> Cache-First */
   if (url.pathname.indexOf('/fonts/') !== -1 ||
       url.hostname === 'fonts.googleapis.com' ||
