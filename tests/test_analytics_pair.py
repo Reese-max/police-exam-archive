@@ -6,25 +6,33 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 SITE = ROOT / "考古題網站"
-PAIR_TEST = SITE / "tests" / "analytics-pair.test.js"
+PAIR_TEST = SITE / "tests" / "analytics-pair.regression.js"
 CHART_JS = SITE / "analytics-chart.js"
 CHART_DATA = SITE / "analytics-chart-data.js"
 CHART_BUNDLE = SITE / "analytics-chart-bundle.js"
 
+node_required = pytest.mark.skipif(
+    not shutil.which("node"),
+    reason="node not installed",
+)
 
+
+@node_required
 def test_service_worker_never_serves_a_mixed_chart_pair() -> None:
     """service worker 只能提供整組同版的圖表程式／資料。"""
-    assert shutil.which("node"), "需要 node 才能執行 service worker 回歸測試"
     result = subprocess.run(
         ["node", "--test", str(PAIR_TEST)],
         cwd=ROOT,
         capture_output=True,
         text=True,
         check=False,
+        timeout=300,
     )
     assert result.returncode == 0, result.stdout + result.stderr
 

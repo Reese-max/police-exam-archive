@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.6.1';
+var CACHE_VERSION = 'v1.7.0';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -156,6 +156,9 @@ function networkFirst(request, cacheName) {
      pair as a single cache entry, and the offline fallback may only serve a
      cached pair — never two independently cached halves. */
 function analyticsBundle(request) {
+  /* no-store keeps this route honest about freshness: an HTTP-cached copy is
+     always a whole pair, but it may be an older one, and the point here is to
+     promote the newest complete pair the server has. */
   return fetch(request, { cache: 'no-store' }).then(function(response) {
     if (!response || !response.ok) {
       throw new Error('Analytics pair unavailable');
@@ -169,7 +172,10 @@ function analyticsBundle(request) {
       return response;
     });
   }).catch(function() {
-    return caches.match(request, { cacheName: CORE_CACHE }).then(function(cached) {
+    return caches.match(request, { cacheName: CORE_CACHE }).catch(function() {
+      /* Cache storage itself failed: fail closed instead of guessing a pair. */
+      return undefined;
+    }).then(function(cached) {
       return cached || Response.error();
     });
   });

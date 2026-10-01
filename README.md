@@ -210,13 +210,15 @@ with ExamDB() as db:
 ## 驗證
 
 ```bash
-# 執行 18 項自動化品質測試
+# 執行完整 pytest 品質測試套件
 python -m pytest tests/ -v
 ```
 
 ## Analytics 前端同步（圖表程式／資料同版）
 
 `考古題網站/analytics.html` 只載入 `analytics-chart-bundle.js`：圖表程式（`analytics-chart.js`）與產生資料（`analytics-chart-data.js`）由 `scripts/sync_analytics_frontend.py` 合成單一 bundle，檔頭以 SHA-256 標記兩者的共同版本。這讓 service worker 只需一個請求就能快取整組 pair——要嘛是完整的最新版本，要嘛是完整的已快取版本，離線時不會混用不同版本的程式與資料；舊版頁面分別請求兩支檔案時會直接失敗封閉。
+
+改動 `analytics-chart.js`、`analytics-chart-data.js` 或 bundle 內容時，除了重新產生 bundle，也要同步更新 `sw.js`：把 `CORE_ASSETS` 的 pair 換成新檔名，並依本 repo 慣例遞增 `CACHE_VERSION` 的 minor 版號，舊版頁面才會換到同一組 pair。
 
 ```bash
 # 資料異動後重新產生（含 bundle）
@@ -227,7 +229,7 @@ python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json
 python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
 
 # service worker 回歸測試（需要 node）
-node --test 考古題網站/tests/analytics-pair.test.js
+node --test 考古題網站/tests/analytics-pair.regression.js
 ```
 
 ## 115 年資料更新

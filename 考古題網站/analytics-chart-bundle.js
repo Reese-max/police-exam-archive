@@ -1,4 +1,4 @@
-/* Generated Analytics code/data pair SHA-256: 8e936f8d815766525f6f726295425aa7ff7d42380328a4c916b205ad194b9590 */
+/* Generated Analytics code/data pair（自動產生，勿手改）SHA-256: 8e936f8d815766525f6f726295425aa7ff7d42380328a4c916b205ad194b9590 */
 /* ===== 真實資料（由 analytics.json 自動產生，勿手改） ===== */
 const STATS = {"total":42518,"choice":36760,"essay":5758,"categories":49,"subjects":101,"firstYear":106,"lastYear":115,"yearCount":10};
 const YEARS = ["106","107","108","109","110","111","112","113","114","115"];

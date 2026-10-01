@@ -20,7 +20,7 @@ CHART_DATA = SITE / "analytics-chart-data.js"
 CHART_BUNDLE = SITE / "analytics-chart-bundle.js"
 GEN = SITE / "_gen_data.js"
 
-BUNDLE_MARKER = "Generated Analytics code/data pair SHA-256: "
+BUNDLE_MARKER = "Generated Analytics code/data pair（自動產生，勿手改）SHA-256: "
 
 
 def chart_bundle(data: str, chart: str) -> str:
