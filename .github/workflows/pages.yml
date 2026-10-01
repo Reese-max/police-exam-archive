@@ -55,6 +55,8 @@ jobs:
           node --check 考古題網站/js/app.js
           node --check 考古題網站/analytics-chart.js
           node --check 考古題網站/analytics-chart-data.js
+          node --check 考古題網站/analytics-chart-bundle.js
+          node --test 考古題網站/tests/analytics-pair.regression.js
 
       - uses: actions/configure-pages@v5
 

@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.6.0';
+var CACHE_VERSION = 'v1.7.0';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -9,8 +9,7 @@ var CORE_ASSETS = [
   './index.html',
   './category.html',
   './analytics.html',
-  './analytics-chart.js',
-  './analytics-chart-data.js',
+  './analytics-chart-bundle.js',
   './data/home-stats.json',
   './css/style.css',
   './js/app.js',
@@ -63,11 +62,22 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-  /* Analytics code + generated data must update together; never serve stale first. */
+  /* The Analytics chart code and its generated data ship as one digest-marked
+     bundle: the shared version lives in the bundle's SHA-256 header and in the
+     versioned CORE_CACHE name, and the pair moves as a single request. */
+  if (url.origin === self.location.origin &&
+      url.pathname.endsWith('/analytics-chart-bundle.js')) {
+    event.respondWith(analyticsBundle(event.request));
+    return;
+  }
+
+  /* Cached pages may still ask for the two halves separately. Answering one
+     of them from network or cache could pair mismatched versions, so both
+     fail closed instead of composing a mixed pair. */
   if (url.origin === self.location.origin &&
       (url.pathname.endsWith('/analytics-chart.js') ||
        url.pathname.endsWith('/analytics-chart-data.js'))) {
-    event.respondWith(networkFirst(event.request, CORE_CACHE));
+    event.respondWith(Promise.resolve(Response.error()));
     return;
   }
 
@@ -141,6 +151,48 @@ function networkFirst(request, cacheName) {
       }
     });
   });
+}
+
+/* One complete Analytics pair per response: a fresh fetch replaces the cached
+     pair as a single cache entry, and the offline fallback may only serve a
+     cached pair — never two independently cached halves. */
+function analyticsBundle(request) {
+  /* no-store keeps this route honest about freshness: an HTTP-cached copy is
+     always a whole pair, but it may be an older one, and the point here is to
+     promote the newest complete pair the server has. */
+  return fetch(request, { cache: 'no-store' }).then(function(response) {
+    if (!isAnalyticsPair(response)) {
+      /* A 200 that is not JavaScript (a soft 404, an error page) must not be
+         cached as the pair: fall through to the known complete pair instead. */
+      throw new Error('Analytics pair unavailable');
+    }
+    var fresh = response.clone();
+    return caches.open(CORE_CACHE).then(function(cache) {
+      return cache.put(request, fresh);
+    }).catch(function() {
+      /* A fresh complete pair is still safe when cache storage fails. */
+    }).then(function() {
+      return response;
+    });
+  }).catch(function() {
+    /* Only the versioned core cache holds a pair this worker wrote, and only a
+       JavaScript entry can be one; anything else fails closed. */
+    return caches.open(CORE_CACHE).then(function(cache) {
+      return cache.match(request);
+    }).then(function(cached) {
+      return cached && isAnalyticsPair(cached) ? cached : Response.error();
+    }).catch(function() {
+      /* Cache storage itself failed: fail closed instead of guessing a pair. */
+      return Response.error();
+    });
+  });
+}
+
+/* The pair is always served as JavaScript, so an HTML error page can never be
+   mistaken for a code/data pair. */
+function isAnalyticsPair(response) {
+  if (!response || !response.ok || !response.headers) return false;
+  return /javascript|ecmascript/i.test(response.headers.get('content-type') || '');
 }
 
 function staleWhileRevalidate(request, cacheName) {
