@@ -161,11 +161,9 @@ function analyticsBundle(request) {
      always a whole pair, but it may be an older one, and the point here is to
      promote the newest complete pair the server has. */
   return fetch(request, { cache: 'no-store' }).then(function(response) {
-    /* A 200 that is not JavaScript (a soft 404, an error page) must not be
-       cached as the pair: fall through to the known complete pair instead. */
-    var type = response && response.headers ?
-      (response.headers.get('content-type') || '') : '';
-    if (!response || !response.ok || !/javascript|ecmascript/i.test(type)) {
+    if (!isAnalyticsPair(response)) {
+      /* A 200 that is not JavaScript (a soft 404, an error page) must not be
+         cached as the pair: fall through to the known complete pair instead. */
       throw new Error('Analytics pair unavailable');
     }
     var fresh = response.clone();
@@ -177,13 +175,24 @@ function analyticsBundle(request) {
       return response;
     });
   }).catch(function() {
-    return caches.match(request, { cacheName: CORE_CACHE }).catch(function() {
-      /* Cache storage itself failed: fail closed instead of guessing a pair. */
-      return undefined;
+    /* Only the versioned core cache holds a pair this worker wrote, and only a
+       JavaScript entry can be one; anything else fails closed. */
+    return caches.open(CORE_CACHE).then(function(cache) {
+      return cache.match(request);
     }).then(function(cached) {
-      return cached || Response.error();
+      return cached && isAnalyticsPair(cached) ? cached : Response.error();
+    }).catch(function() {
+      /* Cache storage itself failed: fail closed instead of guessing a pair. */
+      return Response.error();
     });
   });
+}
+
+/* The pair is always served as JavaScript, so an HTML error page can never be
+   mistaken for a code/data pair. */
+function isAnalyticsPair(response) {
+  if (!response || !response.ok || !response.headers) return false;
+  return /javascript|ecmascript/i.test(response.headers.get('content-type') || '');
 }
 
 function staleWhileRevalidate(request, cacheName) {

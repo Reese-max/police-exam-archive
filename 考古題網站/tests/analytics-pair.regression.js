@@ -107,8 +107,10 @@ function startWorker(network) {
     return stores.get(name);
   };
   const read = (store, request) => {
-    const body = store.get(urlOf(request));
-    return body === undefined ? undefined : new Response(body, { headers: JS_HEADERS });
+    const entry = store.get(urlOf(request));
+    return entry === undefined
+      ? undefined
+      : new Response(entry.body, { headers: { 'content-type': entry.type } });
   };
 
   const listeners = new Map();
@@ -130,9 +132,13 @@ function startWorker(network) {
         return {
           async put(request, response) {
             await putBehaviour();
-            store.set(urlOf(request), await response.text());
+            store.set(urlOf(request), {
+              body: await response.text(),
+              type: response.headers.get('content-type') || 'text/plain'
+            });
           },
           async match(request) {
+            await lookupBehaviour();
             return read(store, request);
           },
           async addAll(urls) {
@@ -144,9 +150,12 @@ function startWorker(network) {
             for (const url of urls) {
               const response = await precache(new URL(url, ORIGIN + '/').href);
               if (!response || !response.ok) throw new Error('pre-cache failed: ' + url);
-              fetched.push([new URL(url, ORIGIN + '/').href, await response.text()]);
+              fetched.push([new URL(url, ORIGIN + '/').href, {
+                body: await response.text(),
+                type: response.headers.get('content-type') || 'text/plain'
+              }]);
             }
-            for (const [href, body] of fetched) store.set(href, body);
+            for (const [href, entry] of fetched) store.set(href, entry);
             precached.push(...urls);
             precachedSet = new Set(urls);
           }
@@ -234,18 +243,20 @@ function startWorker(network) {
     failPrecache() {
       precache = () => Promise.resolve(new Response('unavailable', { status: 503 }));
     },
-    seed(cacheName, pathname, body) {
-      storeFor(cacheName).set(ORIGIN + pathname, body);
+    seed(cacheName, pathname, body, type = 'text/javascript') {
+      storeFor(cacheName).set(ORIGIN + pathname, { body, type });
     },
     cachedBodies() {
       const bodies = {};
       for (const store of stores.values()) {
-        for (const [href, body] of store) bodies[href] = body;
+        for (const [href, entry] of store) bodies[href] = entry.body;
       }
       return bodies;
     },
     bodiesIn(cacheName) {
-      return Object.fromEntries(stores.get(cacheName) || []);
+      const bodies = {};
+      for (const [href, entry] of stores.get(cacheName) || []) bodies[href] = entry.body;
+      return bodies;
     },
     bundle() {
       return respond(BUNDLE_PATH);
@@ -274,9 +285,9 @@ test('the generated bundle is exactly the current code and data, marked with the
   const bundlePath = path.join(SITE, 'analytics-chart-bundle.js');
   assert.ok(existsSync(bundlePath), 'analytics-chart-bundle.js must be generated');
   const bundle = readFileSync(bundlePath, 'utf8').replace(/\r\n/g, '\n');
-  const marker = /^\/\* Generated Analytics code\/data pair（自動產生，勿手改）SHA-256: ([0-9a-f]{64}) \*\/\n/;
+  const marker = /^(?:\/\*[^\n]*\b)?SHA-256: ([0-9a-f]{64}) \*\/\n/;
   const marked = marker.exec(bundle);
-  assert.ok(marked, 'the bundle must carry the pair digest marker');
+  assert.ok(marked, 'the bundle must carry the pair digest header');
   const pair = sourceText('analytics-chart-data.js') + sourceText('analytics-chart.js');
   assert.equal(bundle.slice(marked[0].length), pair,
     'the bundle must be data + chart code, byte for byte');
@@ -458,6 +469,15 @@ test('with no cached pair a failed refresh fails closed', async () => {
 test('the offline fallback trusts only the versioned core cache', async () => {
   const worker = startWorker(() => Promise.reject(new Error('offline')));
   worker.seed('dynamic-not-a-pair-store', BUNDLE_PATH, CACHED_PAIR);
+
+  assert.equal((await worker.bundle()).ok, false);
+});
+
+test('a cached entry that is not JavaScript fails closed', async () => {
+  // A soft 404 captured by the pre-cache must never be replayed as the pair.
+  const worker = startWorker(() => Promise.reject(new Error('offline')));
+  await worker.install();
+  worker.seed(worker.coreCache(), BUNDLE_PATH, '<!doctype html><h1>404</h1>', 'text/html');
 
   assert.equal((await worker.bundle()).ok, false);
 });

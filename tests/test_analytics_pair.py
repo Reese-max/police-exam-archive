@@ -24,8 +24,8 @@ node_required = pytest.mark.skipif(
 
 
 @node_required
-def test_service_worker_never_serves_a_mixed_chart_pair() -> None:
-    """service worker 只能提供整組同版的圖表程式／資料。"""
+def test_analytics_pair_suite_passes() -> None:
+    """Analytics pair 回歸套件（service worker + bundle 身分）必須全綠。"""
     result = subprocess.run(
         ["node", "--test", str(PAIR_TEST)],
         cwd=ROOT,
