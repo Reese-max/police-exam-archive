@@ -93,6 +93,7 @@ function startWorker(network) {
   const networkCalls = [];
   const precached = [];
   const openedCaches = [];
+  let precachedSet = new Set();
   let putBehaviour = () => Promise.resolve();
   let lookupBehaviour = () => Promise.resolve();
   let precache = url => Promise.resolve(url === BUNDLE_URL
@@ -147,6 +148,7 @@ function startWorker(network) {
             }
             for (const [href, body] of fetched) store.set(href, body);
             precached.push(...urls);
+            precachedSet = new Set(urls);
           }
         };
       },
@@ -190,6 +192,9 @@ function startWorker(network) {
   return {
     networkCalls,
     openedCaches,
+    get lastPrecached() {
+      return precachedSet;
+    },
     /* Runs install() so the pre-cache model is exercised, then forgets the
        install-time network traffic for the per-request assertions. */
     async install() {
@@ -204,6 +209,14 @@ function startWorker(network) {
     coreCache() {
       assert.ok(openedCaches.length > 0, 'the worker must open a cache first');
       return openedCaches[0];
+    },
+    /* Runs activate(): stale cache names must go, the current ones must stay. */
+    async activate() {
+      let waited;
+      listeners.get('activate')({ waitUntil(value) { waited = value; } });
+      assert.ok(waited, 'activate handler must waitUntil()');
+      await waited;
+      return [...stores.keys()];
     },
     /* CacheStorage failure modes a real browser can hit (quota, eviction). */
     failCacheWrites(error) {
@@ -230,6 +243,9 @@ function startWorker(network) {
         for (const [href, body] of store) bodies[href] = body;
       }
       return bodies;
+    },
+    bodiesIn(cacheName) {
+      return Object.fromEntries(stores.get(cacheName) || []);
     },
     bundle() {
       return respond(BUNDLE_PATH);
@@ -273,9 +289,37 @@ test('the bundle parses as one script, so a future redeclaration cannot brick An
     'data + chart code share one lexical scope and must not redeclare a binding');
 });
 
-test('install precaches the pair as a single asset', async () => {
+test('install precaches the Analytics page and the pair, never a half', async () => {
   const worker = startWorker(onlineNetwork(() => true));
-  assert.deepEqual(await worker.install(), [BUNDLE_ASSET]);
+  const precached = await worker.install();
+  assert.deepEqual(precached, [BUNDLE_ASSET]);
+  assert.equal(
+    worker.lastPrecached.has('./analytics.html'), true,
+    'the page that loads the pair must itself be pre-cached for offline use'
+  );
+  for (const legacy of LEGACY_SOURCES) {
+    assert.equal(worker.lastPrecached.has(legacy), false,
+      legacy + ' must not be pre-cached: a cached half can pair with a network half');
+  }
+});
+
+test('activate drops the caches of older revisions and keeps the current one', async () => {
+  const worker = startWorker(onlineNetwork(() => true));
+  await worker.install();
+  const revision = worker.coreCache().replace(/^core-/, '');
+  worker.seed('core-' + revision, '/index.html', '/* current revision */');
+  worker.seed('dynamic-' + revision, '/index.html', '/* current revision */');
+  worker.seed('core-v1.6.0', BUNDLE_PATH, CACHED_PAIR);
+  worker.seed('dynamic-v1.6.0', '/index.html', '/* old revision */');
+
+  // Evicting the previous revision is what removes its cached chart halves.
+  assert.deepEqual((await worker.activate()).sort(),
+    ['core-' + revision, 'dynamic-' + revision].sort());
+  assert.deepEqual(worker.bodiesIn('core-v1.6.0'), {},
+    'a previous revision must not keep serving the chart pair after the update');
+  assert.deepEqual(worker.bodiesIn('dynamic-v1.6.0'), {});
+  assert.equal(worker.bodiesIn('dynamic-' + revision)[ORIGIN + '/index.html'],
+    '/* current revision */');
 });
 
 test('install rejects instead of half-populating the cache when pre-caching fails', async () => {
@@ -374,6 +418,22 @@ test('a cache write failure still serves the fresh pair and keeps the cached pai
     code: 'network-code'
   });
   assert.equal((await worker.cachedBodies())[BUNDLE_URL], CACHED_PAIR);
+});
+
+test('a 200 that is not JavaScript never becomes the cached pair', async () => {
+  const worker = startWorker(() => new Response('<!doctype html><h1>Not found</h1>', {
+    status: 200,
+    headers: { 'content-type': 'text/html' }
+  }));
+  await worker.install();
+  await worker.seed(worker.coreCache(), BUNDLE_PATH, CACHED_PAIR);
+
+  assert.deepEqual(await executedPair(await worker.bundle()), {
+    data: 'cached-data',
+    code: 'cached-code'
+  });
+  assert.equal((await worker.cachedBodies())[BUNDLE_URL], CACHED_PAIR,
+    'an error page must not overwrite the known complete pair');
 });
 
 test('an error response never replaces the cached pair', async () => {

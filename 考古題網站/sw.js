@@ -62,8 +62,9 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-  /* Analytics chart code and its generated data ship as one versioned
-     bundle, so the pair is fetched and cached as a single request. */
+  /* The Analytics chart code and its generated data ship as one digest-marked
+     bundle: the shared version lives in the bundle's SHA-256 header and in the
+     versioned CORE_CACHE name, and the pair moves as a single request. */
   if (url.origin === self.location.origin &&
       url.pathname.endsWith('/analytics-chart-bundle.js')) {
     event.respondWith(analyticsBundle(event.request));
@@ -160,7 +161,11 @@ function analyticsBundle(request) {
      always a whole pair, but it may be an older one, and the point here is to
      promote the newest complete pair the server has. */
   return fetch(request, { cache: 'no-store' }).then(function(response) {
-    if (!response || !response.ok) {
+    /* A 200 that is not JavaScript (a soft 404, an error page) must not be
+       cached as the pair: fall through to the known complete pair instead. */
+    var type = response && response.headers ?
+      (response.headers.get('content-type') || '') : '';
+    if (!response || !response.ok || !/javascript|ecmascript/i.test(type)) {
       throw new Error('Analytics pair unavailable');
     }
     var fresh = response.clone();

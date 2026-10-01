@@ -37,6 +37,17 @@ def test_service_worker_never_serves_a_mixed_chart_pair() -> None:
     assert result.returncode == 0, result.stdout + result.stderr
 
 
+def test_chart_bundle_is_identical_for_crlf_and_lf_sources() -> None:
+    """Windows 貢獻者的 CRLF 版本必須產生與 LF 相同的 bundle 與 digest。"""
+    from scripts.sync_analytics_frontend import chart_bundle
+
+    data = CHART_DATA.read_text(encoding="utf-8")
+    chart = CHART_JS.read_text(encoding="utf-8")
+    assert chart_bundle(data, chart) == chart_bundle(
+        data.replace("\n", "\r\n"), chart.replace("\n", "\r\n")
+    )
+
+
 def test_generated_bundle_matches_its_sources() -> None:
     """產生的 pair bundle 必須等同目前的 chart code + data。"""
     from scripts.sync_analytics_frontend import chart_bundle

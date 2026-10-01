@@ -218,7 +218,9 @@ python -m pytest tests/ -v
 
 `考古題網站/analytics.html` 只載入 `analytics-chart-bundle.js`：圖表程式（`analytics-chart.js`）與產生資料（`analytics-chart-data.js`）由 `scripts/sync_analytics_frontend.py` 合成單一 bundle，檔頭以 SHA-256 標記兩者的共同版本。這讓 service worker 只需一個請求就能快取整組 pair——要嘛是完整的最新版本，要嘛是完整的已快取版本，離線時不會混用不同版本的程式與資料；舊版頁面分別請求兩支檔案時會直接失敗封閉。
 
-改動 `analytics-chart.js`、`analytics-chart-data.js` 或 bundle 內容時，除了重新產生 bundle，也要同步更新 `sw.js`：把 `CORE_ASSETS` 的 pair 換成新檔名，並依本 repo 慣例遞增 `CACHE_VERSION` 的 minor 版號，舊版頁面才會換到同一組 pair。
+改動 `analytics-chart.js`、`analytics-chart-data.js` 或 bundle 內容時，除了重新產生 bundle，還要依本 repo 慣例遞增 `sw.js` 的 `CACHE_VERSION` minor 版號；bundle 檔名固定不變，`CORE_ASSETS` 不需跟著改。
+
+共同版本的驗證發生在建置與測試階段：`sync_analytics_frontend.py --check` 與 `tests/test_analytics_pair.py` 會重算 bundle 內兩半的 SHA-256，執行時不做二次驗證（要重讀 bundle 文字就得再發一次請求，反而破壞單一請求的pair 邊界）。已快取舊版 `analytics.html` 的瀏覽器在更新前仍會分別請求兩支舊檔名，這類頁面會直接失敗封閉而不是載入混用版本，重新載入線上頁面即可恢復。
 
 ```bash
 # 資料異動後重新產生（含 bundle）
