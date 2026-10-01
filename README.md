@@ -225,7 +225,7 @@ with ExamDB() as db:
 ## 驗證
 
 ```bash
-# 執行 18 項自動化品質測試
+# 執行自動化品質測試
 python -m pytest tests/ -v
 ```
 

@@ -8,6 +8,7 @@
   var HISTORY_KEY = 'exam-quiz-history';
   var MINUTES_PER_QUESTION = 2;
   var UNSEEN_CANDIDATES_PER_SUBJECT = 4;
+  var MAX_ATTEMPTS_PER_QUESTION = 30;
   var VALID_OUTCOMES = { correct: true, wrong: true, unanswered: true };
   var DEFAULT_SETTINGS = {
     deadline_enabled: false,
@@ -70,10 +71,23 @@
     return emptyLedger();
   }
 
+  // Keep only the newest events per question so a long-lived ledger cannot
+  // grow past the localStorage quota and silently stop persisting.
+  function compactAttempts(attempts) {
+    var counts = {};
+    var kept = [];
+    for (var i = attempts.length - 1; i >= 0; i--) {
+      var id = attempts[i] && attempts[i].question_id;
+      counts[id] = (counts[id] || 0) + 1;
+      if (counts[id] <= MAX_ATTEMPTS_PER_QUESTION) kept.unshift(attempts[i]);
+    }
+    return kept;
+  }
+
   function saveLedger(ledger, storage) {
     return writeJson(storage, LEDGER_KEY, {
       schema_version: SCHEMA_VERSION,
-      attempts: Array.isArray(ledger.attempts) ? ledger.attempts : [],
+      attempts: compactAttempts(Array.isArray(ledger.attempts) ? ledger.attempts : []),
     });
   }
 
@@ -143,6 +157,9 @@
         year: year,
         subject: subject,
         number: number,
+        // Search-index row position disambiguates the rare locator collisions
+        // (same 類科/年份/科目/題號 appearing twice in one dataset build).
+        index: q.idx != null ? q.idx : null,
       },
       source_hash: contentHash(q),
       dataset_version: stableText(datasetVersion || q.dataset_version || 'unknown'),
@@ -218,6 +235,13 @@
     return date.toISOString();
   }
 
+  // Code-point compare: localeCompare collations can differ between Node and
+  // browsers, and the queue must replay identically in both.
+  function compareText(a, b) {
+    a = String(a); b = String(b);
+    return a < b ? -1 : a > b ? 1 : 0;
+  }
+
   function latestAttempt(attempts) {
     return attempts.reduce(function (latest, item) {
       if (!latest || String(item.attempted_at) >= String(latest.attempted_at)) return item;
@@ -228,16 +252,24 @@
   function deriveReviewState(question, attempts, now, datasetVersion) {
     var identity = questionIdentity(question, datasetVersion);
     var all = (attempts || []).filter(function (item) { return item.question_id === identity.question_id; });
+    // An attempt is "owned" by this row when the recorded index matches (or
+    // either side predates index tracking); a locator collision sibling keeps
+    // a different index, so its attempts never mark this row STALE.
+    var owned = all.filter(function (item) {
+      var li = item.source_locator ? item.source_locator.index : null;
+      var qi = identity.source_locator.index;
+      return li == null || qi == null || li === qi;
+    });
     // Compatibility keys on the content fingerprint, not the dataset version:
     // attempts against identical question content re-map across index rebuilds,
     // and re-attempting changed content lets the state recover instead of
     // pinning STALE forever. Old-version events stay in the ledger as facts.
-    var compatible = all.filter(function (item) {
+    var compatible = owned.filter(function (item) {
       return item.source_hash === identity.source_hash;
     });
-    var stale = all.length > 0 && compatible.length === 0;
+    var stale = owned.length > 0 && compatible.length === 0;
     var ordered = compatible.slice().sort(function (a, b) {
-      return String(a.attempted_at).localeCompare(String(b.attempted_at));
+      return compareText(a.attempted_at, b.attempted_at);
     });
     var latest = latestAttempt(ordered);
     var wrongCount = ordered.filter(function (item) { return item.outcome === 'wrong'; }).length;
@@ -285,7 +317,16 @@
   }
 
   function deadlineEnd(targetDate) {
-    return targetDate ? targetDate + 'T23:59:59.999Z' : null;
+    // End of the target day in the user's local timezone — the audience is not
+    // UTC, and anchoring to `T23:59:59Z` would spill scheduling into the
+    // morning after the chosen date.
+    var parts = targetDate && /^(\d{4})-(\d{2})-(\d{2})$/.exec(targetDate);
+    if (!parts) return null;
+    var end = new Date(+parts[1], +parts[2] - 1, +parts[3], 23, 59, 59, 999);
+    // Local construction rolls impossible dates (e.g. Feb 31) into March —
+    // reject them instead of silently scheduling past the chosen day.
+    if (Number.isNaN(end.getTime()) || end.getDate() !== +parts[3]) return null;
+    return end.toISOString();
   }
 
   function subjectKey(question) {
@@ -300,7 +341,7 @@
   function roundRobin(items) {
     var groups = {};
     items.slice().sort(function (a, b) {
-      return a.question_id.localeCompare(b.question_id);
+      return compareText(a.question_id, b.question_id);
     }).forEach(function (item) {
       var key = subjectKey(item.question);
       if (!groups[key]) groups[key] = [];
@@ -402,10 +443,15 @@
     var unseenCandidates = roundRobin(records.filter(function (item) { return item.priority === 4; }));
     var exploration = coverageCandidates.concat(unseenCandidates);
     var selected = [];
-    var selectedIds = {};
+    var selectedRows = {};
     function add(item) {
-      if (!item || selectedIds[item.question_id] || selected.length >= capacity) return;
-      selectedIds[item.question_id] = true;
+      // Dedupe by row, not question_id: locator collisions legitimately put
+      // two distinct rows under one id, and each deserves its own slot.
+      var rowKey = item.question && item.question.idx != null
+        ? 'idx:' + item.question.idx
+        : 'qid:' + item.question_id + ':' + item.state.source_hash;
+      if (!item || selectedRows[rowKey] || selected.length >= capacity) return;
+      selectedRows[rowKey] = true;
       selected.push(item);
     }
     // Fill order honors the declared tiers: stale items need re-confirmation
@@ -471,6 +517,7 @@
       return item && typeof item.question_id === 'string' && item.question_id
         && VALID_OUTCOMES[item.outcome] === true
         && typeof item.source_hash === 'string' && item.source_hash
+        && item.source_locator && typeof item.source_locator === 'object'
         && !!parseDate(item.attempted_at);
     }).map(function (item) {
       // Canonicalize timestamps: lexicographic ordering only works on ISO text.

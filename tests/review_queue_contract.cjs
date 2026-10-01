@@ -119,7 +119,9 @@ assert.ok(firstQueue.items.some((item) => item.reason_code === 'marked_review'))
 assert.ok(firstQueue.items.some((item) => item.reason_code === 'due'));
 assert.ok(firstQueue.items.some((item) => item.reason_code === 'coverage_gap'));
 assert.ok(firstQueue.items.filter((item) => item.question.cat === 'A').length <= 3, 'one weak subject must not starve coverage');
-assert.ok(firstQueue.items.every((item) => item.scheduled_due_at <= '2026-10-14T23:59:59.999Z'));
+// The deadline clamp is the local end of the target day, not a fixed UTC bound.
+const targetDayEnd = new Date(2026, 9, 14, 23, 59, 59, 999).toISOString();
+assert.ok(firstQueue.items.every((item) => item.scheduled_due_at <= targetDayEnd));
 assert.deepEqual(
   firstQueue.items.map((item) => [item.question.cat, item.question.no, item.reason_code]),
   ReviewQueue.buildReviewQueue([...a, ...b, ...c, ...d], ReviewQueue.getLedger(storage), settings, now, datasetVersion)
@@ -141,7 +143,7 @@ const deadlineQueue = ReviewQueue.buildReviewQueue(
   ReviewQueue.normalizeSettings({ deadline_enabled: true, target_date: '2026-09-30', daily_question_limit: 5 }),
   now, datasetVersion,
 );
-assert.equal(deadlineQueue.items[0].scheduled_due_at, '2026-09-30T23:59:59.999Z');
+assert.equal(deadlineQueue.items[0].scheduled_due_at, new Date(2026, 8, 30, 23, 59, 59, 999).toISOString());
 
 const changed = { ...a[0], stem: 'changed source text' };
 const changedState = ReviewQueue.deriveReviewState(
@@ -198,15 +200,17 @@ assert.equal(pastDeadline.overload.available_capacity, 0);
 assert.equal(pastDeadline.overload.backlog, pastDeadline.overload.required);
 
 // Import must drop malformed attempt rows instead of corrupting derived state.
+const validLocator = { category: 'c', year: '115', subject: 's', number: '1', index: null };
 const malformedStorage = makeStorage();
 ReviewQueue.importData({
   schema_version: 1,
   ledger: { schema_version: 1, attempts: [
-    { question_id: '', outcome: 'correct', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000' },
-    { question_id: 'q1', outcome: 'guessed', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000' },
-    { question_id: 'q2', outcome: 'wrong', attempted_at: 'not-a-date', source_hash: 'fnv1a-00000000' },
-    { question_id: 'q3', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000' },
-    { question_id: 'q4', outcome: 'correct', attempted_at: '2026-03-03', source_hash: 'fnv1a-00000000' },
+    { question_id: '', outcome: 'correct', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000', source_locator: validLocator },
+    { question_id: 'q1', outcome: 'guessed', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000', source_locator: validLocator },
+    { question_id: 'q2', outcome: 'wrong', attempted_at: 'not-a-date', source_hash: 'fnv1a-00000000', source_locator: validLocator },
+    { question_id: 'q5', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000' },
+    { question_id: 'q3', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000', source_locator: validLocator },
+    { question_id: 'q4', outcome: 'correct', attempted_at: '2026-03-03', source_hash: 'fnv1a-00000000', source_locator: validLocator },
   ] },
 }, malformedStorage);
 assert.equal(ReviewQueue.getLedger(malformedStorage).attempts.length, 2);
@@ -269,6 +273,48 @@ assert.equal(ReviewQueue.getLedger(corruptStorage).attempts.length, 0);
 assert.equal(corruptStorage.getItem('exam-attempt-ledger-v1.corrupt'), '{"schema_version":999,"attempts":[]}');
 ReviewQueue.clearLearnerData(corruptStorage);
 assert.equal(corruptStorage.getItem('exam-attempt-ledger-v1.corrupt'), null);
+
+// A locator collision (same 類科|年份|科目|題號, different row index/content)
+// must not mark the never-attempted sibling STALE.
+const collidedA = { ...question('dup', '碰撞科目', 1, 'first copy'), idx: 100 };
+const collidedB = { ...question('dup', '碰撞科目', 1, 'second copy'), idx: 101 };
+assert.equal(
+  ReviewQueue.questionIdentity(collidedA).question_id,
+  ReviewQueue.questionIdentity(collidedB).question_id,
+);
+ReviewQueue.recordQuizAttempt([collidedA], ['B'], [false], { attemptedAt: now, datasetVersion }, storage);
+const siblingState = ReviewQueue.deriveReviewState(collidedB, ReviewQueue.getLedger(storage).attempts, now, datasetVersion);
+assert.equal(siblingState.status, 'CURRENT');
+assert.ok(!siblingState.reason_codes.includes('dataset_changed'));
+const siblingQueue = ReviewQueue.buildReviewQueue(
+  [collidedA, collidedB], ReviewQueue.getLedger(storage), settings, now, datasetVersion,
+);
+assert.equal(siblingQueue.items.find((item) => item.question_id === siblingState.question_id && item.question.idx === 101).reason_code, 'coverage_gap');
+
+// The same locator at the same index with changed content stays STALE.
+const indexedChanged = { ...question('idx', '索引科目', 1, 'old text'), idx: 200 };
+ReviewQueue.recordQuizAttempt([indexedChanged], ['B'], [false], { attemptedAt: now, datasetVersion }, storage);
+const indexedStale = ReviewQueue.deriveReviewState(
+  { ...indexedChanged, stem: 'new text' }, ReviewQueue.getLedger(storage).attempts, now, datasetVersion,
+);
+assert.equal(indexedStale.status, 'STALE');
+assert.ok(indexedStale.reason_codes.includes('dataset_changed'));
+
+// Attempt history is bounded per question so the ledger cannot outgrow the quota.
+const cappedStorage = makeStorage();
+const cappedQuestion = question('cap', '容量測試', 1);
+for (let i = 0; i < 32; i++) {
+  ReviewQueue.recordQuizAttempt(
+    [cappedQuestion], ['B'], [false],
+    { attemptedAt: new Date(Date.UTC(2026, 0, 1 + i)).toISOString(), datasetVersion },
+    cappedStorage,
+  );
+}
+const cappedAttempts = ReviewQueue.getLedger(cappedStorage).attempts;
+assert.equal(cappedAttempts.length, 30);
+// The two oldest events were trimmed; the rest keep append order.
+assert.equal(cappedAttempts[0].attempted_at, new Date(Date.UTC(2026, 0, 3)).toISOString());
+assert.equal(cappedAttempts[29].attempted_at, new Date(Date.UTC(2026, 0, 32)).toISOString());
 
 const importedStorage = makeStorage();
 ReviewQueue.saveSettings(settings, storage);
