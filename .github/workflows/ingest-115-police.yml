@@ -25,6 +25,7 @@ on:
       - 考古題網站/analytics.html
       - 考古題網站/analytics-chart.js
       - 考古題網站/analytics-chart-data.js
+      - 考古題網站/analytics-chart-bundle.js
       - scripts/audit/.finalize_115_import.py.gz.b64
       - .gitignore
 
@@ -221,3 +222,4 @@ jobs:
             考古題庫/dataset_manifest.json
             考古題網站/data/home-stats.json
             考古題網站/analytics-chart-data.js
+            考古題網站/analytics-chart-bundle.js
