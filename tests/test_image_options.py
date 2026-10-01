@@ -243,3 +243,23 @@ def test_examdb_rebuilds_stale_index(tmp_path):
         assert row is not None and row["option_images"]
     finally:
         db.close()
+
+def test_source_locator_uses_existing_canonical_exam_directory():
+    """Alias records must point into the real canonical exam directory.
+
+    Source PDFs are not committed; the containing directory is the resolvable
+    archive locator and must not be synthesized from the alias category.
+    """
+    expected_category = {(109, 2): "水上警察", (113, 20): "消防警察"}
+    for fp, d, q in image_option_questions():
+        key = (d.get("year"), q.get("number"))
+        assert key in expected_category, f"unexpected image-option question: {key}"
+
+        raw_pdf = (q.get("source_locator") or {}).get("pdf", "")
+        source_pdf = Path(raw_pdf.replace("\\\\", "/"))
+        assert source_pdf.parts[0] == "考古題庫", f"{fp} locator is not archive-relative: {raw_pdf}"
+        assert source_pdf.parts[1] == expected_category[key], f"{fp} locator uses an alias category: {raw_pdf}"
+        assert source_pdf.parts[2] == f"{key[0]}年", f"{fp} locator has the wrong year: {raw_pdf}"
+        source_dir = PROJECT_ROOT.joinpath(*source_pdf.parts[:-1])
+        assert source_dir.is_dir(), f"{fp} locator points to a missing exam directory: {raw_pdf}"
+        assert source_pdf.name == "試題.pdf", f"{fp} locator does not name the source PDF: {raw_pdf}"
