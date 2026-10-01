@@ -81,6 +81,16 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .match-note{margin-top:16px;text-align:center;font-size:14px;color:var(--text-2);font-weight:500}
 .match-note b{color:var(--primary);font-weight:800;font-variant-numeric:tabular-nums}
 
+/* resume banner（發現未完成考試時顯示） */
+.resume-banner{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border:1.5px solid var(--warm);background:var(--warm-soft);border-radius:var(--radius);padding:15px 18px;margin-bottom:20px}
+.resume-text{flex:1;min-width:220px;font-size:14px;font-weight:600;color:var(--text)}
+.resume-text b{color:var(--warm);font-weight:800}
+.resume-actions{display:flex;gap:9px}
+.resume-actions button{font-family:inherit;font-size:14px;font-weight:700;padding:9px 16px;border-radius:var(--radius-sm);cursor:pointer;border:1.5px solid var(--border-strong);background:var(--card);color:var(--text);transition:.18s}
+.resume-actions button:hover{border-color:var(--primary);color:var(--primary)}
+.resume-actions .primary{background:var(--primary);border-color:transparent;color:#fff}
+.resume-actions .primary:hover{background:var(--primary-hover);color:#fff}
+
 /* ===== Exam view ===== */
 .timer-bar{position:sticky;top:0;z-index:30;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);padding:13px 18px;display:flex;align-items:center;gap:14px;margin-top:18px;transition:background .4s,border-color .4s}
 .timer{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;color:var(--primary);font-variant-numeric:tabular-nums;letter-spacing:.01em}
@@ -187,6 +197,8 @@ footer strong{color:var(--text-2);font-weight:700}
   .field-grid{grid-template-columns:1fr}
   .res-stats{grid-template-columns:1fr 1fr}
   .res-actions{flex-direction:column}
+  .resume-banner{flex-direction:column;align-items:stretch}
+  .resume-actions button{flex:1}
   .mini-grid{grid-template-columns:repeat(8,1fr)}
   .timer-bar{flex-wrap:wrap}
   .nav-btns{margin-left:0;width:100%;justify-content:flex-end;margin-top:4px}
@@ -216,6 +228,14 @@ footer strong{color:var(--text-2);font-weight:700}
       <div class="setup-title">測驗設定</div>
       <div class="setup-sub">選擇範圍與條件，系統將隨機組卷。</div>
 
+      <div class="resume-banner hidden" id="resumeBanner" role="alert">
+        <div class="resume-text">發現未完成的考試：<b id="resumeInfo"></b></div>
+        <div class="resume-actions">
+          <button class="primary" id="resumeBtn">繼續作答</button>
+          <button id="discardResumeBtn">捨棄這次考試</button>
+        </div>
+      </div>
+
       <div class="field-grid">
         <div class="field">
           <label>類科</label>
@@ -244,6 +264,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
       <div class="field">
         <label>考試時間</label>
+        <!-- 選項分鐘數需與 js/quiz-checkpoint.js 的 ALLOWED_DUR 對應，否則檢查點驗證會失敗 -->
         <div class="seg" id="segTime">
           <button data-v="0">不限時</button>
           <button data-v="30">30 分</button>
@@ -334,6 +355,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
 <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
 <script src="js/search-engine.js"></script>
+<script src="js/quiz-checkpoint.js"></script>
 <script>
 /* ===== 真實題庫（minisearch + search-engine.js，36,210 道選擇題） ===== */
 let POOL = [];
@@ -357,8 +379,17 @@ function refreshPool(){
 const TOTAL = 20;
 let questions = [], answers = [], flags = [], cur = 0;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
+let examDone = false, pendingResume = null;
 
 const $ = id => document.getElementById(id);
+
+/* ===== 進行中考試檢查點（localStorage，供 reload/中斷後回復） ===== */
+function saveCheckpoint(){
+  if(examDone || !questions.length || typeof QuizCheckpoint==='undefined') return;
+  try{ QuizCheckpoint.save({questions, answers, flags, cur, durSec, remain, elapsed}); }catch(e){}
+}
+window.addEventListener('pagehide', saveCheckpoint);
+document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden') saveCheckpoint(); });
 
 /* segmented controls */
 function setupSeg(id){
@@ -391,13 +422,17 @@ $('startBtn').addEventListener('click', ()=>{
   const tmin = +document.querySelector('#segTime .on').dataset.v;
   if(POOL.length===0){ alert('沒有符合條件的題目，請調整篩選條件。'); return; }
   if(POOL.length<want && !confirm('符合條件的題目只有 '+POOL.length+' 題，將全部出題。確定開始？')) return;
+  pendingResume = null;
+  $('resumeBanner').classList.add('hidden');
   buildQuestions(want);
   total = questions.length;
   $('totalNum').textContent = total;
   durSec = tmin*60; remain = durSec; elapsed = 0;
+  examDone = false;
   switchView('exam');
   renderQuestion(); renderMini();
   startTimer(tmin>0);
+  saveCheckpoint();
   window.scrollTo({top:0});
 });
 
@@ -428,11 +463,12 @@ function startTimer(countdown){
       remain--; elapsed++;
       $('timerText').textContent = fmtMMSS(Math.max(remain,0));
       if(remain<=60) $('timer').classList.add('warn');
+      saveCheckpoint();
       if(remain<=0){clearInterval(timerId); finish();}
     },1000);
   } else {
-    $('timerText').textContent = fmtMMSS(0);
-    timerId = setInterval(()=>{ elapsed++; $('timerText').textContent = fmtMMSS(elapsed); },1000);
+    $('timerText').textContent = fmtMMSS(elapsed);
+    timerId = setInterval(()=>{ elapsed++; $('timerText').textContent = fmtMMSS(elapsed); saveCheckpoint(); },1000);
   }
 }
 
@@ -449,16 +485,16 @@ function renderQuestion(){
     return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span><span class="ctxt">${o}</span></div>`;
   }).join('');
   $('choices').querySelectorAll('.choice').forEach(el=>{
-    const pick = ()=>{ answers[cur] = +el.dataset.i; renderQuestion(); renderMini(); };
+    const pick = ()=>{ answers[cur] = +el.dataset.i; renderQuestion(); renderMini(); saveCheckpoint(); };
     el.addEventListener('click', pick);
     el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); } });
   });
   $('prevBtn').disabled = cur===0;
   $('nextBtn').disabled = cur===total-1;
 }
-$('prevBtn').addEventListener('click',()=>{if(cur>0){cur--;renderQuestion();renderMini();}});
-$('nextBtn').addEventListener('click',()=>{if(cur<total-1){cur++;renderQuestion();renderMini();}});
-$('flagBtn').addEventListener('click',()=>{flags[cur]=!flags[cur];renderQuestion();renderMini();});
+$('prevBtn').addEventListener('click',()=>{if(cur>0){cur--;renderQuestion();renderMini();saveCheckpoint();}});
+$('nextBtn').addEventListener('click',()=>{if(cur<total-1){cur++;renderQuestion();renderMini();saveCheckpoint();}});
+$('flagBtn').addEventListener('click',()=>{flags[cur]=!flags[cur];renderQuestion();renderMini();saveCheckpoint();});
 
 function renderMini(){
   $('miniGrid').innerHTML = questions.map((_,i)=>{
@@ -469,7 +505,7 @@ function renderMini(){
     return `<button class="${c}" data-i="${i}">${i+1}</button>`;
   }).join('');
   $('miniGrid').querySelectorAll('.mini').forEach(el=>{
-    el.addEventListener('click',()=>{cur=+el.dataset.i;renderQuestion();renderMini();});
+    el.addEventListener('click',()=>{cur=+el.dataset.i;renderQuestion();renderMini();saveCheckpoint();});
   });
 }
 
@@ -481,6 +517,8 @@ $('submitBtn').addEventListener('click',()=>{
 });
 function finish(){
   clearInterval(timerId);
+  examDone = true;
+  if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear();
   let ok=0,no=0,skip=0;
   questions.forEach((q,i)=>{
     if(answers[i]===null) skip++;
@@ -529,6 +567,42 @@ function switchView(v){
     $(name+'View').classList.toggle('hidden', name!==v);
   });
 }
+
+/* ===== 回復中斷的考試 ===== */
+function _describeResume(snap){
+  const answered = snap.answers.filter(a=>a!==null).length;
+  const timePart = snap.durSec>0 ? '剩餘 '+fmtMMSS(snap.remain) : '已作答 '+fmt(snap.elapsed);
+  return '第 '+(snap.cur+1)+' / '+snap.questions.length+' 題・已答 '+answered+' 題・'+timePart;
+}
+(function(){
+  if(typeof QuizCheckpoint==='undefined') return;
+  const snap = QuizCheckpoint.load();
+  if(!snap) return;
+  pendingResume = snap;
+  $('resumeInfo').textContent = _describeResume(snap);
+  $('resumeBanner').classList.remove('hidden');
+})();
+$('resumeBtn').addEventListener('click', ()=>{
+  const snap = pendingResume;
+  pendingResume = null;
+  $('resumeBanner').classList.add('hidden');
+  if(!snap) return;
+  questions = snap.questions; answers = snap.answers; flags = snap.flags;
+  cur = snap.cur; total = questions.length;
+  durSec = snap.durSec; remain = snap.remain; elapsed = snap.elapsed;
+  examDone = false;
+  $('totalNum').textContent = total;
+  $('timer').classList.toggle('warn', durSec>0 && remain<=60);
+  switchView('exam');
+  renderQuestion(); renderMini();
+  startTimer(durSec>0);
+  window.scrollTo({top:0});
+});
+$('discardResumeBtn').addEventListener('click', ()=>{
+  pendingResume = null;
+  if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear();
+  $('resumeBanner').classList.add('hidden');
+});
 
 /* ===== theme — 全站共用 localStorage key「exam-dark」(true/false) ===== */
 (function(){
