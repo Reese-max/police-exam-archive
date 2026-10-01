@@ -38,6 +38,7 @@
 │   │   └── manifest.py               # 增量處理 manifest
 │   └── audit/                   # 資料品質驗證
 ├── tests/                       # pytest 單元測試
+├── 考古題網站/                  # 靜態 PWA（Analytics 離線核心資產含 vendored Chart.js）
 ├── cache/                       # parse_manifest.json, ocr/, http_meta.json
 ├── archive/                     # 歷史腳本（已完成的一次性修復）
 ├── config.py, logger.py, ...    # 核心支援模組
@@ -45,6 +46,19 @@
 ```
 
 每個 `試題.json` 對應一個學系/類別在特定年份的一個科目考卷。
+
+## Analytics 離線資產
+
+`考古題網站/analytics.html` 是 service worker 版本化 core cache 預快取的離線
+核心頁面，因此它需要的 Chart.js 也不能依賴 jsDelivr runtime cache：套件以固定
+版本 vendor 在 `考古題網站/vendor/chart.js-4.4.1/`（同源載入、含 MIT LICENSE 與
+SHA-256/npm integrity 出處），並列入 `sw.js` 的 `CORE_ASSETS`，讓只造訪過首頁的
+使用者在首次離線開啟 Analytics 時即可取得 `Chart` 全域。
+
+升級 Chart.js 時請一併更新 `vendor/chart.js-<version>/` 目錄、`analytics.html`
+的 script URL、`sw.js` 的 `CACHE_VERSION` 與 `CORE_ASSETS`，並執行
+`python3 -m pytest -q` 與 `考古題網站/` 下的
+`npx playwright test tests/analytics-offline.spec.js` 離線回歸測試。
 
 ## 解析 Pipeline (v2)
 
