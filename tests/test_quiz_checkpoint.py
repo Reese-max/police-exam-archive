@@ -1,14 +1,16 @@
-"""Issue #69 regression tests — recover an in-progress mock exam after reload.
+"""Issue #69 regression tests — the checkpoint module contract.
 
 Drives ``考古題網站/js/quiz-checkpoint.js`` under Node with an in-memory
-localStorage stub and statically verifies that ``quiz.html`` wires the
-checkpoint module into the exam lifecycle. Covers the issue's regression
-scenario: start → answer/flag → checkpoint → reload/restore → finish, plus
-explicit discard and corrupt/stale-state cases.
+localStorage stub and asserts its validation, save/load and clear behaviour:
+round-tripping a live session, wall-clock deduction, clearing on finish and
+failing safe on corrupt/stale/mismatched state.
+
+The end-to-end wiring in ``考古題網站/quiz.html`` (start → answer/flag →
+checkpoint → reload → resume → finish) is covered behaviourally in
+``tests/test_quiz_session_flow.py``, which executes the real page script.
 """
 
 import json
-import re
 import shutil
 import subprocess
 import textwrap
@@ -18,7 +20,6 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "考古題網站"
-QUIZ_HTML = SITE / "quiz.html"
 CHECKPOINT_JS = SITE / "js" / "quiz-checkpoint.js"
 
 NODE = shutil.which("node")
@@ -103,95 +104,6 @@ def test_checkpoint_module_loadable() -> None:
         )
     )
     assert_node_ok(proc, "module-ok")
-
-
-def test_quiz_html_wires_checkpoint() -> None:
-    """quiz.html must load the module and call into it (save/restore/clear)."""
-    html = QUIZ_HTML.read_text(encoding="utf-8")
-    assert "js/quiz-checkpoint.js" in html, "quiz.html must include the checkpoint script"
-    assert "QuizCheckpoint." in html, "quiz.html must call QuizCheckpoint APIs"
-    assert "pagehide" in html, "quiz.html must flush the checkpoint on pagehide"
-
-
-def test_quiz_html_checkpoint_guards() -> None:
-    """Structural guards: finished exams must not resurrect, finish() must clear.
-
-    pagehide fires on reload/navigation even after finish(); saveCheckpoint's
-    examDone guard is the only thing preventing a cleared checkpoint from
-    being re-written, so pin the guard directly.
-    """
-    html = QUIZ_HTML.read_text(encoding="utf-8")
-    m = re.search(r"function saveCheckpoint\(\)\{(?P<body>[^}]*)\}", html)
-    assert m, "quiz.html must define saveCheckpoint()"
-    body = m.group("body")
-    assert "examDone" in body, "saveCheckpoint must refuse to write after finish()"
-    assert "questions.length" in body, "saveCheckpoint must refuse to write empty state"
-
-    assert re.search(
-        r"function finish\(\)\{[^}]*QuizCheckpoint\.clear\(\)",
-        html,
-    ), "finish() must clear the checkpoint before rendering results"
-
-
-def test_quiz_html_resume_restores_full_state() -> None:
-    """The resume button must repopulate the whole exam state and restart the timer."""
-    html = QUIZ_HTML.read_text(encoding="utf-8")
-    m = re.search(
-        r"\$\('resumeBtn'\)\.addEventListener\('click'.*?(?=\$\('discardResumeBtn'\))",
-        html,
-        re.S,
-    )
-    assert m, "quiz.html must wire the resume button"
-    body = m.group(0)
-    for frag in (
-        "questions = snap.questions",
-        "answers = snap.answers",
-        "flags = snap.flags",
-        "cur = snap.cur",
-        "remain = snap.remain",
-        "elapsed = snap.elapsed",
-        "durSec = snap.durSec",
-        "examDone = false",
-        "renderQuestion()",
-        "renderMini()",
-        "startTimer(",
-    ):
-        assert frag in body, f"resume handler must restore via {frag!r}"
-
-
-def test_quiz_html_discard_and_new_exam_clear_checkpoint() -> None:
-    """Discard must clear the checkpoint, and starting a fresh exam must clear the
-    previous one before building new state (a failed save can't leave it stale)."""
-    html = QUIZ_HTML.read_text(encoding="utf-8")
-    m = re.search(
-        r"\$\('discardResumeBtn'\)\.addEventListener\('click'.*?\}\);",
-        html,
-        re.S,
-    )
-    assert m, "quiz.html must wire the discard button"
-    assert "QuizCheckpoint.clear()" in m.group(0), "discard must clear the checkpoint"
-
-    m = re.search(
-        r"\$\('startBtn'\)\.addEventListener\('click'.*?buildQuestions\(want\)",
-        html,
-        re.S,
-    )
-    assert m, "quiz.html must wire the start button"
-    assert "QuizCheckpoint.clear()" in m.group(0), (
-        "start must clear any previous checkpoint before the new exam overwrites it"
-    )
-
-
-def test_quiz_html_build_questions_escapes_all_snapshot_fields() -> None:
-    """buildQuestions must escape every string field that lands in a checkpoint —
-    validate() rejects raw < >, so an unescaped field would silently disable
-    checkpointing (and unescaped markup would render via innerHTML)."""
-    html = QUIZ_HTML.read_text(encoding="utf-8")
-    m = re.search(r"questions\s*=\s*pool\.slice\(0,n\)\.map\(q=>\(\{(.*?)\}\)\)", html, re.S)
-    assert m, "quiz.html must define buildQuestions() with the snapshot shape"
-    body = m.group(1)
-    for frag in ("_esc(String(q.yr))", "_esc(q.stem)", "map(_esc)"):
-        assert frag in body, f"buildQuestions must escape via {frag!r}"
 
 
 def test_checkpoint_roundtrip_restores_in_progress_exam() -> None:

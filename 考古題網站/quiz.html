@@ -90,6 +90,7 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .resume-actions button:hover{border-color:var(--primary);color:var(--primary)}
 .resume-actions .primary{background:var(--primary);border-color:transparent;color:#fff}
 .resume-actions .primary:hover{background:var(--primary-hover);color:#fff}
+.resume-note{margin:-8px 0 20px;padding:11px 16px;border:1.5px solid var(--border-strong);border-radius:var(--radius-sm);background:var(--card-2);font-size:14px;font-weight:600;color:var(--text-2)}
 
 /* ===== Exam view ===== */
 .timer-bar{position:sticky;top:0;z-index:30;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);padding:13px 18px;display:flex;align-items:center;gap:14px;margin-top:18px;transition:background .4s,border-color .4s}
@@ -235,6 +236,7 @@ footer strong{color:var(--text-2);font-weight:700}
           <button id="discardResumeBtn">捨棄這次考試</button>
         </div>
       </div>
+      <p class="resume-note hidden" id="resumeNote" role="status"></p>
 
       <div class="field-grid">
         <div class="field">
@@ -384,9 +386,24 @@ let examDone = false, pendingResume = null;
 const $ = id => document.getElementById(id);
 
 /* ===== 進行中考試檢查點（localStorage，供 reload/中斷後回復） ===== */
+/* 計時在每秒 tick 都會推進，但每次都重新序列化整份題目太貴； */
+/* 距上次寫入未滿 CHECKPOINT_TICK_MS 時跳過——load() 會依 savedAt 扣除 */
+/* 離線期間的牆鐘時間，所以少寫幾次不會讓作答中的倒數多出時間。 */
+const CHECKPOINT_TICK_MS = 5000;
+let lastCheckpointAt = 0;
 function saveCheckpoint(){
   if(examDone || !questions.length || typeof QuizCheckpoint==='undefined') return;
+  lastCheckpointAt = Date.now();
   try{ QuizCheckpoint.save({questions, answers, flags, cur, durSec, remain, elapsed}); }catch(e){}
+}
+function saveCheckpointTick(){
+  if(Date.now() - lastCheckpointAt < CHECKPOINT_TICK_MS) return;
+  saveCheckpoint();
+}
+function showResumeNote(msg){
+  const el = $('resumeNote');
+  el.textContent = msg || '';
+  el.classList.toggle('hidden', !msg);
 }
 window.addEventListener('pagehide', saveCheckpoint);
 document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden') saveCheckpoint(); });
@@ -424,6 +441,7 @@ $('startBtn').addEventListener('click', ()=>{
   if(POOL.length<want && !confirm('符合條件的題目只有 '+POOL.length+' 題，將全部出題。確定開始？')) return;
   pendingResume = null;
   $('resumeBanner').classList.add('hidden');
+  showResumeNote('');
   // 先清掉舊檢查點：若接下來 saveCheckpoint() 失敗（容量/隱私模式），
   // 才不會讓上一場的殘留檢查點在下次載入時被誤判為可回復。
   if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear();
@@ -466,12 +484,12 @@ function startTimer(countdown){
       remain--; elapsed++;
       $('timerText').textContent = fmtMMSS(Math.max(remain,0));
       if(remain<=60) $('timer').classList.add('warn');
-      saveCheckpoint();
+      saveCheckpointTick();
       if(remain<=0){clearInterval(timerId); finish();}
     },1000);
   } else {
     $('timerText').textContent = fmtMMSS(elapsed);
-    timerId = setInterval(()=>{ elapsed++; $('timerText').textContent = fmtMMSS(elapsed); saveCheckpoint(); },1000);
+    timerId = setInterval(()=>{ elapsed++; $('timerText').textContent = fmtMMSS(elapsed); saveCheckpointTick(); },1000);
   }
 }
 
@@ -586,10 +604,23 @@ function _describeResume(snap){
   $('resumeBanner').classList.remove('hidden');
 })();
 $('resumeBtn').addEventListener('click', ()=>{
-  const snap = pendingResume;
+  const offered = pendingResume;
   pendingResume = null;
   $('resumeBanner').classList.add('hidden');
-  if(!snap) return;
+  if(!offered) return;
+  // 依點擊當下的時間重新讀取：橫幅是載入時的快照，等待期間倒數仍在走，
+  // 而且別的分頁可能已經交卷或捨棄了這場考試。
+  const snap = QuizCheckpoint.load();
+  if(!snap){
+    showResumeNote('找不到可繼續的考試（可能已在另一個分頁完成或捨棄），請直接開始新的考試。');
+    return;
+  }
+  if(snap.durSec>0 && snap.remain<=0){
+    // 關閉期間已逾時：清掉檢查點並留在設定頁，不要開一個 00:00 的死場次。
+    QuizCheckpoint.clear();
+    showResumeNote('先前的考試在離線期間已逾時，檢查點已清除，請重新開始。');
+    return;
+  }
   questions = snap.questions; answers = snap.answers; flags = snap.flags;
   cur = snap.cur; total = questions.length;
   durSec = snap.durSec; remain = snap.remain; elapsed = snap.elapsed;
@@ -605,6 +636,7 @@ $('discardResumeBtn').addEventListener('click', ()=>{
   pendingResume = null;
   if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear();
   $('resumeBanner').classList.add('hidden');
+  showResumeNote('已捨棄先前的考試，檢查點已清除。');
 });
 
 /* ===== theme — 全站共用 localStorage key「exam-dark」(true/false) ===== */
