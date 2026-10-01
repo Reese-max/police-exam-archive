@@ -381,7 +381,7 @@ function refreshPool(){
 const TOTAL = 20;
 let questions = [], answers = [], flags = [], cur = 0;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
-let examDone = false, pendingResume = null;
+let examDone = false, pendingResume = null, resumeBannerTimer = null;
 
 const $ = id => document.getElementById(id);
 
@@ -423,6 +423,8 @@ function buildQuestions(n){
   const pool = [...POOL];
   for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
   questions = pool.slice(0,n).map(q=>({
+    // subj 會被寫進 localStorage 檢查點，validate() 拒絕未轉義的標記，
+    // 因此每個會落盘的欄位都在此先轉義（yr 防禦非字串年份）。
     subj: _esc(String(q.yr)) + '年 ' + _esc(_short(q.sub,14)),
     stem: _esc(q.stem),
     opts: [q.optA,q.optB,q.optC,q.optD].map(_esc),
@@ -439,8 +441,7 @@ $('startBtn').addEventListener('click', ()=>{
   const tmin = +document.querySelector('#segTime .on').dataset.v;
   if(POOL.length===0){ alert('沒有符合條件的題目，請調整篩選條件。'); return; }
   if(POOL.length<want && !confirm('符合條件的題目只有 '+POOL.length+' 題，將全部出題。確定開始？')) return;
-  pendingResume = null;
-  $('resumeBanner').classList.add('hidden');
+  _hideResumeBanner();
   showResumeNote('');
   // 先清掉舊檢查點：若接下來 saveCheckpoint() 失敗（容量/隱私模式），
   // 才不會讓上一場的殘留檢查點在下次載入時被誤判為可回復。
@@ -595,18 +596,34 @@ function _describeResume(snap){
   const timePart = snap.durSec>0 ? '剩餘 '+fmtMMSS(snap.remain) : '已作答 '+fmt(snap.elapsed);
   return '第 '+(snap.cur+1)+' / '+snap.questions.length+' 題・已答 '+answered+' 題・'+timePart;
 }
-(function(){
-  if(typeof QuizCheckpoint==='undefined') return;
+function _hideResumeBanner(){
+  clearInterval(resumeBannerTimer); resumeBannerTimer = null;
+  pendingResume = null;
+  $('resumeBanner').classList.add('hidden');
+}
+/* 橫幅可能停留數十秒，期間倒數仍在走：定期重讀檢查點，讓顯示的剩餘時間
+   不停在載入當下；若另一個分頁已交卷或捨棄，就把橫幅收掉。 */
+function _refreshResumeBanner(){
   const snap = QuizCheckpoint.load();
-  if(!snap) return;
+  if(!snap){
+    _hideResumeBanner();
+    showResumeNote('先前的考試已在另一個分頁完成或捨棄。');
+    return;
+  }
   pendingResume = snap;
   $('resumeInfo').textContent = _describeResume(snap);
   $('resumeBanner').classList.remove('hidden');
+}
+(function(){
+  if(typeof QuizCheckpoint==='undefined') return;
+  if(!QuizCheckpoint.load()) return;
+  _refreshResumeBanner();
+  resumeBannerTimer = setInterval(_refreshResumeBanner, 1000);
 })();
 $('resumeBtn').addEventListener('click', ()=>{
   const offered = pendingResume;
-  pendingResume = null;
-  $('resumeBanner').classList.add('hidden');
+  _hideResumeBanner();
+  showResumeNote('');
   if(!offered) return;
   // 依點擊當下的時間重新讀取：橫幅是載入時的快照，等待期間倒數仍在走，
   // 而且別的分頁可能已經交卷或捨棄了這場考試。
@@ -633,9 +650,8 @@ $('resumeBtn').addEventListener('click', ()=>{
   window.scrollTo({top:0});
 });
 $('discardResumeBtn').addEventListener('click', ()=>{
-  pendingResume = null;
+  _hideResumeBanner();
   if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear();
-  $('resumeBanner').classList.add('hidden');
   showResumeNote('已捨棄先前的考試，檢查點已清除。');
 });
 

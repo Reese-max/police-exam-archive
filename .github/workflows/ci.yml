@@ -27,6 +27,9 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run all tests
+        env:
+          # The quiz checkpoint tests need node; fail loudly instead of skipping.
+          REQUIRE_NODE_FOR_TESTS: '1'
         run: python -m pytest tests/ -v --tb=short
 
       - name: Verify full category pages and 115 UI

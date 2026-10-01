@@ -11,6 +11,7 @@ checkpoint → reload → resume → finish) is covered behaviourally in
 """
 
 import json
+import os
 import shutil
 import subprocess
 import textwrap
@@ -24,6 +25,9 @@ CHECKPOINT_JS = SITE / "js" / "quiz-checkpoint.js"
 
 NODE = shutil.which("node")
 
+if NODE is None and os.environ.get("REQUIRE_NODE_FOR_TESTS") == "1":
+    raise RuntimeError("node is required to run the quiz.html checkpoint tests")
+
 pytestmark = pytest.mark.skipif(NODE is None, reason="node runtime required for JS checkpoint tests")
 
 
@@ -33,6 +37,8 @@ def run_node(script: str) -> subprocess.CompletedProcess:
         cwd=str(SITE),
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         timeout=30,
     )
 
@@ -87,7 +93,12 @@ def test_checkpoint_module_loadable() -> None:
     """quiz-checkpoint.js must exist, parse, and export the checkpoint API."""
     assert CHECKPOINT_JS.is_file(), "考古題網站/js/quiz-checkpoint.js is missing"
     proc = subprocess.run(
-        [NODE, "--check", str(CHECKPOINT_JS)], capture_output=True, text=True, timeout=30
+        [NODE, "--check", str(CHECKPOINT_JS)],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        timeout=30,
     )
     assert proc.returncode == 0, proc.stderr
     proc = run_node(

@@ -7,12 +7,13 @@ inline script of ``考古題網站/quiz.html`` under Node through
 actually does — start → answer/flag → checkpoint → reload → resume → finish,
 plus discard and corrupt/expired-state cases.
 
-Structural grep assertions over quiz.html live in
-``tests/test_quiz_checkpoint.py``; everything here is behavioural, so deleting
-a wiring line from quiz.html turns these red.
+``tests/test_quiz_checkpoint.py`` covers the checkpoint module's own contract;
+everything here is behavioural, so deleting a wiring line from quiz.html turns
+these red.
 """
 
 import json
+import os
 import shutil
 import subprocess
 import textwrap
@@ -29,6 +30,9 @@ NODE = shutil.which("node")
 
 # Wall-clock instant the fixture starts from (must match T0 in the JS prelude).
 T0 = 1760000000000
+
+if NODE is None and os.environ.get("REQUIRE_NODE_FOR_TESTS") == "1":
+    raise RuntimeError("node is required to run the quiz.html checkpoint tests")
 
 pytestmark = pytest.mark.skipif(NODE is None, reason="node runtime required for quiz.html flow tests")
 
@@ -67,6 +71,20 @@ function startWorkedExam(page) {
   return page;
 }
 
+/* Mirror of quiz.html's fmtMMSS/fmt so expected labels are derived, not typed. */
+function split(sec) {
+  const m = Math.floor(sec / 60);
+  return [m, sec - m * 60];
+}
+function fmtMMSS(sec) {
+  const parts = split(sec);
+  return String(parts[0]).padStart(2, '0') + ':' + String(parts[1]).padStart(2, '0');
+}
+function fmt(sec) {
+  const parts = split(sec);
+  return parts[0] + ':' + String(parts[1]).padStart(2, '0');
+}
+
 function context(extra) {
   const store = readStore();
   const clock = { value: T0 };
@@ -81,6 +99,8 @@ def run_flow(script: str) -> subprocess.CompletedProcess:
         cwd=str(ROOT),
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         timeout=60,
     )
     assert proc.returncode == 0, f"node exited {proc.returncode}\n{proc.stdout}\n{proc.stderr}"
@@ -326,8 +346,10 @@ def test_hidden_tab_flushes_the_checkpoint() -> None:
         """
         const { store, clock, page } = context();
         startWorkedExam(page);
-        store.removeItem(KEY);        // the checkpoint is lost to a hard kill
         page.goto(6); page.choose(3);
+        // Every click already flushed the checkpoint; drop it AFTER the last
+        // interaction so visibilitychange is the only writer under test.
+        store.removeItem(KEY);
         page.hide();
 
         const checkpoint = page.checkpoint();
@@ -336,6 +358,165 @@ def test_hidden_tab_flushes_the_checkpoint() -> None:
         assert.strictEqual(checkpoint.answers[6], 3, 'the last answer must be in the checkpoint');
         assert.strictEqual(checkpoint.answers[0], 0);
         assert.strictEqual(checkpoint.flags[3], true, 'the flag must be in the checkpoint');
+        console.log('flow-ok');
+        """
+    )
+
+
+def test_timer_ticks_flush_the_checkpoint_without_any_click() -> None:
+    """The timer path must checkpoint on its own.
+
+    Nothing is clicked during these ticks, so if only interaction handlers
+    wrote the checkpoint the stored snapshot would still carry the state and
+    savedAt from the moment the exam started.
+    """
+    run_flow(
+        """
+        const { store, clock, page } = context();
+        page.selectSeg('segCount', 10);
+        page.selectSeg('segTime', 60);
+        page.click('startBtn');
+        const started = page.checkpoint();
+        assert.ok(started, 'starting an exam checkpoints it');
+        const savedAt = started.savedAt;
+
+        page.tick(30);   // 30 s of pure timer ticks, no interaction
+
+        const checkpoint = page.checkpoint();
+        assert.strictEqual(checkpoint.savedAt, clock.value, 'the timer path must advance the checkpoint');
+        assert.ok(checkpoint.savedAt > savedAt, 'the checkpoint must not be frozen at start');
+        assert.strictEqual(checkpoint.remain, 3600 - 30);
+        assert.strictEqual(checkpoint.elapsed, 30);
+        console.log('flow-ok');
+        """
+    )
+
+
+def test_resume_banner_keeps_counting_down_while_it_is_offered() -> None:
+    """The banner is a decision screen; its numbers must not freeze at load."""
+    run_flow(
+        """
+        const { store, clock, page } = context();
+        page.selectSeg('segCount', 10);
+        page.selectSeg('segTime', 60);
+        page.click('startBtn');
+        page.tick(10);
+        page.pagehide();
+
+        clock.value += 60 * 1000;
+        const reloaded = open(store, clock);
+        const offered = reloaded.state().resumeInfo;
+        assert.ok(offered.indexOf('剩餘 ' + fmtMMSS(3600 - 10 - 60)) !== -1, offered);
+
+        // 30 more seconds pass on the setup screen while the banner is up.
+        clock.value += 30 * 1000;
+        reloaded.tick(1);
+        const refreshed = reloaded.state().resumeInfo;
+        assert.ok(refreshed.indexOf('剩餘 ' + fmtMMSS(3600 - 10 - 60 - 30 - 1)) !== -1,
+                  'banner must keep counting down: ' + refreshed);
+        assert.ok(refreshed.indexOf('第 1 / 10 題') !== -1, refreshed);
+
+        // And it must not offer a session that another tab already finished.
+        store.removeItem(KEY);
+        reloaded.tick(1);
+        assert.strictEqual(reloaded.state().bannerHidden, true, 'a vanished session must drop the banner');
+        console.log('flow-ok');
+        """
+    )
+
+
+def test_every_setup_duration_round_trips() -> None:
+    """Each #segTime duration must survive a checkpoint round-trip.
+
+    quiz-checkpoint.js only accepts durations the setup screen offers, so a new
+    segment without updating ALLOWED_DUR would silently make every exam of that
+    length unresumable.
+    """
+    run_flow(
+        """
+        const store = readStore();
+        const clock = { value: T0 };
+        const first = open(store, clock);
+        const durations = first.get('segTime').children.map((b) => b.dataset.v);
+        assert.deepStrictEqual(durations, ['0', '30', '60', '90', '120'],
+                               'the setup segments changed; keep ALLOWED_DUR in sync');
+
+        durations.forEach((minutes) => {
+          const store2 = readStore();
+          const clock2 = { value: T0 };
+          const page = open(store2, clock2);
+          page.selectSeg('segCount', 10);
+          page.selectSeg('segTime', minutes);
+          page.click('startBtn');
+          page.choose(0);
+          page.tick(3);
+          const seconds = (+minutes) * 60;
+          assert.ok(page.checkpoint(), minutes + ' min: an active exam must be checkpointed');
+          page.pagehide();
+
+          clock2.value += 20 * 1000;
+          const reloaded = open(store2, clock2);
+          assert.strictEqual(reloaded.state().bannerHidden, false, minutes + ' min: must be resumable');
+          reloaded.click('resumeBtn');
+          const state = reloaded.state();
+          assert.strictEqual(state.view, 'exam', minutes + ' min: resume must open the exam');
+          assert.strictEqual(state.durSec, seconds, minutes + ' min: duration restored');
+          const expectedRemain = seconds > 0 ? seconds - 3 - 20 : 0;
+          assert.strictEqual(state.remain, expectedRemain, minutes + ' min: countdown restored');
+          assert.strictEqual(state.answers[0], 0, minutes + ' min: answer restored');
+          assert.strictEqual(state.selectedChoice, '0', minutes + ' min: selection repainted');
+          console.log('flow-ok');
+        });
+        """
+    )
+
+
+def test_untimed_exam_resumes_with_elapsed_time() -> None:
+    """不限時 exams have no countdown, so elapsed time is the only timer state."""
+    run_flow(
+        """
+        const { store, clock, page } = context();
+        page.selectSeg('segCount', 10);
+        page.selectSeg('segTime', 0);
+        page.click('startBtn');
+        assert.strictEqual(page.state().durSec, 0);
+        assert.strictEqual(page.state().timerText, '00:00', 'an untimed exam starts at zero');
+        page.choose(0);
+        page.tick(7);
+        page.pagehide();
+
+        clock.value += 30 * 1000;
+        const reloaded = open(store, clock);
+        const state = reloaded.state();
+        assert.strictEqual(state.bannerHidden, false);
+        assert.ok(state.resumeInfo.indexOf('已作答 ' + fmt(7 + 30)) !== -1, state.resumeInfo);
+
+        reloaded.click('resumeBtn');
+        const resumed = reloaded.state();
+        assert.strictEqual(resumed.view, 'exam');
+        assert.strictEqual(resumed.durSec, 0);
+        assert.strictEqual(resumed.remain, 0, 'an untimed exam has no countdown');
+        assert.strictEqual(resumed.elapsed, 37);
+        assert.strictEqual(resumed.timerText, fmtMMSS(37), 'the elapsed timer must be repainted');
+        assert.strictEqual(resumed.timerWarn, false);
+
+        reloaded.tick(5);
+        assert.strictEqual(reloaded.state().elapsed, 42);
+        assert.strictEqual(reloaded.state().timerText, fmtMMSS(42));
+
+        // Timer writes are throttled, so the stored snapshot may lag by the
+        // throttle window; load() reconciles it from savedAt.
+        const checkpoint = reloaded.checkpoint();
+        assert.ok(checkpoint, 'untimed exams must checkpoint too');
+        assert.ok(checkpoint.elapsed >= 37 && checkpoint.elapsed <= 42, checkpoint.elapsed);
+        assert.ok(checkpoint.savedAt >= clock.value - 5000, 'the checkpoint must not fall stale');
+
+        reloaded.pagehide();
+        clock.value += 10 * 1000;
+        const again = open(store, clock);
+        assert.strictEqual(again.state().bannerHidden, false);
+        again.click('resumeBtn');
+        assert.strictEqual(again.state().elapsed, 52, 'a reload must reconcile the throttled clock');
         console.log('flow-ok');
         """
     )

@@ -160,7 +160,7 @@ function createQuizPage(options) {
   doc.dispatch = (name, event) => (doc._listeners[name] || []).forEach((fn) => fn(event));
   doc.visibilityState = 'visible';
 
-  const timer = { fn: null };
+  const timers = [];
   const sandbox = {
     document: doc,
     navigator: {},
@@ -180,8 +180,8 @@ function createQuizPage(options) {
     Error: Error,
     setTimeout: () => 0,
     clearTimeout: () => {},
-    setInterval: (fn) => { timer.fn = fn; return 1; },
-    clearInterval: () => { timer.fn = null; },
+    setInterval: (fn) => { timers.push(fn); return timers.length; },
+    clearInterval: (handle) => { timers[handle - 1] = null; },
     alert: () => {},
     confirm: () => true,
   };
@@ -241,10 +241,16 @@ function createQuizPage(options) {
     selectSeg(segId, value) {
       get(segId).children.find((c) => c.dataset.v === String(value)).dispatch('click');
     },
+    // One tick == one second of wall clock, so timed writes and the wall-clock
+    // deduction behave the way they do in the browser.
     tick(times) {
-      for (let i = 0; i < (times || 1); i++) { if (timer.fn) timer.fn(); }
+      for (let i = 0; i < (times || 1); i++) {
+        clock.value += 1000;
+        timers.slice().forEach((fn) => { if (fn) fn(); });
+      }
     },
-    running() { return timer.fn !== null; },
+    running() { return timers.some((fn) => fn !== null); },
+    timers: timers,
     read(expression) { return vm.runInContext(expression, sandbox); },
     hide() { doc.visibilityState = 'hidden'; doc.dispatch('visibilitychange', { type: 'visibilitychange' }); },
     pagehide() { sandbox.dispatch('pagehide', { type: 'pagehide' }); },
