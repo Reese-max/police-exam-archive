@@ -168,7 +168,6 @@ function createQuizPage(options) {
     console: console,
     JSON: JSON,
     Math: Math,
-    Date: Date,
     isFinite: isFinite,
     parseInt: parseInt,
     parseFloat: parseFloat,
@@ -196,7 +195,9 @@ function createQuizPage(options) {
 
   vm.createContext(sandbox);
   // Date.now() reads the shared clock, so advancing it affects every open page
-  // the way a real wall clock would.
+  // the way a real wall clock would. The host Date is deliberately NOT injected
+  // into the sandbox: each vm context owns its own Date intrinsic, so patching
+  // it here cannot leak into another page (or into the host realm).
   sandbox.__clockRef = clock;
   vm.runInContext('Date.now = function () { return globalThis.__clockRef.value; };', sandbox);
 

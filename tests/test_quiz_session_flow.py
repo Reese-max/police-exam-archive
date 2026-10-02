@@ -197,12 +197,12 @@ def test_resume_charges_time_spent_on_the_setup_screen() -> None:
     )
 
 
-def test_expired_countdown_does_not_resume_into_a_dead_exam_view() -> None:
+def test_expired_countdown_is_never_offered_as_resumable() -> None:
     """A countdown that ran out while the surface was closed must fail safely.
 
     Resuming it as-is drops the user into an exam view stuck at 00:00 for a
     full tick before auto-submitting, and reports 用時 longer than the exam
-    allows.
+    allows. The session must not even be advertised on the setup screen.
     """
     run_flow(
         """
@@ -215,16 +215,97 @@ def test_expired_countdown_does_not_resume_into_a_dead_exam_view() -> None:
 
         clock.value += 40 * 60 * 1000;   // closed far longer than the exam allows
         const reloaded = open(store, clock);
-        reloaded.click('resumeBtn');
-
-        const state = reloaded.state();
-        assert.notStrictEqual(state.view, 'exam', 'an expired exam must not open the exam view');
-        assert.strictEqual(state.bannerHidden, true, 'the stale banner must be dismissed');
+        let state = reloaded.state();
+        assert.strictEqual(state.bannerHidden, true, 'an expired session must not be offered');
+        assert.ok(reloaded.get('resumeNote').textContent.indexOf('逾時') !== -1,
+                  'the user must be told why: ' + reloaded.get('resumeNote').textContent);
         assert.strictEqual(reloaded.checkpoint(), null, 'the expired checkpoint must be cleared');
 
-        // And no phantom timer is left ticking.
+        // Clicking the (hidden) resume button must stay on setup and start nothing.
+        reloaded.click('resumeBtn');
         reloaded.tick(5);
-        assert.strictEqual(reloaded.state().view, 'setup', 'setup must stay usable');
+        state = reloaded.state();
+        assert.strictEqual(state.view, 'setup', 'setup must stay usable');
+        assert.strictEqual(state.examDone, false);
+
+        // The setup screen still starts a normal exam.
+        reloaded.selectSeg('segCount', 10);
+        reloaded.selectSeg('segTime', 60);
+        reloaded.click('startBtn');
+        assert.strictEqual(reloaded.state().view, 'exam');
+        assert.strictEqual(reloaded.state().durSec, 3600);
+        console.log('flow-ok');
+        """
+    )
+
+
+def test_resume_aligns_the_setup_form_with_the_session() -> None:
+    """「再考一次」 must not silently switch to the form defaults.
+
+    The banner advertises a 10-question / 30-minute session; if the segmented
+    controls stay on 20 題 / 60 分 the next exam is a different one.
+    """
+    run_flow(
+        """
+        const { store, clock, page } = context();
+        page.selectSeg('segCount', 10);
+        page.selectSeg('segTime', 30);
+        page.click('startBtn');
+        page.tick(5);
+        page.pagehide();
+
+        clock.value += 30 * 1000;
+        const reloaded = open(store, clock);
+        reloaded.click('resumeBtn');
+        assert.strictEqual(reloaded.state().view, 'exam');
+
+        // Back to the form via 再考一次.
+        reloaded.click('submitBtn');
+        reloaded.click('retryBtn');
+        assert.strictEqual(reloaded.state().view, 'setup');
+        const selected = (id) => reloaded.get(id).children
+          .filter((b) => b.classes.has('on'))
+          .map((b) => b.dataset.v);
+        assert.deepStrictEqual(selected('segCount'), ['10'], selected('segCount').join(','));
+        assert.deepStrictEqual(selected('segTime'), ['30'], selected('segTime').join(','));
+        console.log('flow-ok');
+        """
+    )
+
+
+def test_unusable_storage_does_not_break_an_exam() -> None:
+    """Private mode / a full quota must degrade to "no recovery", not an error."""
+    run_flow(
+        """
+        const broken = {
+          getItem: () => null,
+          setItem: () => { throw new Error('QuotaExceededError'); },
+          removeItem: () => {},
+        };
+        const clock = { value: T0 };
+        const page = open(broken, clock);
+        assert.strictEqual(page.state().view, 'setup');
+
+        page.selectSeg('segCount', 10);
+        page.selectSeg('segTime', 30);
+        page.click('startBtn');
+        page.choose(0);
+        page.goto(1); page.choose(1);
+        page.tick(2);
+        page.pagehide();
+
+        const state = page.state();
+        assert.strictEqual(state.view, 'exam', 'the exam must keep running');
+        assert.strictEqual(state.cur, 1);
+        assert.deepStrictEqual(state.answers.slice(0, 2), [0, 1]);
+        assert.strictEqual(state.remain, 1800 - 2);
+
+        page.click('submitBtn');
+        assert.strictEqual(page.state().view, 'result', 'finishing must still work');
+
+        // And a fresh page over the same broken store simply offers nothing.
+        const reopened = open(broken, clock);
+        assert.strictEqual(reopened.state().bannerHidden, true);
         console.log('flow-ok');
         """
     )

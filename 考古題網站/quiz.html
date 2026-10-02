@@ -601,30 +601,44 @@ function _hideResumeBanner(){
   pendingResume = null;
   $('resumeBanner').classList.add('hidden');
 }
+function _discardExpiredSession(){
+  QuizCheckpoint.clear();
+  _hideResumeBanner();
+  showResumeNote('先前的考試在離線期間已逾時，檢查點已清除，請重新開始。');
+}
 /* 橫幅可能停留數十秒，期間倒數仍在走：定期重讀檢查點，讓顯示的剩餘時間
-   不停在載入當下；若另一個分頁已交卷或捨棄，就把橫幅收掉。 */
+   不停在載入當下；若檢查點消失（另一個分頁已交卷或捨棄）或已逾時，就收掉橫幅。 */
 function _refreshResumeBanner(){
   const snap = QuizCheckpoint.load();
   if(!snap){
     _hideResumeBanner();
-    showResumeNote('先前的考試已在另一個分頁完成或捨棄。');
+    showResumeNote('先前的考試紀錄已不存在或無法使用（可能已在另一個分頁完成或捨棄，或已過期）。');
     return;
   }
+  if(snap.durSec>0 && snap.remain<=0){ _discardExpiredSession(); return; }
   pendingResume = snap;
   $('resumeInfo').textContent = _describeResume(snap);
   $('resumeBanner').classList.remove('hidden');
+}
+/* 回復後讓設定表單跟著這場考試走，避免「再考一次」時默默換成另一種組合。 */
+function _syncSetupFilters(snap){
+  const pick = (id, value)=>{
+    $(id).querySelectorAll('button').forEach(b=>{ b.classList.toggle('on', +b.dataset.v === value); });
+  };
+  pick('segCount', snap.questions.length);
+  pick('segTime', Math.round(snap.durSec/60));
 }
 (function(){
   if(typeof QuizCheckpoint==='undefined') return;
   if(!QuizCheckpoint.load()) return;
   _refreshResumeBanner();
-  resumeBannerTimer = setInterval(_refreshResumeBanner, 1000);
+  if(pendingResume) resumeBannerTimer = setInterval(_refreshResumeBanner, 1000);
 })();
 $('resumeBtn').addEventListener('click', ()=>{
   const offered = pendingResume;
   _hideResumeBanner();
-  showResumeNote('');
   if(!offered) return;
+  showResumeNote('');
   // 依點擊當下的時間重新讀取：橫幅是載入時的快照，等待期間倒數仍在走，
   // 而且別的分頁可能已經交卷或捨棄了這場考試。
   const snap = QuizCheckpoint.load();
@@ -632,16 +646,13 @@ $('resumeBtn').addEventListener('click', ()=>{
     showResumeNote('找不到可繼續的考試（可能已在另一個分頁完成或捨棄），請直接開始新的考試。');
     return;
   }
-  if(snap.durSec>0 && snap.remain<=0){
-    // 關閉期間已逾時：清掉檢查點並留在設定頁，不要開一個 00:00 的死場次。
-    QuizCheckpoint.clear();
-    showResumeNote('先前的考試在離線期間已逾時，檢查點已清除，請重新開始。');
-    return;
-  }
+  // 關閉期間已逾時：清掉檢查點並留在設定頁，不要開一個 00:00 的死場次。
+  if(snap.durSec>0 && snap.remain<=0){ _discardExpiredSession(); return; }
   questions = snap.questions; answers = snap.answers; flags = snap.flags;
   cur = snap.cur; total = questions.length;
   durSec = snap.durSec; remain = snap.remain; elapsed = snap.elapsed;
   examDone = false;
+  _syncSetupFilters(snap);
   $('totalNum').textContent = total;
   $('timer').classList.toggle('warn', durSec>0 && remain<=60);
   switchView('exam');

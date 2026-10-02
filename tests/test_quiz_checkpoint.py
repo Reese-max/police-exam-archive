@@ -282,6 +282,48 @@ def test_corrupt_or_stale_checkpoint_fails_safe_to_setup() -> None:
     assert_node_ok(proc, "corrupt-ok")
 
 
+def test_storage_failures_degrade_without_raising() -> None:
+    """Private browsing and a full quota must not break the exam.
+
+    setItem throwing (quota), getItem throwing (blocked storage) and a store
+    that vanishes entirely all have to surface as a falsy save / null load
+    rather than an exception into the quiz's tick handler.
+    """
+    proc = run_node(
+        NODE_PRELUDE
+        + textwrap.dedent(
+            """
+            const state = inProgressState();
+
+            const throwingSet = {
+              getItem: () => null,
+              setItem: () => { throw new Error('QuotaExceededError'); },
+              removeItem: () => {},
+            };
+            assert.strictEqual(QC.save(state, throwingSet, NOW), false, 'a full quota must fail softly');
+
+            const throwingGet = {
+              getItem: () => { throw new Error('SecurityError'); },
+              setItem: () => {},
+              removeItem: () => {},
+            };
+            assert.strictEqual(QC.save(state, throwingGet, NOW), true);
+            assert.strictEqual(QC.load(throwingGet, NOW), null, 'blocked reads must fail soft');
+            QC.clear(throwingGet);
+
+            const throwingRemove = {
+              getItem: () => null,
+              setItem: () => {},
+              removeItem: () => { throw new Error('SecurityError'); },
+            };
+            QC.clear(throwingRemove);
+            console.log('storage-ok');
+            """
+        )
+    )
+    assert_node_ok(proc, "storage-ok")
+
+
 def test_save_rejects_invalid_state_and_untimed_exam_roundtrip() -> None:
     """save() refuses nonsense state; an untimed (0-min) exam still restores."""
     proc = run_node(
