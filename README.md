@@ -195,6 +195,21 @@ python examdb.py random --count 5 --subject "刑法"
 python examdb.py stats
 ```
 
+## 考前逐題複習
+
+網站的「模擬考試」頁（`考古題網站/quiz.html`）會在交卷時，把每一題的
+`correct`、`wrong` 或 `unanswered` 結果，以及是否標記回顧，追加到瀏覽器
+本機的 Attempt Ledger。每筆紀錄都帶有類科／年份／科目／題號的 stable
+question identity、題目內容 fingerprint、dataset version、作答時間與測驗模式；
+因此複習狀態可以由原始事件 deterministic 重建，而不是只保存總分。
+
+同頁的「今日複習」以完整題庫為範圍（不受模擬考篩選條件影響），優先排列
+錯題、未答題、標記題與已到期題，再保留尚未覆蓋科目的題目。可設定每日
+題量、分鐘上限（以每題約 2 分鐘折算題量）與自訂目標考試日；截止日容量
+不足時會顯示 backlog/overload，且不會把排程靜默延到目標日之後。題目會
+顯示「上次答錯」「已到期複習」等可讀 reason code。學習資料可從同一面板
+匯出／匯入 JSON；清除學習資料只會移除 learner state，不會刪除題庫或書籤。
+
 ```python
 # Python API
 from examdb import ExamDB
@@ -210,7 +225,7 @@ with ExamDB() as db:
 ## 驗證
 
 ```bash
-# 執行 18 項自動化品質測試
+# 執行自動化品質測試
 python -m pytest tests/ -v
 ```
 
