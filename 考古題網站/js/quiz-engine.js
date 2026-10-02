@@ -146,18 +146,6 @@
       if (history.length > 50) history = history.slice(0, 50);
       localStorage.setItem('exam-quiz-history', JSON.stringify(history));
     } catch (e) {}
-    // Keep the historical aggregate for compatibility, but also append the
-    // raw per-question facts when the learner-state module is available.
-    if (window.ReviewQueue && typeof window.ReviewQueue.recordQuizAttempt === 'function') {
-      var meta = window.SearchEngine && typeof window.SearchEngine.getDatasetMeta === 'function'
-        ? window.SearchEngine.getDatasetMeta() : null;
-      window.ReviewQueue.recordQuizAttempt(
-        state.questions,
-        state.answers,
-        state.marked,
-        { quizMode: 'simulated', datasetVersion: (meta && meta.datasetVersion) || 'unknown' },
-      );
-    }
   }
 
   function getHistory() {

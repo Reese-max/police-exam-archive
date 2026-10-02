@@ -65,7 +65,9 @@
     if (target) {
       try {
         var raw = target.getItem(LEDGER_KEY);
-        if (raw) target.setItem(LEDGER_KEY + '.corrupt', raw);
+        if (raw && target.getItem(LEDGER_KEY + '.corrupt') !== raw) {
+          target.setItem(LEDGER_KEY + '.corrupt', raw);
+        }
       } catch (e) {}
     }
     return emptyLedger();
@@ -97,7 +99,10 @@
     var minutes = value.daily_minutes != null ? value.daily_minutes : value.dailyMinutes;
     minutes = minutes === '' || minutes == null ? null : Number(minutes);
     var target = value.target_date || value.targetDate || null;
-    if (target && (!/^\d{4}-\d{2}-\d{2}$/.test(target) || !parseDate(target + 'T00:00:00.000Z'))) {
+    // Validate against the real calendar, not just the regex: `Date` parsing
+    // rolls 2026-02-31 into March, which would otherwise leave deadline mode
+    // enabled with a deadline that can never resolve.
+    if (target && (!/^\d{4}-\d{2}-\d{2}$/.test(target) || !deadlineEnd(target))) {
       target = null;
     }
     return {
@@ -184,7 +189,10 @@
       var q = questionSource(question);
       var identity = questionIdentity(q, datasetVersion);
       var chosen = answerLetter(answers && answers[index]);
-      var outcome = !chosen ? 'unanswered' : chosen === answerLetter(q.ans) ? 'correct' : 'wrong';
+      // No valid answer key means the event is recorded but cannot be
+      // graded — count it as unanswered rather than inflating wrong_count.
+      var answerKey = answerLetter(q.ans);
+      var outcome = !chosen || !answerKey ? 'unanswered' : chosen === answerKey ? 'correct' : 'wrong';
       var event = {
         attempt_id: attemptedAt + ':' + identity.question_id + ':' + index,
         attempted_at: attemptedAt,
@@ -367,12 +375,25 @@
     var normalized = normalizeSettings(settings);
     var sourceLedger = ledger && Array.isArray(ledger.attempts) ? ledger.attempts : [];
     var attemptsByQuestion = {};
+    // Index current content per subject first: an attempt only counts as
+    // covering a subject when its content fingerprint still maps to a live
+    // question — a fully stale history must not hide the coverage gap.
+    var currentHashes = {};
+    (questions || []).forEach(function (question) {
+      var q = questionSource(question);
+      var subject = subjectKey(q);
+      if (!currentHashes[subject]) currentHashes[subject] = {};
+      var identity = questionIdentity(q, datasetVersion || q.dataset_version);
+      currentHashes[subject][identity.source_hash] = true;
+    });
     var coveredSubjects = {};
     sourceLedger.forEach(function (attempt) {
       if (!attemptsByQuestion[attempt.question_id]) attemptsByQuestion[attempt.question_id] = [];
       attemptsByQuestion[attempt.question_id].push(attempt);
       var subject = locatorSubject(attempt.source_locator);
-      if (subject) coveredSubjects[subject] = true;
+      if (subject && currentHashes[subject] && currentHashes[subject][attempt.source_hash]) {
+        coveredSubjects[subject] = true;
+      }
     });
     var unseenPerSubject = {};
     var records = [];
@@ -510,7 +531,8 @@
 
   function importData(value, storage) {
     var payload = typeof value === 'string' ? JSON.parse(value) : value;
-    if (!payload || payload.schema_version !== SCHEMA_VERSION || !payload.ledger || !Array.isArray(payload.ledger.attempts)) {
+    if (!payload || payload.schema_version !== SCHEMA_VERSION || !payload.ledger || !Array.isArray(payload.ledger.attempts)
+        || (payload.ledger.schema_version != null && payload.ledger.schema_version !== SCHEMA_VERSION)) {
       throw new Error('無法匯入：複習資料格式不相容');
     }
     var attempts = payload.ledger.attempts.filter(function (item) {
@@ -518,6 +540,7 @@
         && VALID_OUTCOMES[item.outcome] === true
         && typeof item.source_hash === 'string' && item.source_hash
         && item.source_locator && typeof item.source_locator === 'object'
+        && typeof item.source_locator.number === 'string'
         && !!parseDate(item.attempted_at);
     }).map(function (item) {
       // Canonicalize timestamps: lexicographic ordering only works on ISO text.

@@ -105,12 +105,15 @@ const skipQueue = ReviewQueue.buildReviewQueue(
 assert.equal(skipQueue.items[0].reason_code, 'unanswered');
 
 // A never-seen question in an already-covered subject is exploration, not a gap.
+// Coverage is keyed on hash-compatible attempts: pass the bank rows too, as the
+// production caller does, so the subject's attempted questions can prove coverage.
 const newInCovered = question('A', '科目 A', 99);
 const exploreQueue = ReviewQueue.buildReviewQueue(
-  [newInCovered], ReviewQueue.getLedger(storage), settings, now, datasetVersion,
+  [...a, newInCovered], ReviewQueue.getLedger(storage), settings, now, datasetVersion,
 );
-assert.equal(exploreQueue.items[0].reason_code, 'unseen');
-assert.equal(exploreQueue.items[0].priority, 4);
+const exploreItem = exploreQueue.items.find((item) => item.question.no === '99');
+assert.equal(exploreItem.reason_code, 'unseen');
+assert.equal(exploreItem.priority, 4);
 const firstQueue = ReviewQueue.buildReviewQueue(
   [...a, ...b, ...c, ...d], ReviewQueue.getLedger(storage), settings, now, datasetVersion,
 );
@@ -327,5 +330,94 @@ storage.setItem('exam-bookmarks', '{"keep":true}');
 ReviewQueue.clearLearnerData(storage);
 assert.equal(storage.getItem('exam-bookmarks'), '{"keep":true}');
 assert.equal(ReviewQueue.getLedger(storage).attempts.length, 0);
+
+// The standalone engine module's aggregate path must stay aggregate-only:
+// quiz.html's finish() owns the per-question ledger write, and a second
+// writer would double-record every quiz once the module is loaded by a page.
+const engineSource = fs.readFileSync(
+  path.join(__dirname, '..', '考古題網站', 'js', 'quiz-engine.js'), 'utf8');
+const engineWindow = {};
+const engineStorage = makeStorage();
+vm.runInNewContext(engineSource, { window: engineWindow, localStorage: engineStorage });
+engineWindow.QuizEngine.saveHistory({ correct: 1, total: 2, pct: 50, elapsed: 10 });
+engineWindow.QuizEngine.saveHistory({ correct: 2, total: 2, pct: 100, elapsed: 8 });
+assert.equal(JSON.parse(engineStorage.getItem('exam-quiz-history')).length, 1,
+  'saveHistory must stay idempotent');
+assert.equal(engineStorage.getItem('exam-attempt-ledger-v1'), null,
+  'the aggregate engine path must not write the attempt ledger');
+
+// A calendar-impossible target date must be discarded, not turn the whole
+// weak set into phantom backlog while escaping the deadline clamp.
+const badCalendar = ReviewQueue.normalizeSettings({
+  deadline_enabled: true, target_date: '2026-02-31', daily_question_limit: 5,
+});
+assert.equal(badCalendar.target_date, null);
+const phantomBacklog = ReviewQueue.buildReviewQueue(
+  [...a, ...b], ReviewQueue.getLedger(storage), badCalendar, now, datasetVersion,
+);
+assert.equal(phantomBacklog.overload.is_overloaded, false);
+
+// A subject whose entire history went stale is still a coverage gap:
+// unseen questions there outrank routine exploration in a covered subject.
+const driftStorage = makeStorage();
+const driftOld = question('drift', '漂移科目', 1, 'old stem');
+const driftNew = { ...driftOld, stem: 'new stem' };
+const driftUnseen = question('drift', '漂移科目', 2, 'never seen');
+ReviewQueue.recordQuizAttempt(
+  [driftOld], ['B'], [false], { attemptedAt: now, datasetVersion }, driftStorage);
+const driftQueue = ReviewQueue.buildReviewQueue(
+  [driftNew, driftUnseen], ReviewQueue.getLedger(driftStorage),
+  ReviewQueue.normalizeSettings({ daily_question_limit: 10 }), now, datasetVersion,
+);
+assert.equal(driftQueue.items.find((item) => item.question.no === '1').reason_code, 'dataset_changed');
+assert.equal(driftQueue.items.find((item) => item.question.no === '2').reason_code, 'coverage_gap',
+  'stale-only history must not shield a subject from the coverage tier');
+
+// A question without a gradeable answer key cannot be scored wrong;
+// the chosen answer is still recorded for the audit trail.
+const noKeyStorage = makeStorage();
+const noKey = { ...question('key', '無答案科目', 1), ans: 'E' };
+ReviewQueue.recordQuizAttempt(
+  [noKey], ['B'], [false], { attemptedAt: now, datasetVersion }, noKeyStorage);
+const noKeyAttempt = ReviewQueue.getLedger(noKeyStorage).attempts[0];
+assert.equal(noKeyAttempt.outcome, 'unanswered');
+assert.equal(noKeyAttempt.chosen_answer, 'B');
+
+// The corrupt-ledger quarantine blob is written once, not on every read.
+const quarantine = {
+  blob: '{"schema_version":999}',
+  corrupt: null,
+  writes: 0,
+  getItem(key) {
+    if (key === 'exam-attempt-ledger-v1') return this.blob;
+    if (key === 'exam-attempt-ledger-v1.corrupt') return this.corrupt;
+    return null;
+  },
+  setItem(key, value) {
+    if (key === 'exam-attempt-ledger-v1.corrupt') { this.writes += 1; this.corrupt = value; }
+  },
+  removeItem() {},
+};
+ReviewQueue.getLedger(quarantine);
+ReviewQueue.getLedger(quarantine);
+assert.equal(quarantine.writes, 1);
+
+// Import must reject a foreign ledger schema and locator rows that cannot
+// re-map to a stable question identity.
+assert.throws(() => ReviewQueue.importData({
+  schema_version: 1,
+  ledger: { schema_version: 999, attempts: [] },
+}, makeStorage()));
+const weakLocator = makeStorage();
+ReviewQueue.importData({
+  schema_version: 1,
+  ledger: { schema_version: 1, attempts: [
+    { question_id: 'q7', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000', source_locator: { subject: 's' } },
+    { question_id: 'q8', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000', source_locator: validLocator },
+  ] },
+}, weakLocator);
+assert.deepEqual(
+  ReviewQueue.getLedger(weakLocator).attempts.map((item) => item.question_id), ['q8'],
+);
 
 console.log('review queue contract: ok');
