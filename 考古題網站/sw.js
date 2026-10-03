@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.6.0';
+var CACHE_VERSION = 'v1.6.1';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -11,6 +11,7 @@ var CORE_ASSETS = [
   './analytics.html',
   './analytics-chart.js',
   './analytics-chart-data.js',
+  './vendor/chart.js-4.4.1/chart.umd.js',
   './data/home-stats.json',
   './css/style.css',
   './js/app.js',

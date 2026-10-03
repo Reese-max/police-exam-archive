@@ -12,6 +12,7 @@ on:
       - .github/workflows/ingest-115-police.yml
       - scripts/download/download_115_police.py
       - scripts/download/run_115_police_import.py
+      - scripts/check_import_changes.py
       - scripts/parse/answer_extractor.py
       - scripts/parse/.recover_115_missing_choices.py.gz.b64
       - scripts/parse/repair_115_choice_blocks.py
@@ -196,6 +197,15 @@ jobs:
         env:
           HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |
+          if python scripts/check_import_changes.py; then
+            : # Verified data changed; keep the existing commit path.
+          else
+            guard_exit=$?
+            if [ "$guard_exit" -ne 1 ]; then
+              exit "$guard_exit"
+            fi
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config core.quotepath false
