@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "snapshot": {
+    "generated_at": "2026-10-03T03:34:58.281644+00:00",
+    "commit_sha": "a0b5dbb9352b5558dbe62445c6452947dbd2501b",
+    "corpus_version": "106-115",
+    "inclusion_rules": [
+      "所有非重複 JSON 檔案 (metadata._is_duplicate != true)",
+      "年份範圍: 106-115",
+      "跨類科共用考卷僅計入指定正本一次",
+      "115 年非重複題目已納入 (550 選擇題、157 申論題)"
+    ],
+    "exclusion_rules": [
+      "標記 metadata._is_duplicate=true 的重複考卷副本",
+      "無法解析的損壞 JSON 檔案"
+    ]
+  },
+  "counts": {
+    "json_files": 2049,
+    "questions": 42518,
+    "choice": 36760,
+    "essay": 5758,
+    "categories": 49,
+    "subjects": 101
+  },
+  "duplicate_exclusions": {
+    "papers": 41,
+    "questions": 1217
+  },
+  "quality": {
+    "option_completeness": {
+      "numerator": 36760,
+      "denominator": 36760,
+      "rate": 1.0
+    },
+    "answer_legality": {
+      "numerator": 36760,
+      "denominator": 36760,
+      "rate": 1.0
+    }
+  }
+}
