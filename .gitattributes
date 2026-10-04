@@ -1,0 +1,12 @@
+# 本儲存庫多數資料檔與舊產生頁沿用 CRLF 行尾（Windows 產生）。
+# whitespace=cr-at-eol 讓 git diff --check 不把行尾 CR 誤判為 trailing
+# whitespace；blank-at-eol 等其餘空白檢查維持預設行為。
+*.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.html whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.py whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.css whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.js whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.md whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.txt whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.yml whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.bak3 whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

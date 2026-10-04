@@ -144,7 +144,7 @@ pip install PyMuPDF rapidocr-onnxruntime
 
 - `answer: "送分"` — 該題所有考生均給分（176 題）
 - `answer: "C或D"` — 官方公布 C 或 D 皆給分（1 題）
-- `options: {"A": "[圖片選項]", ...}` — 原卷為圖片題，無法文字化（4 題）
+- `options: {"A": "[圖片選項]", ...}` — 原卷為圖片題（4 題），另附 `option_images`（每個選項的圖片路徑、alt、sha256）與 `source_locator`（原始試卷頁碼與 PDF sha256）；前端與搜尋索引（`optionImages`）會渲染實際圖片而非佔位文字
 - `_is_duplicate: true` — metadata 中標記為已知重複資料夾
 
 ## 學系/類別列表
@@ -170,7 +170,7 @@ pip install PyMuPDF rapidocr-onnxruntime
 
 ### 已知限制
 
-1. 圖片題（4 題）以 `[圖片選項]` 佔位，無法呈現原始圖片內容
+1. 圖片題（4 題）的 `options` 仍以 `[圖片選項]` 標記，但已透過 `option_images` 保存原卷圖片（含 sha256 驗證）並在網站、模擬考試、搜尋與 PDF 匯出中渲染
 2. 移民組 111 年入出國法規 Q7 選項 B 與 D 內容相同，為原卷出題瑕疵（已加 `_note` 說明）
 3. 同年同等級共用考卷（國文、英文等）會在多個學系資料夾中重複出現
 
@@ -204,6 +204,8 @@ with ExamDB() as db:
     stats = db.stats()
     random_qs = db.random(n=5, subject="憲法")
 ```
+
+圖片題（4 題）的查詢結果額外帶 `option_images` 與 `source_locator` 欄位（JSON 字串），保留圖片路徑、alt、sha256 與原卷頁碼/PDF sha256，CLI 輸出會列出各選項的圖片檔位置。
 
 查詢速度依執行環境而異（目前 42,518 題全文搜尋）。
 
