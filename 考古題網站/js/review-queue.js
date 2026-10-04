@@ -535,20 +535,51 @@
         || (payload.ledger.schema_version != null && payload.ledger.schema_version !== SCHEMA_VERSION)) {
       throw new Error('無法匯入：複習資料格式不相容');
     }
-    var attempts = payload.ledger.attempts.filter(function (item) {
-      return item && typeof item.question_id === 'string' && item.question_id
+    var attempts = payload.ledger.attempts.map(function (item, index) {
+      var valid = item && typeof item.question_id === 'string' && item.question_id
         && VALID_OUTCOMES[item.outcome] === true
         && typeof item.source_hash === 'string' && item.source_hash
         && item.source_locator && typeof item.source_locator === 'object'
         && typeof item.source_locator.number === 'string'
         && !!parseDate(item.attempted_at);
-    }).map(function (item) {
+      if (!valid) throw new Error('無法匯入：第 ' + (index + 1) + ' 筆作答紀錄格式錯誤，原資料未變更');
       // Canonicalize timestamps: lexicographic ordering only works on ISO text.
       return Object.assign({}, item, { attempted_at: parseDate(item.attempted_at).toISOString() });
     });
-    saveLedger({ schema_version: SCHEMA_VERSION, attempts: attempts }, storage);
-    saveSettings(payload.settings || DEFAULT_SETTINGS, storage);
-    return { ledger: getLedger(storage), settings: getSettings(storage) };
+    // Validate the whole backup before replacing any existing data. Never
+    // silently trim imported history to the normal recording retention limit.
+    if (compactAttempts(attempts).length !== attempts.length) {
+      throw new Error('無法匯入：單題作答紀錄超過 ' + MAX_ATTEMPTS_PER_QUESTION + ' 筆上限，原資料未變更');
+    }
+    if (payload.settings != null && (typeof payload.settings !== 'object' || Array.isArray(payload.settings))) {
+      throw new Error('無法匯入：複習設定格式錯誤，原資料未變更');
+    }
+    var ledger = { schema_version: SCHEMA_VERSION, attempts: attempts };
+    var settings = normalizeSettings(payload.settings || DEFAULT_SETTINGS);
+    var ledgerJson = JSON.stringify(ledger);
+    var settingsJson = JSON.stringify(settings);
+    var target = storageOrDefault(storage);
+    if (!target) throw new Error('匯入失敗：本機儲存空間無法使用');
+    var previousLedger = target.getItem(LEDGER_KEY);
+    var ledgerWritten = false;
+    try {
+      target.setItem(LEDGER_KEY, ledgerJson);
+      ledgerWritten = true;
+      target.setItem(SETTINGS_KEY, settingsJson);
+    } catch (e) {
+      // localStorage.setItem is individually atomic. If the second key fails,
+      // restore the first. This is error recovery, not a cross-tab/crash lock.
+      if (ledgerWritten) {
+        try {
+          if (previousLedger == null) target.removeItem(LEDGER_KEY);
+          else target.setItem(LEDGER_KEY, previousLedger);
+        } catch (rollbackError) {
+          throw new Error('匯入失敗且無法還原原資料；請保留備份並檢查本機儲存空間');
+        }
+      }
+      throw new Error('匯入失敗：本機儲存空間不足或無法寫入，原資料已保留');
+    }
+    return { ledger: ledger, settings: settings };
   }
 
   function clearLearnerData(storage) {

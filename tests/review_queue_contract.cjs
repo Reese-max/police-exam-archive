@@ -202,10 +202,11 @@ assert.equal(pastDeadline.overload.is_overloaded, true);
 assert.equal(pastDeadline.overload.available_capacity, 0);
 assert.equal(pastDeadline.overload.backlog, pastDeadline.overload.required);
 
-// Import must drop malformed attempt rows instead of corrupting derived state.
+// A malformed row rejects the complete import instead of silently dropping
+// history or replacing the learner's current data with a partial backup.
 const validLocator = { category: 'c', year: '115', subject: 's', number: '1', index: null };
 const malformedStorage = makeStorage();
-ReviewQueue.importData({
+const malformedPayload = {
   schema_version: 1,
   ledger: { schema_version: 1, attempts: [
     { question_id: '', outcome: 'correct', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000', source_locator: validLocator },
@@ -215,11 +216,21 @@ ReviewQueue.importData({
     { question_id: 'q3', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000', source_locator: validLocator },
     { question_id: 'q4', outcome: 'correct', attempted_at: '2026-03-03', source_hash: 'fnv1a-00000000', source_locator: validLocator },
   ] },
-}, malformedStorage);
+};
+const beforeImport = ReviewQueue.exportData(malformedStorage, datasetVersion);
+assert.throws(() => ReviewQueue.importData(malformedPayload, malformedStorage), /第 1 筆/);
+assert.equal(ReviewQueue.exportData(malformedStorage, datasetVersion), beforeImport);
+for (const item of malformedPayload.ledger.attempts.slice(0, 4)) {
+  assert.throws(() => ReviewQueue.importData({ schema_version: 1, ledger: { attempts: [item] } }, malformedStorage), /格式錯誤/);
+}
+const validImport = { schema_version: 1, ledger: { attempts: malformedPayload.ledger.attempts.slice(4) }, settings: { daily_question_limit: 7 } };
+ReviewQueue.importData(validImport, malformedStorage);
 assert.equal(ReviewQueue.getLedger(malformedStorage).attempts.length, 2);
 assert.equal(ReviewQueue.getLedger(malformedStorage).attempts[0].question_id, 'q3');
 // Non-ISO timestamps are normalized so lexicographic ordering stays valid.
 assert.equal(ReviewQueue.getLedger(malformedStorage).attempts[1].attempted_at, '2026-03-03T00:00:00.000Z');
+assert.throws(() => ReviewQueue.importData({ ...validImport, settings: [] }, malformedStorage), /設定格式/);
+assert.throws(() => ReviewQueue.importData({ schema_version: 1, ledger: { attempts: Array(31).fill(validImport.ledger.attempts[0]) } }, malformedStorage), /30 筆上限/);
 
 // Persistence failure must be reported to the caller, not swallowed.
 const failingStorage = {
@@ -227,6 +238,23 @@ const failingStorage = {
   setItem() { throw new Error('quota exceeded'); },
   removeItem() {},
 };
+assert.throws(() => ReviewQueue.importData(validImport, failingStorage), /匯入失敗/);
+// A settings-key failure restores the exact previous ledger and keeps the
+// previous settings; callers must never show the success message.
+const backingStorage = makeStorage();
+backingStorage.setItem('exam-attempt-ledger-v1', 'original-ledger-bytes');
+backingStorage.setItem('exam-review-settings-v1', 'original-settings-bytes');
+const secondWriteFailure = {
+  getItem: key => backingStorage.getItem(key),
+  removeItem: key => backingStorage.removeItem(key),
+  setItem(key, value) {
+    if (key === 'exam-review-settings-v1') throw new Error('quota exceeded');
+    backingStorage.setItem(key, value);
+  },
+};
+assert.throws(() => ReviewQueue.importData(validImport, secondWriteFailure), /原資料已保留/);
+assert.equal(backingStorage.getItem('exam-attempt-ledger-v1'), 'original-ledger-bytes');
+assert.equal(backingStorage.getItem('exam-review-settings-v1'), 'original-settings-bytes');
 const failedRecord = ReviewQueue.recordQuizAttempt(
   [a[0]], ['A'], [false], { attemptedAt: now, datasetVersion }, failingStorage,
 );
@@ -409,15 +437,13 @@ assert.throws(() => ReviewQueue.importData({
   ledger: { schema_version: 999, attempts: [] },
 }, makeStorage()));
 const weakLocator = makeStorage();
-ReviewQueue.importData({
+assert.throws(() => ReviewQueue.importData({
   schema_version: 1,
   ledger: { schema_version: 1, attempts: [
     { question_id: 'q7', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000', source_locator: { subject: 's' } },
     { question_id: 'q8', outcome: 'wrong', attempted_at: '2026-09-01T00:00:00.000Z', source_hash: 'fnv1a-00000000', source_locator: validLocator },
   ] },
-}, weakLocator);
-assert.deepEqual(
-  ReviewQueue.getLedger(weakLocator).attempts.map((item) => item.question_id), ['q8'],
-);
+}, weakLocator), /第 1 筆/);
+assert.equal(ReviewQueue.getLedger(weakLocator).attempts.length, 0);
 
 console.log('review queue contract: ok');
