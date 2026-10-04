@@ -157,6 +157,37 @@ def test_rendered_category_pages_embed_option_images():
     assert set(seen) == {"水上警察學系", "水上警察", "消防學系", "消防警察"}
 
 
+@pytest.mark.parametrize("category", ["水上警察學系", "水上警察", "消防學系", "消防警察"])
+def test_rendered_image_source_matches_canonical_record(category):
+    """Published HTML/export provenance must follow corrected canonical JSON."""
+    from html.parser import HTMLParser
+
+    class SourceBlocks(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.blocks = []
+
+        def handle_starttag(self, tag, attrs):
+            attrs = dict(attrs)
+            if tag == "div" and "q-block" in attrs.get("class", "").split():
+                self.blocks.append(attrs)
+
+    affected = [(fp, q) for fp, _, q in image_option_questions() if _dept_of(fp) == category]
+    assert len(affected) == 1
+    _, question = affected[0]
+    source = question["source_locator"]
+    page = SITE_DIR / category / f"{category}考古題總覽.html"
+    parsed = SourceBlocks()
+    parsed.feed(page.read_text(encoding="utf-8"))
+    blocks = [block for block in parsed.blocks
+              if block.get("data-source-sha256") == source["pdf_sha256"]]
+    assert len(blocks) == 1
+    block = blocks[0]
+    assert block["data-source-pdf"].replace("\\", "/") == source["pdf"].replace("\\", "/")
+    assert block["data-source-page"] == str(source["page"])
+    assert block["data-qnum"] == str(question["number"])
+
+
 # ── 前端管線合約（JS 端以契約字串驗證，實際渲染由上方頁面測試涵蓋）──
 
 def test_frontend_surfaces_wire_option_images():
