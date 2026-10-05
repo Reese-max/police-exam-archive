@@ -376,7 +376,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
 <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
 <script src="js/search-engine.js"></script>
-<script src="js/review-queue.js?v=1.7.1"></script>
+<script src="js/review-queue.js?v=1.7.2"></script>
 <script>
 /* ===== 真實題庫（minisearch + search-engine.js，36,210 道選擇題） ===== */
 let POOL = [];
@@ -479,10 +479,18 @@ function loadPlannerSettings(){
 function refreshReviewPlanner(){
   if(!indexReady || !datasetMeta || !window.ReviewQueue) return;
   const settings = plannerSettings();
-  reviewPreview = ReviewQueue.buildReviewQueue(
-    REVIEW_POOL, ReviewQueue.getLedger(), settings, new Date().toISOString(), datasetMeta.datasetVersion,
-  );
+  const ledger = ReviewQueue.getLedger();
   const status = $('reviewStatus');
+  if(ledger.write_blocked){
+    reviewPreview = null;
+    status.textContent = ledger.storage_error;
+    status.classList.add('warn');
+    $('startReviewBtn').disabled = true;
+    return;
+  }
+  reviewPreview = ReviewQueue.buildReviewQueue(
+    REVIEW_POOL, ledger, settings, new Date().toISOString(), datasetMeta.datasetVersion,
+  );
   const count = reviewPreview.items.length;
   let text = count ? '今天可做 ' + count + ' 題，' + reviewPreview.total_candidates + ' 題符合複習條件。'
     : reviewPreview.total_candidates ? '每日分鐘預算不足以安排一題（每題估 2 分鐘），請調整預算。' : '目前沒有需要排入今日複習的題目。';
@@ -567,7 +575,10 @@ $('saveReviewSettingsBtn').addEventListener('click', savePlannerSettings);
 $('startReviewBtn').addEventListener('click', startReview);
 $('exportLearningBtn').addEventListener('click', ()=>{
   if(!window.ReviewQueue){ alert('複習模組未載入，請重新整理頁面。'); return; }
-  const blob = new Blob([ReviewQueue.exportData(null, datasetMeta.datasetVersion)], {type:'application/json'});
+  let exported;
+  try{ exported = ReviewQueue.exportData(null, datasetMeta.datasetVersion); }
+  catch(err){ alert(err.message || '匯出失敗：原資料無法讀取'); return; }
+  const blob = new Blob([exported], {type:'application/json'});
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
   link.download = 'police-exam-learning-data.json';
@@ -682,7 +693,7 @@ function finish(){
     persisted = !!(record && record.persisted);
     if(!persisted){
       finished = false;
-      alert('逐題作答紀錄未能儲存，答案仍保留。請恢復本機儲存空間後再次交卷。');
+      alert((record && record.storage_error ? record.storage_error : '逐題作答紀錄未能儲存。') + ' 答案仍保留，請恢復本機儲存空間後再次交卷。');
       return;
     }
     ReviewQueue.saveQuizSummary({

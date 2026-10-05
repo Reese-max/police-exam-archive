@@ -54,6 +54,13 @@
     return { schema_version: SCHEMA_VERSION, attempts: [] };
   }
 
+  function blockedLedger(message) {
+    var ledger = emptyLedger();
+    ledger.write_blocked = true;
+    ledger.storage_error = message;
+    return ledger;
+  }
+
   function validAttempt(item) {
     if (!item || typeof item !== 'object' || Array.isArray(item)
         || typeof item.question_id !== 'string' || !item.question_id
@@ -76,23 +83,25 @@
   }
 
   function getLedger(storage) {
-    var ledger = readJson(storage, LEDGER_KEY, null);
+    var target = storageOrDefault(storage);
+    if (!target) return blockedLedger('本機儲存空間無法使用，已停止寫入逐題作答紀錄。');
+    var raw;
+    try { raw = target.getItem(LEDGER_KEY); }
+    catch (e) { return blockedLedger('無法讀取原逐題作答紀錄，已停止寫入，原資料未變更。請保留原資料並恢復本機儲存後重試。'); }
+    if (raw == null || raw === '') return emptyLedger();
+    var ledger;
+    try { ledger = JSON.parse(raw); } catch (e) { ledger = null; }
     if (ledger && ledger.schema_version === SCHEMA_VERSION && Array.isArray(ledger.attempts)
         && ledger.attempts.every(validAttempt)) {
       return { schema_version: SCHEMA_VERSION, attempts: ledger.attempts.slice() };
     }
-    // Quarantine an unreadable/foreign blob instead of letting the next write
-    // silently destroy it.
-    var target = storageOrDefault(storage);
-    if (target) {
-      try {
-        var raw = target.getItem(LEDGER_KEY);
-        if (raw && target.getItem(LEDGER_KEY + '.corrupt') !== raw) {
-          target.setItem(LEDGER_KEY + '.corrupt', raw);
-        }
-      } catch (e) {}
-    }
-    return emptyLedger();
+    // A failed duplicate can coexist with a successful smaller replacement
+    // near the quota. Allow replacement only after an exact quarantine readback.
+    try {
+      if (target.getItem(LEDGER_KEY + '.corrupt') !== raw) target.setItem(LEDGER_KEY + '.corrupt', raw);
+      if (target.getItem(LEDGER_KEY + '.corrupt') === raw) return emptyLedger();
+    } catch (e) {}
+    return blockedLedger('原逐題作答紀錄格式異常且無法隔離保存，已停止寫入、匯入與匯出，原資料未變更。請先保留原資料並釋放儲存空間後重試。');
   }
 
   // Keep only the newest events per question so a long-lived ledger cannot
@@ -109,6 +118,7 @@
   }
 
   function saveLedger(ledger, storage) {
+    if (ledger.write_blocked || getLedger(storage).write_blocked) return false;
     return writeJson(storage, LEDGER_KEY, {
       schema_version: SCHEMA_VERSION,
       attempts: compactAttempts(Array.isArray(ledger.attempts) ? ledger.attempts : []),
@@ -203,6 +213,10 @@
   function recordQuizAttempt(questions, answers, marked, options, storage) {
     var opts = options || {};
     var ledger = getLedger(storage);
+    if (ledger.write_blocked) {
+      ledger.persisted = false;
+      return ledger;
+    }
     var attemptedAt = isoDate(opts.attemptedAt) || new Date().toISOString();
     var datasetVersion = opts.datasetVersion || 'unknown';
     var mode = opts.quizMode || 'simulated';
@@ -545,10 +559,12 @@
   }
 
   function exportData(storage, datasetVersion) {
+    var ledger = getLedger(storage);
+    if (ledger.write_blocked) throw new Error(ledger.storage_error);
     return JSON.stringify({
       schema_version: SCHEMA_VERSION,
       dataset_version: datasetVersion || null,
-      ledger: getLedger(storage),
+      ledger: ledger,
       settings: getSettings(storage),
     }, null, 2);
   }
@@ -578,6 +594,8 @@
     var settingsJson = JSON.stringify(settings);
     var target = storageOrDefault(storage);
     if (!target) throw new Error('匯入失敗：本機儲存空間無法使用');
+    var existingLedger = getLedger(storage);
+    if (existingLedger.write_blocked) throw new Error(existingLedger.storage_error);
     var previousLedger = target.getItem(LEDGER_KEY);
     var ledgerWritten = false;
     try {
