@@ -446,4 +446,44 @@ assert.throws(() => ReviewQueue.importData({
 }, weakLocator), /第 1 筆/);
 assert.equal(ReviewQueue.getLedger(weakLocator).attempts.length, 0);
 
+// A mutable search-index position is not durable identity. A unique locator
+// keeps its compatible events when unrelated rows are inserted before it.
+const shiftedStorage = makeStorage();
+const beforeShift = { ...question('move', '索引移動', 1), idx: 0 };
+ReviewQueue.recordQuizAttempt([beforeShift], ['B'], [false], { attemptedAt: now, datasetVersion }, shiftedStorage);
+const afterShift = { ...beforeShift, idx: 1 };
+const shiftedQueue = ReviewQueue.buildReviewQueue([afterShift], ReviewQueue.getLedger(shiftedStorage), settings, now, 'fixture-v2');
+assert.equal(shiftedQueue.items[0].state.wrong_count, 1, 'insertion must not erase a stable question history');
+const shiftedChanged = ReviewQueue.buildReviewQueue([{ ...afterShift, stem: 'corrected text' }], ReviewQueue.getLedger(shiftedStorage), settings, now, 'fixture-v2');
+assert.equal(shiftedChanged.items[0].state.status, 'STALE', 'moving and changing a question still requires review');
+
+// Valid outer JSON does not make a null event safe. Preserve the entire blob
+// in quarantine and let a new planner rebuild without throwing.
+const malformedRows = makeStorage();
+const malformedBlob = JSON.stringify({ schema_version: 1, attempts: [null] });
+malformedRows.setItem('exam-attempt-ledger-v1', malformedBlob);
+assert.equal(ReviewQueue.getLedger(malformedRows).attempts.length, 0);
+assert.equal(malformedRows.getItem('exam-attempt-ledger-v1.corrupt'), malformedBlob);
+
+const settingsFault = makeStorage();
+settingsFault.setItem = () => { throw new Error('fixture quota'); };
+assert.throws(() => ReviewQueue.saveSettings(settings, settingsFault), /儲存/);
+
+// Imports may contain unknown durable ids. Reserved property names must not
+// turn internal dictionaries into a crash or an inherited-object lookup.
+const reservedStorage = makeStorage();
+const reservedEvent = { ...ReviewQueue.getLedger(shiftedStorage).attempts[0], question_id: '__proto__' };
+ReviewQueue.importData({ schema_version: 1, ledger: { attempts: [reservedEvent] } }, reservedStorage);
+assert.doesNotThrow(() => ReviewQueue.buildReviewQueue([afterShift], ReviewQueue.getLedger(reservedStorage), settings, now, datasetVersion));
+
+for (const bad of [
+  { ...reservedEvent, marked_review: 'false' },
+  { ...reservedEvent, chosen_answer: true },
+  { ...reservedEvent, source_locator: { ...reservedEvent.source_locator, index: '0' } },
+]) {
+  const previous = reservedStorage.getItem('exam-attempt-ledger-v1');
+  assert.throws(() => ReviewQueue.importData({ schema_version: 1, ledger: { attempts: [bad] } }, reservedStorage), /格式錯誤/);
+  assert.equal(reservedStorage.getItem('exam-attempt-ledger-v1'), previous, 'malformed facts must fail before replacement');
+}
+
 console.log('review queue contract: ok');

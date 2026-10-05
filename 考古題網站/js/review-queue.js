@@ -54,9 +54,31 @@
     return { schema_version: SCHEMA_VERSION, attempts: [] };
   }
 
+  function validAttempt(item) {
+    if (!item || typeof item !== 'object' || Array.isArray(item)
+        || typeof item.question_id !== 'string' || !item.question_id
+        || VALID_OUTCOMES[item.outcome] !== true
+        || typeof item.source_hash !== 'string' || !item.source_hash
+        || typeof item.attempted_at !== 'string' || !parseDate(item.attempted_at)
+        || !item.source_locator || typeof item.source_locator !== 'object' || Array.isArray(item.source_locator)
+        || typeof item.source_locator.number !== 'string' || !item.source_locator.number) return false;
+    if (item.marked_review !== undefined && typeof item.marked_review !== 'boolean') return false;
+    if (item.chosen_answer !== undefined && item.chosen_answer !== null
+        && (typeof item.chosen_answer !== 'string' || !/^[ABCD]$/.test(item.chosen_answer))) return false;
+    var index = item.source_locator.index;
+    if (index != null && (!Number.isInteger(index) || index < 0)) return false;
+    if (item.elapsed_seconds !== undefined && (!Number.isInteger(item.elapsed_seconds) || item.elapsed_seconds < 0)) return false;
+    if (item.outcome_codes !== undefined && (!Array.isArray(item.outcome_codes)
+        || item.outcome_codes.indexOf(item.outcome) < 0
+        || !item.outcome_codes.every(function (code) { return VALID_OUTCOMES[code] === true || code === 'marked_review'; })
+        || (item.marked_review !== undefined && (item.outcome_codes.indexOf('marked_review') >= 0) !== item.marked_review))) return false;
+    return true;
+  }
+
   function getLedger(storage) {
     var ledger = readJson(storage, LEDGER_KEY, null);
-    if (ledger && ledger.schema_version === SCHEMA_VERSION && Array.isArray(ledger.attempts)) {
+    if (ledger && ledger.schema_version === SCHEMA_VERSION && Array.isArray(ledger.attempts)
+        && ledger.attempts.every(validAttempt)) {
       return { schema_version: SCHEMA_VERSION, attempts: ledger.attempts.slice() };
     }
     // Quarantine an unreadable/foreign blob instead of letting the next write
@@ -76,7 +98,7 @@
   // Keep only the newest events per question so a long-lived ledger cannot
   // grow past the localStorage quota and silently stop persisting.
   function compactAttempts(attempts) {
-    var counts = {};
+    var counts = Object.create(null);
     var kept = [];
     for (var i = attempts.length - 1; i >= 0; i--) {
       var id = attempts[i] && attempts[i].question_id;
@@ -119,7 +141,7 @@
 
   function saveSettings(settings, storage) {
     var normalized = normalizeSettings(settings);
-    writeJson(storage, SETTINGS_KEY, normalized);
+    if (!writeJson(storage, SETTINGS_KEY, normalized)) throw new Error('排程設定儲存失敗：本機儲存空間不足或無法寫入，原設定未變更');
     return normalized;
   }
 
@@ -257,16 +279,16 @@
     }, null);
   }
 
-  function deriveReviewState(question, attempts, now, datasetVersion) {
+  function deriveReviewState(question, attempts, now, datasetVersion, locatorCount) {
     var identity = questionIdentity(question, datasetVersion);
     var all = (attempts || []).filter(function (item) { return item.question_id === identity.question_id; });
-    // An attempt is "owned" by this row when the recorded index matches (or
-    // either side predates index tracking); a locator collision sibling keeps
-    // a different index, so its attempts never mark this row STALE.
+    // A locator unique in the current full bank survives positional inserts.
+    // Ambiguous locators retain conservative row ownership; their siblings'
+    // facts must not be silently applied to another question.
     var owned = all.filter(function (item) {
       var li = item.source_locator ? item.source_locator.index : null;
       var qi = identity.source_locator.index;
-      return li == null || qi == null || li === qi;
+      return locatorCount === 1 || li == null || qi == null || li === qi;
     });
     // Compatibility keys on the content fingerprint, not the dataset version:
     // attempts against identical question content re-map across index rebuilds,
@@ -347,7 +369,7 @@
   }
 
   function roundRobin(items) {
-    var groups = {};
+    var groups = Object.create(null);
     items.slice().sort(function (a, b) {
       return compareText(a.question_id, b.question_id);
     }).forEach(function (item) {
@@ -374,19 +396,21 @@
     var current = isoDate(now || new Date().toISOString()) || new Date().toISOString();
     var normalized = normalizeSettings(settings);
     var sourceLedger = ledger && Array.isArray(ledger.attempts) ? ledger.attempts : [];
-    var attemptsByQuestion = {};
+    var attemptsByQuestion = Object.create(null);
+    var locatorCounts = Object.create(null);
     // Index current content per subject first: an attempt only counts as
     // covering a subject when its content fingerprint still maps to a live
     // question — a fully stale history must not hide the coverage gap.
-    var currentHashes = {};
+    var currentHashes = Object.create(null);
     (questions || []).forEach(function (question) {
       var q = questionSource(question);
       var subject = subjectKey(q);
-      if (!currentHashes[subject]) currentHashes[subject] = {};
+      if (!currentHashes[subject]) currentHashes[subject] = Object.create(null);
       var identity = questionIdentity(q, datasetVersion || q.dataset_version);
+      locatorCounts[identity.question_id] = (locatorCounts[identity.question_id] || 0) + 1;
       currentHashes[subject][identity.source_hash] = true;
     });
-    var coveredSubjects = {};
+    var coveredSubjects = Object.create(null);
     sourceLedger.forEach(function (attempt) {
       if (!attemptsByQuestion[attempt.question_id]) attemptsByQuestion[attempt.question_id] = [];
       attemptsByQuestion[attempt.question_id].push(attempt);
@@ -395,7 +419,7 @@
         coveredSubjects[subject] = true;
       }
     });
-    var unseenPerSubject = {};
+    var unseenPerSubject = Object.create(null);
     var records = [];
     (questions || []).forEach(function (question) {
       var q = questionSource(question);
@@ -421,7 +445,7 @@
           due_at: null, marked_review: false, reason_codes: [code],
         };
       } else {
-        state = deriveReviewState(q, questionAttempts, current, datasetVersion || q.dataset_version);
+        state = deriveReviewState(q, questionAttempts, current, datasetVersion || q.dataset_version, locatorCounts[id]);
       }
       var reason;
       var priority;
@@ -464,7 +488,7 @@
     var unseenCandidates = roundRobin(records.filter(function (item) { return item.priority === 4; }));
     var exploration = coverageCandidates.concat(unseenCandidates);
     var selected = [];
-    var selectedRows = {};
+    var selectedRows = Object.create(null);
     function add(item) {
       // Dedupe by row, not question_id: locator collisions legitimately put
       // two distinct rows under one id, and each deserves its own slot.
@@ -536,13 +560,7 @@
       throw new Error('無法匯入：複習資料格式不相容');
     }
     var attempts = payload.ledger.attempts.map(function (item, index) {
-      var valid = item && typeof item.question_id === 'string' && item.question_id
-        && VALID_OUTCOMES[item.outcome] === true
-        && typeof item.source_hash === 'string' && item.source_hash
-        && item.source_locator && typeof item.source_locator === 'object'
-        && typeof item.source_locator.number === 'string'
-        && !!parseDate(item.attempted_at);
-      if (!valid) throw new Error('無法匯入：第 ' + (index + 1) + ' 筆作答紀錄格式錯誤，原資料未變更');
+      if (!validAttempt(item)) throw new Error('無法匯入：第 ' + (index + 1) + ' 筆作答紀錄格式錯誤，原資料未變更');
       // Canonicalize timestamps: lexicographic ordering only works on ISO text.
       return Object.assign({}, item, { attempted_at: parseDate(item.attempted_at).toISOString() });
     });

@@ -214,6 +214,11 @@ question identity、題目內容 fingerprint、dataset version、作答時間與
 若設定寫入失敗，會嘗試還原原帳本。這是單次錯誤復原，並非跨分頁或
 瀏覽器當機時的交易保證。
 
+題庫索引插入或重新排序時，唯一 locator 的紀錄依題目內容 fingerprint 重新對應；
+內容變更仍需重新確認。格式損壞的已存紀錄會隔離保留，不會讓複習面板中斷。
+交卷儲存失敗時保留答案供再次交卷，排程設定儲存失敗也會明確提示。
+每題只保留最近 30 筆原始事件，衍生次數與 streak 反映保留視窗，並非終生統計。
+
 ```python
 # Python API
 from examdb import ExamDB

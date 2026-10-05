@@ -285,7 +285,7 @@ footer strong{color:var(--text-2);font-weight:700}
         <label class="deadline-toggle"><input type="checkbox" id="deadlineEnabled"> 啟用考前截止日模式</label>
         <label>目標考試日<input type="date" id="targetDate"></label>
         <label>每日題量上限<input type="number" id="dailyQuestionLimit" min="1" max="200" step="1"></label>
-        <label>每日分鐘上限（選填）<input type="number" id="dailyMinutes" min="1" max="1440" step="1" placeholder="不限制"></label>
+        <label>每日分鐘上限（選填，每題估 2 分鐘）<input type="number" id="dailyMinutes" min="1" max="1440" step="1" placeholder="不限制"></label>
       </div>
       <div class="planner-actions">
         <button class="primary" id="startReviewBtn">開始今日複習</button>
@@ -484,7 +484,8 @@ function refreshReviewPlanner(){
   );
   const status = $('reviewStatus');
   const count = reviewPreview.items.length;
-  let text = count ? '今天可做 ' + count + ' 題，' + reviewPreview.total_candidates + ' 題符合複習條件。' : '目前沒有需要排入今日複習的題目。';
+  let text = count ? '今天可做 ' + count + ' 題，' + reviewPreview.total_candidates + ' 題符合複習條件。'
+    : reviewPreview.total_candidates ? '每日分鐘預算不足以安排一題（每題估 2 分鐘），請調整預算。' : '目前沒有需要排入今日複習的題目。';
   if(reviewPreview.overload.is_overloaded){
     text += ' 複習量超過截止日前容量，尚有 ' + reviewPreview.overload.backlog + ' 題 backlog，請調高每日預算或提早開始。';
     status.classList.add('warn');
@@ -496,18 +497,21 @@ function refreshReviewPlanner(){
 }
 
 function savePlannerSettings(){
-  if(!window.ReviewQueue) return;
-  const saved = ReviewQueue.saveSettings(plannerSettings());
+  if(!window.ReviewQueue) return false;
+  let saved;
+  try{ saved = ReviewQueue.saveSettings(plannerSettings()); }
+  catch(err){ alert(err.message || '排程設定儲存失敗'); return false; }
   $('deadlineEnabled').checked = saved.deadline_enabled;
   $('targetDate').value = saved.target_date || '';
   $('dailyQuestionLimit').value = saved.daily_question_limit;
   $('dailyMinutes').value = saved.daily_minutes || '';
   refreshReviewPlanner();
+  return true;
 }
 
 function startReview(){
   if(!window.ReviewQueue){ alert('複習模組未載入，請重新整理頁面。'); return; }
-  savePlannerSettings();
+  if(!savePlannerSettings()) return;
   if(!reviewPreview || !reviewPreview.items.length){ alert('目前沒有可安排的複習題目。'); return; }
   quizMode = 'review';
   activeFilters = { review: true };
@@ -676,6 +680,11 @@ function finish(){
       { attemptedAt, datasetVersion: datasetMeta.datasetVersion, quizMode, filters: activeFilters },
     );
     persisted = !!(record && record.persisted);
+    if(!persisted){
+      finished = false;
+      alert('逐題作答紀錄未能儲存，答案仍保留。請恢復本機儲存空間後再次交卷。');
+      return;
+    }
     ReviewQueue.saveQuizSummary({
       date: attemptedAt, correct: ok, total, pct, elapsed, mode: quizMode,
     });
