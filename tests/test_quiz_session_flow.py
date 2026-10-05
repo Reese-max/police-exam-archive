@@ -167,6 +167,91 @@ def test_reload_restores_the_same_exam_and_finish_clears_the_checkpoint() -> Non
     )
 
 
+def test_stale_tab_cannot_resurrect_an_exam_finished_in_another_tab() -> None:
+    run_flow("""
+        const { store, clock, page } = context();
+        startWorkedExam(page);
+        const resumed = open(store, clock);
+        resumed.click('resumeBtn');
+        resumed.click('submitBtn');
+        assert.strictEqual(store.getItem(KEY), null);
+        page.goto(5); page.tick(6); page.pagehide();
+        assert.strictEqual(store.getItem(KEY), null, 'stale original tab must not resurrect a completed exam');
+        assert.strictEqual(open(store, clock).state().bannerHidden, true);
+        console.log('flow-ok');
+    """)
+
+
+def test_resumed_tab_owns_writes_without_losing_its_new_answers() -> None:
+    run_flow("""
+        const { store, clock, page } = context();
+        startWorkedExam(page);
+        const oldId = JSON.parse(store.getItem(KEY)).sessionId;
+        const resumed = open(store, clock); resumed.click('resumeBtn');
+        resumed.goto(5); resumed.choose(3);
+        const current = store.getItem(KEY);
+        assert.notStrictEqual(JSON.parse(current).sessionId, oldId, 'resume claims fresh writing ownership');
+        page.goto(6); page.pagehide();
+        assert.strictEqual(store.getItem(KEY), current, 'stale tab cannot erase recovered progress');
+        assert.strictEqual(JSON.parse(current).answers[5], 3);
+        resumed.click('submitBtn'); page.pagehide();
+        assert.strictEqual(store.getItem(KEY), null);
+        console.log('flow-ok');
+    """)
+
+
+def test_old_tab_cannot_overwrite_or_clear_a_new_exam() -> None:
+    run_flow("""
+        const { store, clock, page } = context();
+        startWorkedExam(page);
+        const newer = open(store, clock);
+        newer.click('discardResumeBtn');
+        startWorkedExam(newer);
+        const current = store.getItem(KEY);
+        page.goto(6); page.pagehide();
+        assert.strictEqual(store.getItem(KEY), current, 'old tab cannot overwrite a new exam');
+        page.click('submitBtn');
+        assert.strictEqual(store.getItem(KEY), current, 'old tab cannot clear a new exam');
+        assert.strictEqual(open(store, clock).state().bannerHidden, false);
+        console.log('flow-ok');
+    """)
+
+
+def test_legacy_checkpoint_can_resume_and_receive_a_session_identity() -> None:
+    run_flow("""
+        const { store, clock, page } = context();
+        startWorkedExam(page);
+        const legacy = JSON.parse(store.getItem(KEY));
+        delete legacy.sessionId;
+        store.setItem(KEY, JSON.stringify(legacy));
+        const restored = open(store, clock);
+        restored.click('resumeBtn');
+        assert.strictEqual(restored.state().view, 'exam', 'older v1 snapshot remains resumable');
+        const upgraded = JSON.parse(store.getItem(KEY));
+        assert.strictEqual(typeof upgraded.sessionId, 'string');
+        assert.ok(upgraded.sessionId.length > 0);
+        restored.goto(6); restored.pagehide();
+        assert.strictEqual(JSON.parse(store.getItem(KEY)).cur, 6, 'upgraded owner can keep saving');
+        console.log('flow-ok');
+    """)
+
+
+def test_stale_legacy_banner_cannot_discard_a_new_exam() -> None:
+    run_flow("""
+        const { store, clock, page } = context();
+        startWorkedExam(page);
+        const legacy = JSON.parse(store.getItem(KEY)); delete legacy.sessionId;
+        store.setItem(KEY, JSON.stringify(legacy));
+        const stale = open(store, clock);
+        const newer = open(store, clock);
+        newer.click('discardResumeBtn'); startWorkedExam(newer);
+        const current = store.getItem(KEY);
+        stale.click('discardResumeBtn');
+        assert.strictEqual(store.getItem(KEY), current, 'stale legacy banner cannot discard newer exam');
+        console.log('flow-ok');
+    """)
+
+
 def test_resume_charges_time_spent_on_the_setup_screen() -> None:
     """Idling on setup after a reload must not hand out free exam time.
 
@@ -428,9 +513,12 @@ def test_hidden_tab_flushes_the_checkpoint() -> None:
         const { store, clock, page } = context();
         startWorkedExam(page);
         page.goto(6); page.choose(3);
-        // Every click already flushed the checkpoint; drop it AFTER the last
-        // interaction so visibilitychange is the only writer under test.
-        store.removeItem(KEY);
+        // A one-second tick changes the timer without reaching the five-second
+        // periodic flush. Keep the ownership key: deleting it models discard
+        // in another tab, which the hidden tab must not undo.
+        const before = page.checkpoint();
+        page.tick(1);
+        assert.strictEqual(page.checkpoint().savedAt, before.savedAt);
         page.hide();
 
         const checkpoint = page.checkpoint();
@@ -439,6 +527,8 @@ def test_hidden_tab_flushes_the_checkpoint() -> None:
         assert.strictEqual(checkpoint.answers[6], 3, 'the last answer must be in the checkpoint');
         assert.strictEqual(checkpoint.answers[0], 0);
         assert.strictEqual(checkpoint.flags[3], true, 'the flag must be in the checkpoint');
+        assert.strictEqual(checkpoint.savedAt, clock.value, 'visibilitychange must flush the current timer');
+        assert.strictEqual(checkpoint.remain, before.remain - 1);
         console.log('flow-ok');
         """
     )

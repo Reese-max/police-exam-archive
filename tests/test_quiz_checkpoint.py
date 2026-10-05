@@ -157,6 +157,61 @@ def test_checkpoint_roundtrip_restores_in_progress_exam() -> None:
     assert_node_ok(proc, "roundtrip-ok")
 
 
+@pytest.mark.parametrize("elapsed,remain", [(123456, 3300), (300, 3600), (300, 0), (3601, 0)])
+def test_timed_checkpoint_rejects_inconsistent_counters(elapsed: int, remain: int) -> None:
+    proc = run_node(NODE_PRELUDE + f"""
+        const store = memStore();
+        const snap = QC.build(inProgressState(), NOW);
+        snap.elapsed = {elapsed}; snap.remain = {remain};
+        store.setItem(QC.KEY, JSON.stringify(snap));
+        assert.strictEqual(QC.load(store, NOW), null, 'inconsistent timed counters must be rejected');
+        assert.strictEqual(store.getItem(QC.KEY), null);
+        console.log('timer-invalid-ok');
+    """)
+    assert_node_ok(proc, "timer-invalid-ok")
+
+
+def test_session_guard_cannot_resurrect_or_replace_another_exam() -> None:
+    proc = run_node(NODE_PRELUDE + """
+        const store = memStore();
+        const first = { ...inProgressState(), sessionId: QC.newSessionId() };
+        const second = { ...inProgressState(), sessionId: QC.newSessionId() };
+        assert.notStrictEqual(first.sessionId, second.sessionId);
+        assert.ok(QC.save(first, store, NOW));
+        assert.ok(QC.save(first, store, NOW + 1000, first.sessionId), 'owned update succeeds');
+        QC.clear(store, first.sessionId);
+        assert.strictEqual(QC.save(first, store, NOW, first.sessionId), false, 'cleared exam cannot resurrect');
+        assert.ok(QC.save(second, store, NOW));
+        const newer = store.getItem(QC.KEY);
+        assert.strictEqual(QC.save(first, store, NOW, first.sessionId), false, 'old exam cannot replace newer one');
+        QC.clear(store, first.sessionId);
+        assert.strictEqual(store.getItem(QC.KEY), newer, 'old exam cannot clear newer one');
+        QC.clear(store, second.sessionId);
+        assert.strictEqual(store.getItem(QC.KEY), null);
+        console.log('ownership-ok');
+    """)
+    assert_node_ok(proc, "ownership-ok")
+
+
+def test_legacy_clear_only_removes_the_snapshot_it_offered() -> None:
+    proc = run_node(NODE_PRELUDE + """
+        const store = memStore();
+        QC.save(inProgressState(), store, NOW);
+        const legacy = QC.load(store, NOW);
+        const newer = { ...inProgressState(), sessionId: QC.newSessionId() };
+        QC.save(newer, store, NOW);
+        const current = store.getItem(QC.KEY);
+        QC.clear(store, legacy.sessionId, legacy.storageToken);
+        assert.strictEqual(store.getItem(QC.KEY), current, 'legacy clear cannot remove a newer exam');
+        QC.save(inProgressState(), store, NOW);
+        const currentLegacy = QC.load(store, NOW);
+        QC.clear(store, currentLegacy.sessionId, currentLegacy.storageToken);
+        assert.strictEqual(store.getItem(QC.KEY), null, 'unchanged legacy checkpoint remains discardable');
+        console.log('legacy-clear-ok');
+    """)
+    assert_node_ok(proc, "legacy-clear-ok")
+
+
 def test_finish_clears_checkpoint_and_does_not_resurrect() -> None:
     """Finishing an exam clears the checkpoint; a later load must not revive it."""
     proc = run_node(

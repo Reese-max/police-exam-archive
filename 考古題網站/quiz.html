@@ -357,7 +357,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
 <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
 <script src="js/search-engine.js"></script>
-<script src="js/quiz-checkpoint.js"></script>
+<script src="js/quiz-checkpoint.js?v=1.7.1"></script>
 <script>
 /* ===== 真實題庫（minisearch + search-engine.js，36,210 道選擇題） ===== */
 let POOL = [];
@@ -382,6 +382,7 @@ const TOTAL = 20;
 let questions = [], answers = [], flags = [], cur = 0;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
 let examDone = false, pendingResume = null, resumeBannerTimer = null;
+let checkpointSessionId = null;
 
 const $ = id => document.getElementById(id);
 
@@ -391,10 +392,12 @@ const $ = id => document.getElementById(id);
 /* 離線期間的牆鐘時間，所以少寫幾次不會讓作答中的倒數多出時間。 */
 const CHECKPOINT_TICK_MS = 5000;
 let lastCheckpointAt = 0;
-function saveCheckpoint(){
+function saveCheckpoint(createSession, previousSnapshot){
   if(examDone || !questions.length || typeof QuizCheckpoint==='undefined') return;
   lastCheckpointAt = Date.now();
-  try{ QuizCheckpoint.save({questions, answers, flags, cur, durSec, remain, elapsed}); }catch(e){}
+  try{ QuizCheckpoint.save({questions, answers, flags, cur, durSec, remain, elapsed, sessionId:checkpointSessionId},
+    undefined, undefined, previousSnapshot ? previousSnapshot.sessionId : (createSession===true ? undefined : checkpointSessionId),
+    previousSnapshot ? previousSnapshot.storageToken : undefined); }catch(e){}
 }
 function saveCheckpointTick(){
   if(Date.now() - lastCheckpointAt < CHECKPOINT_TICK_MS) return;
@@ -450,11 +453,12 @@ $('startBtn').addEventListener('click', ()=>{
   total = questions.length;
   $('totalNum').textContent = total;
   durSec = tmin*60; remain = durSec; elapsed = 0;
+  checkpointSessionId = typeof QuizCheckpoint!=='undefined' ? QuizCheckpoint.newSessionId() : null;
   examDone = false;
   switchView('exam');
   renderQuestion(); renderMini();
   startTimer(tmin>0);
-  saveCheckpoint();
+  saveCheckpoint(true);
   window.scrollTo({top:0});
 });
 
@@ -540,7 +544,7 @@ $('submitBtn').addEventListener('click',()=>{
 function finish(){
   clearInterval(timerId);
   examDone = true;
-  if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear();
+  if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear(undefined, checkpointSessionId);
   let ok=0,no=0,skip=0;
   questions.forEach((q,i)=>{
     if(answers[i]===null) skip++;
@@ -601,8 +605,8 @@ function _hideResumeBanner(){
   pendingResume = null;
   $('resumeBanner').classList.add('hidden');
 }
-function _discardExpiredSession(){
-  QuizCheckpoint.clear();
+function _discardExpiredSession(snap){
+  QuizCheckpoint.clear(undefined, snap.sessionId, snap.storageToken);
   _hideResumeBanner();
   showResumeNote('先前的考試在離線期間已逾時，檢查點已清除，請重新開始。');
 }
@@ -615,7 +619,7 @@ function _refreshResumeBanner(){
     showResumeNote('先前的考試紀錄已不存在或無法使用（可能已在另一個分頁完成或捨棄，或已過期）。');
     return;
   }
-  if(snap.durSec>0 && snap.remain<=0){ _discardExpiredSession(); return; }
+  if(snap.durSec>0 && snap.remain<=0){ _discardExpiredSession(snap); return; }
   pendingResume = snap;
   $('resumeInfo').textContent = _describeResume(snap);
   $('resumeBanner').classList.remove('hidden');
@@ -647,10 +651,11 @@ $('resumeBtn').addEventListener('click', ()=>{
     return;
   }
   // 關閉期間已逾時：清掉檢查點並留在設定頁，不要開一個 00:00 的死場次。
-  if(snap.durSec>0 && snap.remain<=0){ _discardExpiredSession(); return; }
+  if(snap.durSec>0 && snap.remain<=0){ _discardExpiredSession(snap); return; }
   questions = snap.questions; answers = snap.answers; flags = snap.flags;
   cur = snap.cur; total = questions.length;
   durSec = snap.durSec; remain = snap.remain; elapsed = snap.elapsed;
+  checkpointSessionId = QuizCheckpoint.newSessionId();
   examDone = false;
   _syncSetupFilters(snap);
   $('totalNum').textContent = total;
@@ -658,11 +663,13 @@ $('resumeBtn').addEventListener('click', ()=>{
   switchView('exam');
   renderQuestion(); renderMini();
   startTimer(durSec>0);
+  saveCheckpoint(true, snap);
   window.scrollTo({top:0});
 });
 $('discardResumeBtn').addEventListener('click', ()=>{
+  const offered = pendingResume;
   _hideResumeBanner();
-  if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear();
+  if(typeof QuizCheckpoint!=='undefined' && offered) QuizCheckpoint.clear(undefined, offered.sessionId, offered.storageToken);
   showResumeNote('已捨棄先前的考試，檢查點已清除。');
 });
 

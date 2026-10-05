@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.7.0';
+var CACHE_VERSION = 'v1.7.1';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -15,7 +15,7 @@ var CORE_ASSETS = [
   './css/style.css',
   './js/app.js',
   './js/pdf-export.js',
-  './js/quiz-checkpoint.js',
+  './js/quiz-checkpoint.js?v=1.7.1',
   './manifest.json',
   './icons/icon-192.svg',
   './icons/icon-512.svg'

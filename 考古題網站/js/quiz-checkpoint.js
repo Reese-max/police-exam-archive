@@ -16,6 +16,12 @@
   var ALLOWED_DUR = { 0: true, 1800: true, 3600: true, 5400: true, 7200: true };  // 不限時 / 30 / 60 / 90 / 120 分
 
   function _isInt(v) { return typeof v === 'number' && isFinite(v) && Math.floor(v) === v; }
+  function _validSessionId(v) { return typeof v === 'string' && /^[a-zA-Z0-9-]{1,100}$/.test(v); }
+  var sequence = 0;
+  function newSessionId() {
+    if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') return crypto.randomUUID();
+    return Date.now().toString(36) + '-' + Math.random().toString(36).slice(2) + '-' + (++sequence);
+  }
 
   function _store(storage) {
     if (storage) return storage;
@@ -41,6 +47,8 @@
     if (!snap || typeof snap !== 'object' || Array.isArray(snap)) return null;
     now = _isInt(now) ? now : Date.now();
     if (snap.v !== VERSION) return null;
+    // 原有 v1 快照沒有 sessionId，仍可回復；回復頁會替它建立識別。
+    if (snap.sessionId !== undefined && !_validSessionId(snap.sessionId)) return null;
     if (!_isInt(snap.savedAt) || snap.savedAt > now + CLOCK_SKEW_MS || now - snap.savedAt > MAX_AGE_MS) return null;
 
     var qs = snap.questions;
@@ -60,9 +68,11 @@
     if (!_isInt(snap.durSec) || !ALLOWED_DUR[snap.durSec]) return null;
     if (!_isInt(snap.remain) || snap.remain < 0 || snap.remain > snap.durSec) return null;
     if (!_isInt(snap.elapsed) || snap.elapsed < 0) return null;
+    if (snap.durSec > 0 && snap.elapsed + snap.remain !== snap.durSec) return null;
 
     return {
       v: VERSION,
+      sessionId: snap.sessionId,
       savedAt: snap.savedAt,
       questions: qs.slice(),
       answers: snap.answers.slice(),
@@ -79,6 +89,7 @@
     if (!state || typeof state !== 'object') return null;
     var snap = {
       v: VERSION,
+      sessionId: state.sessionId,
       savedAt: _isInt(now) ? now : Date.now(),
       questions: state.questions,
       answers: state.answers,
@@ -92,11 +103,27 @@
   }
 
   /* 寫入檢查點；成功回傳 true，狀態不合法或儲存失敗（容量/隱私模式）回傳 false。 */
-  function save(state, storage, now) {
+  function _owns(store, sessionId) {
+    if (!_validSessionId(sessionId)) return false;
+    try {
+      var current = JSON.parse(store.getItem(KEY));
+      return !!current && current.sessionId === sessionId;
+    } catch (e) { return false; }
+  }
+  function _matchesRaw(store, raw) {
+    try { return store.getItem(KEY) === raw; } catch (e) { return false; }
+  }
+
+  // 新場次首次寫入不帶 expectedSessionId；之後只有目前場次能更新。
+  // 若檢查點已被交卷/捨棄清除，舊分頁不得從 pagehide 或 tick 把它寫回。
+  function save(state, storage, now, expectedSessionId, expectedRaw) {
     var store = _store(storage);
     if (!store) return false;
     var snap = build(state, now);
     if (!snap) return false;
+    // 回復時可持有舊識別並寫入新識別，交接後舊分頁即失去寫入權。
+    if (expectedSessionId !== undefined && (!_validSessionId(snap.sessionId) || !_owns(store, expectedSessionId))) return false;
+    if (expectedSessionId === undefined && expectedRaw !== undefined && (!_validSessionId(snap.sessionId) || !_matchesRaw(store, expectedRaw))) return false;
     try {
       store.setItem(KEY, JSON.stringify(snap));
       return true;
@@ -115,6 +142,9 @@
     now = _isInt(now) ? now : Date.now();
     var valid = snap === null ? null : validate(snap, now);
     if (!valid) { clear(store); return null; }
+    // 舊 v1 沒有場次識別；保留讀取時的原始值，供捨棄/逾時清除比對。
+    // token 只回傳給呼叫端，不寫進下一份快照，也不改變 savedAt。
+    valid.storageToken = raw;
     // 扣除離線期間經過的牆鐘時間，避免重新整理等同於暫停計時；
     // remain 以 0 為下界（離線期間已逾時的考試，回復後會立即交卷）。
     var offline = Math.floor((now - valid.savedAt) / 1000);
@@ -126,9 +156,11 @@
   }
 
   /* 明確清除檢查點（交卷或使用者捨棄時呼叫）。 */
-  function clear(storage) {
+  function clear(storage, expectedSessionId, expectedRaw) {
     var store = _store(storage);
     if (!store) return;
+    if (expectedSessionId !== undefined && !_owns(store, expectedSessionId)) return;
+    if (expectedSessionId === undefined && expectedRaw !== undefined && !_matchesRaw(store, expectedRaw)) return;
     try { store.removeItem(KEY); } catch (e) {}
   }
 
@@ -136,6 +168,7 @@
     KEY: KEY,
     VERSION: VERSION,
     MAX_AGE_MS: MAX_AGE_MS,
+    newSessionId: newSessionId,
     validate: validate,
     build: build,
     save: save,
