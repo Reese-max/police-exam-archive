@@ -11,7 +11,13 @@
     "official_category_code": "206",
     "official_category": "消防警察人員",
     "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=206&s=1005&q=1",
-    "source_sha256": "f8c66c82c7cd9d3d2b58b10c347ce78dad867e077d070d898c67f56d4e81fc91"
+    "source_sha256": "f8c66c82c7cd9d3d2b58b10c347ce78dad867e077d070d898c67f56d4e81fc91",
+    "categories": [
+      "消防學系"
+    ],
+    "official_subject": "消防警察情境實務(包括消防法規、實務操作標準作業程序、人權保障與正當法律程序)",
+    "path_subject": "消防警察情境實務(包括消防法規、實務操作標準作業程序、人權保障與正當法律程序)",
+    "category_membership": "消防學系"
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -318,5 +324,8 @@
     ]
   },
   "_answer_source": "答案.pdf",
-  "_answers_merged": 20
+  "_answers_merged": 20,
+  "categories": [
+    "消防學系"
+  ]
 }
