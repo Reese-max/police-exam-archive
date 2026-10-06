@@ -43,9 +43,6 @@ jobs:
       - name: Generate analytics
         run: python scripts/build_analytics.py --output /tmp/analytics.json
 
-      - name: Generate category overview pages
-        run: python scripts/build_category_pages.py
-
       - name: Sync analytics frontend
         run: python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json
 
