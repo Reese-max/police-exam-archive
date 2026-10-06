@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    name: CI / test (${{ matrix.python-version }})
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -56,4 +57,31 @@ jobs:
           node --check 考古題網站/js/app.js
           node --check 考古題網站/analytics-chart.js
           node --check 考古題網站/analytics-chart-data.js
+          node --check 考古題網站/analytics-chart-bundle.js
           node --check 考古題網站/_gen_data.js
+
+      - name: Verify atomic Analytics pair failover
+        run: node --test 考古題網站/tests/analytics-pair.test.js
+
+  analytics-offline-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: 考古題網站/package-lock.json
+
+      - name: Install site dependencies
+        working-directory: 考古題網站
+        run: npm ci
+
+      - name: Install Chromium
+        working-directory: 考古題網站
+        run: npx playwright install --with-deps chromium
+
+      - name: Verify first offline Analytics visit
+        working-directory: 考古題網站
+        run: npx playwright test tests/analytics-offline.spec.js
