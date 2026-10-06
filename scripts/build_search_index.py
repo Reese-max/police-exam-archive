@@ -22,7 +22,7 @@ DEFAULT_DATA_DIR = ROOT / "考古題庫"
 DEFAULT_OUTPUT = ROOT / "考古題網站" / "data" / "search-index.json"
 
 # 欄位定義（順序即為 column index）
-FIELDS = ["cat", "yr", "sub", "no", "type", "stem", "optA", "optB", "optC", "optD", "ans"]
+FIELDS = ["cat", "yr", "sub", "no", "type", "stem", "optA", "optB", "optC", "optD", "ans", "img"]
 
 
 def load_exam_files(data_dir: Path) -> list[tuple]:
@@ -73,6 +73,7 @@ def load_exam_files(data_dir: Path) -> list[tuple]:
                 opts.get("C", ""),               # optC
                 opts.get("D", ""),               # optD
                 q.get("answer", "") if qtype == "choice" else "",  # ans
+                1 if any("[圖片選項]" in str(v) for v in opts.values()) else "",  # img
             )
             rows.append(row)
 

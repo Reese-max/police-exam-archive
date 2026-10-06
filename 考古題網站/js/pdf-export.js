@@ -511,7 +511,7 @@
     var optIndent = labelW + 10;
     for (var i = 0; i < item.options.length; i++) {
       var opt = item.options[i];
-      var optText = opt.label + ' ' + opt.text;
+      var optText = opt.label + ' ' + (opt.text === '[圖片選項]' ? '（圖片選項 — 原卷為圖，請查閱原始 PDF）' : opt.text);
       this._drawText(optText, FONT_SIZE.body, {
         x: MARGIN.left,
         indent: optIndent,
