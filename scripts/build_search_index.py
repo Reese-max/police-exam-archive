@@ -12,6 +12,7 @@
 import argparse
 import glob
 import gzip
+import hashlib
 import json
 import os
 import sys
@@ -84,6 +85,9 @@ def load_exam_files(data_dir: Path) -> list[tuple]:
 def build_index(data_dir: Path) -> dict:
     """建立 column-oriented 搜尋索引。"""
     rows = load_exam_files(data_dir)
+    dataset_hash = hashlib.sha256(
+        json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
 
     # 收集 facets
     categories = sorted({r[0] for r in rows if r[0]})
@@ -97,6 +101,8 @@ def build_index(data_dir: Path) -> dict:
 
     return {
         "v": 1,
+        "datasetVersion": f"search-index-{dataset_hash}",
+        "datasetHash": dataset_hash,
         "fields": FIELDS,
         "stats": {
             "total": len(rows),
