@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    name: CI / test (${{ matrix.python-version }})
     runs-on: ubuntu-latest
     strategy:
       matrix:
