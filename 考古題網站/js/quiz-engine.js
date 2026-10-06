@@ -13,6 +13,7 @@
     totalSeconds: 0,  // 總秒數
     started: false,
     finished: false,
+    historySaved: false,
   };
 
   /* ── 抽題 ── */
@@ -41,6 +42,7 @@
     state.current = 0;
     state.started = false;
     state.finished = false;
+    state.historySaved = false;
 
     return { total: state.questions.length, poolSize: pool.length };
   }
@@ -130,6 +132,8 @@
 
   /* ── 歷史紀錄 ── */
   function saveHistory(result) {
+    if (state.historySaved) return;
+    state.historySaved = true;
     try {
       var history = JSON.parse(localStorage.getItem('exam-quiz-history') || '[]');
       history.unshift({

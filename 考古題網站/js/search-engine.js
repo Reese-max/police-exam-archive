@@ -153,11 +153,20 @@
     return rawData.stats;
   }
 
+  function getDatasetMeta() {
+    if (!rawData) return null;
+    return {
+      datasetVersion: rawData.datasetVersion || rawData.datasetHash || String(rawData.v || ''),
+      datasetHash: rawData.datasetHash || null,
+    };
+  }
+
   /* ── 匯出 ── */
   window.SearchEngine = {
     loadIndex: loadIndex,
     search: search,
     getFacets: getFacets,
     getStats: getStats,
+    getDatasetMeta: getDatasetMeta,
   };
 })(window);
