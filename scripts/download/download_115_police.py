@@ -23,12 +23,10 @@ from typing import Any
 from urllib.parse import parse_qs, urljoin, urlparse
 
 import requests
-import urllib3
 from bs4 import BeautifulSoup, Tag
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 YEAR = 115
 GREGORIAN_YEAR = 2026
@@ -81,17 +79,54 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def safe_component(value: str) -> str:
+def normalize_subject(value: str) -> str:
     value = html.unescape(value).strip()
     value = re.sub(r'[\\/:*?"<>|]', "", value)
-    value = re.sub(r"\s+", " ", value)
+    value = re.sub(r"\s+", " ", value).rstrip(" .")
     if not value:
         raise ValueError("空白科目名稱")
-    return value[:180]
+    return value
+
+
+def safe_component(value: str) -> str:
+    """建立可追溯且不碰撞的安全路徑；完整名稱另存 official_subject。"""
+    value = normalize_subject(value)
+    if len(value.encode("utf-8")) <= 240:
+        return value
+    suffix = "__" + hashlib.sha256(value.encode("utf-8")).hexdigest()[:10]
+    prefix = value
+    while prefix and len((prefix.rstrip(" .") + suffix).encode("utf-8")) > 240:
+        prefix = prefix[:-1]
+    prefix = prefix.rstrip(" .")
+    if not prefix:
+        raise ValueError("科目名稱無法建立安全路徑")
+    return prefix + suffix
 
 
 def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def validate_pdf_bytes(data: bytes, source: str, content_type: str = "") -> None:
+    normalized_type = content_type.lower().split(";", 1)[0].strip()
+    if normalized_type and normalized_type not in {
+        "application/pdf", "application/octet-stream", "application/x-download"
+    }:
+        raise RuntimeError(f"下載 Content-Type 非 PDF：{source}：{content_type}")
+    if not data.startswith(b"%PDF-"):
+        raise RuntimeError(f"內容缺少 PDF 檔頭：{source}")
+    if len(data) <= 1024:
+        raise RuntimeError(f"PDF 檔案過小（{len(data)} bytes）：{source}")
+    if not data.rstrip().endswith(b"%%EOF"):
+        raise RuntimeError(f"PDF 缺少 EOF 標記，可能截斷：{source}")
+    try:
+        import fitz
+        with fitz.open(stream=data, filetype="pdf") as document:
+            if document.page_count < 1:
+                raise RuntimeError("頁數為 0")
+            document.load_page(0)
+    except Exception as exc:
+        raise RuntimeError(f"PDF 無法解析：{source}：{exc}") from exc
 
 
 def make_session() -> requests.Session:
@@ -112,7 +147,7 @@ def make_session() -> requests.Session:
 
 
 def fetch_html(session: requests.Session) -> str:
-    response = session.get(PAGE_URL, timeout=60, verify=False)
+    response = session.get(PAGE_URL, timeout=60, verify=True)
     response.raise_for_status()
     if response.apparent_encoding:
         response.encoding = response.apparent_encoding
@@ -153,7 +188,7 @@ def subject_from_link(link: Tag) -> str:
             anchor.decompose()
         subject = clone.get_text(" ", strip=True)
     subject = re.sub(r"^(試題|答案|更正答案|參考答案)\s*", "", subject)
-    return safe_component(subject)
+    return normalize_subject(subject)
 
 
 def scrape_entries(page_html: str) -> list[dict[str, Any]]:
@@ -175,7 +210,8 @@ def scrape_entries(page_html: str) -> list[dict[str, Any]]:
         if file_type not in FILE_NAMES:
             continue
 
-        subject = subject_from_link(link)
+        official_subject = subject_from_link(link)
+        subject = safe_component(official_subject)
         absolute_url = urljoin(BASE_URL, html.unescape(href))
         key = (category_code, subject, file_type, absolute_url)
         collected[key] = {
@@ -183,6 +219,7 @@ def scrape_entries(page_html: str) -> list[dict[str, Any]]:
             "category_folder": CATEGORY_MAP[category_code]["folder"],
             "official_category": CATEGORY_MAP[category_code]["official"],
             "subject": subject,
+            "official_subject": official_subject,
             "file_type": file_type,
             "file_name": FILE_NAMES[file_type],
             "url": absolute_url,
@@ -263,21 +300,14 @@ def download_pdf(
 ) -> tuple[bytes, bool]:
     if destination.exists() and not overwrite:
         data = destination.read_bytes()
-        if data.startswith(b"%PDF-") and len(data) > 1024:
-            return data, True
+        validate_pdf_bytes(data, str(destination))
+        return data, True
 
-    response = session.get(url, timeout=120, verify=False)
+    response = session.get(url, timeout=120, verify=True)
     response.raise_for_status()
     data = response.content
-    content_type = response.headers.get("Content-Type", "").lower()
-    if not data.startswith(b"%PDF-"):
-        preview = data[:120].decode("utf-8", errors="replace")
-        raise RuntimeError(
-            f"下載內容不是 PDF（{content_type or '無 Content-Type'}）：{url}；"
-            f"前綴={preview!r}"
-        )
-    if len(data) <= 1024:
-        raise RuntimeError(f"PDF 檔案過小（{len(data)} bytes）：{url}")
+    content_type = response.headers.get("Content-Type", "")
+    validate_pdf_bytes(data, url, content_type)
 
     destination.parent.mkdir(parents=True, exist_ok=True)
     temp = destination.with_suffix(destination.suffix + ".part")

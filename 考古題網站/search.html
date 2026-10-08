@@ -187,6 +187,10 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .opt.correct{background:var(--primary-tint);border-color:var(--primary-soft)}
 .opt.correct .lbl{background:var(--primary);color:#fff;border-color:transparent}
 .opt.correct .otxt{color:var(--primary);font-weight:700}
+.opt-media{display:inline-flex;flex-direction:column;align-items:flex-start;gap:5px;max-width:100%}
+.opt-media img{display:block;max-width:min(100%,24rem);max-height:18rem;width:auto;height:auto;border:1px solid var(--border);border-radius:8px;background:#fff;padding:4px}
+.opt-media a{color:var(--primary);font-size:12px;text-decoration:underline;min-height:32px;display:inline-flex;align-items:center}
+.opt-media a:focus-visible{outline:3px solid var(--primary);outline-offset:2px;border-radius:4px}
 .ans-row{margin-top:15px;padding-top:14px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px}
 .ans-row .al{font-size:13px;color:var(--text-3);font-weight:600}
 .ans-pill{
@@ -242,7 +246,11 @@ footer strong{color:var(--text-2);font-weight:700}
     <a href="index.html" class="back-link">← 回到首頁</a>
     <span class="eyebrow">考古題資料庫 · 全文檢索</span>
     <h1>考古題全文搜尋</h1>
-    <p class="lead">跨部門搜尋 41,811 道警察特考考古題。</p>
+    <p class="lead">跨類科搜尋歷年警察特考考古題與閱讀題組。</p>
+<!-- corpus-scope:begin -->
+<p class="lead corpus-scope">完整題庫：36,760 道選擇題、5,758 道申論題，共 42,518 題。<br>本頁依搜尋排除規則索引 42,482 題；重複試卷排除範圍見統計依據。 <a href="https://github.com/Reese-max/police-exam-archive/blob/master/考古題庫/quality_summary.json">統計依據</a></p>
+<!-- corpus-scope:end -->
+
   </div>
 </header>
 
@@ -289,6 +297,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
 <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
 <script src="js/search-engine.js"></script>
+<script src="js/answer-utils.js"></script>
 <script>
 /* ===== 真實搜尋引擎整合（minisearch + search-engine.js） ===== */
 (function(){
@@ -311,19 +320,32 @@ footer strong{color:var(--text-2);font-weight:700}
     return text;
   }
 
+  function _renderOption(q, label, value){
+    var image = q['optImage' + label];
+    if(!image) return '<span class="otxt">' + _highlight(_esc(value)) + '</span>';
+    var alt = q['optAlt' + label] || ('第' + q.no + '題 ' + label + '選項圖片');
+    var page = q.sourcePage ? '（原始試卷第' + _esc(String(q.sourcePage)) + '頁）' : '';
+    return '<span class="opt-media">' +
+      '<a href="' + _esc(image) + '" target="_blank" rel="noopener" aria-label="開啟 ' + label + ' 選項來源圖片">' +
+      '<img src="' + _esc(image) + '" alt="' + _esc(alt) + '" loading="lazy" decoding="async"></a>' +
+      '<a href="' + _esc(image) + '" target="_blank" rel="noopener">查看' + label + '選項來源圖片' + page + '</a>' +
+      '</span>';
+  }
+
   function _card(q){
     var tags = '<span class="tag year">' + q.yr + ' 年</span>' +
       '<span class="tag cat">' + _esc(q.cat) + '</span>' +
       '<span class="tag subj">' + _esc(q.sub) + '</span>' +
       '<span class="tag type">' + (q.type==='choice'?'選擇題':'申論題') + '</span>' +
       (q.ans ? '<span class="tag ans">答案 ' + q.ans + '</span>' : '');
-    var html = '<article class="result"><div class="tags">' + tags + '</div>' +
+    var passage = q.passage ? '<div class="passage">' + _highlight(_esc(q.passage)).replace(/\[\[(\d+)\]\]/g,'<mark>[$1]</mark>') + '</div>' : '';
+    var html = '<article class="result"><div class="tags">' + tags + '</div>' + passage +
       '<p class="stem">' + _highlight(_esc(q.type==='essay' ? q.stem.substring(0,300) : q.stem)) + '</p>';
     if(q.type==='choice' && q.optA){
       var opts='';
       ['A','B','C','D'].forEach(function(L){
         var v=q['opt'+L]; if(!v) return;
-        opts += '<div class="opt'+(q.ans===L?' correct':'')+'"><span class="lbl">'+L+'</span><span class="otxt">'+_highlight(_esc(v))+'</span></div>';
+        opts += '<div class="opt'+(AnswerUtils.accepts(q.ans,L)?' correct':'')+'"><span class="lbl">'+L+'</span>'+_renderOption(q,L,v)+'</div>';
       });
       html += '<div class="options">'+opts+'</div>';
       if(q.ans) html += '<div class="ans-row"><span class="al">正確答案</span><span class="ans-pill">'+q.ans+'</span></div>';

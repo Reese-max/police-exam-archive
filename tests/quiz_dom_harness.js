@@ -14,6 +14,7 @@ const fs = require('fs');
 const vm = require('vm');
 
 const CLOCK = { value: 1760000000000 };
+let sessionSequence = 0;
 
 function readStore(storage) {
   const store = new Map();
@@ -94,7 +95,14 @@ function makeElement(doc, id) {
       const want = sel.replace(/^[.#]/, '');
       return el.children.find((c) => c.classes.has(want)) || null;
     },
-    closest() { return el; },
+    closest(selector) {
+      let node = el;
+      while (node) {
+        if (selector.startsWith('.') ? node.classes.has(selector.slice(1)) : node.tagName === selector.toUpperCase()) return node;
+        node = node.parent || null;
+      }
+      return null;
+    },
   };
   (el.classes).add;
   return el;
@@ -191,7 +199,7 @@ function createQuizPage(options) {
   sandbox.matchMedia = () => ({ matches: false });
   sandbox.addEventListener = (name, fn) => { (sandbox._listeners[name] = sandbox._listeners[name] || []).push(fn); };
   sandbox.dispatch = (name, event) => (sandbox._listeners[name] || []).forEach((fn) => fn(event));
-  sandbox.crypto = { randomUUID: () => 'session-' + clock.value };
+  sandbox.crypto = { randomUUID: () => 'session-' + clock.value + '-' + (++sessionSequence) };
 
   vm.createContext(sandbox);
   // Date.now() reads the shared clock, so advancing it affects every open page
@@ -219,6 +227,9 @@ function createQuizPage(options) {
     search: () => pool.map((q) => Object.assign({}, q)),
   };
 
+  // Load the real source contract, just as quiz.html does before its inline script.
+  const answerUtilsJs = require('path').join(require('path').dirname(options.checkpointJs), 'answer-utils.js');
+  vm.runInContext(fs.readFileSync(answerUtilsJs, 'utf8'), sandbox, { filename: 'answer-utils.js' });
   vm.runInContext(fs.readFileSync(options.checkpointJs, 'utf8'), sandbox, { filename: 'quiz-checkpoint.js' });
 
   const inlineRe = /<script(?![^>]*\ssrc=)[^>]*>([\s\S]*?)<\/script>/g;

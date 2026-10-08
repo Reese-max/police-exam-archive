@@ -4,15 +4,18 @@
 
 ## 資料規模
 
+<!-- corpus-stats:begin 由 scripts/check_corpus_claims.py 驗證，請勿手改 -->
 | 項目 | 數量 |
 |------|------|
 | 學系/類別 | 49 個 |
 | 年份 | 106-115 年（10 年） |
 | 科目 | 101 個 |
 | JSON 檔案 | 2,049 個（非重複） |
+| 重複副本 | 41 份（共 1,217 題，不計入題數） |
 | 選擇題 | 36,760 題 |
 | 申論題 | 5,758 題 |
 | 總題數 | 42,518 題 |
+<!-- corpus-stats:end -->
 
 ## 目錄結構
 
@@ -53,6 +56,9 @@
 讓重新整理或分頁／程序被中斷後可以接著作答，而不是整場重來。
 
 - **完全本機**：沒有帳號、雲端同步或跨裝置分享，資料只留在該瀏覽器。
+- **題型保持**：多個官方正解、送分、題組文章與選項圖片都會隨場次保存，回復後
+  仍依原有答案契約計分。舊 v1 的單一整數正解快照可回復並升級；圖片僅接受網站內
+  的相對資產路徑，遭竄改的外站、可執行連結或未轉義標記會拒絕載入。
 - **回復**：重新載入後設定頁會出現「繼續作答／捨棄這次考試」橫幅，
   橫幅上的剩餘時間會持續更新；點擊時會重新讀取檢查點並依據 `savedAt`
   扣除離線期間的時間，倒數不會因為重新整理而暫停，恢復後設定表單也會
@@ -70,7 +76,9 @@
 - 驗證邏輯集中在 `考古題網站/js/quiz-checkpoint.js`；
   `tests/test_quiz_session_flow.py` 會實際執行 `quiz.html` 的流程
   （開始 → 作答／標記 → 檢查點 → 重整 → 回復 → 交卷），
-  `tests/test_quiz_checkpoint.py` 驗證模組本身的契約。
+  `tests/test_quiz_checkpoint.py` 驗證模組本身的契約，
+  `tests/test_quiz_checkpoint_modern.py` 使用實際 AnswerUtils 與頁面腳本驗證現代題型、
+  舊版回復及遭竄改的文章／圖片資料。
 
 ## 解析 Pipeline (v2)
 
@@ -168,9 +176,9 @@ pip install PyMuPDF rapidocr-onnxruntime
 
 ### 特殊值
 
-- `answer: "送分"` — 該題所有考生均給分（176 題）
-- `answer: "C或D"` — 官方公布 C 或 D 皆給分（1 題）
-- `options: {"A": "[圖片選項]", ...}` — 原卷為圖片題，無法文字化（4 題）
+- `answer: "送分"` — 該題所有考生均給分（178 題）
+- `answer: "C或D"` 等「或」複選答案 — 官方公布所列選項皆給分（3 題）
+- `options: {"A": "[圖片選項]", ...}` — 原卷圖形無法文字化（4 題）；`option_images` 保留 A–D 原圖、替代文字、公開路徑與 SHA-256，`source_locator` 保留官方 PDF URL、頁碼與 PDF SHA-256
 - `_is_duplicate: true` — metadata 中標記為已知重複資料夾
 
 ## 學系/類別列表
@@ -186,8 +194,17 @@ pip install PyMuPDF rapidocr-onnxruntime
 本資料庫經過多輪自動化品質檢查與修復：
 
 - **結構完整性**: P0=0, P1=0, P2=0（deep_audit 全通過）
-- **選項完整率**: 36,210/36,210 = 100%
-- **答案合法率**: 36,210/36,210 = 100%
+<!-- corpus-quality:begin 由 scripts/check_corpus_claims.py 驗證，請勿手改 -->
+- **選項完整率**: 36,760/36,760 = 100%
+- **答案合法率**: 36,760/36,760 = 100%
+- **驗證範圍**: 2,049 份非重複試題 JSON、36,760 道選擇題（含 115 年 550 題；另有 41 份重複副本共 1,217 題另行列出，不混入唯一題數）
+- **Canonical scope**: 只排除 `metadata._is_duplicate=true`；42,518 題（36,760 選擇 / 5,758 申論）、49 類科
+- **Search scope**: 同時排除頂層與 `metadata._is_duplicate=true`；由 `loadIndex().stats.total` 動態顯示，離線生成值為 42,482 題（36,760 選擇 / 5,722 申論）
+- **Homepage scope**: 內軌 17 類科投影；24,876 題
+- **Analytics scope**: 與 canonical 相同；42,518 題、49 類科
+- **圖片選項題**: 4 題保留 `[圖片選項]` 文字標記，另提供 `option_images` 與 `source_locator`；圖片資產由專屬測試驗證
+- **統計基準**: `考古題庫/quality_summary.json`（含資料指紋與納入/排除規則）
+<!-- corpus-quality:end -->
 - **題號連續性**: 無缺漏、無重複
 - **PUA 字元**: 已全數替換為正確文字
 - **英文連字**: 已全數修復（wordninja 分詞）
@@ -196,13 +213,15 @@ pip install PyMuPDF rapidocr-onnxruntime
 
 ### 已知限制
 
-1. 圖片題（4 題）以 `[圖片選項]` 佔位，無法呈現原始圖片內容
+1. 圖片題（4 題）保留原卷圖片；替代文字提供題號與選項脈絡，精確圖形內容仍須查看圖片或官方 PDF
 2. 移民組 111 年入出國法規 Q7 選項 B 與 D 內容相同，為原卷出題瑕疵（已加 `_note` 說明）
 3. 同年同等級共用考卷（國文、英文等）會在多個學系資料夾中重複出現
 
 ## 查詢工具
 
 內建 SQLite 索引查詢 API，支援命令列和 Python 兩種方式。
+
+Python 查詢結果的 `option_images` 與 `source_locator` 為 JSON 物件；舊版產生的索引會從完整來源重建後原子升級。若來源損壞、不完整或資料庫含自訂資料表，升級會失敗並保留原始資料庫。
 
 ```bash
 # 建立索引（首次使用）
@@ -213,6 +232,9 @@ python examdb.py query --keyword "基本權" --year 112
 
 # 按科目查詢
 python examdb.py query --subject "憲法" --category "行政警察"
+
+# 匯出圖片題及完整來源 JSON（query / random 均支援 --json）
+python examdb.py query --year 109 --keyword "進港嘴" --json
 
 # 隨機抽題練習
 python examdb.py random --count 5 --subject "刑法"
@@ -231,13 +253,33 @@ with ExamDB() as db:
     random_qs = db.random(n=5, subject="憲法")
 ```
 
-查詢速度依執行環境而異（目前 42,518 題全文搜尋）。
+全文搜尋題數由載入後的 `search-index.json` `stats.total` 動態顯示；搜尋同時排除頂層與 metadata 重複旗標。
 
 ## 驗證
 
 ```bash
-# 執行 18 項自動化品質測試
+# 執行自動化品質測試套件
 python -m pytest tests/ -v
+
+# 驗證公開題數/品質分母與 quality_summary.json 一致（CI 同項檢查）
+python scripts/check_corpus_claims.py
+```
+
+### 語料統計單一來源
+
+`考古題庫/quality_summary.json` 是所有公開題數與品質分母的 machine-readable
+來源，包含資料指紋（sha256）、納入/排除規則、逐年度題數、選項完整率與
+答案合法率的分子/分母，以及首頁（內軌 17 類科）投影。
+
+```bash
+# 語料更新後：重建摘要並重填 README / quiz / manifest 受管區塊
+python scripts/check_corpus_claims.py --write
+
+# 其餘衍生檔由各自產生器維護
+python scripts/build_home_stats.py
+python scripts/build_search_index.py
+python scripts/build_analytics.py
+python scripts/sync_analytics_frontend.py --analytics 考古題網站/data/analytics.json
 ```
 
 ## 115 年資料更新

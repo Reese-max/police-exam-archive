@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.7.1';
+var CACHE_VERSION = 'v1.7.2';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -9,13 +9,22 @@ var CORE_ASSETS = [
   './index.html',
   './category.html',
   './analytics.html',
-  './analytics-chart.js',
-  './analytics-chart-data.js',
+  './analytics-chart-bundle.js',
+  './vendor/chart.js-4.4.1/chart.umd.js',
   './data/home-stats.json',
   './css/style.css',
   './js/app.js',
+  './js/answer-utils.js',
   './js/pdf-export.js',
-  './js/quiz-checkpoint.js?v=1.7.1',
+  './js/quiz-checkpoint.js?v=1.7.2',
+  './水上警察學系/images/q2-option-A.png',
+  './水上警察學系/images/q2-option-B.png',
+  './水上警察學系/images/q2-option-C.png',
+  './水上警察學系/images/q2-option-D.png',
+  './消防學系/images/q20-option-A.png',
+  './消防學系/images/q20-option-B.png',
+  './消防學系/images/q20-option-C.png',
+  './消防學系/images/q20-option-D.png',
   './manifest.json',
   './icons/icon-192.svg',
   './icons/icon-512.svg'
@@ -64,11 +73,18 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-  /* Analytics code + generated data must update together; never serve stale first. */
+  /* One bundle response contains both Analytics code and its generated data. */
+  if (url.origin === self.location.origin &&
+      url.pathname.endsWith('/analytics-chart-bundle.js')) {
+    event.respondWith(analyticsBundle(event.request));
+    return;
+  }
+
+  /* Old pages may request code and data separately; never let cache strategies split the pair. */
   if (url.origin === self.location.origin &&
       (url.pathname.endsWith('/analytics-chart.js') ||
        url.pathname.endsWith('/analytics-chart-data.js'))) {
-    event.respondWith(networkFirst(event.request, CORE_CACHE));
+    event.respondWith(Promise.resolve(Response.error()));
     return;
   }
 
@@ -142,6 +158,45 @@ function networkFirst(request, cacheName) {
       }
     });
   });
+}
+
+function analyticsBundle(request) {
+  /* no-store keeps this route honest about freshness: an HTTP-cached copy is
+     always a whole pair, but it may be an older one, and the point here is to
+     promote the newest complete pair the server has. */
+  return fetch(request, { cache: 'no-store' }).then(function(response) {
+    if (!isAnalyticsPair(response)) {
+      /* A 200 that is not JavaScript (a soft 404, an error page) must not be
+         cached as the pair: fall through to the known complete pair instead. */
+      throw new Error('Analytics pair unavailable');
+    }
+    var fresh = response.clone();
+    return caches.open(CORE_CACHE).then(function(cache) {
+      return cache.put(request, fresh);
+    }).catch(function() {
+      /* A fresh complete pair is still safe when cache storage fails. */
+    }).then(function() {
+      return response;
+    });
+  }).catch(function() {
+    /* Only the versioned core cache holds a pair this worker wrote, and only a
+       JavaScript entry can be one; anything else fails closed. */
+    return caches.open(CORE_CACHE).then(function(cache) {
+      return cache.match(request);
+    }).then(function(cached) {
+      return cached && isAnalyticsPair(cached) ? cached : Response.error();
+    }).catch(function() {
+      /* Cache storage itself failed: fail closed instead of guessing a pair. */
+      return Response.error();
+    });
+  });
+}
+
+/* The pair is always served as JavaScript, so an HTML error page can never be
+   mistaken for a code/data pair. */
+function isAnalyticsPair(response) {
+  if (!response || !response.ok || !response.headers) return false;
+  return /javascript|ecmascript/i.test(response.headers.get('content-type') || '');
 }
 
 function staleWhileRevalidate(request, cacheName) {

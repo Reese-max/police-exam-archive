@@ -9,7 +9,7 @@
   'use strict';
 
   var KEY = 'exam-quiz-active';
-  var VERSION = 1;
+  var VERSION = 2; // v1 單一整數正解仍可載入；新場次保留現代答案/文章/圖片契約。
   var MAX_AGE_MS = 24 * 60 * 60 * 1000;  // 超過 24 小時的檢查點視為過期
   var CLOCK_SKEW_MS = 60 * 1000;         // 容忍的時鐘偏差
   var MAX_QUESTIONS = 200;               // 題目數上限（目前介面最多 50 題）
@@ -33,20 +33,63 @@
   /* 拒絕未轉義標記可避免被竄改的 localStorage 快照經 innerHTML 注入 DOM。 */
   function _hasMarkup(s) { return /[<>]/.test(s); }
 
+  // 圖片只能來自網站內的相對資產路徑。拒絕 scheme、外站、跳脫目錄、
+  // percent/entity 編碼與引號，避免 localStorage 或索引竄改變成可執行連結。
+  function isSafeImagePath(src) {
+    if (typeof src !== 'string') return false;
+    if (!src) return true;
+    if (/[\x00-\x20\x7f:?#%&"'<>\\]/.test(src) || src.charAt(0) === '/') return false;
+    var parts = src.split('/');
+    if (parts.some(function (p) { return !p || p === '.' || p === '..'; })) return false;
+    return /\.(?:png|jpe?g|webp|gif)$/i.test(parts[parts.length - 1]);
+  }
+  function _validAttribute(v) {
+    return typeof v === 'string' && !_hasMarkup(v) && !/[\x00-\x1f\x7f"']/.test(v);
+  }
+  function _validMedia(m) {
+    return !!m && typeof m === 'object' && !Array.isArray(m)
+      && isSafeImagePath(m.src) && _validAttribute(m.alt)
+      && typeof m.sourcePage === 'string' && /^(?:|[1-9][0-9]{0,3})$/.test(m.sourcePage);
+  }
+  function _validAnswers(q) {
+    if (q.accepted === undefined) return _isInt(q.ans) && q.ans >= 0 && q.ans <= 3;
+    if (!Array.isArray(q.accepted) || q.accepted.length < 1 || q.accepted.length > 4 || typeof q.bonus !== 'boolean') return false;
+    var seen = {};
+    for (var i = 0; i < q.accepted.length; i++) {
+      var a = q.accepted[i];
+      if (!_isInt(a) || a < 0 || a > 3 || seen[a]) return false;
+      seen[a] = true;
+    }
+    if (q.bonus && q.accepted.length !== 4) return false;
+    if (q.answerLabel !== undefined) {
+      if (typeof q.answerLabel !== 'string') return false;
+      if (q.bonus) return q.answerLabel === '送分';
+      if (!/^[ABCD](?:或[ABCD]){0,3}$/.test(q.answerLabel)) return false;
+      var labels = q.answerLabel.split('或');
+      if (labels.length !== q.accepted.length) return false;
+      for (i = 0; i < labels.length; i++) {
+        if ('ABCD'.indexOf(labels[i]) !== q.accepted[i]) return false;
+      }
+    }
+    return true;
+  }
+
   function _validQuestion(q) {
     return !!q && typeof q === 'object' && !Array.isArray(q)
       && typeof q.subj === 'string' && !_hasMarkup(q.subj)
       && typeof q.stem === 'string' && !_hasMarkup(q.stem)
       && Array.isArray(q.opts) && q.opts.length === 4
       && q.opts.every(function (o) { return typeof o === 'string' && !_hasMarkup(o); })
-      && _isInt(q.ans) && q.ans >= 0 && q.ans <= 3;
+      && _validAnswers(q)
+      && (q.passage === undefined || (typeof q.passage === 'string' && !_hasMarkup(q.passage)))
+      && (q.imageOpts === undefined || (Array.isArray(q.imageOpts) && q.imageOpts.length === 4 && q.imageOpts.every(_validMedia)));
   }
 
   /* 驗證並正規化一份快照；任何欄位不合法時回傳 null（呼叫端退回設定畫面）。 */
   function validate(snap, now) {
     if (!snap || typeof snap !== 'object' || Array.isArray(snap)) return null;
     now = _isInt(now) ? now : Date.now();
-    if (snap.v !== VERSION) return null;
+    if (snap.v !== VERSION && snap.v !== 1) return null;
     // 原有 v1 快照沒有 sessionId，仍可回復；回復頁會替它建立識別。
     if (snap.sessionId !== undefined && !_validSessionId(snap.sessionId)) return null;
     if (!_isInt(snap.savedAt) || snap.savedAt > now + CLOCK_SKEW_MS || now - snap.savedAt > MAX_AGE_MS) return null;
@@ -71,7 +114,7 @@
     if (snap.durSec > 0 && snap.elapsed + snap.remain !== snap.durSec) return null;
 
     return {
-      v: VERSION,
+      v: snap.v,
       sessionId: snap.sessionId,
       savedAt: snap.savedAt,
       questions: qs.slice(),
@@ -169,6 +212,7 @@
     VERSION: VERSION,
     MAX_AGE_MS: MAX_AGE_MS,
     newSessionId: newSessionId,
+    isSafeImagePath: isSafeImagePath,
     validate: validate,
     build: build,
     save: save,
