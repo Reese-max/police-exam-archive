@@ -35,7 +35,8 @@ def test_all_source_image_choices_keep_four_verified_assets() -> None:
         (113, 20),
     }
 
-    for _, data, question in questions:
+    for path, data, question in questions:
+        assert data['category'] == path.relative_to(DATA_ROOT).parts[0]
         locator = question["source_locator"]
         assert locator["pdf"] == data["source_pdf"]
         assert locator["page"] in (2, 4)
@@ -64,7 +65,9 @@ def test_search_index_and_generator_preserve_image_and_source_fields(tmp_path: P
         if "進港嘴內航行時誤擊消波塊" in stem or "短路熔痕鑑定" in stem
     ]
     assert len(target_rows) == 4
+    assert {columns['cat'][row] for row in target_rows} == {'水上警察', '水上警察學系', '消防警察', '消防學系'}
     for row in target_rows:
+        assert columns['cats'][row] == [columns['cat'][row]]
         assert all(columns[f][row] for f in ("optImageA", "optImageB", "optImageC", "optImageD"))
         assert all(columns[f][row] for f in ("optAltA", "optAltB", "optAltC", "optAltD"))
         assert columns["sourcePage"][row] in ("2", "4")
