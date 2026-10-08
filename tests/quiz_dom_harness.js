@@ -12,6 +12,13 @@
 
 const fs = require('fs');
 const vm = require('vm');
+const { IDBFactory } = require('./node_modules/fake-indexeddb');
+const databases = new WeakMap();
+
+function databaseFor(storage) {
+  if (!databases.has(storage)) databases.set(storage, new IDBFactory());
+  return databases.get(storage);
+}
 
 const CLOCK = { value: 1760000000000 };
 let sessionSequence = 0;
@@ -64,10 +71,12 @@ function makeElement(doc, id) {
       const target = (event && event.target) || el;
       const ev = event || { target: target, preventDefault() {} };
       let node = el;
+      const pending = [];
       while (node) {
-        (node.listeners[name] || []).forEach((fn) => fn.call(node, ev));
+        (node.listeners[name] || []).forEach((fn) => pending.push(fn.call(node, ev)));
         node = node.parent || null;
       }
+      return Promise.all(pending);
     },
     set innerHTML(html) {
       el._innerHTML = html;
@@ -165,7 +174,7 @@ function createQuizPage(options) {
   };
   doc.querySelectorAll = () => [];
   doc.addEventListener = (name, fn) => { (doc._listeners[name] = doc._listeners[name] || []).push(fn); };
-  doc.dispatch = (name, event) => (doc._listeners[name] || []).forEach((fn) => fn(event));
+  doc.dispatch = (name, event) => Promise.all((doc._listeners[name] || []).map((fn) => fn(event)));
   doc.visibilityState = 'visible';
 
   const timers = [];
@@ -173,6 +182,7 @@ function createQuizPage(options) {
     document: doc,
     navigator: {},
     localStorage: storage,
+    indexedDB: options.indexedDB === undefined ? databaseFor(storage) : options.indexedDB,
     console: console,
     JSON: JSON,
     Math: Math,
@@ -198,7 +208,7 @@ function createQuizPage(options) {
   sandbox.scrollTo = () => {};
   sandbox.matchMedia = () => ({ matches: false });
   sandbox.addEventListener = (name, fn) => { (sandbox._listeners[name] = sandbox._listeners[name] || []).push(fn); };
-  sandbox.dispatch = (name, event) => (sandbox._listeners[name] || []).forEach((fn) => fn(event));
+  sandbox.dispatch = (name, event) => Promise.all((sandbox._listeners[name] || []).map((fn) => fn(event)));
   sandbox.crypto = { randomUUID: () => 'session-' + clock.value + '-' + (++sessionSequence) };
 
   vm.createContext(sandbox);
@@ -247,25 +257,27 @@ function createQuizPage(options) {
     get: get,
     setNow(ms) { clock.value = ms; },
     now() { return clock.value; },
-    click(id) { get(id).dispatch('click', { target: get(id), preventDefault() {} }); },
-    choose(index) { get('choices').children.find((c) => c.dataset.i === String(index)).dispatch('click'); },
-    goto(index) { get('miniGrid').children.find((c) => c.dataset.i === String(index)).dispatch('click'); },
+    ready() { return vm.runInContext('checkpointReady', sandbox); },
+    click(id) { return get(id).dispatch('click', { target: get(id), preventDefault() {} }); },
+    choose(index) { return get('choices').children.find((c) => c.dataset.i === String(index)).dispatch('click'); },
+    goto(index) { return get('miniGrid').children.find((c) => c.dataset.i === String(index)).dispatch('click'); },
     selectSeg(segId, value) {
-      get(segId).children.find((c) => c.dataset.v === String(value)).dispatch('click');
+      return get(segId).children.find((c) => c.dataset.v === String(value)).dispatch('click');
     },
     // One tick == one second of wall clock, so timed writes and the wall-clock
     // deduction behave the way they do in the browser.
-    tick(times) {
+    async tick(times) {
       for (let i = 0; i < (times || 1); i++) {
         clock.value += 1000;
-        timers.slice().forEach((fn) => { if (fn) fn(); });
+        await Promise.all(timers.slice().map((fn) => fn && fn()));
       }
     },
     running() { return timers.some((fn) => fn !== null); },
     timers: timers,
     read(expression) { return vm.runInContext(expression, sandbox); },
-    hide() { doc.visibilityState = 'hidden'; doc.dispatch('visibilitychange', { type: 'visibilitychange' }); },
-    pagehide() { sandbox.dispatch('pagehide', { type: 'pagehide' }); },
+    hide() { doc.visibilityState = 'hidden'; return doc.dispatch('visibilitychange', { type: 'visibilitychange' }); },
+    pagehide() { return sandbox.dispatch('pagehide', { type: 'pagehide' }); },
+    async authoritative() { return sandbox.QuizCheckpoint.persistence.read(); },
     checkpoint() {
       const raw = storage.getItem(sandbox.QuizCheckpoint ? sandbox.QuizCheckpoint.KEY : 'exam-quiz-active');
       return raw === null ? null : JSON.parse(raw);
@@ -302,4 +314,4 @@ function createQuizPage(options) {
   return page;
 }
 
-module.exports = { createQuizPage: createQuizPage, readStore: readStore, CLOCK: CLOCK };
+module.exports = { createQuizPage, readStore, databaseFor, CLOCK };

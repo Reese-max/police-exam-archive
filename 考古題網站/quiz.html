@@ -291,6 +291,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
   <!-- ===== EXAM ===== -->
   <div id="examView" class="view hidden">
+    <p id="checkpointStatus" class="resume-note" role="status" aria-live="polite"></p>
     <div class="timer-bar">
       <div class="timer" id="timer"><span id="timerText">60:00</span></div>
       <div class="prog">第 <b id="curNum">1</b> / <span id="totalNum">20</span> 題</div>
@@ -367,7 +368,7 @@ footer strong{color:var(--text-2);font-weight:700}
 <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
 <script src="js/search-engine.js"></script>
 <script src="js/answer-utils.js"></script>
-<script src="js/quiz-checkpoint.js?v=1.7.2"></script>
+<script src="js/quiz-checkpoint.js?v=1.7.3"></script>
 <script>
 // corpus-stats:begin 由 scripts/check_corpus_claims.py 驗證，請勿手改
 /* ===== 真實題庫（minisearch + search-engine.js，搜尋索引排除頂層與 metadata 重複旗標後含 36,760 道選擇題） ===== */
@@ -396,33 +397,69 @@ let questions = [], answers = [], flags = [], cur = 0;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
 let examDone = false, pendingResume = null, resumeBannerTimer = null;
 let checkpointSessionId = null;
+let checkpointBusy = false, checkpointLost = false, recoveryAvailable = true, bannerEpoch = 0;
+let pendingCommit = null;
 
 const $ = id => document.getElementById(id);
 
-/* ===== 進行中考試檢查點（localStorage，供 reload/中斷後回復） ===== */
+/* ===== 進行中考試檢查點（IndexedDB 交易，供 reload/中斷後回復） ===== */
 /* 計時在每秒 tick 都會推進，但每次都重新序列化整份題目太貴； */
 /* 距上次寫入未滿 CHECKPOINT_TICK_MS 時跳過——load() 會依 savedAt 扣除 */
 /* 離線期間的牆鐘時間，所以少寫幾次不會讓作答中的倒數多出時間。 */
 const CHECKPOINT_TICK_MS = 5000;
 let lastCheckpointAt = 0;
-function saveCheckpoint(createSession, previousSnapshot){
-  if(examDone || !questions.length || typeof QuizCheckpoint==='undefined') return;
+function checkpointState(){
+  return {questions, answers, flags, cur, durSec, remain, elapsed, sessionId:checkpointSessionId};
+}
+function checkpointStatus(message, state){
+  $('checkpointStatus').textContent = message;
+  $('checkpointStatus').dataset.state = state;
+}
+function noRecovery(){
+  recoveryAvailable = false;
+  checkpointStatus('本機儲存無法使用：目前作答僅保留在此頁，關閉或重新整理後無法回復。', 'unavailable');
+}
+async function saveCheckpoint(){
+  if(examDone || !questions.length || checkpointLost) return false;
+  if(!recoveryAvailable) return true;
   lastCheckpointAt = Date.now();
-  try{ QuizCheckpoint.save({questions, answers, flags, cur, durSec, remain, elapsed, sessionId:checkpointSessionId},
-    undefined, undefined, previousSnapshot ? previousSnapshot.sessionId : (createSession===true ? undefined : checkpointSessionId),
-    previousSnapshot ? previousSnapshot.storageToken : undefined); }catch(e){}
+  try{
+    const saved = await QuizCheckpoint.persistence.save(checkpointState(), checkpointSessionId);
+    if(!saved){
+      checkpointLost = true;
+      checkpointStatus('這場考試已在另一個分頁接手、完成或捨棄。此頁無法再儲存作答，請使用接手的分頁。', 'conflict');
+      return false;
+    }
+    checkpointStatus('作答已儲存在本機。', 'saved');
+    return true;
+  }catch(e){ noRecovery(); return true; }
 }
 function saveCheckpointTick(){
-  if(Date.now() - lastCheckpointAt < CHECKPOINT_TICK_MS) return;
-  saveCheckpoint();
+  if(checkpointBusy || Date.now() - lastCheckpointAt < CHECKPOINT_TICK_MS) return;
+  return saveCheckpoint();
+}
+async function commitInteraction(change){
+  if(checkpointBusy || checkpointLost || examDone) return;
+  checkpointBusy = true;
+  const previous = {answers:answers.slice(), flags:flags.slice(), cur};
+  change();
+  if(recoveryAvailable) checkpointStatus('正在儲存作答…', 'pending');
+  pendingCommit = saveCheckpoint();
+  try{
+    if(!await pendingCommit){ answers=previous.answers; flags=previous.flags; cur=previous.cur; }
+    // A selected radio means the write transaction has completed, or the
+    // visible no-recovery warning explicitly describes an in-memory exam.
+    renderQuestion(); renderMini();
+  }finally{ checkpointBusy=false; pendingCommit=null; }
+  if(durSec>0 && remain<=0) await finish();
 }
 function showResumeNote(msg){
   const el = $('resumeNote');
   el.textContent = msg || '';
   el.classList.toggle('hidden', !msg);
 }
-window.addEventListener('pagehide', saveCheckpoint);
-document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden') saveCheckpoint(); });
+window.addEventListener('pagehide', ()=>{ if(!checkpointBusy) return saveCheckpoint(); });
+document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden' && !checkpointBusy) return saveCheckpoint(); });
 
 /* segmented controls */
 function setupSeg(id){
@@ -461,26 +498,30 @@ function buildQuestions(n){
 }
 
 /* ===== start ===== */
-$('startBtn').addEventListener('click', ()=>{
+$('startBtn').addEventListener('click', async ()=>{
+  await checkpointReady;
+  if(checkpointBusy) return;
   const want = +document.querySelector('#segCount .on').dataset.v;
   const tmin = +document.querySelector('#segTime .on').dataset.v;
   if(POOL.length===0){ alert('沒有符合條件的題目，請調整篩選條件。'); return; }
   if(POOL.length<want && !confirm('符合條件的題目只有 '+POOL.length+' 題，將全部出題。確定開始？')) return;
   _hideResumeBanner();
   showResumeNote('');
-  // 先清掉舊檢查點：若接下來 saveCheckpoint() 失敗（容量/隱私模式），
-  // 才不會讓上一場的殘留檢查點在下次載入時被誤判為可回復。
-  if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear();
   buildQuestions(want);
   total = questions.length;
   $('totalNum').textContent = total;
   durSec = tmin*60; remain = durSec; elapsed = 0;
   checkpointSessionId = typeof QuizCheckpoint!=='undefined' ? QuizCheckpoint.newSessionId() : null;
   examDone = false;
+  checkpointBusy = true; checkpointLost = false; recoveryAvailable = true;
+  try{
+    if(typeof QuizCheckpoint==='undefined' || !await QuizCheckpoint.persistence.start(checkpointState())) noRecovery();
+    else{ lastCheckpointAt=Date.now(); checkpointStatus('作答已儲存在本機。', 'saved'); }
+  }catch(e){ noRecovery(); }
+  finally{ checkpointBusy=false; }
   switchView('exam');
   renderQuestion(); renderMini();
   startTimer(tmin>0);
-  saveCheckpoint(true);
   window.scrollTo({top:0});
 });
 
@@ -508,15 +549,16 @@ function startTimer(countdown){
   if(countdown){
     $('timerText').textContent = fmtMMSS(remain);
     timerId = setInterval(()=>{
+      if(examDone || remain<=0) return;
       remain--; elapsed++;
       $('timerText').textContent = fmtMMSS(Math.max(remain,0));
       if(remain<=60) $('timer').classList.add('warn');
-      saveCheckpointTick();
-      if(remain<=0){clearInterval(timerId); finish();}
+      if(remain<=0){clearInterval(timerId); return finish();}
+      return saveCheckpointTick();
     },1000);
   } else {
     $('timerText').textContent = fmtMMSS(elapsed);
-    timerId = setInterval(()=>{ elapsed++; $('timerText').textContent = fmtMMSS(elapsed); saveCheckpointTick(); },1000);
+    timerId = setInterval(()=>{ elapsed++; $('timerText').textContent = fmtMMSS(elapsed); return saveCheckpointTick(); },1000);
   }
 }
 
@@ -546,26 +588,26 @@ function renderQuestion(){
     return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span>${_quizOptionMarkup(q,i,o,'choice')}</div>`;
   }).join('');
   $('choices').querySelectorAll('.choice').forEach(el=>{
-    const pick = ()=>{ answers[cur] = +el.dataset.i; renderQuestion(); renderMini(); saveCheckpoint(); };
+    const pick = ()=>commitInteraction(()=>{answers[cur]=+el.dataset.i;});
     el.addEventListener('click', e=>{
       // Image/source links are independent controls inside the radio option.
       // Let their default target=_blank behaviour run without selecting an answer.
       if(e.target.closest('a')) return;
-      pick();
+      return pick();
     });
     el.addEventListener('keydown', e=>{
       // Enter/Space still select when the custom radio itself has focus; source
       // links keep their own keyboard activation and focus.
       if(e.target.closest('a')) return;
-      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); }
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); return pick(); }
     });
   });
   $('prevBtn').disabled = cur===0;
   $('nextBtn').disabled = cur===total-1;
 }
-$('prevBtn').addEventListener('click',()=>{if(cur>0){cur--;renderQuestion();renderMini();saveCheckpoint();}});
-$('nextBtn').addEventListener('click',()=>{if(cur<total-1){cur++;renderQuestion();renderMini();saveCheckpoint();}});
-$('flagBtn').addEventListener('click',()=>{flags[cur]=!flags[cur];renderQuestion();renderMini();saveCheckpoint();});
+$('prevBtn').addEventListener('click',()=>{if(cur>0) return commitInteraction(()=>{cur--;});});
+$('nextBtn').addEventListener('click',()=>{if(cur<total-1) return commitInteraction(()=>{cur++;});});
+$('flagBtn').addEventListener('click',()=>commitInteraction(()=>{flags[cur]=!flags[cur];}));
 
 function renderMini(){
   $('miniGrid').innerHTML = questions.map((_,i)=>{
@@ -576,7 +618,7 @@ function renderMini(){
     return `<button class="${c}" data-i="${i}">${i+1}</button>`;
   }).join('');
   $('miniGrid').querySelectorAll('.mini').forEach(el=>{
-    el.addEventListener('click',()=>{cur=+el.dataset.i;renderQuestion();renderMini();saveCheckpoint();});
+    el.addEventListener('click',()=>commitInteraction(()=>{cur=+el.dataset.i;}));
   });
 }
 
@@ -584,12 +626,17 @@ function renderMini(){
 $('submitBtn').addEventListener('click',()=>{
   const unanswered = answers.filter(a=>a===null).length;
   if(unanswered>0 && !confirm('還有 '+unanswered+' 題未作答，確定交卷？')) return;
-  finish();
+  return finish();
 });
-function finish(){
+async function finish(){
+  if(pendingCommit) await pendingCommit;
+  if(examDone) return;
   clearInterval(timerId);
   examDone = true;
-  if(typeof QuizCheckpoint!=='undefined') QuizCheckpoint.clear(undefined, checkpointSessionId);
+  if(recoveryAvailable && typeof QuizCheckpoint!=='undefined') {
+    try{ await QuizCheckpoint.persistence.clear({sessionId:checkpointSessionId}); }
+    catch(e){ noRecovery(); }
+  }
   let ok=0,no=0,skip=0;
   questions.forEach((q,i)=>{
     if(q.bonus) ok++;
@@ -647,25 +694,35 @@ function _describeResume(snap){
   return '第 '+(snap.cur+1)+' / '+snap.questions.length+' 題・已答 '+answered+' 題・'+timePart;
 }
 function _hideResumeBanner(){
+  bannerEpoch++;
   clearInterval(resumeBannerTimer); resumeBannerTimer = null;
   pendingResume = null;
   $('resumeBanner').classList.add('hidden');
 }
-function _discardExpiredSession(snap){
-  QuizCheckpoint.clear(undefined, snap.sessionId, snap.storageToken);
+async function _discardExpiredSession(snap){
+  try{ await QuizCheckpoint.persistence.clear(snap); }
+  catch(e){ _hideResumeBanner(); showResumeNote('本機儲存無法使用，無法確認是否已清除先前的考試。'); return; }
   _hideResumeBanner();
   showResumeNote('先前的考試在離線期間已逾時，檢查點已清除，請重新開始。');
 }
 /* 橫幅可能停留數十秒，期間倒數仍在走：定期重讀檢查點，讓顯示的剩餘時間
    不停在載入當下；若檢查點消失（另一個分頁已交卷或捨棄）或已逾時，就收掉橫幅。 */
-function _refreshResumeBanner(){
-  const snap = QuizCheckpoint.load();
+let bannerRefreshing = false;
+async function _refreshResumeBanner(initial){
+  if(bannerRefreshing || checkpointBusy || (questions.length && !examDone)) return;
+  bannerRefreshing = true;
+  const epoch = bannerEpoch;
+  let snap;
+  try{ snap = await QuizCheckpoint.persistence.read(); }
+  catch(e){ _hideResumeBanner(); showResumeNote('本機儲存無法使用，先前的考試無法回復。新考試仍可在此頁作答。'); return; }
+  finally{ bannerRefreshing = false; }
+  if(epoch!==bannerEpoch) return;
   if(!snap){
     _hideResumeBanner();
-    showResumeNote('先前的考試紀錄已不存在或無法使用（可能已在另一個分頁完成或捨棄，或已過期）。');
+    if(initial!==true) showResumeNote('先前的考試紀錄已不存在或無法使用（可能已在另一個分頁完成或捨棄，或已過期）。');
     return;
   }
-  if(snap.durSec>0 && snap.remain<=0){ _discardExpiredSession(snap); return; }
+  if(snap.durSec>0 && snap.remain<=0){ await _discardExpiredSession(snap); return; }
   pendingResume = snap;
   $('resumeInfo').textContent = _describeResume(snap);
   $('resumeBanner').classList.remove('hidden');
@@ -682,22 +739,27 @@ function _syncSetupFilters(snap){
   pick('segCount', counts.find(n=>n>=snap.questions.length) || counts[counts.length-1]);
   pick('segTime', Math.round(snap.durSec/60));
 }
-(function(){
+const checkpointReady = (async function(){
   if(typeof QuizCheckpoint==='undefined') return;
-  if(!QuizCheckpoint.load()) return;
-  _refreshResumeBanner();
-  if(pendingResume) resumeBannerTimer = setInterval(_refreshResumeBanner, 1000);
+  await _refreshResumeBanner(true);
+  if(pendingResume) resumeBannerTimer = setInterval(()=>_refreshResumeBanner(false), 1000);
 })();
-$('resumeBtn').addEventListener('click', ()=>{
+$('resumeBtn').addEventListener('click', async ()=>{
+  if(checkpointBusy) return;
   const offered = pendingResume;
   _hideResumeBanner();
   if(!offered) return;
   showResumeNote('');
-  // 依點擊當下的時間重新讀取：橫幅是載入時的快照，等待期間倒數仍在走，
-  // 而且別的分頁可能已經交卷或捨棄了這場考試。
-  const snap = QuizCheckpoint.load();
+  // Read latest progress, check the offered owner, and take ownership in ONE
+  // transaction. No stale banner copy can overwrite an answer accepted later.
+  checkpointBusy = true;
+  const owner = QuizCheckpoint.newSessionId();
+  let snap;
+  try{ snap = await QuizCheckpoint.persistence.claim(offered, owner); }
+  catch(e){ showResumeNote('本機儲存無法使用，無法安全接手先前的考試。請稍後重試。'); return; }
+  finally{ checkpointBusy = false; }
   if(!snap){
-    showResumeNote('找不到可繼續的考試（可能已在另一個分頁完成或捨棄），請直接開始新的考試。');
+    showResumeNote('先前的考試已逾時、在另一個分頁接手、完成或捨棄，請重新開始或使用接手的分頁。');
     return;
   }
   // 關閉期間已逾時：清掉檢查點並留在設定頁，不要開一個 00:00 的死場次。
@@ -711,7 +773,9 @@ $('resumeBtn').addEventListener('click', ()=>{
   answers = snap.answers; flags = snap.flags;
   cur = snap.cur; total = questions.length;
   durSec = snap.durSec; remain = snap.remain; elapsed = snap.elapsed;
-  checkpointSessionId = QuizCheckpoint.newSessionId();
+  checkpointSessionId = owner;
+  checkpointLost = false; recoveryAvailable = true; lastCheckpointAt = Date.now();
+  checkpointStatus('作答已儲存在本機。', 'saved');
   examDone = false;
   _syncSetupFilters(snap);
   $('totalNum').textContent = total;
@@ -719,14 +783,19 @@ $('resumeBtn').addEventListener('click', ()=>{
   switchView('exam');
   renderQuestion(); renderMini();
   startTimer(durSec>0);
-  saveCheckpoint(true, snap);
   window.scrollTo({top:0});
 });
-$('discardResumeBtn').addEventListener('click', ()=>{
+$('discardResumeBtn').addEventListener('click', async ()=>{
+  if(checkpointBusy) return;
   const offered = pendingResume;
   _hideResumeBanner();
-  if(typeof QuizCheckpoint!=='undefined' && offered) QuizCheckpoint.clear(undefined, offered.sessionId, offered.storageToken);
-  showResumeNote('已捨棄先前的考試，檢查點已清除。');
+  if(typeof QuizCheckpoint==='undefined' || !offered) return;
+  checkpointBusy = true;
+  try{
+    const cleared = await QuizCheckpoint.persistence.clear(offered);
+    showResumeNote(cleared ? '已捨棄先前的考試，檢查點已清除。' : '這場考試已在另一個分頁接手、完成或捨棄，未變更新的考試。');
+  }catch(e){ showResumeNote('本機儲存無法使用，無法確認是否已捨棄先前的考試。'); }
+  finally{ checkpointBusy = false; }
 });
 
 /* ===== theme — 全站共用 localStorage key「exam-dark」(true/false) ===== */

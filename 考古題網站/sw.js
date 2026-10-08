@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.7.2';
+var CACHE_VERSION = 'v1.7.3';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -16,7 +16,7 @@ var CORE_ASSETS = [
   './js/app.js',
   './js/answer-utils.js',
   './js/pdf-export.js',
-  './js/quiz-checkpoint.js?v=1.7.2',
+  './js/quiz-checkpoint.js?v=1.7.3',
   './水上警察學系/images/q2-option-A.png',
   './水上警察學系/images/q2-option-B.png',
   './水上警察學系/images/q2-option-C.png',

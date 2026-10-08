@@ -1,5 +1,5 @@
 /* === quiz-checkpoint.js — 模擬考試進行中場次的本機檢查點 === */
-/* 將進行中的考試快照（題目、作答、標記、位置、計時）存入 localStorage， */
+/* 將進行中的考試快照（題目、作答、標記、位置、計時）存入 IndexedDB， */
 /* 供頁面重新載入或分頁/程序中斷後回復。僅使用本機儲存，不涉及帳號、雲端同步或外部服務。 */
 (function (root, factory) {
   var api = factory();
@@ -207,6 +207,153 @@
     try { store.removeItem(KEY); } catch (e) {}
   }
 
+  /* localStorage 的 read/compare/write 不是跨 renderer 的原子操作。上面的
+   * 同步 API 僅保留舊快照工具的相容性；頁面使用下列交易式 API。
+   * owner、完整快照、關閉墓碑都在同一筆 record，且只在 transaction.complete
+   * 後回報成功。readwrite 交易串行化接手與舊分頁的所有後續寫入。
+   * strict 是瀏覽器的耐久性提示，並非電源故障/清除網站資料的絕對保證。
+   */
+  var DB_NAME = 'exam-quiz-checkpoints';
+  var DB_STORE = 'sessions';
+  function createPersistence(options) {
+    options = options || {};
+    var factory = options.indexedDB;
+    if (factory === undefined) {
+      try { factory = typeof indexedDB !== 'undefined' ? indexedDB : null; } catch (e) { factory = null; }
+    }
+    var legacy = _store(options.storage);
+    var opening = null;
+    function unavailable() { return new Error('本機考試儲存無法使用'); }
+    function openDatabase() {
+      if (!factory) return Promise.reject(unavailable());
+      if (!opening) opening = new Promise(function (resolve, reject) {
+        var request, failed = false;
+        function fail() { failed = true; reject(unavailable()); }
+        try { request = factory.open(DB_NAME, 1); } catch (e) { reject(unavailable()); return; }
+        request.onupgradeneeded = function () { request.result.createObjectStore(DB_STORE); };
+        request.onerror = fail;
+        request.onblocked = fail;
+        request.onsuccess = function () {
+          var db = request.result;
+          if (failed) { db.close(); return; }
+          db.onversionchange = function () { db.close(); opening = null; };
+          resolve(db);
+        };
+      }).catch(function (error) { opening = null; throw error; });
+      return opening;
+    }
+    function closed() { return { format: 1, revision: newSessionId(), closed: true }; }
+    function active(snap) { return { format: 1, revision: newSessionId(), closed: false, snapshot: snap }; }
+    function view(record, now) {
+      if (!record || record.format !== 1 || record.closed !== false || !_validSessionId(record.revision)) return null;
+      var snap = validate(record.snapshot, now);
+      if (!snap) return null;
+      snap.persistenceToken = record.revision;
+      var offline = Math.max(0, Math.floor((now - snap.savedAt) / 1000));
+      if (snap.durSec > 0) {
+        offline = Math.min(offline, snap.remain);
+        snap.remain -= offline;
+      }
+      snap.elapsed += offline;
+      return snap;
+    }
+    function matches(record, expected) {
+      if (!record || record.closed !== false || !expected) return false;
+      // A live owner can still answer between banner display and takeover.
+      // Claim its latest record inside the transaction, not the banner copy.
+      if (expected.sessionId !== undefined) return _validSessionId(expected.sessionId)
+        && record.snapshot && record.snapshot.sessionId === expected.sessionId;
+      return _validSessionId(expected.persistenceToken) && record.revision === expected.persistenceToken;
+    }
+    function transaction(operation) {
+      return openDatabase().then(function (db) {
+        return new Promise(function (resolve, reject) {
+          var tx, store, output, mirror;
+          try {
+            tx = db.transaction(DB_STORE, 'readwrite', { durability: 'strict' });
+            store = tx.objectStore(DB_STORE);
+          } catch (e) { reject(unavailable()); return; }
+          tx.onabort = function () { reject(unavailable()); };
+          tx.onerror = function () { reject(unavailable()); };
+          tx.oncomplete = function () {
+            // Compatibility mirror only. It is NEVER used once a DB record
+            // exists, even if an old page writes its cached localStorage later.
+            if (mirror && legacy) {
+              try {
+                if (mirror.closed) legacy.removeItem(KEY);
+                else legacy.setItem(KEY, JSON.stringify(mirror.snapshot));
+              } catch (e) {}
+            }
+            resolve(output);
+          };
+          var request = store.get(KEY);
+          request.onsuccess = function () {
+            try {
+              var record = request.result;
+              // Exactly one import under the same serialized transaction.
+              // A closed record stays present, so stale v1/LS writers cannot
+              // resurrect a finished/discarded exam on the next page load.
+              if (record === undefined) {
+                var raw = null, imported = null;
+                try { raw = legacy && legacy.getItem(KEY); imported = raw && validate(JSON.parse(raw), Date.now()); } catch (e) {}
+                record = imported ? active(imported) : closed();
+                store.put(record, KEY); mirror = record;
+              }
+              var result = operation(record);
+              output = result.value;
+              if (result.record) { store.put(result.record, KEY); mirror = result.record; }
+            } catch (e) { tx.abort(); }
+          };
+        });
+      });
+    }
+    return {
+      read: function () {
+        return transaction(function (record) {
+          var snap = view(record, Date.now());
+          return { value: snap, record: !snap && record.closed !== true ? closed() : null };
+        });
+      },
+      start: function (state) {
+        var snap = build(state);
+        if (!snap || !_validSessionId(snap.sessionId)) return Promise.resolve(false);
+        return transaction(function () { return { value: true, record: active(snap) }; });
+      },
+      save: function (state, owner) {
+        var snap = build(state);
+        if (!snap || !_validSessionId(owner) || snap.sessionId !== owner) return Promise.resolve(false);
+        return transaction(function (record) {
+          return matches(record, { sessionId: owner }) ? { value: true, record: active(snap) } : { value: false };
+        });
+      },
+      claim: function (offered, owner) {
+        if (!_validSessionId(owner)) return Promise.resolve(null);
+        return transaction(function (record) {
+          if (!matches(record, offered)) return { value: null };
+          var snap = view(record, Date.now());
+          if (!snap || (snap.durSec > 0 && snap.remain === 0)) return { value: null, record: closed() };
+          snap.sessionId = owner;
+          snap.questions = snap.questions.map(function (q) {
+            if (q.accepted !== undefined) return q;
+            return {
+              subj: q.subj, stem: q.stem, opts: q.opts,
+              passage: q.passage || '',
+              imageOpts: q.imageOpts || [0, 1, 2, 3].map(function () { return { src: '', alt: '', sourcePage: '' }; }),
+              accepted: [q.ans], bonus: false, answerLabel: 'ABCD'[q.ans],
+            };
+          });
+          snap = build(snap);
+          return { value: snap, record: active(snap) };
+        });
+      },
+      clear: function (expected) {
+        return transaction(function (record) {
+          return matches(record, expected) ? { value: true, record: closed() } : { value: false };
+        });
+      },
+    };
+  }
+
   return {
     KEY: KEY,
     VERSION: VERSION,
@@ -218,5 +365,9 @@
     save: save,
     load: load,
     clear: clear,
+    DB_NAME: DB_NAME,
+    DB_STORE: DB_STORE,
+    createPersistence: createPersistence,
+    persistence: createPersistence(),
   };
 });
