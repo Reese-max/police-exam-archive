@@ -8,7 +8,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import unquote
 
-from scripts.build_category_pages import _load_generator
+from scripts.build_category_pages import _load_generator, build_pages
 from scripts.build_search_index import FIELDS, build_index
 
 
@@ -138,6 +138,19 @@ def test_all_four_category_aliases_resolve_their_rendered_source_images():
             asset = (SITE_ROOT / category / unquote(relative)).resolve()
             assert asset.is_file(), f'{category}: {label} source image does not resolve: {relative}'
             assert hashlib.sha256(asset.read_bytes()).hexdigest() == question['option_images'][label]['sha256']
+
+
+def test_release_builder_updates_all_four_image_question_category_pages(tmp_path):
+    build_pages(DATA_ROOT, tmp_path)
+    for path, _, question in _image_questions():
+        category = path.relative_to(DATA_ROOT).parts[0]
+        page = tmp_path / category / f'{category}考古題總覽.html'
+        assert page.is_file(), f'Release builder omitted image question category: {category}'
+        html = page.read_text(encoding='utf-8')
+        assert html.count('class="opt-image"') >= 4
+        assert question['source_locator']['pdf_sha256'] in html
+        for image in question['option_images'].values():
+            assert ('../' + image['public_src']) in html
 
 
 def test_pdf_export_keeps_mixed_options_before_answer_and_provenance() -> None:

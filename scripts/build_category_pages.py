@@ -42,6 +42,7 @@ CATEGORIES_GROUP_B = [
 ]
 
 CATEGORIES = CATEGORIES_GROUP_A + CATEGORIES_GROUP_B
+IMAGE_CHOICE_ALIASES = ("水上警察", "消防警察")
 
 CATEGORIES_INFO = {
     "行政警察學系": {"code": 501, "icon": "&#128110;", "color": "#2563eb"},
@@ -181,6 +182,9 @@ def _validate_generated_page(path: Path, category: str, years: list[int]) -> Non
 
 def build_pages(input_root: Path, output_root: Path) -> dict[str, dict[str, int]]:
     generator = _load_generator()
+    # These supported legacy URLs contain the other two aliases of image
+    # questions. Rebuild their full pages from their own source JSON as well.
+    generator.CATEGORIES_ORDER = [*CATEGORIES, *IMAGE_CHOICE_ALIASES]
     all_data = generator.collect_json_data(str(input_root))
 
     missing_categories = [category for category in CATEGORIES if category not in all_data]
@@ -219,7 +223,16 @@ def build_pages(input_root: Path, output_root: Path) -> dict[str, dict[str, int]
     if len(with_115) != 13:
         raise RuntimeError(f"預期 13 個類科含 115 年，實際為 {len(with_115)}：{with_115}")
 
-    print("完整類科頁重建完成：17 個類科，其中 13 個已含 115 年")
+    for category in IMAGE_CHOICE_ALIASES:
+        years_data = all_data.get(category)
+        if not years_data:
+            raise RuntimeError(f"圖片題舊類科網址缺少來源：{category}")
+        page = generator.generate_category_page(category, years_data, str(output_root))
+        if not page:
+            raise RuntimeError(f"{category} 圖片題舊類科頁產生失敗")
+        _validate_generated_page(Path(page), category, sorted(int(year) for year in years_data))
+
+    print("完整類科頁重建完成：17 個類科，其中 13 個已含 115 年；另重建 2 個圖片題舊類科網址")
     return summary
 
 

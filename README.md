@@ -147,7 +147,7 @@ pip install PyMuPDF rapidocr-onnxruntime
 
 - `answer: "送分"` — 該題所有考生均給分（178 題）
 - `answer: "C或D"` 等「或」複選答案 — 官方公布所列選項皆給分（3 題）
-- `options: {"A": "[圖片選項]", ...}` — 原卷為圖片題；`option_images` 保留 A–D 原圖、替代文字、公開路徑與 SHA-256，`source_locator` 保留官方 PDF URL、頁碼與 PDF SHA-256（4 題）
+- `options: {"A": "[圖片選項]", ...}` — 原卷圖形無法文字化（4 題）；`option_images` 保留 A–D 原圖、替代文字、公開路徑與 SHA-256，`source_locator` 保留官方 PDF URL、頁碼與 PDF SHA-256
 - `_is_duplicate: true` — metadata 中標記為已知重複資料夾
 
 ## 學系/類別列表
@@ -171,7 +171,7 @@ pip install PyMuPDF rapidocr-onnxruntime
 - **Search scope**: 同時排除頂層與 `metadata._is_duplicate=true`；由 `loadIndex().stats.total` 動態顯示，離線生成值為 42,482 題（36,760 選擇 / 5,722 申論）
 - **Homepage scope**: 內軌 17 類科投影；24,876 題
 - **Analytics scope**: 與 canonical 相同；42,518 題、49 類科
-- **圖片佔位題**: 4 題以 `[圖片選項]` 佔位，僅驗證選項鍵存在（詳見下方已知限制）
+- **圖片選項題**: 4 題保留 `[圖片選項]` 文字標記，另提供 `option_images` 與 `source_locator`；圖片資產由專屬測試驗證
 - **統計基準**: `考古題庫/quality_summary.json`（含資料指紋與納入/排除規則）
 <!-- corpus-quality:end -->
 - **題號連續性**: 無缺漏、無重複
