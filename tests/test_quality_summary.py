@@ -363,9 +363,9 @@ class TestSummaryAgainstCorpus:
         assert summary["dataset_fingerprint"].startswith("sha256:")
         assert len(summary["dataset_fingerprint"]) == len("sha256:") + 64
         assert summary["corpus_fingerprint"] == summary["dataset_fingerprint"]
-        # Official image provenance in four source JSONs; source commit 5a24656e.
+        # Official image provenance and category repair; source commit 66e2dab9.
         assert summary["corpus_fingerprint"] == (
-            "sha256:f64f6b48e0b0e6352b9c0a0d5771ce213b9625c6fae8c5db69487e023efcad4e"
+            "sha256:b05dc4ea00381de2523d8dc25b8d183f6db9743c3dd60dc0ed79f622271b6e61"
         )
         assert summary["provenance"]["schema_version"] == 1
         assert summary["provenance"]["fingerprint"]["value"] == summary["corpus_fingerprint"]

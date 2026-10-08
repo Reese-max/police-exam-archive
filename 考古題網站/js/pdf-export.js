@@ -752,7 +752,10 @@
       }
     }
     progress(15, '正在嵌入字型...');
-    var font = await pdfDoc.embedFont(fontBytes, { subset: true });
+    // The served OTF is already subset. A second CFF subset produced blank
+    // glyphs in rendered exports despite recoverable text. Embed its outlines
+    // intact so titles, option labels and offline provenance stay readable.
+    var font = await pdfDoc.embedFont(fontBytes, { subset: false });
 
     // 擷取資料
     progress(20, '正在擷取試題資料...');
