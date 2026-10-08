@@ -228,3 +228,93 @@ def test_save_failure_cannot_make_finish_skip_an_existing_durable_record():
         assert.strictEqual(reopened.state().bannerHidden,true);
         console.log('flow-ok');
     """)
+
+
+def test_stale_resume_banner_tick_does_not_rebind_to_claimed_session_or_allow_discard():
+    run_flow("""
+        const {store,clock,page}=await context();
+        await startWorkedExam(page);
+        const originalState=JSON.parse(store.getItem(KEY));
+        const originalSessionId=originalState.sessionId;
+
+        // Two tabs both see the resume banner
+        const a=await open(store,clock), b=await open(store,clock);
+        assert.strictEqual(a.state().bannerHidden,false);
+        assert.strictEqual(b.state().bannerHidden,false);
+
+        // Tab A takes ownership and makes progress
+        await a.click('resumeBtn');
+        assert.strictEqual(a.state().view,'exam');
+        await a.goto(2); await a.choose(3);
+        const committed=await a.authoritative();
+        assert.ok(committed);
+        assert.notStrictEqual(committed.sessionId,originalSessionId,'tab A claimed a new session identity');
+        const newSessionId=committed.sessionId;
+        assert.strictEqual(committed.answers[2],3);
+
+        // Tab B's resume banner timer ticks after Tab A has claimed the session
+        await b.tick(1);
+
+        // The banner must be hidden and pendingResume must not rebind to newSessionId
+        assert.strictEqual(b.state().bannerHidden,true,'stale tab banner must be hidden once tick detects new owner');
+
+        // Tab B clicking discard must not erase Tab A's active session
+        await b.click('discardResumeBtn');
+        const afterDiscard=await a.authoritative();
+        assert.ok(afterDiscard,'discard from stale tab must not erase claimed session');
+        assert.strictEqual(afterDiscard.sessionId,newSessionId);
+        assert.strictEqual(afterDiscard.answers[2],3);
+
+        // Tab B clicking resume must not hijack Tab A's active session
+        await b.click('resumeBtn');
+        const afterResume=await a.authoritative();
+        assert.ok(afterResume,'resume from stale tab must not hijack claimed session');
+        assert.strictEqual(afterResume.sessionId,newSessionId);
+        assert.strictEqual(afterResume.answers[2],3);
+        assert.strictEqual(b.state().view,'setup','stale tab must stay on setup view');
+
+        console.log('flow-ok');
+    """)
+
+
+def test_stale_legacy_resume_banner_tick_does_not_rebind_or_clear_upgraded_session():
+    run_flow("""
+        const {store,clock,page}=await context();
+        await startWorkedExam(page);
+        const legacy=JSON.parse(store.getItem(KEY)); delete legacy.sessionId; legacy.v=1;
+        const legacyStore=readStore(); legacyStore.setItem(KEY,JSON.stringify(legacy));
+
+        const a=await open(legacyStore,clock), b=await open(legacyStore,clock);
+        assert.strictEqual(a.state().bannerHidden,false);
+        assert.strictEqual(b.state().bannerHidden,false);
+
+        // Tab A resumes the legacy checkpoint and gets upgraded session ID
+        await a.click('resumeBtn');
+        await a.goto(2); await a.choose(3);
+        const committed=await a.authoritative();
+        assert.ok(committed);
+        assert.strictEqual(typeof committed.sessionId,'string');
+        const upgradedSessionId=committed.sessionId;
+        assert.strictEqual(committed.answers[2],3);
+
+        // Tab B ticks after Tab A has claimed and upgraded the session
+        await b.tick(1);
+        assert.strictEqual(b.state().bannerHidden,true,'stale tab banner must be hidden once tick detects upgrade');
+
+        // Tab B clicking discard must not erase upgraded session
+        await b.click('discardResumeBtn');
+        const afterDiscard=await a.authoritative();
+        assert.ok(afterDiscard,'discard from stale tab must not erase upgraded session');
+        assert.strictEqual(afterDiscard.sessionId,upgradedSessionId);
+        assert.strictEqual(afterDiscard.answers[2],3);
+
+        // Tab B clicking resume must not hijack upgraded session
+        await b.click('resumeBtn');
+        const afterResume=await a.authoritative();
+        assert.ok(afterResume,'resume from stale tab must not hijack upgraded session');
+        assert.strictEqual(afterResume.sessionId,upgradedSessionId);
+        assert.strictEqual(afterResume.answers[2],3);
+        assert.strictEqual(b.state().view,'setup');
+
+        console.log('flow-ok');
+    """)
