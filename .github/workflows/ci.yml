@@ -24,6 +24,11 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Set up Node for required checkpoint and contract tests
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Install dependencies
         run: |
           pip install pytest pytest-cov
@@ -33,6 +38,9 @@ jobs:
         run: python scripts/audit/verify_115_integrity.py
 
       - name: Run all tests
+        env:
+          # The quiz checkpoint tests need node; fail loudly instead of skipping.
+          REQUIRE_NODE_FOR_TESTS: '1'
         run: python -m pytest tests/ -v --tb=short
 
       - name: Verify full category pages and 115 UI
@@ -69,6 +77,7 @@ jobs:
         run: |
           node --check 考古題網站/sw.js
           node --check 考古題網站/js/app.js
+          node --check 考古題網站/js/quiz-checkpoint.js
           node --check 考古題網站/js/answer-utils.js
           node --check 考古題網站/js/search-engine.js
           node --check 考古題網站/js/quiz-engine.js

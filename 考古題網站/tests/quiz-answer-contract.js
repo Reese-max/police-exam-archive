@@ -29,6 +29,10 @@ vm.runInContext(
 
 assert.ok(context.AnswerUtils, 'AnswerUtils must be exported');
 assert.ok(context.QuizEngine, 'QuizEngine must be exported');
+for (const invalid of ['', ' ', '或', 'A或', '或B', 'Z', 'AB', 'A或Z', '<img src=x>']) {
+  assert.deepStrictEqual(Array.from(context.AnswerUtils.parse(invalid).accepted), [], 'invalid answer must not enter the scoring pool: ' + invalid);
+  assert.strictEqual(context.AnswerUtils.parse(invalid).bonus, false);
+}
 
 function grade(answer, chosen) {
   const state = context.QuizEngine.getState();
@@ -53,4 +57,6 @@ assert.strictEqual(grade('A或C', 'C').correct, 1);
 assert.strictEqual(grade('A或C', 'B').wrong, 1);
 assert.strictEqual(grade('A或C或D', 'D').correct, 1);
 assert.strictEqual(grade('送分', 'B').correct, 1);
+assert.deepStrictEqual(Array.from(context.AnswerUtils.parse(' A或C ').accepted), ['A','C']);
+assert.deepStrictEqual(Array.from(context.AnswerUtils.parse('A或A').accepted), ['A']);
 console.log('quiz answer contract passed');

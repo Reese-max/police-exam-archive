@@ -6,6 +6,7 @@
     var value = String(raw || '').trim().toUpperCase();
     if (value === '送分') return { accepted: ['A','B','C','D'], bonus: true };
     var accepted = [];
+    if (!/^[ABCD](?:或[ABCD])*$/.test(value)) return { accepted: accepted, bonus: false };
     value.split('或').forEach(function (letter) {
       if ('ABCD'.indexOf(letter) !== -1 && accepted.indexOf(letter) === -1) accepted.push(letter);
     });
