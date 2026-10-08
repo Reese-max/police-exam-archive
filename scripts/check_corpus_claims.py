@@ -305,7 +305,7 @@ def _check_search(root: Path, summary: dict) -> list[Finding]:
     ):
         if expected not in text:
             findings.append(Finding(rel, expected, "找不到動態搜尋統計契約"))
-    if re.search(r"跨部門搜尋 [\d,]+ 道警察特考考古題", text):
+    if re.search(r"跨(?:部門|類科)搜尋\s*[\d,]+\s*道(?:歷年)?警察特考考古題", text):
         findings.append(
             Finding(rel, "不含固定總題數的搜尋說明", "找到固定搜尋題數")
         )
@@ -527,8 +527,9 @@ def write_surfaces(root: Path, summary: dict) -> list[Path]:
     """重建 artifact 並重填本腳本擁有的表面（README、quiz.html、manifest）。
 
     先於記憶體算好所有新內容（缺 markers 會在寫檔前失敗），再落盤。
-    home-stats / analytics 由各自的產生器擁有；漂移時請執行
-    scripts/build_home_stats.py 與 scripts/sync_analytics_frontend.py。
+    home-stats / search-index / analytics 由各自的產生器擁有；漂移時請執行
+    scripts/build_home_stats.py、scripts/build_search_index.py
+    與 scripts/sync_analytics_frontend.py。
     """
     root = Path(root)
 
@@ -615,6 +616,7 @@ def main() -> int:
             "\n若是合法的語料更新，請依序執行：\n"
             "  python scripts/check_corpus_claims.py --write\n"
             "  python scripts/build_home_stats.py\n"
+            "  python scripts/build_search_index.py\n"
             "  python scripts/build_analytics.py\n"
             "  python scripts/sync_analytics_frontend.py --analytics "
             "考古題網站/data/analytics.json\n"

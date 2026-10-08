@@ -241,6 +241,7 @@ python scripts/check_corpus_claims.py --write
 
 # 其餘衍生檔由各自產生器維護
 python scripts/build_home_stats.py
+python scripts/build_search_index.py
 python scripts/build_analytics.py
 python scripts/sync_analytics_frontend.py --analytics 考古題網站/data/analytics.json
 ```

@@ -95,75 +95,69 @@ def _fingerprint(files: list[str], data_dir: Path) -> str:
 def _fingerprint_at_commit(
     files: list[str], data_dir: Path, repo_root: Path, sha: str
 ) -> str:
-    """Hash raw Git blob bytes after worktree/source equality passed."""
+    """Hash raw Git blobs, independent of checkout and archive transformations."""
     repo_root = repo_root.resolve()
     data_dir = data_dir.resolve()
     relative_root = data_dir.relative_to(repo_root).as_posix()
     expected_paths = {
         os.path.relpath(fp, str(data_dir)).replace(os.sep, "/") for fp in files
     }
+    entries: list[tuple[str, bytes]] = []
     try:
         tree = subprocess.run(
-            [
-                "git", "-C", str(repo_root), "ls-tree", "-r", "-z",
-                sha, "--", relative_root,
-            ],
-            capture_output=True,
-            timeout=30,
+            ["git", "-C", str(repo_root), "ls-tree", "-r", "-z", "--full-tree",
+             sha, "--", relative_root],
+            check=True, capture_output=True, timeout=30,
         )
-    except (OSError, subprocess.SubprocessError) as exc:
-        raise RuntimeError(f"無法計算 Git corpus fingerprint：{exc}") from exc
-    if tree.returncode != 0:
-        raise RuntimeError(
-            "無法計算 Git corpus fingerprint："
-            + tree.stderr.decode("utf-8", errors="replace").strip()
-        )
-
-    prefix = f"{relative_root}/"
-    objects: list[tuple[str, str]] = []
-    for record in tree.stdout.split(b"\0"):
-        if not record:
-            continue
-        header, raw_path = record.split(b"\t", 1)
-        _mode, object_type, object_id = header.split()
-        path = raw_path.decode("utf-8")
-        if object_type != b"blob" or not path.endswith("/試題.json"):
-            continue
-        objects.append((path[len(prefix):], object_id.decode("ascii")))
-    if {rel for rel, _object_id in objects} != expected_paths:
+        prefix = f"{relative_root}/"
+        for row in tree.stdout.split(b"\0"):
+            if not row:
+                continue
+            metadata, path_bytes = row.split(b"\t", 1)
+            _mode, kind, blob_sha = metadata.split(b" ", 2)
+            path = path_bytes.decode("utf-8")
+            if kind == b"blob" and path.startswith(prefix) and path.endswith("/試題.json"):
+                entries.append((path[len(prefix):], blob_sha))
+    except (OSError, subprocess.SubprocessError, ValueError, UnicodeError) as exc:
+        raise RuntimeError(f"無法讀取 Git corpus tree：{exc}") from exc
+    if {rel for rel, _blob in entries} != expected_paths:
         raise RuntimeError("Git source commit 與輸入 corpus 的試題檔 inventory 不一致")
 
+    rows: list[tuple[str, bytes]] = []
+    process = None
     try:
         process = subprocess.Popen(
             ["git", "-C", str(repo_root), "cat-file", "--batch"],
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
         )
         assert process.stdin is not None and process.stdout is not None
-        rows: list[tuple[str, bytes]] = []
-        for rel, object_id in objects:
-            process.stdin.write(object_id.encode("ascii") + b"\n")
+        for rel, blob_sha in entries:
+            process.stdin.write(blob_sha + b"\n")
             process.stdin.flush()
-            header = process.stdout.readline().rstrip(b"\n")
-            returned_id, object_type, raw_size = header.split()
-            if returned_id.decode("ascii") != object_id or object_type != b"blob":
-                raise RuntimeError(f"Git cat-file 回傳非預期 blob：{header!r}")
-            size = int(raw_size)
+            header = process.stdout.readline().split()
+            if len(header) != 3 or header[0] != blob_sha or header[1] != b"blob":
+                raise RuntimeError(f"無法讀取 Git corpus blob：{rel}")
+            size = int(header[2])
+            if size < 0:
+                raise RuntimeError(f"Git corpus blob size 無效：{rel}")
             content = process.stdout.read(size)
             if len(content) != size or process.stdout.read(1) != b"\n":
-                raise RuntimeError(f"Git cat-file blob 長度不符：{object_id}")
+                raise RuntimeError(f"Git corpus blob 已截斷：{rel}")
             rows.append((rel, hashlib.sha256(content).digest()))
         process.stdin.close()
         stderr = process.stderr.read() if process.stderr is not None else b""
-        returncode = process.wait(timeout=30)
+        if process.wait(timeout=30) != 0:
+            raise RuntimeError("無法讀取 Git corpus blobs：" + stderr.decode("utf-8", errors="replace").strip())
     except (OSError, subprocess.SubprocessError, ValueError) as exc:
-        raise RuntimeError(f"無法讀取 Git corpus blobs：{exc}") from exc
-    if returncode != 0:
-        raise RuntimeError(
-            "無法讀取 Git corpus blobs："
-            + stderr.decode("utf-8", errors="replace").strip()
-        )
+        raise RuntimeError(f"無法計算 Git corpus fingerprint：{exc}") from exc
+    finally:
+        if process is not None:
+            if process.poll() is None:
+                process.kill()
+                process.wait(timeout=10)
+            for handle in (process.stdin, process.stdout, process.stderr):
+                if handle is not None:
+                    handle.close()
 
     h = hashlib.sha256()
     for rel, digest in sorted(rows):
