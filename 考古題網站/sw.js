@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.6.3';
+var CACHE_VERSION = 'v1.6.4';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -152,22 +152,42 @@ function networkFirst(request, cacheName) {
 }
 
 function analyticsBundle(request) {
+  /* no-store keeps this route honest about freshness: an HTTP-cached copy is
+     always a whole pair, but it may be an older one, and the point here is to
+     promote the newest complete pair the server has. */
   return fetch(request, { cache: 'no-store' }).then(function(response) {
-    if (!response || !response.ok) throw new Error('Analytics bundle unavailable');
-    var clone = response.clone();
+    if (!isAnalyticsPair(response)) {
+      /* A 200 that is not JavaScript (a soft 404, an error page) must not be
+         cached as the pair: fall through to the known complete pair instead. */
+      throw new Error('Analytics pair unavailable');
+    }
+    var fresh = response.clone();
     return caches.open(CORE_CACHE).then(function(cache) {
-      return cache.put(request, clone);
+      return cache.put(request, fresh);
+    }).catch(function() {
+      /* A fresh complete pair is still safe when cache storage fails. */
     }).then(function() {
-      return response;
-    }, function() {
-      /* The fresh response is still a complete pair if cache storage fails. */
       return response;
     });
   }).catch(function() {
-    return caches.match(request).then(function(cached) {
-      return cached || Response.error();
+    /* Only the versioned core cache holds a pair this worker wrote, and only a
+       JavaScript entry can be one; anything else fails closed. */
+    return caches.open(CORE_CACHE).then(function(cache) {
+      return cache.match(request);
+    }).then(function(cached) {
+      return cached && isAnalyticsPair(cached) ? cached : Response.error();
+    }).catch(function() {
+      /* Cache storage itself failed: fail closed instead of guessing a pair. */
+      return Response.error();
     });
   });
+}
+
+/* The pair is always served as JavaScript, so an HTML error page can never be
+   mistaken for a code/data pair. */
+function isAnalyticsPair(response) {
+  if (!response || !response.ok || !response.headers) return false;
+  return /javascript|ecmascript/i.test(response.headers.get('content-type') || '');
 }
 
 function staleWhileRevalidate(request, cacheName) {
