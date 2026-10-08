@@ -167,3 +167,64 @@ def test_aborted_transactions_show_memory_only_state_instead_of_claiming_saved()
         assert.strictEqual(await reopened.authoritative(),null);
         console.log('flow-ok');
     """)
+
+
+def test_failed_finish_does_not_acknowledge_completion_before_the_tombstone_commits():
+    run_flow("""
+        const {IDBFactory}=require(path.join(ROOT,'tests','node_modules','fake-indexeddb'));
+        const factory=new IDBFactory(); let abortWrites=false;
+        const controlled={open(...args){
+          const request=factory.open(...args);
+          request.addEventListener('success',()=>{
+            const db=request.result, native=db.transaction.bind(db);
+            db.transaction=(...args)=>{const tx=native(...args);if(abortWrites)tx.abort();return tx;};
+          }); return request;
+        }};
+        const store=readStore(), clock={value:T0};
+        const page=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,indexedDB:controlled});
+        await page.click('startBtn'); await page.choose(3);
+        abortWrites=true; await page.click('submitBtn');
+        assert.strictEqual(page.state().view,'exam','no successful completion before clearing the durable session');
+        assert.strictEqual(page.state().examDone,false);
+        assert.ok(page.get('checkpointStatus').textContent.includes('交卷未完成'));
+        const remaining=page.state().remain;
+        await page.tick(2);
+        assert.strictEqual(page.state().remain,remaining-2,'failed cleanup must not pause the original clock');
+        abortWrites=false; await page.click('submitBtn');
+        assert.strictEqual(page.state().view,'result','retry finishes after the tombstone commits');
+        assert.strictEqual(await page.authoritative(),null);
+        const reopened=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,indexedDB:factory});
+        assert.strictEqual(reopened.state().bannerHidden,true);
+        console.log('flow-ok');
+    """)
+
+
+def test_save_failure_cannot_make_finish_skip_an_existing_durable_record():
+    run_flow("""
+        const {IDBFactory}=require(path.join(ROOT,'tests','node_modules','fake-indexeddb'));
+        const factory=new IDBFactory(); let abortWrites=false;
+        const controlled={open(...args){
+          const request=factory.open(...args);
+          request.addEventListener('success',()=>{
+            const db=request.result, native=db.transaction.bind(db);
+            db.transaction=(...args)=>{const tx=native(...args);if(abortWrites)tx.abort();return tx;};
+          }); return request;
+        }};
+        const store=readStore(), clock={value:T0};
+        const page=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,indexedDB:controlled});
+        await page.click('startBtn'); await page.choose(0);
+        abortWrites=true; await page.choose(3);
+        assert.strictEqual(page.state().selectedChoice,'3','memory-only selection is explicitly warned');
+        assert.strictEqual(page.get('checkpointStatus').dataset.state,'unavailable');
+        assert.strictEqual(JSON.parse(store.getItem(KEY)).answers[0],0,'last durable answer is still the original');
+        await page.click('submitBtn');
+        assert.strictEqual(page.state().view,'exam','save failure must not bypass the durable tombstone');
+        assert.strictEqual(page.state().examDone,false);
+        assert.ok(page.get('checkpointStatus').textContent.includes('交卷未完成'));
+        abortWrites=false; await page.click('submitBtn');
+        assert.strictEqual(page.state().view,'result');
+        const reopened=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,indexedDB:factory});
+        assert.strictEqual(await reopened.authoritative(),null,'retry closes the old committed snapshot');
+        assert.strictEqual(reopened.state().bannerHidden,true);
+        console.log('flow-ok');
+    """)

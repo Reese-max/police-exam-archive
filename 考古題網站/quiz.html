@@ -398,6 +398,10 @@ let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
 let examDone = false, pendingResume = null, resumeBannerTimer = null;
 let checkpointSessionId = null;
 let checkpointBusy = false, checkpointLost = false, recoveryAvailable = true, bannerEpoch = 0;
+// A save failure can disable future recovery without deleting an earlier
+// committed record. Only a never-committed memory session can finish without
+// attempting to close its durable ownership.
+let checkpointPersisted = false, finishPending = false;
 let pendingCommit = null;
 
 const $ = id => document.getElementById(id);
@@ -439,7 +443,7 @@ function saveCheckpointTick(){
   return saveCheckpoint();
 }
 async function commitInteraction(change){
-  if(checkpointBusy || checkpointLost || examDone) return;
+  if(checkpointBusy || checkpointLost || examDone || (durSec>0 && remain<=0)) return;
   checkpointBusy = true;
   const previous = {answers:answers.slice(), flags:flags.slice(), cur};
   change();
@@ -514,9 +518,10 @@ $('startBtn').addEventListener('click', async ()=>{
   checkpointSessionId = typeof QuizCheckpoint!=='undefined' ? QuizCheckpoint.newSessionId() : null;
   examDone = false;
   checkpointBusy = true; checkpointLost = false; recoveryAvailable = true;
+  checkpointPersisted = false;
   try{
     if(typeof QuizCheckpoint==='undefined' || !await QuizCheckpoint.persistence.start(checkpointState())) noRecovery();
-    else{ lastCheckpointAt=Date.now(); checkpointStatus('作答已儲存在本機。', 'saved'); }
+    else{ checkpointPersisted=true; lastCheckpointAt=Date.now(); checkpointStatus('作答已儲存在本機。', 'saved'); }
   }catch(e){ noRecovery(); }
   finally{ checkpointBusy=false; }
   switchView('exam');
@@ -630,13 +635,24 @@ $('submitBtn').addEventListener('click',()=>{
 });
 async function finish(){
   if(pendingCommit) await pendingCommit;
-  if(examDone) return;
-  clearInterval(timerId);
-  examDone = true;
-  if(recoveryAvailable && typeof QuizCheckpoint!=='undefined') {
-    try{ await QuizCheckpoint.persistence.clear({sessionId:checkpointSessionId}); }
-    catch(e){ noRecovery(); }
+  if(examDone || finishPending || !questions.length) return;
+  finishPending = true; checkpointBusy = true;
+  if(checkpointPersisted && typeof QuizCheckpoint!=='undefined') {
+    checkpointStatus('正在交卷並清除本機紀錄…', 'pending');
+    try{
+      await QuizCheckpoint.persistence.clear({sessionId:checkpointSessionId});
+      checkpointPersisted = false;
+    }catch(e){
+      noRecovery();
+      checkpointStatus('交卷未完成：本機紀錄尚未能清除。請恢復儲存後再按交卷；目前新作答僅保留在此頁。', 'unavailable');
+      finishPending = false; checkpointBusy = false;
+      return;
+    }
   }
+  // Keep the original exam and running clock while cleanup is pending or
+  // failed. Successful completion is acknowledged only after the transaction.
+  clearInterval(timerId);
+  examDone = true; finishPending = false; checkpointBusy = false;
   let ok=0,no=0,skip=0;
   questions.forEach((q,i)=>{
     if(q.bonus) ok++;
@@ -774,6 +790,7 @@ $('resumeBtn').addEventListener('click', async ()=>{
   cur = snap.cur; total = questions.length;
   durSec = snap.durSec; remain = snap.remain; elapsed = snap.elapsed;
   checkpointSessionId = owner;
+  checkpointPersisted = true;
   checkpointLost = false; recoveryAvailable = true; lastCheckpointAt = Date.now();
   checkpointStatus('作答已儲存在本機。', 'saved');
   examDone = false;
