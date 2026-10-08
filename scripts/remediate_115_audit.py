@@ -14,6 +14,7 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import hashlib
 import json
 import re
@@ -954,11 +955,62 @@ def quiz_engine_source() -> str:
 '''
 
 
+LEGACY_FRONTEND_HASHES = {
+    "scripts/build_search_index.py": {"1c4b7fdd49996e42ebb609664a50c007a6d6633e3c1ee142bd0606ec0f62e8c9"},
+    "考古題網站/js/search-engine.js": {"871085048b8dbe2616541d2fdafff7be0bc68a14852d13a495c55d7944da67a1"},
+    "考古題網站/js/quiz-engine.js": {"e552390d8cc6ae17f80c1257d11329285a0097feb40fced1df3e98cea647287f"},
+}
+
+
+def _has_current_corpus_contract(relative: str, text: str) -> bool:
+    required = {"cat", "cats", "yr", "sub", "no", "type", "passage", "stem",
+                "optA", "optB", "optC", "optD", "ans"}
+    if relative == "scripts/build_search_index.py":
+        try:
+            module = ast.parse(text)
+            fields = next(ast.literal_eval(node.value) for node in module.body
+                          if isinstance(node, ast.Assign)
+                          and any(isinstance(target, ast.Name) and target.id == "FIELDS"
+                                  for target in node.targets))
+            functions = {node.name for node in module.body if isinstance(node, ast.FunctionDef)}
+            return required.issubset(fields) and {"build_index", "load_exam_files", "_categories"}.issubset(functions)
+        except (SyntaxError, ValueError, TypeError, StopIteration):
+            return False
+    if relative == "考古題網站/js/search-engine.js":
+        match = re.search(r"var FIELDS = (\[.*?\]);", text, re.DOTALL)
+        if not match:
+            return False
+        try:
+            fields = json.loads(match.group(1).replace("'", '"'))
+            return required.issubset(fields) and all(marker in text for marker in (
+                "window.SearchEngine = {", "data.columns.passage", "data.columns.cats",
+                "loadIndex: loadIndex", "search: search",
+            ))
+        except (ValueError, TypeError):
+            return False
+    return False
+
+
+def patch_frontend_module(path: Path, replacement: str) -> None:
+    """只升級已知舊版；保留具現行契約的後續功能，未知版本拒絕覆寫。"""
+    relative = path.relative_to(ROOT).as_posix()
+    if not path.exists():
+        write_text(path, replacement)
+        return
+    current = path.read_text(encoding="utf-8")
+    if current == replacement or _has_current_corpus_contract(relative, current):
+        return
+    digest = hashlib.sha256(current.encode("utf-8")).hexdigest()
+    if digest not in LEGACY_FRONTEND_HASHES.get(relative, set()):
+        raise RuntimeError(f"未知前端版本，保留 {relative}；請先審查適配，禁止一次性模板覆寫")
+    write_text(path, replacement)
+
+
 def patch_frontend_sources() -> None:
-    write_text(ROOT / "scripts/build_search_index.py", build_search_index_source())
-    write_text(SITE_DIR / "js/search-engine.js", search_engine_source())
-    write_text(SITE_DIR / "js/answer-utils.js", answer_utils_source())
-    write_text(SITE_DIR / "js/quiz-engine.js", quiz_engine_source())
+    patch_frontend_module(ROOT / "scripts/build_search_index.py", build_search_index_source())
+    patch_frontend_module(SITE_DIR / "js/search-engine.js", search_engine_source())
+    patch_frontend_module(SITE_DIR / "js/answer-utils.js", answer_utils_source())
+    patch_frontend_module(SITE_DIR / "js/quiz-engine.js", quiz_engine_source())
 
     quiz = SITE_DIR / "quiz.html"
     text = quiz.read_text(encoding="utf-8")

@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'v1.6.4';
+var CACHE_VERSION = 'v1.6.6';
 var CORE_CACHE = 'core-' + CACHE_VERSION;
 var FONT_CACHE = 'fonts-' + CACHE_VERSION;
 var CDN_CACHE = 'cdn-' + CACHE_VERSION;
@@ -16,6 +16,14 @@ var CORE_ASSETS = [
   './js/app.js',
   './js/answer-utils.js',
   './js/pdf-export.js',
+  './水上警察學系/images/q2-option-A.png',
+  './水上警察學系/images/q2-option-B.png',
+  './水上警察學系/images/q2-option-C.png',
+  './水上警察學系/images/q2-option-D.png',
+  './消防學系/images/q20-option-A.png',
+  './消防學系/images/q20-option-B.png',
+  './消防學系/images/q20-option-C.png',
+  './消防學系/images/q20-option-D.png',
   './manifest.json',
   './icons/icon-192.svg',
   './icons/icon-512.svg'

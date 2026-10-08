@@ -537,8 +537,8 @@ def build_summary(data_dir: Path) -> dict:
             "choice_questions": image_placeholder,
             "marker": f"[{IMAGE_OPTION_MARKER}]",
             "note": (
-                "僅驗證選項鍵存在；圖片內容本身的可用性尚未驗證"
-                "（追蹤於 issue #58），不對外宣稱可用"
+                "選項完整率僅驗證 A–D 欄位；圖片資產與來源另由"
+                " tests/test_image_choices.py 驗證，不混入文字欄位品質指標"
             ),
         },
         "projections": {

@@ -113,7 +113,19 @@
         cat: columns.cat[id], cats: columns.cats[id], yr: columns.yr[id], sub: columns.sub[id],
         no: columns.no[id], type: columns.type[id], passage: columns.passage[id], stem: columns.stem[id],
         optA: columns.optA[id], optB: columns.optB[id], optC: columns.optC[id], optD: columns.optD[id],
-        ans: columns.ans[id]
+        ans: columns.ans[id],
+        optImageA: (columns.optImageA || [])[id] || '',
+        optImageB: (columns.optImageB || [])[id] || '',
+        optImageC: (columns.optImageC || [])[id] || '',
+        optImageD: (columns.optImageD || [])[id] || '',
+        optAltA: (columns.optAltA || [])[id] || '',
+        optAltB: (columns.optAltB || [])[id] || '',
+        optAltC: (columns.optAltC || [])[id] || '',
+        optAltD: (columns.optAltD || [])[id] || '',
+        sourcePdf: (columns.sourcePdf || [])[id] || '',
+        sourcePage: (columns.sourcePage || [])[id] || '',
+        sourceSha256: (columns.sourceSha256 || [])[id] || '',
+        sourceLocator: (columns.sourceLocator || [])[id] || ''
       };
     });
   }

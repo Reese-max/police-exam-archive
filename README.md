@@ -147,7 +147,7 @@ pip install PyMuPDF rapidocr-onnxruntime
 
 - `answer: "送分"` — 該題所有考生均給分（178 題）
 - `answer: "C或D"` 等「或」複選答案 — 官方公布所列選項皆給分（3 題）
-- `options: {"A": "[圖片選項]", ...}` — 原卷為圖片題，無法文字化（4 題）
+- `options: {"A": "[圖片選項]", ...}` — 原卷圖形無法文字化（4 題）；`option_images` 保留 A–D 原圖、替代文字、公開路徑與 SHA-256，`source_locator` 保留官方 PDF URL、頁碼與 PDF SHA-256
 - `_is_duplicate: true` — metadata 中標記為已知重複資料夾
 
 ## 學系/類別列表
@@ -171,7 +171,7 @@ pip install PyMuPDF rapidocr-onnxruntime
 - **Search scope**: 同時排除頂層與 `metadata._is_duplicate=true`；由 `loadIndex().stats.total` 動態顯示，離線生成值為 42,482 題（36,760 選擇 / 5,722 申論）
 - **Homepage scope**: 內軌 17 類科投影；24,876 題
 - **Analytics scope**: 與 canonical 相同；42,518 題、49 類科
-- **圖片佔位題**: 4 題以 `[圖片選項]` 佔位，僅驗證選項鍵存在（詳見下方已知限制）
+- **圖片選項題**: 4 題保留 `[圖片選項]` 文字標記，另提供 `option_images` 與 `source_locator`；圖片資產由專屬測試驗證
 - **統計基準**: `考古題庫/quality_summary.json`（含資料指紋與納入/排除規則）
 <!-- corpus-quality:end -->
 - **題號連續性**: 無缺漏、無重複
@@ -182,13 +182,15 @@ pip install PyMuPDF rapidocr-onnxruntime
 
 ### 已知限制
 
-1. 圖片題（4 題）以 `[圖片選項]` 佔位，無法呈現原始圖片內容
+1. 圖片題（4 題）保留原卷圖片；替代文字提供題號與選項脈絡，精確圖形內容仍須查看圖片或官方 PDF
 2. 移民組 111 年入出國法規 Q7 選項 B 與 D 內容相同，為原卷出題瑕疵（已加 `_note` 說明）
 3. 同年同等級共用考卷（國文、英文等）會在多個學系資料夾中重複出現
 
 ## 查詢工具
 
 內建 SQLite 索引查詢 API，支援命令列和 Python 兩種方式。
+
+Python 查詢結果的 `option_images` 與 `source_locator` 為 JSON 物件；舊版產生的索引會從完整來源重建後原子升級。若來源損壞、不完整或資料庫含自訂資料表，升級會失敗並保留原始資料庫。
 
 ```bash
 # 建立索引（首次使用）
@@ -199,6 +201,9 @@ python examdb.py query --keyword "基本權" --year 112
 
 # 按科目查詢
 python examdb.py query --subject "憲法" --category "行政警察"
+
+# 匯出圖片題及完整來源 JSON（query / random 均支援 --json）
+python examdb.py query --year 109 --keyword "進港嘴" --json
 
 # 隨機抽題練習
 python examdb.py random --count 5 --subject "刑法"

@@ -19,6 +19,7 @@ DEFAULT_OUTPUT = ROOT / "考古題網站" / "data" / "search-index.json"
 FIELDS = [
     "cat", "cats", "yr", "sub", "no", "type", "passage", "stem",
     "optA", "optB", "optC", "optD", "ans",
+    "optImageA", "optImageB", "optImageC", "optImageD", "optAltA", "optAltB", "optAltC", "optAltD", "sourcePdf", "sourcePage", "sourceSha256", "sourceLocator",
 ]
 
 
@@ -31,6 +32,17 @@ def _categories(document: dict[str, Any], fallback: str) -> list[str]:
     if fallback and fallback not in values:
         values.append(fallback)
     return sorted(set(values))
+
+
+def _option_image_value(question: dict, label: str, key: str) -> str:
+    """取得圖片選項的公開路徑或可及性文字，缺欄位時保持舊資料相容。"""
+    image = (question.get("option_images") or {}).get(label)
+    if not isinstance(image, dict):
+        return ""
+    value = image.get(key)
+    if key == "public_src":
+        value = value or image.get("src")
+    return str(value or "")
 
 
 def load_exam_files(data_dir: Path) -> list[tuple]:
@@ -67,6 +79,7 @@ def load_exam_files(data_dir: Path) -> list[tuple]:
         for question in document.get("questions", []):
             qtype = question.get("type", "")
             options = question.get("options", {}) if qtype == "choice" else {}
+            locator = question.get("source_locator") or {}
             rows.append((
                 category,
                 categories,
@@ -81,6 +94,18 @@ def load_exam_files(data_dir: Path) -> list[tuple]:
                 options.get("C", ""),
                 options.get("D", ""),
                 question.get("answer", "") if qtype == "choice" else "",
+                _option_image_value(question, "A", "public_src"),
+                _option_image_value(question, "B", "public_src"),
+                _option_image_value(question, "C", "public_src"),
+                _option_image_value(question, "D", "public_src"),
+                _option_image_value(question, "A", "alt"),
+                _option_image_value(question, "B", "alt"),
+                _option_image_value(question, "C", "alt"),
+                _option_image_value(question, "D", "alt"),
+                str(locator.get("url") or document.get("source_pdf", "") or ""),
+                str(locator.get("page", "") or ""),
+                str(locator.get("pdf_sha256", "") or ""),
+                json.dumps(locator, ensure_ascii=False, separators=(",", ":")) if locator else "",
             ))
 
     if skipped:

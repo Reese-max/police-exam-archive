@@ -155,8 +155,8 @@ def render_readme_quality(summary: dict) -> str:
         f"{home['question_count']:,} 題",
         f"- **Analytics scope**: 與 canonical 相同；"
         f"{analytics['total']:,} 題、{analytics['categories']} 類科",
-        f"- **圖片佔位題**: {img} 題以 `[圖片選項]` 佔位，"
-        "僅驗證選項鍵存在（詳見下方已知限制）",
+        f"- **圖片選項題**: {img} 題保留 `[圖片選項]` 文字標記，"
+        "另提供 `option_images` 與 `source_locator`；圖片資產由專屬測試驗證",
         "- **統計基準**: `考古題庫/quality_summary.json`"
         "（含資料指紋與納入/排除規則）",
     ])
