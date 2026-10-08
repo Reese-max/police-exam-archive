@@ -78,7 +78,7 @@ jobs:
           node --check 考古題網站/_gen_data.js
 
       - name: Verify atomic Analytics pair failover
-        run: node --test 考古題網站/tests/analytics-pair.test.js
+        run: node --test 考古題網站/tests/analytics-pair.test.js 考古題網站/tests/analytics-pair.regression.js
 
   analytics-offline-browser:
     runs-on: ubuntu-latest
