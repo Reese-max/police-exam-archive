@@ -14,7 +14,23 @@
     "source_sha256": "3d9f56f37e2ae1a6752e006ce7f6c3c76dce0db69961c97597c7ae592b13db17",
     "_is_duplicate": true,
     "_duplicate_of": "行政警察學系/115年/中華民國憲法與警察專業英文",
-    "_duplicate_note": "此檔案與指定來源考卷題目內容完全相同，保留於類科目錄供瀏覽，統計時排除重複。"
+    "_duplicate_note": "此檔案與指定來源考卷題目內容完全相同，保留於類科目錄供瀏覽，統計時排除重複。",
+    "official_subject": "中華民國憲法與警察專業英文",
+    "categories": [
+      "交通學系交通組",
+      "公共安全學系社安組",
+      "刑事警察學系",
+      "國境警察學系境管組",
+      "外事警察學系",
+      "法律學系",
+      "犯罪防治學系預防組",
+      "行政管理學系",
+      "行政警察學系",
+      "資訊管理學系",
+      "鑑識科學學系"
+    ],
+    "path_subject": "中華民國憲法與警察專業英文",
+    "category_membership": "國境警察學系境管組"
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -556,7 +572,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Theofficerscarefullysearchedtheareaforany thatcouldhelpidentifythesuspectinvolved intherobbery.",
+      "stem": "The officers carefully searched the area for any _____ that could help identify the suspect involved in the robbery.",
       "section": "乙、測驗題",
       "options": {
         "A": "equipment",
@@ -569,7 +585,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "Many road accidents happen because drivers are by their mobile phones and fail to see the redlight.",
+      "stem": "Many road accidents happen because drivers are _____ by their mobile phones and fail to see the red light.",
       "section": "乙、測驗題",
       "options": {
         "A": "distracted",
@@ -582,7 +598,7 @@
     {
       "number": 43,
       "type": "choice",
-      "stem": "During the large public festival, additional police officers were hired to provide better and ensuredthat everyone remainedsafe.",
+      "stem": "During the large public festival, additional police officers were hired to provide better _____ and ensured that everyone remained safe.",
       "section": "乙、測驗題",
       "options": {
         "A": "authority",
@@ -595,7 +611,7 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "When officers are driving through the neighborhood, it is important to any suspicious behavior and report it to the station immediately.",
+      "stem": "When officers are driving through the neighborhood, it is important to _____ any suspicious behavior and report it to the station immediately.",
       "section": "乙、測驗題",
       "options": {
         "A": "utilize",
@@ -608,7 +624,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "According to the Domestic Violence Prevention Act, medical professionals are reporters with a legal obligation to report suspected cases. Whenever theytreat a patient with injuries related todomesticviolence,theyareduty-boundtonotifythelocal competent authority.",
+      "stem": "According to the Domestic Violence Prevention Act, medical professionals are _____ reporters with a legal obligation to report suspected cases. Whenever they treat a patient with injuries related to domestic violence, they are duty-bound to notify the local competent authority.",
       "section": "乙、測驗題",
       "options": {
         "A": "mandatory",
@@ -621,7 +637,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "The main responsibility of a traffic officer is to road safety laws, such as speed limits, to prevent accidents.",
+      "stem": "The main responsibility of a traffic officer is to _____ road safety laws, such as speed limits, to prevent accidents.",
       "section": "乙、測驗題",
       "options": {
         "A": "enforce",
@@ -634,20 +650,20 @@
     {
       "number": 47,
       "type": "choice",
-      "stem": "Despite the absence of a signed treaty, Taiwanese law enforcement agencies still strived to obtain bankrecords from Singaporeforthe corruptioncaseviamutual legal channels.",
+      "stem": "Despite the absence of a signed treaty, Taiwanese law enforcement agencies still strived to obtain bank records from Singapore for the corruption case via mutual legal _____ channels.",
       "section": "乙、測驗題",
       "options": {
-        "A": "hotline",
-        "B": "committee",
-        "C": "securitycamera",
-        "D": "servicedesk"
+        "A": "action",
+        "B": "assistance",
+        "C": "obligation",
+        "D": "advice"
       },
       "answer": "B"
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "In an effort to solve this criminal case as quickly as possible, the investigative team has set up a for members of the public to call in and provide reports.",
+      "stem": "In an effort to solve this criminal case as quickly as possible, the investigative team has set up a _____ for members of the public to call in and provide reports.",
       "options": {
         "A": "hotline",
         "B": "committee",
@@ -655,13 +671,12 @@
         "D": "service desk"
       },
       "answer": "A",
-      "section": "乙、測驗題",
-      "_recovered_from_pdf_page": 6
+      "section": "乙、測驗題"
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "The police will set up DUI checkpoints on several main streets every holiday weekend. Once the officersmellsalcoholinsidethecar,thedriverwillberequestedtoperform thefield testby theroadside.",
+      "stem": "The police will set up DUI checkpoints on several main streets every holiday weekend. Once the officer smells alcohol inside the car, the driver will be requested to perform the field _____ test by the roadside.",
       "section": "乙、測驗題",
       "options": {
         "A": "blood",
@@ -674,13 +689,13 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "The department decided to increase patrols in the city center to potential criminals from committingrobberies duringtheholidayseason.",
+      "stem": "The department decided to increase patrols in the city center to _____ potential criminals from committing robberies during the holiday season.",
       "section": "乙、測驗題",
       "options": {
         "A": "detach",
         "B": "declare",
         "C": "define",
-        "D": "deter - 、 請依下文回答第51題至第55題 Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street 51 Jews in what police said was a suspected terrorist incident. Police said the two victims, aged76and34,werebothinastableconditioninhospital,andcounter-terrorofficers,someofwhomthe suspect also attacked,had arrested a45-year-oldmanafterstoppedhim witha Taser 52 gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon"
+        "D": "deter"
       },
       "answer": "D"
     },
@@ -695,7 +710,7 @@
         "D": "staring"
       },
       "section": "乙、測驗題",
-      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon and taken to London police station where he remains in custody on of attempted murder. This stabbing incident is the latest one in a of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain’s 290,000 Jews.",
+      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street [[51]] Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser [[52]] gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon [[53]] and taken to London police station where he remains in custody on [[54]] of attempted murder. This stabbing incident is the latest one in a [[55]] of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain's 290,000 Jews.",
       "answer": "A"
     },
     {
@@ -709,7 +724,7 @@
         "D": "flare"
       },
       "section": "乙、測驗題",
-      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon and taken to London police station where he remains in custody on of attempted murder. This stabbing incident is the latest one in a of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain’s 290,000 Jews.",
+      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street [[51]] Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser [[52]] gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon [[53]] and taken to London police station where he remains in custody on [[54]] of attempted murder. This stabbing incident is the latest one in a [[55]] of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain's 290,000 Jews.",
       "answer": "C"
     },
     {
@@ -723,7 +738,7 @@
         "D": "discharged"
       },
       "section": "乙、測驗題",
-      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon and taken to London police station where he remains in custody on of attempted murder. This stabbing incident is the latest one in a of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain’s 290,000 Jews.",
+      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street [[51]] Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser [[52]] gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon [[53]] and taken to London police station where he remains in custody on [[54]] of attempted murder. This stabbing incident is the latest one in a [[55]] of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain's 290,000 Jews.",
       "answer": "D"
     },
     {
@@ -737,7 +752,7 @@
         "D": "doubt"
       },
       "section": "乙、測驗題",
-      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon and taken to London police station where he remains in custody on of attempted murder. This stabbing incident is the latest one in a of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain’s 290,000 Jews.",
+      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street [[51]] Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser [[52]] gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon [[53]] and taken to London police station where he remains in custody on [[54]] of attempted murder. This stabbing incident is the latest one in a [[55]] of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain's 290,000 Jews.",
       "answer": "B"
     },
     {
@@ -751,73 +766,78 @@
         "D": "bit"
       },
       "section": "乙、測驗題",
-      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon and taken to London police station where he remains in custody on of attempted murder. This stabbing incident is the latest one in a of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain’s 290,000 Jews.",
+      "passage": "Two Jewish men were stabbed in north London two days ago by an attacker who ran down a street [[51]] Jews in what police said was a suspected terrorist incident. Police said the two victims, aged 76 and 34, were both in a stable condition in hospital, and counter-terror officers, some of whom the suspect also attacked, had arrested a 45-year-old man after stopped him with a Taser [[52]] gun. The suspect is a British national, born in Somalia, the Metropolitan Police said in a statement. On being arrested, he was initially taken to a hospital. After examination and treatment, he was soon [[53]] and taken to London police station where he remains in custody on [[54]] of attempted murder. This stabbing incident is the latest one in a [[55]] of UK antisemitic attacks. The consecutive attacks have drawn demands for urgent action from Jewish community leaders in London. Israeli Prime Minister Benjamin Netanyahu and the Israeli president also expressed concerns over the safety of Britain's 290,000 Jews.",
       "answer": "A"
     },
     {
       "number": 56,
       "type": "choice",
-      "stem": "What is themainpurposeofthis readingpassage?",
+      "stem": "What is the main purpose of this reading passage?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Tocriticizepolicedepartments forfailingtocatchinternational criminals.",
-        "B": "Toprovideatechnical guideonhowto createdeepfakevideosforworkshops.",
-        "C": "Toarguethat AItechnologylike Deep Fakeshouldbebannedtoprevent financial fraud.",
-        "D": "Toexplainanewsafetymindset that helps the publicdefendagainst modernscams."
+        "A": "To criticize police departments for failing to catch international criminals.",
+        "B": "To provide a technical guide on how to create deepfake videos for workshops.",
+        "C": "To argue that AI technology like Deep Fake should be banned to prevent financial fraud.",
+        "D": "To explain a new safety mindset that helps the public defend against modern scams."
       },
-      "answer": "D"
+      "answer": "D",
+      "passage": "As digital deception becomes more indistinguishable from reality, law enforcement agencies are shifting their public education strategies toward a “Zero Trust” framework. Historically, crime prevention advice focused on identifying “red flags,” such as poor grammar in an email or a strange accent on the phone. However, with the advent of AI-driven scams, these traditional markers have vanished. The “Zero Trust” protocol operates on a simple but strict principle: never trust, always verify. In a “Zero Trust” environment, the public is taught to treat every digital interaction as potentially compromised, regardless of the apparent source. For example, if a citizen receives a video call from their “bank manager” or a voice note from a “family member” requesting urgent financial assistance, the protocol dictates that they must immediately terminate the connection. Verification is then conducted through an independent, “out-of-band” channel—such as calling a trusted, officially listed phone number or visiting a physical branch. For police officers, promoting this mindset requires a delicate balance. The goal is not to create a society of paranoia, but to foster “digital skepticism.” Officers are now being trained to conduct community workshops that demonstrate how easily a “digital identity” can be faked. They emphasize that in the modern era, “seeing is no longer believing.” By teaching the public to pause and verify, police can significantly reduce the success rate of high-tech fraud without needing to trace every individual packet of data across international borders. Ultimately, the “Zero Trust” model represents a shift in responsibility. While the police continue to pursue the technical “attribution” of cybercrimes, the first line of defense has moved to the individual’s decision-making process. By adopting a “verify-first” culture, communities can create a hostile environment for scammers, making it much harder for AI-generated deceptions to result in successful thefts."
     },
     {
       "number": 57,
       "type": "choice",
-      "stem": "Howdoes the“Zero Trust”protocol differfrom oldercrimepreventionmethods?",
+      "stem": "How does the “Zero Trust” protocol differ from older crime prevention methods?",
       "section": "乙、測驗題",
       "options": {
         "A": "It relies on the police to verify every message for the citizens.",
-        "B": "It focuses on“nevertrusting”ratherthanjust lookingfor “red flags.”",
-        "C": "It teachespeopletoignoreall emails andphonecalls entirely.",
-        "D": "It encourages peopletotrust theirinstincts morethantechnology."
+        "B": "It focuses on “never trusting” rather than just looking for “red flags.”",
+        "C": "It teaches people to ignore all emails and phone calls entirely.",
+        "D": "It encourages people to trust their instincts more than technology."
       },
-      "answer": "B"
+      "answer": "B",
+      "passage": "As digital deception becomes more indistinguishable from reality, law enforcement agencies are shifting their public education strategies toward a “Zero Trust” framework. Historically, crime prevention advice focused on identifying “red flags,” such as poor grammar in an email or a strange accent on the phone. However, with the advent of AI-driven scams, these traditional markers have vanished. The “Zero Trust” protocol operates on a simple but strict principle: never trust, always verify. In a “Zero Trust” environment, the public is taught to treat every digital interaction as potentially compromised, regardless of the apparent source. For example, if a citizen receives a video call from their “bank manager” or a voice note from a “family member” requesting urgent financial assistance, the protocol dictates that they must immediately terminate the connection. Verification is then conducted through an independent, “out-of-band” channel—such as calling a trusted, officially listed phone number or visiting a physical branch. For police officers, promoting this mindset requires a delicate balance. The goal is not to create a society of paranoia, but to foster “digital skepticism.” Officers are now being trained to conduct community workshops that demonstrate how easily a “digital identity” can be faked. They emphasize that in the modern era, “seeing is no longer believing.” By teaching the public to pause and verify, police can significantly reduce the success rate of high-tech fraud without needing to trace every individual packet of data across international borders. Ultimately, the “Zero Trust” model represents a shift in responsibility. While the police continue to pursue the technical “attribution” of cybercrimes, the first line of defense has moved to the individual’s decision-making process. By adopting a “verify-first” culture, communities can create a hostile environment for scammers, making it much harder for AI-generated deceptions to result in successful thefts."
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "What is anexampleofan“out-of-band”verificationmentionedinthetext?",
+      "stem": "What is an example of an “out-of-band” verification mentioned in the text?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Callinganindependent,official phonenumber toverify.",
-        "B": "Askingthe callertosendaphotooftheir ID card.",
-        "C": "Replyingimmediatelytothesuspicious videocall toaskquestions.",
-        "D": "Sendinga follow-upemail tothesameaddress that contacted you."
+        "A": "Calling an independent, official phone number to verify.",
+        "B": "Asking the caller to send a photo of their ID card.",
+        "C": "Replying immediately to the suspicious video call to ask questions.",
+        "D": "Sending a follow-up email to the same address that contacted you."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "As digital deception becomes more indistinguishable from reality, law enforcement agencies are shifting their public education strategies toward a “Zero Trust” framework. Historically, crime prevention advice focused on identifying “red flags,” such as poor grammar in an email or a strange accent on the phone. However, with the advent of AI-driven scams, these traditional markers have vanished. The “Zero Trust” protocol operates on a simple but strict principle: never trust, always verify. In a “Zero Trust” environment, the public is taught to treat every digital interaction as potentially compromised, regardless of the apparent source. For example, if a citizen receives a video call from their “bank manager” or a voice note from a “family member” requesting urgent financial assistance, the protocol dictates that they must immediately terminate the connection. Verification is then conducted through an independent, “out-of-band” channel—such as calling a trusted, officially listed phone number or visiting a physical branch. For police officers, promoting this mindset requires a delicate balance. The goal is not to create a society of paranoia, but to foster “digital skepticism.” Officers are now being trained to conduct community workshops that demonstrate how easily a “digital identity” can be faked. They emphasize that in the modern era, “seeing is no longer believing.” By teaching the public to pause and verify, police can significantly reduce the success rate of high-tech fraud without needing to trace every individual packet of data across international borders. Ultimately, the “Zero Trust” model represents a shift in responsibility. While the police continue to pursue the technical “attribution” of cybercrimes, the first line of defense has moved to the individual’s decision-making process. By adopting a “verify-first” culture, communities can create a hostile environment for scammers, making it much harder for AI-generated deceptions to result in successful thefts."
     },
     {
       "number": 59,
       "type": "choice",
-      "stem": "What is themeaningofthephrase “seeingis nolongerbelieving”inthis context?",
+      "stem": "What is the meaning of the phrase “seeing is no longer believing” in this context?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Peoplearelosingtheir eyesight duetohigh-techscreenusage.",
-        "B": "Officers shouldnot collect videoevidencebecauseit is useless.",
-        "C": "Digital images andvideos canbe fakedso easilythat theycannot betrusted.",
-        "D": "Most crimes nowhappeninthedarkwhereofficers cannot seeanything."
+        "A": "People are losing their eyesight due to high-tech screen usage.",
+        "B": "Officers should not collect video evidence because it is useless.",
+        "C": "Digital images and videos can be faked so easily that they cannot be trusted.",
+        "D": "Most crimes now happen in the dark where officers cannot see anything."
       },
-      "answer": "C"
+      "answer": "C",
+      "passage": "As digital deception becomes more indistinguishable from reality, law enforcement agencies are shifting their public education strategies toward a “Zero Trust” framework. Historically, crime prevention advice focused on identifying “red flags,” such as poor grammar in an email or a strange accent on the phone. However, with the advent of AI-driven scams, these traditional markers have vanished. The “Zero Trust” protocol operates on a simple but strict principle: never trust, always verify. In a “Zero Trust” environment, the public is taught to treat every digital interaction as potentially compromised, regardless of the apparent source. For example, if a citizen receives a video call from their “bank manager” or a voice note from a “family member” requesting urgent financial assistance, the protocol dictates that they must immediately terminate the connection. Verification is then conducted through an independent, “out-of-band” channel—such as calling a trusted, officially listed phone number or visiting a physical branch. For police officers, promoting this mindset requires a delicate balance. The goal is not to create a society of paranoia, but to foster “digital skepticism.” Officers are now being trained to conduct community workshops that demonstrate how easily a “digital identity” can be faked. They emphasize that in the modern era, “seeing is no longer believing.” By teaching the public to pause and verify, police can significantly reduce the success rate of high-tech fraud without needing to trace every individual packet of data across international borders. Ultimately, the “Zero Trust” model represents a shift in responsibility. While the police continue to pursue the technical “attribution” of cybercrimes, the first line of defense has moved to the individual’s decision-making process. By adopting a “verify-first” culture, communities can create a hostile environment for scammers, making it much harder for AI-generated deceptions to result in successful thefts."
     },
     {
       "number": 60,
       "type": "choice",
-      "stem": "Whyis the “Zero Trust” model considered a“shift inresponsibility”?",
+      "stem": "Why is the “Zero Trust” model considered a “shift in responsibility”?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Becausetheindividual’s decision-makinghas becomethefirst lineofdefense.",
-        "B": "Becausethepoliceare not responsibleforcatchingcriminals anylonger.",
-        "C": "Becausescammers arenowresponsibleforprovingtheyarereal.",
-        "D": "Becausethepublicmust nowpayfortheirowndigital protection."
+        "A": "Because the individual’s decision-making has become the first line of defense.",
+        "B": "Because the police are not responsible for catching criminals any longer.",
+        "C": "Because scammers are now responsible for proving they are real.",
+        "D": "Because the public must now pay for their own digital protection."
       },
-      "answer": "A"
+      "answer": "A",
+      "passage": "As digital deception becomes more indistinguishable from reality, law enforcement agencies are shifting their public education strategies toward a “Zero Trust” framework. Historically, crime prevention advice focused on identifying “red flags,” such as poor grammar in an email or a strange accent on the phone. However, with the advent of AI-driven scams, these traditional markers have vanished. The “Zero Trust” protocol operates on a simple but strict principle: never trust, always verify. In a “Zero Trust” environment, the public is taught to treat every digital interaction as potentially compromised, regardless of the apparent source. For example, if a citizen receives a video call from their “bank manager” or a voice note from a “family member” requesting urgent financial assistance, the protocol dictates that they must immediately terminate the connection. Verification is then conducted through an independent, “out-of-band” channel—such as calling a trusted, officially listed phone number or visiting a physical branch. For police officers, promoting this mindset requires a delicate balance. The goal is not to create a society of paranoia, but to foster “digital skepticism.” Officers are now being trained to conduct community workshops that demonstrate how easily a “digital identity” can be faked. They emphasize that in the modern era, “seeing is no longer believing.” By teaching the public to pause and verify, police can significantly reduce the success rate of high-tech fraud without needing to trace every individual packet of data across international borders. Ultimately, the “Zero Trust” model represents a shift in responsibility. While the police continue to pursue the technical “attribution” of cybercrimes, the first line of defense has moved to the individual’s decision-making process. By adopting a “verify-first” culture, communities can create a hostile environment for scammers, making it much harder for AI-generated deceptions to result in successful thefts."
     }
   ],
   "year": 115,
@@ -838,5 +858,18 @@
   "_answers_merged": 60,
   "_is_duplicate": true,
   "_duplicate_of": "行政警察學系/115年/中華民國憲法與警察專業英文",
-  "_duplicate_note": "此檔案與指定來源考卷題目內容完全相同，保留於類科目錄供瀏覽，統計時排除重複。"
+  "_duplicate_note": "此檔案與指定來源考卷題目內容完全相同，保留於類科目錄供瀏覽，統計時排除重複。",
+  "categories": [
+    "交通學系交通組",
+    "公共安全學系社安組",
+    "刑事警察學系",
+    "國境警察學系境管組",
+    "外事警察學系",
+    "法律學系",
+    "犯罪防治學系預防組",
+    "行政管理學系",
+    "行政警察學系",
+    "資訊管理學系",
+    "鑑識科學學系"
+  ]
 }

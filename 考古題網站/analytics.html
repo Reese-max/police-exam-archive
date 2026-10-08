@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="vendor/chart.js-4.4.1/chart.umd.js"></script>
 <style>
 :root{
   --bg:#faf8f5;
@@ -341,8 +341,7 @@ footer{margin:56px 0 40px;text-align:center;color:var(--text-3);font-size:13px;f
   <span class="tlabel" id="themeLabel">深色模式</span>
 </button>
 
-<script src="analytics-chart-data.js"></script>
-<script src="analytics-chart.js"></script>
+<script src="analytics-chart-bundle.js"></script>
 <script>
 if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').catch(function(){}); }
 </script>

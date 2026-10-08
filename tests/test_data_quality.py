@@ -147,6 +147,19 @@ class TestTextQuality:
                     concat_count += 1
         assert concat_count == 0, f"{concat_count} 處 camelCase 連字"
 
+
+    def test_no_suspicious_lowercase_concat_in_115(self):
+        """115 年英文題不得含 25 字以上全小寫黏字。"""
+        issues = []
+        for fp, q in ALL_QUESTIONS:
+            if f"{os.sep}115年{os.sep}" not in fp:
+                continue
+            for value in _all_text_fields(q):
+                match = re.search(r"\b[a-z]{25,}\b", value)
+                if match:
+                    issues.append((fp, q.get("number"), match.group(0)))
+        assert not issues, f"115 年仍有異常英文黏字: {issues[:10]}"
+
     def test_no_control_characters(self):
         """無控制字元"""
         ctrl_count = 0

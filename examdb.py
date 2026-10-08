@@ -24,6 +24,8 @@ import os
 import re
 import sys
 import argparse
+import tempfile
+from contextlib import closing
 from pathlib import Path
 
 DB_PATH = Path(__file__).resolve().parent / "exam.db"
@@ -43,17 +45,54 @@ def _resolve_data_dir(override: str | None = None) -> Path:
 class ExamDB:
     """考古題資料庫查詢介面"""
 
-    def __init__(self, db_path=None, data_dir=None):
+    def __init__(self, db_path=None, data_dir=None, rebuild=False):
         self.db_path = str(db_path or DB_PATH)
         self.data_dir = _resolve_data_dir(data_dir)
-        if not os.path.exists(self.db_path):
-            print(f"索引不存在，正在建立: {self.db_path}")
+        if rebuild or not os.path.exists(self.db_path):
+            print(f"正在建立索引: {self.db_path}", file=sys.stderr)
             self.build()
         self.conn = sqlite3.connect(self.db_path)
         self.conn.row_factory = sqlite3.Row
+        try:
+            self._ensure_schema()
+        except Exception:
+            if self.conn is not None:
+                self.conn.close()
+            raise
+
+    def _ensure_schema(self):
+        """以完整新索引升級舊圖片 schema；失敗時保留可用的原始索引。"""
+        self._assert_generated_cache(self.conn)
+        columns = {row[1] for row in self.conn.execute("PRAGMA table_info(questions)")}
+        if {"option_images", "source_locator"}.issubset(columns):
+            return
+        self.build()
+
+    @staticmethod
+    def _assert_generated_cache(conn):
+        """僅能取代本工具的可重建索引；未知 schema 可能包含使用者資料。"""
+        tables = {row[0] for row in conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"
+        )}
+        expected_files = {"id", "path", "category", "year", "subject", "exam_name", "level"}
+        expected_questions = {"id", "file_id", "number", "type", "stem", "option_a", "option_b",
+                              "option_c", "option_d", "answer", "passage", "section"}
+        files = {row[1] for row in conn.execute("PRAGMA table_info(files)")}
+        questions = {row[1] for row in conn.execute("PRAGMA table_info(questions)")}
+        if tables != {"files", "questions"} or files != expected_files or not (
+            expected_questions <= questions <= expected_questions | {"option_images", "source_locator"}
+        ):
+            raise RuntimeError("索引包含未知資料表或欄位，拒絕自動重建並保留原始資料庫")
+        known_indexes = {"idx_q_type", "idx_q_answer", "idx_q_file", "idx_f_category", "idx_f_year", "idx_f_subject"}
+        for kind, name in conn.execute(
+            "SELECT type, name FROM sqlite_master WHERE type IN ('view','trigger','index')"
+        ):
+            if kind != "index" or (not name.startswith("sqlite_") and name not in known_indexes):
+                raise RuntimeError("索引包含未知 schema 物件，拒絕重建並保留原始資料庫")
 
     def close(self):
-        self.conn.close()
+        if self.conn is not None:
+            self.conn.close()
 
     def __enter__(self):
         return self
@@ -62,8 +101,52 @@ class ExamDB:
         self.close()
 
     def build(self):
-        """建立 SQLite 索引"""
-        conn = sqlite3.connect(self.db_path)
+        """完整暫存索引通過後才原子取代；來源/SQLite 失敗不修改既有索引。"""
+        files = sorted(glob.glob(str(self.data_dir / "**" / "試題.json"), recursive=True))
+        if not files:
+            raise RuntimeError("缺少原始題庫來源，拒絕建立或升級索引")
+        previous_questions = 0
+        if os.path.exists(self.db_path):
+            with closing(sqlite3.connect(self.db_path)) as previous:
+                self._assert_generated_cache(previous)
+                sources = {Path(fp).resolve() for fp in files}
+                relative_sources = {Path(fp).resolve().relative_to(self.data_dir).as_posix() for fp in files}
+                for path, category in previous.execute("SELECT path, category FROM files"):
+                    if Path(path).resolve() in sources:
+                        continue
+                    # Old caches can move between clones. Preserve the category-relative
+                    # source locator rather than requiring the old machine's absolute root.
+                    parts = str(path).replace("\\", "/").split("/")
+                    matches = {"/".join(parts[i:]) for i, part in enumerate(parts) if part == category} & relative_sources
+                    if len(matches) != 1:
+                        raise RuntimeError("原始題庫來源不完整，拒絕重建並保留原始資料庫")
+                previous_questions = previous.execute("SELECT COUNT(*) FROM questions").fetchone()[0]
+        descriptor, temporary = tempfile.mkstemp(prefix="exam-schema-", suffix=".db", dir=Path(self.db_path).parent)
+        os.close(descriptor)
+        connected = getattr(self, "conn", None) is not None
+        try:
+            file_count, question_count = self._write_index(temporary, files)
+            if not file_count or (previous_questions and not question_count):
+                raise RuntimeError("原始題庫沒有可重建題目，拒絕取代既有索引")
+            if connected:
+                self.conn.close()
+                self.conn = None
+            os.replace(temporary, self.db_path)
+        finally:
+            if os.path.exists(temporary):
+                os.remove(temporary)
+            if connected and self.conn is None:
+                self.conn = sqlite3.connect(self.db_path)
+                self.conn.row_factory = sqlite3.Row
+        db_size = os.path.getsize(self.db_path)
+        print(f"索引建立完成: {file_count} 個檔案, {question_count} 題, {db_size/1024/1024:.1f} MB", file=sys.stderr)
+
+    def _write_index(self, db_path, files):
+        """寫入隔離暫存檔；closing 在解析或 SQL 例外時也會釋放 Windows 檔案 handle。"""
+        with closing(sqlite3.connect(db_path)) as conn:
+            return self._populate_index(conn, files)
+
+    def _populate_index(self, conn, files):
         c = conn.cursor()
 
         c.executescript("""
@@ -93,17 +176,21 @@ class ExamDB:
                 answer TEXT,
                 passage TEXT,
                 section TEXT,
+                option_images TEXT,
+                source_locator TEXT,
                 FOREIGN KEY (file_id) REFERENCES files(id)
             );
         """)
 
-        files = glob.glob(str(self.data_dir / "**" / "試題.json"), recursive=True)
         file_id = 0
         q_count = 0
 
         for fp in files:
             with open(fp, 'r', encoding='utf-8') as f:
                 d = json.load(f)
+
+            if not isinstance(d, dict) or not isinstance(d.get('metadata', {}), dict) or not isinstance(d.get('questions'), list):
+                raise ValueError(f"題庫 JSON 格式錯誤: {fp}")
 
             if d.get('metadata', {}).get('_is_duplicate'):
                 continue
@@ -126,6 +213,11 @@ class ExamDB:
             )
 
             for q in d.get('questions', []):
+                if not isinstance(q, dict) or not isinstance(q.get('options', {}), dict):
+                    raise ValueError(f"題目 JSON 格式錯誤: {fp}")
+                for field in ('option_images', 'source_locator'):
+                    if q.get(field) is not None and not isinstance(q[field], dict):
+                        raise ValueError(f"{field} 必須為 JSON 物件: {fp}")
                 q_count += 1
                 opts = q.get('options', {})
                 # answer 可能是 str / list (多答案) / None (送分) → 統一字串
@@ -135,13 +227,15 @@ class ExamDB:
                 elif ans is None:
                     ans = ''
                 c.execute(
-                    "INSERT INTO questions VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "INSERT INTO questions VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (q_count, file_id, str(q.get('number', '')),
                      q.get('type', ''), q.get('stem', ''),
                      opts.get('A', ''), opts.get('B', ''),
                      opts.get('C', ''), opts.get('D', ''),
                      ans, q.get('passage', ''),
-                     q.get('section', ''))
+                     q.get('section', ''),
+                     json.dumps(q['option_images'], ensure_ascii=False) if 'option_images' in q else None,
+                     json.dumps(q['source_locator'], ensure_ascii=False) if 'source_locator' in q else None)
                 )
 
         # 建立索引
@@ -155,9 +249,7 @@ class ExamDB:
         """)
 
         conn.commit()
-        conn.close()
-        db_size = os.path.getsize(self.db_path)
-        print(f"索引建立完成: {file_id} 個檔案, {q_count} 題, {db_size/1024/1024:.1f} MB")
+        return file_id, q_count
 
     def search(self, keyword=None, year=None, category=None, subject=None,
                answer=None, qtype='choice', limit=50):
@@ -212,7 +304,14 @@ class ExamDB:
         params.append(limit)
 
         rows = self.conn.execute(sql, params).fetchall()
-        return [dict(r) for r in rows]
+        results = []
+        for row in rows:
+            item = dict(row)
+            for field in ('option_images', 'source_locator'):
+                if item[field] is not None:
+                    item[field] = json.loads(item[field])
+            results.append(item)
+        return results
 
     def stats(self):
         """統計摘要"""
@@ -265,12 +364,35 @@ def format_question(q):
     if q.get('passage'):
         lines.append(f"段落: {q['passage'][:100]}...")
     lines.append(f"題幹: {q['stem']}")
+    images = q.get('option_images') or {}
+    locator = q.get('source_locator') or {}
+    if isinstance(images, str):
+        images = json.loads(images)
+    if isinstance(locator, str):
+        locator = json.loads(locator)
     if q['type'] == 'choice':
         for letter in 'ABCD':
             val = q.get(f'option_{letter.lower()}', '')
             marker = " ★" if q.get('answer') == letter else ""
             lines.append(f"  ({letter}) {val}{marker}")
+            image = images.get(letter)
+            if image:
+                reference = image.get('public_src') or image.get('src') or ''
+                lines.append(f"      圖片: {reference}")
+                if image.get('src') and image.get('src') != reference:
+                    lines.append(f"      原始圖片: {image['src']}")
+                if image.get('alt'):
+                    lines.append(f"      圖片說明: {image['alt']}")
         lines.append(f"答案: {q['answer']}")
+    if locator:
+        if locator.get('url'):
+            lines.append(f"原始來源 URL: {locator['url']}")
+        if locator.get('pdf'):
+            lines.append(f"來源 PDF: {locator['pdf']}")
+        if locator.get('page') is not None:
+            lines.append(f"來源頁碼: {locator['page']}")
+        if locator.get('pdf_sha256'):
+            lines.append(f"來源 SHA-256: {locator['pdf_sha256']}")
     return "\n".join(lines)
 
 
@@ -299,6 +421,7 @@ def main():
     qp.add_argument('--answer', '-a', help='答案')
     qp.add_argument('--type', '-t', default='choice', help='題型 (choice/essay)')
     qp.add_argument('--limit', '-n', type=int, default=10, help='顯示數量')
+    qp.add_argument('--json', action='store_true', help='輸出完整題目 JSON（含圖片與來源）')
 
     # stats
     sub.add_parser('stats', help='統計摘要')
@@ -308,15 +431,14 @@ def main():
     rp.add_argument('--count', '-n', type=int, default=5, help='抽題數量')
     rp.add_argument('--year', '-y', type=int, help='年份')
     rp.add_argument('--subject', '-s', help='科目')
+    rp.add_argument('--json', action='store_true', help='輸出完整題目 JSON（含圖片與來源）')
 
     args = parser.parse_args()
 
     if args.command == 'build':
-        # build 模式 — 強制重建
+        # Build completes in isolation before replacing any existing generated cache.
         db_path = args.db or DB_PATH
-        if os.path.exists(db_path):
-            os.remove(db_path)
-        db = ExamDB(db_path=db_path, data_dir=args.data_dir)
+        db = ExamDB(db_path=db_path, data_dir=args.data_dir, rebuild=True)
         db.close()
 
     elif args.command == 'query':
@@ -326,10 +448,13 @@ def main():
                 category=args.category, subject=args.subject,
                 answer=args.answer, qtype=args.type, limit=args.limit
             )
-            print(f"找到 {len(results)} 題：\n")
-            for q in results:
-                print(format_question(q))
-                print("─" * 60)
+            if args.json:
+                print(json.dumps(results, ensure_ascii=False))
+            else:
+                print(f"找到 {len(results)} 題：\n")
+                for q in results:
+                    print(format_question(q))
+                    print("─" * 60)
 
     elif args.command == 'stats':
         with ExamDB(db_path=args.db, data_dir=args.data_dir) as db:
@@ -346,10 +471,13 @@ def main():
     elif args.command == 'random':
         with ExamDB(db_path=args.db, data_dir=args.data_dir) as db:
             results = db.random(n=args.count, year=args.year, subject=args.subject)
-            print(f"隨機 {len(results)} 題：\n")
-            for q in results:
-                print(format_question(q))
-                print("─" * 60)
+            if args.json:
+                print(json.dumps(results, ensure_ascii=False))
+            else:
+                print(f"隨機 {len(results)} 題：\n")
+                for q in results:
+                    print(format_question(q))
+                    print("─" * 60)
 
     else:
         parser.print_help()

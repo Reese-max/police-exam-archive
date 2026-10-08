@@ -848,7 +848,10 @@
               engine.drawAnswer(item.answer, questionLayout.optionIndent);
               // 選項圖片與題目來源保留在匯出內容中，讓離線 PDF 仍可追溯原卷。
               if (item.source && (item.source.page || item.source.pdf || item.source.sha256)) {
-                var sourceName = item.source.pdf ? item.source.pdf.split(/[\\/]/).pop() : '';
+                var sourceName = item.source.pdf || '';
+                if (sourceName && !/^https?:\/\//i.test(sourceName)) {
+                  sourceName = sourceName.split(/[\\/]/).pop();
+                }
                 var sourceText = '選項圖片來源：原始試卷' + (item.source.page ? '第' + item.source.page + '頁' : '');
                 if (sourceName) sourceText += '（' + sourceName + '）';
                 if (item.source.sha256) sourceText += '；PDF SHA-256 ' + item.source.sha256;
