@@ -79,17 +79,17 @@ def test_nonpreset_restored_exam_keeps_a_valid_count_for_finish_retry(pool_size,
     run_flow("""
         const store=readStore(); const clock={value:T0};
         const pool=%s;
-        const page=createQuizPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool});
-        page.selectSeg('segCount',50); page.selectSeg('segTime',60); page.click('startBtn');
+        const page=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool});
+        await page.selectSeg('segCount',50); await page.selectSeg('segTime',60); await page.click('startBtn');
         assert.strictEqual(page.state().total,%s,'confirmed short pool starts with available questions');
-        page.choose(2); page.pagehide(); const expected=page.checkpoint();
-        const recovered=createQuizPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool});
-        recovered.click('resumeBtn');
+        await page.choose(2); await page.pagehide(); const expected=page.checkpoint();
+        const recovered=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool});
+        await recovered.click('resumeBtn');
         assert.deepStrictEqual(JSON.parse(JSON.stringify(recovered.checkpoint().questions)),expected.questions);
         assert.strictEqual(recovered.state().total,%s,'recovery cannot change the active exam size');
         assert.strictEqual(recovered.read("document.querySelector('#segCount .on').dataset.v"),'%s');
         assert.strictEqual(recovered.get('segCount').children.length,4,'do not inject a raw checkpoint count button');
-        recovered.click('submitBtn'); recovered.click('retryBtn'); recovered.click('startBtn');
+        await recovered.click('submitBtn'); await recovered.click('retryBtn'); await recovered.click('startBtn');
         assert.strictEqual(recovered.state().view,'exam','retry starts without a null count selection');
         assert.strictEqual(recovered.state().total,Math.min(%s,%s));
         assert.ok(recovered.checkpoint(),'new retry is checkpointable');
@@ -101,8 +101,8 @@ def test_nonpreset_restored_exam_keeps_a_valid_count_for_finish_retry(pool_size,
 def test_real_page_recovers_alternative_answers_passage_and_image_without_downgrade():
     run_flow("""
         const store=readStore(); const clock={value:T0};
-        const page=createQuizPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool:%s});
-        page.selectSeg('segCount',10); page.selectSeg('segTime',60); page.click('startBtn');
+        const page=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool:%s});
+        await page.selectSeg('segCount',10); await page.selectSeg('segTime',60); await page.click('startBtn');
         assert.ok(page.checkpoint(), 'current mode is saved');
         assert.ok(page.get('qPassage').innerHTML.includes('<mark>[1]</mark>'));
         assert.ok(page.get('qPassage').innerHTML.includes('&lt;段落&gt;'));
@@ -111,18 +111,18 @@ def test_real_page_recovers_alternative_answers_passage_and_image_without_downgr
         const radio=page.get('choices').children.find(el=>el.classes.has('choice'));
         radio.dispatch('click',{target:link,preventDefault(){}});
         assert.strictEqual(page.state().answers[0],null,'image link does not pick a choice');
-        for(let i=0;i<10;i++){page.goto(i);page.choose(2);}
-        page.goto(4); page.click('flagBtn'); page.tick(17); page.pagehide();
+        for(let i=0;i<10;i++){await page.goto(i);await page.choose(2);}
+        await page.goto(4); await page.click('flagBtn'); await page.tick(17); await page.pagehide();
         const expected=page.checkpoint(); clock.value+=11000;
-        const recovered=open(store,clock); recovered.click('resumeBtn');
+        const recovered=await open(store,clock); await recovered.click('resumeBtn');
         assert.strictEqual(recovered.state().view,'exam');
         assert.strictEqual(recovered.state().remain,3600-28);
         assert.deepStrictEqual(JSON.parse(JSON.stringify(recovered.checkpoint().questions)),expected.questions);
         assert.ok(recovered.get('qPassage').innerHTML.includes('<mark>[1]</mark>'));
         assert.ok(recovered.get('choices').innerHTML.includes('q2-option-A.png'));
         assert.strictEqual(recovered.state().flags[4],true);
-        recovered.click('submitBtn'); assert.strictEqual(recovered.state().scorePct,'100%%');
-        assert.strictEqual(store.getItem(KEY),null); page.pagehide();
+        await recovered.click('submitBtn'); assert.strictEqual(recovered.state().scorePct,'100%%');
+        assert.strictEqual(store.getItem(KEY),null); await page.pagehide();
         assert.strictEqual(store.getItem(KEY),null,'old owner cannot resurrect completed current exam');
         console.log('flow-ok');
     """ % json.dumps(current_pool(), ensure_ascii=False))
@@ -131,12 +131,12 @@ def test_real_page_recovers_alternative_answers_passage_and_image_without_downgr
 def test_real_page_bonus_unanswered_questions_still_score_after_recovery():
     run_flow("""
         const store=readStore(); const clock={value:T0};
-        const page=createQuizPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool:%s});
-        page.selectSeg('segCount',10); page.click('startBtn'); page.pagehide();
-        const recovered=open(store,clock); recovered.click('resumeBtn');
+        const page=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool:%s});
+        await page.selectSeg('segCount',10); await page.click('startBtn'); await page.pagehide();
+        const recovered=await open(store,clock); await recovered.click('resumeBtn');
         assert.strictEqual(recovered.state().view,'exam');
         assert.ok(recovered.checkpoint().questions.every(q=>q.bonus && q.accepted.length===4));
-        recovered.click('submitBtn'); assert.strictEqual(recovered.state().scorePct,'100%%');
+        await recovered.click('submitBtn'); assert.strictEqual(recovered.state().scorePct,'100%%');
         assert.strictEqual(recovered.get('sSkip').textContent,'0');
         console.log('flow-ok');
     """ % json.dumps(current_pool('送分'), ensure_ascii=False))
@@ -145,14 +145,14 @@ def test_real_page_bonus_unanswered_questions_still_score_after_recovery():
 def test_current_recovery_changes_owner_even_at_the_same_wall_clock_instant():
     run_flow("""
         const store=readStore(); const clock={value:T0};
-        const original=createQuizPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool:%s});
-        original.selectSeg('segCount',10); original.click('startBtn'); original.choose(0);
+        const original=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool:%s});
+        await original.selectSeg('segCount',10); await original.click('startBtn'); await original.choose(0);
         const previousOwner=original.checkpoint().sessionId;
-        const recovered=open(store,clock); recovered.click('resumeBtn'); recovered.choose(2);
+        const recovered=await open(store,clock); await recovered.click('resumeBtn'); await recovered.choose(2);
         assert.notStrictEqual(recovered.checkpoint().sessionId,previousOwner);
-        const current=store.getItem(KEY); original.pagehide();
+        const current=store.getItem(KEY); await original.pagehide();
         assert.strictEqual(store.getItem(KEY),current,'old page cannot replace the new owner answer');
-        recovered.click('submitBtn'); original.pagehide();
+        await recovered.click('submitBtn'); await original.pagehide();
         assert.strictEqual(store.getItem(KEY),null,'old page cannot resurrect a completed current exam');
         console.log('flow-ok');
     """ % json.dumps(current_pool(), ensure_ascii=False))
@@ -163,9 +163,9 @@ def test_real_pool_excludes_missing_invalid_answers_and_canonicalizes_valid_labe
     for invalid in ['', '或', 'A或', 'A或Z', 'AB']:
         pool.append({**pool[0], 'ans': invalid})
     run_flow("""
-        const page=createQuizPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:readStore(),clock:{value:T0},pool:%s});
+        const page=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:readStore(),clock:{value:T0},pool:%s});
         assert.strictEqual(page.get('matchCount').textContent,'12 題','unscorable source answers must stay out of pool');
-        page.selectSeg('segCount',10); page.click('startBtn');
+        await page.selectSeg('segCount',10); await page.click('startBtn');
         assert.ok(page.checkpoint(), 'normalized valid source labels remain checkpointable');
         assert.ok(page.checkpoint().questions.every(q=>q.answerLabel==='A或C' && q.accepted.join(',')==='0,2'));
         console.log('flow-ok');
@@ -174,18 +174,18 @@ def test_real_pool_excludes_missing_invalid_answers_and_canonicalizes_valid_labe
 
 def test_real_page_legacy_v1_integer_answer_restores_and_upgrades():
     run_flow("""
-        const {store,clock,page}=context(); startWorkedExam(page);
+        const {store,clock,page}=await context(); await startWorkedExam(page);
         const snap=page.checkpoint(); snap.v=1; delete snap.sessionId;
         snap.questions=snap.questions.map(q=>({subj:q.subj,stem:q.stem,opts:q.opts,ans:q.accepted[0]}));
-        store.setItem(KEY,JSON.stringify(snap));
-        const recovered=open(store,clock); recovered.click('resumeBtn');
+        const legacyStore=readStore(); legacyStore.setItem(KEY,JSON.stringify(snap));
+        const recovered=await open(legacyStore,clock); await recovered.click('resumeBtn');
         assert.strictEqual(recovered.state().view,'exam');
         assert.deepStrictEqual(recovered.state().answers,page.state().answers);
         assert.deepStrictEqual(recovered.state().flags,page.state().flags);
         assert.strictEqual(recovered.state().cur,4);
         assert.ok(recovered.checkpoint().questions.every(q=>q.accepted.length===1 && q.bonus===false));
-        recovered.click('submitBtn'); assert.strictEqual(recovered.state().view,'result');
-        assert.strictEqual(store.getItem(KEY),null);
+        await recovered.click('submitBtn'); assert.strictEqual(recovered.state().view,'result');
+        assert.strictEqual(legacyStore.getItem(KEY),null);
         console.log('flow-ok');
     """)
 
@@ -194,8 +194,8 @@ def test_real_page_legacy_v1_integer_answer_restores_and_upgrades():
                                   'cat/images/x.png" onerror="alert(1)', 'cat/images/%2e%2e/x.png'])
 def test_raw_source_image_path_cannot_inject_active_or_external_markup(image):
     run_flow("""
-        const page=createQuizPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:readStore(),clock:{value:T0},pool:%s});
-        page.selectSeg('segCount',10); page.click('startBtn');
+        const page=await createPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:readStore(),clock:{value:T0},pool:%s});
+        await page.selectSeg('segCount',10); await page.click('startBtn');
         assert.ok(page.checkpoint(), 'invalid optional image does not break a valid question');
         assert.ok(page.checkpoint().questions.every(q=>q.imageOpts[0].src===''));
         assert.ok(!page.get('choices').innerHTML.includes('<img'), 'unsafe source produces no image markup');

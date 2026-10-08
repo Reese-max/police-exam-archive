@@ -31,6 +31,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          npm ci --prefix tests --ignore-scripts
           pip install pytest pytest-cov
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 

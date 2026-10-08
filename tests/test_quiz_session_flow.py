@@ -52,22 +52,27 @@ const T0 = 1760000000000;
 const KEY = 'exam-quiz-active';
 
 /* Open a page over `store` at wall-clock `now` (defaults to the shared clock). */
-function open(store, clock) {
-  return createQuizPage({ html: HTML, checkpointJs: CHECKPOINT_JS, storage: store, clock: clock });
+async function createPage(options) {
+  const page = createQuizPage(options);
+  await page.ready();
+  return page;
+}
+async function open(store, clock, indexedDB) {
+  return createPage({ html: HTML, checkpointJs: CHECKPOINT_JS, storage: store, clock: clock, indexedDB });
 }
 
 /* Start a 10-question / 60-minute exam and work it into the fixture state:
  * answer Q1-Q3, flag Q4, park on Q5, run the timer for 30 s. */
-function startWorkedExam(page) {
-  page.selectSeg('segCount', 10);
-  page.selectSeg('segTime', 60);
-  page.click('startBtn');
-  page.choose(0);                 // Q1
-  page.goto(1); page.choose(1);   // Q2
-  page.goto(2); page.choose(2);   // Q3
-  page.goto(3); page.click('flagBtn');   // flag Q4
-  page.goto(4);                   // park on Q5
-  page.tick(30);                  // advance the timer by 30 s
+async function startWorkedExam(page) {
+  await page.selectSeg('segCount', 10);
+  await page.selectSeg('segTime', 60);
+  await page.click('startBtn');
+  await page.choose(0);                 // Q1
+  await page.goto(1); await page.choose(1);   // Q2
+  await page.goto(2); await page.choose(2);   // Q3
+  await page.goto(3); await page.click('flagBtn');   // flag Q4
+  await page.goto(4);                   // park on Q5
+  await page.tick(30);                  // advance the timer by 30 s
   return page;
 }
 
@@ -85,17 +90,17 @@ function fmt(sec) {
   return parts[0] + ':' + String(parts[1]).padStart(2, '0');
 }
 
-function context(extra) {
+async function context(extra) {
   const store = readStore();
   const clock = { value: T0 };
-  return { store: store, clock: clock, page: open(store, clock) };
+  return { store: store, clock: clock, page: await open(store, clock) };
 }
 """ % json.dumps(str(ROOT))
 
 
 def run_flow(script: str) -> subprocess.CompletedProcess:
     proc = subprocess.run(
-        [NODE, "-e", PRELUDE + textwrap.dedent(script)],
+        [NODE, "-e", PRELUDE + "\n(async()=>{\n" + textwrap.dedent(script) + "\n})().catch(error=>{console.error(error);process.exitCode=1;});"],
         cwd=str(ROOT),
         capture_output=True,
         text=True,
@@ -111,8 +116,8 @@ def test_reload_restores_the_same_exam_and_finish_clears_the_checkpoint() -> Non
     """start → answer/flag → checkpoint → reload → resume → finish (issue scenario)."""
     run_flow(
         """
-        const { store, clock, page } = context();
-        startWorkedExam(page);
+        const { store, clock, page } = await context();
+        await startWorkedExam(page);
 
         const before = page.state();
         assert.strictEqual(before.view, 'exam', 'the exam view must be showing');
@@ -123,17 +128,17 @@ def test_reload_restores_the_same_exam_and_finish_clears_the_checkpoint() -> Non
         assert.strictEqual(before.remain, 3600 - 30);
 
         // The tab is interrupted: the page is hidden and then reloaded.
-        page.pagehide();
+        await page.pagehide();
         clock.value += 45 * 1000;
 
-        const reloaded = open(store, clock);
+        const reloaded = await open(store, clock);
         let state = reloaded.state();
         assert.strictEqual(state.view, 'setup', 'a reload lands back on setup');
         assert.strictEqual(state.bannerHidden, false, 'the resume banner must be offered');
         assert.ok(state.resumeInfo.indexOf('第 5 / 10 題') !== -1, state.resumeInfo);
         assert.ok(state.resumeInfo.indexOf('剩餘 58:45') !== -1, state.resumeInfo);
 
-        reloaded.click('resumeBtn');
+        await reloaded.click('resumeBtn');
         state = reloaded.state();
         assert.strictEqual(state.view, 'exam', 'resume must show the exam, not setup');
         assert.strictEqual(state.cur, 4, 'same position');
@@ -147,7 +152,7 @@ def test_reload_restores_the_same_exam_and_finish_clears_the_checkpoint() -> Non
         assert.strictEqual(state.elapsed, 30 + 45);
 
         // Finishing clears the checkpoint and a later load must not resurrect it.
-        reloaded.click('submitBtn');
+        await reloaded.click('submitBtn');
         state = reloaded.state();
         assert.strictEqual(state.view, 'result');
         assert.strictEqual(reloaded.checkpoint(), null, 'finish() must clear the checkpoint');
@@ -155,12 +160,12 @@ def test_reload_restores_the_same_exam_and_finish_clears_the_checkpoint() -> Non
 
         // Unloading a finished exam must not write a fresh checkpoint: pagehide
         // still fires after finish(), so the examDone guard is load-bearing.
-        reloaded.pagehide();
-        reloaded.tick(3);
+        await reloaded.pagehide();
+        await reloaded.tick(3);
         assert.strictEqual(reloaded.checkpoint(), null, 'pagehide after finish must not resurrect');
 
         clock.value += 60 * 1000;
-        const reopened = open(store, clock);
+        const reopened = await open(store, clock);
         assert.strictEqual(reopened.state().bannerHidden, true, 'a completed exam must not resurrect');
         console.log('flow-ok');
         """
@@ -169,32 +174,32 @@ def test_reload_restores_the_same_exam_and_finish_clears_the_checkpoint() -> Non
 
 def test_stale_tab_cannot_resurrect_an_exam_finished_in_another_tab() -> None:
     run_flow("""
-        const { store, clock, page } = context();
-        startWorkedExam(page);
-        const resumed = open(store, clock);
-        resumed.click('resumeBtn');
-        resumed.click('submitBtn');
+        const { store, clock, page } = await context();
+        await startWorkedExam(page);
+        const resumed = await open(store, clock);
+        await resumed.click('resumeBtn');
+        await resumed.click('submitBtn');
         assert.strictEqual(store.getItem(KEY), null);
-        page.goto(5); page.tick(6); page.pagehide();
+        await page.goto(5); await page.tick(6); await page.pagehide();
         assert.strictEqual(store.getItem(KEY), null, 'stale original tab must not resurrect a completed exam');
-        assert.strictEqual(open(store, clock).state().bannerHidden, true);
+        assert.strictEqual((await open(store, clock)).state().bannerHidden, true);
         console.log('flow-ok');
     """)
 
 
 def test_resumed_tab_owns_writes_without_losing_its_new_answers() -> None:
     run_flow("""
-        const { store, clock, page } = context();
-        startWorkedExam(page);
+        const { store, clock, page } = await context();
+        await startWorkedExam(page);
         const oldId = JSON.parse(store.getItem(KEY)).sessionId;
-        const resumed = open(store, clock); resumed.click('resumeBtn');
-        resumed.goto(5); resumed.choose(3);
+        const resumed = await open(store, clock); await resumed.click('resumeBtn');
+        await resumed.goto(5); await resumed.choose(3);
         const current = store.getItem(KEY);
         assert.notStrictEqual(JSON.parse(current).sessionId, oldId, 'resume claims fresh writing ownership');
-        page.goto(6); page.pagehide();
+        await page.goto(6); await page.pagehide();
         assert.strictEqual(store.getItem(KEY), current, 'stale tab cannot erase recovered progress');
         assert.strictEqual(JSON.parse(current).answers[5], 3);
-        resumed.click('submitBtn'); page.pagehide();
+        await resumed.click('submitBtn'); await page.pagehide();
         assert.strictEqual(store.getItem(KEY), null);
         console.log('flow-ok');
     """)
@@ -202,52 +207,52 @@ def test_resumed_tab_owns_writes_without_losing_its_new_answers() -> None:
 
 def test_old_tab_cannot_overwrite_or_clear_a_new_exam() -> None:
     run_flow("""
-        const { store, clock, page } = context();
-        startWorkedExam(page);
-        const newer = open(store, clock);
-        newer.click('discardResumeBtn');
-        startWorkedExam(newer);
+        const { store, clock, page } = await context();
+        await startWorkedExam(page);
+        const newer = await open(store, clock);
+        await newer.click('discardResumeBtn');
+        await startWorkedExam(newer);
         const current = store.getItem(KEY);
-        page.goto(6); page.pagehide();
+        await page.goto(6); await page.pagehide();
         assert.strictEqual(store.getItem(KEY), current, 'old tab cannot overwrite a new exam');
-        page.click('submitBtn');
+        await page.click('submitBtn');
         assert.strictEqual(store.getItem(KEY), current, 'old tab cannot clear a new exam');
-        assert.strictEqual(open(store, clock).state().bannerHidden, false);
+        assert.strictEqual((await open(store, clock)).state().bannerHidden, false);
         console.log('flow-ok');
     """)
 
 
 def test_legacy_checkpoint_can_resume_and_receive_a_session_identity() -> None:
     run_flow("""
-        const { store, clock, page } = context();
-        startWorkedExam(page);
+        const { store, clock, page } = await context();
+        await startWorkedExam(page);
         const legacy = JSON.parse(store.getItem(KEY));
         delete legacy.sessionId;
-        store.setItem(KEY, JSON.stringify(legacy));
-        const restored = open(store, clock);
-        restored.click('resumeBtn');
+        const legacyStore=readStore(); legacyStore.setItem(KEY, JSON.stringify(legacy));
+        const restored = await open(legacyStore, clock);
+        await restored.click('resumeBtn');
         assert.strictEqual(restored.state().view, 'exam', 'older v1 snapshot remains resumable');
-        const upgraded = JSON.parse(store.getItem(KEY));
+        const upgraded = JSON.parse(legacyStore.getItem(KEY));
         assert.strictEqual(typeof upgraded.sessionId, 'string');
         assert.ok(upgraded.sessionId.length > 0);
-        restored.goto(6); restored.pagehide();
-        assert.strictEqual(JSON.parse(store.getItem(KEY)).cur, 6, 'upgraded owner can keep saving');
+        await restored.goto(6); await restored.pagehide();
+        assert.strictEqual(JSON.parse(legacyStore.getItem(KEY)).cur, 6, 'upgraded owner can keep saving');
         console.log('flow-ok');
     """)
 
 
 def test_stale_legacy_banner_cannot_discard_a_new_exam() -> None:
     run_flow("""
-        const { store, clock, page } = context();
-        startWorkedExam(page);
+        const { store, clock, page } = await context();
+        await startWorkedExam(page);
         const legacy = JSON.parse(store.getItem(KEY)); delete legacy.sessionId;
-        store.setItem(KEY, JSON.stringify(legacy));
-        const stale = open(store, clock);
-        const newer = open(store, clock);
-        newer.click('discardResumeBtn'); startWorkedExam(newer);
-        const current = store.getItem(KEY);
-        stale.click('discardResumeBtn');
-        assert.strictEqual(store.getItem(KEY), current, 'stale legacy banner cannot discard newer exam');
+        const legacyStore=readStore(); legacyStore.setItem(KEY, JSON.stringify(legacy));
+        const stale = await open(legacyStore, clock);
+        const newer = await open(legacyStore, clock);
+        await newer.click('discardResumeBtn'); await startWorkedExam(newer);
+        const current = legacyStore.getItem(KEY);
+        await stale.click('discardResumeBtn');
+        assert.strictEqual(legacyStore.getItem(KEY), current, 'stale legacy banner cannot discard newer exam');
         console.log('flow-ok');
     """)
 
@@ -261,17 +266,17 @@ def test_resume_charges_time_spent_on_the_setup_screen() -> None:
     """
     run_flow(
         """
-        const { store, clock, page } = context();
-        startWorkedExam(page);
-        page.pagehide();
+        const { store, clock, page } = await context();
+        await startWorkedExam(page);
+        await page.pagehide();
         clock.value += 60 * 1000;
 
-        const reloaded = open(store, clock);
+        const reloaded = await open(store, clock);
         assert.strictEqual(reloaded.state().bannerHidden, false);
 
         // 10 more minutes sitting on the setup screen before clicking 繼續作答.
         clock.value += 10 * 60 * 1000;
-        reloaded.click('resumeBtn');
+        await reloaded.click('resumeBtn');
 
         const state = reloaded.state();
         assert.strictEqual(state.view, 'exam');
@@ -291,15 +296,15 @@ def test_expired_countdown_is_never_offered_as_resumable() -> None:
     """
     run_flow(
         """
-        const { store, clock, page } = context();
-        page.selectSeg('segCount', 10);
-        page.selectSeg('segTime', 30);
-        page.click('startBtn');
-        page.choose(0);
-        page.tick(5);
+        const { store, clock, page } = await context();
+        await page.selectSeg('segCount', 10);
+        await page.selectSeg('segTime', 30);
+        await page.click('startBtn');
+        await page.choose(0);
+        await page.tick(5);
 
         clock.value += 40 * 60 * 1000;   // closed far longer than the exam allows
-        const reloaded = open(store, clock);
+        const reloaded = await open(store, clock);
         let state = reloaded.state();
         assert.strictEqual(state.bannerHidden, true, 'an expired session must not be offered');
         assert.ok(reloaded.get('resumeNote').textContent.indexOf('逾時') !== -1,
@@ -307,16 +312,16 @@ def test_expired_countdown_is_never_offered_as_resumable() -> None:
         assert.strictEqual(reloaded.checkpoint(), null, 'the expired checkpoint must be cleared');
 
         // Clicking the (hidden) resume button must stay on setup and start nothing.
-        reloaded.click('resumeBtn');
-        reloaded.tick(5);
+        await reloaded.click('resumeBtn');
+        await reloaded.tick(5);
         state = reloaded.state();
         assert.strictEqual(state.view, 'setup', 'setup must stay usable');
         assert.strictEqual(state.examDone, false);
 
         // The setup screen still starts a normal exam.
-        reloaded.selectSeg('segCount', 10);
-        reloaded.selectSeg('segTime', 60);
-        reloaded.click('startBtn');
+        await reloaded.selectSeg('segCount', 10);
+        await reloaded.selectSeg('segTime', 60);
+        await reloaded.click('startBtn');
         assert.strictEqual(reloaded.state().view, 'exam');
         assert.strictEqual(reloaded.state().durSec, 3600);
         console.log('flow-ok');
@@ -332,21 +337,21 @@ def test_resume_aligns_the_setup_form_with_the_session() -> None:
     """
     run_flow(
         """
-        const { store, clock, page } = context();
-        page.selectSeg('segCount', 10);
-        page.selectSeg('segTime', 30);
-        page.click('startBtn');
-        page.tick(5);
-        page.pagehide();
+        const { store, clock, page } = await context();
+        await page.selectSeg('segCount', 10);
+        await page.selectSeg('segTime', 30);
+        await page.click('startBtn');
+        await page.tick(5);
+        await page.pagehide();
 
         clock.value += 30 * 1000;
-        const reloaded = open(store, clock);
-        reloaded.click('resumeBtn');
+        const reloaded = await open(store, clock);
+        await reloaded.click('resumeBtn');
         assert.strictEqual(reloaded.state().view, 'exam');
 
         // Back to the form via 再考一次.
-        reloaded.click('submitBtn');
-        reloaded.click('retryBtn');
+        await reloaded.click('submitBtn');
+        await reloaded.click('retryBtn');
         assert.strictEqual(reloaded.state().view, 'setup');
         const selected = (id) => reloaded.get(id).children
           .filter((b) => b.classes.has('on'))
@@ -368,16 +373,16 @@ def test_unusable_storage_does_not_break_an_exam() -> None:
           removeItem: () => {},
         };
         const clock = { value: T0 };
-        const page = open(broken, clock);
+        const page = await open(broken, clock, null);
         assert.strictEqual(page.state().view, 'setup');
 
-        page.selectSeg('segCount', 10);
-        page.selectSeg('segTime', 30);
-        page.click('startBtn');
-        page.choose(0);
-        page.goto(1); page.choose(1);
-        page.tick(2);
-        page.pagehide();
+        await page.selectSeg('segCount', 10);
+        await page.selectSeg('segTime', 30);
+        await page.click('startBtn');
+        await page.choose(0);
+        await page.goto(1); await page.choose(1);
+        await page.tick(2);
+        await page.pagehide();
 
         const state = page.state();
         assert.strictEqual(state.view, 'exam', 'the exam must keep running');
@@ -385,11 +390,11 @@ def test_unusable_storage_does_not_break_an_exam() -> None:
         assert.deepStrictEqual(state.answers.slice(0, 2), [0, 1]);
         assert.strictEqual(state.remain, 1800 - 2);
 
-        page.click('submitBtn');
+        await page.click('submitBtn');
         assert.strictEqual(page.state().view, 'result', 'finishing must still work');
 
         // And a fresh page over the same broken store simply offers nothing.
-        const reopened = open(broken, clock);
+        const reopened = await open(broken, clock, null);
         assert.strictEqual(reopened.state().bannerHidden, true);
         console.log('flow-ok');
         """
@@ -400,21 +405,21 @@ def test_discard_clears_the_checkpoint_and_a_new_exam_starts_clean() -> None:
     """The explicit discard path drops the saved session and starts fresh."""
     run_flow(
         """
-        const { store, clock, page } = context();
-        startWorkedExam(page);
-        page.pagehide();
+        const { store, clock, page } = await context();
+        await startWorkedExam(page);
+        await page.pagehide();
         clock.value += 30 * 1000;
 
-        const reloaded = open(store, clock);
+        const reloaded = await open(store, clock);
         assert.strictEqual(reloaded.state().bannerHidden, false);
-        reloaded.click('discardResumeBtn');
+        await reloaded.click('discardResumeBtn');
         assert.strictEqual(reloaded.state().bannerHidden, true, 'discard must hide the banner');
         assert.strictEqual(reloaded.checkpoint(), null, 'discard must clear the checkpoint');
 
         // Starting an exam over a discarded session must not resurrect it.
-        reloaded.selectSeg('segCount', 20);
-        reloaded.selectSeg('segTime', 90);
-        reloaded.click('startBtn');
+        await reloaded.selectSeg('segCount', 20);
+        await reloaded.selectSeg('segTime', 90);
+        await reloaded.click('startBtn');
         const fresh = reloaded.state();
         assert.strictEqual(fresh.view, 'exam');
         assert.strictEqual(fresh.total, 20);
@@ -430,9 +435,9 @@ def test_discard_clears_the_checkpoint_and_a_new_exam_starts_clean() -> None:
         assert.strictEqual(checkpoint.cur, 0);
         assert.strictEqual(checkpoint.questions.length, 20);
 
-        reloaded.pagehide();
+        await reloaded.pagehide();
         clock.value += 1000;
-        const reopened = open(store, clock);
+        const reopened = await open(store, clock);
         assert.strictEqual(reopened.state().bannerHidden, false, 'the new session is resumable');
         assert.ok(reopened.state().resumeInfo.indexOf('第 1 / 20 題') !== -1, reopened.state().resumeInfo);
         console.log('flow-ok');
@@ -471,16 +476,16 @@ def test_corrupt_or_mismatched_checkpoint_falls_back_to_setup() -> None:
             const store = readStore();
             const clock = { value: T0 };
             store.setItem(KEY, %s);
-            const page = open(store, clock);
+            const page = await open(store, clock);
             const state = page.state();
             assert.strictEqual(state.bannerHidden, true, '%s: no banner for unusable state');
             assert.strictEqual(state.view, 'setup');
             assert.strictEqual(page.checkpoint(), null, '%s: unusable state must be cleared');
 
             // Setup must still be fully usable after falling back.
-            page.selectSeg('segCount', 10);
-            page.selectSeg('segTime', 30);
-            page.click('startBtn');
+            await page.selectSeg('segCount', 10);
+            await page.selectSeg('segTime', 30);
+            await page.click('startBtn');
             assert.strictEqual(page.state().view, 'exam');
             assert.strictEqual(page.state().total, 10);
             console.log('flow-ok');
@@ -493,12 +498,12 @@ def test_no_checkpoint_shows_no_banner() -> None:
     """A first-time visitor must not be offered a resume."""
     run_flow(
         """
-        const { page } = context();
+        const { page } = await context();
         assert.strictEqual(page.state().bannerHidden, true);
         assert.strictEqual(page.state().view, 'setup');
-        page.selectSeg('segCount', 10);
-        page.selectSeg('segTime', 60);
-        page.click('startBtn');
+        await page.selectSeg('segCount', 10);
+        await page.selectSeg('segTime', 60);
+        await page.click('startBtn');
         assert.strictEqual(page.state().view, 'exam');
         console.log('flow-ok');
         """
@@ -510,16 +515,16 @@ def test_hidden_tab_flushes_the_checkpoint() -> None:
     ``visibilitychange`` must flush the in-progress session on its own."""
     run_flow(
         """
-        const { store, clock, page } = context();
-        startWorkedExam(page);
-        page.goto(6); page.choose(3);
+        const { store, clock, page } = await context();
+        await startWorkedExam(page);
+        await page.goto(6); await page.choose(3);
         // A one-second tick changes the timer without reaching the five-second
         // periodic flush. Keep the ownership key: deleting it models discard
         // in another tab, which the hidden tab must not undo.
         const before = page.checkpoint();
-        page.tick(1);
+        await page.tick(1);
         assert.strictEqual(page.checkpoint().savedAt, before.savedAt);
-        page.hide();
+        await page.hide();
 
         const checkpoint = page.checkpoint();
         assert.ok(checkpoint, 'hiding the tab must flush the checkpoint');
@@ -543,15 +548,15 @@ def test_timer_ticks_flush_the_checkpoint_without_any_click() -> None:
     """
     run_flow(
         """
-        const { store, clock, page } = context();
-        page.selectSeg('segCount', 10);
-        page.selectSeg('segTime', 60);
-        page.click('startBtn');
+        const { store, clock, page } = await context();
+        await page.selectSeg('segCount', 10);
+        await page.selectSeg('segTime', 60);
+        await page.click('startBtn');
         const started = page.checkpoint();
         assert.ok(started, 'starting an exam checkpoints it');
         const savedAt = started.savedAt;
 
-        page.tick(30);   // 30 s of pure timer ticks, no interaction
+        await page.tick(30);   // 30 s of pure timer ticks, no interaction
 
         const checkpoint = page.checkpoint();
         assert.strictEqual(checkpoint.savedAt, clock.value, 'the timer path must advance the checkpoint');
@@ -567,29 +572,29 @@ def test_resume_banner_keeps_counting_down_while_it_is_offered() -> None:
     """The banner is a decision screen; its numbers must not freeze at load."""
     run_flow(
         """
-        const { store, clock, page } = context();
-        page.selectSeg('segCount', 10);
-        page.selectSeg('segTime', 60);
-        page.click('startBtn');
-        page.tick(10);
-        page.pagehide();
+        const { store, clock, page } = await context();
+        await page.selectSeg('segCount', 10);
+        await page.selectSeg('segTime', 60);
+        await page.click('startBtn');
+        await page.tick(10);
+        await page.pagehide();
 
         clock.value += 60 * 1000;
-        const reloaded = open(store, clock);
+        const reloaded = await open(store, clock);
         const offered = reloaded.state().resumeInfo;
         assert.ok(offered.indexOf('剩餘 ' + fmtMMSS(3600 - 10 - 60)) !== -1, offered);
 
         // 30 more seconds pass on the setup screen while the banner is up.
         clock.value += 30 * 1000;
-        reloaded.tick(1);
+        await reloaded.tick(1);
         const refreshed = reloaded.state().resumeInfo;
         assert.ok(refreshed.indexOf('剩餘 ' + fmtMMSS(3600 - 10 - 60 - 30 - 1)) !== -1,
                   'banner must keep counting down: ' + refreshed);
         assert.ok(refreshed.indexOf('第 1 / 10 題') !== -1, refreshed);
 
         // And it must not offer a session that another tab already finished.
-        store.removeItem(KEY);
-        reloaded.tick(1);
+        await page.click('submitBtn');
+        await reloaded.tick(1);
         assert.strictEqual(reloaded.state().bannerHidden, true, 'a vanished session must drop the banner');
         console.log('flow-ok');
         """
@@ -607,28 +612,28 @@ def test_every_setup_duration_round_trips() -> None:
         """
         const store = readStore();
         const clock = { value: T0 };
-        const first = open(store, clock);
+        const first = await open(store, clock);
         const durations = first.get('segTime').children.map((b) => b.dataset.v);
         assert.deepStrictEqual(durations, ['0', '30', '60', '90', '120'],
                                'the setup segments changed; keep ALLOWED_DUR in sync');
 
-        durations.forEach((minutes) => {
+        for (const minutes of durations) {
           const store2 = readStore();
           const clock2 = { value: T0 };
-          const page = open(store2, clock2);
-          page.selectSeg('segCount', 10);
-          page.selectSeg('segTime', minutes);
-          page.click('startBtn');
-          page.choose(0);
-          page.tick(3);
+          const page = await open(store2, clock2);
+          await page.selectSeg('segCount', 10);
+          await page.selectSeg('segTime', minutes);
+          await page.click('startBtn');
+          await page.choose(0);
+          await page.tick(3);
           const seconds = (+minutes) * 60;
           assert.ok(page.checkpoint(), minutes + ' min: an active exam must be checkpointed');
-          page.pagehide();
+          await page.pagehide();
 
           clock2.value += 20 * 1000;
-          const reloaded = open(store2, clock2);
+          const reloaded = await open(store2, clock2);
           assert.strictEqual(reloaded.state().bannerHidden, false, minutes + ' min: must be resumable');
-          reloaded.click('resumeBtn');
+          await reloaded.click('resumeBtn');
           const state = reloaded.state();
           assert.strictEqual(state.view, 'exam', minutes + ' min: resume must open the exam');
           assert.strictEqual(state.durSec, seconds, minutes + ' min: duration restored');
@@ -637,7 +642,7 @@ def test_every_setup_duration_round_trips() -> None:
           assert.strictEqual(state.answers[0], 0, minutes + ' min: answer restored');
           assert.strictEqual(state.selectedChoice, '0', minutes + ' min: selection repainted');
           console.log('flow-ok');
-        });
+        }
         """
     )
 
@@ -646,23 +651,23 @@ def test_untimed_exam_resumes_with_elapsed_time() -> None:
     """不限時 exams have no countdown, so elapsed time is the only timer state."""
     run_flow(
         """
-        const { store, clock, page } = context();
-        page.selectSeg('segCount', 10);
-        page.selectSeg('segTime', 0);
-        page.click('startBtn');
+        const { store, clock, page } = await context();
+        await page.selectSeg('segCount', 10);
+        await page.selectSeg('segTime', 0);
+        await page.click('startBtn');
         assert.strictEqual(page.state().durSec, 0);
         assert.strictEqual(page.state().timerText, '00:00', 'an untimed exam starts at zero');
-        page.choose(0);
-        page.tick(7);
-        page.pagehide();
+        await page.choose(0);
+        await page.tick(7);
+        await page.pagehide();
 
         clock.value += 30 * 1000;
-        const reloaded = open(store, clock);
+        const reloaded = await open(store, clock);
         const state = reloaded.state();
         assert.strictEqual(state.bannerHidden, false);
         assert.ok(state.resumeInfo.indexOf('已作答 ' + fmt(7 + 30)) !== -1, state.resumeInfo);
 
-        reloaded.click('resumeBtn');
+        await reloaded.click('resumeBtn');
         const resumed = reloaded.state();
         assert.strictEqual(resumed.view, 'exam');
         assert.strictEqual(resumed.durSec, 0);
@@ -671,7 +676,7 @@ def test_untimed_exam_resumes_with_elapsed_time() -> None:
         assert.strictEqual(resumed.timerText, fmtMMSS(37), 'the elapsed timer must be repainted');
         assert.strictEqual(resumed.timerWarn, false);
 
-        reloaded.tick(5);
+        await reloaded.tick(5);
         assert.strictEqual(reloaded.state().elapsed, 42);
         assert.strictEqual(reloaded.state().timerText, fmtMMSS(42));
 
@@ -682,11 +687,11 @@ def test_untimed_exam_resumes_with_elapsed_time() -> None:
         assert.ok(checkpoint.elapsed >= 37 && checkpoint.elapsed <= 42, checkpoint.elapsed);
         assert.ok(checkpoint.savedAt >= clock.value - 5000, 'the checkpoint must not fall stale');
 
-        reloaded.pagehide();
+        await reloaded.pagehide();
         clock.value += 10 * 1000;
-        const again = open(store, clock);
+        const again = await open(store, clock);
         assert.strictEqual(again.state().bannerHidden, false);
-        again.click('resumeBtn');
+        await again.click('resumeBtn');
         assert.strictEqual(again.state().elapsed, 52, 'a reload must reconcile the throttled clock');
         console.log('flow-ok');
         """
@@ -712,13 +717,13 @@ def test_question_text_is_escaped_before_it_is_checkpointed_and_rendered() -> No
         """
         const store = readStore();
         const clock = { value: T0 };
-        const page = createQuizPage({
+        const page = await createPage({
           html: HTML, checkpointJs: CHECKPOINT_JS, storage: store, clock: clock,
           pool: %s,
         });
-        page.selectSeg('segCount', 10);
-        page.selectSeg('segTime', 60);
-        page.click('startBtn');
+        await page.selectSeg('segCount', 10);
+        await page.selectSeg('segTime', 60);
+        await page.click('startBtn');
 
         const rendered = page.get('qStem').innerHTML;
         assert.ok(rendered.indexOf('<img') === -1, 'raw markup must not reach innerHTML: ' + rendered);
