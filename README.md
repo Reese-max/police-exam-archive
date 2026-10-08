@@ -167,6 +167,10 @@ pip install PyMuPDF rapidocr-onnxruntime
 - **選項完整率**: 36,760/36,760 = 100%
 - **答案合法率**: 36,760/36,760 = 100%
 - **驗證範圍**: 2,049 份非重複試題 JSON、36,760 道選擇題（含 115 年 550 題；另有 41 份重複副本共 1,217 題另行列出，不混入唯一題數）
+- **Canonical scope**: 只排除 `metadata._is_duplicate=true`；42,518 題（36,760 選擇 / 5,758 申論）、49 類科
+- **Search scope**: 同時排除頂層與 `metadata._is_duplicate=true`；由 `loadIndex().stats.total` 動態顯示，離線生成值為 42,482 題（36,760 選擇 / 5,722 申論）
+- **Homepage scope**: 內軌 17 類科投影；24,876 題
+- **Analytics scope**: 與 canonical 相同；42,518 題、49 類科
 - **圖片佔位題**: 4 題以 `[圖片選項]` 佔位，僅驗證選項鍵存在（詳見下方已知限制）
 - **統計基準**: `考古題庫/quality_summary.json`（含資料指紋與納入/排除規則）
 <!-- corpus-quality:end -->
@@ -213,7 +217,7 @@ with ExamDB() as db:
     random_qs = db.random(n=5, subject="憲法")
 ```
 
-查詢速度依執行環境而異（目前 42,518 題全文搜尋）。
+全文搜尋題數由載入後的 `search-index.json` `stats.total` 動態顯示；搜尋同時排除頂層與 metadata 重複旗標。
 
 ## 驗證
 

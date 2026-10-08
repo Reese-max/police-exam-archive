@@ -423,6 +423,8 @@ def normalize_115_files(
                     "official_exam_code": EXAM_CODE,
                     "official_category_code": code,
                     "official_category": info["official"],
+                    "official_subject": manifest_item.get("official_subject") or subject,
+                    "path_subject": subject,
                     "source_url": manifest_item.get("url"),
                     "source_sha256": actual_sha,
                 }
@@ -477,6 +479,7 @@ def mark_duplicates(records: list[dict[str, Any]]) -> dict[str, Any]:
             )
         )
         canonical = group[0]
+        categories = sorted({str(record["folder"]) for record in group})
         if len(group) > 1:
             duplicate_groups += 1
 
@@ -484,6 +487,9 @@ def mark_duplicates(records: list[dict[str, Any]]) -> dict[str, Any]:
         for index, record in enumerate(group):
             payload = record["payload"]
             metadata = payload.setdefault("metadata", {})
+            payload["categories"] = categories
+            metadata["categories"] = categories
+            metadata["category_membership"] = str(record["folder"])
             # 清掉可能由重跑留下的舊標記。
             for key in ("_is_duplicate", "_duplicate_of", "_duplicate_note"):
                 payload.pop(key, None)

@@ -21,19 +21,23 @@ import re
 import subprocess
 import sys
 from datetime import datetime, timezone
+from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from scripts.build_analytics import build_analytics, load_all_questions  # noqa: E402
 from scripts.build_home_stats import build_stats  # noqa: E402
+from scripts.build_search_index import build_index  # noqa: E402
 
 DEFAULT_DATA_DIR = ROOT / "考古題庫"
 DEFAULT_OUTPUT = DEFAULT_DATA_DIR / "quality_summary.json"
 
 # 生成時才確定的欄位；--check 比對時排除
 VOLATILE_KEYS = ("generated_at", "source_commit")
+FULL_COMMIT_RE = re.compile(r"^[0-9a-fA-F]{40}$")
 
 VALID_ANSWER = re.compile(r"^[A-D](?:或[A-D])*$")
 IMAGE_OPTION_MARKER = "圖片選項"
@@ -88,16 +92,136 @@ def _fingerprint(files: list[str], data_dir: Path) -> str:
     return "sha256:" + h.hexdigest()
 
 
-def _source_commit(data_dir: Path) -> str | None:
+def find_git_repo_root(data_dir: Path) -> Path | None:
     try:
         out = subprocess.run(
-            ["git", "-C", str(data_dir), "rev-parse", "HEAD"],
+            ["git", "-C", str(data_dir), "rev-parse", "--show-toplevel"],
             capture_output=True, text=True, timeout=10,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        raise RuntimeError(f"無法檢查 Git source：{exc}") from exc
+    if out.returncode != 0:
+        if "not a git repository" in out.stderr.lower():
+            return None
+        raise RuntimeError(f"無法檢查 Git source：{out.stderr.strip()}")
+    if not out.stdout.strip():
+        raise RuntimeError("無法檢查 Git source：git rev-parse 未回傳 repository root")
+    return Path(out.stdout.strip()).resolve()
+
+
+def _corpus_pathspec(repo_root: Path, data_dir: Path) -> str:
+    relative = data_dir.resolve().relative_to(repo_root.resolve()).as_posix()
+    prefix = f"{relative}/" if relative != "." else ""
+    return f":(glob){prefix}**/試題.json"
+
+
+def _corpus_matches_commit(repo_root: Path, data_dir: Path, sha: str) -> bool:
+    repo_root = repo_root.resolve()
+    data_dir = data_dir.resolve()
+    if not _repo_has_commit(str(repo_root), sha):
+        return False
+    try:
+        pathspec = _corpus_pathspec(repo_root, data_dir)
+    except ValueError:
+        return False
+
+    try:
+        diff = subprocess.run(
+            [
+                "git", "-C", str(repo_root), "diff", "--quiet", "--no-ext-diff",
+                sha, "--", pathspec,
+            ],
+            capture_output=True,
+            timeout=30,
+        )
+        if diff.returncode != 0:
+            return False
+        for extra_args in (
+            ["ls-files", "--others", "--exclude-standard", "-z"],
+            ["ls-files", "--others", "--ignored", "--exclude-standard", "-z"],
+        ):
+            untracked = subprocess.run(
+                ["git", "-C", str(repo_root), *extra_args, "--", pathspec],
+                capture_output=True,
+                timeout=30,
+            )
+            if untracked.returncode != 0 or untracked.stdout:
+                return False
+    except (OSError, subprocess.SubprocessError):
+        return False
+    return True
+
+
+def _resolve_commit(repo_root: Path, ref: str) -> str | None:
+    try:
+        out = subprocess.run(
+            [
+                "git", "-C", str(repo_root), "rev-parse", "--verify",
+                f"{ref}^{{commit}}",
+            ],
+            capture_output=True,
+            text=True,
+            timeout=10,
         )
     except (OSError, subprocess.SubprocessError):
         return None
     sha = out.stdout.strip()
-    return sha if out.returncode == 0 and sha else None
+    return sha if out.returncode == 0 and FULL_COMMIT_RE.fullmatch(sha) else None
+
+
+def _source_commit(data_dir: Path) -> str | None:
+    """Choose a commit whose exam corpus exactly matches ``data_dir``.
+
+    Prefer the merge-base with the remote default branch, because it is stable
+    across local metadata-only commits.  Matching is content-based; callers may
+    still validate a same-corpus commit from another lineage.
+    """
+    repo_root = find_git_repo_root(data_dir)
+    if repo_root is None:
+        return None
+
+    candidates: list[str] = []
+    try:
+        remote_head = subprocess.run(
+            [
+                "git", "-C", str(repo_root), "symbolic-ref", "--quiet", "--short",
+                "refs/remotes/origin/HEAD",
+            ],
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+    except (OSError, subprocess.SubprocessError):
+        remote_head = None
+    if remote_head is not None and remote_head.returncode == 0:
+        default_ref = remote_head.stdout.strip()
+        if default_ref:
+            try:
+                merge_base = subprocess.run(
+                    ["git", "-C", str(repo_root), "merge-base", "HEAD", default_ref],
+                    capture_output=True,
+                    text=True,
+                    timeout=10,
+                )
+            except (OSError, subprocess.SubprocessError):
+                merge_base = None
+            if merge_base is not None and merge_base.returncode == 0:
+                candidates.append(merge_base.stdout.strip())
+            candidates.append(default_ref)
+    candidates.append("HEAD")
+
+    seen: set[str] = set()
+    for candidate in candidates:
+        sha = _resolve_commit(repo_root, candidate)
+        if sha is None or sha in seen:
+            continue
+        seen.add(sha)
+        if _corpus_matches_commit(repo_root, data_dir, sha):
+            return sha
+    raise RuntimeError(
+        "無法找到與目前 **/試題.json 完全一致的 Git source commit；"
+        "請先提交語料變更或清除未追蹤/已修改的試題檔"
+    )
 
 
 def build_summary(data_dir: Path) -> dict:
@@ -126,19 +250,44 @@ def build_summary(data_dir: Path) -> dict:
     free_score = 0
     multi_answer = 0
     top_level_only_flags = 0
+    top_level_only_questions = 0
+    top_level_only_choice = 0
+    top_level_only_essay = 0
     files_without_year = 0
+    metadata_duplicate_inventory: list[dict] = []
+    top_level_only_inventory: list[dict] = []
 
     for fp in files:
         with open(fp, encoding="utf-8") as f:
             payload = json.load(f)
         counts["total_files"] += 1
         questions = payload.get("questions") or []
+        rel_path = os.path.relpath(fp, str(data_dir)).replace(os.sep, "/")
+        file_choice = sum(q.get("type") == "choice" for q in questions)
+        file_essay = sum(q.get("type") == "essay" for q in questions)
 
         if _is_top_level_flagged_only(payload):
             top_level_only_flags += 1
+            top_level_only_questions += len(questions)
+            top_level_only_choice += file_choice
+            top_level_only_essay += file_essay
+            top_level_only_inventory.append({
+                "path": rel_path,
+                "questions": len(questions),
+                "choice": file_choice,
+                "essay": file_essay,
+                "canonical_action": "included",
+                "search_action": "excluded",
+            })
 
         if _is_duplicate(payload):
             counts["duplicate_files"] += 1
+            metadata_duplicate_inventory.append({
+                "path": rel_path,
+                "questions": len(questions),
+                "choice": file_choice,
+                "essay": file_essay,
+            })
             for q in questions:
                 counts["duplicate_questions"] += 1
                 if q.get("type") == "choice":
@@ -192,6 +341,15 @@ def build_summary(data_dir: Path) -> dict:
 
     years = sorted(counts["years"])
     choice = counts["choice"]
+    generated_at = datetime.now(timezone.utc).isoformat()
+    source_commit = _source_commit(data_dir)
+    corpus_fingerprint = _fingerprint(files, data_dir)
+
+    # 各表面使用既有 generator 實算，不由 canonical 數字倒推。搜尋同時
+    # 排除頂層與 metadata duplicate；analytics 與 canonical 只排除 metadata。
+    home_projection = build_stats(data_dir)
+    search_projection = build_index(data_dir)
+    analytics_projection = build_analytics(load_all_questions(data_dir))
 
     known_inconsistencies = []
     if top_level_only_flags:
@@ -206,12 +364,27 @@ def build_summary(data_dir: Path) -> dict:
 
     return {
         "schema_version": 1,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "source_commit": _source_commit(data_dir),
-        "dataset_fingerprint": _fingerprint(files, data_dir),
+        "generated_at": generated_at,
+        "source_commit": source_commit,
+        "dataset_fingerprint": corpus_fingerprint,
+        "corpus_fingerprint": corpus_fingerprint,
+        "provenance": {
+            "schema_version": 1,
+            "generator": "scripts/build_quality_summary.py",
+            "source": {
+                "root": data_dir.name,
+                "file_pattern": "**/試題.json",
+            },
+            "fingerprint": {
+                "algorithm": "sha256",
+                "value": corpus_fingerprint,
+                "material": "sorted relative path + NUL + SHA-256(file bytes)",
+            },
+        },
         "dataset": {
             "root": data_dir.name,
             "file_pattern": "**/試題.json",
+            "scope": "canonical quality corpus",
             "inclusion_rule": (
                 "僅計入 metadata._is_duplicate 不為 true 的 試題.json"
             ),
@@ -234,7 +407,14 @@ def build_summary(data_dir: Path) -> dict:
             "categories": len(counts["categories"]),
             "subjects": len(counts["subjects"]),
             "top_level_only_duplicate_flags": top_level_only_flags,
+            "top_level_only_duplicate_questions": top_level_only_questions,
+            "top_level_only_duplicate_choice": top_level_only_choice,
+            "top_level_only_duplicate_essay": top_level_only_essay,
             "files_without_year": files_without_year,
+        },
+        "exclusion_inventory": {
+            "metadata_duplicate_files": metadata_duplicate_inventory,
+            "top_level_only_duplicate_files": top_level_only_inventory,
         },
         "coverage": {
             "first_year": years[0] if years else None,
@@ -271,7 +451,24 @@ def build_summary(data_dir: Path) -> dict:
             ),
         },
         "projections": {
-            "site": build_stats(data_dir),
+            "site": home_projection,
+            "search": {
+                "scope": (
+                    "search index；排除頂層 _is_duplicate 或 "
+                    "metadata._is_duplicate 為 true 的試題檔"
+                ),
+                "generator": "scripts/build_search_index.py",
+                "stats": search_projection["stats"],
+                "years": search_projection["facets"]["years"],
+            },
+            "analytics": {
+                "scope": (
+                    "canonical analytics；只排除 metadata._is_duplicate "
+                    "為 true 的試題檔"
+                ),
+                "generator": "scripts/build_analytics.py",
+                "stats": analytics_projection["stats"],
+            },
         },
     }
 
@@ -280,23 +477,136 @@ def render_summary(summary: dict) -> str:
     return json.dumps(summary, ensure_ascii=False, indent=2) + "\n"
 
 
-def semantic_diff(expected, actual, _path: str = "") -> list[tuple]:
+def _is_timezone_aware_iso8601(value) -> bool:
+    if not isinstance(value, str):
+        return False
+    normalized = value[:-1] + "+00:00" if value.endswith("Z") else value
+    try:
+        parsed = datetime.fromisoformat(normalized)
+    except ValueError:
+        return False
+    return parsed.tzinfo is not None and parsed.utcoffset() is not None
+
+
+@lru_cache(maxsize=128)
+def _repo_has_commit(repo_root: str, sha: str) -> bool:
+    if not FULL_COMMIT_RE.fullmatch(sha):
+        return False
+    try:
+        out = subprocess.run(
+            ["git", "-C", repo_root, "cat-file", "-e", f"{sha}^{{commit}}"],
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return False
+    return out.returncode == 0
+
+
+def _volatile_schema_diff(
+    key,
+    expected,
+    actual,
+    repo_root: Path | None,
+    data_dir: Path | None,
+) -> list[tuple]:
+    if key == "generated_at":
+        requirement = "timezone-aware ISO 8601 datetime"
+        if not _is_timezone_aware_iso8601(expected):
+            return [(key, requirement, f"invalid expected {expected!r}")]
+        if not _is_timezone_aware_iso8601(actual):
+            return [(key, requirement, repr(actual))]
+        return []
+
+    requirement = (
+        "full 40-hex commit SHA whose **/試題.json matches the input corpus"
+    )
+    resolved_data_dir = Path(data_dir).resolve() if data_dir is not None else None
+    detected_root = (
+        find_git_repo_root(resolved_data_dir)
+        if resolved_data_dir is not None
+        else None
+    )
+    resolved_repo_root = (
+        Path(repo_root).resolve() if repo_root is not None else detected_root
+    )
+    context_is_consistent = (
+        resolved_data_dir is not None
+        and resolved_repo_root is not None
+        and detected_root == resolved_repo_root
+    )
+
+    # A null expectation is legal only when the caller supplied a data root and
+    # that root is demonstrably outside Git.  It is not a generic escape hatch.
+    if expected is None:
+        if resolved_data_dir is None or detected_root is not None:
+            return [(key, requirement, "invalid expected None")]
+        return (
+            []
+            if actual is None
+            else [(key, "None for non-Git source", repr(actual))]
+        )
+
+    if (
+        not context_is_consistent
+        or not isinstance(expected, str)
+        or not _corpus_matches_commit(
+            resolved_repo_root, resolved_data_dir, expected
+        )
+    ):
+        return [(key, requirement, f"invalid expected {expected!r}")]
+
+    if actual is None:
+        return [(key, requirement, "None")]
+    if not isinstance(actual, str) or not _corpus_matches_commit(
+        resolved_repo_root, resolved_data_dir, actual
+    ):
+        return [(key, requirement, repr(actual))]
+    return []
+
+
+def semantic_diff(
+    expected,
+    actual,
+    _path: str = "",
+    *,
+    repo_root: Path | None = None,
+    data_dir: Path | None = None,
+) -> list[tuple]:
     """遞迴比對兩個 dict/值，回傳 (path, expected, actual) tuple 清單。
 
-    頂層 VOLATILE_KEYS（generated_at、source_commit）不參與比對。
+    頂層 VOLATILE_KEYS（generated_at、source_commit）必須存在且符合 schema；
+    只有兩邊皆合法後，值差異才不參與比對。
     """
     if isinstance(expected, dict) and isinstance(actual, dict):
         diffs: list[tuple] = []
         for key in sorted(set(expected) | set(actual)):
-            if not _path and key in VOLATILE_KEYS:
-                continue
             sub = f"{_path}.{key}" if _path else key
             if key not in expected:
                 diffs.append((sub, "<absent>", repr(actual[key])))
             elif key not in actual:
                 diffs.append((sub, repr(expected[key]), "<absent>"))
+            elif not _path and key in VOLATILE_KEYS:
+                diffs.extend(
+                    _volatile_schema_diff(
+                        key,
+                        expected[key],
+                        actual[key],
+                        repo_root,
+                        data_dir,
+                    )
+                )
             else:
-                diffs.extend(semantic_diff(expected[key], actual[key], sub))
+                diffs.extend(
+                    semantic_diff(
+                        expected[key],
+                        actual[key],
+                        sub,
+                        repo_root=repo_root,
+                        data_dir=data_dir,
+                    )
+                )
         return diffs
     if expected != actual:
         return [(_path, repr(expected), repr(actual))]
@@ -329,7 +639,12 @@ def main() -> int:
         if not args.output.exists():
             raise SystemExit(f"品質摘要不存在：{args.output}")
         committed = json.loads(args.output.read_text(encoding="utf-8"))
-        diffs = semantic_diff(summary, committed)
+        diffs = semantic_diff(
+            summary,
+            committed,
+            repo_root=find_git_repo_root(args.data_dir),
+            data_dir=args.data_dir,
+        )
         if diffs:
             for d in format_diffs(diffs):
                 print(f"  {d}")

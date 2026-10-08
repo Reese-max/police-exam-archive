@@ -4,12 +4,13 @@
 受管表面：
   - 考古題庫/quality_summary.json     （artifact 本身；本腳本重建比對）
   - 考古題庫/dataset_manifest.json    （counts / coverage 欄位）
-  - README.md                          （corpus-stats / corpus-quality 區塊與搜尋題數行）
+  - README.md                          （corpus-stats / corpus-quality 區塊與 scope 說明）
   - 考古題網站/quiz.html               （corpus-stats 區塊）
-  - 考古題網站/search.html             （跨部門搜尋題數行內宣告）
+  - 考古題網站/search.html             （由 loadIndex().stats.total 動態顯示）
   - 考古題網站/data/home-stats.json    （內軌 17 類科投影，由 build_home_stats.py 產生）
   - 考古題網站/analytics.html          （統計卡片 data-target 與篩選提示）
   - 考古題網站/analytics-chart-data.js （STATS 常數）
+  - 考古題網站/analytics-chart-bundle.js（實際載入的 code/data pair）
 
 用法:
     python scripts/check_corpus_claims.py          # CI 檢查模式
@@ -32,10 +33,12 @@ if str(ROOT) not in sys.path:
 
 from scripts.build_quality_summary import (  # noqa: E402
     build_summary,
+    find_git_repo_root,
     render_summary,
     semantic_diff,
     write_summary,
 )
+from scripts.sync_analytics_frontend import chart_bundle  # noqa: E402
 
 DATA_DIR_NAME = "考古題庫"
 SITE_DIR_NAME = "考古題網站"
@@ -128,6 +131,9 @@ def render_readme_quality(summary: dict) -> str:
     img = summary["image_placeholders"]["choice_questions"]
     oc = q["option_completeness"]
     av = q["answer_validity"]
+    search = summary["projections"]["search"]["stats"]
+    home = summary["projections"]["site"]
+    analytics = summary["projections"]["analytics"]["stats"]
     return "\n".join([
         f"- **選項完整率**: {oc['numerator']:,}/{oc['denominator']:,}"
         f" = {_pct(oc['rate'])}",
@@ -137,6 +143,17 @@ def render_readme_quality(summary: dict) -> str:
         f"{c['choice']:,} 道選擇題（含 {ly} 年 {ly_choice:,} 題；另有 "
         f"{c['duplicate_files']:,} 份重複副本共 "
         f"{c['duplicate_questions']:,} 題另行列出，不混入唯一題數）",
+        f"- **Canonical scope**: 只排除 `metadata._is_duplicate=true`；"
+        f"{c['questions']:,} 題（{c['choice']:,} 選擇 / {c['essay']:,} 申論）、"
+        f"{c['categories']} 類科",
+        f"- **Search scope**: 同時排除頂層與 `metadata._is_duplicate=true`；"
+        f"由 `loadIndex().stats.total` 動態顯示，離線生成值為 "
+        f"{search['total']:,} 題（{search['choice']:,} 選擇 / "
+        f"{search['essay']:,} 申論）",
+        f"- **Homepage scope**: 內軌 {home['category_count']} 類科投影；"
+        f"{home['question_count']:,} 題",
+        f"- **Analytics scope**: 與 canonical 相同；"
+        f"{analytics['total']:,} 題、{analytics['categories']} 類科",
         f"- **圖片佔位題**: {img} 題以 `[圖片選項]` 佔位，"
         "僅驗證選項鍵存在（詳見下方已知限制）",
         "- **統計基準**: `考古題庫/quality_summary.json`"
@@ -145,10 +162,11 @@ def render_readme_quality(summary: dict) -> str:
 
 
 def render_quiz_block(summary: dict) -> str:
-    choice = summary["counts"]["choice"]
+    choice = summary["projections"]["search"]["stats"]["choice"]
     return (
         "/* ===== 真實題庫（minisearch + search-engine.js，"
-        f"搜尋索引含 {choice:,} 道非重複選擇題） ===== */"
+        f"搜尋索引排除頂層與 metadata 重複旗標後含 "
+        f"{choice:,} 道選擇題） ===== */"
     )
 
 
@@ -161,8 +179,9 @@ def _load_json(path: Path):
 
 
 def _read_text(path: Path) -> str:
-    """讀取文字表面並正規化 CRLF，避免換行差異造成誤報。"""
-    return path.read_text(encoding="utf-8").replace("\r\n", "\n")
+    """正規化 CRLF/CR（含 Windows 測試寫入產生的 CRCRLF）。"""
+    text = path.read_bytes().decode("utf-8")
+    return re.sub(r"\r+\n", "\n", text).replace("\r", "\n")
 
 
 def _check_inline_patterns(
@@ -185,6 +204,7 @@ def _check_inline_patterns(
 
 def _check_artifact(root: Path, summary: dict) -> list[Finding]:
     path = root / DATA_DIR_NAME / "quality_summary.json"
+    data_dir = root / DATA_DIR_NAME
     rel = f"{DATA_DIR_NAME}/quality_summary.json"
     if not path.exists():
         return [Finding(rel, "已提交的品質摘要", "檔案不存在")]
@@ -193,13 +213,17 @@ def _check_artifact(root: Path, summary: dict) -> list[Finding]:
         return [Finding(rel, "有效 JSON", err)]
     return [
         Finding(f"{rel}:{p}", e, a)
-        for p, e, a in semantic_diff(summary, committed)
+        for p, e, a in semantic_diff(
+            summary,
+            committed,
+            repo_root=find_git_repo_root(data_dir),
+            data_dir=data_dir,
+        )
     ]
 
 
 def _readme_expected_patterns(summary: dict) -> list[tuple[str, str]]:
     """README 內需與 artifact 一致的行內數值。(regex, 期望完整字串)。"""
-    c = summary["counts"]
     cov = summary["coverage"]
     fy, ly = cov["first_year"], cov["last_year"]
     sv = summary["special_values"]
@@ -226,8 +250,13 @@ def _readme_expected_patterns(summary: dict) -> list[tuple[str, str]]:
             f"圖片題（{img:,} 題）",
         ),
         (
-            r"目前 [\d,]+ 題全文搜尋",
-            f"目前 {c['questions']:,} 題全文搜尋",
+            r"(?:查詢速度依執行環境而異（目前 [\d,]+ 題全文搜尋）。|"
+            r"全文搜尋題數由載入後的 `search-index\.json` "
+            r"`stats\.total` 動態顯示；搜尋同時排除頂層與 metadata "
+            r"重複旗標。)",
+            "全文搜尋題數由載入後的 `search-index.json` "
+            "`stats.total` 動態顯示；搜尋同時排除頂層與 metadata "
+            "重複旗標。",
         ),
     ]
 
@@ -263,26 +292,42 @@ def _check_quiz(root: Path, summary: dict) -> list[Finding]:
     return [f] if f else []
 
 
-def _search_expected_patterns(summary: dict) -> list[tuple[str, str]]:
-    """search.html 內需與 artifact 一致的行內數值。(regex, 期望完整字串)。"""
-    total = summary["counts"]["questions"]
-    return [
-        (
-            r"跨部門搜尋 [\d,]+ 道警察特考考古題",
-            f"跨部門搜尋 {total:,} 道警察特考考古題",
-        ),
-    ]
-
-
 def _check_search(root: Path, summary: dict) -> list[Finding]:
     path = root / SITE_DIR_NAME / "search.html"
     rel = f"{SITE_DIR_NAME}/search.html"
     if not path.exists():
         return [Finding(rel, "search.html", "檔案不存在")]
     text = _read_text(path)
-    return _check_inline_patterns(
-        text, _search_expected_patterns(summary), rel
-    )
+    findings = []
+    for expected in (
+        "SearchEngine.loadIndex().then(function(stats){",
+        "document.getElementById('statTotal').textContent=stats.total.toLocaleString();",
+    ):
+        if expected not in text:
+            findings.append(Finding(rel, expected, "找不到動態搜尋統計契約"))
+    if re.search(r"跨部門搜尋 [\d,]+ 道警察特考考古題", text):
+        findings.append(
+            Finding(rel, "不含固定總題數的搜尋說明", "找到固定搜尋題數")
+        )
+    return findings
+
+
+def _check_search_index(root: Path, summary: dict) -> list[Finding]:
+    """Pages 產物若存在就核對；repo 不提交大型 search index 時允許缺檔。"""
+    path = root / SITE_DIR_NAME / "data" / "search-index.json"
+    rel = f"{SITE_DIR_NAME}/data/search-index.json"
+    if not path.exists():
+        return []
+    current, err = _load_json(path)
+    if err:
+        return [Finding(rel, "有效 JSON", err)]
+    expected = summary["projections"]["search"]["stats"]
+    actual = current.get("stats") if isinstance(current, dict) else None
+    return [
+        Finding(f"{rel}:stats.{key}", repr(value), repr((actual or {}).get(key)))
+        for key, value in expected.items()
+        if (actual or {}).get(key) != value
+    ]
 
 
 _MANIFEST_COUNT_KEYS = (
@@ -341,16 +386,16 @@ def _check_analytics_html(root: Path, summary: dict) -> list[Finding]:
     if not path.exists():
         return [Finding(rel, "analytics.html", "檔案不存在")]
     text = _read_text(path)
-    c = summary["counts"]
+    stats = summary["projections"]["analytics"]["stats"]
     cov = summary["coverage"]
     findings = []
 
     for label, value in (
-        ("總題數", c["questions"]),
-        ("選擇題", c["choice"]),
-        ("申論題", c["essay"]),
-        ("類科", c["categories"]),
-        ("科目", c["subjects"]),
+        ("總題數", stats["total"]),
+        ("選擇題", stats["choice"]),
+        ("申論題", stats["essay"]),
+        ("類科", stats["categories"]),
+        ("科目", stats["subjects"]),
     ):
         m = re.search(
             rf'<div class="label">{re.escape(label)}</div><div>'
@@ -378,10 +423,10 @@ def _check_analytics_html(root: Path, summary: dict) -> list[Finding]:
 
     m = re.search(r'id="filterTag">全部類科 · ([\d,]+) 題', text)
     if not m:
-        findings.append(Finding(rel, f"filterTag={c['questions']:,} 題", "找不到 filterTag"))
-    elif m.group(1) != f"{c['questions']:,}":
+        findings.append(Finding(rel, f"filterTag={stats['total']:,} 題", "找不到 filterTag"))
+    elif m.group(1) != f"{stats['total']:,}":
         findings.append(
-            Finding(rel, f"filterTag={c['questions']:,} 題", m.group(0))
+            Finding(rel, f"filterTag={stats['total']:,} 題", m.group(0))
         )
 
     m = re.search(r'<span class="hint">資料更新至 (\d+) 年', text)
@@ -417,14 +462,14 @@ def _check_chart_data(root: Path, summary: dict) -> list[Finding]:
         stats = json.loads(m.group(1))
     except json.JSONDecodeError as e:
         return [Finding(rel, "STATS 為有效 JSON", str(e))]
-    c = summary["counts"]
+    stats_expected = summary["projections"]["analytics"]["stats"]
     cov = summary["coverage"]
     expected = {
-        "total": c["questions"],
-        "choice": c["choice"],
-        "essay": c["essay"],
-        "categories": c["categories"],
-        "subjects": c["subjects"],
+        "total": stats_expected["total"],
+        "choice": stats_expected["choice"],
+        "essay": stats_expected["essay"],
+        "categories": stats_expected["categories"],
+        "subjects": stats_expected["subjects"],
         "firstYear": cov["first_year"],
         "lastYear": cov["last_year"],
         "yearCount": len(cov["years"]),
@@ -434,6 +479,28 @@ def _check_chart_data(root: Path, summary: dict) -> list[Finding]:
         for k, v in expected.items()
         if stats.get(k) != v
     ]
+
+
+def _check_chart_bundle(root: Path, summary: dict) -> list[Finding]:
+    site = root / SITE_DIR_NAME
+    bundle_path = site / "analytics-chart-bundle.js"
+    data_path = site / "analytics-chart-data.js"
+    chart_path = site / "analytics-chart.js"
+    rel = f"{SITE_DIR_NAME}/analytics-chart-bundle.js"
+    missing = [
+        path.name for path in (bundle_path, data_path, chart_path)
+        if not path.exists()
+    ]
+    if missing:
+        return [Finding(rel, "完整 analytics code/data pair", repr(missing))]
+    expected = chart_bundle(_read_text(data_path), _read_text(chart_path))
+    actual = _read_text(bundle_path)
+    if actual != expected:
+        return [Finding(rel, "由目前 chart-data + chart 生成的 bundle", "內容或 digest 漂移")]
+    html_path = site / "analytics.html"
+    if not html_path.exists() or '<script src="analytics-chart-bundle.js"></script>' not in _read_text(html_path):
+        return [Finding(rel, "analytics.html 實際載入 bundle", "找不到 script src")]
+    return []
 
 
 # ── 入口 ─────────────────────────────────────────────────
@@ -447,15 +514,17 @@ def check_all(root: Path, summary: dict | None = None) -> list[Finding]:
     findings += _check_readme(root, summary)
     findings += _check_quiz(root, summary)
     findings += _check_search(root, summary)
+    findings += _check_search_index(root, summary)
     findings += _check_manifest(root, summary)
     findings += _check_home_stats(root, summary)
     findings += _check_analytics_html(root, summary)
     findings += _check_chart_data(root, summary)
+    findings += _check_chart_bundle(root, summary)
     return findings
 
 
 def write_surfaces(root: Path, summary: dict) -> list[Path]:
-    """重建 artifact 並重填本腳本擁有的表面（README、quiz.html、search.html、manifest）。
+    """重建 artifact 並重填本腳本擁有的表面（README、quiz.html、manifest）。
 
     先於記憶體算好所有新內容（缺 markers 會在寫檔前失敗），再落盤。
     home-stats / analytics 由各自的產生器擁有；漂移時請執行
@@ -479,11 +548,6 @@ def write_surfaces(root: Path, summary: dict) -> list[Path]:
     quiz_text = _fill_region(
         quiz_text, "corpus-stats", "js", render_quiz_block(summary)
     )
-
-    search = root / SITE_DIR_NAME / "search.html"
-    search_text = _read_text(search)
-    for pattern, expected in _search_expected_patterns(summary):
-        search_text = re.sub(pattern, expected, search_text)
 
     manifest_path = root / DATA_DIR_NAME / "dataset_manifest.json"
     manifest, err = _load_json(manifest_path)
@@ -518,8 +582,7 @@ def write_surfaces(root: Path, summary: dict) -> list[Path]:
     write_summary(summary, artifact)
     readme.write_text(readme_text, encoding="utf-8")
     quiz.write_text(quiz_text, encoding="utf-8")
-    search.write_text(search_text, encoding="utf-8")
-    written = [artifact, readme, quiz, search]
+    written = [artifact, readme, quiz]
     if manifest_text is not None:
         manifest_path.write_text(manifest_text, encoding="utf-8")
         written.append(manifest_path)
