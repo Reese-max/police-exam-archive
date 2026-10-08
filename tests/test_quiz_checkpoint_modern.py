@@ -74,6 +74,30 @@ def current_pool(answer='A或C', image='水上警察學系/images/q2-option-A.pn
                  optImageA=image, optAltA='選項 "圖片"', sourcePage='2')] * 12
 
 
+@pytest.mark.parametrize('pool_size,preset', [(1, 10), (9, 10), (12, 20), (25, 30), (40, 50), (49, 50), (50, 50)])
+def test_nonpreset_restored_exam_keeps_a_valid_count_for_finish_retry(pool_size, preset):
+    run_flow("""
+        const store=readStore(); const clock={value:T0};
+        const pool=%s;
+        const page=createQuizPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool});
+        page.selectSeg('segCount',50); page.selectSeg('segTime',60); page.click('startBtn');
+        assert.strictEqual(page.state().total,%s,'confirmed short pool starts with available questions');
+        page.choose(2); page.pagehide(); const expected=page.checkpoint();
+        const recovered=createQuizPage({html:HTML,checkpointJs:CHECKPOINT_JS,storage:store,clock,pool});
+        recovered.click('resumeBtn');
+        assert.deepStrictEqual(JSON.parse(JSON.stringify(recovered.checkpoint().questions)),expected.questions);
+        assert.strictEqual(recovered.state().total,%s,'recovery cannot change the active exam size');
+        assert.strictEqual(recovered.read("document.querySelector('#segCount .on').dataset.v"),'%s');
+        assert.strictEqual(recovered.get('segCount').children.length,4,'do not inject a raw checkpoint count button');
+        recovered.click('submitBtn'); recovered.click('retryBtn'); recovered.click('startBtn');
+        assert.strictEqual(recovered.state().view,'exam','retry starts without a null count selection');
+        assert.strictEqual(recovered.state().total,Math.min(%s,%s));
+        assert.ok(recovered.checkpoint(),'new retry is checkpointable');
+        console.log('flow-ok');
+    """ % (json.dumps((current_pool() * 5)[:pool_size], ensure_ascii=False),
+           pool_size, pool_size, preset, pool_size, preset))
+
+
 def test_real_page_recovers_alternative_answers_passage_and_image_without_downgrade():
     run_flow("""
         const store=readStore(); const clock={value:T0};

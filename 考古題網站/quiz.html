@@ -675,7 +675,11 @@ function _syncSetupFilters(snap){
   const pick = (id, value)=>{
     $(id).querySelectorAll('button').forEach(b=>{ b.classList.toggle('on', +b.dataset.v === value); });
   };
-  pick('segCount', snap.questions.length);
+  // 篩選後可能只有 25 / 40 題，快照題數並非設定按鈕的值。
+  // 只從既有選項選最小足夠題數（超過介面上限則選最大值）；
+  // 回復中的題目保持原樣，「再考一次」仍有合法且可見的題數選擇。
+  const counts = Array.from($('segCount').querySelectorAll('button'), b=>+b.dataset.v);
+  pick('segCount', counts.find(n=>n>=snap.questions.length) || counts[counts.length-1]);
   pick('segTime', Math.round(snap.durSec/60));
 }
 (function(){
