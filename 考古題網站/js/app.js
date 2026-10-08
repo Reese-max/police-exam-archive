@@ -521,7 +521,8 @@ function bindOptionClicks() {
   document.querySelectorAll('.mc-opt').forEach(function(opt) {
     if (opt._boundClick) return;
     opt._boundClick = true;
-    opt.addEventListener('click', function() {
+    opt.addEventListener('click', function(event) {
+      if (event.target.closest('a')) return;
       if (!practiceMode) return;
       var block = opt.closest('.q-block');
       if (!block || block.classList.contains('answered')) return;
