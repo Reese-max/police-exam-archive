@@ -395,7 +395,7 @@ function refreshPool(){
 const TOTAL = 20;
 let questions = [], answers = [], flags = [], cur = 0;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
-let examDone = false, pendingResume = null, resumeBannerTimer = null;
+let examDone = false, pendingResume = null, resumeBannerTimer = null, bannerIdentity = null;
 let checkpointSessionId = null;
 let checkpointBusy = false, checkpointLost = false, recoveryAvailable = true, bannerEpoch = 0;
 // A save failure can disable future recovery without deleting an earlier
@@ -713,6 +713,7 @@ function _hideResumeBanner(){
   bannerEpoch++;
   clearInterval(resumeBannerTimer); resumeBannerTimer = null;
   pendingResume = null;
+  bannerIdentity = null;
   $('resumeBanner').classList.add('hidden');
 }
 async function _discardExpiredSession(snap){
@@ -736,6 +737,14 @@ async function _refreshResumeBanner(initial){
   if(!snap){
     _hideResumeBanner();
     if(initial!==true) showResumeNote('先前的考試紀錄已不存在或無法使用（可能已在另一個分頁完成或捨棄，或已過期）。');
+    return;
+  }
+  const snapIdentity = snap.sessionId || snap.persistenceToken || null;
+  if(initial || !bannerIdentity){
+    bannerIdentity = snapIdentity;
+  } else if(snapIdentity !== bannerIdentity){
+    _hideResumeBanner();
+    showResumeNote('先前的考試已逾時、在另一個分頁接手、完成或捨棄，請重新開始或使用接手的分頁。');
     return;
   }
   if(snap.durSec>0 && snap.remain<=0){ await _discardExpiredSession(snap); return; }
