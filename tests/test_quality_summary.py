@@ -107,14 +107,20 @@ def _skeleton_surfaces(root):
         encoding="utf-8",
     )
     (root / "考古題網站" / "quiz.html").write_text(
+        "<!-- corpus-scope:begin -->\nold\n<!-- corpus-scope:end -->\n"
         "<script>\n// corpus-stats:begin\nold\n// corpus-stats:end\n</script>\n",
         encoding="utf-8",
     )
     (root / "考古題網站" / "search.html").write_text(
         '<p class="lead">跨類科搜尋歷年警察特考考古題與閱讀題組。</p>\n'
+        "<!-- corpus-scope:begin -->\nold\n<!-- corpus-scope:end -->\n"
         "<script>\nSearchEngine.loadIndex().then(function(stats){\n"
         "document.getElementById('statTotal').textContent="
         "stats.total.toLocaleString();\n});\n</script>\n",
+        encoding="utf-8",
+    )
+    (root / "考古題網站" / "index.html").write_text(
+        "<!-- corpus-scope:begin -->\nold\n<!-- corpus-scope:end -->\n",
         encoding="utf-8",
     )
     (root / "考古題庫" / "dataset_manifest.json").write_text(
@@ -413,6 +419,25 @@ class TestSummaryAgainstCorpus:
 class TestFixtureImport:
     """對應 regression test 3/4：新年度匯入與重複副本行為。"""
 
+    @pytest.mark.parametrize("page", ["index.html", "search.html", "quiz.html"])
+    def test_visible_canonical_scope_and_one_count_drift(self, tmp_path, page):
+        root = _build_fixture_root(tmp_path)
+        summary = _sync_fixture(root)
+        path = root / "考古題網站" / page
+        text = path.read_text(encoding="utf-8")
+        count = summary["counts"]
+        canonical = (
+            f"完整題庫：{count['choice']:,} 道選擇題、"
+            f"{count['essay']:,} 道申論題，共 {count['questions']:,} 題"
+        )
+        assert canonical in text
+        assert "本頁" in text
+        path.write_text(text.replace(canonical, canonical.replace(
+            f"共 {count['questions']:,} 題", f"共 {count['questions'] + 1:,} 題"
+        )), encoding="utf-8")
+        findings = check_all(root)
+        assert any(f.path == f"考古題網站/{page}" for f in findings)
+
     def test_new_import_moves_all_governed_counts(self, tmp_path):
         root = _build_fixture_root(tmp_path)
         s1 = _sync_fixture(root)
@@ -445,6 +470,10 @@ class TestFixtureImport:
         write_surfaces(root, s2)
         _write_foreign_surfaces(root, s2)
         assert check_all(root) == []
+        for page in ("index.html", "search.html", "quiz.html"):
+            text = (root / "考古題網站" / page).read_text(encoding="utf-8")
+            assert f"共 {s2['counts']['questions']:,} 題" in text
+            assert f"{s2['counts']['choice']:,} 道選擇題" in text
         search_index = json.loads(
             (root / "考古題網站" / "data" / "search-index.json").read_text(
                 encoding="utf-8"

@@ -7,6 +7,7 @@
   - README.md                          （corpus-stats / corpus-quality 區塊與 scope 說明）
   - 考古題網站/quiz.html               （corpus-stats 區塊）
   - 考古題網站/search.html             （由 loadIndex().stats.total 動態顯示）
+  - 考古題網站/index.html / search.html / quiz.html（可見的完整題庫與本頁範圍）
   - 考古題網站/data/home-stats.json    （內軌 17 類科投影，由 build_home_stats.py 產生）
   - 考古題網站/analytics.html          （統計卡片 data-target 與篩選提示）
   - 考古題網站/analytics-chart-data.js （STATS 常數）
@@ -330,6 +331,53 @@ def _check_search_index(root: Path, summary: dict) -> list[Finding]:
     ]
 
 
+SCOPE_PAGES = ("index.html", "search.html", "quiz.html")
+
+
+def render_visible_scope(summary: dict, page: str) -> str:
+    """完整語料與本頁投影並列；不把完整總數冒充搜尋或練習池大小。"""
+    counts = summary["counts"]
+    canonical = (
+        f"完整題庫：{counts['choice']:,} 道選擇題、"
+        f"{counts['essay']:,} 道申論題，共 {counts['questions']:,} 題。"
+    )
+    search = summary["projections"]["search"]["stats"]
+    home = summary["projections"]["site"]
+    scopes = {
+        "index.html": (
+            f"本頁呈現內軌 {home['category_count']} 類科、"
+            f"{home['question_count']:,} 題。"
+        ),
+        "search.html": (
+            f"本頁依搜尋排除規則索引 {search['total']:,} 題；"
+            "重複試卷排除範圍見統計依據。"
+        ),
+        "quiz.html": f"本頁練習題池包含 {search['choice']:,} 道選擇題。",
+    }
+    return (
+        '<p class="lead corpus-scope">' + canonical + "<br>" + scopes[page]
+        + ' <a href="https://github.com/Reese-max/police-exam-archive/blob/master/'
+        + '考古題庫/quality_summary.json">統計依據</a></p>\n'
+    )
+
+
+def _check_visible_scopes(root: Path, summary: dict) -> list[Finding]:
+    findings = []
+    for page in SCOPE_PAGES:
+        path = root / SITE_DIR_NAME / page
+        rel = f"{SITE_DIR_NAME}/{page}"
+        if not path.exists():
+            findings.append(Finding(rel, "完整題庫與本頁範圍", "檔案不存在"))
+            continue
+        finding = _check_region(
+            _read_text(path), "corpus-scope", "html",
+            render_visible_scope(summary, page), rel,
+        )
+        if finding:
+            findings.append(finding)
+    return findings
+
+
 _MANIFEST_COUNT_KEYS = (
     "json_files", "questions", "choice", "essay", "categories", "subjects",
 )
@@ -514,6 +562,7 @@ def check_all(root: Path, summary: dict | None = None) -> list[Finding]:
     findings += _check_readme(root, summary)
     findings += _check_quiz(root, summary)
     findings += _check_search(root, summary)
+    findings += _check_visible_scopes(root, summary)
     findings += _check_search_index(root, summary)
     findings += _check_manifest(root, summary)
     findings += _check_home_stats(root, summary)
@@ -524,7 +573,7 @@ def check_all(root: Path, summary: dict | None = None) -> list[Finding]:
 
 
 def write_surfaces(root: Path, summary: dict) -> list[Path]:
-    """重建 artifact 並重填本腳本擁有的表面（README、quiz.html、manifest）。
+    """重建 artifact 並重填自有的 README、頁面範圍、quiz、manifest 表面。
 
     先於記憶體算好所有新內容（缺 markers 會在寫檔前失敗），再落盤。
     home-stats / search-index / analytics 由各自的產生器擁有；漂移時請執行
@@ -549,6 +598,14 @@ def write_surfaces(root: Path, summary: dict) -> list[Path]:
     quiz_text = _fill_region(
         quiz_text, "corpus-stats", "js", render_quiz_block(summary)
     )
+
+    scope_texts = {}
+    for page in SCOPE_PAGES:
+        path = root / SITE_DIR_NAME / page
+        text = quiz_text if page == "quiz.html" else _read_text(path)
+        scope_texts[path] = _fill_region(
+            text, "corpus-scope", "html", render_visible_scope(summary, page)
+        )
 
     manifest_path = root / DATA_DIR_NAME / "dataset_manifest.json"
     manifest, err = _load_json(manifest_path)
@@ -582,8 +639,9 @@ def write_surfaces(root: Path, summary: dict) -> list[Path]:
     artifact = root / DATA_DIR_NAME / "quality_summary.json"
     write_summary(summary, artifact)
     readme.write_text(readme_text, encoding="utf-8")
-    quiz.write_text(quiz_text, encoding="utf-8")
-    written = [artifact, readme, quiz]
+    for path, text in scope_texts.items():
+        path.write_text(text, encoding="utf-8")
+    written = [artifact, readme, *scope_texts]
     if manifest_text is not None:
         manifest_path.write_text(manifest_text, encoding="utf-8")
         written.append(manifest_path)
@@ -596,7 +654,7 @@ def main() -> int:
     parser.add_argument(
         "--write",
         action="store_true",
-        help="重建 quality_summary.json 並重填 README/quiz/manifest",
+        help="重建 quality_summary.json 並重填 README/頁面範圍/quiz/manifest",
     )
     args = parser.parse_args()
 
