@@ -20,6 +20,7 @@ import os
 import re
 import subprocess
 import sys
+import tarfile
 from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
@@ -89,6 +90,57 @@ def _fingerprint(files: list[str], data_dir: Path) -> str:
         h.update(rel.encode("utf-8"))
         h.update(b"\0")
         h.update(hashlib.sha256(Path(fp).read_bytes()).digest())
+    return "sha256:" + h.hexdigest()
+
+
+def _fingerprint_at_commit(
+    files: list[str], data_dir: Path, repo_root: Path, sha: str
+) -> str:
+    """Hash canonical Git-object bytes after worktree/source equality passed."""
+    repo_root = repo_root.resolve()
+    data_dir = data_dir.resolve()
+    relative_root = data_dir.relative_to(repo_root).as_posix()
+    expected_paths = {
+        os.path.relpath(fp, str(data_dir)).replace(os.sep, "/") for fp in files
+    }
+    rows: list[tuple[str, bytes]] = []
+    try:
+        process = subprocess.Popen(
+            [
+                "git", "-C", str(repo_root), "archive", "--format=tar",
+                sha, "--", relative_root,
+            ],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        assert process.stdout is not None
+        with tarfile.open(fileobj=process.stdout, mode="r|") as archive:
+            prefix = f"{relative_root}/"
+            for member in archive:
+                if not member.isfile() or not member.name.endswith("/試題.json"):
+                    continue
+                extracted = archive.extractfile(member)
+                if extracted is None:
+                    raise RuntimeError(f"無法讀取 Git archive entry：{member.name}")
+                rel = member.name[len(prefix):]
+                rows.append((rel, hashlib.sha256(extracted.read()).digest()))
+        stderr = process.stderr.read() if process.stderr is not None else b""
+        returncode = process.wait(timeout=30)
+    except (OSError, subprocess.SubprocessError, tarfile.TarError) as exc:
+        raise RuntimeError(f"無法計算 Git corpus fingerprint：{exc}") from exc
+    if returncode != 0:
+        raise RuntimeError(
+            "無法計算 Git corpus fingerprint："
+            + stderr.decode("utf-8", errors="replace").strip()
+        )
+    if {rel for rel, _digest in rows} != expected_paths:
+        raise RuntimeError("Git source commit 與輸入 corpus 的試題檔 inventory 不一致")
+
+    h = hashlib.sha256()
+    for rel, digest in sorted(rows):
+        h.update(rel.encode("utf-8"))
+        h.update(b"\0")
+        h.update(digest)
     return "sha256:" + h.hexdigest()
 
 
@@ -193,21 +245,28 @@ def _source_commit(data_dir: Path) -> str | None:
         )
     except (OSError, subprocess.SubprocessError):
         remote_head = None
+    default_refs: list[str] = []
     if remote_head is not None and remote_head.returncode == 0:
-        default_ref = remote_head.stdout.strip()
-        if default_ref:
-            try:
-                merge_base = subprocess.run(
-                    ["git", "-C", str(repo_root), "merge-base", "HEAD", default_ref],
-                    capture_output=True,
-                    text=True,
-                    timeout=10,
-                )
-            except (OSError, subprocess.SubprocessError):
-                merge_base = None
-            if merge_base is not None and merge_base.returncode == 0:
-                candidates.append(merge_base.stdout.strip())
-            candidates.append(default_ref)
+        symbolic_default = remote_head.stdout.strip()
+        if symbolic_default:
+            default_refs.append(symbolic_default)
+    default_refs.extend(["origin/master", "origin/main"])
+
+    for default_ref in dict.fromkeys(default_refs):
+        if _resolve_commit(repo_root, default_ref) is None:
+            continue
+        try:
+            merge_base = subprocess.run(
+                ["git", "-C", str(repo_root), "merge-base", "HEAD", default_ref],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+        except (OSError, subprocess.SubprocessError):
+            merge_base = None
+        if merge_base is not None and merge_base.returncode == 0:
+            candidates.append(merge_base.stdout.strip())
+        candidates.append(default_ref)
     candidates.append("HEAD")
 
     seen: set[str] = set()
@@ -343,7 +402,12 @@ def build_summary(data_dir: Path) -> dict:
     choice = counts["choice"]
     generated_at = datetime.now(timezone.utc).isoformat()
     source_commit = _source_commit(data_dir)
-    corpus_fingerprint = _fingerprint(files, data_dir)
+    repo_root = find_git_repo_root(data_dir)
+    corpus_fingerprint = (
+        _fingerprint_at_commit(files, data_dir, repo_root, source_commit)
+        if repo_root is not None and source_commit is not None
+        else _fingerprint(files, data_dir)
+    )
 
     # 各表面使用既有 generator 實算，不由 canonical 數字倒推。搜尋同時
     # 排除頂層與 metadata duplicate；analytics 與 canonical 只排除 metadata。

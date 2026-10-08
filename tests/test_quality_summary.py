@@ -19,6 +19,7 @@ try:
     from scripts.build_analytics import build_analytics, load_all_questions  # noqa: E402
     from scripts.build_home_stats import build_stats  # noqa: E402
     from scripts.build_quality_summary import (  # noqa: E402
+        _source_commit,
         build_summary,
         semantic_diff,
     )
@@ -47,7 +48,7 @@ except ModuleNotFoundError as exc:  # pragma: no cover - 模組尚未實作
         pytest.fail(f"品質摘要模組尚未實作：{exc}")
 
     build_analytics = load_all_questions = build_index = _missing
-    build_stats = build_summary = semantic_diff = _missing
+    _source_commit = build_stats = build_summary = semantic_diff = _missing
     chart_bundle = sync_chart_js = sync_text = _missing
     check_all = write_surfaces = _missing
 
@@ -272,6 +273,14 @@ def source_commit_repo(tmp_path_factory):
     ).strip()
     subprocess.run(
         ["git", "-C", str(repo), "checkout", "--detach", second],
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        [
+            "git", "-C", str(repo), "update-ref",
+            "refs/remotes/origin/master", first,
+        ],
         check=True,
         capture_output=True,
     )
@@ -598,6 +607,20 @@ class TestFixtureImport:
         assert semantic_diff(
             expected, actual, repo_root=repo, data_dir=data_dir
         ) == []
+
+    def test_source_commit_falls_back_to_origin_master_without_symbolic_head(
+        self, source_commit_repo
+    ):
+        repo, data_dir, first, _second, _different = source_commit_repo
+        symbolic = subprocess.run(
+            [
+                "git", "-C", str(repo), "symbolic-ref", "--quiet",
+                "refs/remotes/origin/HEAD",
+            ],
+            capture_output=True,
+        )
+        assert symbolic.returncode != 0
+        assert _source_commit(data_dir) == first
 
     def test_existing_commit_with_different_corpus_is_not_ignored(
         self, source_commit_repo
