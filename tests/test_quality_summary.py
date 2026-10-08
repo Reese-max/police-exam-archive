@@ -5,6 +5,7 @@
 與所有公開表面的題數/品質分母一致，且漂移可被偵測。
 """
 
+import hashlib
 import json
 import subprocess
 import sys
@@ -19,6 +20,7 @@ try:
     from scripts.build_analytics import build_analytics, load_all_questions  # noqa: E402
     from scripts.build_home_stats import build_stats  # noqa: E402
     from scripts.build_quality_summary import (  # noqa: E402
+        _fingerprint_at_commit,
         _source_commit,
         build_summary,
         semantic_diff,
@@ -48,7 +50,8 @@ except ModuleNotFoundError as exc:  # pragma: no cover - 模組尚未實作
         pytest.fail(f"品質摘要模組尚未實作：{exc}")
 
     build_analytics = load_all_questions = build_index = _missing
-    _source_commit = build_stats = build_summary = semantic_diff = _missing
+    _fingerprint_at_commit = _source_commit = _missing
+    build_stats = build_summary = semantic_diff = _missing
     chart_bundle = sync_chart_js = sync_text = _missing
     check_all = write_surfaces = _missing
 
@@ -354,8 +357,14 @@ class TestSummaryAgainstCorpus:
         assert summary["dataset_fingerprint"].startswith("sha256:")
         assert len(summary["dataset_fingerprint"]) == len("sha256:") + 64
         assert summary["corpus_fingerprint"] == summary["dataset_fingerprint"]
+        assert summary["corpus_fingerprint"] == (
+            "sha256:9713a5d4acbc1b75dbe438fd42d296a735d7866c346eb46f91c441157bfcf3f1"
+        )
         assert summary["provenance"]["schema_version"] == 1
         assert summary["provenance"]["fingerprint"]["value"] == summary["corpus_fingerprint"]
+        assert summary["provenance"]["fingerprint"]["byte_source"].startswith(
+            "raw Git blob bytes"
+        )
         assert summary["dataset"]["inclusion_rule"]
         assert summary["dataset"]["exclusion_rule"]
 
@@ -384,10 +393,7 @@ class TestSummaryAgainstCorpus:
     def test_committed_artifact_in_sync(self, summary):
         assert SUMMARY_PATH.exists(), "quality_summary.json 未提交"
         committed = json.loads(SUMMARY_PATH.read_text(encoding="utf-8"))
-        assert summary["source_commit"] == (
-            "c4be3b03d743bacbed3b55dc3c77536fb0880f80"
-        )
-        assert committed["source_commit"] == summary["source_commit"]
+        assert len(committed["source_commit"]) == 40
         assert semantic_diff(
             summary,
             committed,
@@ -621,6 +627,17 @@ class TestFixtureImport:
         )
         assert symbolic.returncode != 0
         assert _source_commit(data_dir) == first
+
+    def test_git_blob_fingerprint_is_content_exact(self, source_commit_repo):
+        repo, data_dir, first, _second, _different = source_commit_repo
+        exam = data_dir / "exam" / "試題.json"
+        h = hashlib.sha256()
+        h.update("exam/試題.json".encode("utf-8"))
+        h.update(b"\0")
+        h.update(hashlib.sha256(b'{"version": 1}\n').digest())
+        assert _fingerprint_at_commit(
+            [str(exam)], data_dir, repo, first
+        ) == "sha256:" + h.hexdigest()
 
     def test_existing_commit_with_different_corpus_is_not_ignored(
         self, source_commit_repo

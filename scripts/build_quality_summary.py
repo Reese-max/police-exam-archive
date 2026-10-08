@@ -20,7 +20,6 @@ import os
 import re
 import subprocess
 import sys
-import tarfile
 from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
@@ -96,45 +95,75 @@ def _fingerprint(files: list[str], data_dir: Path) -> str:
 def _fingerprint_at_commit(
     files: list[str], data_dir: Path, repo_root: Path, sha: str
 ) -> str:
-    """Hash canonical Git-object bytes after worktree/source equality passed."""
+    """Hash raw Git blob bytes after worktree/source equality passed."""
     repo_root = repo_root.resolve()
     data_dir = data_dir.resolve()
     relative_root = data_dir.relative_to(repo_root).as_posix()
     expected_paths = {
         os.path.relpath(fp, str(data_dir)).replace(os.sep, "/") for fp in files
     }
-    rows: list[tuple[str, bytes]] = []
     try:
-        process = subprocess.Popen(
+        tree = subprocess.run(
             [
-                "git", "-C", str(repo_root), "archive", "--format=tar",
+                "git", "-C", str(repo_root), "ls-tree", "-r", "-z",
                 sha, "--", relative_root,
             ],
+            capture_output=True,
+            timeout=30,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        raise RuntimeError(f"無法計算 Git corpus fingerprint：{exc}") from exc
+    if tree.returncode != 0:
+        raise RuntimeError(
+            "無法計算 Git corpus fingerprint："
+            + tree.stderr.decode("utf-8", errors="replace").strip()
+        )
+
+    prefix = f"{relative_root}/"
+    objects: list[tuple[str, str]] = []
+    for record in tree.stdout.split(b"\0"):
+        if not record:
+            continue
+        header, raw_path = record.split(b"\t", 1)
+        _mode, object_type, object_id = header.split()
+        path = raw_path.decode("utf-8")
+        if object_type != b"blob" or not path.endswith("/試題.json"):
+            continue
+        objects.append((path[len(prefix):], object_id.decode("ascii")))
+    if {rel for rel, _object_id in objects} != expected_paths:
+        raise RuntimeError("Git source commit 與輸入 corpus 的試題檔 inventory 不一致")
+
+    try:
+        process = subprocess.Popen(
+            ["git", "-C", str(repo_root), "cat-file", "--batch"],
+            stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
         )
-        assert process.stdout is not None
-        with tarfile.open(fileobj=process.stdout, mode="r|") as archive:
-            prefix = f"{relative_root}/"
-            for member in archive:
-                if not member.isfile() or not member.name.endswith("/試題.json"):
-                    continue
-                extracted = archive.extractfile(member)
-                if extracted is None:
-                    raise RuntimeError(f"無法讀取 Git archive entry：{member.name}")
-                rel = member.name[len(prefix):]
-                rows.append((rel, hashlib.sha256(extracted.read()).digest()))
+        assert process.stdin is not None and process.stdout is not None
+        rows: list[tuple[str, bytes]] = []
+        for rel, object_id in objects:
+            process.stdin.write(object_id.encode("ascii") + b"\n")
+            process.stdin.flush()
+            header = process.stdout.readline().rstrip(b"\n")
+            returned_id, object_type, raw_size = header.split()
+            if returned_id.decode("ascii") != object_id or object_type != b"blob":
+                raise RuntimeError(f"Git cat-file 回傳非預期 blob：{header!r}")
+            size = int(raw_size)
+            content = process.stdout.read(size)
+            if len(content) != size or process.stdout.read(1) != b"\n":
+                raise RuntimeError(f"Git cat-file blob 長度不符：{object_id}")
+            rows.append((rel, hashlib.sha256(content).digest()))
+        process.stdin.close()
         stderr = process.stderr.read() if process.stderr is not None else b""
         returncode = process.wait(timeout=30)
-    except (OSError, subprocess.SubprocessError, tarfile.TarError) as exc:
-        raise RuntimeError(f"無法計算 Git corpus fingerprint：{exc}") from exc
+    except (OSError, subprocess.SubprocessError, ValueError) as exc:
+        raise RuntimeError(f"無法讀取 Git corpus blobs：{exc}") from exc
     if returncode != 0:
         raise RuntimeError(
-            "無法計算 Git corpus fingerprint："
+            "無法讀取 Git corpus blobs："
             + stderr.decode("utf-8", errors="replace").strip()
         )
-    if {rel for rel, _digest in rows} != expected_paths:
-        raise RuntimeError("Git source commit 與輸入 corpus 的試題檔 inventory 不一致")
 
     h = hashlib.sha256()
     for rel, digest in sorted(rows):
@@ -443,6 +472,10 @@ def build_summary(data_dir: Path) -> dict:
                 "algorithm": "sha256",
                 "value": corpus_fingerprint,
                 "material": "sorted relative path + NUL + SHA-256(file bytes)",
+                "byte_source": (
+                    "raw Git blob bytes when source_commit is present; "
+                    "raw file bytes outside Git"
+                ),
             },
         },
         "dataset": {
