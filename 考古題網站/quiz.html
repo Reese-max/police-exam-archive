@@ -205,6 +205,10 @@ footer strong{color:var(--text-2);font-weight:700}
     <span class="eyebrow">考古題資料庫 · 模擬測驗</span>
     <h1>模擬考試</h1>
     <p class="lead">隨機出題・計時作答・自動批改。</p>
+<!-- corpus-scope:begin -->
+<p class="lead corpus-scope">完整題庫：36,760 道選擇題、5,758 道申論題，共 42,518 題。<br>本頁練習題池包含 36,760 道選擇題。 <a href="https://github.com/Reese-max/police-exam-archive/blob/master/考古題庫/quality_summary.json">統計依據</a></p>
+<!-- corpus-scope:end -->
+
   </div>
 </header>
 
@@ -337,7 +341,9 @@ footer strong{color:var(--text-2);font-weight:700}
 <script src="js/search-engine.js"></script>
 <script src="js/answer-utils.js"></script>
 <script>
-/* ===== 真實題庫（minisearch + search-engine.js，36,210 道選擇題） ===== */
+// corpus-stats:begin 由 scripts/check_corpus_claims.py 驗證，請勿手改
+/* ===== 真實題庫（minisearch + search-engine.js，搜尋索引排除頂層與 metadata 重複旗標後含 36,760 道選擇題） ===== */
+// corpus-stats:end
 let POOL = [];
 let indexReady = false;
 

@@ -51,6 +51,7 @@ jobs:
           python scripts/build_home_stats.py --check
           python scripts/apply_layout_refinements.py --check
           python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
+          python scripts/check_corpus_claims.py
           node --check 考古題網站/sw.js
           node --check 考古題網站/js/app.js
           node --check 考古題網站/js/answer-utils.js
