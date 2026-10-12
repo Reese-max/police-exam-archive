@@ -107,6 +107,41 @@ assert.equal(singleWrong.practiceCorrect, 0, '單選答錯仍應算錯');
 assert.deepEqual(singleWrong.revealed, ['C'], '單選答錯應揭示正解');
 const bonusWrongImpossible = run('送分', 'B');
 assert.deepEqual(bonusWrongImpossible.revealed, [], '送分題不應有 correct-reveal');
+for (const bad of ['X', '', '解析']) {
+  const row = run(bad, 'A');
+  assert.equal(row.practiceCorrect, 0, `無效答案 ${bad} 不應算對`);
+  assert.ok(row.classes.includes('wrong'), `無效答案 ${bad} 應標 wrong`);
+  assert.deepEqual(row.revealed, [], `無效答案 ${bad} 不應揭示任何選項`);
+}
+// 已載入 AnswerUtils 時應直接採用其契約（此處以樁證明委派分支有作用）。
+const delegated = (() => {
+  const optionClasses = new Set();
+  let handler;
+  const block = {
+    classList: {contains: () => false, add() {}},
+    getAttribute: () => 'C',
+    querySelector: () => null,
+    querySelectorAll: () => [],
+  };
+  const option = {
+    addEventListener: (type, callback) => { handler = callback; },
+    closest: () => block,
+    getAttribute: () => 'B',
+    classList: {add: x => optionClasses.add(x)},
+  };
+  const calls = [];
+  const context = {document: {querySelectorAll: () => [option]}, practiceMode: true,
+    practiceTotal: 0, practiceCorrect: 0,
+    AnswerUtils: {parse(raw) { calls.push(raw); return {accepted: ['B']}; }},
+    updateScoreUI() {}, savePracticeSession() {}};
+  vm.createContext(context);
+  vm.runInContext(snippet, context);
+  context.bindOptionClicks();
+  handler({target: {closest: () => null}});
+  return {practiceCorrect: context.practiceCorrect, calls};
+})();
+assert.deepEqual(delegated.calls, ['C'], '應以原始答案呼叫 AnswerUtils.parse');
+assert.equal(delegated.practiceCorrect, 1, '委派分支應採用 AnswerUtils 的 accepted 計分');
 '''
     result = subprocess.run(['node', '-e', script], cwd=ROOT, capture_output=True, text=True)
     assert result.returncode == 0, result.stdout + result.stderr
