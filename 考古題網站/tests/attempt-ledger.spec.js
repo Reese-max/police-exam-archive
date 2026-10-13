@@ -2,12 +2,12 @@ const { test, expect } = require('@playwright/test');
 
 async function routeLedgerFixture(page, version = 'v1') {
   const questions = [
-    { cat: 'A', yr: 113, sub: 'Law', no: '1', type: 'choice', stem: version === 'v1' ? 'Q1' : 'Revised Q1', optA: 'A', optB: 'B', optC: 'C', optD: 'D', ans: 'A' },
-    { cat: 'B', yr: 114, sub: 'Other', no: '2', type: 'choice', stem: 'Q2', optA: 'A', optB: 'B', optC: 'C', optD: 'D', ans: 'A' },
+    { cat: 'A', cats:['A'], yr: 113, sub: 'Law', no: '1', type: 'choice', passage:'', stem: version === 'v1' ? 'Q1' : 'Revised Q1', optA: 'A', optB: 'B', optC: 'C', optD: 'D', ans: 'A' },
+    { cat: 'B', cats:['B'], yr: 114, sub: 'Other', no: '2', type: 'choice', passage:'', stem: 'Q2', optA: 'A', optB: 'B', optC: 'C', optD: 'D', ans: 'A' },
   ];
   await page.unroute('**/data/search-index.json');
   await page.route('**/data/search-index.json', route => route.fulfill({ json: {
-    v: 1, datasetVersion: version, stats: { total: 2 },
+    v: 2, datasetVersion: version, stats: { total: 2 },
     facets: { categories: ['A', 'B'], years: [113, 114], subjects: ['Law', 'Other'] },
     columns: Object.fromEntries(Object.keys(questions[0]).map(key => [key, questions.map(q => q[key])])),
   } }));
@@ -25,13 +25,13 @@ test.describe('PR80 UI regression', () => {
     await expect(page.locator('#queueCount')).toHaveText('2 題');
   });
 
-  test('empty filters clear the old review queue', async ({ page }) => {
+  test('empty exam filters keep the full-bank review queue', async ({ page }) => {
     await page.locator('#fCat').selectOption('B');
     await page.locator('#fYear').selectOption('113');
     await expect(page.locator('#matchCount')).toHaveText('0 題');
-    await expect(page.locator('#queueCount')).toHaveText('0 題');
-    await expect(page.locator('#reviewQueueList li')).toHaveCount(0);
-    await expect(page.locator('#reviewStartBtn')).toBeDisabled();
+    await expect(page.locator('#queueCount')).toHaveText('2 題');
+    await expect(page.locator('#reviewQueueList li')).toHaveCount(2);
+    await expect(page.locator('#reviewStartBtn')).toBeEnabled();
   });
 
   test('failed persistence keeps answers available for resubmission', async ({ page }) => {
@@ -50,7 +50,7 @@ test.describe('PR80 UI regression', () => {
     page.on('dialog', async dialog => { messages.push(dialog.message()); await dialog.accept(); });
     await page.locator('#submitBtn').click();
     await expect(page.locator('#examView')).toBeVisible();
-    expect(messages.join(' ')).toContain('未儲存');
+    await expect(page.locator('#checkpointStatus')).toContainText('未儲存');
     await page.evaluate(() => { Storage.prototype.setItem = window.originalSetItem; });
     await page.locator('#submitBtn').click();
     await expect(page.locator('#sOk')).toHaveText('2');
@@ -108,7 +108,7 @@ test.describe('逐題作答 ledger 與考前複習佇列', () => {
         { question: questions[1], attemptedAt: '2026-09-01T00:00:00.000Z', answerOutcome: 'correct', chosenAnswer: 'B' },
       ];
       AttemptLedger.replace(events.map(event => AttemptLedger.createEvent(event)));
-      AttemptLedger.saveSettings({ enabled: true, targetExamDate: '2026-10-02', dailyQuestionLimit: 1 });
+      AttemptLedger.saveSettings({ enabled: true, targetExamDate: '2026-10-02', dailyQuestionLimit: 5 });
       const queue = AttemptLedger.buildQueue(questions, { now, limit: 5 });
       return {
         ledger: AttemptLedger.getLedger(),
@@ -149,7 +149,7 @@ test.describe('逐題作答 ledger 與考前複習佇列', () => {
         answerOutcome: 'wrong',
         chosenAnswer: 'B',
       })));
-      AttemptLedger.saveSettings({ enabled: true, targetExamDate: '2026-10-01', dailyQuestionLimit: 2 });
+      AttemptLedger.saveSettings({ enabled: true, targetExamDate: '2026-10-01', dailyQuestionLimit: 6 });
       const changed = { ...questions[0], stem: '修正版題目 0' };
       const queue = AttemptLedger.buildQueue([changed, ...questions.slice(1)], { now, limit: 6 });
       const state = queue.states[0];

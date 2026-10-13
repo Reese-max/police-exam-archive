@@ -11,9 +11,12 @@ on:
 
 jobs:
   quality-check:
+    name: Data Quality Check / quality-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -23,5 +26,11 @@ jobs:
       - name: Install dependencies
         run: pip install pytest
 
+      - name: Verify 115 import integrity
+        run: python scripts/audit/verify_115_integrity.py
+
       - name: Run data quality tests
-        run: python -m pytest tests/test_data_quality.py -v
+        run: python -m pytest tests/test_data_quality.py tests/test_115_remediation.py tests/test_quality_summary.py -v
+
+      - name: Verify public corpus claims stay in sync
+        run: python scripts/check_corpus_claims.py

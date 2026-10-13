@@ -28,7 +28,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts.parse import patterns as P  # noqa: E402
-from scripts.parse.answer_extractor import parse_answer_pdf  # noqa: E402
+from scripts.parse.answer_extractor import find_answer_pdf, parse_answer_pdf  # noqa: E402
 
 EXPECTED_LABELS = {"A", "B", "C", "D"}
 OPTION_MARKER = re.compile(r"\(([A-D])\)")
@@ -125,7 +125,7 @@ def clean_passage(raw: str, start: int, end: int) -> str:
     for number in range(start, end + 1):
         passage = re.sub(
             rf"(?<!\d)\b{number}\b(?!\d)",
-            f"____({number})____",
+            f"[[{number}]]",
             passage,
         )
     return passage
@@ -170,7 +170,7 @@ def normalize_answer(value: Any) -> str | None:
 
 def repair_json(json_path: Path) -> dict[str, Any]:
     pdf_path = json_path.with_suffix(".pdf")
-    answer_path = json_path.parent / "答案.pdf"
+    answer_path = find_answer_pdf(pdf_path, prefer_corrected=True)
     if not pdf_path.exists():
         raise RuntimeError(f"缺少試題 PDF：{pdf_path}")
 
@@ -184,7 +184,7 @@ def repair_json(json_path: Path) -> dict[str, Any]:
     cloze_ranges = extract_cloze_passages(text, option_positions)
 
     answers: dict[int, str] = {}
-    if answer_path.exists():
+    if answer_path is not None and answer_path.exists():
         answers = {
             int(number): normalized
             for number, value in parse_answer_pdf(answer_path).items()
@@ -269,7 +269,7 @@ def repair_json(json_path: Path) -> dict[str, Any]:
     payload["questions"] = essay_questions + [choices[n] for n in sorted(choices)]
     if answers:
         payload["_answers_merged"] = len(answers)
-        payload["_answer_source"] = answer_path.name
+        payload["_answer_source"] = (answer_path.name if answer_path is not None else "")
     json_path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",

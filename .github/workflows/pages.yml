@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -51,10 +53,15 @@ jobs:
           python scripts/build_home_stats.py --check
           python scripts/apply_layout_refinements.py --check
           python scripts/sync_analytics_frontend.py --analytics /tmp/analytics.json --check
+          python scripts/check_corpus_claims.py
           node --check 考古題網站/sw.js
           node --check 考古題網站/js/app.js
+          node --check 考古題網站/js/answer-utils.js
+          node --check 考古題網站/js/search-engine.js
+          node --check 考古題網站/js/quiz-engine.js
           node --check 考古題網站/analytics-chart.js
           node --check 考古題網站/analytics-chart-data.js
+          node --check 考古題網站/analytics-chart-bundle.js
 
       - uses: actions/configure-pages@v5
 

@@ -67,6 +67,59 @@ process.stdout.write(JSON.stringify({ event, state, queue, changed, exportData: 
 
 
 @pytest.mark.parametrize("scenario", {
+    "source_metadata_and_serialized_locator_survive_export": r"""
+const original = {...q, sourcePdf:'official.pdf', sourcePage:3, sourceSha256:'a'.repeat(64),
+  sourceLocator:JSON.stringify({cat:'A', year:113, subject:'Law', no:1, file:'source.json', index:0})};
+const event = ledger.createEvent({question:original, answerOutcome:'wrong'});
+assert.equal(event.sourceLocator.subject, 'Law');
+assert.equal(event.sourceMetadata.page, '3');
+assert.equal(JSON.parse(event.sourceMetadata.locator).file, 'source.json');
+ledger.replace([event]);
+const payload = ledger.exportData(); ledger.clearLearnerData(); ledger.importData(payload);
+assert.equal(ledger.getLedger()[0].sourceMetadata.sha256, 'a'.repeat(64));
+""",
+    "review_limit_matches_durable_checkpoint_bound": r"""
+ledger.saveSettings({dailyQuestionLimit:201, dailyMinutes:1500});
+assert.equal(ledger.getSettings().dailyMinutes, 1440);
+ledger.saveSettings({dailyMinutes:0});
+assert.equal(ledger.getSettings().dailyQuestionLimit, 200);
+const pool = Array.from({length:201}, (_, index) => ({...q, no:index+1}));
+assert.equal(ledger.buildQueue(pool, {now}).items.length, 200);
+const exported = JSON.parse(ledger.exportData());
+exported.reviewSettings.dailyQuestionLimit=201;
+assert.throws(() => ledger.importData(exported));
+""",
+    "time_budget_limits_queue_and_backlog": r"""
+const questions = Array.from({length: 20}, (_, index) => ({...q, no: index + 1}));
+ledger.replace(questions.map(question => attempt(question, 'wrong', now)));
+ledger.saveSettings({enabled: true, targetExamDate: '2026-09-30', dailyQuestionLimit:20, dailyMinutes:4, planningMinutesPerQuestion:2});
+const queue = ledger.buildQueue(questions, {now});
+assert.equal(queue.items.length, 2);
+assert.equal(queue.capacity, 2);
+assert.equal(queue.backlogCount, 18);
+assert.equal(queue.overload, true);
+assert.equal(queue.planning.status, 'ESTIMATED');
+ledger.saveSettings({dailyMinutes:1});
+assert.equal(ledger.buildQueue(questions, {now}).items.length, 0);
+ledger.saveSettings({dailyMinutes:0});
+assert.equal(ledger.buildQueue(questions, {now}).items.length, 20);
+""",
+    "bonus_alternative_and_finish_retry_facts": r"""
+const questions = [{...q, no:1, ans:'送分'}, {...q, no:2, ans:'A或C'}];
+ledger.recordQuiz({questions, answers:[null,2], attemptId:'owned-session', attemptedAt:now});
+assert.deepEqual(Array.from(ledger.getLedger(), event => event.answerOutcome), ['correct','correct']);
+ledger.recordQuiz({questions, answers:[null,2], attemptId:'owned-session', attemptedAt:now});
+assert.equal(ledger.getLedger().length, 2);
+ledger.recordQuiz({questions:[questions[1]], answers:[1], attemptId:'different-session', attemptedAt:now});
+assert.equal(ledger.getLedger()[2].answerOutcome, 'wrong');
+""",
+    "passage_and_image_changes_invalidate_old_attempts": r"""
+const original = {...q, passage:'原文章', optImageA:'images/original.png'};
+ledger.replace([attempt(original, 'correct', now)]);
+assert.equal(ledger.getReviewState({...original, passage:'更正文章'}, {now}).sourceCompat, 'stale');
+assert.equal(ledger.getReviewState({...original, optImageA:'images/revised.png'}, {now}).sourceCompat, 'stale');
+assert.equal(ledger.getReviewState(original, {now}).sourceCompat, 'current');
+""",
     "compatible_relearning": r"""
 const revised = { ...q, stem: 'revised', datasetVersion: 'v2' };
 ledger.replace([attempt(q, 'wrong')]);

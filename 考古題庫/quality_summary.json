@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-08T08:42:04.203306+00:00",
+  "source_commit": "66e2dab99daa09be150fc097f70f570f1bb5f866",
+  "dataset_fingerprint": "sha256:b05dc4ea00381de2523d8dc25b8d183f6db9743c3dd60dc0ed79f622271b6e61",
+  "corpus_fingerprint": "sha256:b05dc4ea00381de2523d8dc25b8d183f6db9743c3dd60dc0ed79f622271b6e61",
+  "provenance": {
+    "schema_version": 1,
+    "generator": "scripts/build_quality_summary.py",
+    "source": {
+      "root": "考古題庫",
+      "file_pattern": "**/試題.json"
+    },
+    "fingerprint": {
+      "algorithm": "sha256",
+      "value": "sha256:b05dc4ea00381de2523d8dc25b8d183f6db9743c3dd60dc0ed79f622271b6e61",
+      "material": "sorted relative path + NUL + SHA-256(file bytes)",
+      "byte_source": "raw Git blob bytes when source_commit is present; raw file bytes outside Git"
+    }
+  },
+  "dataset": {
+    "root": "考古題庫",
+    "file_pattern": "**/試題.json",
+    "scope": "canonical quality corpus",
+    "inclusion_rule": "僅計入 metadata._is_duplicate 不為 true 的 試題.json",
+    "exclusion_rule": "metadata._is_duplicate == true 的跨類科共用考卷副本僅列入 duplicate_* 計數，不混入唯一題數",
+    "known_inconsistencies": [
+      "9 份檔案僅在頂層標記 _is_duplicate（metadata 未標記）；依正典規則仍計入唯一題數"
+    ]
+  },
+  "counts": {
+    "total_files": 2090,
+    "json_files": 2049,
+    "duplicate_files": 41,
+    "questions": 42518,
+    "choice": 36760,
+    "essay": 5758,
+    "duplicate_questions": 1217,
+    "duplicate_choice": 1145,
+    "duplicate_essay": 72,
+    "categories": 49,
+    "subjects": 101,
+    "top_level_only_duplicate_flags": 9,
+    "top_level_only_duplicate_questions": 36,
+    "top_level_only_duplicate_choice": 0,
+    "top_level_only_duplicate_essay": 36,
+    "files_without_year": 0
+  },
+  "exclusion_inventory": {
+    "metadata_duplicate_files": [
+      {
+        "path": "交通學系交通組/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "交通學系交通組/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "交通學系交通組/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      },
+      {
+        "path": "交通學系交通組/115年/警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)/試題.json",
+        "questions": 27,
+        "choice": 25,
+        "essay": 2
+      },
+      {
+        "path": "公共安全學系社安組/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "公共安全學系社安組/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "公共安全學系社安組/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      },
+      {
+        "path": "公共安全學系社安組/115年/警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)/試題.json",
+        "questions": 27,
+        "choice": 25,
+        "essay": 2
+      },
+      {
+        "path": "刑事警察學系/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "刑事警察學系/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "刑事警察學系/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      },
+      {
+        "path": "刑事警察學系/115年/警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)/試題.json",
+        "questions": 27,
+        "choice": 25,
+        "essay": 2
+      },
+      {
+        "path": "國境警察學系境管組/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "國境警察學系境管組/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "國境警察學系境管組/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      },
+      {
+        "path": "國境警察學系境管組/115年/警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)/試題.json",
+        "questions": 27,
+        "choice": 25,
+        "essay": 2
+      },
+      {
+        "path": "外事警察學系/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "外事警察學系/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "外事警察學系/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      },
+      {
+        "path": "外事警察學系/115年/警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)/試題.json",
+        "questions": 27,
+        "choice": 25,
+        "essay": 2
+      },
+      {
+        "path": "水上警察學系/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "法律學系/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "法律學系/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "法律學系/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      },
+      {
+        "path": "法律學系/115年/警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)/試題.json",
+        "questions": 27,
+        "choice": 25,
+        "essay": 2
+      },
+      {
+        "path": "消防學系/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "犯罪防治學系預防組/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "犯罪防治學系預防組/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "犯罪防治學系預防組/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      },
+      {
+        "path": "犯罪防治學系預防組/115年/警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)/試題.json",
+        "questions": 27,
+        "choice": 25,
+        "essay": 2
+      },
+      {
+        "path": "行政管理學系/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "行政管理學系/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "行政管理學系/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      },
+      {
+        "path": "行政管理學系/115年/警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)/試題.json",
+        "questions": 27,
+        "choice": 25,
+        "essay": 2
+      },
+      {
+        "path": "資訊管理學系/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "資訊管理學系/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "資訊管理學系/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      },
+      {
+        "path": "資訊管理學系/115年/警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)/試題.json",
+        "questions": 27,
+        "choice": 25,
+        "essay": 2
+      },
+      {
+        "path": "鑑識科學學系/115年/中華民國憲法與警察專業英文/試題.json",
+        "questions": 60,
+        "choice": 60,
+        "essay": 0
+      },
+      {
+        "path": "鑑識科學學系/115年/國文(作文與測驗)/試題.json",
+        "questions": 12,
+        "choice": 10,
+        "essay": 2
+      },
+      {
+        "path": "鑑識科學學系/115年/警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)/試題.json",
+        "questions": 23,
+        "choice": 20,
+        "essay": 3
+      }
+    ],
+    "top_level_only_duplicate_files": [
+      {
+        "path": "交通警察交通組/106年/交通警察學（包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導）/試題.json",
+        "questions": 4,
+        "choice": 0,
+        "essay": 4,
+        "canonical_action": "included",
+        "search_action": "excluded"
+      },
+      {
+        "path": "交通警察交通組/107年/交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)/試題.json",
+        "questions": 4,
+        "choice": 0,
+        "essay": 4,
+        "canonical_action": "included",
+        "search_action": "excluded"
+      },
+      {
+        "path": "交通警察交通組/108年/交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)/試題.json",
+        "questions": 4,
+        "choice": 0,
+        "essay": 4,
+        "canonical_action": "included",
+        "search_action": "excluded"
+      },
+      {
+        "path": "交通警察交通組/109年/交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)/試題.json",
+        "questions": 4,
+        "choice": 0,
+        "essay": 4,
+        "canonical_action": "included",
+        "search_action": "excluded"
+      },
+      {
+        "path": "交通警察交通組/110年/交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)/試題.json",
+        "questions": 4,
+        "choice": 0,
+        "essay": 4,
+        "canonical_action": "included",
+        "search_action": "excluded"
+      },
+      {
+        "path": "交通警察交通組/111年/交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)/試題.json",
+        "questions": 4,
+        "choice": 0,
+        "essay": 4,
+        "canonical_action": "included",
+        "search_action": "excluded"
+      },
+      {
+        "path": "交通警察交通組/112年/交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)/試題.json",
+        "questions": 4,
+        "choice": 0,
+        "essay": 4,
+        "canonical_action": "included",
+        "search_action": "excluded"
+      },
+      {
+        "path": "交通警察交通組/113年/交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)/試題.json",
+        "questions": 4,
+        "choice": 0,
+        "essay": 4,
+        "canonical_action": "included",
+        "search_action": "excluded"
+      },
+      {
+        "path": "交通警察交通組/114年/交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)/試題.json",
+        "questions": 4,
+        "choice": 0,
+        "essay": 4,
+        "canonical_action": "included",
+        "search_action": "excluded"
+      }
+    ]
+  },
+  "coverage": {
+    "first_year": 106,
+    "last_year": 115,
+    "years": [
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115
+    ]
+  },
+  "by_year": {
+    "106": {
+      "choice": 3950,
+      "essay": 621,
+      "total": 4571
+    },
+    "107": {
+      "choice": 4180,
+      "essay": 664,
+      "total": 4844
+    },
+    "108": {
+      "choice": 3990,
+      "essay": 678,
+      "total": 4668
+    },
+    "109": {
+      "choice": 4100,
+      "essay": 646,
+      "total": 4746
+    },
+    "110": {
+      "choice": 4140,
+      "essay": 626,
+      "total": 4766
+    },
+    "111": {
+      "choice": 4140,
+      "essay": 653,
+      "total": 4793
+    },
+    "112": {
+      "choice": 3870,
+      "essay": 576,
+      "total": 4446
+    },
+    "113": {
+      "choice": 3930,
+      "essay": 579,
+      "total": 4509
+    },
+    "114": {
+      "choice": 3910,
+      "essay": 558,
+      "total": 4468
+    },
+    "115": {
+      "choice": 550,
+      "essay": 157,
+      "total": 707
+    }
+  },
+  "quality": {
+    "option_completeness": {
+      "numerator": 36760,
+      "denominator": 36760,
+      "rate": 1.0,
+      "scope": "counts.choice（所有非重複選擇題）",
+      "rule": "options 恰好含 A/B/C/D 四個鍵"
+    },
+    "answer_validity": {
+      "numerator": 36760,
+      "denominator": 36760,
+      "rate": 1.0,
+      "scope": "counts.choice（所有非重複選擇題）",
+      "rule": "answer 為 '送分' 或符合 ^[A-D](或[A-D])*$"
+    }
+  },
+  "special_values": {
+    "free_score_questions": 178,
+    "multi_answer_questions": 3
+  },
+  "image_placeholders": {
+    "choice_questions": 4,
+    "marker": "[圖片選項]",
+    "note": "選項完整率僅驗證 A–D 欄位；圖片資產與來源另由 tests/test_image_choices.py 驗證，不混入文字欄位品質指標"
+  },
+  "projections": {
+    "site": {
+      "schema_version": 1,
+      "scope": "三等警察特考內軌 17 類科",
+      "category_count": 17,
+      "paper_count": 1180,
+      "question_count": 24876,
+      "searchable_question_count": 23659,
+      "groups": {
+        "A": {
+          "category_count": 7,
+          "papers": 448,
+          "questions": 9372,
+          "searchable_questions": 8887
+        },
+        "B": {
+          "category_count": 10,
+          "papers": 732,
+          "questions": 15504,
+          "searchable_questions": 14772
+        }
+      },
+      "categories": {
+        "刑事警察學系": {
+          "papers": 70,
+          "questions": 1811,
+          "searchable_questions": 1689
+        },
+        "鑑識科學學系": {
+          "papers": 70,
+          "questions": 1585,
+          "searchable_questions": 1490
+        },
+        "交通學系交通組": {
+          "papers": 70,
+          "questions": 1354,
+          "searchable_questions": 1232
+        },
+        "交通學系電訊組": {
+          "papers": 28,
+          "questions": 551,
+          "searchable_questions": 551
+        },
+        "消防學系": {
+          "papers": 70,
+          "questions": 1359,
+          "searchable_questions": 1347
+        },
+        "水上警察學系": {
+          "papers": 70,
+          "questions": 1357,
+          "searchable_questions": 1345
+        },
+        "資訊管理學系": {
+          "papers": 70,
+          "questions": 1355,
+          "searchable_questions": 1233
+        },
+        "行政警察學系": {
+          "papers": 70,
+          "questions": 2042,
+          "searchable_questions": 2042
+        },
+        "外事警察學系": {
+          "papers": 60,
+          "questions": 1314,
+          "searchable_questions": 1192
+        },
+        "公共安全學系社安組": {
+          "papers": 70,
+          "questions": 1353,
+          "searchable_questions": 1231
+        },
+        "公共安全學系情報組": {
+          "papers": 54,
+          "questions": 972,
+          "searchable_questions": 972
+        },
+        "犯罪防治學系預防組": {
+          "papers": 70,
+          "questions": 1353,
+          "searchable_questions": 1231
+        },
+        "犯罪防治學系矯治組": {
+          "papers": 72,
+          "questions": 774,
+          "searchable_questions": 774
+        },
+        "國境警察學系境管組": {
+          "papers": 70,
+          "questions": 1353,
+          "searchable_questions": 1231
+        },
+        "國境警察學系移民組": {
+          "papers": 126,
+          "questions": 3186,
+          "searchable_questions": 3186
+        },
+        "行政管理學系": {
+          "papers": 70,
+          "questions": 1582,
+          "searchable_questions": 1460
+        },
+        "法律學系": {
+          "papers": 70,
+          "questions": 1575,
+          "searchable_questions": 1453
+        }
+      }
+    },
+    "search": {
+      "scope": "search index；排除頂層 _is_duplicate 或 metadata._is_duplicate 為 true 的試題檔",
+      "generator": "scripts/build_search_index.py",
+      "stats": {
+        "total": 42482,
+        "choice": 36760,
+        "essay": 5722,
+        "categories": 49,
+        "subjects": 101
+      },
+      "years": [
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115
+      ]
+    },
+    "analytics": {
+      "scope": "canonical analytics；只排除 metadata._is_duplicate 為 true 的試題檔",
+      "generator": "scripts/build_analytics.py",
+      "stats": {
+        "total": 42518,
+        "choice": 36760,
+        "essay": 5758,
+        "categories": 49,
+        "subjects": 101,
+        "years": [
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115
+        ]
+      }
+    }
+  }
+}
