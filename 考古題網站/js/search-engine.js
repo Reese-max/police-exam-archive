@@ -125,7 +125,8 @@
         sourcePdf: (columns.sourcePdf || [])[id] || '',
         sourcePage: (columns.sourcePage || [])[id] || '',
         sourceSha256: (columns.sourceSha256 || [])[id] || '',
-        sourceLocator: (columns.sourceLocator || [])[id] || ''
+        sourceLocator: (columns.sourceLocator || [])[id] || '',
+        datasetVersion: getDatasetVersion()
       };
     });
   }
@@ -133,5 +134,9 @@
   function getFacets() { return rawData ? rawData.facets : null; }
   function getStats() { return rawData ? rawData.stats : null; }
 
-  window.SearchEngine = { loadIndex: loadIndex, search: search, getFacets: getFacets, getStats: getStats };
+  function getDatasetVersion() {
+    if (!rawData) return null;
+    return rawData.datasetVersion || rawData.datasetHash || ('search-index-v' + (rawData.v || 1));
+  }
+  window.SearchEngine = { loadIndex: loadIndex, search: search, getFacets: getFacets, getStats: getStats, getDatasetVersion: getDatasetVersion };
 })(window);

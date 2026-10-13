@@ -223,6 +223,7 @@ function createQuizPage(options) {
   // harness does not need; the pool shape is what buildQuestions consumes.
   const POOL_SIZE = 60;
   const pool = options.pool || Array.from({ length: POOL_SIZE }, (_, i) => ({
+    cat: '行政警察', no: i + 1,
     yr: 110 + (i % 5),
     sub: '測試科目' + (i % 3),
     stem: '第' + (i + 1) +'題題幹',
@@ -234,12 +235,17 @@ function createQuizPage(options) {
     // and a real Promise would resolve after the harness has finished driving.
     loadIndex: () => ({ then(fn) { fn({}); return this; }, catch() { return this; } }),
     getFacets: () => ({ categories: ['行政警察'], years: [110, 111, 112, 113, 114], subjects: ['測試科目1'] }),
+    getDatasetVersion: () => 'synthetic-recovery-v1',
     search: () => pool.map((q) => Object.assign({}, q)),
   };
 
   // Load the real source contract, just as quiz.html does before its inline script.
   const answerUtilsJs = require('path').join(require('path').dirname(options.checkpointJs), 'answer-utils.js');
   vm.runInContext(fs.readFileSync(answerUtilsJs, 'utf8'), sandbox, { filename: 'answer-utils.js' });
+  if (html.includes('js/attempt-ledger.js')) {
+    const ledgerJs = require('path').join(require('path').dirname(options.checkpointJs), 'attempt-ledger.js');
+    vm.runInContext(fs.readFileSync(ledgerJs, 'utf8'), sandbox, { filename: 'attempt-ledger.js' });
+  }
   vm.runInContext(fs.readFileSync(options.checkpointJs, 'utf8'), sandbox, { filename: 'quiz-checkpoint.js' });
 
   const inlineRe = /<script(?![^>]*\ssrc=)[^>]*>([\s\S]*?)<\/script>/g;

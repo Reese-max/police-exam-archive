@@ -78,6 +78,23 @@
   function isMarked(index) { return !!state.marked[index]; }
 
   function saveHistory(result) {
+    // Ledger failures must reach the caller so submission can be retried.
+    if (window.AttemptLedger && state.questions.length) {
+      var answers = state.questions.map(function (_, i) { return state.answers[i]; });
+      var marked = state.questions.map(function (_, i) { return !!state.marked[i]; });
+      var datasetVersion = window.SearchEngine && typeof window.SearchEngine.getDatasetVersion === 'function'
+        ? window.SearchEngine.getDatasetVersion()
+        : undefined;
+      var questions = state.questions.map(function (question) {
+        return datasetVersion ? Object.assign({}, question, { datasetVersion: datasetVersion }) : question;
+      });
+      window.AttemptLedger.recordQuiz({
+        questions: questions,
+        answers: answers,
+        marked: marked,
+        quizMode: 'official',
+      });
+    }
     try {
       var history = JSON.parse(localStorage.getItem('exam-quiz-history') || '[]');
       history.unshift({ date: new Date().toISOString(), correct: result.correct, total: result.total, pct: result.pct, elapsed: result.elapsed });

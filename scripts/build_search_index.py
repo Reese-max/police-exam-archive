@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import glob
 import gzip
+import hashlib
 import json
 import os
 import sys
@@ -115,12 +116,17 @@ def load_exam_files(data_dir: Path) -> list[tuple]:
 
 def build_index(data_dir: Path) -> dict[str, Any]:
     rows = load_exam_files(data_dir)
+    dataset_hash = hashlib.sha256(
+        json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
     categories = sorted({category for row in rows for category in row[1] if category})
     subjects = sorted({row[3] for row in rows if row[3]})
     years = sorted({row[2] for row in rows if row[2]})
     columns = {field: [row[index] for row in rows] for index, field in enumerate(FIELDS)}
     return {
         "v": 2,
+        "datasetVersion": f"search-index-{dataset_hash}",
+        "datasetHash": dataset_hash,
         "fields": FIELDS,
         "stats": {
             "total": len(rows),

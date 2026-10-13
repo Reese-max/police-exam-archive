@@ -992,6 +992,12 @@ def _has_current_corpus_contract(relative: str, text: str) -> bool:
     return False
 
 
+# Reviewed follow-up modules are preserved, never used as overwrite targets.
+PRESERVED_FRONTEND_HASHES = {
+    "考古題網站/js/quiz-engine.js": {"c12638e90b28705da841cee0f601b223f197a47491704ad92c467661eccf7885"},
+}
+
+
 def patch_frontend_module(path: Path, replacement: str) -> None:
     """只升級已知舊版；保留具現行契約的後續功能，未知版本拒絕覆寫。"""
     relative = path.relative_to(ROOT).as_posix()
@@ -1002,6 +1008,8 @@ def patch_frontend_module(path: Path, replacement: str) -> None:
     if current == replacement or _has_current_corpus_contract(relative, current):
         return
     digest = hashlib.sha256(current.encode("utf-8")).hexdigest()
+    if digest in PRESERVED_FRONTEND_HASHES.get(relative, set()):
+        return
     if digest not in LEGACY_FRONTEND_HASHES.get(relative, set()):
         raise RuntimeError(f"未知前端版本，保留 {relative}；請先審查適配，禁止一次性模板覆寫")
     write_text(path, replacement)

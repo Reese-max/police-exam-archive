@@ -112,6 +112,64 @@ def run_flow(script: str) -> subprocess.CompletedProcess:
     assert "flow-ok" in proc.stdout, f"scenario did not complete\n{proc.stdout}\n{proc.stderr}"
 
 
+def test_ledger_write_failure_preserves_the_durable_exam() -> None:
+    run_flow("""
+        const {store, page} = await context();
+        await startWorkedExam(page);
+        const write = store.setItem;
+        store.setItem = (key, value) => {
+          if(key === 'exam-question-attempt-ledger') throw new Error('controlled ledger quota');
+          return write(key, value);
+        };
+        await page.click('submitBtn');
+        assert.equal(page.state().view, 'exam');
+        assert.ok(page.checkpoint(), 'failed ledger write must not delete recovery');
+        store.setItem = write;
+        await page.click('submitBtn');
+        assert.equal(page.state().view, 'result');
+        assert.equal(JSON.parse(store.getItem('exam-question-attempt-ledger')).length, 10);
+        console.log('flow-ok');
+    """)
+
+
+def test_checkpoint_cleanup_retry_does_not_repeat_learning_facts() -> None:
+    run_flow("""
+        const {store, page} = await context();
+        await startWorkedExam(page);
+        page.read('globalThis.originalClear = QuizCheckpoint.persistence.clear; QuizCheckpoint.persistence.clear = async () => { throw new Error("controlled cleanup"); }');
+        await page.click('submitBtn');
+        assert.equal(page.state().view, 'exam');
+        assert.equal(JSON.parse(store.getItem('exam-question-attempt-ledger')).length, 10);
+        page.read('QuizCheckpoint.persistence.clear = globalThis.originalClear');
+        await page.click('submitBtn');
+        assert.equal(page.state().view, 'result');
+        assert.equal(JSON.parse(store.getItem('exam-question-attempt-ledger')).length, 10);
+        console.log('flow-ok');
+    """)
+
+
+def test_review_budget_and_source_binding_survive_reload() -> None:
+    run_flow("""
+        const {store, clock, page} = await context();
+        page.read('AttemptLedger.saveSettings({dailyMinutes:40, dailyQuestionLimit:5}); refreshReviewQueue()');
+        await page.click('reviewStartBtn');
+        assert.equal(page.state().view, 'exam');
+        assert.equal(page.state().durSec, 2400);
+        assert.equal(page.checkpoint().quizMode, 'review');
+        assert.ok(page.checkpoint().questions.every(q => q.questionId && q.sourceHash && q.attemptBatchId));
+        await page.pagehide(); clock.value += 10000;
+        const reloaded = await open(store, clock);
+        await reloaded.click('resumeBtn');
+        assert.equal(reloaded.state().remain, 2390);
+        assert.equal(reloaded.read('currentQuizMode'), 'review');
+        await reloaded.click('submitBtn');
+        const facts = JSON.parse(store.getItem('exam-question-attempt-ledger'));
+        assert.equal(facts.length, 5);
+        assert.ok(facts.every(f => f.quizMode === 'review' && f.datasetVersion === 'synthetic-recovery-v1'));
+        console.log('flow-ok');
+    """)
+
+
 def test_reload_restores_the_same_exam_and_finish_clears_the_checkpoint() -> None:
     """start → answer/flag → checkpoint → reload → resume → finish (issue scenario)."""
     run_flow(
@@ -392,6 +450,7 @@ def test_unusable_storage_does_not_break_an_exam() -> None:
 
         await page.click('submitBtn');
         assert.strictEqual(page.state().view, 'result', 'finishing must still work');
+            assert.ok(page.read('$("resultSub").textContent').includes('未儲存練習'), 'memory-only completion must disclose missing learning records');
 
         // And a fresh page over the same broken store simply offers nothing.
         const reopened = await open(broken, clock, null);
@@ -738,3 +797,58 @@ def test_question_text_is_escaped_before_it_is_checkpointed_and_rendered() -> No
         """
         % json.dumps(markup_pool, ensure_ascii=False)
     )
+
+
+def test_applied_filters_survive_checkpoint_reload() -> None:
+    run_flow("""
+        const {store, page} = await context();
+        await startWorkedExam(page);
+        const expected = page.read('JSON.stringify(currentFilters)');
+        const reloaded = await open(store, {value:T0 + 31000});
+        await reloaded.click('resumeBtn');
+        assert.equal(reloaded.read('JSON.stringify(currentFilters)'), expected);
+        await reloaded.click('submitBtn');
+        assert.equal(JSON.stringify(JSON.parse(store.getItem('exam-question-attempt-ledger'))[0].filters), expected);
+        console.log('flow-ok');
+    """)
+
+
+def test_pre_ledger_checkpoint_finishes_as_distinct_unmapped_portable_events() -> None:
+    run_flow("""
+        const {store, page} = await context();
+        await startWorkedExam(page);
+        await page.read(`questions.forEach(q=>{
+          ['cat','yr','sub','no','questionId','sourceHash','datasetVersion','attemptBatchId'].forEach(k=>delete q[k]);
+        }); saveCheckpoint()`);
+        const reloaded = await open(store, {value:T0 + 31000});
+        await reloaded.click('resumeBtn');
+        const checkpoint = reloaded.checkpoint();
+        assert.equal(new Set(checkpoint.questions.map(q=>q.questionId)).size, 10);
+        assert.ok(checkpoint.questions.every(q=>q.sourceStatus==='UNMAPPED_REVIEW_REQUIRED'));
+        await reloaded.click('submitBtn');
+        assert.equal(reloaded.state().view, 'result');
+        const events = JSON.parse(store.getItem('exam-question-attempt-ledger'));
+        assert.equal(events.length, 10);
+        assert.equal(new Set(events.map(e=>e.questionId)).size, 10);
+        assert.ok(events.every(e=>e.sourceStatus==='UNMAPPED_REVIEW_REQUIRED'));
+        reloaded.read('globalThis.exportedLegacy = AttemptLedger.exportData(); AttemptLedger.clearLearnerData(); AttemptLedger.importData(globalThis.exportedLegacy)');
+        assert.equal(JSON.parse(store.getItem('exam-question-attempt-ledger')).length, 10);
+        console.log('flow-ok');
+    """)
+
+
+@pytest.mark.parametrize("fault", ["throw", "conflict"])
+def test_resume_migration_save_preserves_failure_status(fault) -> None:
+    injected = "throw new Error('migration unavailable')" if fault == 'throw' else 'return false'
+    expected = 'unavailable' if fault == 'throw' else 'conflict'
+    run_flow("""
+        const {store, page} = await context();
+        await startWorkedExam(page);
+        const reloaded = await open(store, {value:T0 + 31000});
+        reloaded.read("QuizCheckpoint.persistence.save = async () => { %s; }");
+        await reloaded.click('resumeBtn');
+        assert.equal(reloaded.get('checkpointStatus').dataset.state, '%s');
+        assert.equal(reloaded.read('recoveryAvailable'), %s);
+        assert.equal(reloaded.read('checkpointLost'), %s);
+        console.log('flow-ok');
+    """ % (injected, expected, 'false' if fault == 'throw' else 'true', 'true' if fault == 'conflict' else 'false'))

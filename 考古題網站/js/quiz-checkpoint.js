@@ -108,7 +108,11 @@
     for (i = 0; i < n; i++) { if (snap.flags[i] !== true && snap.flags[i] !== false) return null; }
 
     if (!_isInt(snap.cur) || snap.cur < 0 || snap.cur >= n) return null;
-    if (!_isInt(snap.durSec) || !ALLOWED_DUR[snap.durSec]) return null;
+    if (snap.quizMode !== undefined && snap.quizMode !== 'official' && snap.quizMode !== 'review') return null;
+    if (snap.filters !== undefined && (!snap.filters || typeof snap.filters !== 'object' || Array.isArray(snap.filters)
+        || Object.keys(snap.filters).some(function (key) { return typeof snap.filters[key] !== 'string'; }))) return null;
+    var reviewDuration = snap.quizMode === 'review' && snap.durSec >= 0 && snap.durSec <= 86400 && snap.durSec % 60 === 0;
+    if (!_isInt(snap.durSec) || (!ALLOWED_DUR[snap.durSec] && !reviewDuration)) return null;
     if (!_isInt(snap.remain) || snap.remain < 0 || snap.remain > snap.durSec) return null;
     if (!_isInt(snap.elapsed) || snap.elapsed < 0) return null;
     if (snap.durSec > 0 && snap.elapsed + snap.remain !== snap.durSec) return null;
@@ -116,6 +120,8 @@
     return {
       v: snap.v,
       sessionId: snap.sessionId,
+      quizMode: snap.quizMode,
+      filters: snap.filters ? Object.assign({}, snap.filters) : undefined,
       savedAt: snap.savedAt,
       questions: qs.slice(),
       answers: snap.answers.slice(),
@@ -133,6 +139,8 @@
     var snap = {
       v: VERSION,
       sessionId: state.sessionId,
+      quizMode: state.quizMode,
+      filters: state.filters,
       savedAt: _isInt(now) ? now : Date.now(),
       questions: state.questions,
       answers: state.answers,
