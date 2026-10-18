@@ -1,0 +1,12 @@
+{
+  "repo": "Reese-max/police-exam-archive",
+  "issue": 87,
+  "base_sha": "64ec92560bb152b9bbab5be59a0c2ef922a25b4f",
+  "red_proof": "Before editing the tracker, Git Bash command `python -m pytest -q tests/test_audit_tracker.py` exited 1: FAILED test_tracker_links_findings_and_evidence (AssertionError: #50 needs an explicit issue/PR link); FAILED test_tracker_dates_historical_status (AssertionError: Historical issue/PR states need an explicit snapshot date); FAILED test_tracker_keeps_p2_validation_gaps_in_clean_gate (AssertionError: P2 validation gaps cannot bypass CLEAN). Summary: 3 failed in 0.26s.",
+  "test_command": "python -m pytest -q",
+  "test_exit": 0,
+  "tests_passed": 140,
+  "tests_failed": 0,
+  "summary": "Reviewed PR #87 against issue #68, the fixed-persona protocol, central round records, and GitHub-rendered Markdown. Added explicit finding/PR links and commit-pinned report/protocol links, scoped recorded states to the original 2026-09-30 snapshot, and restored the protocol's P0/P1/P2 CLEAN requirements without exempting validation gaps. All three new regression tests failed before the documentation fix; the Git-Bash-runnable full suite now passes 140 tests.",
+  "not_done": "No push, branch change, merge, deployment, product implementation, or new 50-persona/runtime audit was performed. This review validates documentation on the admitted PR head; it does not establish current-product CLEAN or runtime acceptance."
+}

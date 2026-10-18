@@ -1,0 +1,26 @@
+{
+  "pr": 87,
+  "head": "64ec92560bb152b9bbab5be59a0c2ef922a25b4f",
+  "findings": [
+    {
+      "severity": "med",
+      "file": "docs/audits/50-persona-tracker.md",
+      "line": 39,
+      "issue": "The tracker does not link the independent findings required by #68: all finding/PR numbers, the protocol, and round records are plain text. GitHub-rendered HTML contains only the umbrella #68 link, preventing direct navigation to the actionable findings and audit evidence."
+    },
+    {
+      "severity": "low",
+      "file": "docs/audits/50-persona-tracker.md",
+      "line": 18,
+      "issue": "Historical audit and PR states are presented as current without a snapshot date. PRs #59/#76/#77/#86 have since merged and other candidates closed; scope this record to its 2026-09-30 capture and inspected SHA rather than implying those states describe the latest default branch."
+    },
+    {
+      "severity": "med",
+      "file": "docs/audits/50-persona-tracker.md",
+      "line": 45,
+      "issue": "Calling P2 VALIDATION_GAP #70 non-blocking creates an exception to the fixed protocol, which requires every P0/P1/P2 issue to be closed or have an explicit not_planned rationale. The CLEAN gate also weakens that rule to generic disposition; retain the validation-gap distinction without exempting it from CLEAN."
+    }
+  ],
+  "fixed": true,
+  "summary": "Fixed three documentation defects: missing links to independent findings and audit evidence, undated historical status presented as current, and an unsupported CLEAN exemption for P2 validation gap #70. Three regression tests failed before the correction and pass afterward; the full suite passes 140 tests. Product code and the historical 0/2 streak are unchanged."
+}
