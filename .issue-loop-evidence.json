@@ -1,0 +1,15 @@
+{
+  "repo": "Reese-max/police-exam-archive",
+  "issue": 71,
+  "base_sha": "791ed9d3d9dad05ddd1bf5d5103755ae6b768a0a",
+  "red_proof": "Before product fixes, `python -X utf8 -m pytest tests/test_image_options.py -q -k review --tb=short` exited 1: 9 failed, 3 passed, 14 deselected. Failures reproduced cache loss on invalid/missing/mismatched sources, incomplete schema detection, generated source links submitting answers, category-filter exclusion, and truncated PDF source locators. `node tests/image_options_print.cjs` also exited 1 with 'published native PDF lost the source locator'. Two additional regressions exited 1 before their fixes: valid JSON without a questions list was accepted, and rebuilding an open cache failed on Windows (WinError 5).",
+  "test_command": "python -X utf8 -m pytest tests/ -q --tb=short && node tests/image_options_print.cjs",
+  "test_exit": 0,
+  "tests_passed": 166,
+  "tests_failed": 0,
+  "summary": "All 166 Python tests passed in 18.20s, including 15 new regression cases; two additional real Edge native-print PDF cases passed. Category-page and homepage consistency checks, JavaScript syntax checks, Python compilation, and git diff --check also exited 0. Cache upgrades now validate schema and source identity, build a complete sibling database before replacement, preserve the original on failure, and refresh open connections. Generated source links, both PDF provenance paths, and the four affected category values are corrected.",
+  "not_done": [
+    "No push, deployment, or remote CI run was performed.",
+    "Full search/quiz browser flows, assistive-technology acceptance, and physical mobile-device validation were not performed; mobile PDF control flow was tested with mocked PDF drawing primitives."
+  ]
+}

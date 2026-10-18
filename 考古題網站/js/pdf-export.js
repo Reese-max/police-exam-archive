@@ -846,7 +846,7 @@
               engine.drawAnswer(item.answer, questionLayout.optionIndent);
               // 圖片選項的來源保留在匯出內容中，離線 PDF 仍可追溯原卷
               if (item.source && (item.source.page || item.source.pdf || item.source.sha256)) {
-                var sourceName = item.source.pdf ? item.source.pdf.split(/[\\/]/).pop() : '';
+                var sourceName = item.source.pdf || '';
                 var sourceText = '選項圖片來源：原始試卷' + (item.source.page ? '第' + item.source.page + '頁' : '');
                 if (sourceName) sourceText += '（' + sourceName + '）';
                 if (item.source.sha256) sourceText += '；PDF SHA-256 ' + item.source.sha256;

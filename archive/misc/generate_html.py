@@ -540,6 +540,13 @@ html.dark .search-box::after { background: linear-gradient(to right, rgba(15,23,
 .math-content .katex { font-size: 1em; }
 .math-content .katex-display { margin: 0.5em 0; overflow-x: auto; overflow-y: hidden; padding: 0.25em 0; }
 .math-content .katex-display > .katex { text-align: left; }
+@media print {
+  .q-block[data-source-pdf]::after {
+    content: '選項圖片來源：' attr(data-source-pdf) '；第' attr(data-source-page) '頁；PDF SHA-256 ' attr(data-source-sha256);
+    display: block; position: static; height: auto; background: none;
+    font-size: 8pt; line-height: 1.4; color: #000; overflow-wrap: anywhere;
+  }
+}
 """
 
 
@@ -1049,8 +1056,9 @@ function bindOptionClicks() {
   document.querySelectorAll('.mc-opt').forEach(function(opt) {
     if (opt._boundClick) return;
     opt._boundClick = true;
-    opt.addEventListener('click', function() {
+    opt.addEventListener('click', function(e) {
       if (!practiceMode) return;
+      if (e.target && e.target.closest && e.target.closest('a')) return;
       var block = opt.closest('.q-block');
       if (!block || block.classList.contains('answered')) return;
       var answer = block.getAttribute('data-answer');

@@ -1,0 +1,13 @@
+{
+  "pr": 71,
+  "head": "791ed9d3d9dad05ddd1bf5d5103755ae6b768a0a",
+  "findings": [
+    {"severity":"high","file":"examdb.py","line":62,"issue":"Opening an old cache rebuilds its live tables before validating sources. Missing, corrupt or mismatched sources can erase a usable cache; an unrecognized custom database is also rebuilt automatically."},
+    {"severity":"med","file":"examdb.py","line":61,"issue":"The schema guard checks option_images alone, accepting a cache that is missing source_locator and returning questions without the promised provenance."},
+    {"severity":"med","file":"archive/misc/generate_html.py","line":1052,"issue":"generate_shared_js still counts clicks on the newly introduced image/source anchors as answers when generating a fresh site."},
+    {"severity":"med","file":"考古題網站/js/pdf-export.js","line":849,"issue":"Mobile PDF output truncates the source locator to the generic basename 試題.pdf; native print never exposes the source path or hash stored in data attributes."},
+    {"severity":"med","file":"scripts/build_search_index.py","line":83,"issue":"All four image-question records retain subject-shaped category values. Exact category filtering in search/quiz excludes them under their normal category names, preventing the requested image feature from satisfying issue #58."}
+  ],
+  "fixed": true,
+  "summary": "Fixed five findings: unsafe SQLite cache rebuilding, incomplete schema detection, generated-site source clicks submitting answers, lost PDF provenance, and four image questions excluded by category filters. Regressions failed before the fixes; all 166 tests and two native-print PDF cases now pass. Changes are committed locally only; remote CI, deployment, and full assistive-technology/mobile-device acceptance remain unverified."
+}

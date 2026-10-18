@@ -15,6 +15,7 @@ import hashlib
 import json
 import glob
 import re
+from contextlib import closing
 from pathlib import Path
 
 import pytest
@@ -294,3 +295,141 @@ def test_source_locator_uses_existing_canonical_exam_directory():
         source_dir = PROJECT_ROOT.joinpath(*source_pdf.parts[:-1])
         assert source_dir.is_dir(), f"{fp} locator points to a missing exam directory: {raw_pdf}"
         assert source_pdf.name == "試題.pdf", f"{fp} locator does not name the source PDF: {raw_pdf}"
+
+
+def _review_legacy_cache(tmp_path, extra_column=None):
+    """A real old cache and its small, independently rebuildable source corpus."""
+    import sqlite3
+
+    source = tmp_path / "source" / "category" / "109年" / "subject" / "試題.json"
+    source.parent.mkdir(parents=True)
+    source.write_text(json.dumps({"questions": [{
+        "number": 1, "type": "choice", "stem": "rebuilt question",
+        "options": {"A": "image"}, "answer": "A",
+        "option_images": {"A": {"src": "image.png"}},
+        "source_locator": {"pdf": "source.pdf", "page": 2},
+    }]}), encoding="utf-8")
+    db_path = tmp_path / "legacy.db"
+    with closing(sqlite3.connect(db_path)) as conn, conn:
+        conn.executescript("""
+            CREATE TABLE files (
+                id INTEGER PRIMARY KEY, path TEXT NOT NULL, category TEXT,
+                year INTEGER, subject TEXT, exam_name TEXT, level TEXT
+            );
+            CREATE TABLE questions (
+                id INTEGER PRIMARY KEY, file_id INTEGER NOT NULL, number TEXT,
+                type TEXT NOT NULL, stem TEXT, option_a TEXT, option_b TEXT,
+                option_c TEXT, option_d TEXT, answer TEXT, passage TEXT,
+                section TEXT, FOREIGN KEY (file_id) REFERENCES files(id)
+            );
+        """)
+        conn.execute("INSERT INTO files VALUES (1, ?, 'category', 109, 'subject', '', '')",
+                     (str(source),))
+        conn.execute("INSERT INTO questions VALUES (1, 1, '1', 'choice', 'cached question', '', '', '', '', 'A', '', '')")
+        if extra_column:
+            conn.execute(f"ALTER TABLE questions ADD COLUMN {extra_column} TEXT")
+    return db_path, source.parents[3], source
+
+
+@pytest.mark.parametrize("condition", ["missing", "empty", "corrupt", "invalid", "different-corpus", "custom-schema"])
+def test_review_failed_upgrade_preserves_original_cache(tmp_path, condition):
+    import sqlite3
+    from examdb import ExamDB
+
+    db_path, data_dir, source = _review_legacy_cache(tmp_path)
+    expected_error = ValueError
+    if condition in ("missing", "empty", "different-corpus"):
+        data_dir = tmp_path / "other-source"
+        if condition != "missing":
+            data_dir.mkdir()
+        if condition == "different-corpus":
+            (data_dir / "試題.json").write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
+    elif condition == "corrupt":
+        source.write_text("{", encoding="utf-8")
+        expected_error = json.JSONDecodeError
+    elif condition == "invalid":
+        source.write_text("{}", encoding="utf-8")
+    elif condition == "custom-schema":
+        with closing(sqlite3.connect(db_path)) as conn, conn:
+            conn.execute("CREATE TABLE user_notes (note TEXT)")
+            conn.execute("INSERT INTO user_notes VALUES ('keep me')")
+    original = db_path.read_bytes()
+    with pytest.raises(expected_error):
+        with ExamDB(db_path=db_path, data_dir=str(data_dir)):
+            pass
+    assert db_path.read_bytes() == original, "failed upgrade changed the original database"
+    with closing(sqlite3.connect(db_path)) as conn:
+        assert conn.execute("SELECT stem FROM questions").fetchone()[0] == "cached question"
+
+
+@pytest.mark.parametrize("extra_column", [None, "option_images", "source_locator"])
+def test_review_upgrade_requires_both_image_columns(tmp_path, extra_column):
+    from examdb import ExamDB
+
+    db_path, data_dir, _ = _review_legacy_cache(tmp_path, extra_column)
+    with ExamDB(db_path=db_path, data_dir=str(data_dir)) as db:
+        row = db.search()[0]
+        assert row["stem"] == "rebuilt question"
+        assert json.loads(row["option_images"])["A"]["src"] == "image.png"
+        assert json.loads(row["source_locator"])["page"] == 2
+
+
+def test_review_failed_publication_preserves_original_cache(tmp_path, monkeypatch):
+    import examdb
+
+    db_path, data_dir, _ = _review_legacy_cache(tmp_path)
+    original = db_path.read_bytes()
+
+    def reject_publication(*args):
+        raise PermissionError("cache is busy")
+
+    monkeypatch.setattr(examdb.os, "replace", reject_publication)
+    with pytest.raises(PermissionError, match="cache is busy"):
+        examdb.ExamDB(db_path=db_path, data_dir=str(data_dir))
+    assert db_path.read_bytes() == original
+    assert not list(tmp_path.glob("examdb-*")), "candidate cache was not cleaned up"
+
+
+def test_review_rebuild_refreshes_open_connection(tmp_path):
+    from examdb import ExamDB
+
+    db_path, data_dir, source = _review_legacy_cache(tmp_path)
+    with ExamDB(db_path=db_path, data_dir=str(data_dir)) as db:
+        record = json.loads(source.read_text(encoding="utf-8"))
+        record["questions"][0]["stem"] = "updated question"
+        source.write_text(json.dumps(record), encoding="utf-8")
+        db.build()
+        assert db.search()[0]["stem"] == "updated question"
+
+
+def _review_runtime(payload):
+    import subprocess
+
+    result = subprocess.run(
+        ["node", str(PROJECT_ROOT / "tests" / "image_options_runtime.cjs")],
+        input=json.dumps(payload), capture_output=True, text=True, encoding="utf-8",
+        cwd=PROJECT_ROOT, timeout=30,
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+@pytest.mark.parametrize("producer", ["published", "generated"])
+def test_review_source_click_does_not_answer(producer):
+    from build_category_pages import _load_generator
+
+    js = ((_load_generator().generate_shared_js()) if producer == "generated"
+          else (SITE_DIR / "js" / "app.js").read_text(encoding="utf-8"))
+    _review_runtime({"mode": "source-click", "js": js})
+
+
+def test_review_normal_category_filters_reach_all_image_questions():
+    from build_search_index import build_index
+
+    expected = [{"category": _dept_of(fp), "year": d["year"],
+                 "src": q["option_images"]["A"]["public_src"]}
+                for fp, d, q in image_option_questions()]
+    _review_runtime({"mode": "search", "index": build_index(DATA_DIR), "expected": expected})
+
+
+def test_review_pdf_preserves_image_order_answers_and_full_source():
+    _review_runtime({"mode": "pdf", "questions": [q for _, _, q in image_option_questions()]})

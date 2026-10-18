@@ -24,6 +24,8 @@ import os
 import re
 import sys
 import argparse
+import tempfile
+from contextlib import closing
 from pathlib import Path
 
 DB_PATH = Path(__file__).resolve().parent / "exam.db"
@@ -51,17 +53,32 @@ class ExamDB:
             self.build()
         self.conn = sqlite3.connect(self.db_path)
         self.conn.row_factory = sqlite3.Row
-        self._ensure_schema()
+        try:
+            self._ensure_schema()
+        except Exception:
+            self.conn.close()
+            raise
 
     def _ensure_schema(self):
         """既有索引若建於舊 schema（缺 option_images/source_locator），自動重建。"""
         cols = {r[1] for r in self.conn.execute("PRAGMA table_info(questions)")}
-        if "option_images" not in cols:
+        required = {"option_images", "source_locator"}
+        if not required <= cols:
+            legacy = set("id file_id number type stem option_a option_b option_c option_d answer passage section".split())
+            file_cols = {r[1] for r in self.conn.execute("PRAGMA table_info(files)")}
+            tables = {r[0] for r in self.conn.execute(
+                "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"
+            )}
+            if (not legacy <= cols or cols - legacy - required
+                    or file_cols != set("id path category year subject exam_name level".split())
+                    or tables != {"files", "questions"}):
+                raise ValueError("Unrecognized cache schema; automatic rebuild refused")
+            sources = {Path(fp).resolve() for fp in glob.glob(str(self.data_dir / "**" / "試題.json"), recursive=True)}
+            indexed = {Path(r[0]).resolve() for r in self.conn.execute("SELECT path FROM files")}
+            if not sources or not indexed <= sources:
+                raise ValueError("Original cache sources unavailable; automatic rebuild refused")
             print("索引為舊 schema，重建以保留圖片選項欄位")
-            self.conn.close()
             self.build()
-            self.conn = sqlite3.connect(self.db_path)
-            self.conn.row_factory = sqlite3.Row
 
     def close(self):
         self.conn.close()
@@ -74,7 +91,27 @@ class ExamDB:
 
     def build(self):
         """建立 SQLite 索引"""
-        conn = sqlite3.connect(self.db_path)
+        files = glob.glob(str(self.data_dir / "**" / "試題.json"), recursive=True)
+        if not files:
+            raise ValueError(f"No exam sources found: {self.data_dir}")
+        # Publish only a complete, closed database on the same filesystem.
+        with tempfile.TemporaryDirectory(prefix="examdb-", dir=Path(self.db_path).resolve().parent) as cache_dir:
+            candidate = Path(cache_dir) / "exam.db"
+            with closing(sqlite3.connect(candidate)) as conn:
+                file_id, q_count = self._populate(conn, files)
+            current = getattr(self, "conn", None)
+            if current is not None:
+                current.close()
+            try:
+                os.replace(candidate, self.db_path)
+            finally:
+                if current is not None:
+                    self.conn = sqlite3.connect(self.db_path)
+                    self.conn.row_factory = sqlite3.Row
+        db_size = os.path.getsize(self.db_path)
+        print(f"索引建立完成: {file_id} 個檔案, {q_count} 題, {db_size/1024/1024:.1f} MB")
+
+    def _populate(self, conn, files):
         c = conn.cursor()
 
         c.executescript("""
@@ -110,13 +147,15 @@ class ExamDB:
             );
         """)
 
-        files = glob.glob(str(self.data_dir / "**" / "試題.json"), recursive=True)
         file_id = 0
         q_count = 0
 
         for fp in files:
             with open(fp, 'r', encoding='utf-8') as f:
                 d = json.load(f)
+
+            if not isinstance(d, dict) or not isinstance(d.get('questions'), list):
+                raise ValueError(f"Invalid exam source: {fp}")
 
             if d.get('metadata', {}).get('_is_duplicate'):
                 continue
@@ -173,9 +212,7 @@ class ExamDB:
         """)
 
         conn.commit()
-        conn.close()
-        db_size = os.path.getsize(self.db_path)
-        print(f"索引建立完成: {file_id} 個檔案, {q_count} 題, {db_size/1024/1024:.1f} MB")
+        return file_id, q_count
 
     def search(self, keyword=None, year=None, category=None, subject=None,
                answer=None, qtype='choice', limit=50):
