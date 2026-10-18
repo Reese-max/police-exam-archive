@@ -135,6 +135,7 @@ pip install PyMuPDF rapidocr-onnxruntime
 | `type` | string | `"choice"` 或 `"essay"` |
 | `stem` | string | 題幹文字 |
 | `options` | object | 選項 A-D（僅選擇題） |
+| `image_options` | object | 圖片選項缺漏註記：`note`、`status`、`provenance`（選填）；目前 `status` 為 `pending-source-pdf`，不含圖檔或可解析來源連結 |
 | `answer` | string | 正確答案 A/B/C/D 或 `"送分"`（僅選擇題） |
 | `section` | string | 所屬區段（甲、申論題 / 乙、測驗題） |
 | `passage` | string | 閱讀測驗/克漏字的共用段落文字（選填） |
@@ -170,7 +171,7 @@ pip install PyMuPDF rapidocr-onnxruntime
 
 ### 已知限制
 
-1. 圖片題（4 題）以 `[圖片選項]` 佔位，無法呈現原始圖片內容
+1. 圖片題（4 題）的 JSON 仍以 `[圖片選項]` 佔位，並附上 `image_options` 缺漏註記。類科頁、搜尋、測驗及 PDF／桌面列印會顯示圖片缺漏提示，仍無法呈現或判讀原圖；SQLite 查詢 API 尚未保留此註記與來源參照
 2. 移民組 111 年入出國法規 Q7 選項 B 與 D 內容相同，為原卷出題瑕疵（已加 `_note` 說明）
 3. 同年同等級共用考卷（國文、英文等）會在多個學系資料夾中重複出現
 

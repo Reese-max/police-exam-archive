@@ -40,7 +40,8 @@
     for (var i = 0; i < total; i++) {
       var doc = { id: i };
       for (var f = 0; f < FIELDS.length; f++) {
-        doc[FIELDS[f]] = cols[FIELDS[f]][i];
+        // 舊版離線索引可能尚未包含選用的 img 欄位。
+        doc[FIELDS[f]] = cols[FIELDS[f]] ? cols[FIELDS[f]][i] : '';
       }
       docs[i] = doc;
     }

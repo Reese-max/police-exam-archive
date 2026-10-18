@@ -1,0 +1,17 @@
+{
+  "repo": "Reese-max/police-exam-archive",
+  "issue": 65,
+  "base_sha": "26db49c06e99cefcc314695464e3248571e8e244",
+  "red_proof": "在 reviewed head 的產品程式尚未修改、僅加入回歸測試時，以 Git Bash 執行 python -X utf8 -m pytest tests/test_image_options.py -q --tb=short -k 'legacy or category'，exit 1。FF                                                                       [100%]\r\n================================== FAILURES ===================================\r\n_____________ test_search_engine_loads_legacy_and_current_indexes _____________\r\ntests\\test_image_options.py:117: in test_search_engine_loads_legacy_and_current_indexes\r\n    assert result.returncode == 0, result.stdout + result.stderr\r\nE   AssertionError: TypeError: Cannot read properties of undefined (reading '0')\r\nE         at _buildIndex (evalmachine.<anonymous>:43:41)\r\nE         at evalmachine.<anonymous>:23:9\r\nE         at async [eval]:21:5\r\nE     \r\nE   assert 1 == 0\r\nE    +  where 1 = CompletedProcess(args=['node', '-e', \"\\nconst assert = require('node:assert/strict');\\nconst fs = require('node:fs');\\...\\n    at _buildIndex (evalmachine.<anonymous>:43:41)\\n    at evalmachine.<anonymous>:23:9\\n    at async [eval]:21:5\\n\").returncode\r\n_______________ test_category_and_print_disclose_image_options ________________\r\ntests\\test_image_options.py:127: in test_category_and_print_disclose_image_options\r\n    assert PLACEHOLDER not in rendered, f\"{fp} 仍輸出裸露的圖片佔位\"\r\nE   AssertionError: C:\\Users\\Administrator\\issue-loop\\worktrees\\Reese-max_police-exam-archive-pr-65\\考古題庫\\水上警察\\109年\\水上警察情境實務（包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序）\\試題.json 仍輸出裸露的圖片佔位\r\nE   assert '[圖片選項]' not in '<div class=...v>\\n</div>\\n'\r\nE     \r\nE     '[圖片選項]' is contained here:\r\nE       opt-text\">[圖片選項]</span></div>\r\nE     ?           ++++++\r\nE       <div class=\"mc-opt\" data-val=\"B\"><span class=\"opt-label\">(B)</span><span class=\"opt-text\">[圖片選項]</span></div>\r\nE       <div class=\"mc-opt\" data-val=\"C\"><span class=\"opt-label\">(C)</span><span class=\"opt-text\">[圖片選項]</span></div>\r\nE       <div class=\"mc-opt\" data-val=\"D\"><span class=\"opt-label\">(D)</span><span class=\"opt-text\">[圖片選項]</span></div>...\r\nE     \r\nE     ...Full output truncated (3 lines hidden), use '-vv' to show\r\n=========================== short test summary info ===========================\r\nFAILED tests/test_image_options.py::test_search_engine_loads_legacy_and_current_indexes\r\nFAILED tests/test_image_options.py::test_category_and_print_disclose_image_options\r\n2 failed, 3 deselected in 1.67s\r\n",
+  "test_command": "python -X utf8 -m pytest tests/ -q --tb=short",
+  "test_exit": 0,
+  "tests_passed": 142,
+  "tests_failed": 0,
+  "summary": "已修正舊索引缺少 img 時的載入崩潰，以及類科頁／桌面列印仍輸出圖片佔位的缺口；兩項回歸測試先紅後綠，完整 Python 測試 142 通過。17 個類科頁暫存重建檢查、搜尋與 PDF JS 語法檢查及 git diff --check 均以 exit 0 通過。",
+  "not_done": [
+    "needs-human：PR 明確是誠實降級備案，仍未提供 #58 AC2/AC3/AC4/AC6 要求的實際選項圖、可解析圖片來源與來源控制項；目前 issue 已記錄 #59 合併，須人工判定此 PR 的保留價值。",
+    "needs-human：ExamDB/API 未保存 image_options 或 source_pdf；已用實際圖片題及暫存 SQLite 確認，保存契約變更未實作。",
+    "未執行實際瀏覽器操作、輔助科技或完整 PDF 檔案驗收，也未重新執行遠端 CI／部署；本機驗證涵蓋實際 JS 載入流程與 HTML 產生器。",
+    "未 push、未修改遠端 PR 或 issue、未切換或修改其他分支。"
+  ]
+}

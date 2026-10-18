@@ -1347,10 +1347,13 @@ def render_question_html(question):
             html_parts.append('<div class="mc-options">\n')
             for label in ['A', 'B', 'C', 'D', 'E']:
                 if label in q['options']:
+                    option_text = q['options'][label]
+                    if option_text == '[圖片選項]':
+                        option_text = '（圖片選項 — 原卷為圖，請查閱原始 PDF）'
                     html_parts.append(
                         f'<div class="mc-opt" data-val="{label}">'
                         f'<span class="opt-label">({label})</span>'
-                        f'<span class="opt-text">{escape_html(q["options"][label])}</span>'
+                        f'<span class="opt-text">{escape_html(option_text)}</span>'
                         f'</div>\n'
                     )
             html_parts.append('</div>\n')

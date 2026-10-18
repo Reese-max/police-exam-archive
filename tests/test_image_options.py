@@ -8,6 +8,7 @@
 
 import json
 import glob
+import subprocess
 import sys
 from pathlib import Path
 
@@ -62,3 +63,69 @@ def test_search_index_flags_image_questions():
 def test_known_affected_question_count():
     """目前確認的圖片選項題為 4 題（README 記錄）；新增圖片題須連同標註一起進"""
     assert len(image_option_questions()) == 4
+
+
+def test_search_engine_loads_legacy_and_current_indexes(tmp_path):
+    """新版 JS 也必須能載入離線快取的舊索引，並保留新索引的圖片標記。"""
+    from build_search_index import build_index
+
+    image_question = image_option_questions()[0][1]
+    paper = {
+        "category": "水上警察", "year": 109, "subject": "情境實務",
+        "questions": [image_question, {
+            "number": 3, "type": "choice", "stem": "文字題", "answer": "A",
+            "options": {label: label for label in "ABCD"},
+        }],
+    }
+    (tmp_path / "試題.json").write_text(json.dumps(paper), encoding="utf-8")
+    script = r"""
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const original = JSON.parse(fs.readFileSync(0, 'utf8'));
+const source = fs.readFileSync(process.argv[1], 'utf8');
+(async () => {
+  for (const current of [false, true]) {
+    const data = JSON.parse(JSON.stringify(original));
+    if (!current) {
+      delete data.columns.img;
+      data.fields = data.fields.filter(field => field !== 'img');
+    }
+    let documents;
+    const context = vm.createContext({
+      window: {},
+      fetch: async () => ({ok: true, json: async () => data}),
+      MiniSearch: class { addAll(docs) { documents = docs; } },
+    });
+    vm.runInContext(source, context);
+    await context.window.SearchEngine.loadIndex();
+    const results = context.window.SearchEngine.search('', {type: 'choice'});
+    assert.equal(documents.length, 2);
+    assert.equal(results.length, 2);
+    assert.equal(results[0].optA, original.columns.optA[0]);
+    assert.equal(results[0].ans, original.columns.ans[0]);
+    assert.equal(results[0].img, current ? 1 : '');
+    assert.equal(results[1].img, '');
+  }
+})().catch(error => { console.error(error); process.exitCode = 1; });
+"""
+    result = subprocess.run(
+        ["node", "-e", script, str(PROJECT_ROOT / "考古題網站/js/search-engine.js")],
+        input=json.dumps(build_index(tmp_path)), text=True, encoding="utf-8",
+        capture_output=True, timeout=20,
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_category_and_print_disclose_image_options():
+    """類科頁及其桌面列印 DOM 必須說明圖片缺漏，保留選項與答案。"""
+    from build_category_pages import _load_generator
+
+    generator = _load_generator()
+    for fp, question in image_option_questions():
+        rendered = generator.render_question_html(question)
+        assert PLACEHOLDER not in rendered, f"{fp} 仍輸出裸露的圖片佔位"
+        assert rendered.count("原卷為圖") == 4
+        for label in "ABCD":
+            assert f'data-val="{label}"' in rendered
+        assert f'data-answer="{question["answer"]}"' in rendered

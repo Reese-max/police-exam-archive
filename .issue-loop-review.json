@@ -1,0 +1,32 @@
+{
+  "pr": 65,
+  "head": "26db49c06e99cefcc314695464e3248571e8e244",
+  "findings": [
+    {
+      "severity": "high",
+      "file": "考古題網站/js/search-engine.js",
+      "line": 43,
+      "issue": "新增 img 到 FIELDS 後，_buildIndex 無條件讀取 cols.img[i]；新 JS 載入既有或離線快取的 11 欄索引會拋出 TypeError，搜尋與測驗均無法初始化。search() 內的相容防護執行得太晚。"
+    },
+    {
+      "severity": "med",
+      "file": "archive/misc/generate_html.py",
+      "line": 1353,
+      "issue": "部署使用的共用類科頁產生器仍原樣輸出 [圖片選項]，沒有圖片內容缺漏說明；桌面列印沿用相同 DOM。因此本 PR 的誠實降級沒有涵蓋類科頁與桌面匯出。"
+    },
+    {
+      "severity": "high",
+      "file": "tests/test_image_options.py",
+      "line": 40,
+      "issue": "needs-human：測試只要求 note/status，四筆資料仍沒有可解析圖片、替代呈現或來源圖片控制項，未滿足 #58 的 AC2/AC3/AC4/AC6。PR 明確定位為降級備案，而目前 issue 已記錄 #59 完整修法合併；須由人工決定本 PR 是否仍應保留，不能將此備案當成 issue 完整解法。"
+    },
+    {
+      "severity": "med",
+      "file": "examdb.py",
+      "line": 137,
+      "issue": "needs-human：PR 宣稱 API 保留來源與 pending 狀態，但 ExamDB.build() 的 schema/INSERT 與 search() 回傳均未保存 image_options 或 source_pdf。使用實際圖片題建立暫存資料庫已確認兩欄都遺失；修正涉及 API/SQLite 保存契約，依指示留待人工判定。"
+    }
+  ],
+  "fixed": true,
+  "summary": "已修正舊索引缺 img 導致搜尋／測驗載入失敗，以及類科頁／桌面列印漏顯示缺圖說明；新增兩項先紅後綠回歸測試，完整測試 142 通過。完整圖片驗收與 API 來源保存契約仍為 needs-human，#58 已記錄 #59 完整修法合併；本次僅本機提交，未 push。"
+}
