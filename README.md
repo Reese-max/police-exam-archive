@@ -277,10 +277,19 @@ python scripts/check_corpus_claims.py --write
 
 # 其餘衍生檔由各自產生器維護
 python scripts/build_home_stats.py
+python scripts/build_category_pages.py
+python scripts/apply_layout_refinements.py
 python scripts/build_search_index.py
 python scripts/build_analytics.py
 python scripts/sync_analytics_frontend.py --analytics 考古題網站/data/analytics.json
 ```
+
+類科頁建置涵蓋首頁 17 類科與水上警察、消防警察 2 個圖片題舊網址；更新後請一併提交 HTML。
+`python scripts/build_category_pages.py --check` 會在暫存目錄重建並比對現有頁面，
+統計、年度、題文或圖片標記過期時以非零結束碼失敗，且不改寫來源頁面。
+比對忽略頁尾產生日期與另行掛載的 `layout-refinements.css` 連結，並保留搜尋、測驗及 PWA 入口。
+既有 PDF 下載連結依科目卡片 ID 保留為展示資料；檢查不驗證這些連結的變更或 PDF 資產可用性，
+也不會把舊題文帶入重建結果。指定 `--output` 時，只保留該目錄本身的 PDF 入口。
 
 ## 模擬考逐題複習
 
