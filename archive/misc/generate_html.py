@@ -1435,7 +1435,7 @@ def render_question_html(question):
     return ''
 
 
-def render_subject_card(card_id, subject_name, questions_data, year):
+def render_subject_card(card_id, subject_name, questions_data, year, pdf_links=''):
     """渲染一個科目卡片"""
     questions = questions_data.get('questions', [])
     notes = questions_data.get('notes', [])
@@ -1477,6 +1477,7 @@ def render_subject_card(card_id, subject_name, questions_data, year):
   <h3>{escape_html(subject_name)}</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
+{pdf_links}
 <div class="subject-body">
 <div class="exam-meta-bar">
 {meta_html}
@@ -1490,7 +1491,7 @@ def render_subject_card(card_id, subject_name, questions_data, year):
 '''
 
 
-def generate_category_page(category_name, years_data, output_dir):
+def generate_category_page(category_name, years_data, output_dir, pdf_links_by_card=None):
     """為一個類科生成完整的 HTML 頁面"""
     info = CATEGORIES_INFO.get(category_name, {'code': 0, 'icon': '&#128196;', 'color': '#1a365d'})
     emoji = CATEGORIES_EMOJI.get(category_name, '')
@@ -1525,7 +1526,10 @@ def generate_category_page(category_name, years_data, output_dir):
         content_html += f'<h2 class="year-heading">{year}年</h2>\n'
         for subj_name in sorted(subjects.keys()):
             card_id = make_card_id(year, subj_name)
-            content_html += render_subject_card(card_id, subj_name, subjects[subj_name], year)
+            content_html += render_subject_card(
+                card_id, subj_name, subjects[subj_name], year,
+                (pdf_links_by_card or {}).get(card_id, ''),
+            )
         content_html += '</div>\n'
 
     # 收集科目名稱（跨年份去重）
@@ -1547,12 +1551,13 @@ def generate_category_page(category_name, years_data, output_dir):
 <title>{escape_html(category_name)}考古題總覽 ({years[-1]}-{years[0]}年)</title>
 <meta name="description" content="{exam_prefix}{escape_html(category_name)}考古題總覽，涵蓋{years[-1]}-{years[0]}年共 {total_subjects} 份試卷、{total_questions} 道題目">
 <meta name="theme-color" content="{info['color']}">
+<link rel="manifest" href="../manifest.json">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="{escape_html(category_name)}考古題總覽 ({years[-1]}-{years[0]}年)">
 <meta property="og:description" content="{exam_prefix}{escape_html(category_name)}，{years[-1]}-{years[0]}年共 {total_subjects} 份試卷、{total_questions} 道題目">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
-<link rel="canonical" href="{escape_html(category_name)}/{escape_html(category_name)}考古題總覽.html">
+<link rel="canonical" href="{escape_html(category_name)}考古題總覽.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%AE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1576,6 +1581,8 @@ def generate_category_page(category_name, years_data, output_dir):
 <nav class="sidebar" id="sidebar" aria-label="年份導航">
 <div class="sidebar-title"><span>{emoji} {escape_html(category_name)}</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="收合導航">&#10005;</button></div>
 <a class="sidebar-home" href="../index.html">&#8592; 回到首頁</a>
+<a class="sidebar-home" href="../search.html">全文搜尋</a>
+<a class="sidebar-home" href="../quiz.html">模擬考試</a>
 {sidebar_html}
 </nav>
 <button class="back-to-top" id="backToTop" aria-label="回到頂部">&#8593;</button>
@@ -1620,8 +1627,10 @@ def generate_category_page(category_name, years_data, output_dir):
 <div class="export-panel" id="exportPanel" style="display:none" role="dialog" aria-label="匯出設定">
   <p class="export-title">匯出設定</p>
   <div id="exportSelectors"></div>
+  <div class="export-actions">
   <button class="export-option" onclick="exportPDF(true)">&#128203; 含答案（複習用）</button>
   <button class="export-option" onclick="exportPDF(false)">&#128221; 不含答案（練習用）</button>
+  </div>
   <button class="export-cancel" onclick="hideExportPanel()">取消</button>
 </div>
 <div id="yearView">
@@ -1634,6 +1643,11 @@ def generate_category_page(category_name, years_data, output_dir):
 </footer>
 {subject_keys_script}
 <script src="../js/app.js" defer></script>
+<script>
+if ('serviceWorker' in navigator) {{
+  navigator.serviceWorker.register('../sw.js', {{scope: '../'}}).catch(function() {{}});
+}}
+</script>
 </body>
 </html>'''
 

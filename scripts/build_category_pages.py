@@ -9,6 +9,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import tempfile
 import types
 from pathlib import Path
@@ -140,6 +141,51 @@ def _validate_source_pages(output_root: Path) -> None:
     print("原始 17 個類科頁均保有完整 UI 與功能")
 
 
+def _comparable_page(path: Path) -> str:
+    text = path.read_text(encoding="utf-8")
+    # The deployment's separate layout step adds this link. The footer date
+    # changes daily; neither difference means the question content is stale.
+    text = text.replace('<link rel="stylesheet" href="../css/layout-refinements.css">\n', "")
+    return re.sub(
+        r"(?m)(^  資料來源：考選部考畢試題查詢平臺 ・ 生成時間：)\d{4}-\d{2}-\d{2}$",
+        r"\1<date>",
+        text,
+    )
+
+
+def _validate_current_pages(output_root: Path, generated_root: Path) -> None:
+    stale = []
+    for category in (*CATEGORIES, *IMAGE_CHOICE_ALIASES):
+        current = _category_page(output_root, category)
+        generated = _category_page(generated_root, category)
+        if not current.is_file() or _comparable_page(current) != _comparable_page(generated):
+            stale.append(str(current))
+    if stale:
+        raise RuntimeError(
+            "類科頁已過期或不存在；請執行 python scripts/build_category_pages.py "
+            "與 python scripts/apply_layout_refinements.py 後提交變更：\n"
+            + "\n".join(stale)
+        )
+    print("17 個類科頁與 2 個圖片題舊類科網址均與最新產生結果一致")
+
+
+def _existing_pdf_links(path: Path) -> dict[str, str]:
+    """保留既有下載入口；不把舊題文當成重建來源。"""
+    if not path.is_file():
+        return {}
+    cards = re.findall(
+        r'<div class="subject-card" id="([^"]+)">(.*?)(?=<div class="subject-card"|\Z)',
+        path.read_text(encoding="utf-8"),
+        flags=re.DOTALL,
+    )
+    links = {}
+    for card_id, content in cards:
+        match = re.search(r'<div class="pdf-links">.*?</div>', content, flags=re.DOTALL)
+        if match:
+            links[card_id] = match.group(0)
+    return links
+
+
 def _load_generator() -> types.ModuleType:
     if not LEGACY_GENERATOR.is_file():
         raise FileNotFoundError(f"找不到既有 HTML 產生器：{LEGACY_GENERATOR}")
@@ -180,7 +226,10 @@ def _validate_generated_page(path: Path, category: str, years: list[int]) -> Non
             raise RuntimeError(f"{category} 的 115 年標題未正常產生")
 
 
-def build_pages(input_root: Path, output_root: Path) -> dict[str, dict[str, int]]:
+def build_pages(
+    input_root: Path, output_root: Path, *, shell_root: Path | None = None
+) -> dict[str, dict[str, int]]:
+    shell_root = output_root if shell_root is None else shell_root
     generator = _load_generator()
     # These supported legacy URLs contain the other two aliases of image
     # questions. Rebuild their full pages from their own source JSON as well.
@@ -194,7 +243,10 @@ def build_pages(input_root: Path, output_root: Path) -> dict[str, dict[str, int]
     summary: dict[str, dict[str, int]] = {}
     for category in CATEGORIES:
         years_data = all_data[category]
-        page = generator.generate_category_page(category, years_data, str(output_root))
+        page = generator.generate_category_page(
+            category, years_data, str(output_root),
+            pdf_links_by_card=_existing_pdf_links(_category_page(shell_root, category)),
+        )
         if not page:
             raise RuntimeError(f"{category} 類科頁產生失敗")
 
@@ -227,7 +279,10 @@ def build_pages(input_root: Path, output_root: Path) -> dict[str, dict[str, int]
         years_data = all_data.get(category)
         if not years_data:
             raise RuntimeError(f"圖片題舊類科網址缺少來源：{category}")
-        page = generator.generate_category_page(category, years_data, str(output_root))
+        page = generator.generate_category_page(
+            category, years_data, str(output_root),
+            pdf_links_by_card=_existing_pdf_links(_category_page(shell_root, category)),
+        )
         if not page:
             raise RuntimeError(f"{category} 圖片題舊類科頁產生失敗")
         _validate_generated_page(Path(page), category, sorted(int(year) for year in years_data))
@@ -243,7 +298,7 @@ def main() -> int:
     parser.add_argument(
         "--check",
         action="store_true",
-        help="驗證儲存庫 UI，並在暫存目錄完整產生最新頁面",
+        help="唯讀驗證完整 UI，並與暫存目錄產生的最新 19 個類科頁比對",
     )
     args = parser.parse_args()
 
@@ -252,7 +307,8 @@ def main() -> int:
     if args.check:
         _validate_source_pages(output_root)
         with tempfile.TemporaryDirectory(prefix="police-exam-category-pages-") as tmp:
-            build_pages(input_root, Path(tmp))
+            build_pages(input_root, Path(tmp), shell_root=output_root)
+            _validate_current_pages(output_root, Path(tmp))
         return 0
 
     output_root.mkdir(parents=True, exist_ok=True)
