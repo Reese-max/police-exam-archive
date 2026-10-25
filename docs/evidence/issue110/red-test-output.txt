@@ -1,0 +1,685 @@
+
+Running 3 tests using 1 worker
+
+  x  1 tests\audit-legibility.spec.js:116:5 › 今日複習設定重排及持久化 › 320px 的設定值可讀且原生編輯、blur、reload 不變 (3.8s)
+  x  2 tests\audit-legibility.spec.js:116:5 › 今日複習設定重排及持久化 › 390px 的設定值可讀且原生編輯、blur、reload 不變 (2.2s)
+  ok 3 tests\audit-legibility.spec.js:116:5 › 今日複習設定重排及持久化 › 1280px 的設定值可讀且原生編輯、blur、reload 不變 (2.2s)
+
+
+  1) tests\audit-legibility.spec.js:116:5 › 今日複習設定重排及持久化 › 320px 的設定值可讀且原生編輯、blur、reload 不變 ────────
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 226
+    Received:    245
+
+      148 |         await info.attach(`${phase}-layout.json`, { body: Buffer.from(JSON.stringify(layout)), contentType: 'application/json' });
+      149 |         await info.attach(`${phase}-settings.png`, { body: await page.locator('#reviewTools').screenshot(), contentType: 'image/png' });
+    > 150 |         expect.soft(layout.scroll).toBeLessThanOrEqual(layout.client);
+          |                                    ^
+      151 |         expect.soft(layout.columns).toBe(width <= 560 ? 1 : 4);
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:150:36)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 4
+
+      149 |         await info.attach(`${phase}-settings.png`, { body: await page.locator('#reviewTools').screenshot(), contentType: 'image/png' });
+      150 |         expect.soft(layout.scroll).toBeLessThanOrEqual(layout.client);
+    > 151 |         expect.soft(layout.columns).toBe(width <= 560 ? 1 : 4);
+          |                                     ^
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:151:37)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: 每日分鐘上限
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 226
+    Received:    244.5
+
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+    > 154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+          |                                                    ^
+      155 |         }
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:154:52)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: dailyMinutes
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 226
+    Received:    244.5
+
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+    > 154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+          |                                                    ^
+      155 |         }
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:154:52)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error:  啟用考前截止日
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 4
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: 每日題量上限
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 6
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: 每日分鐘上限
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 6
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: 規劃每題分鐘（估算）
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 5
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: dailyQuestionLimit
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 30.75
+    Received:    0
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: dailyMinutes
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 30.75
+    Received:    0
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: planningMinutesPerQuestion
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 23.375
+    Received:    3
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 226
+    Received:    245
+
+      148 |         await info.attach(`${phase}-layout.json`, { body: Buffer.from(JSON.stringify(layout)), contentType: 'application/json' });
+      149 |         await info.attach(`${phase}-settings.png`, { body: await page.locator('#reviewTools').screenshot(), contentType: 'image/png' });
+    > 150 |         expect.soft(layout.scroll).toBeLessThanOrEqual(layout.client);
+          |                                    ^
+      151 |         expect.soft(layout.columns).toBe(width <= 560 ? 1 : 4);
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:150:36)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 4
+
+      149 |         await info.attach(`${phase}-settings.png`, { body: await page.locator('#reviewTools').screenshot(), contentType: 'image/png' });
+      150 |         expect.soft(layout.scroll).toBeLessThanOrEqual(layout.client);
+    > 151 |         expect.soft(layout.columns).toBe(width <= 560 ? 1 : 4);
+          |                                     ^
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:151:37)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: 每日分鐘上限
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 226
+    Received:    244.5
+
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+    > 154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+          |                                                    ^
+      155 |         }
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:154:52)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: dailyMinutes
+
+    expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 226
+    Received:    244.5
+
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+    > 154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+          |                                                    ^
+      155 |         }
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:154:52)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error:  啟用考前截止日
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 4
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: 每日題量上限
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 6
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: 每日分鐘上限
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 6
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: 規劃每題分鐘（估算）
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 5
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: dailyQuestionLimit
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 30.75
+    Received:    0
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: dailyMinutes
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 45.5
+    Received:    0
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: planningMinutesPerQuestion
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 34.8125
+    Received:    3
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\output\playwright\issue110-red\audit-legibility-今日複習設定重排及-d3365--的設定值可讀且原生編輯、blur、reload-不變\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\output\playwright\issue110-red\audit-legibility-今日複習設定重排及-d3365--的設定值可讀且原生編輯、blur、reload-不變\error-context.md
+
+  2) tests\audit-legibility.spec.js:116:5 › 今日複習設定重排及持久化 › 390px 的設定值可讀且原生編輯、blur、reload 不變 ────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 4
+
+      149 |         await info.attach(`${phase}-settings.png`, { body: await page.locator('#reviewTools').screenshot(), contentType: 'image/png' });
+      150 |         expect.soft(layout.scroll).toBeLessThanOrEqual(layout.client);
+    > 151 |         expect.soft(layout.columns).toBe(width <= 560 ? 1 : 4);
+          |                                     ^
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:151:37)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error:  啟用考前截止日
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 3
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: 每日題量上限
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: 每日分鐘上限
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: 規劃每題分鐘（估算）
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 4
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: dailyQuestionLimit
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 30.75
+    Received:    18
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: dailyMinutes
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 30.75
+    Received:    18
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: planningMinutesPerQuestion
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 23.375
+    Received:    18
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:161:7
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 4
+
+      149 |         await info.attach(`${phase}-settings.png`, { body: await page.locator('#reviewTools').screenshot(), contentType: 'image/png' });
+      150 |         expect.soft(layout.scroll).toBeLessThanOrEqual(layout.client);
+    > 151 |         expect.soft(layout.columns).toBe(width <= 560 ? 1 : 4);
+          |                                     ^
+      152 |         for (const element of layout.elements) {
+      153 |           expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:151:37)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error:  啟用考前截止日
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 3
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: 每日題量上限
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: 每日分鐘上限
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: 規劃每題分鐘（估算）
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 4
+
+      154 |           expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+      155 |         }
+    > 156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+          |                                                                                 ^
+      157 |         for (const input of layout.inputs) {
+      158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      159 |         }
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:156:81)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: dailyQuestionLimit
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 30.75
+    Received:    18
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: dailyMinutes
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 23.375
+    Received:    18
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    Error: planningMinutesPerQuestion
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 38.125
+    Received:    18
+
+      156 |         for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+      157 |         for (const input of layout.inputs) {
+    > 158 |           expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+          |                                                ^
+      159 |         }
+      160 |       }
+      161 |       await readableSettings('initial');
+        at readableSettings (C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:158:48)
+        at C:\Users\Administrator\issue-loop\worktrees\Reese-max_police-exam-archive-issue-110\考古題網站\tests\audit-legibility.spec.js:189:7
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\output\playwright\issue110-red\audit-legibility-今日複習設定重排及-b6cc2--的設定值可讀且原生編輯、blur、reload-不變\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\output\playwright\issue110-red\audit-legibility-今日複習設定重排及-b6cc2--的設定值可讀且原生編輯、blur、reload-不變\error-context.md
+
+  2 failed
+    tests\audit-legibility.spec.js:116:5 › 今日複習設定重排及持久化 › 320px 的設定值可讀且原生編輯、blur、reload 不變 ─────────
+    tests\audit-legibility.spec.js:116:5 › 今日複習設定重排及持久化 › 390px 的設定值可讀且原生編輯、blur、reload 不變 ─────────
+  1 passed (21.7s)
+(node:14320) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[WebServer] (node:16996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm notice run exam-archive-site@1.0.0 npx
+[WebServer] npm notice run serve . -l 8765 --no-clipboard
+[WebServer] (node:10760) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:46728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46728) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:46728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46440) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:46440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45784) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:45784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

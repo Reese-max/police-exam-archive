@@ -1,0 +1,620 @@
+{
+  "320": {
+    "initial-layout.json": {
+      "columns": 4,
+      "client": 226,
+      "scroll": 245,
+      "elements": [
+        {
+          "name": "啟用考前截止日",
+          "left": 0,
+          "right": 25
+        },
+        {
+          "name": "deadlineEnabled",
+          "left": 0,
+          "right": 25
+        },
+        {
+          "name": "目標考試日",
+          "left": 37,
+          "right": 176.5
+        },
+        {
+          "name": "targetExamDate",
+          "left": 37,
+          "right": 176.5
+        },
+        {
+          "name": "每日題量上限",
+          "left": 188.5,
+          "right": 210.5
+        },
+        {
+          "name": "dailyQuestionLimit",
+          "left": 188.5,
+          "right": 210.5
+        },
+        {
+          "name": "每日分鐘上限",
+          "left": 222.5,
+          "right": 244.5
+        },
+        {
+          "name": "dailyMinutes",
+          "left": 222.5,
+          "right": 244.5
+        },
+        {
+          "name": "規劃每題分鐘（估算）",
+          "left": 0,
+          "right": 25
+        },
+        {
+          "name": "planningMinutesPerQuestion",
+          "left": 0,
+          "right": 25
+        }
+      ],
+      "labels": [
+        {
+          "text": " 啟用考前截止日",
+          "lines": 4
+        },
+        {
+          "text": "目標考試日",
+          "lines": 1
+        },
+        {
+          "text": "每日題量上限",
+          "lines": 6
+        },
+        {
+          "text": "每日分鐘上限",
+          "lines": 6
+        },
+        {
+          "text": "規劃每題分鐘（估算）",
+          "lines": 5
+        }
+      ],
+      "inputs": [
+        {
+          "id": "dailyQuestionLimit",
+          "client": 20,
+          "content": 0,
+          "value": "20",
+          "measured": 14.75
+        },
+        {
+          "id": "dailyMinutes",
+          "client": 20,
+          "content": 0,
+          "value": "40",
+          "measured": 14.75
+        },
+        {
+          "id": "planningMinutesPerQuestion",
+          "client": 23,
+          "content": 3,
+          "value": "2",
+          "measured": 7.375
+        }
+      ]
+    },
+    "reloaded-layout.json": {
+      "columns": 4,
+      "client": 226,
+      "scroll": 245,
+      "elements": [
+        {
+          "name": "啟用考前截止日",
+          "left": 0,
+          "right": 25
+        },
+        {
+          "name": "deadlineEnabled",
+          "left": 0,
+          "right": 25
+        },
+        {
+          "name": "目標考試日",
+          "left": 37,
+          "right": 176.5
+        },
+        {
+          "name": "targetExamDate",
+          "left": 37,
+          "right": 176.5
+        },
+        {
+          "name": "每日題量上限",
+          "left": 188.5,
+          "right": 210.5
+        },
+        {
+          "name": "dailyQuestionLimit",
+          "left": 188.5,
+          "right": 210.5
+        },
+        {
+          "name": "每日分鐘上限",
+          "left": 222.5,
+          "right": 244.5
+        },
+        {
+          "name": "dailyMinutes",
+          "left": 222.5,
+          "right": 244.5
+        },
+        {
+          "name": "規劃每題分鐘（估算）",
+          "left": 0,
+          "right": 25
+        },
+        {
+          "name": "planningMinutesPerQuestion",
+          "left": 0,
+          "right": 25
+        }
+      ],
+      "labels": [
+        {
+          "text": " 啟用考前截止日",
+          "lines": 4
+        },
+        {
+          "text": "目標考試日",
+          "lines": 1
+        },
+        {
+          "text": "每日題量上限",
+          "lines": 6
+        },
+        {
+          "text": "每日分鐘上限",
+          "lines": 6
+        },
+        {
+          "text": "規劃每題分鐘（估算）",
+          "lines": 5
+        }
+      ],
+      "inputs": [
+        {
+          "id": "dailyQuestionLimit",
+          "client": 20,
+          "content": 0,
+          "value": "37",
+          "measured": 14.75
+        },
+        {
+          "id": "dailyMinutes",
+          "client": 20,
+          "content": 0,
+          "value": "1440",
+          "measured": 29.5
+        },
+        {
+          "id": "planningMinutesPerQuestion",
+          "client": 23,
+          "content": 3,
+          "value": "0.5",
+          "measured": 18.8125
+        }
+      ]
+    }
+  },
+  "390": {
+    "initial-layout.json": {
+      "columns": 4,
+      "client": 296,
+      "scroll": 296,
+      "elements": [
+        {
+          "name": "啟用考前截止日",
+          "left": 0,
+          "right": 40.15625
+        },
+        {
+          "name": "deadlineEnabled",
+          "left": 0,
+          "right": 40.15625
+        },
+        {
+          "name": "目標考試日",
+          "left": 52.15625,
+          "right": 191.65625
+        },
+        {
+          "name": "targetExamDate",
+          "left": 52.15625,
+          "right": 191.65625
+        },
+        {
+          "name": "每日題量上限",
+          "left": 203.65625,
+          "right": 243.828125
+        },
+        {
+          "name": "dailyQuestionLimit",
+          "left": 203.65625,
+          "right": 243.828125
+        },
+        {
+          "name": "每日分鐘上限",
+          "left": 255.828125,
+          "right": 296
+        },
+        {
+          "name": "dailyMinutes",
+          "left": 255.828125,
+          "right": 296
+        },
+        {
+          "name": "規劃每題分鐘（估算）",
+          "left": 0,
+          "right": 40.15625
+        },
+        {
+          "name": "planningMinutesPerQuestion",
+          "left": 0,
+          "right": 40.15625
+        }
+      ],
+      "labels": [
+        {
+          "text": " 啟用考前截止日",
+          "lines": 3
+        },
+        {
+          "text": "目標考試日",
+          "lines": 1
+        },
+        {
+          "text": "每日題量上限",
+          "lines": 2
+        },
+        {
+          "text": "每日分鐘上限",
+          "lines": 2
+        },
+        {
+          "text": "規劃每題分鐘（估算）",
+          "lines": 4
+        }
+      ],
+      "inputs": [
+        {
+          "id": "dailyQuestionLimit",
+          "client": 38,
+          "content": 18,
+          "value": "20",
+          "measured": 14.75
+        },
+        {
+          "id": "dailyMinutes",
+          "client": 38,
+          "content": 18,
+          "value": "40",
+          "measured": 14.75
+        },
+        {
+          "id": "planningMinutesPerQuestion",
+          "client": 38,
+          "content": 18,
+          "value": "2",
+          "measured": 7.375
+        }
+      ]
+    },
+    "reloaded-layout.json": {
+      "columns": 4,
+      "client": 296,
+      "scroll": 296,
+      "elements": [
+        {
+          "name": "啟用考前截止日",
+          "left": 0,
+          "right": 40.15625
+        },
+        {
+          "name": "deadlineEnabled",
+          "left": 0,
+          "right": 40.15625
+        },
+        {
+          "name": "目標考試日",
+          "left": 52.15625,
+          "right": 191.65625
+        },
+        {
+          "name": "targetExamDate",
+          "left": 52.15625,
+          "right": 191.65625
+        },
+        {
+          "name": "每日題量上限",
+          "left": 203.65625,
+          "right": 243.828125
+        },
+        {
+          "name": "dailyQuestionLimit",
+          "left": 203.65625,
+          "right": 243.828125
+        },
+        {
+          "name": "每日分鐘上限",
+          "left": 255.828125,
+          "right": 296
+        },
+        {
+          "name": "dailyMinutes",
+          "left": 255.828125,
+          "right": 296
+        },
+        {
+          "name": "規劃每題分鐘（估算）",
+          "left": 0,
+          "right": 40.15625
+        },
+        {
+          "name": "planningMinutesPerQuestion",
+          "left": 0,
+          "right": 40.15625
+        }
+      ],
+      "labels": [
+        {
+          "text": " 啟用考前截止日",
+          "lines": 3
+        },
+        {
+          "text": "目標考試日",
+          "lines": 1
+        },
+        {
+          "text": "每日題量上限",
+          "lines": 2
+        },
+        {
+          "text": "每日分鐘上限",
+          "lines": 2
+        },
+        {
+          "text": "規劃每題分鐘（估算）",
+          "lines": 4
+        }
+      ],
+      "inputs": [
+        {
+          "id": "dailyQuestionLimit",
+          "client": 38,
+          "content": 18,
+          "value": "42",
+          "measured": 14.75
+        },
+        {
+          "id": "dailyMinutes",
+          "client": 38,
+          "content": 18,
+          "value": "0",
+          "measured": 7.375
+        },
+        {
+          "id": "planningMinutesPerQuestion",
+          "client": 38,
+          "content": 18,
+          "value": "120",
+          "measured": 22.125
+        }
+      ]
+    }
+  },
+  "1280": {
+    "initial-layout.json": {
+      "columns": 4,
+      "client": 690,
+      "scroll": 690,
+      "elements": [
+        {
+          "name": "啟用考前截止日",
+          "left": 0,
+          "right": 163.5
+        },
+        {
+          "name": "deadlineEnabled",
+          "left": 60.15625,
+          "right": 163.5
+        },
+        {
+          "name": "目標考試日",
+          "left": 175.5,
+          "right": 339
+        },
+        {
+          "name": "targetExamDate",
+          "left": 175.5,
+          "right": 339
+        },
+        {
+          "name": "每日題量上限",
+          "left": 351,
+          "right": 514.5
+        },
+        {
+          "name": "dailyQuestionLimit",
+          "left": 351,
+          "right": 514.5
+        },
+        {
+          "name": "每日分鐘上限",
+          "left": 526.5,
+          "right": 690
+        },
+        {
+          "name": "dailyMinutes",
+          "left": 526.5,
+          "right": 690
+        },
+        {
+          "name": "規劃每題分鐘（估算）",
+          "left": 0,
+          "right": 163.5
+        },
+        {
+          "name": "planningMinutesPerQuestion",
+          "left": 0,
+          "right": 163.5
+        }
+      ],
+      "labels": [
+        {
+          "text": " 啟用考前截止日",
+          "lines": 1
+        },
+        {
+          "text": "目標考試日",
+          "lines": 1
+        },
+        {
+          "text": "每日題量上限",
+          "lines": 1
+        },
+        {
+          "text": "每日分鐘上限",
+          "lines": 1
+        },
+        {
+          "text": "規劃每題分鐘（估算）",
+          "lines": 1
+        }
+      ],
+      "inputs": [
+        {
+          "id": "dailyQuestionLimit",
+          "client": 162,
+          "content": 142,
+          "value": "20",
+          "measured": 14.75
+        },
+        {
+          "id": "dailyMinutes",
+          "client": 162,
+          "content": 142,
+          "value": "40",
+          "measured": 14.75
+        },
+        {
+          "id": "planningMinutesPerQuestion",
+          "client": 162,
+          "content": 142,
+          "value": "2",
+          "measured": 7.375
+        }
+      ]
+    },
+    "reloaded-layout.json": {
+      "columns": 4,
+      "client": 690,
+      "scroll": 690,
+      "elements": [
+        {
+          "name": "啟用考前截止日",
+          "left": 0,
+          "right": 163.5
+        },
+        {
+          "name": "deadlineEnabled",
+          "left": 60.15625,
+          "right": 163.5
+        },
+        {
+          "name": "目標考試日",
+          "left": 175.5,
+          "right": 339
+        },
+        {
+          "name": "targetExamDate",
+          "left": 175.5,
+          "right": 339
+        },
+        {
+          "name": "每日題量上限",
+          "left": 351,
+          "right": 514.5
+        },
+        {
+          "name": "dailyQuestionLimit",
+          "left": 351,
+          "right": 514.5
+        },
+        {
+          "name": "每日分鐘上限",
+          "left": 526.5,
+          "right": 690
+        },
+        {
+          "name": "dailyMinutes",
+          "left": 526.5,
+          "right": 690
+        },
+        {
+          "name": "規劃每題分鐘（估算）",
+          "left": 0,
+          "right": 163.5
+        },
+        {
+          "name": "planningMinutesPerQuestion",
+          "left": 0,
+          "right": 163.5
+        }
+      ],
+      "labels": [
+        {
+          "text": " 啟用考前截止日",
+          "lines": 1
+        },
+        {
+          "text": "目標考試日",
+          "lines": 1
+        },
+        {
+          "text": "每日題量上限",
+          "lines": 1
+        },
+        {
+          "text": "每日分鐘上限",
+          "lines": 1
+        },
+        {
+          "text": "規劃每題分鐘（估算）",
+          "lines": 1
+        }
+      ],
+      "inputs": [
+        {
+          "id": "dailyQuestionLimit",
+          "client": 162,
+          "content": 142,
+          "value": "53",
+          "measured": 14.75
+        },
+        {
+          "id": "dailyMinutes",
+          "client": 162,
+          "content": 142,
+          "value": "1440",
+          "measured": 29.5
+        },
+        {
+          "id": "planningMinutesPerQuestion",
+          "client": 162,
+          "content": 142,
+          "value": "0.5",
+          "measured": 18.8125
+        }
+      ]
+    }
+  }
+}
