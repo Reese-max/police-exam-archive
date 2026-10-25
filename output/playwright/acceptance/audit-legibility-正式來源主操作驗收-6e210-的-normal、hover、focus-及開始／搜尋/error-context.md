@@ -1,0 +1,280 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "← 回到首頁" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+      - generic [ref=e5]: 考古題資料庫 · 模擬測驗
+      - heading "模擬考試" [level=1] [ref=e6]
+      - paragraph [ref=e7]: 隨機出題・計時作答・自動批改。
+      - paragraph [ref=e8]:
+        - text: 完整題庫：36,760 道選擇題、5,758 道申論題，共 42,518 題。
+        - text: 本頁練習題池包含 36,760 道選擇題。
+        - link "統計依據" [ref=e9] [cursor=pointer]:
+          - /url: https://github.com/Reese-max/police-exam-archive/blob/master/考古題庫/quality_summary.json
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e13]: 測驗設定
+        - generic [ref=e14]: 選擇範圍與條件，系統將隨機組卷。
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - generic [ref=e17]: 類科
+            - combobox [ref=e19] [cursor=pointer]:
+              - option "全部類科" [selected]
+              - option "中華民國憲法與水上警察學系專業英文"
+              - option "中華民國憲法與水上警察專業英文"
+              - option "中華民國憲法與消防學系專業英文"
+              - option "中華民國憲法與消防警察專業英文"
+              - option "交通學系交通組"
+              - option "交通學系電訊組"
+              - option "交通警察交通組"
+              - option "交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)"
+              - option "交通警察電訊組"
+              - option "公共安全"
+              - option "公共安全學系社安組"
+              - option "公共安全學系社安組學系情報組"
+              - option "刑事警察"
+              - option "刑事警察學系"
+              - option "國境警察"
+              - option "國境警察學系境管組"
+              - option "國境警察學系移民組"
+              - option "外事警察"
+              - option "外事警察學"
+              - option "外事警察學系"
+              - option "外事警察學系學"
+              - option "水上警察"
+              - option "水上警察學"
+              - option "水上警察學系"
+              - option "水上警察學系學"
+              - option "水上警察學系情境實務(包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序)"
+              - option "水上警察情境實務(包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序)"
+              - option "法律學系"
+              - option "法律學系作業"
+              - option "消防學系"
+              - option "消防學系情境實務(包括消防法規、實務操作標準作業程序、人權保障與正當法律程序)"
+              - option "消防警察"
+              - option "消防警察情境實務(包括消防法規、實務操作標準作業程序、人權保障與正當法律程序)"
+              - option "犯罪防治學系矯治組"
+              - option "犯罪防治學系預防組"
+              - option "犯罪防治矯治組"
+              - option "犯罪防治預防組"
+              - option "行政管理"
+              - option "行政管理學系"
+              - option "行政警察"
+              - option "行政警察學系"
+              - option "警察法制"
+              - option "警察法制作業"
+              - option "警政資訊管理學系與應用"
+              - option "警政資訊管理與應用"
+              - option "資訊管理"
+              - option "資訊管理學系"
+              - option "鑑識科學"
+              - option "鑑識科學學系"
+          - generic [ref=e20]:
+            - generic [ref=e21]: 年份
+            - combobox [ref=e23] [cursor=pointer]:
+              - option "全部年份" [selected]
+              - option "115 年"
+              - option "114 年"
+              - option "113 年"
+              - option "112 年"
+              - option "111 年"
+              - option "110 年"
+              - option "109 年"
+              - option "108 年"
+              - option "107 年"
+              - option "106 年"
+        - generic [ref=e24]:
+          - generic [ref=e25]: 科目
+          - combobox [ref=e27] [cursor=pointer]:
+            - option "全部科目" [selected]
+            - option "中華民國憲法與水上警察專業英文"
+            - option "中華民國憲法與消防警察專業英文"
+            - option "中華民國憲法與警察專業英文"
+            - option "交通工程與管制"
+            - option "交通統計與分析"
+            - option "交通警察學(包括交通行政與組織、交通法規與執法、交通事故處理與偵查、交通安全策略與宣導)"
+            - option "偵查法學"
+            - option "偵查法學與刑事司法作業"
+            - option "偵查法學與犯罪偵查"
+            - option "入出國及移民法規(包括入出國及移民法、人口販運防制法、國籍法、就業服務法、臺灣地區與大陸地區人民關係條例、香港澳門關係條例、護照條例、外國護照簽證條例、涉外民事"
+            - option "刑事化學"
+            - option "刑事政策"
+            - option "刑事政策與犯罪學"
+            - option "刑事生物"
+            - option "刑案現場處理與刑事鑑識"
+            - option "刑法"
+            - option "刑法與少年事件處理法"
+            - option "國土安全與國境安全管理"
+            - option "國土安全與移民政策(包括移民人權)"
+            - option "國土安全與非傳統安全"
+            - option "國境執法"
+            - option "國境執法與刑事法(包括刑法與刑事訴訟法)"
+            - option "國家安全(含傳統安全與非傳統安全)"
+            - option "國家安全情報法制"
+            - option "國家安全相關法規(包括國家機密保護法、國家情報工作法、國家安全法、通訊保障及監察法、特種勤務條例)"
+            - option "國家安全相關法規（包括國家機密保護法、國家情報工作法、國家安全法、通訊保障及監察法、特種勤務條例）"
+            - option "國家安全（含傳統安全與非傳統安全）"
+            - option "國文(作文、公文與測驗)"
+            - option "國文(作文與測驗)"
+            - option "國文（作文、公文與測驗）"
+            - option "國文（作文與測驗）"
+            - option "國際海洋法"
+            - option "國際警察合作與跨國(境)犯罪防制"
+            - option "國際警察合作與跨國（境）犯罪防制"
+            - option "外事警察學"
+            - option "外國文(俄文兼試移民專業英文)"
+            - option "外國文(印尼文兼試移民專業英文)"
+            - option "外國文(德文兼試移民專業英文)"
+            - option "外國文(日文兼試移民專業英文)"
+            - option "外國文(法文兼試移民專業英文)"
+            - option "外國文(泰文兼試移民專業英文)"
+            - option "外國文(英文)"
+            - option "外國文(英文兼試移民專業英文)"
+            - option "外國文(葡萄牙文兼試移民專業英文)"
+            - option "外國文(西班牙文兼試移民專業英文)"
+            - option "外國文(越南文兼試移民專業英文)"
+            - option "外國文(韓文兼試移民專業英文)"
+            - option "外國文（日文）"
+            - option "外國文（英文）"
+            - option "心理測驗"
+            - option "情報學"
+            - option "情報學(含各國安全制度)"
+            - option "情報學（含各國安全制度）"
+            - option "數位鑑識執法"
+            - option "水上警察學"
+            - option "水上警察情境實務(包括海巡法規、實務操作標準作業程序、人權保障與正當法律程序)"
+            - option "法學知識與英文(包括中華民國憲法、法學緒論、英文)"
+            - option "法學知識與英文（包括中華民國憲法、法學緒論、英文）"
+            - option "海上犯罪偵查法學"
+            - option "海巡法規(包括國家安全法、臺灣地區與大陸地區人民關係條例、海岸巡防法、海岸巡防機關器械使用條例、海關緝私條例、中華民國領海及鄰接區法、中華民國專屬經濟海域及大陸"
+            - option "海巡法規（包括國家安全法、臺灣地區與大陸地區人民關係條例、海岸巡防法、海岸巡防機關器械使用條例、海關緝私條例、中華民國領海及鄰接區法、中華民國專屬經濟海域及大陸"
+            - option "消防安全設備"
+            - option "消防戰術(包括消防戰術、消防機械、緊急救護)"
+            - option "消防戰術（包括消防戰術、消防機械、緊急救護）"
+            - option "消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體製造儲存處理場所設置標準暨安全管理辦法、"
+            - option "消防與災害防救法規(包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊"
+            - option "消防與災害防救法規（包括消防法及施行細則、災害防救法及施行細則、爆竹煙火管理條例及施行細則、公共危險物品及可燃性高壓氣體設置標準暨安全管理辦法、緊急救護辦法、緊"
+            - option "消防警察情境實務(包括消防法規、實務操作標準作業程序、人權保障與正當法律程序)"
+            - option "火災學與消防化學"
+            - option "物理鑑識"
+            - option "犯罪偵查"
+            - option "犯罪偵查學"
+            - option "犯罪分析"
+            - option "犯罪學與再犯預測"
+            - option "犯罪學與犯罪預防"
+            - option "監獄學"
+            - option "監獄行刑法"
+            - option "監獄行刑法與羈押法"
+            - option "移民情勢與政策分析"
+            - option "綜合法政知識與英文(包括中華民國憲法、法學緒論、兩岸關係、英文)"
+            - option "綜合法政知識與英文（包括中華民國憲法、法學緒論、兩岸關係、英文）"
+            - option "行政法"
+            - option "行政法與警察行政違規調查裁處作業"
+            - option "諮商與矯正輔導"
+            - option "諮商與輔導"
+            - option "諮商輔導與婦幼保護"
+            - option "警察人事行政與法制"
+            - option "警察危機應變與安全管理"
+            - option "警察學與警察勤務"
+            - option "警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)"
+            - option "警察情境實務（包括警察法規、實務操作標準作業程序、人權保障與正當法律程序）"
+            - option "警察政策與犯罪預防"
+            - option "警察法制作業"
+            - option "警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)"
+            - option "警察法規（包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法）"
+            - option "警察組織與事務管理"
+            - option "警政資訊管理與應用"
+            - option "通訊犯罪偵查"
+            - option "通訊系統"
+            - option "電腦犯罪偵查"
+            - option "電路學"
+        - generic [ref=e28]:
+          - generic [ref=e29]: 題目數量
+          - generic [ref=e30]:
+            - button "10 題" [ref=e31] [cursor=pointer]
+            - button "20 題" [ref=e32] [cursor=pointer]
+            - button "30 題" [ref=e33] [cursor=pointer]
+            - button "50 題" [ref=e34] [cursor=pointer]
+        - generic [ref=e35]:
+          - generic [ref=e36]: 考試時間
+          - generic [ref=e37]:
+            - button "不限時" [ref=e38] [cursor=pointer]
+            - button "30 分" [ref=e39] [cursor=pointer]
+            - button "60 分" [ref=e40] [cursor=pointer]
+            - button "90 分" [ref=e41] [cursor=pointer]
+            - button "120 分" [ref=e42] [cursor=pointer]
+        - button "開始考試" [ref=e43] [cursor=pointer]
+        - paragraph [ref=e44]: 符合條件的選擇題：36,760 題
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - heading "今日複習" [level=2] [ref=e47]
+          - generic [ref=e48]: 20 題
+        - paragraph [ref=e49]: 根據每題的作答事實、標記與科目覆蓋，產生可重播的官方題目佇列。
+        - generic [ref=e50]:
+          - generic [ref=e52]:
+            - checkbox "啟用考前截止日" [ref=e53]
+            - text: 啟用考前截止日
+          - generic [ref=e54]:
+            - text: 目標考試日
+            - textbox "目標考試日" [ref=e55]
+          - generic [ref=e56]:
+            - text: 每日題量上限
+            - spinbutton "每日題量上限" [ref=e57]: "20"
+          - generic [ref=e58]:
+            - text: 每日分鐘上限
+            - spinbutton "每日分鐘上限" [ref=e59]: "40"
+          - generic [ref=e60]:
+            - text: 規劃每題分鐘（估算）
+            - spinbutton "規劃每題分鐘（估算）" [ref=e61]: "2"
+        - generic [ref=e62]: 佇列依序涵蓋錯題、未答、標記、到期與科目覆蓋；相同資料會重建相同順序。
+        - list "今日複習題目與原因" [ref=e63]:
+          - listitem [ref=e64]:
+            - generic [ref=e65]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|1
+            - generic [ref=e66]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e67]:
+            - generic [ref=e68]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|10
+            - generic [ref=e69]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e70]:
+            - generic [ref=e71]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|11
+            - generic [ref=e72]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e73]:
+            - generic [ref=e74]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|12
+            - generic [ref=e75]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e76]:
+            - generic [ref=e77]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|13
+            - generic [ref=e78]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e79]:
+            - generic [ref=e80]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|14
+            - generic [ref=e81]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e82]:
+            - generic [ref=e83]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|15
+            - generic [ref=e84]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e85]:
+            - generic [ref=e86]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|16
+            - generic [ref=e87]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e88]:
+            - generic [ref=e89]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|17
+            - generic [ref=e90]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e91]:
+            - generic [ref=e92]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|18
+            - generic [ref=e93]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e94]:
+            - generic [ref=e95]: 中華民國憲法與水上警察學系專業英文|106|中華民國憲法與水上警察專業英文|19
+            - generic [ref=e96]: 探索新題 · 本科目近期覆蓋不足
+          - listitem [ref=e97]:
+            - generic [ref=e98]: 中華民國憲法與水上警察專業英文|106|中華民國憲法與水上警察專業英文|1
+            - generic [ref=e99]: 探索新題 · 本科目近期覆蓋不足
+        - generic [ref=e100]:
+          - button "開始今日複習" [ref=e101] [cursor=pointer]
+          - button "匯出學習資料" [ref=e102] [cursor=pointer]
+          - button "匯入學習資料" [ref=e103] [cursor=pointer]
+          - button "清除學習資料" [ref=e104] [cursor=pointer]
+    - contentinfo [ref=e105]:
+      - text: 資料來源：
+      - strong [ref=e106]: 考選部考畢試題查詢平臺
+  - button "切換深色模式" [ref=e107] [cursor=pointer]
+```

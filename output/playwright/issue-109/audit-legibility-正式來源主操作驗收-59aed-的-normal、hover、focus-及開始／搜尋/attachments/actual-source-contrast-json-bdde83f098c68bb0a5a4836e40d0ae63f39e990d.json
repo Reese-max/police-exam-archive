@@ -1,0 +1,70 @@
+{
+  "width": 1280,
+  "theme": "light",
+  "observations": [
+    {
+      "selector": "#startBtn",
+      "state": "normal",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(74, 124, 94)",
+      "ratio": 4.843329523833901,
+      "disabled": false
+    },
+    {
+      "selector": "#startBtn",
+      "state": "hover",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(61, 107, 80)",
+      "ratio": 6.145138717164307,
+      "disabled": false
+    },
+    {
+      "selector": "#startBtn",
+      "state": "focus",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(74, 124, 94)",
+      "ratio": 4.843329523833901,
+      "disabled": false
+    },
+    {
+      "selector": "#searchBtn",
+      "state": "normal",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(74, 124, 94)",
+      "ratio": 4.843329523833901,
+      "disabled": false
+    },
+    {
+      "selector": "#searchBtn",
+      "state": "hover",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(61, 107, 80)",
+      "ratio": 6.145138717164307,
+      "disabled": false
+    },
+    {
+      "selector": "#searchBtn",
+      "state": "focus",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(74, 124, 94)",
+      "ratio": 4.843329523833901,
+      "disabled": false
+    },
+    {
+      "selector": ".opt.correct .lbl",
+      "state": "normal",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(74, 124, 94)",
+      "ratio": 4.843329523833901,
+      "disabled": false
+    },
+    {
+      "selector": ".ans-pill",
+      "state": "normal",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(74, 124, 94)",
+      "ratio": 4.843329523833901,
+      "disabled": false
+    }
+  ]
+}
