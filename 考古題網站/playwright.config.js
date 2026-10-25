@@ -1,5 +1,5 @@
 const { defineConfig } = require('@playwright/test');
-const path = require('path');
+const port = Number(process.env.PLAYWRIGHT_PORT || 8765);
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -9,13 +9,14 @@ module.exports = defineConfig({
   retries: 0,
   reporter: 'list',
   use: {
-    baseURL: 'http://localhost:8765',
+    baseURL: `http://localhost:${port}`,
     headless: true,
     screenshot: 'only-on-failure',
   },
   webServer: {
-    command: 'npx serve . -l 8765 --no-clipboard',
-    port: 8765,
-    reuseExistingServer: true,
+    command: `python -X utf8 ../scripts/build_search_index.py && npx serve . -l ${port} --no-clipboard`,
+    port,
+    reuseExistingServer: false,
+    timeout: 120000,
   },
 });
