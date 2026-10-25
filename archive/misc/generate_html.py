@@ -857,6 +857,16 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('#yearView .subject-card').forEach(function(card) {
     window._cardTextCache.set(card, card.textContent.toLowerCase());
   });
+
+  // Generated controls start unavailable: an early click must not call a
+  // missing handler or silently lose a filter while this deferred file loads.
+  document.querySelectorAll('[data-app-pending]').forEach(function(control) {
+    control.removeAttribute('disabled');
+    control.removeAttribute('inert');
+    control.removeAttribute('data-app-pending');
+  });
+  const loadingStatus = document.getElementById('appLoadingStatus');
+  if (loadingStatus) loadingStatus.hidden = true;
 });
 
 /* === Bookmarks === */
@@ -1599,6 +1609,7 @@ def generate_category_page(category_name, years_data, output_dir, pdf_links_by_c
   <div class="stat-item"><div class="stat-value">{total_questions}</div><div class="stat-label">題目</div></div>
 </div>
 <div class="search-box" role="search" aria-label="考古題內容搜尋">
+  <p id="appLoadingStatus" role="status">互動功能載入中，完成後即可操作；若一直未完成，請重新整理。</p>
   <input type="text" class="search-input" id="searchInput" placeholder="搜尋關鍵字..." oninput="debouncedSearch(this.value)" aria-label="搜尋考古題關鍵字" aria-describedby="searchStats">
   <div class="search-filters" id="searchFilters">
 {filter_chips}
@@ -1642,7 +1653,7 @@ def generate_category_page(category_name, years_data, output_dir, pdf_links_by_c
   資料來源：考選部考畢試題查詢平臺 ・ 生成時間：{datetime.now().strftime('%Y-%m-%d')}
 </footer>
 {subject_keys_script}
-<script src="../js/app.js" defer></script>
+<script src="../js/app.js?v=category-ready-1" defer></script>
 <script>
 if ('serviceWorker' in navigator) {{
   navigator.serviceWorker.register('../sw.js', {{scope: '../'}}).catch(function() {{}});
@@ -1650,6 +1661,20 @@ if ('serviceWorker' in navigator) {{
 </script>
 </body>
 </html>'''
+
+    # All native controls and custom button headers on this generated page
+    # depend on the shared deferred app. Keep ordinary links and question text
+    # intact; the app releases these gates only after its setup completes.
+    page_html = re.sub(
+        r'<(?:button|input|select)\b[^>]*>',
+        lambda match: match.group(0)[:-1] + ' disabled data-app-pending>',
+        page_html,
+    )
+    page_html = re.sub(
+        r'<div\b[^>]*\brole="button"[^>]*>',
+        lambda match: match.group(0)[:-1] + ' inert data-app-pending>',
+        page_html,
+    )
 
     cat_dir = os.path.join(output_dir, category_name)
     os.makedirs(cat_dir, exist_ok=True)

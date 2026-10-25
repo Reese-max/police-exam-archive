@@ -303,6 +303,16 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('#yearView .subject-card').forEach(function(card) {
     window._cardTextCache.set(card, card.textContent.toLowerCase());
   });
+
+  // Generated controls start unavailable: an early click must not call a
+  // missing handler or silently lose a filter while this deferred file loads.
+  document.querySelectorAll('[data-app-pending]').forEach(function(control) {
+    control.removeAttribute('disabled');
+    control.removeAttribute('inert');
+    control.removeAttribute('data-app-pending');
+  });
+  const loadingStatus = document.getElementById('appLoadingStatus');
+  if (loadingStatus) loadingStatus.hidden = true;
 });
 
 /* === Bookmarks === */
@@ -939,7 +949,7 @@ function _loadPdfLibraries() {
     })
     .then(function() {
       var appScript = document.querySelector('script[src*="app.js"]');
-      var base = appScript ? appScript.getAttribute('src').replace('app.js', '') : '../js/';
+      var base = appScript ? new URL('.', appScript.src).href : '../js/';
       return loadScript(base + 'pdf-export.js');
     })
     .then(function() {

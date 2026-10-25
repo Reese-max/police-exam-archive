@@ -31,15 +31,15 @@
 </head>
 <body>
 <a href="#searchInput" class="skip-link">跳至搜尋</a>
-<button class="hamburger" id="hamburgerBtn" aria-label="開啟導航選單" aria-expanded="false">&#9776;</button>
+<button class="hamburger" id="hamburgerBtn" aria-label="開啟導航選單" aria-expanded="false" disabled data-app-pending>&#9776;</button>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
-<button class="sidebar-reopen" id="sidebarReopen" aria-label="展開導航">&#9776;</button>
+<button class="sidebar-reopen" id="sidebarReopen" aria-label="展開導航" disabled data-app-pending>&#9776;</button>
 <nav class="sidebar" id="sidebar" aria-label="年份導航">
-<div class="sidebar-title"><span>📡 交通學系電訊組</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="收合導航">&#10005;</button></div>
+<div class="sidebar-title"><span>📡 交通學系電訊組</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="收合導航" disabled data-app-pending>&#10005;</button></div>
 <a class="sidebar-home" href="../index.html">&#8592; 回到首頁</a>
 <a class="sidebar-home" href="../search.html">全文搜尋</a>
 <a class="sidebar-home" href="../quiz.html">模擬考試</a>
-<div class="sidebar-year" role="button" tabindex="0" aria-expanded="false">111年</div>
+<div class="sidebar-year" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>111年</div>
 <div class="sidebar-subjects">
 <a class="sidebar-link" href="#y111-15a7b19c" title="中華民國憲法與警察專業英文">中華民國憲法與警察專業英文</a>
 <a class="sidebar-link" href="#y111-359207d9" title="國文(作文、公文與測驗)">國文(作文、公文與測驗)</a>
@@ -49,7 +49,7 @@
 <a class="sidebar-link" href="#y111-fb37b2de" title="通訊系統">通訊系統</a>
 <a class="sidebar-link" href="#y111-61c8fe92" title="電路學">電路學</a>
 </div>
-<div class="sidebar-year" role="button" tabindex="0" aria-expanded="false">110年</div>
+<div class="sidebar-year" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>110年</div>
 <div class="sidebar-subjects">
 <a class="sidebar-link" href="#y110-15a7b19c" title="中華民國憲法與警察專業英文">中華民國憲法與警察專業英文</a>
 <a class="sidebar-link" href="#y110-359207d9" title="國文(作文、公文與測驗)">國文(作文、公文與測驗)</a>
@@ -59,7 +59,7 @@
 <a class="sidebar-link" href="#y110-fb37b2de" title="通訊系統">通訊系統</a>
 <a class="sidebar-link" href="#y110-61c8fe92" title="電路學">電路學</a>
 </div>
-<div class="sidebar-year" role="button" tabindex="0" aria-expanded="false">109年</div>
+<div class="sidebar-year" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>109年</div>
 <div class="sidebar-subjects">
 <a class="sidebar-link" href="#y109-15a7b19c" title="中華民國憲法與警察專業英文">中華民國憲法與警察專業英文</a>
 <a class="sidebar-link" href="#y109-359207d9" title="國文(作文、公文與測驗)">國文(作文、公文與測驗)</a>
@@ -69,7 +69,7 @@
 <a class="sidebar-link" href="#y109-fb37b2de" title="通訊系統">通訊系統</a>
 <a class="sidebar-link" href="#y109-61c8fe92" title="電路學">電路學</a>
 </div>
-<div class="sidebar-year" role="button" tabindex="0" aria-expanded="false">107年</div>
+<div class="sidebar-year" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>107年</div>
 <div class="sidebar-subjects">
 <a class="sidebar-link" href="#y107-15a7b19c" title="中華民國憲法與警察專業英文">中華民國憲法與警察專業英文</a>
 <a class="sidebar-link" href="#y107-359207d9" title="國文(作文、公文與測驗)">國文(作文、公文與測驗)</a>
@@ -81,8 +81,8 @@
 </div>
 
 </nav>
-<button class="back-to-top" id="backToTop" aria-label="回到頂部">&#8593;</button>
-<button class="dark-toggle" id="darkToggle" aria-label="切換深色模式">
+<button class="back-to-top" id="backToTop" aria-label="回到頂部" disabled data-app-pending>&#8593;</button>
+<button class="dark-toggle" id="darkToggle" aria-label="切換深色模式" disabled data-app-pending>
 <svg class="dark-icon-moon" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 <svg class="dark-icon-sun" viewBox="0 0 24 24" fill="none" stroke="#ecc94b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
@@ -95,13 +95,14 @@
   <div class="stat-item"><div class="stat-value">551</div><div class="stat-label">題目</div></div>
 </div>
 <div class="search-box" role="search" aria-label="考古題內容搜尋">
-  <input type="text" class="search-input" id="searchInput" placeholder="搜尋關鍵字..." oninput="debouncedSearch(this.value)" aria-label="搜尋考古題關鍵字" aria-describedby="searchStats">
+  <p id="appLoadingStatus" role="status">互動功能載入中，完成後即可操作；若一直未完成，請重新整理。</p>
+  <input type="text" class="search-input" id="searchInput" placeholder="搜尋關鍵字..." oninput="debouncedSearch(this.value)" aria-label="搜尋考古題關鍵字" aria-describedby="searchStats" disabled data-app-pending>
   <div class="search-filters" id="searchFilters">
-<button class="filter-chip active" data-year="" onclick="toggleFilter(this,'year')">全部年份</button>
-<button class="filter-chip" data-year="111" onclick="toggleFilter(this,'year')">111</button>
-<button class="filter-chip" data-year="110" onclick="toggleFilter(this,'year')">110</button>
-<button class="filter-chip" data-year="109" onclick="toggleFilter(this,'year')">109</button>
-<button class="filter-chip" data-year="107" onclick="toggleFilter(this,'year')">107</button>
+<button class="filter-chip active" data-year="" onclick="toggleFilter(this,'year')" disabled data-app-pending>全部年份</button>
+<button class="filter-chip" data-year="111" onclick="toggleFilter(this,'year')" disabled data-app-pending>111</button>
+<button class="filter-chip" data-year="110" onclick="toggleFilter(this,'year')" disabled data-app-pending>110</button>
+<button class="filter-chip" data-year="109" onclick="toggleFilter(this,'year')" disabled data-app-pending>109</button>
+<button class="filter-chip" data-year="107" onclick="toggleFilter(this,'year')" disabled data-app-pending>107</button>
 
   </div>
   <div class="search-stats" id="searchStats" aria-live="polite" role="status"><span id="searchStatsText"></span> <span id="searchJump"></span></div>
@@ -109,36 +110,36 @@
 <div class="practice-score" id="practiceScore">
   <span class="score-text">答對 <strong id="scoreCorrect">0</strong> / <strong id="scoreTotal">0</strong> 題</span>
   <span class="score-pct" id="scorePct">--</span>
-  <button class="score-reset" onclick="resetScore()">重新計分</button>
+  <button class="score-reset" onclick="resetScore()" disabled data-app-pending>重新計分</button>
 </div>
 <div class="toolbar" id="toolbar" role="toolbar" aria-label="瀏覽工具列">
-  <button class="toolbar-btn active" id="viewYear" onclick="switchView('year')">依年份瀏覽</button>
-  <button class="toolbar-btn" id="viewSubject" onclick="switchView('subject')">依科目瀏覽</button>
+  <button class="toolbar-btn active" id="viewYear" onclick="switchView('year')" disabled data-app-pending>依年份瀏覽</button>
+  <button class="toolbar-btn" id="viewSubject" onclick="switchView('subject')" disabled data-app-pending>依科目瀏覽</button>
   <span class="toolbar-sep"></span>
-  <button class="toolbar-btn" id="practiceToggle" onclick="togglePractice()">練習模式</button>
-  <button class="toolbar-btn" id="answerToggle" onclick="toggleAllAnswers(this)">顯示答案</button>
-  <button class="toolbar-btn bookmark-filter" id="bookmarkFilter" onclick="toggleBookmarkFilter()" aria-pressed="false">只看書籤</button>
+  <button class="toolbar-btn" id="practiceToggle" onclick="togglePractice()" disabled data-app-pending>練習模式</button>
+  <button class="toolbar-btn" id="answerToggle" onclick="toggleAllAnswers(this)" disabled data-app-pending>顯示答案</button>
+  <button class="toolbar-btn bookmark-filter" id="bookmarkFilter" onclick="toggleBookmarkFilter()" aria-pressed="false" disabled data-app-pending>只看書籤</button>
   <span class="toolbar-sep"></span>
-  <select class="toolbar-select" id="subjectFilter" aria-label="科目篩選" onchange="filterBySubject(this.value)">
+  <select class="toolbar-select" id="subjectFilter" aria-label="科目篩選" onchange="filterBySubject(this.value)" disabled data-app-pending>
     <option value="">全部科目</option>
   </select>
   <span class="toolbar-sep"></span>
-  <button class="toolbar-btn" id="exportBtn" onclick="showExportPanel()" aria-label="匯出 PDF">匯出 PDF</button>
+  <button class="toolbar-btn" id="exportBtn" onclick="showExportPanel()" aria-label="匯出 PDF" disabled data-app-pending>匯出 PDF</button>
 </div>
 <div class="export-panel" id="exportPanel" style="display:none" role="dialog" aria-label="匯出設定">
   <p class="export-title">匯出設定</p>
   <div id="exportSelectors"></div>
   <div class="export-actions">
-  <button class="export-option" onclick="exportPDF(true)">&#128203; 含答案（複習用）</button>
-  <button class="export-option" onclick="exportPDF(false)">&#128221; 不含答案（練習用）</button>
+  <button class="export-option" onclick="exportPDF(true)" disabled data-app-pending>&#128203; 含答案（複習用）</button>
+  <button class="export-option" onclick="exportPDF(false)" disabled data-app-pending>&#128221; 不含答案（練習用）</button>
   </div>
-  <button class="export-cancel" onclick="hideExportPanel()">取消</button>
+  <button class="export-cancel" onclick="hideExportPanel()" disabled data-app-pending>取消</button>
 </div>
 <div id="yearView">
 <div class="year-section" id="year-111">
 <h2 class="year-heading">111年</h2>
 <div class="subject-card" id="y111-15a7b19c">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>中華民國憲法與警察專業英文</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -765,7 +766,7 @@
 </div>
 </div>
 <div class="subject-card" id="y111-359207d9">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>國文(作文、公文與測驗)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -887,7 +888,7 @@
 </div>
 </div>
 <div class="subject-card" id="y111-c79e95c1">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -1112,7 +1113,7 @@
 </div>
 </div>
 <div class="subject-card" id="y111-3cd81d5f">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -1386,7 +1387,7 @@
 </div>
 </div>
 <div class="subject-card" id="y111-62ceea3a">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>通訊犯罪偵查</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -1409,7 +1410,7 @@
 </div>
 </div>
 <div class="subject-card" id="y111-fb37b2de">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>通訊系統</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -1433,7 +1434,7 @@
 </div>
 </div>
 <div class="subject-card" id="y111-61c8fe92">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>電路學</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -1463,7 +1464,7 @@
 <div class="year-section" id="year-110">
 <h2 class="year-heading">110年</h2>
 <div class="subject-card" id="y110-15a7b19c">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>中華民國憲法與警察專業英文</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -2088,7 +2089,7 @@
 </div>
 </div>
 <div class="subject-card" id="y110-359207d9">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>國文(作文、公文與測驗)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -2210,7 +2211,7 @@
 </div>
 </div>
 <div class="subject-card" id="y110-c79e95c1">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -2435,7 +2436,7 @@
 </div>
 </div>
 <div class="subject-card" id="y110-3cd81d5f">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -2709,7 +2710,7 @@
 </div>
 </div>
 <div class="subject-card" id="y110-62ceea3a">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>通訊犯罪偵查</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -2732,7 +2733,7 @@
 </div>
 </div>
 <div class="subject-card" id="y110-fb37b2de">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>通訊系統</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -2757,7 +2758,7 @@
 </div>
 </div>
 <div class="subject-card" id="y110-61c8fe92">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>電路學</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -2789,7 +2790,7 @@
 <div class="year-section" id="year-109">
 <h2 class="year-heading">109年</h2>
 <div class="subject-card" id="y109-15a7b19c">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>中華民國憲法與警察專業英文</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -3413,7 +3414,7 @@
 </div>
 </div>
 <div class="subject-card" id="y109-359207d9">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>國文(作文、公文與測驗)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -3535,7 +3536,7 @@
 </div>
 </div>
 <div class="subject-card" id="y109-c79e95c1">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -3760,7 +3761,7 @@
 </div>
 </div>
 <div class="subject-card" id="y109-3cd81d5f">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -4034,7 +4035,7 @@
 </div>
 </div>
 <div class="subject-card" id="y109-62ceea3a">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>通訊犯罪偵查</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -4057,7 +4058,7 @@
 </div>
 </div>
 <div class="subject-card" id="y109-fb37b2de">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>通訊系統</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -4081,7 +4082,7 @@
 </div>
 </div>
 <div class="subject-card" id="y109-61c8fe92">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>電路學</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -4111,7 +4112,7 @@
 <div class="year-section" id="year-107">
 <h2 class="year-heading">107年</h2>
 <div class="subject-card" id="y107-15a7b19c">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>中華民國憲法與警察專業英文</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -4737,7 +4738,7 @@
 </div>
 </div>
 <div class="subject-card" id="y107-359207d9">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>國文(作文、公文與測驗)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -4859,7 +4860,7 @@
 </div>
 </div>
 <div class="subject-card" id="y107-c79e95c1">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -5084,7 +5085,7 @@
 </div>
 </div>
 <div class="subject-card" id="y107-3cd81d5f">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -5358,7 +5359,7 @@
 </div>
 </div>
 <div class="subject-card" id="y107-62ceea3a">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>通訊犯罪偵查</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -5381,7 +5382,7 @@
 </div>
 </div>
 <div class="subject-card" id="y107-fb37b2de">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>通訊系統</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -5405,7 +5406,7 @@
 </div>
 </div>
 <div class="subject-card" id="y107-61c8fe92">
-<div class="subject-header" role="button" tabindex="0" aria-expanded="false">
+<div class="subject-header" role="button" tabindex="0" aria-expanded="false" inert data-app-pending>
   <h3>電路學</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
@@ -5442,7 +5443,7 @@
   資料來源：考選部考畢試題查詢平臺 ・ 生成時間：2026-10-21
 </footer>
 <script>const SUBJECT_KEYS=["中華民國憲法與警察專業英文", "國文(作文、公文與測驗)", "警察情境實務(包括警察法規、實務操作標準作業程序、人權保障與正當法律程序)", "警察法規(包括警察法、行政執行法、社會秩序維護法、警械使用條例、集會遊行法、警察職權行使法、公務人員行政中立法)", "通訊犯罪偵查", "通訊系統", "電路學"];</script>
-<script src="../js/app.js" defer></script>
+<script src="../js/app.js?v=category-ready-1" defer></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('../sw.js', {scope: '../'}).catch(function() {});
