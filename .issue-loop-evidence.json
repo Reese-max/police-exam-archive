@@ -1,12 +1,12 @@
 {
   "repo": "Reese-max/police-exam-archive",
-  "issue": 109,
-  "base_sha": "36fb1519ed08d40d0d22a8f41672e6d97f2953ef",
-  "red_proof": "Genuine test-harness RED before server-isolation implementation (not an original contrast-defect RED, since admitted base already contains 740c42f1): Error: expect(locator).toBeEnabled() failed\nLocator: locator('#startBtn')\nExpected: enabled\nReceived: disabled\nTimeout: 20000ms\n1 failed; 3 did not run; 6 passed (35.3s).\nFailure snapshot: 符合條件的選擇題：索引載入失敗：HTTP 404. Live process inspection confirmed port 8765 served issue-110's different worktree. The earlier 5000ms run also failed awaiting real-index readiness. Both failures occurred before the configurable-port, no-server-reuse and pre-server index-build changes; product source was never altered to manufacture RED.",
-  "test_command": "cd 考古題網站 && PLAYWRIGHT_PORT=18769 npx playwright test tests/audit-legibility.spec.js --workers=2 --output=../output/playwright/issue-109",
+  "issue": 113,
+  "base_sha": "84ccbdfdb8f041bd8152af92d31d4630d8571905",
+  "red_proof": "Before modifying playwright.config.js, ran in Git Bash: cd 考古題網站 && PLAYWRIGHT_PORT=18773 npx playwright test tests/server-isolation.spec.js --workers=1. Exit 1, 1 failed. The controlled index-builder process bound a foreign HTTP listener only after Playwright spawned it, then kept index construction pending. The regression confirmed foreign-ready existed, but failed at server-isolation.spec.js:47: Error: tests ran before the owned server started; Expected: false; Received: true. After replacing port-only readiness with owned-process stdout readiness, the unchanged regression passed: 1 passed (11.1s), exit 0; it also passed in the complete 57-test suite.",
+  "test_command": "cd 考古題網站 && PLAYWRIGHT_PORT=18773 npx playwright test --workers=2",
   "test_exit": 0,
-  "tests_passed": 10,
+  "tests_passed": 57,
   "tests_failed": 0,
-  "summary": "指定基底已包含 740c42f1 的對比修正，本次保留產品檔案與原始題庫，補齊驗收及測試站來源隔離。新增四組 Chromium 正式來源測試，使用既有產生器與真實索引、比對 HTML 原始位元組，驗證 390px／1280px、深淺色的 normal／hover／Tab focus、20 題開始及正常搜尋，並檢查同族答案標籤與既有停用語意。相關測試 6→10 全過，完整瀏覽器 56、Python 400、Node 28 個測試亦全過；主操作最低實測對比為淺色 4.8433:1、深色 6.6098:1。Playwright 改為先產生索引再啟動獨立伺服器，可指定埠並拒絕沿用既有伺服器，避免驗收另一份 worktree。",
-  "not_done": "沒有重新修改已修復的產品 CSS／HTML／JavaScript，也沒有在指定基底重現原始產品對比缺陷的 RED；red_proof 明確記錄的是本次真實失敗的驗收環境測試，不能視為原始產品缺陷的 TDD 證據。未 push、開 PR、部署或執行遠端 CI；未進行真人使用成效、輔助科技語音或全站 WCAG 認證。沒有新增 lint、coverage ratchet、CRAP 或 mutation 工具。"
+  "summary": "Fixed the startup TOCTOU race with Python stdlib http.server bound to 127.0.0.1 and Playwright wait.stdout tied to its successful bind; no shared-port readiness polling or automatic port switching remains. Added one deterministic startup-race regression and documented the server contract. The Git Bash test_command passed all 57 Playwright tests (1.4m), including four real-source light/dark narrow/desktop Start/Search acceptance groups. Additional validation: PYTHONUTF8=1 REQUIRE_NODE_FOR_TESTS=1 python -m pytest tests -q --tb=short passed 400 tests; node --test 考古題網站/tests/analytics-pair.test.js 考古題網站/tests/analytics-pair.regression.js passed 28 tests. Category-page, homepage-stat, corpus-claim, 115-integrity, quiz-answer-contract, JavaScript syntax and git diff --check commands all exited 0. The product HTML/shared JavaScript and question corpus have zero diff against the reviewed head.",
+  "not_done": "No push, other-branch changes, PR comments, merge, deployment, issue close or remote CI run. No product-code or question-data changes. Browser acceptance continues to use the existing MiniSearch CDN and requires network access."
 }
