@@ -111,7 +111,7 @@ REQUIRED_UI_MARKERS = (
     'id="bookmarkFilter"',
     'id="exportPanel"',
     'id="darkToggle"',
-    '<script src="../js/app.js" defer></script>',
+    '<script src="../js/app.js?v=category-ready-1" defer></script>',
 )
 
 SIMPLIFIED_REDIRECT_MARKER = "location.replace('../category.html?cat='"

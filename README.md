@@ -285,6 +285,9 @@ python scripts/sync_analytics_frontend.py --analytics 考古題網站/data/analy
 ```
 
 類科頁建置涵蓋首頁 17 類科與水上警察、消防警察 2 個圖片題舊網址；更新後請一併提交 HTML。
+類科頁的互動控制會在共用腳本完成初始化前停用，並顯示載入提示；載入失敗時
+保留提示，可重新整理重試，不會暗中重播點擊。文字與一般連結不會被移除。
+腳本網址帶固定版本參數，避免新頁面使用仍在 PWA 快取中的舊版初始化程式。
 `python scripts/build_category_pages.py --check` 會在暫存目錄重建並比對現有頁面，
 統計、年度、題文或圖片標記過期時以非零結束碼失敗，且不改寫來源頁面。
 比對忽略頁尾產生日期與另行掛載的 `layout-refinements.css` 連結，並保留搜尋、測驗及 PWA 入口。
