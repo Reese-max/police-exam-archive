@@ -1,4 +1,6 @@
 const { test, expect } = require('@playwright/test');
+const { readFileSync } = require('node:fs');
+const path = require('node:path');
 
 // Small owned data/dependency fixtures isolate real DOM/CSS and native local
 // save/reload behavior. They are not a corpus, MiniSearch or provider-quality test.
@@ -114,41 +116,78 @@ test.describe('今日複習設定重排及持久化', () => {
     test(`${width}px 的設定值可讀且原生編輯、blur、reload 不變`, async ({ page }, info) => {
       await page.setViewportSize({ width, height: 900 });
       await ownedQuiz(page);
-      await page.goto('/quiz.html');
+      const response = await page.goto('/quiz.html');
+      expect(await response.text()).toBe(readFileSync(path.join(__dirname, '../quiz.html'), 'utf8'));
       await expect(page.locator('#matchCount')).toHaveText('2 題');
       await page.locator('.deadline-grid').scrollIntoViewIfNeeded();
-      const layout = await page.evaluate(() => {
-        const grid = document.querySelector('.deadline-grid');
-        return { columns: getComputedStyle(grid).gridTemplateColumns.split(' ').length,
-          client: grid.clientWidth, scroll: grid.scrollWidth,
-          inputs: ['dailyQuestionLimit', 'dailyMinutes', 'planningMinutesPerQuestion'].map(id => {
-            const input = document.getElementById(id), style = getComputedStyle(input);
-            const canvas = document.createElement('canvas'), context = canvas.getContext('2d');
-            context.font = style.font;
-            return { id, client: input.clientWidth,
-              content: input.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight),
-              measured: context.measureText(input.value).width };
-          }) };
-      });
-      await info.attach('actual-layout.json', { body: Buffer.from(JSON.stringify(layout)), contentType: 'application/json' });
-      expect(layout.scroll).toBeLessThanOrEqual(layout.client);
-      expect(layout.columns).toBe(width <= 560 ? 1 : 4);
-      for (const input of layout.inputs) {
-        expect(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+      async function readableSettings(phase) {
+        await page.evaluate(() => document.fonts.ready);
+        const layout = await page.evaluate(() => {
+          const grid = document.querySelector('.deadline-grid');
+          const bounds = grid.getBoundingClientRect();
+          return { columns: getComputedStyle(grid).gridTemplateColumns.split(' ').length,
+            client: grid.clientWidth, scroll: grid.scrollWidth,
+            elements: Array.from(grid.querySelectorAll('label, input')).map(element => {
+              const rect = element.getBoundingClientRect();
+              return { name: element.id || element.textContent.trim(),
+                left: rect.left - bounds.left, right: rect.right - bounds.left };
+            }),
+            labels: Array.from(grid.querySelectorAll('label')).map(label => {
+              const range = document.createRange();
+              range.selectNodeContents(label.firstChild.nodeType === Node.TEXT_NODE ? label.firstChild : label.firstChild.lastChild);
+              return { text: range.toString(), lines: range.getClientRects().length };
+            }),
+            inputs: ['dailyQuestionLimit', 'dailyMinutes', 'planningMinutesPerQuestion'].map(id => {
+              const input = document.getElementById(id), style = getComputedStyle(input);
+              const canvas = document.createElement('canvas'), context = canvas.getContext('2d');
+              context.font = style.font;
+              return { id, client: input.clientWidth,
+                content: input.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight),
+                value: input.value, measured: context.measureText(input.value).width };
+            }) };
+        });
+        await info.attach(`${phase}-layout.json`, { body: Buffer.from(JSON.stringify(layout)), contentType: 'application/json' });
+        await info.attach(`${phase}-settings.png`, { body: await page.locator('#reviewTools').screenshot(), contentType: 'image/png' });
+        expect.soft(layout.scroll).toBeLessThanOrEqual(layout.client);
+        expect.soft(layout.columns).toBe(width <= 560 ? 1 : 4);
+        for (const element of layout.elements) {
+          expect.soft(element.left, element.name).toBeGreaterThanOrEqual(0);
+          expect.soft(element.right, element.name).toBeLessThanOrEqual(layout.client);
+        }
+        for (const label of layout.labels) expect.soft(label.lines, label.text).toBe(1);
+        for (const input of layout.inputs) {
+          expect.soft(input.content, input.id).toBeGreaterThanOrEqual(input.measured + 16); // reserve native number spinner
+        }
       }
+      await readableSettings('initial');
       await page.locator('#deadlineEnabled').focus();
-      for (let i = 0; i < 16 && await page.evaluate(() => document.activeElement.id !== 'dailyQuestionLimit'); i++) {
+      await page.keyboard.press('Space');
+      await page.keyboard.press('Tab');
+      await expect(page.locator('#targetExamDate')).toBeFocused();
+      await page.locator('#targetExamDate').fill('2099-12-31');
+      // Native date inputs have multiple Tab stops on some platforms.
+      for (let i = 0; i < 5 && await page.locator('#targetExamDate').evaluate(el => el === document.activeElement); i++) {
         await page.keyboard.press('Tab');
       }
-      expect(await page.evaluate(() => document.activeElement.id)).toBe('dailyQuestionLimit');
       const value = width === 320 ? '37' : width === 390 ? '42' : '53';
-      await page.keyboard.press('Control+A');
-      await page.keyboard.type(value);
-      await page.keyboard.press('Tab');
-      await page.waitForFunction(value => AttemptLedger.getSettings().dailyQuestionLimit === Number(value), value);
+      const values = { dailyQuestionLimit: value, dailyMinutes: width === 390 ? '0' : '1440',
+        planningMinutesPerQuestion: width === 390 ? '120' : '0.5' };
+      for (const [id, number] of Object.entries(values)) {
+        await expect(page.locator('#' + id)).toBeFocused();
+        await page.keyboard.press('ControlOrMeta+A');
+        await page.keyboard.type(number);
+        await page.keyboard.press('Tab');
+      }
+      const saved = await page.evaluate(() => AttemptLedger.getSettings());
+      expect(saved).toMatchObject({ deadlineEnabled: true, targetExamDate: '2099-12-31',
+        ...Object.fromEntries(Object.entries(values).map(([id, number]) => [id, Number(number)])) });
       await page.reload();
-      await expect(page.locator('#dailyQuestionLimit')).toHaveValue(value);
-      expect(await page.evaluate(() => AttemptLedger.getSettings().dailyQuestionLimit)).toBe(Number(value));
+      await expect(page.locator('#matchCount')).toHaveText('2 題');
+      await expect(page.locator('#deadlineEnabled')).toBeChecked();
+      await expect(page.locator('#targetExamDate')).toHaveValue('2099-12-31');
+      for (const [id, number] of Object.entries(values)) await expect(page.locator('#' + id)).toHaveValue(number);
+      expect(await page.evaluate(() => AttemptLedger.getSettings())).toEqual(saved);
+      await readableSettings('reloaded');
       await expect(page.locator('#dailyQuestionLimit')).toHaveAttribute('max', '200');
       await expect(page.locator('#dailyMinutes')).toHaveAttribute('max', '1440');
       await expect(page.locator('#planningMinutesPerQuestion')).toHaveAttribute('max', '120');

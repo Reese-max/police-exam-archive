@@ -300,6 +300,8 @@ python scripts/sync_analytics_frontend.py --analytics 考古題網站/data/analy
 
 「今日複習」由 ledger deterministic 派生，排除未到期且無其他複習原因的正答題。最多一半名額依類科／科目最近作答時間輪替覆蓋，其餘優先安排答錯、未答、標記與到期題；每日僅一題時先輪替覆蓋。每題會顯示如「上次答錯」「連續 2 次答錯」「標記回顧」「21 天未複習」等原因。使用者可設定目標考試日、每日題量與分鐘預算；截止日模式會將 due date 限制在考試日前，依每日題量與使用者設定的規劃每題分鐘估算容量不足時顯示 backlog/overload。每日容量為 min(題量上限, floor(分鐘上限／規劃每題分鐘))；0 分鐘表示不限時且不設時間容量上限。這是規劃估算，不是測得的作答速度或學習成效。單場題量上限 200 題、分鐘上限 1440，與 durable checkpoint 的範圍一致。
 
+複習設定在窄螢幕會改為單欄，數值編輯後離開欄位即自動儲存，重新整理後保留截止日與規劃設定。320／390／1280px 的瀏覽器回歸、修正前幾何與截圖見 [#110 驗收證據](docs/evidence/issue110/README.md)。
+
 學習資料可從模擬考頁匯出／匯入 JSON。匯入先驗證 schema、逐題事實與設定；無效檔案會拒絕匯入，設定寫入失敗時還原原 ledger。題目 hash 改變或缺失時標記為 `STALE/REVIEW_REQUIRED`，重新作答後可由相容紀錄恢復進度；只有整體資料集版本改變、題目內容未變時仍保留進度，build version 留作來源紀錄。交卷儲存失敗會保留原 durable checkpoint 供重試；清除 checkpoint 重試不會重複保存作答事實。舊版進行中場次若沒有官方來源識別，恢復後保留為不同的 UNMAPPED_REVIEW_REQUIRED 快照與作答，仍可匯出／匯入，但不會套用至官方題目的複習狀態。清除學習資料只移除 `exam-question-attempt-ledger`、`exam-review-settings` 與 `exam-quiz-history`，不會刪除題庫或書籤；資料不會離開瀏覽器。目前 localStorage 寫入尚未支援跨分頁交易，請避免同時在多個分頁交卷或匯入。
 
 ## 115 年資料更新
