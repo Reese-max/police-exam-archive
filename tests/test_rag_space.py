@@ -72,6 +72,33 @@ def test_dataset_download_never_uses_implicit_account(app, monkeypatch, tmp_path
     assert calls[0][2]["repo_type"] == "dataset" and calls[0][2]["token"] is False
 
 
+def test_zero_gpu_space_registers_marker_without_using_gpu(monkeypatch):
+    registered = []
+
+    def gpu(*, duration):
+        registered.append(duration)
+
+        def decorate(function):
+            def forbidden(*args, **kwargs):
+                raise AssertionError("CPU search must not request GPU")
+            return forbidden
+        return decorate
+
+    monkeypatch.setenv("SPACES_ZERO_GPU", "1")
+    monkeypatch.setitem(sys.modules, "spaces", SimpleNamespace(GPU=gpu))
+    root = Path(__file__).resolve().parents[1]
+    spec = importlib.util.spec_from_file_location("rag_zero_space_app", root / "space/app.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    module.retriever = SimpleNamespace(search=lambda *args, **kwargs: [])
+    module.mode, module.options = "hybrid", {}
+    try:
+        assert "查無符合題目" in module.search("警察")
+        assert registered == [1]
+    finally:
+        module.executor.shutdown(wait=True)
+
+
 def test_space_package_is_self_contained_and_does_not_overwrite(tmp_path):
     root = Path(__file__).resolve().parents[1]
     target = tmp_path / "space"

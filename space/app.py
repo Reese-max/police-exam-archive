@@ -9,6 +9,14 @@ import sys
 import time
 from urllib.parse import urlsplit
 
+if os.environ.get("SPACES_ZERO_GPU"):
+    import spaces
+
+    @spaces.GPU(duration=1)
+    def _zero_gpu_marker():
+        """Register the required marker; actual retrieval runs on CPU."""
+        pass
+
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE if (HERE / "scripts/rag/retrieval.py").is_file() else HERE.parent

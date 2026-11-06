@@ -154,7 +154,7 @@ python scripts/rag/update_index.py --device cuda --db .rag-dataset/index-bge-m3.
 
 ## Gradio 檢索介面
 
-本機使用既有索引和模型快取（PowerShell 範例）：
+本機需另行安裝 `gradio==5.50.0`；Space 平台會提供 Gradio。使用既有索引和模型快取（PowerShell 範例）：
 
 ```powershell
 $env:RAG_INDEX_PATH = "rag/index-bge-m3.sqlite"
@@ -175,6 +175,7 @@ python scripts/rag/package_space.py --out /path/to/new-space-directory
 日後經授權建立 Space 後，上傳該目錄，並設定 `HF_DATASET_REPO` 指向已有索引的公開
 Dataset；Space 啟動時匿名下載索引。[Hugging Face 官方文件](https://huggingface.co/docs/hub/spaces-overview)
 目前指出 CPU Basic 無時租，但建立 Gradio Space 需要付費方案；建立前應先確認帳號方案與費用。
+符合資格的免費個人帳號亦可使用 ZeroGPU（`zero-a10g`）；本介面仍只在 CPU 執行檢索，不呼叫 GPU。
 
 ## 目錄結構
 
