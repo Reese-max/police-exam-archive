@@ -470,7 +470,7 @@
     {
       "number": 36,
       "type": "choice",
-      "stem": "You shouldavoid_____wordsorphrasestomakesurethateverywordyouuseaddssomethingnewtoyourpiece ofwriting.",
+      "stem": "You shouldavoid_____wordsorphrasestomakesurethateverywordyouuseaddssomethingnewtoyourpiece of writing.",
       "section": null,
       "options": {
         "A": "redundant",
@@ -600,7 +600,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "Preventive health optionsare believed to bea better route than disease treatment, so nutrition and dietary _____ are key components of people’shealthregimens.",
+      "stem": "Preventive health options are believed to bea better route than disease treatment, so nutrition and dietary _____ are key components of people’shealthregimens.",
       "section": null,
       "options": {
         "A": "subscriptions",

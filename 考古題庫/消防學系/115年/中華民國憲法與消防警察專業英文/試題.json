@@ -560,7 +560,7 @@
     {
       "number": 41,
       "type": "choice",
-      "stem": "Fires generate pressure that moves from high-pressure zones, such as the fire room itself, toward low-pressureareas likeanyopeningawayfrom theblaze,creatingwhat firefighters call a .",
+      "stem": "Fires generate pressure that moves from high-pressure zones, such as the fire room itself, toward low-pressureareas like any opening away from the blaze,creating what firefighters call a .",
       "section": "乙、測驗題",
       "options": {
         "A": "neutral buoyancy",
@@ -573,7 +573,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "Understanding fire safety precautions serves as the foundation for a secure environment, requiring a strategythat will hazard awareness, preventive measures, equipment proficiency, and the formulationofefficient emergencyresponseplans.",
+      "stem": "Understanding fire safety precautions serves as the foundation for a secure environment, requiring a strategy that will hazard awareness, preventive measures, equipment proficiency, and the formulation of efficient emergencyresponseplans.",
       "section": "乙、測驗題",
       "options": {
         "A": "maneuver",
@@ -600,12 +600,12 @@
     {
       "number": 44,
       "type": "choice",
-      "stem": "Taiwan is earthquakes, typhoons, heaving rains, droughts, mudslides, and overflows of barrierlakes, all ofwhichseverelyendangerlife andproperty.",
+      "stem": "Taiwan is earthquakes, typhoons, heaving rains, droughts, mudslides, and overflows of barrierlakes, all ofwhichseverelyendangerlife and property.",
       "section": "乙、測驗題",
       "options": {
         "A": "stagnant with",
         "B": "exempt from",
-        "C": "susceptibleto",
+        "C": "susceptible to",
         "D": "incidental to"
       },
       "answer": "C"
@@ -639,7 +639,7 @@
     {
       "number": 47,
       "type": "choice",
-      "stem": "Theprimarygoalofinstallingfire-rateddoors andcompartmentsis ,ensuringtheblazedoes not spreadtoothersections ofthebuilding.",
+      "stem": "The primary goal of installing fire-rateddoors andcompartmentsis ,ensuring the blaze does not spread to other sections of the building.",
       "section": "乙、測驗題",
       "options": {
         "A": "recruitment",
@@ -679,13 +679,13 @@
     {
       "number": 50,
       "type": "choice",
-      "stem": "Whichofthefollowingstatements is incorrect?",
+      "stem": "Which of the following statements is incorrect?",
       "section": "乙、測驗題",
       "options": {
         "A": "palliative",
         "B": "remedial",
         "C": "prehospital",
-        "D": "therapeutic 請依下文回答第56題至第60題 Theuseoffire-resistantmaterialsdatesbackcenturies.Amethodofcontainingfire,includingcoating woodinvinegarandalumbeforeencasingitinclay,wasfirstusedin China.Itwouldthen,manycenturies later,bereplicatedbythe Romans toprotect theirboats. Andtheatres inthe UKusedasimilarmethodas recentlyasthe1500stopreventstagecurtainsfromsettingalight.Alumisstillusedtodayinchemicaland oilfireextinguishers.Inmorerecenttimes,asbestoswascommonlyusedasafireproofingmaterial,either alone or in combination with binders like cement. It was applied in different forms, such as sprayed coatings, pressed sheets, or as an additive in various products, including protective clothing fabrics and buildingmaterials.However,itsusewasbannedintheUKin1999followingevidencelinkingittocancer. Asbestoswasusedfrom aroundthe1930sandwasaparticularlypopularchoicefromthe1960sonwards, making it common in homes built or refurbished at this time. As a result, an entire industry dedicated to its removal and safe disposal has arisen. While asbestos is no longer deemed a suitable option, endothermic materials such as gypsum are still widely used. Fire doors, for example, use fire-resistant materialssuchassteel,gypsum,andaluminium.Firedoorwindowsaremadefromborosilicateorceramic glass,whichprovides higherfire resistancethanregular glass."
+        "D": "therapeutic 請依下文回答第56題至第60題 The use of fire-resistantmaterialsdatesbackcenturies.Amethodofcontainingfire,includingcoating woodinvinegarandalumbeforeencasingitinclay,was first used in China.Itwouldthen,manycenturies later,bereplicatedbythe Romans to protect their boats. And theatres inthe UKusedasimilarmethodas recentlyasthe1500stopreventstagecurtainsfromsettingalight.Alumisstillusedtodayinchemicaland oilfireextinguishers.Inmorerecenttimes,asbestoswascommonlyusedasafireproofingmaterial,either alone or in combination with binders like cement. It was applied in different forms, such as sprayed coatings, pressed sheets, or as an additive in various products, including protective clothing fabrics and buildingmaterials.However,itsusewasbannedintheUKin1999followingevidencelinkingittocancer. Asbestoswasusedfrom aroundthe1930sandwasaparticularlypopularchoicefromthe1960sonwards, making it common in homes built or refurbished at this time. As a result, an entire industry dedicated to its removal and safe disposal has arisen. While asbestos is no longer deemed a suitable option, endothermic materials such as gypsum are still widely used. Fire doors, for example, use fire-resistant materialssuchassteel,gypsum,andaluminium.Firedoorwindowsaremadefromborosilicateorceramic glass,which provides higherfire resistance than regular glass."
       },
       "answer": "D"
     },
@@ -762,10 +762,10 @@
     {
       "number": 56,
       "type": "choice",
-      "stem": "According to the passage, what is the historical progression of the fireproofing method involving alum andvinegar?",
+      "stem": "According to the passage, what is the historical progression of the fireproofing method involving alum and vinegar?",
       "section": "乙、測驗題",
       "options": {
-        "A": "It was inventedbythe Romansandlateradoptedby Chineseshipbuilders.",
+        "A": "It was invented by the Romans and later adopted by Chineseshipbuilders.",
         "B": "Itwasa Chineseinnovationlaterutilizedby RomansformaritimeprotectionandUKtheatresfor stagesafety.",
         "C": "It was first used in uk theatres in the 1500s before being adapted for use in modern oil fire extinguishers.",
         "D": "It was developed simultaneously in China and Rome to protect wooden structures from clay encasement."
@@ -779,16 +779,16 @@
       "section": "乙、測驗題",
       "options": {
         "A": "It is most likely to be found in homes constructed immediately after the 1999ban.",
-        "B": "It was primarilyused inthe1930s, makingit rareinhouses built duringthe1960s.",
-        "C": "Properties renovated orconstructed after1950 haveahigherprobabilityof containingit.",
-        "D": "Its usewas restrictedexclusivelytoprotective clothingandindustrial cement binders ratherthan domesticbuildings."
+        "B": "It was primarilyused inthe1930s, making it rareinhouses built duringthe1960s.",
+        "C": "Properties renovated orconstructed after1950 have a higher probability of containing it.",
+        "D": "Its usewas restricted exclusively to protective clothing and industrial cement binders rather than domesticbuildings."
       },
       "answer": "C"
     },
     {
       "number": 58,
       "type": "choice",
-      "stem": "Whichofthefollowingiscategorizedbythetextasan“endothermicmaterial”currentlyusedinfire safety?",
+      "stem": "Which of the following is categorized by the text as an“endothermicmaterial”currently used in fire safety?",
       "section": "乙、測驗題",
       "options": {
         "A": "Borosilicate glass",
@@ -801,12 +801,12 @@
     {
       "number": 59,
       "type": "choice",
-      "stem": "Thepassageimplies that alum has maintainedrelevance across historyprimarilybecause",
+      "stem": "The passage implies that alum has maintainedrelevance across history primarily because",
       "section": "乙、測驗題",
       "options": {
         "A": "it was the only fire-resistant material available until the20thcentury.",
-        "B": "it provedeffectiveenoughtobe adoptedbymultiplecivilizations andremains inusetoday.",
-        "C": "Romanengineers recognizedits superiorityoverall otherknownmaterials.",
+        "B": "it proved effective enough to be adoptedbymultiplecivilizations and remains in use today.",
+        "C": "Romanengineers recognized its superiorityoverall otherknownmaterials.",
         "D": "its chemical properties wereonlyfullyunderstoodinthemodernera."
       },
       "answer": "B"
@@ -814,13 +814,13 @@
     {
       "number": 60,
       "type": "choice",
-      "stem": "Howdoes thepassagedistinguish thecompositionoffiredoor windows from standard glass?",
+      "stem": "Howdoes the passage distinguish the composition of fire door windows from standard glass?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Theyutilizeceramicorborosilicate glass toachievesuperiorthermal resistance.",
-        "B": "Theyarereinforced withacoatingofvinegarandalum toprevent combustion.",
-        "C": "Theyareencasedinclayandsteel towithstand thehightemperatures of abuildingfire.",
-        "D": "Theyaremanufacturedusingthesame endothermicproperties asgypsum-basedpressedsheets."
+        "A": "Theyutilizeceramicorborosilicate glass to achieve superior thermal resistance.",
+        "B": "They are reinforced withacoatingofvinegarandalum to prevent combustion.",
+        "C": "Theyareencasedinclayandsteel to withstand the high temperatures of abuildingfire.",
+        "D": "They are manufactured using the same endothermicproperties asgypsum-basedpressedsheets."
       },
       "answer": "A"
     }

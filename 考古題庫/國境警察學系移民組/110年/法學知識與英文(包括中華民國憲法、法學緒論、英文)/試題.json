@@ -446,7 +446,7 @@
     {
       "number": 34,
       "type": "choice",
-      "stem": "In a democraticcountry, everyoneis tothefreedomof speech and expression. Thisrightisprotected bythelaw.",
+      "stem": "In a democraticcountry, everyone is to the freedom of speech and expression. This right is protected bythelaw.",
       "section": null,
       "options": {
         "A": "empowered",
@@ -472,7 +472,7 @@
     {
       "number": 36,
       "type": "choice",
-      "stem": "Whencelebratinganewyear, we often wish others happiness, , andgoodhealth.",
+      "stem": "When celebrating a new year, we often wish others happiness, , and good health.",
       "section": null,
       "options": {
         "A": "resistance",
@@ -498,7 +498,7 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "Sadly, theirrecent, truncated live shows bore no evidence of new material with which to theirsuccess.",
+      "stem": "Sadly, their recent, truncated live shows bore no evidence of new material with which to their success.",
       "section": null,
       "options": {
         "A": "sustain",
@@ -540,13 +540,13 @@
       "stem": "（承上題組）",
       "section": null,
       "options": {
-        "A": "insteadof",
-        "B": "intermsof",
-        "C": "inplaceof",
-        "D": "inspiteof"
+        "A": "instead of",
+        "B": "in terms of",
+        "C": "in place of",
+        "D": "in spite of"
       },
       "answer": "B",
-      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , arepickedwhenthey’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Most food you take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , are picked when they’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
       "passage_intro": "請依下文回答第41題至第45題"
     },
     {
@@ -555,13 +555,13 @@
       "stem": "（承上題組）",
       "section": null,
       "options": {
-        "A": "washarvesting",
-        "B": "hasharvested",
-        "C": "hadharvested",
-        "D": "hasbeenharvested"
+        "A": "was harvesting",
+        "B": "has harvested",
+        "C": "had harvested",
+        "D": "has been harvested"
       },
       "answer": "D",
-      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , arepickedwhenthey’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Most food you take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , are picked when they’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
       "passage_intro": "請依下文回答第41題至第45題"
     },
     {
@@ -576,7 +576,7 @@
         "D": "deteriorate"
       },
       "answer": "D",
-      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , arepickedwhenthey’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Most food you take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , are picked when they’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
       "passage_intro": "請依下文回答第41題至第45題"
     },
     {
@@ -585,13 +585,13 @@
       "stem": "（承上題組）",
       "section": null,
       "options": {
-        "A": "inthemeantime",
-        "B": "insomerespects",
-        "C": "ontheotherhand",
-        "D": "forthetimebeing"
+        "A": "in the meantime",
+        "B": "in some respects",
+        "C": "on the other hand",
+        "D": "for the time being"
       },
       "answer": "C",
-      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , arepickedwhenthey’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Most food you take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , are picked when they’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
       "passage_intro": "請依下文回答第41題至第45題"
     },
     {
@@ -606,28 +606,28 @@
         "D": "Nonetheless"
       },
       "answer": "A",
-      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Mostfoodyou take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , arepickedwhenthey’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
+      "passage": "With the advent of freezers, we’re able to preserve our food longer than before. But is there a difference between fresh and frozen produce 41 nutrition?Well, it highly depends on the circumstances. Most food you take off the shelf in a grocery store 42 under-ripe to avoid damage during travel time. This means it hasn’t yet reached it speak nutrition. Furthermore, the minute it is picked, its nutritional content begins to 43 . When it finally appears on your dinner table days later, thefoodmayloseupto50percentofitsnutritionalvalue. Frozen foods, 44 , are picked when they’re ripe and frozen immediately. 45 the quick freeze process may affect some of the vitamin content, it essentially locks most of the nutrients in place. Compared with the fresh produce that has been sitting around for days, there’s no doubt that frozen foods contain more nutrition.",
       "passage_intro": "請依下文回答第41題至第45題"
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "Whichofthefollowingstatementsis TRUE, according to the text above?",
+      "stem": "Which of the following statements is TRUE, according to the text above?",
       "section": null,
       "options": {
-        "A": "Atthebeginning, therewerelessthan1,000collegeswith160,000studentsexistinginthe US.",
+        "A": "At the beginning, therewerelessthan1,000collegeswith160,000studentsexistinginthe US.",
         "B": "Inthe1830s, state colleges and universities were setup to train teachers for the explosive growth of K–12 education.",
         "C": "Juniorcollegeswereusuallysetupbycityschoolsystemsstartinginthe1930s.",
-        "D": "Communitycolleges wererenamed from junior colleges aslow-costinstitutions with astrongcomponent of vocational education."
+        "D": "Communitycolleges were renamed from junior colleges aslow-costinstitutions with astrongcomponent of vocational education."
       },
       "answer": "D",
-      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. Stateuniversitiesgrewfromsmall institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. Tohandletheexplosivegrowthof K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated withchurches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
+      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. State universities grew from small institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. To handle the explosive growth of K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated with churches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
       "passage_intro": "請依下文回答第46題至第50題"
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "Whichofthefollowingstatementsistruetothedescriptionaboutjuniorcolleges?",
+      "stem": "Which of the following statements is true to the description about junior colleges?",
       "section": null,
       "options": {
         "A": "Juniorcollegesgrewfrom1919studentsto70,000in1930.",
@@ -636,28 +636,28 @@
         "D": "Teachers’colleges are the community name for junior colleges."
       },
       "answer": "B",
-      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. Stateuniversitiesgrewfromsmall institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. Tohandletheexplosivegrowthof K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated withchurches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
+      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. State universities grew from small institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. To handle the explosive growth of K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated with churches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
       "passage_intro": "請依下文回答第46題至第50題"
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "Whichisoneofthefactorsthatcontributedtotherapidgrowthofcommunitycollegesinthe United States?",
+      "stem": "Which is one of the factors that contributed to the rapid growth of community colleges in the United States?",
       "section": null,
       "options": {
-        "A": "Itisamajornewtrendtoincludeasmanyruralstudentsaspossible.",
-        "B": "Thepurposeistohandletheexplosivegrowthof K–12education.",
-        "C": "Parentsandbusinessmenwantednearby, low-cost schools in rural or small-town areas to provide training for the growing white-collarlaborforce.",
+        "A": "It is a major new trend to include as many rural students as possible.",
+        "B": "The purpose is to handle the explosive growth of K–12education.",
+        "C": "Parents and businessmen wanted nearby, low-cost schools in rural or small-town areas to provide training for the growing white-collarlaborforce.",
         "D": "Many community colleges were located in the center of the fast-growing metropolis to provide more advanced technical jobs in the blue-collarsphere."
       },
       "answer": "D",
-      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. Stateuniversitiesgrewfromsmall institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. Tohandletheexplosivegrowthof K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated withchurches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
+      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. State universities grew from small institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. To handle the explosive growth of K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated with churches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
       "passage_intro": "請依下文回答第46題至第50題"
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "Whichofthefollowingstatisticsis TRUE?",
+      "stem": "Which of the following statistics is TRUE?",
       "section": null,
       "options": {
         "A": "Before1919, therewerealreadymorethan170juniorcolleges.",
@@ -666,22 +666,22 @@
         "D": "Thepeakyearforprivatecommunitycollegeexpansioncameattheyearof1922."
       },
       "answer": "B",
-      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. Stateuniversitiesgrewfromsmall institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. Tohandletheexplosivegrowthof K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated withchurches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
+      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. State universities grew from small institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. To handle the explosive growth of K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated with churches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
       "passage_intro": "請依下文回答第46題至第50題"
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "Whichofthefollowingstatementsis TRUE, according to the text above?",
+      "stem": "Which of the following statements is TRUE, according to the text above?",
       "section": null,
       "options": {
         "A": "Communitycollegesenrollmentisvocationallylimited.",
         "B": "Four-year college growth was affected by the open-enrollment policy of junior colleges.",
         "C": "Communitycollegesprovidelow-cost preparation for transfer students into four-yearinstitutions.",
-        "D": "Communitycollegescontinuetoappealtoyoung, less prepared students."
+        "D": "Community colleges continue to appeal to young, less prepared students."
       },
       "answer": "C",
-      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. Stateuniversitiesgrewfromsmall institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. Tohandletheexplosivegrowthof K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated withchurches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
+      "passage": "At the beginning of the 20th century, less than 1,000 colleges with 160,000 students existed in the US. The number of colleges skyrocketed in waves, duringtheearlyandmid20thcentury. State universities grew from small institutions of fewer than 1,000 students to campuses with 40,000 more students, with networks of regional campuses around the state. Inturn, regional campuses broke away and became separate universities. To handle the explosive growth of K–12education, every state setup a network of teachers’colleges, beginning with Massachusetts in the 1830s. After 1950, they became state colleges and then state universities with a broad curriculum. Major new trends included the development of the junior colleges. They were usually set up by city schoolsystemsstartinginthe1920s. Bythe1960stheywererenamedas“communitycolleges.” Junior colleges grew from 20 in number in 1909, to 170 in 1919. By 1922, 37 states had set up 70 junior colleges, enrollingabout150studentseach. Meanwhile, another137wereprivatelyoperated, withabout60students each. Rapid expansion continued in the 1920s, with 440 junior colleges in 1930 enrolling about 70,000 students. Thepeakyearforprivateinstitutionscamein1949, whentherewere322juniorcollegesinall;180wereaffiliated with churches,108wereindependentandnon-profit, and34wereprivateschoolsbeingrunfor-profit. Many factors contributed to rapid growth of community colleges. Students parents and businessmen wanted nearby, low-cost schools to provide training for the growing white-collarlaborforce, as well as for more advanced technical jobs in the blue-collarsphere. Four-year colleges were also growing, albeitnotasfast; however, manyof them were located in rural or small-town areas away from the fast-growing metropolis. Community colleges continue as open-enrollment, low-cost institutions with a strong component of vocational education, as well as a low-cost preparation for transfer students into four-year schools. They appeal to a poorer, older, less prepared element.",
       "passage_intro": "請依下文回答第46題至第50題"
     }
   ],

@@ -1,0 +1,35 @@
+{
+  "mode": "apply",
+  "wordninja_version": "2.0.0",
+  "rules": [
+    "Candidates are ASCII letter runs of at least 8 letters absent from the wordninja dictionary.",
+    "Keep dictionary words and existing whitespace; never resegment a spaced phrase.",
+    "Protect URLs, emails, dotted names, paths, backticks/fences, math, calls, digits/underscores and operator-bearing tokens.",
+    "Keep whitelist acronyms, all-uppercase tokens and tokens with noninitial uppercase letters (including chemical formulae/identifiers).",
+    "Require a grammatical function word at an edge, or inside a run of at least 16 letters; allow only common short pieces and dictionary rank <= 20000.",
+    "Require an English-only subject or 3 distinct English context words in the question; otherwise require a run >= 24 letters with 2 English context words in its proposal.",
+    "Only insert ASCII spaces; preserve the exact original letters, case, punctuation and non-ASCII text.",
+    "Every proposed component must be dictionary-known, making the output a fixed point."
+  ],
+  "summary": {
+    "scanned_files": 2090,
+    "scanned_questions": 43735,
+    "detected_candidates": 27359,
+    "proposed_modifications": 10756,
+    "actual_modifications": 10756,
+    "modified_fields": 4743,
+    "modified_files": 235,
+    "skipped": 16603,
+    "skip_reasons": {
+      "abbreviation": 10,
+      "ambiguous_word_or_compound": 5167,
+      "insufficient_english_context": 306,
+      "mixed_case_identifier_or_formula": 444,
+      "protected_construct": 3953,
+      "rare_or_unknown_piece": 2746,
+      "uncertain_short_piece": 3977
+    }
+  },
+  "note": "Per-change list omitted from git; regenerate with: python scripts/rag/repair_english.py --report <path> (dry-run against the pre-repair commit), or see git diff of this commit.",
+  "skipped_count": 16603
+}
