@@ -51,7 +51,6 @@ def test_pr50_integrity_auditor_present_and_passes():
     result = subprocess.run(
         [sys.executable, str(auditor)],
         capture_output=True,
-        text=True,
         timeout=300,
     )
     assert result.returncode == 0, result.stdout + result.stderr
