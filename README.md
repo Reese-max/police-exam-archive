@@ -6,13 +6,27 @@
 
 | 項目 | 數量 |
 |------|------|
-| 學系/類別 | 49 個 |
+| 學系/類別資料夾 | 32 個（其中 9 組為同一學系的新舊名稱，見 `rag/corpus_issues.json`） |
 | 年份 | 106-115 年（10 年） |
-| 科目 | 101 個 |
-| JSON 檔案 | 2,049 個（非重複） |
-| 選擇題 | 36,760 題 |
-| 申論題 | 5,758 題 |
-| 總題數 | 42,518 題 |
+| 科目資料夾 | 104 個 |
+| JSON 檔案 | 2,090 個 |
+| 選擇題 | 37,905 題 |
+| 申論題 | 5,830 題 |
+| 總題數 | 43,735 題 |
+| 不重複題（跨學系去重） | 10,594 題 |
+
+數字由 `python scripts/rag/build_corpus.py` 產生，見 `rag/corpus_stats.json`。
+
+## RAG 語料
+
+| 指令 | 產出 |
+|---|---|
+| `python scripts/rag/fetch_moex_catalog.py` | 讀取考選部公開「試題及答案」目錄 → `rag/moex_catalog.json`（原始 HTML 快取於 `rag/moex_cache/`，不進版控） |
+| `python scripts/rag/build_source_map.py` | 每份考卷對應考選部試題／答案 PDF 網址 → `rag/source_map.json`（未對應者列於 `rag/source_map_unresolved.json`） |
+| `python scripts/rag/build_corpus.py` | 去重、正規化語料 → `rag/corpus.jsonl`（不進版控）、`rag/corpus_stats.json`、`rag/corpus_issues.json` |
+| `python scripts/rag/repair_english.py [--apply]` | 修正英文黏字，預設只產報告 |
+
+`corpus.jsonl` 每行一題：`question_id`、題幹、選項、答案與 `answer_status`、題組文章、所有出處 `appears_in`，以及考選部原始 PDF 連結 `sources`，可直接用於檢索與溯源。
 
 ## 目錄結構
 
