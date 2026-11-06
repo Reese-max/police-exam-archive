@@ -100,3 +100,6 @@ rag/*.sqlite
 rag/*.sqlite-*
 rag/embeddings/
 .hf_cache/
+.rag-dataset/
+.rag-update.json
+.space-data/

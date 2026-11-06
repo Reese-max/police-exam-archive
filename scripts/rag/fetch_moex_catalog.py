@@ -147,10 +147,10 @@ def parse_catalog(text: str, exam: dict, page_url: str) -> list[dict]:
     return [rows[key] for key in sorted(rows)]
 
 
-def fetch_catalog(root: Path, offline=False, refresh=False) -> tuple[dict, int]:
+def fetch_catalog(root: Path, offline=False, refresh=False, years=range(106, 116)) -> tuple[dict, int]:
     fetcher = CatalogFetcher(root / "rag/moex_cache", offline, refresh)
     pages, entries = {}, []
-    for year in range(106, 116):
+    for year in sorted(set(years)):
         index_url = PAGE + "?" + urlencode({"y": year + 1911})
         text, receipt = fetcher.get(index_url)
         pages[index_url] = receipt

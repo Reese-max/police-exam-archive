@@ -1,0 +1,86 @@
+import importlib.util
+from pathlib import Path
+import subprocess
+import sys
+import threading
+from types import SimpleNamespace
+
+import pytest
+
+
+@pytest.fixture
+def app(monkeypatch):
+    root = Path(__file__).resolve().parents[1]
+    monkeypatch.syspath_prepend(str(root))
+    spec = importlib.util.spec_from_file_location("rag_space_app", root / "space/app.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    yield module
+    module.executor.shutdown(wait=True)
+
+
+def test_search_keeps_sqlite_work_on_one_thread_and_renders_pdf(app, monkeypatch, tmp_path):
+    calls = []
+    class FakeRetriever:
+        def __init__(self, db, *, device):
+            self.meta = {"model": "BAAI/bge-m3"}
+            calls.append(("init", threading.get_ident(), device))
+        def _load_vectors(self):
+            calls.append(("load", threading.get_ident()))
+        def search(self, query, **kwargs):
+            calls.append(("search", threading.get_ident(), query, kwargs))
+            return [{"rank": 1, "question_id": "x", "type": "choice", "stem": "<script>警察題目</script>" + "甲" * 130,
+                     "passage": "題組文章", "options": {"A": "第一選項", "B": "第二選項"},
+                     "citations": [{"path": "a", "category": "行政警察", "year": 115,
+                                    "subject": "警察法規", "number": 3,
+                                    "question_pdf_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060"}]}]
+        def close(self):
+            calls.append(("close", threading.get_ident()))
+    monkeypatch.setattr(app, "Retriever", FakeRetriever)
+    monkeypatch.setitem(sys.modules, "torch", SimpleNamespace(set_num_threads=lambda n: None))
+    app.executor.submit(app.initialize, tmp_path / "index.sqlite").result()
+    result = app.search("警察查證身分")
+    assert "行政警察／115年／警察法規／第3題" in result
+    assert "[開啟考選部原始試題](https://wwwq.moex.gov.tw/" in result
+    assert "&lt;script&gt;" in result and "<script>" not in result
+    assert "甲" * 130 in result and "題組文章" in result and "(A) 第一選項" in result
+    assert len({entry[1] for entry in calls}) == 1
+    assert calls[-1][3]["k"] == 5 and calls[-1][3]["mode"] == "hybrid"
+    assert app.search("  ") == "請輸入問題。"
+
+
+def test_render_does_not_show_cli_only_hints(app):
+    item = {"rank": 1, "question_id": "x", "type": "essay", "stem": "題目",
+            "answer_conflicts": [{"value": "A"}, {"value": "B"}],
+            "citations": [{"path": str(i), "category": "甲", "year": 115,
+                           "subject": "科目", "number": i, "question_pdf_url": None}
+                          for i in range(4)]}
+    rendered = app.render([item])
+    assert "原始答案存在歧異" in rendered and "另有 1 筆出處" in rendered
+    assert "--json" not in rendered and "answer_conflicts" not in rendered
+
+
+def test_dataset_download_never_uses_implicit_account(app, monkeypatch, tmp_path):
+    calls = []
+    def download(repo, filename, **kwargs):
+        calls.append((repo, filename, kwargs))
+        return str(tmp_path / filename)
+    monkeypatch.delenv("RAG_INDEX_PATH", raising=False)
+    monkeypatch.setenv("HF_DATASET_REPO", "owner/dataset")
+    monkeypatch.setitem(sys.modules, "huggingface_hub", SimpleNamespace(hf_hub_download=download))
+    assert app.index_path() == tmp_path / "index-bge-m3.sqlite"
+    assert calls[0][2]["repo_type"] == "dataset" and calls[0][2]["token"] is False
+
+
+def test_space_package_is_self_contained_and_does_not_overwrite(tmp_path):
+    root = Path(__file__).resolve().parents[1]
+    target = tmp_path / "space"
+    command = [sys.executable, str(root / "scripts/rag/package_space.py"), "--out", str(target)]
+    assert subprocess.run(command, capture_output=True).returncode == 0
+    assert all((target / name).is_file() for name in (
+        "app.py", "README.md", "requirements.txt", "scripts/rag/query.py",
+        "scripts/rag/retrieval.py", "scripts/rag/build_corpus.py", "rag/bench_report.json",
+        "rag/abbreviations.json"))
+    before = (target / "app.py").read_bytes()
+    assert subprocess.run(command, capture_output=True).returncode != 0
+    assert (target / "app.py").read_bytes() == before

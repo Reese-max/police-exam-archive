@@ -128,6 +128,54 @@ top-5 ≥0.98、ambiguous relevant@1 ≥0.95；結果寫入 `rag/eval_report.jso
 本沙箱沒有 sentence-transformers，真實雙模型建索引、CPU 延遲與最終預設選型待沙箱外執行；
 `bench_report.json` 如含 null，表示未測，不能視為通過。
 
+## 每年增量更新索引
+
+啟用後，考古題匯入並合併至 `master` 時，`.github/workflows/rag-index.yml` 會下載上一版 Dataset
+索引及考選部目錄、更新來源對應與語料，只為新增或變更的內容計算向量，再把兩個檔案一起上傳。
+目錄缺少年份或新考卷時，會重新擷取該年度的考選部公開目錄。題庫匯入本身不由此工作流程執行。
+
+首次啟用前，需先以本機 GPU 建好完整的 `rag/index-bge-m3.sqlite`，並在**既有公開**
+Hugging Face Dataset 放入 `index-bge-m3.sqlite` 與 `moex_catalog.json`。建立 Dataset、
+上傳、設定儲存庫變數 `HF_DATASET_REPO` 與具有該 Dataset 寫入權限的 GitHub Secret
+`HF_DATASET_TOKEN`，都須由擁有者事先授權。完成設定及費用確認後，再將變數
+`HF_RAG_UPDATES_ENABLED` 設為 `true`；在此之前工作不會啟動 runner。工作流程只讀 GitHub 內容，Dataset 下載不使用帳號；
+上傳以下載時的 revision 為條件，避免覆寫並行更新。
+
+可在本機用現有索引測試（請先將兩個檔案複製到 `.rag-dataset/`）：
+
+```bash
+python scripts/rag/update_index.py --device cuda --db .rag-dataset/index-bge-m3.sqlite --catalog .rag-dataset/moex_catalog.json --catalog-out .rag-dataset/moex_catalog.json --report .rag-update.json
+```
+
+缺少舊索引、模型或 schema 不符、舊索引不完整、語料為空或與舊索引完全無重疊時，
+更新會停止，不會在 CPU 上自動全量重建。索引在副本建置成功後才替換；沒有變更時不載入模型，
+也不會上傳。可設定 `RAG_MODEL_CACHE` 指向既有模型快取；模型下載仍不使用 HF token。
+索引、向量與暫存語料不進 Git。
+
+## Gradio 檢索介面
+
+本機使用既有索引和模型快取（PowerShell 範例）：
+
+```powershell
+$env:RAG_INDEX_PATH = "rag/index-bge-m3.sqlite"
+$env:RAG_MODEL_CACHE = ".hf_cache"
+$env:HF_HUB_OFFLINE = "1"
+python space/app.py
+```
+
+介面預設只監聽本機，使用 benchmark 選定的 BGE-M3 混合檢索參數；顯示前五題及其出處，
+不呼叫 LLM。未解析的考選部 PDF 會標示為「未解析」。`RAG_MODEL_CACHE` 可指向其他既有快取。
+
+準備 Hugging Face Space 目錄（不會上傳或使用帳號）：
+
+```bash
+python scripts/rag/package_space.py --out /path/to/new-space-directory
+```
+
+日後經授權建立 Space 後，上傳該目錄，並設定 `HF_DATASET_REPO` 指向已有索引的公開
+Dataset；Space 啟動時匿名下載索引。[Hugging Face 官方文件](https://huggingface.co/docs/hub/spaces-overview)
+目前指出 CPU Basic 無時租，但建立 Gradio Space 需要付費方案；建立前應先確認帳號方案與費用。
+
 ## 目錄結構
 
 ```

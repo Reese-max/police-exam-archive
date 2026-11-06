@@ -189,10 +189,11 @@ def load_evidence(root: Path) -> tuple[dict, dict, set[str]]:
     return records, aliases, sources
 
 
-def load_catalog(root: Path, records: dict, aliases: dict, sources: set) -> tuple[dict, dict]:
+def load_catalog(root: Path, records: dict, aliases: dict, sources: set,
+                 catalog_path: Path | None = None) -> tuple[dict, dict]:
     """Join exact official labels using repo naming evidence, never fuzzy subjects."""
     source = "rag/moex_catalog.json"
-    path = root / source
+    path = Path(catalog_path) if catalog_path is not None else root / source
     if not path.exists():
         return {}, {}
     catalog = read_json(path)
@@ -239,7 +240,7 @@ def load_catalog(root: Path, records: dict, aliases: dict, sources: set) -> tupl
     matched, categories = defaultdict(list), defaultdict(set)
     for item in catalog["entries"]:
         year = item["year"]
-        if not isinstance(year, int) or not 106 <= year <= 115:
+        if not isinstance(year, int) or not 106 <= year <= 999:
             raise ValueError("Invalid catalog year")
         # A 107-year re-exam listed in the 109 directory is not a 109 paper.
         named_year = re.match(r"([0-9]{3})年", item.get("exam_name", ""))
@@ -263,9 +264,9 @@ def load_catalog(root: Path, records: dict, aliases: dict, sources: set) -> tupl
     return matched, categories
 
 
-def build_source_map(root: Path) -> tuple[dict, dict]:
+def build_source_map(root: Path, catalog_path: Path | None = None) -> tuple[dict, dict]:
     records, aliases, sources = load_evidence(root)
-    catalog, catalog_categories = load_catalog(root, records, aliases, sources)
+    catalog, catalog_categories = load_catalog(root, records, aliases, sources, catalog_path)
     table_source = "scripts/download/download_all_categories.py"
     table = root / table_source
     codes, by_year = police_context(records, literal_mapping(table, "CATEGORIES") if table.exists() else {})

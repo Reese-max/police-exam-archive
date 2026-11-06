@@ -5,9 +5,28 @@ import pytest
 
 from scripts.rag.build_index import build_index
 from scripts.rag.eval_retrieval import evaluate, middle_query, matching_text
+from scripts.rag.eval_retrieval import main as eval_main
 from scripts.rag.query import format_results, main
 from scripts.rag.retrieval import Retriever, keyword_search, rrf
 from test_rag_index import FakeEmbedder, document, write_corpus
+
+
+@pytest.mark.parametrize("profile_db", ["rag/index.sqlite", r"rag\index.sqlite"])
+def test_profile_paths_work_for_query_and_evaluation(tmp_path, monkeypatch, capsys, profile_db):
+    monkeypatch.chdir(tmp_path)
+    rag = tmp_path / "rag"
+    rag.mkdir()
+    corpus, db = rag / "corpus.jsonl", rag / "index.sqlite"
+    write_corpus(corpus, [document("a", "警察查證身分的法律規定")])
+    build_index(corpus, db, embed=False)
+    profile = rag / "profile.json"
+    profile.write_text(json.dumps({"status": "measured", "device": "cpu", "selected_default": {
+        "db": profile_db, "configuration": {"name": "keyword", "mode": "keyword"}}}), encoding="utf-8")
+    main(["查證身分", "--profile", str(profile), "--json"])
+    assert json.loads(capsys.readouterr().out)[0]["question_id"] == "a"
+    eval_main(["--profile", str(profile), "--corpus", str(corpus), "--out", str(rag / "eval.json"),
+               "--modes", "keyword", "--n", "1"])
+    assert json.loads((rag / "eval.json").read_text(encoding="utf-8"))["n"] == 1
 
 
 def test_rrf_correct_scores_dedup_and_stable_ties():

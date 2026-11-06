@@ -101,7 +101,7 @@ def parse_search_args(parser, argv=None):
             raise ValueError("Benchmark 尚未選出通過 CPU 門檻的預設組合")
         config = selected["configuration"]
         defaults = {key: value for key, value in config.items() if key not in ("name", "use_reranker")}
-        parser.set_defaults(**defaults, db=Path(selected["db"]))
+        parser.set_defaults(**defaults, db=Path(selected["db"].replace("\\", "/")))
         args = parser.parse_args(argv)
         args.use_reranker = bool(config.get("use_reranker"))
     return args
@@ -113,7 +113,7 @@ def search_arguments(args):
 
 
 def configure_model_cache():
-    cache = ROOT / ".hf_cache"
+    cache = Path(os.environ.get("RAG_MODEL_CACHE", ROOT / ".hf_cache"))
     for name, suffix in (("HF_HOME", ""), ("HF_HUB_CACHE", "hub"),
                          ("HUGGINGFACE_HUB_CACHE", "hub"), ("TRANSFORMERS_CACHE", "transformers"),
                          ("SENTENCE_TRANSFORMERS_HOME", "sentence_transformers")):

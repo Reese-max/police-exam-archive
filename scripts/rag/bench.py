@@ -116,7 +116,7 @@ def run_benchmark(indexes, records, configs, *, device="cpu", warmup=3, repeats=
             error = str(exc)
         try:
             for config in configs:
-                row = {"model": model, "db": str(db), "configuration": config, "metrics": None}
+                row = {"model": model, "db": Path(db).as_posix(), "configuration": config, "metrics": None}
                 if not error and config["mode"] != "keyword" and vector_error is None and retriever.vector_ids is None:
                     try:
                         retriever._load_vectors()

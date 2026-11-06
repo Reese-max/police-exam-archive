@@ -791,7 +791,7 @@
       "rrf_k": 20,
       "vector_weight": 1.0
     },
-    "db": "rag\\index-bge-m3.sqlite",
+    "db": "rag/index-bge-m3.sqlite",
     "metrics": {
       "mrr": 0.7461111111111111,
       "p50_ms": 191.18,
