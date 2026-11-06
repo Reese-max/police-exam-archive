@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T08:42:04.203306+00:00",
-  "source_commit": "66e2dab99daa09be150fc097f70f570f1bb5f866",
-  "dataset_fingerprint": "sha256:b05dc4ea00381de2523d8dc25b8d183f6db9743c3dd60dc0ed79f622271b6e61",
-  "corpus_fingerprint": "sha256:b05dc4ea00381de2523d8dc25b8d183f6db9743c3dd60dc0ed79f622271b6e61",
+  "generated_at": "2026-11-06T20:42:20.611553+00:00",
+  "source_commit": "8d9b68dc8a6c4685ff16e3a9344a6390c082bd6a",
+  "dataset_fingerprint": "sha256:de4eafbd9fa9cc95e8f927103433d8864f33f446acaeeb3f6718bf96ea01ae84",
+  "corpus_fingerprint": "sha256:de4eafbd9fa9cc95e8f927103433d8864f33f446acaeeb3f6718bf96ea01ae84",
   "provenance": {
     "schema_version": 1,
     "generator": "scripts/build_quality_summary.py",
@@ -13,7 +13,7 @@
     },
     "fingerprint": {
       "algorithm": "sha256",
-      "value": "sha256:b05dc4ea00381de2523d8dc25b8d183f6db9743c3dd60dc0ed79f622271b6e61",
+      "value": "sha256:de4eafbd9fa9cc95e8f927103433d8864f33f446acaeeb3f6718bf96ea01ae84",
       "material": "sorted relative path + NUL + SHA-256(file bytes)",
       "byte_source": "raw Git blob bytes when source_commit is present; raw file bytes outside Git"
     }
