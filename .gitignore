@@ -92,3 +92,4 @@ backups/
 cache/
 pdfs_missing/
 scripts/download/.download_cache_all.json
+rag/corpus.jsonl
