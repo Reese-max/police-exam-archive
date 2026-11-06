@@ -94,3 +94,7 @@ pdfs_missing/
 scripts/download/.download_cache_all.json
 rag/corpus.jsonl
 rag/moex_cache/
+rag/index.sqlite
+rag/index.sqlite-*
+rag/embeddings/
+.hf_cache/

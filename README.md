@@ -28,6 +28,81 @@
 
 `corpus.jsonl` 每行一題：`question_id`、題幹、選項、答案與 `answer_status`、題組文章、所有出處 `appears_in`，以及考選部原始 PDF 連結 `sources`，可直接用於檢索與溯源。
 
+## 檢索與查詢
+
+先產生語料，再建立本機 SQLite 索引（免費 CPU 可執行，不使用 API 金鑰）：
+
+```bash
+python scripts/rag/build_corpus.py
+python scripts/rag/build_index.py --no-embed
+python scripts/rag/query.py "警察職權行使法 查證身分" --mode keyword -k 5
+python scripts/rag/query.py "DNA 鑑定" --mode keyword --json
+python scripts/rag/eval_retrieval.py --n 500 --seed 0 --modes keyword
+```
+
+在已提供 `sentence-transformers` 的環境中，可建立向量及混合索引；本 repo 的
+`requirements.txt` 尚未列入此選用套件，缺少時會提示使用 keyword，不會自動安裝：
+
+```bash
+python scripts/rag/build_index.py --embed --model intfloat/multilingual-e5-small --device auto --batch-size 64
+python scripts/rag/build_index.py --embed
+python scripts/rag/query.py "集會遊行 禁制區" --mode hybrid
+python scripts/rag/query.py "DNA 鑑定" --mode vector --json
+python scripts/rag/eval_retrieval.py --n 500 --device auto
+```
+
+`build_index.py` 預設開啟向量。模型與 tokenizer 快取由程式固定放在 worktree 的
+`.hf_cache/`（包含 `HF_HOME`），不執行模型遠端程式碼。
+建置、查詢與評估均支援 `--device auto|cpu|cuda`，預設 auto：PyTorch 有 CUDA 時用 GPU，
+否則使用 CPU；明確指定 cuda 而無可用 CUDA 時會報錯。建置 `--batch-size` 預設 64，
+每批將向量與維度提交至 SQLite，並向 stderr 印出已完成數／總數及本次進度。
+Hugging Face Spaces 免費 CPU 也可用相同指令；重新啟動後若磁碟未保留，須重建索引。
+初次取得公開模型需連網，快取完整後可設定 `HF_HUB_OFFLINE=1` 離線使用。
+
+索引預設為 `rag/index.sqlite`，可用 `--db` 指定。`questions` 保留完整語料 JSON
+與題文 SHA-256；`question_fts` 使用 FTS5 trigram 與 BM25，完整片語優先，
+無結果時按空白拆成詞組 AND／OR；不足三字使用跳脫萬用字元的 LIKE 後備。
+`vectors` 以 little-endian float32 BLOB 保存正規化向量，使用 E5 的
+`passage: `／`query: ` 前綴。hybrid 各取前 50 筆，以 RRF（常數 60）合併；
+同分依 `question_id` 排序。向量缺漏時 vector／hybrid 會提示重建。
+
+每年匯入資料並更新 `source_map.json` 後，重跑 corpus 與 index 即可：僅新增或
+`text_hash` 變更的題目更新 FTS／向量，已移除題目同步刪除，引用或答案變更僅更新 JSON。
+第二次相同輸入印出 `added=updated=removed=0`，且不載入模型。
+`--no-embed` 會使改動題目的舊向量失效；之後 `--embed` 只補齊缺漏。
+換 `--model` 會明確提示並重建全部向量；meta 記錄模型、維度與 corpus SHA-256。
+meta 另記錄最近實際編碼的 device，CPU／GPU 視為同模型相容，不因換裝置重算。
+題文雜湊更新與舊向量刪除在同一交易提交，因此存在的向量必對應已提交的 `text_hash`；
+中斷後重跑只補缺漏或題文變更的向量。殘留 `-journal` 由 SQLite 在可寫開啟時自動復原，
+請直接重跑建置，勿手動刪除 journal。首批失敗會回復該次題文更新，後續批失敗保留先前已提交的批次。
+年度修補仍須沿用相同模型版本；若同名遠端模型權重改版，應使用新的索引路徑重建。
+
+文字輸出每題列出最多三筆學系／年度／科目／題號與原始 PDF 連結，其餘顯示數量；
+`--json` 保留完整題幹、選項、所有出處及答案歧異。未解析網址保留 null，不補猜。
+這是附原題答案的檢索工具，沒有自動生成解答，也不重新查證法規現況。
+
+評估預設抽 500 題、seed=0，仍以原始題幹中間連續 15 字查詢（不足則全文），
+不更換抽樣母體或挑選較容易的片段。結果與定義寫入 `rag/eval_report.json`。
+由於題幹保留原始換行／標點，corpus 的 `text` 已正規化，包含比對雙方採 NFC、
+合併空白，並等同 ASCII／全形 `,;:?!()`；仍區分大小寫，不用模糊或近義比對。
+在**所有題目的完整 text（含選項、題組文章）**中計算包含該片段的題數：
+
+- `unique`：僅一題包含片段，列嚴格 `question_id` top-1／top-5。
+- `ambiguous`：多題包含片段，`relevant_at1`／`relevant_at5` 表示前 k 名至少一題
+  包含片段；另保留嚴格 `question_id` top-1／top-5 供參考。
+
+報告列兩群的抽樣數與占比，並保留**全體原本的嚴格 top-1／top-5**與所有 top-1 失敗案例。
+零包含的查詢另列 `unresolved_queries`，仍納入全體分母；空群與未執行模式的 gate 為 null。
+分群理由是同一片段可能對應不同選項或文章，僅憑該片段無法指定唯一 question_id；
+相同中間片段的全語料嚴格 top-1 上限約 90.43%，不能要求全體嚴格 top-1 達 95%。
+新門檻為 unique：keyword top-1 ≥ 95%、hybrid top-1 ≥ 95%、hybrid top-5 ≥ 98%；
+ambiguous：keyword、hybrid 的 relevant@1 各 ≥ 95%。
+本次 500 題 keyword：unique 375 題（75%），top-1／top-5 均為 99.73%；
+ambiguous 125 題（25%），relevant@1 97.6%、relevant@5 98.4%；全體嚴格 84.6%／96.2%。
+兩項 keyword gate 通過；真實 vector／hybrid 成績仍待具備模型的環境驗證。
+平均時間含查詢編碼，不含首次模型／矩陣載入（另列 `setup_ms`）。排序、抽樣及 JSON 欄位固定；
+實測耗時會隨機器變動。
+
 ## 目錄結構
 
 ```
