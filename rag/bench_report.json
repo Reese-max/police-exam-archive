@@ -1,0 +1,810 @@
+{
+  "coverage": {
+    "abbreviated_queries": 34,
+    "abbreviation_ratio": 0.22666666666666666,
+    "errors": [],
+    "queries": 150,
+    "subjects": [
+      "交通工程與管制",
+      "刑事化學",
+      "刑案現場處理與刑事鑑識",
+      "國土安全與移民政策(包括移民人權)",
+      "國境執法與刑事法(包括刑法與刑事訴訟法)",
+      "消防安全設備",
+      "火災學與消防化學",
+      "物理鑑識",
+      "犯罪偵查",
+      "行政法",
+      "行政法與警察行政違規調查裁處作業",
+      "警察學與警察勤務",
+      "警察政策與犯罪預防",
+      "警察組織與事務管理",
+      "電腦犯罪偵查"
+    ],
+    "types": {
+      "choice": 85,
+      "essay": 67
+    }
+  },
+  "definitions": {
+    "mrr": "first labeled relevant rank reciprocal, truncated at 10",
+    "recall": "macro mean of |top-k intersect labeled relevant| / |labeled relevant|; sparse judgments, unjudged results are not certified irrelevant",
+    "selection": "full supplied evaluation set; exploratory selection, no held-out generalization claim",
+    "timing": "sequential single-query wall time including encoding, fusion, optional top-20 reranking and JSON/citations; excludes setup, warmup and index build"
+  },
+  "device": "cpu",
+  "environment": {
+    "platform": "Windows-10-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "python": "3.11.9"
+  },
+  "eval_set_sha256": "e41e44b10a3d19b719d2db7d2355705ba55b5088203e61bde00b93c2d6eec505",
+  "results": [
+    {
+      "configuration": {
+        "mode": "keyword",
+        "name": "keyword",
+        "phrase_priority": false
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.0,
+        "p50_ms": 0.744,
+        "p95_ms": 2.64,
+        "queries": 150,
+        "recall@1": 0.0,
+        "recall@10": 0.0,
+        "recall@5": 0.0,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "mode": "vector",
+        "name": "vector"
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.5042354497354498,
+        "p50_ms": 38.588,
+        "p95_ms": 67.826,
+        "queries": 150,
+        "recall@1": 0.39666666666666667,
+        "recall@10": 0.74,
+        "recall@5": 0.6533333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "keyword_weight": 1.0,
+        "mode": "hybrid",
+        "name": "hybrid_old_equal",
+        "phrase_priority": false,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.5042354497354498,
+        "p50_ms": 49.658,
+        "p95_ms": 80.848,
+        "queries": 150,
+        "recall@1": 0.39666666666666667,
+        "recall@10": 0.74,
+        "recall@5": 0.6533333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 1,
+        "mode": "hybrid",
+        "name": "hybrid_w1_k20",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.5042354497354498,
+        "p50_ms": 44.778,
+        "p95_ms": 79.894,
+        "queries": 150,
+        "recall@1": 0.39666666666666667,
+        "recall@10": 0.74,
+        "recall@5": 0.6533333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 1,
+        "mode": "hybrid",
+        "name": "hybrid_w1_k20_expanded",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.538468253968254,
+        "p50_ms": 37.335,
+        "p95_ms": 93.473,
+        "queries": 150,
+        "recall@1": 0.43666666666666665,
+        "recall@10": 0.7533333333333333,
+        "recall@5": 0.6733333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 1,
+        "mode": "hybrid",
+        "name": "hybrid_w1_k60",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.5042354497354498,
+        "p50_ms": 43.225,
+        "p95_ms": 73.05,
+        "queries": 150,
+        "recall@1": 0.39666666666666667,
+        "recall@10": 0.74,
+        "recall@5": 0.6533333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 1,
+        "mode": "hybrid",
+        "name": "hybrid_w1_k60_expanded",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.538468253968254,
+        "p50_ms": 43.878,
+        "p95_ms": 103.529,
+        "queries": 150,
+        "recall@1": 0.43666666666666665,
+        "recall@10": 0.7533333333333333,
+        "recall@5": 0.6733333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 2,
+        "mode": "hybrid",
+        "name": "hybrid_w2_k20",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.5042354497354498,
+        "p50_ms": 39.901,
+        "p95_ms": 62.483,
+        "queries": 150,
+        "recall@1": 0.39666666666666667,
+        "recall@10": 0.74,
+        "recall@5": 0.6533333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 2,
+        "mode": "hybrid",
+        "name": "hybrid_w2_k20_expanded",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.538468253968254,
+        "p50_ms": 34.814,
+        "p95_ms": 80.307,
+        "queries": 150,
+        "recall@1": 0.43666666666666665,
+        "recall@10": 0.7533333333333333,
+        "recall@5": 0.6733333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 2,
+        "mode": "hybrid",
+        "name": "hybrid_w2_k60",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.5042354497354498,
+        "p50_ms": 37.952,
+        "p95_ms": 72.187,
+        "queries": 150,
+        "recall@1": 0.39666666666666667,
+        "recall@10": 0.74,
+        "recall@5": 0.6533333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 2,
+        "mode": "hybrid",
+        "name": "hybrid_w2_k60_expanded",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.538468253968254,
+        "p50_ms": 45.271,
+        "p95_ms": 91.522,
+        "queries": 150,
+        "recall@1": 0.43666666666666665,
+        "recall@10": 0.7533333333333333,
+        "recall@5": 0.6733333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 4,
+        "mode": "hybrid",
+        "name": "hybrid_w4_k20",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.5042354497354498,
+        "p50_ms": 43.089,
+        "p95_ms": 76.482,
+        "queries": 150,
+        "recall@1": 0.39666666666666667,
+        "recall@10": 0.74,
+        "recall@5": 0.6533333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 4,
+        "mode": "hybrid",
+        "name": "hybrid_w4_k20_expanded",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.538468253968254,
+        "p50_ms": 42.857,
+        "p95_ms": 100.767,
+        "queries": 150,
+        "recall@1": 0.43666666666666665,
+        "recall@10": 0.7533333333333333,
+        "recall@5": 0.6733333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 4,
+        "mode": "hybrid",
+        "name": "hybrid_w4_k60",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.5042354497354498,
+        "p50_ms": 37.413,
+        "p95_ms": 86.983,
+        "queries": 150,
+        "recall@1": 0.39666666666666667,
+        "recall@10": 0.74,
+        "recall@5": 0.6533333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 4,
+        "mode": "hybrid",
+        "name": "hybrid_w4_k60_expanded",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.538468253968254,
+        "p50_ms": 43.822,
+        "p95_ms": 85.536,
+        "queries": 150,
+        "recall@1": 0.43666666666666665,
+        "recall@10": 0.7533333333333333,
+        "recall@5": 0.6733333333333333,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "mode": "keyword",
+        "name": "keyword_expanded"
+      },
+      "db": "rag\\index-e5.sqlite",
+      "metrics": {
+        "mrr": 0.0,
+        "p50_ms": 0.447,
+        "p95_ms": 2.228,
+        "queries": 150,
+        "recall@1": 0.0,
+        "recall@10": 0.0,
+        "recall@5": 0.0,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "intfloat/multilingual-e5-small"
+    },
+    {
+      "configuration": {
+        "mode": "keyword",
+        "name": "keyword",
+        "phrase_priority": false
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.0,
+        "p50_ms": 0.192,
+        "p95_ms": 0.461,
+        "queries": 150,
+        "recall@1": 0.0,
+        "recall@10": 0.0,
+        "recall@5": 0.0,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "mode": "vector",
+        "name": "vector"
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.736574074074074,
+        "p50_ms": 174.863,
+        "p95_ms": 332.546,
+        "queries": 150,
+        "recall@1": 0.6333333333333333,
+        "recall@10": 0.9,
+        "recall@5": 0.86,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "keyword_weight": 1.0,
+        "mode": "hybrid",
+        "name": "hybrid_old_equal",
+        "phrase_priority": false,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.736574074074074,
+        "p50_ms": 187.004,
+        "p95_ms": 331.901,
+        "queries": 150,
+        "recall@1": 0.6333333333333333,
+        "recall@10": 0.9,
+        "recall@5": 0.86,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 1,
+        "mode": "hybrid",
+        "name": "hybrid_w1_k20",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.736574074074074,
+        "p50_ms": 219.818,
+        "p95_ms": 389.277,
+        "queries": 150,
+        "recall@1": 0.6333333333333333,
+        "recall@10": 0.9,
+        "recall@5": 0.86,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 1,
+        "mode": "hybrid",
+        "name": "hybrid_w1_k20_expanded",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.7461111111111111,
+        "p50_ms": 229.498,
+        "p95_ms": 362.259,
+        "queries": 150,
+        "recall@1": 0.6533333333333333,
+        "recall@10": 0.8866666666666667,
+        "recall@5": 0.8666666666666667,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 1,
+        "mode": "hybrid",
+        "name": "hybrid_w1_k60",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.736574074074074,
+        "p50_ms": 200.325,
+        "p95_ms": 327.788,
+        "queries": 150,
+        "recall@1": 0.6333333333333333,
+        "recall@10": 0.9,
+        "recall@5": 0.86,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 1,
+        "mode": "hybrid",
+        "name": "hybrid_w1_k60_expanded",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.7461111111111111,
+        "p50_ms": 235.891,
+        "p95_ms": 367.159,
+        "queries": 150,
+        "recall@1": 0.6533333333333333,
+        "recall@10": 0.8866666666666667,
+        "recall@5": 0.8666666666666667,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 2,
+        "mode": "hybrid",
+        "name": "hybrid_w2_k20",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.736574074074074,
+        "p50_ms": 186.628,
+        "p95_ms": 337.27,
+        "queries": 150,
+        "recall@1": 0.6333333333333333,
+        "recall@10": 0.9,
+        "recall@5": 0.86,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 2,
+        "mode": "hybrid",
+        "name": "hybrid_w2_k20_expanded",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.7461111111111111,
+        "p50_ms": 191.18,
+        "p95_ms": 342.875,
+        "queries": 150,
+        "recall@1": 0.6533333333333333,
+        "recall@10": 0.8866666666666667,
+        "recall@5": 0.8666666666666667,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 2,
+        "mode": "hybrid",
+        "name": "hybrid_w2_k60",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.736574074074074,
+        "p50_ms": 184.651,
+        "p95_ms": 330.63,
+        "queries": 150,
+        "recall@1": 0.6333333333333333,
+        "recall@10": 0.9,
+        "recall@5": 0.86,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 2,
+        "mode": "hybrid",
+        "name": "hybrid_w2_k60_expanded",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.7461111111111111,
+        "p50_ms": 213.738,
+        "p95_ms": 357.476,
+        "queries": 150,
+        "recall@1": 0.6533333333333333,
+        "recall@10": 0.8866666666666667,
+        "recall@5": 0.8666666666666667,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 4,
+        "mode": "hybrid",
+        "name": "hybrid_w4_k20",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.736574074074074,
+        "p50_ms": 199.774,
+        "p95_ms": 354.247,
+        "queries": 150,
+        "recall@1": 0.6333333333333333,
+        "recall@10": 0.9,
+        "recall@5": 0.86,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 4,
+        "mode": "hybrid",
+        "name": "hybrid_w4_k20_expanded",
+        "phrase_priority": true,
+        "rrf_k": 20,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.7461111111111111,
+        "p50_ms": 226.894,
+        "p95_ms": 422.152,
+        "queries": 150,
+        "recall@1": 0.6533333333333333,
+        "recall@10": 0.8866666666666667,
+        "recall@5": 0.8666666666666667,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": false,
+        "keyword_weight": 4,
+        "mode": "hybrid",
+        "name": "hybrid_w4_k60",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.736574074074074,
+        "p50_ms": 171.494,
+        "p95_ms": 332.213,
+        "queries": 150,
+        "recall@1": 0.6333333333333333,
+        "recall@10": 0.9,
+        "recall@5": 0.86,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "keyword_weight": 4,
+        "mode": "hybrid",
+        "name": "hybrid_w4_k60_expanded",
+        "phrase_priority": true,
+        "rrf_k": 60,
+        "vector_weight": 1.0
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.7461111111111111,
+        "p50_ms": 202.038,
+        "p95_ms": 351.201,
+        "queries": 150,
+        "recall@1": 0.6533333333333333,
+        "recall@10": 0.8866666666666667,
+        "recall@5": 0.8666666666666667,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    },
+    {
+      "configuration": {
+        "expand_abbreviations": true,
+        "mode": "keyword",
+        "name": "keyword_expanded"
+      },
+      "db": "rag\\index-bge-m3.sqlite",
+      "metrics": {
+        "mrr": 0.0,
+        "p50_ms": 0.495,
+        "p95_ms": 1.795,
+        "queries": 150,
+        "recall@1": 0.0,
+        "recall@10": 0.0,
+        "recall@5": 0.0,
+        "timed_queries": 150,
+        "warmup_queries": 3
+      },
+      "model": "BAAI/bge-m3"
+    }
+  ],
+  "selected_default": {
+    "configuration": {
+      "expand_abbreviations": true,
+      "keyword_weight": 2,
+      "mode": "hybrid",
+      "name": "hybrid_w2_k20_expanded",
+      "phrase_priority": true,
+      "rrf_k": 20,
+      "vector_weight": 1.0
+    },
+    "db": "rag\\index-bge-m3.sqlite",
+    "metrics": {
+      "mrr": 0.7461111111111111,
+      "p50_ms": 191.18,
+      "p95_ms": 342.875,
+      "queries": 150,
+      "recall@1": 0.6533333333333333,
+      "recall@10": 0.8866666666666667,
+      "recall@5": 0.8666666666666667,
+      "timed_queries": 150,
+      "warmup_queries": 3
+    },
+    "model": "BAAI/bge-m3"
+  },
+  "selection_reason": "Highest Recall@5 above keyword with CPU p95 <= 500ms; ties: MRR, p95, model/name.",
+  "status": "measured"
+}

@@ -11,9 +11,9 @@ import sqlite3
 import time
 
 if __package__:
-    from .retrieval import Retriever, normalize_text
+    from .retrieval import Retriever, normalize_text, add_search_arguments, search_arguments, parse_search_args, load_reranker
 else:
-    from retrieval import Retriever, normalize_text
+    from retrieval import Retriever, normalize_text, add_search_arguments, search_arguments, parse_search_args, load_reranker
 
 
 def middle_query(stem):
@@ -28,7 +28,7 @@ def matching_text(text):
 
 
 def evaluate(corpus, db, *, n=500, seed=0, modes=("keyword", "vector", "hybrid"),
-             embedder=None, device="auto"):
+             embedder=None, device="auto", **search_options):
     if n <= 0:
         raise ValueError("n 必須大於 0")
     raw = Path(corpus).read_bytes()
@@ -55,6 +55,8 @@ def evaluate(corpus, db, *, n=500, seed=0, modes=("keyword", "vector", "hybrid")
         report = {"n": len(sample), "requested_n": n, "seed": seed,
                   "query_method": "middle contiguous 15 characters of original stem; full stem if shorter",
                   "corpus_sha256": corpus_hash, "model": retriever.meta.get("model"),
+                  "search_options": {key: value for key, value in search_options.items() if key != "reranker"},
+                  "reranker": type(search_options["reranker"]).__name__ if search_options.get("reranker") else None,
                   "definitions": {
                       "matching": "NFC, collapsed whitespace, ASCII/fullwidth ,;:?!() equivalence on query and text; case-sensitive substring, no stemming or fuzzy match",
                       "unique": "Query occurs in exactly one corpus question's full text (including options and passage); strict question_id top1/top5",
@@ -91,7 +93,7 @@ def evaluate(corpus, db, *, n=500, seed=0, modes=("keyword", "vector", "hybrid")
                 match_query = matching_text(query)
                 group = groups[doc["question_id"]]
                 started = time.perf_counter()
-                results = retriever.search(query, k=5, mode=mode)
+                results = retriever.search(query, k=5, mode=mode, **search_options)
                 elapsed += time.perf_counter() - started
                 identifiers = [result["question_id"] for result in results]
                 hit1 = bool(identifiers) and identifiers[0] == doc["question_id"]
@@ -137,9 +139,14 @@ def main(argv=None):
                         default=["keyword", "vector", "hybrid"])
     parser.add_argument("--out", type=Path, default=Path("rag/eval_report.json"))
     parser.add_argument("--device", choices=("auto", "cpu", "cuda"), default="auto")
-    args = parser.parse_args(argv)
+    add_search_arguments(parser)
     try:
-        report = evaluate(args.corpus, args.db, n=args.n, seed=args.seed, modes=args.modes, device=args.device)
+        args = parse_search_args(parser, argv)
+        options = search_arguments(args)
+        if getattr(args, "use_reranker", False):
+            options["reranker"] = load_reranker(args.device)
+        report = evaluate(args.corpus, args.db, n=args.n, seed=args.seed, modes=args.modes, device=args.device,
+                          **options)
     except (ValueError, RuntimeError, OSError, sqlite3.Error) as exc:
         parser.exit(1, f"評估失敗：{exc}\n")
     args.out.parent.mkdir(parents=True, exist_ok=True)

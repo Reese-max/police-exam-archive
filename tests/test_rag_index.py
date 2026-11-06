@@ -8,7 +8,7 @@ from types import SimpleNamespace
 import pytest
 
 from scripts.rag.build_index import build_index
-from scripts.rag.retrieval import load_embedder, metadata
+from scripts.rag.retrieval import load_embedder, metadata, embedding_texts
 
 
 class FakeEmbedder:
@@ -57,7 +57,7 @@ def test_incremental_and_noop_does_not_load_model(tmp_path):
     assert (third["added"], third["updated"], third["removed"], third["unchanged"]) == (1, 1, 1, 1)
     assert third["embedded"] == len(fake.calls) == 2
     with sqlite3.connect(db) as connection:
-        assert connection.execute("SELECT question_id FROM vectors ORDER BY question_id").fetchall() == [("a",), ("c",), ("d",)]
+        assert connection.execute("SELECT question_id FROM question_vectors WHERE vector_id IN (SELECT vector_id FROM vectors WHERE embedding IS NOT NULL) ORDER BY question_id").fetchall() == [("a",), ("c",), ("d",)]
         assert connection.execute("SELECT count(*) FROM question_fts").fetchone()[0] == 3
         assert connection.execute("SELECT question_id FROM question_fts WHERE question_fts MATCH '修改後'").fetchall() == [("a",)]
         meta = metadata(connection)
@@ -113,7 +113,7 @@ def test_keyword_updates_invalidate_only_changed_vectors_then_backfill(tmp_path)
     write_corpus(corpus, [document(text="新的警察職權"), document("b")])
     build_index(corpus, db, embed=False)
     with sqlite3.connect(db) as connection:
-        assert connection.execute("SELECT question_id FROM vectors").fetchall() == [("b",)]
+        assert connection.execute("SELECT question_id FROM question_vectors WHERE vector_id IN (SELECT vector_id FROM vectors WHERE embedding IS NOT NULL)").fetchall() == [("b",)]
     fake.calls.clear()
     result = build_index(corpus, db, embedder_factory=lambda model: fake)
     assert result["embedded"] == len(fake.calls) == 1
@@ -184,8 +184,8 @@ def test_batches_resume_after_interruption_and_hot_journal(tmp_path, capsys):
         build_index(corpus, db, batch_size=2, embedder_factory=lambda model: InterruptedEmbedder())
     assert "2/5" in capsys.readouterr().err
     with sqlite3.connect(db) as connection:
-        before = connection.execute("SELECT question_id, embedding FROM vectors ORDER BY question_id").fetchall()
-        assert [row[0] for row in before] == ["a", "b"]
+        before = connection.execute("SELECT vector_id, embedding FROM vectors WHERE embedding IS NOT NULL ORDER BY vector_id").fetchall()
+        assert [row[0] for row in before] == ["q:a:000000", "q:b:000000"]
         assert metadata(connection)["dimension"] == 3
     # Exit without close/rollback after SQLite has spilled dirty pages: a real hot journal.
     subprocess.run([sys.executable, "-c", """
@@ -194,7 +194,7 @@ connection = sqlite3.connect(sys.argv[1])
 connection.execute('PRAGMA cache_size=1')
 connection.execute('BEGIN IMMEDIATE')
 connection.execute("UPDATE questions SET text_hash='interrupted' WHERE question_id='a'")
-connection.execute("UPDATE vectors SET embedding=zeroblob(262144) WHERE question_id='a'")
+connection.execute("UPDATE vectors SET embedding=zeroblob(262144) WHERE vector_id='q:a:000000'")
 os._exit(0)
 """, str(db)], check=True)
     assert db.with_name(db.name + "-journal").stat().st_size > 512
@@ -202,14 +202,14 @@ os._exit(0)
     resumed = build_index(corpus, db, batch_size=2, embedder_factory=lambda model: fake)
     assert resumed["embedded"] == 3
     assert resumed["added"] == resumed["updated"] == 0
-    assert fake.calls == ["passage: " + doc["text"] for doc in docs[2:]]
+    assert fake.calls == ["passage: " + embedding_texts(doc)[0] for doc in docs[2:]]
     with sqlite3.connect(db) as connection:
         assert connection.execute("PRAGMA quick_check").fetchone()[0] == "ok"
-        assert connection.execute("SELECT question_id, embedding FROM vectors ORDER BY question_id LIMIT 2").fetchall() == before
+        assert connection.execute("SELECT vector_id, embedding FROM vectors WHERE embedding IS NOT NULL ORDER BY vector_id LIMIT 2").fetchall() == before
     write_corpus(corpus, [document("a", "題文改變後需要重算"), *docs[1:]])
     fake.calls.clear()
     assert build_index(corpus, db, embedder_factory=lambda model: fake)["embedded"] == 1
-    assert fake.calls == ["passage: 題文改變後需要重算"]
+    assert fake.calls == ["passage: " + embedding_texts(document("a", "題文改變後需要重算"))[0]]
 
 
 def test_interrupted_model_change_resumes_new_model_only(tmp_path):
@@ -229,7 +229,7 @@ def test_interrupted_model_change_resumes_new_model_only(tmp_path):
     with sqlite3.connect(db) as connection:
         assert metadata(connection)["model"] == "new"
         assert metadata(connection)["dimension"] == 2
-        assert connection.execute("SELECT question_id FROM vectors").fetchall() == [("a",)]
+        assert connection.execute("SELECT question_id FROM question_vectors WHERE vector_id IN (SELECT vector_id FROM vectors WHERE embedding IS NOT NULL)").fetchall() == [("a",)]
     replacement.calls.clear()
     resumed = build_index(corpus, db, model="new", batch_size=2, embedder_factory=lambda model: replacement)
     assert resumed["embedded"] == 2 and not resumed["model_changed"]

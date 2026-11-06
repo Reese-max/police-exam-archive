@@ -58,7 +58,7 @@ def test_output_citations_links_and_full_json(tmp_path, capsys):
     output = format_results(results)
     assert "行政警察／114年／警察法規／第7題" in output
     assert "https://wwwq.moex.gov.tw/exam/" in output
-    assert output.count("試題 PDF：") == 3 and "另有 1 筆出處" in output
+    assert output.count("試題 PDF：") == 1 and "另有" not in output
     assert len(output.split("題幹：")[1].splitlines()[0]) == 120
     assert "答案：A" in output
     assert "查無" in format_results([])
@@ -80,7 +80,7 @@ def test_vector_and_hybrid_with_fake_embedder(tmp_path):
         assert retriever.search("警察", mode="vector")[0]["question_id"] == "a"
         hybrid = retriever.search("警察職權", mode="hybrid")
         assert hybrid[0]["question_id"] == "a"
-        assert hybrid[0]["score"] == pytest.approx(2 / 61)
+        assert hybrid[0]["score"] == pytest.approx(3 / 61)
         assert any(text == "query: 警察" for text in fake.calls)
         assert retriever.search("  ", mode="keyword") == []
         with pytest.raises(ValueError, match="k"):

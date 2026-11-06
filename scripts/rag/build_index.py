@@ -10,9 +10,9 @@ import sys
 import time
 
 if __package__:
-    from .retrieval import DEFAULT_MODEL, encode, json_text, load_embedder, metadata, vector_blob
+    from .retrieval import DEFAULT_MODEL, SCHEMA_VERSION, chunk_text, embedding_texts, encode, json_text, load_embedder, metadata, model_prefix, vector_blob
 else:
-    from retrieval import DEFAULT_MODEL, encode, json_text, load_embedder, metadata, vector_blob
+    from retrieval import DEFAULT_MODEL, SCHEMA_VERSION, chunk_text, embedding_texts, encode, json_text, load_embedder, metadata, model_prefix, vector_blob
 
 
 def read_corpus(path):
@@ -51,10 +51,19 @@ def build_index(corpus=Path("rag/corpus.jsonl"), db=Path("rag/index.sqlite"), *,
                                "(question_id TEXT PRIMARY KEY, text_hash TEXT NOT NULL, doc_json TEXT NOT NULL)")
             connection.execute("CREATE VIRTUAL TABLE IF NOT EXISTS question_fts "
                                "USING fts5(question_id UNINDEXED, text, tokenize='trigram')")
-            connection.execute("CREATE TABLE IF NOT EXISTS vectors (question_id TEXT PRIMARY KEY "
-                               "REFERENCES questions(question_id) ON DELETE CASCADE, embedding BLOB NOT NULL)")
             connection.execute("CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)")
             previous_meta = metadata(connection)
+            schema_changed = previous_meta.get("schema_version") != SCHEMA_VERSION
+            if schema_changed:
+                connection.execute("DROP TABLE IF EXISTS question_vectors")
+                connection.execute("DROP TABLE IF EXISTS vectors")
+                print("向量 schema 變更；全量重建向量索引", file=sys.stderr)
+            connection.execute("CREATE TABLE IF NOT EXISTS vectors "
+                               "(vector_id TEXT PRIMARY KEY, text TEXT NOT NULL, embedding BLOB)")
+            connection.execute("CREATE TABLE IF NOT EXISTS question_vectors "
+                               "(question_id TEXT REFERENCES questions(question_id) ON DELETE CASCADE, "
+                               "vector_id TEXT REFERENCES vectors(vector_id) ON DELETE CASCADE, "
+                               "PRIMARY KEY(question_id, vector_id))")
             old = {identifier: (text_hash, doc_json) for identifier, text_hash, doc_json in
                    connection.execute("SELECT question_id, text_hash, doc_json FROM questions")}
             fts_rows = {identifier: rowid for rowid, identifier in
@@ -65,18 +74,25 @@ def build_index(corpus=Path("rag/corpus.jsonl"), db=Path("rag/index.sqlite"), *,
                              if records[identifier][0] != old[identifier][0])
             changed = set(added + updated)
             model_changed = embed and previous_meta.get("model") not in (None, model)
+            reset = schema_changed or model_changed or not previous_meta.get("model")
             if model_changed:
                 print(f"模型變更：{previous_meta['model']} → {model}；全量重建向量索引", file=sys.stderr)
-            present_vectors = {row[0] for row in connection.execute("SELECT question_id FROM vectors")}
-            pending = (sorted(records) if model_changed or not previous_meta.get("model") else
-                       sorted(changed | (records.keys() - present_vectors))) if embed else []
-            dimension = (None if embed and (model_changed or not previous_meta.get("model"))
-                         else previous_meta.get("dimension"))
-            if pending:
+            if reset:
+                connection.execute("DELETE FROM question_vectors")
+                connection.execute("DELETE FROM vectors")
+            present = {row[0] for row in connection.execute("SELECT DISTINCT question_id FROM question_vectors")}
+            documents = {key: json.loads(row[1]) for key, row in records.items()}
+            vector_changed = {key for key in records.keys() & old.keys()
+                              if embedding_texts(documents[key]) != embedding_texts(json.loads(old[key][1]))}
+            invalid = set(added) | vector_changed
+            for identifier in sorted(invalid | set(removed)):
+                connection.execute("DELETE FROM question_vectors WHERE question_id=?", (identifier,))
+            prepare = sorted((records.keys() - present) | invalid) if embed else []
+            unfinished = connection.execute("SELECT count(*) FROM vectors WHERE embedding IS NULL").fetchone()[0]
+            dimension = None if reset else previous_meta.get("dimension")
+            if prepare or (embed and unfinished):
                 embedder = (embedder_factory(model) if embedder_factory
                             else load_embedder(model, device=device))
-                if model_changed or not previous_meta.get("model"):
-                    connection.execute("DELETE FROM vectors")
             for identifier in removed:
                 connection.execute("DELETE FROM question_fts WHERE rowid=?", (fts_rows[identifier],))
                 connection.execute("DELETE FROM questions WHERE question_id=?", (identifier,))
@@ -87,33 +103,45 @@ def build_index(corpus=Path("rag/corpus.jsonl"), db=Path("rag/index.sqlite"), *,
                         connection.execute("DELETE FROM question_fts WHERE rowid=?", (fts_rows[identifier],))
                     connection.execute("INSERT INTO question_fts(question_id, text) VALUES (?, ?)",
                                        (identifier, text))
-                    connection.execute("DELETE FROM vectors WHERE question_id=?", (identifier,))
                 if identifier not in old or old[identifier] != (text_hash, doc_json):
                     connection.execute("INSERT INTO questions VALUES (?, ?, ?) ON CONFLICT(question_id) "
                                        "DO UPDATE SET text_hash=excluded.text_hash, doc_json=excluded.doc_json",
                                        (identifier, text_hash, doc_json))
-            current_meta = {**previous_meta, "schema_version": 1, "corpus_sha256": corpus_hash}
+            for identifier in prepare:
+                for kind, text in enumerate(embedding_texts(documents[identifier])):
+                    for ordinal, chunk in enumerate(chunk_text(embedder, text, model_prefix(model))):
+                        # Main chunks stay question-specific; identical passages share storage/encoding.
+                        digest = hashlib.sha256(chunk.encode("utf-8")).hexdigest()
+                        vector_id = (f"q:{identifier}:{ordinal:06d}" if kind == 0 else "p:" + digest)
+                        existing = connection.execute("SELECT text FROM vectors WHERE vector_id=?", (vector_id,)).fetchone()
+                        if existing and existing[0] != chunk:
+                            connection.execute("UPDATE vectors SET text=?, embedding=NULL WHERE vector_id=?", (chunk, vector_id))
+                        else:
+                            connection.execute("INSERT OR IGNORE INTO vectors(vector_id,text) VALUES (?,?)", (vector_id, chunk))
+                        connection.execute("INSERT OR IGNORE INTO question_vectors VALUES (?,?)", (identifier, vector_id))
+            connection.execute("DELETE FROM vectors WHERE vector_id NOT IN (SELECT vector_id FROM question_vectors)")
+            pending = connection.execute("SELECT vector_id,text FROM vectors WHERE embedding IS NULL ORDER BY vector_id").fetchall() if embed else []
+            current_meta = {**previous_meta, "schema_version": SCHEMA_VERSION, "corpus_sha256": corpus_hash}
             if embed:
                 current_meta.update(model=model, dimension=dimension)
                 if pending:
                     current_meta["device"] = str(getattr(embedder, "device", device))
-            else:
-                current_meta.setdefault("model", None)
-                current_meta.setdefault("dimension", None)
+            elif reset:
+                current_meta.update(model=None, dimension=None)
             for key, value in sorted(current_meta.items()):
                 if key not in previous_meta or previous_meta[key] != value:
                     connection.execute("INSERT OR REPLACE INTO meta VALUES (?, ?)", (key, json_text(value)))
             for offset in range(0, len(pending), batch_size):
-                identifiers = pending[offset:offset + batch_size]
-                vectors = encode(embedder, [records[identifier][2] for identifier in identifiers],
-                                 "passage: ", batch_size=batch_size)
-                for identifier, vector in zip(identifiers, vectors):
+                batch = pending[offset:offset + batch_size]
+                vectors = encode(embedder, [text for identifier, text in batch],
+                                 model_prefix(model), batch_size=batch_size)
+                for (identifier, text), vector in zip(batch, vectors):
                     if dimension is None:
                         dimension = len(vector)
                     if dimension != len(vector):
                         raise ValueError("Embedder dimension changed; rebuild with a different --model name")
-                    connection.execute("INSERT OR REPLACE INTO vectors VALUES (?, ?)",
-                                       (identifier, vector_blob(vector)))
+                    connection.execute("UPDATE vectors SET embedding=? WHERE vector_id=?",
+                                       (vector_blob(vector), identifier))
                 if current_meta["dimension"] != dimension:
                     current_meta["dimension"] = dimension
                     connection.execute("INSERT OR REPLACE INTO meta VALUES ('dimension', ?)",
@@ -121,8 +149,8 @@ def build_index(corpus=Path("rag/corpus.jsonl"), db=Path("rag/index.sqlite"), *,
                 # Hash updates and stale-vector deletion commit atomically with the first batch.
                 # SQLite recovers an interrupted batch's journal on the next writable open.
                 connection.commit()
-                print(f"向量進度：{len(records) - len(pending) + offset + len(identifiers)}/{len(records)}"
-                      f"（本次 {offset + len(identifiers)}/{len(pending)}）", file=sys.stderr, flush=True)
+                print(f"向量進度：{offset + len(batch)}/{len(pending)}"
+                      f"（本次 {offset + len(batch)}/{len(pending)}）", file=sys.stderr, flush=True)
     finally:
         connection.close()
     return {"added": len(added), "updated": len(updated), "removed": len(removed),

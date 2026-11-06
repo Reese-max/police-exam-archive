@@ -96,5 +96,7 @@ rag/corpus.jsonl
 rag/moex_cache/
 rag/index.sqlite
 rag/index.sqlite-*
+rag/*.sqlite
+rag/*.sqlite-*
 rag/embeddings/
 .hf_cache/

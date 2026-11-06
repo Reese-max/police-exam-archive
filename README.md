@@ -30,78 +30,103 @@
 
 ## 檢索與查詢
 
-先產生語料，再建立本機 SQLite 索引（免費 CPU 可執行，不使用 API 金鑰）：
+先建立語料與 keyword 索引，不需模型套件或 API 金鑰：
 
 ```bash
 python scripts/rag/build_corpus.py
 python scripts/rag/build_index.py --no-embed
-python scripts/rag/query.py "警察職權行使法 查證身分" --mode keyword -k 5
-python scripts/rag/query.py "DNA 鑑定" --mode keyword --json
-python scripts/rag/eval_retrieval.py --n 500 --seed 0 --modes keyword
+python scripts/rag/query.py "警察職權行使法 查證身分" --mode keyword
+python scripts/rag/query.py "警職法" --mode keyword --expand-abbreviations
 ```
 
-在已提供 `sentence-transformers` 的環境中，可建立向量及混合索引；本 repo 的
-`requirements.txt` 尚未列入此選用套件，缺少時會提示使用 keyword，不會自動安裝：
+向量套件 `sentence-transformers` 為選用依賴；程式不會自動安裝。請在已提供套件的環境
+以本機 GPU 建索引、CPU 測查詢；兩個模型使用不同的 `--db`：
 
 ```bash
-python scripts/rag/build_index.py --embed --model intfloat/multilingual-e5-small --device auto --batch-size 64
-python scripts/rag/build_index.py --embed
-python scripts/rag/query.py "集會遊行 禁制區" --mode hybrid
-python scripts/rag/query.py "DNA 鑑定" --mode vector --json
-python scripts/rag/eval_retrieval.py --n 500 --device auto
+python scripts/rag/build_index.py --model intfloat/multilingual-e5-small --db rag/index-e5.sqlite --device cuda --batch-size 64
+python scripts/rag/build_index.py --model BAAI/bge-m3 --db rag/index-bge-m3.sqlite --device cuda --batch-size 8
+python scripts/rag/query.py "警察何時能攔人問身分" --db rag/index-e5.sqlite --device cpu
 ```
 
-`build_index.py` 預設開啟向量。模型與 tokenizer 快取由程式固定放在 worktree 的
-`.hf_cache/`（包含 `HF_HOME`），不執行模型遠端程式碼。
-建置、查詢與評估均支援 `--device auto|cpu|cuda`，預設 auto：PyTorch 有 CUDA 時用 GPU，
-否則使用 CPU；明確指定 cuda 而無可用 CUDA 時會報錯。建置 `--batch-size` 預設 64，
-每批將向量與維度提交至 SQLite，並向 stderr 印出已完成數／總數及本次進度。
-Hugging Face Spaces 免費 CPU 也可用相同指令；重新啟動後若磁碟未保留，須重建索引。
-初次取得公開模型需連網，快取完整後可設定 `HF_HUB_OFFLINE=1` 離線使用。
+模型與 tokenizer 快取固定在 worktree 的 `.hf_cache/`，不執行遠端模型程式碼，不使用
+API 金鑰。首次取得公開權重需要連網；快取完整後可設 `HF_HUB_OFFLINE=1`。
+建置、查詢與評估支援 `--device auto|cpu|cuda`；auto 偵測 CUDA，指定不可用的 cuda
+會報錯。CPU 查詢仍需要相同模型的本機權重；不會在查詢時重建文件向量。
 
-索引預設為 `rag/index.sqlite`，可用 `--db` 指定。`questions` 保留完整語料 JSON
-與題文 SHA-256；`question_fts` 使用 FTS5 trigram 與 BM25，完整片語優先，
-無結果時按空白拆成詞組 AND／OR；不足三字使用跳脫萬用字元的 LIKE 後備。
-`vectors` 以 little-endian float32 BLOB 保存正規化向量，使用 E5 的
-`passage: `／`query: ` 前綴。hybrid 各取前 50 筆，以 RRF（常數 60）合併；
-同分依 `question_id` 排序。向量缺漏時 vector／hybrid 會提示重建。
+向量 schema v2：每題先組合「完整題幹、選項、已知正確選項內容、資料夾科目名稱」，
+題組文章另建向量。長文字按模型 tokenizer 的實際 token 預算切段，保留所有題幹內容，
+不再讓文章佔滿 e5 的 512 token。相同文章片段只編碼與儲存一次，以 `question_vectors`
+關聯多題；每題對所有關聯片段、所有查詢版本取最大 cosine 分數，結果每題只出現一次。
+E5 使用 `passage: `／`query: `；bge-m3 dense 不加 E5 前綴。
+`vectors` 保存輸入文字與 little-endian float32 正規化向量。meta 記錄 schema、模型、
+維度、corpus SHA-256 及實際編碼裝置；舊 schema 或模型變更會全量重建向量。
 
-每年匯入資料並更新 `source_map.json` 後，重跑 corpus 與 index 即可：僅新增或
-`text_hash` 變更的題目更新 FTS／向量，已移除題目同步刪除，引用或答案變更僅更新 JSON。
-第二次相同輸入印出 `added=updated=removed=0`，且不載入模型。
-`--no-embed` 會使改動題目的舊向量失效；之後 `--embed` 只補齊缺漏。
-換 `--model` 會明確提示並重建全部向量；meta 記錄模型、維度與 corpus SHA-256。
-meta 另記錄最近實際編碼的 device，CPU／GPU 視為同模型相容，不因換裝置重算。
-題文雜湊更新與舊向量刪除在同一交易提交，因此存在的向量必對應已提交的 `text_hash`；
-中斷後重跑只補缺漏或題文變更的向量。殘留 `-journal` 由 SQLite 在可寫開啟時自動復原，
-請直接重跑建置，勿手動刪除 journal。首批失敗會回復該次題文更新，後續批失敗保留先前已提交的批次。
-年度修補仍須沿用相同模型版本；若同名遠端模型權重改版，應使用新的索引路徑重建。
+重跑相同 corpus 不載入模型、不重算向量。題文更新 FTS，題幹／選項／正確答案內容／科目／
+文章變動才使相應向量失效；僅出處網址異動只更新 JSON。刪題會清理關聯與無人引用的向量。
+`--no-embed` 會使有變動題目的向量關聯失效，之後 `--embed` 補齊。
+每批向量與維度一併提交；尚未編碼的列保留 NULL，續跑只補缺漏。
+首批失敗會回復此次更新，後續中斷保留已提交批次；殘留 journal 由 SQLite 復原，勿手動刪除。
+向量不完整時 vector/hybrid 會報錯，keyword 仍可使用。年度更新沿用原 corpus 建置流程。
 
-文字輸出每題列出最多三筆學系／年度／科目／題號與原始 PDF 連結，其餘顯示數量；
-`--json` 保留完整題幹、選項、所有出處及答案歧異。未解析網址保留 null，不補猜。
-這是附原題答案的檢索工具，沒有自動生成解答，也不重新查證法規現況。
+keyword 使用 SQLite FTS5 trigram BM25；完整片語優先，無命中才按空白拆詞 AND／OR，
+不足三字使用跳脫萬用字元的 LIKE。hybrid 預設候選各 50 筆，以加權 RRF 合併：
+`keyword_weight/(k+rank) + vector_weight/(k+rank)`。完整查詢片語命中先排前面，
+且保留 keyword 在這些命中之間的次序；可選 reranker 也不會破壞此規則。
+同分按題目 ID 固定排序；下列參數可調：
 
-評估預設抽 500 題、seed=0，仍以原始題幹中間連續 15 字查詢（不足則全文），
-不更換抽樣母體或挑選較容易的片段。結果與定義寫入 `rag/eval_report.json`。
-由於題幹保留原始換行／標點，corpus 的 `text` 已正規化，包含比對雙方採 NFC、
-合併空白，並等同 ASCII／全形 `,;:?!()`；仍區分大小寫，不用模糊或近義比對。
-在**所有題目的完整 text（含選項、題組文章）**中計算包含該片段的題數：
+```bash
+python scripts/rag/query.py "查證身分" --db rag/index-e5.sqlite --device cpu --keyword-weight 2 --vector-weight 1 --rrf-k 60 --candidates 50 --phrase-priority
+# 復現舊等權融合（使用目前 schema v2 向量，並非舊文件向量的完整歷史復現）
+python scripts/rag/query.py "查證身分" --db rag/index-e5.sqlite --keyword-weight 1 --vector-weight 1 --no-phrase-priority --no-expand-abbreviations
+```
 
-- `unique`：僅一題包含片段，列嚴格 `question_id` top-1／top-5。
-- `ambiguous`：多題包含片段，`relevant_at1`／`relevant_at5` 表示前 k 名至少一題
-  包含片段；另保留嚴格 `question_id` top-1／top-5 供參考。
+**2:1、k=60 是待測的暫用值，尚未宣稱為實測最佳預設。** 最終值由下述 benchmark 選出，
+再以 `--profile rag/bench_report.json` 套用；明確給的 CLI 參數優先於 profile。
+當比較未完成、非 CPU 或沒有組合通過門檻時，`selected_default=null`，profile 會拒絕使用。
 
-報告列兩群的抽樣數與占比，並保留**全體原本的嚴格 top-1／top-5**與所有 top-1 失敗案例。
-零包含的查詢另列 `unresolved_queries`，仍納入全體分母；空群與未執行模式的 gate 為 null。
-分群理由是同一片段可能對應不同選項或文章，僅憑該片段無法指定唯一 question_id；
-相同中間片段的全語料嚴格 top-1 上限約 90.43%，不能要求全體嚴格 top-1 達 95%。
-新門檻為 unique：keyword top-1 ≥ 95%、hybrid top-1 ≥ 95%、hybrid top-5 ≥ 98%；
-ambiguous：keyword、hybrid 的 relevant@1 各 ≥ 95%。
-本次 500 題 keyword：unique 375 題（75%），top-1／top-5 均為 99.73%；
-ambiguous 125 題（25%），relevant@1 97.6%、relevant@5 98.4%；全體嚴格 84.6%／96.2%。
-兩項 keyword gate 通過；真實 vector／hybrid 成績仍待具備模型的環境驗證。
-平均時間含查詢編碼，不含首次模型／矩陣載入（另列 `setup_ms`）。排序、抽樣及 JSON 欄位固定；
-實測耗時會隨機器變動。
+`rag/abbreviations.json` 收錄 31 組明確法規簡稱；`--expand-abbreviations` 啟用最長詞優先、
+單次非遞迴替換，同時查原查詢及全名版本；keyword 合併兩版排名，向量批次編碼兩版並取最大分。
+不自動更新法規名稱、不做模糊猜測；這是檢索用對照，不保證歷史題目適用現行法。
+
+每題的文字出處按已知試題 PDF 網址分組，同網址學系合併一行，最多顯示三組；未知網址保持
+未解析，依原路徑保留。`--json` 保留完整題文、所有原出處與答案歧異，不會刪掉原始引用。
+
+語意集 `rag/eval_semantic.jsonl` 共 150 筆、15 科目，包含選擇及申論；34 筆（22.7%）使用
+法規簡稱。逐題讀原題後編寫自然語言與相關性理由；人臉辨識的兩個近重複原題都標為相關。
+標註是有限正例，未標題目不代表已確認不相關。原題未修改，也未加入臆測答案。
+檢查器拒絕未知 ID、空理由、重複查詢、涵蓋不足及與任何相關題幹／選項共享連續四字的查詢；
+採 NFKC、忽略大小寫、去掉空白及標點後檢查，比只比原字串更嚴格：
+
+```bash
+python scripts/rag/check_eval_set.py
+python scripts/rag/bench.py --device cpu
+# 明確指定索引；標準輸出含 Markdown 表，JSON 預設寫入 rag/bench_report.json
+python scripts/rag/bench.py --device cpu --index intfloat/multilingual-e5-small=rag/index-e5.sqlite --index BAAI/bge-m3=rag/index-bge-m3.sqlite --weights 1 2 4 --rrf-constants 20 60 --repeats 3
+# 選用：僅對前 20 筆執行 BAAI/bge-reranker-v2-m3
+python scripts/rag/bench.py --device cpu --reranker
+```
+
+bench 不會建立或改寫索引。每個模型比較 keyword、vector、舊等權 RRF、新片語優先融合
+（keyword 權重 1/2/4、RRF k=20/60），並比較簡稱展開；可加入重排。
+先暖機（預設三次）再逐筆量測，時間包含查詢編碼、融合、可選重排與結果組裝，排除建索引及
+初始載入。列 Recall@1/@5/@10、MRR@10、p50/p95；Recall 是每筆已標正例的找回比例再取平均，
+p95 使用 nearest-rank。只在兩個指定模型的所有組合都完成後，選 CPU p95 ≤500 ms 且
+Recall@5 高於 keyword 的最高 Recall@5 組合；同分依 MRR、p95、模型及組合名稱決定。
+這是同一評估集的探索選型，未宣稱獨立測試集上的泛化效果。套用與字面驗收：
+
+```bash
+python scripts/rag/query.py "臨檢有哪些限制" --profile rag/bench_report.json --device cpu
+python scripts/rag/eval_retrieval.py --profile rag/bench_report.json --n 500 --seed 0 --device cpu
+```
+
+字面評估沿用 seed=0、原題幹中間連續 15 字及原抽樣母體。NFC、合併空白與
+ASCII／全形 `,;:?!()` 等同後，在完整 text 中只有一題含片段為 unique，多題則 ambiguous。
+unique 使用嚴格 ID top-1/top-5，ambiguous 另列前 k 題至少一題包含片語的 relevant@k。
+空群及未執行 gate 為 null，零包含仍計入全體分母。新 hybrid 門檻為 unique top-1 ≥0.95、
+top-5 ≥0.98、ambiguous relevant@1 ≥0.95；結果寫入 `rag/eval_report.json`。
+現存 `eval_report.json` 是先前 schema v1 的 500 題實測紀錄，**不是本輪多向量驗收**。
+本沙箱沒有 sentence-transformers，真實雙模型建索引、CPU 延遲與最終預設選型待沙箱外執行；
+`bench_report.json` 如含 null，表示未測，不能視為通過。
 
 ## 目錄結構
 

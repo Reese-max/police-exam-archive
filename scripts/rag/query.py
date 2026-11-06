@@ -7,9 +7,18 @@ from pathlib import Path
 import sqlite3
 
 if __package__:
-    from .retrieval import Retriever
+    from .retrieval import Retriever, add_search_arguments, search_arguments, parse_search_args, load_reranker
 else:
-    from retrieval import Retriever
+    from retrieval import Retriever, add_search_arguments, search_arguments, parse_search_args, load_reranker
+
+
+def group_citations(citations):
+    groups = {}
+    for citation in citations:
+        # Unknown URLs are not evidence of a shared PDF.
+        key = citation.get("question_pdf_url") or (citation.get("path"), citation.get("number"))
+        groups.setdefault(key, []).append(citation)
+    return list(groups.values())
 
 
 def format_results(results):
@@ -23,9 +32,11 @@ def format_results(results):
             lines.append("答案：送分")
         if item.get("answer_conflicts"):
             lines.append("注意：原始答案存在歧異，詳見 --json 的 answer_conflicts")
-        citations = item.get("citations", [])
-        for citation in citations[:3]:
-            lines.append(f"出處：{citation.get('category')}／{citation.get('year')}年／"
+        citations = group_citations(item.get("citations", []))
+        for group in citations[:3]:
+            citation = group[0]
+            categories = "、".join(sorted({str(c.get('category')) for c in group}))
+            lines.append(f"出處：{categories}／{citation.get('year')}年／"
                          f"{citation.get('subject')}／第{citation.get('number')}題")
             lines.append("試題 PDF：" + (citation.get("question_pdf_url") or "未解析"))
         if len(citations) > 3:
@@ -42,11 +53,15 @@ def main(argv=None):
     parser.add_argument("--mode", choices=("hybrid", "keyword", "vector"), default="hybrid")
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--device", choices=("auto", "cpu", "cuda"), default="auto")
-    args = parser.parse_args(argv)
+    add_search_arguments(parser)
     retriever = None
     try:
+        args = parse_search_args(parser, argv)
         retriever = Retriever(args.db, device=args.device)
-        results = retriever.search(args.query, k=args.k, mode=args.mode)
+        options = search_arguments(args)
+        if getattr(args, "use_reranker", False):
+            options["reranker"] = load_reranker(args.device)
+        results = retriever.search(args.query, k=args.k, mode=args.mode, **options)
     except (ValueError, RuntimeError, OSError, sqlite3.Error) as exc:
         parser.exit(1, f"查詢失敗：{exc}\n")
     finally:
