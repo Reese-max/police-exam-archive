@@ -1,0 +1,8 @@
+{
+  "name": "exam-archive-node-regressions",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "fake-indexeddb": "6.2.4"
+  }
+}

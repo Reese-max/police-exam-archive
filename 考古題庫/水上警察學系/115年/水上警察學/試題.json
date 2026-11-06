@@ -11,7 +11,13 @@
     "official_category_code": "211",
     "official_category": "水上警察人員",
     "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=211&s=0706&q=1",
-    "source_sha256": "478604c08a3f0bc28bda1f28c5a9fe31bf6bcbe7ed57af9ea02a9a801871b05e"
+    "source_sha256": "478604c08a3f0bc28bda1f28c5a9fe31bf6bcbe7ed57af9ea02a9a801871b05e",
+    "categories": [
+      "水上警察學系"
+    ],
+    "official_subject": "水上警察學",
+    "path_subject": "水上警察學",
+    "category_membership": "水上警察學系"
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -56,5 +62,8 @@
     "strategies_tried": [
       "pdfplumber"
     ]
-  }
+  },
+  "categories": [
+    "水上警察學系"
+  ]
 }

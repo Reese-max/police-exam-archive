@@ -11,7 +11,13 @@
     "official_category_code": "205",
     "official_category": "犯罪防治人員預防組",
     "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=205&s=1103&q=1",
-    "source_sha256": "5508ed26a9eca49d0afbee2bc8f31659798e0aa14e0e3fa226eee3f2a54e1abd"
+    "source_sha256": "5508ed26a9eca49d0afbee2bc8f31659798e0aa14e0e3fa226eee3f2a54e1abd",
+    "categories": [
+      "犯罪防治學系預防組"
+    ],
+    "official_subject": "犯罪分析",
+    "path_subject": "犯罪分析",
+    "category_membership": "犯罪防治學系預防組"
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -35,7 +41,7 @@
     {
       "number": "三",
       "type": "essay",
-      "stem": "娛樂用大麻(recreationalcannabis)與醫療用大麻(medical cannabis)在\n主要成分與作用上有何差異?並說明濫用娛樂性大麻可能造成之社會\n衝擊與個人身心危害。(25 分)",
+      "stem": "娛樂用大麻(recreational cannabis)與醫療用大麻(medical cannabis)在\n主要成分與作用上有何差異?並說明濫用娛樂性大麻可能造成之社會\n衝擊與個人身心危害。(25 分)",
       "section": null
     },
     {
@@ -56,5 +62,8 @@
     "strategies_tried": [
       "pdfplumber"
     ]
-  }
+  },
+  "categories": [
+    "犯罪防治學系預防組"
+  ]
 }

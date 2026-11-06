@@ -7,7 +7,7 @@ HTML 生成器 — 從 JSON 題目資料生成靜態 HTML 考古題網站
 用法:
   python generate_html.py                              # 從 考古題庫/ 生成到 考古題網站/
   python generate_html.py --input 考古題庫 --output 考古題網站
-  python generate_html.py --category 行政警察學系學系       # 只生成一個類科
+  python generate_html.py --category 行政警察學系       # 只生成一個類科
 """
 
 import os
@@ -23,62 +23,62 @@ from collections import defaultdict
 # ===== 類科定義（按警大學系分組） =====
 # 甲組 — 警察科技學院
 CATEGORIES_GROUP_A = [
-    '刑事警察學系學系',
-    '鑑識科學學系學系',
+    '刑事警察學系',
+    '鑑識科學學系',
     '交通學系交通組',
     '交通學系電訊組',
     '消防學系',
-    '水上警察學系學系',
-    '資訊管理學系學系',
+    '水上警察學系',
+    '資訊管理學系',
 ]
 
 # 乙組 — 警政管理學院
 CATEGORIES_GROUP_B = [
-    '行政警察學系學系',
-    '外事警察學系學系',
-    '公共安全學系社安組學系社安組',
-    '公共安全學系社安組學系情報組',
+    '行政警察學系',
+    '外事警察學系',
+    '公共安全學系社安組',
+    '公共安全學系情報組',
     '犯罪防治學系預防組',
     '犯罪防治學系矯治組',
-    '國境警察學系境管組學系境管組',
-    '國境警察學系境管組學系移民組',
-    '行政管理學系學系',
+    '國境警察學系境管組',
+    '國境警察學系移民組',
+    '行政管理學系',
     '法律學系',
 ]
 
 CATEGORIES_ORDER = CATEGORIES_GROUP_A + CATEGORIES_GROUP_B
 
 CATEGORIES_INFO = {
-    '行政警察學系學系': {'code': 501, 'icon': '&#128110;', 'color': '#2563eb'},
-    '外事警察學系學系': {'code': 502, 'icon': '&#127760;', 'color': '#0d9488'},
-    '刑事警察學系學系': {'code': 503, 'icon': '&#128269;', 'color': '#d97706'},
-    '公共安全學系社安組學系社安組': {'code': 504, 'icon': '&#128737;', 'color': '#7c3aed'},
+    '行政警察學系': {'code': 501, 'icon': '&#128110;', 'color': '#2563eb'},
+    '外事警察學系': {'code': 502, 'icon': '&#127760;', 'color': '#0d9488'},
+    '刑事警察學系': {'code': 503, 'icon': '&#128269;', 'color': '#d97706'},
+    '公共安全學系社安組': {'code': 504, 'icon': '&#128737;', 'color': '#7c3aed'},
     '犯罪防治學系預防組': {'code': 505, 'icon': '&#129309;', 'color': '#e11d48'},
     '犯罪防治學系矯治組': {'code': '505b', 'icon': '&#128274;', 'color': '#ea580c'},
     '消防學系': {'code': 506, 'icon': '&#128658;', 'color': '#dc2626'},
     '交通學系交通組': {'code': 507, 'icon': '&#128678;', 'color': '#475569'},
     '交通學系電訊組': {'code': '507b', 'icon': '&#128225;', 'color': '#0284c7'},
-    '資訊管理學系學系': {'code': 508, 'icon': '&#128187;', 'color': '#2563eb'},
-    '鑑識科學學系學系': {'code': 509, 'icon': '&#128300;', 'color': '#059669'},
-    '國境警察學系境管組學系境管組': {'code': 510, 'icon': '&#128706;', 'color': '#7c3aed'},
-    '水上警察學系學系': {'code': 511, 'icon': '&#9875;', 'color': '#0369a1'},
+    '資訊管理學系': {'code': 508, 'icon': '&#128187;', 'color': '#2563eb'},
+    '鑑識科學學系': {'code': 509, 'icon': '&#128300;', 'color': '#059669'},
+    '國境警察學系境管組': {'code': 510, 'icon': '&#128706;', 'color': '#7c3aed'},
+    '水上警察學系': {'code': 511, 'icon': '&#9875;', 'color': '#0369a1'},
     '法律學系': {'code': 512, 'icon': '&#9878;', 'color': '#b45309'},
-    '行政管理學系學系': {'code': 513, 'icon': '&#128203;', 'color': '#6366f1'},
-    '國境警察學系境管組學系移民組': {'code': 590, 'icon': '&#9992;', 'color': '#0891b2'},
-    '公共安全學系社安組學系情報組': {'code': 'nsi', 'icon': '&#128065;', 'color': '#4f46e5'},
+    '行政管理學系': {'code': 513, 'icon': '&#128203;', 'color': '#6366f1'},
+    '國境警察學系移民組': {'code': 590, 'icon': '&#9992;', 'color': '#0891b2'},
+    '公共安全學系情報組': {'code': 'nsi', 'icon': '&#128065;', 'color': '#4f46e5'},
 }
 
 # 圖標對照（純文字版，用於 Python 端）
 CATEGORIES_EMOJI = {
-    '行政警察學系學系': '👮', '外事警察學系學系': '🌐', '刑事警察學系學系': '🔍',
-    '公共安全學系社安組學系社安組': '🛡', '犯罪防治學系預防組': '🤝', '犯罪防治學系矯治組': '🔒',
+    '行政警察學系': '👮', '外事警察學系': '🌐', '刑事警察學系': '🔍',
+    '公共安全學系社安組': '🛡', '犯罪防治學系預防組': '🤝', '犯罪防治學系矯治組': '🔒',
     '消防學系': '🚒',
     '交通學系交通組': '🚦', '交通學系電訊組': '📡',
-    '資訊管理學系學系': '💻', '鑑識科學學系學系': '🔬',
-    '國境警察學系境管組學系境管組': '🛂', '水上警察學系學系': '⚓', '法律學系': '⚖',
-    '行政管理學系學系': '📋',
-    '國境警察學系境管組學系移民組': '✈',
-    '公共安全學系社安組學系情報組': '👁',
+    '資訊管理學系': '💻', '鑑識科學學系': '🔬',
+    '國境警察學系境管組': '🛂', '水上警察學系': '⚓', '法律學系': '⚖',
+    '行政管理學系': '📋',
+    '國境警察學系移民組': '✈',
+    '公共安全學系情報組': '👁',
 }
 
 
@@ -99,6 +99,13 @@ def format_passage_html(text):
     """
     # 先做 HTML 跳脫，但不轉義引號（段落在 div 內容中，不需要跳脫引號）
     escaped = html_module.escape(str(text), quote=False)
+
+    # 新格式以 [[題號]] 明確保存填空位置，不依賴 PDF 空白寬度。
+    explicit_placeholder = re.compile(r"\[\[(\d{1,3})\]\]")
+    escaped = explicit_placeholder.sub(
+        lambda match: f'<strong class="passage-qnum">[{match.group(1)}]</strong>',
+        escaped,
+    )
 
     # 先提取題號範圍（如 51-55），用於後續只標記範圍內的數字
     range_match = re.search(r'請依下文回答第(\d+)題至第(\d+)題', escaped)
@@ -264,10 +271,14 @@ body.sidebar-collapsed .sidebar-reopen { display: flex; }
 .q-block:last-child { border-bottom: none; margin-bottom: 0; }
 .q-block:last-child::after { display: none; }
 .mc-options { padding-left: 2.3rem; margin: 0.2rem 0 0.15rem; }
-.mc-opt { display: flex; gap: 0.4rem; padding: 0.25rem 0.4rem; align-items: baseline; border-radius: 8px; transition: all 0.15s ease; cursor: default; margin: 0.1rem -0.4rem; }
+.mc-opt { display: flex; gap: 0.4rem; padding: 0.25rem 0.4rem; align-items: flex-start; border-radius: 8px; transition: all 0.15s ease; cursor: default; margin: 0.1rem -0.4rem; }
 .mc-opt:hover { background: rgba(99, 102, 241, 0.06); }
 .opt-label { font-weight: 700; color: var(--accent); flex-shrink: 0; font-size: 0.88rem; }
 .opt-text { font-size: 0.9rem; line-height: 1.7; overflow-wrap: break-word; word-break: break-word; }
+.opt-image { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0.25rem; max-width: 100%; }
+.opt-image img { display: block; max-width: min(100%, 24rem); max-height: 18rem; width: auto; height: auto; border: 1px solid var(--border); border-radius: 8px; background: #fff; padding: 0.25rem; }
+.option-image-source { display: inline-flex; align-items: center; min-height: 44px; color: var(--primary); font-size: 0.78rem; text-decoration: underline; }
+.option-image-source:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 /* === Answer Visibility === */
 .q-answer { display: none; font-size: 0.85rem; color: var(--success); font-weight: 700; padding: 0.45rem 0.85rem; margin: 0.4rem 0 0.15rem 2.3rem; background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 3px solid var(--success); border-radius: 0 8px 8px 0; letter-spacing: 0.02em; }
 .q-answer::before { content: '\\2713 '; font-weight: 800; margin-right: 0.15em; }
@@ -846,6 +857,16 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('#yearView .subject-card').forEach(function(card) {
     window._cardTextCache.set(card, card.textContent.toLowerCase());
   });
+
+  // Generated controls start unavailable: an early click must not call a
+  // missing handler or silently lose a filter while this deferred file loads.
+  document.querySelectorAll('[data-app-pending]').forEach(function(control) {
+    control.removeAttribute('disabled');
+    control.removeAttribute('inert');
+    control.removeAttribute('data-app-pending');
+  });
+  const loadingStatus = document.getElementById('appLoadingStatus');
+  if (loadingStatus) loadingStatus.hidden = true;
 });
 
 /* === Bookmarks === */
@@ -1042,6 +1063,21 @@ function togglePractice() {
 }
 
 function bindOptionClicks() {
+  /* 與 js/answer-utils.js 相同的答案契約：已載入 AnswerUtils 時直接採用，
+     否則以相同的內建規則兜底（送分視為全對，「A或C」任一皆對）。 */
+  function acceptedOptions(raw) {
+    if (typeof AnswerUtils !== 'undefined' && AnswerUtils && typeof AnswerUtils.parse === 'function') {
+      return AnswerUtils.parse(raw).accepted;
+    }
+    var value = String(raw == null ? '' : raw).trim().toUpperCase();
+    if (value === '送分') return ['A', 'B', 'C', 'D'];
+    if (!/^[ABCD](?:或[ABCD])*$/.test(value)) return [];
+    var accepted = [];
+    value.split('或').forEach(function(letter) {
+      if ('ABCD'.indexOf(letter) !== -1 && accepted.indexOf(letter) === -1) accepted.push(letter);
+    });
+    return accepted;
+  }
   document.querySelectorAll('.mc-opt').forEach(function(opt) {
     if (opt._boundClick) return;
     opt._boundClick = true;
@@ -1053,13 +1089,14 @@ function bindOptionClicks() {
       var chosen = opt.getAttribute('data-val');
       block.classList.add('answered');
       practiceTotal++;
-      if (chosen === answer) {
+      var accepted = acceptedOptions(answer);
+      if (accepted.indexOf(String(chosen).toUpperCase()) !== -1) {
         practiceCorrect++;
         opt.classList.add('correct');
       } else {
         opt.classList.add('wrong');
         block.querySelectorAll('.mc-opt').forEach(function(o) {
-          if (o.getAttribute('data-val') === answer) o.classList.add('correct-reveal');
+          if (accepted.indexOf(String(o.getAttribute('data-val')).toUpperCase()) !== -1) o.classList.add('correct-reveal');
         });
       }
       var ansEl = block.querySelector('.q-answer');
@@ -1272,6 +1309,31 @@ def _render_figure_placeholder(q):
     return ''
 
 
+def _render_choice_option(q, label):
+    """渲染選擇題選項，保留圖片選項的原圖與可及性來源控制。"""
+    value = (q.get('options') or {}).get(label, '')
+    image = (q.get('option_images') or {}).get(label)
+    if isinstance(image, dict) and image.get('src'):
+        # 共用原圖可由學系與非學系頁引用；不要假設每個類科目錄都有副本。
+        asset = '../' + str(image['public_src']) if image.get('public_src') else str(image['src'])
+        src = escape_html(asset)
+        alt = escape_html(str(image.get('alt') or f'第{q.get("number", "")}題 {label}選項圖片'))
+        source_page = image.get('source_page') or (q.get('source_locator') or {}).get('page')
+        page_text = f'（原始試卷第{source_page}頁）' if source_page else ''
+        link_text = f'查看{label}選項來源圖片{page_text}'
+        return (
+            f'<span class="opt-image" data-source-page="{escape_html(str(source_page or ""))}">'
+            f'<a href="{src}" target="_blank" rel="noopener" '
+            f'aria-label="開啟 {escape_html(label)} 選項來源圖片">'
+            f'<img src="{src}" alt="{alt}" loading="lazy" decoding="async">'
+            f'</a>'
+            f'<a class="option-image-source" href="{src}" target="_blank" rel="noopener">'
+            f'{escape_html(link_text)}</a>'
+            f'</span>'
+        )
+    return f'<span class="opt-text">{escape_html(str(value))}</span>'
+
+
 def render_question_html(question):
     """將單一題目渲染為 HTML（含逐題選項與答案）"""
     q = question
@@ -1315,9 +1377,19 @@ def render_question_html(question):
         else:
             subtype_attr = ''
 
-        # 題目區塊包含題幹、選項、逐題答案
+        # 題目區塊包含題幹、選項、逐題答案與來源定位
+        source_locator = q.get('source_locator') or {}
+        source_attrs = ''
+        for attr, key in (
+            ('data-source-pdf', 'pdf'),
+            ('data-source-page', 'page'),
+            ('data-source-sha256', 'pdf_sha256'),
+        ):
+            if source_locator.get(key) not in (None, ''):
+                value = (source_locator.get('url') or source_locator[key]) if key == 'pdf' else source_locator[key]
+                source_attrs += f' {attr}="{escape_html(str(value))}"'
         html_parts.append(
-            f'<div class="q-block" data-qnum="{q["number"]}"{answer_attr}>\n'
+            f'<div class="q-block" data-qnum="{q["number"]}"{answer_attr}{source_attrs}>\n'
         )
 
         # 題幹
@@ -1350,7 +1422,7 @@ def render_question_html(question):
                     html_parts.append(
                         f'<div class="mc-opt" data-val="{label}">'
                         f'<span class="opt-label">({label})</span>'
-                        f'<span class="opt-text">{escape_html(q["options"][label])}</span>'
+                        f'{_render_choice_option(q, label)}'
                         f'</div>\n'
                     )
             html_parts.append('</div>\n')
@@ -1373,7 +1445,7 @@ def render_question_html(question):
     return ''
 
 
-def render_subject_card(card_id, subject_name, questions_data, year):
+def render_subject_card(card_id, subject_name, questions_data, year, pdf_links=''):
     """渲染一個科目卡片"""
     questions = questions_data.get('questions', [])
     notes = questions_data.get('notes', [])
@@ -1415,6 +1487,7 @@ def render_subject_card(card_id, subject_name, questions_data, year):
   <h3>{escape_html(subject_name)}</h3>
   <span class="subject-toggle" aria-hidden="true">&#9660;</span>
 </div>
+{pdf_links}
 <div class="subject-body">
 <div class="exam-meta-bar">
 {meta_html}
@@ -1428,7 +1501,7 @@ def render_subject_card(card_id, subject_name, questions_data, year):
 '''
 
 
-def generate_category_page(category_name, years_data, output_dir):
+def generate_category_page(category_name, years_data, output_dir, pdf_links_by_card=None):
     """為一個類科生成完整的 HTML 頁面"""
     info = CATEGORIES_INFO.get(category_name, {'code': 0, 'icon': '&#128196;', 'color': '#1a365d'})
     emoji = CATEGORIES_EMOJI.get(category_name, '')
@@ -1463,7 +1536,10 @@ def generate_category_page(category_name, years_data, output_dir):
         content_html += f'<h2 class="year-heading">{year}年</h2>\n'
         for subj_name in sorted(subjects.keys()):
             card_id = make_card_id(year, subj_name)
-            content_html += render_subject_card(card_id, subj_name, subjects[subj_name], year)
+            content_html += render_subject_card(
+                card_id, subj_name, subjects[subj_name], year,
+                (pdf_links_by_card or {}).get(card_id, ''),
+            )
         content_html += '</div>\n'
 
     # 收集科目名稱（跨年份去重）
@@ -1474,8 +1550,8 @@ def generate_category_page(category_name, years_data, output_dir):
     subject_keys_json = json.dumps(subject_keys, ensure_ascii=False)
     subject_keys_script = f'<script>const SUBJECT_KEYS={subject_keys_json};</script>'
 
-    exam_prefix = '' if category_name == '國境警察學系境管組學系移民組' else '警察特考三等'
-    site_name = '考古題總覽' if category_name == '國境警察學系境管組學系移民組' else '三等警察特考考古題總覽'
+    exam_prefix = '' if category_name == '國境警察學系移民組' else '警察特考三等'
+    site_name = '考古題總覽' if category_name == '國境警察學系移民組' else '三等警察特考考古題總覽'
 
     page_html = f'''<!DOCTYPE html>
 <html lang="zh-TW">
@@ -1485,12 +1561,13 @@ def generate_category_page(category_name, years_data, output_dir):
 <title>{escape_html(category_name)}考古題總覽 ({years[-1]}-{years[0]}年)</title>
 <meta name="description" content="{exam_prefix}{escape_html(category_name)}考古題總覽，涵蓋{years[-1]}-{years[0]}年共 {total_subjects} 份試卷、{total_questions} 道題目">
 <meta name="theme-color" content="{info['color']}">
+<link rel="manifest" href="../manifest.json">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="{escape_html(category_name)}考古題總覽 ({years[-1]}-{years[0]}年)">
 <meta property="og:description" content="{exam_prefix}{escape_html(category_name)}，{years[-1]}-{years[0]}年共 {total_subjects} 份試卷、{total_questions} 道題目">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
-<link rel="canonical" href="{escape_html(category_name)}/{escape_html(category_name)}考古題總覽.html">
+<link rel="canonical" href="{escape_html(category_name)}考古題總覽.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%AE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1514,6 +1591,8 @@ def generate_category_page(category_name, years_data, output_dir):
 <nav class="sidebar" id="sidebar" aria-label="年份導航">
 <div class="sidebar-title"><span>{emoji} {escape_html(category_name)}</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="收合導航">&#10005;</button></div>
 <a class="sidebar-home" href="../index.html">&#8592; 回到首頁</a>
+<a class="sidebar-home" href="../search.html">全文搜尋</a>
+<a class="sidebar-home" href="../quiz.html">模擬考試</a>
 {sidebar_html}
 </nav>
 <button class="back-to-top" id="backToTop" aria-label="回到頂部">&#8593;</button>
@@ -1530,6 +1609,7 @@ def generate_category_page(category_name, years_data, output_dir):
   <div class="stat-item"><div class="stat-value">{total_questions}</div><div class="stat-label">題目</div></div>
 </div>
 <div class="search-box" role="search" aria-label="考古題內容搜尋">
+  <p id="appLoadingStatus" role="status">互動功能載入中，完成後即可操作；若一直未完成，請重新整理。</p>
   <input type="text" class="search-input" id="searchInput" placeholder="搜尋關鍵字..." oninput="debouncedSearch(this.value)" aria-label="搜尋考古題關鍵字" aria-describedby="searchStats">
   <div class="search-filters" id="searchFilters">
 {filter_chips}
@@ -1557,8 +1637,11 @@ def generate_category_page(category_name, years_data, output_dir):
 </div>
 <div class="export-panel" id="exportPanel" style="display:none" role="dialog" aria-label="匯出設定">
   <p class="export-title">匯出設定</p>
+  <div id="exportSelectors"></div>
+  <div class="export-actions">
   <button class="export-option" onclick="exportPDF(true)">&#128203; 含答案（複習用）</button>
   <button class="export-option" onclick="exportPDF(false)">&#128221; 不含答案（練習用）</button>
+  </div>
   <button class="export-cancel" onclick="hideExportPanel()">取消</button>
 </div>
 <div id="yearView">
@@ -1570,9 +1653,28 @@ def generate_category_page(category_name, years_data, output_dir):
   資料來源：考選部考畢試題查詢平臺 ・ 生成時間：{datetime.now().strftime('%Y-%m-%d')}
 </footer>
 {subject_keys_script}
-<script src="../js/app.js" defer></script>
+<script src="../js/app.js?v=category-ready-1" defer></script>
+<script>
+if ('serviceWorker' in navigator) {{
+  navigator.serviceWorker.register('../sw.js', {{scope: '../'}}).catch(function() {{}});
+}}
+</script>
 </body>
 </html>'''
+
+    # All native controls and custom button headers on this generated page
+    # depend on the shared deferred app. Keep ordinary links and question text
+    # intact; the app releases these gates only after its setup completes.
+    page_html = re.sub(
+        r'<(?:button|input|select)\b[^>]*>',
+        lambda match: match.group(0)[:-1] + ' disabled data-app-pending>',
+        page_html,
+    )
+    page_html = re.sub(
+        r'<div\b[^>]*\brole="button"[^>]*>',
+        lambda match: match.group(0)[:-1] + ' inert data-app-pending>',
+        page_html,
+    )
 
     cat_dir = os.path.join(output_dir, category_name)
     os.makedirs(cat_dir, exist_ok=True)

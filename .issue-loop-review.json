@@ -1,0 +1,18 @@
+{
+  "pr": 80,
+  "head": "563d481072051d07b3e0c67fd63fb657bbc46814",
+  "findings": [
+    {"severity":"high","file":"考古題網站/js/attempt-ledger.js","line":249,"issue":"Any historical hash/version mismatch discards every compatible attempt, so answering a revised question never restores progress; unrelated dataset updates also invalidate unchanged questions."},
+    {"severity":"high","file":"考古題網站/js/attempt-ledger.js","line":384,"issue":"Alphabetical subject allocation permanently starves later subjects when the limit is small, conflates categories sharing a subject, and includes not-yet-due correct answers with no reason."},
+    {"severity":"high","file":"考古題網站/js/attempt-ledger.js","line":335,"issue":"Coverage overwrites the stale category and removes stale questions from weakCount/backlog; expired deadlines also incorrectly retain one day of capacity."},
+    {"severity":"med","file":"考古題網站/js/attempt-ledger.js","line":467,"issue":"getReviewState ignores saved deadline settings while buildQueue clamps dueAt; a valid zero-minute setting is silently replaced with 40 minutes."},
+    {"severity":"high","file":"考古題網站/js/attempt-ledger.js","line":436,"issue":"Import accepts unknown schema versions and malformed events, silently drops/coerces data, and replaces the existing ledger before validating settings."},
+    {"severity":"high","file":"考古題網站/js/attempt-ledger.js","line":35,"issue":"Storage write failures are swallowed, so submission/import report success without persistence; importing ledger plus settings can leave partial data after a settings write failure."},
+    {"severity":"med","file":"考古題網站/quiz.html","line":509,"issue":"Filtering to an empty pool returns before clearing the previous review queue, leaving an enabled button that starts questions outside the selected filters."},
+    {"severity":"low","file":"tests/test_attempt_ledger.py","line":48,"issue":"Node emits UTF-8 but subprocess text decoding uses the Windows CP950 default; the original full suite fails with UnicodeDecodeError."},
+    {"severity":"med","file":"考古題網站/js/attempt-ledger.js","line":410,"issue":"needs-human: dailyMinutes only drives the quiz timer; backlog/capacity ignore the time budget. A per-question time estimate or alternate capacity contract needs a product decision."},
+    {"severity":"med","file":"考古題網站/js/attempt-ledger.js","line":166,"issue":"needs-human: synchronous localStorage read-modify-write has no cross-tab serialization, and two-key imports cannot be crash-atomic. Preventing lost concurrent attempts requires an asynchronous storage/locking contract decision."}
+  ],
+  "fixed": true,
+  "summary": "Fixed eight findings covering progress compatibility/relearning, fair eligible queues, stale backlog/expired capacity, consistent settings, validated imports, recoverable write failures, empty-filter UI and Windows UTF-8 decoding; red-to-green verification passes 147 Python and 7 browser tests. needs-human: minute-budget capacity policy and cross-tab/crash-atomic storage require contract decisions. The broader frontend suite remains 35 passed/4 pre-existing homepage failures in files identical to master and the admitted head; no push was performed."
+}

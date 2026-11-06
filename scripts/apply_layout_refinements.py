@@ -16,22 +16,37 @@ CSS_PATH = SITE_ROOT / "css" / "layout-refinements.css"
 
 CATEGORIES = [
     "刑事警察學系",
+    "刑事警察",
     "鑑識科學學系",
+    "鑑識科學",
     "交通學系交通組",
     "交通學系電訊組",
+    "交通警察交通組",
+    "交通警察電訊組",
     "消防學系",
+    "消防警察",
     "水上警察學系",
+    "水上警察",
     "資訊管理學系",
+    "資訊管理",
     "行政警察學系",
+    "行政警察",
     "外事警察學系",
+    "外事警察",
     "公共安全學系社安組",
     "公共安全學系情報組",
+    "公共安全",
     "犯罪防治學系預防組",
     "犯罪防治學系矯治組",
+    "犯罪防治預防組",
+    "犯罪防治矯治組",
     "國境警察學系境管組",
     "國境警察學系移民組",
+    "國境警察",
     "行政管理學系",
+    "行政管理",
     "法律學系",
+    "警察法制",
 ]
 
 HOME_LINK = '<link rel="stylesheet" href="css/layout-refinements.css">'
@@ -83,7 +98,7 @@ def apply(site_root: Path) -> int:
     for category in CATEGORIES:
         changed += int(inject_link(category_page(site_root, category), CATEGORY_LINK))
 
-    print(f"版面精修樣式已掛載：18 個頁面，實際更新 {changed} 個")
+    print(f"版面精修樣式已掛載：{len(CATEGORIES) + 1} 個頁面，實際更新 {changed} 個")
     return changed
 
 
@@ -104,7 +119,7 @@ def check(site_root: Path) -> None:
 
     if failures:
         raise RuntimeError("\n".join(failures))
-    print("首頁與 17 個完整類科頁均已載入版面精修樣式")
+    print(f"首頁與 {len(CATEGORIES)} 個類科頁均已載入版面精修樣式")
 
 
 def main() -> int:

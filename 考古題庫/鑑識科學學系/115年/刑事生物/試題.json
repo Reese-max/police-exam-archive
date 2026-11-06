@@ -11,7 +11,13 @@
     "official_category_code": "209",
     "official_category": "刑事鑑識人員",
     "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115060&c=209&s=1503&q=1",
-    "source_sha256": "651cc87ec111cba573ba4ec67b1f991cf5facc9d17042fd8dcc2473d7cd35178"
+    "source_sha256": "651cc87ec111cba573ba4ec67b1f991cf5facc9d17042fd8dcc2473d7cd35178",
+    "categories": [
+      "鑑識科學學系"
+    ],
+    "official_subject": "刑事生物",
+    "path_subject": "刑事生物",
+    "category_membership": "鑑識科學學系"
   },
   "notes": [
     "※注意：禁止使用電子計算器。",
@@ -56,5 +62,8 @@
     "strategies_tried": [
       "pdfplumber"
     ]
-  }
+  },
+  "categories": [
+    "鑑識科學學系"
+  ]
 }

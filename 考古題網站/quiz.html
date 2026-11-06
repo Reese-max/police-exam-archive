@@ -75,11 +75,44 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .seg{display:flex;gap:9px;flex-wrap:wrap}
 .seg button{flex:1;min-width:64px;font-family:inherit;font-size:14.5px;font-weight:700;color:var(--text-2);background:var(--card-2);border:1.5px solid var(--border-strong);border-radius:var(--radius-sm);padding:11px 8px;cursor:pointer;transition:.18s}
 .seg button:hover{border-color:var(--primary);color:var(--primary)}
-.seg button.on{background:var(--primary);color:#fff;border-color:transparent;box-shadow:var(--shadow-sm)}
-.start-btn{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--primary);color:#fff;border:none;font-family:inherit;font-size:17px;font-weight:700;padding:16px;border-radius:var(--radius);cursor:pointer;transition:.2s;box-shadow:var(--shadow-md)}
+.seg button.on{background:var(--primary);color:var(--card);border-color:transparent;box-shadow:var(--shadow-sm)}
+.start-btn{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--primary);color:var(--card);border:none;font-family:inherit;font-size:17px;font-weight:700;padding:16px;border-radius:var(--radius);cursor:pointer;transition:.2s;box-shadow:var(--shadow-md)}
 .start-btn:hover{background:var(--primary-hover)}
 .match-note{margin-top:16px;text-align:center;font-size:14px;color:var(--text-2);font-weight:500}
 .match-note b{color:var(--primary);font-weight:800;font-variant-numeric:tabular-nums}
+
+/* resume banner（發現未完成考試時顯示） */
+.resume-banner{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border:1.5px solid var(--warm);background:var(--warm-soft);border-radius:var(--radius);padding:15px 18px;margin-bottom:20px}
+.resume-text{flex:1;min-width:220px;font-size:14px;font-weight:600;color:var(--text)}
+.resume-text b{color:var(--warm);font-weight:800}
+.resume-actions{display:flex;gap:9px}
+.resume-actions button{font-family:inherit;font-size:14px;font-weight:700;padding:9px 16px;border-radius:var(--radius-sm);cursor:pointer;border:1.5px solid var(--border-strong);background:var(--card);color:var(--text);transition:.18s}
+.resume-actions button:hover{border-color:var(--primary);color:var(--primary)}
+.resume-actions .primary{background:var(--primary);border-color:transparent;color:var(--card)}
+.resume-actions .primary:hover{background:var(--primary-hover);color:var(--card)}
+.resume-note{margin:-8px 0 20px;padding:11px 16px;border:1.5px solid var(--border-strong);border-radius:var(--radius-sm);background:var(--card-2);font-size:14px;font-weight:600;color:var(--text-2)}
+
+/* ===== Review queue / local learner state ===== */
+.review-tools{padding:24px 30px;margin-top:16px}
+.review-tools-head{display:flex;align-items:center;gap:10px}
+.review-tools-head h2{font-size:18px;font-weight:800}
+.queue-count{margin-left:auto;font-size:13px;font-weight:700;color:var(--primary);background:var(--primary-soft);padding:5px 10px;border-radius:6px}
+.review-tools-sub{margin-top:5px;font-size:13.5px;color:var(--text-2)}
+.deadline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.deadline-grid label{display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:var(--text-2)}
+.deadline-grid label:first-child{justify-content:flex-end;flex-direction:row;align-items:center;padding-bottom:10px}
+.deadline-grid input{width:100%;font:inherit;color:var(--text);background:var(--card-2);border:1.5px solid var(--border-strong);border-radius:var(--radius-sm);padding:9px 10px}
+.deadline-grid input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.queue-status{margin-top:14px;padding:11px 13px;border-radius:var(--radius-sm);font-size:13px;color:var(--text-2);background:var(--card-2);border:1px solid var(--border)}
+.queue-status.overload{color:var(--danger);background:var(--danger-soft);border-color:transparent;font-weight:700}
+.queue-list{margin-top:10px;display:flex;flex-direction:column;gap:6px;max-height:190px;overflow:auto}
+.queue-list:empty{display:none}
+.queue-list-item{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:var(--radius-sm);background:var(--card-2);font-size:12.5px}
+.queue-list-item .qid{min-width:0;overflow:hidden;text-overflow:ellipsis;font-weight:700;color:var(--text-2);white-space:nowrap}
+.queue-list-item .qreason{margin-left:auto;color:var(--primary);font-weight:700;text-align:right}
+.review-tools-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.review-tools-actions .btn{flex:0 1 auto;padding:10px 14px;font-size:13.5px}
+.reason-badge{margin-left:auto;font-size:11.5px;font-weight:700;color:var(--warm);background:var(--warm-soft);padding:3px 8px;border-radius:12px}
 
 /* ===== Exam view ===== */
 .timer-bar{position:sticky;top:0;z-index:30;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);padding:13px 18px;display:flex;align-items:center;gap:14px;margin-top:18px;transition:background .4s,border-color .4s}
@@ -92,25 +125,29 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .nav-btns button{width:38px;height:38px;border-radius:10px;border:1.5px solid var(--border-strong);background:var(--card-2);color:var(--text);font-size:16px;font-weight:700;cursor:pointer;transition:.18s;display:grid;place-items:center}
 .nav-btns button:hover:not(:disabled){border-color:var(--primary);color:var(--primary)}
 .nav-btns button:disabled{opacity:.4;cursor:not-allowed}
-.submit-btn{width:auto !important;padding:0 18px !important;background:var(--danger) !important;color:#fff !important;border-color:transparent !important;font-family:inherit;font-size:14.5px;font-weight:700;border-radius:10px !important;height:38px}
+.submit-btn{width:auto !important;padding:0 18px !important;background:var(--danger) !important;color:var(--card) !important;border-color:transparent !important;font-family:inherit;font-size:14.5px;font-weight:700;border-radius:10px !important;height:38px}
 .submit-btn:hover{filter:brightness(1.05)}
 
 .q-card{padding:26px 28px;margin-top:16px}
 .q-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.q-num{font-size:13px;font-weight:800;color:#fff;background:var(--primary);padding:5px 14px;border-radius:6px}
+.q-num{font-size:13px;font-weight:800;color:var(--card);background:var(--primary);padding:5px 14px;border-radius:6px}
 .q-meta{font-size:13px;color:var(--text-3);font-weight:600}
 .flag-btn{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;font-weight:700;color:var(--text-2);background:var(--card-2);border:1.5px solid var(--border-strong);border-radius:6px;padding:6px 14px;cursor:pointer;transition:.18s}
 .flag-btn:hover{border-color:var(--warm);color:var(--warm)}
 .flag-btn.on{background:var(--warm-soft);border-color:var(--warm);color:var(--warm)}
-.q-stem{font-size:17px;font-weight:600;line-height:1.7;margin-bottom:20px}
+.q-passage{font-size:15.5px;line-height:1.85;margin-bottom:20px;padding:18px;background:var(--card-2);border:1px solid var(--border);border-radius:var(--radius);white-space:pre-wrap}.q-passage mark{font-weight:800;color:var(--primary);background:var(--primary-soft);padding:1px 4px;border-radius:4px}.q-stem{font-size:17px;font-weight:600;line-height:1.7;margin-bottom:20px}
 .choices{display:flex;flex-direction:column;gap:11px}
 .choice{display:flex;align-items:flex-start;gap:13px;padding:15px 17px;border-radius:var(--radius);border:1.5px solid var(--border-strong);background:var(--card-2);cursor:pointer;transition:.16s}
 .choice:hover{border-color:var(--primary);background:var(--primary-tint)}
 .choice.sel{border-color:var(--primary);background:var(--primary-tint);box-shadow:0 0 0 3px var(--primary-soft)}
 .choice .clbl{flex-shrink:0;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:13.5px;font-weight:700;background:var(--card);border:1.5px solid var(--border-strong);color:var(--text-2);transition:.16s}
-.choice.sel .clbl{background:var(--primary);color:#fff;border-color:transparent}
+.choice.sel .clbl{background:var(--primary);color:var(--card);border-color:transparent}
 .choice .ctxt{font-size:15.5px;font-weight:500;color:var(--text);padding-top:1px}
 .choice.sel .ctxt{color:var(--primary);font-weight:600}
+.choice-media,.review-media{display:inline-flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:0}
+.choice-media img,.review-media img{display:block;max-width:min(100%,24rem);max-height:18rem;width:auto;height:auto;border:1px solid var(--border);border-radius:8px;background:#fff;padding:4px}
+.choice-media .option-image-source,.review-media .option-image-source{min-height:40px;color:var(--primary);font-size:12px;text-decoration:underline}
+.choice-media .option-image-source:focus-visible,.review-media .option-image-source:focus-visible{outline:3px solid var(--primary);outline-offset:2px;border-radius:4px}
 
 .mini-nav{margin-top:18px;padding:20px 22px}
 .mini-nav .mt{font-size:14px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
@@ -120,7 +157,7 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .mini-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:9px}
 .mini{aspect-ratio:1;border-radius:9px;border:1.5px solid var(--border-strong);background:var(--card-2);color:var(--text-2);font-size:13.5px;font-weight:700;cursor:pointer;transition:.15s;font-variant-numeric:tabular-nums}
 .mini:hover{border-color:var(--primary)}
-.mini.done{background:var(--primary);color:#fff;border-color:transparent}
+.mini.done{background:var(--primary);color:var(--card);border-color:transparent}
 .mini.flag{border-color:var(--warm);box-shadow:inset 0 0 0 2px var(--warm-soft)}
 .mini.cur{box-shadow:0 0 0 3px var(--primary-soft);border-color:var(--primary)}
 
@@ -143,7 +180,7 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .rstat.time .rn{color:var(--text)}
 .res-actions{display:flex;gap:12px;margin-top:26px}
 .btn{flex:1;font-family:inherit;font-size:15.5px;font-weight:700;padding:14px;border-radius:var(--radius);cursor:pointer;transition:.2s;border:1.5px solid transparent}
-.btn.primary{background:var(--primary);color:#fff;box-shadow:var(--shadow-sm)}
+.btn.primary{background:var(--primary);color:var(--card);box-shadow:var(--shadow-sm)}
 .btn.primary:hover{background:var(--primary-hover);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .btn.ghost{background:var(--card);color:var(--text-2);border-color:var(--border-strong)}
 .btn.ghost:hover{border-color:var(--primary);color:var(--primary)}
@@ -161,10 +198,10 @@ select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(-
 .rv-opt{display:flex;align-items:flex-start;gap:11px;font-size:14.5px;padding:10px 14px;border-radius:var(--radius-sm);border:1px solid transparent}
 .rv-opt .rl2{flex-shrink:0;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--card-2);border:1px solid var(--border);color:var(--text-2)}
 .rv-opt.correct{background:var(--primary-tint);border-color:var(--primary-soft)}
-.rv-opt.correct .rl2{background:var(--primary);color:#fff;border-color:transparent}
+.rv-opt.correct .rl2{background:var(--primary);color:var(--card);border-color:transparent}
 .rv-opt.correct .rt{color:var(--primary);font-weight:700}
 .rv-opt.wrong{background:var(--danger-soft);border-color:transparent}
-.rv-opt.wrong .rl2{background:var(--danger);color:#fff;border-color:transparent}
+.rv-opt.wrong .rl2{background:var(--danger);color:var(--card);border-color:transparent}
 .rv-opt.wrong .rt{color:var(--danger);text-decoration:line-through;font-weight:600}
 .rv-opt .tagy{margin-left:auto;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:12px;align-self:center}
 .rv-opt.correct .tagy{color:var(--primary);background:var(--primary-soft)}
@@ -185,8 +222,13 @@ footer strong{color:var(--text-2);font-weight:700}
   .wrap{padding:0 16px}
   .hero h1{font-size:29px}
   .field-grid{grid-template-columns:1fr}
+  .deadline-grid{grid-template-columns:minmax(0,1fr)}
+  .deadline-grid label,.deadline-grid input{min-width:0}
+  .deadline-grid input[type="checkbox"]{width:auto}
   .res-stats{grid-template-columns:1fr 1fr}
   .res-actions{flex-direction:column}
+  .resume-banner{flex-direction:column;align-items:stretch}
+  .resume-actions button{flex:1}
   .mini-grid{grid-template-columns:repeat(8,1fr)}
   .timer-bar{flex-wrap:wrap}
   .nav-btns{margin-left:0;width:100%;justify-content:flex-end;margin-top:4px}
@@ -205,6 +247,10 @@ footer strong{color:var(--text-2);font-weight:700}
     <span class="eyebrow">考古題資料庫 · 模擬測驗</span>
     <h1>模擬考試</h1>
     <p class="lead">隨機出題・計時作答・自動批改。</p>
+<!-- corpus-scope:begin -->
+<p class="lead corpus-scope">完整題庫：36,760 道選擇題、5,758 道申論題，共 42,518 題。<br>本頁練習題池包含 36,760 道選擇題。 <a href="https://github.com/Reese-max/police-exam-archive/blob/master/考古題庫/quality_summary.json">統計依據</a></p>
+<!-- corpus-scope:end -->
+
   </div>
 </header>
 
@@ -215,6 +261,15 @@ footer strong{color:var(--text-2);font-weight:700}
     <div class="card setup-card">
       <div class="setup-title">測驗設定</div>
       <div class="setup-sub">選擇範圍與條件，系統將隨機組卷。</div>
+
+      <div class="resume-banner hidden" id="resumeBanner" role="alert">
+        <div class="resume-text">發現未完成的考試：<b id="resumeInfo"></b></div>
+        <div class="resume-actions">
+          <button class="primary" id="resumeBtn">繼續作答</button>
+          <button id="discardResumeBtn">捨棄這次考試</button>
+        </div>
+      </div>
+      <p class="resume-note hidden" id="resumeNote" role="status"></p>
 
       <div class="field-grid">
         <div class="field">
@@ -244,6 +299,7 @@ footer strong{color:var(--text-2);font-weight:700}
 
       <div class="field">
         <label>考試時間</label>
+        <!-- 選項分鐘數需與 js/quiz-checkpoint.js 的 ALLOWED_DUR 對應，否則檢查點驗證會失敗 -->
         <div class="seg" id="segTime">
           <button data-v="0">不限時</button>
           <button data-v="30">30 分</button>
@@ -256,10 +312,34 @@ footer strong{color:var(--text-2);font-weight:700}
       <button class="start-btn" id="startBtn">開始考試</button>
       <p class="match-note">符合條件的選擇題：<b id="matchCount">載入索引中…</b></p>
     </div>
+    <div class="card review-tools" id="reviewTools">
+      <div class="review-tools-head">
+        <h2>今日複習</h2>
+        <span class="queue-count" id="queueCount">載入中…</span>
+      </div>
+      <p class="review-tools-sub">根據每題的作答事實、標記與科目覆蓋，產生可重播的官方題目佇列。</p>
+      <div class="deadline-grid">
+        <label><span><input type="checkbox" id="deadlineEnabled"> 啟用考前截止日</span></label>
+        <label>目標考試日<input type="date" id="targetExamDate"></label>
+        <label>每日題量上限<input type="number" id="dailyQuestionLimit" min="1" max="200" step="1"></label>
+        <label>每日分鐘上限<input type="number" id="dailyMinutes" min="0" max="1440" step="5"></label>
+        <label>規劃每題分鐘（估算）<input type="number" id="planningMinutesPerQuestion" min="0.5" max="120" step="0.5"></label>
+      </div>
+      <div class="queue-status" id="queueStatus">完成一次模擬考後，這裡會出現帶原因的複習建議。</div>
+      <ol class="queue-list" id="reviewQueueList" aria-label="今日複習題目與原因"></ol>
+      <div class="review-tools-actions">
+        <button class="btn primary" id="reviewStartBtn" type="button" disabled>開始今日複習</button>
+        <button class="btn ghost" id="exportLearningBtn" type="button">匯出學習資料</button>
+        <button class="btn ghost" id="importLearningBtn" type="button">匯入學習資料</button>
+        <button class="btn ghost" id="clearLearningBtn" type="button">清除學習資料</button>
+        <input id="importLearningFile" type="file" accept="application/json" hidden>
+      </div>
+    </div>
   </div>
 
   <!-- ===== EXAM ===== -->
   <div id="examView" class="view hidden">
+    <p id="checkpointStatus" class="resume-note" role="status" aria-live="polite"></p>
     <div class="timer-bar">
       <div class="timer" id="timer"><span id="timerText">60:00</span></div>
       <div class="prog">第 <b id="curNum">1</b> / <span id="totalNum">20</span> 題</div>
@@ -276,6 +356,7 @@ footer strong{color:var(--text-2);font-weight:700}
         <span class="q-meta" id="qMeta">憲法 · 選擇題</span>
         <button class="flag-btn" id="flagBtn">標記回顧</button>
       </div>
+      <div class="q-passage" id="qPassage" hidden></div>
       <p class="q-stem" id="qStem"></p>
       <div class="choices" id="choices" role="radiogroup" aria-label="作答選項"></div>
     </div>
@@ -334,12 +415,18 @@ footer strong{color:var(--text-2);font-weight:700}
 
 <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.js"></script>
 <script src="js/search-engine.js"></script>
+<script src="js/attempt-ledger.js"></script>
+<script src="js/answer-utils.js"></script>
+<script src="js/quiz-checkpoint.js?v=1.7.3"></script>
 <script>
-/* ===== 真實題庫（minisearch + search-engine.js，36,210 道選擇題） ===== */
+// corpus-stats:begin 由 scripts/check_corpus_claims.py 驗證，請勿手改
+/* ===== 真實題庫（minisearch + search-engine.js，搜尋索引排除頂層與 metadata 重複旗標後含 36,760 道選擇題） ===== */
+// corpus-stats:end
 let POOL = [];
 let indexReady = false;
 
 function _esc(s){ if(!s) return ''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function _escAttr(s){ return _esc(String(s||'')).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 function _short(s,n){ s=s||''; return s.length>n ? s.slice(0,n)+'…' : s; }
 
 function refreshPool(){
@@ -348,17 +435,86 @@ function refreshPool(){
   POOL = SearchEngine.search('', {
     cat: $('fCat').value, yr: yv?parseInt(yv,10):null, sub: $('fSubj').value,
     type:'choice', ans:'',
-  }, 99999).filter(q => q.optA && q.optB && q.optC && q.optD && 'ABCD'.indexOf(q.ans) >= 0);
+  }, 99999).filter(q => q.optA && q.optB && q.optC && q.optD && AnswerUtils.parse(q.ans).accepted.length > 0);
   $('matchCount').textContent = POOL.length.toLocaleString() + ' 題';
   $('startBtn').disabled = POOL.length === 0;
+  refreshReviewQueue();
 }
 
 /* state */
 const TOTAL = 20;
 let questions = [], answers = [], flags = [], cur = 0;
+let currentQuizMode = "official", currentFilters = {}, ledgerRecorded = false;
 let total = TOTAL, durSec = 60*60, remain = durSec, timerId = null, elapsed = 0;
+let examDone = false, pendingResume = null, resumeBannerTimer = null, bannerIdentity = null;
+let checkpointSessionId = null;
+let checkpointBusy = false, checkpointLost = false, recoveryAvailable = true, bannerEpoch = 0;
+// A save failure can disable future recovery without deleting an earlier
+// committed record. Only a never-committed memory session can finish without
+// attempting to close its durable ownership.
+let checkpointPersisted = false, finishPending = false;
+let pendingCommit = null;
 
 const $ = id => document.getElementById(id);
+
+/* ===== 進行中考試檢查點（IndexedDB 交易，供 reload/中斷後回復） ===== */
+/* 計時在每秒 tick 都會推進，但每次都重新序列化整份題目太貴； */
+/* 距上次寫入未滿 CHECKPOINT_TICK_MS 時跳過——load() 會依 savedAt 扣除 */
+/* 離線期間的牆鐘時間，所以少寫幾次不會讓作答中的倒數多出時間。 */
+const CHECKPOINT_TICK_MS = 5000;
+let lastCheckpointAt = 0;
+function checkpointState(){
+  return {questions, answers, flags, cur, durSec, remain, elapsed, sessionId:checkpointSessionId, quizMode:currentQuizMode, filters:currentFilters};
+}
+function checkpointStatus(message, state){
+  $('checkpointStatus').textContent = message;
+  $('checkpointStatus').dataset.state = state;
+}
+function noRecovery(){
+  recoveryAvailable = false;
+  checkpointStatus('本機儲存無法使用：目前作答僅保留在此頁，關閉或重新整理後無法回復。', 'unavailable');
+}
+async function saveCheckpoint(){
+  if(examDone || !questions.length || checkpointLost) return false;
+  if(!recoveryAvailable) return true;
+  lastCheckpointAt = Date.now();
+  try{
+    const saved = await QuizCheckpoint.persistence.save(checkpointState(), checkpointSessionId);
+    if(!saved){
+      checkpointLost = true;
+      checkpointStatus('這場考試已在另一個分頁接手、完成或捨棄。此頁無法再儲存作答，請使用接手的分頁。', 'conflict');
+      return false;
+    }
+    checkpointStatus('作答已儲存在本機。', 'saved');
+    return true;
+  }catch(e){ noRecovery(); return true; }
+}
+function saveCheckpointTick(){
+  if(checkpointBusy || Date.now() - lastCheckpointAt < CHECKPOINT_TICK_MS) return;
+  return saveCheckpoint();
+}
+async function commitInteraction(change){
+  if(checkpointBusy || checkpointLost || examDone || (durSec>0 && remain<=0)) return;
+  checkpointBusy = true;
+  const previous = {answers:answers.slice(), flags:flags.slice(), cur};
+  change();
+  if(recoveryAvailable) checkpointStatus('正在儲存作答…', 'pending');
+  pendingCommit = saveCheckpoint();
+  try{
+    if(!await pendingCommit){ answers=previous.answers; flags=previous.flags; cur=previous.cur; }
+    // A selected radio means the write transaction has completed, or the
+    // visible no-recovery warning explicitly describes an in-memory exam.
+    renderQuestion(); renderMini();
+  }finally{ checkpointBusy=false; pendingCommit=null; }
+  if(durSec>0 && remain<=0) await finish();
+}
+function showResumeNote(msg){
+  const el = $('resumeNote');
+  el.textContent = msg || '';
+  el.classList.toggle('hidden', !msg);
+}
+window.addEventListener('pagehide', ()=>{ if(!checkpointBusy) return saveCheckpoint(); });
+document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden' && !checkpointBusy) return saveCheckpoint(); });
 
 /* segmented controls */
 function setupSeg(id){
@@ -370,36 +526,75 @@ function setupSeg(id){
 }
 setupSeg('segCount'); setupSeg('segTime');
 
-function buildQuestions(n){
+function buildQuestions(n, source, preserveOrder){
   // 洗牌真實題池，抽前 n 題，轉成本頁題目格式（文字先 escape，渲染端用 innerHTML）
-  const pool = [...POOL];
-  for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
-  questions = pool.slice(0,n).map(q=>({
-    subj: q.yr + '年 ' + _esc(_short(q.sub,14)),
-    stem: _esc(q.stem),
-    opts: [q.optA,q.optB,q.optC,q.optD].map(_esc),
-    ans: 'ABCD'.indexOf(q.ans),
-  }));
+  const pool = [...(source || POOL)];
+  if(!preserveOrder){
+    for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  }
+  questions = pool.slice(0,n).map(q=>{
+    const contract = AnswerUtils.parse(q.ans);
+    return {
+      questionId: AttemptLedger.questionId(q), sourceHash: AttemptLedger.questionHash(q),
+      datasetVersion: SearchEngine.getDatasetVersion(),
+      cat: q.cat, yr: q.yr, sub: q.sub, no: q.no, ans: q.ans,
+      sourcePdf: q.sourcePdf || '', sourcePage: q.sourcePage || '',
+      sourceSha256: q.sourceSha256 || '', sourceLocator: q.sourceLocator || '',
+      subj: _esc(String(q.yr)) + '年 ' + _esc(_short(q.sub,14)),
+      passage: _esc(q.passage || ''),
+      stem: _esc(q.stem),
+      opts: [q.optA,q.optB,q.optC,q.optD].map(_esc),
+    imageOpts: ['A','B','C','D'].map(label=>({
+      src: typeof QuizCheckpoint!=='undefined' && QuizCheckpoint.isSafeImagePath(q['optImage'+label] || '') ? _escAttr(q['optImage'+label] || '') : '',
+      alt: _escAttr(q['optAlt'+label] || ''),
+      sourcePage: _escAttr(q.sourcePage || '')
+    })),
+      accepted: contract.accepted.map(letter=>'ABCD'.indexOf(letter)),
+      bonus: contract.bonus,
+      answerLabel: contract.bonus ? '送分' : contract.accepted.join('或'),
+    };
+  });
   answers = new Array(questions.length).fill(null);
   flags = new Array(questions.length).fill(false);
   cur = 0;
 }
 
 /* ===== start ===== */
-$('startBtn').addEventListener('click', ()=>{
+$('startBtn').addEventListener('click', async ()=>{
   const want = +document.querySelector('#segCount .on').dataset.v;
   const tmin = +document.querySelector('#segTime .on').dataset.v;
   if(POOL.length===0){ alert('沒有符合條件的題目，請調整篩選條件。'); return; }
   if(POOL.length<want && !confirm('符合條件的題目只有 '+POOL.length+' 題，將全部出題。確定開始？')) return;
-  buildQuestions(want);
+  await beginRun(want, tmin, 'official', POOL, false);
+});
+
+async function beginRun(want, tmin, mode, source, preserveOrder){
+  await checkpointReady;
+  if(checkpointBusy || !source.length) return;
+  _hideResumeBanner();
+  showResumeNote('');
+  buildQuestions(want, source, preserveOrder);
+  currentQuizMode = mode; ledgerRecorded = false;
+  currentFilters = mode === 'review' ? {type:'choice', scope:'full-bank'} :
+    {cat: $("fCat").value, year: $("fYear").value, subject: $("fSubj").value};
   total = questions.length;
   $('totalNum').textContent = total;
   durSec = tmin*60; remain = durSec; elapsed = 0;
+  checkpointSessionId = typeof QuizCheckpoint!=='undefined' ? QuizCheckpoint.newSessionId() : null;
+  questions.forEach(question => { question.attemptBatchId = checkpointSessionId; });
+  examDone = false;
+  checkpointBusy = true; checkpointLost = false; recoveryAvailable = true;
+  checkpointPersisted = false;
+  try{
+    if(typeof QuizCheckpoint==='undefined' || !await QuizCheckpoint.persistence.start(checkpointState())) noRecovery();
+    else{ checkpointPersisted=true; lastCheckpointAt=Date.now(); checkpointStatus('作答已儲存在本機。', 'saved'); }
+  }catch(e){ noRecovery(); }
+  finally{ checkpointBusy=false; }
   switchView('exam');
   renderQuestion(); renderMini();
   startTimer(tmin>0);
   window.scrollTo({top:0});
-});
+}
 
 /* ===== 載入真實索引 + facets ===== */
 function _fill(id, items, sfx){
@@ -417,6 +612,90 @@ SearchEngine.loadIndex().then(()=>{
 }).catch(err=>{ $('matchCount').textContent = '索引載入失敗：' + err.message; });
 ['fCat','fYear','fSubj'].forEach(id=>$(id).addEventListener('change', refreshPool));
 
+/* ===== local learner settings and deterministic review queue ===== */
+function syncReviewSettings(){
+  const settings = AttemptLedger.getSettings();
+  $('deadlineEnabled').checked = settings.deadlineEnabled;
+  $('targetExamDate').value = settings.targetExamDate;
+  $('dailyQuestionLimit').value = settings.dailyQuestionLimit;
+  $('dailyMinutes').value = settings.dailyMinutes;
+  $('planningMinutesPerQuestion').value = settings.planningMinutesPerQuestion;
+}
+
+function saveReviewSettingsFromForm(){
+  try {
+    AttemptLedger.saveSettings({
+      deadlineEnabled: $('deadlineEnabled').checked,
+      targetExamDate: $('targetExamDate').value,
+      dailyQuestionLimit: $('dailyQuestionLimit').value,
+      dailyMinutes: $('dailyMinutes').value,
+      planningMinutesPerQuestion: $('planningMinutesPerQuestion').value,
+    });
+  } catch(err) { alert('複習設定未儲存：' + err.message); syncReviewSettings(); }
+  refreshReviewQueue();
+}
+
+function refreshReviewQueue(){
+  if(!indexReady) return;
+  const reviewPool = SearchEngine.search('', {type:'choice', ans:''}, 99999).filter(q =>
+    q.optA && q.optB && q.optC && q.optD && AnswerUtils.parse(q.ans).accepted.length > 0
+  );
+  reviewQueue = AttemptLedger.buildQueue(reviewPool, {limit: AttemptLedger.getSettings().dailyQuestionLimit});
+  const count = reviewQueue.items.length;
+  $('queueCount').textContent = count + ' 題';
+  $('reviewStartBtn').disabled = count === 0;
+  $('reviewQueueList').innerHTML = reviewQueue.items.slice(0, 12).map(item=>
+    '<li class="queue-list-item"><span class="qid">' + _esc(item.questionId) + '</span><span class="qreason">' + _esc(item.reasonCodes.join(' · ')) + '</span></li>'
+  ).join('');
+  const status = $('queueStatus');
+  status.classList.toggle('overload', reviewQueue.overload);
+  if(reviewQueue.overload){
+    status.textContent = '目前有 ' + reviewQueue.weakCount + ' 題弱項，截止日前可安排 ' + reviewQueue.capacity + ' 題，還有 ' + reviewQueue.backlogCount + ' 題 backlog；請增加每日容量或延後目標日。';
+  }else if(reviewQueue.deadline){
+    status.textContent = '截止日模式已啟用：今日佇列 ' + count + ' 題，依題量與時間上限估算尚無 backlog（每題 ' + reviewQueue.planning.minutesPerQuestion + ' 分鐘，非速度或通過率預測）。';
+  }else if(count){
+    status.textContent = '佇列依序涵蓋錯題、未答、標記、到期與科目覆蓋；相同資料會重建相同順序。';
+  }else{
+    status.textContent = '目前沒有可安排的複習題。';
+  }
+}
+
+syncReviewSettings();
+['deadlineEnabled','targetExamDate','dailyQuestionLimit','dailyMinutes','planningMinutesPerQuestion'].forEach(id=>$(id).addEventListener('change', saveReviewSettingsFromForm));
+
+$('reviewStartBtn').addEventListener('click', async ()=>{
+  if(!reviewQueue || !reviewQueue.items.length) return;
+  const settings = AttemptLedger.getSettings();
+  await beginRun(reviewQueue.items.length, settings.dailyMinutes, 'review', reviewQueue.items.map(item=>item.question), true);
+});
+
+$('exportLearningBtn').addEventListener('click', ()=>{
+  const blob = new Blob([AttemptLedger.exportData()], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url; link.download = 'police-exam-learning-data.json';
+  document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
+});
+
+$('importLearningBtn').addEventListener('click', ()=>$('importLearningFile').click());
+$('importLearningFile').addEventListener('change', event=>{
+  const file = event.target.files && event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    try{ AttemptLedger.importData(reader.result); syncReviewSettings(); refreshReviewQueue(); }
+    catch(err){ alert('匯入失敗：' + err.message); }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+});
+
+$('clearLearningBtn').addEventListener('click', ()=>{
+  if(!confirm('只清除本機作答與複習設定，不會影響題庫或書籤。確定清除？')) return;
+  AttemptLedger.clearLearnerData();
+  syncReviewSettings(); refreshReviewQueue();
+});
+
 /* ===== timer ===== */
 function fmt(s){const m=Math.floor(s/60),sec=s%60;return m+':'+String(sec).padStart(2,'0')}
 function fmtMMSS(s){const m=Math.floor(s/60),sec=s%60;return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0')}
@@ -425,40 +704,65 @@ function startTimer(countdown){
   if(countdown){
     $('timerText').textContent = fmtMMSS(remain);
     timerId = setInterval(()=>{
+      if(examDone || remain<=0) return;
       remain--; elapsed++;
       $('timerText').textContent = fmtMMSS(Math.max(remain,0));
       if(remain<=60) $('timer').classList.add('warn');
-      if(remain<=0){clearInterval(timerId); finish();}
+      if(remain<=0){clearInterval(timerId); return finish();}
+      return saveCheckpointTick();
     },1000);
   } else {
-    $('timerText').textContent = fmtMMSS(0);
-    timerId = setInterval(()=>{ elapsed++; $('timerText').textContent = fmtMMSS(elapsed); },1000);
+    $('timerText').textContent = fmtMMSS(elapsed);
+    timerId = setInterval(()=>{ elapsed++; $('timerText').textContent = fmtMMSS(elapsed); return saveCheckpointTick(); },1000);
   }
 }
 
 /* ===== render question ===== */
+function _quizOptionMarkup(q, i, text, kind){
+  const label = 'ABCD'[i];
+  const media = q.imageOpts && q.imageOpts[i];
+  if(media && media.src){
+    const page = media.sourcePage ? '（原始試卷第'+media.sourcePage+'頁）' : '';
+    const alt = media.alt || ('第'+label+'選項圖片');
+    return `<span class="${kind}-media"><a href="${media.src}" target="_blank" rel="noopener" aria-label="開啟${label}選項來源圖片${page}"><img src="${media.src}" alt="${alt}" loading="lazy" decoding="async"></a><a class="option-image-source" href="${media.src}" target="_blank" rel="noopener">查看${label}選項來源圖片${page}</a></span>`;
+  }
+  return `<span class="${kind==='choice'?'ctxt':'rt'}">${text}</span>`;
+}
 function renderQuestion(){
   const q = questions[cur];
   $('qNum').textContent = '第 '+(cur+1)+' 題';
   $('curNum').textContent = cur+1;
   $('qMeta').textContent = q.subj + ' · 選擇題';
-  $('qStem').innerHTML = q.stem; // 題幹於 buildQuestions 已 escape
+  const passage = $('qPassage');
+  passage.hidden = !q.passage;
+  passage.innerHTML = (q.passage || '').replace(/\[\[(\d+)\]\]/g, '<mark>[$1]</mark>');
+  $('qStem').innerHTML = q.stem; // 題幹與文章於 buildQuestions 已 escape
   $('flagBtn').classList.toggle('on', flags[cur]);
   $('choices').innerHTML = q.opts.map((o,i)=>{
     const sel = answers[cur]===i;
-    return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span><span class="ctxt">${o}</span></div>`;
+    return `<div class="choice${sel?' sel':''}" data-i="${i}" role="radio" aria-checked="${sel}" tabindex="0"><span class="clbl">${'ABCD'[i]}</span>${_quizOptionMarkup(q,i,o,'choice')}</div>`;
   }).join('');
   $('choices').querySelectorAll('.choice').forEach(el=>{
-    const pick = ()=>{ answers[cur] = +el.dataset.i; renderQuestion(); renderMini(); };
-    el.addEventListener('click', pick);
-    el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); } });
+    const pick = ()=>commitInteraction(()=>{answers[cur]=+el.dataset.i;});
+    el.addEventListener('click', e=>{
+      // Image/source links are independent controls inside the radio option.
+      // Let their default target=_blank behaviour run without selecting an answer.
+      if(e.target.closest('a')) return;
+      return pick();
+    });
+    el.addEventListener('keydown', e=>{
+      // Enter/Space still select when the custom radio itself has focus; source
+      // links keep their own keyboard activation and focus.
+      if(e.target.closest('a')) return;
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); return pick(); }
+    });
   });
   $('prevBtn').disabled = cur===0;
   $('nextBtn').disabled = cur===total-1;
 }
-$('prevBtn').addEventListener('click',()=>{if(cur>0){cur--;renderQuestion();renderMini();}});
-$('nextBtn').addEventListener('click',()=>{if(cur<total-1){cur++;renderQuestion();renderMini();}});
-$('flagBtn').addEventListener('click',()=>{flags[cur]=!flags[cur];renderQuestion();renderMini();});
+$('prevBtn').addEventListener('click',()=>{if(cur>0) return commitInteraction(()=>{cur--;});});
+$('nextBtn').addEventListener('click',()=>{if(cur<total-1) return commitInteraction(()=>{cur++;});});
+$('flagBtn').addEventListener('click',()=>commitInteraction(()=>{flags[cur]=!flags[cur];}));
 
 function renderMini(){
   $('miniGrid').innerHTML = questions.map((_,i)=>{
@@ -469,7 +773,7 @@ function renderMini(){
     return `<button class="${c}" data-i="${i}">${i+1}</button>`;
   }).join('');
   $('miniGrid').querySelectorAll('.mini').forEach(el=>{
-    el.addEventListener('click',()=>{cur=+el.dataset.i;renderQuestion();renderMini();});
+    el.addEventListener('click',()=>commitInteraction(()=>{cur=+el.dataset.i;}));
   });
 }
 
@@ -477,17 +781,56 @@ function renderMini(){
 $('submitBtn').addEventListener('click',()=>{
   const unanswered = answers.filter(a=>a===null).length;
   if(unanswered>0 && !confirm('還有 '+unanswered+' 題未作答，確定交卷？')) return;
-  finish();
+  return finish();
 });
-function finish(){
+async function finish(){
+  if(pendingCommit) await pendingCommit;
+  if(examDone || finishPending || !questions.length) return;
+  finishPending = true; checkpointBusy = true;
+  let unsavedLearningWarning = questions.some(q=>q.sourceStatus==='UNMAPPED_REVIEW_REQUIRED') ?
+    ' 舊場次缺少官方來源識別：已保留作答快照，但需重新對應來源，未套用至今日複習。' : '';
+  if(!ledgerRecorded){
+    try{
+      AttemptLedger.recordQuiz({questions, answers, marked:flags, quizMode:currentQuizMode,
+        filters:currentFilters, attemptId:questions[0].attemptBatchId || checkpointSessionId});
+      ledgerRecorded = true;
+    }catch(error){
+      // Preserve the existing explicitly memory-only exam path when both stores
+      // were unusable from the start. Previously durable sessions still fail closed.
+      if(!checkpointPersisted && !recoveryAvailable){
+        unsavedLearningWarning = ' 本次為未儲存練習：作答與複習紀錄未寫入本機，請保留本頁。';
+      }else{
+      checkpointStatus('作答紀錄未儲存，尚未交卷；請排除儲存問題後重試：' + error.message, 'unavailable');
+      finishPending = false; checkpointBusy = false;
+      return;
+      }
+    }
+  }
+  if(checkpointPersisted && typeof QuizCheckpoint!=='undefined') {
+    checkpointStatus('正在交卷並清除本機紀錄…', 'pending');
+    try{
+      await QuizCheckpoint.persistence.clear({sessionId:checkpointSessionId});
+      checkpointPersisted = false;
+    }catch(e){
+      noRecovery();
+      checkpointStatus('交卷未完成：本機紀錄尚未能清除。請恢復儲存後再按交卷；目前新作答僅保留在此頁。', 'unavailable');
+      finishPending = false; checkpointBusy = false;
+      return;
+    }
+  }
+  // Keep the original exam and running clock while cleanup is pending or
+  // failed. Successful completion is acknowledged only after the transaction.
   clearInterval(timerId);
+  examDone = true; finishPending = false; checkpointBusy = false;
   let ok=0,no=0,skip=0;
   questions.forEach((q,i)=>{
-    if(answers[i]===null) skip++;
-    else if(answers[i]===q.ans) ok++;
+    if(q.bonus) ok++;
+    else if(answers[i]===null) skip++;
+    else if(q.accepted.includes(answers[i])) ok++;
     else no++;
   });
   const pct = Math.round(ok/total*100);
+  refreshReviewQueue();
   switchView('result');
   window.scrollTo({top:0});
   // ring
@@ -497,22 +840,22 @@ function finish(){
   $('sOk').textContent=ok; $('sNo').textContent=no; $('sSkip').textContent=skip;
   $('sTime').textContent=fmt(elapsed);
   $('resultTitle').textContent='作答完成';
-  $('resultSub').textContent='錯題與未答題整理於下方。';
+  $('resultSub').textContent='錯題與未答題整理於下方。' + unsavedLearningWarning;
   // review (wrong + skipped)
-  const wrong = questions.map((q,i)=>({q,i})).filter(({q,i})=>answers[i]!==q.ans);
+  const wrong = questions.map((q,i)=>({q,i})).filter(({q,i})=>!q.bonus && (answers[i]===null || !q.accepted.includes(answers[i])));
   $('reviewCount').textContent = wrong.length+' 題';
   $('review').innerHTML = wrong.map(({q,i})=>{
     const opts = q.opts.map((o,j)=>{
-      const isCorrect = j===q.ans;
-      const isWrong = answers[i]===j && j!==q.ans;
+      const isCorrect = q.accepted.includes(j) || q.bonus;
+      const isWrong = answers[i]===j && !isCorrect;
       let cls='rv-opt', tag='';
       if(isCorrect){cls+=' correct';tag='<span class="tagy">正解</span>';}
       else if(isWrong){cls+=' wrong';tag='<span class="tagy">你的答案</span>';}
-      return `<div class="${cls}"><span class="rl2">${'ABCD'[j]}</span><span class="rt">${o}</span>${tag}</div>`;
+      return `<div class="${cls}"><span class="rl2">${'ABCD'[j]}</span>${_quizOptionMarkup(q,j,o,'review')}${tag}</div>`;
     }).join('');
     return `<article class="card rv-card">
       <div class="rv-head"><span class="rv-num">第 ${i+1} 題</span><span class="q-meta">${q.subj} · 選擇題</span></div>
-      <p class="rv-stem">${q.stem}</p>
+      ${q.passage ? `<div class="q-passage">${q.passage.replace(/\[\[(\d+)\]\]/g, '<mark>[$1]</mark>')}</div>` : ''}<p class="rv-stem">${q.stem}</p>
       <div class="rv-opts">${opts}</div>
     </article>`;
   }).join('') || '<div class="card rv-card" style="text-align:center;color:var(--text-2)">全部答對，沒有錯題。</div>';
@@ -529,6 +872,144 @@ function switchView(v){
     $(name+'View').classList.toggle('hidden', name!==v);
   });
 }
+
+/* ===== 回復中斷的考試 ===== */
+function _describeResume(snap){
+  const answered = snap.answers.filter(a=>a!==null).length;
+  const timePart = snap.durSec>0 ? '剩餘 '+fmtMMSS(snap.remain) : '已作答 '+fmt(snap.elapsed);
+  return '第 '+(snap.cur+1)+' / '+snap.questions.length+' 題・已答 '+answered+' 題・'+timePart;
+}
+function _hideResumeBanner(){
+  bannerEpoch++;
+  clearInterval(resumeBannerTimer); resumeBannerTimer = null;
+  pendingResume = null;
+  bannerIdentity = null;
+  $('resumeBanner').classList.add('hidden');
+}
+async function _discardExpiredSession(snap){
+  try{ await QuizCheckpoint.persistence.clear(snap); }
+  catch(e){ _hideResumeBanner(); showResumeNote('本機儲存無法使用，無法確認是否已清除先前的考試。'); return; }
+  _hideResumeBanner();
+  showResumeNote('先前的考試在離線期間已逾時，檢查點已清除，請重新開始。');
+}
+/* 橫幅可能停留數十秒，期間倒數仍在走：定期重讀檢查點，讓顯示的剩餘時間
+   不停在載入當下；若檢查點消失（另一個分頁已交卷或捨棄）或已逾時，就收掉橫幅。 */
+let bannerRefreshing = false;
+async function _refreshResumeBanner(initial){
+  if(bannerRefreshing || checkpointBusy || (questions.length && !examDone)) return;
+  bannerRefreshing = true;
+  const epoch = bannerEpoch;
+  let snap;
+  try{ snap = await QuizCheckpoint.persistence.read(); }
+  catch(e){ _hideResumeBanner(); showResumeNote('本機儲存無法使用，先前的考試無法回復。新考試仍可在此頁作答。'); return; }
+  finally{ bannerRefreshing = false; }
+  if(epoch!==bannerEpoch) return;
+  if(!snap){
+    _hideResumeBanner();
+    if(initial!==true) showResumeNote('先前的考試紀錄已不存在或無法使用（可能已在另一個分頁完成或捨棄，或已過期）。');
+    return;
+  }
+  const snapIdentity = snap.sessionId || snap.persistenceToken || null;
+  if(initial || !bannerIdentity){
+    bannerIdentity = snapIdentity;
+  } else if(snapIdentity !== bannerIdentity){
+    _hideResumeBanner();
+    showResumeNote('先前的考試已逾時、在另一個分頁接手、完成或捨棄，請重新開始或使用接手的分頁。');
+    return;
+  }
+  if(snap.durSec>0 && snap.remain<=0){ await _discardExpiredSession(snap); return; }
+  pendingResume = snap;
+  $('resumeInfo').textContent = _describeResume(snap);
+  $('resumeBanner').classList.remove('hidden');
+}
+/* 回復後讓設定表單跟著這場考試走，避免「再考一次」時默默換成另一種組合。 */
+function _syncSetupFilters(snap){
+  const pick = (id, value)=>{
+    $(id).querySelectorAll('button').forEach(b=>{ b.classList.toggle('on', +b.dataset.v === value); });
+  };
+  // 篩選後可能只有 25 / 40 題，快照題數並非設定按鈕的值。
+  // 只從既有選項選最小足夠題數（超過介面上限則選最大值）；
+  // 回復中的題目保持原樣，「再考一次」仍有合法且可見的題數選擇。
+  const counts = Array.from($('segCount').querySelectorAll('button'), b=>+b.dataset.v);
+  pick('segCount', counts.find(n=>n>=snap.questions.length) || counts[counts.length-1]);
+  pick('segTime', Math.round(snap.durSec/60));
+}
+const checkpointReady = (async function(){
+  if(typeof QuizCheckpoint==='undefined') return;
+  await _refreshResumeBanner(true);
+  if(pendingResume) resumeBannerTimer = setInterval(()=>_refreshResumeBanner(false), 1000);
+})();
+$('resumeBtn').addEventListener('click', async ()=>{
+  if(checkpointBusy) return;
+  const offered = pendingResume;
+  _hideResumeBanner();
+  if(!offered) return;
+  showResumeNote('');
+  // Read latest progress, check the offered owner, and take ownership in ONE
+  // transaction. No stale banner copy can overwrite an answer accepted later.
+  checkpointBusy = true;
+  const owner = QuizCheckpoint.newSessionId();
+  let snap;
+  try{ snap = await QuizCheckpoint.persistence.claim(offered, owner); }
+  catch(e){ showResumeNote('本機儲存無法使用，無法安全接手先前的考試。請稍後重試。'); return; }
+  finally{ checkpointBusy = false; }
+  if(!snap){
+    showResumeNote('先前的考試已逾時、在另一個分頁接手、完成或捨棄，請重新開始或使用接手的分頁。');
+    return;
+  }
+  // 關閉期間已逾時：清掉檢查點並留在設定頁，不要開一個 00:00 的死場次。
+  if(snap.durSec>0 && snap.remain<=0){ _discardExpiredSession(snap); return; }
+  // 舊 v1 整數答案以相同作答/順序恢復，升級後才用 accepted/bonus 計分。
+  questions = snap.questions.map(q=>q.accepted ? q : ({
+    subj:q.subj, stem:q.stem, opts:q.opts, passage:q.passage || '',
+    imageOpts:q.imageOpts || [0,1,2,3].map(()=>({src:'',alt:'',sourcePage:''})),
+    accepted:[q.ans], bonus:false, answerLabel:'ABCD'[q.ans]
+  }));
+  answers = snap.answers; flags = snap.flags;
+  cur = snap.cur; total = questions.length;
+  durSec = snap.durSec; remain = snap.remain; elapsed = snap.elapsed;
+  checkpointSessionId = owner;
+  currentQuizMode = snap.quizMode || 'official'; currentFilters = snap.filters || {}; ledgerRecorded = false;
+  // Pre-ledger checkpoints can finish and export without inventing official identity.
+  questions.forEach((question,index)=>{
+    if(!question.questionId && !(question.cat && question.yr && question.sub && question.no)){
+      question.questionId = 'unmapped-' + checkpointSessionId + '-' + index;
+      question.sourceStatus = 'UNMAPPED_REVIEW_REQUIRED';
+      question.sourceHash = AttemptLedger.questionHash(question);
+    }
+    if(!question.attemptBatchId) question.attemptBatchId = checkpointSessionId;
+  });
+  checkpointPersisted = true;
+  checkpointLost = false; recoveryAvailable = true; lastCheckpointAt = Date.now();
+  examDone = false;
+  checkpointBusy = true;
+  let migrated;
+  try{ migrated = await saveCheckpoint(); }
+  finally{ checkpointBusy = false; }
+  if(!migrated){
+    showResumeNote('這場考試已在另一個分頁接手，未變更接手分頁的作答；請使用接手的分頁。');
+    return;
+  }
+  _syncSetupFilters(snap);
+  $('totalNum').textContent = total;
+  $('timer').classList.toggle('warn', durSec>0 && remain<=60);
+  switchView('exam');
+  renderQuestion(); renderMini();
+  startTimer(durSec>0);
+  window.scrollTo({top:0});
+});
+$('discardResumeBtn').addEventListener('click', async ()=>{
+  if(checkpointBusy) return;
+  const offered = pendingResume;
+  _hideResumeBanner();
+  if(typeof QuizCheckpoint==='undefined' || !offered) return;
+  checkpointBusy = true;
+  try{
+    const cleared = await QuizCheckpoint.persistence.clear(offered);
+    showResumeNote(cleared ? '已捨棄先前的考試，檢查點已清除。' : '這場考試已在另一個分頁接手、完成或捨棄，未變更新的考試。');
+  }catch(e){ showResumeNote('本機儲存無法使用，無法確認是否已捨棄先前的考試。'); }
+  finally{ checkpointBusy = false; }
+});
 
 /* ===== theme — 全站共用 localStorage key「exam-dark」(true/false) ===== */
 (function(){

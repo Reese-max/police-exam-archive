@@ -1,0 +1,176 @@
+"""圖片選項從題庫到前端輸出的回歸測試。"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+from html.parser import HTMLParser
+from urllib.parse import unquote
+
+from scripts.build_category_pages import _load_generator, build_pages
+from scripts.build_search_index import FIELDS, build_index
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA_ROOT = ROOT / "考古題庫"
+SITE_ROOT = ROOT / "考古題網站"
+
+
+def _image_questions() -> list[tuple[Path, dict, dict]]:
+    found = []
+    for path in sorted(DATA_ROOT.rglob("試題.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for question in data.get("questions", []):
+            if question.get("option_images") or any("圖片選項" in str(value) for value in (question.get("options") or {}).values()):
+                found.append((path, data, question))
+    return found
+
+
+def test_all_source_image_choices_keep_four_verified_assets() -> None:
+    questions = _image_questions()
+    assert len(questions) == 4
+    assert {(data.get("year"), question.get("number")) for _, data, question in questions} == {
+        (109, 2),
+        (113, 20),
+    }
+
+    for path, data, question in questions:
+        assert data['category'] == path.relative_to(DATA_ROOT).parts[0]
+        locator = question["source_locator"]
+        assert locator["pdf"] == data["source_pdf"]
+        assert locator["page"] in (2, 4)
+        assert len(locator["pdf_sha256"]) == 64
+        assert locator["url"].startswith("https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?")
+        assert set(question["option_images"]) == set("ABCD")
+
+        for label in "ABCD":
+            image = question["option_images"][label]
+            assert image["src"].startswith("images/")
+            assert image["public_src"].endswith(".png")
+            asset = SITE_ROOT / image["public_src"]
+            assert asset.is_file(), asset
+            digest = hashlib.sha256(asset.read_bytes()).hexdigest()
+            assert digest == image["sha256"]
+
+
+def test_search_index_and_generator_preserve_image_and_source_fields(tmp_path: Path) -> None:
+    index = build_index(DATA_ROOT)
+    assert index["v"] == 2
+    assert index["fields"] == FIELDS
+    columns = index["columns"]
+
+    target_rows = [
+        i for i, stem in enumerate(columns["stem"])
+        if "進港嘴內航行時誤擊消波塊" in stem or "短路熔痕鑑定" in stem
+    ]
+    assert len(target_rows) == 4
+    assert {columns['cat'][row] for row in target_rows} == {'水上警察', '水上警察學系', '消防警察', '消防學系'}
+    for row in target_rows:
+        assert columns['cats'][row] == [columns['cat'][row]]
+        assert all(columns[f][row] for f in ("optImageA", "optImageB", "optImageC", "optImageD"))
+        assert all(columns[f][row] for f in ("optAltA", "optAltB", "optAltC", "optAltD"))
+        assert columns["sourcePage"][row] in ("2", "4")
+        assert len(columns["sourceSha256"][row]) == 64
+        assert "pdf_sha256" in columns["sourceLocator"][row]
+        assert columns["sourcePdf"][row].startswith("https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?")
+
+    generator = _load_generator()
+    rendered = []
+    for _, _, question in _image_questions():
+        html = generator.render_question_html(question)
+        rendered.append(html)
+        assert html.count('class="opt-image"') == 4
+        assert 'class="opt-text">[圖片選項]' not in html
+        assert 'data-source-page=' in html
+        assert 'data-source-sha256=' in html
+        for label in "ABCD":
+            assert f"images/q{question['number']}-option-{label}.png" in html
+
+    assert len(rendered) == 4
+
+    # 以實際類科頁生成器寫入隔離目錄，確認 build output 仍攜帶同一契約。
+    data = generator.collect_json_data(str(DATA_ROOT))
+    water_page = Path(generator.generate_category_page("水上警察學系", data["水上警察學系"], str(tmp_path)))
+    fire_page = Path(generator.generate_category_page("消防學系", data["消防學系"], str(tmp_path)))
+    water_html = water_page.read_text(encoding="utf-8")
+    fire_html = fire_page.read_text(encoding="utf-8")
+    assert 'data-source-page="2"' in water_html
+    assert water_html.count('class="opt-image"') == 4
+    assert 'data-source-page="4"' in fire_html
+    assert fire_html.count('class="opt-image"') == 4
+    # app.js builds the year/subject checkboxes only inside this container;
+    # keep the generator and its generated export contract in sync.
+    assert water_html.count('id="exportSelectors"') == 1
+    assert fire_html.count('id="exportSelectors"') == 1
+
+
+def test_frontend_contract_has_image_paths_for_search_quiz_and_pdf() -> None:
+    search_html = (SITE_ROOT / "search.html").read_text(encoding="utf-8")
+    quiz_html = (SITE_ROOT / "quiz.html").read_text(encoding="utf-8")
+    pdf_js = (SITE_ROOT / "js" / "pdf-export.js").read_text(encoding="utf-8")
+    search_engine = (SITE_ROOT / "js" / "search-engine.js").read_text(encoding="utf-8")
+
+    assert "optImage' + label" in search_html and "查看" in search_html
+    assert "imageOpts" in quiz_html and "查看" in quiz_html
+    assert "if(e.target.closest('a')) return;" in quiz_html
+    assert "option.image" in pdf_js and "source" in pdf_js
+    assert "drawOptionImage" in pdf_js and "載入失敗" in pdf_js
+    assert "sourceLocator" in search_engine
+
+
+def test_all_four_category_aliases_resolve_their_rendered_source_images():
+    class Images(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.sources = []
+
+        def handle_starttag(self, tag, attrs):
+            if tag == 'img':
+                self.sources.append(dict(attrs)['src'])
+
+    generator = _load_generator()
+    questions = _image_questions()
+    assert len(questions) == 4
+    for path, _, question in questions:
+        category = path.relative_to(DATA_ROOT).parts[0]
+        parser = Images()
+        parser.feed(generator.render_question_html(question))
+        assert len(parser.sources) == 4
+        for label, relative in zip('ABCD', parser.sources):
+            asset = (SITE_ROOT / category / unquote(relative)).resolve()
+            assert asset.is_file(), f'{category}: {label} source image does not resolve: {relative}'
+            assert hashlib.sha256(asset.read_bytes()).hexdigest() == question['option_images'][label]['sha256']
+
+
+def test_release_builder_updates_all_four_image_question_category_pages(tmp_path):
+    build_pages(DATA_ROOT, tmp_path)
+    for path, _, question in _image_questions():
+        category = path.relative_to(DATA_ROOT).parts[0]
+        page = tmp_path / category / f'{category}考古題總覽.html'
+        assert page.is_file(), f'Release builder omitted image question category: {category}'
+        html = page.read_text(encoding='utf-8')
+        assert html.count('class="opt-image"') >= 4
+        assert question['source_locator']['pdf_sha256'] in html
+        for image in question['option_images'].values():
+            assert ('../' + image['public_src']) in html
+
+
+def test_pdf_export_keeps_mixed_options_before_answer_and_provenance() -> None:
+    pdf_js = (SITE_ROOT / "js" / "pdf-export.js").read_text(encoding="utf-8")
+    question_start = pdf_js.index("case 'mc-question':")
+    question_end = pdf_js.index("case 'figure':", question_start)
+    question_flow = pdf_js[question_start:question_end]
+    draw_start = pdf_js.index("PdfLayoutEngine.prototype.drawMCQuestion")
+    draw_end = pdf_js.index("/* 繪製段落註記 */", draw_start)
+    draw_method = pdf_js[draw_start:draw_end]
+
+    assert "if (opt.image) continue" not in draw_method
+    assert question_flow.index("for (var oi = 0; oi < item.options.length; oi++)") < question_flow.index(
+        "engine.drawAnswer(item.answer"
+    )
+    assert question_flow.index("engine.drawAnswer(item.answer") < question_flow.index(
+        "var sourceName"
+    )
+    assert "engine.drawOptionText(option, questionLayout.optionIndent)" in question_flow
+    assert "engine.drawOptionImage(item, option, optionImageData)" in question_flow

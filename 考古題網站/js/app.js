@@ -303,6 +303,16 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('#yearView .subject-card').forEach(function(card) {
     window._cardTextCache.set(card, card.textContent.toLowerCase());
   });
+
+  // Generated controls start unavailable: an early click must not call a
+  // missing handler or silently lose a filter while this deferred file loads.
+  document.querySelectorAll('[data-app-pending]').forEach(function(control) {
+    control.removeAttribute('disabled');
+    control.removeAttribute('inert');
+    control.removeAttribute('data-app-pending');
+  });
+  const loadingStatus = document.getElementById('appLoadingStatus');
+  if (loadingStatus) loadingStatus.hidden = true;
 });
 
 /* === Bookmarks === */
@@ -518,10 +528,26 @@ function togglePractice() {
 }
 
 function bindOptionClicks() {
+  /* 與 js/answer-utils.js 相同的答案契約：已載入 AnswerUtils 時直接採用，
+     類科頁僅載入本檔時以相同的內建規則兜底（送分視為全對，「A或C」任一皆對）。 */
+  function acceptedOptions(raw) {
+    if (typeof AnswerUtils !== 'undefined' && AnswerUtils && typeof AnswerUtils.parse === 'function') {
+      return AnswerUtils.parse(raw).accepted;
+    }
+    var value = String(raw == null ? '' : raw).trim().toUpperCase();
+    if (value === '送分') return ['A', 'B', 'C', 'D'];
+    if (!/^[ABCD](?:或[ABCD])*$/.test(value)) return [];
+    var accepted = [];
+    value.split('或').forEach(function(letter) {
+      if ('ABCD'.indexOf(letter) !== -1 && accepted.indexOf(letter) === -1) accepted.push(letter);
+    });
+    return accepted;
+  }
   document.querySelectorAll('.mc-opt').forEach(function(opt) {
     if (opt._boundClick) return;
     opt._boundClick = true;
-    opt.addEventListener('click', function() {
+    opt.addEventListener('click', function(event) {
+      if (event.target.closest('a')) return;
       if (!practiceMode) return;
       var block = opt.closest('.q-block');
       if (!block || block.classList.contains('answered')) return;
@@ -529,13 +555,14 @@ function bindOptionClicks() {
       var chosen = opt.getAttribute('data-val');
       block.classList.add('answered');
       practiceTotal++;
-      if (chosen === answer) {
+      var accepted = acceptedOptions(answer);
+      if (accepted.indexOf(String(chosen).toUpperCase()) !== -1) {
         practiceCorrect++;
         opt.classList.add('correct');
       } else {
         opt.classList.add('wrong');
         block.querySelectorAll('.mc-opt').forEach(function(o) {
-          if (o.getAttribute('data-val') === answer) o.classList.add('correct-reveal');
+          if (accepted.indexOf(String(o.getAttribute('data-val')).toUpperCase()) !== -1) o.classList.add('correct-reveal');
         });
       }
       var ansEl = block.querySelector('.q-answer');
@@ -922,7 +949,7 @@ function _loadPdfLibraries() {
     })
     .then(function() {
       var appScript = document.querySelector('script[src*="app.js"]');
-      var base = appScript ? appScript.getAttribute('src').replace('app.js', '') : '../js/';
+      var base = appScript ? new URL('.', appScript.src).href : '../js/';
       return loadScript(base + 'pdf-export.js');
     })
     .then(function() {

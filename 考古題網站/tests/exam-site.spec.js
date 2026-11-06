@@ -9,16 +9,16 @@ test.describe('首頁', () => {
   });
 
   test('應有正確的頁面標題', async ({ page }) => {
-    await expect(page).toHaveTitle(/三等警察特考考古題總覽/);
+    await expect(page).toHaveTitle(/三等警察特考考古題/);
   });
 
   test('應有 17 個類科連結指向考古題總覽頁面', async ({ page }) => {
-    const deptLinks = page.locator('.category-list a[href*="考古題總覽"]');
+    const deptLinks = page.locator('#groupA .cat-item, #groupB .cat-item');
     await expect(deptLinks).toHaveCount(17);
   });
 
   test('每個類科連結路徑應正確且可點擊', async ({ page }) => {
-    const links = page.locator('.category-list a[href*="考古題總覽"]');
+    const links = page.locator('#groupA .cat-item, #groupB .cat-item');
     const count = await links.count();
     for (let i = 0; i < count; i++) {
       const href = await links.nth(i).getAttribute('href');
@@ -27,20 +27,20 @@ test.describe('首頁', () => {
     }
   });
 
-  test('Hero 統計區應顯示 17 類科 / 1090 試卷 / 22523 題目', async ({ page }) => {
-    const values = page.locator('.hero-stat-value');
-    await expect(values).toHaveCount(3);
-    await expect(values.nth(0)).toHaveText('17');
-    await expect(values.nth(1)).toHaveText('1090');
-    await expect(values.nth(2)).toHaveText('22523');
+  test('Hero 統計區應顯示最新類科、試卷與題目數', async ({ page }) => {
+    await expect(page.locator('#statCategories')).toHaveText('17');
+    await expect(page.locator('#statPapers')).toHaveText('1,180');
+    await expect(page.locator('#statQuestions')).toHaveText('24,876');
   });
 
   test('暗色模式切換（首頁）', async ({ page }) => {
-    await page.locator('#darkToggle').click();
-    await expect(page.locator('html')).toHaveClass(/dark/);
+    const theme = page.locator('html');
+    const toggle = page.locator('#themeToggle');
+    await toggle.click();
+    await expect(theme).toHaveAttribute('data-theme', 'dark');
     // 再點一次切回淺色
-    await page.locator('#darkToggle').click();
-    await expect(page.locator('html')).not.toHaveClass(/dark/);
+    await toggle.click();
+    await expect(theme).toHaveAttribute('data-theme', 'light');
   });
 });
 
@@ -58,10 +58,10 @@ test.describe('類科頁面 - 行政警察學系', () => {
   test('統計列應顯示正確數據', async ({ page }) => {
     const statValues = page.locator('.stat-value');
     await expect(statValues).toHaveCount(3);
-    // 9 年度、63 試卷、1812 題目
-    await expect(statValues.nth(0)).toHaveText('9');
-    await expect(statValues.nth(1)).toHaveText('63');
-    await expect(statValues.nth(2)).toHaveText('1812');
+    // 10 年度、70 試卷、2042 題目
+    await expect(statValues.nth(0)).toHaveText('10');
+    await expect(statValues.nth(1)).toHaveText('70');
+    await expect(statValues.nth(2)).toHaveText('2042');
   });
 
   /* --- 搜尋功能 --- */
@@ -98,6 +98,16 @@ test.describe('類科頁面 - 行政警察學系', () => {
   });
 
   /* --- 年度篩選 --- */
+  test('年度篩選：115 年資料與篩選存在', async ({ page }) => {
+    const chip115 = page.locator('.filter-chip[data-year="115"]');
+    await expect(chip115).toBeVisible();
+    await chip115.click();
+    await expect(chip115).toHaveClass(/active/);
+    await expect(page.locator('#year-115')).toBeVisible();
+    await expect(page.locator('#year-115 .subject-card')).toHaveCount(7);
+    await expect(page.locator('#year-114')).toBeHidden();
+  });
+
   test('年度篩選：點擊年份 chip 後只顯示該年度', async ({ page }) => {
     // 點擊 114 年份
     const chip114 = page.locator('.filter-chip[data-year="114"]');
