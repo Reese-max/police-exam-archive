@@ -1,5 +1,5 @@
 sentence-transformers==5.7.0
-torch==2.7.1
+torch==2.8.0
 transformers==5.16.1
 tokenizers==0.23.2
 huggingface-hub==1.30.0
