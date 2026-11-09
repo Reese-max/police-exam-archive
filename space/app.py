@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 import sys
 import time
-from urllib.parse import urlsplit
+from urllib.parse import quote
 
 if os.environ.get("SPACES_ZERO_GPU"):
     import spaces
@@ -21,8 +21,10 @@ if os.environ.get("SPACES_ZERO_GPU"):
 HERE = Path(__file__).resolve().parent
 ROOT = HERE if (HERE / "scripts/rag/retrieval.py").is_file() else HERE.parent
 sys.path.insert(0, str(ROOT / "scripts/rag"))
-from query import format_results
-from retrieval import Retriever, add_search_arguments, parse_search_args, search_arguments
+from query import (LOW_CONFIDENCE_NOTICE, MOEX_CORRECTION_INFO_URL, _is_official_exam_pdf,
+                   format_results)
+from retrieval import (LEGACY_EMBEDDING_TEXT_VERSION, LEGACY_INDEX_WARNING, Retriever, add_search_arguments,
+                       embedding_text_version, parse_search_args, search_arguments)
 
 
 executor = ThreadPoolExecutor(max_workers=1)
@@ -69,26 +71,45 @@ def initialize(db):
     retriever, options, mode = instance, search_arguments(args), args.mode
 
 
-def render(results):
+def render(results, *, include_notice=True):
     lines = []
     if not results:
         return "查無符合題目。"
+    if include_notice and any(item.get("low_confidence") for item in results):
+        lines.extend([escape(LOW_CONFIDENCE_NOTICE), ""])
     for item in results:
-        for line in format_results([item]).splitlines():
+        for line in format_results([item], include_notice=False).splitlines():
             line = line.replace("（完整內容見 --json）", "").replace("，詳見 --json 的 answer_conflicts", "")
             if line.startswith("題幹："):
                 if item.get("passage"):
                     lines.append(escape("題組文章：" + " ".join(item["passage"].split())))
                 lines.append(escape("題幹：" + " ".join(item.get("stem", "").split())))
-                lines.extend(escape(f"({key}) {value}") for key, value in sorted(item.get("options", {}).items()))
+                lines.extend(escape(f"({' '.join(str(key).split())}) {' '.join(str(value).split())}")
+                             for key, value in sorted(item.get("options", {}).items()))
                 continue
-            if line.startswith("試題 PDF："):
-                url = line.removeprefix("試題 PDF：")
-                parsed = urlsplit(url)
-                if (parsed.scheme == "https" and parsed.netloc == "wwwq.moex.gov.tw"
-                        and parsed.path == "/exam/wHandExamQandA_File.ashx"):
-                    lines.append(f"試題 PDF：[開啟考選部原始試題]({url})")
+            if line == "更正查詢：" + MOEX_CORRECTION_INFO_URL:
+                lines.append(f"更正查詢：[考選部考畢試題與更正答案查詢]({MOEX_CORRECTION_INFO_URL})")
+                continue
+            if line.startswith("考選部答案 PDF："):
+                _, url = line.split("：", 1)
+                if _is_official_exam_pdf(url):
+                    safe_url = quote(url, safe=":/?&=%#-._~+;,")
+                    lines.append(f"考選部答案 PDF：[開啟考選部官方答案]({safe_url})")
+                else:
+                    lines.append("考選部答案 PDF：非考選部官方答案")
+                continue
+            if line.startswith(("試題 PDF：", "原始答案 PDF：")):
+                label, url = line.split("：", 1)
+                if _is_official_exam_pdf(url, file_type="S" if label == "原始答案 PDF" else "Q"):
+                    description = "開啟考選部原始試題" if label == "試題 PDF" else "開啟考選部原始答案（須另查更正）"
+                    safe_url = quote(url, safe=":/?&=%#-._~+;,")
+                    lines.append(f"{label}：[{description}]({safe_url})")
                     continue
+                if label == "原始答案 PDF":
+                    lines.append(f"{label}：" + ("未解析" if url == "未解析" else "非考選部原始答案"))
+                    continue
+                lines.append(f"{label}：" + ("未解析" if url == "未解析" else "非考選部試題"))
+                continue
             lines.append(escape(line))
         lines.append("")
     return "  \n".join(lines)
@@ -102,7 +123,14 @@ def run_search(query):
     started = time.perf_counter()
     results = retriever.search(query, k=5, mode=mode, **options)
     elapsed_ms = (time.perf_counter() - started) * 1000
-    return f"查詢耗時：{elapsed_ms:.0f} 毫秒\n\n{render(results)}"
+    meta = getattr(retriever, "meta", None)
+    warning = ""
+    if any(item.get("low_confidence") for item in results):
+        warning += LOW_CONFIDENCE_NOTICE + "\n\n"
+    if (mode != "keyword" and meta is not None
+            and embedding_text_version(meta) == LEGACY_EMBEDDING_TEXT_VERSION):
+        warning += LEGACY_INDEX_WARNING + "\n\n"
+    return f"{warning}查詢耗時：{elapsed_ms:.0f} 毫秒\n\n{render(results, include_notice=False)}"
 
 
 def search(query):

@@ -96,11 +96,13 @@ cache/
 pdfs_missing/
 scripts/download/.download_cache_all.json
 rag/corpus.jsonl
+rag/.answer_cache/
 rag/moex_cache/
 rag/index.sqlite
 rag/index.sqlite-*
 rag/*.sqlite
 rag/*.sqlite-*
+*.rag-write.lock
 rag/embeddings/
 .hf_cache/
 .rag-dataset/

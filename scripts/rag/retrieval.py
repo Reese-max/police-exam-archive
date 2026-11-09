@@ -4,19 +4,25 @@ import json
 import math
 import os
 import re
+from contextlib import contextmanager
 from functools import lru_cache
 from pathlib import Path
 import sqlite3
 
 if __package__:
     from .build_corpus import json_text, normalize_text
+    from .model_identity import REBUILD_MESSAGE, model_identity, require_matching_identity, valid_identity
 else:
     from build_corpus import json_text, normalize_text
+    from model_identity import REBUILD_MESSAGE, model_identity, require_matching_identity, valid_identity
 
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MODEL = "intfloat/multilingual-e5-small"
 SCHEMA_VERSION = 2
+LEGACY_EMBEDDING_TEXT_VERSION = 1
+EMBEDDING_TEXT_VERSION = 2
+LEGACY_INDEX_WARNING = "索引使用舊版向量輸入規則，尚未遷移；答案歧異可能影響向量檢索結果。"
 # Provisional until bench.py selects parameters on the semantic development split.
 DEFAULT_KEYWORD_WEIGHT = 2.0
 DEFAULT_VECTOR_WEIGHT = 1.0
@@ -26,8 +32,8 @@ def model_prefix(model, query=False):
     return ("query: " if query else "passage: ") if "e5" in model.lower() else ""
 
 
-def embedding_texts(doc):
-    """Keep the entire stem first; answers/subjects participate in invalidation."""
+def embedding_texts_v1(doc):
+    """Original schema-v2 input, retained to identify vectors needing migration."""
     options = doc.get("options", {})
     subjects = sorted({item["subject"] for item in doc.get("appears_in", []) if item.get("subject")})
     main = "\n".join(filter(None, [doc.get("stem", ""),
@@ -35,6 +41,32 @@ def embedding_texts(doc):
         ("正確選項：" + options[doc["answer"]]) if doc.get("answer") in options else "",
         "／".join(subjects)]))
     return [normalize_text(main)] + ([normalize_text(doc["passage"])] if doc.get("passage", "").strip() else [])
+
+
+def embedding_texts(doc):
+    """Keep all options, but do not label a disputed answer as correct."""
+    if doc.get("answer_conflicts"):
+        return embedding_texts_v1({**doc, "answer": None})
+    return embedding_texts_v1(doc)
+
+
+def embedding_text_version(meta):
+    """An unversioned schema-v2 index predates the current input rule."""
+    version = meta.get("embedding_text_version", LEGACY_EMBEDDING_TEXT_VERSION)
+    if type(version) is not int or version not in (LEGACY_EMBEDDING_TEXT_VERSION, EMBEDDING_TEXT_VERSION):
+        raise ValueError(f"不支援的向量輸入規則版本：{version!r}")
+    return version
+
+
+def pending_vector_questions(meta):
+    """Validate component-level work left by a non-embedding build."""
+    pending = meta.get("pending_question_vectors", {})
+    if not isinstance(pending, dict) or any(
+            not isinstance(identifier, str) or not identifier or not isinstance(parts, list)
+            or any(part not in ("main", "passage") for part in parts)
+            for identifier, parts in pending.items()):
+        raise ValueError("向量索引待補建狀態無效")
+    return {identifier: set(parts) for identifier, parts in pending.items() if parts}
 
 
 def chunk_text(embedder, text, prefix):
@@ -87,6 +119,7 @@ def add_search_arguments(parser):
     parser.add_argument("--vector-weight", type=float, default=DEFAULT_VECTOR_WEIGHT)
     parser.add_argument("--rrf-k", type=int, default=60)
     parser.add_argument("--candidates", type=int, default=50)
+    parser.add_argument("--min-vector-score", type=float, default=None)
     parser.add_argument("--phrase-priority", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--expand-abbreviations", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--profile", type=Path, help="Use bench_report.json selected_default; explicit flags override it")
@@ -109,7 +142,7 @@ def parse_search_args(parser, argv=None):
 
 def search_arguments(args):
     return {key: getattr(args, key) for key in ("keyword_weight", "vector_weight", "rrf_k",
-            "candidates", "phrase_priority", "expand_abbreviations")}
+            "candidates", "phrase_priority", "expand_abbreviations", "min_vector_score")}
 
 
 def configure_model_cache():
@@ -135,7 +168,35 @@ def load_reranker(device="cpu"):
                         model_kwargs={"token": False}, tokenizer_kwargs={"token": False})
 
 
-def load_embedder(model, device="auto"):
+def validate_model_revision(model, revision):
+    """A Hub commit is a locator, not a proof of the loaded model content."""
+    if (not isinstance(revision, str) or not re.fullmatch(r"[0-9a-f]{40}", revision)
+            or Path(model).is_dir()):
+        raise ValueError("模型 revision 無效；必須是 Hub 模型的完整 commit")
+    return revision
+
+
+def resolve_model_revision(model, *, cache=None):
+    """Resolve main once before loading any module; local paths have no Hub revision."""
+    if Path(model).is_dir():
+        return None
+    cache = configure_model_cache() if cache is None else Path(cache)
+    try:
+        from huggingface_hub import hf_hub_download
+        filename = Path(hf_hub_download(model, "modules.json", revision="main",
+                                        cache_dir=str(cache / "hub"), token=False))
+    except Exception as exc:
+        raise RuntimeError("無法解析 Hub 模型的完整 revision；請檢查連線或離線快取") from exc
+    snapshot = filename.parent
+    expected_repo = "models--" + model.replace("/", "--")
+    if (filename.name != "modules.json" or snapshot.parent.name != "snapshots"
+            or snapshot.parent.parent.name != expected_repo
+            or snapshot.parent.parent.parent.absolute() != (cache / "hub").absolute()):
+        raise ValueError("無法解析 Hub 模型的完整 revision")
+    return validate_model_revision(model, snapshot.name)
+
+
+def load_embedder(model, device="auto", *, revision=None):
     # Keep model/tokenizer caches inside this worktree, including on Spaces.
     cache = configure_model_cache()
     try:
@@ -152,8 +213,32 @@ def load_embedder(model, device="auto"):
         device = "cuda" if torch.cuda.is_available() else "cpu"
     if device == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("指定 --device cuda，但目前 PyTorch 無可用 CUDA；請改用 --device cpu")
-    return SentenceTransformer(model, device=device, cache_folder=str(cache / "hub"),
-                               trust_remote_code=False, token=False)
+    if revision is not None:
+        validate_model_revision(model, revision)
+    else:
+        revision = resolve_model_revision(model, cache=cache)
+    options = {"device": device, "cache_folder": str(cache / "hub"),
+               "trust_remote_code": False, "token": False}
+    if revision is not None:
+        options["revision"] = revision
+    return SentenceTransformer(model, **options)
+
+
+def load_injected_embedder(factory, model, revision):
+    """Existing unpinned factories retain their one-argument API."""
+    if revision is None:
+        return factory(model)
+    import inspect
+    try:
+        inspect.signature(factory).bind(model, revision=revision)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("注入的模型 factory 須接受 revision 參數") from exc
+    return factory(model, revision=revision)
+
+
+def embedder_identity(embedder, model):
+    return model_identity(embedder, model, document_prefix=model_prefix(model),
+                          query_prefix=model_prefix(model, True))
 
 
 def encode(embedder, texts, prefix, batch_size=64):
@@ -262,9 +347,11 @@ class Retriever:
     def __init__(self, db, *, embedder=None, embedder_factory=None, device="auto"):
         if device not in ("auto", "cpu", "cuda"):
             raise ValueError("device 必須為 auto、cpu 或 cuda")
-        self.connection = open_index(db)
+        self.db = Path(db)
+        self.connection, self._file_key = self._open_current()
         self.meta = metadata(self.connection)
         self.embedder = embedder
+        self._managed_embedder = embedder is None
         self.embedder_factory = embedder_factory
         self.device = device
         self.vector_ids = None
@@ -272,24 +359,102 @@ class Retriever:
         self.question_ids = None
         self.link_questions = None
         self.link_vectors = None
+        self._snapshot_depth = 0
+        self._cache_token = None
+
+    def _open_current(self):
+        before = self._index_file_key()
+        connection = open_index(self.db)
+        after = self._index_file_key()
+        if before != after:
+            connection.close()
+            raise ValueError("開啟期間索引已替換；請重試")
+        return connection, after
+
+    def _index_file_key(self):
+        try:
+            stat = self.db.stat()
+            return stat.st_dev, stat.st_ino
+        except OSError:
+            return None
+
+    def _clear_vectors(self):
+        self.vector_ids = self.matrix = self.question_ids = None
+        self.link_questions = self.link_vectors = None
+
+    @contextmanager
+    def _snapshot(self):
+        if self._snapshot_depth:
+            yield
+            return
+        file_key = self._index_file_key()
+        if self._file_key is not None and file_key != self._file_key:
+            if file_key is None:
+                raise ValueError(f"索引不存在：{self.db}")
+            self.connection.close()
+            self.connection, self._file_key = self._open_current()
+            self._cache_token = None
+            self._clear_vectors()
+            if self._managed_embedder:
+                self.embedder = None
+        self.connection.execute("SAVEPOINT rag_retriever_snapshot")
+        self._snapshot_depth = 1
+        try:
+            # The data version is sampled before the first read establishes the
+            # snapshot. A racing commit then invalidates the next search too.
+            token = (self.connection.execute("PRAGMA data_version").fetchone()[0],
+                     self.connection.total_changes)
+            current_meta = metadata(self.connection)
+            if self._cache_token != token or current_meta != self.meta:
+                if self._managed_embedder and any(
+                        self.meta.get(key) != current_meta.get(key)
+                        for key in ("model", "model_revision", "model_identity")):
+                    self.embedder = None
+                self._clear_vectors()
+            self.meta = current_meta
+            self._cache_token = token
+            yield
+        finally:
+            self._snapshot_depth = 0
+            self.connection.execute("RELEASE SAVEPOINT rag_retriever_snapshot")
 
     def close(self):
         self.connection.close()
 
     def _load_vectors(self):
+        with self._snapshot():
+            return self._load_vectors_snapshot()
+
+    def _load_vectors_snapshot(self):
         import numpy as np
-        if self.meta.get("schema_version") != SCHEMA_VERSION:
+        schema = self.meta.get("schema_version")
+        if type(schema) is not int or schema != SCHEMA_VERSION:
             raise ValueError("向量 schema 過期；請執行 build_index.py --embed 全量重建")
+        embedding_text_version(self.meta)
+        pending = pending_vector_questions(self.meta)
         self.question_ids = [row[0] for row in self.connection.execute("SELECT question_id FROM questions ORDER BY question_id")]
         rows = self.connection.execute(
             "SELECT vector_id, embedding FROM vectors ORDER BY vector_id"
         ).fetchall()
+        if any(row[1] is not None for row in rows) and not valid_identity(self.meta.get("model_identity")):
+            raise ValueError(REBUILD_MESSAGE)
         dimension = self.meta.get("dimension")
         links = self.connection.execute("SELECT question_id, vector_id FROM question_vectors ORDER BY question_id, vector_id").fetchall()
-        if (not self.meta.get("model") or not dimension or any(row[1] is None for row in rows)
-                or {row[0] for row in links} != set(self.question_ids)):
-            raise ValueError("向量索引缺漏或過期；請先執行 build_index.py --embed（keyword 仍可使用）")
+        if any(not isinstance(question_id, str) or not isinstance(vector_id, str)
+               for question_id, vector_id in links):
+            raise ValueError("向量索引連結無效")
+        main_questions = {question_id for question_id, vector_id in links
+                          if vector_id.startswith(f"q:{question_id}:")}
         vector_ids = [row[0] for row in rows]
+        if (not self.meta.get("model") or not dimension or any(row[1] is None for row in rows)
+                or pending or main_questions != set(self.question_ids)
+                or not {q for q, _ in links}.issubset(self.question_ids)
+                or not {v for _, v in links}.issubset(vector_ids)):
+            raise ValueError("向量索引缺漏或過期；請先執行 build_index.py --embed（keyword 仍可使用）")
+        if not valid_identity(self.meta.get("model_identity")):
+            raise ValueError(REBUILD_MESSAGE)
+        revision = (validate_model_revision(self.meta["model"], self.meta["model_revision"])
+                    if "model_revision" in self.meta else None)
         matrix = (np.stack([np.frombuffer(row[1], dtype="<f4") for row in rows])
                   if rows else np.empty((0, dimension), dtype=np.float32))
         if matrix.shape != (len(rows), dimension):
@@ -299,15 +464,25 @@ class Retriever:
         self.link_questions = np.asarray([question_positions[q] for q, v in links], dtype=np.intp)
         self.link_vectors = np.asarray([vector_positions[v] for q, v in links], dtype=np.intp)
         if self.embedder is None:
-            self.embedder = (self.embedder_factory(self.meta["model"]) if self.embedder_factory
-                             else load_embedder(self.meta["model"], device=self.device))
+            if self.embedder_factory:
+                self.embedder = load_injected_embedder(self.embedder_factory, self.meta["model"], revision)
+            elif revision is None:
+                self.embedder = load_embedder(self.meta["model"], device=self.device)
+            else:
+                self.embedder = load_embedder(self.meta["model"], device=self.device, revision=revision)
+        require_matching_identity(self.meta["model_identity"], embedder_identity(self.embedder, self.meta["model"]))
         # Publish readiness only after the model and matrix are both usable.
         self.vector_ids, self.matrix = vector_ids, matrix
 
     def vector_search(self, query, limit):
+        with self._snapshot():
+            return self._vector_search_snapshot(query, limit)
+
+    def _vector_search_snapshot(self, query, limit):
         import numpy as np
         if self.vector_ids is None:
             self._load_vectors()
+        # Identity is verified once in _load_vectors; hashing every weight per query cost seconds.
         queries = [query] if isinstance(query, str) else query
         vectors = encode(self.embedder, [normalize_text(q) for q in queries], model_prefix(self.meta["model"], True))
         if len(vectors[0]) != self.meta["dimension"]:
@@ -321,11 +496,22 @@ class Retriever:
 
     def search(self, query, *, k=5, mode="hybrid", keyword_weight=DEFAULT_KEYWORD_WEIGHT,
                vector_weight=DEFAULT_VECTOR_WEIGHT, rrf_k=60, phrase_priority=True,
-               expand_abbreviations=False, candidates=50, reranker=None):
+               expand_abbreviations=False, candidates=50, min_vector_score=None, reranker=None):
+        with self._snapshot():
+            return self._search_snapshot(query, k=k, mode=mode, keyword_weight=keyword_weight,
+                vector_weight=vector_weight, rrf_k=rrf_k, phrase_priority=phrase_priority,
+                expand_abbreviations=expand_abbreviations, candidates=candidates,
+                min_vector_score=min_vector_score, reranker=reranker)
+
+    def _search_snapshot(self, query, *, k, mode, keyword_weight, vector_weight, rrf_k,
+                         phrase_priority, expand_abbreviations, candidates, min_vector_score, reranker):
         if mode not in ("keyword", "vector", "hybrid"):
             raise ValueError(f"Unknown retrieval mode: {mode}")
         if k <= 0:
             raise ValueError("k 必須大於 0")
+        if (min_vector_score is not None and
+                (not math.isfinite(min_vector_score) or not -1 <= min_vector_score <= 1)):
+            raise ValueError("min_vector_score 必須為 -1 到 1 之間的有限數值")
         if not query.strip():
             return []
         if candidates <= 0:
@@ -341,10 +527,14 @@ class Retriever:
             ranking = self.vector_search(queries, limit)
         else:
             vector = self.vector_search(queries, limit)
+            top1_vector_score = vector[0][1] if vector else None
             ranking = rrf([[row[0] for row in keyword], [row[0] for row in vector]],
                           k=rrf_k, weights=[keyword_weight, vector_weight])
-        if phrase_priority and mode != "vector":
+        exact = set()
+        if mode == "hybrid" or (mode == "keyword" and phrase_priority):
             exact = set().union(*(phrase_ids(self.connection, q, limit) for q in queries))
+        keyword_phrase_hit = bool(exact)
+        if phrase_priority and mode != "vector":
             # Preserve keyword's exact-hit order: weak vectors cannot displace it.
             promoted = [row[0] for row in keyword if row[0] in exact]
             positions = {identifier: index for index, identifier in enumerate(promoted)}
@@ -358,7 +548,14 @@ class Retriever:
             citations = [{**item, "question_pdf_url": sources.get(item["path"], {}).get("question_pdf_url"),
                           "answer_pdf_url": sources.get(item["path"], {}).get("answer_pdf_url")}
                          for item in doc.get("appears_in", [])]
-            results.append({**doc, "rank": rank, "score": score, "citations": citations})
+            result = {**doc, "rank": rank, "score": score, "citations": citations,
+                      "answer_confidence": "disputed" if doc.get("answer_conflicts") else "unknown"}
+            if mode == "hybrid":
+                result.update(top1_vector_score=top1_vector_score, keyword_phrase_hit=keyword_phrase_hit)
+                if (min_vector_score is not None and top1_vector_score is not None
+                        and top1_vector_score < min_vector_score and not keyword_phrase_hit):
+                    result["low_confidence"] = True
+            results.append(result)
         if reranker and results:
             head = results[:20]
             scores = reranker.predict([(query, embedding_texts(doc)[0]) for doc in head])
