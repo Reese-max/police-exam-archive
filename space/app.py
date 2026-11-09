@@ -21,7 +21,8 @@ if os.environ.get("SPACES_ZERO_GPU"):
 HERE = Path(__file__).resolve().parent
 ROOT = HERE if (HERE / "scripts/rag/retrieval.py").is_file() else HERE.parent
 sys.path.insert(0, str(ROOT / "scripts/rag"))
-from query import MOEX_CORRECTION_INFO_URL, _is_official_exam_pdf, format_results
+from query import (LOW_CONFIDENCE_NOTICE, MOEX_CORRECTION_INFO_URL, _is_official_exam_pdf,
+                   format_results)
 from retrieval import (LEGACY_EMBEDDING_TEXT_VERSION, LEGACY_INDEX_WARNING, Retriever, add_search_arguments,
                        embedding_text_version, parse_search_args, search_arguments)
 
@@ -70,12 +71,14 @@ def initialize(db):
     retriever, options, mode = instance, search_arguments(args), args.mode
 
 
-def render(results):
+def render(results, *, include_notice=True):
     lines = []
     if not results:
         return "查無符合題目。"
+    if include_notice and any(item.get("low_confidence") for item in results):
+        lines.extend([escape(LOW_CONFIDENCE_NOTICE), ""])
     for item in results:
-        for line in format_results([item]).splitlines():
+        for line in format_results([item], include_notice=False).splitlines():
             line = line.replace("（完整內容見 --json）", "").replace("，詳見 --json 的 answer_conflicts", "")
             if line.startswith("題幹："):
                 if item.get("passage"):
@@ -113,9 +116,13 @@ def run_search(query):
     results = retriever.search(query, k=5, mode=mode, **options)
     elapsed_ms = (time.perf_counter() - started) * 1000
     meta = getattr(retriever, "meta", None)
-    warning = (LEGACY_INDEX_WARNING + "\n\n" if mode != "keyword" and meta is not None
-               and embedding_text_version(meta) == LEGACY_EMBEDDING_TEXT_VERSION else "")
-    return f"{warning}查詢耗時：{elapsed_ms:.0f} 毫秒\n\n{render(results)}"
+    warning = ""
+    if any(item.get("low_confidence") for item in results):
+        warning += LOW_CONFIDENCE_NOTICE + "\n\n"
+    if (mode != "keyword" and meta is not None
+            and embedding_text_version(meta) == LEGACY_EMBEDDING_TEXT_VERSION):
+        warning += LEGACY_INDEX_WARNING + "\n\n"
+    return f"{warning}查詢耗時：{elapsed_ms:.0f} 毫秒\n\n{render(results, include_notice=False)}"
 
 
 def search(query):

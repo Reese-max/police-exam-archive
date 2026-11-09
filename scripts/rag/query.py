@@ -16,6 +16,7 @@ else:
                            embedding_text_version, search_arguments, parse_search_args, load_reranker)
 
 MOEX_CORRECTION_INFO_URL = "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx"
+LOW_CONFIDENCE_NOTICE = "找不到高度相關的考題，以下結果僅供參考"
 
 
 def _is_official_exam_pdf(url, *, file_type=None):
@@ -32,6 +33,17 @@ def _is_official_exam_pdf(url, *, file_type=None):
 
 def _one_line(value):
     return " ".join(str(value).split())
+
+
+def is_legal_subject(subject):
+    return isinstance(subject, str) and any(term in subject for term in ("法", "憲法"))
+
+
+def _result_years(item):
+    occurrences = item.get("citations") or item.get("appears_in", [])
+    years = {str(row["year"]) for row in occurrences
+             if isinstance(row, dict) and row.get("year") is not None}
+    return sorted(years, key=lambda year: (0, int(year)) if year.isdecimal() else (1, year))
 
 
 def group_citations(citations):
@@ -51,10 +63,23 @@ def group_citations(citations):
     return list(groups.values())
 
 
-def format_results(results):
+def format_results(results, *, include_notice=True):
     lines = []
+    if include_notice and any(item.get("low_confidence") for item in results):
+        lines.extend([LOW_CONFIDENCE_NOTICE, ""])
     for item in results:
         lines.append(f"{_one_line(item['rank'])}. {_one_line(item['question_id'])} [{_one_line(item.get('type'))}]")
+        occurrences = item.get("citations") or item.get("appears_in", [])
+        years = _result_years(item)
+        if years:
+            lines.append("年度：" + "、".join(f"民國{year}年" for year in years))
+        legal_years = sorted({
+            str(row["year"]) for row in occurrences
+            if isinstance(row, dict) and row.get("year") is not None
+            and is_legal_subject(row.get("subject"))
+        }, key=lambda year: (0, int(year)) if year.isdecimal() else (1, year))
+        for year in legal_years:
+            lines.append(f"此為民國{year}年試題，法規可能已修正，請以現行條文為準")
         lines.append("題幹：" + " ".join(item.get("stem", "").split())[:120])
         if item.get("answer_conflicts"):
             lines.append("答案：待核實")

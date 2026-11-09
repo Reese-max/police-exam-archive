@@ -28,6 +28,15 @@
 
 `corpus.jsonl` 每行一題：`question_id`、題幹、選項、答案與 `answer_status`、題組文章、所有出處 `appears_in`，以及考選部原始 PDF 連結 `sources`，可直接用於檢索與溯源。
 
+### RAG 來源覆蓋率
+
+`rag/corpus_stats.json` 的 `questions_with_sources` 表示題目有本地來源對應資料（來源路徑及其 URL 欄位），
+不代表一定有 PDF 連結。`questions_with_question_pdf_url` 與 `questions_with_answer_pdf_url` 分別計算至少一筆
+來源具有非空考選部試題／答案 PDF URL 的去重題目；`choice_questions_with_question_pdf_url` 與
+`choice_questions_with_answer_pdf_url` 是相同口徑下的選擇題數。各 URL 欄位分開統計，一題可同時計入兩者。
+目前語料有 10,594 題具本地來源對應，但其中 8,514 題有試題 PDF URL、6,814 題有答案 PDF URL；
+選擇題的對應數為 6,419 題（試題）及 6,419 題（答案）。執行建置指令可更新這些數字。
+
 ## 檢索與查詢
 
 先建立語料與 keyword 索引，不需模型套件或 API 金鑰：
@@ -139,6 +148,14 @@ python scripts/rag/query.py "查證身分" --db rag/index-e5.sqlite --keyword-we
 未解析，依原路徑保留。`--json` 保留完整題文、所有原出處與答案歧異，不會刪掉原始引用。
 查詢結果的 `answer_confidence` 為 `disputed`（有答案歧異）或 `unknown`；`unknown` 不代表
 答案已經核實。衝突題顯示的來源資料夾題號仍須對照官方試卷。
+查詢文字與 Space 介面會列出每題的民國年度；科目名稱含「法」等法律標記時，另提醒法規可能已修正。
+hybrid 可用 `--min-vector-score` 啟用低信心提示：只有 top-1 cosine 低於門檻且沒有關鍵字片語命中時，
+結果才標記為低信心；未設定（預設 `null`）維持原行為。`bench_report.json` 暫不設定此值，應先由呼叫端以
+實際模型與索引校準，再將建議值加入 `selected_default.configuration`：
+
+```bash
+python scripts/rag/calibrate_threshold.py --profile rag/bench_report.json --device cpu
+```
 
 語意集 `rag/eval_semantic.jsonl` 共 150 筆、15 科目，包含選擇及申論；34 筆（22.7%）使用
 法規簡稱。逐題讀原題後編寫自然語言與相關性理由；人臉辨識的兩個近重複原題都標為相關。

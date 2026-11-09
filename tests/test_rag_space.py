@@ -41,6 +41,8 @@ def test_search_keeps_sqlite_work_on_one_thread_and_renders_pdf(app, monkeypatch
     app.executor.submit(app.initialize, tmp_path / "index.sqlite").result()
     result = app.search("警察查證身分")
     assert "行政警察／115年／警察法規／第3題" in result
+    assert "年度：民國115年" in result
+    assert "此為民國115年試題，法規可能已修正，請以現行條文為準" in result
     assert "[開啟考選部原始試題](https://wwwq.moex.gov.tw/" in result
     assert "&lt;script&gt;" in result and "<script>" not in result
     assert "甲" * 130 in result and "題組文章" in result and "(A) 第一選項" in result
@@ -52,13 +54,25 @@ def test_search_keeps_sqlite_work_on_one_thread_and_renders_pdf(app, monkeypatch
 
 def test_render_does_not_show_cli_only_hints(app):
     item = {"rank": 1, "question_id": "x", "type": "essay", "stem": "題目",
+            "low_confidence": True,
             "answer_conflicts": [{"value": "A"}, {"value": "B"}],
             "citations": [{"path": str(i), "category": "甲", "year": 115,
                            "subject": "科目", "number": i, "question_pdf_url": None}
                           for i in range(4)]}
     rendered = app.render([item])
+    assert rendered.startswith("找不到高度相關的考題，以下結果僅供參考")
     assert "原始答案存在歧異" in rendered and "另有 1 筆出處" in rendered
     assert "--json" not in rendered and "answer_conflicts" not in rendered
+
+
+def test_run_search_puts_low_confidence_notice_before_other_output(app):
+    result = {"rank": 1, "question_id": "x", "type": "essay", "stem": "題目",
+              "low_confidence": True, "citations": []}
+    app.retriever = SimpleNamespace(meta={"embedding_text_version": 2},
+                                    search=lambda *args, **kwargs: [result])
+    app.mode, app.options = "hybrid", {}
+
+    assert app.run_search("完全無關").startswith("找不到高度相關的考題，以下結果僅供參考")
 
 
 def test_dataset_download_never_uses_implicit_account(app, monkeypatch, tmp_path):
