@@ -481,11 +481,9 @@ class Retriever:
         import numpy as np
         if self.vector_ids is None:
             self._load_vectors()
-        else:
-            require_matching_identity(self.meta["model_identity"], embedder_identity(self.embedder, self.meta["model"]))
+        # Identity is verified once in _load_vectors; hashing every weight per query cost seconds.
         queries = [query] if isinstance(query, str) else query
         vectors = encode(self.embedder, [normalize_text(q) for q in queries], model_prefix(self.meta["model"], True))
-        require_matching_identity(self.meta["model_identity"], embedder_identity(self.embedder, self.meta["model"]))
         if len(vectors[0]) != self.meta["dimension"]:
             raise ValueError("查詢向量與索引維度不符")
         vector_scores = (self.matrix @ np.asarray(vectors, dtype=np.float32).T).max(axis=1)

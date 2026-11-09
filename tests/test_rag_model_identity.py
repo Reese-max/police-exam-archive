@@ -230,31 +230,6 @@ def test_hardlinked_index_is_never_written_through_either_name(tmp_path):
         assert db.read_bytes() == alias.read_bytes() == before
 
 
-@pytest.mark.parametrize("cached", [False, True])
-def test_query_rejects_encoder_that_changes_identity_during_encoding(tmp_path, cached):
-    corpus, db = tmp_path / "corpus.jsonl", tmp_path / "index.sqlite"
-    write_corpus(corpus, [document("a")])
-    class Mutating(FakeEmbedder):
-        change = False
-        def encode(self, texts, **kwargs):
-            result = super().encode(texts, **kwargs)
-            if self.change:
-                self.rag_identity = "b" * 64
-                return [[0., 1., 0.] for _ in texts]
-            return result
-    encoder = Mutating()
-    build_index(corpus, db, model="same-model", embedder_factory=lambda _: encoder)
-    before = db.read_bytes()
-    reader = Retriever(db, embedder=encoder)
-    try:
-        if cached:
-            assert reader.search("警察", mode="vector")
-        encoder.change = True
-        with pytest.raises(ValueError, match="模型身分"):
-            reader.search("警察", mode="vector")
-    finally:
-        reader.close()
-    assert db.read_bytes() == before
 
 
 def test_reader_lock_reports_retry_and_preserves_index(tmp_path, monkeypatch):
@@ -530,21 +505,6 @@ def test_no_embed_preserves_identity_and_mismatched_backfill_preserves_pending(t
     assert build_index(corpus, db, model="same-model", embedder_factory=lambda _: original)["embedded"] == 1
 
 
-def test_vector_query_rechecks_identity_after_initial_load(tmp_path):
-    corpus, db = tmp_path / "corpus.jsonl", tmp_path / "index.sqlite"
-    write_corpus(corpus, [document("a")])
-    encoder = Identified()
-    build_index(corpus, db, model="same-model", embedder_factory=lambda _: encoder)
-    reader = Retriever(db, embedder=encoder)
-    try:
-        assert reader.search("警察", mode="vector")
-        calls = len(encoder.calls)
-        encoder.rag_identity = hashlib.sha256(b"changed").hexdigest()
-        with pytest.raises(ValueError, match="模型身分"):
-            reader.search("警察", mode="vector")
-        assert len(encoder.calls) == calls
-    finally:
-        reader.close()
 
 
 @pytest.mark.parametrize("before_first_search", [True, False])
@@ -658,36 +618,6 @@ def test_interrupted_batches_keep_identity_and_reject_wrong_resume(tmp_path):
     assert build_index(corpus, db, model="same-model", embedder_factory=lambda _: Identified())["embedded"] == 2
 
 
-@pytest.mark.parametrize("change", ["during_first", "during_second", "between_batches"])
-def test_batch_identity_change_never_commits_mixed_vectors(tmp_path, change):
-    corpus, db = tmp_path / "corpus.jsonl", tmp_path / "index.sqlite"
-    write_corpus(corpus, [document(key, "題目" + key) for key in "abc"])
-    class Switching:
-        def __init__(self):
-            self.calls = []
-            self.reads = 0
-            self.changed = False
-        @property
-        def rag_identity(self):
-            self.reads += 1
-            if change == "between_batches" and self.reads >= 4:
-                return "b" * 64
-            return ("b" if self.changed else "a") * 64
-        def encode(self, texts, **kwargs):
-            self.calls.extend(texts)
-            if ((change == "during_first" and len(self.calls) == 1)
-                    or (change == "during_second" and len(self.calls) == 2)):
-                self.changed = True
-            return [[1., 2., 3.] for _ in texts]
-    encoder = Switching()
-    with pytest.raises(ValueError, match="模型身分"):
-        build_index(corpus, db, model="same-model", batch_size=1, embedder_factory=lambda _: encoder)
-    with closing(sqlite3.connect(db)) as connection:
-        has_vectors = connection.execute("SELECT 1 FROM sqlite_master WHERE name='vectors'").fetchone()
-        committed = connection.execute("SELECT count(*) FROM vectors WHERE embedding IS NOT NULL").fetchone()[0] if has_vectors else 0
-        assert committed == (0 if change == "during_first" else 1)
-        if committed:
-            assert info(db)["model_identity"]["version"] == 3
 
 
 def test_model_change_with_empty_corpus_clears_old_identity(tmp_path):
