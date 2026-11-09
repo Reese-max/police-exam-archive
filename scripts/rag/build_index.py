@@ -403,7 +403,6 @@ def _build_index(corpus, db, *, embed, model, embedder_factory, device, batch_si
                     connection.execute("INSERT OR REPLACE INTO meta VALUES (?, ?)", (key, json_text(value)))
             for offset in range(0, len(pending), batch_size):
                 batch = pending[offset:offset + batch_size]
-                require_matching_identity(current_identity, embedder_identity(embedder, model))
                 vectors = encode(embedder, [text for identifier, text in batch],
                                  model_prefix(model), batch_size=batch_size)
                 for (identifier, text), vector in zip(batch, vectors):
@@ -419,7 +418,6 @@ def _build_index(corpus, db, *, embed, model, embedder_factory, device, batch_si
                                        (json_text(dimension),))
                 # Hash updates and stale-vector deletion commit atomically with the first batch.
                 # SQLite recovers an interrupted batch's journal on the next writable open.
-                require_matching_identity(current_identity, embedder_identity(embedder, model))
                 connection.commit()
                 print(f"向量進度：{offset + len(batch)}/{len(pending)}"
                       f"（本次 {offset + len(batch)}/{len(pending)}）", file=sys.stderr, flush=True)

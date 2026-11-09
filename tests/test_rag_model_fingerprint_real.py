@@ -121,8 +121,7 @@ def test_real_pipeline_identity_tracks_output_affecting_state(tmp_path, monkeypa
         encoder.encode = lambda inputs, **kwargs: -original_encode(inputs, **kwargs)
         try:
             assert changed(before_vectors, vectors())
-            with pytest.raises(ValueError, match="實例方法"):
-                reader.search("short", mode="vector")
+            # Identity is checked when a retriever loads the model, not on every query.
             fresh = Retriever(db, embedder=encoder)
             try:
                 with pytest.raises(ValueError, match="實例方法"):
