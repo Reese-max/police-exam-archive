@@ -1,0 +1,24 @@
+{
+  "file_count": 2090,
+  "raw_question_count": 43735,
+  "raw_questions_by_type": {
+    "choice": 37905,
+    "essay": 5830
+  },
+  "deduplicated_question_count": 10594,
+  "deduplicated_questions_by_type": {
+    "choice": 8164,
+    "essay": 2430
+  },
+  "answer_status": {
+    "normal": 8139,
+    "free": 22,
+    "none": 2430,
+    "other": 3
+  },
+  "questions_with_sources": 10594,
+  "answer_conflict_count": 6,
+  "max_duplicate_count": 32,
+  "in_file_duplicate_count": 40,
+  "disambiguated_collision_groups": 1
+}

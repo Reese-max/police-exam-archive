@@ -29,7 +29,7 @@
     {
       "number": "二",
       "type": "essay",
-      "stem": "英翻中:Please translate the following passage into Chinese.(20 分)\nEngagement is what flow is defined by—high, high levels of engagement.\nPeople experience flow in many kinds of work, fromlooking at the tiniest cells\nto exploring the largest scales of the universe. One of the famous cell\nbiologists described flow looking through a microscope; astronomers describe\nit looking through telescopes. Similar flow states are described by musicians,\npainters, computer programmers, tile setters, writers, scientists, public\nspeakers, surgeons, and Olympic athletes. People experience it playing chess,\nwriting poetry, rock climbing, and disco dancing. Almost without exception,\nthe flow state is when one does his or her best work.",
+      "stem": "英翻中:Please translate the following passage into Chinese.(20 分)\nEngagement is what flow is defined by—high, high levels of engagement.\nPeople experience flow in many kinds of work, from looking at the tiniest cells\nto exploring the largest scales of the universe. One of the famous cell\nbiologists described flow looking through a microscope; astronomers describe\nit looking through telescopes. Similar flow states are described by musicians,\npainters, computer programmers, tile setters, writers, scientists, public\nspeakers, surgeons, and Olympic athletes. People experience it playing chess,\nwriting poetry, rock climbing, and disco dancing. Almost without exception,\nthe flow state is when one does his or her best work.",
       "section": "甲、申論題"
     },
     {
@@ -41,7 +41,7 @@
     {
       "number": 1,
       "type": "choice",
-      "stem": "Anew economic immigration bill was passed in 2018 to recruit foreign workers and talent necessaryfor Taiwan’s national development without affecting job opportunities andwagelevel.",
+      "stem": "Anew economic immigration bill was passed in 2018 to recruit foreign workers and talent necessary for Taiwan’s national development without affecting job opportunities and wage level.",
       "section": "乙、測驗題",
       "options": {
         "A": "intrinsic",
@@ -54,7 +54,7 @@
     {
       "number": 2,
       "type": "choice",
-      "stem": "Interpol is aninternational organizationthat worldwide police cooperation and crime control.",
+      "stem": "Interpol is aninternational organization that worldwide police cooperation and crime control.",
       "section": "乙、測驗題",
       "options": {
         "A": "probes",
@@ -67,7 +67,7 @@
     {
       "number": 3,
       "type": "choice",
-      "stem": "Thelawprovides that an asylum seeker, a recognized refugee, or aperson underhumanitarian protection maynot be to the situation which would threaten his/herlifeorfreedom.",
+      "stem": "The law provides that an asylum seeker, a recognized refugee, or aperson underhumanitarian protection maynot be to the situation which would threaten his/herlifeorfreedom.",
       "section": "乙、測驗題",
       "options": {
         "A": "returned",
@@ -106,7 +106,7 @@
     {
       "number": 6,
       "type": "choice",
-      "stem": "Whilesomeimmigrantsareabletoholddualormultiplecitizenship, others are required to their original citizenship if they officially change their nationality.",
+      "stem": "While some immigrants are able to hold dual or multiple citizenship, others are required to their original citizenship if they officially change their nationality.",
       "section": "乙、測驗題",
       "options": {
         "A": "announce",
@@ -119,7 +119,7 @@
     {
       "number": 7,
       "type": "choice",
-      "stem": "Tennisstar Novak Djokovicfaceddeportationafterthe Australiangovernment hisvisaonpublic interest grounds, threedays beforethe Australian Openwas tobegin.",
+      "stem": "Tennisstar Novak Djokovicfaceddeportationafterthe Australiangovernment hisvisaonpublic interest grounds, threedays before the Australian Openwas tobegin.",
       "section": "乙、測驗題",
       "options": {
         "A": "erased",
@@ -132,7 +132,7 @@
     {
       "number": 8,
       "type": "choice",
-      "stem": "The digital environment opens new channels for education; however, children can also come across harmfulandviolent content or of information online.",
+      "stem": "The digital environment opens new channels for education; however, children can also come across harmful and violent content or of information online.",
       "section": "乙、測驗題",
       "options": {
         "A": "manipulation",
@@ -158,7 +158,7 @@
     {
       "number": 10,
       "type": "choice",
-      "stem": "The chapters in this book combine theory and extensive empirical data to provide a balanced account of government performance underthepresident’s .",
+      "stem": "The chapters in this book combine theory and extensive empirical data to provide a balanced account of government performance under the president’s .",
       "section": "乙、測驗題",
       "options": {
         "A": "reign",
@@ -176,11 +176,11 @@
       "options": {
         "A": "Owingto",
         "B": "As aresult of",
-        "C": "Inoppositionto",
+        "C": "In opposition to",
         "D": "In agreement with"
       },
       "answer": "C",
-      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neitherdid Jankowski find that they joined to seek asubstitute family since as many boys saidtheywere closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neither did Jankowski find that they joined to seek asubstitute family since as many boys said they were closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 to the dead-endjobs held by their parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
       "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
@@ -195,7 +195,7 @@
         "D": "intact"
       },
       "answer": "D",
-      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neitherdid Jankowski find that they joined to seek asubstitute family since as many boys saidtheywere closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neither did Jankowski find that they joined to seek asubstitute family since as many boys said they were closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 to the dead-endjobs held by their parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
       "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
@@ -210,7 +210,7 @@
         "D": "fusion"
       },
       "answer": "A",
-      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neitherdid Jankowski find that they joined to seek asubstitute family since as many boys saidtheywere closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neither did Jankowski find that they joined to seek asubstitute family since as many boys said they were closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 to the dead-endjobs held by their parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
       "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
@@ -225,7 +225,7 @@
         "D": "orientation"
       },
       "answer": "C",
-      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neitherdid Jankowski find that they joined to seek asubstitute family since as many boys saidtheywere closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neither did Jankowski find that they joined to seek asubstitute family since as many boys said they were closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 to the dead-endjobs held by their parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
       "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
@@ -240,13 +240,13 @@
         "D": "light-hearted"
       },
       "answer": "B",
-      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neitherdid Jankowski find that they joined to seek asubstitute family since as many boys saidtheywere closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 tothedead-endjobs heldbytheir parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
+      "passage": "For more than ten years, sociologist Martin Jankowski did participant observation of thirty-seven gangs in Boston, Los Angeles, and New York City. 11 stereotypes, Jankowski did not find that the motive for joining was to escape from a broken home because there were as many members from 12 asfrombroken homes. Neither did Jankowski find that they joined to seek asubstitute family since as many boys said they were closeto their families as said they were not. Rather, the boys joined to gain access to money, tohave 13 , such as girls and drugs, to maintain anonymityin committingcrimes, to get protection, and to help the community. This last reason mayseem surprising, but insome neighborhoods, gangs protect residents from outsiders. The boys also sawthe gangas a(n) 14 to the dead-endjobs held by their parents. Neighborhood residents are 15 about gangs. On the one hand, they fear the violence. On the other hand, many adults once belonged to gangs, and stated that since gang members are the children of people who live in the neighborhood, they often provide better protection than the police.",
       "passage_intro": "請依下文回答第11 題至第15題"
     },
     {
       "number": 16,
       "type": "choice",
-      "stem": "Accordingtothis passage, theword“sterile”means .",
+      "stem": "According to this passage, theword“sterile”means .",
       "section": "乙、測驗題",
       "options": {
         "A": "lifeless",
@@ -259,12 +259,12 @@
     {
       "number": 17,
       "type": "choice",
-      "stem": "Themainpatternoforganizationofthesecondparagraphis .",
+      "stem": "The main pattern of organization of the second paragraph is .",
       "section": "乙、測驗題",
       "options": {
         "A": "timeorder",
         "B": "definition and example",
-        "C": "causeand effect",
+        "C": "cause and effect",
         "D": "comparison and/orcontrast"
       },
       "answer": "D"
@@ -272,25 +272,25 @@
     {
       "number": 18,
       "type": "choice",
-      "stem": "We can conclude from the passage that the two professors might have guessed the purpose of the study theywereinbecause .",
+      "stem": "We can conclude from the passage that the two professors might have guessed the purpose of the study they were in because .",
       "section": "乙、測驗題",
       "options": {
-        "A": "theyhadreadabout theinterests oftheresearchers",
-        "B": "oneofthetworooms theytaught in was decorated unusually",
-        "C": "research assistants gavethem hints about the purpose of the study",
-        "D": "thestudywas carried out manytimes before they participated in this study"
+        "A": "they had read about the interests of the researchers",
+        "B": "one of the two rooms they taught in was decorated unusually",
+        "C": "research assistants gave them hints about the purpose of the study",
+        "D": "the study was carried out manytimes before they participated in this study"
       },
       "answer": "B"
     },
     {
       "number": 19,
       "type": "choice",
-      "stem": "Thesentence“ ”best expresses thecentral point ofthis passage.",
+      "stem": "The sentence“ ”best expresses the central point ofthis passage.",
       "section": "乙、測驗題",
       "options": {
         "A": "Collegeclassrooms are often drab and dreary places.",
-        "B": "In one study, over 80% of university students rated their classrooms negatively, describing them as ugly, cramped, stuffy, anduncomfortable.",
-        "C": "Theresearchbyenvironmentalpsychologistsisbeginningtoshowthatunattractiveclassroomsarenot onlyunappealing; theymayalso adverselyaffect academic performance.",
+        "B": "In one study, over 80% of university students rated their classrooms negatively, describing them as ugly, cramped, stuffy, and uncomfortable.",
+        "C": "Theresearchbyenvironmentalpsychologistsisbeginningtoshowthatunattractiveclassroomsarenot onlyunappealing; they may also adverselyaffect academic performance.",
         "D": "The researchers investigated how these two different environments affected performance in actual collegeclasses."
       },
       "answer": "C"
@@ -301,10 +301,10 @@
       "stem": "The sentence “ ” is NOT relevant support for the setting of the two classrooms designed by the researchers.",
       "section": "乙、測驗題",
       "options": {
-        "A": "Theresearchers selected two identical classrooms located side by side in the psychology building.",
-        "B": "Besides, analcohol-basedbeautiful handsanitizerwas placedintheroom forstudents touse.",
-        "C": "Severalwallswerepaintedbrightcolors, art posters hung on the walls, large plants added to the room, andcolorful Chinesekites hungfrom theceiling.",
-        "D": "In addition to traditional desks, a part of the room was outfitted with area rugs, color-coordinated cushions, andwoodencubes to provide non traditional seating."
+        "A": "The researchers selected two identical classrooms located side by side in the psychology building.",
+        "B": "Besides, analcohol-basedbeautiful handsanitizerwas placedintheroom for students touse.",
+        "C": "Several walls were painted bright colors, art posters hung on the walls, large plants added to the room, and colorful Chinesekites hung from the ceiling.",
+        "D": "In addition to traditional desks, a part of the room was outfitted with area rugs, color-coordinated cushions, and wooden cubes to provide non traditional seating."
       },
       "answer": "B"
     }

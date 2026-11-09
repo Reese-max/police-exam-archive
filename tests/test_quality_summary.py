@@ -363,9 +363,9 @@ class TestSummaryAgainstCorpus:
         assert summary["dataset_fingerprint"].startswith("sha256:")
         assert len(summary["dataset_fingerprint"]) == len("sha256:") + 64
         assert summary["corpus_fingerprint"] == summary["dataset_fingerprint"]
-        # Official image provenance and category repair; source commit 66e2dab9.
+        # Includes the RAG branch's English spacing fixes and current 115 repairs.
         assert summary["corpus_fingerprint"] == (
-            "sha256:b05dc4ea00381de2523d8dc25b8d183f6db9743c3dd60dc0ed79f622271b6e61"
+            "sha256:de4eafbd9fa9cc95e8f927103433d8864f33f446acaeeb3f6718bf96ea01ae84"
         )
         assert summary["provenance"]["schema_version"] == 1
         assert summary["provenance"]["fingerprint"]["value"] == summary["corpus_fingerprint"]
@@ -531,11 +531,10 @@ class TestFixtureImport:
             "--output",
             str(output),
         ]
-        subprocess.run(build_command, check=True, capture_output=True, text=True)
+        subprocess.run(build_command, check=True, capture_output=True)
         checked = subprocess.run(
             [*build_command, "--check"],
             capture_output=True,
-            text=True,
         )
         assert checked.returncode == 0, checked.stdout + checked.stderr
 
@@ -547,7 +546,6 @@ class TestFixtureImport:
                 str(root),
             ],
             capture_output=True,
-            text=True,
         )
         assert claims.returncode == 0, claims.stdout + claims.stderr
         artifact = json.loads(output.read_text(encoding="utf-8"))
@@ -561,10 +559,9 @@ class TestFixtureImport:
         dirty = subprocess.run(
             [*build_command, "--check"],
             capture_output=True,
-            text=True,
         )
         assert dirty.returncode != 0
-        assert "source commit" in dirty.stderr
+        assert b"source commit" in dirty.stderr
 
     def test_duplicate_copy_diverges_labeled(self, tmp_path):
         root = _build_fixture_root(tmp_path)

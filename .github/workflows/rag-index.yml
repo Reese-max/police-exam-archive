@@ -1,0 +1,54 @@
+name: Update RAG index
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '考古題庫/**'
+      - 'rag/moex_catalog.json'
+      - 'scripts/rag/**'
+      - '.github/workflows/rag-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rag-index
+  cancel-in-progress: false
+
+jobs:
+  incremental-index:
+    if: ${{ vars.HF_RAG_UPDATES_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      HF_DATASET_REPO: ${{ vars.HF_DATASET_REPO }}
+      HF_HUB_DISABLE_IMPLICIT_TOKEN: "1"
+      HF_HUB_DISABLE_TELEMETRY: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install sentence-transformers huggingface-hub beautifulsoup4
+      - name: Download the previous dataset snapshot
+        run: |
+          test -n "$HF_DATASET_REPO"
+          python scripts/rag/dataset_index.py download --repo "$HF_DATASET_REPO" --folder .rag-dataset
+      - name: Update only changed vectors
+        run: |
+          python scripts/rag/update_index.py --device cpu \
+            --db .rag-dataset/index-bge-m3.sqlite \
+            --catalog .rag-dataset/moex_catalog.json \
+            --catalog-out .rag-dataset/moex_catalog.json \
+            --report .rag-update.json
+      - name: Publish the new snapshot if changed
+        env:
+          HF_DATASET_TOKEN: ${{ secrets.HF_DATASET_TOKEN }}
+        run: |
+          python scripts/rag/dataset_index.py publish --repo "$HF_DATASET_REPO" \
+            --folder .rag-dataset --report .rag-update.json

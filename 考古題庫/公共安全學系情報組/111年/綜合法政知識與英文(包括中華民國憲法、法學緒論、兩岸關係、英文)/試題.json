@@ -314,7 +314,7 @@
     {
       "number": 24,
       "type": "choice",
-      "stem": "「臺灣友邦國際保護及加強倡議法」(Taiwan Allies International Protectionand Enhancement Initiative Act) 是川普總統於2020年簽署之重要友臺法案之一。關於該法內容,以下敘述何者正確?",
+      "stem": "「臺灣友邦國際保護及加強倡議法」(Taiwan Allies International Protection and Enhancement Initiative Act) 是川普總統於2020年簽署之重要友臺法案之一。關於該法內容,以下敘述何者正確?",
       "section": null,
       "options": {
         "A": "美國歷屆政府自1979年之後,從未對臺灣最終地位採取正式立場",
@@ -444,7 +444,7 @@
     {
       "number": 34,
       "type": "choice",
-      "stem": "Thephysiciantold Helentogetbedrest,_____herfeet, and take some medication.",
+      "stem": "The physician told Helentogetbedrest,_____herfeet, and take some medication.",
       "section": null,
       "options": {
         "A": "disclose",
@@ -548,7 +548,7 @@
     {
       "number": 42,
       "type": "choice",
-      "stem": "Food insecurityrefers toa spectrumof experiences that encompass worries aboutrunningout of food or making _____infoodqualitybecauseoflimitedfunds.",
+      "stem": "Food in security refers toa spectrum of experiences that encompass worries about running out of food or making _____infoodqualitybecauseoflimitedfunds.",
       "section": null,
       "options": {
         "A": "compromises",
@@ -587,7 +587,7 @@
     {
       "number": 45,
       "type": "choice",
-      "stem": "Thecivilrightsmovementlastingforadecadecausedsomeviolentincidentsandmarkedaperiodofsocial_____ inthecountry.",
+      "stem": "Thecivilrightsmovementlastingforadecadecausedsomeviolentincidentsandmarkedaperiodofsocial_____ in the country.",
       "section": null,
       "options": {
         "A": "burglary",
@@ -600,7 +600,7 @@
     {
       "number": 46,
       "type": "choice",
-      "stem": "The United Stateshas experienced a dramatic increase in overdose deaths over the past20years, whichhasbeen welldocumentedandlargely_____towhathasbeentermedtheopioidcrisisoropioidepidemic.",
+      "stem": "The United States has experienced a dramatic increase in overdose deaths over the past20years, which has been welldocumentedandlargely_____towhathasbeentermedtheopioidcrisisoropioidepidemic.",
       "section": null,
       "options": {
         "A": "accumulated",

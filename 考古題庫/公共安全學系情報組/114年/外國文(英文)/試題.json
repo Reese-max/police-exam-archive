@@ -33,7 +33,7 @@
     {
       "number": 1,
       "type": "choice",
-      "stem": "Thecoursedescriptionstates that attendanceat everylectureis .",
+      "stem": "The course description states that attendance at every lecture is .",
       "section": "乙、測驗題",
       "options": {
         "A": "pacific",
@@ -46,7 +46,7 @@
     {
       "number": 2,
       "type": "choice",
-      "stem": "Weneedtodevelopaframeworkthatcrossesthetraditional between the public and private sectors.",
+      "stem": "We need to develop a framework that crosses the traditional between the public and private sectors.",
       "section": "乙、測驗題",
       "options": {
         "A": "deck",
@@ -72,7 +72,7 @@
     {
       "number": 4,
       "type": "choice",
-      "stem": "Nobodybelievedtheman’s storiesabout his adventures as ahunter.",
+      "stem": "Nobody believed the man’s stories about his adventures as ahunter.",
       "section": "乙、測驗題",
       "options": {
         "A": "tame",
@@ -98,7 +98,7 @@
     {
       "number": 6,
       "type": "choice",
-      "stem": "Brownhas been under investigation for allegedly accepting a from a Frenchbusinessman.",
+      "stem": "Brown has been under investigation for allegedly accepting a from a Frenchbusinessman.",
       "section": "乙、測驗題",
       "options": {
         "A": "responsibility",
@@ -111,7 +111,7 @@
     {
       "number": 7,
       "type": "choice",
-      "stem": "In ancient times, criminals weresometimes from thekingdom theylivedin.",
+      "stem": "In ancient times, criminals were sometimes from the kingdom they lived in.",
       "section": "乙、測驗題",
       "options": {
         "A": "shifted",
@@ -124,7 +124,7 @@
     {
       "number": 8,
       "type": "choice",
-      "stem": "Keeping youngertalent awayfrom powers ofdecision-makingmayresult inabrain .",
+      "stem": "Keeping youngertalent away from powers of decision-makingmayresult in a brain .",
       "section": "乙、測驗題",
       "options": {
         "A": "drain",
@@ -137,7 +137,7 @@
     {
       "number": 9,
       "type": "choice",
-      "stem": "Periodicdroughts havecaused foodshortages throughout thecountry.",
+      "stem": "Periodicdroughts have caused foodshortages throughout the country.",
       "section": "乙、測驗題",
       "options": {
         "A": "acute",
@@ -150,7 +150,7 @@
     {
       "number": 10,
       "type": "choice",
-      "stem": "Duringthemassivedust storm, thecitywas inacloudof yellow dirt.",
+      "stem": "During the massive dust storm, the city was in a cloud of yellow dirt.",
       "section": "乙、測驗題",
       "options": {
         "A": "enveloped",
@@ -176,7 +176,7 @@
     {
       "number": 12,
       "type": "choice",
-      "stem": "Usingsignlanguage, chimpanzeescan suchideasas“Candysweet”and“Givemeahug.”",
+      "stem": "Usingsignlanguage, chimpanzees can suchideasas“Candysweet”and“Givemeahug.”",
       "section": "乙、測驗題",
       "options": {
         "A": "distort",
@@ -189,7 +189,7 @@
     {
       "number": 13,
       "type": "choice",
-      "stem": "Many people take dietary such as extra calcium or large doses of vitamin C in the belief that theywill cureorprevent disease.",
+      "stem": "Many people take dietary such as extra calcium or large doses of vitamin C in the belief that they will cureorprevent disease.",
       "section": "乙、測驗題",
       "options": {
         "A": "additives",
@@ -202,7 +202,7 @@
     {
       "number": 14,
       "type": "choice",
-      "stem": "Many customers have complained about the noise from the air conditioning of the restaurant, and theowneris tryingtofindways to thenoise.",
+      "stem": "Many customers have complained about the noise from the air conditioning of the restaurant, and the owner is trying to find ways to the noise.",
       "section": "乙、測驗題",
       "options": {
         "A": "mute",
@@ -215,7 +215,7 @@
     {
       "number": 15,
       "type": "choice",
-      "stem": "Evenwhilein thewomb, ababycanpick updifferent sounds and between thevoiceof its motherandthat ofanotherwoman.",
+      "stem": "Even while in thewomb, ababycanpick updifferent sounds and between the voice of its mother and that of another woman.",
       "section": "乙、測驗題",
       "options": {
         "A": "communicate",
@@ -254,7 +254,7 @@
     {
       "number": 18,
       "type": "choice",
-      "stem": "A generation or two ago, it was considered rude to bring up three topics in conversation, politics, religion, andsex, but nowadays wedonot tosuchlimitations.",
+      "stem": "A generation or two ago, it was considered rude to bring up three topics in conversation, politics, religion, andsex, but nowadays wedonot to such limitations.",
       "section": "乙、測驗題",
       "options": {
         "A": "lead",
@@ -280,7 +280,7 @@
     {
       "number": 20,
       "type": "choice",
-      "stem": "Scientists find that when people feel “love at first sight,” the pleasure center of the brain sets off a chemical that thebody, causingrapid heartbeat anddeepbreathing.",
+      "stem": "Scientists find that when people feel “love at first sight,” the pleasure center of the brain sets off a chemical that thebody, causingrapid heartbeat and deep breathing.",
       "section": "乙、測驗題",
       "options": {
         "A": "relaxes",
@@ -297,12 +297,12 @@
       "section": "乙、測驗題",
       "options": {
         "A": "at least",
-        "B": "incontrast",
+        "B": "in contrast",
         "C": "aboveall",
         "D": "that is"
       },
       "answer": "C",
-      "passage": "請依下文回答第21題至第25題\nPeopletellstories forvarious reasons. Somestoriesaretoldtoentertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in theirlives. Notonlydochildrenlearnabouttheworldaroundthemthroughstoriesbut 21 , theybuild up a foundation for future learning as well. Researchhasshownthatthereisastrongassociationbetween children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. Thevalueofstories, nevertheless, shouldnot belimitedto language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 thoseinlanguage.",
+      "passage": "請依下文回答第21題至第25題\nPeopletellstories for various reasons. Some stories are told to entertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in their lives. Not only do children learn about the world around them through stories but 21 , they build up a foundation for future learning as well. Research has shown that there is a strong association between children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. The value of stories, nevertheless, should not be limited to language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 those in language.",
       "passage_question_range": "21-25"
     },
     {
@@ -317,7 +317,7 @@
         "D": "tongue"
       },
       "answer": "D",
-      "passage": "請依下文回答第21題至第25題\nPeopletellstories forvarious reasons. Somestoriesaretoldtoentertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in theirlives. Notonlydochildrenlearnabouttheworldaroundthemthroughstoriesbut 21 , theybuild up a foundation for future learning as well. Researchhasshownthatthereisastrongassociationbetween children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. Thevalueofstories, nevertheless, shouldnot belimitedto language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 thoseinlanguage.",
+      "passage": "請依下文回答第21題至第25題\nPeopletellstories for various reasons. Some stories are told to entertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in their lives. Not only do children learn about the world around them through stories but 21 , they build up a foundation for future learning as well. Research has shown that there is a strong association between children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. The value of stories, nevertheless, should not be limited to language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 those in language.",
       "passage_question_range": "21-25"
     },
     {
@@ -332,7 +332,7 @@
         "D": "perform"
       },
       "answer": "D",
-      "passage": "請依下文回答第21題至第25題\nPeopletellstories forvarious reasons. Somestoriesaretoldtoentertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in theirlives. Notonlydochildrenlearnabouttheworldaroundthemthroughstoriesbut 21 , theybuild up a foundation for future learning as well. Researchhasshownthatthereisastrongassociationbetween children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. Thevalueofstories, nevertheless, shouldnot belimitedto language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 thoseinlanguage.",
+      "passage": "請依下文回答第21題至第25題\nPeopletellstories for various reasons. Some stories are told to entertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in their lives. Not only do children learn about the world around them through stories but 21 , they build up a foundation for future learning as well. Research has shown that there is a strong association between children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. The value of stories, nevertheless, should not be limited to language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 those in language.",
       "passage_question_range": "21-25"
     },
     {
@@ -344,10 +344,10 @@
         "A": "takeon",
         "B": "pickup",
         "C": "showup",
-        "D": "dependon"
+        "D": "depend on"
       },
       "answer": "B",
-      "passage": "請依下文回答第21題至第25題\nPeopletellstories forvarious reasons. Somestoriesaretoldtoentertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in theirlives. Notonlydochildrenlearnabouttheworldaroundthemthroughstoriesbut 21 , theybuild up a foundation for future learning as well. Researchhasshownthatthereisastrongassociationbetween children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. Thevalueofstories, nevertheless, shouldnot belimitedto language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 thoseinlanguage.",
+      "passage": "請依下文回答第21題至第25題\nPeopletellstories for various reasons. Some stories are told to entertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in their lives. Not only do children learn about the world around them through stories but 21 , they build up a foundation for future learning as well. Research has shown that there is a strong association between children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. The value of stories, nevertheless, should not be limited to language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 those in language.",
       "passage_question_range": "21-25"
     },
     {
@@ -362,7 +362,7 @@
         "D": "beneath"
       },
       "answer": "A",
-      "passage": "請依下文回答第21題至第25題\nPeopletellstories forvarious reasons. Somestoriesaretoldtoentertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in theirlives. Notonlydochildrenlearnabouttheworldaroundthemthroughstoriesbut 21 , theybuild up a foundation for future learning as well. Researchhasshownthatthereisastrongassociationbetween children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. Thevalueofstories, nevertheless, shouldnot belimitedto language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 thoseinlanguage.",
+      "passage": "請依下文回答第21題至第25題\nPeopletellstories for various reasons. Some stories are told to entertain, while others aim to pass on wisdom, knowledge, and morals to future generations. For young children, stories play a crucial role in their lives. Not only do children learn about the world around them through stories but 21 , they build up a foundation for future learning as well. Research has shown that there is a strong association between children’s success in school and their experiences with storybooks and storytelling in their mother 22 from an early age. Children who 23 well on literacy tests tend to have stories read or told to them before starting their formal education. In regard to the significance of stories in children's literacy development, studies suggest that most of the new vocabulary children 24 in their school years are acquired through stories they read or listen to. The value of stories, nevertheless, should not be limited to language acquisition; stories can also bring gains in personal, emotional and learning development in children 25 those in language.",
       "passage_question_range": "21-25"
     },
     {
@@ -377,7 +377,7 @@
         "D": "undermine"
       },
       "answer": "B",
-      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. Inresponse, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 thelatterservice, it’s an optionthat wouldlikelyonlybe usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
+      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. In response, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 the latter service, it’s an option that would likely only be usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
       "passage_question_range": "26-30"
     },
     {
@@ -392,7 +392,7 @@
         "D": "navigate"
       },
       "answer": "C",
-      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. Inresponse, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 thelatterservice, it’s an optionthat wouldlikelyonlybe usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
+      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. In response, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 the latter service, it’s an option that would likely only be usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
       "passage_question_range": "26-30"
     },
     {
@@ -402,12 +402,12 @@
       "section": "乙、測驗題",
       "options": {
         "A": "reliant on",
-        "B": "extractedfrom",
+        "B": "extracted from",
         "C": "manipulatedby",
-        "D": "associatedwith"
+        "D": "associated with"
       },
       "answer": "D",
-      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. Inresponse, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 thelatterservice, it’s an optionthat wouldlikelyonlybe usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
+      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. In response, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 the latter service, it’s an option that would likely only be usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
       "passage_question_range": "26-30"
     },
     {
@@ -422,7 +422,7 @@
         "D": "reasons"
       },
       "answer": "C",
-      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. Inresponse, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 thelatterservice, it’s an optionthat wouldlikelyonlybe usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
+      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. In response, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 the latter service, it’s an option that would likely only be usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
       "passage_question_range": "26-30"
     },
     {
@@ -437,13 +437,13 @@
         "D": "proponents"
       },
       "answer": "A",
-      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. Inresponse, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 thelatterservice, it’s an optionthat wouldlikelyonlybe usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
+      "passage": "請依下文回答第26題至第30題\nBecause of their valuable cargo and minimal defenses, merchant ships make especially attractive targets for maritime pirates. In response, some private companies offer security services to 26 merchant ships’ defensive capacities. Vessels can hire armed security personnel to accompany them on voyages. Or, an escort vessel can be hired to 27 dangerous shipping lanes. Because of the high risk and expense 28 the latter service, it’s an option that would likely only be usedbyships carryingrareor most valuable commodities. In fact, many shipping firms choose to forego any additional security 29 , opting instead to simply pay the ransom should one of their vessels be hijacked. Unfortunately, 30 say, doingso emboldens hijackers and encourages piracy.",
       "passage_question_range": "26-30"
     },
     {
       "number": 31,
       "type": "choice",
-      "stem": "Whichofthefollowingsentences best expresses themainideaofthe first paragraph?",
+      "stem": "Which of the following sentences best expresses the main idea of the first paragraph?",
       "section": "乙、測驗題",
       "options": {
         "A": "Microbeads are contaminating waterways ina harmful manner.",
@@ -452,22 +452,22 @@
         "D": "Microbeads are clogging up the bathroom drains and wastewater treatment systems."
       },
       "answer": "A",
-      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, andlakes inaserious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, thesesameanimals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, theyareincredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Anotherwayistoadoptnaturalalternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probabilityofrisk from microbe ad pollution is high, while the solution to this problem is simple.”",
+      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, and lakes in a serious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, these same animals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, they are incredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Another way is to adopt natural alternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probability of risk from microbe ad pollution is high, while the solution to this problem is simple.”",
       "passage_question_range": "31-35"
     },
     {
       "number": 32,
       "type": "choice",
-      "stem": "Whichofthefollowingsentences best expresses the main idea of the second paragraph?",
+      "stem": "Which of the following sentences best expresses the main idea of the second paragraph?",
       "section": "乙、測驗題",
       "options": {
         "A": "Microbeads are, infact, flammable and can easily catch fire in the presence of a heat source.",
-        "B": "Microbeadsaretravellingthroughthefoodchainsandgraduallyspreadingintodifferentareasof lifeontheplanet.",
-        "C": "Theincreasingpresenceofmicrobeadshascausedsignificantdamagetothewaterquality, aquatic life, andhumanhealth.",
-        "D": "Chemicalsareattractedtomicrobeads, andwhencombined, they become toxic substances that appear asfoodtofish."
+        "B": "Micro beads are travelling through the food chains and gradually spreading into different areas of lifeontheplanet.",
+        "C": "The increasing presence of micro beads has caused significant damage to the water quality, aquatic life, and human health.",
+        "D": "Chemicals are attracted to micro beads, and when combined, they become toxic substances that appear asfoodtofish."
       },
       "answer": "C",
-      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, andlakes inaserious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, thesesameanimals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, theyareincredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Anotherwayistoadoptnaturalalternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probabilityofrisk from microbe ad pollution is high, while the solution to this problem is simple.”",
+      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, and lakes in a serious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, these same animals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, they are incredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Another way is to adopt natural alternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probability of risk from microbe ad pollution is high, while the solution to this problem is simple.”",
       "passage_question_range": "31-35"
     },
     {
@@ -478,71 +478,71 @@
       "options": {
         "A": "Classification",
         "B": "Causeandeffect",
-        "C": "Problem andsolution",
-        "D": "Definitionwith examples"
+        "C": "Problem and solution",
+        "D": "Definition with examples"
       },
       "answer": "B",
-      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, andlakes inaserious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, thesesameanimals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, theyareincredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Anotherwayistoadoptnaturalalternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probabilityofrisk from microbe ad pollution is high, while the solution to this problem is simple.”",
+      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, and lakes in a serious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, these same animals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, they are incredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Another way is to adopt natural alternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probability of risk from microbe ad pollution is high, while the solution to this problem is simple.”",
       "passage_question_range": "31-35"
     },
     {
       "number": 34,
       "type": "choice",
-      "stem": "Whichsentencedoes NOTproviderelevant support for the main idea of the thirdparagraph?",
+      "stem": "Which sentence does NOTproviderelevant support for the main idea of the thirdparagraph?",
       "section": "乙、測驗題",
       "options": {
         "A": "It has even released an app that allows people to scan the barcodes of products to see whether they contain micro beads.",
-        "B": "Identifyingthecomplex names inaningredients list canbedifficult for consumers.",
-        "C": "However, the best solution at handis toban theuse ofmicrobeads outright andfigureout a way tocleanouroceans.",
+        "B": "Identifying the complex names in an ingredients list can be difficult for consumers.",
+        "C": "However, the best solution at handis toban theuse of micro beads outright and figure out a way to clean our oceans.",
         "D": "Anotherwayistoadoptnaturalalternativesthatarenon-toxic and biodegradable to replace micro beads."
       },
       "answer": "B",
-      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, andlakes inaserious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, thesesameanimals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, theyareincredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Anotherwayistoadoptnaturalalternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probabilityofrisk from microbe ad pollution is high, while the solution to this problem is simple.”",
+      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, and lakes in a serious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, these same animals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, they are incredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Another way is to adopt natural alternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probability of risk from microbe ad pollution is high, while the solution to this problem is simple.”",
       "passage_question_range": "31-35"
     },
     {
       "number": 35,
       "type": "choice",
-      "stem": "Whichofthefollowingtitles is most appropriate for this passage?",
+      "stem": "Which of the following titles is most appropriate for this passage?",
       "section": "乙、測驗題",
       "options": {
         "A": "Lift the Bandon Microbeads",
         "B": "Omnipresenceof Microbeads",
-        "C": "The Futureof Microbeads",
+        "C": "The Future of Microbeads",
         "D": "Put a Stopto Microbeads"
       },
       "answer": "D",
-      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, andlakes inaserious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, thesesameanimals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, theyareincredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Anotherwayistoadoptnaturalalternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probabilityofrisk from microbe ad pollution is high, while the solution to this problem is simple.”",
+      "passage": "請依下文回答第31題至第35題\nIf you are a person who cares about hygiene, you may have noticed little beads in exfoliating facial scrubs and toothpaste. What you may not know is that these microbeads are actually balls of plastic that are smaller than five millimeters in diameter. They were designed to be easily flushed down the drain. However, because water treatment plants were not built to filter them out, micro beads are polluting rivers, oceans, and lakes in a serious yet not immediately obvious way. According to a study that was published in the scientific journal Environmental Science and Technology in 2015, eight trillion microbeads were released into aquatic habitats daily in the US alone. Since then, this estimate has continued to rise, contributing to the ever-growing global microplastic problem. Microbeads aren’t biodegradable, which is bad news for both marine life and humans. The micro beads function as sponges and end up attracting dangerous chemicals like pesticides. Someanimals, suchasfish, cannot distinguish the beads from good and windup eating them. Inturn, these same animals are then eaten by humans. Asaresult, these beads radically impact human health as they move from being chemicals in water to being part of the food chain. What’s worse is that because of their size, they are incredibly difficult to cleanup. Usingthemhasputusonasurefirepathtoharmingtheplanet’s wildlife and water quality. “Beat the Microbead” is an international campaign initiated in 2012bythe Plastic Soup Foundation to raise the general public’s awareness about the environmental impact of microbeads. It has pressured cosmetic companies to phase out the use of beads. It has even released an app that allows people to scan the barcodes of products to see whether they contain microbeads. Identifying the complex names in an ingredients list can be difficult for consumers. However, the best solution at hand is to ban the use of micro beads outright and figure out away to clean our oceans. Another way is to adopt natural alternatives that are non-toxic and biodegradable to replace microbeads. Researchers of the study concluded, “The probability of risk from microbe ad pollution is high, while the solution to this problem is simple.”",
       "passage_question_range": "31-35"
     },
     {
       "number": 36,
       "type": "choice",
-      "stem": "What is thewriter’s purposeinthefirst paragraph?",
+      "stem": "What is the writer’s purpose in the first paragraph?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Todescribethe financial advantages ofusing AIagents over humanemployees",
-        "B": "Toexplainthetechnical capabilities of AIagents like Avainsales-relatedtasks",
+        "A": "To describe the financial advantages ofusing AIagents over humanemployees",
+        "B": "To explain the technical capabilities of AIagents like Avainsales-relatedtasks",
         "C": "Toprovideanexampleofastartupbenefitingfrom AIbyofferingvirtual sales representatives",
-        "D": "Toillustratethegrowingconcernabout AI’s potential to replace human workers in the job market"
+        "D": "To illustrate the growing concern about AI’s potential to replace human workers in the job market"
       },
       "answer": "D",
-      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. Thesecompanies arguethat ratherthan replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, andtravelagents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Othersnotethatwhilecompaniesmaynot wanttolayoffstaff, they are looking to grow without additional hiring. Transparencyabout AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
+      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. These companies argue that rather than replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, and travel agents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Others note that while companies may not wanttolayoffstaff, they are looking to grow without additional hiring. Transparency about AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
       "passage_question_range": "36-40"
     },
     {
       "number": 37,
       "type": "choice",
-      "stem": "What is thewriter’s purpose in the second paragraph?",
+      "stem": "What is the writer’s purpose in the second paragraph?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Toemphasizethepotentialrisksof AIreplacinghumanlabor, specifically through Artisan’sexample",
+        "A": "To emphasize the potential risks of AIreplacinghumanlabor, specifically through Artisan’sexample",
         "B": "To provide contrasting viewpoints on whether AI will take over jobs or serve as a tool to assist workers",
-        "C": "Toarguethat AIwill inevitably replace jobs inindustries likesales and customer service",
+        "C": "To argue that AIwill inevitably replace jobs in industries likesales and customer service",
         "D": "To provide a historical overview of how generative AI evolved, beginning with the launch of Chat GPT"
       },
       "answer": "B",
-      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. Thesecompanies arguethat ratherthan replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, andtravelagents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Othersnotethatwhilecompaniesmaynot wanttolayoffstaff, they are looking to grow without additional hiring. Transparencyabout AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
+      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. These companies argue that rather than replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, and travel agents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Others note that while companies may not wanttolayoffstaff, they are looking to grow without additional hiring. Transparency about AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
       "passage_question_range": "36-40"
     },
     {
@@ -551,13 +551,13 @@
       "stem": "What is the main idea of the third paragraph?",
       "section": "乙、測驗題",
       "options": {
-        "A": "Predictions about AI’s impact onjobs areconsistent across different sources.",
-        "B": "Predictionsabout AI’s impact on employment are mostly optimistic, with a focus on job creation.",
-        "C": "AIis reshaping the job market incomplex ways, leading to job losses and new opportunities.",
+        "A": "Predictions about AI’s impact onjobs are consistent across different sources.",
+        "B": "Predictions about AI’s impact on employment are mostly optimistic, with a focus on job creation.",
+        "C": "AIis reshaping the job market in complex ways, leading to job losses and new opportunities.",
         "D": "AIwill cause widespread job losses, especially in customer relations andsecretarial roles."
       },
       "answer": "C",
-      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. Thesecompanies arguethat ratherthan replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, andtravelagents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Othersnotethatwhilecompaniesmaynot wanttolayoffstaff, they are looking to grow without additional hiring. Transparencyabout AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
+      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. These companies argue that rather than replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, and travel agents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Others note that while companies may not wanttolayoffstaff, they are looking to grow without additional hiring. Transparency about AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
       "passage_question_range": "36-40"
     },
     {
@@ -568,17 +568,17 @@
       "options": {
         "A": "While AImight lead to job reductions, it could also create new roles, and organizations must be clear about its impact to manage public perception.",
         "B": "The growing use of AI technology is inevitable and should be embraced without concern for potential joblosses.",
-        "C": "Companiesshouldavoidusing AItoreplacehumanworkersandfocusonlyonenhancingcurrent staffroles.",
-        "D": "The use of AIin the workplace is primarily beneficial for businesses lookingto reduce staff and expenses."
+        "C": "Companies should avoid using AItoreplacehumanworkersandfocusonlyonenhancingcurrent staffroles.",
+        "D": "The use of AIin the workplace is primarily beneficial for businesses looking to reduce staff and expenses."
       },
       "answer": "A",
-      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. Thesecompanies arguethat ratherthan replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, andtravelagents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Othersnotethatwhilecompaniesmaynot wanttolayoffstaff, they are looking to grow without additional hiring. Transparencyabout AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
+      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. These companies argue that rather than replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, and travel agents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Others note that while companies may not wanttolayoffstaff, they are looking to grow without additional hiring. Transparency about AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
       "passage_question_range": "36-40"
     },
     {
       "number": 40,
       "type": "choice",
-      "stem": "What is thewriter’s tone towardtheimpact of AIonhumanjobs overall?",
+      "stem": "What is the writer’s tone towardtheimpact of AIonhumanjobs overall?",
       "section": "乙、測驗題",
       "options": {
         "A": "Praising",
@@ -587,7 +587,7 @@
         "D": "Discouraging"
       },
       "answer": "C",
-      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. Thesecompanies arguethat ratherthan replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, andtravelagents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Othersnotethatwhilecompaniesmaynot wanttolayoffstaff, they are looking to grow without additional hiring. Transparencyabout AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
+      "passage": "請依下文回答第36題至第40題\nThe impact of artificial intelligence on employment is a prominent topic, as highlighted by a sign reading “Stop Hiring Humans” at an AI conference, reflecting the unease surrounding new AI models. Artisan, a startup, exemplifies this shift byoffering AI agents like Ava, virtual sales representatives that can identify leads, contact customers, write emails, and schedule appointments, costing 96 percent less than human equivalents. This development is part of the generative AI trend that began with Chat GPT in 2022, where AI increasinglymakes decisions traditionally made by humans. While Artisan, one of the key players inthis field, is upfront about the possibility of AI replacing certain jobs, many other generative AI companies takeamorecautious stance. These companies argue that rather than replacingworkers, AIwill primarily serve as a tool to enhance human capabilities, allowing individuals to perform their jobs more efficiently andcreatively. Predictionsregarding AI's impact vary significantly. Goldman Sachsestimates300millionpotentialjob lossesglobally. AMetrigyreportindicatedthat89percentofsurveyedfirmsreducedcustomerrelationsstaff duetogenerative AI.Conversely, the World Economic Forumfoundthat70percentofmajorcompaniesplan to hire workers with AI-related skills. This is seen by some as a “natural evolution,” with new sectors and jobs being created while others are lost, similar to the impact of the car. USDepartmentof Labordatashows a decline in secretarial roles and arise in computer scientists, coinciding with the rise of office computing. Given the potential for displacement, some advise discretion when promoting AIthat replaces parts ofateam, with some clients preferring to keep their AIusageconfidential. Analystspredictjoblossesforroles likeprogrammers, call center operators, translators, and travel agents. However, some startup s argue that their AIfocusesonrevenuegrowth, which can lead to more human jobs. Others note that while companies may not wanttolayoffstaff, they are looking to grow without additional hiring. Transparency about AI'simplications is crucial to avoid public backlash, as the development of AIisconsideredbysometobe“inevitable.”",
       "passage_question_range": "36-40"
     }
   ],

@@ -383,7 +383,7 @@
       "section": null,
       "options": {
         "A": "臺灣旅行法(Taiwan Travel Act)",
-        "B": "臺灣友邦國際保護及加強倡議法(Taiwan Allies International Protectionand Enhancement Initiative Act)",
+        "B": "臺灣友邦國際保護及加強倡議法(Taiwan Allies International Protection and Enhancement Initiative Act)",
         "C": "臺灣安全加強法(Taiwan Security Enhancement Act)",
         "D": "臺灣保證法(Taiwan Assurance Act)"
       },
@@ -405,7 +405,7 @@
     {
       "number": 31,
       "type": "choice",
-      "stem": "Environmental hasdirect, tangible consequences:drought, famine, andfuelscarcity.",
+      "stem": "Environmental has direct, tangible consequences:drought, famine, andfuelscarcity.",
       "section": null,
       "options": {
         "A": "construction",
@@ -418,7 +418,7 @@
     {
       "number": 32,
       "type": "choice",
-      "stem": "Shecertainlyseemedveryconscientiousandtrustworthy, but Iwonderwhethershe’sgotthenecessary , or whethershe’s assertive enough for this job of CEO.",
+      "stem": "Shecertainlyseemedveryconscientiousandtrustworthy, but I wonder whether she’sgotthenecessary , or whether she’s assertive enough for this job of CEO.",
       "section": null,
       "options": {
         "A": "charisma",
@@ -431,7 +431,7 @@
     {
       "number": 33,
       "type": "choice",
-      "stem": "The Meakambut, a nomadic tribe in Papua New Guinea, are onthe edge of because theyare dyingfrom easily contagious illnesses.",
+      "stem": "The Meakambut, a nomadic tribe in Papua New Guinea, are onthe edge of because theyare dying from easily contagious illnesses.",
       "section": null,
       "options": {
         "A": "extinction",
@@ -444,7 +444,7 @@
     {
       "number": 34,
       "type": "choice",
-      "stem": "Thehumanbodyismadeofsome50to100trillioncells. Insideeachcell, genes a“blueprint”forprotein production that determine show the cell will function.",
+      "stem": "Thehumanbodyismadeofsome50to100trillioncells. Insideeachcell, genes a“blueprint”for protein production that determine show the cell will function.",
       "section": null,
       "options": {
         "A": "wreck",
@@ -457,7 +457,7 @@
     {
       "number": 35,
       "type": "choice",
-      "stem": "Ithasbeenincreasinglyseenaroundtheworldthat climate events such as super typhoons and hurricanes could have a serious impact on a region’seconomy.",
+      "stem": "It has been increasingly seen around the world that climate events such as super typhoons and hurricanes could have a serious impact on a region’seconomy.",
       "section": null,
       "options": {
         "A": "catastrophic",
@@ -470,7 +470,7 @@
     {
       "number": 36,
       "type": "choice",
-      "stem": "Creutzfeldt-Jakob disease is a rare but illnessfor itis always fatal andmost patients sadlydie within six weeksofdiagnosis.",
+      "stem": "Creutzfeldt-Jakob disease is a rare but illness for itis always fatal andmost patients sadlydie within six weeks of diagnosis.",
       "section": null,
       "options": {
         "A": "challenged",
@@ -496,7 +496,7 @@
     {
       "number": 38,
       "type": "choice",
-      "stem": "Theblood-stainedknifewas foundnearthebody, whichmeansitis themurderweapon.",
+      "stem": "The blood-stained knife was found near the body, which means it is the murder weapon.",
       "section": null,
       "options": {
         "A": "ludicrously",
@@ -522,7 +522,7 @@
     {
       "number": 40,
       "type": "choice",
-      "stem": "Ifwegetnewsandinformation fromaparticular TVchannel, our worldviews can be biased.",
+      "stem": "If we get news and information from a particular TVchannel, our worldviews can be biased.",
       "section": null,
       "options": {
         "A": "maliciously",
@@ -544,7 +544,7 @@
         "D": "tossandturn"
       },
       "answer": "D",
-      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!If you have any of a variety of smart beds or sleep apps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow rested they feel in the morning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. People get all this data and get upset about having a perfect number.",
       "passage_question_range": "41-45"
     },
     {
@@ -554,12 +554,12 @@
       "section": null,
       "options": {
         "A": "theyare",
-        "B": "whichare",
-        "C": "theyhave been",
-        "D": "thathave been"
+        "B": "which are",
+        "C": "they have been",
+        "D": "that have been"
       },
       "answer": "B",
-      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!If you have any of a variety of smart beds or sleep apps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow rested they feel in the morning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. People get all this data and get upset about having a perfect number.",
       "passage_question_range": "41-45"
     },
     {
@@ -574,7 +574,7 @@
         "D": "offenders"
       },
       "answer": "A",
-      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!If you have any of a variety of smart beds or sleep apps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow rested they feel in the morning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. People get all this data and get upset about having a perfect number.",
       "passage_question_range": "41-45"
     },
     {
@@ -589,7 +589,7 @@
         "D": "Subsequently"
       },
       "answer": "B",
-      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!If you have any of a variety of smart beds or sleep apps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow rested they feel in the morning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. People get all this data and get upset about having a perfect number.",
       "passage_question_range": "41-45"
     },
     {
@@ -604,28 +604,28 @@
         "D": "preference"
       },
       "answer": "C",
-      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!Ifyouhaveanyofavarietyofsmartbedsorsleepapps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow restedthey feel in themorning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. Peoplegetallthisdataandgetupsetabouthavingaperfectnumber.",
+      "passage": "請依下文回答第41題至第45題:\nYourbedcouldbewatchingyou!If you have any of a variety of smart beds or sleep apps, it knows when you fall asleep and whenyou 41 . Amanufacturersaysthebedcollectsmorethan8billionbiometricdatapointseverynight, 42 sent to the company’s servers via an app. According to the company, analyzing all the personal data not only helps them inform the consumers about their health, but also aids the company’s efforts to make better products. Still, consumer- privacy 43 are increasingly raising concerns about the fate of personal health information, which is potentially valuable to companies that collect and sell it. 44 , consumers are flocking to sleep tracking devices and under- mattress sensors that claim to quantify sleep. But do consumers really need an app to tell themhow rested they feel in the morning?Oneunexpected 45 is that people who become too attuned to their data may experience anxiety and an inability to sleep. People get all this data and get upset about having a perfect number.",
       "passage_question_range": "41-45"
     },
     {
       "number": 46,
       "type": "choice",
-      "stem": "Whatisthemainpurposeofthispassage?",
+      "stem": "What is the main purpose of this passage?",
       "section": null,
       "options": {
-        "A": "Tocastdoubtonthefunctionofsocialmedia.",
-        "B": "Tohighlighttheimportanceofhistoryandpolitics.",
+        "A": "To cast doubt on the function of social media.",
+        "B": "To highlight the importance of history and politics.",
         "C": "Topraisetranscendenceovertriviality.",
-        "D": "Topointoutanurgentissue Americanyouthsface."
+        "D": "To point out an urgent issue Americanyouthsface."
       },
       "answer": "D",
-      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Who has the time?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-old professor of English at Emory University writes in“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The result is, essentially, a collective loss of context and history. The problem is that instead of using the Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
       "passage_question_range": "46-50"
     },
     {
       "number": 47,
       "type": "choice",
-      "stem": "Accordingtothepassage, howmuchtimedoestheaverage15-to24-year-old spend on reading each day?",
+      "stem": "According to the passage, howmuchtimedoestheaverage15-to24-year-old spend on reading each day?",
       "section": null,
       "options": {
         "A": "4minutes.",
@@ -634,13 +634,13 @@
         "D": "16minutes."
       },
       "answer": "B",
-      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Who has the time?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-old professor of English at Emory University writes in“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The result is, essentially, a collective loss of context and history. The problem is that instead of using the Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
       "passage_question_range": "46-50"
     },
     {
       "number": 48,
       "type": "choice",
-      "stem": "Whatdoestheword“dim”in the first paragraph mean?",
+      "stem": "What does the word“dim”in the first paragraph mean?",
       "section": null,
       "options": {
         "A": "Pessimistic.",
@@ -649,13 +649,13 @@
         "D": "Illiterate."
       },
       "answer": "A",
-      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Who has the time?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-old professor of English at Emory University writes in“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The result is, essentially, a collective loss of context and history. The problem is that instead of using the Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
       "passage_question_range": "46-50"
     },
     {
       "number": 49,
       "type": "choice",
-      "stem": "Whichofthefollowingis NOTaproblemthatcurrent Americanyoungpeopleface?",
+      "stem": "Which of the following is NOTaproblemthatcurrent Americanyoungpeopleface?",
       "section": null,
       "options": {
         "A": "Badspelling.",
@@ -664,13 +664,13 @@
         "D": "Linguafranca."
       },
       "answer": "D",
-      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Who has the time?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-old professor of English at Emory University writes in“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The result is, essentially, a collective loss of context and history. The problem is that instead of using the Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
       "passage_question_range": "46-50"
     },
     {
       "number": 50,
       "type": "choice",
-      "stem": "Whatistheauthor’s attitude toward the intellectual future of America’syouth?",
+      "stem": "What is the author’s attitude toward the intellectual future of America’syouth?",
       "section": null,
       "options": {
         "A": "Supportive.",
@@ -679,7 +679,7 @@
         "D": "Neutral."
       },
       "answer": "B",
-      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Whohasthetime?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-oldprofessorof English at Emory Universitywritesin“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The resultis, essentially, a collective loss of context and history. The problemis that insteadofusingthe Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
+      "passage": "請依下文回答第46題至第50題:\nIn the four minutes it probably takes to read this review, you will have logged exactly half the time the average 15- to 24-year-old now spends reading each day. That is, if you even bother to finish. If you are perusing this on the Internet, the big block of text below probably seems daunting, maybeevenboring. Who has the time?Suchisthekindofrecklessly distracted impatience that makes Mark Bauerleinfearforhiscountry.“Asof2008,”the49-year-old professor of English at Emory University writes in“The Dumbest Generation,”“the intellectual future of the United Stateslooksdim.” Theway Bauerleinseesit, something new and disastrous has happened to America’s youth with the arrival of the instant gratification go-go-go digital age. The result is, essentially, a collective loss of context and history. The problem is that instead of using the Webtolearnabouttheworld, young people mostly use it to gossip about each other and follow pop culture, relentlessly keeping up with the ever-shifting lingua franca of being cool in school. Social life is a powerful temptation and most teenagers feel the pain of missing out. And all this feeds on itself. Increasingly disconnected from the “adult” world of tradition, culture, history, context and the ability to s it down for more than five minutes with a book, today’s digital generation is becoming insulated in its own stultifying cocoon of bad spelling, civic illiteracy and endless postings that hopelessly confuse triviality with transcendence. At fault is not just technology but also a newly indulgent attitude among parents, educators and other mentors, who, Bauerleinargues, lack the courage to risk“being labeled a curmudgeon and a reactionary.”",
       "passage_question_range": "46-50"
     }
   ],
