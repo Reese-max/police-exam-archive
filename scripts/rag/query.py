@@ -58,8 +58,28 @@ def format_results(results):
         lines.append("題幹：" + " ".join(item.get("stem", "").split())[:120])
         if item.get("answer_conflicts"):
             lines.append("答案：待核實")
-            lines.append("注意：原始答案存在歧異，請核對官方答案及更正公告，詳見 --json 的 answer_conflicts")
+            reason = item.get(
+                "answer_conflict_reason",
+                "原始答案存在歧異，請核對官方答案及更正公告，詳見 --json 的 answer_conflicts",
+            )
+            lines.append("注意：" + _one_line(reason))
             lines.append("更正查詢：" + MOEX_CORRECTION_INFO_URL)
+        elif item.get("answer_source") == "moex_official":
+            label = "官方更正" if item.get("answer_correction") else "考選部官方"
+            if item.get("answer_status") == "multiple":
+                accepted = " 或 ".join(_one_line(value) for value in item.get("answer_values", []))
+                lines.append(f"答案：{accepted} 均給分（{label}）")
+            elif item.get("answer_status") == "free":
+                lines.append(f"答案：一律給分（{label}）")
+            elif item.get("answer") is not None:
+                lines.append(f"答案：{_one_line(item['answer'])}（{label}）")
+            answer_urls = item.get("answer_source_urls", [])
+            preferred = next((url for url in answer_urls
+                              if _is_official_exam_pdf(url, file_type="M")), None)
+            preferred = preferred or next((url for url in answer_urls
+                                           if _is_official_exam_pdf(url, file_type="S")), None)
+            if preferred:
+                lines.append("考選部答案 PDF：" + quote(preferred, safe=":/?&=%#-._~+;,"))
         elif item.get("answer") is not None:
             lines.append(f"答案：{_one_line(item['answer'])}")
         elif item.get("answer_status") == "free":
