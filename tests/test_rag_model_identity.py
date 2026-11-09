@@ -939,8 +939,9 @@ def test_supported_pipeline_fingerprint_covers_live_state_and_rejects_unknown_mo
     gpu_identity = embedder_identity(encoder, "same-model")
     fake_torch.__version__ = "2.7.1+cpu"
     assert embedder_identity(encoder, "same-model") == gpu_identity
-    fake_torch.__version__ = "2.7.2+cpu"
-    assert embedder_identity(encoder, "same-model") != gpu_identity
+    fake_torch.__version__ = "2.8.0"
+    # The torch version is not part of the identity; ZeroGPU Spaces dictate it.
+    assert embedder_identity(encoder, "same-model") == gpu_identity
     fake_torch.__version__ = "test"
     encoder.reverse = True
     assert embedder_identity(encoder, "same-model") == initial

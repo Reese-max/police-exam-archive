@@ -145,9 +145,3 @@ def test_real_pipeline_identity_tracks_output_affecting_state(tmp_path, monkeypa
             delattr(obj, name)
     assert identity()
 
-
-def test_torch_wheel_tags_do_not_hide_upstream_version_changes():
-    from scripts.rag.model_identity import _torch_version
-    assert _torch_version("2.7.1+cpu") == _torch_version("2.7.1+cu118") == "2.7.1"
-    assert _torch_version("2.7.2+cpu") != _torch_version("2.7.1+cu118")
-    assert _torch_version("2.7.1+other") != _torch_version("2.7.1+cpu")

@@ -16,11 +16,6 @@ REBUILD_MESSAGE = "向量模型身分未知或不相符；請保留舊索引，�
 _SHA256 = re.compile(r"[0-9a-f]{64}\Z")
 
 
-def _torch_version(version):
-    """CPU/CUDA wheel tags do not change the upstream PyTorch version."""
-    return re.sub(r"\+(?:cpu|cu\d+)$", "", str(version))
-
-
 def _module_value(value):
     if value is None or type(value) in (bool, int, float, str):
         return value
@@ -142,7 +137,8 @@ def _sentence_transformer_state(embedder):
         for key in ("_name_or_path", "_commit_hash", "transformers_version"):
             config.pop(key, None)
         settings = {
-            "library_versions": {"torch": _torch_version(torch.__version__), "tokenizers": str(tokenizers.__version__),
+            # torch is left out: ZeroGPU Spaces dictate the torch version, and weights are hashed below.
+            "library_versions": {"tokenizers": str(tokenizers.__version__),
                                  "sentence_transformers": str(sentence_transformers.__version__),
                                  "transformers": str(transformers.__version__)},
             "module_types": [type(module).__name__ for module in modules],
