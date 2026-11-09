@@ -41,7 +41,8 @@ def shared_four(query, doc):
 
 
 def check_records(records, documents, *, min_queries=150, min_subjects=15,
-                  abbreviation_range=(0.15, 0.25), abbreviations=None):
+                  abbreviation_range=(0.15, 0.25), abbreviations=None,
+                  require_types=("choice", "essay")):
     docs = {doc["question_id"]: doc for doc in documents}
     aliases = load_abbreviations() if abbreviations is None else abbreviations
     errors, subjects, types, queries = [], set(), Counter(), set()
@@ -77,8 +78,8 @@ def check_records(records, documents, *, min_queries=150, min_subjects=15,
         errors.append(f"need >= {min_queries} queries, got {len(records)}")
     if len(subjects) < min_subjects:
         errors.append(f"need >= {min_subjects} subjects, got {len(subjects)}")
-    if not {"choice", "essay"} <= types.keys():
-        errors.append("need both choice and essay questions")
+    if not set(require_types) <= types.keys():
+        errors.append(f"need question types {sorted(require_types)}")
     if not abbreviation_range[0] <= ratio <= abbreviation_range[1]:
         errors.append(f"abbreviation ratio {ratio:.3f} outside {abbreviation_range}")
     return {"queries": len(records), "subjects": sorted(subjects), "types": dict(sorted(types.items())),
@@ -90,8 +91,14 @@ def main(argv=None):
     parser.add_argument("--eval-set", type=Path, default=Path("rag/eval_semantic.jsonl"))
     parser.add_argument("--corpus", type=Path, default=Path("rag/corpus.jsonl"))
     parser.add_argument("--root", type=Path, default=Path("考古題庫"))
+    parser.add_argument("--min-queries", type=int, default=150)
+    parser.add_argument("--min-subjects", type=int, default=15)
+    parser.add_argument("--require-types", nargs="+", default=["choice", "essay"],
+                        choices=["choice", "essay"])
     args = parser.parse_args(argv)
-    report = check_records(read_jsonl(args.eval_set), load_documents(args.corpus, args.root))
+    report = check_records(read_jsonl(args.eval_set), load_documents(args.corpus, args.root),
+                           min_queries=args.min_queries, min_subjects=args.min_subjects,
+                           require_types=tuple(args.require_types))
     print(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2))
     return 1 if report["errors"] else 0
 
