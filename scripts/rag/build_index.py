@@ -59,7 +59,8 @@ def retryable_sqlite_errors():
         yield
     except sqlite3.OperationalError as exc:
         code = getattr(exc, "sqlite_errorcode", 0) or 0
-        if code & 0xff in (sqlite3.SQLITE_BUSY, sqlite3.SQLITE_LOCKED) or str(exc).lower() in (
+        # SQLITE_BUSY=5, SQLITE_LOCKED=6; the sqlite3 constants only exist on Python 3.11+.
+        if code & 0xff in (5, 6) or str(exc).lower() in (
                 "database is locked", "database table is locked"):
             raise sqlite3.OperationalError(f"資料庫忙碌或被鎖定；已提交批次保留，可以安全重試：{exc}") from exc
         raise
