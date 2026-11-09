@@ -36,7 +36,7 @@ def _one_line(value):
 
 
 def is_legal_subject(subject):
-    return isinstance(subject, str) and any(term in subject for term in ("法", "憲法"))
+    return isinstance(subject, str) and any(term in subject for term in ("法", "警察", "勤務", "偵查", "消防", "交通", "移民", "國境", "實務"))
 
 
 def _result_years(item):

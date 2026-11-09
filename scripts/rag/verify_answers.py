@@ -135,7 +135,8 @@ def parse_answer_text(text):
             pending_numbers = numbers or None
         elif pending_numbers and line.startswith("答案"):
             values = _answer_tokens(line[len("答案"):])
-            if values and len(values) <= len(pending_numbers):
+            # A short row cannot be aligned safely; leave those questions unresolved.
+            if values and len(values) == len(pending_numbers):
                 answers.update(zip(pending_numbers, values))
             pending_numbers = None
         else:
@@ -634,7 +635,11 @@ def verify_corpus(corpus_path, source_map_path, cache_dir, root=Path("考古題�
             "reason": result["reason"],
         }
         details.append(detail)
-        if classification in ("corrected", "mismatch") and official and not result.get("renumbered"):
+        # Conflicting archive answers are only replaced when every appearance has an official key.
+        partly_unverified = bool(record.get("answer_conflicts")) and any(
+            not source.get("answer_pdf_url") for source in record.get("sources", []))
+        if (classification in ("corrected", "mismatch") and official
+                and not result.get("renumbered") and not partly_unverified):
             overrides[record["question_id"]] = {
                 "answer": (official["answers"][0] if len(official["answers"]) == 1 else None),
                 "answer_status": ("free" if official["free"] else
