@@ -1,0 +1,96 @@
+{"query": "大法官解釋跟警職法集遊法社維法有關的哪個講錯", "rationale": "考大法官釋字與憲法法庭判決對警察相關法令的見解，錯誤項為釋字689跟追採訪案的比例原則認定。", "relevant_question_ids": ["0128e9defa607a37"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "專科學校發展史那篇英文閱讀答案選什麼", "rationale": "junior colleges 閱讀理解；題幹與選項完全一致之同題於他卷重複出現，併列gold。", "relevant_question_ids": ["004a92f98e34d7d4", "446dfc43c85b165c", "4531747b4cefa8f4"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "英文閱讀兩位教授怎麼猜到研究目的", "rationale": "閱讀題推論教授察覺實驗目的的原因；同題跨卷重複，併列gold。", "relevant_question_ids": ["002ab9a5b30bb3dc", "818422728e356ca4"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "原住民打獵的釋憲案哪個說法不對", "rationale": "考釋字803原住民狩獵文化權與比例原則，找錯誤敘述。", "relevant_question_ids": ["0016678f45e2539d"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "憲訴案件撤回之後能再聲請嗎", "rationale": "憲法訴訟法撤回聲請之要件與更行聲請限制。", "relevant_question_ids": ["0066c79e0bb88279"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "酒測攔檢站佈置哪種做法不妥", "rationale": "取締酒駕勤務部署階段的警示與攝影安排，選最不適當作為；同題跨卷重複，併列gold。", "relevant_question_ids": ["0057edb6ea0c0e06", "84846d174a955e5b"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "持有低階毒品罰鍰講習歸誰辦", "rationale": "第三、四級毒品裁罰的對象、罰鍰講習與辦理機關。", "relevant_question_ids": ["0203265ba9f27c89"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "消防專業英文考呼吸的單字", "rationale": "消防英文單字題，breathing（呼吸）動名詞辨識。", "relevant_question_ids": ["007a68332c985991"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "正式書面指控犯罪的英文字", "rationale": "警察專業英文：法院起訴用正式書面指控 indictment。", "relevant_question_ids": ["006ef480811b5d33"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "海上漂流被丟著的英文動詞", "rationale": "水上警察英文：船員被劫船者置於海上漂流 cast adrift。", "relevant_question_ids": ["010c9dbc4ae50264"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "陸船闖進管制海域何種情況船會被沒入", "rationale": "兩岸條例下大陸船舶被扣留後得沒入的情形組合。", "relevant_question_ids": ["016a85d68fbdf6c3"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "大樓失火指揮官幕僚群任務分配", "rationale": "火場總指揮官對作戰、通訊、聯絡、後勤幕僚的正確分工。", "relevant_question_ids": ["12921df566f22c58"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "火場搶救術語哪個解釋不對", "rationale": "火場指揮及搶救作業要點的名詞定義，車輛部署、水源運用等。", "relevant_question_ids": ["00b81fe27e7fac9c"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "面對壓力表現出色的英文動詞用法", "rationale": "英文片語 rise to the occasion 的動詞形態辨識。", "relevant_question_ids": ["00acb5f5509e52d9"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "海上攔毒船哪些做法不妥", "rationale": "海巡夜間攔截走私漁船的執勤技巧，裝GPS發報器是否合法。", "relevant_question_ids": ["04cc15c16f96fb99"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "鄭板橋家書養鳥那篇主旨", "rationale": "鄭燮家書反對屈物性適吾性，主旨為不可只圖己樂罔顧他苦。", "relevant_question_ids": ["00c74464828ab37f"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "行程法哪種行政決定不用附理由", "rationale": "書面行政處分得不記明理由的法定情形。", "relevant_question_ids": ["02a763b598bdd4e7"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "哪種警察勤務算主動出擊型", "rationale": "先發式(proactive)勤務的判斷，勤區查察屬之；同題跨卷重複，併列gold。", "relevant_question_ids": ["008aaf04b5f02c2e", "881c3cd08f2eb041"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "出生在台灣父母查無國籍算哪國人", "rationale": "國籍法屬地主義：在台出生父母無考或無國籍者之國籍歸屬。", "relevant_question_ids": ["0083a650cbb2c290"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "DNA複製三階段溫度順序", "rationale": "PCR熱循環變性、黏合、延伸的順序與溫度對應。", "relevant_question_ids": ["01e03d098195a0ab"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "那篇講人類與自然關係的閱讀題主旨", "rationale": "環境社會學Taylor環境法與環境正義文章的論點歸納。", "relevant_question_ids": ["173b60964cc9339e"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "TQM理論哪個講法有問題", "rationale": "全面品質管理以顧客需求為核心，找錯誤敘述（目標設定非最高原則）。", "relevant_question_ids": ["0abab1cb5f166eee"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "船上查到一堆粉末桶子先用什麼驗", "rationale": "海巡查獲不明桶裝粉末的現場檢驗順序：拉曼光譜儀再手持分析儀。", "relevant_question_ids": ["0a7920e310d1d1ae"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "災防法各級計畫幾年要檢討", "rationale": "災害防救法施行細則各級計畫勘查評估檢討年限；同題跨卷重複，併列gold。", "relevant_question_ids": ["01d3a56f9f4e97b5", "e89b0eb2fc9b8103"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "行執法哪種手段不是直接逼", "rationale": "行政執行法直接強制方法的種類，對人管束屬即時強制。", "relevant_question_ids": ["01849b0a86aaba10"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "非法移民跟健保那篇閱讀支持什麼論點", "rationale": "閱讀題：納入非法移民於健保可減少傳染病散布的作者立場。", "relevant_question_ids": ["0ca12ec62f9d5a10"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "查訪治安疑慮人口依據警職法還是內規層級高", "rationale": "治安顧慮人口查訪法源位階：法律優於辦法與內部計畫。", "relevant_question_ids": ["069c9ad88351436f"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "居留許可被撤掉要幾天內離開台灣", "rationale": "無戶籍國民許可遭撤銷廢止後限令出國的日數。", "relevant_question_ids": ["02d7cc1acd9aa873"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "實證派犯罪學者認為人為什麼會犯案", "rationale": "犯罪學實證學派採決定論的犯罪原因觀。", "relevant_question_ids": ["095b230d2a50c996"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "年輕人台語國語都流利那題英文單字", "rationale": "移民專業英文：not uncommon 雙重否定表常見；同題跨卷重複，併列gold。", "relevant_question_ids": ["0679a62b0cba9cbd", "3995a9323d41350f"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "刑訴共犯在警詢互相指控算不算傳聞", "rationale": "共犯警詢供述對他被告屬傳聞證據的判斷與補強證據適格。", "relevant_question_ids": ["01b7b5d9092104fd"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "毒品交易車子換手取貨那招叫什麼", "rationale": "販毒集團以交換車輛取貨模式，實務稱多重轉手。", "relevant_question_ids": ["0cec89b97bcca400"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "幫外國人做不符居留目的活動被罰款的英文填空", "rationale": "移民專業英文 subject to a fine 用法。", "relevant_question_ids": ["01f8db8db6291e4a"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "院級販運防制會報的組成規定", "rationale": "行政院防制人口販運及消除種族歧視協調會報設置要點的委員編制。", "relevant_question_ids": ["126da264de7a2bce"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "審計長決算報告要送給誰", "rationale": "審計長任免、審核期限與決算審核報告對象（立法院非總統）。", "relevant_question_ids": ["075892fbbc91e0fa"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "溫哥華那篇英文閱讀在談什麼", "rationale": "閱讀主旨題：溫哥華人口組成。", "relevant_question_ids": ["142c3ce07c5e69b9"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "刑訴拿搜索票去旅館房門鎖著怎麼辦", "rationale": "持票搜索旅館房門深鎖的適當處置：會同服務員請其開門。", "relevant_question_ids": ["0dfc93d4964c152c"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "公寓破舊想賣好價錢要翻新的英文單字", "rationale": "英文單字 renovation（翻新整修）辨識。", "relevant_question_ids": ["0ba773032aff1b13"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "急救病患運送跟救護員定義哪個對", "rationale": "緊急救護辦法中救護人員、傷病患運送與服務證明申請規定。", "relevant_question_ids": ["01c568cc9dd86ca8"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "生日感言那篇國文心境", "rationale": "半百感言文章心境：所作所為在建立自我人格。", "relevant_question_ids": ["20771cb04b7c26c8"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "陸漁船拒檢跑掉海巡能用什麼手段", "rationale": "大陸漁船拒檢逃逸時海巡器械使用的手段順序與種類。", "relevant_question_ids": ["10d9eb151434c316"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "怎麼用顯微鏡顆粒判斷是開槍殘留", "rationale": "射擊殘跡的成分(Sb,Ba)、形狀與粒徑研判；同題跨卷重複，併列gold。", "relevant_question_ids": ["01cee7189dbb6f62", "85cdf1c405b122a3"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "當好警察頭頭要哪三類知識", "rationale": "Mintzberg及Katz管理者概念、人際、技術三種知識。", "relevant_question_ids": ["0d7d403144463179"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "政府立法解決人力短缺填什麼動詞", "rationale": "英文單字 tackle（著手解決）辨識；同題跨卷重複，併列gold。", "relevant_question_ids": ["2656a98fe01a1372", "1e419c2779c2780a"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "災防法各級指揮所通訊器材幾個月測試演練", "rationale": "災害應變中心資訊通信器材功能測試與演練頻率；同題跨卷重複，併列gold。", "relevant_question_ids": ["017758cb573c1162", "fd83bb23d1209bd4"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "社區警政裡居民被當成哪種角色", "rationale": "問題導向警政中民眾常被僅視為訊息提供者的困境。", "relevant_question_ids": ["0c48aad32ebae4b2"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "吃麥製品跟慢性病有關的那篇", "rationale": "現代小麥結構改變與慢性病風險的閱讀題意旨。", "relevant_question_ids": ["0292a0a166bc69a2"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "釋字怎麼看公僕與政府間的權利義務", "rationale": "大法官解釋對公務員法律關係與權利救濟的見解，找錯誤敘述。", "relevant_question_ids": ["0aaecd1d202020ca"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "外國人住合法了還能被驅逐嗎", "rationale": "公政公約第13條：合法居留外國人非經依法判定不得驅逐。", "relevant_question_ids": ["01471f51b2bb0be4"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "網球選手簽證被撤掉的英文單字", "rationale": "英文單字 revoked（撤銷簽證）辨識；同題跨卷重複，併列gold。", "relevant_question_ids": ["06401ea1a8a02f49", "0c5fe3a08911f834", "da9ef5db4036a36b"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "貪污條例公務員叫老婆代收紅包誰有罪", "rationale": "公務員與配偶共同收賄的共同正犯責任。", "relevant_question_ids": ["0350516f0e098e9a"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "新修移民法對出入境查驗怎麼規定", "rationale": "112年入出國及移民法修正後國民與外國人查驗規定。", "relevant_question_ids": ["0a5de0cdacb50398"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "刑訴無令狀搜完民宅幾日內要回報", "rationale": "逕行搜索住宅後陳報檢察官及法院的期限。", "relevant_question_ids": ["00b59f8f53f34569"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "胸痛冷汗是什麼的英文單字", "rationale": "英文單字 symptoms（症狀）辨識。", "relevant_question_ids": ["27fd221adaf033d6"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "什麼場所依法要有防火專責人員", "rationale": "集合住宅、電影院、托兒所、撞球場哪些應實施防火管理。", "relevant_question_ids": ["09f116c0dc4f2030"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "吃藥要得到最佳效果填哪個字", "rationale": "英文單字 optimal（最佳的）辨識。", "relevant_question_ids": ["72f3800fa0c5e8c1"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "危險品場所定義哪個講對", "rationale": "公共危險物品與可燃性高壓氣體各類場所定義的正誤。", "relevant_question_ids": ["06bef7b54f13296c"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "文學對人生有啥用那篇主旨", "rationale": "文學對德行言語政事的潛移默化，文學素養對全人養成的意義。", "relevant_question_ids": ["35ab5e10c65d896c"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "海巡人員動用器械的規矩", "rationale": "海岸巡防機關器械使用條例的比例原則與報告義務。", "relevant_question_ids": ["279e4cde8a79a4bb"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "危險品販賣處調配間的規格哪個錯", "rationale": "第一種販賣場所六類物品調配室的防火門、面積、集液設施規格。", "relevant_question_ids": ["0fa8aae443b178af"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "被關說的時候警察要怎麼處理", "rationale": "公務員遇請託關說應三日內簽報長官並知會政風機構。", "relevant_question_ids": ["01199a04a3495100"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "警職法攔車盤查看到可疑粉末對方能主張什麼", "rationale": "路檢轉刑事案件後受詢人緘默權、選任辯護人與錄音要件。", "relevant_question_ids": ["003f44e3af6b7908"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "海難搜救定基準點要看什麼", "rationale": "搜救範圍中心datum point考量因素不含海水溫度；同題跨卷重複，併列gold。", "relevant_question_ids": ["30af8e6382461fbf", "053a86aa1bf7f691"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "行程法民眾陳情受理單位要怎麼辦", "rationale": "行政機關處理陳情案件的告知與移送義務。", "relevant_question_ids": ["1889a0fdb5bc2e3a"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "海汙法管到哪些水域", "rationale": "海洋污染防治法適用範圍含潮間帶、內水至上覆水域。", "relevant_question_ids": ["13492e8259bb028e"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "犯罪現場拉封鎖線要注意什麼", "rationale": "刑案現場封鎖的目的、範圍與器材選擇觀念。", "relevant_question_ids": ["0ab924418670a587"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "刑訴持票搜到沒寫的東西能不能扣", "rationale": "持票搜索發現票載以外物品扣押的一目瞭然原則與證據能力。", "relevant_question_ids": ["0d5857a26a4b94ea"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "談電視角色聰明形象那篇最好的標題", "rationale": "閱讀題選最佳標題：電視媒體中的聰明形象；同題跨卷重複，併列gold。", "relevant_question_ids": ["02644751f8572a3d", "6a927842246f8537"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "行程法定行政規章哪些情況免走正常流程", "rationale": "法規命令訂定得不依行政程序法程序的法定除外事由。", "relevant_question_ids": ["032faafeab6d1853"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "刑訴羈押可以延幾次", "rationale": "偵查與審判中羈押及延押次數限制。", "relevant_question_ids": ["035fa12b3c2aa5b1"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "跨國同婚登記內政部新函怎麼規定", "rationale": "112年跨國同性婚姻戶籍登記函釋的適用範圍與除外規定。", "relevant_question_ids": ["0f2a59569cbf480f"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "移民取得公民身分英文叫啥", "rationale": "英文單字 naturalization（歸化）辨識；同題跨卷重複，併列gold。", "relevant_question_ids": ["43ded15bca3ce7dd", "fefab9447b392217"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "吃素變流行那篇沒提到的原因", "rationale": "閱讀題：素食飲食興起原因中未提及營養補充品。", "relevant_question_ids": ["13a5697c4c74d9e2"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "災難失蹤多久內要聲請死亡宣告", "rationale": "災害防救法：因災失蹤死亡宣告聲請應於災害發生後一年內。", "relevant_question_ids": ["0487f0941b7181d6"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "外籍人士在台不能行使哪項權利", "rationale": "合法居留外國人得請願訴願集會遊行，但不得參加律師高考。", "relevant_question_ids": ["0ca37b7135a580ae"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "法治國原則不包含哪個", "rationale": "法治原則內涵：法律保留、基本權保障、法律明確，多元民主非屬之。", "relevant_question_ids": ["034579174d6c243c"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "八零年代台灣鄉鎮變化那篇在嘆什麼", "rationale": "城鄉開發使各地鄉鎮景色雷同失去特色的文章意旨。", "relevant_question_ids": ["38a490ed6e348840"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "長照機構面積多大起要裝排煙管滅火", "rationale": "護理之家樓地板面積門檻與廚房排油煙管簡易自動滅火設備。", "relevant_question_ids": ["1d85a0f0039df512"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "船上抓到一批偷渡客先幹嘛", "rationale": "海巡登檢發現密艙偷渡犯的優先處理順序。", "relevant_question_ids": ["1a179933de82736f"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "評估犯案風險考慮三要素哪個錯", "rationale": "犯罪風險分析vulnerability、probability、criticality三因素；同題跨卷重複，併列gold。", "relevant_question_ids": ["01e8eaea41732df3", "ce63f5d88e19ee46"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "命案現場抓到人能留在現場嗎", "rationale": "刑案現場逮捕嫌疑人應立即帶離，場外逮捕不可帶回現場。", "relevant_question_ids": ["08253bc8db8ba9dd"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "新移民面對過去創傷的英文片語", "rationale": "英文片語 come to terms with（接受面對）；同題跨卷重複，併列gold。", "relevant_question_ids": ["b8651424a98c0e0d", "2b3aa1348f589f64"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "路上車多走不動英文單字", "rationale": "英文單字 congestion（交通壅塞）辨識；同題跨卷重複，併列gold。", "relevant_question_ids": ["efd332cd39752d4e", "5944b74c66f0a00c"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "工地焊渣引起火災用什麼工具採證", "rationale": "熔接焊渣火災以強力磁鐵採集金屬殘跡。", "relevant_question_ids": ["1522e69615c7a480"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "勤區員警訪查目的不包括啥", "rationale": "警勤區訪查目的含犯罪預防、為民服務、治安調查，不含犯罪偵查。", "relevant_question_ids": ["074300eca49b263a"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "縣市災防會報不管什麼事", "rationale": "縣市災害防救會報任務不含決定基本方針（屬中央）。", "relevant_question_ids": ["0c5b782f41b7deb7"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "太空梭跟太空站對接送人的動詞", "rationale": "英文單字 transfer（轉乘移送人員貨物）辨識。", "relevant_question_ids": ["0789669731dbe2ad"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "外籍配偶消失多年法院怎麼判", "rationale": "涉外死亡宣告事件的管轄、準據法與聲請人資格。", "relevant_question_ids": ["05430c836d9e6de3"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "英文考題無菌那個字是什麼意思", "rationale": "閱讀題詞義：sterile＝lifeless；同題跨卷重複，併列gold。", "relevant_question_ids": ["0677485d5aeadd2e", "77a4c617c1a7dc49", "e8c821d432ff1cd1"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "美國移民人口那篇哪句沒講", "rationale": "閱讀題細節判斷：美國移民人口相關未提及的陳述。", "relevant_question_ids": ["020e796f9a48d7eb"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "刑訴哪種被告能跳過傳喚直接抓", "rationale": "刑事訴訟法第76條不經傳喚逕行拘提的情形。", "relevant_question_ids": ["036cdc38d47a6331"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "同事請假幫忙代班的英文片語", "rationale": "英文片語 fills in for（代理職務）辨識。", "relevant_question_ids": ["162ab3372f2ec565"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "哪類案件歸一般法院而非行院", "rationale": "行政法院審判權範圍：收容、強制隔離屬之，撤銷假釋非屬之。", "relevant_question_ids": ["07aac11781bc80b4"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "行執法管收期間跟提訊規定", "rationale": "行政執行法管收期限與隨時提訊每月至少三次之規定。", "relevant_question_ids": ["2c32d8cd532396fb"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "國家重要基設八大類不含啥", "rationale": "國家關鍵基礎設施八項主領域不含農業與糧食。", "relevant_question_ids": ["0ec735639eea6e73"], "split": "holdout", "author": "SWE-2 Max"}
+{"query": "偵查手冊對被害人保護哪條規定不對", "rationale": "警察偵查犯罪手冊被害保護規定，陪同在場人也含專業人員需同意之錯誤項。", "relevant_question_ids": ["066512098d5e892e"], "split": "holdout", "author": "SWE-2 Max"}
