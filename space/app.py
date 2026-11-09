@@ -90,6 +90,14 @@ def render(results, *, include_notice=True):
             if line == "更正查詢：" + MOEX_CORRECTION_INFO_URL:
                 lines.append(f"更正查詢：[考選部考畢試題與更正答案查詢]({MOEX_CORRECTION_INFO_URL})")
                 continue
+            if line.startswith("考選部答案 PDF："):
+                _, url = line.split("：", 1)
+                if _is_official_exam_pdf(url):
+                    safe_url = quote(url, safe=":/?&=%#-._~+;,")
+                    lines.append(f"考選部答案 PDF：[開啟考選部官方答案]({safe_url})")
+                else:
+                    lines.append("考選部答案 PDF：非考選部官方答案")
+                continue
             if line.startswith(("試題 PDF：", "原始答案 PDF：")):
                 label, url = line.split("：", 1)
                 if _is_official_exam_pdf(url, file_type="S" if label == "原始答案 PDF" else "Q"):

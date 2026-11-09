@@ -11,18 +11,35 @@
     "essay": 2430
   },
   "answer_status": {
-    "normal": 8139,
-    "free": 22,
+    "normal": 8103,
+    "free": 24,
     "none": 2430,
-    "other": 3
+    "other": 0,
+    "multiple": 37
   },
   "questions_with_sources": 10594,
   "questions_with_question_pdf_url": 8514,
   "questions_with_answer_pdf_url": 6814,
   "choice_questions_with_question_pdf_url": 6419,
   "choice_questions_with_answer_pdf_url": 6419,
-  "answer_conflict_count": 6,
+  "answer_conflict_count": 341,
   "max_duplicate_count": 32,
   "in_file_duplicate_count": 40,
-  "disambiguated_collision_groups": 1
+  "disambiguated_collision_groups": 1,
+  "answer_verification": {
+    "counts": {
+      "match": 5846,
+      "corrected": 39,
+      "renumbered": 175,
+      "mismatch": 161,
+      "unaligned": 198,
+      "unparsed": 0,
+      "no_official": 1745
+    },
+    "verifiable_question_count": 5903,
+    "correct_rate": 0.9903438929357954,
+    "overrides_applied": 57,
+    "unresolved_mismatch_count": 143,
+    "unresolved_question_count": 341
+  }
 }

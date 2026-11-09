@@ -147,7 +147,10 @@ def has_pdf_url(record: dict, field: str) -> bool:
                for source in record.get("sources", []))
 
 
-def build_corpus(root: Path, source_map: Path, *, issues: dict | None = None) -> tuple[list[dict], dict]:
+def build_corpus(
+    root: Path, source_map: Path, *, issues: dict | None = None,
+    answer_overrides: Path | dict | None = None,
+) -> tuple[list[dict], dict]:
     root, source_map = Path(root), Path(source_map)
     if not root.is_dir():
         raise ValueError(f"Archive root is not a directory: {root}")
@@ -157,6 +160,16 @@ def build_corpus(root: Path, source_map: Path, *, issues: dict | None = None) ->
         if data.get("schema_version") != 1 or not isinstance(data.get("entries"), dict):
             raise ValueError("source map must have schema_version=1 and object entries")
         entries = data["entries"]
+    overrides_path = (source_map.parent / "answer_overrides.json" if answer_overrides is None
+                      else answer_overrides)
+    if isinstance(overrides_path, dict):
+        override_data = overrides_path
+    elif Path(overrides_path).is_file():
+        override_data = json.loads(Path(overrides_path).read_text(encoding="utf-8-sig"))
+    else:
+        override_data = {}
+    overrides = override_data.get("overrides", {})
+    unresolved = override_data.get("unresolved", {})
 
     files = sorted(root.rglob("試題.json"), key=lambda path: path.relative_to(root).as_posix())
     if issues is None:
@@ -255,6 +268,32 @@ def build_corpus(root: Path, source_map: Path, *, issues: dict | None = None) ->
         ]).split())
         corpus.append(record)
 
+    applied_overrides = 0
+    for record in corpus:
+        if record["type"] != "choice":
+            continue
+        override = overrides.get(record["question_id"])
+        if override:
+            record["answer_original"] = {
+                key: record[key] for key in
+                ("answer", "answer_status", "answer_raw", "answer_conflicts") if key in record
+            }
+            record["answer"] = override.get("answer")
+            record["answer_status"] = override.get("answer_status", "normal")
+            record["answer_source"] = "moex_official"
+            record["answer_correction"] = bool(override.get("answer_correction"))
+            record["answer_source_urls"] = override.get("answer_source_urls", [])
+            if record["answer_status"] == "multiple":
+                record["answer_values"] = override.get("answer_values", [])
+            else:
+                record.pop("answer_values", None)
+            record.pop("answer_conflicts", None)
+            applied_overrides += 1
+        if record["question_id"] in unresolved:
+            item = unresolved[record["question_id"]]
+            record["answer_conflicts"] = item.get("answer_conflicts", [])
+            record["answer_conflict_reason"] = item.get("reason", "官方答案來源無法唯一對應")
+
     issues["folder_aliases"] = folder_aliases([file.parent.relative_to(root) for file in files])
     unique_types = Counter(record["type"] for record in corpus)
     statuses = Counter(record["answer_status"] for record in corpus)
@@ -263,7 +302,7 @@ def build_corpus(root: Path, source_map: Path, *, issues: dict | None = None) ->
         "raw_questions_by_type": {key: raw_types[key] for key in ("choice", "essay")},
         "deduplicated_question_count": len(corpus),
         "deduplicated_questions_by_type": {key: unique_types[key] for key in ("choice", "essay")},
-        "answer_status": {key: statuses[key] for key in ("normal", "free", "none", "other")},
+        "answer_status": {key: statuses[key] for key in ("normal", "free", "none", "other", "multiple")},
         "questions_with_sources": sum(bool(record["sources"]) for record in corpus),
         "questions_with_question_pdf_url": sum(has_pdf_url(record, "question_pdf_url") for record in corpus),
         "questions_with_answer_pdf_url": sum(has_pdf_url(record, "answer_pdf_url") for record in corpus),
@@ -275,6 +314,17 @@ def build_corpus(root: Path, source_map: Path, *, issues: dict | None = None) ->
         "max_duplicate_count": max((len(record["appears_in"]) for record in corpus), default=0),
         "in_file_duplicate_count": len(issues["in_file_duplicates"]),
         "disambiguated_collision_groups": disambiguated,
+        "answer_verification": {
+            "counts": override_data.get("summary", {}).get("counts", {}),
+            "verifiable_question_count": override_data.get("summary", {}).get(
+                "verifiable_question_count", 0),
+            "correct_rate": override_data.get("summary", {}).get("correct_rate"),
+            "overrides_applied": applied_overrides,
+            "unresolved_mismatch_count": override_data.get("summary", {}).get(
+                "unresolved_mismatch_count", len(unresolved)),
+            "unresolved_question_count": override_data.get("summary", {}).get(
+                "unresolved_question_count", len(unresolved)),
+        },
     }
     return corpus, stats
 
