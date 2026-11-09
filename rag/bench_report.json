@@ -789,7 +789,8 @@
       "name": "hybrid_w2_k20_expanded",
       "phrase_priority": true,
       "rrf_k": 20,
-      "vector_weight": 1.0
+      "vector_weight": 1.0,
+      "min_vector_score": 0.555
     },
     "db": "rag/index-bge-m3.sqlite",
     "metrics": {
@@ -803,7 +804,19 @@
       "timed_queries": 150,
       "warmup_queries": 3
     },
-    "model": "BAAI/bge-m3"
+    "model": "BAAI/bge-m3",
+    "low_confidence_calibration": {
+      "source": "scripts/rag/calibrate_threshold.py on eval_semantic (150) + eval_offtopic (40)",
+      "related_flagged": 0.013,
+      "offtopic_flagged": 0.925,
+      "holdout_check": {
+        "eval_set": "rag/eval_holdout.jsonl",
+        "n": 96,
+        "recall@5": 0.844,
+        "mrr": 0.776,
+        "low_confidence_rate": 0.052
+      }
+    }
   },
   "selection_reason": "Highest Recall@5 above keyword with CPU p95 <= 500ms; ties: MRR, p95, model/name.",
   "status": "measured"
