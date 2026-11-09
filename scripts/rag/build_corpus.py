@@ -142,6 +142,11 @@ def answer_fields(value) -> dict:
     return {"answer": None, "answer_status": "other", "answer_raw": value}
 
 
+def has_pdf_url(record: dict, field: str) -> bool:
+    return any(isinstance(source.get(field), str) and source[field].strip()
+               for source in record.get("sources", []))
+
+
 def build_corpus(root: Path, source_map: Path, *, issues: dict | None = None) -> tuple[list[dict], dict]:
     root, source_map = Path(root), Path(source_map)
     if not root.is_dir():
@@ -260,6 +265,12 @@ def build_corpus(root: Path, source_map: Path, *, issues: dict | None = None) ->
         "deduplicated_questions_by_type": {key: unique_types[key] for key in ("choice", "essay")},
         "answer_status": {key: statuses[key] for key in ("normal", "free", "none", "other")},
         "questions_with_sources": sum(bool(record["sources"]) for record in corpus),
+        "questions_with_question_pdf_url": sum(has_pdf_url(record, "question_pdf_url") for record in corpus),
+        "questions_with_answer_pdf_url": sum(has_pdf_url(record, "answer_pdf_url") for record in corpus),
+        "choice_questions_with_question_pdf_url": sum(
+            record["type"] == "choice" and has_pdf_url(record, "question_pdf_url") for record in corpus),
+        "choice_questions_with_answer_pdf_url": sum(
+            record["type"] == "choice" and has_pdf_url(record, "answer_pdf_url") for record in corpus),
         "answer_conflict_count": sum("answer_conflicts" in record for record in corpus),
         "max_duplicate_count": max((len(record["appears_in"]) for record in corpus), default=0),
         "in_file_duplicate_count": len(issues["in_file_duplicates"]),

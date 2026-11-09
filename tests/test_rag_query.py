@@ -1,4 +1,6 @@
+import argparse
 import json
+from pathlib import Path
 import sqlite3
 
 import pytest
@@ -6,8 +8,13 @@ import pytest
 from scripts.rag.build_index import build_index
 from scripts.rag.eval_retrieval import evaluate, middle_query, matching_text
 from scripts.rag.eval_retrieval import main as eval_main
-from scripts.rag.query import format_results, main
-from scripts.rag.retrieval import Retriever, keyword_search, rrf
+from scripts.rag.query import format_results, is_legal_subject, main
+from scripts.rag.calibrate_threshold import (
+    calibration_rows, read_queries, recommend_threshold,
+)
+from scripts.rag.retrieval import (
+    Retriever, add_search_arguments, keyword_search, parse_search_args, rrf,
+)
 from test_rag_index import FakeEmbedder, document, write_corpus
 
 
@@ -27,6 +34,33 @@ def test_profile_paths_work_for_query_and_evaluation(tmp_path, monkeypatch, caps
     eval_main(["--profile", str(profile), "--corpus", str(corpus), "--out", str(rag / "eval.json"),
                "--modes", "keyword", "--n", "1"])
     assert json.loads((rag / "eval.json").read_text(encoding="utf-8"))["n"] == 1
+
+
+def test_profile_min_vector_score_defaults_and_cli_override(tmp_path):
+    profile = tmp_path / "profile.json"
+    profile.write_text(json.dumps({"status": "measured", "device": "cpu", "selected_default": {
+        "db": "rag/index.sqlite",
+        "configuration": {"name": "hybrid", "mode": "hybrid", "min_vector_score": 0.62},
+    }}), encoding="utf-8")
+    def make_parser():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--db", type=Path)
+        parser.add_argument("--mode", default="hybrid")
+        add_search_arguments(parser)
+        return parser
+
+    parser = make_parser()
+    assert parser.parse_args([]).min_vector_score is None
+    configured = parse_search_args(parser, ["--profile", str(profile)])
+    overridden = parse_search_args(parser, ["--profile", str(profile), "--min-vector-score", "0.4"])
+
+    assert configured.min_vector_score == pytest.approx(0.62)
+    assert overridden.min_vector_score == pytest.approx(0.4)
+    profile_data = json.loads(profile.read_text(encoding="utf-8"))
+    profile_data["selected_default"]["configuration"].pop("min_vector_score")
+    profile.write_text(json.dumps(profile_data), encoding="utf-8")
+    uncalibrated = parse_search_args(make_parser(), ["--profile", str(profile)])
+    assert uncalibrated.min_vector_score is None
 
 
 def test_rrf_correct_scores_dedup_and_stable_ties():
@@ -100,12 +134,81 @@ def test_vector_and_hybrid_with_fake_embedder(tmp_path):
         hybrid = retriever.search("警察職權", mode="hybrid")
         assert hybrid[0]["question_id"] == "a"
         assert hybrid[0]["score"] == pytest.approx(3 / 61)
+        assert hybrid[0]["top1_vector_score"] == pytest.approx(1)
+        assert hybrid[0]["keyword_phrase_hit"] is True
         assert any(text == "query: 警察" for text in fake.calls)
         assert retriever.search("  ", mode="keyword") == []
         with pytest.raises(ValueError, match="k"):
             retriever.search("警察", k=0)
     finally:
         retriever.close()
+
+
+def test_min_vector_score_is_opt_in_and_exact_phrase_prevents_low_confidence(tmp_path):
+    corpus, db = tmp_path / "corpus.jsonl", tmp_path / "index.sqlite"
+    write_corpus(corpus, [document("a", "警察法規特殊片語")])
+
+    class OppositeQueryEmbedder(FakeEmbedder):
+        def encode(self, texts, **kwargs):
+            self.calls.extend(texts)
+            return [[0, 1] if text.startswith("query:") else [1, 0] for text in texts]
+
+    fake = OppositeQueryEmbedder()
+    build_index(corpus, db, embedder_factory=lambda model: fake)
+    retriever = Retriever(db, embedder=fake)
+    try:
+        disabled = retriever.search("完全無關的程式問題", mode="hybrid")
+        assert disabled[0]["top1_vector_score"] == pytest.approx(0)
+        assert disabled[0]["keyword_phrase_hit"] is False
+        assert "low_confidence" not in disabled[0]
+
+        enabled = retriever.search("完全無關的程式問題", mode="hybrid", min_vector_score=0.1)
+        assert enabled[0]["low_confidence"] is True
+        exact = retriever.search("警察法規特殊片語", mode="hybrid", min_vector_score=0.1,
+                                 phrase_priority=False)
+        assert exact[0]["top1_vector_score"] == pytest.approx(0)
+        assert exact[0]["keyword_phrase_hit"] is True
+        assert "low_confidence" not in exact[0]
+        with pytest.raises(ValueError, match="min_vector_score"):
+            retriever.search("警察", mode="hybrid", min_vector_score=2)
+    finally:
+        retriever.close()
+
+
+@pytest.mark.parametrize("subject", ["警察法規", "刑法概要", "憲法與警察專業英文"])
+def test_legal_subject_detector(subject):
+    assert is_legal_subject(subject)
+
+
+def test_nonlegal_subject_does_not_trigger_law_reminder():
+    assert not is_legal_subject("犯罪心理學")
+
+
+def test_format_results_displays_roc_year_and_law_reminder_and_low_confidence_first():
+    item = document(rank=1, citations=[
+        {"path": "law", "category": "行政警察", "year": 114, "subject": "警察法規", "number": 7},
+        {"path": "general", "category": "行政警察", "year": 113, "subject": "英文", "number": 8},
+    ], low_confidence=True)
+    text = format_results([item])
+    assert text.startswith("找不到高度相關的考題，以下結果僅供參考")
+    assert "年度：民國113年、民國114年" in text
+    assert "此為民國114年試題，法規可能已修正，請以現行條文為準" in text
+    assert "此為民國113年試題" not in text
+
+
+def test_threshold_calibration_respects_related_false_alarm_limit(tmp_path):
+    semantic = [{"score": 0.8, "keyword_phrase_hit": False}] * 100
+    offtopic = ([{"score": 0.2, "keyword_phrase_hit": False}] * 8
+                + [{"score": 0.1, "keyword_phrase_hit": True}] * 2)
+    rows = calibration_rows(semantic, offtopic)
+    recommendation = recommend_threshold(rows)
+    assert recommendation["related_false_low_rate"] <= 0.02
+    assert recommendation["offtopic_detected_rate"] == pytest.approx(0.8)
+    assert recommendation["threshold"] <= 0.8
+
+    path = tmp_path / "eval.jsonl"
+    path.write_text('{"query":"無關查詢"}\n', encoding="utf-8")
+    assert read_queries(path) == ["無關查詢"]
 
 
 def test_missing_vectors_never_silently_downgrade(tmp_path):

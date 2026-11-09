@@ -69,6 +69,32 @@ def test_missing_source_map(tmp_path):
     assert stats["answer_status"]["free"] == 1
 
 
+def test_source_coverage_counts_local_sources_and_each_pdf_url_type(tmp_path):
+    entries = {
+        "甲/106年/選擇甲": {"question_pdf_url": "https://example.org/q1.pdf",
+                           "answer_pdf_url": "https://example.org/a1.pdf"},
+        "甲/106年/選擇乙": {"question_pdf_url": "https://example.org/q2.pdf",
+                           "answer_pdf_url": None},
+        "甲/106年/申論甲": {"question_pdf_url": None,
+                           "answer_pdf_url": "https://example.org/a2.pdf"},
+        "甲/106年/申論乙": {"question_pdf_url": None, "answer_pdf_url": None},
+    }
+    write_exam(tmp_path, "甲/106年/選擇甲", [choice(stem="選擇題甲")])
+    write_exam(tmp_path, "甲/106年/選擇乙", [choice(stem="選擇題乙")])
+    write_exam(tmp_path, "甲/106年/申論甲", [{"number": 1, "type": "essay", "stem": "申論題甲"}])
+    write_exam(tmp_path, "甲/106年/申論乙", [{"number": 1, "type": "essay", "stem": "申論題乙"}])
+    source_map = tmp_path / "sources.json"
+    source_map.write_text(json.dumps({"schema_version": 1, "entries": entries}), encoding="utf-8")
+
+    _, stats = build_corpus(tmp_path, source_map)
+
+    assert stats["questions_with_sources"] == 4
+    assert stats["questions_with_question_pdf_url"] == 2
+    assert stats["questions_with_answer_pdf_url"] == 2
+    assert stats["choice_questions_with_question_pdf_url"] == 2
+    assert stats["choice_questions_with_answer_pdf_url"] == 1
+
+
 @pytest.mark.parametrize("field,value", [
     ("passage_group", "group-1"), ("passage_group", "1-2"),
     ("passage_question_range", "1-2"), ("passage_intro", "請依下文回答第1題至第2題"),

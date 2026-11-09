@@ -119,6 +119,7 @@ def add_search_arguments(parser):
     parser.add_argument("--vector-weight", type=float, default=DEFAULT_VECTOR_WEIGHT)
     parser.add_argument("--rrf-k", type=int, default=60)
     parser.add_argument("--candidates", type=int, default=50)
+    parser.add_argument("--min-vector-score", type=float, default=None)
     parser.add_argument("--phrase-priority", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--expand-abbreviations", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--profile", type=Path, help="Use bench_report.json selected_default; explicit flags override it")
@@ -141,7 +142,7 @@ def parse_search_args(parser, argv=None):
 
 def search_arguments(args):
     return {key: getattr(args, key) for key in ("keyword_weight", "vector_weight", "rrf_k",
-            "candidates", "phrase_priority", "expand_abbreviations")}
+            "candidates", "phrase_priority", "expand_abbreviations", "min_vector_score")}
 
 
 def configure_model_cache():
@@ -497,18 +498,22 @@ class Retriever:
 
     def search(self, query, *, k=5, mode="hybrid", keyword_weight=DEFAULT_KEYWORD_WEIGHT,
                vector_weight=DEFAULT_VECTOR_WEIGHT, rrf_k=60, phrase_priority=True,
-               expand_abbreviations=False, candidates=50, reranker=None):
+               expand_abbreviations=False, candidates=50, min_vector_score=None, reranker=None):
         with self._snapshot():
             return self._search_snapshot(query, k=k, mode=mode, keyword_weight=keyword_weight,
                 vector_weight=vector_weight, rrf_k=rrf_k, phrase_priority=phrase_priority,
-                expand_abbreviations=expand_abbreviations, candidates=candidates, reranker=reranker)
+                expand_abbreviations=expand_abbreviations, candidates=candidates,
+                min_vector_score=min_vector_score, reranker=reranker)
 
     def _search_snapshot(self, query, *, k, mode, keyword_weight, vector_weight, rrf_k,
-                         phrase_priority, expand_abbreviations, candidates, reranker):
+                         phrase_priority, expand_abbreviations, candidates, min_vector_score, reranker):
         if mode not in ("keyword", "vector", "hybrid"):
             raise ValueError(f"Unknown retrieval mode: {mode}")
         if k <= 0:
             raise ValueError("k 必須大於 0")
+        if (min_vector_score is not None and
+                (not math.isfinite(min_vector_score) or not -1 <= min_vector_score <= 1)):
+            raise ValueError("min_vector_score 必須為 -1 到 1 之間的有限數值")
         if not query.strip():
             return []
         if candidates <= 0:
@@ -524,10 +529,14 @@ class Retriever:
             ranking = self.vector_search(queries, limit)
         else:
             vector = self.vector_search(queries, limit)
+            top1_vector_score = vector[0][1] if vector else None
             ranking = rrf([[row[0] for row in keyword], [row[0] for row in vector]],
                           k=rrf_k, weights=[keyword_weight, vector_weight])
-        if phrase_priority and mode != "vector":
+        exact = set()
+        if mode == "hybrid" or (mode == "keyword" and phrase_priority):
             exact = set().union(*(phrase_ids(self.connection, q, limit) for q in queries))
+        keyword_phrase_hit = bool(exact)
+        if phrase_priority and mode != "vector":
             # Preserve keyword's exact-hit order: weak vectors cannot displace it.
             promoted = [row[0] for row in keyword if row[0] in exact]
             positions = {identifier: index for index, identifier in enumerate(promoted)}
@@ -541,8 +550,14 @@ class Retriever:
             citations = [{**item, "question_pdf_url": sources.get(item["path"], {}).get("question_pdf_url"),
                           "answer_pdf_url": sources.get(item["path"], {}).get("answer_pdf_url")}
                          for item in doc.get("appears_in", [])]
-            results.append({**doc, "rank": rank, "score": score, "citations": citations,
-                            "answer_confidence": "disputed" if doc.get("answer_conflicts") else "unknown"})
+            result = {**doc, "rank": rank, "score": score, "citations": citations,
+                      "answer_confidence": "disputed" if doc.get("answer_conflicts") else "unknown"}
+            if mode == "hybrid":
+                result.update(top1_vector_score=top1_vector_score, keyword_phrase_hit=keyword_phrase_hit)
+                if (min_vector_score is not None and top1_vector_score is not None
+                        and top1_vector_score < min_vector_score and not keyword_phrase_hit):
+                    result["low_confidence"] = True
+            results.append(result)
         if reranker and results:
             head = results[:20]
             scores = reranker.predict([(query, embedding_texts(doc)[0]) for doc in head])

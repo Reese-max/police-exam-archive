@@ -17,6 +17,10 @@
     "other": 3
   },
   "questions_with_sources": 10594,
+  "questions_with_question_pdf_url": 8514,
+  "questions_with_answer_pdf_url": 6814,
+  "choice_questions_with_question_pdf_url": 6419,
+  "choice_questions_with_answer_pdf_url": 6419,
   "answer_conflict_count": 6,
   "max_duplicate_count": 32,
   "in_file_duplicate_count": 40,
