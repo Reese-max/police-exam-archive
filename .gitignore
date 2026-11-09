@@ -101,6 +101,7 @@ rag/index.sqlite
 rag/index.sqlite-*
 rag/*.sqlite
 rag/*.sqlite-*
+*.rag-write.lock
 rag/embeddings/
 .hf_cache/
 .rag-dataset/

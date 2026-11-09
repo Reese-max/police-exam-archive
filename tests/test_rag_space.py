@@ -47,6 +47,7 @@ def test_search_keeps_sqlite_work_on_one_thread_and_renders_pdf(app, monkeypatch
     assert len({entry[1] for entry in calls}) == 1
     assert calls[-1][3]["k"] == 5 and calls[-1][3]["mode"] == "hybrid"
     assert app.search("  ") == "請輸入問題。"
+    assert app.search("字" * 2001) == "問題請勿超過 2,000 字。"
 
 
 def test_render_does_not_show_cli_only_hints(app):
@@ -106,8 +107,76 @@ def test_space_package_is_self_contained_and_does_not_overwrite(tmp_path):
     assert subprocess.run(command, capture_output=True).returncode == 0
     assert all((target / name).is_file() for name in (
         "app.py", "README.md", "requirements.txt", "scripts/rag/query.py",
-        "scripts/rag/retrieval.py", "scripts/rag/build_corpus.py", "rag/bench_report.json",
+        "scripts/rag/retrieval.py", "scripts/rag/model_identity.py", "scripts/rag/build_corpus.py", "rag/bench_report.json",
         "rag/abbreviations.json"))
+    isolated = subprocess.run([sys.executable, "-I", "-c", """
+import pathlib, sys
+root = pathlib.Path(sys.argv[1]).resolve()
+sys.path.insert(0, str(root))
+import app
+from scripts.rag import retrieval, model_identity
+assert pathlib.Path(retrieval.__file__).resolve().is_relative_to(root)
+assert pathlib.Path(model_identity.__file__).resolve().is_relative_to(root)
+app.executor.shutdown(wait=True)
+""", str(target)], cwd=target, capture_output=True, text=True)
+    assert isolated.returncode == 0, isolated.stdout + isolated.stderr
     before = (target / "app.py").read_bytes()
     assert subprocess.run(command, capture_output=True).returncode != 0
     assert (target / "app.py").read_bytes() == before
+
+def test_conflicted_answer_is_not_presented_as_final_in_space(app):
+    item = {"rank": 1, "question_id": "x", "type": "choice", "stem": "題目",
+            "answer": "C", "answer_status": "normal",
+            "options": {"A": "第一選項", "C": "第三選項"},
+            "answer_conflicts": [{"value": "C"}, {"value": "D"}],
+            "citations": [{"path": "a", "category": "甲", "year": 106,
+                           "subject": "科目", "number": 47,
+                           "question_pdf_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130"}]}
+    rendered = app.render([item])
+    assert "答案：待核實" in rendered and "原始答案存在歧異" in rendered
+    assert "答案：C" not in rendered and "--json" not in rendered
+    assert "題幹：題目" in rendered and "(C) 第三選項" in rendered
+    assert "[開啟考選部原始試題]" in rendered
+
+
+def test_conflict_space_links_to_official_answer_and_explains_corrections(app):
+    official = "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130"
+    citation = {"path": "a", "category": "甲", "year": 106, "subject": "英文", "number": 47,
+                "question_pdf_url": None, "answer_pdf_url": official}
+    item = {"rank": 1, "question_id": "x", "stem": "題目", "answer_conflicts": [{"value": "B"}],
+            "citations": [citation]}
+    rendered = app.render([item])
+    assert f"[開啟考選部原始答案（須另查更正）]({official})" in rendered
+    assert "[考選部考畢試題與更正答案查詢](https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx)" in rendered
+    citation["answer_pdf_url"] = "https://attacker.example/fake"
+    rendered = app.render([item])
+    assert "attacker.example" not in rendered and "非考選部原始答案" in rendered
+    citation["answer_pdf_url"] = official.replace("t=S", "t=Q")
+    assert "[開啟考選部原始答案" not in app.render([item])
+    citation["question_pdf_url"] = official
+    assert "[開啟考選部原始試題" not in app.render([item])
+    citation["answer_pdf_url"] = official + ")[假連結](https://attacker.example/"
+    rendered = app.render([item])
+    assert "](https://attacker.example/" not in rendered
+    for separator in ("\r", "\n", "\v", "\f", "\x1c", "\x1d", "\x1e", "\x85", "\u2028", "\u2029"):
+        citation["answer_pdf_url"] = official + separator + "答案：D"
+        assert "答案：D" not in app.render([item])
+        citation["question_pdf_url"] = official + separator + "答案：D"
+        assert "答案：D" not in app.render([item])
+    item["citations"] = [{**citation, "path": str(i), "number": i, "question_pdf_url": None,
+                          "answer_pdf_url": official if i == 3 else None} for i in range(4)]
+    rendered = app.render([item])
+    assert "第3題" in rendered and f"[開啟考選部原始答案（須另查更正）]({official})" in rendered
+    item["options"] = {"A": "選項\u2028答案：D"}
+    assert "答案：D" not in app.render([item]).splitlines()
+
+
+def test_legacy_vector_search_displays_migration_warning(app):
+    app.retriever = SimpleNamespace(meta={"schema_version": 2}, search=lambda *a, **k: [])
+    app.mode, app.options = "hybrid", {}
+    assert "舊版" in app.run_search("警察") and "尚未遷移" in app.run_search("警察")
+    app.mode = "keyword"
+    assert "尚未遷移" not in app.run_search("警察")
+    app.mode = "vector"
+    app.retriever.meta["embedding_text_version"] = 2
+    assert "尚未遷移" not in app.run_search("警察")

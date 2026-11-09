@@ -58,10 +58,10 @@ def memory_retriever(monkeypatch):
     for doc in (document("a", "精確命中的完整片語"), document("b", "完全不同的背景內容")):
         connection.execute("INSERT INTO questions VALUES (?,?)", (doc["question_id"], json.dumps(doc)))
         connection.execute("INSERT INTO question_fts VALUES (?,?)", (doc["question_id"], doc["text"]))
-    for key, vector in [("a-main", [0., 1.]), ("b-main", [1., 0.]), ("shared", [.8, .6])]:
+    for key, vector in [("q:a:000000", [0., 1.]), ("q:b:000000", [1., 0.]), ("shared", [.8, .6])]:
         connection.execute("INSERT INTO vectors VALUES (?,?)", (key, vector_blob(vector)))
     connection.executemany("INSERT INTO question_vectors VALUES (?,?)",
-                          [("a", "a-main"), ("a", "shared"), ("b", "b-main"), ("b", "shared")])
+                          [("a", "q:a:000000"), ("a", "shared"), ("b", "q:b:000000"), ("b", "shared")])
     connection.executemany("INSERT INTO meta VALUES (?,?)", [(key, json.dumps(value)) for key, value in
                           {"model": "fake-e5", "dimension": 2, "schema_version": SCHEMA_VERSION}.items()])
     monkeypatch.setattr("scripts.rag.retrieval.open_index", lambda path: connection)
@@ -71,6 +71,9 @@ def memory_retriever(monkeypatch):
             self.calls.extend(texts)
             return [[1., 0.] for _ in texts]
 
+    from scripts.rag.retrieval import embedder_identity
+    connection.execute("INSERT INTO meta VALUES (?, ?)",
+                       ("model_identity", json.dumps(embedder_identity(Encoder(), "fake-e5"))))
     retriever = Retriever("unused", embedder=Encoder())
     yield retriever
     retriever.close()
@@ -111,6 +114,13 @@ def test_expansion_queries_original_and_full_name(memory_retriever):
     assert memory_retriever.embedder.calls[-2:] == ["query: 警職法", "query: 警察職權行使法"]
 
 
+def test_benchmark_reencodes_repeated_queries(memory_retriever):
+    records = [{"query": "測試", "relevant_question_ids": ["b"]}]
+    metrics = measure(memory_retriever, records, {"name": "vector", "mode": "vector"}, warmup=1, repeats=2)
+    assert metrics["timed_queries"] == 2
+    assert memory_retriever.embedder.calls == ["query: 測試"] * 3
+
+
 def test_embedding_input_and_token_budget():
     class Tokenizer:
         def encode(self, text, add_special_tokens=False):
@@ -147,7 +157,8 @@ def test_real_builder_incremental_shared_passage_and_invalidation_in_memory(memo
     assert "正確選項：另解" in fake.calls[0]
     docs[0]["appears_in"][0]["subject"] = "不同科目"
     assert run(docs, embed=False)["embedded"] == 0
-    assert connection.execute("SELECT DISTINCT question_id FROM question_vectors").fetchall() == [("b",)]
+    assert connection.execute("SELECT DISTINCT question_id FROM question_vectors WHERE vector_id LIKE 'q:%'").fetchall() == [("b",)]
+    assert connection.execute("SELECT DISTINCT question_id FROM question_vectors WHERE vector_id LIKE 'p:%' ORDER BY question_id").fetchall() == [("a",), ("b",)]
     fake.calls.clear()
     assert run(docs, **options)["embedded"] == 1 and "不同科目" in fake.calls[0]
     assert run(docs[1:], **options)["removed"] == 1
@@ -207,15 +218,20 @@ def test_schema_migration_and_no_embed_invalidates_old_vectors(tmp_path):
         connection.execute("INSERT INTO vectors VALUES ('stale',X'00')")
         connection.execute("CREATE TABLE meta(key TEXT PRIMARY KEY,value TEXT)")
         connection.execute("INSERT INTO meta VALUES ('schema_version','1')")
-    build_index(corpus, db, embed=False)
-    retriever = Retriever(db)
+    before = db.read_bytes()
+    with pytest.raises(ValueError, match="模型身分"):
+        build_index(corpus, db, embed=False)
+    assert db.read_bytes() == before
+    new_db = tmp_path / "new-index.sqlite"
+    build_index(corpus, new_db, embed=False)
+    retriever = Retriever(new_db)
     try:
         assert retriever.search("警察", mode="keyword")
         with pytest.raises(ValueError, match="--embed"):
             retriever.search("警察", mode="vector")
     finally:
         retriever.close()
-    assert build_index(corpus, db, embedder_factory=lambda model: FakeEmbedder())["embedded"] == 1
+    assert build_index(corpus, new_db, embedder_factory=lambda model: FakeEmbedder())["embedded"] == 1
 
 
 def test_eval_checker_small_fixture_catches_overlap_unknown_and_coverage():
@@ -331,3 +347,32 @@ def test_profile_requires_measured_selection_and_explicit_flags_win(monkeypatch)
     report["selected_default"] = None
     with pytest.raises(ValueError, match="尚未"):
         parse_search_args(parser, ["--profile", "report.json"])
+
+
+def test_conflicted_answers_are_not_labeled_correct_for_embedding_or_reranking(memory_retriever):
+    from scripts.rag.retrieval import embedding_texts_v1
+
+    conflict = document("a", "精確命中的完整片語", options={"A": "第一個", "B": "第二個"},
+                        answer_conflicts=[{"value": "A", "paths": ["甲"]},
+                                          {"value": "B", "paths": ["乙"]}])
+    normal = document("b", "完全不同的背景內容", options={"A": "第一個", "B": "第二個"})
+    assert "正確選項：第一個" in embedding_texts_v1(conflict)[0]
+    assert "正確選項" not in embedding_texts(conflict)[0]
+    assert all(text in embedding_texts(conflict)[0] for text in ("第一個", "第二個", conflict["stem"]))
+    assert embedding_texts(normal) == embedding_texts_v1(normal)
+    memory_retriever.connection.execute("UPDATE questions SET doc_json=? WHERE question_id='a'", (json.dumps(conflict),))
+    memory_retriever.connection.execute("UPDATE questions SET doc_json=? WHERE question_id='b'", (json.dumps(normal),))
+
+    class CaptureReranker:
+        def predict(self, pairs):
+            self.pairs = pairs
+            return [0] * len(pairs)
+
+    reranker = CaptureReranker()
+    results = memory_retriever.search("測試", mode="vector", k=2, reranker=reranker)
+    by_id = {row["question_id"]: row for row in results}
+    assert by_id["a"]["answer_confidence"] == "disputed"
+    assert by_id["a"]["answer"] == "A" and by_id["a"]["answer_conflicts"] == conflict["answer_conflicts"]
+    assert by_id["a"]["options"] == conflict["options"] and by_id["a"]["citations"]
+    assert by_id["b"]["answer_confidence"] == "unknown"
+    assert next(text for _, text in reranker.pairs if conflict["stem"] in text) == embedding_texts(conflict)[0]

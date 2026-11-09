@@ -48,18 +48,31 @@ python scripts/rag/build_index.py --model BAAI/bge-m3 --db rag/index-bge-m3.sqli
 python scripts/rag/query.py "警察何時能攔人問身分" --db rag/index-e5.sqlite --device cpu
 ```
 
-模型與 tokenizer 快取固定在 worktree 的 `.hf_cache/`，不執行遠端模型程式碼，不使用
-API 金鑰。首次取得公開權重需要連網；快取完整後可設 `HF_HUB_OFFLINE=1`。
+模型與 tokenizer 預設使用 worktree 的 `.hf_cache/`，亦可透過 `RAG_MODEL_CACHE` 指向既有快取；
+預設允許首次載入時下載公開權重，不執行遠端模型程式碼，也不使用 API 金鑰。需離線執行時，
+可在快取完整後設定 `HF_HUB_OFFLINE=1`。
 建置、查詢與評估支援 `--device auto|cpu|cuda`；auto 偵測 CUDA，指定不可用的 cuda
 會報錯。CPU 查詢仍需要相同模型的本機權重；不會在查詢時重建文件向量。
 
-向量 schema v2：每題先組合「完整題幹、選項、已知正確選項內容、資料夾科目名稱」，
+向量 schema v2：每題先組合「完整題幹、選項、無歧異時的答案選項內容、資料夾科目名稱」；
+若有答案歧異，保留所有選項但不將其中一個標記為正確。
 題組文章另建向量。長文字按模型 tokenizer 的實際 token 預算切段，保留所有題幹內容，
 不再讓文章佔滿 e5 的 512 token。相同文章片段只編碼與儲存一次，以 `question_vectors`
 關聯多題；每題對所有關聯片段、所有查詢版本取最大 cosine 分數，結果每題只出現一次。
 E5 使用 `passage: `／`query: `；bge-m3 dense 不加 E5 前綴。
 `vectors` 保存輸入文字與 little-endian float32 正規化向量。meta 記錄 schema、模型、
-維度、corpus SHA-256 及實際編碼裝置；舊 schema 或模型變更會全量重建向量。
+維度、corpus SHA-256、實際編碼裝置與版本化 `model_identity`。第 3 版模型身分根據載入後的
+完整權重與所有 buffer（含非持久 buffer）、模組類型與設定、tokenizer 實際內容與輸入欄位、
+模型輸入過濾參數、模型／pooling、切段與編碼設定，以及相關套件版本計算；revision、
+模型名稱或維度本身都不是權重證明。增量編碼、續跑及每次向量查詢都核對身分；不符即停止。
+明確指定不同模型名稱時，可信索引沿用原有的全量重建行為。
+
+Hub 模型在載入各模組前，先將 `main` 解析為完整 commit，並在新索引記錄 `model_revision`；
+後續增量建置、續跑及查詢使用該 commit，而不是重新追蹤可能已移動的 `main`。無法解析或
+取得該版本時會停止，離線使用需先備妥對應版本的完整快取。commit 和快取路徑只用來定位，
+可寫入的本機檔案仍可能被修改，因此每次向量運算仍須比對實際內容指紋。
+本機模型目錄不推定為 Hub 模型，也不記錄 Hub revision。既有索引若已有內容身分但沒有
+revision，使用時會解析當前 Hub 版本並比對內容，但不會回填或宣稱原始來源版本。
 
 重跑相同 corpus 不載入模型、不重算向量。題文更新 FTS，題幹／選項／正確答案內容／科目／
 文章變動才使相應向量失效；僅出處網址異動只更新 JSON。刪題會清理關聯與無人引用的向量。
@@ -67,6 +80,40 @@ E5 使用 `passage: `／`query: `；bge-m3 dense 不加 E5 前綴。
 每批向量與維度一併提交；尚未編碼的列保留 NULL，續跑只補缺漏。
 首批失敗會回復此次更新，後續中斷保留已提交批次；殘留 journal 由 SQLite 復原，勿手動刪除。
 向量不完整時 vector/hybrid 會報錯，keyword 仍可使用。年度更新沿用原 corpus 建置流程。
+
+向量輸入規則另以 `embedding_text_version` 記錄。**舊索引有向量但沒有可信的模型身分時，
+無法由抽樣或目前快取補證來源**：保留舊檔，keyword 與真正不需編碼的 no-op 仍可使用；
+若要更動該索引、補建或進行向量查詢，請指定新的 `--db` 完整重建。例如：
+
+```bash
+python scripts/rag/build_index.py --model BAAI/bge-m3 --db rag/index-bge-m3-verified.sqlite --device cuda --batch-size 8
+```
+
+第 1、2 版模型身分未涵蓋所有會影響輸出的狀態，因此不能視為第 3 版；既有第 1、2 版向量索引
+仍可 keyword 與 no-op，但向量運算須在新檔完整重建。
+
+目前自動驗證僅支援標準 SentenceTransformer BERT／XLM-R transformer + pooling，及可選的 normalize，
+搭配可序列化的 XLM-R backend tokenizer；adapter、量化、自訂模組、實例方法覆寫及 PyTorch 全域 forward hook 會明確拒絕。程式注入的
+編碼器須提供 `rag_identity`（小寫 64 位 SHA-256 字串），由呼叫端負責涵蓋權重、tokenizer
+與所有影響輸出的行為；這是呼叫端的契約，並非程式對注入編碼器內容的獨立驗證。
+直接注入的編碼器由呼叫端管理來源，不會自動記錄 Hub revision；對已記錄 revision 的索引，
+注入 factory 須接受 `revision` 關鍵字參數，並依該定位載入模型。
+完整雜湊有實際成本：每次向量查詢編碼前、後各完整核對一次模型權重與設定，每批建置也會在編碼前及提交前核對。第 3 版
+以最多四個執行緒平行雜湊各個 tensor，仍不省略內容。本機 BGE-M3 CPU 單題隔離索引的三次
+暖機查詢為 7.862、7.711、10.984 秒；這是小樣本，不能代表完整資料集或 p95，實際時間依
+硬體及負載而異。尚未重測 150 題 p95，不能宣稱達到 500 ms 目標。no-op 不載入模型。
+同一 PyTorch 上游版本的 `+cpu`／`+cuNNN` wheel 後綴視為相容，不同上游版本仍分別核對。
+Space 與更新 workflow 固定相同上游模型套件版本。
+新版索引使用觸發器阻擋舊建置器
+寫入，並保留使用者觸發器；SQLite `trusted_schema=OFF` 下建置會失敗並回滾，不會自動
+降低安全設定。合作的建置與更新程序使用固定的 `.索引檔名.rag-write.lock` 旁檔跨批次互斥；
+旁檔會保留，作業系統會在程序結束時釋放鎖。具有多個硬連結的索引會拒絕寫入；若替換時才出現
+舊索引硬連結，更新會保留該連結並回報狀態不確定。年度更新替換
+候選檔時，若來源處於 WAL 模式或仍有 SQLite journal／WAL sidecar，會保留原檔並停止；
+初次檢查及備份時分別完整雜湊來源快照；若需替換，會在獨占鎖下再次核對，並讀取候選與目的地
+驗證結果，防止覆寫其他提交或錯報替換成功。這些完整讀檔有額外成本，no-op 也會完整讀取來源兩次。
+若 SQLite 讀者或寫入者使資料庫鎖定，已提交的安全批次保留，釋放鎖後可重試。Windows 的原子
+替換需要檔案系統支援 POSIX 語意；不支援時會停止並保留原檔。
 
 keyword 使用 SQLite FTS5 trigram BM25；完整片語優先，無命中才按空白拆詞 AND／OR，
 不足三字使用跳脫萬用字元的 LIKE。hybrid 預設候選各 50 筆，以加權 RRF 合併：
@@ -90,6 +137,8 @@ python scripts/rag/query.py "查證身分" --db rag/index-e5.sqlite --keyword-we
 
 每題的文字出處按已知試題 PDF 網址分組，同網址學系合併一行，最多顯示三組；未知網址保持
 未解析，依原路徑保留。`--json` 保留完整題文、所有原出處與答案歧異，不會刪掉原始引用。
+查詢結果的 `answer_confidence` 為 `disputed`（有答案歧異）或 `unknown`；`unknown` 不代表
+答案已經核實。衝突題顯示的來源資料夾題號仍須對照官方試卷。
 
 語意集 `rag/eval_semantic.jsonl` 共 150 筆、15 科目，包含選擇及申論；34 筆（22.7%）使用
 法規簡稱。逐題讀原題後編寫自然語言與相關性理由；人臉辨識的兩個近重複原題都標為相關。

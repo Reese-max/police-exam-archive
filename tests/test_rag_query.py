@@ -187,3 +187,134 @@ def test_query_device_is_forwarded_to_model_loader(tmp_path, monkeypatch, capsys
     main(["警察", "--db", str(db), "--mode", "vector", "--device", "cuda", "--json"])
     assert json.loads(capsys.readouterr().out)[0]["question_id"] == "a"
     assert calls == [("intfloat/multilingual-e5-small", "cuda")]
+
+def test_conflicted_answer_text_is_not_definitive_and_json_stays_raw(tmp_path, capsys):
+    corpus, db = tmp_path / "corpus.jsonl", tmp_path / "index.sqlite"
+    doc = document("conflict", "警察查證身分題目")
+    doc["answer"] = "C"
+    doc["answer_conflicts"] = [{"value": "C", "paths": ["甲"]}, {"value": "D", "paths": ["乙"]}]
+    write_corpus(corpus, [doc])
+    build_index(corpus, db, embed=False)
+    main(["查證身分", "--db", str(db), "--mode", "keyword", "--json"])
+    results = json.loads(capsys.readouterr().out)
+    assert results[0]["answer"] == "C"
+    assert results[0]["answer_conflicts"] == doc["answer_conflicts"]
+    assert results[0]["citations"] and results[0]["stem"] == doc["stem"]
+    before = json.dumps(results, ensure_ascii=False, sort_keys=True)
+    text = format_results(results)
+    assert "答案：待核實" in text and "原始答案存在歧異" in text
+    assert "答案：C" not in text and "--json" in text
+    assert json.dumps(results, ensure_ascii=False, sort_keys=True) == before
+
+    free = {**results[0], "answer": None, "answer_status": "free"}
+    assert "答案：待核實" in format_results([free])
+    assert "答案：送分" not in format_results([free])
+    normal = {**results[0], "answer_conflicts": []}
+    assert "答案：C" in format_results([normal])
+    no_answer = {**normal, "answer": None, "answer_status": "none"}
+    assert "答案：" not in format_results([no_answer])
+    free["answer_conflicts"] = []
+    assert "答案：送分" in format_results([free])
+
+
+def test_conflict_text_includes_original_answer_sources_and_correction_lookup():
+    question = "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130"
+    answer_a = "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=112"
+    answer_b = "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=604"
+    citation = {"path": "a", "category": "甲", "year": 106, "subject": "英文", "number": 47,
+                "question_pdf_url": question, "answer_pdf_url": answer_a}
+    item = {"rank": 1, "question_id": "x", "stem": "題目", "answer_conflicts": [{"value": "B"}],
+            "citations": [citation, {**citation, "path": "b", "answer_pdf_url": answer_b}]}
+    text = format_results([item])
+    assert "原始答案 PDF：" + answer_a in text
+    assert "原始答案 PDF：" + answer_b in text
+    assert "更正查詢：https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx" in text
+    item["citations"] = [{**citation, "answer_pdf_url": None}]
+    assert "原始答案 PDF：未解析" in format_results([item])
+    item["answer_conflicts"] = []
+    assert "原始答案 PDF：" not in format_results([item])
+    item["answer_conflicts"] = [{"value": "B"}]
+    for separator in ("\r", "\n", "\v", "\f", "\x1c", "\x1d", "\x1e", "\x85", "\u2028", "\u2029"):
+        item["citations"][0]["answer_pdf_url"] = answer_a + separator + "答案：D"
+        assert "答案：D" not in format_results([item]).splitlines()
+        item["citations"][0]["question_pdf_url"] = question + separator + "答案：D"
+        assert "答案：D" not in format_results([item]).splitlines()
+    item["citations"][0]["answer_pdf_url"] = "https://attacker.example/fake"
+    text = format_results([item])
+    assert "非考選部原始答案" in text and "attacker.example" not in text
+    item["citations"][0]["answer_pdf_url"] = question
+    assert "原始答案 PDF：非考選部原始答案" in format_results([item])
+    item["citations"][0]["answer_pdf_url"] = answer_a + "&t=Q"
+    assert "原始答案 PDF：非考選部原始答案" in format_results([item])
+    item["citations"][0]["question_pdf_url"] = answer_a
+    assert "試題 PDF：非考選部試題" in format_results([item])
+
+
+def test_legacy_vector_warning_is_stderr_only_and_keyword_does_not_warn(tmp_path, monkeypatch, capsys):
+    import sqlite3
+    from scripts.rag import retrieval
+
+    corpus, db = tmp_path / "corpus.jsonl", tmp_path / "index.sqlite"
+    write_corpus(corpus, [document()])
+    build_index(corpus, db, embedder_factory=lambda _: FakeEmbedder())
+    with sqlite3.connect(db) as connection:
+        connection.execute("DELETE FROM meta WHERE key='embedding_text_version'")
+    monkeypatch.setattr(retrieval, "load_embedder", lambda *args, **kwargs: FakeEmbedder())
+    capsys.readouterr()
+    main(["警察", "--db", str(db), "--mode", "vector", "--json"])
+    output = capsys.readouterr()
+    assert json.loads(output.out)[0]["answer_confidence"] == "unknown"
+    assert "舊版" in output.err and "尚未遷移" in output.err
+    main(["警察", "--db", str(db), "--json"])
+    output = capsys.readouterr()
+    assert json.loads(output.out)[0]["answer_confidence"] == "unknown"
+    assert "舊版" in output.err and "尚未遷移" in output.err
+    main(["警察", "--db", str(db), "--mode", "keyword", "--json"])
+    output = capsys.readouterr()
+    assert json.loads(output.out) and "尚未遷移" not in output.err
+    with sqlite3.connect(db) as connection:
+        connection.execute("INSERT INTO meta VALUES ('embedding_text_version', '999')")
+    with pytest.raises(SystemExit):
+        main(["警察", "--db", str(db), "--mode", "vector", "--json"])
+    output = capsys.readouterr()
+    assert not output.out and "版本" in output.err
+
+
+def test_conflict_labels_provisional_source_folder_number_without_changing_normal_output():
+    citation = {"path": "source", "category": "甲", "year": 106, "subject": "英文", "number": 42,
+                "question_pdf_url": None, "answer_pdf_url": None}
+    item = {"rank": 1, "question_id": "q", "stem": "題目", "answer": "A",
+            "citations": [citation], "answer_conflicts": [{"value": "A"}, {"value": "B"}]}
+    text = format_results([item])
+    assert "第42題（來源資料夾題號，請核對官方試卷）" in text
+    item["answer_conflicts"] = []
+    text = format_results([item])
+    assert "甲／106年／英文／第42題" in text and "來源資料夾題號" not in text
+
+
+@pytest.mark.parametrize("malformed", [{}, [], {"url": "bad"}, ["bad"], 0, 42, False, True])
+def test_malformed_source_urls_are_unresolved_without_losing_valid_sources(malformed):
+    question = "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130"
+    answer = "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130"
+    citation = {"path": "a", "category": "甲", "year": 106, "subject": "英文", "number": 42,
+                "question_pdf_url": malformed, "answer_pdf_url": malformed}
+    valid = {**citation, "path": "b", "number": 43, "question_pdf_url": question, "answer_pdf_url": answer}
+    item = {"rank": 1, "question_id": "q", "stem": "題目", "answer": "A",
+            "answer_conflicts": [{"value": "A"}, {"value": "B"}], "citations": [citation, valid]}
+    text = format_results([item])
+    assert "試題 PDF：未解析" in text and "原始答案 PDF：未解析" in text
+    assert "試題 PDF：" + question in text and "原始答案 PDF：" + answer in text
+    item["answer_conflicts"] = []
+    text = format_results([item])
+    assert "試題 PDF：未解析" in text and "試題 PDF：" + question in text and "答案：A" in text
+
+
+def test_malformed_and_valid_answer_urls_on_same_paper_are_both_handled():
+    question = "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130"
+    answer = "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130"
+    citation = {"path": "a", "category": "甲", "year": 106, "subject": "英文", "number": 42,
+                "question_pdf_url": question, "answer_pdf_url": ["bad"]}
+    item = {"rank": 1, "question_id": "q", "stem": "題目", "answer_conflicts": [{"value": "A"}],
+            "citations": [citation, {**citation, "path": "b", "answer_pdf_url": answer}]}
+    text = format_results([item])
+    assert "原始答案 PDF：未解析" in text and "原始答案 PDF：" + answer in text
