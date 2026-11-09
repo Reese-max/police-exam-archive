@@ -30,7 +30,7 @@ def test_profile_paths_work_for_query_and_evaluation(tmp_path, monkeypatch, caps
     profile.write_text(json.dumps({"status": "measured", "device": "cpu", "selected_default": {
         "db": profile_db, "configuration": {"name": "keyword", "mode": "keyword"}}}), encoding="utf-8")
     main(["查證身分", "--profile", str(profile), "--json"])
-    assert json.loads(capsys.readouterr().out)[0]["question_id"] == "a"
+    assert json.loads(capsys.readouterr().out)["results"][0]["question_id"] == "a"
     eval_main(["--profile", str(profile), "--corpus", str(corpus), "--out", str(rag / "eval.json"),
                "--modes", "keyword", "--n", "1"])
     assert json.loads((rag / "eval.json").read_text(encoding="utf-8"))["n"] == 1
@@ -104,7 +104,7 @@ def test_output_citations_links_and_full_json(tmp_path, capsys):
     write_corpus(corpus, [doc])
     build_index(corpus, db, embed=False)
     main(["查證身分", "--db", str(db), "--mode", "keyword", "--json"])
-    results = json.loads(capsys.readouterr().out)
+    results = json.loads(capsys.readouterr().out)["results"]
     assert results[0]["rank"] == 1
     assert len(results[0]["citations"]) == 4
     assert results[0]["sources"] == doc["sources"]
@@ -288,7 +288,7 @@ def test_query_device_is_forwarded_to_model_loader(tmp_path, monkeypatch, capsys
 
     monkeypatch.setattr("scripts.rag.retrieval.load_embedder", loader)
     main(["警察", "--db", str(db), "--mode", "vector", "--device", "cuda", "--json"])
-    assert json.loads(capsys.readouterr().out)[0]["question_id"] == "a"
+    assert json.loads(capsys.readouterr().out)["results"][0]["question_id"] == "a"
     assert calls == [("intfloat/multilingual-e5-small", "cuda")]
 
 def test_conflicted_answer_text_is_not_definitive_and_json_stays_raw(tmp_path, capsys):
@@ -299,7 +299,7 @@ def test_conflicted_answer_text_is_not_definitive_and_json_stays_raw(tmp_path, c
     write_corpus(corpus, [doc])
     build_index(corpus, db, embed=False)
     main(["查證身分", "--db", str(db), "--mode", "keyword", "--json"])
-    results = json.loads(capsys.readouterr().out)
+    results = json.loads(capsys.readouterr().out)["results"]
     assert results[0]["answer"] == "C"
     assert results[0]["answer_conflicts"] == doc["answer_conflicts"]
     assert results[0]["citations"] and results[0]["stem"] == doc["stem"]
@@ -366,11 +366,11 @@ def test_legacy_vector_warning_is_stderr_only_and_keyword_does_not_warn(tmp_path
     capsys.readouterr()
     main(["警察", "--db", str(db), "--mode", "vector", "--json"])
     output = capsys.readouterr()
-    assert json.loads(output.out)[0]["answer_confidence"] == "unknown"
+    assert json.loads(output.out)["results"][0]["answer_confidence"] == "unknown"
     assert "舊版" in output.err and "尚未遷移" in output.err
     main(["警察", "--db", str(db), "--json"])
     output = capsys.readouterr()
-    assert json.loads(output.out)[0]["answer_confidence"] == "unknown"
+    assert json.loads(output.out)["results"][0]["answer_confidence"] == "unknown"
     assert "舊版" in output.err and "尚未遷移" in output.err
     main(["警察", "--db", str(db), "--mode", "keyword", "--json"])
     output = capsys.readouterr()

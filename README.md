@@ -57,6 +57,12 @@ python scripts/rag/build_index.py --model BAAI/bge-m3 --db rag/index-bge-m3.sqli
 python scripts/rag/query.py "警察何時能攔人問身分" --db rag/index-e5.sqlite --device cpu
 ```
 
+現行法條取自全國法規資料庫開放資料，法規清單由 `rag/law_list.json` 限定；
+使用 `python scripts/rag/fetch_laws.py --source <ChLaw.json或law.zip>` 更新 `rag/laws.jsonl`，
+再以 `python scripts/rag/build_index.py --laws rag/laws.jsonl` 寫入題目索引 SQLite。
+目前法條資料日期為 2026/10/30（來源 `UpdateDate`），查詢預設附上最多 3 條相關法條，
+可用 `--law-k 0` 關閉。
+
 模型與 tokenizer 預設使用 worktree 的 `.hf_cache/`，亦可透過 `RAG_MODEL_CACHE` 指向既有快取；
 預設允許首次載入時下載公開權重，不執行遠端模型程式碼，也不使用 API 金鑰。需離線執行時，
 可在快取完整後設定 `HF_HUB_OFFLINE=1`。

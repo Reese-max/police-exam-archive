@@ -22,7 +22,8 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE if (HERE / "scripts/rag/retrieval.py").is_file() else HERE.parent
 sys.path.insert(0, str(ROOT / "scripts/rag"))
 from query import (LOW_CONFIDENCE_NOTICE, MOEX_CORRECTION_INFO_URL, _is_official_exam_pdf,
-                   format_results)
+                   format_law_modified_date, format_results, is_official_law_url,
+                   truncate_law_content)
 from retrieval import (LEGACY_EMBEDDING_TEXT_VERSION, LEGACY_INDEX_WARNING, Retriever, add_search_arguments,
                        embedding_text_version, parse_search_args, search_arguments)
 
@@ -31,6 +32,8 @@ executor = ThreadPoolExecutor(max_workers=1)
 retriever = None
 options = None
 mode = None
+law_k = 3
+law_min_score = None
 
 
 def index_path():
@@ -49,12 +52,13 @@ def index_path():
 
 
 def initialize(db):
-    global retriever, options, mode
+    global retriever, options, mode, law_k, law_min_score
     import torch
     torch.set_num_threads(2)
     parser = argparse.ArgumentParser()
     parser.add_argument("--db", type=Path)
     parser.add_argument("--mode", default="hybrid")
+    parser.add_argument("--law-k", type=int, default=3)
     add_search_arguments(parser)
     args = parse_search_args(parser, ["--profile", str(ROOT / "rag/bench_report.json"), "--db", str(db)])
     if args.use_reranker:
@@ -68,10 +72,14 @@ def initialize(db):
     except BaseException:
         instance.close()
         raise
-    retriever, options, mode = instance, search_arguments(args), args.mode
+    if args.law_k < 0:
+        instance.close()
+        raise ValueError("--law-k 不可小於 0")
+    retriever, options, mode, law_k = instance, search_arguments(args), args.mode, args.law_k
+    law_min_score = args.law_min_vector_score
 
 
-def render(results, *, include_notice=True):
+def _render_questions(results, *, include_notice=True):
     lines = []
     if not results:
         return "查無符合題目。"
@@ -115,6 +123,26 @@ def render(results, *, include_notice=True):
     return "  \n".join(lines)
 
 
+def render_laws(laws):
+    if not laws:
+        return ""
+    lines = ["## 相關現行條文"]
+    for law in laws:
+        title = escape(f"{law.get('law_name', '')} {law.get('article_no', '')}"
+                       f"（法規最後修正：{format_law_modified_date(law.get('law_modified_date'))}）")
+        lines.extend(["", title, "", escape(truncate_law_content(law.get("content", "")))])
+        url = law.get("url")
+        if is_official_law_url(url):
+            lines.extend(["", f"[全國法規資料庫]({quote(url, safe=':/?&=%#-._~+;,')})"])
+    return "  \n".join(lines)
+
+
+def render(results, *, include_notice=True, laws=None):
+    question_text = _render_questions(results, include_notice=include_notice)
+    law_text = render_laws(laws or [])
+    return question_text + ("\n\n" + law_text if law_text else "")
+
+
 def run_search(query):
     if not query or not query.strip():
         return "請輸入問題。"
@@ -122,6 +150,12 @@ def run_search(query):
         return "問題請勿超過 2,000 字。"
     started = time.perf_counter()
     results = retriever.search(query, k=5, mode=mode, **options)
+    law_results = []
+    if law_k and hasattr(retriever, "search_laws"):
+        law_options = {key: options[key] for key in (
+            "keyword_weight", "vector_weight", "rrf_k", "candidates", "expand_abbreviations"
+        ) if key in options}
+        law_results = retriever.search_laws(query, k=law_k, min_vector_score=law_min_score, **law_options)
     elapsed_ms = (time.perf_counter() - started) * 1000
     meta = getattr(retriever, "meta", None)
     warning = ""
@@ -130,7 +164,8 @@ def run_search(query):
     if (mode != "keyword" and meta is not None
             and embedding_text_version(meta) == LEGACY_EMBEDDING_TEXT_VERSION):
         warning += LEGACY_INDEX_WARNING + "\n\n"
-    return f"{warning}查詢耗時：{elapsed_ms:.0f} 毫秒\n\n{render(results, include_notice=False)}"
+    return (f"{warning}查詢耗時：{elapsed_ms:.0f} 毫秒\n\n"
+            f"{render(results, include_notice=False, laws=law_results)}")
 
 
 def search(query):

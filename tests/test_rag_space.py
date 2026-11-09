@@ -65,6 +65,17 @@ def test_render_does_not_show_cli_only_hints(app):
     assert "--json" not in rendered and "answer_conflicts" not in rendered
 
 
+def test_law_rendering_truncates_content_and_rejects_non_official_links(app):
+    law = {
+        "law_name": "測試法", "article_no": "第6條", "law_modified_date": "20251006",
+        "content": "法條內容" * 80,
+        "url": "https://law.moj.gov.tw.attacker.example/fake",
+    }
+    rendered = app.render_laws([law])
+    assert "民國114年10月6日" in rendered and "內容已截斷" in rendered
+    assert "attacker.example" not in rendered and "全國法規資料庫" not in rendered
+
+
 def test_run_search_puts_low_confidence_notice_before_other_output(app):
     result = {"rank": 1, "question_id": "x", "type": "essay", "stem": "題目",
               "low_confidence": True, "citations": []}
