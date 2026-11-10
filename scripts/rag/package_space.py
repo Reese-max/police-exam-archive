@@ -20,6 +20,18 @@ FILES = {
 }
 
 
+def _copy_frontend(out):
+    source = ROOT / "space/web/dist"
+    if not (source / "index.html").is_file():
+        print("未包含前端 build")
+        return False
+    destination = out / "web" / "dist"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copytree(source, destination)
+    print(f"已包含前端 build：{destination}")
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, required=True, help="A new, non-existing output directory")
@@ -29,6 +41,7 @@ def main():
         target = args.out / destination
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ROOT / source, target)
+    _copy_frontend(args.out)
     print(f"Space 檔案已整理至 {args.out.resolve()}")
 
 

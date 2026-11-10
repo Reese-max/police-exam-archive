@@ -125,6 +125,36 @@ def test_zero_gpu_space_registers_marker_without_using_gpu(monkeypatch):
         module.executor.shutdown(wait=True)
 
 
+def test_frontend_iframe_uses_relative_gradio_file_url(app, tmp_path):
+    html = app._frontend_html(tmp_path / "web" / "dist")
+    src = html.split('src="', 1)[1].split('"', 1)[0]
+    assert not src.startswith(("/", "http"))
+    assert src.endswith("/index.html")
+    assert "gradio_api/file=" in src
+
+
+@pytest.mark.parametrize("has_build", [True, False])
+def test_package_space_copies_frontend_build_only_when_present(
+        monkeypatch, tmp_path, has_build):
+    from scripts.rag import package_space
+
+    root = tmp_path / "repo"
+    dist = root / "space" / "web" / "dist"
+    if has_build:
+        dist.mkdir(parents=True)
+        (dist / "index.html").write_text("<html>測試</html>", encoding="utf-8")
+    output = tmp_path / "out"
+    output.mkdir()
+    monkeypatch.setattr(package_space, "ROOT", root)
+
+    assert package_space._copy_frontend(output) is has_build
+    if has_build:
+        assert (output / "web" / "dist" / "index.html").read_text(
+            encoding="utf-8") == "<html>測試</html>"
+    else:
+        assert not (output / "web").exists()
+
+
 def test_space_package_is_self_contained_and_does_not_overwrite(tmp_path):
     root = Path(__file__).resolve().parents[1]
     target = tmp_path / "space"
