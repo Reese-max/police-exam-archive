@@ -83,7 +83,7 @@ def test_citation_validation_removes_out_of_range_references(evidence, monkeypat
     assert result["citations"] == ["[題1]", "[條1]"]
     assert result["invalid_citations"] == ["[題8]"]
     assert "[題8]" not in result["text"]
-    assert client.calls[0][1]["max_tokens"] >= 4000
+    assert "max_tokens" not in client.calls[0][1]
     assert client.calls[0][1]["api_key"] == "do-not-leak"
     assert client.calls[0][1]["model"] == "MiniMax-M3.1-Flash"
 
@@ -153,7 +153,7 @@ def test_insufficient_answer_with_trailing_period_passes(evidence, monkeypatch):
     assert result["status"] == "ok"
 
 
-def test_http_payload_requests_low_reasoning_effort(monkeypatch):
+def test_http_payload_requests_high_effort_without_token_cap(monkeypatch):
     sent = {}
 
     class Response:
@@ -173,8 +173,9 @@ def test_http_payload_requests_low_reasoning_effort(monkeypatch):
     monkeypatch.setattr(answer, "urlopen", fake_urlopen)
     monkeypatch.delenv("RAG_LLM_REASONING_EFFORT", raising=False)
     answer._http_complete([], model="m", api_key="k", base_url="https://x/v1",
-                          timeout=1, max_tokens=10)
-    assert sent["reasoning_effort"] == "low"
+                          timeout=1)
+    assert sent["reasoning_effort"] == "high"
+    assert "max_tokens" not in sent
 
 
 @pytest.mark.parametrize("error", [

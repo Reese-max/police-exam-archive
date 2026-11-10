@@ -8,7 +8,6 @@ from urllib.request import Request, urlopen
 
 
 MAX_CONTEXT_CHARS = 12_000
-MAX_TOKENS = 4_000
 INSUFFICIENT_DATA = "提供的資料不足以回答這個問題"
 UNCITED_ANSWER = "AI 回答未通過引用檢查，請直接參考下方考題與條文"
 LOW_CONFIDENCE_ANSWER = "找不到足夠相關的資料，不產生 AI 回答"
@@ -115,14 +114,12 @@ def build_context(results, laws):
     return "".join(parts)
 
 
-def _http_complete(messages, *, model, api_key, base_url, timeout, max_tokens):
+def _http_complete(messages, *, model, api_key, base_url, timeout):
     payload = json.dumps({
         "model": model,
         "messages": messages,
-        "max_tokens": max_tokens,
-        # MiniMax-M3.1-Flash at default effort sometimes spends all max_tokens reasoning and
-        # returns empty content; "low" measured 115-307 reasoning tokens, 5-10 s.
-        "reasoning_effort": os.environ.get("RAG_LLM_REASONING_EFFORT", "low"),
+        # No max_tokens: a cap let reasoning use up the budget and return empty content.
+        "reasoning_effort": os.environ.get("RAG_LLM_REASONING_EFFORT", "high"),
     }).encode("utf-8")
     request = Request(
         base_url.rstrip("/") + "/chat/completions",
@@ -144,7 +141,7 @@ def _content(response):
         raise ValueError("invalid response")
     message = choices[0].get("message")
     if choices[0].get("finish_reason") == "length" and not (message or {}).get("content"):
-        raise ReasoningLimitError("reasoning exhausted max_tokens")
+        raise ReasoningLimitError("reasoning exhausted the output limit")
     if not isinstance(message, dict) or not isinstance(message.get("content"), str):
         raise ValueError("invalid response")
     return THINK_PATTERN.sub("", message["content"]).strip()
@@ -174,7 +171,7 @@ def generate_answer(query, results, laws, *, client=None):
     base_url = os.environ.get("RAG_LLM_BASE_URL", "https://api.minimax.io/v1")
     model = os.environ.get("RAG_LLM_MODEL", "MiniMax-M3.1-Flash")
     try:
-        timeout = float(os.environ.get("RAG_LLM_TIMEOUT", "60"))
+        timeout = float(os.environ.get("RAG_LLM_TIMEOUT", "180"))
         if timeout <= 0:
             raise ValueError
     except ValueError:
@@ -191,12 +188,12 @@ def generate_answer(query, results, laws, *, client=None):
         if client is None:
             response = _http_complete(
                 messages, model=model, api_key=api_key, base_url=base_url,
-                timeout=timeout, max_tokens=MAX_TOKENS,
+                timeout=timeout,
             )
         else:
             response = client.complete(
                 messages, model=model, api_key=api_key, base_url=base_url,
-                timeout=timeout, max_tokens=MAX_TOKENS,
+                timeout=timeout,
             )
         text = _content(response)
     except HTTPError as exc:

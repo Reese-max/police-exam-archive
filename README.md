@@ -66,7 +66,7 @@ python scripts/rag/query.py "警察何時能攔人問身分" --db rag/index-e5.s
 可選擇以 `python scripts/rag/query.py "問題" --answer` 產生 AI 整理回答；HF Space 僅在設定
 `RAG_LLM_API_KEY` secret 時顯示獨立的回答按鈕，不會在一般搜尋時呼叫模型。可設定
 `RAG_LLM_BASE_URL`（預設 `https://api.minimax.io/v1`）、`RAG_LLM_MODEL`（預設
-`MiniMax-M3.1-Flash`）、`RAG_LLM_TIMEOUT`（預設 60 秒）及 Space 每小時上限
+`MiniMax-M3.1-Flash`）、`RAG_LLM_TIMEOUT`（預設 180 秒）、`RAG_LLM_REASONING_EFFORT`（預設 high，不設輸出 token 上限；實測 2～36 秒）及 Space 每小時上限
 `RAG_LLM_MAX_PER_HOUR`（預設 30 次）。回答僅能依本次檢索到的考題、答案狀態及現行條文，
 並須通過引用編號檢查；資料不足時不猜答。模型與費用來源為 MiniMax Token Plan，並與其他用途共用額度。
 
