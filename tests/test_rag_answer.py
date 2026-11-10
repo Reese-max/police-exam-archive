@@ -640,6 +640,29 @@ def test_chat_uncited_list_item_inside_a_lead_in_paragraph_is_supplement(evidenc
     assert result["supplement"] == "- 沒有依據的項目。"
 
 
+def test_chat_wrapped_list_item_is_judged_as_one_item(evidence, monkeypatch):
+    # Review t18: the citation sat on the indented second line, so the first line alone was moved away.
+    monkeypatch.setenv("RAG_LLM_API_KEY", "chat-key")
+    reply = "結論。[題1]\n\n- 第一點的前半句\n  後半句。[題1]\n- 沒有依據\n  折行也沒有。"
+
+    result = answer.generate_chat_answer("查詢", *evidence, client=FakeClient(reply))
+
+    assert result["grounded"] == "結論。[題1]\n\n- 第一點的前半句\n  後半句。[題1]"
+    assert result["supplement"] == "- 沒有依據\n  折行也沒有。"
+
+
+@pytest.mark.parametrize("item", ["(B) 沒有依據。", "（B）沒有依據。", "B. 沒有依據。", "B、沒有依據。",
+                                  "**(B)** 沒有依據。", "**B.** 沒有依據。"])
+def test_chat_option_line_without_citation_is_supplement(evidence, monkeypatch, item):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "chat-key")
+    reply = "(A) 有依據。[題1]\n" + item
+
+    result = answer.generate_chat_answer("查詢", *evidence, client=FakeClient(reply))
+
+    assert result["grounded"] == "(A) 有依據。[題1]"
+    assert result["supplement"] == item
+
+
 def test_search_web_disabled_without_url_and_does_not_call_urlopen(monkeypatch):
     monkeypatch.delenv("RAG_WEB_SEARCH_URL", raising=False)
     monkeypatch.setenv("RAG_LLM_API_KEY", "fake-web-key")
