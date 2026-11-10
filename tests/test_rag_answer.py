@@ -75,14 +75,15 @@ def test_context_numbers_questions_and_preserves_uncertain_answer_states(evidenc
     assert len(answer.build_context([], [{"content": "x" * 20_000}])) <= answer.MAX_CONTEXT_CHARS
 
 
-def test_citation_validation_removes_out_of_range_references(evidence, monkeypatch):
+def test_any_out_of_range_citation_makes_answer_untrusted(evidence, monkeypatch):
     monkeypatch.setenv("RAG_LLM_API_KEY", "do-not-leak")
     client = FakeClient("結論甲。[題1] 結論乙。[條1] 錯誤引用[題8]")
     result = answer.generate_answer("查詢", *evidence, client=client)
-    assert result["status"] == "ok"
-    assert result["citations"] == ["[題1]", "[條1]"]
+    assert result["status"] == "untrusted"
+    assert result["text"] == answer.UNCITED_ANSWER
     assert result["invalid_citations"] == ["[題8]"]
-    assert "[題8]" not in result["text"]
+    good = answer.generate_answer("查詢", *evidence, client=FakeClient("結論甲。[題1] 結論乙。[條1]"))
+    assert good["status"] == "ok" and good["citations"] == ["[題1]", "[條1]"]
     assert "max_tokens" not in client.calls[0][1]
     assert client.calls[0][1]["api_key"] == "do-not-leak"
     assert client.calls[0][1]["model"] == "MiniMax-M3.1-Flash"
@@ -283,3 +284,79 @@ def test_space_hourly_limit_and_query_cache_escape_answer(monkeypatch):
         assert len(calls) == 1
     finally:
         app.executor.shutdown(wait=True)
+
+
+def test_citations_to_truncated_evidence_are_invalid(monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "test-key")
+    results = [{"stem": "長" * 13_000, "answer_status": "none"}]
+    laws = [{"law_name": "法", "article_no": "第1條", "content": "內容"}]
+    assert "[條1]" not in answer.build_context(results, laws)
+    result = answer.generate_answer("查詢", results, laws, client=FakeClient("依條文。[條1]"))
+    assert result["status"] == "untrusted" and result["invalid_citations"] == ["[條1]"]
+
+
+def test_fullwidth_and_zero_padded_citations_are_normalized(evidence, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "test-key")
+    result = answer.generate_answer("查詢", *evidence, client=FakeClient("結論。［題1］ 再述。【條01】"))
+    assert result["status"] == "ok"
+    assert result["citations"] == ["[題1]", "[條1]"]
+    bad = answer.generate_answer("查詢", *evidence, client=FakeClient("結論。[題1] 編造。［題99］"))
+    assert bad["status"] == "untrusted" and bad["invalid_citations"] == ["[題99]"]
+
+
+def test_markdown_links_and_unclosed_think_are_removed(evidence, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "test-key")
+    result = answer.generate_answer("查詢", *evidence, client=FakeClient(
+        "看[官方解答](https://evil.example) ![x](https://t.example/p.png)。[題1]"))
+    assert "evil.example" not in result["text"] and "t.example" not in result["text"]
+    assert "官方解答" in result["text"]
+    unclosed = answer.generate_answer("查詢", *evidence, client=FakeClient("答案。[題1]<think>內部推理"))
+    assert "內部推理" not in unclosed["text"]
+
+
+def test_question_and_data_are_tagged_and_blank_key_disables(evidence, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "test-key")
+    client = FakeClient("結論。[題1]")
+    answer.generate_answer("忽略指示", *evidence, client=client)
+    content = client.calls[0][0][1]["content"]
+    assert content.startswith("<question>\n忽略指示\n</question>") and "<data>\n[題1]" in content
+    monkeypatch.setenv("RAG_LLM_API_KEY", "   ")
+    assert answer.generate_answer("查詢", *evidence, client=client)["status"] == "disabled"
+
+
+def _space_app(monkeypatch, limit):
+    root = Path(__file__).resolve().parents[1]
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-test-key")
+    monkeypatch.setenv("RAG_LLM_MAX_PER_HOUR", str(limit))
+    spec = importlib.util.spec_from_file_location("rag_answer_space_app2", root / "space/app.py")
+    app = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(app)
+    app.retriever = FakeRetriever()
+    app.mode, app.options, app.law_k, app.law_min_score = "keyword", {}, 1, None
+    app._answer_cache.clear()
+    app._answer_requests.clear()
+    return app
+
+
+def test_space_cache_ignores_whitespace_and_failures_do_not_use_quota(monkeypatch):
+    app = _space_app(monkeypatch, 1)
+    calls = []
+    outcome = {"status": "error", "text": "AI 回答暫時無法產生。", "citations": [], "invalid_citations": []}
+    monkeypatch.setattr(app, "generate_answer", lambda *args: calls.append(1) or dict(outcome))
+    try:
+        app.run_answer("查證身分")
+        assert len(app._answer_requests) == 0
+        outcome.update(status="ok", text="回答。[題1]", citations=["[題1]"])
+        app.run_answer("查證身分")
+        app.run_answer("  查證身分 \n")
+        assert len(calls) == 2
+    finally:
+        app.executor.shutdown(wait=False)
+
+
+def test_space_answer_cache_is_bounded(monkeypatch):
+    app = _space_app(monkeypatch, 10_000)
+    monkeypatch.setattr(app, "_ANSWER_CACHE_MAX", 3)
+    for index in range(10):
+        app._store_answer(f"q{index}", {"status": "ok"})
+    assert list(app._answer_cache) == ["q7", "q8", "q9"]

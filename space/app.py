@@ -41,6 +41,7 @@ _answer_cache = {}
 _answer_requests = deque()
 _answer_lock = Lock()
 _ANSWER_CACHE_SECONDS = 3600
+_ANSWER_CACHE_MAX = 500
 
 
 def _answer_limit():
@@ -191,18 +192,27 @@ def run_search(query):
     return _search_output(results, law_results, elapsed_ms, warning)
 
 
+def _store_answer(key, result):
+    with _answer_lock:
+        _answer_cache.pop(key, None)
+        _answer_cache[key] = (time.monotonic() + _ANSWER_CACHE_SECONDS, dict(result))
+        while len(_answer_cache) > _ANSWER_CACHE_MAX:
+            _answer_cache.pop(next(iter(_answer_cache)))
+
+
 def _cached_answer(query, results, laws):
     now = time.monotonic()
+    # Whitespace variants must not bypass the cache and spend shared quota.
+    key = " ".join(query.split())
     with _answer_lock:
-        cached = _answer_cache.get(query)
+        cached = _answer_cache.get(key)
         if cached and cached[0] > now:
             return dict(cached[1])
-        _answer_cache.pop(query, None)
+        _answer_cache.pop(key, None)
 
     if any(item.get("low_confidence") for item in results) and not laws:
         result = generate_answer(query, results, laws)
-        with _answer_lock:
-            _answer_cache[query] = (time.monotonic() + _ANSWER_CACHE_SECONDS, dict(result))
+        _store_answer(key, result)
         return result
 
     with _answer_lock:
@@ -219,8 +229,14 @@ def _cached_answer(query, results, laws):
         _answer_requests.append(now)
     result = generate_answer(query, results, laws)
     if result.get("status") in ("ok", "untrusted", "skipped", "disabled"):
+        _store_answer(key, result)
+    else:
+        # A failed provider call did not produce an answer; give the slot back.
         with _answer_lock:
-            _answer_cache[query] = (time.monotonic() + _ANSWER_CACHE_SECONDS, dict(result))
+            try:
+                _answer_requests.remove(now)
+            except ValueError:
+                pass
     return result
 
 
