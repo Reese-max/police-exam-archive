@@ -71,7 +71,7 @@ def _locate_question(record, paper):
         for value in record.get("options", {}).values()
         if isinstance(value, str)
     ]
-    option_keys = [key for key in option_keys if len(key) >= 8]
+    option_keys = [key for key in option_keys if key]
     stem_candidates = []
     option_candidates = []
     for question in paper.get("questions", []):
@@ -91,6 +91,190 @@ def _locate_question(record, paper):
     if len(option_candidates) == 1:
         return option_candidates[0], "options"
     return None, None
+
+
+def _paper_identity(url):
+    try:
+        query = parse_qs(urlsplit(url).query)
+    except (TypeError, ValueError):
+        return None
+    values = [query.get(key, []) for key in ("code", "c", "s")]
+    if any(len(items) != 1 or not items[0] for items in values):
+        return None
+    return tuple(items[0] for items in values)
+
+
+def _paper_structure_reasons(paper, answer_total):
+    if not paper or paper.get("error"):
+        return ["question_paper_unavailable"]
+    questions = paper.get("questions", [])
+    numbers = [item.get("number") for item in questions]
+    reasons = []
+    if numbers != list(range(1, len(numbers) + 1)):
+        reasons.append("question_numbers_not_contiguous")
+    if type(answer_total) is not int or answer_total <= 0:
+        reasons.append("official_answer_total_missing")
+    elif len(numbers) != answer_total:
+        reasons.append("question_count_mismatch")
+    return reasons
+
+
+def _alignment_location(record, paper):
+    stem = _normalize_question_text(record.get("stem", ""))
+    questions = paper.get("questions", [])
+    option_keys = [
+        _normalize_question_text(value)
+        for value in record.get("options", {}).values()
+        if isinstance(value, str)
+    ]
+    option_keys = [key for key in option_keys if key]
+    if len(stem) >= 12:
+        candidates = [
+            item for item in questions
+            if stem in _normalize_question_text(item.get("text", ""))
+        ]
+        if len(candidates) != 1:
+            return None, "stem_not_unique"
+        question = candidates[0]
+        raw_body = question.get("text", "")
+        question_number = question.get("number")
+        if type(question_number) is int:
+            raw_body = re.sub(
+                rf"^\s*{question_number}\s+", "", raw_body, count=1
+            )
+        body = _normalize_question_text(raw_body)
+        position = body.find(stem)
+        if position < 0:
+            return None, "stem_not_found"
+        if position >= 40:
+            return None, "stem_not_near_question_start"
+        option_candidates = [
+            item for item in questions
+            if sum(
+                key in _normalize_question_text(item.get("text", ""))
+                for key in option_keys
+            ) >= 2
+        ]
+        if option_candidates and question not in option_candidates:
+            return None, "stem_options_disagree"
+        return question, None
+
+    option_keys = [key for key in option_keys if key]
+    candidates = []
+    for question in questions:
+        body = _normalize_question_text(question.get("text", ""))
+        if sum(key in body for key in option_keys) >= 2:
+            candidates.append(question)
+    if len(candidates) != 1:
+        return None, "short_stem_options_not_unique"
+    return candidates[0], None
+
+
+def _alignment_results(records, results, source_answers, question_papers):
+    candidates_by_id = {}
+    comparable_by_paper = {}
+    totals_by_paper = {}
+    for record in records:
+        result = results[record["question_id"]]
+        sources = {item["path"]: item for item in record.get("sources", [])}
+        candidates = []
+        for question_number in result.get("question_numbers", []):
+            reasons = []
+            source = sources.get(question_number.get("path"), {})
+            answer_url = source.get("answer_pdf_url")
+            identity = _paper_identity(answer_url)
+            if identity is None:
+                reasons.append("paper_identity_missing")
+
+            parsed = source_answers.get(answer_url, {})
+            answer_total = parsed.get("total")
+            if identity is not None:
+                totals_by_paper.setdefault(identity, set()).add(answer_total)
+            paper = question_papers.get(question_number.get("question_url"))
+            reasons.extend(_paper_structure_reasons(paper, answer_total))
+
+            located, location_error = _alignment_location(record, paper or {})
+            if location_error:
+                reasons.append(location_error)
+            elif located["number"] != question_number.get("official_number"):
+                reasons.append("located_question_number_changed")
+
+            official = parsed.get("answers", {}).get(question_number.get("official_number"))
+            if not official or official.get("unresolved"):
+                reasons.append("official_answer_unavailable")
+
+            candidate = {
+                "question_number": question_number,
+                "identity": identity,
+                "official": official,
+                "reasons": reasons,
+            }
+            candidates.append(candidate)
+
+            if (identity is not None and not reasons
+                    and official and not official.get("corrected")
+                    and not official.get("free")
+                    and len(official.get("answers", [])) == 1
+                    and record.get("answer_status") == "normal"
+                    and record.get("answer") in ANSWER_CHOICES
+                and not record.get("answer_conflicts")):
+                matches = _archive_matches([record["answer"]], official)
+                paper_comparisons = comparable_by_paper.setdefault(identity, {})
+                official_number = question_number["official_number"]
+                paper_comparisons[official_number] = (
+                    paper_comparisons.get(official_number, True) and matches
+                )
+        candidates_by_id[record["question_id"]] = candidates
+
+    paper_reasons = {}
+    for identity, totals in totals_by_paper.items():
+        reasons = []
+        if len(totals) != 1:
+            reasons.append("official_answer_total_conflict")
+        comparisons = comparable_by_paper.get(identity, {})
+        if len(comparisons) < 5:
+            reasons.append("paper_too_few_comparable_questions")
+        elif sum(comparisons.values()) / len(comparisons) < 0.9:
+            reasons.append("paper_answer_consistency_below_0_9")
+        paper_reasons[identity] = reasons
+
+    alignment_by_id = {}
+    for record in records:
+        question_id = record["question_id"]
+        result = results[question_id]
+        candidates = candidates_by_id[question_id]
+        sources = {item["path"]: item for item in record.get("sources", [])}
+        for candidate in candidates:
+            if candidate["identity"] is not None:
+                candidate["reasons"].extend(paper_reasons.get(candidate["identity"], []))
+            question_number = candidate["question_number"]
+            reasons = sorted(set(candidate["reasons"]))
+            question_number["alignment_confirmed"] = not reasons
+            question_number["alignment_reason_codes"] = reasons
+            question_number["stem_prefix_40"] = record.get("stem", "")[:40]
+
+        expected_sources = sum(
+            bool(sources.get(occurrence.get("path"), {}).get("answer_pdf_url"))
+            for occurrence in record.get("appears_in", [])
+        )
+        reason_codes = sorted({
+            code for candidate in candidates for code in candidate["reasons"]
+        })
+        if len(candidates) < expected_sources:
+            reason_codes.append("source_alignment_missing")
+        signatures = {
+            (tuple(candidate["official"].get("answers", [])),
+             candidate["official"].get("free", False))
+            for candidate in candidates if candidate["official"]
+        }
+        if len(signatures) > 1:
+            reason_codes.append("official_answers_disagree")
+        confirmed = bool(candidates) and len(candidates) == expected_sources and not reason_codes
+        alignment_by_id[question_id] = {
+            "confirmed": confirmed,
+            "reason_codes": sorted(set(reason_codes)),
+        }
+    return alignment_by_id
 
 
 def _parse_notes(text):
@@ -238,10 +422,11 @@ class _OfficialRedirects(HTTPRedirectHandler):
 class MoexClient:
     """Rate-limited downloader; successful PDFs and not-found responses are cached."""
 
-    def __init__(self, cache_dir, *, interval=0.5, timeout=30):
+    def __init__(self, cache_dir, *, interval=0.5, timeout=30, offline=False):
         self.cache_dir = Path(cache_dir)
         self.interval = interval
         self.timeout = timeout
+        self.offline = offline
         self.last_request = None
         self.downloads = 0
         self.cache_hits = 0
@@ -262,6 +447,8 @@ class MoexClient:
             self.cache_hits += 1
             response = json.loads(response_path.read_text(encoding="utf-8"))
             return None, response.get("reason", "官方端點未回傳 PDF")
+        if self.offline:
+            return None, "離線模式下快取沒有此 PDF"
 
         error = None
         for attempt in range(4):
@@ -319,6 +506,7 @@ def _official_pdf_answers(url, client):
         numbers.update(modified["notes"])
     return {
         "answers": {number: _answer_record(number, standard, modified) for number in numbers},
+        "total": standard["total"],
         "urls": urls,
         "error": None,
     }
@@ -543,7 +731,10 @@ def _raw_corpus(corpus_path, source_map_path, root):
     return list(raw.values())
 
 
-def verify_corpus(corpus_path, source_map_path, cache_dir, root=Path("考古題庫")):
+def verify_corpus(
+    corpus_path, source_map_path, cache_dir, root=Path("考古題庫"), *,
+    offline=False,
+):
     corpus_path, source_map_path = Path(corpus_path), Path(source_map_path)
     corpus = _raw_corpus(corpus_path, source_map_path, root)
     source_map = json.loads(source_map_path.read_text(encoding="utf-8-sig"))
@@ -561,7 +752,7 @@ def verify_corpus(corpus_path, source_map_path, cache_dir, root=Path("考古題�
     choices = [record for record in corpus if record.get("type") == "choice"]
     urls = sorted({source.get("answer_pdf_url") for record in choices
                    for source in record.get("sources", []) if source.get("answer_pdf_url")})
-    client = MoexClient(cache_dir)
+    client = MoexClient(cache_dir, offline=offline)
     source_answers = {}
     for index, url in enumerate(urls, 1):
         try:
@@ -594,24 +785,33 @@ def verify_corpus(corpus_path, source_map_path, cache_dir, root=Path("考古題�
         if index % 25 == 0 or index == len(question_urls):
             print(f"[MOEX] 已檢查試題 PDF {index}/{len(question_urls)}", flush=True)
 
+    results = {
+        record["question_id"]: _classify_record(record, source_answers, question_papers)
+        for record in choices
+    }
+    alignments = _alignment_results(choices, results, source_answers, question_papers)
     details, overrides, unresolved = [], {}, {}
     counts = Counter()
     renumbered_count = 0
     renumbered_occurrence_count = 0
+    alignment_confirmed_renumbered_count = 0
     verifiable = 0
     correct = 0
     for record in choices:
-        result = _classify_record(record, source_answers, question_papers)
+        result = results[record["question_id"]]
+        alignment = alignments[record["question_id"]]
         classification = result["classification"]
         counts[classification] += 1
         renumbered_count += bool(result.get("renumbered"))
+        alignment_confirmed_renumbered_count += (
+            bool(result.get("renumbered")) and alignment["confirmed"]
+        )
         renumbered_occurrence_count += sum(
             item["archive_number"] != item["official_number"]
             for item in result.get("question_numbers", [])
         )
-        # shortcut: question-number alignment from PDF text is heuristic (group/page headers
-        # mislead it), so renumbered records never count as verified nor get overridden.
-        if result.get("verifiable") and not result.get("renumbered"):
+        if (result.get("verifiable")
+                and (not result.get("renumbered") or alignment["confirmed"])):
             verifiable += 1
             correct += classification in ("match", "renumbered")
         if classification == "match" and not result.get("renumbered"):
@@ -621,6 +821,8 @@ def verify_corpus(corpus_path, source_map_path, cache_dir, root=Path("考古題�
             "question_id": record["question_id"],
             "classification": classification,
             "renumbered": bool(result.get("renumbered")),
+            "alignment_confirmed": alignment["confirmed"],
+            "alignment_reason_codes": alignment["reason_codes"],
             "question_numbers": result.get("question_numbers", []),
             "archive_answer": {
                 "answer": record.get("answer"),
@@ -638,8 +840,17 @@ def verify_corpus(corpus_path, source_map_path, cache_dir, root=Path("考古題�
         # Conflicting archive answers are only replaced when every appearance has an official key.
         partly_unverified = bool(record.get("answer_conflicts")) and any(
             not source.get("answer_pdf_url") for source in record.get("sources", []))
-        if (classification in ("corrected", "mismatch") and official
-                and not result.get("renumbered") and not partly_unverified):
+        safe_to_override = bool(official) and (
+            (
+                classification in ("corrected", "mismatch")
+                and not result.get("renumbered") and not partly_unverified
+            )
+            or (
+                classification == "mismatch" and result.get("renumbered")
+                and alignment["confirmed"] and not partly_unverified
+            )
+        )
+        if safe_to_override:
             overrides[record["question_id"]] = {
                 "answer": (official["answers"][0] if len(official["answers"]) == 1 else None),
                 "answer_status": ("free" if official["free"] else
@@ -658,6 +869,15 @@ def verify_corpus(corpus_path, source_map_path, cache_dir, root=Path("考古題�
                 "answer_conflicts": _conflicts_for_unresolved(record, result),
             }
 
+    new_renumbered_overrides = {
+        question_id: item for question_id, item in overrides.items()
+        if any(
+            detail["question_id"] == question_id and detail["renumbered"]
+            and detail["alignment_confirmed"]
+            for detail in details
+        )
+    }
+
     summary = {
         "choice_question_count": len(choices),
         "counts": {name: counts[name] for name in CLASSES},
@@ -665,7 +885,12 @@ def verify_corpus(corpus_path, source_map_path, cache_dir, root=Path("考古題�
         "correct_rate": (correct / verifiable if verifiable else None),
         "renumbered_count": renumbered_count,
         "renumbered_occurrence_count": renumbered_occurrence_count,
+        "alignment_confirmed_renumbered_count": alignment_confirmed_renumbered_count,
+        "alignment_unconfirmed_renumbered_count": (
+            renumbered_count - alignment_confirmed_renumbered_count
+        ),
         "override_count": len(overrides),
+        "new_renumbered_override_count": len(new_renumbered_overrides),
         "unresolved_mismatch_count": sum(
             item["classification"] == "mismatch"
             for item in details if item["question_id"] in unresolved
@@ -701,6 +926,8 @@ def main(argv=None):
     parser.add_argument("--cache", type=Path, default=Path("rag/.answer_cache"))
     parser.add_argument("--audit", type=Path, default=Path("rag/answer_audit.json"))
     parser.add_argument("--overrides", type=Path, default=Path("rag/answer_overrides.json"))
+    parser.add_argument("--offline", action="store_true",
+                        help="只使用快取；缺少 PDF 時標記為無法確認，不連網")
     args = parser.parse_args(argv)
     if not args.corpus.exists():
         if __package__:
@@ -708,10 +935,14 @@ def main(argv=None):
         else:
             from build_corpus import main as build_corpus_main
         build_corpus_main(["--out", str(args.corpus), "--source-map", str(args.source_map)])
-    audit, overrides = verify_corpus(args.corpus, args.source_map, args.cache, args.root)
+    audit, overrides = verify_corpus(
+        args.corpus, args.source_map, args.cache, args.root,
+        offline=args.offline,
+    )
     for path, data in ((args.audit, audit), (args.overrides, overrides)):
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        with path.open("w", encoding="utf-8", newline="\n") as output:
+            output.write(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(audit["summary"], ensure_ascii=False, indent=2))
 
 

@@ -5,8 +5,8 @@ from pathlib import Path
 from scripts.rag.build_corpus import build_corpus, question_id
 from scripts.rag.query import format_results
 from scripts.rag.verify_answers import (
-    _classify_record, _locate_question, _question_segments, _raw_corpus, parse_answer_text,
-    verify_corpus,
+    _alignment_location, _classify_record, _locate_question, _paper_structure_reasons,
+    _question_segments, _raw_corpus, parse_answer_text, verify_corpus,
 )
 
 
@@ -173,9 +173,258 @@ def test_short_stem_uses_options_for_unique_question_location():
     located, method = _locate_question(record, paper)
     assert located["number"] == 54
     assert method == "options"
+    aligned, reason = _alignment_location(record, paper)
+    assert aligned["number"] == 54
+    assert reason is None
+    ambiguous, reason = _alignment_location(
+        record, {"questions": [paper["questions"][1], {
+            "number": 55, "text": "55 " + " ".join(record["options"].values()),
+        }]}
+    )
+    assert ambiguous is None
+    assert reason == "short_stem_options_not_unique"
     assert [item["number"] for item in _question_segments(
         "測驗題部分：\n1 first question\n\n2 second question\n\n21 內容中的第21組"
     )] == [1, 2]
+
+
+def test_alignment_rejects_discontinuous_or_incomplete_question_papers():
+    discontinuous = {"questions": [
+        {"number": 1, "text": "1 first"},
+        {"number": 2, "text": "2 second"},
+        {"number": 4, "text": "4 fourth"},
+    ]}
+    assert "question_numbers_not_contiguous" in _paper_structure_reasons(
+        discontinuous, 3
+    )
+    incomplete = {"questions": [
+        {"number": 1, "text": "1 first"},
+        {"number": 2, "text": "2 second"},
+    ]}
+    assert _paper_structure_reasons(incomplete, 3) == ["question_count_mismatch"]
+
+
+def test_alignment_rejects_stem_that_only_appears_mid_paragraph():
+    stem = "A sufficiently long question stem for official alignment."
+    question = {"number": 4, "text": "4 " + ("context " * 8) + stem}
+    located, reason = _alignment_location({"stem": stem}, {"questions": [question]})
+    assert located is None
+    assert reason == "stem_not_near_question_start"
+
+
+def test_alignment_preserves_leading_year_after_removing_question_number():
+    stem = "109年警察人員考試法規適用題目如下"
+    question = {"number": 1, "text": "1 " + stem}
+    located, reason = _alignment_location({"stem": stem}, {"questions": [question]})
+    assert located is question
+    assert reason is None
+
+
+def test_alignment_rejects_passage_prompt_when_options_identify_another_question():
+    record = {
+        "stem": "Please answer questions 26 through 30 based on the following passage.",
+        "options": {"A": "the unmistakable first answer choice",
+                    "B": "the unmistakable second answer choice"},
+    }
+    paper = {"questions": [
+        {"number": 25, "text": "25 prior choices " + record["stem"] + " shared passage"},
+        {"number": 28, "text": "28 " + " ".join(record["options"].values())},
+    ]}
+    located, reason = _alignment_location(record, paper)
+    assert located is None
+    assert reason == "stem_options_disagree"
+
+
+def _verify_synthetic_paper(
+    tmp_path, monkeypatch, answers, archived_answers, *,
+    archive_number_for_first=1, duplicate_last_with_answer=None,
+    unverified_conflict_first=False,
+):
+    import scripts.rag.verify_answers as verifier
+
+    count = len(answers)
+    url = "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=507&s=0207"
+    question_url = url.replace("t=S", "t=Q")
+    records = []
+    entries = {}
+    questions = []
+    for number in range(1, count + 1):
+        path = f"甲/106年/科目{number}"
+        stem = f"Question stem number {number} with enough identifying text."
+        question_number = (archive_number_for_first if number == 1 else number)
+        record = {
+            "question_id": f"synthetic-{number}", "type": "choice", "stem": stem,
+            "options": {"A": f"option alpha for question {number}",
+                        "B": f"option beta for question {number}"},
+            "answer": archived_answers[number - 1], "answer_status": "normal",
+            "appears_in": [{"path": path, "number": question_number}],
+            "sources": [{"path": path, "answer_pdf_url": url,
+                         "question_pdf_url": question_url}],
+        }
+        if number == 1 and unverified_conflict_first:
+            unverified_path = "乙/106年/未驗證"
+            record["answer_conflicts"] = [{"value": "C", "paths": [path]}]
+            record["appears_in"].append({
+                "path": unverified_path, "number": question_number,
+            })
+            record["sources"].append({"path": unverified_path})
+        records.append(record)
+        entries[path] = {"answer_pdf_url": url, "question_pdf_url": question_url}
+        option_text = " ".join(record["options"].values())
+        questions.append({
+            "number": number, "text": f"{number} {stem} {option_text}",
+        })
+
+    if duplicate_last_with_answer is not None:
+        duplicate = dict(records[-1])
+        duplicate["question_id"] = "synthetic-duplicate-last"
+        duplicate["answer"] = duplicate_last_with_answer
+        records.append(duplicate)
+
+    class FakeClient:
+        downloads = cache_hits = errors = 0
+
+        def __init__(self, *_args, **_kwargs):
+            pass
+
+    monkeypatch.setattr(verifier, "MoexClient", FakeClient)
+    monkeypatch.setattr(verifier, "_raw_corpus", lambda *_args: records)
+    monkeypatch.setattr(verifier, "_official_pdf_answers", lambda *_args: {
+        "answers": {
+            number: {"answers": [answer], "free": False, "corrected": False,
+                     "unresolved": False}
+            for number, answer in enumerate(answers, 1)
+        },
+        "total": count, "urls": [url], "error": None,
+    })
+    monkeypatch.setattr(verifier, "_official_question_paper", lambda *_args: {
+        "questions": questions, "parsed": True,
+    })
+    source_map = tmp_path / "source_map.json"
+    source_map.write_text(json.dumps({"entries": entries}), encoding="utf-8")
+    corpus = tmp_path / "corpus.jsonl"
+    corpus.write_text("", encoding="utf-8")
+    return verify_corpus(corpus, source_map, tmp_path / "cache")
+
+
+def test_duplicate_question_ids_count_once_for_paper_consistency(tmp_path, monkeypatch):
+    audit, _ = _verify_synthetic_paper(
+        tmp_path, monkeypatch, ["A"] * 9, ["A"] * 8 + ["B"],
+        duplicate_last_with_answer="A",
+    )
+    detail = next(item for item in audit["details"]
+                  if item["question_id"] == "synthetic-9")
+    assert detail["alignment_confirmed"] is False
+    assert "paper_answer_consistency_below_0_9" in detail["alignment_reason_codes"]
+
+
+def test_unverified_conflicting_renumbered_answer_is_not_overridden(tmp_path, monkeypatch):
+    audit, overrides = _verify_synthetic_paper(
+        tmp_path, monkeypatch, ["A"] * 11, ["B"] + ["A"] * 10,
+        archive_number_for_first=41, unverified_conflict_first=True,
+    )
+    detail = next(item for item in audit["details"]
+                  if item["question_id"] == "synthetic-1")
+    assert detail["classification"] == "mismatch"
+    assert detail["alignment_confirmed"] is True
+    assert "synthetic-1" not in overrides["overrides"]
+    assert "synthetic-1" in overrides["unresolved"]
+
+
+def test_low_paper_answer_consistency_blocks_renumbered_override(tmp_path, monkeypatch):
+    audit, overrides = _verify_synthetic_paper(
+        tmp_path, monkeypatch, ["A"] * 5, ["B", "B", "A", "A", "A"],
+        archive_number_for_first=41,
+    )
+    detail = next(item for item in audit["details"]
+                  if item["question_id"] == "synthetic-1")
+    assert detail["alignment_confirmed"] is False
+    assert "paper_answer_consistency_below_0_9" in detail["alignment_reason_codes"]
+    assert "synthetic-1" not in overrides["overrides"]
+    assert "synthetic-1" in overrides["unresolved"]
+
+
+def test_confirmed_renumbered_mismatch_uses_official_answer(tmp_path, monkeypatch):
+    audit, overrides = _verify_synthetic_paper(
+        tmp_path, monkeypatch, ["A"] * 11, ["B"] + ["A"] * 10,
+        archive_number_for_first=41,
+    )
+    detail = next(item for item in audit["details"]
+                  if item["question_id"] == "synthetic-1")
+    assert detail["classification"] == "mismatch"
+    assert detail["alignment_confirmed"] is True
+    assert detail["alignment_reason_codes"] == []
+    assert overrides["overrides"]["synthetic-1"]["answer"] == "A"
+    assert "synthetic-1" not in overrides["unresolved"]
+    assert audit["summary"]["new_renumbered_override_count"] == 1
+
+
+def test_nonrenumbered_mismatch_override_does_not_require_alignment(tmp_path, monkeypatch):
+    audit, overrides = _verify_synthetic_paper(
+        tmp_path, monkeypatch, ["A"], ["B"],
+    )
+    detail = next(item for item in audit["details"]
+                  if item["question_id"] == "synthetic-1")
+    assert detail["classification"] == "mismatch"
+    assert detail["renumbered"] is False
+    assert detail["alignment_confirmed"] is False
+    assert overrides["overrides"]["synthetic-1"]["answer"] == "A"
+
+
+def test_main_does_not_retain_stale_override_from_disk(tmp_path, monkeypatch):
+    import scripts.rag.verify_answers as verifier
+
+    url = ("https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx"
+           "?t=S&code=106130&c=507&s=0207")
+    question_url = url.replace("t=S", "t=Q")
+    path = "甲/106年/科目"
+    stem = "A sufficiently long question stem for stale override testing."
+    record = {
+        "question_id": "stale-override", "type": "choice", "stem": stem,
+        "answer": "A", "answer_status": "normal",
+        "appears_in": [{"path": path, "number": 1}],
+        "sources": [{"path": path, "answer_pdf_url": url,
+                     "question_pdf_url": question_url}],
+    }
+
+    class FakeClient:
+        downloads = cache_hits = errors = 0
+
+        def __init__(self, *_args, **_kwargs):
+            pass
+
+    monkeypatch.setattr(verifier, "MoexClient", FakeClient)
+    monkeypatch.setattr(verifier, "_raw_corpus", lambda *_args: [record])
+    monkeypatch.setattr(verifier, "_official_pdf_answers", lambda *_args: {
+        "answers": {1: {
+            "answers": ["A"], "free": False, "corrected": False, "unresolved": False,
+        }},
+        "total": 1, "urls": [url], "error": None,
+    })
+    monkeypatch.setattr(verifier, "_official_question_paper", lambda *_args: {
+        "questions": [{"number": 1, "text": f"1 {stem}"}], "parsed": True,
+    })
+
+    corpus = tmp_path / "corpus.jsonl"
+    corpus.write_text("", encoding="utf-8")
+    source_map = tmp_path / "source_map.json"
+    source_map.write_text(json.dumps({"entries": {path: {
+        "answer_pdf_url": url, "question_pdf_url": question_url,
+    }}}), encoding="utf-8")
+    audit_path = tmp_path / "answer_audit.json"
+    overrides_path = tmp_path / "answer_overrides.json"
+    overrides_path.write_text(json.dumps({
+        "overrides": {"stale-override": {"answer": "B"}},
+    }), encoding="utf-8")
+
+    verifier.main([
+        "--corpus", str(corpus), "--root", str(tmp_path / "archive"),
+        "--source-map", str(source_map), "--cache", str(tmp_path / "cache"),
+        "--audit", str(audit_path), "--overrides", str(overrides_path), "--offline",
+    ])
+
+    written = json.loads(overrides_path.read_text(encoding="utf-8"))
+    assert written["overrides"] == {}
 
 
 def test_unaligned_question_is_not_overridden_and_becomes_conflict(tmp_path, monkeypatch):
