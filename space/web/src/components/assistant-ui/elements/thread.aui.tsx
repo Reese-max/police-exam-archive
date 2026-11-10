@@ -68,6 +68,7 @@ import {
 import {
   createContext,
   useContext,
+  useEffect,
   useLayoutEffect,
   useRef,
   useState,
@@ -578,7 +579,27 @@ const MessageError: FC = () => {
   );
 };
 
+// Seconds since this answer started; mounted only while it is being generated.
+const Elapsed: FC = () => {
+  const [seconds, setSeconds] = useState(0);
+  useEffect(() => {
+    const start = Date.now();
+    const timer = setInterval(
+      () => setSeconds(Math.round((Date.now() - start) / 1000)),
+      1000,
+    );
+    return () => clearInterval(timer);
+  }, []);
+  // aria-hidden: a screen reader should not announce every second.
+  return (
+    <p aria-hidden className="text-muted-foreground mt-1 text-sm tabular-nums">
+      已等候 {seconds} 秒
+    </p>
+  );
+};
+
 const AssistantMessage: FC = () => {
+  const running = useAuiState((s) => s.message.status?.type === "running");
   const {
     ToolFallback: ToolFallbackComponent = ToolFallback,
     ToolGroup,
@@ -671,6 +692,7 @@ const AssistantMessage: FC = () => {
             }
           }}
         </MessagePrimitive.GroupedParts>
+        {running && <Elapsed />}
         <MessageError />
       </div>
 
