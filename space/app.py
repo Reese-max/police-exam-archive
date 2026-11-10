@@ -280,10 +280,13 @@ def _safe_model_text(value):
     return escape(MARKDOWN_LINK.sub(_unlink, str(value or "")))
 
 
-def _chat_sources(results, laws):
-    if not results and not laws:
+def _chat_sources(results, laws, web=()):
+    if not results and not laws and not web:
         return None
-    title = f"檢索到的考題與條文（{len(results)} 題、{len(laws)} 條）"
+    title = f"檢索到的考題與條文（{len(results)} 題、{len(laws)} 條"
+    if web:
+        title += f"、網路 {len(web)} 筆"
+    title += "）"
     pieces = []
     questions = _render_questions(results, include_notice=False, include_numbers=True)
     if results:
@@ -291,6 +294,20 @@ def _chat_sources(results, laws):
     statutes = render_laws(laws, include_numbers=True)
     if statutes:
         pieces.append(statutes)
+    if web:
+        lines = ["## 網路搜尋結果（非官方來源）"]
+        for index, item in enumerate(web, 1):
+            safe_url = quote(str(item.get("url") or ""), safe=":/?&=%#-._~+;,")
+            web_title = _safe_model_text(item.get("title"))
+            date = _safe_model_text(item.get("date")).strip()
+            snippet = _safe_model_text(item.get("snippet"))
+            if date:
+                web_title += f"（{date}）"
+            # Labels keep untrusted text from starting a line as "## " or "[條n]" (would break/spoof source pop-ups).
+            lines.extend(["", f"[網{index}]", "",
+                          f"標題：{web_title}", "", f"摘要：{snippet}", "",
+                          f"[開啟來源網頁]({safe_url})"])
+        pieces.append("  \n".join(lines))
     return {"role": "assistant", "content": "\n\n".join(pieces),
             "metadata": {"title": title}}
 
@@ -342,9 +359,13 @@ def chat(message, history):
         message, results, law_results, history=conversation, use_cache=not conversation
     )
     if answer_result.get("status") == "ok":
+        web = answer_result.get("web") or []
         parts = []
         if answer_result.get("grounded"):
             parts.append(_safe_model_text(answer_result["grounded"]))
+        if any(isinstance(citation, str) and citation.startswith("[網")
+               for citation in answer_result.get("citations") or []):
+            parts.append("🌐 標示 [網n] 的內容來自網路搜尋摘要，不是官方來源，請點開來源核對。")
         if answer_result.get("supplement"):
             parts.append(
                 "⚠️ 以下不是出自題庫或法條，是 AI 依自身知識回答，未經查證；"
@@ -352,10 +373,13 @@ def chat(message, history):
                 + _safe_model_text(answer_result["supplement"])
             )
         messages[-1] = {"role": "assistant", "content": "\n\n".join(parts)}
-        if not _low_confidence_without_laws(results, law_results):
-            # Number only what the model was given, so [題n]/[條n] match the answer.
+        low_confidence_without_laws = _low_confidence_without_laws(results, law_results)
+        if not low_confidence_without_laws or web:
+            # Number only what the model was given, so citation ids match the answer.
             seen = answer_result.get("included") or {"題": len(results), "條": len(law_results)}
-            source_message = _chat_sources(results[:seen["題"]], law_results[:seen["條"]])
+            source_results = [] if low_confidence_without_laws else results[:seen["題"]]
+            source_laws = [] if low_confidence_without_laws else law_results[:seen["條"]]
+            source_message = _chat_sources(source_results, source_laws, web=web)
             if source_message:
                 messages.append(source_message)
     else:

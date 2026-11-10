@@ -202,6 +202,9 @@ const defaultComponents = memoizeMarkdownComponents({
           className,
         )}
         href={href}
+        // The app runs in an iframe: a same-frame link would replace the chat.
+        target="_blank"
+        rel="noopener noreferrer"
         {...props}
       />
     );
