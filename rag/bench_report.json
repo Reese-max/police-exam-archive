@@ -790,7 +790,8 @@
       "phrase_priority": true,
       "rrf_k": 20,
       "vector_weight": 1.0,
-      "min_vector_score": 0.555
+      "min_vector_score": 0.555,
+      "law_min_vector_score": 0.48
     },
     "db": "rag/index-bge-m3.sqlite",
     "metrics": {
@@ -819,5 +820,23 @@
     }
   },
   "selection_reason": "Highest Recall@5 above keyword with CPU p95 <= 500ms; ties: MRR, p95, model/name.",
-  "status": "measured"
+  "status": "measured",
+  "law_retrieval": {
+    "eval_set": "rag/eval_laws.jsonl",
+    "n": 80,
+    "laws_data_date": "2026/10/30",
+    "articles": 4201,
+    "metrics": {
+      "R@1": 0.65,
+      "R@3": 0.825,
+      "R@5": 0.8625,
+      "MRR": 0.741
+    },
+    "law_min_vector_score": 0.48,
+    "threshold_calibration": {
+      "legal_queries_hidden": 0.0,
+      "offtopic_queries_hidden": 0.85,
+      "note": "threshold chosen on eval_laws.jsonl and eval_offtopic.jsonl top-1 law cosine; legal min 0.501, off-topic median 0.444"
+    }
+  }
 }

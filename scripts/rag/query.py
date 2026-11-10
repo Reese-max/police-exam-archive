@@ -35,6 +35,33 @@ def _one_line(value):
     return " ".join(str(value).split())
 
 
+def is_official_law_url(url):
+    if not isinstance(url, str) or not url.startswith("https://law.moj.gov.tw/"):
+        return False
+    try:
+        parsed = urlsplit(url)
+    except (TypeError, ValueError):
+        return False
+    return (parsed.scheme == "https" and parsed.netloc == "law.moj.gov.tw"
+            and parsed.path.startswith("/LawClass/") and bool(parsed.query))
+
+
+def format_law_modified_date(value):
+    if not isinstance(value, str) or len(value) != 8 or not value.isdecimal():
+        return "日期未提供"
+    year, month, day = int(value[:4]) - 1911, int(value[4:6]), int(value[6:])
+    if year <= 0 or not 1 <= month <= 12 or not 1 <= day <= 31:
+        return "日期未提供"
+    return f"民國{year}年{month}月{day}日"
+
+
+def truncate_law_content(content, limit=300):
+    content = str(content or "")
+    if len(content) <= limit:
+        return content
+    return content[:limit].rstrip() + "…（內容已截斷）"
+
+
 def is_legal_subject(subject):
     return isinstance(subject, str) and any(term in subject for term in ("法", "警察", "勤務", "偵查", "消防", "交通", "移民", "國境", "實務"))
 
@@ -63,7 +90,23 @@ def group_citations(citations):
     return list(groups.values())
 
 
-def format_results(results, *, include_notice=True):
+def format_laws(laws):
+    if not laws:
+        return ""
+    lines = ["相關現行條文"]
+    for law in laws:
+        lines.extend([
+            "",
+            f"{_one_line(law.get('law_name'))} {_one_line(law.get('article_no'))}"
+            f"（法規最後修正：{format_law_modified_date(law.get('law_modified_date'))}）",
+            "條文內容：" + truncate_law_content(law.get("content", "")),
+        ])
+        if is_official_law_url(law.get("url")):
+            lines.append(f"[全國法規資料庫]({quote(law['url'], safe=':/?&=%#-._~+;,')})")
+    return "\n".join(lines)
+
+
+def format_results(results, *, include_notice=True, laws=None):
     lines = []
     if include_notice and any(item.get("low_confidence") for item in results):
         lines.extend([LOW_CONFIDENCE_NOTICE, ""])
@@ -137,7 +180,9 @@ def format_results(results, *, include_notice=True):
         if len(citations) > len(visible):
             lines.append(f"另有 {len(citations) - len(visible)} 筆出處（完整內容見 --json）")
         lines.append("")
-    return "\n".join(lines).rstrip() if results else "查無符合題目。"
+    questions = "\n".join(lines).rstrip() if results else "查無符合題目。"
+    law_text = format_laws(laws or [])
+    return questions + ("\n\n" + law_text if law_text else "")
 
 
 def main(argv=None):
@@ -146,6 +191,7 @@ def main(argv=None):
     parser.add_argument("-k", type=int, default=5)
     parser.add_argument("--db", type=Path, default=Path("rag/index.sqlite"))
     parser.add_argument("--mode", choices=("hybrid", "keyword", "vector"), default="hybrid")
+    parser.add_argument("--law-k", type=int, default=3, help="顯示相關現行條文數；0 關閉")
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--device", choices=("auto", "cpu", "cuda"), default="auto")
     add_search_arguments(parser)
@@ -159,13 +205,20 @@ def main(argv=None):
         if getattr(args, "use_reranker", False):
             options["reranker"] = load_reranker(args.device)
         results = retriever.search(args.query, k=args.k, mode=args.mode, **options)
+        if args.law_k < 0:
+            raise ValueError("--law-k 不可小於 0")
+        law_options = {key: options[key] for key in (
+            "keyword_weight", "vector_weight", "rrf_k", "candidates", "expand_abbreviations"
+        )}
+        law_options["min_vector_score"] = args.law_min_vector_score
+        laws = retriever.search_laws(args.query, k=args.law_k, **law_options) if args.law_k else []
     except (ValueError, RuntimeError, OSError, sqlite3.Error) as exc:
         parser.exit(1, f"查詢失敗：{exc}\n")
     finally:
         if retriever is not None:
             retriever.close()
-    print(json.dumps(results, ensure_ascii=False, sort_keys=True, indent=2)
-          if args.json else format_results(results))
+    print(json.dumps({"results": results, "laws": laws}, ensure_ascii=False, sort_keys=True, indent=2)
+          if args.json else format_results(results, laws=laws))
 
 
 if __name__ == "__main__":

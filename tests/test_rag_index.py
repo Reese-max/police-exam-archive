@@ -74,6 +74,27 @@ def test_incremental_and_noop_does_not_load_model(tmp_path):
         assert connection.execute("SELECT count(*) FROM question_fts").fetchone()[0] == 0
 
 
+def test_build_without_laws_preserves_existing_law_tables_and_hash(tmp_path):
+    corpus, laws, db = tmp_path / "corpus.jsonl", tmp_path / "laws.jsonl", tmp_path / "index.sqlite"
+    write_corpus(corpus, [document()])
+    law = {
+        "id": "law:A1234567:6", "law_name": "測試法", "pcode": "A1234567",
+        "article_no": "第6條", "chapter": "第一章", "content": "原有法條",
+        "law_modified_date": "20251006",
+        "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A1234567&flno=6",
+    }
+    laws.write_text(json.dumps(law, ensure_ascii=False) + "\n", encoding="utf-8")
+    build_index(corpus, db, embed=False, laws=laws)
+    with sqlite3.connect(db) as connection:
+        before = connection.execute("SELECT * FROM law_articles").fetchall()
+        digest = connection.execute("SELECT value FROM meta WHERE key='laws_sha256'").fetchone()[0]
+
+    build_index(corpus, db, embed=False)
+    with sqlite3.connect(db) as connection:
+        assert connection.execute("SELECT * FROM law_articles").fetchall() == before
+        assert connection.execute("SELECT value FROM meta WHERE key='laws_sha256'").fetchone()[0] == digest
+
+
 def test_citation_only_change_updates_doc_without_embedding(tmp_path):
     corpus, db = tmp_path / "corpus.jsonl", tmp_path / "index.sqlite"
     fake = FakeEmbedder()

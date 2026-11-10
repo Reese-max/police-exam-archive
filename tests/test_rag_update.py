@@ -326,6 +326,39 @@ for statement in ('PRAGMA journal_mode=WAL', 'BEGIN IMMEDIATE'):
     monkeypatch.setattr(update_index, "replacement_guard", guard)
     assert update(root, db, embedder_factory=lambda _: FakeEmbedder())["index_changed"]
     assert probes == ["locked", "locked"]
+
+
+def test_incremental_update_preserves_existing_law_tables(tmp_path, monkeypatch):
+    root, db, _ = legacy_update_fixture(tmp_path, monkeypatch, disputed=False)
+    with closing(sqlite3.connect(db)) as connection, connection:
+        connection.execute(
+            "CREATE TABLE law_articles (id TEXT PRIMARY KEY, law_name TEXT NOT NULL, "
+            "pcode TEXT NOT NULL, article_no TEXT NOT NULL, chapter TEXT NOT NULL, "
+            "content TEXT NOT NULL, law_modified_date TEXT NOT NULL, url TEXT NOT NULL)"
+        )
+        connection.execute(
+            "CREATE VIRTUAL TABLE law_fts USING fts5(article_id UNINDEXED, text, tokenize='trigram')"
+        )
+        connection.execute(
+            "CREATE TABLE law_vectors (article_id TEXT PRIMARY KEY, embedding BLOB NOT NULL)"
+        )
+        article = ("law:A1234567:6", "測試法", "A1234567", "第6條", "第一章",
+                   "警察查證身分", "20251006",
+                   "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A1234567&flno=6")
+        connection.execute("INSERT INTO law_articles VALUES (?, ?, ?, ?, ?, ?, ?, ?)", article)
+        connection.execute("INSERT INTO law_fts(article_id, text) VALUES (?, ?)", (article[0], article[5]))
+        connection.execute("INSERT INTO law_vectors VALUES (?, ?)", (article[0], b"law-vector"))
+        connection.execute("INSERT INTO meta VALUES ('laws_sha256', ?)", (json.dumps("a" * 64),))
+
+    result = update(root, db, embedder_factory=lambda _: pytest.fail("metadata-only update must not encode"))
+    assert result["index_changed"]
+    with closing(sqlite3.connect(db)) as connection:
+        assert connection.execute("SELECT * FROM law_articles").fetchone() == article
+        assert connection.execute("SELECT * FROM law_fts").fetchone()[1] == "警察查證身分"
+        assert connection.execute("SELECT embedding FROM law_vectors").fetchone()[0] == b"law-vector"
+        assert json.loads(connection.execute(
+            "SELECT value FROM meta WHERE key='laws_sha256'"
+        ).fetchone()[0]) == "a" * 64
     with closing(sqlite3.connect(db)) as connection:
         assert connection.execute("PRAGMA journal_mode").fetchone()[0] != "wal"
         assert connection.execute("SELECT count(*) FROM questions").fetchone() == (1,)

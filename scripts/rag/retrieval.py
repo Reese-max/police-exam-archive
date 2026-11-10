@@ -120,6 +120,7 @@ def add_search_arguments(parser):
     parser.add_argument("--rrf-k", type=int, default=60)
     parser.add_argument("--candidates", type=int, default=50)
     parser.add_argument("--min-vector-score", type=float, default=None)
+    parser.add_argument("--law-min-vector-score", type=float, default=None)
     parser.add_argument("--phrase-priority", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--expand-abbreviations", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--profile", type=Path, help="Use bench_report.json selected_default; explicit flags override it")
@@ -293,18 +294,28 @@ def like_pattern(text):
 
 
 def keyword_search(connection, query, limit):
+    return _keyword_search(connection, query, limit, "question_fts", "question_id")
+
+
+def law_keyword_search(connection, query, limit):
+    return _keyword_search(connection, query, limit, "law_fts", "article_id")
+
+
+def _keyword_search(connection, query, limit, table, id_column):
+    if (table, id_column) not in (("question_fts", "question_id"), ("law_fts", "article_id")):
+        raise ValueError("不支援的 FTS 索引")
     query = normalize_text(query).strip().strip(",;:?!，；：？！")
     if not query or limit <= 0:
         return []
     if len(query) < 3:
         return connection.execute(
-            "SELECT question_id, 0.0 FROM question_fts WHERE text LIKE ? ESCAPE '\\' "
-            "ORDER BY question_id LIMIT ?", (like_pattern(query), limit)
+            f"SELECT {id_column}, 0.0 FROM {table} WHERE text LIKE ? ESCAPE '\\' "
+            f"ORDER BY {id_column} LIMIT ?", (like_pattern(query), limit)
         ).fetchall()
     phrase = '"' + query.replace('"', '""') + '"'
     rows = connection.execute(
-        "SELECT question_id, bm25(question_fts) FROM question_fts WHERE question_fts MATCH ? "
-        "ORDER BY bm25(question_fts), question_id LIMIT ?", (phrase, limit)
+        f"SELECT {id_column}, bm25({table}) FROM {table} WHERE {table} MATCH ? "
+        f"ORDER BY bm25({table}), {id_column} LIMIT ?", (phrase, limit)
     ).fetchall()
     if rows:
         return [(identifier, -score) for identifier, score in rows]
@@ -313,15 +324,15 @@ def keyword_search(connection, query, limit):
     short_terms = [term for term in terms if len(term) < 3]
     if not long_terms:
         return connection.execute(
-            "SELECT question_id, 0.0 FROM question_fts WHERE "
+            f"SELECT {id_column}, 0.0 FROM {table} WHERE "
             + " AND ".join("text LIKE ? ESCAPE '\\'" for _ in terms)
-            + " ORDER BY question_id LIMIT ?", (*map(like_pattern, terms), limit)
+            + f" ORDER BY {id_column} LIMIT ?", (*map(like_pattern, terms), limit)
         ).fetchall()
     quoted = ['"' + term.replace('"', '""') + '"' for term in long_terms]
     filters = "".join(" AND text LIKE ? ESCAPE '\\'" for _ in short_terms)
-    sql = ("SELECT question_id, bm25(question_fts) FROM question_fts "
-           "WHERE question_fts MATCH ?" + filters
-           + " ORDER BY bm25(question_fts), question_id LIMIT ?")
+    sql = (f"SELECT {id_column}, bm25({table}) FROM {table} "
+           f"WHERE {table} MATCH ?" + filters
+           + f" ORDER BY bm25({table}), {id_column} LIMIT ?")
     parameters = (*map(like_pattern, short_terms), limit)
     rows = connection.execute(sql, (" AND ".join(quoted), *parameters)).fetchall()
     if not rows and len(quoted) > 1:
@@ -359,6 +370,10 @@ class Retriever:
         self.question_ids = None
         self.link_questions = None
         self.link_vectors = None
+        self.law_ids = None
+        self.law_matrix = None
+        self.law_embedder = None
+        self._managed_law_embedder = embedder is None
         self._snapshot_depth = 0
         self._cache_token = None
 
@@ -381,6 +396,7 @@ class Retriever:
     def _clear_vectors(self):
         self.vector_ids = self.matrix = self.question_ids = None
         self.link_questions = self.link_vectors = None
+        self.law_ids = self.law_matrix = None
 
     @contextmanager
     def _snapshot(self):
@@ -410,6 +426,10 @@ class Retriever:
                         self.meta.get(key) != current_meta.get(key)
                         for key in ("model", "model_revision", "model_identity")):
                     self.embedder = None
+                if self._managed_law_embedder and any(
+                        self.meta.get(key) != current_meta.get(key)
+                        for key in ("laws_model", "laws_model_revision", "laws_model_identity")):
+                    self.law_embedder = None
                 self._clear_vectors()
             self.meta = current_meta
             self._cache_token = token
@@ -570,3 +590,115 @@ class Retriever:
             for rank, doc in enumerate(results, 1):
                 doc["rank"] = rank
         return results[:k]
+
+    def search_laws(self, query, *, k=3, keyword_weight=DEFAULT_KEYWORD_WEIGHT,
+                    vector_weight=DEFAULT_VECTOR_WEIGHT, rrf_k=60, candidates=50,
+                    expand_abbreviations=False, min_vector_score=None):
+        with self._snapshot():
+            return self._search_laws_snapshot(
+                query, k=k, keyword_weight=keyword_weight, vector_weight=vector_weight,
+                rrf_k=rrf_k, candidates=candidates, expand_abbreviations=expand_abbreviations,
+                min_vector_score=min_vector_score,
+            )
+
+    def _search_laws_snapshot(self, query, *, k, keyword_weight, vector_weight,
+                              rrf_k, candidates, expand_abbreviations, min_vector_score):
+        if k < 0:
+            raise ValueError("k 不可小於 0")
+        if not query.strip() or k == 0:
+            return []
+        if candidates <= 0:
+            raise ValueError("candidates 必須大於 0")
+        exists = self.connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='law_articles'"
+        ).fetchone()
+        if not exists:
+            return []
+        total = self.connection.execute("SELECT count(*) FROM law_articles").fetchone()[0]
+        if not total:
+            return []
+
+        queries = expand_query(query) if expand_abbreviations else [query]
+        limit = max(k, candidates)
+        keyword_runs = [law_keyword_search(self.connection, item, limit) for item in queries]
+        keyword = (keyword_runs[0] if len(keyword_runs) == 1 else
+                   rrf([[row[0] for row in ranking] for ranking in keyword_runs], k=rrf_k))
+        vector = self._law_vector_search_snapshot(queries, limit)
+        # Off-topic queries still match some article; hide the block when the best article is weak.
+        if vector and min_vector_score is not None and vector[0][1] < min_vector_score:
+            return []
+        if vector:
+            ranking = rrf(
+                [[row[0] for row in keyword], [row[0] for row in vector]],
+                k=rrf_k, weights=[keyword_weight, vector_weight],
+            )
+        else:
+            ranking = keyword
+
+        results = []
+        for rank, (identifier, score) in enumerate(ranking[:k], 1):
+            row = self.connection.execute(
+                "SELECT id, law_name, pcode, article_no, chapter, content, "
+                "law_modified_date, url FROM law_articles WHERE id=?",
+                (identifier,),
+            ).fetchone()
+            if row:
+                results.append(dict(zip(
+                    ("id", "law_name", "pcode", "article_no", "chapter", "content",
+                     "law_modified_date", "url"), row
+                ), rank=rank, score=score))
+        return results
+
+    def _law_vector_search_snapshot(self, queries, limit):
+        has_vectors = self.connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='law_vectors'"
+        ).fetchone()
+        if not has_vectors or not valid_identity(self.meta.get("laws_model_identity")):
+            return []
+        model = self.meta.get("laws_model")
+        dimension = self.meta.get("laws_dimension")
+        if not isinstance(model, str) or type(dimension) is not int or dimension <= 0:
+            return []
+        import numpy as np
+        if self.law_ids is None:
+            rows = self.connection.execute(
+                "SELECT article_id, embedding FROM law_vectors ORDER BY article_id"
+            ).fetchall()
+            if len(rows) != self.connection.execute("SELECT count(*) FROM law_articles").fetchone()[0]:
+                return []
+            if not rows:
+                return []
+            matrix = np.stack([np.frombuffer(blob, dtype="<f4") for _, blob in rows])
+            if matrix.shape != (len(rows), dimension):
+                raise ValueError("法條向量維度不符；請重建法條索引")
+            self.law_ids = [identifier for identifier, _ in rows]
+            self.law_matrix = matrix
+        revision = self.meta.get("laws_model_revision")
+        if revision is not None:
+            validate_model_revision(model, revision)
+        if self.law_embedder is None:
+            if self.embedder is not None and self.meta.get("model") == model:
+                self.law_embedder = self.embedder
+            elif self.embedder_factory:
+                self.law_embedder = load_injected_embedder(self.embedder_factory, model, revision)
+            elif revision is None:
+                self.law_embedder = load_embedder(model, device=self.device)
+            else:
+                self.law_embedder = load_embedder(model, device=self.device, revision=revision)
+            # Identity hashes every weight; check once per loaded embedder, not per query,
+            # and skip it when _load_vectors already verified this same embedder and identity.
+            already_verified = (self.law_embedder is self.embedder and self.matrix is not None
+                                and self.meta.get("laws_model_identity") == self.meta.get("model_identity"))
+            if not already_verified:
+                require_matching_identity(
+                    self.meta["laws_model_identity"], embedder_identity(self.law_embedder, model)
+                )
+        encoded = encode(
+            self.law_embedder, [normalize_text(item) for item in queries],
+            model_prefix(model, True),
+        )
+        if any(len(vector) != dimension for vector in encoded):
+            raise ValueError("查詢向量與法條索引維度不符")
+        scores = (self.law_matrix @ np.asarray(encoded, dtype=np.float32).T).max(axis=1)
+        order = np.argsort(-scores, kind="stable")[:limit]
+        return [(self.law_ids[index], float(scores[index])) for index in order]
