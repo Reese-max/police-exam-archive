@@ -22,6 +22,7 @@ if os.environ.get("SPACES_ZERO_GPU"):
 
 
 HERE = Path(__file__).resolve().parent
+WEB = HERE / "web" / "dist"
 ROOT = HERE if (HERE / "scripts/rag/retrieval.py").is_file() else HERE.parent
 sys.path.insert(0, str(ROOT / "scripts/rag"))
 from query import (LOW_CONFIDENCE_NOTICE, MOEX_CORRECTION_INFO_URL, _is_official_exam_pdf,
@@ -379,16 +380,31 @@ def search(query):
     return executor.submit(run_search, query).result()
 
 
+def _frontend_html(web):
+    src = f"gradio_api/file={web.as_posix()}/index.html"
+    return (
+        f'<iframe src="{escape(src, quote=True)}" title="警察考古題 AI 助理" '
+        'style="position:fixed;inset:0;width:100%;height:100%;border:0;'
+        'z-index:1000;background:#fff"></iframe>'
+    )
+
+
 def main():
     import gradio as gr
     executor.submit(initialize, index_path()).result()
+    frontend_built = (WEB / "index.html").is_file()
+    if frontend_built:
+        gr.set_static_paths(paths=[WEB])
     with gr.Blocks(title="警察考古題 AI 助理") as demo:
+        if frontend_built:
+            gr.HTML(_frontend_html(WEB))
         gr.Markdown("# 警察考古題 AI 助理\n"
                     "AI 回答僅供參考，請以考選部公告與現行條文為準。\n\n"
                     "範例問題：警察何時可以查證身分？｜警察職權行使法第 6 條規定什麼？｜"
-                    "考古題中的答案和現行法條不同時應如何判斷？")
-        chatbot = gr.Chatbot(type="messages", height=600)
-        with gr.Row():
+                    "考古題中的答案和現行法條不同時應如何判斷？", visible=not frontend_built)
+        # Hidden, not removed: the /chat API is defined by these components.
+        chatbot = gr.Chatbot(type="messages", height=600, visible=not frontend_built)
+        with gr.Row(visible=not frontend_built):
             question = gr.Textbox(label="訊息", placeholder="輸入問題或接續追問…",
                                   lines=1, scale=8)
             submit = gr.Button("送出", variant="primary", scale=1)
