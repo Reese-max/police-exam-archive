@@ -11,9 +11,11 @@ from urllib.parse import parse_qs, quote, urlsplit
 if __package__:
     from .retrieval import (LEGACY_EMBEDDING_TEXT_VERSION, LEGACY_INDEX_WARNING, Retriever, add_search_arguments,
                             embedding_text_version, search_arguments, parse_search_args, load_reranker)
+    from .answer import generate_answer
 else:
     from retrieval import (LEGACY_EMBEDDING_TEXT_VERSION, LEGACY_INDEX_WARNING, Retriever, add_search_arguments,
                            embedding_text_version, search_arguments, parse_search_args, load_reranker)
+    from answer import generate_answer
 
 MOEX_CORRECTION_INFO_URL = "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx"
 LOW_CONFIDENCE_NOTICE = "找不到高度相關的考題，以下結果僅供參考"
@@ -193,6 +195,7 @@ def main(argv=None):
     parser.add_argument("--mode", choices=("hybrid", "keyword", "vector"), default="hybrid")
     parser.add_argument("--law-k", type=int, default=3, help="顯示相關現行條文數；0 關閉")
     parser.add_argument("--json", action="store_true")
+    parser.add_argument("--answer", action="store_true", help="使用檢索到的考題與現行條文產生 AI 整理回答")
     parser.add_argument("--device", choices=("auto", "cpu", "cuda"), default="auto")
     add_search_arguments(parser)
     retriever = None
@@ -212,13 +215,23 @@ def main(argv=None):
         )}
         law_options["min_vector_score"] = args.law_min_vector_score
         laws = retriever.search_laws(args.query, k=args.law_k, **law_options) if args.law_k else []
+        answer = generate_answer(args.query, results, laws) if args.answer else None
     except (ValueError, RuntimeError, OSError, sqlite3.Error) as exc:
         parser.exit(1, f"查詢失敗：{exc}\n")
     finally:
         if retriever is not None:
             retriever.close()
-    print(json.dumps({"results": results, "laws": laws}, ensure_ascii=False, sort_keys=True, indent=2)
-          if args.json else format_results(results, laws=laws))
+    if args.json:
+        payload = {"results": results, "laws": laws}
+        if answer is not None:
+            payload["answer"] = answer
+        print(json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2))
+        return
+    answer_text = ""
+    if answer is not None:
+        answer_text = ("AI 整理回答（僅供參考，請以考選部公告與現行條文為準）\n"
+                       + answer["text"] + "\n\n")
+    print(answer_text + format_results(results, laws=laws))
 
 
 if __name__ == "__main__":

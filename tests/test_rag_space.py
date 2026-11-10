@@ -131,7 +131,7 @@ def test_space_package_is_self_contained_and_does_not_overwrite(tmp_path):
     command = [sys.executable, str(root / "scripts/rag/package_space.py"), "--out", str(target)]
     assert subprocess.run(command, capture_output=True).returncode == 0
     assert all((target / name).is_file() for name in (
-        "app.py", "README.md", "requirements.txt", "scripts/rag/query.py",
+        "app.py", "README.md", "requirements.txt", "scripts/rag/query.py", "scripts/rag/answer.py",
         "scripts/rag/retrieval.py", "scripts/rag/model_identity.py", "scripts/rag/build_corpus.py", "rag/bench_report.json",
         "rag/abbreviations.json"))
     isolated = subprocess.run([sys.executable, "-I", "-c", """
