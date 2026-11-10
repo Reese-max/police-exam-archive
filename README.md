@@ -63,12 +63,14 @@ python scripts/rag/query.py "警察何時能攔人問身分" --db rag/index-e5.s
 目前法條資料日期為 2026/10/30（來源 `UpdateDate`），查詢預設附上最多 3 條相關法條，
 可用 `--law-k 0` 關閉。
 
-可選擇以 `python scripts/rag/query.py "問題" --answer` 產生 AI 整理回答；HF Space 僅在設定
-`RAG_LLM_API_KEY` secret 時顯示獨立的回答按鈕，不會在一般搜尋時呼叫模型。可設定
+可選擇以 `python scripts/rag/query.py "問題" --answer` 產生 AI 整理回答；HF Space 提供
+對話式介面，設定 `RAG_LLM_API_KEY` secret 後可使用 AI 回答，未設定時只回檢索結果。可設定
 `RAG_LLM_BASE_URL`（預設 `https://api.minimax.io/v1`）、`RAG_LLM_MODEL`（預設
 `MiniMax-M3.1-Flash`）、`RAG_LLM_TIMEOUT`（預設 180 秒）、`RAG_LLM_REASONING_EFFORT`（預設 high，不設輸出 token 上限；實測 2～36 秒）及 Space 每小時上限
-`RAG_LLM_MAX_PER_HOUR`（預設 30 次）。回答僅能依本次檢索到的考題、答案狀態及現行條文，
-並須通過引用編號檢查；資料不足時不猜答。模型與費用來源為 MiniMax Token Plan，並與其他用途共用額度。
+`RAG_LLM_MAX_PER_HOUR`（不設定＝不限次數；設數字才限制，每一則實際送出模型的訊息都計入）。主要模型限流或失敗時，設有 `RAG_LLM_FALLBACK_API_KEY` 就改送備用模型（`RAG_LLM_FALLBACK_BASE_URL` 預設 `https://api.openai.com/v1`、`RAG_LLM_FALLBACK_MODEL` 預設 `gpt-6-luna`、`RAG_LLM_FALLBACK_REASONING_EFFORT` 預設 low，設為空字串則不送此欄位；按量計費），兩者都失敗才只回檢索結果。有檢索依據的回答
+會驗證引用編號；資料未涵蓋處可由模型自身知識補充，並由程式強制標示「未經查證」。
+追問時若本次檢索沒有條文，且考題為低信心或沒有考題，會以前一則使用者問題加上本次問題重查；追問訊息含 [題n]／[條n] 時沿用上一輪的檢索，讓編號與畫面一致；引用編號每一輪重新編排，沒有引用的段落與清單項目一律歸入「未經查證」；
+兩段回答及可展開的檢索來源會分開呈現。模型與費用來源為 MiniMax Token Plan，並與其他用途共用額度。
 
 模型與 tokenizer 預設使用 worktree 的 `.hf_cache/`，亦可透過 `RAG_MODEL_CACHE` 指向既有快取；
 預設允許首次載入時下載公開權重，不執行遠端模型程式碼，也不使用 API 金鑰。需離線執行時，
@@ -230,7 +232,7 @@ python scripts/rag/update_index.py --device cuda --db .rag-dataset/index-bge-m3.
 也不會上傳。可設定 `RAG_MODEL_CACHE` 指向既有模型快取；模型下載仍不使用 HF token。
 索引、向量與暫存語料不進 Git。
 
-## Gradio 檢索介面
+## Gradio 對話介面
 
 本機需另行安裝 `gradio==5.50.0`；Space 平台會提供 Gradio。使用既有索引和模型快取（PowerShell 範例）：
 
@@ -242,7 +244,8 @@ python space/app.py
 ```
 
 介面預設只監聽本機，使用 benchmark 選定的 BGE-M3 混合檢索參數；顯示前五題及其出處，
-不呼叫 LLM。未解析的考選部 PDF 會標示為「未解析」。`RAG_MODEL_CACHE` 可指向其他既有快取。
+以對話方式回答並支援追問。未解析的考選部 PDF 會標示為「未解析」。
+設定 `RAG_LLM_API_KEY` 才會使用 AI；沒有金鑰時仍可檢索。`RAG_MODEL_CACHE` 可指向其他既有快取。
 
 準備 Hugging Face Space 目錄（不會上傳或使用帳號）：
 
@@ -253,7 +256,7 @@ python scripts/rag/package_space.py --out /path/to/new-space-directory
 日後經授權建立 Space 後，上傳該目錄，並設定 `HF_DATASET_REPO` 指向已有索引的公開
 Dataset；Space 啟動時匿名下載索引。[Hugging Face 官方文件](https://huggingface.co/docs/hub/spaces-overview)
 目前指出 CPU Basic 無時租，但建立 Gradio Space 需要付費方案；建立前應先確認帳號方案與費用。
-符合資格的免費個人帳號亦可使用 ZeroGPU（`zero-a10g`）；本介面仍只在 CPU 執行檢索，不呼叫 GPU。
+符合資格的免費個人帳號亦可使用 ZeroGPU（`zero-a10g`）；本介面仍只在 CPU 執行檢索。
 
 ## 目錄結構
 
