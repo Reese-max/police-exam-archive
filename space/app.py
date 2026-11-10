@@ -1,11 +1,13 @@
 """Search exam questions locally, or use a public HF Dataset in a Space."""
 
 import argparse
+from collections import deque
 from concurrent.futures import ThreadPoolExecutor
 from html import escape
 import os
 from pathlib import Path
 import sys
+from threading import Lock
 import time
 from urllib.parse import quote
 
@@ -26,6 +28,7 @@ from query import (LOW_CONFIDENCE_NOTICE, MOEX_CORRECTION_INFO_URL, _is_official
                    truncate_law_content)
 from retrieval import (LEGACY_EMBEDDING_TEXT_VERSION, LEGACY_INDEX_WARNING, Retriever, add_search_arguments,
                        embedding_text_version, parse_search_args, search_arguments)
+from answer import generate_answer
 
 
 executor = ThreadPoolExecutor(max_workers=1)
@@ -34,6 +37,18 @@ options = None
 mode = None
 law_k = 3
 law_min_score = None
+_answer_cache = {}
+_answer_requests = deque()
+_answer_lock = Lock()
+_ANSWER_CACHE_SECONDS = 3600
+_ANSWER_CACHE_MAX = 500
+
+
+def _answer_limit():
+    try:
+        return max(0, int(os.environ.get("RAG_LLM_MAX_PER_HOUR", "30")))
+    except ValueError:
+        return 30
 
 
 def index_path():
@@ -143,11 +158,7 @@ def render(results, *, include_notice=True, laws=None):
     return question_text + ("\n\n" + law_text if law_text else "")
 
 
-def run_search(query):
-    if not query or not query.strip():
-        return "請輸入問題。"
-    if len(query) > 2000:
-        return "問題請勿超過 2,000 字。"
+def _search_data(query):
     started = time.perf_counter()
     results = retriever.search(query, k=5, mode=mode, **options)
     law_results = []
@@ -164,8 +175,96 @@ def run_search(query):
     if (mode != "keyword" and meta is not None
             and embedding_text_version(meta) == LEGACY_EMBEDDING_TEXT_VERSION):
         warning += LEGACY_INDEX_WARNING + "\n\n"
+    return results, law_results, elapsed_ms, warning
+
+
+def _search_output(results, law_results, elapsed_ms, warning):
     return (f"{warning}查詢耗時：{elapsed_ms:.0f} 毫秒\n\n"
             f"{render(results, include_notice=False, laws=law_results)}")
+
+
+def run_search(query):
+    if not query or not query.strip():
+        return "請輸入問題。"
+    if len(query) > 2000:
+        return "問題請勿超過 2,000 字。"
+    results, law_results, elapsed_ms, warning = _search_data(query)
+    return _search_output(results, law_results, elapsed_ms, warning)
+
+
+def _store_answer(key, result):
+    with _answer_lock:
+        _answer_cache.pop(key, None)
+        _answer_cache[key] = (time.monotonic() + _ANSWER_CACHE_SECONDS, dict(result))
+        while len(_answer_cache) > _ANSWER_CACHE_MAX:
+            _answer_cache.pop(next(iter(_answer_cache)))
+
+
+def _cached_answer(query, results, laws):
+    now = time.monotonic()
+    # Whitespace variants must not bypass the cache and spend shared quota.
+    key = " ".join(query.split()).casefold()
+    with _answer_lock:
+        cached = _answer_cache.get(key)
+        if cached and cached[0] > now:
+            return dict(cached[1])
+        _answer_cache.pop(key, None)
+
+    if any(item.get("low_confidence") for item in results) and not laws:
+        result = generate_answer(query, results, laws)
+        _store_answer(key, result)
+        return result
+
+    with _answer_lock:
+        cutoff = now - _ANSWER_CACHE_SECONDS
+        while _answer_requests and _answer_requests[0][0] <= cutoff:
+            _answer_requests.popleft()
+        if len(_answer_requests) >= _answer_limit():
+            return {
+                "status": "limited",
+                "text": "AI 回答已達本小時上限",
+                "citations": [],
+                "invalid_citations": [],
+            }
+        ticket = (now, object())  # unique, so a refund never removes another request's slot
+        _answer_requests.append(ticket)
+    result = generate_answer(query, results, laws)
+    if result.get("status") in ("ok", "untrusted", "skipped", "disabled"):
+        _store_answer(key, result)
+    else:
+        # A failed provider call did not produce an answer; give the slot back.
+        with _answer_lock:
+            try:
+                _answer_requests.remove(ticket)
+            except ValueError:
+                pass
+    return result
+
+
+def _render_answer(result):
+    lines = ["## AI 整理回答（僅供參考，請以考選部公告與現行條文為準）",
+             escape(result.get("text", ""))]
+    citations = result.get("citations") or []
+    if citations:
+        lines.extend(["", "引用來源：" + "、".join(escape(value) for value in citations)])
+    invalid = result.get("invalid_citations") or []
+    if invalid:
+        lines.extend(["", "已移除無效引用：" + "、".join(escape(value) for value in invalid)])
+    reason = result.get("reason")
+    if reason:
+        lines.extend(["", escape(reason)])
+    return "  \n".join(lines)
+
+
+def run_answer(query):
+    if not query or not query.strip():
+        return "請輸入問題。"
+    if len(query) > 2000:
+        return "問題請勿超過 2,000 字。"
+    results, law_results, elapsed_ms, warning = executor.submit(_search_data, query).result()
+    answer_result = _cached_answer(query, results, law_results)
+    full_results = _search_output(results, law_results, elapsed_ms, warning)
+    return _render_answer(answer_result) + "\n\n---\n\n" + full_results
 
 
 def search(query):
@@ -180,9 +279,12 @@ def main():
         gr.Markdown("# 警察考古題檢索\n輸入問題，查找相關考古題及考選部原始試題。")
         question = gr.Textbox(label="問題", placeholder="例如：警察什麼情況可以查證身分？", lines=2)
         button = gr.Button("搜尋", variant="primary")
+        answer_button = gr.Button("AI 整理回答") if os.environ.get("RAG_LLM_API_KEY") else None
         answer = gr.Markdown(label="搜尋結果")
         button.click(search, inputs=question, outputs=answer, api_name="search")
         question.submit(search, inputs=question, outputs=answer, api_name=False)
+        if answer_button is not None:
+            answer_button.click(run_answer, inputs=question, outputs=answer, api_name="answer")
     host = os.environ.get("RAG_HOST", "0.0.0.0" if os.environ.get("SPACE_ID") else "127.0.0.1")
     demo.queue(default_concurrency_limit=1).launch(
         server_name=host, server_port=int(os.environ.get("RAG_PORT", "7860")), show_error=True)

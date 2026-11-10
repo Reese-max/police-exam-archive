@@ -11,6 +11,7 @@ FILES = {
     "space/README.md": "README.md",
     "space/requirements.txt": "requirements.txt",
     "scripts/rag/query.py": "scripts/rag/query.py",
+    "scripts/rag/answer.py": "scripts/rag/answer.py",
     "scripts/rag/retrieval.py": "scripts/rag/retrieval.py",
     "scripts/rag/model_identity.py": "scripts/rag/model_identity.py",
     "scripts/rag/build_corpus.py": "scripts/rag/build_corpus.py",
