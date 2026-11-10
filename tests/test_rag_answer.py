@@ -310,8 +310,12 @@ def test_markdown_links_and_unclosed_think_are_removed(evidence, monkeypatch):
         "看[官方解答](https://evil.example) ![x](https://t.example/p.png)。[題1]"))
     assert "evil.example" not in result["text"] and "t.example" not in result["text"]
     assert "官方解答" in result["text"]
-    unclosed = answer.generate_answer("查詢", *evidence, client=FakeClient("答案。[題1]<think>內部推理"))
-    assert "內部推理" not in unclosed["text"]
+    unclosed = answer.generate_answer("查詢", *evidence, client=FakeClient("<think>只有推理沒有收尾"))
+    assert unclosed["status"] == "error"
+    kept = answer.generate_answer("查詢", *evidence, client=FakeClient("依[題1](A)選項，並參照[條1](第1項)。"))
+    assert kept["status"] == "ok" and "(A)" in kept["text"] and "(第1項)" in kept["text"]
+    linked = answer.generate_answer("查詢", *evidence, client=FakeClient("見[題1](https://moex.gov.tw/x)。"))
+    assert linked["status"] == "ok" and linked["citations"] == ["[題1]"] and "moex" not in linked["text"]
 
 
 def test_question_and_data_are_tagged_and_blank_key_disables(evidence, monkeypatch):
@@ -360,3 +364,21 @@ def test_space_answer_cache_is_bounded(monkeypatch):
     for index in range(10):
         app._store_answer(f"q{index}", {"status": "ok"})
     assert list(app._answer_cache) == ["q7", "q8", "q9"]
+
+
+def test_space_cache_is_case_insensitive_and_refunds_the_right_ticket(monkeypatch):
+    app = _space_app(monkeypatch, 5)
+    calls = []
+    monkeypatch.setattr(app, "generate_answer", lambda *args: calls.append(1) or {
+        "status": "ok", "text": "回答。[題1]", "citations": ["[題1]"], "invalid_citations": []})
+    monkeypatch.setattr(app.time, "monotonic", lambda: 1000.0)
+    try:
+        app.run_answer("GPS 定位")
+        app.run_answer("gps 定位")
+        assert len(calls) == 1 and len(app._answer_requests) == 1
+        monkeypatch.setattr(app, "generate_answer", lambda *args: {
+            "status": "error", "text": "x", "citations": [], "invalid_citations": []})
+        app.run_answer("另一題")
+        assert len(app._answer_requests) == 1  # same timestamp, but only the failed ticket was refunded
+    finally:
+        app.executor.shutdown(wait=False)

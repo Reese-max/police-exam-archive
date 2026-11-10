@@ -203,7 +203,7 @@ def _store_answer(key, result):
 def _cached_answer(query, results, laws):
     now = time.monotonic()
     # Whitespace variants must not bypass the cache and spend shared quota.
-    key = " ".join(query.split())
+    key = " ".join(query.split()).casefold()
     with _answer_lock:
         cached = _answer_cache.get(key)
         if cached and cached[0] > now:
@@ -217,7 +217,7 @@ def _cached_answer(query, results, laws):
 
     with _answer_lock:
         cutoff = now - _ANSWER_CACHE_SECONDS
-        while _answer_requests and _answer_requests[0] <= cutoff:
+        while _answer_requests and _answer_requests[0][0] <= cutoff:
             _answer_requests.popleft()
         if len(_answer_requests) >= _answer_limit():
             return {
@@ -226,7 +226,8 @@ def _cached_answer(query, results, laws):
                 "citations": [],
                 "invalid_citations": [],
             }
-        _answer_requests.append(now)
+        ticket = (now, object())  # unique, so a refund never removes another request's slot
+        _answer_requests.append(ticket)
     result = generate_answer(query, results, laws)
     if result.get("status") in ("ok", "untrusted", "skipped", "disabled"):
         _store_answer(key, result)
@@ -234,7 +235,7 @@ def _cached_answer(query, results, laws):
         # A failed provider call did not produce an answer; give the slot back.
         with _answer_lock:
             try:
-                _answer_requests.remove(now)
+                _answer_requests.remove(ticket)
             except ValueError:
                 pass
     return result
