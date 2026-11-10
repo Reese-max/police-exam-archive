@@ -6,6 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 from html import escape
 import os
 from pathlib import Path
+import re
 import sys
 from threading import Lock
 import time
@@ -28,7 +29,7 @@ from query import (LOW_CONFIDENCE_NOTICE, MOEX_CORRECTION_INFO_URL, _is_official
                    truncate_law_content)
 from retrieval import (LEGACY_EMBEDDING_TEXT_VERSION, LEGACY_INDEX_WARNING, Retriever, add_search_arguments,
                        embedding_text_version, parse_search_args, search_arguments)
-from answer import generate_answer
+from answer import MARKDOWN_LINK, _unlink, chat_enabled, generate_chat_answer
 
 
 executor = ThreadPoolExecutor(max_workers=1)
@@ -39,14 +40,21 @@ law_k = 3
 law_min_score = None
 _answer_cache = {}
 _answer_requests = deque()
+# "[題1]" anywhere, or a bare "題 3" only at the start; "選擇題 5 題", "題 107 年…" and
+# "條 10 …" are new questions (at most 5 questions and 3 articles are listed).
+_SOURCE_REFERENCE = re.compile(r"[\[［【](?:題|條)\s*\d+[\]］】]|^\s*(?:題|條)\s*\d(?!\s*[\d年])")
 _answer_lock = Lock()
 _ANSWER_CACHE_SECONDS = 3600
 _ANSWER_CACHE_MAX = 500
 
 
 def _answer_limit():
+    """Hourly cap on model calls; None (variable unset) means unlimited."""
+    value = (os.environ.get("RAG_LLM_MAX_PER_HOUR") or "").strip()
+    if not value:
+        return None
     try:
-        return max(0, int(os.environ.get("RAG_LLM_MAX_PER_HOUR", "30")))
+        return max(0, int(value))
     except ValueError:
         return 30
 
@@ -94,13 +102,15 @@ def initialize(db):
     law_min_score = args.law_min_vector_score
 
 
-def _render_questions(results, *, include_notice=True):
+def _render_questions(results, *, include_notice=True, include_numbers=False):
     lines = []
     if not results:
         return "查無符合題目。"
     if include_notice and any(item.get("low_confidence") for item in results):
         lines.extend([escape(LOW_CONFIDENCE_NOTICE), ""])
-    for item in results:
+    for index, item in enumerate(results, 1):
+        if include_numbers:
+            lines.append(escape(f"[題{index}]"))
         for line in format_results([item], include_notice=False).splitlines():
             line = line.replace("（完整內容見 --json）", "").replace("，詳見 --json 的 answer_conflicts", "")
             if line.startswith("題幹："):
@@ -138,11 +148,13 @@ def _render_questions(results, *, include_notice=True):
     return "  \n".join(lines)
 
 
-def render_laws(laws):
+def render_laws(laws, *, include_numbers=False):
     if not laws:
         return ""
     lines = ["## 相關現行條文"]
-    for law in laws:
+    for index, law in enumerate(laws, 1):
+        if include_numbers:
+            lines.extend(["", escape(f"[條{index}]")])
         title = escape(f"{law.get('law_name', '')} {law.get('article_no', '')}"
                        f"（法規最後修正：{format_law_modified_date(law.get('law_modified_date'))}）")
         lines.extend(["", title, "", escape(truncate_law_content(law.get("content", "")))])
@@ -200,39 +212,41 @@ def _store_answer(key, result):
             _answer_cache.pop(next(iter(_answer_cache)))
 
 
-def _cached_answer(query, results, laws):
+def _cached_chat_answer(query, results, laws, history=(), *, use_cache=True):
     now = time.monotonic()
-    # Whitespace variants must not bypass the cache and spend shared quota.
     key = " ".join(query.split()).casefold()
-    with _answer_lock:
-        cached = _answer_cache.get(key)
-        if cached and cached[0] > now:
-            return dict(cached[1])
-        _answer_cache.pop(key, None)
+    if not chat_enabled():
+        return generate_chat_answer(query, results, laws, history=history)
 
-    if any(item.get("low_confidence") for item in results) and not laws:
-        result = generate_answer(query, results, laws)
-        _store_answer(key, result)
-        return result
+    if use_cache:
+        with _answer_lock:
+            cached = _answer_cache.get(key)
+            if cached and cached[0] > now:
+                return dict(cached[1])
+            _answer_cache.pop(key, None)
 
+    limit = _answer_limit()
+    ticket = (now, object())
     with _answer_lock:
         cutoff = now - _ANSWER_CACHE_SECONDS
         while _answer_requests and _answer_requests[0][0] <= cutoff:
             _answer_requests.popleft()
-        if len(_answer_requests) >= _answer_limit():
-            return {
-                "status": "limited",
-                "text": "AI 回答已達本小時上限",
-                "citations": [],
-                "invalid_citations": [],
-            }
-        ticket = (now, object())  # unique, so a refund never removes another request's slot
-        _answer_requests.append(ticket)
-    result = generate_answer(query, results, laws)
-    if result.get("status") in ("ok", "untrusted", "skipped", "disabled"):
-        _store_answer(key, result)
+        if limit is not None:
+            if len(_answer_requests) >= limit:
+                return {"status": "limited", "citations": [], "invalid_citations": [],
+                        "reason": "AI 回答已達本小時上限"}
+            _answer_requests.append(ticket)
+
+    try:
+        result = generate_chat_answer(query, results, laws, history=history)
+    except Exception as exc:
+        # Keep the chat usable and the quota slot refunded; the message may hold user text, so log the type only.
+        print(f"chat answer failed: {type(exc).__name__}", file=sys.stderr)
+        result = {"status": "error", "reason": "內部錯誤"}
+    if result.get("status") == "ok":
+        if use_cache:
+            _store_answer(key, result)
     else:
-        # A failed provider call did not produce an answer; give the slot back.
         with _answer_lock:
             try:
                 _answer_requests.remove(ticket)
@@ -241,30 +255,123 @@ def _cached_answer(query, results, laws):
     return result
 
 
-def _render_answer(result):
-    lines = ["## AI 整理回答（僅供參考，請以考選部公告與現行條文為準）",
-             escape(result.get("text", ""))]
-    citations = result.get("citations") or []
-    if citations:
-        lines.extend(["", "引用來源：" + "、".join(escape(value) for value in citations)])
-    invalid = result.get("invalid_citations") or []
-    if invalid:
-        lines.extend(["", "已移除無效引用：" + "、".join(escape(value) for value in invalid)])
-    reason = result.get("reason")
-    if reason:
-        lines.extend(["", escape(reason)])
-    return "  \n".join(lines)
+def _history_text(history):
+    messages = []
+    for item in history or []:
+        if isinstance(item, dict):
+            role, content = item.get("role"), item.get("content")
+            metadata = item.get("metadata")
+        else:
+            role, content = getattr(item, "role", None), getattr(item, "content", None)
+            metadata = getattr(item, "metadata", None)
+        if isinstance(metadata, dict) and metadata.get("title"):
+            continue
+        if role in ("user", "assistant") and isinstance(content, str):
+            messages.append({"role": role, "content": content})
+    return messages
 
 
-def run_answer(query):
-    if not query or not query.strip():
-        return "請輸入問題。"
-    if len(query) > 2000:
-        return "問題請勿超過 2,000 字。"
-    results, law_results, elapsed_ms, warning = executor.submit(_search_data, query).result()
-    answer_result = _cached_answer(query, results, law_results)
-    full_results = _search_output(results, law_results, elapsed_ms, warning)
-    return _render_answer(answer_result) + "\n\n---\n\n" + full_results
+def _low_confidence_without_laws(results, laws):
+    return (not laws and (not results or any(item.get("low_confidence") for item in results)))
+
+
+def _safe_model_text(value):
+    return escape(MARKDOWN_LINK.sub(_unlink, str(value or "")))
+
+
+def _chat_sources(results, laws):
+    if not results and not laws:
+        return None
+    title = f"檢索到的考題與條文（{len(results)} 題、{len(laws)} 條）"
+    pieces = []
+    questions = _render_questions(results, include_notice=False, include_numbers=True)
+    if results:
+        pieces.append(questions)
+    statutes = render_laws(laws, include_numbers=True)
+    if statutes:
+        pieces.append(statutes)
+    return {"role": "assistant", "content": "\n\n".join(pieces),
+            "metadata": {"title": title}}
+
+
+def _search_turn(question, earlier=None):
+    found = executor.submit(_search_data, question).result()
+    if earlier and _low_confidence_without_laws(*found[:2]):
+        retry = executor.submit(_search_data, f"{earlier} {question}").result()
+        if not _low_confidence_without_laws(*retry[:2]):
+            return retry
+    return found
+
+
+def chat(message, history):
+    messages = list(history or [])
+    if not message or not message.strip():
+        messages.extend([{"role": "user", "content": message or ""},
+                         {"role": "assistant", "content": "請輸入問題。"}])
+        yield messages, ""
+        return
+    if len(message) > 2000:
+        messages.extend([{"role": "user", "content": message},
+                         {"role": "assistant", "content": "問題請勿超過 2,000 字。"}])
+        yield messages, ""
+        return
+
+    messages.append({"role": "user", "content": message})
+    conversation = _history_text(history)
+    questions = [item["content"] for item in conversation
+                 if item["role"] == "user" and item["content"].strip()
+                 and not _SOURCE_REFERENCE.search(item["content"])]
+    if questions and _SOURCE_REFERENCE.search(message):
+        # "[題1] 為什麼…" points at the previous turn's sources: repeat that turn's retrieval so the
+        # numbers match. shortcut: history beyond the recent window is not replayed; upgrade: keep
+        # each turn's results per session.
+        results, law_results, elapsed_ms, warning = _search_turn(
+            questions[-1], questions[-2] if len(questions) > 1 else None)
+    else:
+        results, law_results, elapsed_ms, warning = _search_turn(
+            message, questions[-1] if questions else None)
+
+    progress = {"role": "assistant",
+                "content": (f"已完成檢索（{len(results)} 題考題、{len(law_results)} 條條文），"
+                            "正在整理回答…")}
+    messages.append(progress)
+    yield list(messages), ""
+
+    answer_result = _cached_chat_answer(
+        message, results, law_results, history=conversation, use_cache=not conversation
+    )
+    if answer_result.get("status") == "ok":
+        parts = []
+        if answer_result.get("grounded"):
+            parts.append(_safe_model_text(answer_result["grounded"]))
+        if answer_result.get("supplement"):
+            parts.append(
+                "⚠️ 以下不是出自題庫或法條，是 AI 依自身知識回答，未經查證；"
+                "條號、數字請自行核對。\n\n"
+                + _safe_model_text(answer_result["supplement"])
+            )
+        messages[-1] = {"role": "assistant", "content": "\n\n".join(parts)}
+        if not _low_confidence_without_laws(results, law_results):
+            # Number only what the model was given, so [題n]/[條n] match the answer.
+            seen = answer_result.get("included") or {"題": len(results), "條": len(law_results)}
+            source_message = _chat_sources(results[:seen["題"]], law_results[:seen["條"]])
+            if source_message:
+                messages.append(source_message)
+    else:
+        if answer_result.get("status") == "disabled":
+            reason = "未設定 AI 金鑰，以下是檢索結果："
+        elif answer_result.get("status") == "limited":
+            reason = "AI 回答已達本小時上限，以下是檢索結果："
+        else:
+            detail = answer_result.get("reason") or "模型服務錯誤"
+            reason = f"AI 回答暫時無法產生（{escape(str(detail))}），以下是檢索結果："
+        messages[-1] = {
+            "role": "assistant",
+            "content": reason + "\n\n" + _search_output(
+                results, law_results, elapsed_ms, warning
+            ),
+        }
+    yield list(messages), ""
 
 
 def search(query):
@@ -275,16 +382,21 @@ def search(query):
 def main():
     import gradio as gr
     executor.submit(initialize, index_path()).result()
-    with gr.Blocks(title="警察考古題檢索") as demo:
-        gr.Markdown("# 警察考古題檢索\n輸入問題，查找相關考古題及考選部原始試題。")
-        question = gr.Textbox(label="問題", placeholder="例如：警察什麼情況可以查證身分？", lines=2)
-        button = gr.Button("搜尋", variant="primary")
-        answer_button = gr.Button("AI 整理回答") if os.environ.get("RAG_LLM_API_KEY") else None
-        answer = gr.Markdown(label="搜尋結果")
-        button.click(search, inputs=question, outputs=answer, api_name="search")
-        question.submit(search, inputs=question, outputs=answer, api_name=False)
-        if answer_button is not None:
-            answer_button.click(run_answer, inputs=question, outputs=answer, api_name="answer")
+    with gr.Blocks(title="警察考古題 AI 助理") as demo:
+        gr.Markdown("# 警察考古題 AI 助理\n"
+                    "AI 回答僅供參考，請以考選部公告與現行條文為準。\n\n"
+                    "範例問題：警察何時可以查證身分？｜警察職權行使法第 6 條規定什麼？｜"
+                    "考古題中的答案和現行法條不同時應如何判斷？")
+        chatbot = gr.Chatbot(type="messages", height=600)
+        with gr.Row():
+            question = gr.Textbox(label="訊息", placeholder="輸入問題或接續追問…",
+                                  lines=1, scale=8)
+            submit = gr.Button("送出", variant="primary", scale=1)
+        # One shared group: up to 30 people wait on the model at once; retrieval stays on `executor`.
+        question.submit(chat, inputs=[question, chatbot], outputs=[chatbot, question],
+                        api_name="chat", concurrency_limit=30, concurrency_id="chat")
+        submit.click(chat, inputs=[question, chatbot], outputs=[chatbot, question],
+                     api_name=False, concurrency_limit=30, concurrency_id="chat")
     host = os.environ.get("RAG_HOST", "0.0.0.0" if os.environ.get("SPACE_ID") else "127.0.0.1")
     demo.queue(default_concurrency_limit=1).launch(
         server_name=host, server_port=int(os.environ.get("RAG_PORT", "7860")), show_error=True)
