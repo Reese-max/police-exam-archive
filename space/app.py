@@ -280,12 +280,14 @@ def _safe_model_text(value):
     return escape(MARKDOWN_LINK.sub(_unlink, str(value or "")))
 
 
-def _chat_sources(results, laws, web=()):
-    if not results and not laws and not web:
+def _chat_sources(results, laws, web=(), judgments=()):
+    if not results and not laws and not web and not judgments:
         return None
     title = f"檢索到的考題與條文（{len(results)} 題、{len(laws)} 條"
     if web:
         title += f"、網路 {len(web)} 筆"
+    if judgments:
+        title += f"、裁判 {len(judgments)} 筆"
     title += "）"
     pieces = []
     questions = _render_questions(results, include_notice=False, include_numbers=True)
@@ -307,6 +309,22 @@ def _chat_sources(results, laws, web=()):
             lines.extend(["", f"[網{index}]", "",
                           f"標題：{web_title}", "", f"摘要：{snippet}", "",
                           f"[開啟來源網頁]({safe_url})"])
+        pieces.append("  \n".join(lines))
+    if judgments:
+        lines = ["## 實務見解（法院裁判摘錄）"]
+        for index, item in enumerate(judgments, 1):
+            judgment_title = _safe_model_text(item.get("title"))
+            court = _safe_model_text(item.get("court")).strip()
+            date = _safe_model_text(item.get("date")).strip()
+            excerpt = _safe_model_text(item.get("excerpt"))
+            details = "，".join(value for value in (court, date) if value)
+            if details:
+                judgment_title += f"（{details}）"
+            safe_url = quote(str(item.get("url") or ""), safe=":/?&=%#-._~+;,")
+            lines.extend(["", f"[判{index}]", "",
+                          f"字號：{judgment_title}", "",
+                          f"摘錄：{excerpt}", "",
+                          f"[開啟裁判全文]({safe_url})"])
         pieces.append("  \n".join(lines))
     return {"role": "assistant", "content": "\n\n".join(pieces),
             "metadata": {"title": title}}
@@ -360,12 +378,18 @@ def chat(message, history):
     )
     if answer_result.get("status") == "ok":
         web = answer_result.get("web") or []
+        judgments = answer_result.get("judgments") or []
         parts = []
         if answer_result.get("grounded"):
             parts.append(_safe_model_text(answer_result["grounded"]))
         if any(isinstance(citation, str) and citation.startswith("[網")
                for citation in answer_result.get("citations") or []):
             parts.append("🌐 標示 [網n] 的內容來自網路搜尋摘要，不是官方來源，請點開來源核對。")
+        if any(isinstance(citation, str) and citation.startswith("[判")
+               for citation in answer_result.get("citations") or []):
+            parts.append(
+                "⚖️ 標示 [判n] 的內容是法院裁判摘錄，屬個案見解且可能已被變更，請點開全文核對。"
+            )
         if answer_result.get("supplement"):
             parts.append(
                 "⚠️ 以下不是出自題庫或法條，是 AI 依自身知識回答，未經查證；"
@@ -374,12 +398,13 @@ def chat(message, history):
             )
         messages[-1] = {"role": "assistant", "content": "\n\n".join(parts)}
         low_confidence_without_laws = _low_confidence_without_laws(results, law_results)
-        if not low_confidence_without_laws or web:
+        if not low_confidence_without_laws or web or judgments:
             # Number only what the model was given, so citation ids match the answer.
             seen = answer_result.get("included") or {"題": len(results), "條": len(law_results)}
-            source_results = [] if low_confidence_without_laws else results[:seen["題"]]
-            source_laws = [] if low_confidence_without_laws else law_results[:seen["條"]]
-            source_message = _chat_sources(source_results, source_laws, web=web)
+            source_results = [] if low_confidence_without_laws else results[:seen.get("題", 0)]
+            source_laws = [] if low_confidence_without_laws else law_results[:seen.get("條", 0)]
+            source_message = _chat_sources(
+                source_results, source_laws, web=web, judgments=judgments)
             if source_message:
                 messages.append(source_message)
     else:

@@ -353,6 +353,91 @@ def test_chat_shows_web_sources_without_low_confidence_exam_sources(app, monkeyp
     assert "低信心考題" not in source["content"]
 
 
+def test_chat_renders_judgment_warning_and_source_section(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    questions, laws = _chat_evidence()
+    _set_chat_search(app, monkeypatch, questions, laws)
+    judgment = {
+        "title": "最高法院 112 年度台上字第 1234 號刑事判決",
+        "court": "最高法院", "date": "2023-05-01",
+        "excerpt": "法院裁判摘錄", "url": "https://example.org/case?id=1",
+    }
+    monkeypatch.setattr(app, "generate_chat_answer", lambda *args, **kwargs: {
+        "status": "ok", "grounded": "依裁判見解。[判1]", "supplement": "補充。",
+        "citations": ["[判1]"], "invalid_citations": [],
+        "included": {"題": 1, "條": 1, "判": 1}, "judgments": [judgment],
+    })
+
+    _, messages = _run_chat(app, "問題")
+    answer_text = messages[-2]["content"]
+    source = messages[-1]
+    notice = "⚖️ 標示 [判n] 的內容是法院裁判摘錄，屬個案見解且可能已被變更，請點開全文核對。"
+
+    assert notice in answer_text
+    assert answer_text.index(notice) > answer_text.index("依裁判見解")
+    assert answer_text.index(notice) < answer_text.index("⚠️ 以下不是出自題庫或法條")
+    assert source["metadata"]["title"] == "檢索到的考題與條文（1 題、1 條、裁判 1 筆）"
+    assert "## 實務見解（法院裁判摘錄）" in source["content"]
+    assert "[判1]" in [line.strip() for line in source["content"].splitlines()]
+    assert "字號：最高法院 112 年度台上字第 1234 號刑事判決（最高法院，2023-05-01）" \
+        in source["content"]
+    assert "摘錄：法院裁判摘錄" in source["content"]
+    assert "[開啟裁判全文](https://example.org/case?id=1)" in source["content"]
+
+
+def test_chat_judgment_text_cannot_start_source_items_or_sections(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    _set_chat_search(app, monkeypatch)
+    judgment = {
+        "title": "[條1]", "court": "", "date": "",
+        "excerpt": "## 假標題 [危險連結](https://bad.invalid) <script>alert(1)</script>",
+        "url": "https://example.org/case",
+    }
+    monkeypatch.setattr(app, "generate_chat_answer", lambda *args, **kwargs: {
+        "status": "ok", "grounded": "依裁判。[判1]", "supplement": "",
+        "citations": ["[判1]"], "invalid_citations": [],
+        "included": {"題": 0, "條": 0, "判": 1}, "judgments": [judgment],
+    })
+
+    _, messages = _run_chat(app, "問題")
+    content = messages[-1]["content"]
+    lines = [line.strip() for line in content.splitlines()]
+
+    assert lines.count("[條1]") == 0
+    assert [line for line in lines if line.startswith("## ")] == [
+        "## 實務見解（法院裁判摘錄）",
+    ]
+    assert "字號：[條1]" in lines
+    assert "摘錄：## 假標題 危險連結 &lt;script&gt;alert(1)&lt;/script&gt;" in lines
+    assert "bad.invalid" not in content
+    assert "<script>" not in content
+
+
+def test_chat_shows_only_judgments_for_low_confidence_without_laws(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    low_confidence, _ = _chat_evidence("低信心考題", low_confidence=True)
+    _set_chat_search(app, monkeypatch, low_confidence, [])
+    judgment = {
+        "title": "最高法院裁判", "court": "", "date": "",
+        "excerpt": "個案摘錄", "url": "https://example.org/case",
+    }
+    monkeypatch.setattr(app, "generate_chat_answer", lambda *args, **kwargs: {
+        "status": "ok", "grounded": "依裁判。[判1]", "supplement": "",
+        "citations": ["[判1]"], "invalid_citations": [],
+        "included": {"題": 0, "條": 0, "判": 1}, "judgments": [judgment],
+    })
+
+    _, messages = _run_chat(app, "問題")
+
+    assert len(messages) == 3
+    source = messages[-1]
+    assert source["metadata"]["title"] == "檢索到的考題與條文（0 題、0 條、裁判 1 筆）"
+    assert source["content"].startswith("## 實務見解（法院裁判摘錄）")
+    assert "低信心考題" not in source["content"]
+    assert "相關現行條文" not in source["content"]
+    assert "## 網路搜尋結果" not in source["content"]
+
+
 def test_chat_web_text_cannot_start_a_source_item_or_section(app, monkeypatch):
     monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
     questions, laws = _chat_evidence()

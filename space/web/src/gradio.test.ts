@@ -91,3 +91,11 @@ test('web citations are parsed and linked like exam and law citations', () => {
   })
   assert.equal(linkCitations('參考[網1]。'), '參考[網1](#src-網1)。')
 })
+
+test('judgment citations are parsed, linked, and identified', () => {
+  assert.deepEqual(parseSources('## 實務見解（法院裁判摘錄）\n\n[判1]\n\n裁判摘錄'), {
+    判1: '\n裁判摘錄\n',
+  })
+  assert.equal(linkCitations('參考[判1]。'), '參考[判1](#src-判1)。')
+  assert.equal(citationId('#src-判1'), '判1')
+})
