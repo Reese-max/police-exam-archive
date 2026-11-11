@@ -300,6 +300,78 @@ def test_chat_renders_grounded_supplement_and_collapsible_numbered_sources(
     assert "[題1]" in source["content"] and "[條1]" in source["content"]
 
 
+def test_chat_renders_web_citation_warning_and_sanitized_sources(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    questions, laws = _chat_evidence()
+    _set_chat_search(app, monkeypatch, questions, laws)
+    web = [{"title": "<img src=x> [危險標題](https://bad-title.invalid)",
+            "url": "https://example.org/source?q=a&x=1",
+            "snippet": "<script>不可信</script> [危險摘要](https://bad-snippet.invalid)",
+            "date": "<2026-06>"}]
+    monkeypatch.setattr(app, "generate_chat_answer", lambda *args, **kwargs: {
+        "status": "ok", "grounded": "網路依據。[網1] 另有考題。[題1]",
+        "supplement": "未查證補充。", "citations": ["[網1]", "[題1]"],
+        "invalid_citations": [], "included": {"題": 1, "條": 1, "網": 1}, "web": web,
+    })
+
+    _, messages = _run_chat(app, "問題")
+    answer_text = messages[-2]["content"]
+    source = messages[-1]
+
+    notice = "🌐 標示 [網n] 的內容來自網路搜尋摘要，不是官方來源，請點開來源核對。"
+    assert notice in answer_text
+    assert answer_text.index(notice) > answer_text.index("網路依據")
+    assert answer_text.index(notice) < answer_text.index("⚠️ 以下不是出自題庫或法條")
+    assert source["metadata"]["title"] == "檢索到的考題與條文（1 題、1 條、網路 1 筆）"
+    assert "## 網路搜尋結果（非官方來源）" in source["content"]
+    assert "[網1]" in [line.strip() for line in source["content"].splitlines()]
+    assert "[開啟來源網頁](https://example.org/source?q=a&x=1)" in source["content"]
+    assert "&lt;img src=x&gt;" in source["content"]
+    assert "&lt;script&gt;不可信&lt;/script&gt;" in source["content"]
+    assert "&lt;2026-06&gt;" in source["content"]
+    assert "bad-title.invalid" not in source["content"]
+    assert "bad-snippet.invalid" not in source["content"]
+
+
+def test_chat_shows_web_sources_without_low_confidence_exam_sources(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    low_confidence, _ = _chat_evidence("低信心考題", low_confidence=True)
+    _set_chat_search(app, monkeypatch, low_confidence, [])
+    web = [{"title": "搜尋標題", "url": "https://example.org", "snippet": "搜尋摘要", "date": ""}]
+    monkeypatch.setattr(app, "generate_chat_answer", lambda *args, **kwargs: {
+        "status": "ok", "grounded": "依網路摘要。[網1]", "supplement": "",
+        "citations": ["[網1]"], "invalid_citations": [],
+        "included": {"題": 0, "條": 0, "網": 1}, "web": web,
+    })
+
+    _, messages = _run_chat(app, "問題")
+
+    assert len(messages) == 3
+    source = messages[-1]
+    assert source["metadata"]["title"] == "檢索到的考題與條文（0 題、0 條、網路 1 筆）"
+    assert "## 網路搜尋結果（非官方來源）" in source["content"]
+    assert "低信心考題" not in source["content"]
+
+
+def test_chat_web_text_cannot_start_a_source_item_or_section(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    questions, laws = _chat_evidence()
+    _set_chat_search(app, monkeypatch, questions, laws)
+    web = [{"title": "[條1]", "url": "https://example.org", "snippet": "## 假標題", "date": ""}]
+    monkeypatch.setattr(app, "generate_chat_answer", lambda *args, **kwargs: {
+        "status": "ok", "grounded": "依據。[題1]", "supplement": "",
+        "citations": ["[題1]"], "invalid_citations": [],
+        "included": {"題": 1, "條": 1, "網": 1}, "web": web,
+    })
+
+    _, messages = _run_chat(app, "問題")
+    lines = [line.strip() for line in messages[-1]["content"].splitlines()]
+
+    assert lines.count("[條1]") == 1
+    assert "標題：[條1]" in lines and "摘要：## 假標題" in lines
+    assert not any(line.startswith("## 假") for line in lines)
+
+
 def test_chat_escapes_model_html_and_removes_markdown_links(app, monkeypatch):
     monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
     _set_chat_search(app, monkeypatch)

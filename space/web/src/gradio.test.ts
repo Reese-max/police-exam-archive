@@ -79,7 +79,15 @@ test('linkCitations turns citations into source links', () => {
 test('citationId accepts only citation links and never throws', () => {
   assert.equal(citationId('#src-%E6%A2%9D2'), '條2')
   assert.equal(citationId('#src-題1'), '題1')
+  assert.equal(citationId('#src-網1'), '網1')
   for (const href of ['#src-%E6', '#src-%ZZ', '#src-x', 'https://example.com', undefined]) {
     assert.equal(citationId(href), '')
   }
+})
+
+test('web citations are parsed and linked like exam and law citations', () => {
+  assert.deepEqual(parseSources('## 網路搜尋結果（非官方來源）\n\n[網1]\n\n標題'), {
+    網1: '\n標題\n',
+  })
+  assert.equal(linkCitations('參考[網1]。'), '參考[網1](#src-網1)。')
 })

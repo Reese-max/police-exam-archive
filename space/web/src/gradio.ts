@@ -176,12 +176,12 @@ export async function* streamChat(
   }
 }
 
-// Sources block format (space/app.py): a line "[題n]" or "[條n]" starts an item, "## " starts a new section.
+// Sources block format (space/app.py): a line "[題n]", "[條n]", or "[網n]" starts an item; "## " starts a new section.
 export function parseSources(markdown: string): Record<string, string> {
   const items: Record<string, string> = {}
   let key = ''
   for (const line of markdown.split('\n')) {
-    const marker = /^\[([題條]\d+)\]$/.exec(line.trim())
+    const marker = /^\[([題條網]\d+)\]$/.exec(line.trim())
     if (marker) {
       key = marker[1]
       items[key] = ''
@@ -191,15 +191,15 @@ export function parseSources(markdown: string): Record<string, string> {
   return items
 }
 
-// Also fixes "[題1](A)", which markdown would otherwise read as a link to "A".
+// Also fixes citations such as "[網1](A)", which markdown would otherwise read as a link to "A".
 // shortcut: also rewrites citations inside code spans, switch to a remark plugin if answers start containing code.
 export const linkCitations = (text: string) =>
-  text.replace(/\[([題條]\d+)\]/g, '[$1](#src-$1)')
+  text.replace(/\[([題條網]\d+)\]/g, '[$1](#src-$1)')
 
-// "題1"/"條2" for links made by linkCitations, "" otherwise; decodeURIComponent throws on a bad "%".
+// "題1"/"條2"/"網3" for links made by linkCitations, "" otherwise; decodeURIComponent throws on a bad "%".
 export function citationId(href = ''): string {
   try {
-    return /^#src-([題條]\d+)$/.exec(decodeURIComponent(href))?.[1] ?? ''
+    return /^#src-([題條網]\d+)$/.exec(decodeURIComponent(href))?.[1] ?? ''
   } catch {
     return ''
   }
