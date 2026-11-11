@@ -371,7 +371,7 @@ def test_chat_renders_judgment_warning_and_source_section(app, monkeypatch):
     _, messages = _run_chat(app, "問題")
     answer_text = messages[-2]["content"]
     source = messages[-1]
-    notice = "⚖️ 標示 [判n] 的內容是法院裁判摘錄，屬個案見解且可能已被變更，請點開全文核對。"
+    notice = "⚖️ 標示 [判n] 的內容是裁判書摘錄，可能是當事人的主張而不是法院的見解，也可能已被變更，請點開全文核對。"
 
     assert notice in answer_text
     assert answer_text.index(notice) > answer_text.index("依裁判見解")

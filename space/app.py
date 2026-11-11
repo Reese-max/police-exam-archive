@@ -388,7 +388,7 @@ def chat(message, history):
         if any(isinstance(citation, str) and citation.startswith("[判")
                for citation in answer_result.get("citations") or []):
             parts.append(
-                "⚖️ 標示 [判n] 的內容是法院裁判摘錄，屬個案見解且可能已被變更，請點開全文核對。"
+                "⚖️ 標示 [判n] 的內容是裁判書摘錄，可能是當事人的主張而不是法院的見解，也可能已被變更，請點開全文核對。"
             )
         if answer_result.get("supplement"):
             parts.append(
