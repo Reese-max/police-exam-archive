@@ -756,8 +756,8 @@ def test_search_web_returns_empty_on_provider_exception_or_bad_structure(monkeyp
         def __exit__(self, *args):
             return False
 
-        def read(self):
-            return b'{"organic": {}}'
+    def read(self):
+        return b'{"organic": {}}'
 
     monkeypatch.setattr(answer, "urlopen", lambda *args, **kwargs: Response())
     assert answer.search_web("查詢") == []
@@ -1113,3 +1113,309 @@ def test_generate_answer_treats_web_citation_as_invalid_without_web_source(evide
 
     assert result["status"] == "untrusted"
     assert result["invalid_citations"] == ["[網1]"]
+
+
+def _enable_essay(monkeypatch, *, token="essay-secret"):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "llm-secret")
+    monkeypatch.delenv("RAG_LLM_FALLBACK_API_KEY", raising=False)
+    monkeypatch.setenv("RAG_LLM_TIMEOUT", "180")
+    monkeypatch.setenv("RAG_ESSAY_MCP_URL", "https://essay.example/mcp")
+    monkeypatch.setenv("RAG_ESSAY_MCP_TOKEN", token)
+
+
+def _mcp_body(structured):
+    return json.dumps({
+        "result": {"structuredContent": structured, "isError": False},
+    }, ensure_ascii=False)
+
+
+def _essay_state_response(*, fits=True, version=1, overflow=0, total=30):
+    return {
+        "answer": {"id": "answer-1", "version": version},
+        "layout": {
+            "fits": fits, "totalLines": total, "remainingLines": 44 - total,
+            "overflowLines": overflow, "pagesUsed": 1 if total <= 22 else 2,
+        },
+    }
+
+
+def _essay_json(title="申論題摘要", text="依檢索資料說明核心理由。"):
+    return json.dumps({
+        "title": title,
+        "sections": [
+            {"heading": "一、核心說明", "text": text},
+            {"heading": "二、結論", "text": "回到題示事實作結。"},
+        ],
+    }, ensure_ascii=False)
+
+
+@pytest.mark.parametrize("missing", ["chat", "url", "token"])
+def test_essay_enabled_requires_all_three_configuration_values(monkeypatch, missing):
+    _enable_essay(monkeypatch)
+    if missing == "chat":
+        monkeypatch.delenv("RAG_LLM_API_KEY")
+    elif missing == "url":
+        monkeypatch.delenv("RAG_ESSAY_MCP_URL")
+    else:
+        monkeypatch.delenv("RAG_ESSAY_MCP_TOKEN")
+
+    assert not answer.essay_enabled()
+
+
+@pytest.mark.parametrize("url", ["javascript:alert(1)", "ftp://essay.example/mcp"])
+def test_essay_enabled_rejects_non_http_urls(monkeypatch, url):
+    _enable_essay(monkeypatch)
+    monkeypatch.setenv("RAG_ESSAY_MCP_URL", url)
+
+    assert not answer.essay_enabled()
+
+
+def test_essay_enabled_when_chat_url_and_stripped_token_are_present(monkeypatch):
+    _enable_essay(monkeypatch, token=" essay-secret ")
+
+    assert answer.essay_enabled()
+
+
+@pytest.mark.parametrize("content_type,body", [
+    ("application/json", _mcp_body({"ok": "json"})),
+    ("text/event-stream", "event: message\ndata: not-json\n"
+                          "data: {\"result\":{\"structuredContent\":{\"ok\":\"sse\"},"
+                          "\"isError\":false}}\n\n"),
+])
+def test_essay_call_decodes_json_and_sse_and_sends_protocol_headers(
+        monkeypatch, content_type, body):
+    _enable_essay(monkeypatch)
+    sent = {}
+
+    def post(url, payload, headers, timeout):
+        sent.update(url=url, payload=json.loads(payload), headers=headers, timeout=timeout)
+        return content_type, body
+
+    result = answer._essay_call("create_answer", {"title": "題目"}, post=post)
+
+    assert result == {"ok": "json"} if content_type == "application/json" else {"ok": "sse"}
+    assert sent["url"] == "https://essay.example/mcp" and sent["timeout"] == 30
+    assert sent["headers"]["Authorization"] == "Bearer essay-secret"
+    assert sent["headers"]["Accept"] == "application/json, text/event-stream"
+    assert sent["payload"]["method"] == "tools/call"
+    assert sent["payload"]["params"] == {
+        "name": "create_answer", "arguments": {"title": "題目"}}
+
+
+@pytest.mark.parametrize("body", [
+    '{"result":{"isError":true,"content":[{"text":"essay-secret private response"}]}}',
+    '{"error":{"message":"essay-secret private response"}}',
+    'not-json essay-secret private response',
+])
+def test_essay_call_errors_have_fixed_message_without_secrets_or_body(monkeypatch, body):
+    _enable_essay(monkeypatch)
+
+    with pytest.raises(ValueError) as caught:
+        answer._essay_call("create_answer", {}, post=lambda *args: ("application/json", body))
+
+    assert str(caught.value) == "essay service error"
+    assert "essay-secret" not in str(caught.value)
+    assert "private response" not in str(caught.value)
+
+
+@pytest.mark.parametrize("error", [
+    TimeoutError("essay-secret private response"),
+    HTTPError("https://essay.example/mcp", 503, "essay-secret private response", {}, None),
+])
+def test_essay_call_transport_errors_have_fixed_message(monkeypatch, error):
+    _enable_essay(monkeypatch)
+
+    with pytest.raises(ValueError) as caught:
+        answer._essay_call(
+            "create_answer", {}, post=lambda *args: (_ for _ in ()).throw(error))
+
+    assert str(caught.value) == "essay service error"
+    assert "essay-secret" not in str(caught.value)
+    assert "private response" not in str(caught.value)
+
+
+def test_essay_call_redacts_credentials_from_structured_content(monkeypatch):
+    _enable_essay(monkeypatch)
+    body = _mcp_body({"echo": ["essay-secret", "llm-secret"]})
+
+    result = answer._essay_call(
+        "create_answer", {}, post=lambda *args: ("application/json", body))
+
+    assert result == {"echo": ["[已遮蔽]", "[已遮蔽]"]}
+
+
+def test_parse_essay_extracts_json_and_removes_citations_and_markdown_links(monkeypatch):
+    _enable_essay(monkeypatch)
+    wrapped = '前置文字```json\n' + json.dumps({
+        "title": "題目摘要［條1］",
+        "sections": [{"heading": "一、理由［條1］",
+                      "text": "依據[條1](https://evil.example)參考[官方](https://bad.example)。"}],
+    }, ensure_ascii=False) + "\n```後置文字"
+
+    parsed = answer._parse_essay(wrapped)
+
+    assert parsed == {
+        "title": "題目摘要",
+        "sections": [{"heading": "一、理由", "text": "依據參考官方。"}],
+    }
+
+
+@pytest.mark.parametrize("payload", [
+    {"sections": [{"heading": "標題", "text": "內文"}]},
+    {"title": "標題", "sections": []},
+    {"title": "標題", "sections": [{"heading": "", "text": 3}]},
+])
+def test_parse_essay_rejects_invalid_required_fields(payload):
+    assert answer._parse_essay(json.dumps(payload, ensure_ascii=False)) is None
+
+
+def test_generate_essay_creates_and_exports_and_filters_urls_and_secrets(
+        monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+    calls = []
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)
+        calls.append((request["params"]["name"], request["params"]["arguments"], headers))
+        if request["params"]["name"] == "create_answer":
+            structured = _essay_state_response()
+        else:
+            structured = {"files": [
+                {"format": "pdf", "fileName": "答案.pdf",
+                 "downloadUrl": "https://files.example/answer.pdf"},
+                {"format": "docx", "fileName": "答案.docx",
+                 "downloadUrl": "https://files.example/answer.docx"},
+                {"format": "pdf", "fileName": "bad.pdf",
+                 "downloadUrl": "javascript:alert(1)"},
+            ]}
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay(
+        "申論題", *evidence, client=FakeClient(_essay_json(
+            text="依據 llm-secret 與 essay-secret 說明。")), post=post)
+
+    assert result["status"] == "ok"
+    assert [name for name, _, _ in calls] == ["create_answer", "export_answer"]
+    assert calls[0][1]["templateId"] == "police_information_essay"
+    assert calls[1][1]["expectedVersion"] == 1
+    assert result["essay"]["files"] == [
+        {"format": "pdf", "url": "https://files.example/answer.pdf"},
+        {"format": "docx", "url": "https://files.example/answer.docx"},
+    ]
+    dumped = json.dumps(result, ensure_ascii=False)
+    assert "essay-secret" not in dumped and "llm-secret" not in dumped
+
+
+def test_generate_essay_compresses_overflow_and_exports_with_new_version(
+        monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+    client = SequenceClient(_essay_json(), _essay_json(text="縮短後的答案。"))
+    calls = []
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)
+        name, arguments = request["params"]["name"], request["params"]["arguments"]
+        calls.append((name, arguments))
+        if name == "create_answer":
+            structured = _essay_state_response(fits=False, overflow=4, total=48)
+        elif name == "write_answer":
+            structured = _essay_state_response(fits=True, version=2, total=40)
+        else:
+            structured = {"files": []}
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    assert [name for name, _ in calls] == ["create_answer", "write_answer", "export_answer"]
+    assert calls[1][1]["expectedVersion"] == 1
+    assert calls[2][1]["expectedVersion"] == 2
+    assert result["essay"]["sections"][0]["text"] == "縮短後的答案。"
+    assert result["essay"]["layout"]["fits"] is True
+    assert len(client.calls) == 2
+
+
+def test_generate_essay_keeps_overflow_note_and_skips_export_after_compression(
+        monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+    client = SequenceClient(_essay_json(), _essay_json(text="仍然超出版面。"))
+    names = []
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)
+        name = request["params"]["name"]
+        names.append(name)
+        state = _essay_state_response(fits=False, overflow=2, total=46)
+        return "application/json", _mcp_body(state if name != "export_answer" else {"files": []})
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    assert names == ["create_answer", "write_answer"]
+    assert "超出答題紙 2 行" in result["essay"]["note"]
+    assert result["essay"]["layout"]["fits"] is False
+
+
+def test_generate_essay_create_failure_keeps_text_and_returns_fixed_note(monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+
+    def fail(*args):
+        raise RuntimeError("essay-secret response body")
+
+    result = answer.generate_essay(
+        "申論題", *evidence, client=FakeClient(_essay_json()), post=fail)
+
+    assert result["status"] == "ok" and result["essay"]["sections"]
+    assert result["essay"]["layout"] is None and result["essay"]["files"] == []
+    assert result["essay"]["note"] == "排版服務暫時無法使用，以下只有文字。"
+    assert "essay-secret" not in json.dumps(result, ensure_ascii=False)
+
+
+def test_generate_essay_export_failure_keeps_layout_and_adds_fixed_note(monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)
+        if request["params"]["name"] == "export_answer":
+            raise TimeoutError("essay-secret")
+        return "application/json", _mcp_body(_essay_state_response())
+
+    result = answer.generate_essay(
+        "申論題", *evidence, client=FakeClient(_essay_json()), post=post)
+
+    assert result["status"] == "ok" and result["essay"]["layout"]["fits"]
+    assert result["essay"]["note"] == "檔案匯出失敗，以下只有文字與版面結果。"
+    assert "essay-secret" not in json.dumps(result, ensure_ascii=False)
+
+
+def test_generate_essay_model_invalid_json_is_error(monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+
+    result = answer.generate_essay(
+        "申論題", *evidence, client=FakeClient("不是 JSON"))
+
+    assert result["status"] == "error" and result["reason"] == "模型回應格式錯誤"
+
+
+@pytest.mark.parametrize("fullwidth", [False, True])
+def test_generate_essay_reports_only_unretrieved_article_numbers(
+        monkeypatch, evidence, fullwidth):
+    _enable_essay(monkeypatch)
+    questions, laws = evidence
+    laws = [dict(laws[0], article_no="第６條" if fullwidth else "第 6 條")]
+    answer_text = "依第６條與第８條之１作答。" if fullwidth else "依第 6 條與第 8 條之 1 作答。"
+    essay_text = json.dumps({
+        "title": "題目摘要",
+        "sections": [{"heading": "一、說明", "text": answer_text}],
+    }, ensure_ascii=False)
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)
+        if request["params"]["name"] == "create_answer":
+            structured = _essay_state_response()
+        else:
+            structured = {"files": []}
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay(
+        "題目", questions, laws, client=FakeClient(essay_text), post=post)
+
+    assert result["essay"]["unverified_articles"] == ["第 8 條之 1"]
