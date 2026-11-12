@@ -1352,14 +1352,23 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
         if name == "load_exam_paper":
             structured = {"template": {}, "writingGuide": {
                 "stages": {"draft": "先按每小問與指令動詞擬綱", "compress": "先刪套話{再}縮句"},
-                "paperLayout": {"instruction": "段落只用單一換行"}}}
+                "paperLayout": {"instruction": "段落只用單一換行"}, "examplesLabel": "自製教學示例",
+                "examples": [{"type": "比較", "question": "比較甲乙", "teachingExample": "依共同維度對照"}, "壞"]}}
         elif name == "create_answer":
             structured = _essay_state_response(fits=False, overflow=4, total=48)
         elif name == "write_answer":
             structured = _essay_state_response(fits=True, version=2, total=40)
         elif name == "check_layout":
-            structured = (_essay_check_response(version=2, total=40) if written else
-                          _essay_check_response(fits=False, overflow=4, total=48))
+            structured = (_essay_check_response(version=2, total=40) if written else _essay_check_response(
+                fits=False, overflow=4, total=48, notes=["超出答案紙 4 行；建議先壓縮：一、核心說明（42 行）。"]))
+            if not written:
+                paragraph = {"sectionId": "s1", "paragraphIndex": 0, "isHeading": False, "page": 1}
+                structured["warnings"] = ["壞", {"code": "ORPHAN_HEADING", "page": 1, "line": 3, "sectionId": "s1"},
+                                          {"code": "SHORT_TAIL_LINE", "page": 1, "line": 3, "sectionId": "s1"}]
+                structured["layout"]["lines"] = [
+                    {**paragraph, "lineOnPage": 1, "isHeading": True, "text": "一、核心說明"},
+                    {**paragraph, "lineOnPage": 2, "text": "（一）滯留於有事實足認有陰謀、預備"},
+                    {**paragraph, "lineOnPage": 3, "text": "者。"}]
         else:
             structured = {"files": []}
         return "application/json", _mcp_body(structured)
@@ -1373,11 +1382,17 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
     assert "初稿控制在 650–700 字" in system and "每行約 16 個全形字" in system
     # the essay server's own writing guide reaches the model
     assert "【起草】先按每小問與指令動詞擬綱" in system and "【稿紙段落】段落只用單一換行" in system
+    assert "【題型示例（自製教學示例）】〔比較〕題目：比較甲乙　寫法：依共同維度對照\n" in system
     assert calls[1][1]["templateId"] == "police_information_essay_165"
     assert calls[1][1]["lineTargets"] == [{"sectionId": "s1", "lines": 20}, {"sectionId": "s2", "lines": 10}]
     revision = client.calls[1][0][-1]["content"]
     assert "超出 4 行" in revision and "s1 42 行（目標 20）、s2 6 行" in revision
     assert "先刪套話再縮句" in revision and "每行約 16 個全形字" in revision
+    assert "建議先壓縮：一、核心說明（42 行）" in revision
+    # the server's short-tail warning names the paragraph to trim
+    assert revision.count("可省一行") == 1
+    assert "條列各項仍以句號結尾" in revision
+    assert "可省一行：「（一）滯留於有事實足認有」這段的最後一行只剩 2 字，把這段精簡 2 字以上就少一行。" in revision
     assert "{" not in revision
     assert calls[3][1]["expectedVersion"] == 1
     assert [section["id"] for section in calls[3][1]["sections"]] == ["s1", "s2"]
@@ -1428,8 +1443,10 @@ def test_generate_essay_fixes_structure_reminders_and_restores_the_fitting_versi
             structured = (_essay_state_response(fits=False, version=2, overflow=3, total=47) if writes == 1
                           else _essay_state_response(version=3))
         elif name == "check_layout":
-            structured = (_essay_check_response(fits=False, version=2, overflow=3, total=47) if writes else
-                          _essay_check_response(notes=["結構提醒：s1 把多個編號項併在同一段", "其他說明"]))
+            structured = (
+                _essay_check_response(notes=["結構提醒：s1 把多個編號項併在同一段", "其他說明"]) if not writes
+                else _essay_check_response(fits=False, version=2, overflow=3, total=47) if writes == 1
+                else _essay_check_response(version=3))
         else:
             structured = {"files": []}
         return "application/json", _mcp_body(structured)
@@ -1438,16 +1455,76 @@ def test_generate_essay_fixes_structure_reminders_and_restores_the_fitting_versi
 
     assert [name for name, _ in calls] == [
         "load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout",
-        "write_answer", "export_answer"]
+        "write_answer", "check_layout", "export_answer"]
     reminder = client.calls[1][0][-1]["content"]
     assert "結構提醒：s1 把多個編號項併在同一段" in reminder and "其他說明" not in reminder
     assert "請壓縮" not in reminder and "請壓縮" in client.calls[2][0][-1]["content"]
     # the revision overflowed and could not be repaired: the version that fit goes back and is exported
     assert calls[5][1]["expectedVersion"] == 2
     assert calls[5][1]["sections"][0]["text"] == "依檢索資料說明核心理由。"
-    assert calls[6][1]["expectedVersion"] == 3
+    assert calls[7][1]["expectedVersion"] == 3
     assert result["essay"]["sections"][0]["text"] == "依檢索資料說明核心理由。"
     assert result["essay"]["layout"]["fits"] is True and result["essay"]["note"] == ""
+
+
+ARTICLE_7 = {"law_name": "警察職權行使法", "article_no": "第7條", "content": (
+    "警察依前條規定，為查證人民身分，得採取下列之必要措施：一、攔停人、車、船及其他交通工具。"
+    "二、詢問姓名、出生年月日、出生地、國籍、住居所及身分證統一編號等。三、令出示身分證明文件。"
+    "四、若有明顯事實足認其有攜帶足以自殺、自傷或傷害他人生命或身體之物者，得檢查其身體及所攜帶之物。")}
+ARTICLE_8 = {"law_name": "警察職權行使法", "article_no": "第8條", "content": (
+    "警察對於已發生危害或依客觀合理判斷易生危害之交通工具，得予以攔停並採行下列措施："
+    "一、要求駕駛人或乘客出示相關證件或查證其身分。二、檢查引擎、車身號碼或其他足資識別之特徵。"
+    "三、要求駕駛人接受酒精濃度測試之檢定。警察因前項交通工具之駕駛人或乘客有異常舉動而合理懷疑其將有危害行為時，"
+    "得強制其離車；有事實足認其有犯罪之虞者，並得檢查交通工具。")}
+VEHICLE_STOP = ("對已發生危害或依客觀合理判斷易生危害之交通工具，得攔停並查證駕駛人或乘客身分；"
+                "有異常舉動而合理懷疑其將有危害行為時，得強制離車。")
+# the vehicle stop is article 8's wording, written here as an item of article 7
+MISPLACED = f"依警察職權行使法第7條，警察得採取下列必要措施：\n（一）攔停人、車、船及其他交通工具。\n（二）{VEHICLE_STOP}"
+
+
+def test_misplaced_articles_flags_another_articles_wording_under_the_cited_number():
+    laws = [ARTICLE_7, ARTICLE_8]
+    sections = [{"heading": "一、概說", "text": f"未引條號的段落不判：{VEHICLE_STOP}"},
+                {"heading": "二、程序", "text": MISPLACED}]
+
+    assert answer._misplaced_articles(sections, laws) == [
+        (2, MISPLACED.split("\n")[2][:14], "第 7 條", "警察職權行使法第8條")]
+    for text in (f"依警察職權行使法第8條，{VEHICLE_STOP}",  # under its own article
+                 f"依警察職權行使法第9條，{VEHICLE_STOP}",  # cited article not retrieved: unverified_articles reports it
+                 f"依警察職權行使法第7條及第8條，{VEHICLE_STOP}",  # two articles in one paragraph
+                 "依警察職權行使法第７條，得攔停人、車、船及其他交通工具，並詢問姓名、出生年月日及住居所。"):
+        assert answer._misplaced_articles([{"heading": "一、", "text": text}], laws) == []
+    assert answer._misplaced_articles(sections, []) == []
+
+
+@pytest.mark.parametrize("fixed", [True, False])
+def test_generate_essay_asks_the_model_to_fix_content_written_under_the_wrong_article(
+        monkeypatch, evidence, fixed):
+    _enable_essay(monkeypatch)
+    corrected = MISPLACED.replace("（二）", "依同法第8條，")
+    client = SequenceClient(_essay_json(text=MISPLACED), _essay_json(text=corrected) if fixed else "不是 JSON")
+    names = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        names.append(name)
+        structured = {"export_answer": {"files": []}, "create_answer": _essay_state_response(),
+                      "write_answer": _essay_state_response(version=2)}.get(
+            name, _essay_check_response(version=2 if "write_answer" in names else 1))
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", evidence[0], [ARTICLE_7, ARTICLE_8], client=client, post=post)
+
+    request = client.calls[1][0][-1]["content"]
+    assert "寫在第 7 條之下，內容卻是 <data> 裡警察職權行使法第8條的原文" in request and "請壓縮" not in request
+    if fixed:
+        assert names == ["load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout",
+                         "export_answer"]
+        assert result["essay"]["sections"][0]["text"] == corrected and result["essay"]["note"] == ""
+    else:
+        # the answer still goes out, with a warning that carries no model text
+        assert names == ["load_exam_paper", "create_answer", "check_layout", "export_answer"]
+        assert result["essay"]["note"] == "第 1 節有段落寫在第 7 條之下，用語卻較接近警察職權行使法第8條，請對照原文。"
 
 
 def test_generate_essay_exports_a_fitting_answer_without_revision_when_already_slow(
