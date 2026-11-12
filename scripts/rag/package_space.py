@@ -50,7 +50,8 @@ def main():
             shutil.copytree(args.essay_mcp / relative, args.out / "essay-mcp" / relative)
         for name in ("package.json", "package-lock.json"):
             shutil.copy2(args.essay_mcp / name, args.out / "essay-mcp" / name)
-        (args.out / "packages.txt").write_text("fonts-noto-cjk\n", encoding="utf-8")
+        # bytes: a CRLF written on Windows makes apt look for "fonts-noto-cjk\r" and the Space build fails
+        (args.out / "packages.txt").write_bytes(b"fonts-noto-cjk\n")
     print(f"Space 檔案已整理至 {args.out.resolve()}")
 
 
