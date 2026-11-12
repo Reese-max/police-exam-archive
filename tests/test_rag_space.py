@@ -133,6 +133,13 @@ def test_frontend_iframe_uses_relative_gradio_file_url(app, tmp_path):
     assert "gradio_api/file=" in src
 
 
+@pytest.mark.parametrize("enabled", [True, False])
+def test_frontend_iframe_flags_essay_only_when_enabled(app, tmp_path, monkeypatch, enabled):
+    monkeypatch.setattr(app, "essay_enabled", lambda: enabled)
+    src = app._frontend_html(tmp_path / "web" / "dist").split('src="', 1)[1].split('"', 1)[0]
+    assert src.endswith("/index.html?essay=1" if enabled else "/index.html")
+
+
 @pytest.mark.parametrize("has_build", [True, False])
 def test_package_space_copies_frontend_build_only_when_present(
         monkeypatch, tmp_path, has_build):
@@ -371,7 +378,7 @@ def test_chat_renders_judgment_warning_and_source_section(app, monkeypatch):
     _, messages = _run_chat(app, "問題")
     answer_text = messages[-2]["content"]
     source = messages[-1]
-    notice = "⚖️ 標示 [判n] 的內容是法院裁判摘錄，屬個案見解且可能已被變更，請點開全文核對。"
+    notice = "⚖️ 標示 [判n] 的內容是裁判書摘錄，可能是當事人的主張而不是法院的見解，也可能已被變更，請點開全文核對。"
 
     assert notice in answer_text
     assert answer_text.index(notice) > answer_text.index("依裁判見解")
@@ -839,3 +846,147 @@ def test_numbered_follow_up_skips_an_empty_message_in_the_history(app, monkeypat
     _run_chat(app, "[題1] 的理由是什麼？", history)
 
     assert searched[0][0] == "警察查證身分"
+
+
+def _space_essay_result(*, files=None, unverified=None):
+    return {
+        "status": "ok",
+        "essay": {
+            "title": "申論題摘要",
+            "sections": [
+                {"heading": "一、核心說明", "text": "依檢索資料回答。"},
+                {"heading": "二、結論", "text": "回到題示事實。"},
+            ],
+            "layout": {
+                "fits": True, "totalLines": 32, "remainingLines": 12,
+                "overflowLines": 0, "pagesUsed": 2,
+            },
+            "files": files or [{"format": "pdf", "url": "https://files.example/answer.pdf"}],
+            "note": "",
+            "unverified_articles": unverified or [],
+        },
+        "included": {"題": 1, "條": 1},
+    }
+
+
+def test_essay_prefix_is_ordinary_chat_when_disabled(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    monkeypatch.setenv("RAG_ESSAY_MCP_URL", "")
+    searched = _set_chat_search(app, monkeypatch)
+    monkeypatch.setattr(app, "essay_enabled", lambda: False)
+    monkeypatch.setattr(app, "generate_essay",
+                        lambda *args, **kwargs: pytest.fail("essay generator must not run"))
+    generated = []
+
+    def ordinary(query, *args, **kwargs):
+        generated.append(query)
+        return {"status": "ok", "grounded": "一般聊天回答。[題1]",
+                "supplement": "", "citations": ["[題1]"], "invalid_citations": []}
+
+    monkeypatch.setattr(app, "generate_chat_answer", ordinary)
+    _, messages = _run_chat(app, "申論題：警察得否查證身分？")
+
+    assert [query for query, _ in searched] == ["申論題：警察得否查證身分？"]
+    assert generated == ["申論題：警察得否查證身分？"]
+    assert "一般聊天回答" in messages[-2]["content"]
+
+
+def test_enabled_essay_path_uses_question_and_renders_sources_and_warning(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    searched = _set_chat_search(app, monkeypatch)
+    monkeypatch.setattr(app, "essay_enabled", lambda: True)
+    generated = []
+
+    def generate(query, results, laws, *, history=()):
+        generated.append((query, results, laws, history))
+        return _space_essay_result(unverified=["第 8 條"])
+
+    monkeypatch.setattr(app, "generate_essay", generate)
+    updates, messages = _run_chat(app, "  申論題：  警察得否查證身分？  ")
+
+    answer_text = messages[-2]["content"]
+    assert [query for query, _ in searched] == ["警察得否查證身分？"]
+    assert generated[0][0] == "警察得否查證身分？"
+    assert "正在撰寫申論擬答並排版" in updates[0][0][-1]["content"]
+    assert "申論擬答" in answer_text
+    assert "**一、核心說明**" in answer_text and "依檢索資料回答。" in answer_text
+    assert "共 32 行、2 頁，尚餘 12 行" in answer_text
+    assert "[下載 PDF](" in answer_text
+    assert "⚠️ 擬答由 AI 撰寫" in answer_text
+    assert "第 8 條" in answer_text and messages[-1]["metadata"]["title"] == \
+        "檢索到的考題與條文（1 題、1 條）"
+
+
+def test_source_followup_after_essay_replays_search_without_prefix(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    searched = _set_chat_search(app, monkeypatch)
+    monkeypatch.setattr(app, "essay_enabled", lambda: True)
+    monkeypatch.setattr(app, "generate_chat_answer", lambda *args, **kwargs: {
+        "status": "ok", "grounded": "說明。[題1]", "supplement": "",
+        "citations": ["[題1]"], "invalid_citations": []})
+    history = [{"role": "user", "content": "申論題：警察得否查證身分？"},
+               {"role": "assistant", "content": "📝 **申論擬答：摘要**"}]
+    _run_chat(app, "[題1] 為什麼這樣考？", history)
+
+    assert [query for query, _ in searched] == ["警察得否查證身分？"]
+
+
+def test_essay_download_urls_are_encoded_and_model_text_is_safe(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    _set_chat_search(app, monkeypatch)
+    monkeypatch.setattr(app, "essay_enabled", lambda: True)
+    result = _space_essay_result(files=[
+        {"format": "docx", "url": "https://files.example/answer.docx"},
+        {"format": "pdf", "url": "https://files.example/answer (final)/答案.pdf"},
+    ])
+    result["essay"]["sections"][0]["text"] = (
+        "模型文字 [x](http://evil.example) <script>alert(1)</script>")
+    monkeypatch.setattr(app, "generate_essay", lambda *args, **kwargs: result)
+
+    _, messages = _run_chat(app, "申論題：題目")
+    rendered = messages[-2]["content"]
+
+    assert "[下載 PDF](https://files.example/answer%20%28final%29/%E7%AD%94%E6%A1%88.pdf)" in rendered
+    assert rendered.index("[下載 PDF]") < rendered.index("[下載 Word]")
+    assert "http://evil.example" not in rendered and "](http://evil.example)" not in rendered
+    assert "x" in rendered and "&lt;script&gt;" in rendered and "<script>" not in rendered
+
+
+def test_essay_path_shares_hourly_limit_and_refunds_failed_generation(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    monkeypatch.setenv("RAG_LLM_MAX_PER_HOUR", "1")
+    _set_chat_search(app, monkeypatch)
+    monkeypatch.setattr(app, "essay_enabled", lambda: True)
+    calls = []
+    monkeypatch.setattr(app, "generate_essay", lambda *args, **kwargs:
+                        calls.append(1) or _space_essay_result())
+
+    _, first = _run_chat(app, "申論題：第一題")
+    _, limited = _run_chat(app, "申論題：第二題")
+    assert "申論擬答" in first[-2]["content"]
+    assert "AI 回答已達本小時上限，以下是檢索結果：" in limited[-1]["content"]
+    assert len(calls) == 1
+
+    app._answer_requests.clear()
+    monkeypatch.setattr(app, "generate_essay", lambda *args, **kwargs: {
+        "status": "error", "reason": "模型回應格式錯誤",
+    })
+    _, failed = _run_chat(app, "申論題：格式錯誤")
+    assert "AI 回答暫時無法產生（模型回應格式錯誤），以下是檢索結果：" \
+        in failed[-1]["content"]
+    assert not app._answer_requests
+
+
+def test_essay_error_uses_existing_retrieval_fallback(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    _set_chat_search(app, monkeypatch)
+    monkeypatch.setattr(app, "essay_enabled", lambda: True)
+    monkeypatch.setattr(app, "generate_essay", lambda *args, **kwargs: {
+        "status": "error", "reason": "模型服務連線逾時或失敗",
+    })
+
+    _, messages = _run_chat(app, "申論題：題目")
+
+    assert "AI 回答暫時無法產生（模型服務連線逾時或失敗），以下是檢索結果：" \
+        in messages[-1]["content"]
+    assert "題幹：查證身分題" in messages[-1]["content"]

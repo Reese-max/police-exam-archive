@@ -8,7 +8,7 @@ import { File, getFileHref } from "@/components/assistant-ui/elements/file";
 import { ThreadFollowupSuggestions } from "@/components/assistant-ui/elements/follow-up-suggestions.aui";
 import { Image } from "@/components/assistant-ui/elements/image";
 import { MarkdownText } from "@/components/assistant-ui/elements/markdown-text";
-import { linkCitations } from "@/gradio";
+import { prepareAnswer } from "@/gradio";
 import {
   Reasoning,
   ReasoningContent,
@@ -658,7 +658,7 @@ const AssistantMessage: FC = () => {
                 );
               }
               case "text":
-                return <MarkdownText preprocess={linkCitations} />;
+                return <MarkdownText preprocess={prepareAnswer} />;
               case "reasoning":
                 return <Reasoning {...part} />;
               case "tool-call":

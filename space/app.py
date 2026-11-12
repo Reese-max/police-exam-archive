@@ -30,7 +30,8 @@ from query import (LOW_CONFIDENCE_NOTICE, MOEX_CORRECTION_INFO_URL, _is_official
                    truncate_law_content)
 from retrieval import (LEGACY_EMBEDDING_TEXT_VERSION, LEGACY_INDEX_WARNING, Retriever, add_search_arguments,
                        embedding_text_version, parse_search_args, search_arguments)
-from answer import MARKDOWN_LINK, _unlink, chat_enabled, generate_chat_answer
+from answer import (MARKDOWN_LINK, _unlink, _valid_http_url, chat_enabled,
+                    essay_enabled, generate_chat_answer, generate_essay)
 
 
 executor = ThreadPoolExecutor(max_workers=1)
@@ -44,6 +45,7 @@ _answer_requests = deque()
 # "[題1]" anywhere, or a bare "題 3" only at the start; "選擇題 5 題", "題 107 年…" and
 # "條 10 …" are new questions (at most 5 questions and 3 articles are listed).
 _SOURCE_REFERENCE = re.compile(r"[\[［【](?:題|條)\s*\d+[\]］】]|^\s*(?:題|條)\s*\d(?!\s*[\d年])")
+_ESSAY_PREFIX = re.compile(r"^\s*申論(?:題)?\s*[：:]\s*(.+)", re.DOTALL)
 _answer_lock = Lock()
 _ANSWER_CACHE_SECONDS = 3600
 _ANSWER_CACHE_MAX = 500
@@ -213,11 +215,12 @@ def _store_answer(key, result):
             _answer_cache.pop(next(iter(_answer_cache)))
 
 
-def _cached_chat_answer(query, results, laws, history=(), *, use_cache=True):
+def _cached_chat_answer(query, results, laws, history=(), *, use_cache=True, generate=None):
+    generate_answer = generate or generate_chat_answer
     now = time.monotonic()
     key = " ".join(query.split()).casefold()
     if not chat_enabled():
-        return generate_chat_answer(query, results, laws, history=history)
+        return generate_answer(query, results, laws, history=history)
 
     if use_cache:
         with _answer_lock:
@@ -239,7 +242,7 @@ def _cached_chat_answer(query, results, laws, history=(), *, use_cache=True):
             _answer_requests.append(ticket)
 
     try:
-        result = generate_chat_answer(query, results, laws, history=history)
+        result = generate_answer(query, results, laws, history=history)
     except Exception as exc:
         # Keep the chat usable and the quota slot refunded; the message may hold user text, so log the type only.
         print(f"chat answer failed: {type(exc).__name__}", file=sys.stderr)
@@ -278,6 +281,41 @@ def _low_confidence_without_laws(results, laws):
 
 def _safe_model_text(value):
     return escape(MARKDOWN_LINK.sub(_unlink, str(value or "")))
+
+
+def _essay_reply(essay):
+    parts = [f"📝 **申論擬答：{_safe_model_text(essay.get('title'))}**"]
+    for section in essay.get("sections") or []:
+        heading = _safe_model_text(section.get("heading"))
+        if heading:
+            parts.append(f"**{heading}**")
+        parts.append(_safe_model_text(section.get("text")))
+    layout = essay.get("layout")
+    if layout:
+        detail = (f"📄 答題紙版面：共 {layout['totalLines']} 行、{layout['pagesUsed']} 頁，"
+                  f"尚餘 {layout['remainingLines']} 行。")
+        labels = {"pdf": "下載 PDF", "docx": "下載 Word"}
+        urls = {}
+        for file in essay.get("files") or []:
+            if not isinstance(file, dict) or file.get("format") not in labels:
+                continue
+            url = quote(str(file.get("url") or ""), safe=":/?#@!$&*+,;=%-._~")
+            if _valid_http_url(url):
+                urls.setdefault(file["format"], url)
+        links = [f"[{labels[format_name]}]({urls[format_name]})"
+                 for format_name in ("pdf", "docx") if format_name in urls]
+        if links:
+            detail += "　" + "　".join(links) + "　（連結 24 小時內有效）"
+        parts.append(detail)
+    if essay.get("note"):
+        parts.append(str(essay["note"]))
+    parts.append("⚠️ 擬答由 AI 撰寫，未逐句查證，請對照下方來源；不保證得分。")
+    unverified = essay.get("unverified_articles") or []
+    if unverified:
+        parts.append("下列條號不在本次檢索到的條文中，請自行核對：" + "、".join(
+            _safe_model_text(article) for article in unverified
+        ) + "。")
+    return "\n\n".join(parts)
 
 
 def _chat_sources(results, laws, web=(), judgments=()):
@@ -357,26 +395,53 @@ def chat(message, history):
     questions = [item["content"] for item in conversation
                  if item["role"] == "user" and item["content"].strip()
                  and not _SOURCE_REFERENCE.search(item["content"])]
-    if questions and _SOURCE_REFERENCE.search(message):
+    essay_match = _ESSAY_PREFIX.match(message)
+    essay_question = essay_match.group(1).strip() if essay_match else ""
+    is_essay = bool(essay_question and essay_enabled())
+    if is_essay:
+        results, law_results, elapsed_ms, warning = _search_turn(essay_question)
+    elif questions and _SOURCE_REFERENCE.search(message):
         # "[題1] 為什麼…" points at the previous turn's sources: repeat that turn's retrieval so the
         # numbers match. shortcut: history beyond the recent window is not replayed; upgrade: keep
         # each turn's results per session.
-        results, law_results, elapsed_ms, warning = _search_turn(
-            questions[-1], questions[-2] if len(questions) > 1 else None)
+        asked = _ESSAY_PREFIX.match(questions[-1]) if essay_enabled() else None
+        if asked and asked.group(1).strip():
+            # An essay turn searched its question alone, without the prefix.
+            results, law_results, elapsed_ms, warning = _search_turn(asked.group(1).strip())
+        else:
+            results, law_results, elapsed_ms, warning = _search_turn(
+                questions[-1], questions[-2] if len(questions) > 1 else None)
     else:
         results, law_results, elapsed_ms, warning = _search_turn(
             message, questions[-1] if questions else None)
 
     progress = {"role": "assistant",
                 "content": (f"已完成檢索（{len(results)} 題考題、{len(law_results)} 條條文），"
-                            "正在整理回答…")}
+                            + ("正在撰寫申論擬答並排版…" if is_essay else "正在整理回答…"))}
     messages.append(progress)
     yield list(messages), ""
 
     answer_result = _cached_chat_answer(
-        message, results, law_results, history=conversation, use_cache=not conversation
+        essay_question if is_essay else message,
+        results, law_results, history=conversation,
+        use_cache=not conversation and not is_essay,
+        generate=generate_essay if is_essay else None,
     )
+    if is_essay and answer_result.get("status") == "ok" and not answer_result.get("essay"):
+        answer_result = {"status": "error", "reason": "模型回應格式錯誤"}
     if answer_result.get("status") == "ok":
+        if is_essay:
+            messages[-1] = {"role": "assistant", "content": _essay_reply(answer_result["essay"])}
+            low_confidence_without_laws = _low_confidence_without_laws(results, law_results)
+            if not low_confidence_without_laws:
+                seen = answer_result.get("included") or {
+                    "題": len(results), "條": len(law_results)}
+                source_message = _chat_sources(
+                    results[:seen.get("題", 0)], law_results[:seen.get("條", 0)])
+                if source_message:
+                    messages.append(source_message)
+            yield list(messages), ""
+            return
         web = answer_result.get("web") or []
         judgments = answer_result.get("judgments") or []
         parts = []
@@ -388,7 +453,7 @@ def chat(message, history):
         if any(isinstance(citation, str) and citation.startswith("[判")
                for citation in answer_result.get("citations") or []):
             parts.append(
-                "⚖️ 標示 [判n] 的內容是法院裁判摘錄，屬個案見解且可能已被變更，請點開全文核對。"
+                "⚖️ 標示 [判n] 的內容是裁判書摘錄，可能是當事人的主張而不是法院的見解，也可能已被變更，請點開全文核對。"
             )
         if answer_result.get("supplement"):
             parts.append(
@@ -431,6 +496,8 @@ def search(query):
 
 def _frontend_html(web):
     src = f"gradio_api/file={web.as_posix()}/index.html"
+    if essay_enabled():
+        src += "?essay=1"
     return (
         f'<iframe src="{escape(src, quote=True)}" title="警察考古題 AI 助理" '
         'style="position:fixed;inset:0;width:100%;height:100%;border:0;'

@@ -17,6 +17,10 @@ const suggestionTexts = [
   '警察何時可以查證身分？',
   '警察職權行使法第 6 條規定什麼？',
   '考古題中的答案和現行法條不同時應如何判斷？',
+  // The backend adds ?essay=1 to the iframe src when essay answers are enabled.
+  ...(new URLSearchParams(window.location.search).has('essay')
+    ? ['申論題：試述警察查證身分之要件及程序。']
+    : []),
 ]
 
 const getText = (message: ThreadMessage) =>
