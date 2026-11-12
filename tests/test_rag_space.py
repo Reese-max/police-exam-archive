@@ -245,7 +245,9 @@ def _fake_tempdir(app, monkeypatch, work):
 
 
 def _clear_essay_env(monkeypatch):
-    for key in ("RAG_ESSAY_MCP_DIR", "RAG_ESSAY_MCP_URL", "RAG_ESSAY_MCP_TOKEN"):
+    for key in ("RAG_ESSAY_MCP_DIR", "RAG_ESSAY_MCP_URL", "RAG_ESSAY_MCP_TOKEN",
+                "RAG_ESSAY_PAPER_FONT", "RAG_ESSAY_TEMPLATE"):
+        monkeypatch.setenv(key, "")  # recorded, so a value the app sets itself is removed at teardown
         monkeypatch.delenv(key, raising=False)
 
 
@@ -349,6 +351,74 @@ def test_start_essay_mcp_installs_and_starts_with_allowlisted_environment(
     assert "RAG_JUDGMENT_API_KEY" not in child_env
     assert app.os.environ["RAG_ESSAY_MCP_URL"] == origin + "/mcp"
     assert app.os.environ["RAG_ESSAY_MCP_TOKEN"] == child_env["MCP_AUTH_TOKEN"]
+    assert "ESSAY_MCP_PAPER_FONT" not in child_env
+    assert "RAG_ESSAY_TEMPLATE" not in app.os.environ
+
+
+@pytest.mark.parametrize("zipped", [False, True])
+def test_paper_font_accepts_only_the_pinned_file(app, monkeypatch, tmp_path, zipped):
+    font = b"moe-kai-font"
+    monkeypatch.setattr(app, "_PAPER_FONT_SHA256", app.hashlib.sha256(font).hexdigest())
+    data = font
+    if zipped:
+        buffer = app.io.BytesIO()
+        with app.zipfile.ZipFile(buffer, "w") as archive:
+            archive.writestr("readme.txt", "x")
+            archive.writestr("other.ttf", b"another font")
+            archive.writestr("字型/edukai-5.1.TTF", font)
+        data = buffer.getvalue()
+    monkeypatch.setenv("RAG_ESSAY_PAPER_FONT", "https://fonts.example/kai")
+    monkeypatch.setattr(app, "urlopen", lambda url, timeout: _FakeResponse(data))
+
+    assert app._paper_font(tmp_path).read_bytes() == font
+
+
+def test_paper_font_rejects_other_files_and_failures(app, monkeypatch, tmp_path, capsys):
+    work = tmp_path / "work"
+    work.mkdir()
+    monkeypatch.delenv("RAG_ESSAY_PAPER_FONT", raising=False)
+    assert app._paper_font(work) is None
+    wrong = tmp_path / "wrong.ttf"
+    wrong.write_bytes(b"not the font")
+    monkeypatch.setenv("RAG_ESSAY_PAPER_FONT", str(wrong))
+    assert app._paper_font(work) is None
+    monkeypatch.setenv("RAG_ESSAY_PAPER_FONT", str(tmp_path / "missing-secret-name.ttf"))
+    assert app._paper_font(work) is None
+    output = capsys.readouterr().out
+    assert "不是教育部標準楷書" in output and "FileNotFoundError" in output
+    assert "missing-secret-name" not in output
+    assert not list(work.iterdir())
+
+
+def test_start_essay_mcp_uses_165_sheet_when_font_is_ready(app, monkeypatch, tmp_path):
+    _clear_essay_env(monkeypatch)
+    source = _essay_project(tmp_path, with_node_modules=True)
+    monkeypatch.setenv("RAG_ESSAY_MCP_DIR", str(source))
+    font = tmp_path / "kai.ttf"
+    font.write_bytes(b"moe-kai-font")
+    monkeypatch.setenv("RAG_ESSAY_PAPER_FONT", str(font))
+    monkeypatch.setattr(app, "_PAPER_FONT_SHA256", app.hashlib.sha256(b"moe-kai-font").hexdigest())
+    monkeypatch.setattr(app.shutil, "which", lambda name: f"{name}-executable")
+    work = tmp_path / "work"
+    _fake_tempdir(app, monkeypatch, work)
+    _fake_port_socket(app, monkeypatch)
+    popen_calls = []
+
+    class Process:
+        def poll(self):
+            return None
+
+        def terminate(self):
+            pass
+
+    monkeypatch.setattr(app.subprocess, "Popen",
+                        lambda args, **kwargs: popen_calls.append(kwargs) or Process())
+    monkeypatch.setattr(app.atexit, "register", lambda callback: None)
+    monkeypatch.setattr(app, "urlopen", lambda url, timeout: _FakeResponse())
+
+    assert app._start_essay_mcp() is not None
+    assert popen_calls[0]["env"]["ESSAY_MCP_PAPER_FONT"] == str(work / "edukai-5.1.ttf")
+    assert app.os.environ["RAG_ESSAY_TEMPLATE"] == "police_information_essay_165"
 
 
 def test_start_essay_mcp_reuses_existing_node_modules(app, monkeypatch, tmp_path):
