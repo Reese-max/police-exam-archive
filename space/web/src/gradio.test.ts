@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { citationId, linkCitations, parseSources, splitReply } from './gradio.ts'
+import { citationId, linkCitations, padBold, parseSources, prepareAnswer, splitReply } from './gradio.ts'
 
 test('splitReply keeps a progress-only assistant message as text', () => {
   assert.deepEqual(
@@ -74,6 +74,13 @@ test('linkCitations turns citations into source links', () => {
     linkCitations('依規定[條2]，答案為[題1](A)。[其他]'),
     '依規定[條2](#src-條2)，答案為[題1](#src-題1)(A)。[其他]',
   )
+})
+
+test('padBold pads only bold text that starts or ends with punctuation', () => {
+  assert.equal(padBold('重點是**「合理懷疑」如何判斷**，而非'), '重點是\u200A**「合理懷疑」如何判斷**\u200A，而非')
+  assert.equal(padBold('**注意：**警察得'), '\u200A**注意：**\u200A警察得')
+  for (const text of ['一般**粗體**文字', '2 ** 3 ** 4', '沒有粗體']) assert.equal(padBold(text), text)
+  assert.equal(prepareAnswer('**「甲」**[條1]'), '\u200A**「甲」**\u200A[條1](#src-條1)')
 })
 
 test('citationId accepts only citation links and never throws', () => {

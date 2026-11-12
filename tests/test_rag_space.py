@@ -133,6 +133,13 @@ def test_frontend_iframe_uses_relative_gradio_file_url(app, tmp_path):
     assert "gradio_api/file=" in src
 
 
+@pytest.mark.parametrize("enabled", [True, False])
+def test_frontend_iframe_flags_essay_only_when_enabled(app, tmp_path, monkeypatch, enabled):
+    monkeypatch.setattr(app, "essay_enabled", lambda: enabled)
+    src = app._frontend_html(tmp_path / "web" / "dist").split('src="', 1)[1].split('"', 1)[0]
+    assert src.endswith("/index.html?essay=1" if enabled else "/index.html")
+
+
 @pytest.mark.parametrize("has_build", [True, False])
 def test_package_space_copies_frontend_build_only_when_present(
         monkeypatch, tmp_path, has_build):

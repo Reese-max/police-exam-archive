@@ -196,6 +196,16 @@ export function parseSources(markdown: string): Record<string, string> {
 export const linkCitations = (text: string) =>
   text.replace(/\[([題條網判]\d+)\]/g, '[$1](#src-$1)')
 
+// CommonMark leaves "**" literal between a letter and punctuation ("是**「甲」**，"); a hair space on each side makes it bold.
+// shortcut: same code-span limit as linkCitations.
+export const padBold = (text: string) =>
+  text.replace(/\*\*([^*\n]+)\*\*/g, (bold, inner) =>
+    /^[\p{P}\p{S}]|[\p{P}\p{S}]$/u.test(inner) ? `\u200A${bold}\u200A` : bold,
+  )
+
+// Display only: copy, regenerate, and the history sent to the backend keep the raw text.
+export const prepareAnswer = (text: string) => linkCitations(padBold(text))
+
 // "題1"/"條2"/"網3"/"判4" for links made by linkCitations, "" otherwise; decodeURIComponent throws on a bad "%".
 export function citationId(href = ''): string {
   try {

@@ -496,6 +496,8 @@ def search(query):
 
 def _frontend_html(web):
     src = f"gradio_api/file={web.as_posix()}/index.html"
+    if essay_enabled():
+        src += "?essay=1"
     return (
         f'<iframe src="{escape(src, quote=True)}" title="警察考古題 AI 助理" '
         'style="position:fixed;inset:0;width:100%;height:100%;border:0;'
