@@ -1,16 +1,23 @@
 """Search exam questions locally, or use a public HF Dataset in a Space."""
 
 import argparse
+import atexit
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor
 from html import escape
 import os
 from pathlib import Path
 import re
+import secrets
+import shutil
+import socket
+import subprocess
 import sys
+import tempfile
 from threading import Lock
 import time
 from urllib.parse import quote
+from urllib.request import urlopen
 
 if os.environ.get("SPACES_ZERO_GPU"):
     import spaces
@@ -38,6 +45,7 @@ executor = ThreadPoolExecutor(max_workers=1)
 retriever = None
 options = None
 mode = None
+ESSAY_LOCAL = None
 law_k = 3
 law_min_score = None
 _answer_cache = {}
@@ -49,6 +57,145 @@ _ESSAY_PREFIX = re.compile(r"^\s*申論(?:題)?\s*[：:]\s*(.+)", re.DOTALL)
 _answer_lock = Lock()
 _ANSWER_CACHE_SECONDS = 3600
 _ANSWER_CACHE_MAX = 500
+
+
+def _start_essay_mcp():
+    global ESSAY_LOCAL
+    ESSAY_LOCAL = None
+    process = None
+
+    def terminate_process():
+        if process is not None:
+            try:
+                process.terminate()
+            except Exception:
+                pass
+
+    try:
+        configured_dir = (os.environ.get("RAG_ESSAY_MCP_DIR") or "").strip()
+        if not configured_dir or os.environ.get("RAG_ESSAY_MCP_URL"):
+            return None
+        source = Path(configured_dir)
+        if not source.is_absolute():
+            source = HERE / source
+        if not (source / "dist" / "src" / "index.js").is_file():
+            print("申論排版服務未啟動：找不到 dist/src/index.js")
+            return None
+
+        node = shutil.which("node")
+        npm = shutil.which("npm")
+        if not node or not npm:
+            print("申論排版服務未啟動：找不到 node 或 npm")
+            return None
+
+        work = Path(tempfile.mkdtemp(prefix="essay-")).resolve()
+        if (source / "node_modules").is_dir():
+            run_dir = source
+        else:
+            run_dir = work / "app"
+            shutil.copytree(source, run_dir)
+
+        child_env = {
+            key: os.environ[key]
+            for key in ("PATH", "HOME", "USERPROFILE", "APPDATA", "LOCALAPPDATA",
+                        "SYSTEMROOT", "TEMP", "TMP")
+            if key in os.environ
+        }
+        if run_dir == work / "app":
+            subprocess.run(
+                [npm, "ci", "--omit=dev", "--no-audit", "--no-fund", "--ignore-scripts"],
+                cwd=run_dir, env=child_env, check=True, timeout=600,
+                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            )
+
+        answers = work / "answers"
+        exports = work / "exports"
+        answers.mkdir()
+        exports.mkdir()
+        with socket.socket() as listener:
+            listener.bind(("127.0.0.1", 0))
+            port = listener.getsockname()[1]
+        origin = f"http://127.0.0.1:{port}"
+        token = secrets.token_urlsafe(32)
+        child_env.update({
+            "HOST": "127.0.0.1",
+            "PORT": str(port),
+            "MCP_AUTH_TOKEN": token,
+            "ESSAY_PUBLIC_BASE_URL": origin,
+            "ESSAY_MCP_ANSWER_DIR": str(answers),
+            "ESSAY_MCP_EXPORT_DIR": str(exports),
+            "ESSAY_MCP_PDF_FONT": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+            "ESSAY_MCP_PDF_BOLD_FONT": "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+        })
+        process = subprocess.Popen(
+            [node, "dist/src/index.js"], cwd=run_dir, env=child_env,
+            stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        )
+        atexit.register(process.terminate)
+
+        deadline = time.monotonic() + 30
+        while time.monotonic() < deadline:
+            if process.poll() is not None:
+                terminate_process()
+                return None
+            try:
+                with urlopen(origin + "/health", timeout=2) as response:
+                    ready = response.getcode() == 200
+            except Exception:
+                ready = False
+            if ready:
+                folder = work / "downloads"
+                folder.mkdir()
+                try:
+                    os.environ["RAG_ESSAY_MCP_URL"] = origin + "/mcp"
+                    os.environ["RAG_ESSAY_MCP_TOKEN"] = token
+                except Exception:
+                    os.environ.pop("RAG_ESSAY_MCP_URL", None)
+                    os.environ.pop("RAG_ESSAY_MCP_TOKEN", None)
+                    raise
+                ESSAY_LOCAL = (origin, folder.resolve())
+                return ESSAY_LOCAL
+            time.sleep(0.5)
+        terminate_process()
+        return None
+    except Exception as exc:
+        terminate_process()
+        os.environ.pop("RAG_ESSAY_MCP_URL", None)
+        os.environ.pop("RAG_ESSAY_MCP_TOKEN", None)
+        print(f"申論排版服務未啟動：{type(exc).__name__}")
+        return None
+
+
+def _public_essay_url(url, format_name):
+    if ESSAY_LOCAL is None:
+        return url
+    try:
+        if format_name not in ("pdf", "docx"):
+            return ""
+        origin, folder = ESSAY_LOCAL
+        source_url = str(url or "")
+        match = re.fullmatch(
+            rf"{re.escape(origin)}/downloads/([0-9a-f-]{{36}})/([^/?#]+)",
+            source_url,
+        )
+        if not match:
+            return ""
+        handle, filename = match.groups()
+        if ".." in filename:
+            return ""
+        with urlopen(source_url, timeout=30) as response:
+            content = response.read(20_000_001)
+        if len(content) > 20_000_000:
+            return ""
+        target = folder / handle / f"申論擬答.{format_name}"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(content)
+        # shortcut: 複製出來的檔案不會過期，Space 重啟才清掉；upgrade: 用量大時加清理。
+        base = (f"https://{os.environ['SPACE_HOST']}" if os.environ.get("SPACE_HOST")
+                else f"http://127.0.0.1:{os.environ.get('RAG_PORT', '7860')}")
+        return f"{base}/gradio_api/file={target.as_posix()}"
+    except Exception:
+        return ""
 
 
 def _answer_limit():
@@ -299,7 +446,8 @@ def _essay_reply(essay):
         for file in essay.get("files") or []:
             if not isinstance(file, dict) or file.get("format") not in labels:
                 continue
-            url = quote(str(file.get("url") or ""), safe=":/?#@!$&*+,;=%-._~")
+            url = _public_essay_url(file.get("url"), file["format"])
+            url = quote(str(url or ""), safe=":/?#@!$&*+,;=%-._~")
             if _valid_http_url(url):
                 urls.setdefault(file["format"], url)
         links = [f"[{labels[format_name]}]({urls[format_name]})"
@@ -508,9 +656,13 @@ def _frontend_html(web):
 def main():
     import gradio as gr
     executor.submit(initialize, index_path()).result()
+    _start_essay_mcp()
     frontend_built = (WEB / "index.html").is_file()
-    if frontend_built:
-        gr.set_static_paths(paths=[WEB])
+    static_paths = ([WEB] if frontend_built else [])
+    if ESSAY_LOCAL is not None:
+        static_paths.append(ESSAY_LOCAL[1])
+    if static_paths:
+        gr.set_static_paths(paths=static_paths)
     with gr.Blocks(title="警察考古題 AI 助理") as demo:
         if frontend_built:
             gr.HTML(_frontend_html(WEB))
