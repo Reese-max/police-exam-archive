@@ -572,7 +572,7 @@ def test_package_space_includes_only_required_essay_mcp_files(tmp_path):
         "essay-mcp/templates/essay.md", "essay-mcp/assets/logo.svg",
         "essay-mcp/package.json", "essay-mcp/package-lock.json",
     ))
-    assert (output / "packages.txt").read_text(encoding="utf-8") == "fonts-noto-cjk\n"
+    assert (output / "packages.txt").read_bytes() == b"fonts-noto-cjk\n"
     assert not (output / "essay-mcp/dist/tests").exists()
     assert not (output / "essay-mcp/node_modules").exists()
     assert not (output / "essay-mcp/.git").exists()
