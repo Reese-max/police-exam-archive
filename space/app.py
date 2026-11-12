@@ -2,6 +2,8 @@
 
 import argparse
 import atexit
+import hashlib
+import io
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor
 from html import escape
@@ -18,6 +20,7 @@ from threading import Lock
 import time
 from urllib.parse import quote
 from urllib.request import urlopen
+import zipfile
 
 if os.environ.get("SPACES_ZERO_GPU"):
     import spaces
@@ -57,6 +60,36 @@ _ESSAY_PREFIX = re.compile(r"^\s*申論(?:題)?\s*[：:]\s*(.+)", re.DOTALL)
 _answer_lock = Lock()
 _ANSWER_CACHE_SECONDS = 3600
 _ANSWER_CACHE_MAX = 500
+# 教育部標準楷書 5.1, unmodified: the only font the essay server accepts for the 165 answer sheet
+_PAPER_FONT_SHA256 = "e2b6b1bd1d6303672a68d5057a1f1e4b5361e3d8842373ff3bd1c71fb9ea9b98"
+
+
+def _paper_font(work):
+    """Copy the owner-configured 165 answer-sheet font into work; None unless it is the exact file."""
+    source = (os.environ.get("RAG_ESSAY_PAPER_FONT") or "").strip()
+    if not source:
+        return None
+    try:
+        if source.startswith(("https://", "http://")):
+            with urlopen(source, timeout=120) as response:
+                data = response.read()
+        else:
+            path = Path(source)
+            data = (path if path.is_absolute() else HERE / path).read_bytes()
+        fonts = [data]
+        if data[:2] == b"PK":  # the official download is a zip
+            archive = zipfile.ZipFile(io.BytesIO(data))
+            fonts = (archive.read(name) for name in archive.namelist()
+                     if name.lower().endswith(".ttf"))
+        for font in fonts:
+            if hashlib.sha256(font).hexdigest() == _PAPER_FONT_SHA256:
+                target = work / "edukai-5.1.ttf"
+                target.write_bytes(font)
+                return target
+        print("165 原稿紙未啟用：字型檔不是教育部標準楷書 5.1")
+    except Exception as exc:
+        print(f"165 原稿紙未啟用：{type(exc).__name__}")
+    return None
 
 
 def _start_essay_mcp():
@@ -112,6 +145,7 @@ def _start_essay_mcp():
         exports = work / "exports"
         answers.mkdir()
         exports.mkdir()
+        paper_font = _paper_font(work)
         with socket.socket() as listener:
             listener.bind(("127.0.0.1", 0))
             port = listener.getsockname()[1]
@@ -127,6 +161,8 @@ def _start_essay_mcp():
             "ESSAY_MCP_PDF_FONT": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
             "ESSAY_MCP_PDF_BOLD_FONT": "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
         })
+        if paper_font:
+            child_env["ESSAY_MCP_PAPER_FONT"] = str(paper_font)
         process = subprocess.Popen(
             [node, "dist/src/index.js"], cwd=run_dir, env=child_env,
             stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
@@ -149,6 +185,8 @@ def _start_essay_mcp():
                 try:
                     os.environ["RAG_ESSAY_MCP_URL"] = origin + "/mcp"
                     os.environ["RAG_ESSAY_MCP_TOKEN"] = token
+                    if paper_font:
+                        os.environ.setdefault("RAG_ESSAY_TEMPLATE", "police_information_essay_165")
                 except Exception:
                     os.environ.pop("RAG_ESSAY_MCP_URL", None)
                     os.environ.pop("RAG_ESSAY_MCP_TOKEN", None)

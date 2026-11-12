@@ -1290,13 +1290,14 @@ def test_generate_essay_creates_and_exports_and_filters_urls_and_secrets(
             ]}
         return "application/json", _mcp_body(structured)
 
-    result = answer.generate_essay(
-        "申論題", *evidence, client=FakeClient(_essay_json(
-            text="依據 llm-secret 與 essay-secret 說明。")), post=post)
+    client = FakeClient(_essay_json(text="依據 llm-secret 與 essay-secret 說明。"))
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+    result_prompt = client.calls[0][0][0]["content"]
 
     assert result["status"] == "ok"
     assert [name for name, _, _ in calls] == ["create_answer", "export_answer"]
     assert calls[0][1]["templateId"] == "police_information_essay"
+    assert "以 700 字為上限" in result_prompt and "每行約 21 個全形字" in result_prompt
     assert calls[1][1]["expectedVersion"] == 1
     assert result["essay"]["files"] == [
         {"format": "pdf", "url": "https://files.example/answer.pdf"},
@@ -1324,9 +1325,14 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
             structured = {"files": []}
         return "application/json", _mcp_body(structured)
 
+    monkeypatch.setenv("RAG_ESSAY_TEMPLATE", "police_information_essay_165")
     result = answer.generate_essay("申論題", *evidence, client=client, post=post)
 
     assert [name for name, _ in calls] == ["create_answer", "write_answer", "export_answer"]
+    assert calls[0][1]["templateId"] == "police_information_essay_165"
+    assert "以 600 字為上限" in client.calls[0][0][0]["content"]
+    assert "每行約 16 個全形字" in client.calls[1][0][-1]["content"]
+    assert "{" not in client.calls[1][0][-1]["content"]
     assert calls[1][1]["expectedVersion"] == 1
     assert calls[2][1]["expectedVersion"] == 2
     assert result["essay"]["sections"][0]["text"] == "縮短後的答案。"
