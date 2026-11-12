@@ -185,6 +185,412 @@ app.executor.shutdown(wait=True)
     before = (target / "app.py").read_bytes()
     assert subprocess.run(command, capture_output=True).returncode != 0
     assert (target / "app.py").read_bytes() == before
+    assert not (target / "essay-mcp").exists()
+    assert not (target / "packages.txt").exists()
+
+
+class _FakeResponse:
+    def __init__(self, data=b"", status=200):
+        self.data = data
+        self.status = status
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        return False
+
+    def getcode(self):
+        return self.status
+
+    def read(self, size=-1):
+        return self.data if size < 0 else self.data[:size]
+
+
+def _essay_project(tmp_path, *, with_node_modules=False, with_index=True):
+    source = tmp_path / "essay-mcp"
+    (source / "dist" / "src").mkdir(parents=True)
+    if with_index:
+        (source / "dist" / "src" / "index.js").write_text("entry", encoding="utf-8")
+    (source / "package.json").write_text("{}", encoding="utf-8")
+    (source / "package-lock.json").write_text("{}", encoding="utf-8")
+    if with_node_modules:
+        (source / "node_modules").mkdir()
+    return source
+
+
+def _fake_port_socket(app, monkeypatch, port=43210):
+    class Listener:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+        def bind(self, address):
+            assert address == ("127.0.0.1", 0)
+
+        def getsockname(self):
+            return ("127.0.0.1", port)
+
+    monkeypatch.setattr(app.socket, "socket", lambda: Listener())
+
+
+def _fake_tempdir(app, monkeypatch, work):
+    def make_work(prefix):
+        work.mkdir()
+        return str(work)
+
+    monkeypatch.setattr(app.tempfile, "mkdtemp", make_work)
+
+
+def _clear_essay_env(monkeypatch):
+    for key in ("RAG_ESSAY_MCP_DIR", "RAG_ESSAY_MCP_URL", "RAG_ESSAY_MCP_TOKEN"):
+        monkeypatch.delenv(key, raising=False)
+
+
+def test_start_essay_mcp_skips_unconfigured_or_external_server(app, monkeypatch):
+    _clear_essay_env(monkeypatch)
+    called = []
+    monkeypatch.setattr(app.subprocess, "run", lambda *a, **k: called.append("run"))
+    monkeypatch.setattr(app.subprocess, "Popen", lambda *a, **k: called.append("Popen"))
+    assert app._start_essay_mcp() is None
+    assert called == []
+
+    monkeypatch.setenv("RAG_ESSAY_MCP_DIR", "ignored")
+    monkeypatch.setenv("RAG_ESSAY_MCP_URL", "https://external.example/mcp")
+    assert app._start_essay_mcp() is None
+    assert called == []
+
+
+def test_start_essay_mcp_skips_missing_entrypoint(app, monkeypatch, tmp_path):
+    _clear_essay_env(monkeypatch)
+    source = _essay_project(tmp_path, with_index=False)
+    monkeypatch.setenv("RAG_ESSAY_MCP_DIR", str(source))
+
+    assert app._start_essay_mcp() is None
+
+
+@pytest.mark.parametrize("missing", ["node", "npm"])
+def test_start_essay_mcp_skips_when_runtime_is_missing(
+        app, monkeypatch, tmp_path, capsys, missing):
+    _clear_essay_env(monkeypatch)
+    source = _essay_project(tmp_path)
+    monkeypatch.setenv("RAG_ESSAY_MCP_DIR", str(source))
+    monkeypatch.setattr(app.shutil, "which",
+                        lambda name: None if name == missing else f"{name}-executable")
+    monkeypatch.setattr(app.subprocess, "run",
+                        lambda *a, **k: pytest.fail("runtime unavailable"))
+    monkeypatch.setattr(app.subprocess, "Popen",
+                        lambda *a, **k: pytest.fail("runtime unavailable"))
+
+    assert app._start_essay_mcp() is None
+    assert "找不到 node 或 npm" in capsys.readouterr().out
+
+
+def test_start_essay_mcp_installs_and_starts_with_allowlisted_environment(
+        app, monkeypatch, tmp_path):
+    _clear_essay_env(monkeypatch)
+    source = _essay_project(tmp_path)
+    monkeypatch.setenv("RAG_ESSAY_MCP_DIR", str(source))
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-secret")
+    monkeypatch.setenv("RAG_JUDGMENT_API_KEY", "judgment-secret")
+    monkeypatch.setattr(app.shutil, "which", lambda name: f"{name}-executable")
+    work = tmp_path / "work"
+    _fake_tempdir(app, monkeypatch, work)
+    _fake_port_socket(app, monkeypatch)
+    monkeypatch.setattr(app.secrets, "token_urlsafe", lambda size: "unit-test-token")
+    run_calls, popen_calls = [], []
+
+    def fake_run(args, **kwargs):
+        run_calls.append((args, kwargs))
+
+    class Process:
+        def poll(self):
+            return None
+
+        def terminate(self):
+            self.terminated = True
+
+    def fake_popen(args, **kwargs):
+        process = Process()
+        popen_calls.append((args, kwargs, process))
+        return process
+
+    monkeypatch.setattr(app.subprocess, "run", fake_run)
+    monkeypatch.setattr(app.subprocess, "Popen", fake_popen)
+    monkeypatch.setattr(app.atexit, "register", lambda callback: None)
+    monkeypatch.setattr(app, "urlopen", lambda url, timeout: _FakeResponse())
+    monkeypatch.setattr(app, "ESSAY_LOCAL", None)
+
+    result = app._start_essay_mcp()
+
+    assert result is not None
+    origin, folder = result
+    assert folder.is_dir()
+    assert (work / "app" / "dist" / "src" / "index.js").is_file()
+    assert len(run_calls) == 1
+    npm_args, npm_kwargs = run_calls[0]
+    assert npm_args == [
+        "npm-executable", "ci", "--omit=dev", "--no-audit", "--no-fund", "--ignore-scripts",
+    ]
+    assert npm_kwargs["cwd"] == work / "app"
+    assert npm_kwargs["check"] is True and npm_kwargs["timeout"] == 600
+    assert npm_kwargs["stdout"] is app.subprocess.DEVNULL
+    assert npm_kwargs["stderr"] is app.subprocess.DEVNULL
+    args, kwargs, _ = popen_calls[0]
+    assert args == ["node-executable", "dist/src/index.js"]
+    assert kwargs["cwd"] == work / "app"
+    child_env = kwargs["env"]
+    assert child_env["HOST"] == "127.0.0.1"
+    assert child_env["MCP_AUTH_TOKEN"] == "unit-test-token"
+    assert child_env["ESSAY_PUBLIC_BASE_URL"] == origin
+    assert "RAG_LLM_API_KEY" not in child_env
+    assert "RAG_JUDGMENT_API_KEY" not in child_env
+    assert app.os.environ["RAG_ESSAY_MCP_URL"] == origin + "/mcp"
+    assert app.os.environ["RAG_ESSAY_MCP_TOKEN"] == child_env["MCP_AUTH_TOKEN"]
+
+
+def test_start_essay_mcp_reuses_existing_node_modules(app, monkeypatch, tmp_path):
+    _clear_essay_env(monkeypatch)
+    source = _essay_project(tmp_path, with_node_modules=True)
+    monkeypatch.setenv("RAG_ESSAY_MCP_DIR", str(source))
+    monkeypatch.setattr(app.shutil, "which", lambda name: f"{name}-executable")
+    _fake_tempdir(app, monkeypatch, tmp_path / "work")
+    _fake_port_socket(app, monkeypatch)
+    run_calls, popen_calls = [], []
+    monkeypatch.setattr(app.subprocess, "run", lambda *a, **k: run_calls.append(a))
+
+    class Process:
+        def poll(self):
+            return None
+
+        def terminate(self):
+            pass
+
+    monkeypatch.setattr(app.subprocess, "Popen",
+                        lambda args, **kwargs: popen_calls.append((args, kwargs)) or Process())
+    monkeypatch.setattr(app.atexit, "register", lambda callback: None)
+    monkeypatch.setattr(app, "urlopen", lambda url, timeout: _FakeResponse())
+
+    result = app._start_essay_mcp()
+
+    assert result is not None
+    assert not run_calls
+    assert popen_calls[0][1]["cwd"] == source
+
+
+def test_start_essay_mcp_npm_failure_is_nonfatal_and_does_not_leak_token(
+        app, monkeypatch, tmp_path, capsys):
+    _clear_essay_env(monkeypatch)
+    source = _essay_project(tmp_path)
+    monkeypatch.setenv("RAG_ESSAY_MCP_DIR", str(source))
+    monkeypatch.setattr(app.shutil, "which", lambda name: f"{name}-executable")
+    _fake_tempdir(app, monkeypatch, tmp_path / "work")
+    monkeypatch.setattr(app.subprocess, "run", lambda *a, **k: (_ for _ in ()).throw(
+        subprocess.CalledProcessError(1, a[0])))
+    monkeypatch.setattr(app.subprocess, "Popen", lambda *a, **k: pytest.fail("unexpected Popen"))
+    monkeypatch.setattr(app, "ESSAY_LOCAL", None)
+
+    assert app._start_essay_mcp() is None
+    assert "RAG_ESSAY_MCP_URL" not in app.os.environ
+    assert "RAG_ESSAY_MCP_TOKEN" not in app.os.environ
+    assert "CalledProcessError" in capsys.readouterr().out
+
+
+def test_start_essay_mcp_health_timeout_terminates_and_hides_token(
+        app, monkeypatch, tmp_path, capsys):
+    _clear_essay_env(monkeypatch)
+    source = _essay_project(tmp_path, with_node_modules=True)
+    monkeypatch.setenv("RAG_ESSAY_MCP_DIR", str(source))
+    monkeypatch.setattr(app.shutil, "which", lambda name: f"{name}-executable")
+    _fake_tempdir(app, monkeypatch, tmp_path / "work")
+    _fake_port_socket(app, monkeypatch)
+    monkeypatch.setattr(app.secrets, "token_urlsafe", lambda size: "private-test-token")
+    ticks = iter((0, 0, 31))
+    monkeypatch.setattr(app.time, "monotonic", lambda: next(ticks))
+    monkeypatch.setattr(app.time, "sleep", lambda delay: None)
+    monkeypatch.setattr(app, "urlopen", lambda *a, **k: (_ for _ in ()).throw(OSError("offline")))
+    processes = []
+
+    class Process:
+        def poll(self):
+            return None
+
+        def terminate(self):
+            self.terminated = True
+
+    def fake_popen(*args, **kwargs):
+        process = Process()
+        processes.append(process)
+        return process
+
+    monkeypatch.setattr(app.subprocess, "Popen", fake_popen)
+    monkeypatch.setattr(app.atexit, "register", lambda callback: None)
+    monkeypatch.setattr(app, "ESSAY_LOCAL", None)
+
+    assert app._start_essay_mcp() is None
+    assert processes[0].terminated
+    assert "RAG_ESSAY_MCP_URL" not in app.os.environ
+    assert "RAG_ESSAY_MCP_TOKEN" not in app.os.environ
+    assert "private-test-token" not in capsys.readouterr().out
+
+
+def test_start_essay_mcp_early_exit_terminates(app, monkeypatch, tmp_path):
+    _clear_essay_env(monkeypatch)
+    source = _essay_project(tmp_path, with_node_modules=True)
+    monkeypatch.setenv("RAG_ESSAY_MCP_DIR", str(source))
+    monkeypatch.setattr(app.shutil, "which", lambda name: f"{name}-executable")
+    _fake_tempdir(app, monkeypatch, tmp_path / "work")
+    _fake_port_socket(app, monkeypatch)
+
+    class Process:
+        terminated = False
+
+        def poll(self):
+            return 1
+
+        def terminate(self):
+            self.terminated = True
+
+    process = Process()
+    monkeypatch.setattr(app.subprocess, "Popen", lambda *a, **k: process)
+    monkeypatch.setattr(app.atexit, "register", lambda callback: None)
+    monkeypatch.setattr(app, "urlopen", lambda *a, **k: pytest.fail("health after process exit"))
+    monkeypatch.setattr(app, "ESSAY_LOCAL", None)
+
+    assert app._start_essay_mcp() is None
+    assert process.terminated
+    assert "RAG_ESSAY_MCP_URL" not in app.os.environ
+    assert "RAG_ESSAY_MCP_TOKEN" not in app.os.environ
+
+
+def test_public_essay_url_returns_external_url_without_local_mcp(app, monkeypatch):
+    monkeypatch.setattr(app, "ESSAY_LOCAL", None)
+    url = "https://external.example/download.pdf"
+    assert app._public_essay_url(url, "pdf") == url
+
+
+def test_public_essay_url_copies_valid_file_and_uses_space_host(app, monkeypatch, tmp_path):
+    handle = "a1" * 18
+    origin = "http://127.0.0.1:43210"
+    folder = tmp_path / "downloads"
+    monkeypatch.setattr(app, "ESSAY_LOCAL", (origin, folder))
+    monkeypatch.setenv("SPACE_HOST", "police-exam.hf.space")
+    url = f"{origin}/downloads/{handle}/answer.pdf"
+    monkeypatch.setattr(app, "urlopen", lambda actual, timeout: (
+        _FakeResponse(b"%PDF-data") if actual == url and timeout == 30 else pytest.fail("bad fetch")))
+
+    public = app._public_essay_url(url, "pdf")
+
+    target = folder / handle / "申論擬答.pdf"
+    assert target.read_bytes() == b"%PDF-data"
+    assert public == f"https://police-exam.hf.space/gradio_api/file={target.as_posix()}"
+
+
+@pytest.mark.parametrize("url", [
+    "http://127.0.0.1:43211/downloads/" + "a1" * 18 + "/answer.pdf",
+    "http://127.0.0.1:43210/downloads/" + "g1" * 18 + "/answer.pdf",
+    "http://127.0.0.1:43210/downloads/" + "a1" * 18 + "/../answer.pdf",
+    "http://127.0.0.1:43210/downloads/" + "a1" * 18 + "/answer..pdf",
+    "http://127.0.0.1:43210/downloads/" + "a1" * 18 + "/folder/answer.pdf",
+])
+def test_public_essay_url_rejects_invalid_local_urls(app, monkeypatch, tmp_path, url):
+    folder = tmp_path / "downloads"
+    monkeypatch.setattr(app, "ESSAY_LOCAL", ("http://127.0.0.1:43210", folder))
+    monkeypatch.setattr(app, "urlopen", lambda *a, **k: pytest.fail("invalid URL fetched"))
+
+    assert app._public_essay_url(url, "pdf") == ""
+    assert not folder.exists()
+
+
+def test_public_essay_url_rejects_oversize_and_fetch_errors(app, monkeypatch, tmp_path):
+    handle = "b2" * 18
+    origin = "http://127.0.0.1:43210"
+    folder = tmp_path / "downloads"
+    monkeypatch.setattr(app, "ESSAY_LOCAL", (origin, folder))
+    url = f"{origin}/downloads/{handle}/answer.pdf"
+    monkeypatch.setattr(app, "urlopen", lambda *a, **k: _FakeResponse(b"x" * 20_000_001))
+    assert app._public_essay_url(url, "pdf") == ""
+    assert not folder.exists()
+    monkeypatch.setattr(app, "urlopen", lambda *a, **k: (_ for _ in ()).throw(OSError("offline")))
+    assert app._public_essay_url(url, "pdf") == ""
+    assert not folder.exists()
+
+
+def test_public_essay_url_uses_local_fallback_port(app, monkeypatch, tmp_path):
+    handle = "c3" * 18
+    origin = "http://127.0.0.1:43210"
+    folder = tmp_path / "downloads"
+    monkeypatch.setattr(app, "ESSAY_LOCAL", (origin, folder))
+    monkeypatch.delenv("SPACE_HOST", raising=False)
+    monkeypatch.setenv("RAG_PORT", "8123")
+    monkeypatch.setattr(app, "urlopen", lambda *a, **k: _FakeResponse(b"docx"))
+    public = app._public_essay_url(f"{origin}/downloads/{handle}/answer.docx", "docx")
+
+    assert public.startswith("http://127.0.0.1:8123/gradio_api/file=")
+
+
+def test_essay_reply_uses_public_encoded_download_link(app, monkeypatch, tmp_path):
+    handle = "d4" * 18
+    origin = "http://127.0.0.1:43210"
+    folder = tmp_path / "downloads"
+    monkeypatch.setattr(app, "ESSAY_LOCAL", (origin, folder))
+    monkeypatch.setenv("SPACE_HOST", "police-exam.hf.space")
+    monkeypatch.setattr(app, "urlopen", lambda *a, **k: _FakeResponse(b"pdf"))
+    reply = app._essay_reply({
+        "title": "警察題目", "sections": [],
+        "layout": {"totalLines": 10, "pagesUsed": 1, "remainingLines": 5},
+        "files": [{"format": "pdf", "url": f"{origin}/downloads/{handle}/answer.pdf"}],
+    })
+
+    assert "[下載 PDF](https://police-exam.hf.space/gradio_api/file=" in reply
+    assert "%E7%94%B3%E8%AB%96%E6%93%AC%E7%AD%94.pdf)" in reply
+    assert origin not in reply
+
+
+def test_package_space_includes_only_required_essay_mcp_files(tmp_path):
+    root = Path(__file__).resolve().parents[1]
+    source = tmp_path / "essay-mcp"
+    for relative in (
+        "dist/src/index.js", "dist/src/other.js", "dist/tests/test.js",
+        "templates/essay.md", "assets/logo.svg", "package.json", "package-lock.json",
+        "node_modules/ignored.js", ".git/config",
+    ):
+        file = source / relative
+        file.parent.mkdir(parents=True, exist_ok=True)
+        file.write_text("fixture", encoding="utf-8")
+    output = tmp_path / "space-with-essay"
+    command = [sys.executable, str(root / "scripts/rag/package_space.py"),
+               "--out", str(output), "--essay-mcp", str(source)]
+
+    completed = subprocess.run(command, capture_output=True, text=True, encoding="utf-8")
+
+    assert completed.returncode == 0, completed.stdout + completed.stderr
+    assert all((output / relative).is_file() for relative in (
+        "essay-mcp/dist/src/index.js", "essay-mcp/dist/src/other.js",
+        "essay-mcp/templates/essay.md", "essay-mcp/assets/logo.svg",
+        "essay-mcp/package.json", "essay-mcp/package-lock.json",
+    ))
+    assert (output / "packages.txt").read_text(encoding="utf-8") == "fonts-noto-cjk\n"
+    assert not (output / "essay-mcp/dist/tests").exists()
+    assert not (output / "essay-mcp/node_modules").exists()
+    assert not (output / "essay-mcp/.git").exists()
+
+
+def test_package_space_rejects_missing_essay_entry_before_output_creation(tmp_path):
+    root = Path(__file__).resolve().parents[1]
+    source = tmp_path / "bad-essay-mcp"
+    source.mkdir()
+    output = tmp_path / "must-not-exist"
+    command = [sys.executable, str(root / "scripts/rag/package_space.py"),
+               "--out", str(output), "--essay-mcp", str(source)]
+
+    completed = subprocess.run(command, capture_output=True, text=True, encoding="utf-8")
+
+    assert completed.returncode != 0
+    assert "dist/src/index.js" in completed.stderr + completed.stdout
+    assert not output.exists()
 
 def test_conflicted_answer_is_not_presented_as_final_in_space(app):
     item = {"rank": 1, "question_id": "x", "type": "choice", "stem": "題目",

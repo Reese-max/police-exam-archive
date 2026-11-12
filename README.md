@@ -253,6 +253,10 @@ python space/app.py
 python scripts/rag/package_space.py --out /path/to/new-space-directory
 ```
 
+可加上 `--essay-mcp <已建置的申論 MCP 專案目錄>`，將 Space 啟動所需的 MCP 檔案一併封裝。
+部署後設定 Space 變數 `RAG_ESSAY_MCP_DIR=essay-mcp` 才會啟用；每次啟動會隨機產生 token，
+申論答案與匯出檔放在暫存目錄，Space 重啟即清空。目前使用一般申論模板；165 原稿紙模板需要另備字型。
+
 日後經授權建立 Space 後，上傳該目錄，並設定 `HF_DATASET_REPO` 指向已有索引的公開
 Dataset；Space 啟動時匿名下載索引。[Hugging Face 官方文件](https://huggingface.co/docs/hub/spaces-overview)
 目前指出 CPU Basic 無時租，但建立 Gradio Space 需要付費方案；建立前應先確認帳號方案與費用。
