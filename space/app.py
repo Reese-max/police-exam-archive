@@ -50,6 +50,8 @@ options = None
 mode = None
 ESSAY_LOCAL = None
 law_k = 3
+# an essay answers every sub-question from the articles: three hits miss whole sub-questions
+ESSAY_LAW_K = 8
 law_min_score = None
 _answer_cache = {}
 _answer_requests = deque()
@@ -358,7 +360,7 @@ def render(results, *, include_notice=True, laws=None):
     return question_text + ("\n\n" + law_text if law_text else "")
 
 
-def _search_data(query):
+def _search_data(query, laws=None):
     started = time.perf_counter()
     results = retriever.search(query, k=5, mode=mode, **options)
     law_results = []
@@ -366,7 +368,7 @@ def _search_data(query):
         law_options = {key: options[key] for key in (
             "keyword_weight", "vector_weight", "rrf_k", "candidates", "expand_abbreviations"
         ) if key in options}
-        law_results = retriever.search_laws(query, k=law_k, min_vector_score=law_min_score, **law_options)
+        law_results = retriever.search_laws(query, k=laws or law_k, min_vector_score=law_min_score, **law_options)
     elapsed_ms = (time.perf_counter() - started) * 1000
     meta = getattr(retriever, "meta", None)
     warning = ""
@@ -474,7 +476,9 @@ def _essay_reply(essay):
         heading = _safe_model_text(section.get("heading"))
         if heading:
             parts.append(f"**{heading}**")
-        parts.append(_safe_model_text(section.get("text")))
+        # each numbered item is its own line on the answer sheet: keep the breaks, and keep "1." literal
+        parts.append(re.sub(r"(?m)^(\d+)([.)])", r"\1\\\2", _safe_model_text(section.get("text")))
+                     .replace("\n", "\n\n"))
     layout = essay.get("layout")
     if layout:
         detail = (f"📄 答題紙版面：共 {layout['totalLines']} 行、{layout['pagesUsed']} 頁，"
@@ -554,10 +558,10 @@ def _chat_sources(results, laws, web=(), judgments=()):
             "metadata": {"title": title}}
 
 
-def _search_turn(question, earlier=None):
-    found = executor.submit(_search_data, question).result()
+def _search_turn(question, earlier=None, laws=None):
+    found = executor.submit(_search_data, question, laws).result()
     if earlier and _low_confidence_without_laws(*found[:2]):
-        retry = executor.submit(_search_data, f"{earlier} {question}").result()
+        retry = executor.submit(_search_data, f"{earlier} {question}", laws).result()
         if not _low_confidence_without_laws(*retry[:2]):
             return retry
     return found
@@ -585,7 +589,7 @@ def chat(message, history):
     essay_question = essay_match.group(1).strip() if essay_match else ""
     is_essay = bool(essay_question and essay_enabled())
     if is_essay:
-        results, law_results, elapsed_ms, warning = _search_turn(essay_question)
+        results, law_results, elapsed_ms, warning = _search_turn(essay_question, laws=ESSAY_LAW_K)
     elif questions and _SOURCE_REFERENCE.search(message):
         # "[題1] 為什麼…" points at the previous turn's sources: repeat that turn's retrieval so the
         # numbers match. shortcut: history beyond the recent window is not replayed; upgrade: keep
@@ -593,7 +597,8 @@ def chat(message, history):
         asked = _ESSAY_PREFIX.match(questions[-1]) if essay_enabled() else None
         if asked and asked.group(1).strip():
             # An essay turn searched its question alone, without the prefix.
-            results, law_results, elapsed_ms, warning = _search_turn(asked.group(1).strip())
+            results, law_results, elapsed_ms, warning = _search_turn(
+                asked.group(1).strip(), laws=ESSAY_LAW_K)
         else:
             results, law_results, elapsed_ms, warning = _search_turn(
                 questions[-1], questions[-2] if len(questions) > 1 else None)
@@ -603,7 +608,7 @@ def chat(message, history):
 
     progress = {"role": "assistant",
                 "content": (f"已完成檢索（{len(results)} 題考題、{len(law_results)} 條條文），"
-                            + ("正在撰寫申論擬答並排版…" if is_essay else "正在整理回答…"))}
+                            + ("正在撰寫申論擬答並排版，通常需要 1–2 分鐘…" if is_essay else "正在整理回答…"))}
     messages.append(progress)
     yield list(messages), ""
 

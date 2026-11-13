@@ -744,7 +744,7 @@ def _set_chat_search(app, monkeypatch, results=None, laws=None):
     laws = statutes if laws is None else laws
     searched = []
 
-    def search(query):
+    def search(query, law_count=None):
         searched.append((query, threading.get_ident()))
         return results, laws, 12.0, ""
 
@@ -963,7 +963,7 @@ def test_follow_up_retrieval_retries_with_previous_question_and_uses_good_retry(
     improved, laws = _chat_evidence("合併查詢找到的題目")
     calls = []
 
-    def search(query):
+    def search(query, law_count=None):
         calls.append(query)
         if len(calls) == 1:
             return low, [], 1, ""
@@ -991,7 +991,7 @@ def test_follow_up_retrieval_keeps_first_results_when_retry_remains_low_confiden
     retry, _ = _chat_evidence("仍低信心的重查結果", low_confidence=True)
     calls = []
 
-    def search(query):
+    def search(query, law_count=None):
         calls.append(query)
         return (first if len(calls) == 1 else retry), [], 1, ""
 
@@ -1282,7 +1282,7 @@ def test_numbered_follow_up_repeats_the_expanded_search_of_the_previous_turn(app
     good, _ = _chat_evidence("重查結果")
     searched = []
 
-    def search(query):
+    def search(query, law_count=None):
         searched.append(query)
         return (good if query == "警察攔檢 要帶證件嗎" else low), [], 1, ""
 
@@ -1383,7 +1383,7 @@ def test_enabled_essay_path_uses_question_and_renders_sources_and_warning(app, m
     answer_text = messages[-2]["content"]
     assert [query for query, _ in searched] == ["警察得否查證身分？"]
     assert generated[0][0] == "警察得否查證身分？"
-    assert "正在撰寫申論擬答並排版" in updates[0][0][-1]["content"]
+    assert "正在撰寫申論擬答並排版，通常需要 1–2 分鐘" in updates[0][0][-1]["content"]
     assert "申論擬答" in answer_text
     assert "**一、核心說明**" in answer_text and "依檢索資料回答。" in answer_text
     assert "共 32 行、2 頁，尚餘 12 行" in answer_text
@@ -1407,6 +1407,33 @@ def test_source_followup_after_essay_replays_search_without_prefix(app, monkeypa
     assert [query for query, _ in searched] == ["警察得否查證身分？"]
 
 
+def test_essay_turn_and_its_source_followup_retrieve_more_law_articles(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    results, laws = _chat_evidence()
+    counts = []
+
+    def search(query, law_count=None):
+        counts.append(law_count)
+        return results, laws, 1.0, ""
+
+    monkeypatch.setattr(app, "_search_data", search)
+    monkeypatch.setattr(app, "essay_enabled", lambda: True)
+    monkeypatch.setattr(app, "generate_essay", lambda *args, **kwargs: _space_essay_result())
+    monkeypatch.setattr(app, "generate_chat_answer", lambda *args, **kwargs: {
+        "status": "ok", "grounded": "說明。[題1]", "supplement": "",
+        "citations": ["[題1]"], "invalid_citations": []})
+    app._answer_cache.clear()
+    app._answer_requests.clear()
+    essay_turn = [{"role": "user", "content": "申論題：警察得否查證身分？"},
+                  {"role": "assistant", "content": "📝 **申論擬答：摘要**"}]
+
+    _run_chat(app, "申論題：警察得否查證身分？")
+    _run_chat(app, "[題1] 為什麼這樣考？", essay_turn)  # same retrieval, so the numbers still match
+    _run_chat(app, "警察得否查證身分？")
+
+    assert counts == [app.ESSAY_LAW_K, app.ESSAY_LAW_K, None]
+
+
 def test_essay_download_urls_are_encoded_and_model_text_is_safe(app, monkeypatch):
     monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
     _set_chat_search(app, monkeypatch)
@@ -1426,6 +1453,13 @@ def test_essay_download_urls_are_encoded_and_model_text_is_safe(app, monkeypatch
     assert rendered.index("[下載 PDF]") < rendered.index("[下載 Word]")
     assert "http://evil.example" not in rendered and "](http://evil.example)" not in rendered
     assert "x" in rendered and "&lt;script&gt;" in rendered and "<script>" not in rendered
+
+
+def test_essay_reply_keeps_one_numbered_item_per_line(app):
+    rendered = app._essay_reply({"title": "摘要", "sections": [
+        {"id": "s1", "heading": "一、要件", "text": "（一）合理懷疑。\n1. 客觀事實。\n2) 非單純臆測。"}]})
+
+    assert "**一、要件**\n\n（一）合理懷疑。\n\n1\\. 客觀事實。\n\n2\\) 非單純臆測。" in rendered
 
 
 def test_essay_path_shares_hourly_limit_and_refunds_failed_generation(app, monkeypatch):
