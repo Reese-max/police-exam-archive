@@ -608,7 +608,7 @@ def chat(message, history):
 
     progress = {"role": "assistant",
                 "content": (f"已完成檢索（{len(results)} 題考題、{len(law_results)} 條條文），"
-                            + ("正在撰寫申論擬答並排版…" if is_essay else "正在整理回答…"))}
+                            + ("正在撰寫申論擬答並排版，通常需要 1–2 分鐘…" if is_essay else "正在整理回答…"))}
     messages.append(progress)
     yield list(messages), ""
 

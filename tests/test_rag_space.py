@@ -1383,7 +1383,7 @@ def test_enabled_essay_path_uses_question_and_renders_sources_and_warning(app, m
     answer_text = messages[-2]["content"]
     assert [query for query, _ in searched] == ["警察得否查證身分？"]
     assert generated[0][0] == "警察得否查證身分？"
-    assert "正在撰寫申論擬答並排版" in updates[0][0][-1]["content"]
+    assert "正在撰寫申論擬答並排版，通常需要 1–2 分鐘" in updates[0][0][-1]["content"]
     assert "申論擬答" in answer_text
     assert "**一、核心說明**" in answer_text and "依檢索資料回答。" in answer_text
     assert "共 32 行、2 頁，尚餘 12 行" in answer_text
