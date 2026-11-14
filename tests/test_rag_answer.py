@@ -1380,6 +1380,7 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
         "load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout", "export_answer"]
     system = client.calls[0][0][0]["content"]
     assert "初稿控制在 650–700 字" in system and "每行約 16 個全形字" in system
+    assert "全程使用繁體中文" in system  # the sheet font has no simplified glyphs
     # the essay server's own writing guide reaches the model
     assert "【起草】先按每小問與指令動詞擬綱" in system and "【稿紙段落】段落只用單一換行" in system
     assert "【題型示例（自製教學示例）】〔比較〕題目：比較甲乙　寫法：依共同維度對照\n" in system
