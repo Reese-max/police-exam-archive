@@ -1130,7 +1130,7 @@ def _mcp_body(structured):
     }, ensure_ascii=False)
 
 
-def _essay_state_response(*, fits=True, version=1, overflow=0, total=30):
+def _essay_state_response(*, fits=True, version=1, overflow=0, total=42):
     return {
         "answer": {"id": "answer-1", "version": version},
         "layout": {
@@ -1150,7 +1150,7 @@ def _essay_json(title="申論題摘要", text="依檢索資料說明核心理由
     return json.dumps({"title": title, "sections": sections}, ensure_ascii=False)
 
 
-def _essay_check_response(*, fits=True, version=1, overflow=0, total=30, notes=()):
+def _essay_check_response(*, fits=True, version=1, overflow=0, total=42, notes=()):
     return {
         "answerId": "answer-1", "version": version,
         "layout": _essay_state_response(fits=fits, overflow=overflow, total=total)["layout"],
@@ -1357,9 +1357,9 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
         elif name == "create_answer":
             structured = _essay_state_response(fits=False, overflow=4, total=48)
         elif name == "write_answer":
-            structured = _essay_state_response(fits=True, version=2, total=40)
+            structured = _essay_state_response(fits=True, version=2, total=42)
         elif name == "check_layout":
-            structured = (_essay_check_response(version=2, total=40) if written else _essay_check_response(
+            structured = (_essay_check_response(version=2, total=42) if written else _essay_check_response(
                 fits=False, overflow=4, total=48, notes=["超出答案紙 4 行；建議先壓縮：一、核心說明（42 行）。"]))
             if not written:
                 paragraph = {"sectionId": "s1", "paragraphIndex": 0, "isHeading": False, "page": 1}
@@ -1380,6 +1380,7 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
         "load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout", "export_answer"]
     system = client.calls[0][0][0]["content"]
     assert "初稿控制在 650–700 字" in system and "每行約 16 個全形字" in system
+    assert "全程使用繁體中文" in system  # the sheet font has no simplified glyphs
     # the essay server's own writing guide reaches the model
     assert "【起草】先按每小問與指令動詞擬綱" in system and "【稿紙段落】段落只用單一換行" in system
     assert "【題型示例（自製教學示例）】〔比較〕題目：比較甲乙　寫法：依共同維度對照\n" in system
@@ -1417,7 +1418,7 @@ def test_parse_essay_lifts_arabic_items_placed_directly_under_a_heading(text, ex
 
 def test_essay_check_caps_the_number_and_length_of_notes(monkeypatch):
     _enable_essay(monkeypatch)
-    response = _essay_check_response(notes=["結構提醒：" + "長" * 900] * 20)
+    response = _essay_check_response(total=30, notes=["結構提醒：" + "長" * 900] * 20)
 
     _, _, used, notes = answer._essay_check(
         "answer-1", lambda url, payload, headers, timeout: ("application/json", _mcp_body(response)))
@@ -1527,6 +1528,34 @@ def test_generate_essay_asks_the_model_to_fix_content_written_under_the_wrong_ar
         assert result["essay"]["note"] == "第 1 節有段落寫在第 7 條之下，用語卻較接近警察職權行使法第8條，請對照原文。"
 
 
+def test_generate_essay_asks_a_short_answer_to_use_the_sheet(monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+    ticks = iter([0.0])  # 100 s in: past the 90 s polish budget, a short answer still gets its revision
+    monkeypatch.setattr(answer, "time", SimpleNamespace(monotonic=lambda: next(ticks, 100.0)))
+    client = SequenceClient(_essay_json(), _essay_json(text="依檢索資料說明核心理由，並補上要件與涵攝。"))
+    names = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        names.append(name)
+        written = "write_answer" in names
+        structured = {"export_answer": {"files": []}, "create_answer": _essay_state_response(total=39),
+                      "write_answer": _essay_state_response(version=2, total=43)}.get(
+            name, _essay_check_response(version=2, total=43) if written else _essay_check_response(
+                total=39, notes=["還可再寫 5 行；若要寫滿兩頁，可擴充論述最核心的區塊。"]))
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    request = client.calls[1][0][-1]["content"]
+    assert "共 39 行，答題紙容量 44 行，尚餘 5 行。" in request and "請壓縮" not in request
+    assert "還可再寫 5 行；若要寫滿兩頁，可擴充論述最核心的區塊。站主要求尚餘不超過 2 行：請補寫 3–5 行（約 76 字）" in request
+    assert names == ["load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout",
+                     "export_answer"]
+    assert result["essay"]["layout"]["remainingLines"] == 1
+    assert "補上要件與涵攝" in result["essay"]["sections"][0]["text"]
+
+
 def test_generate_essay_exports_a_fitting_answer_without_revision_when_already_slow(
         monkeypatch, evidence):
     _enable_essay(monkeypatch)
@@ -1551,7 +1580,8 @@ def test_generate_essay_exports_a_fitting_answer_without_revision_when_already_s
 def test_generate_essay_keeps_overflow_note_and_skips_export_after_compression(
         monkeypatch, evidence):
     _enable_essay(monkeypatch)
-    client = SequenceClient(_essay_json(), _essay_json(text="仍然超出版面。"), _essay_json(text="還是超出。"))
+    client = SequenceClient(_essay_json(), _essay_json(text="仍然超出版面。"), _essay_json(text="依然超出。"),
+                            _essay_json(text="還是超出。"))
     names = []
 
     def post(url, payload, headers, timeout):
@@ -1563,10 +1593,10 @@ def test_generate_essay_keeps_overflow_note_and_skips_export_after_compression(
 
     result = answer.generate_essay("申論題", *evidence, client=client, post=post)
 
-    # at most two revisions, then stop without exporting
+    # at most three revisions, then stop without exporting
     assert names == ["load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout",
-                     "write_answer", "check_layout"]
-    assert len(client.calls) == 3 and result["essay"]["sections"][0]["text"] == "還是超出。"
+                     "write_answer", "check_layout", "write_answer", "check_layout"]
+    assert len(client.calls) == 4 and result["essay"]["sections"][0]["text"] == "還是超出。"
     assert "超出答題紙 2 行" in result["essay"]["note"]
     assert result["essay"]["layout"]["fits"] is False
 
