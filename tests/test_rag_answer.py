@@ -1385,7 +1385,7 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
     # the essay server's own writing guide reaches the model
     assert "【起草】先按每小問與指令動詞擬綱" in system and "【稿紙段落】段落只用單一換行" in system
     assert "【申論寫作規則】大標寫一、，其下 (一)→1.→⑴\n【起草】" in system  # writingRules first, label not doubled
-    assert "開頭用「」框出本題核心概念" in system and "每個重點項只寫一到兩行" in system
+    assert "開頭寫 2–3 句（約 3–5 行）：第一句用「」框出本題核心概念" in system and "每個重點項只寫一到兩行" in system
     assert "【題型示例（自製教學示例）】〔比較〕題目：比較甲乙　寫法：依共同維度對照\n" in system
     assert calls[1][1]["templateId"] == "police_information_essay_165"
     assert calls[1][1]["lineTargets"] == [{"sectionId": "s1", "lines": 20}, {"sectionId": "s2", "lines": 10}]
