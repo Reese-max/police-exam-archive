@@ -1351,6 +1351,7 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
         written = any(called == "write_answer" for called, _ in calls)
         if name == "load_exam_paper":
             structured = {"template": {}, "writingGuide": {
+                "writingRules": "【申論寫作規則】大標寫一、，其下 (一)→1.→⑴",
                 "stages": {"draft": "先按每小問與指令動詞擬綱", "compress": "先刪套話{再}縮句"},
                 "paperLayout": {"instruction": "段落只用單一換行"}, "examplesLabel": "自製教學示例",
                 "examples": [{"type": "比較", "question": "比較甲乙", "teachingExample": "依共同維度對照"}, "壞"]}}
@@ -1383,6 +1384,8 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
     assert "全程使用繁體中文" in system  # the sheet font has no simplified glyphs
     # the essay server's own writing guide reaches the model
     assert "【起草】先按每小問與指令動詞擬綱" in system and "【稿紙段落】段落只用單一換行" in system
+    assert "【申論寫作規則】大標寫一、，其下 (一)→1.→⑴\n【起草】" in system  # writingRules first, label not doubled
+    assert "開頭用「」框出本題核心概念" in system and "每個重點項只寫一到兩行" in system
     assert "【題型示例（自製教學示例）】〔比較〕題目：比較甲乙　寫法：依共同維度對照\n" in system
     assert calls[1][1]["templateId"] == "police_information_essay_165"
     assert calls[1][1]["lineTargets"] == [{"sectionId": "s1", "lines": 20}, {"sectionId": "s2", "lines": 10}]
@@ -1404,8 +1407,9 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
 
 
 @pytest.mark.parametrize(("text", "expected"), [
-    ("依第 6 條：\n1. 合理懷疑。\n2．知情者。\n10. 管制站。", "依第 6 條：\n（一）合理懷疑。\n（二）知情者。\n（十）管制站。"),
+    ("依第 6 條：\n1. 合理懷疑。\n2．知情者。\n10. 管制站。", "依第 6 條：\n(一)合理懷疑。\n(二)知情者。\n(十)管制站。"),
     ("（一）要件：\n1. 合理懷疑。\n2. 知情者。", "（一）要件：\n1. 合理懷疑。\n2. 知情者。"),  # already layered
+    ("(一)要件：\n1. 合理懷疑。\n2. 知情者。", "(一)要件：\n1. 合理懷疑。\n2. 知情者。"),  # half-width layer
     ("1. 甲。\n11. 乙。", "1. 甲。\n11. 乙。"),  # more than ten items: left to the layout reminders
     ("3.5 公里內。\n共 1. 項", "3.5 公里內。\n共 1. 項"),  # not numbering
 ])
@@ -1550,6 +1554,7 @@ def test_generate_essay_asks_a_short_answer_to_use_the_sheet(monkeypatch, eviden
     request = client.calls[1][0][-1]["content"]
     assert "共 39 行，答題紙容量 44 行，尚餘 5 行。" in request and "請壓縮" not in request
     assert "還可再寫 5 行；若要寫滿兩頁，可擴充論述最核心的區塊。站主要求尚餘不超過 2 行：請補寫 3–5 行（約 76 字）" in request
+    assert "以新增簡短的重點項補足" in request and "不把既有重點項寫長" in request
     assert names == ["load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout",
                      "export_answer"]
     assert result["essay"]["layout"]["remainingLines"] == 1
