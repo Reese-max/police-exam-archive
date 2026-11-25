@@ -60,18 +60,16 @@ _answer_requests = deque()
 # "條 10 …" are new questions (at most 5 questions and 3 articles are listed).
 _SOURCE_REFERENCE = re.compile(r"[\[［【](?:題|條)\s*\d+[\]］】]|^\s*(?:題|條)\s*\d(?!\s*[\d年])")
 _ESSAY_PREFIX = re.compile(r"^\s*申論(?:題)?\s*[：:]\s*(.+)", re.DOTALL)
-_ESSAY_COMPARISON_PAIR = re.compile(
-    r"(?:比較|對照)\s*(?P<left>[^，,。；;：:、與和及暨]{1,40}?)\s*"
-    r"(?:與|和|及|暨)\s*(?P<right>[^，,。；;：:、]{1,60}?)"
-    r"(?=之|的|對|在|於|間|是否|如何|異同|差異|$)"
+_ESSAY_PAIR_CONNECTOR = re.compile(r"\s*(?:以及|與|和|及|暨|、)\s*")
+_ESSAY_ARTICLE_REFERENCE = re.compile(r"第\s*\d+(?:[-－]\d+)?\s*條")
+_ESSAY_LEGAL_TOPIC = re.compile(
+    r"行政罰|刑罰|刑法|行政處分|處分|撤銷|廢止|強制|羈押|保護令|原則|"
+    r"管束|臨檢|拘提|逮捕|搜索|扣押|罰鍰|裁罰|正當程序"
 )
-_ESSAY_LAW_PAIR = re.compile(
-    r"(?P<left>[\u3400-\u9fffA-Za-z0-9]{2,40}?法)\s*(?:與|和|及|暨|、)\s*"
-    r"(?P<right>[\u3400-\u9fffA-Za-z0-9]{2,40}?法)"
+_ESSAY_OBJECT_PREFIX = re.compile(
+    r"^\s*(?:就[^，,]{1,40}(?:而言|來說)[，,]\s*|試述|試論|試說明|試比較|"
+    r"試|請|論|比較|對照|說明|論述|分析|探討)\s*"
 )
-_ESSAY_PAIR_ENDING = re.compile(r"(?:之(?:異同|差異)|的(?:異同|差異)|異同|差異)[？?。！!；;]*$")
-_ESSAY_PAIR_CONNECTOR = re.compile(r"\s*(?:與|和|及|暨)\s*")
-_ESSAY_OBJECT_PREFIX = re.compile(r"^\s*(?:試述|試比較|請|試|比較|對照|說明|論述|分析|探討)\s*")
 _answer_lock = Lock()
 _ANSWER_CACHE_SECONDS = 3600
 _ANSWER_CACHE_MAX = 500
@@ -373,51 +371,127 @@ def render(results, *, include_notice=True, laws=None):
     return question_text + ("\n\n" + law_text if law_text else "")
 
 
-def _essay_law_queries(query):
-    match = _ESSAY_COMPARISON_PAIR.search(query)
-    if match is None:
-        match = _ESSAY_LAW_PAIR.search(query)
-    if match is not None:
-        subjects = [match.group("left"), match.group("right")]
-    else:
-        ending = _ESSAY_PAIR_ENDING.search(query)
-        connectors = list(_ESSAY_PAIR_CONNECTOR.finditer(query[:ending.start()])) if ending else []
-        if not connectors:
-            return [query]
-        connector = connectors[-1]
-        subjects = [query[:connector.start()], query[connector.end():ending.start()]]
+def _essay_law_names():
+    connection = getattr(retriever, "connection", None)
+    if connection is None or not connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='law_articles'").fetchone():
+        return ()
+    return tuple(row[0] for row in connection.execute(
+        "SELECT DISTINCT law_name FROM law_articles WHERE law_name IS NOT NULL"
+    ))
 
-    cleaned = []
-    for subject in subjects:
-        subject = subject.strip(" \t\r\n，,。；;：:？！?、")
-        while prefix := _ESSAY_OBJECT_PREFIX.match(subject):
-            subject = subject[prefix.end():]
-        if not subject:
-            return [query]
-        cleaned.append(subject)
-    return [query, *dict.fromkeys(cleaned)]
+
+def _essay_law_spans(query, law_names):
+    spans = []
+    for name in sorted(set(law_names), key=len, reverse=True):
+        start = query.find(name)
+        while start >= 0:
+            end = start + len(name)
+            if all(end <= left or start >= right for left, right in spans):
+                spans.append((start, end))
+            start = query.find(name, end)
+    return spans
+
+
+def _essay_has_law_anchor(subject, law_names):
+    return bool(any(name in subject for name in law_names)
+                or _ESSAY_ARTICLE_REFERENCE.search(subject)
+                or _ESSAY_LEGAL_TOPIC.search(subject))
+
+
+def _clean_essay_subject(subject):
+    subject = subject.strip(" \t\r\n，,。；;：:？！?、")
+    while prefix := _ESSAY_OBJECT_PREFIX.match(subject):
+        subject = subject[prefix.end():]
+    return subject.strip(" \t\r\n，,。；;：:？！?、")
+
+
+def _essay_law_queries(query, law_names=None):
+    law_names = tuple(law_names) if law_names is not None else _essay_law_names()
+    law_spans = _essay_law_spans(query, law_names)
+    connectors = [match for match in _ESSAY_PAIR_CONNECTOR.finditer(query)
+                  if not any(start <= match.start() < end for start, end in law_spans)]
+    if not connectors:
+        return [query]
+
+    subjects = []
+    start = 0
+    for connector in connectors:
+        subjects.append(_clean_essay_subject(query[start:connector.start()]))
+        start = connector.end()
+    subjects.append(_clean_essay_subject(query[start:]))
+    if any(not subject for subject in subjects):
+        return [query]
+
+    last_law = None
+    for index, subject in enumerate(subjects):
+        found_law = next((name for name in sorted(law_names, key=len, reverse=True)
+                          if name in subject), None)
+        if found_law:
+            last_law = found_law
+        elif last_law and _ESSAY_ARTICLE_REFERENCE.search(subject):
+            subjects[index] = last_law + subject
+
+    if (len(subjects) > 1
+            and not any(_ESSAY_ARTICLE_REFERENCE.search(subject) for subject in subjects)
+            and not any(any(name in subject for name in law_names) for subject in subjects[1:])):
+        context = re.match(r"(?P<base>.+?)(?P<joiner>之|的)(?P<topic>[^之的]+)$", subjects[0])
+        if context and _essay_has_law_anchor(context.group("base"), law_names):
+            shared = context.group("base") + context.group("joiner")
+            for index, subject in enumerate(subjects[1:], 1):
+                if _ESSAY_LEGAL_TOPIC.search(subject):
+                    subjects[index] = shared + subject
+
+    penal_code = next((name for name in law_names if name.endswith("刑法")), None)
+    if penal_code:
+        subjects = [f"{penal_code} {subject}"
+                    if "刑罰" in subject and not any(name in subject for name in law_names)
+                    else subject for subject in subjects]
+
+    if not all(_essay_has_law_anchor(subject, law_names) for subject in subjects):
+        return [query]
+    return [query, *dict.fromkeys(subjects)]
 
 
 def _merge_essay_laws(rankings, k):
     if k <= 0:
         return []
-    max_per_law = max(1, k // 2)
+    available_laws = {ranking[0].get("law_name") for ranking in rankings if ranking}
+    # Reserve two slots for each other top-ranked law; original results backfill unused slots.
+    max_per_law = max(1, k - 2 * (len(available_laws) - 1)) if len(available_laws) > 1 else k
     results = []
     seen = set()
     law_counts = {}
-    for rank in range(max((len(items) for items in rankings), default=0)):
-        for items in rankings:
-            if rank >= len(items):
-                continue
-            law = items[rank]
-            identity = (law.get("law_name"), law.get("article_no"))
-            if identity in seen or law_counts.get(identity[0], 0) >= max_per_law:
-                continue
-            seen.add(identity)
-            law_counts[identity[0]] = law_counts.get(identity[0], 0) + 1
-            results.append(law)
-            if len(results) == k:
-                return results
+
+    def add(law, *, enforce_cap=True):
+        identity = (law.get("law_name"), law.get("article_no"))
+        if identity in seen or (enforce_cap and law_counts.get(identity[0], 0) >= max_per_law):
+            return
+        seen.add(identity)
+        law_counts[identity[0]] = law_counts.get(identity[0], 0) + 1
+        results.append(law)
+
+    original = rankings[0] if rankings else []
+    for law in original:
+        add(law)
+        if len(results) == k:
+            return results
+    for rank in range(max((len(items) for items in rankings[1:]), default=0)):
+        for items in rankings[1:]:
+            if rank < len(items):
+                add(items[rank])
+                if len(results) == k:
+                    return results
+    for law in original:
+        add(law, enforce_cap=False)
+        if len(results) == k:
+            return results
+    for rank in range(max((len(items) for items in rankings[1:]), default=0)):
+        for items in rankings[1:]:
+            if rank < len(items):
+                add(items[rank], enforce_cap=False)
+                if len(results) == k:
+                    return results
     return results
 
 

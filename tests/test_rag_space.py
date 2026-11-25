@@ -762,20 +762,51 @@ def _run_chat(app, message, history=None):
     return updates, updates[-1][0]
 
 
-@pytest.mark.parametrize(("query", "expected"), [
-    ("試比較行政罰與刑罰之異同",
-     ["試比較行政罰與刑罰之異同", "行政罰", "刑罰"]),
+@pytest.mark.parametrize(("query", "law_names", "expected"), [
+    ("試比較行政罰與刑罰之異同", (),
+     ["試比較行政罰與刑罰之異同", "行政罰", "刑罰之異同"]),
+    ("試比較行政罰與刑罰之異同", ("中華民國刑法",),
+     ["試比較行政罰與刑罰之異同", "行政罰", "中華民國刑法 刑罰之異同"]),
     ("試比較集會遊行法與社會秩序維護法對聚眾活動之規範",
-     ["試比較集會遊行法與社會秩序維護法對聚眾活動之規範", "集會遊行法", "社會秩序維護法"]),
-    ("警察職權行使法及行政程序法如何適用",
-     ["警察職權行使法及行政程序法如何適用", "警察職權行使法", "行政程序法"]),
-    ("警察職權行使法中查證身分之要件與程序",
+     ("集會遊行法", "社會秩序維護法"),
+     ["試比較集會遊行法與社會秩序維護法對聚眾活動之規範",
+      "集會遊行法", "社會秩序維護法對聚眾活動之規範"]),
+    ("試比較家庭暴力防治法之保護令與刑事訴訟法之羈押",
+     ("家庭暴力防治法", "刑事訴訟法"),
+     ["試比較家庭暴力防治法之保護令與刑事訴訟法之羈押",
+      "家庭暴力防治法之保護令", "刑事訴訟法之羈押"]),
+    ("行政執行法之即時強制與警察職權行使法之管束",
+     ("行政執行法", "警察職權行使法"),
+     ["行政執行法之即時強制與警察職權行使法之管束",
+      "行政執行法之即時強制", "警察職權行使法之管束"]),
+    ("比較警察職權行使法第6條之要件與第7條之要件", ("警察職權行使法",),
+     ["比較警察職權行使法第6條之要件與第7條之要件",
+      "警察職權行使法第6條之要件", "警察職權行使法第7條之要件"]),
+    ("試說明行政處分之撤銷與廢止之異同", (),
+     ["試說明行政處分之撤銷與廢止之異同", "行政處分之撤銷", "行政處分之廢止之異同"]),
+    ("請說明警察職權行使法、行政執行法與刑法之關係",
+     ("警察職權行使法", "行政執行法", "中華民國刑法"),
+     ["請說明警察職權行使法、行政執行法與刑法之關係",
+      "警察職權行使法", "行政執行法", "刑法之關係"]),
+    ("就警察實務而言，比例原則與信賴保護原則之差異", (),
+     ["就警察實務而言，比例原則與信賴保護原則之差異",
+      "比例原則", "信賴保護原則之差異"]),
+    ("試述通訊保障及監察法與刑法之異同",
+     ("通訊保障及監察法", "中華民國刑法"),
+     ["試述通訊保障及監察法與刑法之異同",
+      "通訊保障及監察法", "刑法之異同"]),
+    ("比較甲說與乙說之差異", (), ["比較甲說與乙說之差異"]),
+    ("做法與看法之差異", (), ["做法與看法之差異"]),
+    ("試述警察實施臨檢之方法與相關法規", (),
+     ["試述警察實施臨檢之方法與相關法規"]),
+    ("比較警察法與辦法之關係", ("警察法",), ["比較警察法與辦法之關係"]),
+    ("警察職權行使法中查證身分之要件與程序", ("警察職權行使法",),
      ["警察職權行使法中查證身分之要件與程序"]),
-    ("請依 ISO/IEC 27037 說明數位證據處理的四個階段及其要求",
+    ("請依 ISO/IEC 27037 說明數位證據處理的四個階段及其要求", (),
      ["請依 ISO/IEC 27037 說明數位證據處理的四個階段及其要求"]),
 ])
-def test_essay_law_queries_split_only_clear_pairs(app, query, expected):
-    assert app._essay_law_queries(query) == expected
+def test_essay_law_queries_split_only_clear_pairs(app, query, law_names, expected):
+    assert app._essay_law_queries(query, law_names=law_names) == expected
 
 
 def test_essay_law_merge_deduplicates_and_caps_each_law(app):
@@ -795,7 +826,36 @@ def test_essay_law_merge_deduplicates_and_caps_each_law(app):
 
     assert len(merged) == len(set(identities)) == 8
     assert {name: sum(item["law_name"] == name for item in merged)
-            for name in ("甲法", "乙法")} == {"甲法": 4, "乙法": 4}
+            for name in ("甲法", "乙法")} == {"甲法": 6, "乙法": 2}
+
+
+def test_essay_law_merge_backfills_unused_quota_from_original(app):
+    original = [{"law_name": "甲法", "article_no": f"第{i}條"} for i in range(1, 9)]
+    other = [{"law_name": "乙法", "article_no": "第1條"}]
+
+    assert app._merge_essay_laws([original, []], 8) == original
+    merged = app._merge_essay_laws([original, other], 8)
+
+    assert len(merged) == 8
+    assert [(item["law_name"], item["article_no"]) for item in merged[:6]] == [
+        ("甲法", f"第{i}條") for i in range(1, 7)]
+    assert sum(item["law_name"] == "乙法" for item in merged) == 1
+
+
+def test_single_essay_subquery_preserves_original_search(app):
+    query = "查證身分之程序"
+    result = [{"law_name": "警察職權行使法", "article_no": "第6條"}]
+    calls = []
+    app.retriever = type("Retriever", (), {
+        "search_laws": lambda self, text, **kwargs: calls.append((text, kwargs)) or result,
+    })()
+    app.law_min_score = 0.47
+
+    actual = app._search_essay_laws(query, 8, {})
+
+    assert actual is result
+    assert len(calls) == 1 and calls[0][0] == query
+    assert calls[0][1]["min_vector_score"] == 0.47
 
 
 def test_general_search_keeps_single_law_query(app):
@@ -838,7 +898,7 @@ def test_essay_source_followup_reuses_decomposed_law_search(app, monkeypatch):
     _run_chat(app, f"申論題：{question}")
     _run_chat(app, "[條1] 為什麼？", history)
 
-    expected = [question, "行政罰", "刑罰"]
+    expected = [question, "行政罰", "刑罰之異同"]
     assert law_calls == expected + expected
 
 
