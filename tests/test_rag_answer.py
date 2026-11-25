@@ -1448,7 +1448,7 @@ def test_essay_check_caps_the_number_and_length_of_notes(monkeypatch):
 def test_generate_essay_fixes_structure_reminders_and_restores_the_fitting_version(
         monkeypatch, evidence):
     _enable_essay(monkeypatch)
-    client = SequenceClient(_essay_json(), _essay_json(text="（一）拆開。\n（二）之後太長。"), "不是 JSON")
+    client = SequenceClient(_essay_json(), _essay_json(text="（一）拆開。\n（二）之後太長。"), "不是 JSON", "還是不是 JSON")
     calls = []
 
     def post(url, payload, headers, timeout):
@@ -1472,16 +1472,18 @@ def test_generate_essay_fixes_structure_reminders_and_restores_the_fitting_versi
 
     result = answer.generate_essay("申論題", *evidence, client=client, post=post)
 
+    # one unusable revision gets another try; after the second the fitting version goes back
     assert [name for name, _ in calls] == [
-        "load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout",
+        "load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout", "check_layout",
         "write_answer", "check_layout", "export_answer"]
+    assert len(client.calls) == 4
     reminder = client.calls[1][0][-1]["content"]
     assert "結構提醒：s1 把多個編號項併在同一段" in reminder and "其他說明" not in reminder
     assert "請壓縮" not in reminder and "請壓縮" in client.calls[2][0][-1]["content"]
     # the revision overflowed and could not be repaired: the version that fit goes back and is exported
-    assert calls[5][1]["expectedVersion"] == 2
-    assert calls[5][1]["sections"][0]["text"] == "依檢索資料說明核心理由。"
-    assert calls[7][1]["expectedVersion"] == 3
+    assert calls[6][1]["expectedVersion"] == 2
+    assert calls[6][1]["sections"][0]["text"] == "依檢索資料說明核心理由。"
+    assert calls[8][1]["expectedVersion"] == 3
     assert result["essay"]["sections"][0]["text"] == "依檢索資料說明核心理由。"
     assert result["essay"]["layout"]["fits"] is True and result["essay"]["note"] == ""
 
@@ -1716,7 +1718,8 @@ def test_generate_essay_asks_the_model_to_fix_content_written_under_the_wrong_ar
         monkeypatch, evidence, fixed):
     _enable_essay(monkeypatch)
     corrected = MISPLACED.replace("（二）", "依同法第8條，")
-    client = SequenceClient(_essay_json(text=MISPLACED), _essay_json(text=corrected) if fixed else "不是 JSON")
+    client = SequenceClient(_essay_json(text=MISPLACED),
+                            *([_essay_json(text=corrected)] if fixed else ["不是 JSON", "不是 JSON"]))
     names = []
 
     def post(url, payload, headers, timeout):
@@ -1736,8 +1739,8 @@ def test_generate_essay_asks_the_model_to_fix_content_written_under_the_wrong_ar
                          "export_answer"]
         assert result["essay"]["sections"][0]["text"] == corrected and result["essay"]["note"] == ""
     else:
-        # the answer still goes out, with a warning that carries no model text
-        assert names == ["load_exam_paper", "create_answer", "check_layout", "export_answer"]
+        # the answer still goes out after two unusable revisions, with a warning that carries no model text
+        assert names == ["load_exam_paper", "create_answer", "check_layout", "check_layout", "export_answer"]
         assert result["essay"]["note"] == "第 1 節有段落寫在第 7 條之下，用語卻較接近警察職權行使法第8條，請對照原文。"
 
 
@@ -1847,11 +1850,71 @@ def test_generate_essay_gets_a_fourth_revision_after_trimming_and_filling_oversh
     assert result["essay"]["sections"][0]["text"] == "第 4 版。"
 
 
+def test_generate_essay_recovers_when_the_sheet_service_refuses_a_revision(monkeypatch, evidence, capsys):
+    _enable_essay(monkeypatch)
+    # live: a 67-line draft's revision was refused and the answer went out with no file and no trace
+    client = SequenceClient(_essay_json(), _essay_json(text="第一次修訂。"), _essay_json(text="第二次修訂。"))
+    names = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        names.append(name)
+        writes = names.count("write_answer")
+        if name == "write_answer" and writes == 1:
+            return "application/json", json.dumps({"jsonrpc": "2.0", "id": 1, "result": {"isError": True, "content": [
+                {"type": "text", "text": "INVALID_INPUT：申論題 sections.0 無效"}]}}, ensure_ascii=False)
+        if name == "export_answer":
+            return "application/json", _mcp_body({"files": []})
+        fits = writes >= 2
+        maker = _essay_check_response if name == "check_layout" else _essay_state_response
+        return "application/json", _mcp_body(maker(fits=fits, overflow=0 if fits else 3, total=43 if fits else 47,
+                                                   version=2 if fits else 1))
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    assert names == ["load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout",
+                     "write_answer", "check_layout", "export_answer"]
+    assert result["essay"]["sections"][0]["text"] == "第二次修訂。" and result["essay"]["layout"]["fits"] is True
+    out = capsys.readouterr().out
+    assert "write failed: INVALID_INPUT" in out and "申論題" not in out  # the code, never the service's text
+
+
+@pytest.mark.parametrize(("detail", "code"), [
+    ("INVALID_INPUT：sections.0 無效", "INVALID_INPUT"),
+    ("ESSAY_VERSION_CONFLICT", "ESSAY_VERSION_CONFLICT"),
+    ("依 ISO 27037 與 DNS SECRET_TOKEN_ABC 撰寫", "unknown"),  # echoed answer text is never taken as a code
+    ("", "unknown"),
+])
+def test_essay_service_error_logs_only_the_services_own_codes(detail, code):
+    assert answer.EssayServiceError(detail).code == code
+
+
+@pytest.mark.parametrize(("elapsed", "expected"), [(100.0, 180.0), (400.0, 30.0)])
+def test_generate_essay_revision_timeout_stays_within_the_remaining_budget(
+        monkeypatch, evidence, elapsed, expected):
+    _enable_essay(monkeypatch)
+    ticks = iter([0.0])
+    monkeypatch.setattr(answer, "time", SimpleNamespace(monotonic=lambda: next(ticks, elapsed)))
+    client = SequenceClient(_essay_json(), _essay_json(text="縮短。"))
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        if name == "export_answer":
+            return "application/json", _mcp_body({"files": []})
+        maker = _essay_check_response if name == "check_layout" else _essay_state_response
+        return "application/json", _mcp_body(maker(fits=False, overflow=3, total=47))
+
+    answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    # overflow budget 420 s: at 100 s the full 180 s timeout fits, at 400 s only the 30 s floor is left
+    assert client.calls[1][1]["timeout"] == expected
+
+
 def test_generate_essay_keeps_overflow_note_and_skips_export_after_compression(
         monkeypatch, evidence):
     _enable_essay(monkeypatch)
-    client = SequenceClient(_essay_json(), _essay_json(text="仍然超出版面。"), _essay_json(text="依然超出。"),
-                            _essay_json(text="一樣超出。"), _essay_json(text="還是超出。"))
+    client = SequenceClient(_essay_json(), *(_essay_json(text=f"第 {n} 次仍超出。") for n in range(1, 6)),
+                            _essay_json(text="還是超出。"))
     names = []
 
     def post(url, payload, headers, timeout):
@@ -1863,10 +1926,9 @@ def test_generate_essay_keeps_overflow_note_and_skips_export_after_compression(
 
     result = answer.generate_essay("申論題", *evidence, client=client, post=post)
 
-    # at most four revisions, then stop without exporting
-    assert names == ["load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout",
-                     "write_answer", "check_layout", "write_answer", "check_layout", "write_answer", "check_layout"]
-    assert len(client.calls) == 5 and result["essay"]["sections"][0]["text"] == "還是超出。"
+    # at most six revisions (the time budgets usually stop it sooner), then stop without exporting
+    assert names == ["load_exam_paper", "create_answer", "check_layout", *["write_answer", "check_layout"] * 6]
+    assert len(client.calls) == 7 and result["essay"]["sections"][0]["text"] == "還是超出。"
     assert "超出答題紙 2 行" in result["essay"]["note"]
     assert result["essay"]["layout"]["fits"] is False
 
