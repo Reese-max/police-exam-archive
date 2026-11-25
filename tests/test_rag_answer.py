@@ -1395,6 +1395,8 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
     system = client.calls[0][0][0]["content"]
     assert "初稿控制在 650–700 字" in system and "每行約 16 個全形字" in system
     assert "全程使用繁體中文" in system  # the sheet font has no simplified glyphs
+    # live drafts ran 44–62 lines on a 44-line sheet before the revisions even added wording
+    assert "各節合計等於 40：答題紙是 44 行，留 4 行給修訂時補條號與門檻用語" in system
     # the essay server's own writing guide reaches the model
     assert "【起草】先按每小問與指令動詞擬綱" in system and "【稿紙段落】段落只用單一換行" in system
     assert "【申論寫作規則】大標寫一、，其下 (一)→1.→⑴\n【起草】" in system  # writingRules first, label not doubled
