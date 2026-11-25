@@ -1592,6 +1592,39 @@ def test_generate_essay_revises_with_medium_reasoning_at_most(monkeypatch, evide
     assert efforts == [configured, revision] and result["essay"]["layout"]["fits"] is True
 
 
+def test_generate_essay_trims_again_at_the_configured_effort_after_a_medium_trim_falls_short(
+        monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+    monkeypatch.setenv("RAG_LLM_REASONING_EFFORT", "high")
+    efforts = []
+
+    def fake_complete(messages, *, reasoning_effort=None, **kwargs):
+        efforts.append(reasoning_effort)
+        return {"choices": [{"message": {"content": _essay_json()}}]}
+
+    monkeypatch.setattr(answer, "_http_complete", fake_complete)
+    writes = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        if name == "write_answer":
+            writes.append(name)
+        fits = len(writes) >= 2  # the medium trim still overflows; the next one fits
+        if name == "export_answer":
+            structured = {"files": []}
+        elif name == "check_layout":
+            structured = _essay_check_response(fits=fits, overflow=0 if fits else 4, total=43 if fits else 48,
+                                               version=1 + len(writes))
+        else:
+            structured = _essay_state_response(fits=fits, overflow=0 if fits else 4, total=43 if fits else 48,
+                                               version=1 + len(writes))
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", *evidence, post=post)
+
+    assert efforts == ["high", "medium", "high"] and result["essay"]["layout"]["fits"] is True
+
+
 @pytest.mark.parametrize(("outcomes", "fallback", "calls", "status"), [
     ((TimeoutError("primary-key"), _essay_json()), False, 2, "ok"),  # a stalled draft gets one fresh request
     ((_rate_limited(), _essay_json()), False, 1, "error"),  # a rate limit is not retried at once
