@@ -466,6 +466,18 @@ def essay_enabled():
     )
 
 
+class EssayServiceError(ValueError):
+    """The sheet service refused a call; `code` (e.g. INVALID_INPUT) is safe to log, the message is not shown."""
+
+    # the sheet service's own error codes; anything else in its reply may echo the answer, so it is never logged
+    CODES = ("ESSAY_VERSION_CONFLICT", "VERSION_CONFLICT", "INVALID_INPUT", "LAYOUT_INVALID", "LAYOUT_OVERFLOW",
+             "EXPORT_FAILED", "ANSWER_NOT_FOUND", "TEMPLATE_NOT_FOUND", "IDEMPOTENCY_KEY_REUSED")
+
+    def __init__(self, detail):
+        super().__init__("essay service error")
+        self.code = next((code for code in self.CODES if re.search(rf"\b{code}\b", detail or "")), "unknown")
+
+
 def _essay_call(name, arguments, *, post=None):
     """Call the stateless essay MCP endpoint without exposing transport details."""
     url = (os.environ.get("RAG_ESSAY_MCP_URL") or "").strip()
@@ -505,10 +517,12 @@ def _essay_call(name, arguments, *, post=None):
                     parsed = candidate
         else:
             parsed = json.loads(body_text)
-        if not isinstance(parsed, dict) or "error" in parsed:
+        if not isinstance(parsed, dict):
             raise ValueError("essay service error")
         result = parsed.get("result")
-        if not isinstance(result, dict) or result.get("isError"):
+        if "error" in parsed or (isinstance(result, dict) and result.get("isError")):
+            raise EssayServiceError(json.dumps(parsed.get("error") or result.get("content"), ensure_ascii=False))
+        if not isinstance(result, dict):
             raise ValueError("essay service error")
         structured = result.get("structuredContent")
         if not isinstance(structured, dict):
@@ -518,6 +532,8 @@ def _essay_call(name, arguments, *, post=None):
             *(provider["api_key"] for provider in _chat_providers()),
         ]
         return _redact_structure(structured, secrets)
+    except EssayServiceError:
+        raise
     except Exception:
         raise ValueError("essay service error") from None
 
@@ -1129,9 +1145,10 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                               if provider["reasoning_effort"].strip() in ("high", "xhigh", "max") else provider
                               for provider in providers]
         compressing = False  # the last revision was asked to trim an overflow
-        # check, then at most four revisions: a live answer went 50 → 40 → 49 → 46 lines and three were not enough;
-        # the time budgets below still bound the wait
-        for attempt in range(5):
+        failures = 0  # revisions that came back unusable or that the sheet service refused
+        # the time budgets below decide when to stop; the cap only rules out a loop (live answers needed four
+        # revisions, e.g. 50 → 40 → 49 → 46 lines, and one still overflowed by a line after four)
+        for attempt in range(7):
             checked = _essay_check(answer_id, post)
             used, notes = "", []
             if checked:
@@ -1154,7 +1171,7 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
             budget_s = (90 if layout["fits"] and not misplaced_any and not short
                         else 240 if layout["fits"] else 420)
             late = time.monotonic() - started > budget_s
-            if attempt == 4 or late or (layout["fits"] and not reminders and not misplaced_any and not short):
+            if attempt == 6 or late or (layout["fits"] and not reminders and not misplaced_any and not short):
                 break
             request = f"排版檢查（check_layout）：共 {layout['totalLines']} 行，答題紙容量 44 行"
             request += (f"，超出 {layout['overflowLines']} 行。" if not layout["fits"]
@@ -1203,12 +1220,17 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                     {"role": "user", "content": _chat_redact(request, keys).translate(
                         str.maketrans("", "", "{}"))},
                 ],
-                revision_providers, client, timeout,
+                revision_providers, client,
+                # a call started near the budget may not run a full timeout past it (30 s floor for a real try)
+                min(timeout, max(30.0, budget_s - (time.monotonic() - started))),
             )
             revised = _parse_essay(_chat_redact(revised_text, keys)) if revised_text else None
             mark("revision" if revised else "revision failed")
             if revised is None:
-                break
+                failures += 1
+                if failures >= 2:
+                    break
+                continue  # one bad revision is worth another try; the time budgets still apply
             try:
                 updated = _essay_call("write_answer", {
                     "answerId": answer_id,
@@ -1216,8 +1238,13 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                     "sections": sheet_sections(revised["sections"]),
                 }, post=post)
                 answer_id, version, essay["layout"] = _essay_state(updated)
-            except Exception:
-                break
+            except Exception as error:
+                # live: a 67-line draft's revision was refused here and the answer went out with no file
+                failures += 1
+                mark(f"write failed: {getattr(error, 'code', 'unknown')}")
+                if failures >= 2:
+                    break
+                continue
             essay["sections"] = revised["sections"]
             draft = _chat_redact(revised_text, keys)
 
