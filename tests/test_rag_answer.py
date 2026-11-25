@@ -1392,6 +1392,7 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
     revision = client.calls[1][0][-1]["content"]
     assert "超出 4 行" in revision and "s1 42 行（目標 20）、s2 6 行" in revision
     assert "先刪套話再縮句" in revision and "每行約 16 個全形字" in revision
+    assert "條文的門檻用語（有事實足認、合理懷疑、具體、必要、不得任意、依客觀合理判斷、顯然無法等）照原文保留" in revision
     assert "建議先壓縮：一、核心說明（42 行）" in revision
     # the server's short-tail warning names the paragraph to trim
     assert revision.count("可省一行") == 1
@@ -1504,7 +1505,7 @@ def test_misplaced_articles_flags_another_articles_wording_under_the_cited_numbe
 
 ARTICLE_7_ITEMS = ["(一)攔停：攔停人、車、船及其他交通工具。", "(二)詢問：詢問姓名、出生年月日、出生地、國籍及住居所。",
                    "(三)檢查：有明顯事實足認其攜帶足以自殺、自傷之物，得檢查其身體。"]
-VEHICLE_ITEM = "(四)交通：對易生危害之交通工具得攔停，要求駕駛人或乘客出示相關證件。"
+VEHICLE_ITEM = "(四)交通：對依客觀合理判斷易生危害之交通工具得攔停，要求駕駛人或乘客出示相關證件。"
 # a list of article 7's measures with article 8's vehicle stop slipped in, no article number anywhere
 UNLABELED = "\n".join([*ARTICLE_7_ITEMS, VEHICLE_ITEM])
 
@@ -1531,6 +1532,55 @@ def test_unlabeled_articles_reads_short_items_without_their_numbering():
 
     assert answer._unlabeled_articles([{"heading": "二、程序", "text": "\n".join(short)}], [ARTICLE_7, ARTICLE_8]) == [
         (1, short[3][:14], "警察職權行使法第7條", "警察職權行使法第8條")]
+
+
+SEARCH_ITEM = "(一)異常舉動得強制離車；有犯罪之虞者，並得檢查交通工具。"  # article 8 says 有事實足認其有犯罪之虞
+STOP_ITEM = "(二)對已發生危害或易生危害之交通工具，得予攔停。"  # article 8 says 依客觀合理判斷易生危害
+
+
+def test_dropped_qualifiers_flags_items_that_leave_out_the_articles_threshold_wording():
+    laws = [ARTICLE_7, ARTICLE_8]
+
+    assert answer._dropped_qualifiers([{"heading": "", "text": f"{SEARCH_ITEM}\n{STOP_ITEM}"}], laws) == [
+        (1, SEARCH_ITEM[:14], "警察職權行使法第8條", "有事實足認其有犯罪之虞者", ["事實足認"]),
+        (1, STOP_ITEM[:14], "警察職權行使法第8條", "警察對於已發生危害或依客觀合理判斷易生危害之交通工具", ["合理判斷"])]
+    # 「足認」 without 「有事實」 still drops the factual basis the article requires
+    assert [found[4] for found in answer._dropped_qualifiers(
+        [{"heading": "", "text": SEARCH_ITEM.replace("有犯罪", "足認有犯罪")}], laws)] == [["事實足認"]]
+    for text in (SEARCH_ITEM.replace("有犯罪", "有事實足認有犯罪"),  # wording kept
+                 STOP_ITEM.replace("或易生", "或依客觀合理判斷易生"),
+                 STOP_ITEM[3:],  # a plain paragraph, not a list item
+                 "(一)攔停人、車、船及其他交通工具。"):  # article 7's clause has no threshold wording
+        assert answer._dropped_qualifiers([{"heading": "", "text": text}], laws) == []
+    assert answer._dropped_qualifiers([{"heading": "", "text": SEARCH_ITEM}], []) == []
+
+
+@pytest.mark.parametrize("fixed", [True, False])
+def test_generate_essay_asks_the_model_to_restore_dropped_threshold_wording(monkeypatch, evidence, fixed):
+    _enable_essay(monkeypatch)
+    corrected = SEARCH_ITEM.replace("有犯罪", "有事實足認有犯罪")
+    client = SequenceClient(_essay_json(text=SEARCH_ITEM), _essay_json(text=corrected) if fixed else "不是 JSON")
+    names = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        names.append(name)
+        structured = {"export_answer": {"files": []}, "create_answer": _essay_state_response(),
+                      "write_answer": _essay_state_response(version=2)}.get(
+            name, _essay_check_response(version=2 if "write_answer" in names else 1))
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", evidence[0], [ARTICLE_7, ARTICLE_8], client=client, post=post)
+
+    request = client.calls[1][0][-1]["content"]
+    assert "對應 <data> 裡警察職權行使法第8條的「有事實足認其有犯罪之虞者」，少了法定用語「事實足認」" in request
+    system = client.calls[0][0][0]["content"]
+    assert "門檻用語（有事實足認" in system  # the drafting rules ask for it up front
+    assert "<data> 沒寫到的機關權責與程序細節" in system  # and keep unsupported details out
+    if fixed:
+        assert result["essay"]["sections"][0]["text"] == corrected and result["essay"]["note"] == ""
+    else:
+        assert result["essay"]["note"] == "第 1 節有項目少了警察職權行使法第8條的法定用語「事實足認」，請對照原文。"
 
 
 @pytest.mark.parametrize("fixed", [True, False])
