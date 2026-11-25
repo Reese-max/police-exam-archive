@@ -1759,11 +1759,36 @@ def test_generate_essay_keeps_trimming_an_overflow_until_420_seconds(
     assert ("export_answer" in names) is revised
 
 
+def test_generate_essay_gets_a_fourth_revision_after_trimming_and_filling_overshoot(monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+    # live: 50 lines → cut to 40 → filled to 49 → trimmed to 46; three revisions left the 40-line version
+    totals = [50, 40, 49, 46, 43]
+    client = SequenceClient(*[_essay_json(text=f"第 {n} 版。") for n in range(5)])
+    writes = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        if name == "write_answer":
+            writes.append(name)
+        total = totals[len(writes)]
+        fits = total <= 44
+        if name == "export_answer":
+            return "application/json", _mcp_body({"files": []})
+        maker = _essay_check_response if name == "check_layout" else _essay_state_response
+        return "application/json", _mcp_body(maker(fits=fits, overflow=max(total - 44, 0), total=total,
+                                                   version=1 + len(writes)))
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    assert len(writes) == 4 and result["essay"]["layout"]["remainingLines"] == 1
+    assert result["essay"]["sections"][0]["text"] == "第 4 版。"
+
+
 def test_generate_essay_keeps_overflow_note_and_skips_export_after_compression(
         monkeypatch, evidence):
     _enable_essay(monkeypatch)
     client = SequenceClient(_essay_json(), _essay_json(text="仍然超出版面。"), _essay_json(text="依然超出。"),
-                            _essay_json(text="還是超出。"))
+                            _essay_json(text="一樣超出。"), _essay_json(text="還是超出。"))
     names = []
 
     def post(url, payload, headers, timeout):
@@ -1775,10 +1800,10 @@ def test_generate_essay_keeps_overflow_note_and_skips_export_after_compression(
 
     result = answer.generate_essay("申論題", *evidence, client=client, post=post)
 
-    # at most three revisions, then stop without exporting
+    # at most four revisions, then stop without exporting
     assert names == ["load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout",
-                     "write_answer", "check_layout", "write_answer", "check_layout"]
-    assert len(client.calls) == 4 and result["essay"]["sections"][0]["text"] == "還是超出。"
+                     "write_answer", "check_layout", "write_answer", "check_layout", "write_answer", "check_layout"]
+    assert len(client.calls) == 5 and result["essay"]["sections"][0]["text"] == "還是超出。"
     assert "超出答題紙 2 行" in result["essay"]["note"]
     assert result["essay"]["layout"]["fits"] is False
 

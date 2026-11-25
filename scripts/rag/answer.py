@@ -1086,7 +1086,9 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                               if provider["reasoning_effort"].strip() in ("high", "xhigh", "max") else provider
                               for provider in providers]
         compressing = False  # the last revision was asked to trim an overflow
-        for attempt in range(4):  # check, then at most three revisions: a grown answer may need trimming again
+        # check, then at most four revisions: a live answer went 50 → 40 → 49 → 46 lines and three were not enough;
+        # the time budgets below still bound the wait
+        for attempt in range(5):
             checked = _essay_check(answer_id, post)
             used, notes = "", []
             if checked:
@@ -1107,7 +1109,7 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
             budget_s = (90 if layout["fits"] and not misplaced_any and not short
                         else 240 if layout["fits"] else 420)
             late = time.monotonic() - started > budget_s
-            if attempt == 3 or late or (layout["fits"] and not reminders and not misplaced_any and not short):
+            if attempt == 4 or late or (layout["fits"] and not reminders and not misplaced_any and not short):
                 break
             request = f"排版檢查（check_layout）：共 {layout['totalLines']} 行，答題紙容量 44 行"
             request += (f"，超出 {layout['overflowLines']} 行。" if not layout["fits"]
