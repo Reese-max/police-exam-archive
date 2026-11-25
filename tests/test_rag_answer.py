@@ -1502,6 +1502,77 @@ def test_misplaced_articles_flags_another_articles_wording_under_the_cited_numbe
     assert answer._misplaced_articles(sections, []) == []
 
 
+ARTICLE_7_ITEMS = ["(一)攔停：攔停人、車、船及其他交通工具。", "(二)詢問：詢問姓名、出生年月日、出生地、國籍及住居所。",
+                   "(三)檢查：有明顯事實足認其攜帶足以自殺、自傷之物，得檢查其身體。"]
+VEHICLE_ITEM = "(四)交通：對易生危害之交通工具得攔停，要求駕駛人或乘客出示相關證件。"
+# a list of article 7's measures with article 8's vehicle stop slipped in, no article number anywhere
+UNLABELED = "\n".join([*ARTICLE_7_ITEMS, VEHICLE_ITEM])
+
+
+def test_unlabeled_articles_flags_another_articles_item_in_a_list_drawn_from_one_article():
+    laws = [ARTICLE_7, ARTICLE_8]
+
+    assert answer._unlabeled_articles([{"heading": "", "text": "前言。"}, {"heading": "二、程序", "text": UNLABELED}],
+                                      laws) == [(2, VEHICLE_ITEM[:14], "警察職權行使法第7條", "警察職權行使法第8條")]
+    for text in (UNLABELED.replace("(四)交通：", "(四)交通：依同法第8條，"),  # the item names its article
+                 "\n".join(["依同法第8條另有交通工具攔停：", *ARTICLE_7_ITEMS, VEHICLE_ITEM]),  # named earlier in the section
+                 "\n".join([*ARTICLE_7_ITEMS[:2], VEHICLE_ITEM]),  # two article 7 items are no list to judge against
+                 # the vehicle stop sits in its own list under a higher-level item, not in article 7's
+                 "\n".join(["(一)措施：", *(f"{n}.{item[3:]}" for n, item in enumerate(ARTICLE_7_ITEMS, 1)),
+                            "(二)交通工具：", f"1.{VEHICLE_ITEM[3:]}"])):
+        assert answer._unlabeled_articles([{"heading": "一、", "text": text}], laws) == []
+    assert answer._unlabeled_articles([{"heading": "一、", "text": UNLABELED}], [ARTICLE_7]) == []
+
+
+@pytest.mark.parametrize("fixed", [True, False])
+def test_generate_essay_asks_the_model_to_label_another_articles_item(monkeypatch, evidence, fixed):
+    _enable_essay(monkeypatch)
+    corrected = UNLABELED.replace("(四)交通：", "(四)交通：依同法第8條，")
+    client = SequenceClient(_essay_json(text=UNLABELED), _essay_json(text=corrected) if fixed else "不是 JSON")
+    names = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        names.append(name)
+        structured = {"export_answer": {"files": []}, "create_answer": _essay_state_response(),
+                      "write_answer": _essay_state_response(version=2)}.get(
+            name, _essay_check_response(version=2 if "write_answer" in names else 1))
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", evidence[0], [ARTICLE_7, ARTICLE_8], client=client, post=post)
+
+    request = client.calls[1][0][-1]["content"]
+    assert ("這項是 <data> 裡警察職權行使法第8條的內容，卻沒寫條號就列在警察職權行使法第7條的列舉中" in request
+            and "請壓縮" not in request)
+    if fixed:
+        assert result["essay"]["sections"][0]["text"] == corrected and result["essay"]["note"] == ""
+    else:
+        assert result["essay"]["note"] == "第 1 節有項目出自警察職權行使法第8條，卻未標條號列在警察職權行使法第7條的列舉中，請對照原文。"
+
+
+@pytest.mark.parametrize(("outcomes", "fallback", "calls", "status"), [
+    ((TimeoutError("primary-key"), _essay_json()), False, 2, "ok"),  # a stalled draft gets one fresh request
+    ((_rate_limited(), _essay_json()), False, 1, "error"),  # a rate limit is not retried at once
+    # the fallback already was the second request: no third and fourth one
+    ((TimeoutError("primary-key"), TimeoutError("backup-key"), _essay_json()), True, 2, "error"),
+])
+def test_generate_essay_retries_a_timed_out_draft_once(monkeypatch, evidence, outcomes, fallback, calls, status):
+    _enable_essay(monkeypatch)
+    if fallback:
+        monkeypatch.setenv("RAG_LLM_FALLBACK_API_KEY", "backup-key")
+    client = SequenceClient(*outcomes)
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        structured = {"export_answer": {"files": []}, "create_answer": _essay_state_response()}.get(
+            name, _essay_check_response())
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    assert len(client.calls) == calls and result["status"] == status
+
+
 @pytest.mark.parametrize("fixed", [True, False])
 def test_generate_essay_asks_the_model_to_fix_content_written_under_the_wrong_article(
         monkeypatch, evidence, fixed):
