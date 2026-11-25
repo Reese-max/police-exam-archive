@@ -1550,6 +1550,39 @@ def test_generate_essay_asks_the_model_to_label_another_articles_item(monkeypatc
         assert result["essay"]["note"] == "第 1 節有項目出自警察職權行使法第8條，卻未標條號列在警察職權行使法第7條的列舉中，請對照原文。"
 
 
+@pytest.mark.parametrize(("configured", "revision"), [("high", "medium"), ("low", "low")])
+def test_generate_essay_revises_with_medium_reasoning_at_most(monkeypatch, evidence, configured, revision):
+    _enable_essay(monkeypatch)
+    monkeypatch.setenv("RAG_LLM_REASONING_EFFORT", configured)
+    efforts = []
+
+    def fake_complete(messages, *, reasoning_effort=None, **kwargs):
+        efforts.append(reasoning_effort)
+        return {"choices": [{"message": {"content": _essay_json()}}]}
+
+    monkeypatch.setattr(answer, "_http_complete", fake_complete)
+    names = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        names.append(name)
+        written = "write_answer" in names
+        if name == "export_answer":
+            structured = {"files": []}
+        elif name == "check_layout":
+            structured = (_essay_check_response(version=2, total=43) if written
+                          else _essay_check_response(fits=False, overflow=9, total=53))
+        else:
+            structured = _essay_state_response(fits=written, overflow=0 if written else 9,
+                                               total=43 if written else 53, version=2 if written else 1)
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", *evidence, post=post)
+
+    # the draft keeps the configured effort; the compression revision asks for less
+    assert efforts == [configured, revision] and result["essay"]["layout"]["fits"] is True
+
+
 @pytest.mark.parametrize(("outcomes", "fallback", "calls", "status"), [
     ((TimeoutError("primary-key"), _essay_json()), False, 2, "ok"),  # a stalled draft gets one fresh request
     ((_rate_limited(), _essay_json()), False, 1, "error"),  # a rate limit is not retried at once

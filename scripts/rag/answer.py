@@ -1079,6 +1079,11 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
         essay["note"] = "排版服務暫時無法使用，以下只有文字。"
     else:
         fitting = None  # sections of the latest version that fit the sheet
+        # A revision edits an existing draft: medium reasoning returns far sooner than high, which on a live
+        # 53-line draft ran past the 180 s timeout and left no file; a lower configured effort stays as is.
+        revision_providers = [{**provider, "reasoning_effort": "medium"}
+                              if provider["reasoning_effort"].strip() in ("high", "xhigh", "max") else provider
+                              for provider in providers]
         for attempt in range(4):  # check, then at most three revisions: a grown answer may need trimming again
             checked = _essay_check(answer_id, post)
             used, notes = "", []
@@ -1140,7 +1145,7 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                     {"role": "user", "content": _chat_redact(request, keys).translate(
                         str.maketrans("", "", "{}"))},
                 ],
-                providers, client, timeout,
+                revision_providers, client, timeout,
             )
             revised = _parse_essay(_chat_redact(revised_text, keys)) if revised_text else None
             mark("revision" if revised else "revision failed")
