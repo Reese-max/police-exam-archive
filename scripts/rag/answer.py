@@ -982,8 +982,9 @@ def _unlabeled_articles(sections, laws):
             if level < 0:
                 continue
             items = lists.setdefault(level, [])
-            grams = _bigrams(paragraph)
-            if len(grams) < 12:
+            # items are kept short (about 35 characters), so match without the numbering and from 6 bigrams up
+            grams = _bigrams(paragraph[mark.end():])
+            if len(grams) < 6:
                 continue
             (best, number, label), (second, *_) = sorted(
                 ((len(grams & text), number, label) for number, label, text in articles), reverse=True)[:2]

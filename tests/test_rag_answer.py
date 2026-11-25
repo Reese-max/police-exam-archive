@@ -1524,6 +1524,15 @@ def test_unlabeled_articles_flags_another_articles_item_in_a_list_drawn_from_one
     assert answer._unlabeled_articles([{"heading": "一、", "text": UNLABELED}], [ARTICLE_7]) == []
 
 
+def test_unlabeled_articles_reads_short_items_without_their_numbering():
+    # items are written short, as the prompt asks; a live list hid article 8 behind items like these
+    short = ["(一)攔停人、車、船及其他交通工具。", "(二)詢問姓名、出生年月日。", "(三)令出示身分證明文件。",
+             "(四)檢查引擎、車身號碼。"]
+
+    assert answer._unlabeled_articles([{"heading": "二、程序", "text": "\n".join(short)}], [ARTICLE_7, ARTICLE_8]) == [
+        (1, short[3][:14], "警察職權行使法第7條", "警察職權行使法第8條")]
+
+
 @pytest.mark.parametrize("fixed", [True, False])
 def test_generate_essay_asks_the_model_to_label_another_articles_item(monkeypatch, evidence, fixed):
     _enable_essay(monkeypatch)
