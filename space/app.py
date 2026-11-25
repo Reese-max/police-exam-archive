@@ -20,6 +20,7 @@ from threading import Lock
 import time
 from urllib.parse import quote
 from urllib.request import urlopen
+import warnings
 import zipfile
 
 if os.environ.get("SPACES_ZERO_GPU"):
@@ -698,6 +699,8 @@ def _frontend_html(web):
 
 def main():
     import gradio as gr
+    # Gradio 5.x warns on any allow_tags other than True; the explicit False below already answers it.
+    warnings.filterwarnings("ignore", message="The default value of 'allow_tags'", category=DeprecationWarning)
     executor.submit(initialize, index_path()).result()
     _start_essay_mcp()
     frontend_built = (WEB / "index.html").is_file()
@@ -714,16 +717,15 @@ def main():
                     "範例問題：警察何時可以查證身分？｜警察職權行使法第 6 條規定什麼？｜"
                     "考古題中的答案和現行法條不同時應如何判斷？", visible=not frontend_built)
         # Hidden, not removed: the /chat API is defined by these components.
-        chatbot = gr.Chatbot(type="messages", height=600, visible=not frontend_built)
+        chatbot = gr.Chatbot(type="messages", height=600, visible=not frontend_built, allow_tags=False)
         with gr.Row(visible=not frontend_built):
             question = gr.Textbox(label="訊息", placeholder="輸入問題或接續追問…",
                                   lines=1, scale=8)
             submit = gr.Button("送出", variant="primary", scale=1)
         # One shared group: up to 30 people wait on the model at once; retrieval stays on `executor`.
-        question.submit(chat, inputs=[question, chatbot], outputs=[chatbot, question],
-                        api_name="chat", concurrency_limit=30, concurrency_id="chat")
-        submit.click(chat, inputs=[question, chatbot], outputs=[chatbot, question],
-                     api_name=False, concurrency_limit=30, concurrency_id="chat")
+        # One listener for both triggers: a second one would need api_name=False, removed in Gradio 6.
+        gr.on([question.submit, submit.click], chat, inputs=[question, chatbot],
+              outputs=[chatbot, question], api_name="chat", concurrency_limit=30, concurrency_id="chat")
     host = os.environ.get("RAG_HOST", "0.0.0.0" if os.environ.get("SPACE_ID") else "127.0.0.1")
     demo.queue(default_concurrency_limit=1).launch(
         server_name=host, server_port=int(os.environ.get("RAG_PORT", "7860")), show_error=True)
