@@ -1085,6 +1085,7 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
         revision_providers = [{**provider, "reasoning_effort": "medium"}
                               if provider["reasoning_effort"].strip() in ("high", "xhigh", "max") else provider
                               for provider in providers]
+        compressing = False  # the last revision was asked to trim an overflow
         for attempt in range(4):  # check, then at most three revisions: a grown answer may need trimming again
             checked = _essay_check(answer_id, post)
             used, notes = "", []
@@ -1140,6 +1141,11 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                     f"不加套話、不重複、不新增條號；以新增簡短的重點項補足（每項一到兩行、各自成段、沿用該處既有的編號層級並連號），不把既有重點項寫長，全文增加不超過 {spare * (per_line - 2)} 字；總行數不可超過 44 行。"
                 )
             request += "保留各節的 id、heading 與順序，以及每個小問對應的區塊；輸出同樣格式的完整 JSON。"
+            # medium sometimes barely trims (live: 51 → 50 → 51 → 48 lines): an overflow that survived a
+            # trimming revision goes back at the configured effort
+            if not layout["fits"] and compressing:
+                revision_providers = providers
+            compressing = not layout["fits"]
             revised_text, _ = _complete_text(
                 messages + [
                     {"role": "assistant", "content": draft},
