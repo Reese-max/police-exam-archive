@@ -480,6 +480,19 @@ def test_chat_falls_back_to_second_provider_when_primary_fails(evidence, monkeyp
     assert "backup-key" not in json.dumps(client.calls[1][0], ensure_ascii=False)
 
 
+def test_fallback_use_is_logged_without_keys_or_user_text(evidence, monkeypatch, capsys):
+    _fallback_env(monkeypatch)
+
+    answer.generate_chat_answer("查詢 backup-key", *evidence, client=SequenceClient("依考題可知。[題1]"))
+    assert "llm fallback" not in capsys.readouterr().out  # the primary answered
+
+    answer.generate_chat_answer("查詢 backup-key", *evidence,
+                                client=SequenceClient(_rate_limited(), "依考題可知。[題1]"))
+    out = capsys.readouterr().out
+    assert "llm fallback after: 模型服務目前限流（HTTP 429）" in out
+    assert "key" not in out and "查詢" not in out
+
+
 def test_chat_reports_error_without_keys_when_both_providers_fail(evidence, monkeypatch):
     _fallback_env(monkeypatch)
     client = SequenceClient(_rate_limited(), TimeoutError("backup-key"))
