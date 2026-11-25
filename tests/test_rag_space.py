@@ -1,5 +1,6 @@
 import importlib.util
 from pathlib import Path
+import os
 import subprocess
 import sys
 import threading
@@ -656,7 +657,9 @@ def test_package_space_rejects_missing_essay_entry_before_output_creation(tmp_pa
     command = [sys.executable, str(root / "scripts/rag/package_space.py"),
                "--out", str(output), "--essay-mcp", str(source)]
 
-    completed = subprocess.run(command, capture_output=True, text=True, encoding="utf-8")
+    # PYTHONUTF8: on Windows the child would otherwise print its Chinese error in the console code page
+    completed = subprocess.run(command, capture_output=True, text=True, encoding="utf-8",
+                               env={**os.environ, "PYTHONUTF8": "1"})
 
     assert completed.returncode != 0
     assert "dist/src/index.js" in completed.stderr + completed.stdout

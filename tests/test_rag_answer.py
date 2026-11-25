@@ -1582,6 +1582,37 @@ def test_generate_essay_exports_a_fitting_answer_without_revision_when_already_s
     assert len(client.calls) == 1 and result["essay"]["layout"]["fits"] is True
 
 
+@pytest.mark.parametrize(("elapsed", "revised"), [(419.0, True), (421.0, False)])
+def test_generate_essay_keeps_trimming_an_overflow_until_420_seconds(
+        monkeypatch, evidence, elapsed, revised):
+    _enable_essay(monkeypatch)
+    ticks = iter([0.0])
+    monkeypatch.setattr(answer, "time", SimpleNamespace(monotonic=lambda: next(ticks, elapsed)))
+    client = SequenceClient(_essay_json(), _essay_json(text="縮短後放得下。"))
+    names = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        names.append(name)
+        written = "write_answer" in names
+        if name == "export_answer":
+            structured = {"files": []}
+        elif name == "check_layout":
+            structured = (_essay_check_response(version=2, total=43) if written
+                          else _essay_check_response(fits=False, overflow=1, total=45))
+        else:
+            structured = _essay_state_response(fits=written, overflow=0 if written else 1,
+                                               total=43 if written else 45, version=2 if written else 1)
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    # past the 240 s content budget an overflow still gets trimmed, since it would leave no file at all
+    assert ("write_answer" in names) is revised
+    assert result["essay"]["layout"]["fits"] is revised
+    assert ("export_answer" in names) is revised
+
+
 def test_generate_essay_keeps_overflow_note_and_skips_export_after_compression(
         monkeypatch, evidence):
     _enable_essay(monkeypatch)
