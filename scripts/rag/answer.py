@@ -906,18 +906,29 @@ def _bigrams(text):
     return {text[index:index + 2] for index in range(len(text) - 1)}
 
 
+TO_ASCII_DIGITS = str.maketrans("０１２３４５６７８９", "0123456789")
+# list item marks by level: (一) → 1. → ⑴
+LIST_ITEM_PATTERN = re.compile(r"\s*(?:([(（][一二三四五六七八九十]+[)）])|(\d+[.．])|([⑴-⒇]))")
+
+
+def _retrieved_articles(laws):
+    """(article number, display name, bigrams) for each retrieved article with one clear number."""
+    articles = []
+    for law in laws or []:
+        number = ARTICLE_PATTERN.findall(str(law.get("article_no") or "").translate(TO_ASCII_DIGITS))
+        grams = _bigrams(str(law.get("content") or ""))
+        if len(number) == 1 and grams:
+            articles.append((number[0], f"{law.get('law_name') or ''}{law.get('article_no')}", grams))
+    return articles
+
+
 def _misplaced_articles(sections, laws):
     """Paragraphs written under one retrieved article whose wording is another retrieved article's.
 
     Returns (section number, paragraph start, cited article, the closer article's name), three at most.
     """
-    to_ascii_digits = str.maketrans("０１２３４５６７８９", "0123456789")
-    articles = []
-    for law in laws or []:
-        number = ARTICLE_PATTERN.findall(str(law.get("article_no") or "").translate(to_ascii_digits))
-        grams = _bigrams(str(law.get("content") or ""))
-        if len(number) == 1 and grams:
-            articles.append((number[0], f"{law.get('law_name') or ''}{law.get('article_no')}", grams))
+    to_ascii_digits = TO_ASCII_DIGITS
+    articles = _retrieved_articles(laws)
     found = []
     for order, section in enumerate(sections, 1):
         cited = None  # the one article the current run of paragraphs is written under
@@ -936,6 +947,51 @@ def _misplaced_articles(sections, laws):
             if score >= 0.5 * len(grams) and score - max(own) >= 0.25 * len(grams):
                 name = f"第 {cited[0]} 條" + (f"之 {cited[1]}" if cited[1] else "")
                 found.append((order, paragraph[:14], name, label))
+    return found[:3]
+
+
+def _unlabeled_articles(sections, laws):
+    """List items whose wording is clearly another retrieved article than the one most of their list comes from,
+    with that article's number not written in the section so far.
+
+    A list is a run of items at one level: a plain paragraph or a higher-level item ends it, deeper items do not.
+    Returns (section number, item start, the list's article name, the item's article name), three at most.
+    """
+    articles = _retrieved_articles(laws)
+    if len(articles) < 2:
+        return []
+    found = []
+
+    def judge(order, items):
+        numbers = [number for _, number, _, _ in items]
+        main = max(set(numbers), key=numbers.count) if numbers else None
+        if main is None or numbers.count(main) < 3 or numbers.count(main) * 2 <= len(numbers):
+            return  # no single article the list is drawn from
+        main_label = next(label for _, number, label, _ in items if number == main)
+        found.extend((order, paragraph[:14], main_label, label)
+                     for paragraph, number, label, labelled in items if number != main and not labelled)
+
+    for order, section in enumerate(sections, 1):
+        named, lists = set(), {}  # lists: level -> items of the open list at that level
+        for paragraph in section["text"].split("\n"):
+            named |= set(ARTICLE_PATTERN.findall(paragraph.translate(TO_ASCII_DIGITS)))
+            mark = LIST_ITEM_PATTERN.match(paragraph)
+            level = next(index for index, group in enumerate(mark.groups()) if group) if mark else -1
+            for open_level in [key for key in lists if key > level]:
+                judge(order, lists.pop(open_level))
+            if level < 0:
+                continue
+            items = lists.setdefault(level, [])
+            grams = _bigrams(paragraph)
+            if len(grams) < 12:
+                continue
+            (best, number, label), (second, *_) = sorted(
+                ((len(grams & text), number, label) for number, label, text in articles), reverse=True)[:2]
+            # same thresholds as _misplaced_articles: the item is that article's wording, not a shared phrase
+            if best >= 0.5 * len(grams) and best - second >= 0.25 * len(grams):
+                items.append((paragraph, number, label, number in named))
+        for items in lists.values():
+            judge(order, items)
     return found[:3]
 
 
@@ -980,6 +1036,11 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                                      f"<data>\n{safe_context}\n</data>")},
     ]
     text, reason = _complete_text(messages, providers, client, timeout)
+    if not text and reason == "模型服務連線逾時或失敗" and len(providers) == 1:
+        # a draft now and then stalls past the timeout; a fresh request usually returns within a minute.
+        # With a fallback configured, the fallback already was that second request.
+        mark("draft timed out, retrying")
+        text, reason = _complete_text(messages, providers, client, timeout)
     mark("draft" if text else "draft failed")
     if not text:
         return _chat_result("error", reason=reason)
@@ -1026,18 +1087,20 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
             layout = essay["layout"]
             reminders = [note for note in notes if note.startswith("結構提醒")]
             misplaced = _misplaced_articles(essay["sections"], laws)
+            unlabeled = _unlabeled_articles(essay["sections"], laws)
             mark(f"check: {layout['totalLines']} lines, {len(reminders)} structure reminders, "
-                 f"{len(misplaced)} misplaced articles")
+                 f"{len(misplaced)} misplaced articles, {len(unlabeled)} unlabeled articles")
+            misplaced_any = misplaced or unlabeled
             if layout["fits"]:
                 fitting = essay["sections"]
             spare = layout["remainingLines"] if layout["fits"] else 0
             short = spare > 2  # the site owner wants at most two unused lines
             # a visitor is waiting: polish structure for 90 s at most; wrong length or content gets 240 s;
             # an overflowing answer gets no file at all, so it keeps trimming for up to 420 s
-            budget_s = (90 if layout["fits"] and not misplaced and not short
+            budget_s = (90 if layout["fits"] and not misplaced_any and not short
                         else 240 if layout["fits"] else 420)
             late = time.monotonic() - started > budget_s
-            if attempt == 3 or late or (layout["fits"] and not reminders and not misplaced and not short):
+            if attempt == 3 or late or (layout["fits"] and not reminders and not misplaced_any and not short):
                 break
             request = f"排版檢查（check_layout）：共 {layout['totalLines']} 行，答題紙容量 44 行"
             request += (f"，超出 {layout['overflowLines']} 行。" if not layout["fits"]
@@ -1049,6 +1112,9 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
             for _, start, cited, label in misplaced:
                 request += (f"條文對照：「{start}」這段寫在{cited}之下，內容卻是 <data> 裡{label}的原文；"
                             "請對照 <data>，把條號改對或把這段移到正確的條文之下，不新增 <data> 以外的內容。")
+            for _, start, main, label in unlabeled:
+                request += (f"條文對照：「{start}」這項是 <data> 裡{label}的內容，卻沒寫條號就列在{main}的列舉中；"
+                            "請在該項寫明條號，或把它移到該節最後另起一項整理，不新增 <data> 以外的內容。")
             if not layout["fits"]:
                 # the server's own pick of what to compress first
                 request += "".join(note for note in notes if note.startswith(("超出答案紙", "可省一行")))
@@ -1133,6 +1199,8 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
     for order, _, cited, label in _misplaced_articles(essay["sections"], laws):
         # no model text here: the note is shown as is
         essay["note"] += f"第 {order} 節有段落寫在{cited}之下，用語卻較接近{label}，請對照原文。"
+    for order, _, main, label in _unlabeled_articles(essay["sections"], laws):
+        essay["note"] += f"第 {order} 節有項目出自{label}，卻未標條號列在{main}的列舉中，請對照原文。"
 
     full_text = "\n".join(
         [essay["title"], *(part for section in essay["sections"]
