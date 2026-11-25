@@ -40,7 +40,7 @@ from query import (LOW_CONFIDENCE_NOTICE, MOEX_CORRECTION_INFO_URL, _is_official
                    format_law_modified_date, format_results, is_official_law_url,
                    truncate_law_content)
 from retrieval import (LEGACY_EMBEDDING_TEXT_VERSION, LEGACY_INDEX_WARNING, Retriever, add_search_arguments,
-                       embedding_text_version, parse_search_args, search_arguments)
+                       embedding_text_version, load_abbreviations, parse_search_args, search_arguments)
 from answer import (MARKDOWN_LINK, _unlink, _valid_http_url, chat_enabled,
                     essay_enabled, generate_chat_answer, generate_essay)
 
@@ -60,6 +60,23 @@ _answer_requests = deque()
 # "條 10 …" are new questions (at most 5 questions and 3 articles are listed).
 _SOURCE_REFERENCE = re.compile(r"[\[［【](?:題|條)\s*\d+[\]］】]|^\s*(?:題|條)\s*\d(?!\s*[\d年])")
 _ESSAY_PREFIX = re.compile(r"^\s*申論(?:題)?\s*[：:]\s*(.+)", re.DOTALL)
+# Guard common compounds so only connector uses of these single characters split subjects.
+_ESSAY_PAIR_CONNECTOR = re.compile(
+    r"\s*(?:(?<!涉)(?<!以)及(?![時於以])|(?<!參)(?<!給)與(?!其)|和(?!解)|暨|、)\s*"
+)
+_ESSAY_ARTICLE_REFERENCE = re.compile(r"第\s*\d+(?:[-－]\d+)?\s*條")
+_ESSAY_LEGAL_TOPIC = re.compile(
+    r"行政罰|刑罰|刑法|行政處分|處分|撤銷|廢止|強制|羈押|保護令|原則|"
+    r"管束|臨檢|拘提|逮捕|搜索|扣押|罰鍰|裁罰|正當程序"
+)
+_ESSAY_SUBJECT_CONTEXT = re.compile(
+    r"行政罰|刑罰|刑法|行政處分|比例原則|信賴保護|羈押|保護令|強制|"
+    r"管束|臨檢|拘提|逮捕|搜索|扣押|罰鍰|裁罰"
+)
+_ESSAY_OBJECT_PREFIX = re.compile(
+    r"^\s*(?:就[^，,]{1,40}(?:而言|來說)[，,]\s*|試述|試論|試說明|試比較|"
+    r"試|請|論|比較|對照|說明|論述|分析|探討)\s*"
+)
 _answer_lock = Lock()
 _ANSWER_CACHE_SECONDS = 3600
 _ANSWER_CACHE_MAX = 500
@@ -361,6 +378,195 @@ def render(results, *, include_notice=True, laws=None):
     return question_text + ("\n\n" + law_text if law_text else "")
 
 
+def _essay_law_names():
+    connection = getattr(retriever, "connection", None)
+    if connection is None or not connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='law_articles'").fetchone():
+        return ()
+    return tuple(row[0] for row in connection.execute(
+        "SELECT DISTINCT law_name FROM law_articles WHERE law_name IS NOT NULL"
+    ))
+
+
+def _essay_law_aliases():
+    aliases = dict(load_abbreviations())
+    aliases.setdefault("刑法", "中華民國刑法")
+    return aliases
+
+
+def _essay_law_spans(query, law_names):
+    spans = []
+    for name in sorted(set(law_names), key=len, reverse=True):
+        start = query.find(name)
+        while start >= 0:
+            end = start + len(name)
+            if all(end <= left or start >= right for left, right in spans):
+                spans.append((start, end))
+            start = query.find(name, end)
+    return spans
+
+
+def _essay_resolve_law(subject, law_names, aliases):
+    matches = [(len(name), name) for name in law_names if name in subject]
+    matches.extend((len(alias), law_name) for alias, law_name in aliases.items() if alias in subject)
+    return max(matches, key=lambda match: (match[0], match[1]))[1] if matches else None
+
+
+def _essay_has_law_anchor(subject, law_names, aliases):
+    return bool(_essay_resolve_law(subject, law_names, aliases)
+                or _ESSAY_ARTICLE_REFERENCE.search(subject)
+                or _ESSAY_LEGAL_TOPIC.search(subject))
+
+
+def _essay_has_subject_context(subject, law_names, aliases):
+    prefix = re.split(r"之|的", subject, maxsplit=1)[0]
+    return bool(_essay_resolve_law(prefix, law_names, aliases)
+                or _ESSAY_SUBJECT_CONTEXT.search(prefix))
+
+
+def _clean_essay_subject(subject):
+    subject = subject.strip(" \t\r\n，,。；;：:？！?、")
+    while prefix := _ESSAY_OBJECT_PREFIX.match(subject):
+        subject = subject[prefix.end():]
+    return subject.strip(" \t\r\n，,。；;：:？！?、")
+
+
+def _essay_law_queries(query, law_names=None):
+    law_names = tuple(law_names) if law_names is not None else _essay_law_names()
+    aliases = _essay_law_aliases()
+    law_spans = _essay_law_spans(query, (*law_names, *aliases))
+    connectors = [match for match in _ESSAY_PAIR_CONNECTOR.finditer(query)
+                  if not any(start <= match.start() < end for start, end in law_spans)]
+    if not connectors:
+        return [query]
+
+    subjects = []
+    start = 0
+    for connector in connectors:
+        subjects.append(_clean_essay_subject(query[start:connector.start()]))
+        start = connector.end()
+    subjects.append(_clean_essay_subject(query[start:]))
+    if any(not subject for subject in subjects):
+        return [query]
+
+    last_law = None
+    for index, subject in enumerate(subjects):
+        found_law = _essay_resolve_law(subject, law_names, aliases)
+        if found_law:
+            last_law = found_law
+            if found_law not in subject:
+                alias = next((name for name, canonical in sorted(
+                    aliases.items(), key=lambda item: (-len(item[0]), item[0]))
+                    if canonical == found_law and name in subject), None)
+                if alias:
+                    subjects[index] = subject.replace(alias, found_law)
+        elif last_law and _ESSAY_ARTICLE_REFERENCE.search(subject):
+            subjects[index] = last_law + subject
+
+    if (len(subjects) > 1
+            and not any(_ESSAY_ARTICLE_REFERENCE.search(subject) for subject in subjects)):
+        context = re.match(r"(?P<base>.+?)(?P<joiner>之|的)(?P<topic>[^之的]+)$", subjects[0])
+        if context and _essay_has_law_anchor(context.group("base"), law_names, aliases):
+            shared = context.group("base") + context.group("joiner")
+            for index, subject in enumerate(subjects[1:], 1):
+                if (not _essay_has_subject_context(subject, law_names, aliases)
+                        and _ESSAY_LEGAL_TOPIC.search(subject)):
+                    subjects[index] = shared + subject
+
+    penal_code = aliases["刑法"] if aliases["刑法"] in law_names else None
+    if penal_code:
+        subjects = [f"{penal_code} {subject}"
+                    if "刑罰" in subject and not _essay_resolve_law(subject, law_names, aliases)
+                    else subject for subject in subjects]
+
+    if not all(_essay_has_law_anchor(subject, law_names, aliases) for subject in subjects):
+        return [query]
+    return [query, *dict.fromkeys(subjects)]
+
+
+def _merge_essay_laws(rankings, k, target_laws=()):
+    if k <= 0:
+        return []
+    results = []
+    seen = set()
+
+    def add(law):
+        identity = (law.get("law_name"), law.get("article_no"))
+        if len(results) >= k or identity in seen:
+            return False
+        seen.add(identity)
+        results.append(law)
+        return True
+
+    original = rankings[0] if rankings else []
+    original_laws = {law.get("law_name") for law in original}
+    primary_law = original[0].get("law_name") if original else None
+    other_articles = {}
+    # For an explicit secondary law, prefer its original hit before child-query backfill.
+    for law in original:
+        law_name = law.get("law_name")
+        if law_name in target_laws and law_name != primary_law:
+            articles = other_articles.setdefault(law_name, {})
+            articles.setdefault((law_name, law.get("article_no")), law)
+    for items in rankings[1:]:
+        for law in items:
+            law_name = law.get("law_name")
+            identity = (law_name, law.get("article_no"))
+            if (law_name != primary_law
+                    and (law_name not in original_laws or law_name in target_laws)):
+                articles = other_articles.setdefault(law_name, {})
+                articles.setdefault(identity, law)
+
+    # A lone off-target hit is retrieval noise; explicit split targets still reserve it.
+    other_articles = {name: articles for name, articles in other_articles.items()
+                      if name in target_laws or len(articles) >= 2}
+
+    reserved = []
+    remaining = k
+    for law_name, articles in other_articles.items():
+        slots = min(2, len(articles), remaining)
+        if slots:
+            reserved.append((law_name, list(articles.values()), slots))
+            remaining -= slots
+        if not remaining:
+            break
+
+    original_target = k - sum(slots for _, _, slots in reserved)
+    for law in original:
+        if len(results) >= original_target:
+            break
+        add(law)
+    for law_name, articles, slots in reserved:
+        present = sum(item.get("law_name") == law_name for item in results)
+        for law in articles:
+            if present >= slots:
+                break
+            if add(law):
+                present += 1
+    for law in original:
+        add(law)
+        if len(results) == k:
+            return results
+    for rank in range(max((len(items) for items in rankings[1:]), default=0)):
+        for items in rankings[1:]:
+            if rank < len(items):
+                add(items[rank])
+                if len(results) == k:
+                    return results
+    return results
+
+
+def _search_essay_laws(query, k, law_options):
+    law_names = _essay_law_names()
+    aliases = _essay_law_aliases()
+    queries = _essay_law_queries(query, law_names=law_names)
+    target_laws = {_essay_resolve_law(item, law_names, aliases) for item in queries[1:]}
+    target_laws.discard(None)
+    rankings = [retriever.search_laws(
+        item, k=k, min_vector_score=law_min_score, **law_options) for item in queries]
+    return rankings[0] if len(rankings) == 1 else _merge_essay_laws(rankings, k, target_laws)
+
+
 def _search_data(query, laws=None):
     started = time.perf_counter()
     results = retriever.search(query, k=5, mode=mode, **options)
@@ -369,7 +575,11 @@ def _search_data(query, laws=None):
         law_options = {key: options[key] for key in (
             "keyword_weight", "vector_weight", "rrf_k", "candidates", "expand_abbreviations"
         ) if key in options}
-        law_results = retriever.search_laws(query, k=laws or law_k, min_vector_score=law_min_score, **law_options)
+        if laws is not None:
+            law_results = _search_essay_laws(query, laws or law_k, law_options)
+        else:
+            law_results = retriever.search_laws(
+                query, k=law_k, min_vector_score=law_min_score, **law_options)
     elapsed_ms = (time.perf_counter() - started) * 1000
     meta = getattr(retriever, "meta", None)
     warning = ""
