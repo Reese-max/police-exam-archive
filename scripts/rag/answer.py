@@ -552,7 +552,10 @@ def _chat_user_text(value, keys):
 def _complete_text(messages, providers, client, timeout):
     """Try configured providers in order and return generated text plus a safe reason."""
     text = reason = ""
-    for provider in providers:
+    for order, provider in enumerate(providers):
+        if order:
+            # no user text or key: only shows in the Space log how often the fallback steps in
+            print(f"llm fallback after: {reason or 'empty answer'}", flush=True)
         try:
             if client is None:
                 response = _http_complete(messages, timeout=timeout, **provider)
