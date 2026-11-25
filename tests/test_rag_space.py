@@ -787,14 +787,14 @@ def _run_chat(app, message, history=None):
     ("請說明警察職權行使法、行政執行法與刑法之關係",
      ("警察職權行使法", "行政執行法", "中華民國刑法"),
      ["請說明警察職權行使法、行政執行法與刑法之關係",
-      "警察職權行使法", "行政執行法", "刑法之關係"]),
+      "警察職權行使法", "行政執行法", "中華民國刑法之關係"]),
     ("就警察實務而言，比例原則與信賴保護原則之差異", (),
      ["就警察實務而言，比例原則與信賴保護原則之差異",
       "比例原則", "信賴保護原則之差異"]),
     ("試述通訊保障及監察法與刑法之異同",
      ("通訊保障及監察法", "中華民國刑法"),
      ["試述通訊保障及監察法與刑法之異同",
-      "通訊保障及監察法", "刑法之異同"]),
+      "通訊保障及監察法", "中華民國刑法之異同"]),
     ("比較甲說與乙說之差異", (), ["比較甲說與乙說之差異"]),
     ("做法與看法之差異", (), ["做法與看法之差異"]),
     ("試述警察實施臨檢之方法與相關法規", (),
@@ -834,12 +834,88 @@ def test_essay_law_merge_backfills_unused_quota_from_original(app):
     other = [{"law_name": "乙法", "article_no": "第1條"}]
 
     assert app._merge_essay_laws([original, []], 8) == original
-    merged = app._merge_essay_laws([original, other], 8)
+    merged = app._merge_essay_laws([original, other], 8, {"乙法"})
 
     assert len(merged) == 8
     assert [(item["law_name"], item["article_no"]) for item in merged[:6]] == [
         ("甲法", f"第{i}條") for i in range(1, 7)]
     assert sum(item["law_name"] == "乙法" for item in merged) == 1
+
+
+def test_essay_law_merge_reserves_each_new_law_and_preserves_original_prefix(app):
+    for a_count in (3, 5):
+        original = ([{"law_name": "甲法", "article_no": f"A{i}"}
+                     for i in range(1, a_count + 1)]
+                    + [{"law_name": "丁法", "article_no": f"D{i}"}
+                       for i in range(1, 9 - a_count)])
+        sub_a = [{"law_name": "丁法", "article_no": f"D{i}"} for i in range(9, 13)]
+        sub_b = ([{"law_name": "丁法", "article_no": f"D{i}"} for i in range(13, 16)]
+                 + [{"law_name": "乙法", "article_no": f"B{i}"} for i in range(1, 5)])
+        merged = app._merge_essay_laws([original, sub_a, sub_b], 8)
+        identities = [(item["law_name"], item["article_no"]) for item in merged]
+        available = {(item["law_name"], item["article_no"])
+                     for ranking in (original, sub_a, sub_b) for item in ranking}
+        original_prefix = [(item["law_name"], item["article_no"]) for item in original[:6]]
+        positions = [identities.index(item) for item in original_prefix]
+
+        assert positions == sorted(positions)
+        assert sum(item["law_name"] == "乙法" for item in merged) >= 2
+        assert len(merged) == len(set(identities)) == min(8, len(available))
+
+    short = [{"law_name": "甲法", "article_no": "A1"},
+             {"law_name": "甲法", "article_no": "A2"}]
+    assert len(app._merge_essay_laws(
+        [short, [{"law_name": "乙法", "article_no": "B1"}]], 8, {"乙法"})) == 3
+
+    scarce = app._merge_essay_laws([
+        [{"law_name": "甲法", "article_no": "A1"}],
+        [{"law_name": "乙法", "article_no": f"B{i}"} for i in range(1, 3)],
+        [{"law_name": "丙法", "article_no": f"C{i}"} for i in range(1, 3)],
+    ], 3)
+    assert [(item["law_name"], item["article_no"]) for item in scarce] == [
+        ("乙法", "B1"), ("乙法", "B2"), ("丙法", "C1")]
+
+
+def test_essay_law_merge_reserves_target_already_in_original(app):
+    original = ([{"law_name": "甲法", "article_no": f"A{i}"} for i in range(1, 7)]
+                + [{"law_name": "乙法", "article_no": "B1"},
+                   {"law_name": "甲法", "article_no": "A7"}])
+    subquery = [{"law_name": "乙法", "article_no": f"B{i}"} for i in range(2, 5)]
+
+    merged = app._merge_essay_laws([original, subquery], 8, {"乙法"})
+
+    assert [(item["law_name"], item["article_no"]) for item in merged] == [
+        ("甲法", f"A{i}") for i in range(1, 7)
+    ] + [("乙法", "B1"), ("乙法", "B2")]
+
+
+@pytest.mark.parametrize("compound", ["涉及", "參與", "給與", "和解", "與其", "以及", "及時", "及於"])
+def test_essay_pair_connector_ignores_common_compound_words(app, compound):
+    assert app._ESSAY_PAIR_CONNECTOR.search(compound) is None
+
+
+def test_essay_query_keeps_topic_after_involving_word(app):
+    query = "試論警察臨檢涉及行政處分與比例原則"
+
+    assert app._essay_law_queries(query, law_names=()) == [
+        query, "警察臨檢涉及行政處分", "比例原則"]
+
+
+def test_essay_query_does_not_copy_law_prefix_over_right_subject(app):
+    query = "試比較刑事訴訟法之羈押與行政罰之裁罰"
+
+    assert app._essay_law_queries(query, law_names=("刑事訴訟法", "行政罰法")) == [
+        query, "刑事訴訟法之羈押", "行政罰之裁罰"]
+
+
+def test_essay_query_inherits_abbreviation_and_selects_penal_code_deterministically(app):
+    assert app._essay_law_queries("比較刑法第32條與第33條") == [
+        "比較刑法第32條與第33條", "中華民國刑法第32條", "中華民國刑法第33條"]
+    assert app._essay_law_queries("比較警職法第6條與第7條") == [
+        "比較警職法第6條與第7條", "警察職權行使法第6條", "警察職權行使法第7條"]
+    result = app._essay_law_queries(
+        "試比較行政罰與刑罰之異同", law_names=("備用刑法", "中華民國刑法"))
+    assert "中華民國刑法 刑罰之異同" in result
 
 
 def test_single_essay_subquery_preserves_original_search(app):
