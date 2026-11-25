@@ -762,6 +762,86 @@ def _run_chat(app, message, history=None):
     return updates, updates[-1][0]
 
 
+@pytest.mark.parametrize(("query", "expected"), [
+    ("試比較行政罰與刑罰之異同",
+     ["試比較行政罰與刑罰之異同", "行政罰", "刑罰"]),
+    ("試比較集會遊行法與社會秩序維護法對聚眾活動之規範",
+     ["試比較集會遊行法與社會秩序維護法對聚眾活動之規範", "集會遊行法", "社會秩序維護法"]),
+    ("警察職權行使法及行政程序法如何適用",
+     ["警察職權行使法及行政程序法如何適用", "警察職權行使法", "行政程序法"]),
+    ("警察職權行使法中查證身分之要件與程序",
+     ["警察職權行使法中查證身分之要件與程序"]),
+    ("請依 ISO/IEC 27037 說明數位證據處理的四個階段及其要求",
+     ["請依 ISO/IEC 27037 說明數位證據處理的四個階段及其要求"]),
+])
+def test_essay_law_queries_split_only_clear_pairs(app, query, expected):
+    assert app._essay_law_queries(query) == expected
+
+
+def test_essay_law_merge_deduplicates_and_caps_each_law(app):
+    def article(law_name, article_no):
+        return {"law_name": law_name, "article_no": article_no}
+
+    rankings = [
+        [article("甲法", f"第{i}條") for i in range(1, 6)],
+        [article("甲法", "第1條"), article("乙法", "第1條"),
+         article("甲法", "第6條"), article("乙法", "第2條")],
+        [article("乙法", "第1條"), article("乙法", "第2條"),
+         article("乙法", "第3條"), article("乙法", "第4條")],
+    ]
+
+    merged = app._merge_essay_laws(rankings, 8)
+    identities = [(item["law_name"], item["article_no"]) for item in merged]
+
+    assert len(merged) == len(set(identities)) == 8
+    assert {name: sum(item["law_name"] == name for item in merged)
+            for name in ("甲法", "乙法")} == {"甲法": 4, "乙法": 4}
+
+
+def test_general_search_keeps_single_law_query(app):
+    query = "試比較行政罰與刑罰之異同"
+    law_calls = []
+    app.retriever = type("Retriever", (), {
+        "meta": None,
+        "search": lambda self, *args, **kwargs: [],
+        "search_laws": lambda self, text, **kwargs: law_calls.append((text, kwargs)) or [],
+    })()
+    app.mode, app.options, app.law_k, app.law_min_score = "hybrid", {}, 3, 0.4
+
+    app._search_data(query)
+
+    assert [text for text, _ in law_calls] == [query]
+    assert law_calls[0][1]["min_vector_score"] == 0.4
+
+
+def test_essay_source_followup_reuses_decomposed_law_search(app, monkeypatch):
+    monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")
+    monkeypatch.setattr(app, "essay_enabled", lambda: True)
+    questions, laws = _chat_evidence()
+    law_calls = []
+    app.retriever = type("Retriever", (), {
+        "meta": None,
+        "search": lambda self, *args, **kwargs: questions,
+        "search_laws": lambda self, query, **kwargs: law_calls.append(query) or laws,
+    })()
+    app.mode, app.options, app.law_k, app.law_min_score = "hybrid", {}, 3, None
+    app._answer_cache.clear()
+    app._answer_requests.clear()
+    monkeypatch.setattr(app, "generate_essay", lambda *args, **kwargs: _space_essay_result())
+    monkeypatch.setattr(app, "generate_chat_answer", lambda *args, **kwargs: {
+        "status": "ok", "grounded": "說明。[條1]", "supplement": "",
+        "citations": ["[條1]"], "invalid_citations": []})
+    question = "試比較行政罰與刑罰之異同"
+    history = [{"role": "user", "content": f"申論題：{question}"},
+               {"role": "assistant", "content": "申論擬答"}]
+
+    _run_chat(app, f"申論題：{question}")
+    _run_chat(app, "[條1] 為什麼？", history)
+
+    expected = [question, "行政罰", "刑罰"]
+    assert law_calls == expected + expected
+
+
 def test_chat_renders_grounded_supplement_and_collapsible_numbered_sources(
         app, monkeypatch):
     monkeypatch.setenv("RAG_LLM_API_KEY", "space-key")

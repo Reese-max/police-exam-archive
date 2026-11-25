@@ -60,6 +60,18 @@ _answer_requests = deque()
 # "條 10 …" are new questions (at most 5 questions and 3 articles are listed).
 _SOURCE_REFERENCE = re.compile(r"[\[［【](?:題|條)\s*\d+[\]］】]|^\s*(?:題|條)\s*\d(?!\s*[\d年])")
 _ESSAY_PREFIX = re.compile(r"^\s*申論(?:題)?\s*[：:]\s*(.+)", re.DOTALL)
+_ESSAY_COMPARISON_PAIR = re.compile(
+    r"(?:比較|對照)\s*(?P<left>[^，,。；;：:、與和及暨]{1,40}?)\s*"
+    r"(?:與|和|及|暨)\s*(?P<right>[^，,。；;：:、]{1,60}?)"
+    r"(?=之|的|對|在|於|間|是否|如何|異同|差異|$)"
+)
+_ESSAY_LAW_PAIR = re.compile(
+    r"(?P<left>[\u3400-\u9fffA-Za-z0-9]{2,40}?法)\s*(?:與|和|及|暨|、)\s*"
+    r"(?P<right>[\u3400-\u9fffA-Za-z0-9]{2,40}?法)"
+)
+_ESSAY_PAIR_ENDING = re.compile(r"(?:之(?:異同|差異)|的(?:異同|差異)|異同|差異)[？?。！!；;]*$")
+_ESSAY_PAIR_CONNECTOR = re.compile(r"\s*(?:與|和|及|暨)\s*")
+_ESSAY_OBJECT_PREFIX = re.compile(r"^\s*(?:試述|試比較|請|試|比較|對照|說明|論述|分析|探討)\s*")
 _answer_lock = Lock()
 _ANSWER_CACHE_SECONDS = 3600
 _ANSWER_CACHE_MAX = 500
@@ -361,6 +373,61 @@ def render(results, *, include_notice=True, laws=None):
     return question_text + ("\n\n" + law_text if law_text else "")
 
 
+def _essay_law_queries(query):
+    match = _ESSAY_COMPARISON_PAIR.search(query)
+    if match is None:
+        match = _ESSAY_LAW_PAIR.search(query)
+    if match is not None:
+        subjects = [match.group("left"), match.group("right")]
+    else:
+        ending = _ESSAY_PAIR_ENDING.search(query)
+        connectors = list(_ESSAY_PAIR_CONNECTOR.finditer(query[:ending.start()])) if ending else []
+        if not connectors:
+            return [query]
+        connector = connectors[-1]
+        subjects = [query[:connector.start()], query[connector.end():ending.start()]]
+
+    cleaned = []
+    for subject in subjects:
+        subject = subject.strip(" \t\r\n，,。；;：:？！?、")
+        while prefix := _ESSAY_OBJECT_PREFIX.match(subject):
+            subject = subject[prefix.end():]
+        if not subject:
+            return [query]
+        cleaned.append(subject)
+    return [query, *dict.fromkeys(cleaned)]
+
+
+def _merge_essay_laws(rankings, k):
+    if k <= 0:
+        return []
+    max_per_law = max(1, k // 2)
+    results = []
+    seen = set()
+    law_counts = {}
+    for rank in range(max((len(items) for items in rankings), default=0)):
+        for items in rankings:
+            if rank >= len(items):
+                continue
+            law = items[rank]
+            identity = (law.get("law_name"), law.get("article_no"))
+            if identity in seen or law_counts.get(identity[0], 0) >= max_per_law:
+                continue
+            seen.add(identity)
+            law_counts[identity[0]] = law_counts.get(identity[0], 0) + 1
+            results.append(law)
+            if len(results) == k:
+                return results
+    return results
+
+
+def _search_essay_laws(query, k, law_options):
+    queries = _essay_law_queries(query)
+    rankings = [retriever.search_laws(
+        item, k=k, min_vector_score=law_min_score, **law_options) for item in queries]
+    return rankings[0] if len(rankings) == 1 else _merge_essay_laws(rankings, k)
+
+
 def _search_data(query, laws=None):
     started = time.perf_counter()
     results = retriever.search(query, k=5, mode=mode, **options)
@@ -369,7 +436,11 @@ def _search_data(query, laws=None):
         law_options = {key: options[key] for key in (
             "keyword_weight", "vector_weight", "rrf_k", "candidates", "expand_abbreviations"
         ) if key in options}
-        law_results = retriever.search_laws(query, k=laws or law_k, min_vector_score=law_min_score, **law_options)
+        if laws is not None:
+            law_results = _search_essay_laws(query, laws or law_k, law_options)
+        else:
+            law_results = retriever.search_laws(
+                query, k=law_k, min_vector_score=law_min_score, **law_options)
     elapsed_ms = (time.perf_counter() - started) * 1000
     meta = getattr(retriever, "meta", None)
     warning = ""
