@@ -898,7 +898,7 @@ def _short_tail_paragraphs(checked):
                     continue
                 section_id, paragraph_index = tail.get("sectionId"), tail.get("paragraphIndex")
                 if (not isinstance(section_id, str) or not isinstance(paragraph_index, int)
-                        or isinstance(paragraph_index, bool) or paragraph_index < 0
+                        or isinstance(paragraph_index, bool) or paragraph_index < 1
                         or (warning.get("sectionId") and warning["sectionId"] != section_id)):
                     continue
                 key = (section_id, paragraph_index)
@@ -1032,6 +1032,9 @@ def _unlabeled_articles(sections, laws):
 
 
 QUALIFIER_TERMS = ("事實足認", "合理懷疑", "具體", "必要", "任意", "合理判斷", "顯然", "抗拒")
+LOCAL_NUMBER_PREFIX_PATTERN = re.compile(
+    r"^(?:[一二三四五六七八九十百]+、|\d+[、.．]|[（(](?:\d+|[一二三四五六七八九十百]+)[）)]|[⑴-⒇]|[①-⑳])"
+)
 CLAUSE_SPLIT_PATTERN = re.compile(r"[。；：，\n]|(?=[一二三四五六七八九十]+、)")
 
 
@@ -1043,8 +1046,8 @@ def _local_trim_targets(checked, sections, overflow):
         if not section or not isinstance(section.get("text"), str):
             continue
         paragraphs = section["text"].split("\n")
-        index = candidate["paragraphIndex"]
-        if index >= len(paragraphs):
+        index = candidate["paragraphIndex"] - 1
+        if index < 0 or index >= len(paragraphs):
             continue
         original = paragraphs[index]
         if not original.strip() or candidate["lastLineChars"] > len(original):
@@ -1062,17 +1065,23 @@ def _local_trim_messages(targets, keys):
     return [
         {"role": "system", "content": "你是申論答案局部精簡器，只能編修使用者列出的段落，不得輸出或改寫整份答案。"},
         {"role": "user", "content": (
-            "只精簡下列段落，每段至少刪除 minimumReduction 個字；段落最後一行即使沒寫滿也算一行。"
+            "paragraphIndex 是內文 1-based 索引；只精簡下列段落，每段至少刪除該段 minimumReduction 欄位的字數；"
+            "段落最後一行即使沒寫滿也算一行。"
             "保留原有編號開頭、條號，以及原文出現的門檻用語（有事實足認、合理懷疑、具體、必要、任意、"
             "合理判斷、顯然、抗拒），不新增事實、不改其他段落。只輸出 JSON："
-            '{"edits":[{"sectionId":"s1","paragraphIndex":0,"text":"…"}]}\n'
+            '{"edits":[{"sectionId":"s1","paragraphIndex":1,"text":"…"}]}\n'
             + json.dumps({"segments": segments}, ensure_ascii=False))},
     ]
 
 
 def _local_trim_sections(response_text, targets, sections):
+    if not isinstance(response_text, str):
+        return sections, 0
+    start, end = response_text.find("{"), response_text.rfind("}")
+    if start < 0 or end < start:
+        return sections, 0
     try:
-        payload = json.loads(response_text)
+        payload = json.loads(response_text[start:end + 1])
     except (TypeError, ValueError):
         return sections, 0
     if not isinstance(payload, dict) or not isinstance(payload.get("edits"), list):
@@ -1100,10 +1109,8 @@ def _local_trim_sections(response_text, targets, sections):
             continue
         if len(original) - len(revised) < requested[key]["lastLineChars"]:
             continue
-        original_numbering = LIST_ITEM_PATTERN.match(original)
-        revised_numbering = LIST_ITEM_PATTERN.match(revised)
-        if (original_numbering and (not revised_numbering
-                                    or original_numbering.group().strip() != revised_numbering.group().strip())):
+        original_numbering = LOCAL_NUMBER_PREFIX_PATTERN.match(original.lstrip())
+        if original_numbering and not revised.lstrip().startswith(original_numbering.group()):
             continue
         if any(term in original and term not in revised for term in QUALIFIER_TERMS):
             continue
@@ -1117,7 +1124,7 @@ def _local_trim_sections(response_text, targets, sections):
         return sections, 0
     revised_sections = [dict(section) for section in sections]
     for section in revised_sections:
-        replacements = [(index, text) for (section_id, index), text in accepted.items()
+        replacements = [(index - 1, text) for (section_id, index), text in accepted.items()
                        if section_id == section.get("id")]
         if not replacements:
             continue
@@ -1247,8 +1254,10 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
     except Exception:
         essay["note"] = "排版服務暫時無法使用，以下只有文字。"
     else:
-        best_sections = None
-        best_layout = None
+        fitting_sections = None
+        best_overflow_sections = None
+        best_overflow_layout = None
+        failed_overflow_restore = None
         # A revision edits an existing draft: medium reasoning returns far sooner than high, which on a live
         # 53-line draft ran past the 180 s timeout and left no file; a lower configured effort stays as is.
         revision_providers = [{**provider, "reasoning_effort": "medium"}
@@ -1256,9 +1265,10 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                               for provider in providers]
         compressing = False  # the last revision was asked to trim an overflow
         failures = 0  # revisions that came back unusable or that the sheet service refused
-        # the time budgets below decide when to stop; the cap only rules out a loop (live answers needed four
-        # revisions, e.g. 50 → 40 → 49 → 46 lines, and one still overflowed by a line after four)
-        for attempt in range(7):
+        revisions = 0
+        force_full_revision = False
+        # Only model requests use this cap; restoring a better overflow does not consume one.
+        while True:
             checked = _essay_check(answer_id, post)
             used, notes, check_payload = "", [], None
             if checked:
@@ -1272,30 +1282,12 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                  f"{len(misplaced)} misplaced articles, {len(unlabeled)} unlabeled articles, "
                  f"{len(dropped)} dropped qualifiers")
             misplaced_any = misplaced or unlabeled or dropped
-            if (best_layout is None or (layout["fits"] and not best_layout["fits"])
-                    or (not layout["fits"] and not best_layout["fits"]
-                        and layout["totalLines"] < best_layout["totalLines"])):
-                best_layout = dict(layout)
-                best_sections = [dict(section) for section in essay["sections"]]
-            elif ((best_layout["fits"] and not layout["fits"])
-                  or (not best_layout["fits"] and not layout["fits"]
-                      and layout["totalLines"] > best_layout["totalLines"])):
-                try:
-                    restored = _essay_call("write_answer", {
-                        "answerId": answer_id,
-                        "expectedVersion": version,
-                        "sections": sheet_sections(best_sections),
-                    }, post=post)
-                    answer_id, version, essay["layout"] = _essay_state(restored)
-                    essay["sections"] = [dict(section) for section in best_sections]
-                    draft = json.dumps({"title": essay["title"], "sections": essay["sections"]}, ensure_ascii=False)
-                    continue
-                except Exception as error:
-                    failures += 1
-                    mark(f"write failed: {getattr(error, 'code', 'unknown')}")
-                    if failures >= 2:
-                        break
-                    continue
+            if layout["fits"]:
+                fitting_sections = [dict(section) for section in essay["sections"]]
+            elif (best_overflow_layout is None
+                  or layout["totalLines"] < best_overflow_layout["totalLines"]):
+                best_overflow_layout = dict(layout)
+                best_overflow_sections = [dict(section) for section in essay["sections"]]
             spare = layout["remainingLines"] if layout["fits"] else 0
             short = spare > 2  # the site owner wants at most two unused lines
             # a visitor is waiting: polish structure for 90 s at most; wrong length or content gets 240 s;
@@ -1303,10 +1295,34 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
             budget_s = (90 if layout["fits"] and not misplaced_any and not short
                         else 240 if layout["fits"] else 420)
             late = time.monotonic() - started > budget_s
-            if attempt == 6 or late or (layout["fits"] and not reminders and not misplaced_any and not short):
+            if (not late and not layout["fits"] and best_overflow_layout is not None
+                    and layout["totalLines"] > best_overflow_layout["totalLines"]):
+                restore_sections = sheet_sections(best_overflow_sections)
+                restore_key = (best_overflow_layout["totalLines"],
+                               json.dumps(restore_sections, ensure_ascii=False, sort_keys=True))
+                if restore_key != failed_overflow_restore:
+                    try:
+                        restored = _essay_call("write_answer", {
+                            "answerId": answer_id,
+                            "expectedVersion": version,
+                            "sections": restore_sections,
+                        }, post=post)
+                        answer_id, version, essay["layout"] = _essay_state(restored)
+                        essay["sections"] = [dict(section) for section in best_overflow_sections]
+                        draft = json.dumps({"title": essay["title"], "sections": essay["sections"]},
+                                           ensure_ascii=False)
+                        continue
+                    except Exception as error:
+                        failures += 1
+                        failed_overflow_restore = restore_key
+                        mark(f"write failed: {getattr(error, 'code', 'unknown')}")
+                        if failures >= 2:
+                            break
+            if revisions >= 6 or late or (layout["fits"] and not reminders and not misplaced_any and not short):
                 break
             local_targets = []
-            if (not layout["fits"] and 1 <= layout["overflowLines"] <= 3 and not reminders
+            if (not force_full_revision and not layout["fits"]
+                    and 1 <= layout["overflowLines"] <= 3 and not reminders
                     and not misplaced_any and check_payload):
                 local_targets = _local_trim_targets(check_payload, essay["sections"], layout["overflowLines"])
             request = f"排版檢查（check_layout）：共 {layout['totalLines']} 行，答題紙容量 44 行"
@@ -1351,6 +1367,7 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                 revision_providers = providers
             compressing = not layout["fits"]
             revision_timeout = min(timeout, max(30.0, budget_s - (time.monotonic() - started)))
+            revisions += 1
             if local_targets:
                 revised_text, _ = _complete_text(
                     _local_trim_messages(local_targets, keys), revision_providers, client, revision_timeout)
@@ -1361,6 +1378,8 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                     revised_sections, edit_count = essay["sections"], 0
                 revised = {"sections": revised_sections} if edit_count else None
                 mark("local trim" if revised else "local trim failed")
+                if revised_text and not edit_count:
+                    force_full_revision = True
             else:
                 revised_text, _ = _complete_text(
                     messages + [
@@ -1372,6 +1391,7 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                 )
                 revised = _parse_essay(_chat_redact(revised_text, keys)) if revised_text else None
                 mark("revision" if revised else "revision failed")
+                force_full_revision = False
             if revised is None:
                 failures += 1
                 if failures >= 2:
@@ -1395,18 +1415,15 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
             draft = (json.dumps({"title": essay["title"], "sections": essay["sections"]}, ensure_ascii=False)
                      if local_targets else _chat_redact(revised_text, keys))
 
-        if (best_sections is not None and best_layout is not None
-                and ((best_layout["fits"] and not essay["layout"]["fits"])
-                     or (not best_layout["fits"] and not essay["layout"]["fits"]
-                         and essay["layout"]["totalLines"] > best_layout["totalLines"]))):
+        if not essay["layout"]["fits"] and fitting_sections is not None:
             try:
                 restored = _essay_call("write_answer", {
                     "answerId": answer_id,
                     "expectedVersion": version,
-                    "sections": sheet_sections(best_sections),
+                    "sections": sheet_sections(fitting_sections),
                 }, post=post)
                 answer_id, version, essay["layout"] = _essay_state(restored)
-                essay["sections"] = [dict(section) for section in best_sections]
+                essay["sections"] = [dict(section) for section in fitting_sections]
                 checked = _essay_check(answer_id, post)  # export only a version check_layout has seen
                 if checked:
                     version, essay["layout"] = checked[:2]

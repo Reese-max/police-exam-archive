@@ -1178,32 +1178,41 @@ def _short_tail_essay():
     first = "(一)警察有合理懷疑時，得依第 7 條檢查交通工具，並記錄資料終。"
     second = "(二)必要措施應依合理判斷執行，並記載理由錄。"
     other = "未選段內容只留在文件中。"
+    before_last = "結語前的段落保持原樣。"
+    last = "(三)顯然危險時應採必要措施並記錄結果結。"
     return {
         "title": "申論題摘要",
         "sections": [
             {"id": "s1", "heading": "一、核心說明", "text": "\n".join((first, second, other))},
-            {"id": "s2", "heading": "二、結論", "text": "回到題示事實作結。"},
+            {"id": "s2", "heading": "二、結論", "text": "\n".join((before_last, last))},
         ],
     }
 
 
 def _short_tail_layout():
-    def line(paragraph, line_number, text):
-        return {"sectionId": "s1", "paragraphIndex": paragraph, "isHeading": False,
+    def line(section_id, paragraph, is_heading, line_number, text):
+        return {"sectionId": section_id, "paragraphIndex": paragraph, "isHeading": is_heading,
                 "page": 1, "lineOnPage": line_number, "text": text}
 
     return [
-        line(0, 1, "(一)警察有合理懷疑時，得依第 7 條檢查交通工具，並記錄資料"),
-        line(0, 2, "終。"),
-        line(1, 3, "(二)必要措施應依合理判斷執行，並記載理由"),
-        line(1, 4, "錄。"),
-        line(2, 5, "未選段內容只留在文件中。"),
+        line("s1", 0, True, 1, "一、核心說明"),
+        line("s1", 1, False, 2, "(一)警察有合理懷疑時，得依第 7 條檢查交通工具，並記錄資料"),
+        line("s1", 1, False, 3, "終。"),
+        line("s1", 2, False, 4, "錄。"),
+        line("s1", 3, False, 5, "未選段內容只留在文件中。"),
+        line("s2", 0, True, 6, "二、結論"),
+        line("s2", 1, False, 7, "結語前的段落保持原樣。"),
+        line("s2", 2, False, 8, "(三)顯然危險時應採必要措施並記錄結果"),
+        line("s2", 2, False, 9, "結。"),
     ]
 
 
 def _short_tail_warnings():
-    return [{"code": "SHORT_TAIL_LINE", "page": 1, "line": line}
-            for line in (2, 4)]
+    return [
+        {"code": "SHORT_TAIL_LINE", "page": 1, "line": 3, "sectionId": "s1"},
+        {"code": "SHORT_TAIL_LINE", "page": 1, "line": 4, "sectionId": "s1"},
+        {"code": "SHORT_TAIL_LINE", "page": 1, "line": 9, "sectionId": "s2"},
+    ]
 
 
 @pytest.mark.parametrize("missing", ["chat", "url", "token"])
@@ -1409,11 +1418,12 @@ def test_generate_essay_compresses_overflow_and_exports_with_new_version(
             structured = (_essay_check_response(version=2, total=42) if written else _essay_check_response(
                 fits=False, overflow=4, total=48, notes=["超出答案紙 4 行；建議先壓縮：一、核心說明（42 行）。"]))
             if not written:
-                paragraph = {"sectionId": "s1", "paragraphIndex": 0, "isHeading": False, "page": 1}
+                heading = {"sectionId": "s1", "paragraphIndex": 0, "isHeading": True, "page": 1}
+                paragraph = {"sectionId": "s1", "paragraphIndex": 1, "isHeading": False, "page": 1}
                 structured["warnings"] = ["壞", {"code": "ORPHAN_HEADING", "page": 1, "line": 3, "sectionId": "s1"},
                                           {"code": "SHORT_TAIL_LINE", "page": 1, "line": 3, "sectionId": "s1"}]
                 structured["layout"]["lines"] = [
-                    {**paragraph, "lineOnPage": 1, "isHeading": True, "text": "一、核心說明"},
+                    {**heading, "lineOnPage": 1, "text": "一、核心說明"},
                     {**paragraph, "lineOnPage": 2, "text": "（一）滯留於有事實足認有陰謀、預備"},
                     {**paragraph, "lineOnPage": 3, "text": "者。"}]
         else:
@@ -1461,14 +1471,17 @@ def test_generate_essay_locally_trims_short_tails_and_exports(monkeypatch, evide
     _enable_essay(monkeypatch)
     essay = _short_tail_essay()
     first, second, other = essay["sections"][0]["text"].split("\n")
+    before_last, last = essay["sections"][1]["text"].split("\n")
     edited_first = "(一)有合理懷疑時，依第 7 條檢查交通工具並記錄終。"
     edited_second = "(二)必要時依合理判斷檢查並記錄錄。"
+    edited_last = "(三)顯然危險時採必要措施並記錄結。"
     client = SequenceClient(
         json.dumps(essay, ensure_ascii=False),
-        json.dumps({"edits": [
-            {"sectionId": "s1", "paragraphIndex": 0, "text": edited_first},
-            {"sectionId": "s1", "paragraphIndex": 1, "text": edited_second},
-        ]}, ensure_ascii=False),
+        "精簡結果如下：\n```json\n" + json.dumps({"edits": [
+            {"sectionId": "s1", "paragraphIndex": 1, "text": edited_first},
+            {"sectionId": "s1", "paragraphIndex": 2, "text": edited_second},
+            {"sectionId": "s2", "paragraphIndex": 2, "text": edited_last},
+        ]}, ensure_ascii=False) + "\n```\n以上。",
     )
     calls = []
 
@@ -1495,28 +1508,73 @@ def test_generate_essay_locally_trims_short_tails_and_exports(monkeypatch, evide
 
     assert [name for name, _ in calls] == [
         "load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout", "export_answer"]
-    request = json.dumps(client.calls[1][0], ensure_ascii=False)
-    assert first in request and second in request
-    assert other not in request and "回到題示事實作結。" not in request
+    request = client.calls[1][0][-1]["content"]
+    assert first in request and second in request and last in request
+    assert other not in request and before_last not in request and "一、核心說明" not in request
+    assert '"paragraphIndex": 1' in request and '"paragraphIndex": 2' in request
     assert len(client.calls) == 2
     assert [section["text"] for section in calls[3][1]["sections"]] == [
-        "\n".join((edited_first, edited_second, other)), "回到題示事實作結。"]
+        "\n".join((edited_first, edited_second, other)), "\n".join((before_last, edited_last))]
     assert result["essay"]["sections"][0]["text"].split("\n") == [edited_first, edited_second, other]
-    assert first == essay["sections"][0]["text"].split("\n")[0]
-    assert second == essay["sections"][0]["text"].split("\n")[1]
+    assert result["essay"]["sections"][1]["text"].split("\n") == [before_last, edited_last]
     assert result["essay"]["layout"]["fits"] is True
     assert calls[-1][0] == "export_answer"
+
+
+def test_generate_essay_keeps_valid_edits_and_originals_for_invalid_segments(monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+    essay = _short_tail_essay()
+    first, second, other = essay["sections"][0]["text"].split("\n")
+    before_last, last = essay["sections"][1]["text"].split("\n")
+    edited_first = "(一)有合理懷疑時，依第 7 條檢查交通工具並記錄終。"
+    edited_last = "(三)顯然危險時採必要措施並記錄結。"
+    invalid_second = "(二)必要措施依客觀判斷執行並記理由錄。"
+    client = SequenceClient(json.dumps(essay, ensure_ascii=False), json.dumps({"edits": [
+        {"sectionId": "s1", "paragraphIndex": 1, "text": edited_first},
+        {"sectionId": "s1", "paragraphIndex": 2, "text": invalid_second},
+        {"sectionId": "s2", "paragraphIndex": 2, "text": edited_last},
+    ]}, ensure_ascii=False))
+    calls = []
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)
+        name, arguments = request["params"]["name"], request["params"]["arguments"]
+        calls.append((name, arguments))
+        if name == "load_exam_paper":
+            structured = {"template": {}, "writingGuide": {}}
+        elif name == "create_answer":
+            structured = _essay_state_response(fits=False, overflow=2, total=46)
+        elif name == "write_answer":
+            structured = _essay_state_response(fits=True, version=2, total=42)
+        elif name == "check_layout":
+            structured = (_essay_check_response(version=2, total=42) if any(
+                called == "write_answer" for called, _ in calls) else _essay_check_response(
+                    fits=False, overflow=2, total=46, layout_lines=_short_tail_layout(),
+                    warnings=_short_tail_warnings()))
+        else:
+            structured = {"files": []}
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", evidence[0], [], client=client, post=post)
+
+    assert len(client.calls) == 2
+    assert [section["text"] for section in calls[3][1]["sections"]] == [
+        "\n".join((edited_first, second, other)), "\n".join((before_last, edited_last))]
+    assert result["essay"]["sections"][0]["text"].split("\n") == [edited_first, second, other]
+    assert result["essay"]["sections"][1]["text"].split("\n") == [before_last, edited_last]
+    assert first != edited_first and last != edited_last
 
 
 @pytest.mark.parametrize("invalid_kind", [
     "longer", "drops_qualifier", "drops_article", "wrong_section", "wrong_paragraph", "bad_json",
 ])
-def test_generate_essay_rejects_invalid_local_edits_without_writing(monkeypatch, evidence, invalid_kind):
+def test_generate_essay_falls_back_to_full_revision_when_local_edits_are_all_invalid(
+        monkeypatch, evidence, invalid_kind):
     _enable_essay(monkeypatch)
     essay = _short_tail_essay()
     first = essay["sections"][0]["text"].split("\n")[0]
     edited_first = "(一)有合理懷疑時，依第 7 條檢查交通工具並記錄終。"
-    bad = {"sectionId": "s1", "paragraphIndex": 0, "text": edited_first}
+    bad = {"sectionId": "s1", "paragraphIndex": 1, "text": edited_first}
     if invalid_kind == "longer":
         bad["text"] = first + "增加"
     elif invalid_kind == "drops_qualifier":
@@ -1530,7 +1588,7 @@ def test_generate_essay_rejects_invalid_local_edits_without_writing(monkeypatch,
     invalid_response = "不是 JSON" if invalid_kind == "bad_json" else json.dumps(
         {"edits": [bad]}, ensure_ascii=False)
     client = SequenceClient(
-        json.dumps(essay, ensure_ascii=False), invalid_response, invalid_response,
+        json.dumps(essay, ensure_ascii=False), invalid_response, _essay_json(text="整份修訂完成。"),
     )
     calls = []
 
@@ -1557,10 +1615,31 @@ def test_generate_essay_rejects_invalid_local_edits_without_writing(monkeypatch,
 
     assert len(client.calls) == 3
     assert "minimumReduction" in client.calls[1][0][-1]["content"]
-    assert [name for name, _ in calls] == ["load_exam_paper", "create_answer", "check_layout", "check_layout"]
-    assert not any(name == "write_answer" for name, _ in calls)
-    assert result["essay"]["sections"] == essay["sections"]
-    assert result["essay"]["layout"]["fits"] is False
+    full_request = client.calls[2][0][-1]["content"]
+    assert "請壓縮" in full_request and "minimumReduction" not in full_request
+    assert "未選段內容只留在文件中。" in json.dumps(client.calls[2][0], ensure_ascii=False)
+    assert [name for name, _ in calls] == [
+        "load_exam_paper", "create_answer", "check_layout", "check_layout", "write_answer",
+        "check_layout", "export_answer"]
+    assert result["essay"]["sections"][0]["text"] == "整份修訂完成。"
+    assert result["essay"]["layout"]["fits"] is True
+
+
+@pytest.mark.parametrize(("original_prefix", "edited_prefix"), [
+    ("一、", "二、"), ("1、", "2、"), ("(1)", "(2)"), ("（一）", "（二）"),
+])
+def test_local_trim_rejects_changed_numbering_prefix(original_prefix, edited_prefix):
+    original = original_prefix + "合理懷疑依第 7 條記錄完整資料終。"
+    edited = edited_prefix + "合理懷疑依第 7 條記錄終。"
+    target = {"sectionId": "s1", "paragraphIndex": 1, "lastLineChars": 2, "text": original}
+    response = json.dumps({"edits": [
+        {"sectionId": "s1", "paragraphIndex": 1, "text": edited},
+    ]}, ensure_ascii=False)
+
+    revised, accepted = answer._local_trim_sections(response, [target], [{"id": "s1", "text": original}])
+
+    assert accepted == 0
+    assert revised == [{"id": "s1", "text": original}]
 
 
 def test_generate_essay_restores_the_best_overflow_before_the_next_revision(monkeypatch, evidence):
@@ -1599,6 +1678,156 @@ def test_generate_essay_restores_the_best_overflow_before_the_next_revision(monk
     assert "最佳 45 行版。" in client.calls[4][0][-2]["content"]
     assert "變差 58 行版。" not in client.calls[4][0][-2]["content"]
     assert result["essay"]["sections"][0]["text"] == "修訂後放得下。"
+    assert result["essay"]["layout"]["fits"] is True
+
+
+def test_generate_essay_keeps_fit_content_fix_through_overflow_until_loop_end(monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+    initial_text = "（一）原始內容含必要規範與充分說明末尾。"
+    trimmed_text = "（一）必要規範與說明末尾。"
+    fit_text = "已修正結構與門檻的可放版本。"
+    overflow_text = "補回門檻但暫時超線的版本。"
+    client = SequenceClient(
+        _essay_json(text=initial_text),
+        json.dumps({"edits": [{"sectionId": "s1", "paragraphIndex": 1, "text": trimmed_text}]},
+                   ensure_ascii=False),
+        _essay_json(text=fit_text), _essay_json(text=overflow_text), "不是 JSON", "還是不是 JSON",
+    )
+    current = {"text": initial_text, "total": 45, "version": 1}
+    totals = {trimmed_text: 40, fit_text: 40, overflow_text: 45}
+    calls, writes = [], []
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)["params"]
+        name, arguments = request["name"], request["arguments"]
+        calls.append((name, arguments))
+        if name == "load_exam_paper":
+            structured = {"template": {}, "writingGuide": {}}
+        elif name == "create_answer":
+            structured = _essay_state_response(fits=True, total=42)
+        elif name == "export_answer":
+            structured = {"files": []}
+        elif name == "write_answer":
+            current["text"] = arguments["sections"][0]["text"]
+            current["total"] = totals[current["text"]]
+            current["version"] += 1
+            writes.append(current["text"])
+            structured = _essay_state_response(fits=current["total"] <= 44,
+                                               overflow=max(current["total"] - 44, 0),
+                                               total=current["total"], version=current["version"])
+        else:
+            if current["text"] == initial_text:
+                line = {"sectionId": "s1", "paragraphIndex": 1, "isHeading": False,
+                        "page": 1, "lineOnPage": 2, "text": "末尾。"}
+                structured = _essay_check_response(
+                    fits=False, overflow=1, total=45, version=current["version"],
+                    layout_lines=[{"sectionId": "s1", "paragraphIndex": 0, "isHeading": True,
+                                   "page": 1, "lineOnPage": 1, "text": "一、核心說明"}, line],
+                    warnings=[{"code": "SHORT_TAIL_LINE", "page": 1, "line": 2, "sectionId": "s1"}])
+            else:
+                structured = _essay_check_response(fits=current["total"] <= 44,
+                                                   overflow=max(current["total"] - 44, 0),
+                                                   total=current["total"], version=current["version"])
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    assert writes == [trimmed_text, fit_text, overflow_text, fit_text]
+    assert overflow_text in client.calls[4][0][-2]["content"]
+    assert fit_text not in client.calls[4][0][-2]["content"]
+    assert [name for name, _ in calls[-3:]] == ["write_answer", "check_layout", "export_answer"]
+    assert result["essay"]["sections"][0]["text"] == fit_text
+    assert result["essay"]["layout"]["fits"] is True
+
+
+def test_generate_essay_best_overflow_restore_does_not_consume_revision_cap(monkeypatch, evidence):
+    _enable_essay(monkeypatch)
+    totals = {
+        "初稿55。": 55, "第1次54。": 54, "第2次53。": 53, "第3次52。": 52,
+        "最佳51。": 51, "變差58。": 58, "第6次放得下。": 43,
+    }
+    texts = list(totals)
+    client = SequenceClient(*[_essay_json(text=text) for text in texts])
+    current = {"text": texts[0], "total": totals[texts[0]], "version": 1}
+    writes = []
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)["params"]
+        name, arguments = request["name"], request["arguments"]
+        if name == "load_exam_paper":
+            structured = {"template": {}, "writingGuide": {}}
+        elif name == "create_answer":
+            structured = _essay_state_response(fits=False, overflow=current["total"] - 44,
+                                               total=current["total"], version=current["version"])
+        elif name == "export_answer":
+            structured = {"files": []}
+        elif name == "write_answer":
+            current["text"] = arguments["sections"][0]["text"]
+            current["total"] = totals[current["text"]]
+            current["version"] += 1
+            writes.append(current["text"])
+            structured = _essay_state_response(fits=current["total"] <= 44,
+                                               overflow=max(current["total"] - 44, 0),
+                                               total=current["total"], version=current["version"])
+        else:
+            structured = _essay_check_response(fits=current["total"] <= 44,
+                                               overflow=max(current["total"] - 44, 0),
+                                               total=current["total"], version=current["version"])
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    assert writes == [texts[1], texts[2], texts[3], texts[4], texts[5], texts[4], texts[6]]
+    assert texts[4] in client.calls[6][0][-2]["content"]
+    assert texts[5] not in client.calls[6][0][-2]["content"]
+    assert result["essay"]["sections"][0]["text"] == texts[6]
+    assert result["essay"]["layout"]["fits"] is True
+
+
+def test_generate_essay_does_not_repeat_a_failed_best_overflow_restore(monkeypatch, evidence, capsys):
+    _enable_essay(monkeypatch)
+    totals = {"初稿55。": 55, "最佳45。": 45, "變差58。": 58, "更差60。": 60, "修正完成43。": 43}
+    client = SequenceClient(*[_essay_json(text=text) for text in (
+        "初稿55。", "最佳45。", "變差58。", "更差60。", "修正完成43。",
+    )])
+    current = {"text": "初稿55。", "total": 55, "version": 1}
+    attempts = []
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)["params"]
+        name, arguments = request["name"], request["arguments"]
+        if name == "load_exam_paper":
+            structured = {"template": {}, "writingGuide": {}}
+        elif name == "create_answer":
+            structured = _essay_state_response(fits=False, overflow=current["total"] - 44,
+                                               total=current["total"], version=current["version"])
+        elif name == "export_answer":
+            structured = {"files": []}
+        elif name == "write_answer":
+            text = arguments["sections"][0]["text"]
+            attempts.append(text)
+            if text == "最佳45。" and attempts.count(text) > 1:
+                raise RuntimeError("simulated restore failure")
+            current["text"] = text
+            current["total"] = totals[text]
+            current["version"] += 1
+            structured = _essay_state_response(fits=current["total"] <= 44,
+                                               overflow=max(current["total"] - 44, 0),
+                                               total=current["total"], version=current["version"])
+        else:
+            structured = _essay_check_response(fits=current["total"] <= 44,
+                                               overflow=max(current["total"] - 44, 0),
+                                               total=current["total"], version=current["version"])
+        return "application/json", _mcp_body(structured)
+
+    result = answer.generate_essay("申論題", *evidence, client=client, post=post)
+
+    assert attempts == ["最佳45。", "變差58。", "最佳45。", "更差60。", "修正完成43。"]
+    assert "write failed: unknown" in capsys.readouterr().out
+    assert "最佳45。" in client.calls[2][0][-2]["content"]
+    assert "變差58。" in client.calls[3][0][-2]["content"]
+    assert "更差60。" in client.calls[4][0][-2]["content"]
+    assert result["essay"]["sections"][0]["text"] == "修正完成43。"
     assert result["essay"]["layout"]["fits"] is True
 
 
@@ -1656,17 +1885,17 @@ def test_generate_essay_fixes_structure_reminders_and_restores_the_fitting_versi
 
     result = answer.generate_essay("申論題", *evidence, client=client, post=post)
 
-    # The overflow is restored before another full revision continues from the fitting version.
+    # Two failed full revisions leave the overflow in place until the loop-end fitting restore.
     assert [name for name, _ in calls] == [
-        "load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout", "write_answer",
-        "check_layout", "check_layout", "export_answer"]
+        "load_exam_paper", "create_answer", "check_layout", "write_answer", "check_layout", "check_layout",
+        "write_answer", "check_layout", "export_answer"]
     assert len(client.calls) == 4
     reminder = client.calls[1][0][-1]["content"]
     assert "結構提醒：s1 把多個編號項併在同一段" in reminder and "其他說明" not in reminder
-    assert "請壓縮" not in reminder and "請壓縮" not in client.calls[2][0][-1]["content"]
-    assert "結構提醒：s1 把多個編號項併在同一段" in client.calls[2][0][-1]["content"]
-    assert calls[5][1]["expectedVersion"] == 2
-    assert calls[5][1]["sections"][0]["text"] == "依檢索資料說明核心理由。"
+    assert "請壓縮" not in reminder and "請壓縮" in client.calls[2][0][-1]["content"]
+    assert client.calls[2][0][-2]["content"].find("（一）拆開。") >= 0
+    assert calls[6][1]["expectedVersion"] == 2
+    assert calls[6][1]["sections"][0]["text"] == "依檢索資料說明核心理由。"
     assert written_sections[1][0]["text"] == "依檢索資料說明核心理由。"
     assert calls[8][1]["expectedVersion"] == 3
     assert result["essay"]["sections"][0]["text"] == "依檢索資料說明核心理由。"
@@ -2012,7 +2241,7 @@ def test_generate_essay_keeps_trimming_an_overflow_until_420_seconds(
 
 def test_generate_essay_gets_a_fourth_revision_after_trimming_and_filling_overshoot(monkeypatch, evidence):
     _enable_essay(monkeypatch)
-    # 50 → 40 → 49 restores 40 before the next revision, then 46 restores 40 again, then 43 fits.
+    # A fitting version is retained for end-of-loop recovery, not forced back during revisions.
     totals = {"第 0 版。": 50, "第 1 版。": 40, "第 2 版。": 49, "第 3 版。": 46, "第 4 版。": 43}
     client = SequenceClient(*[_essay_json(text=f"第 {n} 版。") for n in range(5)])
     writes = []
@@ -2035,9 +2264,9 @@ def test_generate_essay_gets_a_fourth_revision_after_trimming_and_filling_oversh
 
     result = answer.generate_essay("申論題", *evidence, client=client, post=post)
 
-    assert writes == ["第 1 版。", "第 2 版。", "第 1 版。", "第 3 版。", "第 1 版。", "第 4 版。"]
-    assert "第 1 版。" in client.calls[4][0][-2]["content"]
-    assert "第 3 版。" not in client.calls[4][0][-2]["content"]
+    assert writes == ["第 1 版。", "第 2 版。", "第 3 版。", "第 4 版。"]
+    assert "第 3 版。" in client.calls[4][0][-2]["content"]
+    assert "第 1 版。" not in client.calls[4][0][-2]["content"]
     assert result["essay"]["layout"]["remainingLines"] == 1
     assert result["essay"]["sections"][0]["text"] == "第 4 版。"
 
