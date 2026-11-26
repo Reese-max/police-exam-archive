@@ -1038,10 +1038,36 @@ LOCAL_NUMBER_PREFIX_PATTERN = re.compile(
 CLAUSE_SPLIT_PATTERN = re.compile(r"[。；：，\n]|(?=[一二三四五六七八九十]+、)")
 
 
+def _wrapped_paragraph_tails(checked, max_chars=8):
+    """Body paragraphs that wrap onto a short last line, shortest first: cutting that many characters saves a line.
+
+    The sheet service only flags tails of two characters or less (SHORT_TAIL_LINE), which live overflows rarely
+    had, so local trimming never ran; any wrapped paragraph whose last line is short enough qualifies here.
+    """
+    try:
+        groups = {}
+        for line in checked["layout"].get("lines") or []:
+            # spacer lines before and after a paragraph share its paragraphIndex but carry no text
+            if (not isinstance(line, dict) or line.get("isHeading") is not False or line.get("isSpacer")
+                    or line.get("isPadding") or not str(line.get("text") or "").strip()):
+                continue
+            section_id, paragraph_index = line.get("sectionId"), line.get("paragraphIndex")
+            if (not isinstance(section_id, str) or not isinstance(paragraph_index, int)
+                    or isinstance(paragraph_index, bool) or paragraph_index < 1):
+                continue
+            groups.setdefault((section_id, paragraph_index), []).append(str(line.get("text") or "").strip())
+        found = [{"sectionId": section_id, "paragraphIndex": index, "lastLineChars": len(texts[-1]),
+                  "preview": texts[0][:12]}
+                 for (section_id, index), texts in groups.items() if len(texts) >= 2 and 0 < len(texts[-1]) <= max_chars]
+        return sorted(found, key=lambda item: item["lastLineChars"])
+    except Exception:
+        return []
+
+
 def _local_trim_targets(checked, sections, overflow):
     by_id = {section.get("id"): section for section in sections}
     targets = []
-    for candidate in _short_tail_paragraphs(checked):
+    for candidate in _wrapped_paragraph_tails(checked):
         section = by_id.get(candidate["sectionId"])
         if not section or not isinstance(section.get("text"), str):
             continue

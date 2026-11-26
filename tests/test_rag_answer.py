@@ -1198,20 +1198,22 @@ def _short_tail_layout():
         line("s1", 0, True, 1, "一、核心說明"),
         line("s1", 1, False, 2, "(一)警察有合理懷疑時，得依第 7 條檢查交通工具，並記錄資料"),
         line("s1", 1, False, 3, "終。"),
-        line("s1", 2, False, 4, "錄。"),
-        line("s1", 3, False, 5, "未選段內容只留在文件中。"),
-        line("s2", 0, True, 6, "二、結論"),
-        line("s2", 1, False, 7, "結語前的段落保持原樣。"),
-        line("s2", 2, False, 8, "(三)顯然危險時應採必要措施並記錄結果"),
-        line("s2", 2, False, 9, "結。"),
+        # a short tail is the last line of a paragraph that wraps, as the sheet service lays it out
+        line("s1", 2, False, 4, "(二)必要措施應依合理判斷執行，並記載理由"),
+        line("s1", 2, False, 5, "錄。"),
+        line("s1", 3, False, 6, "未選段內容只留在文件中。"),
+        line("s2", 0, True, 7, "二、結論"),
+        line("s2", 1, False, 8, "結語前的段落保持原樣。"),
+        line("s2", 2, False, 9, "(三)顯然危險時應採必要措施並記錄結果"),
+        line("s2", 2, False, 10, "結。"),
     ]
 
 
 def _short_tail_warnings():
     return [
         {"code": "SHORT_TAIL_LINE", "page": 1, "line": 3, "sectionId": "s1"},
-        {"code": "SHORT_TAIL_LINE", "page": 1, "line": 4, "sectionId": "s1"},
-        {"code": "SHORT_TAIL_LINE", "page": 1, "line": 9, "sectionId": "s2"},
+        {"code": "SHORT_TAIL_LINE", "page": 1, "line": 5, "sectionId": "s1"},
+        {"code": "SHORT_TAIL_LINE", "page": 1, "line": 10, "sectionId": "s2"},
     ]
 
 
@@ -1681,6 +1683,53 @@ def test_generate_essay_restores_the_best_overflow_before_the_next_revision(monk
     assert result["essay"]["layout"]["fits"] is True
 
 
+def test_generate_essay_trims_locally_without_the_services_two_character_short_tail_warning(monkeypatch, evidence):
+    # live: overflows had no SHORT_TAIL_LINE (only flagged at two characters or less), so every one was rewritten whole
+    _enable_essay(monkeypatch)
+    text = "(一)警察於公共場所得查證身分並記錄理由與時間\n(二)短段。"
+    client = SequenceClient(_essay_json(text=text), json.dumps({"edits": [
+        {"sectionId": "s1", "paragraphIndex": 1, "text": "(一)警察於公共場所得查證身分並記錄"}]}, ensure_ascii=False))
+    names = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        names.append(name)
+        written = "write_answer" in names
+        if name == "export_answer":
+            return "application/json", _mcp_body({"files": []})
+        if name == "check_layout" and not written:
+            body = {"sectionId": "s1", "paragraphIndex": 1, "isHeading": False, "page": 1}
+            return "application/json", _mcp_body(_essay_check_response(fits=False, overflow=1, total=45, layout_lines=[
+                {"sectionId": "s1", "paragraphIndex": 0, "isHeading": True, "page": 1, "lineOnPage": 1, "text": "一、核心說明"},
+                {**body, "lineOnPage": 2, "text": "(一)警察於公共場所得查證身分並記錄"},
+                {**body, "lineOnPage": 3, "text": "理由與時間"},  # five characters: no warning, still one line to save
+                {"sectionId": "s1", "paragraphIndex": 2, "isHeading": False, "page": 1, "lineOnPage": 4, "text": "(二)短段。"}]))
+        maker = _essay_check_response if name == "check_layout" else _essay_state_response
+        return "application/json", _mcp_body(maker(fits=written, overflow=0 if written else 1,
+                                                   total=43 if written else 45, version=2 if written else 1))
+
+    result = answer.generate_essay("申論題", evidence[0], [], client=client, post=post)
+
+    assert '"paragraphIndex": 1' in client.calls[1][0][-1]["content"]  # the local request names only that paragraph
+    assert result["essay"]["sections"][0]["text"] == "(一)警察於公共場所得查證身分並記錄\n(二)短段。"
+    assert result["essay"]["layout"]["fits"] is True
+
+
+def test_wrapped_paragraph_tails_ignores_spacer_lines():
+    body = {"sectionId": "s1", "isHeading": False, "page": 1}
+    lines = [
+        # a spacer before a one-line paragraph shares its paragraphIndex: it must not look like a wrapped paragraph
+        {**body, "paragraphIndex": 1, "lineOnPage": 1, "text": "", "isSpacer": True},
+        {**body, "paragraphIndex": 1, "lineOnPage": 2, "text": "(一)短段。"},
+        {**body, "paragraphIndex": 2, "lineOnPage": 3, "text": "(二)這一段真的跨兩行而且"},
+        {**body, "paragraphIndex": 2, "lineOnPage": 4, "text": "尾行短。"},
+        {**body, "paragraphIndex": 2, "lineOnPage": 5, "text": "", "isSpacer": True},  # spacer after
+    ]
+
+    assert answer._wrapped_paragraph_tails({"layout": {"lines": lines}}) == [
+        {"sectionId": "s1", "paragraphIndex": 2, "lastLineChars": 4, "preview": "(二)這一段真的跨兩行而"}]
+
+
 def test_generate_essay_keeps_fit_content_fix_through_overflow_until_loop_end(monkeypatch, evidence):
     _enable_essay(monkeypatch)
     initial_text = "（一）原始內容含必要規範與充分說明末尾。"
@@ -1717,13 +1766,14 @@ def test_generate_essay_keeps_fit_content_fix_through_overflow_until_loop_end(mo
                                                total=current["total"], version=current["version"])
         else:
             if current["text"] == initial_text:
-                line = {"sectionId": "s1", "paragraphIndex": 1, "isHeading": False,
-                        "page": 1, "lineOnPage": 2, "text": "末尾。"}
+                body = {"sectionId": "s1", "paragraphIndex": 1, "isHeading": False, "page": 1}
                 structured = _essay_check_response(
                     fits=False, overflow=1, total=45, version=current["version"],
                     layout_lines=[{"sectionId": "s1", "paragraphIndex": 0, "isHeading": True,
-                                   "page": 1, "lineOnPage": 1, "text": "一、核心說明"}, line],
-                    warnings=[{"code": "SHORT_TAIL_LINE", "page": 1, "line": 2, "sectionId": "s1"}])
+                                   "page": 1, "lineOnPage": 1, "text": "一、核心說明"},
+                                  {**body, "lineOnPage": 2, "text": "（一）原始內容含必要規範與充分說明"},
+                                  {**body, "lineOnPage": 3, "text": "末尾。"}],
+                    warnings=[{"code": "SHORT_TAIL_LINE", "page": 1, "line": 3, "sectionId": "s1"}])
             else:
                 structured = _essay_check_response(fits=current["total"] <= 44,
                                                    overflow=max(current["total"] - 44, 0),
