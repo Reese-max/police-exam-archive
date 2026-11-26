@@ -1301,6 +1301,7 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
         failures = 0  # revisions that came back unusable or that the sheet service refused
         revisions = 0
         force_full_revision = False
+        overtime_trim = False  # the one local trim allowed past the time budget has been spent
         # Only model requests use this cap; restoring a better overflow does not consume one.
         while True:
             checked = _essay_check(answer_id, post)
@@ -1352,13 +1353,19 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
                         mark(f"write failed: {getattr(error, 'code', 'unknown')}")
                         if failures >= 2:
                             break
-            if revisions >= 6 or late or (layout["fits"] and not reminders and not misplaced_any and not short):
-                break
             local_targets = []
             if (not force_full_revision and not layout["fits"]
                     and 1 <= layout["overflowLines"] <= 3 and not reminders
                     and not misplaced_any and check_payload):
                 local_targets = _local_trim_targets(check_payload, essay["sections"], layout["overflowLines"])
+            # live: a draft reached 45 lines at 429 s and went out with no file; an overflow of the best draft
+            # that local trimming can fix gets one short trim past the budget or the revision cap
+            overtime = ((revisions >= 6 or late) and local_targets and not overtime_trim and failures < 2
+                        and layout["totalLines"] <= best_overflow_layout["totalLines"])
+            if overtime:
+                overtime_trim = True
+            elif revisions >= 6 or late or (layout["fits"] and not reminders and not misplaced_any and not short):
+                break
             request = f"排版檢查（check_layout）：共 {layout['totalLines']} 行，答題紙容量 44 行"
             request += (f"，超出 {layout['overflowLines']} 行。" if not layout["fits"]
                         else f"，尚餘 {spare} 行。" if short else "。")
@@ -1400,7 +1407,7 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
             if not layout["fits"] and compressing:
                 revision_providers = providers
             compressing = not layout["fits"]
-            revision_timeout = min(timeout, max(30.0, budget_s - (time.monotonic() - started)))
+            revision_timeout = min(timeout, 60.0 if overtime else max(30.0, budget_s - (time.monotonic() - started)))
             revisions += 1
             if local_targets:
                 revised_text, _ = _complete_text(
