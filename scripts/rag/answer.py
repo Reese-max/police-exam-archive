@@ -1274,10 +1274,18 @@ def generate_essay(query, results, laws, history=(), *, client=None, post=None):
         create_arguments["lineTargets"] = [
             {"sectionId": item["id"], "lines": item["lines"]} for item in parsed["sections"]]
     try:
-        created = _essay_call("create_answer", create_arguments, post=post)
+        try:
+            created = _essay_call("create_answer", create_arguments, post=post)
+        except EssayServiceError as error:
+            # a refusal stores nothing, so one retry cannot leave a duplicate; the line targets are only planning
+            # hints and may be what was refused. A dropped connection is not retried: the answer may exist already.
+            mark(f"create failed: {error.code}")
+            create_arguments.pop("lineTargets", None)
+            created = _essay_call("create_answer", create_arguments, post=post)
         answer_id, version, layout = _essay_state(created)
         essay["layout"] = layout
-    except Exception:
+    except Exception as error:
+        mark(f"create failed: {getattr(error, 'code', 'unknown')}")
         essay["note"] = "排版服務暫時無法使用，以下只有文字。"
     else:
         fitting_sections = None

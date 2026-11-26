@@ -2404,15 +2404,47 @@ def test_generate_essay_keeps_overflow_note_and_skips_export_after_compression(
     assert result["essay"]["layout"]["fits"] is False
 
 
+def test_generate_essay_retries_a_refused_create_once_without_line_targets(monkeypatch, evidence, capsys):
+    _enable_essay(monkeypatch)
+    creates = []
+
+    def post(url, payload, headers, timeout):
+        request = json.loads(payload)
+        name, arguments = request["params"]["name"], request["params"]["arguments"]
+        if name == "create_answer":
+            creates.append(arguments)
+            if len(creates) == 1:
+                return "application/json", json.dumps({"result": {
+                    "isError": True, "content": [{"type": "text", "text": "INVALID_INPUT: 答案文字"}]}})
+            return "application/json", _mcp_body(_essay_state_response())
+        if name == "export_answer":
+            return "application/json", _mcp_body({"files": [
+                {"format": "pdf", "fileName": "答案.pdf", "downloadUrl": "https://files.example/answer.pdf"}]})
+        return "application/json", _mcp_body({})
+
+    result = answer.generate_essay(
+        "申論題", *evidence, client=FakeClient(_essay_json(lines=[20, 4])), post=post)
+
+    assert len(creates) == 2 and "lineTargets" in creates[0] and "lineTargets" not in creates[1]
+    assert creates[0]["sections"] == creates[1]["sections"]
+    assert result["essay"]["files"] and result["essay"]["note"] != "排版服務暫時無法使用，以下只有文字。"
+    log = capsys.readouterr().out
+    assert "create failed: INVALID_INPUT" in log and "答案文字" not in log
+
+
 def test_generate_essay_create_failure_keeps_text_and_returns_fixed_note(monkeypatch, evidence):
     _enable_essay(monkeypatch)
+    names = []
 
-    def fail(*args):
+    def fail(url, payload, headers, timeout):
+        names.append(json.loads(payload)["params"]["name"])
         raise RuntimeError("essay-secret response body")
 
     result = answer.generate_essay(
         "申論題", *evidence, client=FakeClient(_essay_json()), post=fail)
 
+    # a dropped connection may have stored the answer already, so create is not sent twice
+    assert sum(name == "create_answer" for name in names) == 1
     assert result["status"] == "ok" and result["essay"]["sections"]
     assert result["essay"]["layout"] is None and result["essay"]["files"] == []
     assert result["essay"]["note"] == "排版服務暫時無法使用，以下只有文字。"
