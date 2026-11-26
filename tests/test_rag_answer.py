@@ -1715,6 +1715,45 @@ def test_generate_essay_trims_locally_without_the_services_two_character_short_t
     assert result["essay"]["layout"]["fits"] is True
 
 
+@pytest.mark.parametrize("still_over", [False, True])
+def test_generate_essay_trims_locally_once_past_the_time_budget(monkeypatch, evidence, still_over):
+    # live: a draft reached 45 lines at 429 s, just past the 420 s budget, and went out with no file
+    _enable_essay(monkeypatch)
+    monkeypatch.setattr(answer, "time", SimpleNamespace(monotonic=lambda: next(ticks, 500.0)))
+    ticks = iter([0.0])
+    text = "(一)警察於公共場所得查證身分並記錄理由與時間\n(二)短段。"
+    client = SequenceClient(_essay_json(text=text), *[json.dumps({"edits": [
+        {"sectionId": "s1", "paragraphIndex": 1, "text": "(一)警察於公共場所得查證身分並記錄"}]}, ensure_ascii=False)] * 3)
+    names = []
+
+    def post(url, payload, headers, timeout):
+        name = json.loads(payload)["params"]["name"]
+        names.append(name)
+        fits = "write_answer" in names and not still_over
+        if name == "export_answer":
+            return "application/json", _mcp_body({"files": []})
+        if name == "check_layout":
+            body = {"sectionId": "s1", "paragraphIndex": 1, "isHeading": False, "page": 1}
+            return "application/json", _mcp_body(_essay_check_response(
+                fits=fits, overflow=0 if fits else 1, total=43 if fits else 45, layout_lines=[
+                    {"sectionId": "s1", "paragraphIndex": 0, "isHeading": True, "page": 1, "lineOnPage": 1,
+                     "text": "一、核心說明"},
+                    {**body, "lineOnPage": 2, "text": "(一)警察於公共場所得查證身分並記錄"},
+                    {**body, "lineOnPage": 3, "text": "理由與時間"},
+                    {"sectionId": "s1", "paragraphIndex": 2, "isHeading": False, "page": 1, "lineOnPage": 4,
+                     "text": "(二)短段。"}]))
+        return "application/json", _mcp_body(_essay_state_response(
+            fits=fits, overflow=0 if fits else 1, total=43 if fits else 45, version=names.count("write_answer") + 1))
+
+    result = answer.generate_essay("申論題", evidence[0], [], client=client, post=post)
+
+    # one local trim past the budget, never a second one, and its timeout is short
+    assert names.count("write_answer") == 1 and len(client.calls) == 2
+    assert client.calls[1][1]["timeout"] == 60.0  # RAG_LLM_TIMEOUT defaults to 180
+    assert result["essay"]["layout"]["fits"] is (not still_over)
+    assert ("export_answer" in names) is (not still_over)
+
+
 def test_wrapped_paragraph_tails_ignores_spacer_lines():
     body = {"sectionId": "s1", "isHeading": False, "page": 1}
     lines = [
